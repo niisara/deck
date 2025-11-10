@@ -1,4 +1,4 @@
-export type { Slide, Deck } from './types';
+export type { Slide, Deck, RevealTheme } from './types';
 import { demoDeck } from './demo-deck';
 import { sampleDeck } from './sample-deck';
 import { nerMetricsDeck } from './ner-metrics-deck';

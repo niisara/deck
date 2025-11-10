@@ -10,7 +10,7 @@ import RevealZoom from 'reveal.js/plugin/zoom/zoom';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
-import type { RevealTheme } from '../data/types';
+import { loadTheme } from '../utils/themeLoader';
 import './DeckPage.css';
 
 function DeckPage() {
@@ -24,23 +24,10 @@ function DeckPage() {
   useEffect(() => {
     if (!deck) return;
 
-    const theme: RevealTheme = deck.theme || 'black';
-    const themeLink = document.createElement('link');
-    themeLink.rel = 'stylesheet';
-    themeLink.href = `/node_modules/reveal.js/dist/theme/${theme}.css`;
-    themeLink.id = 'reveal-theme';
-    
-    // Remove any existing theme link
-    const existingTheme = document.getElementById('reveal-theme');
-    if (existingTheme) {
-      existingTheme.remove();
-    }
-    
-    document.head.appendChild(themeLink);
+    const theme = deck.theme || 'black';
+    const cleanup = loadTheme(theme);
 
-    return () => {
-      themeLink.remove();
-    };
+    return cleanup;
   }, [deck]);
 
   useEffect(() => {
