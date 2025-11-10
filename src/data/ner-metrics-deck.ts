@@ -4,6 +4,7 @@ export const nerMetricsDeck: Deck = {
   id: 'ner-metrics',
   name: '7 Evaluation Metrics for NER Models',
   description: 'A concise cheat sheet for evaluating Named Entity Recognition',
+  theme: 'night',
   slides: [
     {
       id: 1,

@@ -4,6 +4,7 @@ export const sampleDeck: Deck = {
   id: 'sample-deck',
   name: 'Sample Deck',
   description: 'Another example deck with more features',
+  theme: 'moon',
   slides: [
     {
       id: 1,

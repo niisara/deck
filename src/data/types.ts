@@ -6,9 +6,24 @@ export interface Slide {
   notes?: string; // Speaker notes
 }
 
+export type RevealTheme = 
+  | 'black'
+  | 'white'
+  | 'league'
+  | 'beige'
+  | 'night'
+  | 'serif'
+  | 'simple'
+  | 'solarized'
+  | 'moon'
+  | 'dracula'
+  | 'sky'
+  | 'blood';
+
 export interface Deck {
   id: string;
   name: string;
   description: string;
+  theme?: RevealTheme;
   slides: Slide[];
 }

@@ -8,9 +8,9 @@ import RevealNotes from 'reveal.js/plugin/notes/notes';
 import RevealMath from 'reveal.js/plugin/math/math';
 import RevealZoom from 'reveal.js/plugin/zoom/zoom';
 import 'reveal.js/dist/reveal.css';
-import 'reveal.js/dist/theme/black.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
+import type { RevealTheme } from '../data/types';
 import './DeckPage.css';
 
 function DeckPage() {
@@ -19,6 +19,29 @@ function DeckPage() {
   const revealInstanceRef = useRef<Reveal.Api | null>(null);
 
   const deck = decks.find((d) => d.id === deckId);
+
+  // Dynamically load theme CSS
+  useEffect(() => {
+    if (!deck) return;
+
+    const theme: RevealTheme = deck.theme || 'black';
+    const themeLink = document.createElement('link');
+    themeLink.rel = 'stylesheet';
+    themeLink.href = `/node_modules/reveal.js/dist/theme/${theme}.css`;
+    themeLink.id = 'reveal-theme';
+    
+    // Remove any existing theme link
+    const existingTheme = document.getElementById('reveal-theme');
+    if (existingTheme) {
+      existingTheme.remove();
+    }
+    
+    document.head.appendChild(themeLink);
+
+    return () => {
+      themeLink.remove();
+    };
+  }, [deck]);
 
   useEffect(() => {
     if (!deck || !revealRef.current) return;
