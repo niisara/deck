@@ -1,8 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Reveal from 'reveal.js';
+import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
+import RevealMarkdown from 'reveal.js/plugin/markdown/markdown';
+import RevealSearch from 'reveal.js/plugin/search/search';
+import RevealNotes from 'reveal.js/plugin/notes/notes';
+import RevealMath from 'reveal.js/plugin/math/math';
+import RevealZoom from 'reveal.js/plugin/zoom/zoom';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/dist/theme/black.css';
+import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
 import './DeckPage.css';
 
@@ -16,7 +23,7 @@ function DeckPage() {
   useEffect(() => {
     if (!deck || !revealRef.current) return;
 
-    // Initialize Reveal.js
+    // Initialize Reveal.js with all built-in plugins
     const revealInstance = new Reveal(revealRef.current, {
       embedded: false,
       controls: true,
@@ -24,6 +31,14 @@ function DeckPage() {
       center: true,
       hash: true,
       transition: 'slide',
+      plugins: [
+        RevealHighlight,
+        RevealMarkdown,
+        RevealSearch,
+        RevealNotes,
+        RevealMath,
+        RevealZoom
+      ]
     });
 
     revealInstance.initialize();
@@ -57,7 +72,12 @@ function DeckPage() {
               data-background-color={slide.backgroundColor || '#2c3e50'}
             >
               <h2>{slide.title}</h2>
-              <p>{slide.content}</p>
+              <div dangerouslySetInnerHTML={{ __html: slide.content }} />
+              {slide.notes && (
+                <aside className="notes">
+                  {slide.notes}
+                </aside>
+              )}
             </section>
           ))}
         </div>
