@@ -82,7 +82,11 @@ function DeckPage() {
               data-background-color={slide.backgroundColor || '#2c3e50'}
             >
               <h2>{slide.title}</h2>
-              <div dangerouslySetInnerHTML={{ __html: slide.content }} />
+              {typeof slide.content === 'string' ? (
+                <div dangerouslySetInnerHTML={{ __html: slide.content }} />
+              ) : (
+                <div>{slide.content}</div>
+              )}
               {slide.notes && (
                 <aside className="notes">
                   {slide.notes}

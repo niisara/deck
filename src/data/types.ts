@@ -1,7 +1,7 @@
 export interface Slide {
   id: number;
   title: string;
-  content: string;
+  content: string | React.ReactNode;
   backgroundColor?: string;
   notes?: string; // Speaker notes
 }
