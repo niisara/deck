@@ -1,0 +1,62 @@
+.deck-page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.deck-page-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+.deck-page-error h1 {
+  font-size: 2.5rem;
+  color: #e74c3c;
+}
+
+.home-button-overlay {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.home-button-overlay:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.home-button {
+  background: #3498db;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.home-button:hover {
+  background: #2980b9;
+}
+
+.reveal h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.reveal p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
