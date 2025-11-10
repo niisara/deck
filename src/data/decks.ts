@@ -5,6 +5,7 @@ import { nerMetricsDeck } from './ner-metrics-deck';
 import { embeddingQualityDeck } from './embedding-quality-deck';
 import { nerTrainingDeck } from './ner-training-deck';
 import { embeddingModelsDeck } from './embedding-models-deck';
+import { vectorIndexingDeck } from './vector-indexing-deck';
 
 export const decks = [
   demoDeck,
@@ -12,5 +13,6 @@ export const decks = [
   nerMetricsDeck,
   embeddingQualityDeck,
   nerTrainingDeck,
-  embeddingModelsDeck
+  embeddingModelsDeck,
+  vectorIndexingDeck
 ];
