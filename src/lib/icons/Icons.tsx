@@ -249,6 +249,33 @@ export const icons: IconsMap = {
   "duo-wasf": "/icons/svg/duotone-yoga-pose/person-running-fast.svg",
   "duo-wlff": "/icons/svg/duotone-yoga-pose/person-running-fast.svg",
   "duo-ysleep": "/icons/svg/duotone-yoga-pose/person-running-fast.svg",
+  // Icons for NER training deck
+  "duo-brain": "/icons/svg/duotone/brain.svg",
+  "duo-graduation-cap": "/icons/svg/duotone/graduation-cap.svg",
+  "duo-book-open": "/icons/svg/duotone/book-open.svg",
+  "duo-list-check": "/icons/svg/duotone/list-check.svg",
+  "duo-clipboard-list": "/icons/svg/duotone/clipboard-list.svg",
+  "duo-brain-circuit": "/icons/svg/duotone/brain-circuit.svg",
+  "duo-copy": "/icons/svg/duotone/copy.svg",
+  "duo-shield-check": "/icons/svg/duotone/shield-check.svg",
+  "duo-brackets-square": "/icons/svg/duotone/brackets-square.svg",
+  "duo-gauge-high": "/icons/svg/duotone/gauge-high.svg",
+  "duo-list-ol": "/icons/svg/duotone/list-ol.svg",
+  "duo-arrow-trend-down": "/icons/svg/duotone/arrow-trend-down.svg",
+  "duo-battery-quarter": "/icons/svg/duotone/battery-quarter.svg",
+  "duo-check-double": "/icons/svg/duotone/check-double.svg",
+  "duo-rocket": "/icons/svg/duotone/rocket.svg",
+  // Icons for embedding quality deck
+  "duo-broom": "/icons/svg/duotone/broom.svg",
+  "duo-filter": "/icons/svg/duotone/filter.svg",
+  "duo-scissors": "/icons/svg/duotone/scissors.svg",
+  "duo-heading": "/icons/svg/duotone/heading.svg",
+  "duo-eraser": "/icons/svg/duotone/eraser.svg",
+  "duo-tags": "/icons/svg/duotone/tags.svg",
+  "duo-table": "/icons/svg/duotone/table.svg",
+  "duo-map": "/icons/svg/duotone/map.svg",
+  "duo-flask": "/icons/svg/duotone/flask.svg",
+  "duo-star": "/icons/svg/duotone/star.svg",
 };
 
 export const size: SizeMap = {

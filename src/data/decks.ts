@@ -3,10 +3,12 @@ import { demoDeck } from './demo-deck';
 import { sampleDeck } from './sample-deck';
 import { nerMetricsDeck } from './ner-metrics-deck';
 import { embeddingQualityDeck } from './embedding-quality-deck';
+import { nerTrainingDeck } from './ner-training-deck';
 
 export const decks = [
   demoDeck,
   sampleDeck,
   nerMetricsDeck,
-  embeddingQualityDeck
+  embeddingQualityDeck,
+  nerTrainingDeck
 ];
