@@ -22,6 +22,7 @@ import { entityDisambiguationTechniquesDeck } from './entity-disambiguation-tech
 import { featureExtractionDeck } from './feature-extraction-deck';
 import { graphRetrievalDeck } from './graph-retrieval-deck';
 import { ragEvaluationMetricsDeck } from './rag-evaluation-metrics-deck';
+import { sentimentAnalysisDeck } from './sentiment-analysis-deck';
 
 export const decks = [
   demoDeck,
@@ -46,5 +47,6 @@ export const decks = [
   entityDisambiguationTechniquesDeck,
   featureExtractionDeck,
   graphRetrievalDeck,
-  ragEvaluationMetricsDeck
+  ragEvaluationMetricsDeck,
+  sentimentAnalysisDeck
 ];
