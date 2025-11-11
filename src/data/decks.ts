@@ -9,6 +9,7 @@ import { vectorIndexingDeck } from './vector-indexing-deck';
 import { metadataEnrichmentDeck } from './metadata-enrichment-deck';
 import { multiStepRetrievalDeck } from './multi-step-retrieval-deck';
 import { hybridSearchDeck } from './hybrid-search-deck';
+import { nerApproachesDeck } from './ner-approaches-deck';
 
 export const decks = [
   demoDeck,
@@ -20,5 +21,6 @@ export const decks = [
   vectorIndexingDeck,
   metadataEnrichmentDeck,
   multiStepRetrievalDeck,
-  hybridSearchDeck
+  hybridSearchDeck,
+  nerApproachesDeck
 ];

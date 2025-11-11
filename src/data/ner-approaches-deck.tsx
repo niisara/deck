@@ -1,0 +1,739 @@
+import type { Deck } from './types';
+import SvgIcon from '../lib/icons/SvgIcon';
+
+export const nerApproachesDeck: Deck = {
+  id: 'ner-approaches-deck',
+  name: '11 Named Entity Recognition Approaches',
+  description: 'A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons',
+  theme: 'night',
+  slides: [
+    {
+      id: 1,
+      title: 'Named Entity Recognition Approaches',
+      content: (
+        <div>
+          <h2 style={{ marginBottom: '30px' }}>
+            <SvgIcon iconName="duo-tags" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
+            Named Entity Recognition Approaches
+          </h2>
+          <p style={{ fontSize: '1.1em', marginTop: '30px' }}>
+            A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
+          </p>
+          <div style={{ marginTop: '40px', fontSize: '0.85em', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', maxWidth: '800px', margin: '40px auto' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+              <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
+              <div style={{ marginTop: '5px' }}>Rule-Based</div>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
+              <SvgIcon iconName="duo-book" sizeName="2x" darkModeInvert={true} />
+              <div style={{ marginTop: '5px' }}>Dictionary</div>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
+              <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
+              <div style={{ marginTop: '5px' }}>Statistical</div>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px' }}>
+              <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
+              <div style={{ marginTop: '5px' }}>Neural</div>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px' }}>
+              <SvgIcon iconName="duo-brain-circuit" sizeName="2x" darkModeInvert={true} />
+              <div style={{ marginTop: '5px' }}>Transformer</div>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px' }}>
+              <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+              <div style={{ marginTop: '5px' }}>LLM</div>
+            </div>
+          </div>
+          <p style={{ fontSize: '0.8em', marginTop: '40px', color: '#aaa' }}>
+            Prepared by: Genspark AI Slides • Date: 2025-11-07
+          </p>
+        </div>
+      ),
+      backgroundColor: '#1a1a2e',
+      notes: 'Title slide introducing 11 NER approaches across different model types'
+    },
+    {
+      id: 2,
+      title: 'Table of Contents',
+      content: (
+        <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto', fontSize: '0.85em' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '30px' }}>
+            <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
+            Table of Contents
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+            <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>1</span>
+              <span>Rule-Based Pattern Matching</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#81c784' }}>2</span>
+              <span>Dictionary / Gazetteer Lookup</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ffb74d' }}>3</span>
+              <span>TF-IDF + Classifier-Based NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ba68c8' }}>4</span>
+              <span>Hidden Markov Model (HMM) NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#f06292' }}>5</span>
+              <span>Conditional Random Fields (CRF) NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#64b5f6' }}>6</span>
+              <span>BiLSTM + CRF</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#aed581' }}>7</span>
+              <span>CNN + BiLSTM NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ffa726' }}>8</span>
+              <span>spaCy Statistical NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ef5350' }}>9</span>
+              <span>BERT Fine-Tuned for NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#9575cd' }}>10</span>
+              <span>RoBERTa / DistilBERT NER Models</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#66bb6a' }}>11</span>
+              <span>LLM / Zero-Shot NER</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.15)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px', gridColumn: 'span 2' }}>
+              <SvgIcon iconName="duo-trophy" sizeName="1x" style={{ color: '#ffd700' }} darkModeInvert={true} />
+              <span style={{ fontWeight: 'bold' }}>Summary & Comparison</span>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Table of contents showing all 11 NER approaches plus summary'
+    },
+    {
+      id: 3,
+      title: '1) Rule-Based Pattern Matching',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-list-check" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>Rule-Based Pattern Matching</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Deterministic rules, regexes, token patterns, heuristics.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                regex: r"\b[A-Z][a-z]+ [A-Z][a-z]+\b"
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None to build; small annotated set recommended for validation.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Highly structured domains (dates, IDs, emails), compliance/extraction with strict formats, low-resource settings.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Transparent</li>
+                  <li>Fast</li>
+                  <li>Consistent</li>
+                  <li>No labeled data required</li>
+                  <li>Easy to enforce constraints</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Brittle to variations</li>
+                  <li>High maintenance</li>
+                  <li>Limited recall/coverage</li>
+                  <li>Poor generalization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#0f3460',
+      notes: 'Approach 1: Rule-based pattern matching using regexes and heuristics'
+    },
+    {
+      id: 4,
+      title: '2) Dictionary / Gazetteer Lookup',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-book" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>Dictionary / Gazetteer Lookup</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Lexicon/alias lookup with exact/fuzzy matching, optional normalization.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                entity_dict.get(text.lower(), None)
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None; requires curated dictionaries/gazetteers; optional frequency stats for ranking.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Products/catalogs, locations (GeoNames), biomedical ontologies, entity normalization tasks.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Simple</li>
+                  <li>High precision for known entities</li>
+                  <li>Easy to update lists</li>
+                  <li>Multilingual-ready with the right lexicons</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Misses out-of-vocabulary/new entities</li>
+                  <li>Ambiguity without context</li>
+                  <li>Alias/variant management overhead</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1a1a2e',
+      notes: 'Approach 2: Dictionary and gazetteer lookup for known entities'
+    },
+    {
+      id: 5,
+      title: '3) TF-IDF + Classifier-Based NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>TF-IDF + Classifier-Based NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Feature-based ML (TF-IDF/BoW, char n-grams, window features) + classifier (LogReg/SVM/Perceptron) at token/span level.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                X = tfidf_vectorizer.transform(tokens); y_pred = classifier.predict(X)
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled tokens/spans (thousands–tens of thousands); optional pre-chunking.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Lightweight baselines, domains with strong lexical cues, constrained schemas.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Fast to train</li>
+                  <li>Interpretable features</li>
+                  <li>Low compute requirements</li>
+                  <li>Minimal memory usage</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Weak context modeling</li>
+                  <li>Lower accuracy than sequence models</li>
+                  <li>No explicit label dependencies</li>
+                  <li>Requires feature engineering</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Approach 3: TF-IDF based classifier approach with traditional ML'
+    },
+    {
+      id: 6,
+      title: '4) Hidden Markov Model (HMM) NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-arrows-rotate" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>Hidden Markov Model (HMM) NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Generative sequence model with transition/emission probabilities; Viterbi decoding.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                P(tag_i|tag_&#123;i-1&#125;) × P(word_i|tag_i)
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences preferred; can leverage semi-supervised counts and lexicons.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Educational baseline, low-resource scenarios, when probabilistic interpretability is desired.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Efficient decoding</li>
+                  <li>Handles sequence structure</li>
+                  <li>Probabilistic treatment of uncertainty</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Strong independence assumptions</li>
+                  <li>Limited feature flexibility</li>
+                  <li>Typically outperformed by CRF/neural models</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#0f3460',
+      notes: 'Approach 4: Hidden Markov Model for sequence tagging'
+    },
+    {
+      id: 7,
+      title: '5) Conditional Random Fields (CRF) NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-circle-nodes" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>Conditional Random Fields (CRF) NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Discriminative sequence model over hand-crafted features; BIO/IOB tagging.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
+                CRF(features=[word.lower(), word[-3:], word.isupper(), prev_word, next_word])
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences (5k–100k sentences) + feature templates (orthographic, lexicon, context).</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Strong non-neural baseline, small/medium data, domains with informative surface features.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Captures label dependencies</li>
+                  <li>Robust</li>
+                  <li>Well-understood</li>
+                  <li>Stable</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Heavy feature engineering</li>
+                  <li>Limited long-range context</li>
+                  <li>Weaker domain transfer vs. pretrained transformers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1a1a2e',
+      notes: 'Approach 5: CRF for discriminative sequence labeling'
+    },
+    {
+      id: 8,
+      title: '6) BiLSTM + CRF',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-brain" sizeName="3x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>BiLSTM + CRF</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Neural sequence tagger: embeddings + BiLSTM encoder + CRF decoder.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                BiLSTM(embed) → CRF(tag_sequence)
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences (10k–100k sentences); benefits from pretrained word/subword embeddings.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> General-purpose NER with moderate data; multilingual and domain setups without massive compute.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Learns features automatically</li>
+                  <li>Context-aware</li>
+                  <li>Strong accuracy with reasonable compute</li>
+                  <li>Leverages pretrained embeddings</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Needs GPU for training</li>
+                  <li>Complex hyperparameter tuning</li>
+                  <li>Data-hungry vs. rules/CRF</li>
+                  <li>OOV handling depends on char/subword modeling</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Approach 6: BiLSTM + CRF neural sequence tagger'
+    },
+    {
+      id: 9,
+      title: '7) CNN + BiLSTM NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#aed581' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>CNN + BiLSTM NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Character-level CNN (or LSTM) for subword features + word embeddings + BiLSTM (+ CRF/softmax).</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                char_cnn + word_emb → BiLSTM → CRF/softmax
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences (10k–100k); character and word vocabularies.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Morphologically rich languages, noisy text (typos, social media), OOV-heavy domains.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Captures morphology/spelling</li>
+                  <li>Improves robustness to OOV/variants</li>
+                  <li>Strong non-transformer baseline</li>
+                  <li>Better at handling character variations</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>More components/hyperparameters</li>
+                  <li>Increased training complexity</li>
+                  <li>Slower than plain BiLSTM</li>
+                  <li>Usually below transformer SOTA accuracy</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#0f3460',
+      notes: 'Approach 7: CNN + BiLSTM for character-aware NER'
+    },
+    {
+      id: 10,
+      title: '8) spaCy Statistical NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-rocket" sizeName="3x" style={{ color: '#ffa726' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>spaCy Statistical NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Production-ready pipeline (transition-based CNN or transformer backends) with beam search; rule+ML integration.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                nlp = spacy.load("en_core_web_sm")
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None to use pretrained; domain customization with labeled examples; config-driven training in spaCy v3.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Rapid deployment, practical pipelines combining rules, gazetteers, and statistical NER.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Fast inference</li>
+                  <li>Easy to train/tune/deploy</li>
+                  <li>Strong tooling</li>
+                  <li>Multilingual models out-of-the-box</li>
+                  <li>Rule integration capability</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Quality depends on pretrained model/domain fit</li>
+                  <li>Custom labels need data</li>
+                  <li>Limited transparency into pretrained errors</li>
+                  <li>Model size vs. accuracy tradeoffs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1a1a2e',
+      notes: 'Approach 8: spaCy production-ready NER pipeline'
+    },
+    {
+      id: 11,
+      title: '9) BERT Fine-Tuned for NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-brain-circuit" sizeName="3x" style={{ color: '#ef5350' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>BERT Fine-Tuned for NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Transformer encoder (BERT) with token classification head (softmax) ± CRF layer.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
+                BertForTokenClassification(num_labels=9)
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled BIO/IOB sequences (5k–50k sentences) leveraging large-scale pretraining.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> High-accuracy NER, domain adaptation via domain-specific BERT (e.g., BioBERT, FinBERT).</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Strong context modeling</li>
+                  <li>Performs well with moderate data</li>
+                  <li>Transferable and robust</li>
+                  <li>Pre-trained language knowledge</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Compute/latency heavy</li>
+                  <li>Subword alignment adds complexity</li>
+                  <li>Privacy/compliance considerations</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Approach 9: BERT fine-tuned for high-accuracy NER'
+    },
+    {
+      id: 12,
+      title: '10) RoBERTa / DistilBERT NER Models',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-gauge-high" sizeName="3x" style={{ color: '#9575cd' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>RoBERTa / DistilBERT NER Models</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Transformer variants; RoBERTa (accuracy-optimized), DistilBERT (compressed for speed) with token classification.</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
+                from transformers import AutoTokenizer, AutoModelForTokenClassification
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Same as BERT; fine-tune on labeled NER data; distillation handled in pretraining of DistilBERT.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Balancing accuracy and latency; edge/real-time constraints; production cost optimization.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>RoBERTa often outperforms BERT</li>
+                  <li>DistilBERT is smaller/faster</li>
+                  <li>Good accuracy retention</li>
+                  <li>Better suited for production</li>
+                  <li>Optimized training techniques</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>DistilBERT has slightly lower accuracy</li>
+                  <li>Still benefits from GPUs</li>
+                  <li>Requires careful tuning</li>
+                  <li>Quantization may be required</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#0f3460',
+      notes: 'Approach 10: RoBERTa/DistilBERT for optimized performance'
+    },
+    {
+      id: 13,
+      title: '11) LLM / Zero-Shot NER',
+      content: (
+        <div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-lightbulb" sizeName="3x" style={{ color: '#66bb6a' }} darkModeInvert={true} />
+            <h2 style={{ margin: 0 }}>LLM / Zero-Shot NER</h2>
+          </div>
+          <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
+              <p><strong>Model Type:</strong> Large instruction-tuned LMs prompted for extraction (zero-/few-shot) or lightly fine-tuned (PEFT/LoRA).</p>
+              <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
+                prompt: "Extract person and organization names from this text: &#123;text&#125;"
+              </p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None for zero-shot; few-shot examples in prompt; optional small labeled set for prompt-tuning.</p>
+            </div>
+            <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Rapid prototyping, new schemas, low-data domains, complex instructions, multilingual scenarios.</p>
+            </div>
+            <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>No labeled data needed</li>
+                  <li>Flexible schemas</li>
+                  <li>Can reason and follow instructions</li>
+                  <li>Fast iteration</li>
+                </ul>
+              </div>
+              <div style={{ flex: 1 }}>
+                <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+                  <li>Hallucinations/inconsistency</li>
+                  <li>Privacy/regulatory concerns</li>
+                  <li>Higher cost/latency</li>
+                  <li>Output parsing needed</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1a1a2e',
+      notes: 'Approach 11: LLM zero-shot NER for rapid prototyping'
+    },
+    {
+      id: 14,
+      title: 'Summary & Comparison',
+      content: (
+        <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.7em' }}>
+          <h2 style={{ textAlign: 'center', marginBottom: '25px' }}>
+            <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
+            Summary & Comparison
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>
+                <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
+                Quick Selection Guide
+              </h3>
+              <ul style={{ fontSize: '0.95em', lineHeight: '1.8', listStyle: 'none', paddingLeft: 0 }}>
+                <li><strong>No data, strict formats:</strong> Rule-Based, Gazetteer</li>
+                <li><strong>Small data, stable schemas:</strong> CRF, spaCy</li>
+                <li><strong>Moderate data, accuracy:</strong> BiLSTM+CRF, CNN+BiLSTM</li>
+                <li><strong>Best accuracy:</strong> BERT/RoBERTa</li>
+                <li><strong>Low latency/edge:</strong> DistilBERT, optimized spaCy</li>
+                <li><strong>New schema/zero data:</strong> LLM Zero-/Few-Shot</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#81c784', marginBottom: '15px' }}>
+                <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                Data Needs Spectrum
+              </h3>
+              <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                <p><strong>Training examples needed:</strong></p>
+                <ul style={{ fontSize: '0.9em' }}>
+                  <li>Rule-Based, Gazetteer: <span style={{ color: '#4fc3f7' }}>0 examples</span></li>
+                  <li>CRF/HMM: <span style={{ color: '#81c784' }}>1,000-5,000 examples</span></li>
+                  <li>BiLSTM models: <span style={{ color: '#ffb74d' }}>5,000-50,000 examples</span></li>
+                  <li>Transformers: <span style={{ color: '#ba68c8' }}>3,000-30,000 examples</span></li>
+                  <li>Zero-shot LLMs: <span style={{ color: '#f06292' }}>0-10 examples in prompt</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ffb74d', marginBottom: '15px' }}>
+                <SvgIcon iconName="duo-clock" sizeName="2x" darkModeInvert={true} />
+                Compute & Latency
+              </h3>
+              <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                <p><strong>Inference time (100 tokens):</strong></p>
+                <ul style={{ fontSize: '0.9em' }}>
+                  <li>Rule-Based/Gazetteer: <span style={{ color: '#4fc3f7' }}>&lt;1ms</span></li>
+                  <li>CRF/HMM: <span style={{ color: '#81c784' }}>~5-10ms</span></li>
+                  <li>BiLSTM+CRF: <span style={{ color: '#ffb74d' }}>~20-50ms</span></li>
+                  <li>DistilBERT: <span style={{ color: '#ba68c8' }}>~20-100ms</span></li>
+                  <li>BERT/RoBERTa: <span style={{ color: '#f06292' }}>~50-200ms</span></li>
+                  <li>LLMs: <span style={{ color: '#ef5350' }}>500ms-5s+</span></li>
+                </ul>
+              </div>
+            </div>
+            <div>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ba68c8', marginBottom: '15px' }}>
+                <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
+                Maintenance & Deployment
+              </h3>
+              <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                <p><strong>Maintenance:</strong></p>
+                <ul style={{ fontSize: '0.9em' }}>
+                  <li>Rules/Gazetteers: frequent manual updates</li>
+                  <li>Classical ML: periodic retraining</li>
+                  <li>Transformers: retrain/fine-tune when domain shifts</li>
+                  <li>LLMs: prompt monitoring, guardrails, parsing</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+            <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+              <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
+              Deployment Tips
+            </h4>
+            <ul style={{ fontSize: '0.9em', lineHeight: '1.6', marginBottom: 0 }}>
+              <li>Combine methods (rules+ML) for better results</li>
+              <li>Add normalization/entity linking step</li>
+              <li>Monitor for concept drift</li>
+              <li>Consider privacy compliance for PII</li>
+              <li>Quantize models when possible for edge</li>
+            </ul>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Summary and comparison of all 11 NER approaches with selection guide'
+    }
+  ]
+};
+
