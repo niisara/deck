@@ -17,6 +17,7 @@ import { ragLatencyDeck } from './rag-latency-deck';
 import { textClassificationDeck } from './text-classification-deck';
 import { llmCachingDeck } from './llm-caching-deck';
 import { contextPackingDeck } from './context-packing-deck';
+import { entityNormalizationDeck } from './entity-normalization-deck';
 
 export const decks = [
   demoDeck,
@@ -36,5 +37,6 @@ export const decks = [
   ragLatencyDeck,
   textClassificationDeck,
   llmCachingDeck,
-  contextPackingDeck
+  contextPackingDeck,
+  entityNormalizationDeck
 ];
