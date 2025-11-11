@@ -15,17 +15,17 @@ export const vectorDatabasesDeck: Deck = {
           <h2 style={{ marginBottom: '40px' }}>A comprehensive guide to 11 leading vector databases</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
-              <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#3498db' }} />
+              <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#3498db' }} darkModeInvert={true} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Vector Storage</p>
             </div>
-            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
+            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
             <div style={{ textAlign: 'center' }}>
-              <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#f39c12' }} />
+              <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#f39c12' }} darkModeInvert={true} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Similarity Search</p>
             </div>
-            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
+            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
             <div style={{ textAlign: 'center' }}>
-              <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#2ecc71' }} />
+              <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>AI Applications</p>
             </div>
           </div>
@@ -46,41 +46,41 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-1" sizeName="1x" style={{ color: '#3498db' }} />
+                <SvgIcon iconName="duo-circle-1" sizeName="1x" style={{ color: '#3498db' }} darkModeInvert={true} />
                 <strong>Pinecone</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-2" sizeName="1x" style={{ color: '#2ecc71' }} />
+                <SvgIcon iconName="duo-circle-2" sizeName="1x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
                 <strong>Weaviate</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-3" sizeName="1x" style={{ color: '#9b59b6' }} />
+                <SvgIcon iconName="duo-circle-3" sizeName="1x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
                 <strong>Qdrant</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-4" sizeName="1x" style={{ color: '#f39c12' }} />
+                <SvgIcon iconName="duo-circle-4" sizeName="1x" style={{ color: '#f39c12' }} darkModeInvert={true} />
                 <strong>Milvus</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-5" sizeName="1x" style={{ color: '#e74c3c' }} />
+                <SvgIcon iconName="duo-circle-5" sizeName="1x" style={{ color: '#e74c3c' }} darkModeInvert={true} />
                 <strong>Chroma</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-6" sizeName="1x" style={{ color: '#1abc9c' }} />
+                <SvgIcon iconName="duo-circle-6" sizeName="1x" style={{ color: '#1abc9c' }} darkModeInvert={true} />
                 <strong>Redis Vector Store</strong>
               </div>
             </div>
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-7" sizeName="1x" style={{ color: '#3498db' }} />
+                <SvgIcon iconName="duo-circle-7" sizeName="1x" style={{ color: '#3498db' }} darkModeInvert={true} />
                 <strong>Elasticsearch Vector</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-8" sizeName="1x" style={{ color: '#e67e22' }} />
+                <SvgIcon iconName="duo-circle-8" sizeName="1x" style={{ color: '#e67e22' }} darkModeInvert={true} />
                 <strong>Vespa</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 73, 94, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-circle-9" sizeName="1x" style={{ color: '#34495e' }} />
+                <SvgIcon iconName="duo-circle-9" sizeName="1x" style={{ color: '#34495e' }} darkModeInvert={true} />
                 <strong>PostgreSQL + pgvector</strong>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(39, 174, 96, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
@@ -110,14 +110,14 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Proprietary ANN algorithms with specialized index families (p1, p2, s1). Uses graph-based approaches for performance indexes and different structures for storage optimization. Supports various quantization options based on tier selection.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -125,7 +125,7 @@ export const vectorDatabasesDeck: Deck = {
                 <strong>Horizontal scaling:</strong> Add replicas to increase throughput (QPS) or create new indexes from collections to expand capacity.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -134,14 +134,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Fully managed service starting at $70/month for s1.x1 pod. Serverless option with usage-based pricing available. Pay for capacity and throughput based on pod size and replica count. Replicas multiply cost but increase QPS linearly.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -150,7 +150,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -174,21 +174,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Primary vector indices: <strong>HNSW</strong> (Hierarchical Navigable Small World) for approximate nearest neighbors and <strong>Flat</strong> for exact search. Also uses inverted index for fast filtering on text and structured data properties. Combination enables efficient hybrid search.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Horizontal scaling through sharding and replication across nodes. Vertical scaling via instance sizing selection. Does not require all vectors to reside in RAM, allowing for efficient memory usage. Supports cloud-native deployments with high availability.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -197,14 +197,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Open source with managed cloud starting at $25/month for standard performance-optimized instance. Serverless option available. Quantization techniques reduce memory requirements and lower costs. Cost-performance optimization guides available for tuning workloads.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -213,7 +213,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -237,21 +237,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Optimized HNSW algorithm with payload-aware filtering for efficient vector search. Supports multiple quantization methods including <strong>scalar, product, and binary quantization</strong> for memory efficiency and improved search performance.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Distributed clustering with configurable replication and sharding capabilities. Works on both on-premises and cloud environments. Features multitenancy support for segmenting collections and efficient resource utilization.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -260,14 +260,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Available as open source with self-hosting options. Qdrant Cloud offers managed plans for various workloads. Efficient memory usage through quantization techniques significantly reduces infrastructure costs for large vector collections.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -276,7 +276,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -300,21 +300,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Multiple specialized options: <strong>FLAT, IVF_FLAT, IVF_SQ8, IVF_PQ, IVF_RABITQ, HNSW, DISKANN, and GPU variants</strong>. Also supports scalar indexes (INVERTED, BITMAP, etc.) for structured data filtering and hybrid searches.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Cloud-native distributed cluster with storage/compute separation. Uses mmap and DiskANN techniques for out-of-RAM data access. Horizontal scaling through sharding and flexible deployment across clusters.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -323,14 +323,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Open source with managed options available (e.g., Zilliz Cloud). Quantization techniques and DiskANN significantly reduce RAM requirements and associated infrastructure costs. Flexible deployment options for cost optimization.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -339,7 +339,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -363,21 +363,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 HNSW-based vector indexing optimized for single-node deployment. Focused on <strong>simplicity and ease of use</strong> rather than complex indexing configurations. Supports both vector embeddings and associated metadata for retrieval.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Primarily single-node open source implementation with simple local persistence. Chroma Cloud offers managed deployment for teams requiring more robust infrastructure without operational overhead.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -386,14 +386,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Open source and free for self-hosting. Managed Chroma Cloud offers usage-based pricing. Minimal operational overhead for prototyping and development workloads. No enterprise licensing fees makes it cost-effective for startups and research.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -402,7 +402,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -426,21 +426,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Implements <strong>HNSW and Flat indexes</strong> via the RediSearch module. Uniquely combines efficient vector search with Redis's native data structures. Supports hybrid search combining both text and vector similarity in the same query for more precise results.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Utilizes Redis Cluster architecture with sharding and replication. Primarily <strong>in-memory for performance</strong> with configurable persistence options (RDB snapshots, AOF logs). Horizontal scaling through cluster nodes and vertical scaling through instance sizing.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -449,14 +449,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Memory-intensive nature drives infrastructure costs higher than disk-based alternatives. Redis Enterprise and Redis Cloud options available with various pricing tiers. Consider using data expiration/TTL strategies to manage memory usage and costs for time-sensitive data.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -465,7 +465,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -489,21 +489,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Built on Lucene HNSW implementation with additional compression and quantization options. Features <strong>DiskBBQ</strong> for memory-efficient vector storage and <strong>ACORN-1 algorithm</strong> specifically optimized for filtered vector search performance.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Horizontal scaling via Elasticsearch's native sharding and replication capabilities. Elastic Cloud provides managed auto-scaling options. Distributes vector search workloads across multiple nodes for balanced resource utilization and high availability.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -512,14 +512,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Cost scales with cluster size and shard configuration. Significant economic advantages for organizations already running Elasticsearch deployments. Binary vector quantization reduces storage costs while maintaining search quality. Elastic Cloud offers various pricing tiers.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -528,7 +528,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -552,21 +552,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 HNSW with <strong>tensor operations</strong> for advanced vector search. Uniquely supports vectors, text, and structured data in a single unified engine. Uses tensor compute framework allowing complex operations beyond simple vector search.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Distributed elastic architecture with horizontal scaling. Supports <strong>real-time indexing and online serving</strong> with auto-scaling patterns. Multiple content clusters can be deployed for different workloads with independent scaling.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -575,14 +575,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Open source with self-managed deployment options. Infrastructure costs tied primarily to throughput requirements and online inference/ranking needs. Cloud offering available for managed operations.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -591,7 +591,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -615,21 +615,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Vector indices: <strong>HNSW and IVFFlat</strong> via pgvector extension. Standard PostgreSQL B-tree, GiST, GIN indices for scalar filtering and metadata. Both approximate and exact vector search supported with different performance trade-offs.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Uses PostgreSQL's native replication and partitioning mechanisms. Extensions like Citus and pg_shard enable horizontal scale-out with distributed tables. Vertical scaling through instance sizing based on workload requirements.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -638,14 +638,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Open-source extension for PostgreSQL – pay only for infrastructure costs. Simpler operational model where PostgreSQL is already deployed. Can run on commodity hardware for development or cloud-managed PostgreSQL services for production.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -654,7 +654,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -678,21 +678,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 HNSW-based vector indexes within MongoDB Atlas with <strong>native integration into document data model</strong>. Supports hybrid relevance scoring combining vector similarity with traditional document data. Vector search built on top of Atlas' proven indexing infrastructure.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Atlas managed scaling with automatic sharding and replication. Scale up/down with minimal operational overhead. Clear guidance provided for sizing RAM relative to index footprint. Leverages MongoDB's mature distributed systems architecture.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -701,14 +701,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Cost driven by Atlas cluster sizing. Follow sizing best practices with sufficient RAM headroom for indexes. Benefit from unified pricing model that includes both operational and vector workloads. Pay-as-you-go options available for all Atlas tiers.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -717,7 +717,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -741,21 +741,21 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Uses <strong>IVF-PQ and disk-optimized ANN algorithms</strong> over the Lance columnar format. Supports hybrid search combining vector and traditional search methods. Provides robust metadata filters for refined search results alongside vector similarity.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
                 Scaling Model
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 Flexible deployment as <strong>embedded database or serverless/cloud service</strong>. Specifically optimized for object storage solutions like S3 and high-performance local NVMe drives. Designed to scale with data volume rather than query complexity.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Performance Profile
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -764,14 +764,14 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost Consideration
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
                 <strong>Storage-centric economics</strong> leveraging inexpensive S3/local disk to reduce RAM requirements and infrastructure costs. Serverless pricing options available, allowing pay-for-use models that scale efficiently with actual workloads. Optimized for low TCO at scale.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
               <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '12px' }}>
@@ -780,7 +780,7 @@ export const vectorDatabasesDeck: Deck = {
                 </p>
               </div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-note-sticky" sizeName="1x" />
+                <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em' }}>
@@ -802,7 +802,7 @@ export const vectorDatabasesDeck: Deck = {
       content: (
         <div style={{ maxWidth: '1100px', margin: '0 auto', fontSize: '0.55em' }}>
           <h3 style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            <SvgIcon iconName="duo-table" sizeName="2x" />
+            <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
             At-a-glance comparison of all 11 vector databases
           </h3>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
@@ -921,7 +921,7 @@ export const vectorDatabasesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" />
+                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
                 Production-Grade & Managed
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -932,7 +932,7 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="1x" />
+                <SvgIcon iconName="duo-chart-line" sizeName="1x" darkModeInvert={true} />
                 Large-Scale & Enterprise
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -943,7 +943,7 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" />
+                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
                 Prototyping & Development
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -953,7 +953,7 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 Real-Time & Low-Latency
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -963,7 +963,7 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 73, 94, 0.1)', borderRadius: '10px', border: '2px solid #34495e' }}>
               <h4 style={{ color: '#34495e', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-database" sizeName="1x" />
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
                 Existing Database Integration
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -974,7 +974,7 @@ export const vectorDatabasesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c' }}>
               <h4 style={{ color: '#e74c3c', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" />
+                <SvgIcon iconName="duo-dollar-sign" sizeName="1x" darkModeInvert={true} />
                 Cost-Efficiency Focus
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
