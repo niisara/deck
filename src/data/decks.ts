@@ -8,6 +8,7 @@ import { embeddingModelsDeck } from './embedding-models-deck';
 import { vectorIndexingDeck } from './vector-indexing-deck';
 import { metadataEnrichmentDeck } from './metadata-enrichment-deck';
 import { multiStepRetrievalDeck } from './multi-step-retrieval-deck';
+import { hybridSearchDeck } from './hybrid-search-deck';
 
 export const decks = [
   demoDeck,
@@ -18,5 +19,6 @@ export const decks = [
   embeddingModelsDeck,
   vectorIndexingDeck,
   metadataEnrichmentDeck,
-  multiStepRetrievalDeck
+  multiStepRetrievalDeck,
+  hybridSearchDeck
 ];
