@@ -3,6 +3,7 @@ export interface Slide {
   title: string;
   content: string | React.ReactNode;
   backgroundColor?: string;
+  center?: boolean; // Whether to center this slide vertically (default: false)
   notes?: string; // Speaker notes
 }
 

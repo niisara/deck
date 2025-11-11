@@ -106,6 +106,22 @@
   text-align: left;
 }
 
+/* Center alignment for slides with center class */
+.reveal .slides section.center {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal .slides section.center h2,
+.reveal .slides section.center h3,
+.reveal .slides section.center ul,
+.reveal .slides section.center ol {
+  text-align: center;
+}
+
 /* Fix slide overflow - ensure content fits within viewport */
 .reveal .slides section > div {
   max-height: 80vh;

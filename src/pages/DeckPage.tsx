@@ -71,7 +71,7 @@ function DeckPage() {
       embedded: false,
       controls: true,
       progress: true,
-      center: false,
+      center: false, // Default to false, individual slides can override with data-center attribute
       hash: true,
       transition: 'slide',
       width: '100%',
@@ -127,6 +127,7 @@ function DeckPage() {
                   <section
                     key={slide.id}
                     data-background-color={slide.backgroundColor || '#2c3e50'}
+                    className={slide.center ? 'center' : ''}
                   >
                     <h2>{slide.title}</h2>
                     {typeof slide.content === 'string' ? (
@@ -149,6 +150,7 @@ function DeckPage() {
               <section
                 key={slide.id}
                 data-background-color={slide.backgroundColor || '#2c3e50'}
+                className={slide.center ? 'center' : ''}
               >
                 <h2>{slide.title}</h2>
                 {typeof slide.content === 'string' ? (

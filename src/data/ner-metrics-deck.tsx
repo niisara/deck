@@ -15,9 +15,10 @@ export const nerMetricsDeck: Deck = {
       slides: [
         {
           id: 1,
+          center: true,
           title: '7 Evaluation Metrics for NER Models',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
                 <SvgIcon iconName="duo-chart-line" sizeName="4x" style={{ color: '#3498db' }} />
                 <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#e74c3c' }} />
