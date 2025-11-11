@@ -71,7 +71,7 @@ function DeckPage() {
       embedded: false,
       controls: true,
       progress: true,
-      center: false, // Don't center vertically to allow better content fitting
+      center: false,
       hash: true,
       transition: 'slide',
       width: '100%',
