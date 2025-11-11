@@ -26,6 +26,7 @@ import { sentimentAnalysisDeck } from './sentiment-analysis-deck';
 import { documentPreprocessingDeck } from './document-preprocessing-deck';
 import { promptEngineeringDeck } from './prompt-engineering-deck';
 import { queryRewritingDeck } from './query-rewriting-deck';
+import { textPreprocessingDeck } from './text-preprocessing-deck';
 
 export const decks = [
   demoDeck,
@@ -54,5 +55,6 @@ export const decks = [
   sentimentAnalysisDeck,
   documentPreprocessingDeck,
   promptEngineeringDeck,
-  queryRewritingDeck
+  queryRewritingDeck,
+  textPreprocessingDeck
 ];
