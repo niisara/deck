@@ -10,6 +10,7 @@ import { metadataEnrichmentDeck } from './metadata-enrichment-deck';
 import { multiStepRetrievalDeck } from './multi-step-retrieval-deck';
 import { hybridSearchDeck } from './hybrid-search-deck';
 import { nerApproachesDeck } from './ner-approaches-deck';
+import { parentChildRetrievalDeck } from './parent-child-retrieval-deck';
 
 export const decks = [
   demoDeck,
@@ -22,5 +23,6 @@ export const decks = [
   metadataEnrichmentDeck,
   multiStepRetrievalDeck,
   hybridSearchDeck,
-  nerApproachesDeck
+  nerApproachesDeck,
+  parentChildRetrievalDeck
 ];
