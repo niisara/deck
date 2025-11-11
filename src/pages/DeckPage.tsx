@@ -11,7 +11,33 @@ import 'reveal.js/dist/reveal.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
 import { loadTheme } from '../utils/themeLoader';
+import SvgIcon from '../lib/icons/SvgIcon';
 import './DeckPage.css';
+
+// Helper function to lighten or darken a color
+const adjustColor = (color: string, amount: number): string => {
+  const hex = color.replace('#', '');
+  const r = Math.max(0, Math.min(255, parseInt(hex.substring(0, 2), 16) + amount));
+  const g = Math.max(0, Math.min(255, parseInt(hex.substring(2, 4), 16) + amount));
+  const b = Math.max(0, Math.min(255, parseInt(hex.substring(4, 6), 16) + amount));
+  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
+};
+
+// Helper function to determine if color is dark or light
+const isDarkColor = (color: string): boolean => {
+  const hex = color.replace('#', '');
+  const r = parseInt(hex.substring(0, 2), 16);
+  const g = parseInt(hex.substring(2, 4), 16);
+  const b = parseInt(hex.substring(4, 6), 16);
+  const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+  return brightness < 128;
+};
+
+// Get icon color that contrasts with background
+const getIconColor = (bgColor: string = '#2c3e50'): string => {
+  // If background is dark, lighten it; if light, darken it
+  return isDarkColor(bgColor) ? adjustColor(bgColor, 80) : adjustColor(bgColor, -80);
+};
 
 function DeckPage() {
   const { deckId } = useParams<{ deckId: string }>();
@@ -129,7 +155,16 @@ function DeckPage() {
                     data-background-color={slide.backgroundColor || '#2c3e50'}
                     className={slide.center ? 'center' : ''}
                   >
-                    <h2>{slide.title}</h2>
+                    <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                      {slide.icon && (
+                        <SvgIcon 
+                          iconName={slide.icon.name as any} 
+                          sizeName="2x" 
+                          style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
+                        />
+                      )}
+                      <span>{slide.title}</span>
+                    </h2>
                     {typeof slide.content === 'string' ? (
                       <div dangerouslySetInnerHTML={{ __html: slide.content }} />
                     ) : (
@@ -152,7 +187,16 @@ function DeckPage() {
                 data-background-color={slide.backgroundColor || '#2c3e50'}
                 className={slide.center ? 'center' : ''}
               >
-                <h2>{slide.title}</h2>
+                <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  {slide.icon && (
+                    <SvgIcon 
+                      iconName={slide.icon.name as any} 
+                      sizeName="2x" 
+                      style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
+                    />
+                  )}
+                  <span>{slide.title}</span>
+                </h2>
                 {typeof slide.content === 'string' ? (
                   <div dangerouslySetInnerHTML={{ __html: slide.content }} />
                 ) : (

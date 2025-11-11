@@ -4,6 +4,7 @@ export interface Slide {
   content: string | React.ReactNode;
   backgroundColor?: string;
   center?: boolean; // Whether to center this slide vertically (default: false)
+  icon?: { name: string }; // Optional icon to display before title (color auto-calculated from background)
   notes?: string; // Speaker notes
 }
 

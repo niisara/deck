@@ -57,11 +57,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 3,
           title: 'Metrics Covered',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-list-check" sizeName="3x" style={{ color: '#3498db' }} />
-              </div>
               <ol style={{ fontSize: '0.95em', lineHeight: '1.8' }}>
                 <li>Precision</li>
                 <li>Recall</li>
@@ -85,11 +83,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 4,
           title: 'Precision (Entity-Level)',
+          icon: { name: 'duo-bullseye' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="3x" style={{ color: '#27AE60' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Of all predicted entities, how many are correct (exact span + type)</p>
               
@@ -138,11 +134,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 6,
           title: 'Recall (Entity-Level)',
+          icon: { name: 'duo-magnifying-glass' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-magnifying-glass" sizeName="3x" style={{ color: '#E67E22' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Of all gold (true) entities, how many did the model find correctly</p>
               
@@ -191,11 +185,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 8,
           title: 'F1 Score (Entity-Level)',
+          icon: { name: 'duo-scale-balanced' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-scale-balanced" sizeName="3x" style={{ color: '#8E44AD' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Balance between precision and recall (harmonic mean)</p>
               
@@ -245,11 +237,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 10,
           title: 'Exact Match Score (Sentence-Level)',
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-check-double" sizeName="3x" style={{ color: '#C0392B' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Percentage of sentences/documents where the entire set of predicted entities exactly equals the gold set</p>
               
@@ -298,11 +288,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 12,
           title: 'Partial Match Score (IoU-Based)',
+          icon: { name: 'duo-circle-half-stroke' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-circle-half-stroke" sizeName="3x" style={{ color: '#1ABC9C' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Credit for near-miss spans to reduce sensitivity to boundary noise</p>
               
@@ -353,11 +341,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 14,
           title: 'Entity-Level Accuracy',
+          icon: { name: 'duo-percent' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-percent" sizeName="3x" style={{ color: '#3498DB' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Accuracy of entity type classification when spans are given (gold spans)</p>
               <p>Isolates typing from detection to focus solely on classification quality</p>
@@ -408,11 +394,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 16,
           title: 'Confusion Matrix Analysis',
+          icon: { name: 'duo-table-cells' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-table-cells" sizeName="3x" style={{ color: '#E67E22' }} />
-              </div>
               <h3>What It Measures</h3>
               <p>Where the model confuses types and how often</p>
               
@@ -467,11 +451,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 18,
           title: 'Summary and Key Takeaways',
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-clipboard-check" sizeName="3x" style={{ color: '#27AE60' }} />
-              </div>
               <h3>Guidance</h3>
               <ul style={{ fontSize: '0.9em', lineHeight: '1.7' }}>
                 <li>Use micro Precision/Recall/F1 with exact matching for standard reporting</li>
@@ -512,11 +494,9 @@ export const nerMetricsDeck: Deck = {
         {
           id: 20,
           title: 'Next Steps',
+          icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="3x" style={{ color: '#3498db' }} />
-              </div>
               <h3>Action Items</h3>
               <ul style={{ fontSize: '0.9em', lineHeight: '1.7' }}>
                 <li>Set evaluation config in code</li>

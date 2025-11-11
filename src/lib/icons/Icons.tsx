@@ -289,6 +289,11 @@ export const icons: IconsMap = {
   "duo-ranking-star": "/icons/svg/duotone/ranking-star.svg",
   "duo-gears": "/icons/svg/duotone/gears.svg",
   "duo-network-wired": "/icons/svg/duotone/network-wired.svg",
+  // Icons for NER metrics deck
+  "duo-percent": "/icons/svg/duotone/percent.svg",
+  "duo-clipboard-check": "/icons/svg/duotone/clipboard-check.svg",
+  "duo-table-cells": "/icons/svg/duotone/table-cells.svg",
+  "duo-circle-half-stroke": "/icons/svg/duotone/circle-half-stroke.svg",
 };
 
 export const size: SizeMap = {
