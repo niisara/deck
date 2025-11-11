@@ -38,7 +38,7 @@ function DeckPage() {
       embedded: false,
       controls: true,
       progress: true,
-      center: true,
+      center: !deck.slideGroups, // Center only if no groups (for backward compatibility)
       hash: true,
       transition: 'slide',
       plugins: [
@@ -76,24 +76,51 @@ function DeckPage() {
       
       <div className="reveal" ref={revealRef}>
         <div className="slides">
-          {deck.slides.map((slide) => (
-            <section
-              key={slide.id}
-              data-background-color={slide.backgroundColor || '#2c3e50'}
-            >
-              <h2>{slide.title}</h2>
-              {typeof slide.content === 'string' ? (
-                <div dangerouslySetInnerHTML={{ __html: slide.content }} />
-              ) : (
-                <div>{slide.content}</div>
-              )}
-              {slide.notes && (
-                <aside className="notes">
-                  {slide.notes}
-                </aside>
-              )}
-            </section>
-          ))}
+          {deck.slideGroups ? (
+            // Render with groups (vertical slides)
+            deck.slideGroups.map((group) => (
+              <section key={group.id}>
+                {group.slides.map((slide) => (
+                  <section
+                    key={slide.id}
+                    data-background-color={slide.backgroundColor || '#2c3e50'}
+                  >
+                    <h2>{slide.title}</h2>
+                    {typeof slide.content === 'string' ? (
+                      <div dangerouslySetInnerHTML={{ __html: slide.content }} />
+                    ) : (
+                      <div>{slide.content}</div>
+                    )}
+                    {slide.notes && (
+                      <aside className="notes">
+                        {slide.notes}
+                      </aside>
+                    )}
+                  </section>
+                ))}
+              </section>
+            ))
+          ) : (
+            // Render flat slides (backward compatibility)
+            deck.slides.map((slide) => (
+              <section
+                key={slide.id}
+                data-background-color={slide.backgroundColor || '#2c3e50'}
+              >
+                <h2>{slide.title}</h2>
+                {typeof slide.content === 'string' ? (
+                  <div dangerouslySetInnerHTML={{ __html: slide.content }} />
+                ) : (
+                  <div>{slide.content}</div>
+                )}
+                {slide.notes && (
+                  <aside className="notes">
+                    {slide.notes}
+                  </aside>
+                )}
+              </section>
+            ))
+          )}
         </div>
       </div>
     </div>

@@ -6,6 +6,12 @@ export interface Slide {
   notes?: string; // Speaker notes
 }
 
+export interface SlideGroup {
+  id: string;
+  title: string;
+  slides: Slide[];
+}
+
 export type RevealTheme = 
   | 'black'
   | 'white'
@@ -26,4 +32,5 @@ export interface Deck {
   description: string;
   theme?: RevealTheme;
   slides: Slide[];
+  slideGroups?: SlideGroup[]; // Optional: if provided, use groups instead of flat slides
 }

@@ -60,3 +60,21 @@
   font-size: 1.5rem;
   line-height: 1.6;
 }
+
+/* Left alignment for slides when using groups */
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section h2 {
+  text-align: left;
+}
+
+.reveal .slides section h3 {
+  text-align: left;
+}
+
+.reveal .slides section ul,
+.reveal .slides section ol {
+  text-align: left;
+}

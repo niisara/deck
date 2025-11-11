@@ -1,0 +1,203 @@
+7 Evaluation Metrics for NER Models
+A concise cheat sheet for evaluating Named Entity Recognition
+Prepared by: Nisar Ansari
+November 7, 2025
+niisar.com
+1
+
+How to Evaluate NER: Overview of 7 Metrics
+Context
+NER predicts entities as spans with types (e.g., PERSON, ORG)
+Default unless noted: entity-level, strict exact match on span + type, micro-averaged over all entities
+Key Notation
+Metrics Covered
+Precision
+Exact Match Score
+Entity-Level Accuracy
+Confusion Matrix Analysis
+TP:
+FP:
+FN:
+IoU(span):
+predicted entity exactly matches a gold entity (span + type)
+predicted entity with no matching gold
+gold entity with no matching prediction
+overlap token / union tokens
+Partial Match Score
+Recall
+F1 Score
+2
+
+Precision (Entity-Level)
+What It Measures
+How It Is Calculated
+When to Use
+Of all predicted entities, how many are correct (exact span + type)
+TP: predicted entities with a one-to-one exact match to gold
+FP: predicted entities without a match
+Typically micro-averaged across types
+Precision = TP / (TP + FP)
+When false positives are costly
+Cons
+Tuning decision thresholds
+Pros
+High-precision applications (e.g., automated actions)
+Intuitive; useful for threshold calibration
+Not inflated by abundant O tokens
+Ignores missed entities (FN)
+Can be gamed by predicting fewer entities
+Rare-class issues can be masked by micro-averaging
+3
+
+Recall (Entity-Level)
+What It Measures
+How It Is Calculated
+When to Use
+Of all gold (true) entities, how many did the model find correctly
+TP: exact matches (span + type)
+FN: gold entities without a matching prediction
+Typically micro-averaged across types
+Recall = TP / (TP + FN)
+When missing entities is costly
+Cons
+Measuring coverage
+Pros
+Evaluating early-stage models/data sufficiency
+Captures model coverage
+Highlights under-detection and data gaps
+Ignores false positives
+Can be inflated by very permissive prediction
+Micro-averaging can hide minority class gaps
+4
+
+F1 Score (Entity-Level)
+What It Measures
+How It Is Calculated
+When to Use
+Balance between precision and recall (harmonic mean)
+General-purpose single-number comparison
+Macro-F1 averages per type (treats classes equally)
+F1 = 2 * (Precision * Recall) / (Precision + Recall)
+Usually micro-F1 across all entities
+Model selection
+Leaderboard reporting
+Pros
+Balances FP and FN
+Widely understood
+Cons
+Comparable across models
+Hides trade-offs between precision and recall
+Macro vs micro choices can change conclusions
+Threshold-sensitive
+5
+
+Exact Match Score (Sentence-Level)
+What It Measures
+How It Is Calculated
+When to Use
+Percentage of sentences/documents where the entire set of predicted entities (spans + types) exactly equals the gold set
+For each sentence i: EM_i = 1 if predicted set == gold set (exact spans + types), else 0
+Exact Match Score = mean
+(EM
+)
+i
+i
+End-to-end reliability
+Cons
+Downstream tasks requiring perfect extraction
+Pros
+Quality gates for production
+Very strict; reflects true task completeness
+Sensitive to any error
+All-or-nothing; punishes minor boundary/label mistakes
+Not decomposable or diagnostic on its own
+6
+
+Partial Match Score (IoU-Based)
+What It Measures
+How It Is Calculated
+When to Use
+Credit for near-miss spans to reduce sensitivity to boundary noise while still checking types
+Span IoU = |tokens_overlap| / |tokens_union|
+Define a match if IoU ≥ τ (common τ = 0.5) and types match
+Compute TP/FP/FN under this fuzzy rule and report Partial-F1
+IoU = |tokens_overlap| / |tokens_union|
+One-to-one matching (greedy or Hungarian algorithm)
+Datasets with noisy boundaries
+Weak supervision scenarios
+Pros
+Comparing span detectors fairly
+Cons
+Rewards close spans
+More stable with annotation noise
+Tunable strictness via τ threshold
+Not standardized (choice of τ and matching algorithm matters)
+Can mask consistent boundary errors
+Less comparable across papers if definitions differ
+7
+
+Entity-Level Accuracy
+What It Measures
+When to Use
+Accuracy of entity type classification when spans are given (gold spans)
+Isolates typing from detection to focus solely on classification quality
+Use gold entity spans only; model predicts a type for each
+How It Is Calculated
+Option: macro-averaged over types for class balance
+Pipeline analysis
+Accuracy = (# gold entities with correct type) / (total gold entities)
+Diagnosing label confusions separate from span detection
+Pros
+Ablations on classifier heads
+Clear diagnostic of typing component
+Unaffected by detection errors
+Cons
+Interpretable
+Not end-to-end
+Can overstate real-world performance
+Influenced by class imbalance unless macro-averaged
+When to Use
+8
+
+Confusion Matrix Analysis (By Entity Type)
+What It Measures
+When to Use
+Where the model confuses types and how often
+Error patterns across entity classes
+On matched entities (exact or partial per your setting), build matrix:
+- Rows = gold types, cols = predicted types
+How It Is Calculated
+Include counts of Missed (FN) and Spurious (FP) as margins
+Normalize rows to get per-class recall
+Derive per-class precision/recall/F1 and macro averages
+Diagnosing confusions (e.g., ORG vs PRODUCT)
+Guiding data collection for underperforming classes
+Pros
+Label schema fixes and refinement
+Cons
+Highly diagnostic for targeted improvements
+Reveals minority-class issues often hidden by averaging
+Supports data-driven schema refinement
+Not a single-number metric (harder to compare)
+Requires enough data per class for significance
+Depends on chosen matching rule (strict vs partial)
+9
+
+Summary and Key Takeaways
+Guidance
+Use micro Precision/Recall/F1 with exact matching for standard reporting
+Add Partial-F1 (IoU) when boundary noise is expected and document τ
+Track Exact Match (sentence-level) for production readiness
+Use Entity-Level Accuracy (on gold spans) and confusion matrices for diagnosis
+Do's
+Define matching rule (strict vs partial), averaging (micro vs macro), and evaluation scope (entity vs token)
+Report per-class metrics alongside micro-F1 for imbalanced datasets
+Don'ts
+Don't rely on token accuracy or overall accuracy including O tokens
+Don't compare results without aligning evaluation settings
+Next Steps
+Set evaluation config in code
+Add unit tests for span matching
+Automate per-class reports
+Include evaluation metrics in model documentation
+10
