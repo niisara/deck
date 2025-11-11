@@ -11,6 +11,7 @@ import { multiStepRetrievalDeck } from './multi-step-retrieval-deck';
 import { hybridSearchDeck } from './hybrid-search-deck';
 import { nerApproachesDeck } from './ner-approaches-deck';
 import { parentChildRetrievalDeck } from './parent-child-retrieval-deck';
+import { productionRagDeck } from './production-rag-deck';
 
 export const decks = [
   demoDeck,
@@ -24,5 +25,6 @@ export const decks = [
   multiStepRetrievalDeck,
   hybridSearchDeck,
   nerApproachesDeck,
-  parentChildRetrievalDeck
+  parentChildRetrievalDeck,
+  productionRagDeck
 ];
