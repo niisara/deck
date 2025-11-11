@@ -15,6 +15,7 @@ import { productionRagDeck } from './production-rag-deck';
 import { rerankingModelsDeck } from './reranking-models-deck';
 import { ragLatencyDeck } from './rag-latency-deck';
 import { textClassificationDeck } from './text-classification-deck';
+import { llmCachingDeck } from './llm-caching-deck';
 
 export const decks = [
   demoDeck,
@@ -32,5 +33,6 @@ export const decks = [
   productionRagDeck,
   rerankingModelsDeck,
   ragLatencyDeck,
-  textClassificationDeck
+  textClassificationDeck,
+  llmCachingDeck
 ];
