@@ -24,6 +24,7 @@ import { graphRetrievalDeck } from './graph-retrieval-deck';
 import { ragEvaluationMetricsDeck } from './rag-evaluation-metrics-deck';
 import { sentimentAnalysisDeck } from './sentiment-analysis-deck';
 import { documentPreprocessingDeck } from './document-preprocessing-deck';
+import { promptEngineeringDeck } from './prompt-engineering-deck';
 
 export const decks = [
   demoDeck,
@@ -50,5 +51,6 @@ export const decks = [
   graphRetrievalDeck,
   ragEvaluationMetricsDeck,
   sentimentAnalysisDeck,
-  documentPreprocessingDeck
+  documentPreprocessingDeck,
+  promptEngineeringDeck
 ];
