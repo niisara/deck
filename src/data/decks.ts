@@ -14,6 +14,7 @@ import { parentChildRetrievalDeck } from './parent-child-retrieval-deck';
 import { productionRagDeck } from './production-rag-deck';
 import { rerankingModelsDeck } from './reranking-models-deck';
 import { ragLatencyDeck } from './rag-latency-deck';
+import { textClassificationDeck } from './text-classification-deck';
 
 export const decks = [
   demoDeck,
@@ -30,5 +31,6 @@ export const decks = [
   parentChildRetrievalDeck,
   productionRagDeck,
   rerankingModelsDeck,
-  ragLatencyDeck
+  ragLatencyDeck,
+  textClassificationDeck
 ];

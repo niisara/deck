@@ -276,6 +276,19 @@ export const icons: IconsMap = {
   "duo-map": "/icons/svg/duotone/map.svg",
   "duo-flask": "/icons/svg/duotone/flask.svg",
   "duo-star": "/icons/svg/duotone/star.svg",
+  // Icons for text classification deck
+  "duo-bullseye": "/icons/svg/duotone/bullseye.svg",
+  "duo-thumbs-up": "/icons/svg/duotone/thumbs-up.svg",
+  "duo-wand-magic-sparkles": "/icons/svg/duotone/wand-magic-sparkles.svg",
+  "duo-compass": "/icons/svg/duotone/compass.svg",
+  "duo-scale-balanced": "/icons/svg/duotone/scale-balanced.svg",
+  "duo-stream": "/icons/svg/duotone/water.svg",
+  "duo-compress": "/icons/svg/duotone/compress.svg",
+  "duo-balance-scale": "/icons/svg/duotone/balance-scale.svg",
+  "duo-microchip": "/icons/svg/duotone/microchip.svg",
+  "duo-ranking-star": "/icons/svg/duotone/ranking-star.svg",
+  "duo-gears": "/icons/svg/duotone/gears.svg",
+  "duo-network-wired": "/icons/svg/duotone/network-wired.svg",
 };
 
 export const size: SizeMap = {
