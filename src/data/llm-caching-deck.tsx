@@ -7,6 +7,7 @@ export const llmCachingDeck: Deck = {
   id: 'llm-caching-patterns',
   name: '13 Caching Patterns That Save Cost in LLM Systems',
   description: 'Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers',
+  category: 'RAG',
   theme: 'black',
   slides: [
     {

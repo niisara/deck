@@ -7,6 +7,7 @@ export const entityNormalizationDeck: Deck = {
   id: 'entity-normalization-disambiguation',
   name: '13 Entity Normalization & Disambiguation Techniques',
   description: 'A practical cheat sheet for NLP, data integration, and knowledge graphs',
+  category: 'NLP',
   theme: 'black',
   slides: [
     {

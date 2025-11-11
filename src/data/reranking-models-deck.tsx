@@ -5,6 +5,7 @@ export const rerankingModelsDeck: Deck = {
   id: 'reranking-models-deck',
   name: '11 Re-Ranking Models to Improve RAG Accuracy',
   description: 'Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation',
+  category: 'RAG',
   theme: 'night',
   slides: [
     {

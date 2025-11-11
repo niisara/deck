@@ -5,6 +5,7 @@ export const documentPreprocessingDeck: Deck = {
   id: 'document-preprocessing-deck',
   name: '17 Document Preprocessing Techniques',
   description: 'A practical cheat sheet for NLP and data processing pipelines',
+  category: 'NLP',
   theme: 'moon',
   slides: [
     {

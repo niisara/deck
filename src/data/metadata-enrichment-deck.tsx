@@ -5,6 +5,7 @@ export const metadataEnrichmentDeck: Deck = {
   id: 'metadata-enrichment-deck',
   name: '9 Metadata Enrichment Tricks',
   description: 'Cheat-sheets, patterns, and practical implementations',
+  category: 'RAG',
   theme: 'moon',
   slides: [
     {

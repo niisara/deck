@@ -5,6 +5,7 @@ export const sentimentAnalysisDeck: Deck = {
   id: 'sentiment-analysis-deck',
   name: 'Sentiment Analysis Techniques',
   description: '15 Sentiment Analysis Techniques - From Rule-Based to Transformers',
+  category: 'NLP',
   theme: 'moon',
   slides: [
     {

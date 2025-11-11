@@ -5,6 +5,7 @@ export const parentChildRetrievalDeck: Deck = {
   id: 'parent-child-retrieval-deck',
   name: '11 Parent–Child Retrieval Design Patterns',
   description: 'A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness',
+  category: 'RAG',
   theme: 'night',
   slides: [
     {

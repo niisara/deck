@@ -5,6 +5,7 @@ export const nerTrainingDeck: Deck = {
   id: 'ner-training-deck',
   name: '9 Custom NER Training Tips',
   description: 'Cheat sheets for practical, high-accuracy NER in specialized domains',
+  category: 'NLP',
   theme: 'moon',
   slides: [],
   slideGroups: [

@@ -30,6 +30,7 @@ export interface Deck {
   id: string;
   name: string;
   description: string;
+  category: 'NLP' | 'RAG' | 'Demo' | 'Other';
   theme?: RevealTheme;
   slides: Slide[];
   slideGroups?: SlideGroup[]; // Optional: if provided, use groups instead of flat slides

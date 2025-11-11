@@ -5,6 +5,7 @@ export const promptEngineeringDeck: Deck = {
   id: 'prompt-engineering-deck',
   name: '18 Prompt Engineering Techniques',
   description: 'A Comprehensive Guide to Advanced Prompting Patterns',
+  category: 'RAG',
   theme: 'moon',
   slides: [
     {

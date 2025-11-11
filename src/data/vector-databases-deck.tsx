@@ -5,6 +5,7 @@ export const vectorDatabasesDeck: Deck = {
   id: 'vector-databases-deck',
   name: 'Vector Databases Cheat Sheet',
   description: 'A comprehensive guide to 11 leading vector databases for similarity search and AI applications',
+  category: 'RAG',
   theme: 'moon',
   slides: [
     {

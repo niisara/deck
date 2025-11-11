@@ -7,6 +7,7 @@ export const contextPackingDeck: Deck = {
   id: 'context-packing-techniques',
   name: '13 Context Packing Techniques',
   description: 'RAG and LLM-ready strategies to maximize answer quality within token limits',
+  category: 'RAG',
   theme: 'black',
   slides: [
     {

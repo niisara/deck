@@ -5,6 +5,7 @@ export const hybridSearchDeck: Deck = {
   id: 'hybrid-search-deck',
   name: '11 Hybrid Search Patterns (Vector + BM25)',
   description: 'A practical cheat sheet for combining lexical and semantic search to build more powerful retrieval systems',
+  category: 'RAG',
   theme: 'night',
   slides: [
     {

@@ -5,6 +5,7 @@ export const queryRewritingDeck: Deck = {
   id: 'query-rewriting-deck',
   name: '21 Query Rewriting Strategies for RAG',
   description: 'Practical patterns, prompts, and examples for better retrieval',
+  category: 'RAG',
   theme: 'moon',
   slides: [
     {

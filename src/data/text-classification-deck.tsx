@@ -7,6 +7,7 @@ export const textClassificationDeck: Deck = {
   id: 'text-classification-approaches',
   name: '11 Text Classification Approaches',
   description: 'A comprehensive guide: From Rules to LLMs',
+  category: 'NLP',
   theme: 'black',
   slides: [
     {

@@ -7,6 +7,7 @@ export const ragEvaluationMetricsDeck: Deck = {
   id: 'rag-evaluation-metrics',
   name: '13 Underused RAG Evaluation Metrics',
   description: 'A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems',
+  category: 'RAG',
   theme: 'sky',
   slides: [
     {

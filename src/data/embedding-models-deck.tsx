@@ -5,6 +5,7 @@ export const embeddingModelsDeck: Deck = {
   id: 'embedding-models-deck',
   name: '9 Embedding Models Cheat Sheet',
   description: 'Quick-reference for RAG, semantic search, clustering, and more',
+  category: 'RAG',
   theme: 'night',
   slides: [],
   slideGroups: [

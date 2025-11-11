@@ -7,6 +7,7 @@ export const ragLatencyDeck: Deck = {
   id: 'rag-latency-optimization',
   name: '11 Techniques to Reduce RAG Latency',
   description: 'Practical, production-ready optimizations for faster RAG pipelines',
+  category: 'RAG',
   theme: 'black',
   slides: [
     {

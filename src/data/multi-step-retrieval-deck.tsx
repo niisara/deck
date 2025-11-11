@@ -5,6 +5,7 @@ export const multiStepRetrievalDeck: Deck = {
   id: 'multi-step-retrieval-deck',
   name: '9 Multi-Step Retrieval Strategies',
   description: 'Retrieve → Generate → Retrieve - A comprehensive guide to techniques that improve RAG through multi-step processes',
+  category: 'RAG',
   theme: 'night',
   slides: [
     {

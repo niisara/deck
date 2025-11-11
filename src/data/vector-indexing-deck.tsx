@@ -5,6 +5,7 @@ export const vectorIndexingDeck: Deck = {
   id: 'vector-indexing-deck',
   name: 'Vector Indexing Schemes',
   description: '9 Indexing Schemes for Efficient Vector Retrieval',
+  category: 'RAG',
   theme: 'black',
   slides: [],
   slideGroups: [

@@ -5,6 +5,7 @@ export const demoDeck: Deck = {
   id: 'demo-deck',
   name: 'Demo Deck',
   description: 'A demonstration presentation with all Reveal.js plugins',
+  category: 'Demo',
   theme: 'sky',
   slides: [
     {

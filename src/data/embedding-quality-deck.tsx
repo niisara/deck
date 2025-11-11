@@ -5,6 +5,7 @@ export const embeddingQualityDeck: Deck = {
   id: 'embedding-quality-deck',
   name: '7 Tricks to Improve Embedding Quality',
   description: 'Practical cheat sheets for preprocessing and chunking',
+  category: 'RAG',
   theme: 'night',
   slides: [],
   slideGroups: [

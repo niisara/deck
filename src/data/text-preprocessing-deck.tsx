@@ -5,6 +5,7 @@ export const textPreprocessingDeck: Deck = {
   id: 'text-preprocessing-deck',
   name: '21 Text Preprocessing Techniques',
   description: 'From tokenization to language detection with practical cheat sheets',
+  category: 'NLP',
   theme: 'moon',
   slides: [
     {

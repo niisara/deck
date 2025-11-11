@@ -7,6 +7,7 @@ export const featureExtractionDeck: Deck = {
   id: 'feature-extraction-techniques',
   name: '13 Feature Extraction Techniques',
   description: 'Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders',
+  category: 'NLP',
   theme: 'night',
   slides: [
     {

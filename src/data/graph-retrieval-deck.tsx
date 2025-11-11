@@ -7,6 +7,7 @@ export const graphRetrievalDeck: Deck = {
   id: 'graph-based-retrieval-techniques',
   name: '13 Graph-Based Retrieval Techniques',
   description: 'A practical cheat-sheet for precision, reasoning, and reliable context',
+  category: 'RAG',
   theme: 'sky',
   slides: [
     {

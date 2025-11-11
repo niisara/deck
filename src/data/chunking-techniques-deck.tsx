@@ -5,6 +5,7 @@ export const chunkingTechniquesDeck: Deck = {
   id: 'chunking-techniques-deck',
   name: '26 Chunking Techniques & Cheat Sheet',
   description: 'Practical guidance for high-quality retrieval in RAG and NLP applications',
+  category: 'RAG',
   theme: 'moon',
   slides: [
     {

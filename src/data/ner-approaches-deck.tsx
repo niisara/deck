@@ -5,6 +5,7 @@ export const nerApproachesDeck: Deck = {
   id: 'ner-approaches-deck',
   name: '11 Named Entity Recognition Approaches',
   description: 'A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons',
+  category: 'NLP',
   theme: 'night',
   slides: [
     {

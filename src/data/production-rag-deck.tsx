@@ -5,6 +5,7 @@ export const productionRagDeck: Deck = {
   id: 'production-rag-deck',
   name: '11 Production RAG Architecture Patterns',
   description: 'Proven designs for reliable, scalable Retrieval-Augmented Generation',
+  category: 'RAG',
   theme: 'night',
   slides: [
     {
