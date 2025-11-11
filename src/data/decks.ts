@@ -19,6 +19,7 @@ import { llmCachingDeck } from './llm-caching-deck';
 import { contextPackingDeck } from './context-packing-deck';
 import { entityNormalizationDeck } from './entity-normalization-deck';
 import { entityDisambiguationTechniquesDeck } from './entity-disambiguation-techniques-deck';
+import { featureExtractionDeck } from './feature-extraction-deck';
 
 export const decks = [
   demoDeck,
@@ -40,5 +41,6 @@ export const decks = [
   llmCachingDeck,
   contextPackingDeck,
   entityNormalizationDeck,
-  entityDisambiguationTechniquesDeck
+  entityDisambiguationTechniquesDeck,
+  featureExtractionDeck
 ];
