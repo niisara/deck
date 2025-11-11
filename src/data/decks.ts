@@ -12,6 +12,7 @@ import { hybridSearchDeck } from './hybrid-search-deck';
 import { nerApproachesDeck } from './ner-approaches-deck';
 import { parentChildRetrievalDeck } from './parent-child-retrieval-deck';
 import { productionRagDeck } from './production-rag-deck';
+import { rerankingModelsDeck } from './reranking-models-deck';
 
 export const decks = [
   demoDeck,
@@ -26,5 +27,6 @@ export const decks = [
   hybridSearchDeck,
   nerApproachesDeck,
   parentChildRetrievalDeck,
-  productionRagDeck
+  productionRagDeck,
+  rerankingModelsDeck
 ];
