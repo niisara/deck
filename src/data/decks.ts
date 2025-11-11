@@ -13,6 +13,7 @@ import { nerApproachesDeck } from './ner-approaches-deck';
 import { parentChildRetrievalDeck } from './parent-child-retrieval-deck';
 import { productionRagDeck } from './production-rag-deck';
 import { rerankingModelsDeck } from './reranking-models-deck';
+import { ragLatencyDeck } from './rag-latency-deck';
 
 export const decks = [
   demoDeck,
@@ -28,5 +29,6 @@ export const decks = [
   nerApproachesDeck,
   parentChildRetrievalDeck,
   productionRagDeck,
-  rerankingModelsDeck
+  rerankingModelsDeck,
+  ragLatencyDeck
 ];
