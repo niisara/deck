@@ -27,6 +27,7 @@ import { documentPreprocessingDeck } from './document-preprocessing-deck';
 import { promptEngineeringDeck } from './prompt-engineering-deck';
 import { queryRewritingDeck } from './query-rewriting-deck';
 import { textPreprocessingDeck } from './text-preprocessing-deck';
+import { chunkingTechniquesDeck } from './chunking-techniques-deck';
 
 export const decks = [
   demoDeck,
@@ -56,5 +57,6 @@ export const decks = [
   documentPreprocessingDeck,
   promptEngineeringDeck,
   queryRewritingDeck,
-  textPreprocessingDeck
+  textPreprocessingDeck,
+  chunkingTechniquesDeck
 ];
