@@ -20,6 +20,7 @@ import { contextPackingDeck } from './context-packing-deck';
 import { entityNormalizationDeck } from './entity-normalization-deck';
 import { entityDisambiguationTechniquesDeck } from './entity-disambiguation-techniques-deck';
 import { featureExtractionDeck } from './feature-extraction-deck';
+import { graphRetrievalDeck } from './graph-retrieval-deck';
 
 export const decks = [
   demoDeck,
@@ -42,5 +43,6 @@ export const decks = [
   contextPackingDeck,
   entityNormalizationDeck,
   entityDisambiguationTechniquesDeck,
-  featureExtractionDeck
+  featureExtractionDeck,
+  graphRetrievalDeck
 ];
