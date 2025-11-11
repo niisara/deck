@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Reveal from 'reveal.js';
 import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
@@ -17,8 +17,41 @@ function DeckPage() {
   const { deckId } = useParams<{ deckId: string }>();
   const revealRef = useRef<HTMLDivElement>(null);
   const revealInstanceRef = useRef<Reveal.Api | null>(null);
+  const [showHomeButton, setShowHomeButton] = useState(true);
+  const hideTimeoutRef = useRef<number | null>(null);
 
   const deck = decks.find((d) => d.id === deckId);
+
+  // Handle mouse movement to show/hide home button
+  useEffect(() => {
+    const handleMouseMove = () => {
+      setShowHomeButton(true);
+      
+      // Clear existing timeout
+      if (hideTimeoutRef.current !== null) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+      
+      // Set new timeout to hide after 3 seconds
+      hideTimeoutRef.current = window.setTimeout(() => {
+        setShowHomeButton(false);
+      }, 3000);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Initial timeout
+    hideTimeoutRef.current = window.setTimeout(() => {
+      setShowHomeButton(false);
+    }, 3000);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (hideTimeoutRef.current !== null) {
+        clearTimeout(hideTimeoutRef.current);
+      }
+    };
+  }, []);
 
   // Dynamically load theme CSS
   useEffect(() => {
@@ -77,7 +110,12 @@ function DeckPage() {
 
   return (
     <div className="deck-page">
-      <Link to="/" className="home-button-overlay">← Home</Link>
+      <Link 
+        to="/" 
+        className={`home-button-overlay ${showHomeButton ? 'visible' : ''}`}
+      >
+        ← Home
+      </Link>
       
       <div className="reveal" ref={revealRef}>
         <div className="slides">

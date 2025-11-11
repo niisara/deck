@@ -29,12 +29,22 @@
   text-decoration: none;
   color: #2c3e50;
   font-weight: 600;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(-10px);
+  pointer-events: none;
 }
 
-.home-button-overlay:hover {
+.home-button-overlay.visible {
+  opacity: 0.3;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.home-button-overlay.visible:hover {
   background: rgba(255, 255, 255, 1);
+  opacity: 1;
 }
 
 .home-button {
