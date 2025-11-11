@@ -52,13 +52,30 @@
 }
 
 .reveal h2 {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.reveal h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
 .reveal p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.reveal ul,
+.reveal ol {
+  font-size: 1.1rem;
   line-height: 1.6;
+}
+
+.reveal li {
+  margin-bottom: 8px;
 }
 
 /* Left alignment for slides when using groups */
@@ -77,4 +94,30 @@
 .reveal .slides section ul,
 .reveal .slides section ol {
   text-align: left;
+}
+
+/* Fix slide overflow - ensure content fits within viewport */
+.reveal .slides section > div {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Custom scrollbar for better appearance */
+.reveal .slides section > div::-webkit-scrollbar {
+  width: 8px;
+}
+
+.reveal .slides section > div::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.reveal .slides section > div::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.reveal .slides section > div::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }

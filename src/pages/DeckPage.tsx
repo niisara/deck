@@ -38,9 +38,14 @@ function DeckPage() {
       embedded: false,
       controls: true,
       progress: true,
-      center: !deck.slideGroups, // Center only if no groups (for backward compatibility)
+      center: false, // Don't center vertically to allow better content fitting
       hash: true,
       transition: 'slide',
+      width: '100%',
+      height: '100%',
+      margin: 0.04,
+      minScale: 0.2,
+      maxScale: 2.0,
       plugins: [
         RevealHighlight,
         RevealMarkdown,
