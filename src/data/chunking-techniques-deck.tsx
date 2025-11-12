@@ -7,12 +7,17 @@ export const chunkingTechniquesDeck: Deck = {
   description: 'Practical guidance for high-quality retrieval in RAG and NLP applications',
   category: 'RAG',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '26 Chunking Techniques & Cheat Sheet',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '26 Chunking Techniques & Cheat Sheet',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
@@ -38,10 +43,10 @@ export const chunkingTechniquesDeck: Deck = {
       backgroundColor: '#2C3E50',
       notes: 'Introduction: 26 comprehensive chunking techniques for RAG and NLP applications'
     },
-    {
-      id: 2,
-      title: 'What is Chunking and Why It Matters',
-      content: (
+        {
+          id: 2,
+          title: 'What is Chunking and Why It Matters',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ marginBottom: '30px' }}>
             <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
@@ -101,11 +106,11 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Chunking definition, importance, key variables, and desired outcomes for RAG systems'
-    },
-    {
-      id: 3,
-      title: 'Overview of 26 Techniques',
-      content: (
+        },
+        {
+          id: 3,
+          title: 'Overview of 26 Techniques',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
@@ -178,11 +183,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: '26 techniques organized into 5 categories: Fixed/Token, Sentence/Paragraph, Structure-aware, Semantic/Adaptive, and Special-Purpose'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'techniques-1-2',
       title: 'Fixed-Size & Sliding Window (1-2)',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: 'Fixed-Size & Sliding Window (1-2)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
@@ -227,11 +238,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#3498DB',
       notes: 'Fixed-size for simplicity and predictability; Sliding window for context continuity with overlap'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'techniques-3-4',
       title: 'Token & Sentence-Based (3-4)',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: 'Token & Sentence-Based (3-4)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
@@ -276,11 +293,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Token-aware for model compatibility; Sentence-level for natural atomic units with semantic boundaries'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'techniques-5-6',
       title: 'Paragraph & Recursive (5-6)',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: 'Paragraph & Recursive (5-6)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px' }}>
@@ -325,11 +348,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Paragraph-level for natural units; Recursive character splitting for intelligent fallback hierarchy'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'techniques-7-9',
       title: 'Structure-Aware Techniques (7-9)',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: 'Structure-Aware Techniques (7-9)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-sitemap" sizeName="3x" style={{ color: '#9b59b6' }} />
@@ -379,11 +408,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Structure-aware techniques leverage document organization: headers, content types, and navigation structure'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'techniques-10-13',
       title: 'Markup & Specialized Structure (10-13)',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: 'Markup & Specialized Structure (10-13)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px' }}>
@@ -438,11 +473,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#E67E22',
       notes: 'Specialized structure techniques: Markdown/HTML, Table-aware, Code-aware, and Page-preservation'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'techniques-14-17',
       title: 'Semantic Chunking (14-17)',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: 'Semantic Chunking (14-17)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-brain" sizeName="3x" style={{ color: '#e74c3c' }} />
@@ -504,11 +545,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#C0392B',
       notes: 'Semantic chunking: Embedding-based, TextTiling, Discourse/RST, and Graph-based for topic-coherent chunks'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'techniques-18-20',
       title: 'Adaptive & LLM-Based (18-20)',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: 'Adaptive & LLM-Based (18-20)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px' }}>
@@ -555,11 +602,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#D35400',
       notes: 'Adaptive techniques: Windowed sentence grouping, adaptive length, and LLM-based summarization'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'techniques-21-22',
       title: 'Audio & Multimedia (21-22)',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: 'Audio & Multimedia (21-22)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-microphone" sizeName="3x" style={{ color: '#3498db' }} />
@@ -607,11 +660,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Audio/multimedia chunking: Time-based for consistent segments, Speaker-turn for conversational context'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'techniques-23-26',
       title: 'Special-Purpose Techniques (23-26)',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: 'Special-Purpose Techniques (23-26)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px' }}>
@@ -670,11 +729,17 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Special-purpose: QA-focused, Caption+Context, Metadata-aware, and Hybrid chunking for specific scenarios'
+        }
+      ]
     },
     {
-      id: 13,
-      title: 'Quick Reference: Default Sizing & Overlap',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 13,
+          title: 'Quick Reference: Default Sizing & Overlap',
+          content: (
         <div style={{ maxWidth: '950px', margin: '0 auto', fontSize: '0.7em' }}>
           <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" />
@@ -753,11 +818,11 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Default sizing and overlap recommendations for each major chunking technique'
-    },
-    {
-      id: 14,
-      title: 'Selection Guide: Decision Flow',
-      content: (
+        },
+        {
+          id: 14,
+          title: 'Selection Guide: Decision Flow',
+          content: (
         <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -805,10 +870,10 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Decision flow for selecting chunking strategy based on document structure, latency constraints, and content types'
-    },
-    {
-      id: 15,
-      title: 'Best Practices & Key Takeaways',
+        },
+        {
+          id: 15,
+          title: 'Best Practices & Key Takeaways',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
@@ -867,6 +932,8 @@ export const chunkingTechniquesDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Best practices: Start simple, measure impact, balance trade-offs, follow recommended path, continuously refine'
+        }
+      ]
     }
   ]
 };
