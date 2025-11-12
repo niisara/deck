@@ -7,12 +7,17 @@ export const promptEngineeringDeck: Deck = {
   description: 'A Comprehensive Guide to Advanced Prompting Patterns',
   category: 'RAG',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '18 Prompt Engineering Techniques',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '18 Prompt Engineering Techniques',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>A Comprehensive Guide to Advanced Prompting Patterns</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
@@ -42,9 +47,9 @@ export const promptEngineeringDeck: Deck = {
       notes: 'Introduction: 18 advanced prompting patterns organized by type - Reasoning, Retrieval, Agentic, and Hybrid'
     },
     {
-      id: 2,
-      title: 'Table of Contents',
-      content: (
+          id: 2,
+          title: 'Table of Contents',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
             <div>
@@ -101,11 +106,17 @@ export const promptEngineeringDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: '18 techniques organized into 4 categories: Reasoning, Retrieval, Agentic, and Hybrid approaches'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1. Zero-shot Prompting',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: '1. Zero-shot Prompting',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-bolt" sizeName="2x" style={{ color: '#3498db' }} />
@@ -158,11 +169,17 @@ in 3 bullets for executives:
       ),
       backgroundColor: '#2980B9',
       notes: 'Zero-shot: Direct instructions without examples, good for baselines and well-known tasks'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2. Few-shot Prompting',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: '2. Few-shot Prompting',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ color: '#3498db' }} />
@@ -217,11 +234,17 @@ Classify: 'It was okay, but pricey.'"`}
       ),
       backgroundColor: '#3498DB',
       notes: 'Few-shot: Provide labeled examples to guide format, tone, and edge case handling'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'technique-3',
       title: '3. Chain-of-Thought (CoT) Prompting',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: '3. Chain-of-Thought (CoT) Prompting',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-link" sizeName="2x" style={{ color: '#e67e22' }} />
@@ -276,11 +299,17 @@ Think step by step."`}
       ),
       backgroundColor: '#D35400',
       notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'techniques-4-6',
       title: 'Reasoning Techniques (4-6)',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: 'Reasoning Techniques (4-6)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
@@ -333,11 +362,17 @@ Think step by step."`}
       ),
       backgroundColor: '#8E44AD',
       notes: 'Meta prompting for schemas, self-consistency for voting, generate knowledge for fact-grounded answers'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'techniques-7-8',
       title: '7-8. Prompt Chaining & Tree of Thoughts',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: '7-8. Prompt Chaining & Tree of Thoughts',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-arrows-turn-to-dots" sizeName="3x" style={{ color: '#f39c12' }} />
@@ -379,11 +414,17 @@ Think step by step."`}
       ),
       backgroundColor: '#E67E22',
       notes: 'Prompt chaining for pipelines, Tree of Thoughts for exploring multiple reasoning branches'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'technique-9',
       title: '9. Retrieval-Augmented Generation (RAG)',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: '9. Retrieval-Augmented Generation (RAG)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-database" sizeName="2x" style={{ color: '#2ecc71' }} />
@@ -445,11 +486,17 @@ work?"`}
       ),
       backgroundColor: '#27AE60',
       notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'techniques-10-14-16',
       title: 'Agentic Techniques (10, 14-16)',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: 'Agentic Techniques (10, 14-16)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-robot" sizeName="3x" style={{ color: '#9b59b6' }} />
@@ -505,11 +552,17 @@ work?"`}
       ),
       backgroundColor: '#8E44AD',
       notes: 'Agentic techniques: ART for tool use, PAL for code execution, ReAct for action loops, Reflexion for self-improvement'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'techniques-11-13',
       title: 'Hybrid Techniques (11-13)',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: 'Hybrid Techniques (11-13)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#f39c12' }} />
@@ -557,11 +610,17 @@ work?"`}
       ),
       backgroundColor: '#E67E22',
       notes: 'Hybrid techniques: APE for prompt optimization, Active-Prompt for adaptive examples, DSP for guided outputs'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'technique-17',
       title: '17. Multimodal Chain-of-Thought',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: '17. Multimodal Chain-of-Thought',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-image" sizeName="2x" style={{ color: '#9b59b6' }} />
@@ -615,11 +674,17 @@ the answer step-by-step."`}
       ),
       backgroundColor: '#8E44AD',
       notes: 'Multimodal CoT: Combines vision/audio with text for step-by-step reasoning on images, charts, and diagrams'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'technique-18',
       title: '18. Graph Prompting',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: '18. Graph Prompting',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-project-diagram" sizeName="2x" style={{ color: '#1abc9c' }} />
@@ -674,11 +739,17 @@ Show the path used."`}
       ),
       backgroundColor: '#16A085',
       notes: 'Graph Prompting: Structure context and reasoning using knowledge graphs for multi-hop and entity-linking tasks'
+        }
+      ]
     },
     {
-      id: 13,
-      title: 'Technique Complexity Overview',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 13,
+          title: 'Technique Complexity Overview',
+          content: (
         <div style={{ fontSize: '0.65em', maxWidth: '1100px', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-chart-bar" sizeName="2x" />
@@ -732,11 +803,11 @@ Show the path used."`}
       ),
       backgroundColor: '#34495E',
       notes: 'Complexity matrix: Simple (zero/few-shot), Intermediate (CoT/RAG), Advanced (agentic/hybrid with tools)'
-    },
-    {
-      id: 14,
-      title: 'Best Practices & Recommendations',
-      content: (
+        },
+        {
+          id: 14,
+          title: 'Best Practices & Recommendations',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
@@ -789,11 +860,11 @@ Show the path used."`}
       ),
       backgroundColor: '#27AE60',
       notes: 'Best practices: Start simple, scale up judiciously, monitor production, avoid over-engineering'
-    },
-    {
-      id: 15,
-      title: 'Decision Framework',
-      content: (
+        },
+        {
+          id: 15,
+          title: 'Decision Framework',
+          content: (
         <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '0.8em' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-route" sizeName="2x" style={{ color: '#3498db' }} />
@@ -833,12 +904,12 @@ Show the path used."`}
       ),
       backgroundColor: '#34495E',
       notes: 'Decision framework: Quick guide for selecting the right technique based on your task requirements'
-    },
-    {
-      id: 16,
-      title: 'Summary: The Prompt Engineering Ladder',
-      content: (
-        <div>
+        },
+        {
+          id: 16,
+          title: 'Summary: The Prompt Engineering Ladder',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>From Simple to Advanced</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', maxWidth: '800px', margin: '0 auto', fontSize: '0.85em' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
@@ -886,6 +957,8 @@ Show the path used."`}
       ),
       backgroundColor: '#2C3E50',
       notes: 'Summary: Progressive ladder from simple zero-shot to advanced research techniques - climb only as needed'
+        }
+      ]
     }
   ]
 };
