@@ -7,12 +7,17 @@ export const textPreprocessingDeck: Deck = {
   description: 'From tokenization to language detection with practical cheat sheets',
   category: 'NLP',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '21 Text Preprocessing Techniques',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '21 Text Preprocessing Techniques',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>From Tokenization to Language Detection</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
@@ -116,11 +121,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: '21 techniques organized into 6 categories: Basic Normalization, Filtering, Morphological, Feature Engineering, Error Correction, and Cleaning'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1. Tokenization',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: '1. Tokenization',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-scissors" sizeName="2x" style={{ color: '#3498db' }} />
@@ -175,11 +186,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#3498DB',
       notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'techniques-2-5',
       title: 'Basic Normalization (2-5)',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: 'Basic Normalization (2-5)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
@@ -234,11 +251,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Basic normalization: Lowercasing, Unicode, Whitespace, and Punctuation normalization for consistent text'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'techniques-6-7',
       title: '6-7. Stopword Techniques',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: '6-7. Stopword Techniques',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-filter-circle-xmark" sizeName="3x" style={{ color: '#e74c3c' }} />
@@ -284,11 +307,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#C0392B',
       notes: 'Stopword techniques: Full removal for dimensionality reduction, light trimming for preserving meaning'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'techniques-8-10',
       title: 'Morphological Analysis (8-10)',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: 'Morphological Analysis (8-10)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-seedling" sizeName="3x" style={{ color: '#2ecc71' }} />
@@ -337,11 +366,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Morphological analysis: Stemming for quick reduction, Lemmatization for accurate base forms, POS tagging for grammar'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'techniques-11-12',
       title: '11-12. Feature Engineering',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: '11-12. Feature Engineering',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#f39c12' }} />
@@ -394,11 +429,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#E67E22',
       notes: 'Feature engineering: N-grams capture word order, Phrase detection treats multiword expressions as units'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'techniques-13-15',
       title: 'Error Correction (13-15)',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: 'Error Correction (13-15)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-spell-check" sizeName="3x" style={{ color: '#3498db' }} />
@@ -447,11 +488,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Error correction: Spell correction for typos, OCR correction for scan errors, Contraction expansion for clarity'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'techniques-16-17',
       title: '16-17. Number & Character Handling',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: '16-17. Number & Character Handling',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-hashtag" sizeName="3x" style={{ color: '#e67e22' }} />
@@ -503,11 +550,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#D35400',
       notes: 'Number normalization standardizes numerics; Special character filtering removes symbols and artifacts'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'techniques-18-20',
       title: 'Cleaning & Structuring (18-20)',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: 'Cleaning & Structuring (18-20)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-broom" sizeName="3x" style={{ color: '#1abc9c' }} />
@@ -556,11 +609,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Cleaning: Remove boilerplate from web content, deduplicate sentences, segment text into sentences'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'technique-21',
       title: '21. Language Detection and Filtering',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: '21. Language Detection and Filtering',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-globe" sizeName="2x" style={{ color: '#3498db' }} />
@@ -623,11 +682,17 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Language detection: Identify and filter text by language for proper routing and mono-lingual datasets'
+        }
+      ]
     },
     {
-      id: 12,
-      title: 'Technique Selection Guide',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 12,
+          title: 'Technique Selection Guide',
+          content: (
         <div style={{ maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
           <h3 style={{ marginBottom: '25px' }}>When to Use Each Technique</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
@@ -676,11 +741,11 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Selection guide: Match preprocessing techniques to your specific task requirements'
-    },
-    {
-      id: 13,
-      title: 'Best Practices',
-      content: (
+        },
+        {
+          id: 13,
+          title: 'Best Practices',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
@@ -723,11 +788,11 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Best practices: Start simple, keep raw copy, validate changes, tailor to task, avoid over-processing'
-    },
-    {
-      id: 14,
-      title: 'Common Pipeline Examples',
-      content: (
+        },
+        {
+          id: 14,
+          title: 'Common Pipeline Examples',
+          content: (
         <div style={{ maxWidth: '950px', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>Task-Specific Preprocessing Pipelines</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
@@ -778,12 +843,12 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Common pipelines for different tasks: IR, Sentiment, NER, Topic Modeling, OCR, and Neural NLP'
-    },
-    {
-      id: 15,
-      title: 'Summary: The Preprocessing Toolkit',
-      content: (
-        <div>
+        },
+        {
+          id: 15,
+          title: 'Summary: The Preprocessing Toolkit',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>21 Techniques for Clean Text</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
@@ -838,6 +903,8 @@ export const textPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Summary: 21 techniques in 6 groups - choose based on task, start minimal, measure impact'
+        }
+      ]
     }
   ]
 };
