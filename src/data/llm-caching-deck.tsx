@@ -9,12 +9,17 @@ export const llmCachingDeck: Deck = {
   description: 'Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers',
   category: 'RAG',
   theme: 'black',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '13 Caching Patterns That Save Cost in LLM Systems',
-      content: (
-        <div style={{ textAlign: 'center' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '13 Caching Patterns That Save Cost in LLM Systems',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-microchip" sizeName="2xl" style={{ marginRight: '1rem' }} />
             LLM CACHING PATTERNS
@@ -102,11 +107,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Overview of why caching matters: cost drivers, benefits, layers, and key principles'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'pattern-1',
       title: 'Pattern 1: Query Embedding Cache',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: 'Pattern 1: Query Embedding Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-brain" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -182,11 +193,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Query Embedding Cache: Caches embedding vectors with long TTL, high hit rate for frequent queries'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'pattern-2',
       title: 'Pattern 2: Retrieval Results Cache',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: 'Pattern 2: Retrieval Results Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -262,11 +279,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Retrieval Results Cache: Short TTL, skips expensive vector search, event-driven invalidation'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'pattern-3',
       title: 'Pattern 3: Prompt Template Cache',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: 'Pattern 3: Prompt Template Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-file-lines" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -342,11 +365,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Prompt Template Cache: Very long TTL, low complexity, consistent outputs across instances'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'pattern-4',
       title: 'Pattern 4: RAG Answer Cache',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: 'Pattern 4: RAG Answer Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-message-square" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -422,11 +451,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'RAG Answer Cache: Large cost/latency savings for FAQs, requires freshness guarantees'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'pattern-5',
       title: 'Pattern 5: Chunk-Level Cache',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: 'Pattern 5: Chunk-Level Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
             <SvgIcon iconName="duo-scissors" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -502,11 +537,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Chunk-Level Cache: No fixed TTL, content-driven expiration, large storage footprint'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'pattern-6',
       title: 'Pattern 6: Session Conversation Cache',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: 'Pattern 6: Session Conversation Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-message-square" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -584,11 +625,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Session Conversation Cache: Sliding TTL, encryption required, improves UX with context retention'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'pattern-7',
       title: 'Pattern 7: User Profile / Preference Cache',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: 'Pattern 7: User Profile / Preference Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-user" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -664,11 +711,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'User Profile Cache: Long TTL, encryption required, GDPR compliance concerns'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'pattern-8',
       title: 'Pattern 8: Token-Level KV Cache',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: 'Pattern 8: Token-Level KV Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -744,11 +797,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Token-Level KV Cache: GPU VRAM storage, 3-10x faster generation, high memory footprint'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'pattern-9',
       title: 'Pattern 9: Model Output Logit Cache',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: 'Pattern 9: Model Output Logit Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-chart-line" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -824,11 +883,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Model Output Logit Cache: Short TTL, faster TTFT, exact-match sensitive'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'pattern-10',
       title: 'Pattern 10: Semantic Similarity Cache',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: 'Pattern 10: Semantic Similarity Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -906,11 +971,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Semantic Similarity Cache: Vector DB storage, catches paraphrases, requires threshold tuning'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'pattern-11',
       title: 'Pattern 11: Ranked Results Cache (Post Re-Ranker)',
-      content: (
+      slides: [
+        {
+          id: 13,
+          title: 'Pattern 11: Ranked Results Cache (Post Re-Ranker)',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-ranking-star" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -988,11 +1059,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Ranked Results Cache: Short TTL, avoids expensive re-ranking, requires consistent candidate set'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'pattern-12',
       title: 'Pattern 12: Summarization Cache',
-      content: (
+      slides: [
+        {
+          id: 14,
+          title: 'Pattern 12: Summarization Cache',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
             <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -1068,11 +1145,17 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Summarization Cache: Long TTL, reused across queries, reduces context tokens dramatically'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'pattern-13',
       title: 'Pattern 13: Final Answer Cache with TTL',
-      content: (
+      slides: [
+        {
+          id: 15,
+          title: 'Pattern 13: Final Answer Cache with TTL',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-check-circle" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -1150,84 +1233,96 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Final Answer Cache: Easiest to implement, huge latency win for FAQs, brittle to wording differences'
+        }
+      ]
     },
     {
-      id: 16,
+      id: 'summary',
       title: 'Key Takeaways',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ marginBottom: '1.5rem', textAlign: 'center', color: '#61dafb', fontSize: '1.2rem' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} />
-            <strong>Strategic Caching for LLM Systems</strong>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-            <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
-              <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-network-wired" sizeName="lg" style={iconStyle} />
-                <strong>Layer Your Caches Strategically</strong>
+      slides: [
+        {
+          id: 16,
+          title: 'Key Takeaways',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
+              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} />
+                <strong>Strategic Caching for LLM Systems</strong>
               </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Input (embeddings/prompts), retrieval (results/ranking), generation (KV/logits), memory (session/user), outputs (answers/summaries) — each layer has distinct benefits and implementation patterns.
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
+                  <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-network-wired" sizeName="lg" style={iconStyle} />
+                    <strong>Layer Your Caches Strategically</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Input (embeddings/prompts), retrieval (results/ranking), generation (KV/logits), memory (session/user), outputs (answers/summaries) — each layer has distinct benefits and implementation patterns.
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
+                  <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-key" sizeName="lg" style={iconStyle} />
+                    <strong>Nail the Cache Keys</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Include versions, model IDs, corpus snapshot IDs, filters, and decoding params in cache keys to avoid inconsistencies and ensure correct cache hits.
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
+                  <div style={{ color: '#e5c07b', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+                    <strong>Freshness First</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Combine TTL-based expiration with event-based invalidation on corpus or template updates to balance performance with data freshness requirements.
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
+                  <div style={{ color: '#c678dd', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-gauge-high" sizeName="lg" style={iconStyle} />
+                    <strong>Measure Relentlessly</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Hit rate × miss cost → savings; track p95 latency improvements and staleness incidents to continuously optimize your cache strategies.
+                  </div>
+                </div>
+
+                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e06c75' }}>
+                  <div style={{ color: '#e06c75', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
+                    <strong>Start Simple, Scale Gradually</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Begin with exact-match and retrieval caches for early wins; add semantic similarity and KV/logit layers as your system matures and scale grows.
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ marginTop: '2rem', padding: '1.2rem', background: 'rgba(97, 218, 251, 0.15)', borderRadius: '10px', textAlign: 'left' }}>
+                <div style={{ color: '#61dafb', fontSize: '1.1rem', marginBottom: '0.5rem' }}>
+                  <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} />
+                  <strong>Impact: Caching can reduce LLM costs by 50-90% and improve latency by 3-10x</strong>
+                </div>
               </div>
             </div>
-
-            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-key" sizeName="lg" style={iconStyle} />
-                <strong>Nail the Cache Keys</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Include versions, model IDs, corpus snapshot IDs, filters, and decoding params in cache keys to avoid inconsistencies and ensure correct cache hits.
-              </div>
-            </div>
-
-            <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-              <div style={{ color: '#e5c07b', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
-                <strong>Freshness First</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Combine TTL-based expiration with event-based invalidation on corpus or template updates to balance performance with data freshness requirements.
-              </div>
-            </div>
-
-            <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
-              <div style={{ color: '#c678dd', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="lg" style={iconStyle} />
-                <strong>Measure Relentlessly</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Hit rate × miss cost → savings; track p95 latency improvements and staleness incidents to continuously optimize your cache strategies.
-              </div>
-            </div>
-
-            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e06c75' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
-                <strong>Start Simple, Scale Gradually</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Begin with exact-match and retrieval caches for early wins; add semantic similarity and KV/logit layers as your system matures and scale grows.
-              </div>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '2rem', padding: '1.2rem', background: 'rgba(97, 218, 251, 0.15)', borderRadius: '10px', textAlign: 'center' }}>
-            <div style={{ color: '#61dafb', fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} />
-              <strong>Impact: Caching can reduce LLM costs by 50-90% and improve latency by 3-10x</strong>
-            </div>
-          </div>
-        </div>
       ),
       notes: 'Key takeaways: Layer caches strategically, nail cache keys, maintain freshness, measure continuously, start simple'
+        }
+      ]
     },
     {
-      id: 17,
+      id: 'thank-you',
       title: 'Thank You',
-      content: (
-        <div style={{ textAlign: 'center' }}>
+      slides: [
+        {
+          id: 17,
+          title: 'Thank You',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-thumbs-up" sizeName="3x" style={{ marginRight: '1rem' }} />
             Thank You
@@ -1274,6 +1369,8 @@ export const llmCachingDeck: Deck = {
         </div>
       ),
       notes: 'Thank you slide with contact information and additional resources'
+        }
+      ]
     }
   ]
 };

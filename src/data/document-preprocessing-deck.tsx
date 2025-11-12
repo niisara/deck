@@ -7,12 +7,17 @@ export const documentPreprocessingDeck: Deck = {
   description: 'A practical cheat sheet for NLP and data processing pipelines',
   category: 'NLP',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '17 Document Preprocessing Techniques',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '17 Document Preprocessing Techniques',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>A practical cheat sheet for NLP and data processing pipelines</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
@@ -39,9 +44,9 @@ export const documentPreprocessingDeck: Deck = {
       notes: 'Introduction: Raw data transformation through processing to clean output'
     },
     {
-      id: 2,
-      title: 'Table of Contents',
-      content: (
+          id: 2,
+          title: 'Table of Contents',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.75em' }}>
           <p style={{ textAlign: 'center', marginBottom: '20px', fontSize: '1.2em' }}>
             Each technique includes <strong>Goal</strong>, <strong>How It Works</strong>, <strong>When to Use</strong>, <strong>Pros</strong>, and <strong>Cons</strong>
@@ -108,11 +113,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: '17 techniques organized into 5 categories: Content Cleaning, Text Segmentation, Normalization, Metadata Enrichment, and Quality Enhancement'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1. Remove Boilerplate Noise',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: '1. Remove Boilerplate Noise',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#e74c3c' }} />
@@ -175,11 +186,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#C0392B',
       notes: 'Remove boilerplate: Extract main content from noisy HTML/PDF, strip navigation, ads, headers/footers'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2. Deduplicate Repeated Text',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: '2. Deduplicate Repeated Text',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-copy" sizeName="2x" style={{ color: '#9b59b6' }} />
@@ -244,11 +261,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Deduplication: Remove exact and near-duplicate text using hashing, LSH, and semantic similarity'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'technique-3',
       title: '3. Normalize Whitespace & Formatting',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: '3. Normalize Whitespace & Formatting',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-align-left" sizeName="2x" style={{ color: '#3498db' }} />
@@ -307,11 +330,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Whitespace normalization: Standardize spacing, line breaks, Unicode, and punctuation for consistent tokenization'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'technique-4',
       title: '4. Convert Tables to Structured Text',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: '4. Convert Tables to Structured Text',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" style={{ color: '#1abc9c' }} />
@@ -368,11 +397,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Table conversion: Transform visual tabular data into structured JSON/CSV for better retrieval and QA'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'technique-5',
       title: '5. OCR Cleanup',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: '5. OCR Cleanup',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-scanner" sizeName="2x" style={{ color: '#e67e22' }} />
@@ -429,11 +464,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#D35400',
       notes: 'OCR cleanup: Fix common OCR errors using spell-checking, confusion sets, dehyphenation, and language models'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'techniques-6-8',
       title: 'Text Segmentation (6-8)',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: 'Text Segmentation (6-8)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-scissors" sizeName="3x" style={{ color: '#3498db' }} />
@@ -479,11 +520,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Text segmentation: Sentence detection, semantic chunking, and contextual linking for better retrieval'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'technique-9',
       title: '9. Text Normalization',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: '9. Text Normalization',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-text-width" sizeName="2x" style={{ color: '#9b59b6' }} />
@@ -541,11 +588,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Text normalization: Standardize casing, contractions, numbers, dates to reduce vocabulary sparsity'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'techniques-10-11',
       title: '10-11. Stopwords & Lemmatization',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: '10-11. Stopwords & Lemmatization',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-filter-circle-xmark" sizeName="3x" style={{ color: '#e74c3c' }} />
@@ -590,11 +643,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Stopwords & Lemmatization: Reduce vocabulary for classical ML/IR, but often unnecessary for modern transformers'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'techniques-12-13',
       title: '12-13. Keyphrase & Entity Extraction',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: '12-13. Keyphrase & Entity Extraction',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-key" sizeName="3x" style={{ color: '#f39c12' }} />
@@ -639,11 +698,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Metadata enrichment: Keyphrase extraction for tagging, NER for structured entity data'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'technique-14',
       title: '14. Remove Dead Chunks',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: '14. Remove Dead Chunks',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-trash-can" sizeName="2x" style={{ color: '#e74c3c' }} />
@@ -702,11 +767,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#C0392B',
       notes: 'Remove dead chunks: Filter low-quality chunks using entropy, length, stopword density, and embedding metrics'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'technique-15',
       title: '15. Chunk Summary Metadata',
-      content: (
+      slides: [
+        {
+          id: 13,
+          title: '15. Chunk Summary Metadata',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-file-contract" sizeName="2x" style={{ color: '#9b59b6' }} />
@@ -764,11 +835,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Chunk summaries: Generate 1-2 sentence previews for better ranking, snippets, and user experience in RAG'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'technique-16',
       title: '16. Domain Dictionary / Synonym Normalization',
-      content: (
+      slides: [
+        {
+          id: 14,
+          title: '16. Domain Dictionary / Synonym Normalization',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-book-bookmark" sizeName="2x" style={{ color: '#1abc9c' }} />
@@ -826,11 +903,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Domain dictionary: Normalize synonyms, acronyms, and variant terminology to canonical forms for consistency'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'technique-17',
       title: '17. Temporal Labeling / Version Tagging',
-      content: (
+      slides: [
+        {
+          id: 15,
+          title: '17. Temporal Labeling / Version Tagging',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-clock" sizeName="2x" style={{ color: '#3498db' }} />
@@ -888,11 +971,17 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Temporal labeling: Track dates, versions, and validity periods for time-aware retrieval and compliance'
+        }
+      ]
     },
     {
-      id: 16,
-      title: 'Minimal Viable Pipeline',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 16,
+          title: 'Minimal Viable Pipeline',
+          content: (
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="2x" style={{ color: '#3498db' }} />
@@ -938,11 +1027,11 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Minimal viable pipeline: Start with 6 core steps, iterate and add techniques based on results'
-    },
-    {
-      id: 17,
-      title: 'Summary & Best Practices',
-      content: (
+        },
+        {
+          id: 17,
+          title: 'Summary & Best Practices',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px' }}>
             <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '18px' }}>
@@ -999,6 +1088,8 @@ export const documentPreprocessingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Summary: Clean structure drives quality, favor conservative normalization, log transformations, iterate based on metrics'
+        }
+      ]
     }
   ]
 };

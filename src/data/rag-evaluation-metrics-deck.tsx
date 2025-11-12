@@ -9,12 +9,17 @@ export const ragEvaluationMetricsDeck: Deck = {
   description: 'A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems',
   category: 'RAG',
   theme: 'sky',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '13 Underused RAG Evaluation Metrics',
-      content: (
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '13 Underused RAG Evaluation Metrics',
+          content: (
+            <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-chart-line" sizeName="2xl" style={{ marginRight: '1rem' }} />
             13 Underused RAG Evaluation Metrics
@@ -49,8 +54,8 @@ export const ragEvaluationMetricsDeck: Deck = {
       id: 2,
       title: 'RAG System Overview',
       content: (
-        <div style={{ fontSize: '1rem', lineHeight: '1.8' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
+        <div style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'left' }}>
+          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="2xl" style={iconStyle} />
             <strong>RAG System Overview</strong>
           </div>
@@ -108,104 +113,116 @@ export const ragEvaluationMetricsDeck: Deck = {
             </div>
           </div>
 
-          <div style={{ marginTop: '2rem', textAlign: 'center', fontSize: '1.1rem', fontStyle: 'italic', color: '#6b7280' }}>
+          <div style={{ marginTop: '2rem', textAlign: 'left', fontSize: '1.1rem', fontStyle: 'italic', color: '#6b7280' }}>
             <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
             Goal: Diagnose failures precisely (missed retrieval vs. ungrounded reasoning vs. inefficient context)
           </div>
         </div>
       ),
       notes: 'Overview of the RAG system and all metric categories'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'metric-1',
       title: '1. Retrieval Recall@K',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-magnifying-glass-plus" sizeName="2xl" style={iconStyle} />
-            <strong>1. Retrieval Recall@K</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Retrieval Metric</span>
-          </div>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
-                <strong>Goal / What It Measures</strong>
+      slides: [
+        {
+          id: 3,
+          title: '1. Retrieval Recall@K',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
+                <SvgIcon iconName="duo-magnifying-glass-plus" sizeName="2xl" style={iconStyle} />
+                <strong>1. Retrieval Recall@K</strong>
+                <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Retrieval Metric</span>
               </div>
-              <div>Measures how many relevant documents were successfully retrieved in the top-K results, indicating retrieval coverage completeness.</div>
-            </div>
-            <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
-                <strong>How to Calculate</strong>
-              </div>
-              <div style={{ fontFamily: 'monospace', fontSize: '0.95rem' }}>
-                Recall@K = |Rel ∩ TopK| / |Rel|
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
-                  Where |Rel ∩ TopK| = relevant docs in top-K, |Rel| = total relevant docs
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                    <strong>Goal / What It Measures</strong>
+                  </div>
+                  <div>Measures how many relevant documents were successfully retrieved in the top-K results, indicating retrieval coverage completeness.</div>
+                </div>
+                <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                    <strong>How to Calculate</strong>
+                  </div>
+                  <div style={{ fontFamily: 'monospace', fontSize: '0.95rem' }}>
+                    Recall@K = |Rel ∩ TopK| / |Rel|
+                    <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                      Where |Rel ∩ TopK| = relevant docs in top-K, |Rel| = total relevant docs
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
-              <strong>When to Use</strong>
-            </div>
-            <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-              <li>When tuning embedding models and chunking strategies</li>
-              <li>To detect missing evidence causing answer omissions</li>
-              <li>When adjusting top-K parameter settings</li>
-              <li>To identify cases where relevant documents are missed</li>
-            </ul>
-          </div>
+              <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+                  <strong>When to Use</strong>
+                </div>
+                <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                  <li>When tuning embedding models and chunking strategies</li>
+                  <li>To detect missing evidence causing answer omissions</li>
+                  <li>When adjusting top-K parameter settings</li>
+                  <li>To identify cases where relevant documents are missed</li>
+                </ul>
+              </div>
 
-          <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
-              <strong>Target / Good Value Benchmark</strong>
-            </div>
-            <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.80 for carefully curated question-answer sets</div>
-              <div>• ≥0.60 for broad open-domain queries</div>
-            </div>
-          </div>
+              <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+                  <strong>Target / Good Value Benchmark</strong>
+                </div>
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <div>• ≥0.80 for carefully curated question-answer sets</div>
+                  <div>• ≥0.60 for broad open-domain queries</div>
+                </div>
+              </div>
 
-          <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
-              <strong>Example</strong>
-            </div>
-            <div style={{ fontSize: '0.9rem' }}>
-              <strong>Query:</strong> "What are the side effects of medication X?"<br/>
-              Corpus has 4 relevant documents discussing side effects<br/>
-              Top-5 retrieval returns 3 of those relevant documents<br/>
-              <strong style={{ color: '#8b5cf6' }}>Recall@5 = 3/4 = 0.75</strong>
-            </div>
-          </div>
+              <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+                  <strong>Example</strong>
+                </div>
+                <div style={{ fontSize: '0.9rem' }}>
+                  <strong>Query:</strong> "What are the side effects of medication X?"<br/>
+                  Corpus has 4 relevant documents discussing side effects<br/>
+                  Top-5 retrieval returns 3 of those relevant documents<br/>
+                  <strong style={{ color: '#8b5cf6' }}>Recall@5 = 3/4 = 0.75</strong>
+                </div>
+              </div>
 
-          <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
-              <strong>Impact on RAG</strong>
+              <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+                  <strong>Impact on RAG</strong>
+                </div>
+                <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                  <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
+                  <li>Improves answer completeness by ensuring all relevant information is available</li>
+                  <li>Critical for complex queries requiring multiple evidence pieces</li>
+                </ul>
+              </div>
             </div>
-            <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-              <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
-              <li>Improves answer completeness by ensuring all relevant information is available</li>
-              <li>Critical for complex queries requiring multiple evidence pieces</li>
-            </ul>
-          </div>
-        </div>
       ),
       notes: 'Retrieval Recall@K - coverage of relevant documents'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'metric-2',
       title: '2. Retrieval Precision@K',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 4,
+          title: '2. Retrieval Precision@K',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-bullseye-arrow" sizeName="2xl" style={iconStyle} />
             <strong>2. Retrieval Precision@K</strong>
@@ -285,12 +302,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Retrieval Precision@K - relevance purity of retrieved results'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'metric-3',
       title: '3. Hit Rate',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 5,
+          title: '3. Hit Rate',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-circle-check" sizeName="2xl" style={iconStyle} />
             <strong>3. Hit Rate</strong>
@@ -370,12 +393,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Hit Rate - minimum success criterion for retrieval'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'metric-4',
       title: '4. Context Overlap Score',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 6,
+          title: '4. Context Overlap Score',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-circle-half-stroke" sizeName="2xl" style={iconStyle} />
             <strong>4. Context Overlap Score</strong>
@@ -455,12 +484,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Context Overlap Score - answer coverage in retrieved context'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'metric-5',
       title: '5. Context Relevance Score (LLM-Scored)',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 7,
+          title: '5. Context Relevance Score (LLM-Scored)',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-scale-balanced" sizeName="2xl" style={iconStyle} />
             <strong>5. Context Relevance Score</strong>
@@ -546,12 +581,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Context Relevance Score - LLM-judged quality of retrieved context'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'metric-6',
       title: '6. Hallucination Rate',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 8,
+          title: '6. Hallucination Rate',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-triangle-exclamation" sizeName="2xl" style={iconStyle} />
             <strong>6. Hallucination Rate</strong>
@@ -635,12 +676,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Hallucination Rate - frequency of unsupported claims'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'metric-7',
       title: '7. Grounded Answer Score',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 9,
+          title: '7. Grounded Answer Score',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-anchor" sizeName="2xl" style={iconStyle} />
             <strong>7. Grounded Answer Score</strong>
@@ -723,12 +770,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Grounded Answer Score - correct citation of retrieved facts'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'metric-8',
       title: '8. Faithfulness Score',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 10,
+          title: '8. Faithfulness Score',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-shield-check" sizeName="2xl" style={iconStyle} />
             <strong>8. Faithfulness Score</strong>
@@ -812,12 +865,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Faithfulness Score - answer supported by retrieved context'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'metric-9',
       title: '9. Answer Completeness',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 11,
+          title: '9. Answer Completeness',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-list-check" sizeName="2xl" style={iconStyle} />
             <strong>9. Answer Completeness</strong>
@@ -898,12 +957,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Answer Completeness - addresses all parts of query'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'metric-10',
       title: '10. Answer Specificity',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 12,
+          title: '10. Answer Specificity',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-crosshairs" sizeName="2xl" style={iconStyle} />
             <strong>10. Answer Specificity</strong>
@@ -981,12 +1046,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Answer Specificity - concrete vs vague responses'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'metric-11',
       title: '11. Noise Density',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 13,
+          title: '11. Noise Density',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-chart-mixed" sizeName="2xl" style={iconStyle} />
             <strong>11. Noise Density</strong>
@@ -1069,12 +1140,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Noise Density - irrelevant token percentage'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'metric-12',
       title: '12. Context Compression Efficiency',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 14,
+          title: '12. Context Compression Efficiency',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-compress" sizeName="2xl" style={iconStyle} />
             <strong>12. Context Compression Efficiency</strong>
@@ -1155,12 +1232,18 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Context Compression Efficiency - information density optimization'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'metric-13',
       title: '13. Latency-Cost Tradeoff Score',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 15,
+          title: '13. Latency-Cost Tradeoff Score',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-scale-unbalanced" sizeName="2xl" style={iconStyle} />
             <strong>13. Latency-Cost Tradeoff Score</strong>
@@ -1244,106 +1327,114 @@ export const ragEvaluationMetricsDeck: Deck = {
         </div>
       ),
       notes: 'Latency-Cost Tradeoff Score - overall efficiency under constraints'
+        }
+      ]
     },
     {
-      id: 16,
+      id: 'summary',
       title: 'Summary & Next Steps',
-      content: (
-        <div style={{ fontSize: '0.95rem', lineHeight: '1.8' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-flag-checkered" sizeName="2xl" style={iconStyle} />
-            <strong>Summary & Next Steps</strong>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-            <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-              <div style={{ color: '#3b82f6', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} />
-                <strong>Key Takeaways</strong>
+      slides: [
+        {
+          id: 16,
+          title: 'Summary & Next Steps',
+          content: (
+            <div style={{ fontSize: '0.95rem', lineHeight: '1.8', textAlign: 'left' }}>
+              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
+                <SvgIcon iconName="duo-flag-checkered" sizeName="2xl" style={iconStyle} />
+                <strong>Summary & Next Steps</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem', marginBottom: 0 }}>
-                <li style={{ marginBottom: '0.8rem' }}>
-                  <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" style={iconStyle} />
-                  <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
-                </li>
-                <li style={{ marginBottom: '0.8rem' }}>
-                  <SvgIcon iconName="duo-file-lines" sizeName="sm" style={iconStyle} />
-                  <strong>Context quality</strong> (5) evaluates relevance alignment
-                </li>
-                <li style={{ marginBottom: '0.8rem' }}>
-                  <SvgIcon iconName="duo-message" sizeName="sm" style={iconStyle} />
-                  <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
-                </li>
-                <li>
-                  <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} />
-                  <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
-                </li>
-              </ul>
-            </div>
 
-            <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-              <div style={{ color: '#10b981', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} />
-                <strong>Best Practices</strong>
-              </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem', marginBottom: 0 }}>
-                <li style={{ marginBottom: '0.8rem' }}>
-                  <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} />
-                  Use multiple metrics together for full picture
-                </li>
-                <li style={{ marginBottom: '0.8rem' }}>
-                  <SvgIcon iconName="duo-chart-bar" sizeName="sm" style={iconStyle} />
-                  Start with retrieval & faithfulness baselines
-                </li>
-                <li style={{ marginBottom: '0.8rem' }}>
-                  <SvgIcon iconName="duo-arrows-rotate" sizeName="sm" style={iconStyle} />
-                  Continuously monitor in production
-                </li>
-                <li>
-                  <SvgIcon iconName="duo-bullseye" sizeName="sm" style={iconStyle} />
-                  Balance quality with efficiency constraints
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px', marginBottom: '1.5rem' }}>
-            <div style={{ color: '#8b5cf6', marginBottom: '1rem', fontSize: '1.2rem' }}>
-              <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
-              <strong>Implementation Roadmap</strong>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '0.95rem' }}>
-              <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                  <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
-                  Phase 1: Foundation
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
+                <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                  <div style={{ color: '#3b82f6', marginBottom: '1rem', fontSize: '1.2rem' }}>
+                    <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} />
+                    <strong>Key Takeaways</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem', marginBottom: 0 }}>
+                    <li style={{ marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" style={iconStyle} />
+                      <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
+                    </li>
+                    <li style={{ marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-file-lines" sizeName="sm" style={iconStyle} />
+                      <strong>Context quality</strong> (5) evaluates relevance alignment
+                    </li>
+                    <li style={{ marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-message" sizeName="sm" style={iconStyle} />
+                      <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
+                    </li>
+                    <li>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} />
+                      <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
+                    </li>
+                  </ul>
                 </div>
-                <div>Implement Recall@K, Precision@K, and Faithfulness Score</div>
-              </div>
-              <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                  <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
-                  Phase 2: Quality
+
+                <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                  <div style={{ color: '#10b981', marginBottom: '1rem', fontSize: '1.2rem' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} />
+                    <strong>Best Practices</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem', marginBottom: 0 }}>
+                    <li style={{ marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} />
+                      Use multiple metrics together for full picture
+                    </li>
+                    <li style={{ marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-chart-bar" sizeName="sm" style={iconStyle} />
+                      Start with retrieval & faithfulness baselines
+                    </li>
+                    <li style={{ marginBottom: '0.8rem' }}>
+                      <SvgIcon iconName="duo-arrows-rotate" sizeName="sm" style={iconStyle} />
+                      Continuously monitor in production
+                    </li>
+                    <li>
+                      <SvgIcon iconName="duo-bullseye" sizeName="sm" style={iconStyle} />
+                      Balance quality with efficiency constraints
+                    </li>
+                  </ul>
                 </div>
-                <div>Add Context Relevance, Answer Completeness, and Hallucination Rate</div>
               </div>
-              <div style={{ background: 'rgba(245, 158, 11, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                  <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
-                  Phase 3: Optimization
+
+              <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px', marginBottom: '1.5rem' }}>
+                <div style={{ color: '#8b5cf6', marginBottom: '1rem', fontSize: '1.2rem' }}>
+                  <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                  <strong>Implementation Roadmap</strong>
                 </div>
-                <div>Track Noise Density, Context Compression, and Latency-Cost Tradeoff</div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '0.95rem' }}>
+                  <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                    <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                      <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
+                      Phase 1: Foundation
+                    </div>
+                    <div>Implement Recall@K, Precision@K, and Faithfulness Score</div>
+                  </div>
+                  <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                    <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                      <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
+                      Phase 2: Quality
+                    </div>
+                    <div>Add Context Relevance, Answer Completeness, and Hallucination Rate</div>
+                  </div>
+                  <div style={{ background: 'rgba(245, 158, 11, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                    <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                      <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
+                      Phase 3: Optimization
+                    </div>
+                    <div>Track Noise Density, Context Compression, and Latency-Cost Tradeoff</div>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ padding: '1.5rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left' }}>
+                <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} />
+                <strong style={{ fontSize: '1.1rem' }}>Remember:</strong> No single metric tells the full story. Use combinations to diagnose root causes: missed retrieval vs. ungrounded reasoning vs. inefficient context.
               </div>
             </div>
-          </div>
-
-          <div style={{ padding: '1.5rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'center' }}>
-            <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} />
-            <strong style={{ fontSize: '1.1rem' }}>Remember:</strong> No single metric tells the full story. Use combinations to diagnose root causes: missed retrieval vs. ungrounded reasoning vs. inefficient context.
-          </div>
-        </div>
       ),
       notes: 'Summary slide with key takeaways, best practices, and implementation roadmap'
+        }
+      ]
     }
   ]
 };

@@ -9,12 +9,17 @@ export const featureExtractionDeck: Deck = {
   description: 'Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders',
   category: 'NLP',
   theme: 'night',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '13 Feature Extraction Techniques',
-      content: (
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '13 Feature Extraction Techniques',
+          content: (
+            <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#e7ad52' }}>
             <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2xl" style={{ marginRight: '1rem' }} />
             13 Feature Extraction Techniques
@@ -49,8 +54,8 @@ export const featureExtractionDeck: Deck = {
       id: 2,
       title: 'Overview',
       content: (
-        <div style={{ fontSize: '0.95rem', lineHeight: '1.8' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem', color: '#e7ad52' }}>
+        <div style={{ fontSize: '0.95rem', lineHeight: '1.8', textAlign: 'left' }}>
+          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#e7ad52' }}>
             <SvgIcon iconName="duo-sitemap" sizeName="2xl" style={iconStyle} />
             <strong>Overview</strong>
           </div>
@@ -136,97 +141,109 @@ export const featureExtractionDeck: Deck = {
             </div>
           </div>
 
-          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
             <SvgIcon iconName="duo-info-circle" sizeName="lg" style={iconStyle} />
             <strong>Format per slide:</strong> Model Type • Representation Style • Best Use Case • Strengths • Weaknesses • Notes
           </div>
         </div>
       ),
       notes: 'Overview of all 13 techniques organized by category'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1) Bag of Words (BoW)',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#e7ad52' }}>
-            <SvgIcon iconName="duo-bag-shopping" sizeName="2xl" style={iconStyle} />
-            <strong>1) Bag of Words (BoW)</strong>
-          </div>
-          
-          <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.95rem' }}>
-            <SvgIcon iconName="duo-quote-left" sizeName="lg" style={iconStyle} />
-            Count-based vectorization: "The cat sat on the mat" → [1,1,1,1,2,0,...]
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
-                <strong>Model Type</strong>
+      slides: [
+        {
+          id: 3,
+          title: '1) Bag of Words (BoW)',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#e7ad52' }}>
+                <SvgIcon iconName="duo-bag-shopping" sizeName="2xl" style={iconStyle} />
+                <strong>1) Bag of Words (BoW)</strong>
               </div>
-              <div>Count-based vectorization (classic IR/NLP)</div>
-            </div>
-            <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
-                <strong>Representation Style</strong>
+              
+              <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.95rem' }}>
+                <SvgIcon iconName="duo-quote-left" sizeName="lg" style={iconStyle} />
+                Count-based vectorization: "The cat sat on the mat" → [1,1,1,1,2,0,...]
               </div>
-              <div>Sparse vector of token counts/binary; optional n-grams</div>
-            </div>
-          </div>
 
-          <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
-              <strong>Best Use Case</strong>
-            </div>
-            <div>Quick baselines, short-text classification with linear models, topic cues</div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                    <strong>Model Type</strong>
+                  </div>
+                  <div>Count-based vectorization (classic IR/NLP)</div>
+                </div>
+                <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                    <strong>Representation Style</strong>
+                  </div>
+                  <div>Sparse vector of token counts/binary; optional n-grams</div>
+                </div>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-                <li>Simple</li>
-                <li>Interpretable</li>
-                <li>Fast to compute</li>
-                <li>Works with many classical ML models</li>
-              </ul>
-            </div>
-            <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-                <li>Ignores word order/context</li>
-                <li>High dimensionality/sparsity</li>
-                <li>Poor synonym handling</li>
-                <li>OOV sensitivity</li>
-              </ul>
-            </div>
-          </div>
 
-          <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
-              <strong>Notes</strong>
+              <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                  <strong>Best Use Case</strong>
+                </div>
+                <div>Quick baselines, short-text classification with linear models, topic cues</div>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                    <strong>Strengths</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                    <li>Simple</li>
+                    <li>Interpretable</li>
+                    <li>Fast to compute</li>
+                    <li>Works with many classical ML models</li>
+                  </ul>
+                </div>
+                <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                    <strong>Weaknesses</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                    <li>Ignores word order/context</li>
+                    <li>High dimensionality/sparsity</li>
+                    <li>Poor synonym handling</li>
+                    <li>OOV sensitivity</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
+                  <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+                  <strong>Notes</strong>
+                </div>
+                <div>Consider stopword removal, n-gram ranges, hashing trick to cap dimensions</div>
+              </div>
             </div>
-            <div>Consider stopword removal, n-gram ranges, hashing trick to cap dimensions</div>
-          </div>
-        </div>
       ),
       notes: 'Bag of Words - traditional count-based approach'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2) TF-IDF',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 4,
+          title: '2) TF-IDF',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#e7ad52' }}>
             <SvgIcon iconName="duo-scale-balanced" sizeName="2xl" style={iconStyle} />
             <strong>2) TF-IDF</strong>
@@ -302,12 +319,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'TF-IDF - weighted count-based representation'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'technique-3',
       title: '3) Word2Vec (CBOW)',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 5,
+          title: '3) Word2Vec (CBOW)',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
             <SvgIcon iconName="duo-arrows-to-circle" sizeName="2xl" style={iconStyle} />
             <strong>3) Word2Vec (CBOW)</strong>
@@ -387,12 +410,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'Word2Vec CBOW - predict center word from context'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'technique-4',
       title: '4) Word2Vec (Skip-Gram)',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 6,
+          title: '4) Word2Vec (Skip-Gram)',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
             <SvgIcon iconName="duo-arrows-from-circle" sizeName="2xl" style={iconStyle} />
             <strong>4) Word2Vec (Skip-Gram)</strong>
@@ -471,12 +500,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'Word2Vec Skip-Gram - predict context from center word'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'technique-5',
       title: '5) GloVe',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 7,
+          title: '5) GloVe',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
             <SvgIcon iconName="duo-globe" sizeName="2xl" style={iconStyle} />
             <strong>5) GloVe</strong>
@@ -553,12 +588,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'GloVe - global vectors using co-occurrence statistics'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'technique-6',
       title: '6) FastText',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 8,
+          title: '6) FastText',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
             <SvgIcon iconName="duo-bolt-lightning" sizeName="2xl" style={iconStyle} />
             <strong>6) FastText</strong>
@@ -637,12 +678,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'FastText - subword embeddings for OOV handling'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'technique-7',
       title: '7) Doc2Vec',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 9,
+          title: '7) Doc2Vec',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
             <SvgIcon iconName="duo-file-lines" sizeName="2xl" style={iconStyle} />
             <strong>7) Doc2Vec</strong>
@@ -721,12 +768,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'Doc2Vec - document-level embeddings'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'technique-8',
       title: '8) ELMo',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 10,
+          title: '8) ELMo',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#9b59b6' }}>
             <SvgIcon iconName="duo-brain" sizeName="2xl" style={iconStyle} />
             <strong>8) ELMo</strong>
@@ -806,12 +859,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'ELMo - contextual embeddings with BiLSTM'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'technique-9',
       title: '9) BERT Embeddings',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 11,
+          title: '9) BERT Embeddings',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#9b59b6' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="2xl" style={iconStyle} />
             <strong>9) BERT Embeddings</strong>
@@ -895,12 +954,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'BERT Embeddings - transformer-based contextual representations'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'technique-10',
       title: '10) Sentence-BERT (SBERT)',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 12,
+          title: '10) Sentence-BERT (SBERT)',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#9b59b6' }}>
             <SvgIcon iconName="duo-code-compare" sizeName="2xl" style={iconStyle} />
             <strong>10) Sentence-BERT (SBERT)</strong>
@@ -980,12 +1045,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'SBERT - siamese network for sentence embeddings'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'technique-11',
       title: '11) Universal Sentence Encoder (USE)',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 13,
+          title: '11) Universal Sentence Encoder (USE)',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#2ecc71' }}>
             <SvgIcon iconName="duo-atom" sizeName="2xl" style={iconStyle} />
             <strong>11) Universal Sentence Encoder (USE)</strong>
@@ -1061,12 +1132,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'Universal Sentence Encoder - Google\'s sentence embedding model'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'technique-12',
       title: '12) E5 Embeddings',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 14,
+          title: '12) E5 Embeddings',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#2ecc71' }}>
             <SvgIcon iconName="duo-bolt" sizeName="2xl" style={iconStyle} />
             <strong>12) E5 Embeddings</strong>
@@ -1150,12 +1227,18 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'E5 Embeddings - multilingual contrastive embeddings'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'technique-13',
       title: '13) GTE Embeddings',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 15,
+          title: '13) GTE Embeddings',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#2ecc71' }}>
             <SvgIcon iconName="duo-star" sizeName="2xl" style={iconStyle} />
             <strong>13) GTE Embeddings</strong>
@@ -1240,107 +1323,115 @@ export const featureExtractionDeck: Deck = {
         </div>
       ),
       notes: 'GTE Embeddings - long-context SOTA embeddings'
+        }
+      ]
     },
     {
-      id: 16,
+      id: 'summary',
       title: 'Summary & Comparison',
-      content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1.5rem', color: '#e7ad52' }}>
-            <SvgIcon iconName="duo-table-list" sizeName="2xl" style={iconStyle} />
-            <strong>Summary & Comparison</strong>
-          </div>
+      slides: [
+        {
+          id: 16,
+          title: 'Summary & Comparison',
+          content: (
+            <div style={{ fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
+              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#e7ad52' }}>
+                <SvgIcon iconName="duo-table-list" sizeName="2xl" style={iconStyle} />
+                <strong>Summary & Comparison</strong>
+              </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e7ad52', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} />
-                <strong>Traditional</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Sparse, interpretable, no context; best for keyword/ranking/classic ML
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                <li>BoW, TF-IDF</li>
-                <li>Context-aware: No</li>
-                <li>OOV Handling: None</li>
-              </ul>
-            </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#e7ad52', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} />
+                    <strong>Traditional</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Sparse, interpretable, no context; best for keyword/ranking/classic ML
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                    <li>BoW, TF-IDF</li>
+                    <li>Context-aware: No</li>
+                    <li>OOV Handling: None</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#1b91e0', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} />
-                <strong>Static word embeddings</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Dense word vectors; FastText handles OOV; no context awareness
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                <li>Word2Vec, GloVe, FastText, Doc2Vec</li>
-                <li>Dimensions: 100-300d</li>
-                <li>FastText: Subword OOV handling</li>
-              </ul>
-            </div>
+                <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#1b91e0', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} />
+                    <strong>Static word embeddings</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Dense word vectors; FastText handles OOV; no context awareness
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                    <li>Word2Vec, GloVe, FastText, Doc2Vec</li>
+                    <li>Dimensions: 100-300d</li>
+                    <li>FastText: Subword OOV handling</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#9b59b6', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="lg" style={iconStyle} />
-                <strong>Contextual embeddings</strong>
-              </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Token-level context; BERT needs pooling/finetune for sentences
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                <li>ELMo, BERT, SBERT</li>
-                <li>Context-aware: Yes</li>
-                <li>Dimensions: 384-1024d</li>
-              </ul>
-            </div>
+                <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#9b59b6', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-brain-circuit" sizeName="lg" style={iconStyle} />
+                    <strong>Contextual embeddings</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Token-level context; BERT needs pooling/finetune for sentences
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                    <li>ELMo, BERT, SBERT</li>
+                    <li>Context-aware: Yes</li>
+                    <li>Dimensions: 384-1024d</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#2ecc71', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
-                <strong>Modern sentence encoders</strong>
+                <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#2ecc71', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
+                    <strong>Modern sentence encoders</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem' }}>
+                    Fixed-size sentence vectors; best for semantic search/clustering
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
+                    <li>USE, E5, GTE</li>
+                    <li>Dimensions: 512-1024d</li>
+                    <li>GTE: 8k context window</li>
+                  </ul>
+                </div>
               </div>
-              <div style={{ fontSize: '0.85rem' }}>
-                Fixed-size sentence vectors; best for semantic search/clustering
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginTop: '0.5rem' }}>
-                <li>USE, E5, GTE</li>
-                <li>Dimensions: 512-1024d</li>
-                <li>GTE: 8k context window</li>
-              </ul>
-            </div>
-          </div>
 
-          <div style={{ background: 'rgba(52, 152, 219, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#3498db', marginBottom: '0.8rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} />
-              <strong>Key Insights by Context Length</strong>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.8rem', fontSize: '0.8rem' }}>
-              <div>
-                <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} />
-                Traditional/Static: N/A
+              <div style={{ background: 'rgba(52, 152, 219, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#3498db', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} />
+                  <strong>Key Insights by Context Length</strong>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.8rem', fontSize: '0.8rem' }}>
+                  <div>
+                    <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} />
+                    Traditional/Static: N/A
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} />
+                    ELMo/BERT/SBERT/USE/E5: 512 tokens
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-star" sizeName="sm" style={iconStyle} />
+                    GTE: 8192 tokens
+                  </div>
+                </div>
               </div>
-              <div>
-                <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} />
-                ELMo/BERT/SBERT/USE/E5: 512 tokens
-              </div>
-              <div>
-                <SvgIcon iconName="duo-star" sizeName="sm" style={iconStyle} />
-                GTE: 8192 tokens
-              </div>
-            </div>
-          </div>
 
-          <div style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.2)', borderRadius: '8px', textAlign: 'center' }}>
-            <SvgIcon iconName="duo-compass" sizeName="xl" style={iconStyle} />
-            <strong style={{ fontSize: '1rem' }}>Similarity Metric:</strong> All dense embeddings use <strong>Cosine</strong> similarity
-          </div>
-        </div>
+              <div style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.2)', borderRadius: '8px', textAlign: 'left' }}>
+                <SvgIcon iconName="duo-compass" sizeName="xl" style={iconStyle} />
+                <strong style={{ fontSize: '1rem' }}>Similarity Metric:</strong> All dense embeddings use <strong>Cosine</strong> similarity
+              </div>
+            </div>
       ),
       notes: 'Summary comparing all 13 techniques by category and characteristics'
+        }
+      ]
     }
   ]
 };

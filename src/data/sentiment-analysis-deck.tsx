@@ -7,12 +7,17 @@ export const sentimentAnalysisDeck: Deck = {
   description: '15 Sentiment Analysis Techniques - From Rule-Based to Transformers',
   category: 'NLP',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '15 Sentiment Analysis Techniques',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '15 Sentiment Analysis Techniques',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>From Rule-Based Scores to Transformers and Multimodal Analysis</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginTop: '50px' }}>
             <SvgIcon iconName="duo-face-smile" sizeName="3x" style={{ color: '#2ecc71' }} />
@@ -25,11 +30,11 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Introduction to 15 comprehensive sentiment analysis techniques covering traditional to advanced methods'
-    },
-    {
-      id: 2,
-      title: 'Table of Contents',
-      content: (
+        },
+        {
+          id: 2,
+          title: 'Table of Contents',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
@@ -80,11 +85,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: '15 techniques organized by category from traditional to advanced'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1. Lexicon-Based Sentiment Scoring',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: '1. Lexicon-Based Sentiment Scoring',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#3498db' }} />
@@ -135,11 +146,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Lexicon-based: Uses dictionaries like AFINN, SentiWordNet for word-level scoring'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2. Rule-Based Sentiment Classification',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: '2. Rule-Based Sentiment Classification',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#9B59B6' }} />
@@ -190,11 +207,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'techniques-3-5',
       title: 'Classical ML Approaches (3-5)',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: 'Classical ML Approaches (3-5)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
@@ -231,11 +254,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Classical ML approaches: Fast, interpretable baselines with modest data requirements'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'techniques-6-7',
       title: 'Modern NLP Tools (6-7)',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: 'Modern NLP Tools (6-7)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-comments" sizeName="3x" style={{ color: '#1abc9c' }} />
@@ -277,11 +306,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Modern NLP tools: VADER for social media, TextBlob for quick prototyping - both require no training data'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'techniques-8-10',
       title: 'Deep Learning Models (8-10)',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: 'Deep Learning Models (8-10)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-network-wired" sizeName="3x" style={{ color: '#e74c3c' }} />
@@ -330,11 +365,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#C0392B',
       notes: 'Deep learning: LSTM for sequences, BiLSTM+Attention for interpretability, CNN for efficient n-gram capture'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'techniques-11-13',
       title: 'Transformer Models (11-13)',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: 'Transformer Models (11-13)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-microchip" sizeName="3x" style={{ color: '#9b59b6' }} />
@@ -390,11 +431,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Transformers: BERT for nuanced sentiment, RoBERTa/DistilBERT for production, GPT for zero-shot cross-domain'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'techniques-14-15',
       title: 'Advanced Techniques (14-15)',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: 'Advanced Techniques (14-15)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-bullseye-arrow" sizeName="3x" style={{ color: '#e67e22' }} />
@@ -442,11 +489,17 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#D35400',
       notes: 'Advanced: ABSA for fine-grained aspect-level insights, Multimodal for audio/video with non-verbal cues'
+        }
+      ]
     },
     {
-      id: 10,
-      title: 'Comparison Matrix',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 10,
+          title: 'Comparison Matrix',
+          content: (
         <div style={{ fontSize: '0.6em', maxWidth: '1100px', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-table-columns" sizeName="2x" />
@@ -484,11 +537,11 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Comprehensive comparison showing trade-offs: Traditional/Classical offer explainability, Transformers offer accuracy, Advanced offer granularity'
-    },
-    {
-      id: 11,
-      title: 'Recommendations & Best Practices',
-      content: (
+        },
+        {
+          id: 11,
+          title: 'Recommendations & Best Practices',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
@@ -538,11 +591,11 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Best practices: Start simple, scale judiciously, operationalize with monitoring, implement guardrails for production'
-    },
-    {
-      id: 12,
-      title: 'Implementation Roadmap',
-      content: (
+        },
+        {
+          id: 12,
+          title: 'Implementation Roadmap',
+          content: (
         <div style={{ maxWidth: '900px', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-map" sizeName="2x" style={{ color: '#3498db' }} />
@@ -613,12 +666,18 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Three-step roadmap: Select candidates, pilot test with domain data, then optimize and deploy with monitoring'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'thank-you',
       title: 'Thank You!',
-      content: (
-        <div>
+      slides: [
+        {
+          id: 13,
+          title: 'Thank You!',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>15 Sentiment Analysis Techniques</h2>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '40px' }}>
             <SvgIcon iconName="duo-face-smile" sizeName="4x" style={{ color: '#2ecc71' }} />
@@ -638,6 +697,8 @@ export const sentimentAnalysisDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Conclusion slide - comprehensive overview of 15 sentiment analysis techniques from basic to advanced'
+        }
+      ]
     }
   ]
 };

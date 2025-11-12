@@ -9,12 +9,17 @@ export const entityDisambiguationTechniquesDeck: Deck = {
   description: 'A practical cheat sheet for data scientists and NLP engineers',
   category: 'NLP',
   theme: 'dracula',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '13 Entity Normalization & Disambiguation Techniques',
-      content: (
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '13 Entity Normalization & Disambiguation Techniques',
+          content: (
+            <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#bd93f9' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="2xl" style={{ marginRight: '1rem' }} />
             13 Entity Normalization & Disambiguation Techniques
@@ -49,8 +54,8 @@ export const entityDisambiguationTechniquesDeck: Deck = {
       id: 2,
       title: 'Table of Contents',
       content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem', color: '#bd93f9' }}>
+        <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
+          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#bd93f9' }}>
             <SvgIcon iconName="duo-list" sizeName="2xl" style={iconStyle} />
             <strong>Table of Contents</strong>
           </div>
@@ -115,91 +120,103 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Table of contents showing all 13 techniques'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1. String Normalization',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-broom" sizeName="2xl" style={iconStyle} />
-            <strong>1. String Normalization</strong>
-          </div>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
-                <strong>Goal</strong>
+      slides: [
+        {
+          id: 3,
+          title: '1. String Normalization',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
+                <SvgIcon iconName="duo-broom" sizeName="2xl" style={iconStyle} />
+                <strong>1. String Normalization</strong>
               </div>
-              <div>Standardize text by removing superficial differences (spacing, punctuation, diacritics).</div>
-            </div>
-            <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
-                <strong>How It Works</strong>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                    <strong>Goal</strong>
+                  </div>
+                  <div>Standardize text by removing superficial differences (spacing, punctuation, diacritics).</div>
+                </div>
+                <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                    <strong>How It Works</strong>
+                  </div>
+                  <div>Trim/collapse whitespace, unify quotes/dashes, normalize punctuation spacing, optionally strip diacritics and normalize numerals.</div>
+                </div>
               </div>
-              <div>Trim/collapse whitespace, unify quotes/dashes, normalize punctuation spacing, optionally strip diacritics and normalize numerals.</div>
-            </div>
-          </div>
 
-          <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
-              <strong>When to Use</strong>
-            </div>
-            <div>Preprocessing noisy inputs (logs, forms, scraped text) before any matching.</div>
-          </div>
-
-          <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
-              <strong>Steps</strong>
-            </div>
-            <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
-              <li>Trim and collapse spaces</li>
-              <li>Canonicalize quotes/dashes</li>
-              <li>Normalize punctuation spacing</li>
-              <li>Optional: remove diacritics/width forms</li>
-              <li>Validate</li>
-            </ol>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Pros</strong>
+              <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+                  <strong>When to Use</strong>
+                </div>
+                <div>Preprocessing noisy inputs (logs, forms, scraped text) before any matching.</div>
               </div>
-              <div>Simple, fast, deterministic; boosts downstream match rates.</div>
-            </div>
-            <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Cons</strong>
-              </div>
-              <div>Possible information loss; language-specific quirks; does not resolve ambiguity.</div>
-            </div>
-          </div>
 
-          <div style={{ marginTop: '1rem', background: 'rgba(68, 71, 90, 0.5)', padding: '1rem', borderRadius: '8px', fontSize: '0.75rem', fontFamily: 'monospace' }}>
-            <SvgIcon iconName="duo-code" sizeName="lg" style={iconStyle} />
-            <code style={{ color: '#f8f8f2' }}>
-              def normalize_string(text):<br/>
-              &nbsp;&nbsp;text = text.strip().replace(" +", " ") # Trim & collapse spaces<br/>
-              &nbsp;&nbsp;text = re.sub(r'["""]', '"', text) # Normalize quotes<br/>
-              &nbsp;&nbsp;return text
-            </code>
-          </div>
-        </div>
+              <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+                  <strong>Steps</strong>
+                </div>
+                <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
+                  <li>Trim and collapse spaces</li>
+                  <li>Canonicalize quotes/dashes</li>
+                  <li>Normalize punctuation spacing</li>
+                  <li>Optional: remove diacritics/width forms</li>
+                  <li>Validate</li>
+                </ol>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                    <strong>Pros</strong>
+                  </div>
+                  <div>Simple, fast, deterministic; boosts downstream match rates.</div>
+                </div>
+                <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                    <strong>Cons</strong>
+                  </div>
+                  <div>Possible information loss; language-specific quirks; does not resolve ambiguity.</div>
+                </div>
+              </div>
+
+              <div style={{ marginTop: '1rem', background: 'rgba(68, 71, 90, 0.5)', padding: '1rem', borderRadius: '8px', fontSize: '0.75rem', fontFamily: 'monospace' }}>
+                <SvgIcon iconName="duo-code" sizeName="lg" style={iconStyle} />
+                <code style={{ color: '#f8f8f2' }}>
+                  def normalize_string(text):<br/>
+                  &nbsp;&nbsp;text = text.strip().replace(" +", " ") # Trim & collapse spaces<br/>
+                  &nbsp;&nbsp;text = re.sub(r'["""]', '"', text) # Normalize quotes<br/>
+                  &nbsp;&nbsp;return text
+                </code>
+              </div>
+            </div>
       ),
       notes: 'String Normalization - basic text standardization'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2. Lowercasing + Unicode Normalization',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 4,
+          title: '2. Lowercasing + Unicode Normalization',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-font" sizeName="2xl" style={iconStyle} />
             <strong>2. Lowercasing + Unicode Normalization</strong>
@@ -276,12 +293,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Lowercasing + Unicode Normalization - handling encoding variations'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'technique-3',
       title: '3. Fuzzy Matching (Edit Distance)',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 5,
+          title: '3. Fuzzy Matching (Edit Distance)',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-magnifying-glass" sizeName="2xl" style={iconStyle} />
             <strong>3. Fuzzy Matching (Edit Distance)</strong>
@@ -359,12 +382,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Fuzzy Matching using edit distance algorithms'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'technique-4',
       title: '4. Token-Based Similarity (Jaccard / Cosine)',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 6,
+          title: '4. Token-Based Similarity (Jaccard / Cosine)',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-diagram-venn" sizeName="2xl" style={iconStyle} />
             <strong>4. Token-Based Similarity (Jaccard / Cosine)</strong>
@@ -440,12 +469,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Token-Based Similarity using Jaccard and Cosine metrics'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'technique-5',
       title: '5. Dictionary / Gazetteer Lookup',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 7,
+          title: '5. Dictionary / Gazetteer Lookup',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-book-open" sizeName="2xl" style={iconStyle} />
             <strong>5. Dictionary / Gazetteer Lookup</strong>
@@ -522,12 +557,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Dictionary/Gazetteer Lookup for controlled vocabulary matching'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'technique-6',
       title: '6. Synonym / Alias Mapping',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 8,
+          title: '6. Synonym / Alias Mapping',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-tags" sizeName="2xl" style={iconStyle} />
             <strong>6. Synonym / Alias Mapping</strong>
@@ -604,12 +645,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Synonym/Alias Mapping for variant consolidation'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'technique-7',
       title: '7. Rule-Based Context Matching',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 9,
+          title: '7. Rule-Based Context Matching',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-gavel" sizeName="2xl" style={iconStyle} />
             <strong>7. Rule-Based Context Matching</strong>
@@ -685,11 +732,17 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Rule-Based Context Matching using patterns and heuristics'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'technique-8',
       title: '8. Embedding-Based Similarity Matching',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: '8. Embedding-Based Similarity Matching',
+          content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="2xl" style={iconStyle} />
@@ -769,12 +822,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Embedding-Based Similarity using neural networks'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'technique-9',
       title: '9. Entity Linking with Knowledge Bases',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 11,
+          title: '9. Entity Linking with Knowledge Bases',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-database" sizeName="2xl" style={iconStyle} />
             <strong>9. Entity Linking with Knowledge Bases</strong>
@@ -848,12 +907,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Entity Linking using Knowledge Bases like Wikidata'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'technique-10',
       title: '10. Graph-Based Entity Disambiguation',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 12,
+          title: '10. Graph-Based Entity Disambiguation',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-network-wired" sizeName="2xl" style={iconStyle} />
             <strong>10. Graph-Based Entity Disambiguation</strong>
@@ -929,12 +994,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Graph-Based Entity Disambiguation for coherent entity selection'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'technique-11',
       title: '11. PageRank / Centrality-Based Disambiguation',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 13,
+          title: '11. PageRank / Centrality-Based Disambiguation',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-ranking-star" sizeName="2xl" style={iconStyle} />
             <strong>11. PageRank / Centrality-Based Disambiguation</strong>
@@ -1012,12 +1083,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'PageRank/Centrality-Based Disambiguation using graph algorithms'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'technique-12',
       title: '12. Domain-Specific Ontology Mapping',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 14,
+          title: '12. Domain-Specific Ontology Mapping',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-book" sizeName="2xl" style={iconStyle} />
             <strong>12. Domain-Specific Ontology Mapping</strong>
@@ -1092,12 +1169,18 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'Domain-Specific Ontology Mapping for regulated domains'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'technique-13',
       title: '13. LLM-Based Entity Disambiguation',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 15,
+          title: '13. LLM-Based Entity Disambiguation',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
             <SvgIcon iconName="duo-robot" sizeName="2xl" style={iconStyle} />
             <strong>13. LLM-Based Entity Disambiguation</strong>
@@ -1172,98 +1255,106 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         </div>
       ),
       notes: 'LLM-Based Entity Disambiguation using large language models'
+        }
+      ]
     },
     {
-      id: 16,
+      id: 'summary',
       title: 'Summary & Practical Guidance',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.7' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1.5rem', color: '#bd93f9' }}>
-            <SvgIcon iconName="duo-check-double" sizeName="2xl" style={iconStyle} />
-            <strong>Summary & Practical Guidance</strong>
-          </div>
+      slides: [
+        {
+          id: 16,
+          title: 'Summary & Practical Guidance',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.7', textAlign: 'left' }}>
+              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#bd93f9' }}>
+                <SvgIcon iconName="duo-check-double" sizeName="2xl" style={iconStyle} />
+                <strong>Summary & Practical Guidance</strong>
+              </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} />
-                <strong>Layered Pipeline</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
-                <li>Start with normalization (String, Unicode)</li>
-                <li>Add lexical matching (Fuzzy, Token-based)</li>
-                <li>Incorporate knowledge (KB/Ontology)</li>
-                <li>Finish with advanced methods (Graph/LLM)</li>
-              </ul>
-            </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#bd93f9', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} />
+                    <strong>Layered Pipeline</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
+                    <li>Start with normalization (String, Unicode)</li>
+                    <li>Add lexical matching (Fuzzy, Token-based)</li>
+                    <li>Incorporate knowledge (KB/Ontology)</li>
+                    <li>Finish with advanced methods (Graph/LLM)</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-sliders" sizeName="lg" style={iconStyle} />
-                <strong>Technique Selection</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
-                <li>Short/typo-prone text: Edit distance</li>
-                <li>Long/reordered text: Token similarity</li>
-                <li>Open-domain: Entity linking/Graph</li>
-                <li>Regulated domains: Ontology mapping</li>
-              </ul>
-            </div>
+                <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#8be9fd', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-sliders" sizeName="lg" style={iconStyle} />
+                    <strong>Technique Selection</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
+                    <li>Short/typo-prone text: Edit distance</li>
+                    <li>Long/reordered text: Token similarity</li>
+                    <li>Open-domain: Entity linking/Graph</li>
+                    <li>Regulated domains: Ontology mapping</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gear" sizeName="lg" style={iconStyle} />
-                <strong>Operational Tips</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
-                <li>Calibrate thresholds on domain data</li>
-                <li>Log normalization decisions and provenance</li>
-                <li>Add human review for low-confidence cases</li>
-                <li>Monitor for data/entity drift over time</li>
-              </ul>
-            </div>
+                <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#50fa7b', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-gear" sizeName="lg" style={iconStyle} />
+                    <strong>Operational Tips</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
+                    <li>Calibrate thresholds on domain data</li>
+                    <li>Log normalization decisions and provenance</li>
+                    <li>Add human review for low-confidence cases</li>
+                    <li>Monitor for data/entity drift over time</li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#f1fa8c', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} />
-                <strong>Evaluation Methods</strong>
+                <div style={{ background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#f1fa8c', marginBottom: '0.8rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} />
+                    <strong>Evaluation Methods</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
+                    <li>Precision/recall against gold standard</li>
+                    <li>Clustering F1 on unlabeled data</li>
+                    <li>Error taxonomy analysis</li>
+                    <li>A/B testing for downstream impact</li>
+                  </ul>
+                </div>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
-                <li>Precision/recall against gold standard</li>
-                <li>Clustering F1 on unlabeled data</li>
-                <li>Error taxonomy analysis</li>
-                <li>A/B testing for downstream impact</li>
-              </ul>
-            </div>
-          </div>
 
-          <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1.2rem', borderRadius: '10px', marginTop: '1rem' }}>
-            <div style={{ color: '#ff79c6', marginBottom: '0.8rem', fontSize: '1.1rem', textAlign: 'center' }}>
-              <SvgIcon iconName="duo-star" sizeName="xl" style={iconStyle} />
-              <strong>Best Practices for Entity Normalization</strong>
+              <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1.2rem', borderRadius: '10px', marginTop: '1rem' }}>
+                <div style={{ color: '#ff79c6', marginBottom: '0.8rem', fontSize: '1.1rem', textAlign: 'left' }}>
+                  <SvgIcon iconName="duo-star" sizeName="xl" style={iconStyle} />
+                  <strong>Best Practices for Entity Normalization</strong>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', fontSize: '0.85rem' }}>
+                  <div>
+                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
+                    Consider domain specificity before technique selection
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
+                    Create feedback loops to improve over time
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
+                    Document decisions for transparency & maintenance
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
+                    Use hybrid approaches for complex domains
+                  </div>
+                </div>
+              </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', fontSize: '0.85rem' }}>
-              <div>
-                <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
-                Consider domain specificity before technique selection
-              </div>
-              <div>
-                <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
-                Create feedback loops to improve over time
-              </div>
-              <div>
-                <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
-                Document decisions for transparency & maintenance
-              </div>
-              <div>
-                <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} />
-                Use hybrid approaches for complex domains
-              </div>
-            </div>
-          </div>
-        </div>
       ),
       notes: 'Summary with practical guidance on pipeline design, technique selection, operations, and evaluation'
+        }
+      ]
     }
   ]
 };
