@@ -7,12 +7,17 @@ export const queryRewritingDeck: Deck = {
   description: 'Practical patterns, prompts, and examples for better retrieval',
   category: 'RAG',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '21 Query Rewriting Strategies for RAG',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '21 Query Rewriting Strategies for RAG',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>Practical patterns, prompts, and examples for better retrieval</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
@@ -36,10 +41,10 @@ export const queryRewritingDeck: Deck = {
       backgroundColor: '#2C3E50',
       notes: 'Introduction: 21 strategies to improve RAG retrieval through query rewriting'
     },
-    {
-      id: 2,
-      title: 'Why Query Rewriting?',
-      content: (
+        {
+          id: 2,
+          title: 'Why Query Rewriting?',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
@@ -88,11 +93,11 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Query rewriting solves vocabulary mismatch, vague queries, and context loss, improving recall and reducing hallucinations'
-    },
-    {
-      id: 3,
-      title: 'Impact on RAG Performance',
-      content: (
+        },
+        {
+          id: 3,
+          title: 'Impact on RAG Performance',
+          content: (
         <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
             <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
@@ -127,11 +132,11 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Query rewriting significantly improves recall (15-40%), ranking (10-25%), grounding (20-45%), and success rates (15-30%)'
-    },
-    {
-      id: 4,
-      title: 'Implementation Workflow',
-      content: (
+        },
+        {
+          id: 4,
+          title: 'Implementation Workflow',
+          content: (
         <div style={{ maxWidth: '950px', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>Step-by-Step Process</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
@@ -179,11 +184,11 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Six-step workflow: Parse intent, pick policy, transform, retrieve, check coverage, log and adapt'
-    },
-    {
-      id: 5,
-      title: '21 Strategies Overview',
-      content: (
+        },
+        {
+          id: 5,
+          title: '21 Strategies Overview',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
@@ -239,11 +244,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: '21 strategies grouped into 6 categories: Expansion, Context, Decomposition, Specification, Domain, and Adaptive'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'strategy-1',
       title: '1. Query Expansion',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: '1. Query Expansion',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-plus-large" sizeName="2x" style={{ color: '#3498db' }} />
@@ -298,11 +309,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#3498DB',
       notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'strategies-2-3',
       title: '2-3. Reformulation & Decomposition',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: '2-3. Reformulation & Decomposition',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
@@ -343,11 +360,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Reformulation makes queries self-contained; Decomposition breaks complex questions into sub-questions'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'strategies-4-5',
       title: '4-5. Step-Back & HyDE',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: '4-5. Step-Back & HyDE',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
@@ -385,11 +408,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Step-Back uses abstraction for broader context; HyDE generates hypothetical answer document for better semantic matching'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'strategies-6-7',
       title: '6-7. Multi-Query & Context-Aware',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: '6-7. Multi-Query & Context-Aware',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
@@ -432,11 +461,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Multi-Query explores diverse interpretations; Context-Aware makes follow-ups standalone with conversation history'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'strategies-8-9',
       title: '8-9. Clarification & Specification',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: '8-9. Clarification & Specification',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
@@ -476,11 +511,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#D35400',
       notes: 'Clarification asks users for disambiguation; Specification adds explicit constraints like time, source, file type'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'strategies-10-15',
       title: '10-15. Semantic & Document Strategies',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: '10-15. Semantic & Document Strategies',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '8px', padding: '12px' }}>
@@ -524,11 +565,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Semantic bridging, Query2Doc, ITER-RETGEN, Template-based, Entity-centric, and Temporal strategies'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'strategies-20-21',
       title: '20-21. Domain & Intent-Based',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: '20-21. Domain & Intent-Based',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
@@ -567,11 +614,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Domain-Specific translates to expert terminology; Intent Classification routes to appropriate rewriting strategy'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'strategies-22-24',
       title: 'Adaptive Strategies (22-24)',
-      content: (
+      slides: [
+        {
+          id: 13,
+          title: 'Adaptive Strategies (22-24)',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
@@ -626,11 +679,17 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#E67E22',
       notes: 'Adaptive strategies: Diverse Multi-Query for facet coverage, Feedback-Based learning, Prompt-Based simplicity, Adaptive policy selection'
+        }
+      ]
     },
     {
-      id: 14,
-      title: 'Strategy Selection Guide',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 14,
+          title: 'Strategy Selection Guide',
+          content: (
         <div style={{ maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '25px' }}>When to Use Each Strategy</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px' }}>
@@ -679,11 +738,11 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Decision guide: Match strategy to your specific needs - recall, precision, domain, time-sensitivity, or adaptivity'
-    },
-    {
-      id: 15,
-      title: 'Best Practices & Implementation',
-      content: (
+        },
+        {
+          id: 15,
+          title: 'Best Practices & Implementation',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
@@ -737,12 +796,12 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Best practices: Start simple, measure baselines, add guardrails, combine strategies thoughtfully, avoid common pitfalls'
-    },
-    {
-      id: 16,
-      title: 'Summary: The Query Rewriting Playbook',
-      content: (
-        <div>
+        },
+        {
+          id: 16,
+          title: 'Summary: The Query Rewriting Playbook',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>21 Strategies for Better RAG Retrieval</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
@@ -779,6 +838,8 @@ export const queryRewritingDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Summary: 21 strategies in 3 groups - Core for all systems, Domain for specialized needs, Advanced for production optimization'
+        }
+      ]
     }
   ]
 };
