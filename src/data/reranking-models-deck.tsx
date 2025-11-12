@@ -7,12 +7,17 @@ export const rerankingModelsDeck: Deck = {
   description: 'Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation',
   category: 'RAG',
   theme: 'night',
-  slides: [
+  slides: [],
+  slideGroups: [
+    {
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
     {
       id: 1,
       title: '11 Re-Ranking Models to Improve RAG Accuracy',
       content: (
-        <div>
+        <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '20px' }}>
             <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
             11 Re-Ranking Models
@@ -20,10 +25,10 @@ export const rerankingModelsDeck: Deck = {
           <h3 style={{ fontSize: '1.1em', marginTop: '30px', color: '#4fc3f7' }}>
             To Improve RAG Accuracy
           </h3>
-          <p style={{ fontSize: '1em', marginTop: '30px', maxWidth: '900px', margin: '30px auto' }}>
+          <p style={{ fontSize: '1em', marginTop: '30px', maxWidth: '900px' }}>
             Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation
           </p>
-          <div style={{ marginTop: '50px', display: 'flex', gap: '20px', justifyContent: 'center', alignItems: 'center' }}>
+          <div style={{ marginTop: '50px', display: 'flex', gap: '20px', alignItems: 'center' }}>
             <div style={{ padding: '20px 30px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
               <SvgIcon iconName="duo-magnifying-glass" sizeName="3x" darkModeInvert={true} />
               <div style={{ textAlign: 'left' }}>
@@ -58,7 +63,7 @@ export const rerankingModelsDeck: Deck = {
       title: 'Why Re-Ranking in RAG?',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '25px' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Why Re-Ranking Matters
           </h2>
@@ -111,7 +116,7 @@ export const rerankingModelsDeck: Deck = {
               </div>
             </div>
           </div>
-          <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+          <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
             <p style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
               <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
               <strong>Without re-ranking,</strong> RAG systems often fail not because of poor embeddings or weak LLMs, 
@@ -130,13 +135,19 @@ export const rerankingModelsDeck: Deck = {
       ),
       backgroundColor: '#16213e',
       notes: 'Overview of why re-ranking is critical for RAG accuracy'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 3,
       title: '1) Cross-Encoder Ranker (MS MARCO family)',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', fontSize: '1.3em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.3em' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="2x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
             Cross-Encoder Ranker (MS MARCO)
           </h2>
@@ -215,7 +226,7 @@ export const rerankingModelsDeck: Deck = {
       title: '2) BERT-based Cross Encoder (ms-marco-MiniLM)',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', fontSize: '1.2em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.2em' }}>
             <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
             BERT-based Cross Encoder (MiniLM)
           </h2>
@@ -295,7 +306,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '3) MonoT5 Re-Ranker',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', fontSize: '1.3em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.3em' }}>
             <SvgIcon iconName="duo-brain" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
             MonoT5 Re-Ranker
           </h2>
@@ -374,7 +385,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '4-5) MonoBERT & ColBERT',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', fontSize: '1.3em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', fontSize: '1.3em' }}>
             <SvgIcon iconName="duo-copy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             MonoBERT & ColBERT Approaches
           </h2>
@@ -473,7 +484,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '6-7) E5-Ranker & LLM-as-a-Ranker',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', fontSize: '1.3em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', fontSize: '1.3em' }}>
             <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             E5-Ranker & LLM-as-a-Ranker
           </h2>
@@ -574,7 +585,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '8-9) RRF & Fusion-in-Decoder',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', fontSize: '1.3em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', fontSize: '1.3em' }}>
             <SvgIcon iconName="duo-arrows-spin" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             RRF & Fusion-in-Decoder
           </h2>
@@ -657,7 +668,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '10-11) DPR & BM25 + LLM Hybrid',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '15px', fontSize: '1.3em' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '15px', fontSize: '1.3em' }}>
             <SvgIcon iconName="duo-sliders" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             DPR & BM25 + LLM Hybrid
           </h2>
@@ -752,13 +763,19 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       ),
       backgroundColor: '#0f3460',
       notes: 'Models 10-11: DPR and hybrid BM25+LLM approaches'
+    }
+      ]
     },
+    {
+      id: 'summary-recommendations',
+      title: 'Summary & Recommendations',
+      slides: [
     {
       id: 10,
       title: 'Model Comparison at a Glance',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.7em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Model Comparison at a Glance
           </h2>
@@ -820,7 +837,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: 'Quick Recommendations by Use Case',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-map" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Quick Recommendations by Use Case
           </h2>
@@ -908,7 +925,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: 'Operational Tips & Trade-offs',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Operational Tips & Trade-offs
           </h2>
@@ -962,7 +979,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
               </div>
             </div>
           </div>
-          <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+          <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
             <p style={{ fontSize: '1em', lineHeight: '1.6' }}>
               <SvgIcon iconName="duo-rocket" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
               <strong>Pro Tip:</strong> Start with ms-marco-MiniLM-L-6-v2 as your baseline, then A/B test against more specialized models 
@@ -973,6 +990,8 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       ),
       backgroundColor: '#0f3460',
       notes: 'Practical operational tips and trade-off considerations'
+    }
+      ]
     }
   ]
 };
