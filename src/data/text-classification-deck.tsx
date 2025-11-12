@@ -9,12 +9,17 @@ export const textClassificationDeck: Deck = {
   description: 'A comprehensive guide: From Rules to LLMs',
   category: 'NLP',
   theme: 'black',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '11 Text Classification Approaches',
-      content: (
-        <div style={{ textAlign: 'center' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '11 Text Classification Approaches',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-tags" sizeName="2xl" style={{ marginRight: '1rem' }} />
             TEXT CLASSIFICATION
@@ -37,8 +42,8 @@ export const textClassificationDeck: Deck = {
       id: 2,
       title: 'Table of Contents — 11 Approaches',
       content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ marginBottom: '2rem', textAlign: 'center', color: '#61dafb' }}>
+        <div style={{ fontSize: '0.9rem', lineHeight: '1.6', textAlign: 'left' }}>
+          <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb' }}>
             <SvgIcon iconName="duo-list-ol" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>11 Text Classification Approaches</strong>
           </div>
@@ -81,11 +86,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Overview of all 11 approaches organized by category: traditional rule-based methods vs neural network approaches'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'rule-based',
       title: '1. Rule-Based Classification',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: '1. Rule-Based Classification',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-brackets-square" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -152,11 +163,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Rule-Based Classification: No training needed, fully interpretable, but brittle and hard to maintain at scale'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'keyword-matching',
       title: '2. Keyword Matching',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: '2. Keyword Matching',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -223,11 +240,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Keyword Matching: Fast and transparent, but misses paraphrases and context'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'bag-of-words-lr',
       title: '3. Bag-of-Words + Logistic Regression',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: '3. Bag-of-Words + Logistic Regression',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-chart-line" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -294,11 +317,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Bag-of-Words + Logistic Regression: Strong baseline, fast and interpretable, but ignores word order'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'tfidf-svm',
       title: '4. TF-IDF + SVM',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: '4. TF-IDF + SVM',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-shield-check" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -364,11 +393,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'TF-IDF + SVM: Top traditional performer, handles sparsity well, robust across domains'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'naive-bayes',
       title: '5. Naive Bayes Classifier',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: '5. Naive Bayes Classifier',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -433,11 +468,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Naive Bayes: Extremely fast, works well with limited data, but makes independence assumption'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'random-forest',
       title: '6. Random Forest Text Classifier',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: '6. Random Forest Text Classifier',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -502,11 +543,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Random Forest: Great for engineered features, provides feature importance, but memory-heavy'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'cnn',
       title: '7. CNN for Text Classification',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: '7. CNN for Text Classification',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -571,11 +618,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'CNN for Text: Fast inference, good at capturing local patterns, but struggles with long-range dependencies'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'rnn-lstm',
       title: '8. RNN/LSTM Text Classifier',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: '8. RNN/LSTM Text Classifier',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -640,11 +693,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'RNN/LSTM: Models sequence and context well, good for medium-length texts, but slower than CNNs'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'bilstm-attention',
       title: '9. BiLSTM with Attention',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: '9. BiLSTM with Attention',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-eye" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -709,11 +768,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'BiLSTM with Attention: Highlights important tokens/phrases, better interpretability, but heavier than plain LSTM'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'bert',
       title: '10. BERT Fine-Tuned Classifier',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: '10. BERT Fine-Tuned Classifier',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-brain" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -782,11 +847,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'BERT Fine-Tuned: State-of-the-art accuracy with strong context understanding, but heavier compute requirements'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'llm-zero-shot',
       title: '11. Instruction / Zero-Shot LLM Classification',
-      content: (
+      slides: [
+        {
+          id: 13,
+          title: '11. Instruction / Zero-Shot LLM Classification',
+          content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
             <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="xl" style={{ marginRight: '0.8rem' }} />
@@ -857,11 +928,17 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'LLM Zero-Shot: No training needed, highly adaptable, but has variability and cost considerations'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'summary',
       title: 'Summary & Comparison',
-      content: (
+      slides: [
+        {
+          id: 14,
+          title: 'Summary & Comparison',
+          content: (
         <div style={{ fontSize: '0.75rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#61dafb', fontSize: '1rem', marginBottom: '0.5rem' }}>
@@ -951,6 +1028,8 @@ export const textClassificationDeck: Deck = {
         </div>
       ),
       notes: 'Summary with key takeaways, quick selector guide, data requirements spectrum, and recommended approach'
+        }
+      ]
     }
   ]
 };
