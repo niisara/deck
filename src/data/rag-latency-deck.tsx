@@ -9,12 +9,17 @@ export const ragLatencyDeck: Deck = {
   description: 'Practical, production-ready optimizations for faster RAG pipelines',
   category: 'RAG',
   theme: 'black',
-  slides: [
+  slides: [],
+  slideGroups: [
+    {
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
     {
       id: 1,
       title: '11 Techniques to Reduce RAG Latency',
       content: (
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-gauge-high" sizeName="2xl" style={{ marginRight: '1rem' }} />
             RAG Optimization
@@ -26,7 +31,7 @@ export const ragLatencyDeck: Deck = {
             <SvgIcon iconName="file-lines" sizeName="lg" style={iconStyle} />
             Technical Guide
           </div>
-          <div style={{ fontSize: '1rem', lineHeight: '1.6', maxWidth: '900px', margin: '0 auto', textAlign: 'left' }}>
+          <div style={{ fontSize: '1rem', lineHeight: '1.6', maxWidth: '900px', textAlign: 'left' }}>
             How to lower end-to-end latency across <span style={{ color: '#e06c75' }}>embedding</span>, 
             <span style={{ color: '#d19a66' }}> retrieval</span>, 
             <span style={{ color: '#98c379' }}> orchestration</span>, and 
@@ -113,7 +118,13 @@ export const ragLatencyDeck: Deck = {
         </div>
       ),
       notes: 'Overview of all 11 techniques organized by category: embeddings, retrieval, caching, reranking, orchestration, and generation'
+    }
+      ]
     },
+    {
+      id: 'the-11-techniques',
+      title: 'The 11 Techniques',
+      slides: [
     {
       id: 3,
       title: '1. Use Smaller Embedding Models',
@@ -1029,7 +1040,13 @@ export const ragLatencyDeck: Deck = {
         </div>
       ),
       notes: 'Technique 11: Replace large LLMs with smaller, distilled models to reduce latency while maintaining acceptable quality'
+    }
+      ]
     },
+    {
+      id: 'summary',
+      title: 'Summary',
+      slides: [
     {
       id: 14,
       title: 'Summary and Comparison',
@@ -1115,6 +1132,8 @@ export const ragLatencyDeck: Deck = {
         </div>
       ),
       notes: 'Summary with key takeaways, quick chooser for common scenarios, and tradeoff comparison'
+    }
+      ]
     }
   ]
 };
