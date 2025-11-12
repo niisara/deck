@@ -9,12 +9,17 @@ export const graphRetrievalDeck: Deck = {
   description: 'A practical cheat-sheet for precision, reasoning, and reliable context',
   category: 'RAG',
   theme: 'sky',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '13 Graph-Based Retrieval Techniques',
-      content: (
-        <div style={{ textAlign: 'center', padding: '2rem' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '13 Graph-Based Retrieval Techniques',
+          content: (
+            <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-network-wired" sizeName="2xl" style={{ marginRight: '1rem' }} />
             13 Graph-Based Retrieval Techniques
@@ -45,8 +50,8 @@ export const graphRetrievalDeck: Deck = {
       id: 2,
       title: 'Overview: 13 Techniques at a Glance',
       content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.8' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
+        <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
+          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-sitemap" sizeName="2xl" style={iconStyle} />
             <strong>Overview: 13 Techniques at a Glance</strong>
           </div>
@@ -111,87 +116,99 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Overview of all 13 graph-based retrieval techniques'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1. Node-Level Retrieval',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-circle-dot" sizeName="2xl" style={iconStyle} />
-            <strong>1. Node-Level Retrieval</strong>
-          </div>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-            <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
-                <strong>Goal / What It Solves</strong>
+      slides: [
+        {
+          id: 3,
+          title: '1. Node-Level Retrieval',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
+                <SvgIcon iconName="duo-circle-dot" sizeName="2xl" style={iconStyle} />
+                <strong>1. Node-Level Retrieval</strong>
               </div>
-              <div>Precise entity/topic lookup; reduces noise and hallucination.</div>
-            </div>
-            <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
-                <strong>How It Works</strong>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                    <strong>Goal / What It Solves</strong>
+                  </div>
+                  <div>Precise entity/topic lookup; reduces noise and hallucination.</div>
+                </div>
+                <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                    <strong>How It Works</strong>
+                  </div>
+                  <div>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</div>
+                </div>
               </div>
-              <div>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</div>
-            </div>
-          </div>
 
-          <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
-              <strong>When to Use</strong>
-            </div>
-            <div>FAQs, glossaries, entity-centric KBs, short queries.</div>
-          </div>
-
-          <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
-              <strong>Data Needed</strong>
-            </div>
-            <div>Node metadata (title, aliases), text chunks, node embeddings, optional entity linker.</div>
-          </div>
-
-          <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
-              <strong>Implementation Steps</strong>
-            </div>
-            <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-              <li>Embed query and search node index (title+embedding)</li>
-              <li>Rank by combined exact match + embedding</li>
-              <li>Return top-k nodes and their attached chunks</li>
-            </ul>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Pros</strong>
+              <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+                  <strong>When to Use</strong>
+                </div>
+                <div>FAQs, glossaries, entity-centric KBs, short queries.</div>
               </div>
-              <div>High precision, simple, fast.</div>
-            </div>
-            <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Cons</strong>
+
+              <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+                  <strong>Data Needed</strong>
+                </div>
+                <div>Node metadata (title, aliases), text chunks, node embeddings, optional entity linker.</div>
               </div>
-              <div>May miss context or relationships; brittle for long, multi-hop queries.</div>
+
+              <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+                  <strong>Implementation Steps</strong>
+                </div>
+                <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                  <li>Embed query and search node index (title+embedding)</li>
+                  <li>Rank by combined exact match + embedding</li>
+                  <li>Return top-k nodes and their attached chunks</li>
+                </ul>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                    <strong>Pros</strong>
+                  </div>
+                  <div>High precision, simple, fast.</div>
+                </div>
+                <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                  <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                    <strong>Cons</strong>
+                  </div>
+                  <div>May miss context or relationships; brittle for long, multi-hop queries.</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
       ),
       notes: 'Node-Level Retrieval - precise entity lookup'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2. Edge-Weighted Retrieval',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 4,
+          title: '2. Edge-Weighted Retrieval',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-arrow-right-arrow-left" sizeName="2xl" style={iconStyle} />
             <strong>2. Edge-Weighted Retrieval</strong>
@@ -264,12 +281,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Edge-Weighted Retrieval - prioritize by relationship strength'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'technique-3',
       title: '3. Neighborhood Expansion',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 5,
+          title: '3. Neighborhood Expansion',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-circle-nodes" sizeName="2xl" style={iconStyle} />
             <strong>3. Neighborhood Expansion</strong>
@@ -342,12 +365,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Neighborhood Expansion - retrieve node with immediate neighbors'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'technique-4',
       title: '4. Path-Based Retrieval',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 6,
+          title: '4. Path-Based Retrieval',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-route" sizeName="2xl" style={iconStyle} />
             <strong>4. Path-Based Retrieval</strong>
@@ -420,12 +449,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Path-Based Retrieval - multi-hop reasoning chains'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'technique-5',
       title: '5. Community / Cluster Retrieval',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 7,
+          title: '5. Community / Cluster Retrieval',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-object-group" sizeName="2xl" style={iconStyle} />
             <strong>5. Community / Cluster Retrieval</strong>
@@ -498,12 +533,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Community/Cluster Retrieval - thematic groups'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'technique-6',
       title: '6. Hierarchical Graph Retrieval',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 8,
+          title: '6. Hierarchical Graph Retrieval',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-sitemap" sizeName="2xl" style={iconStyle} />
             <strong>6. Hierarchical Graph Retrieval</strong>
@@ -576,12 +617,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Hierarchical Graph Retrieval - navigate taxonomies'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'technique-7',
       title: '7. Graph + Dense Vector Hybrid',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 9,
+          title: '7. Graph + Dense Vector Hybrid',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-layer-group" sizeName="2xl" style={iconStyle} />
             <strong>7. Graph + Dense Vector Hybrid Retrieval</strong>
@@ -654,12 +701,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Graph + Dense Vector Hybrid - combine semantics with structure'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'technique-8',
       title: '8. Graph + BM25 Hybrid',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 10,
+          title: '8. Graph + BM25 Hybrid',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-magnifying-glass-chart" sizeName="2xl" style={iconStyle} />
             <strong>8. Graph + BM25 Hybrid</strong>
@@ -732,12 +785,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Graph + BM25 Hybrid - keyword validation'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'technique-9',
       title: '9. Semantic Graph Traversal',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 11,
+          title: '9. Semantic Graph Traversal',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-diagram-next" sizeName="2xl" style={iconStyle} />
             <strong>9. Semantic Graph Traversal</strong>
@@ -810,12 +869,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Semantic Graph Traversal - threshold-based exploration'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'technique-10',
       title: '10. Graph Walk-Based Ranking',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 12,
+          title: '10. Graph Walk-Based Ranking',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-ranking-star" sizeName="2xl" style={iconStyle} />
             <strong>10. Graph Walk-Based Ranking (PageRank/Personalized)</strong>
@@ -888,12 +953,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Graph Walk-Based Ranking - PageRank and PPR'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'technique-11',
       title: '11. Query Graph Construction',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 13,
+          title: '11. Query Graph Construction',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="2xl" style={iconStyle} />
             <strong>11. Query Graph Construction</strong>
@@ -966,12 +1037,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Query Graph Construction - structured intent matching'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'technique-12',
       title: '12. Context Path Stitching',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 14,
+          title: '12. Context Path Stitching',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-link" sizeName="2xl" style={iconStyle} />
             <strong>12. Context Path Stitching</strong>
@@ -1044,12 +1121,18 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'Context Path Stitching - merge paths into coherent narratives'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'technique-13',
       title: '13. LLM-Guided Graph Expansion',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
+      slides: [
+        {
+          id: 15,
+          title: '13. LLM-Guided Graph Expansion',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
             <SvgIcon iconName="duo-robot" sizeName="2xl" style={iconStyle} />
             <strong>13. LLM-Guided Graph Expansion</strong>
@@ -1122,89 +1205,97 @@ export const graphRetrievalDeck: Deck = {
         </div>
       ),
       notes: 'LLM-Guided Graph Expansion - adaptive AI-driven exploration'
+        }
+      ]
     },
     {
-      id: 16,
+      id: 'summary',
       title: 'Putting It Together: Patterns',
-      content: (
-        <div style={{ fontSize: '0.9rem', lineHeight: '1.7' }}>
-          <div style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '1.5rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-puzzle-piece" sizeName="2xl" style={iconStyle} />
-            <strong>Putting It Together: Patterns</strong>
-          </div>
+      slides: [
+        {
+          id: 16,
+          title: 'Putting It Together: Patterns',
+          content: (
+            <div style={{ fontSize: '0.9rem', lineHeight: '1.7', textAlign: 'left' }}>
+              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#3b82f6' }}>
+                <SvgIcon iconName="duo-puzzle-piece" sizeName="2xl" style={iconStyle} />
+                <strong>Putting It Together: Patterns</strong>
+              </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
-            <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '10px' }}>
-              <div style={{ color: '#3b82f6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="xl" style={iconStyle} />
-                <strong>Common Combos</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="sm" style={iconStyle} />
-                  <strong>Hybrid:</strong> Dense + Graph (7) + BM25 (8)
-                </li>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  <SvgIcon iconName="duo-brain" sizeName="sm" style={iconStyle} />
-                  <strong>Reasoning:</strong> Path (4) + Stitching (12) + PPR (10)
-                </li>
-                <li>
-                  <SvgIcon iconName="duo-chart-network" sizeName="sm" style={iconStyle} />
-                  <strong>Coverage:</strong> Cluster (5) + Hierarchical (6) + Neighborhood (3)
-                </li>
-              </ul>
-            </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+                <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '10px' }}>
+                  <div style={{ color: '#3b82f6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="xl" style={iconStyle} />
+                    <strong>Common Combos</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                    <li style={{ marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="sm" style={iconStyle} />
+                      <strong>Hybrid:</strong> Dense + Graph (7) + BM25 (8)
+                    </li>
+                    <li style={{ marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-brain" sizeName="sm" style={iconStyle} />
+                      <strong>Reasoning:</strong> Path (4) + Stitching (12) + PPR (10)
+                    </li>
+                    <li>
+                      <SvgIcon iconName="duo-chart-network" sizeName="sm" style={iconStyle} />
+                      <strong>Coverage:</strong> Cluster (5) + Hierarchical (6) + Neighborhood (3)
+                    </li>
+                  </ul>
+                </div>
 
-            <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '10px' }}>
-              <div style={{ color: '#10b981', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="xl" style={iconStyle} />
-                <strong>Operational Tips</strong>
+                <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '10px' }}>
+                  <div style={{ color: '#10b981', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="xl" style={iconStyle} />
+                    <strong>Operational Tips</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
+                    <li style={{ marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} />
+                      Cap neighbors per type; cache frequent seeds
+                    </li>
+                    <li style={{ marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clipboard-list" sizeName="sm" style={iconStyle} />
+                      Log edge decisions; tune thresholds offline
+                    </li>
+                    <li>
+                      <SvgIcon iconName="duo-chart-line" sizeName="sm" style={iconStyle} />
+                      Measure utility via answer F1 and citation hit-rate
+                    </li>
+                  </ul>
+                </div>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} />
-                  Cap neighbors per type; cache frequent seeds
-                </li>
-                <li style={{ marginBottom: '0.5rem' }}>
-                  <SvgIcon iconName="duo-clipboard-list" sizeName="sm" style={iconStyle} />
-                  Log edge decisions; tune thresholds offline
-                </li>
-                <li>
-                  <SvgIcon iconName="duo-chart-line" sizeName="sm" style={iconStyle} />
-                  Measure utility via answer F1 and citation hit-rate
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.2rem', borderRadius: '10px' }}>
-            <div style={{ color: '#8b5cf6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
-              <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
-              <strong>Next Steps</strong>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '0.9rem' }}>
-              <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
-                <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
-                Pick 2–3 techniques to pilot
+              <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.2rem', borderRadius: '10px' }}>
+                <div style={{ color: '#8b5cf6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
+                  <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                  <strong>Next Steps</strong>
+                </div>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '0.9rem' }}>
+                  <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
+                    Pick 2–3 techniques to pilot
+                  </div>
+                  <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
+                    Establish metrics and budgets (latency, tokens)
+                  </div>
+                  <div style={{ background: 'rgba(239, 68, 68, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
+                    Add safety rails for LLM-guided expansion
+                  </div>
+                </div>
               </div>
-              <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
-                <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
-                Establish metrics and budgets (latency, tokens)
-              </div>
-              <div style={{ background: 'rgba(239, 68, 68, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
-                <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
-                Add safety rails for LLM-guided expansion
-              </div>
-            </div>
-          </div>
 
-          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'center' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} />
-            <strong style={{ fontSize: '1rem' }}>Remember:</strong> Start simple, measure impact, and iterate based on your specific use case and constraints.
-          </div>
-        </div>
+              <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} />
+                <strong style={{ fontSize: '1rem' }}>Remember:</strong> Start simple, measure impact, and iterate based on your specific use case and constraints.
+              </div>
+            </div>
       ),
       notes: 'Summary with common patterns, operational tips, and next steps'
+        }
+      ]
     }
   ]
 };
