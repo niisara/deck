@@ -9,12 +9,17 @@ export const contextPackingDeck: Deck = {
   description: 'RAG and LLM-ready strategies to maximize answer quality within token limits',
   category: 'RAG',
   theme: 'black',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: '13 Context Packing Techniques',
-      content: (
-        <div style={{ textAlign: 'center' }}>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: '13 Context Packing Techniques',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-compress" sizeName="2xl" style={{ marginRight: '1rem' }} />
             CONTEXT PACKING TECHNIQUES
@@ -51,8 +56,8 @@ export const contextPackingDeck: Deck = {
       id: 2,
       title: 'Overview / Table of Contents',
       content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ marginBottom: '2rem', textAlign: 'center', color: '#61dafb' }}>
+        <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
+          <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb' }}>
             <SvgIcon iconName="duo-list-ol" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>13 Context Packing Techniques</strong>
           </div>
@@ -115,13 +120,19 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Overview of all 13 techniques organized by category'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'technique-1',
       title: '1) Semantic Chunking',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
+      slides: [
+        {
+          id: 3,
+          title: '1) Semantic Chunking',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-scissors" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Preserve meaning boundaries; reduce mid-sentence cuts</strong>
           </div>
@@ -208,12 +219,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Semantic Chunking: Preserve meaning boundaries by segmenting at semantic units'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'technique-2',
       title: '2) Dynamic Sliding Window',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 4,
+          title: '2) Dynamic Sliding Window',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-arrows-rotate" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Maintain continuity across chunk boundaries</strong>
@@ -299,12 +316,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Dynamic Sliding Window: Include neighboring chunks to maintain continuity'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'technique-3',
       title: '3) Parent–Child Context Packing',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 5,
+          title: '3) Parent–Child Context Packing',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Disambiguate details with hierarchical context</strong>
@@ -392,12 +415,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Parent-Child Context Packing: Include hierarchical parent summaries with child chunks'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'technique-4',
       title: '4) Context Summarization Before Packing',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 6,
+          title: '4) Context Summarization Before Packing',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Fit long sections within tight budgets</strong>
@@ -485,12 +514,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Context Summarization: Pre-summarize long chunks before packing into context'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'technique-5',
       title: '5) Hybrid Local + Global Summaries',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 7,
+          title: '5) Hybrid Local + Global Summaries',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-network-wired" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Preserve big picture while keeping crucial details</strong>
@@ -577,12 +612,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Hybrid Local + Global: Combine global summary with specific local details'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'technique-6',
       title: '6) Relevance Weighted Packing',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 8,
+          title: '6) Relevance Weighted Packing',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
             <SvgIcon iconName="duo-ranking-star" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Maximize utility by prioritizing high-relevance chunks</strong>
@@ -670,12 +711,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Relevance Weighted Packing: Pack highest-scoring chunks first within budget'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'technique-7',
       title: '7) Passage Compression (LLM Shortening)',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 9,
+          title: '7) Passage Compression (LLM Shortening)',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Shrink verbose passages while retaining facts</strong>
@@ -763,12 +810,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Passage Compression: Use LLM to rewrite verbose chunks into concise summaries'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'technique-8',
       title: '8) Answer-conditioned Retrieval / Packing',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 10,
+          title: '8) Answer-conditioned Retrieval / Packing',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Include only fields relevant to the answer type</strong>
@@ -855,12 +908,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Answer-conditioned Packing: Filter context based on predicted answer type'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'technique-9',
       title: '9) Table / Structured Context Packing',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 11,
+          title: '9) Table / Structured Context Packing',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-table" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Increase information density via structure</strong>
@@ -948,12 +1007,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Table/Structured Packing: Convert prose into compact structured format'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'technique-10',
       title: '10) Semantic Deduplication',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 12,
+          title: '10) Semantic Deduplication',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-copy" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Remove overlapping/near-duplicate chunks before packing</strong>
@@ -1041,12 +1106,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Semantic Deduplication: Remove near-duplicate chunks using similarity clustering'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'technique-11',
       title: '11) Token-Budget Aware Packing',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 13,
+          title: '11) Token-Budget Aware Packing',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Guarantee fits within model context window</strong>
@@ -1134,12 +1205,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Token-Budget Aware Packing: Track and enforce token limits to avoid runtime truncation'
+        }
+      ]
     },
     {
-      id: 14,
+      id: 'technique-12',
       title: '12) Adaptive k Retrieval (Variable Cutoff)',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 14,
+          title: '12) Adaptive k Retrieval (Variable Cutoff)',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-sliders" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Use fewer or more chunks depending on query complexity</strong>
@@ -1227,12 +1304,18 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Adaptive k Retrieval: Dynamically adjust number of chunks based on query complexity'
+        }
+      ]
     },
     {
-      id: 15,
+      id: 'technique-13',
       title: '13) Chain-of-Context Packing (CoC)',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+      slides: [
+        {
+          id: 15,
+          title: '13) Chain-of-Context Packing (CoC)',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-link" sizeName="xl" style={{ marginRight: '0.8rem' }} />
             <strong style={{ fontSize: '1.2rem' }}>Order context to match reasoning flow</strong>
@@ -1320,89 +1403,97 @@ export const contextPackingDeck: Deck = {
         </div>
       ),
       notes: 'Chain-of-Context Packing: Order context to match logical reasoning flow'
+        }
+      ]
     },
     {
-      id: 16,
+      id: 'summary',
       title: 'Summary / Best Practices',
-      content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ marginBottom: '1.5rem', textAlign: 'center', color: '#61dafb', fontSize: '1.2rem' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} />
-            <strong>Best Practices for Context Packing</strong>
-          </div>
+      slides: [
+        {
+          id: 16,
+          title: 'Summary / Best Practices',
+          content: (
+            <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
+              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} />
+                <strong>Best Practices for Context Packing</strong>
+              </div>
 
-          <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ color: '#98c379', marginBottom: '1rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-check-circle" sizeName="xl" style={iconStyle} />
-              <strong>Key Takeaways</strong>
-            </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
-                <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
-                  <strong>Combine techniques</strong>
+              <div style={{ marginBottom: '1.5rem' }}>
+                <div style={{ color: '#98c379', marginBottom: '1rem', fontSize: '1rem' }}>
+                  <SvgIcon iconName="duo-check-circle" sizeName="xl" style={iconStyle} />
+                  <strong>Key Takeaways</strong>
                 </div>
-                <div style={{ fontSize: '0.85rem' }}>
-                  Semantic chunking + dedup + relevance packing as a strong baseline
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
+                    <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                      <strong>Combine techniques</strong>
+                    </div>
+                    <div style={{ fontSize: '0.85rem' }}>
+                      Semantic chunking + dedup + relevance packing as a strong baseline
+                    </div>
+                  </div>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
+                    <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="lg" style={iconStyle} />
+                      <strong>Track token budget</strong>
+                    </div>
+                    <div style={{ fontSize: '0.85rem' }}>
+                      Always monitor and enforce token limits; compress selectively
+                    </div>
+                  </div>
+                  <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
+                    <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
+                      <SvgIcon iconName="duo-circle-nodes" sizeName="lg" style={iconStyle} />
+                      <strong>Add hierarchy</strong>
+                    </div>
+                    <div style={{ fontSize: '0.85rem' }}>
+                      Parent summaries and global + local blends improve context quality
+                    </div>
+                  </div>
+                  <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
+                    <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
+                      <SvgIcon iconName="duo-link" sizeName="lg" style={iconStyle} />
+                      <strong>Optimize order</strong>
+                    </div>
+                    <div style={{ fontSize: '0.85rem' }}>
+                      Order context for reasoning flow when questions are complex
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
-                <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                  <SvgIcon iconName="duo-gauge-high" sizeName="lg" style={iconStyle} />
-                  <strong>Track token budget</strong>
-                </div>
-                <div style={{ fontSize: '0.85rem' }}>
-                  Always monitor and enforce token limits; compress selectively
-                </div>
-              </div>
-              <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-                <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                  <SvgIcon iconName="duo-circle-nodes" sizeName="lg" style={iconStyle} />
-                  <strong>Add hierarchy</strong>
-                </div>
-                <div style={{ fontSize: '0.85rem' }}>
-                  Parent summaries and global + local blends improve context quality
-                </div>
-              </div>
-              <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
-                <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                  <SvgIcon iconName="duo-link" sizeName="lg" style={iconStyle} />
-                  <strong>Optimize order</strong>
-                </div>
-                <div style={{ fontSize: '0.85rem' }}>
-                  Order context for reasoning flow when questions are complex
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div style={{ marginBottom: '1.5rem' }}>
-            <div style={{ color: '#e5c07b', marginBottom: '1rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} />
-              <strong>Implementation Tips</strong>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <div style={{ color: '#e5c07b', marginBottom: '1rem', fontSize: '1rem' }}>
+                <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} />
+                <strong>Implementation Tips</strong>
+              </div>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8' }}>
+                <li>Cache summaries/compressions; log provenance per chunk</li>
+                <li>Measure with answer-grounding and citation metrics</li>
+              </ul>
             </div>
-            <ul style={{ marginLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8' }}>
-              <li>Cache summaries/compressions; log provenance per chunk</li>
-              <li>Measure with answer-grounding and citation metrics</li>
-            </ul>
-          </div>
 
-          <div>
-            <div style={{ color: '#61dafb', marginBottom: '1rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
-              <strong>Next Steps</strong>
-            </div>
-            <div style={{ background: 'rgba(97, 218, 251, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-              <ol style={{ marginLeft: '1.5rem', fontSize: '0.9rem', marginBottom: 0, lineHeight: '1.8' }}>
-                <li>Start simple (k, relevance) → iterate with adaptive and CoC</li>
-                <li>Pilot on one corpus; A/B two packing variants</li>
-                <li>Instrument latency, cost, and answer quality</li>
-              </ol>
+            <div>
+              <div style={{ color: '#61dafb', marginBottom: '1rem', fontSize: '1rem' }}>
+                <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                <strong>Next Steps</strong>
+              </div>
+              <div style={{ background: 'rgba(97, 218, 251, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                <ol style={{ marginLeft: '1.5rem', fontSize: '0.9rem', marginBottom: 0, lineHeight: '1.8' }}>
+                  <li>Start simple (k, relevance) → iterate with adaptive and CoC</li>
+                  <li>Pilot on one corpus; A/B two packing variants</li>
+                  <li>Instrument latency, cost, and answer quality</li>
+                </ol>
+              </div>
             </div>
           </div>
-        </div>
       ),
       notes: 'Summary with key takeaways, implementation tips, and next steps for context packing'
+        }
+      ]
     }
   ]
 };
