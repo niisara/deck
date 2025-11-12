@@ -7,12 +7,17 @@ export const vectorDatabasesDeck: Deck = {
   description: 'A comprehensive guide to 11 leading vector databases for similarity search and AI applications',
   category: 'RAG',
   theme: 'moon',
-  slides: [
+  slides: [],
+  slideGroups: [
     {
-      id: 1,
-      title: 'Vector Databases Cheat Sheet',
-      content: (
-        <div>
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: 'Vector Databases Cheat Sheet',
+          content: (
+            <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>A comprehensive guide to 11 leading vector databases</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ textAlign: 'center' }}>
@@ -102,11 +107,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Overview of all 11 vector databases and comparison summary included in this deck'
+        }
+      ]
     },
     {
-      id: 3,
+      id: 'pinecone',
       title: 'Pinecone',
-      content: (
+      slides: [
+        {
+          id: 3,
+          title: 'Pinecone',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -166,11 +177,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#3498DB',
       notes: 'Pinecone: Fully managed, production-grade vector database with predictable latency and easy operations'
+        }
+      ]
     },
     {
-      id: 4,
+      id: 'weaviate',
       title: 'Weaviate',
-      content: (
+      slides: [
+        {
+          id: 4,
+          title: 'Weaviate',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -229,11 +246,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'Weaviate: Open source with excellent hybrid search capabilities, GraphQL API, and multi-modal support'
+        }
+      ]
     },
     {
-      id: 5,
+      id: 'qdrant',
       title: 'Qdrant',
-      content: (
+      slides: [
+        {
+          id: 5,
+          title: 'Qdrant',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -292,11 +315,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#8E44AD',
       notes: 'Qdrant: High-performance with 4x higher RPS, advanced filtering, and efficient quantization (Rust-based)'
+        }
+      ]
     },
     {
-      id: 6,
+      id: 'milvus',
       title: 'Milvus',
-      content: (
+      slides: [
+        {
+          id: 6,
+          title: 'Milvus',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -355,11 +384,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#E67E22',
       notes: 'Milvus: Billion-scale with flexible index strategies (FLAT, IVF, HNSW, DiskANN, GPU variants)'
+        }
+      ]
     },
     {
-      id: 7,
+      id: 'chroma',
       title: 'Chroma',
-      content: (
+      slides: [
+        {
+          id: 7,
+          title: 'Chroma',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -418,11 +453,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#C0392B',
       notes: 'Chroma: Simple, developer-friendly, perfect for prototyping and local RAG applications'
+        }
+      ]
     },
     {
-      id: 8,
+      id: 'redis',
       title: 'Redis Vector Store',
-      content: (
+      slides: [
+        {
+          id: 8,
+          title: 'Redis Vector Store',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -481,11 +522,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#16A085',
       notes: 'Redis Vector Store: Ultra-low latency with in-memory architecture, perfect for real-time applications'
+        }
+      ]
     },
     {
-      id: 9,
+      id: 'elasticsearch',
       title: 'Elasticsearch Vector',
-      content: (
+      slides: [
+        {
+          id: 9,
+          title: 'Elasticsearch Vector',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -544,11 +591,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#2980B9',
       notes: 'Elasticsearch Vector: Hybrid BM25 + vector search, 5x faster filtered search with ACORN-1'
+        }
+      ]
     },
     {
-      id: 10,
+      id: 'vespa',
       title: 'Vespa',
-      content: (
+      slides: [
+        {
+          id: 10,
+          title: 'Vespa',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -607,11 +660,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#D35400',
       notes: 'Vespa: Unified engine for vectors, text, and structured data with real-time ranking and inference'
+        }
+      ]
     },
     {
-      id: 11,
+      id: 'postgresql',
       title: 'PostgreSQL + pgvector',
-      content: (
+      slides: [
+        {
+          id: 11,
+          title: 'PostgreSQL + pgvector',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -670,11 +729,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'PostgreSQL + pgvector: ACID compliance with 150x performance improvement, SQL interface, relational integration'
+        }
+      ]
     },
     {
-      id: 12,
+      id: 'mongodb',
       title: 'MongoDB Vector Search',
-      content: (
+      slides: [
+        {
+          id: 12,
+          title: 'MongoDB Vector Search',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -733,11 +798,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#27AE60',
       notes: 'MongoDB Vector Search: Unified JSON + vector data with native integration into document model'
+        }
+      ]
     },
     {
-      id: 13,
+      id: 'lancedb',
       title: 'LanceDB',
-      content: (
+      slides: [
+        {
+          id: 13,
+          title: 'LanceDB',
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
@@ -796,11 +867,17 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#95A5A6',
       notes: 'LanceDB: Cost-efficient disk-based storage with <25ms latency, perfect for large-scale RAG over data lakes'
+        }
+      ]
     },
     {
-      id: 14,
-      title: 'Quick Comparison Summary',
-      content: (
+      id: 'summary',
+      title: 'Summary',
+      slides: [
+        {
+          id: 14,
+          title: 'Quick Comparison Summary',
+          content: (
         <div style={{ maxWidth: '1100px', margin: '0 auto', fontSize: '0.55em' }}>
           <h3 style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
@@ -912,10 +989,10 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#2C3E50',
       notes: 'Complete comparison table showing index types, scaling, performance, costs, and best use cases for all 11 databases'
-    },
-    {
-      id: 15,
-      title: 'Selection Guide',
+        },
+        {
+          id: 15,
+          title: 'Selection Guide',
       content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '25px', textAlign: 'center' }}>How to Choose the Right Vector Database</h3>
@@ -989,6 +1066,8 @@ export const vectorDatabasesDeck: Deck = {
       ),
       backgroundColor: '#34495E',
       notes: 'Selection guide organized by use case: production, large-scale, prototyping, real-time, database integration, and cost-efficiency'
+        }
+      ]
     }
   ]
 };
