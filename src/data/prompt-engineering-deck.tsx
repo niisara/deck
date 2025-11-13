@@ -152,8 +152,8 @@ in 3 bullets for executives:
               </h4>
               <p><strong>Level:</strong> Simple</p>
               <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
                 Limitations
               </h4>
               <ul>
@@ -217,8 +217,8 @@ Classify: 'It was okay, but pricey.'"`}
               </h4>
               <p><strong>Level:</strong> Simple–Intermediate</p>
               <p><strong>Models:</strong> Mid-size models benefit noticeably</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
                 Limitations
               </h4>
               <ul>
@@ -283,8 +283,8 @@ Think step by step."`}
               </h4>
               <p><strong>Level:</strong> Intermediate</p>
               <p><strong>Output:</strong> Intermediate reasoning + final answer</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
                 Limitations
               </h4>
               <ul>
@@ -472,8 +472,8 @@ work?"`}
               </h4>
               <p><strong>Level:</strong> Intermediate</p>
               <p><strong>Requirements:</strong> Needs retriever/vector DB</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
                 Limitations
               </h4>
               <ul>
@@ -665,8 +665,8 @@ the answer step-by-step."`}
               </h4>
               <p><strong>Level:</strong> Advanced</p>
               <p><strong>Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
                 Limitations
               </h4>
               <ul>
@@ -731,8 +731,8 @@ Show the path used."`}
               <p><strong>Level:</strong> Advanced</p>
               <p><strong>Requirements:</strong> LLM + graph tools/DB</p>
               <p><strong>Output:</strong> Graph-grounded explanation and answer</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
                 Limitations
               </h4>
               <ul>

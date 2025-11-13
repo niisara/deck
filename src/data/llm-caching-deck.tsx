@@ -169,9 +169,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Avoids recomputing embeddings for identical queries</li>
@@ -180,9 +179,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Memory intensive for large embedding dimensions</li>
@@ -255,9 +253,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Skips expensive vector search operations</li>
@@ -266,9 +263,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Results become stale when corpus changes</li>
@@ -341,9 +337,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Faster prompt assembly and tokenization</li>
@@ -352,9 +347,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Modest absolute savings per request</li>
@@ -427,9 +421,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Large cost and latency savings</li>
@@ -438,9 +431,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Brittle to small context changes</li>
@@ -513,9 +505,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Speeds up ingestion and retrieval workflows</li>
@@ -524,9 +515,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Substantial storage footprint at scale</li>
@@ -599,9 +589,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Maintains continuity across conversation turns</li>
@@ -611,9 +600,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Privacy and security obligations</li>
@@ -687,9 +675,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Personalization without re-sending long profiles</li>
@@ -698,9 +685,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Privacy/GDPR compliance concerns</li>
@@ -773,9 +759,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Massive speedups in decoding (3-10x faster generation)</li>
@@ -784,9 +769,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>High VRAM footprint (can consume gigabytes)</li>
@@ -859,9 +843,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Faster TTFT for common prompts/prefixes</li>
@@ -870,9 +853,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Large memory footprint for many prefixes</li>
@@ -945,9 +927,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Catches paraphrases and varied question forms</li>
@@ -957,9 +938,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Requires careful threshold tuning</li>
@@ -1033,9 +1013,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Avoids expensive re-ranking computation</li>
@@ -1045,9 +1024,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Results become stale if retrieval patterns shift</li>
@@ -1121,9 +1099,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Reused across multiple different queries</li>
@@ -1132,9 +1109,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Storage overhead for multiple granularity levels</li>
@@ -1207,9 +1183,8 @@ export const llmCachingDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Easiest caching pattern to implement</li>
@@ -1219,9 +1194,8 @@ export const llmCachingDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Low hit rate on long-tail queries</li>

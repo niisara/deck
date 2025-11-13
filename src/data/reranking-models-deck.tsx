@@ -197,7 +197,7 @@ export const rerankingModelsDeck: Deck = {
           </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Best accuracy (20-35% over bi-encoders)</li>
                 <li>Fine-grained relevance scoring</li>
@@ -205,7 +205,7 @@ export const rerankingModelsDeck: Deck = {
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Higher latency: O(k·L)</li>
                 <li>GPU recommended</li>
@@ -274,7 +274,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
           </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>2-4x faster than full BERT</li>
                 <li>Only 90MB model size (vs. 440MB+)</li>
@@ -282,7 +282,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>English-centric (MS MARCO dataset)</li>
                 <li>512 token truncation</li>
@@ -350,7 +350,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
           </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Excellent accuracy, often outperforming BERT</li>
                 <li>Strong transfer learning to new domains</li>
@@ -358,7 +358,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Higher latency (encoder-decoder)</li>
                 <li>Larger models (up to billions of parameters)</li>

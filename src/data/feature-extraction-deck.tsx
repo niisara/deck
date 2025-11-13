@@ -197,9 +197,8 @@ export const featureExtractionDeck: Deck = {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                    <strong>Strengths</strong>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
                     <li>Simple</li>
@@ -209,9 +208,8 @@ export const featureExtractionDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                    <strong>Weaknesses</strong>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
                     <li>Ignores word order/context</li>

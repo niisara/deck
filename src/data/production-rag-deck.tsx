@@ -162,7 +162,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Easiest to implement and understand</li>
                     <li>Low latency (single retrieval step)</li>
@@ -171,7 +171,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Rigid recall/precision tradeoffs</li>
                     <li>Brittle on vague/ambiguous queries</li>
@@ -235,7 +235,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Significant precision boost over basic RAG</li>
                     <li>Effectively filters noise in large corpora</li>
@@ -244,7 +244,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Extra cost/latency from reranking step</li>
                     <li>Needs quality reranker matched to domain</li>
@@ -307,7 +307,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Handles ambiguity and vague questions</li>
                     <li>Improves hit rate on messy user queries</li>
@@ -315,7 +315,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Possible over-constraint or intent drift</li>
                     <li>Additional latency from rewriting step</li>
@@ -378,7 +378,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Strong recall across diverse content</li>
                     <li>Robust to query phrasing variations</li>
@@ -386,7 +386,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Increased API calls and token usage</li>
                     <li>Higher latency (multiple retrieval steps)</li>
@@ -448,7 +448,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Zero-shot retrieval performance gains</li>
                     <li>Better handling of ambiguous/short queries</li>
@@ -456,7 +456,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Can mislead if LLM is out-of-domain</li>
                     <li>Extra latency from LLM generation step</li>
@@ -518,7 +518,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Balances precise matching with rich context</li>
                     <li>Reduces hallucinations with fuller context</li>
@@ -526,7 +526,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>More complex ingestion pipeline</li>
                     <li>Higher token consumption</li>
@@ -589,7 +589,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                     <li>Explicit relationship understanding</li>
                     <li>Multi-hop reasoning capabilities</li>
@@ -598,7 +598,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                     <li>Heavy ingestion/ontology requirements</li>
                     <li>Higher complexity in maintenance</li>
@@ -662,7 +662,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Handles complex, multi-step tasks</li>
                     <li>Accesses live/external data sources</li>
@@ -670,7 +670,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Increased latency (multiple tool calls)</li>
                     <li>Higher cost per interaction</li>
@@ -732,7 +732,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Higher quality responses in specialized domains</li>
                     <li>Better formatting/style adherence</li>
@@ -740,7 +740,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Higher development and MLOps burden</li>
                     <li>Version drift between model and retrieval</li>
@@ -802,7 +802,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Solves compositional/multi-hop questions</li>
                     <li>Handles complex reasoning chains</li>
@@ -810,7 +810,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Higher latency/cost (multiple LLM calls)</li>
                     <li>Risk of reasoning drift/hallucination chains</li>
@@ -872,7 +872,7 @@ export const productionRagDeck: Deck = {
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Strengths:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Improved retrieval accuracy (up to 67% reduction in failure)</li>
                     <li>Higher signal density in context window</li>
@@ -880,7 +880,7 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Limitations:</strong></p>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
                   <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
                     <li>Higher preprocessing complexity and cost</li>
                     <li>Potential loss of nuance in compression</li>
