@@ -54,7 +54,7 @@ export const parentChildRetrievalDeck: Deck = {
           id: 2,
           title: 'Table of Contents',
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '900px', fontSize: '0.85em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.85em' }}>
               <h2 style={{ marginBottom: '30px' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Parent-Child Retrieval Design Patterns
@@ -126,7 +126,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Reduces hallucination by always pairing fine-grained evidence (child) with its governing section (parent)</p>
@@ -185,7 +185,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-heading' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Reduces misinterpretation by anchoring chunks to their nearest header and breadcrumb path</p>
@@ -242,7 +242,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Preserves narrative hierarchy by retrieving the path from root → ... → leaf</p>
@@ -297,7 +297,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-arrow-up-circle' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Mitigates ambiguity by attaching multiple plausible parents (immediate + higher levels)</p>
@@ -352,7 +352,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Maintains coherence across adjacent steps/paragraphs. Reduces out-of-context answers</p>
@@ -409,7 +409,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-arrows-spin' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Captures local context beyond chunk edges without full parent overhead</p>
@@ -462,7 +462,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-map' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Reduces hallucination by grouping evidence under topic-level parents (taxonomy/clusters)</p>
@@ -517,7 +517,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-broom' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Fits long parents into tight budgets while keeping detailed child evidence</p>
@@ -573,7 +573,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-shield-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Increases precision by lexically verifying semantic hits to reduce hallucinations</p>
@@ -631,7 +631,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Selects the most relevant section root to ground the answer</p>
@@ -688,7 +688,7 @@ export const parentChildRetrievalDeck: Deck = {
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
                   <p style={{ marginTop: '5px' }}>Disambiguates context via explicit relations and multi-hop traversal</p>
@@ -743,7 +743,7 @@ export const parentChildRetrievalDeck: Deck = {
           id: 14,
           title: 'Summary & Conclusion',
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <h2 style={{ marginBottom: '25px' }}>
                 <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Summary & Conclusion

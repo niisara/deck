@@ -55,7 +55,7 @@ export const multiStepRetrievalDeck: Deck = {
           title: 'Overview: Why Multi-Step Retrieval?',
           icon: { name: 'duo-lightbulb' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.9em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.9em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7' }}>
@@ -164,7 +164,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Progressively improve evidence and answer quality through multiple small retrieval-generation loops</p>
                 <p><strong>How It Works:</strong> Alternate between drafting, spotting gaps, reformulating queries, and re-retrieving to refine answers</p>
                 <p><strong>When to Use:</strong> Ambiguous questions, sparse corpora, long-form synthesis, exploratory Q&A</p>
@@ -219,7 +219,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Boost recall by seeding retrieval with a synthetic document representing the ideal evidence</p>
                 <p><strong>How It Works:</strong> Generate a hypothetical passage from the query; embed it to retrieve similar real documents</p>
                 <p><strong>When to Use:</strong> Short queries, niche domains, low-recall vector stores, lexical mismatch</p>
@@ -273,7 +273,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Break complex questions into sub-questions and solve step-by-step</p>
                 <p><strong>How It Works:</strong> Plan sub-queries, retrieve per sub-query, then synthesize results into comprehensive answer</p>
                 <p><strong>When to Use:</strong> Multi-fact or multi-source questions, procedural tasks, comprehensive reports</p>
@@ -328,7 +328,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Use reasoning traces to focus retrieval on facts needed at each step</p>
                 <p><strong>How It Works:</strong> Generate a CoT skeleton; extract entities/relations per step; retrieve targeted snippets</p>
                 <p><strong>When to Use:</strong> Reasoning-heavy tasks where targeted facts matter (analysis, calculations with context)</p>
@@ -381,7 +381,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Generalize question to higher-level abstraction, retrieve broad context, then specialize</p>
                 <p><strong>How It Works:</strong> Ask a meta-question (what is the core concept?), retrieve summaries, then drill down</p>
                 <p><strong>When to Use:</strong> Overly specific/noisy queries, concept-heavy topics, when direct retrieval fails</p>
@@ -435,7 +435,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Follow entity/relationship paths to gather multi-hop evidence</p>
                 <p><strong>How It Works:</strong> Build or infer a graph (entities/relations) and traverse hops to collect supporting docs</p>
                 <p><strong>When to Use:</strong> Relational questions, cause-effect chains, linking distant facts</p>
@@ -489,7 +489,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Compress evolving context to stay within window while guiding next retrieval</p>
                 <p><strong>How It Works:</strong> Summarize conversation/state; use summary to query for fresh, relevant evidence</p>
                 <p><strong>When to Use:</strong> Long sessions, iterative research, limited context window</p>
@@ -543,7 +543,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Verify and complete provisional answer by retrieving evidence conditioned on its claims</p>
                 <p><strong>How It Works:</strong> Draft answer → extract claims → retrieve per claim → revise and cite</p>
                 <p><strong>When to Use:</strong> Fact-checking, citations, high-stakes outputs, audits</p>
@@ -595,7 +595,7 @@ export const multiStepRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Adapt retrieval using user/model feedback signals to improve relevance over time</p>
                 <p><strong>How It Works:</strong> Collect relevance feedback (explicit or implicit), update queries/weights, re-retrieve</p>
                 <p><strong>When to Use:</strong> Interactive systems, personalization, cold-start or dynamic corpora</p>
@@ -646,7 +646,7 @@ export const multiStepRetrievalDeck: Deck = {
           title: 'Summary and How to Choose',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>

@@ -59,7 +59,7 @@ export const hybridSearchDeck: Deck = {
           title: 'Hybrid Search: What and Why',
           icon: { name: 'duo-lightbulb' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.9em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.9em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7' }}>
@@ -122,7 +122,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Blend BM25 and embedding similarity into one normalized score.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Default hybrid for most queries; balanced corpora; fast and simple deployments.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -175,7 +175,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Recall with fast BM25, then re-rank candidates using embedding similarity.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Keyword-heavy domains; strong exact-match needs; large corpora where BM25 makes a great first filter.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -228,7 +228,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Recall with vector ANN, then re-rank by BM25 to emphasize exact terms.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Paraphrastic queries; vocabulary mismatch; long-tail semantics.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -281,7 +281,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Add keyword boosts/must-haves to vector similarity to control precision.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Product/entity search; compliance terms; disambiguation via must-hit tokens.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -334,7 +334,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Apply faceted/ACL metadata filters, then run hybrid scoring within the slice.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Multi-tenant apps; access control; faceted navigation.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -387,7 +387,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Weight important fields (e.g., title &gt; body) in hybrid lexical + vector scoring.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> News, eCommerce, QA where titles/headings matter.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -440,7 +440,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Expand the query with lexical synonyms and semantic neighbors before hybrid retrieval.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Short queries; vocabulary mismatch; domain jargon.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -493,7 +493,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Use a cross-encoder to re-rank a small hybrid candidate set for maximal precision.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Mission-critical precision; legal, medical, shopping; short final lists.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -546,7 +546,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Retrieve on small child chunks (vectors), return ranked parent chunks for context.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Long documents; LLM context limits; avoiding orphaned snippets.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -599,7 +599,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Combine fast ANN vector recall with exact BM25 ranking/fusion for scale and quality.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Large-scale indexes; strict latency SLOs; cost-sensitive workloads.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -652,7 +652,7 @@ export const hybridSearchDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Inject domain ontologies, synonyms, and entity linking into hybrid retrieval.</p>
                 <p style={{ marginTop: '15px' }}><strong>When to Use:</strong> Healthcare, legal, finance, scientific domains with specialized terminology and knowledge structures.</p>
                 <div style={{ marginTop: '20px' }}>
@@ -702,7 +702,7 @@ export const hybridSearchDeck: Deck = {
           title: 'Summary and Key Takeaways',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>

@@ -44,7 +44,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '1em' }}>
+              <div style={{ fontSize: '1em' }}>
                 <ul style={{ lineHeight: '2' }}>
                   <li><strong>9 actionable tips</strong> for building domain-specific NER models</li>
                   <li><strong>Cheat-sheet structure</strong> per tip: Goal, How It Works, When to Use, Steps, Pros, Cons</li>
@@ -75,7 +75,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Boost recall and speed up labeling with authoritative entity lists.</p>
                 <p><strong>How It Works:</strong> Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</p>
                 <p><strong>When to Use:</strong> Limited labeled data, high domain jargon, recall-critical tasks.</p>
@@ -119,7 +119,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Provide reliable supervision for entity types and boundaries.</p>
                 <p><strong>How It Works:</strong> Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</p>
                 <p><strong>When to Use:</strong> New domain/schema; training from scratch or fine-tuning.</p>
@@ -163,7 +163,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Reduce label noise and ensure reproducibility across annotators.</p>
                 <p><strong>How It Works:</strong> A clear style guide defines boundaries, inclusion/exclusion, and tie-breakers with examples.</p>
                 <p><strong>When to Use:</strong> Multiple annotators, long projects, or outsourced labeling.</p>
@@ -207,7 +207,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Ensure models generalize to production text and edge cases.</p>
                 <p><strong>How It Works:</strong> Use in-the-wild data with real noise, formats, and abbreviations; supplement with synthetic.</p>
                 <p><strong>When to Use:</strong> Messy sources (EHRs, logs, contracts), unique jargon, compliance contexts.</p>
@@ -250,7 +250,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Achieve strong accuracy with less labeled data via transfer learning.</p>
                 <p><strong>How It Works:</strong> Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</p>
                 <p><strong>When to Use:</strong> Limited data, complex language, multilingual, or domain-adapted models available.</p>
@@ -294,7 +294,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Improve recall for low-frequency classes and long-tail entities.</p>
                 <p><strong>How It Works:</strong> Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</p>
                 <p><strong>When to Use:</strong> Class imbalance; few-shot entities; costly labeling.</p>
@@ -337,7 +337,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Increase precision by teaching the model what is not an entity.</p>
                 <p><strong>How It Works:</strong> Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</p>
                 <p><strong>When to Use:</strong> High false-positive rates; ambiguous terminology; rule-assisted pre-annotations.</p>
@@ -380,7 +380,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Fix systematic boundary errors without retraining.</p>
                 <p><strong>How It Works:</strong> Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</p>
                 <p><strong>When to Use:</strong> Consistent punctuation/units/brackets issues; hyphenated terms; titles.</p>
@@ -422,7 +422,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Drive continuous improvement aligned with business impact.</p>
                 <p><strong>How It Works:</strong> Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</p>
                 <p><strong>When to Use:</strong> After baseline; after data/model changes; ongoing operations.</p>
@@ -463,7 +463,7 @@ export const nerTrainingDeck: Deck = {
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   Key Takeaways
@@ -510,7 +510,7 @@ export const nerTrainingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ maxWidth: '800px', fontSize: '0.95em' }}>
+              <div style={{ fontSize: '0.95em' }}>
                 <div style={{ marginBottom: '25px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-lock" sizeName="2x" style={{ color: '#e91e63' }} darkModeInvert={true} />
