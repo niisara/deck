@@ -207,7 +207,9 @@ function DeckPage() {
                     )}
                     {slide.notes && (
                       <aside className="notes">
-                        {slide.notes}
+                        <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', margin: 0 }}>
+                          {slide.notes}
+                        </pre>
                       </aside>
                     )}
                   </section>
@@ -239,7 +241,9 @@ function DeckPage() {
                 )}
                 {slide.notes && (
                   <aside className="notes">
-                    {slide.notes}
+                    <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', margin: 0 }}>
+                      {slide.notes}
+                    </pre>
                   </aside>
                 )}
               </section>

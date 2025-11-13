@@ -31,7 +31,11 @@ export const nerMetricsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: 'Introduction slide for NER evaluation metrics'
+          notes: `Introduction slide for NER evaluation metrics
+
+This presentation covers 7 essential metrics for evaluating Named Entity Recognition models.
+
+Prepared by Nisar A on November 7, 2025`
         },
         {
           id: 2,
