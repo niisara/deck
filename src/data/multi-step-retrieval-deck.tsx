@@ -53,6 +53,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 2,
           title: 'Overview: Why Multi-Step Retrieval?',
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.9em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
@@ -103,6 +104,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 3,
           title: 'The 9 Strategies',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', fontSize: '0.85em' }}>
@@ -157,10 +159,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 4,
           title: '1. Iterative Retrieve-and-Refine',
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Progressively improve evidence and answer quality through multiple small retrieval-generation loops</p>
@@ -212,10 +214,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 5,
           title: '2. HyDE (Hypothetical Document Generation)',
+          icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-file-lines" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Boost recall by seeding retrieval with a synthetic document representing the ideal evidence</p>
@@ -266,10 +268,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 6,
           title: '3. Query Decomposition + Sequential Retrieval',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-list-check" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Break complex questions into sub-questions and solve step-by-step</p>
@@ -321,10 +323,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 7,
           title: '4. Chain-of-Thought Guided Retrieval',
+          icon: { name: 'duo-brain' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Use reasoning traces to focus retrieval on facts needed at each step</p>
@@ -374,10 +376,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 8,
           title: '5. Step-Back Reasoning Retrieval',
+          icon: { name: 'duo-arrow-left' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-arrow-left" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Generalize question to higher-level abstraction, retrieve broad context, then specialize</p>
@@ -428,10 +430,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 9,
           title: '6. Multi-Hop Graph Traversal Retrieval',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="3x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Follow entity/relationship paths to gather multi-hop evidence</p>
@@ -482,10 +484,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 10,
           title: '7. Context-Summarize-and-Retrieve',
+          icon: { name: 'duo-book-open' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-book-open" sizeName="3x" style={{ color: '#aed581' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Compress evolving context to stay within window while guiding next retrieval</p>
@@ -536,10 +538,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 11,
           title: '8. Answer-Conditioned Re-Retrieval',
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-check-double" sizeName="3x" style={{ color: '#ffa726' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Verify and complete provisional answer by retrieving evidence conditioned on its claims</p>
@@ -588,10 +590,10 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 12,
           title: '9. Feedback-Based Retrieval Loop',
+          icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#ef5350' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Adapt retrieval using user/model feedback signals to improve relevance over time</p>
@@ -642,6 +644,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 13,
           title: 'Summary and How to Choose',
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>

@@ -46,6 +46,7 @@ export const vectorDatabasesDeck: Deck = {
     {
       id: 2,
       title: 'Table of Contents',
+      icon: { name: 'duo-list-check' },
       content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto', fontSize: '0.8em' }}>
           <h3 style={{ marginBottom: '30px', textAlign: 'center' }}>11 Vector Databases Covered</h3>

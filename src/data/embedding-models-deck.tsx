@@ -33,6 +33,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 2,
           title: 'Model Families Overview',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', fontSize: '0.9em', maxWidth: '900px' }}>
@@ -90,11 +91,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 3,
           title: 'OpenAI text-embedding-3-small',
+          icon: { name: 'duo-cloud' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-cloud" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-coins" sizeName="2x" style={{ color: '#ffd54f' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -130,11 +130,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 4,
           title: 'OpenAI text-embedding-3-large',
+          icon: { name: 'duo-cloud' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-cloud" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-star" sizeName="2x" style={{ color: '#ffd54f' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -176,11 +175,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 5,
           title: 'BGE Base (bge-base-en-v1.5)',
+          icon: { name: 'duo-code-branch' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-code-branch" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-unlock" sizeName="2x" style={{ color: '#aed581' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -216,11 +214,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 6,
           title: 'BGE Large (bge-large-en-v1.5)',
+          icon: { name: 'duo-code-branch' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-code-branch" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ color: '#ffd54f' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -260,11 +257,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 7,
           title: 'E5 Base',
+          icon: { name: 'duo-building' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-building" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-globe" sizeName="2x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -299,11 +295,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 8,
           title: 'E5 Large',
+          icon: { name: 'duo-building' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-building" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -345,11 +340,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 9,
           title: 'Instructor XL (hkunlp/instructor-xl)',
+          icon: { name: 'duo-graduation-cap' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-comments" sizeName="2x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -390,11 +384,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 10,
           title: 'GTE Base (thenlper/gte-base)',
+          icon: { name: 'duo-shop' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-shop" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-gauge" sizeName="2x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -430,11 +423,10 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 11,
           title: 'GTE Large (thenlper/gte-large)',
+          icon: { name: 'duo-shop' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-shop" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
@@ -476,6 +468,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 12,
           title: 'Model Selection Guide',
+          icon: { name: 'duo-compass' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ maxWidth: '900px', fontSize: '0.75em' }}>

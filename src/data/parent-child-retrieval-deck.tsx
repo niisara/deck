@@ -123,12 +123,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 3,
           title: '1) Parent–Child Chunking (Hierarchical Retrieval)',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Parent–Child Chunking</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -185,12 +182,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 4,
           title: '2) Section-Header Anchored Retrieval',
+          icon: { name: 'duo-heading' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-heading" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Section-Header Anchored Retrieval</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -245,12 +239,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 5,
           title: '3) Outline-Based Tree Retrieval',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-list-check" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Outline-Based Tree Retrieval</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -303,12 +294,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 6,
           title: '4) Top-k Parent Expansion',
+          icon: { name: 'duo-arrow-up-circle' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-arrow-up-circle" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Top-k Parent Expansion</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -361,12 +349,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 7,
           title: '5) Sibling-Aware Retrieval',
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Sibling-Aware Retrieval</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -421,12 +406,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 8,
           title: '6) Windowed Retrieval (Sliding Context Windows)',
+          icon: { name: 'duo-arrows-spin' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-arrows-spin" sizeName="3x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Windowed Retrieval</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -477,12 +459,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 9,
           title: '7) Semantic Hierarchy Retrieval',
+          icon: { name: 'duo-map' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-map" sizeName="3x" style={{ color: '#aed581' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Semantic Hierarchy Retrieval</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -535,12 +514,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 10,
           title: '8) Dynamic Context Folding',
+          icon: { name: 'duo-broom' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-broom" sizeName="3x" style={{ color: '#ffa726' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Dynamic Context Folding</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -594,12 +570,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 11,
           title: '9) Hybrid Parent-Child + BM25 Verification',
+          icon: { name: 'duo-shield-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="3x" style={{ color: '#ef5350' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.2em' }}>Hybrid Parent-Child + BM25 Verification</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -655,12 +628,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 12,
           title: '10) Parent Re-Ranking using Cross-Encoder',
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-check-double" sizeName="3x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.3em' }}>Parent Re-Ranking using Cross-Encoder</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -715,12 +685,9 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 13,
           title: '11) Graph / Knowledge-Node Parent Retrieval',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="3x" style={{ color: '#66bb6a' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0, fontSize: '1.2em' }}>Graph / Knowledge-Node Parent Retrieval</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>

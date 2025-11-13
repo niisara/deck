@@ -49,6 +49,7 @@ export const graphRetrievalDeck: Deck = {
     {
       id: 2,
       title: 'Overview: 13 Techniques at a Glance',
+      icon: { name: 'duo-list-check' },
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
           <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
@@ -126,11 +127,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 3,
           title: '1. Node-Level Retrieval',
+          icon: { name: 'duo-circle-dot' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-              <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-                <SvgIcon iconName="duo-circle-dot" sizeName="2xl" style={iconStyle} />
-                <strong>1. Node-Level Retrieval</strong>
+              <div style={{ marginBottom: '1rem' }}>
               </div>
               
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -207,11 +207,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 4,
           title: '2. Edge-Weighted Retrieval',
+          icon: { name: 'duo-arrow-right-arrow-left' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-arrow-right-arrow-left" sizeName="2xl" style={iconStyle} />
-            <strong>2. Edge-Weighted Retrieval</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -291,11 +290,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 5,
           title: '3. Neighborhood Expansion',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-circle-nodes" sizeName="2xl" style={iconStyle} />
-            <strong>3. Neighborhood Expansion</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -375,11 +373,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 6,
           title: '4. Path-Based Retrieval',
+          icon: { name: 'duo-route' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-route" sizeName="2xl" style={iconStyle} />
-            <strong>4. Path-Based Retrieval</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -459,11 +456,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 7,
           title: '5. Community / Cluster Retrieval',
+          icon: { name: 'duo-object-group' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-object-group" sizeName="2xl" style={iconStyle} />
-            <strong>5. Community / Cluster Retrieval</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -543,11 +539,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 8,
           title: '6. Hierarchical Graph Retrieval',
+          icon: { name: 'duo-sitemap' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-sitemap" sizeName="2xl" style={iconStyle} />
-            <strong>6. Hierarchical Graph Retrieval</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -627,11 +622,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 9,
           title: '7. Graph + Dense Vector Hybrid',
+          icon: { name: 'duo-layer-group' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-layer-group" sizeName="2xl" style={iconStyle} />
-            <strong>7. Graph + Dense Vector Hybrid Retrieval</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -711,11 +705,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 10,
           title: '8. Graph + BM25 Hybrid',
+          icon: { name: 'duo-magnifying-glass-chart' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-magnifying-glass-chart" sizeName="2xl" style={iconStyle} />
-            <strong>8. Graph + BM25 Hybrid</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -795,11 +788,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 11,
           title: '9. Semantic Graph Traversal',
+          icon: { name: 'duo-diagram-next' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-diagram-next" sizeName="2xl" style={iconStyle} />
-            <strong>9. Semantic Graph Traversal</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -879,11 +871,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 12,
           title: '10. Graph Walk-Based Ranking',
+          icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-ranking-star" sizeName="2xl" style={iconStyle} />
-            <strong>10. Graph Walk-Based Ranking (PageRank/Personalized)</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -963,11 +954,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 13,
           title: '11. Query Graph Construction',
+          icon: { name: 'duo-diagram-project' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-diagram-project" sizeName="2xl" style={iconStyle} />
-            <strong>11. Query Graph Construction</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -1047,11 +1037,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 14,
           title: '12. Context Path Stitching',
+          icon: { name: 'duo-link' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-link" sizeName="2xl" style={iconStyle} />
-            <strong>12. Context Path Stitching</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -1131,11 +1120,10 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 15,
           title: '13. LLM-Guided Graph Expansion',
+          icon: { name: 'duo-robot' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-robot" sizeName="2xl" style={iconStyle} />
-            <strong>13. LLM-Guided Graph Expansion</strong>
+          <div style={{ marginBottom: '1rem' }}>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -1215,6 +1203,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 16,
           title: 'Putting It Together: Patterns',
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.7', textAlign: 'left' }}>
               <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#3b82f6' }}>
