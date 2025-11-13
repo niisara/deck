@@ -83,7 +83,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 4,
           title: 'Precision (Entity-Level)',
-          icon: { name: 'duo-bullseye' },
+          icon: { name: 'duo-bullseye', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -134,7 +134,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 6,
           title: 'Recall (Entity-Level)',
-          icon: { name: 'duo-magnifying-glass' },
+          icon: { name: 'duo-magnifying-glass', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -185,7 +185,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 8,
           title: 'F1 Score (Entity-Level)',
-          icon: { name: 'duo-scale-balanced' },
+          icon: { name: 'duo-scale-balanced', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -237,7 +237,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 10,
           title: 'Exact Match Score (Sentence-Level)',
-          icon: { name: 'duo-check-double' },
+          icon: { name: 'duo-check-double', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -288,7 +288,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 12,
           title: 'Partial Match Score (IoU-Based)',
-          icon: { name: 'duo-circle-half-stroke' },
+          icon: { name: 'duo-circle-half-stroke', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -341,7 +341,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 14,
           title: 'Entity-Level Accuracy',
-          icon: { name: 'duo-percent' },
+          icon: { name: 'duo-percent', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -394,7 +394,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 16,
           title: 'Confusion Matrix Analysis',
-          icon: { name: 'duo-table-cells' },
+          icon: { name: 'duo-table-cells', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -451,7 +451,7 @@ export const nerMetricsDeck: Deck = {
         {
           id: 18,
           title: 'Summary and Key Takeaways',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>Guidance</h3>
