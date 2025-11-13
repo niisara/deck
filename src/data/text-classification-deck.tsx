@@ -128,9 +128,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Fully interpretable</li>
@@ -139,9 +138,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Brittle to language variation</li>
@@ -205,9 +203,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Fast</li>
@@ -216,9 +213,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Misses paraphrases</li>
@@ -282,9 +278,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Strong baseline</li>
@@ -293,9 +288,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Ignores word order/long context</li>
@@ -359,9 +353,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Often top traditional performer</li>
@@ -370,9 +363,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Probabilities need calibration</li>
@@ -435,9 +427,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Extremely fast</li>
@@ -446,9 +437,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Independence assumption</li>
@@ -510,9 +500,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Nonlinear boundaries</li>
@@ -521,9 +510,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Less effective on very high-dimensional sparse BOW</li>
@@ -585,9 +573,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Fast inference</li>
@@ -596,9 +583,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Limited long-range dependency modeling</li>
@@ -660,9 +646,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Models sequence and context</li>
@@ -670,9 +655,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Slower training</li>
@@ -735,9 +719,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Highlights important spans</li>
@@ -745,9 +728,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Heavier than vanilla LSTM</li>
@@ -810,9 +792,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>State-of-the-art</li>
@@ -821,9 +802,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Heavier compute</li>
@@ -889,9 +869,8 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
-                <strong>Strengths</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>No training</li>
@@ -901,9 +880,8 @@ export const textClassificationDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
-                <strong>Weaknesses</strong>
+              <div style={{ marginBottom: '0.5rem' }}>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Variability</li>

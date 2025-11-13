@@ -104,7 +104,7 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Cost-efficient large-scale retrieval, clustering, classification, anomaly detection
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Very low cost ($0.02 per 1M tokens)</li>
                     <li>Good quality vs price</li>
@@ -112,7 +112,7 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> Vendor lock-in, data residency/compliance considerations, requires API access
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Vendor lock-in, data residency/compliance considerations, requires API access
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 400–800 tokens (can go higher; practical chunking for RAG efficiency)
@@ -143,7 +143,7 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Highest-quality retrieval/semantic search, multilingual scenarios, sensitive ranking
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Top-tier accuracy across many tasks</li>
                     <li>Robust multilingual support</li>
@@ -151,7 +151,7 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> Higher cost ($0.13 per 1M tokens) vs small; API dependency
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Higher cost ($0.13 per 1M tokens) vs small; API dependency
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 400–800 tokens (can handle larger; tune for latency/cost)
@@ -188,7 +188,7 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> General-purpose English retrieval, semantic similarity on a budget
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Strong MTEB scores for size</li>
                     <li>Easy to self-host</li>
@@ -196,7 +196,7 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> 512-token limit (truncation risk on long docs); may need reranker for precision
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> 512-token limit (truncation risk on long docs); may need reranker for precision
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens (to avoid truncation and keep latency low)
@@ -227,13 +227,13 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> High-quality open-source retrieval and semantic search without vendor lock-in
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>SOTA-level performance on MTEB/C-MTEB among open-source embedders</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> 512-token cap; larger model requires more memory/compute than base
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> 512-token cap; larger model requires more memory/compute than base
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
@@ -270,14 +270,14 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Retrieval and STS with explicit query/document formatting; multilingual (multilingual-e5-base)
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Strong zero-shot performance</li>
                     <li>Multilingual option supports ~100 languages</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> Requires prefixes ("query:", "passage:") for best results; 512-token cap
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Requires prefixes ("query:", "passage:") for best results; 512-token cap
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
@@ -308,7 +308,7 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Higher-accuracy retrieval with E5 formatting, multilingual available (multilingual-e5-large)
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Improved performance over base</li>
                     <li>Strong BEIR/MTEB results</li>
@@ -316,7 +316,7 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> Heavier than base; strict prefixing; 512-token cap
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Heavier than base; strict prefixing; 512-token cap
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
@@ -353,14 +353,14 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Task/domain-specific embeddings via natural-language instructions (classification, retrieval, clustering)
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Task-aware vectors without finetuning</li>
                     <li>Flexible prompts tailor embeddings to objectives</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> Requires crafting consistent instructions; heavier and slower than base models
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Requires crafting consistent instructions; heavier and slower than base models
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
@@ -397,7 +397,7 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Efficient English retrieval/STS with strong all-around performance
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Competitive MTEB performance</li>
                     <li>Lightweight and fast</li>
@@ -405,7 +405,7 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> English-focused; 512-token cap; may trail BGE-large on some retrieval tasks
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> English-focused; 512-token cap; may trail BGE-large on some retrieval tasks
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
@@ -436,7 +436,7 @@ export const embeddingModelsDeck: Deck = {
                   <strong style={{ color: '#81c784' }}>Best Use Case:</strong> Higher-quality English retrieval and semantic similarity with moderate compute
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#aed581' }}>Strengths:</strong>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
                   <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
                     <li>Strong MTEB scores</li>
                     <li>Efficient for its quality</li>
@@ -444,7 +444,7 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <strong style={{ color: '#ff6b6b' }}>Weaknesses:</strong> English-only; 512-token cap; may need reranker for best precision
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> English-only; 512-token cap; may need reranker for best precision
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
