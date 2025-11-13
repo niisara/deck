@@ -147,3 +147,42 @@
 .reveal .slides section > div::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.5);
 }
+
+/* Left align MathJax block equations */
+.reveal .slides section p.formula-left {
+  text-align: left !important;
+}
+
+.reveal .slides section p.formula-left .MathJax_Display,
+.reveal .slides section p.formula-left .MathJax,
+.reveal .slides section p.formula-left .mjx-container,
+.reveal .slides section p.formula-left .mjx-chtml,
+.reveal .slides section p.formula-left .mjx-math {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* Left align MathJax block equations (direct children) */
+.reveal .slides section p.formula-left > .MathJax_Display,
+.reveal .slides section p.formula-left > .MathJax,
+.reveal .slides section p.formula-left > .mjx-container {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+/* Ensure MathJax display equations are left-aligned */
+.reveal .slides section p.formula-left .MathJax_Display {
+  text-align: left !important;
+  margin: 0 !important;
+  margin-right: auto !important;
+}
+
+.reveal .slides section p.formula-left .mjx-container[display="true"] {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
