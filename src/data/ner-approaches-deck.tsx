@@ -150,7 +150,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Transparent</li>
                       <li>Fast</li>
@@ -160,7 +160,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Brittle to variations</li>
                       <li>High maintenance</li>
@@ -202,7 +202,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Simple</li>
                       <li>High precision for known entities</li>
@@ -211,7 +211,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Misses out-of-vocabulary/new entities</li>
                       <li>Ambiguity without context</li>
@@ -252,7 +252,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Fast to train</li>
                       <li>Interpretable features</li>
@@ -261,7 +261,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Weak context modeling</li>
                       <li>Lower accuracy than sequence models</li>
@@ -303,7 +303,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Efficient decoding</li>
                       <li>Handles sequence structure</li>
@@ -311,7 +311,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Strong independence assumptions</li>
                       <li>Limited feature flexibility</li>
@@ -352,7 +352,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Captures label dependencies</li>
                       <li>Robust</li>
@@ -361,7 +361,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Heavy feature engineering</li>
                       <li>Limited long-range context</li>
@@ -402,7 +402,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Learns features automatically</li>
                       <li>Context-aware</li>
@@ -411,7 +411,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Needs GPU for training</li>
                       <li>Complex hyperparameter tuning</li>
@@ -453,7 +453,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Captures morphology/spelling</li>
                       <li>Improves robustness to OOV/variants</li>
@@ -462,7 +462,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>More components/hyperparameters</li>
                       <li>Increased training complexity</li>
@@ -504,7 +504,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Fast inference</li>
                       <li>Easy to train/tune/deploy</li>
@@ -514,7 +514,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Quality depends on pretrained model/domain fit</li>
                       <li>Custom labels need data</li>
@@ -556,7 +556,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Strong context modeling</li>
                       <li>Performs well with moderate data</li>
@@ -565,7 +565,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Compute/latency heavy</li>
                       <li>Subword alignment adds complexity</li>
@@ -606,7 +606,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>RoBERTa often outperforms BERT</li>
                       <li>DistilBERT is smaller/faster</li>
@@ -616,7 +616,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>DistilBERT has slightly lower accuracy</li>
                       <li>Still benefits from GPUs</li>
@@ -658,7 +658,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>No labeled data needed</li>
                       <li>Flexible schemas</li>
@@ -667,7 +667,7 @@ export const nerApproachesDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Hallucinations/inconsistency</li>
                       <li>Privacy/regulatory concerns</li>

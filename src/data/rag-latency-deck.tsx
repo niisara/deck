@@ -174,8 +174,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -186,8 +186,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -251,8 +251,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -264,8 +264,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -329,8 +329,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -342,8 +342,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -411,8 +411,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -424,8 +424,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -489,8 +489,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -502,8 +502,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -567,8 +567,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -580,8 +580,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -649,8 +649,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -662,8 +662,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -728,8 +728,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -741,8 +741,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -807,8 +807,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -820,8 +820,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -887,8 +887,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -900,8 +900,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -967,8 +967,8 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="thumbs-up" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
@@ -980,8 +980,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem' }}>
-                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={iconStyle} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>

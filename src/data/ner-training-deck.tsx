@@ -91,10 +91,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Rapid recall gains; accelerates annotation; domain control</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Rapid recall gains; accelerates annotation; domain control</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Maintenance overhead; ambiguity can raise false positives</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Maintenance overhead; ambiguity can raise false positives</p>
                   </div>
                 </div>
               </div>
@@ -133,10 +135,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Higher model ceiling; trustworthy eval; reusable assets</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Higher model ceiling; trustworthy eval; reusable assets</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Costly; time-consuming; requires expert availability</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Costly; time-consuming; requires expert availability</p>
                   </div>
                 </div>
               </div>
@@ -175,10 +179,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Higher agreement; faster labeling; fewer reworks</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Higher agreement; faster labeling; fewer reworks</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Upfront effort; may seem rigid; needs maintenance</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Upfront effort; may seem rigid; needs maintenance</p>
                   </div>
                 </div>
               </div>
@@ -216,10 +222,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Robust performance; captures rare patterns; reflects production</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Robust performance; captures rare patterns; reflects production</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Access/privacy constraints; harder, slower annotation</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Access/privacy constraints; harder, slower annotation</p>
                   </div>
                 </div>
               </div>
@@ -258,10 +266,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Strong baselines; faster convergence; reusable</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Strong baselines; faster convergence; reusable</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Compute/latency costs; risk of overfitting</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Compute/latency costs; risk of overfitting</p>
                   </div>
                 </div>
               </div>
@@ -299,10 +309,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Better coverage; cheaper than new labels</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Better coverage; cheaper than new labels</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Artifacts can mislead model; unrealistic text; boundary drift risk</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Artifacts can mislead model; unrealistic text; boundary drift risk</p>
                   </div>
                 </div>
               </div>
@@ -340,10 +352,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Precision gains; better disambiguation</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Precision gains; better disambiguation</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> May reduce recall; needs ongoing curation</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>May reduce recall; needs ongoing curation</p>
                   </div>
                 </div>
               </div>
@@ -380,10 +394,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Quick wins; transparent; easy to revert</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Quick wins; transparent; easy to revert</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Brittle; domain/language-specific; maintenance needed</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Brittle; domain/language-specific; maintenance needed</p>
                   </div>
                 </div>
               </div>
@@ -421,10 +437,12 @@ export const nerTrainingDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '15px', fontSize: '0.75em' }}>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong> Compounding gains; focused data spend; robust models</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Compounding gains; focused data spend; robust models</p>
                   </div>
                   <div>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong> Requires sustained effort; risk of overfitting to test</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Requires sustained effort; risk of overfitting to test</p>
                   </div>
                 </div>
               </div>

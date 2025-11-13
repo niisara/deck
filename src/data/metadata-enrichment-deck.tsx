@@ -169,11 +169,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Strong intent signal • Better reranking • Improved explainability</p>
                     </div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Weak on poorly structured docs • Requires robust parsing</p>
                     </div>
                   </div>
@@ -235,11 +235,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Fast filter for retrieval • Reduces irrelevant context • Good for governance • Improves user satisfaction</p>
                     </div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Initial labeling effort • Classifier drift needs audits • Requires governance of labels</p>
                     </div>
                   </div>
@@ -304,11 +304,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '8px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Powerful filters • Better grounding • Per-entity analytics</p>
                     </div>
                     <div style={{ padding: '8px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Compute cost • PII handling • Normalization complexity</p>
                     </div>
                   </div>
@@ -378,11 +378,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Stable navigation and filters • Good for reporting • Enhances UI organization</p>
                     </div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Taxonomy governance needed • Re-tag on taxonomy changes • Initial setup complexity</p>
                     </div>
                   </div>
@@ -448,11 +448,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '8px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Time-aware answers • Easy recency enforcement • Clear versioning</p>
                     </div>
                     <div style={{ padding: '8px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Requires consistent source dates • Backfill can be tedious • Date format standardization</p>
                     </div>
                   </div>
@@ -520,11 +520,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Better relevance signals • Improves user scanability</p>
                     </div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>LLM cost • Periodic refresh as content changes</p>
                     </div>
                   </div>
@@ -594,11 +594,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Cheap to compute • Great for hybrid retrieval</p>
                     </div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Can be noisy • Requires periodic curation</p>
                     </div>
                   </div>
@@ -677,11 +677,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '8px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Reduces low-quality context • Auditable • Prioritizes reliable sources • Increases answer confidence</p>
                     </div>
                     <div style={{ padding: '8px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Potential bias • Needs upkeep and reviewer workflows • Subjective scoring</p>
                     </div>
                   </div>
@@ -749,11 +749,11 @@ export const metadataEnrichmentDeck: Deck = {
                   
                   <div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                      <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Pros:</strong>
+                      <strong style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />Pros:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Better coherence • Fewer orphan chunks • Improves contextual understanding</p>
                     </div>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
-                      <strong style={{ color: '#ff9800' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Cons:</strong>
+                      <strong style={{ color: '#ff9800', display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />Cons:</strong>
                       <p style={{ fontSize: '0.9em', marginTop: '5px' }}>More complex pipeline • Migration/versioning concerns • Requires document structure</p>
                     </div>
                   </div>
