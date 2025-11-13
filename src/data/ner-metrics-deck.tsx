@@ -90,7 +90,7 @@ export const nerMetricsDeck: Deck = {
               <p>Of all predicted entities, how many are correct (exact span + type)</p>
               
               <h3>Formula</h3>
-              <p dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
               
               <h3>When to Use</h3>
               <ul>
@@ -141,7 +141,7 @@ export const nerMetricsDeck: Deck = {
               <p>Of all gold (true) entities, how many did the model find correctly</p>
               
               <h3>Formula</h3>
-              <p dangerouslySetInnerHTML={{ __html: '\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]' }} />
               
               <h3>When to Use</h3>
               <ul>
@@ -192,7 +192,7 @@ export const nerMetricsDeck: Deck = {
               <p>Balance between precision and recall (harmonic mean)</p>
               
               <h3>Formula</h3>
-              <p dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
               
               <h3>When to Use</h3>
               <ul>
@@ -244,8 +244,8 @@ export const nerMetricsDeck: Deck = {
               <p>Percentage of sentences/documents where the entire set of predicted entities exactly equals the gold set</p>
               
               <h3>Formula</h3>
-              <p dangerouslySetInnerHTML={{ __html: '\\[\\text{EM}_i = \\begin{cases} 1 & \\text{if predicted set == gold set} \\\\ 0 & \\text{otherwise} \\end{cases}\\]' }} />
-              <p dangerouslySetInnerHTML={{ __html: '\\[\\text{Exact Match Score} = \\text{mean}(\\text{EM}_i)\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{EM}_i = \\begin{cases} 1 & \\text{if predicted set == gold set} \\\\ 0 & \\text{otherwise} \\end{cases}\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Exact Match Score} = \\text{mean}(\\text{EM}_i)\\]' }} />
               
               <h3>When to Use</h3>
               <ul>
@@ -295,8 +295,8 @@ export const nerMetricsDeck: Deck = {
               <p>Credit for near-miss spans to reduce sensitivity to boundary noise</p>
               
               <h3>How It Works</h3>
-              <p dangerouslySetInnerHTML={{ __html: '\\[\\text{IoU} = \\frac{|\\text{tokens}_\\text{overlap}|}{|\\text{tokens}_\\text{union}|}\\]' }} />
-              <p dangerouslySetInnerHTML={{ __html: 'Define a match if \\(\\text{IoU} \\geq \\tau\\) (common \\(\\tau = 0.5\\)) and types match' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{IoU} = \\frac{|\\text{tokens}_\\text{overlap}|}{|\\text{tokens}_\\text{union}|}\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: 'Define a match if \\(\\text{IoU} \\geq \\tau\\) (common \\(\\tau = 0.5\\)) and types match' }} />
               
               <h3>When to Use</h3>
               <ul>
@@ -349,7 +349,7 @@ export const nerMetricsDeck: Deck = {
               <p>Isolates typing from detection to focus solely on classification quality</p>
               
               <h3>Formula</h3>
-              <p dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
               
               <h3>When to Use</h3>
               <ul>
