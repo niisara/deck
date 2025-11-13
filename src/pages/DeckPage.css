@@ -47,6 +47,41 @@
   opacity: 1;
 }
 
+.pdf-export-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(231, 76, 60, 0.9);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(10px);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.pdf-export-button.visible {
+  opacity: 0.3;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.pdf-export-button.visible:hover {
+  background: rgba(231, 76, 60, 1);
+  opacity: 1;
+  transform: scale(1.05);
+}
+
 .home-button {
   background: #3498db;
   color: white;

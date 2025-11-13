@@ -48,6 +48,17 @@ function DeckPage() {
 
   const deck = decks.find((d) => d.id === deckId);
 
+  // Check if we're in PDF export mode
+  const isPrintPdf = new URLSearchParams(window.location.search).has('print-pdf');
+
+  // Handle PDF export
+  const handlePdfExport = () => {
+    // Add print-pdf to URL to trigger Reveal.js PDF export mode
+    const url = new URL(window.location.href);
+    url.searchParams.set('print-pdf', '');
+    window.location.href = url.toString();
+  };
+
   // Handle mouse movement to show/hide home button
   useEffect(() => {
     const handleMouseMove = () => {
@@ -92,6 +103,9 @@ function DeckPage() {
   useEffect(() => {
     if (!deck || !revealRef.current) return;
 
+    // Check if we're in PDF export mode
+    const isPrintPdf = new URLSearchParams(window.location.search).has('print-pdf');
+
     // Initialize Reveal.js with all built-in plugins
     const revealInstance = new Reveal(revealRef.current, {
       embedded: false,
@@ -105,6 +119,8 @@ function DeckPage() {
       margin: 0.04,
       minScale: 0.2,
       maxScale: 2.0,
+      pdfMaxPagesPerSlide: 1,
+      pdfSeparateFragments: false,
       plugins: [
         RevealHighlight,
         RevealMarkdown,
@@ -115,7 +131,14 @@ function DeckPage() {
       ]
     });
 
-    revealInstance.initialize();
+    revealInstance.initialize().then(() => {
+      // If in PDF mode, trigger print after a short delay to ensure rendering is complete
+      if (isPrintPdf) {
+        setTimeout(() => {
+          window.print();
+        }, 1000);
+      }
+    });
     revealInstanceRef.current = revealInstance;
 
     return () => {
@@ -136,12 +159,24 @@ function DeckPage() {
 
   return (
     <div className="deck-page">
-      <Link 
-        to="/" 
-        className={`home-button-overlay ${showHomeButton ? 'visible' : ''}`}
-      >
-        ← Home
-      </Link>
+      {!isPrintPdf && (
+        <>
+          <Link 
+            to="/" 
+            className={`home-button-overlay ${showHomeButton ? 'visible' : ''}`}
+          >
+            ← Home
+          </Link>
+          
+          <button 
+            onClick={handlePdfExport}
+            className={`pdf-export-button ${showHomeButton ? 'visible' : ''}`}
+            title="Export to PDF"
+          >
+            <SvgIcon iconName="duo-file-pdf" sizeName="lg" />
+          </button>
+        </>
+      )}
       
       <div className="reveal" ref={revealRef}>
         <div className="slides">
