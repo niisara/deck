@@ -99,10 +99,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> More consistent tokenization, fewer artifacts</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>More consistent tokenization, fewer artifacts</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> Over-normalization can remove signals</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Over-normalization can remove signals</p>
                   </div>
                 </div>
               </div>
@@ -140,10 +142,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> Higher signal-to-noise; better retrieval precision</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Higher signal-to-noise; better retrieval precision</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> Risk of deleting useful context</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Risk of deleting useful context</p>
                   </div>
                 </div>
               </div>
@@ -181,10 +185,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> Improves recall/precision; reduces hallucinations</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Improves recall/precision; reduces hallucinations</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> More complex pipeline; requires tuning</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>More complex pipeline; requires tuning</p>
                   </div>
                 </div>
               </div>
@@ -222,10 +228,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> Stronger semantic cues; easier tracing</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Stronger semantic cues; easier tracing</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> Extra tokens; requires robust heading extraction</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Extra tokens; requires robust heading extraction</p>
                   </div>
                 </div>
               </div>
@@ -263,10 +271,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> Smaller, denser chunks; faster indexing</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Smaller, denser chunks; faster indexing</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> Over-trimming harms semantics and QA</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Over-trimming harms semantics and QA</p>
                   </div>
                 </div>
               </div>
@@ -304,10 +314,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> Better recall/precision; enables facets</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Better recall/precision; enables facets</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> Extraction noise; taxonomy maintenance</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Extraction noise; taxonomy maintenance</p>
                   </div>
                 </div>
               </div>
@@ -345,10 +357,12 @@ export const embeddingQualityDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong> Better matching for row-level queries</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Better matching for row-level queries</p>
                   </div>
                   <div>
-                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong> Higher token count; careful formatting needed</p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
+                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Higher token count; careful formatting needed</p>
                   </div>
                 </div>
               </div>
