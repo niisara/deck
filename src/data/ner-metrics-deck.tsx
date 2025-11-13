@@ -19,13 +19,13 @@ export const nerMetricsDeck: Deck = {
           title: '7 Evaluation Metrics for NER Models',
           content: (
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '30px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '20px', marginBottom: '30px' }}>
                 <SvgIcon iconName="duo-chart-line" sizeName="4x" style={{ color: '#3498db' }} />
                 <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#e74c3c' }} />
                 <SvgIcon iconName="duo-lightbulb" sizeName="4x" style={{ color: '#f39c12' }} />
               </div>
               <h3>A concise cheat sheet for evaluating Named Entity Recognition</h3>
-              <p><strong>Prepared by:</strong> Nisar Ansari</p>
+              <p><strong>Prepared by:</strong> Nisar A</p>
               <p><strong>Date:</strong> November 7, 2025</p>
               <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
             </div>
