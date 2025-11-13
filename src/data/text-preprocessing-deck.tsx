@@ -44,10 +44,11 @@ export const textPreprocessingDeck: Deck = {
       backgroundColor: '#2C3E50',
       notes: 'Introduction: 21 comprehensive text preprocessing techniques for NLP and data science'
     },
-    {
-      id: 2,
-      title: 'Table of Contents',
-      content: (
+        {
+          id: 2,
+          title: 'Table of Contents',
+          icon: { name: 'duo-list-check' },
+          content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
             <div>
@@ -131,10 +132,10 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 3,
           title: '1. Tokenization',
+          icon: { name: 'duo-scissors' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-scissors" sizeName="2x" style={{ color: '#3498db' }} />
+          <div style={{ marginBottom: '20px' }}>
             <h3>Split text into meaningful units (tokens) such as words, subwords, or sentences</h3>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
@@ -196,6 +197,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 4,
           title: 'Basic Normalization (2-5)',
+          icon: { name: 'duo-gears' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
@@ -261,6 +263,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 5,
           title: '6-7. Stopword Techniques',
+          icon: { name: 'duo-filter' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
@@ -317,6 +320,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 6,
           title: 'Morphological Analysis (8-10)',
+          icon: { name: 'duo-seedling' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
@@ -376,12 +380,9 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 7,
           title: '11-12. Feature Engineering',
+          icon: { name: 'duo-layer-group' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#f39c12' }} />
-            <SvgIcon iconName="duo-link" sizeName="3x" style={{ color: '#e67e22' }} />
-          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
               <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>11. N-gram Generation</h3>
@@ -439,6 +440,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 8,
           title: 'Error Correction (13-15)',
+          icon: { name: 'duo-wand-magic-sparkles' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
@@ -498,6 +500,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 9,
           title: '16-17. Number & Character Handling',
+          icon: { name: 'duo-broom' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
@@ -560,6 +563,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 10,
           title: 'Cleaning & Structuring (18-20)',
+          icon: { name: 'duo-broom' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
@@ -619,10 +623,10 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 11,
           title: '21. Language Detection and Filtering',
+          icon: { name: 'duo-globe' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-globe" sizeName="2x" style={{ color: '#3498db' }} />
+          <div style={{ marginBottom: '20px' }}>
             <h3>Identify language and route/filter text accordingly</h3>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
@@ -692,6 +696,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 12,
           title: 'Technique Selection Guide',
+          icon: { name: 'duo-compass' },
           content: (
         <div style={{ maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
           <h3 style={{ marginBottom: '25px' }}>When to Use Each Technique</h3>
@@ -745,6 +750,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 13,
           title: 'Best Practices',
+          icon: { name: 'duo-clipboard-check' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
@@ -792,6 +798,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 14,
           title: 'Common Pipeline Examples',
+          icon: { name: 'duo-diagram-project' },
           content: (
         <div style={{ maxWidth: '950px', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>Task-Specific Preprocessing Pipelines</h3>
@@ -847,6 +854,7 @@ export const textPreprocessingDeck: Deck = {
         {
           id: 15,
           title: 'Summary: The Preprocessing Toolkit',
+          icon: { name: 'duo-toolbox' },
           content: (
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>21 Techniques for Clean Text</h2>

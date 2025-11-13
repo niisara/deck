@@ -32,6 +32,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 2,
           title: 'Overview: The 7 Techniques',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '0.9em' }}>
@@ -78,10 +79,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 3,
           title: '1. Clean and Normalize Text',
+          icon: { name: 'duo-broom' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-broom" sizeName="3x" style={{ color: '#4fc3f7' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Reduce textual variability so the same concepts map to similar tokens.</p>
@@ -119,10 +120,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 4,
           title: '2. Remove Boilerplate and Noise',
+          icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#81c784' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Eliminate non-content text that dilutes embeddings.</p>
@@ -160,10 +161,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 5,
           title: '3. Use Semantic Chunking',
+          icon: { name: 'duo-scissors' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-scissors" sizeName="3x" style={{ color: '#ffb74d' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Split documents into coherent units that answer a question on their own.</p>
@@ -201,10 +202,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 6,
           title: '4. Add Section Titles to Chunks',
+          icon: { name: 'duo-heading' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-heading" sizeName="3x" style={{ color: '#ba68c8' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Provide context and disambiguation for each chunk.</p>
@@ -242,10 +243,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 7,
           title: '5. Apply Light Stopword Trimming',
+          icon: { name: 'duo-eraser' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-eraser" sizeName="3x" style={{ color: '#f06292' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Reduce filler tokens while preserving meaning and negation.</p>
@@ -283,10 +284,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 8,
           title: '6. Add Keyphrase / Topic Tags as Metadata',
+          icon: { name: 'duo-tags' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-tags" sizeName="3x" style={{ color: '#64b5f6' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Enrich chunks with facetable concepts for better filtering and recall.</p>
@@ -324,10 +325,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 9,
           title: '7. Convert Tables to Structured Text',
+          icon: { name: 'duo-table' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-table" sizeName="3x" style={{ color: '#aed581' }} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Preserve relational information in a model-friendly linear form.</p>
@@ -365,6 +366,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 10,
           title: 'Summary and Next Steps',
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
@@ -405,10 +407,10 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 11,
           title: 'Final Insight',
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="5x" style={{ color: '#ffd54f' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ maxWidth: '800px', fontSize: '0.85em' }}>
                 <p style={{ fontSize: '1.3em', lineHeight: '1.8', fontWeight: '300' }}>

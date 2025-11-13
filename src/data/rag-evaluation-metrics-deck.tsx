@@ -53,6 +53,7 @@ export const ragEvaluationMetricsDeck: Deck = {
     {
       id: 2,
       title: 'RAG System Overview',
+      icon: { name: 'duo-diagram-project' },
       content: (
         <div style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'left' }}>
           <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
@@ -130,6 +131,7 @@ export const ragEvaluationMetricsDeck: Deck = {
         {
           id: 3,
           title: '1. Retrieval Recall@K',
+          icon: { name: 'duo-magnifying-glass' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
               <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
@@ -221,6 +223,7 @@ export const ragEvaluationMetricsDeck: Deck = {
         {
           id: 4,
           title: '2. Retrieval Precision@K',
+          icon: { name: 'duo-bullseye' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
@@ -312,6 +315,7 @@ export const ragEvaluationMetricsDeck: Deck = {
         {
           id: 5,
           title: '3. Hit Rate',
+          icon: { name: 'duo-check-circle' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>

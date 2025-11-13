@@ -132,12 +132,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 3,
           title: '1) Rule-Based Pattern Matching',
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-list-check" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>Rule-Based Pattern Matching</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Deterministic rules, regexes, token patterns, heuristics.</p>
@@ -187,12 +184,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 4,
           title: '2) Dictionary / Gazetteer Lookup',
+          icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-book" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>Dictionary / Gazetteer Lookup</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Lexicon/alias lookup with exact/fuzzy matching, optional normalization.</p>
@@ -240,12 +234,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 5,
           title: '3) TF-IDF + Classifier-Based NER',
+          icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>TF-IDF + Classifier-Based NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Feature-based ML (TF-IDF/BoW, char n-grams, window features) + classifier (LogReg/SVM/Perceptron) at token/span level.</p>
@@ -294,12 +285,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 6,
           title: '4) Hidden Markov Model (HMM) NER',
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>Hidden Markov Model (HMM) NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Generative sequence model with transition/emission probabilities; Viterbi decoding.</p>
@@ -346,12 +334,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 7,
           title: '5) Conditional Random Fields (CRF) NER',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>Conditional Random Fields (CRF) NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Discriminative sequence model over hand-crafted features; BIO/IOB tagging.</p>
@@ -399,12 +384,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 8,
           title: '6) BiLSTM + CRF',
+          icon: { name: 'duo-brain' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="3x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>BiLSTM + CRF</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Neural sequence tagger: embeddings + BiLSTM encoder + CRF decoder.</p>
@@ -453,12 +435,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 9,
           title: '7) CNN + BiLSTM NER',
+          icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#aed581' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>CNN + BiLSTM NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Character-level CNN (or LSTM) for subword features + word embeddings + BiLSTM (+ CRF/softmax).</p>
@@ -507,12 +486,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 10,
           title: '8) spaCy Statistical NER',
+          icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="3x" style={{ color: '#ffa726' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>spaCy Statistical NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Production-ready pipeline (transition-based CNN or transformer backends) with beam search; rule+ML integration.</p>
@@ -562,12 +538,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 11,
           title: '9) BERT Fine-Tuned for NER',
+          icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="3x" style={{ color: '#ef5350' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>BERT Fine-Tuned for NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Transformer encoder (BERT) with token classification head (softmax) ± CRF layer.</p>
@@ -615,12 +588,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 12,
           title: '10) RoBERTa / DistilBERT NER Models',
+          icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="3x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>RoBERTa / DistilBERT NER Models</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Transformer variants; RoBERTa (accuracy-optimized), DistilBERT (compressed for speed) with token classification.</p>
@@ -670,12 +640,9 @@ export const nerApproachesDeck: Deck = {
         {
           id: 13,
           title: '11) LLM / Zero-Shot NER',
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="3x" style={{ color: '#66bb6a' }} darkModeInvert={true} />
-                <h2 style={{ margin: 0 }}>LLM / Zero-Shot NER</h2>
-              </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Large instruction-tuned LMs prompted for extraction (zero-/few-shot) or lightly fine-tuned (PEFT/LoRA).</p>

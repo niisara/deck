@@ -122,12 +122,9 @@ export const productionRagDeck: Deck = {
         {
           id: 3,
           title: '1) Basic RAG (Single Retrieve → Generate)',
+          icon: { name: 'duo-arrow-right' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
-                Basic RAG (Single Retrieve → Generate)
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -197,12 +194,9 @@ export const productionRagDeck: Deck = {
         {
           id: 4,
           title: '2) RAG with Re-Ranking',
+          icon: { name: 'duo-list-ol' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
-                RAG with Re-Ranking
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -272,12 +266,9 @@ export const productionRagDeck: Deck = {
         {
           id: 5,
           title: '3) RAG with Query Rewriting',
+          icon: { name: 'duo-pencil' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-pencil" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
-                RAG with Query Rewriting
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -346,12 +337,9 @@ export const productionRagDeck: Deck = {
         {
           id: 6,
           title: '4) RAG with Multi-Query Retrieval',
+          icon: { name: 'duo-copy' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-copy" sizeName="2x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
-                RAG with Multi-Query Retrieval
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -420,12 +408,9 @@ export const productionRagDeck: Deck = {
         {
           id: 7,
           title: '5) RAG with HyDE (Hypothetical Document Embeddings)',
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ color: '#f06292' }} darkModeInvert={true} />
-                RAG with HyDE
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -493,12 +478,9 @@ export const productionRagDeck: Deck = {
         {
           id: 8,
           title: '6) RAG with Parent–Child Retrieval',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
-                RAG with Parent–Child Retrieval
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -566,12 +548,9 @@ export const productionRagDeck: Deck = {
         {
           id: 9,
           title: '7) RAG with Graph-Based Retrieval (GraphRAG)',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.7em' }}>
-              <h2 style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', gap: '10px', fontSize: '1.3em' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={{ color: '#aed581' }} darkModeInvert={true} />
-                RAG with Graph-Based Retrieval
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -642,12 +621,9 @@ export const productionRagDeck: Deck = {
         {
           id: 10,
           title: '8) RAG with External Tools / Agents',
+          icon: { name: 'duo-gear' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-gear" sizeName="2x" style={{ color: '#ffa726' }} darkModeInvert={true} />
-                RAG with External Tools / Agents
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -716,12 +692,9 @@ export const productionRagDeck: Deck = {
         {
           id: 11,
           title: '9) RAG + Fine-Tuned Model Hybrid',
+          icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="2x" style={{ color: '#ef5350' }} darkModeInvert={true} />
-                RAG + Fine-Tuned Model Hybrid
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -789,12 +762,9 @@ export const productionRagDeck: Deck = {
         {
           id: 12,
           title: '10) RAG with Multi-Step Retrieval Loops',
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="2x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                RAG with Multi-Step Retrieval Loops
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -862,12 +832,9 @@ export const productionRagDeck: Deck = {
         {
           id: 13,
           title: '11) RAG with Context Compression / Summarization',
+          icon: { name: 'duo-broom' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#66bb6a' }} darkModeInvert={true} />
-                RAG with Context Compression
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>

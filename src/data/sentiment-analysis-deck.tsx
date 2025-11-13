@@ -34,6 +34,7 @@ export const sentimentAnalysisDeck: Deck = {
         {
           id: 2,
           title: 'Table of Contents',
+          icon: { name: 'duo-list-check' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
@@ -95,6 +96,7 @@ export const sentimentAnalysisDeck: Deck = {
         {
           id: 3,
           title: '1. Lexicon-Based Sentiment Scoring',
+          icon: { name: 'duo-book' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -156,6 +158,7 @@ export const sentimentAnalysisDeck: Deck = {
         {
           id: 4,
           title: '2. Rule-Based Sentiment Classification',
+          icon: { name: 'duo-brackets-square' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>

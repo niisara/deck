@@ -57,6 +57,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 2,
           title: 'Hybrid Search: What and Why',
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.9em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
@@ -116,10 +117,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 3,
           title: 'Pattern 1 — Weighted Hybrid Scoring',
+          icon: { name: 'duo-sliders' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-sliders" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Blend BM25 and embedding similarity into one normalized score.</p>
@@ -169,10 +170,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 4,
           title: 'Pattern 2 — Two-Stage Retrieval (BM25 → Vector Re-Rank)',
+          icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Recall with fast BM25, then re-rank candidates using embedding similarity.</p>
@@ -222,10 +223,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 5,
           title: 'Pattern 3 — Reverse Two-Stage (Vector → BM25 Re-Rank)',
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Recall with vector ANN, then re-rank by BM25 to emphasize exact terms.</p>
@@ -275,10 +276,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 6,
           title: 'Pattern 4 — Term-Boosted Vector Search',
+          icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Add keyword boosts/must-haves to vector similarity to control precision.</p>
@@ -328,10 +329,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 7,
           title: 'Pattern 5 — Metadata-Filtered Hybrid Search',
+          icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Apply faceted/ACL metadata filters, then run hybrid scoring within the slice.</p>
@@ -381,10 +382,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 8,
           title: 'Pattern 6 — Field-Aware Hybrid Scoring (BM25F)',
+          icon: { name: 'duo-table' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-table" sizeName="3x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Weight important fields (e.g., title &gt; body) in hybrid lexical + vector scoring.</p>
@@ -434,10 +435,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 9,
           title: 'Pattern 7 — Hybrid Lexical + Semantic Expansion',
+          icon: { name: 'duo-book-open' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-book-open" sizeName="3x" style={{ color: '#aed581' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Expand the query with lexical synonyms and semantic neighbors before hybrid retrieval.</p>
@@ -487,10 +488,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 10,
           title: 'Pattern 8 — Cross-Encoder Re-Ranking After Hybrid',
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-check-double" sizeName="3x" style={{ color: '#ffa726' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Use a cross-encoder to re-rank a small hybrid candidate set for maximal precision.</p>
@@ -540,10 +541,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 11,
           title: 'Pattern 9 — Hybrid with Parent-Child Chunking',
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="3x" style={{ color: '#ef5350' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Retrieve on small child chunks (vectors), return ranked parent chunks for context.</p>
@@ -593,10 +594,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 12,
           title: 'Pattern 10 — Approximate + Exact Hybrid (ANN + BM25)',
+          icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="3x" style={{ color: '#9575cd' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Combine fast ANN vector recall with exact BM25 ranking/fusion for scale and quality.</p>
@@ -646,10 +647,10 @@ export const hybridSearchDeck: Deck = {
         {
           id: 13,
           title: 'Pattern 11 — Hybrid with Domain Dictionaries/Ontologies',
+          icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-book" sizeName="3x" style={{ color: '#66bb6a' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Inject domain ontologies, synonyms, and entity linking into hybrid retrieval.</p>
@@ -699,6 +700,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 14,
           title: 'Summary and Key Takeaways',
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>

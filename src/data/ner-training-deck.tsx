@@ -39,10 +39,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 2,
           title: 'What You\'ll Learn',
+          icon: { name: 'duo-graduation-cap' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '1em' }}>
                 <ul style={{ lineHeight: '2' }}>
@@ -70,10 +70,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 3,
           title: 'Tip 1: Build a Domain-Specific Entity Dictionary',
+          icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-book" sizeName="3x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Boost recall and speed up labeling with authoritative entity lists.</p>
@@ -112,10 +112,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 4,
           title: 'Tip 2: Create High-Quality Annotated Training Data',
+          icon: { name: 'duo-pen-to-square' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-pen-to-square" sizeName="3x" style={{ color: '#81c784' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Provide reliable supervision for entity types and boundaries.</p>
@@ -154,10 +154,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 5,
           title: 'Tip 3: Use Consistent Annotation Guidelines',
+          icon: { name: 'duo-clipboard-list' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-clipboard-list" sizeName="3x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Reduce label noise and ensure reproducibility across annotators.</p>
@@ -196,10 +196,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 6,
           title: 'Tip 4: Label Data with Real Domain Context',
+          icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-file-lines" sizeName="3x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Ensure models generalize to production text and edge cases.</p>
@@ -237,10 +237,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 7,
           title: 'Tip 5: Fine-Tune Pretrained Transformer Models',
+          icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="3x" style={{ color: '#f06292' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Achieve strong accuracy with less labeled data via transfer learning.</p>
@@ -279,10 +279,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 8,
           title: 'Tip 6: Use Data Augmentation for Rare Entities',
+          icon: { name: 'duo-copy' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-copy" sizeName="3x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Improve recall for low-frequency classes and long-tail entities.</p>
@@ -320,10 +320,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 9,
           title: 'Tip 7: Add Negative Examples to Reduce False Positives',
+          icon: { name: 'duo-shield-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="3x" style={{ color: '#aed581' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Increase precision by teaching the model what is not an entity.</p>
@@ -361,10 +361,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 10,
           title: 'Tip 8: Use Entity Boundary Correction Rules',
+          icon: { name: 'duo-brackets-square' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-brackets-square" sizeName="3x" style={{ color: '#ffab40' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Fix systematic boundary errors without retraining.</p>
@@ -401,10 +401,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 11,
           title: 'Tip 9: Perform Iterative Error Analysis and Retraining',
+          icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#ab47bc' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '25px' }}>
               </div>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
                 <p><strong>Goal:</strong> Drive continuous improvement aligned with business impact.</p>
@@ -442,6 +442,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 12,
           title: 'Summary and Next Steps',
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
@@ -486,10 +487,10 @@ export const nerTrainingDeck: Deck = {
         {
           id: 13,
           title: 'Risks & Mitigations',
+          icon: { name: 'duo-triangle-exclamation' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="4x" style={{ color: '#ff9800' }} darkModeInvert={true} />
+              <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ maxWidth: '800px', fontSize: '0.95em' }}>
                 <div style={{ marginBottom: '25px' }}>

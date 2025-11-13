@@ -49,6 +49,7 @@ export const promptEngineeringDeck: Deck = {
     {
           id: 2,
           title: 'Table of Contents',
+          icon: { name: 'duo-list-check' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
@@ -116,6 +117,7 @@ export const promptEngineeringDeck: Deck = {
         {
           id: 3,
           title: '1. Zero-shot Prompting',
+          icon: { name: 'duo-bolt' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -179,6 +181,7 @@ in 3 bullets for executives:
         {
           id: 4,
           title: '2. Few-shot Prompting',
+          icon: { name: 'duo-list-ol' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -244,6 +247,7 @@ Classify: 'It was okay, but pricey.'"`}
         {
           id: 5,
           title: '3. Chain-of-Thought (CoT) Prompting',
+          icon: { name: 'duo-brain' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -309,6 +313,7 @@ Think step by step."`}
         {
           id: 6,
           title: 'Reasoning Techniques (4-6)',
+          icon: { name: 'duo-brain' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
@@ -372,6 +377,7 @@ Think step by step."`}
         {
           id: 7,
           title: '7-8. Prompt Chaining & Tree of Thoughts',
+          icon: { name: 'duo-diagram-project' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
@@ -424,6 +430,7 @@ Think step by step."`}
         {
           id: 8,
           title: '9. Retrieval-Augmented Generation (RAG)',
+          icon: { name: 'duo-database' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -496,6 +503,7 @@ work?"`}
         {
           id: 9,
           title: 'Agentic Techniques (10, 14-16)',
+          icon: { name: 'duo-robot' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
@@ -562,6 +570,7 @@ work?"`}
         {
           id: 10,
           title: 'Hybrid Techniques (11-13)',
+          icon: { name: 'duo-layer-group' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '20px' }}>
@@ -620,6 +629,7 @@ work?"`}
         {
           id: 11,
           title: '17. Multimodal Chain-of-Thought',
+          icon: { name: 'duo-brain' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -684,6 +694,7 @@ the answer step-by-step."`}
         {
           id: 12,
           title: '18. Graph Prompting',
+          icon: { name: 'duo-circle-nodes' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -749,6 +760,7 @@ Show the path used."`}
         {
           id: 13,
           title: 'Technique Complexity Overview',
+          icon: { name: 'duo-table' },
           content: (
         <div style={{ fontSize: '0.65em', maxWidth: '1100px', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
@@ -807,6 +819,7 @@ Show the path used."`}
         {
           id: 14,
           title: 'Best Practices & Recommendations',
+          icon: { name: 'duo-clipboard-check' },
           content: (
         <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
@@ -864,6 +877,7 @@ Show the path used."`}
         {
           id: 15,
           title: 'Decision Framework',
+          icon: { name: 'duo-compass' },
           content: (
         <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '0.8em' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
@@ -908,6 +922,7 @@ Show the path used."`}
         {
           id: 16,
           title: 'Summary: The Prompt Engineering Ladder',
+          icon: { name: 'duo-book-open' },
           content: (
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>From Simple to Advanced</h2>

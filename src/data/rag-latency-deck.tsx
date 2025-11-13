@@ -128,13 +128,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 3,
       title: '1. Use Smaller Embedding Models',
+      icon: { name: 'duo-microchip' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="microchip" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Reduce embedding latency and memory footprint</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -209,13 +205,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 4,
       title: '2. Reduce Chunk Size',
+      icon: { name: 'duo-scissors' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="scissors" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Cut retrieval time and LLM prompt tokens</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -291,13 +283,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 5,
       title: '3. Limit Top-K Retrieval',
+      icon: { name: 'duo-filter' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#d19a66' }}>
-            <SvgIcon iconName="filter" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Reduce downstream processing and prompt size</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -373,13 +361,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 6,
       title: '4. Use Approximate Nearest Neighbor Indexes',
+      icon: { name: 'duo-network-wired' },
       content: (
         <div style={{ fontSize: '0.75rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#d19a66' }}>
-            <SvgIcon iconName="network-wired" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Accelerate vector search at scale (HNSW / IVF)</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -459,13 +443,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 7,
       title: '5. Cache Frequent Query Embeddings',
+      icon: { name: 'duo-database' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="database" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Avoid recomputing embeddings for repeated queries</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -541,13 +521,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 8,
       title: '6. Cache Frequent Retrieval Results',
+      icon: { name: 'duo-floppy-disk' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="floppy-disk" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Skip vector DB operations for repeated queries</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -624,13 +600,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 9,
       title: '7. Use Re-Ranking Only on Top Few Results',
+      icon: { name: 'duo-ranking-star' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="ranking-star" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Improve precision with minimal latency overhead</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -710,13 +682,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 10,
       title: '8. Use Context Compression Before LLM Call',
+      icon: { name: 'duo-compress' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="compress" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Reduce tokens sent to LLM while preserving essential information</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -793,13 +761,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 11,
       title: '9. Parallelize Retrieval + Re-Rank',
+      icon: { name: 'duo-gears' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="gears" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Shorten the critical path via concurrency</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -876,13 +840,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 12,
       title: '10. Use Streaming / Partial Generation',
+      icon: { name: 'duo-stream' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
-            <SvgIcon iconName="stream" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Reduce perceived latency (time-to-first-token)</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
@@ -960,13 +920,9 @@ export const ragLatencyDeck: Deck = {
     {
       id: 13,
       title: '11. Use Distilled or Smaller LLM for RAG Answering',
+      icon: { name: 'duo-wand-magic-sparkles' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
-            <SvgIcon iconName="wand-magic-sparkles" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>Lower TTFT and total generation time with acceptable accuracy</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
