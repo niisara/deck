@@ -153,14 +153,14 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Strong grounding with minimal complexity</li>
                       <li>Easy to implement; good correctness</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Larger context windows</li>
                       <li>Risk of attaching a loosely relevant parent if parsing is noisy</li>
@@ -210,14 +210,14 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Very low overhead</li>
                       <li>Boosts grounding and interpretability</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Weak when headings are sparse or misleading</li>
                       <li>Limited for highly unstructured text</li>
@@ -267,13 +267,13 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Excellent structural grounding; coherent multi-level context</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Token overhead from path; heavier preprocessing to build/maintain tree</li>
                     </ul>
@@ -322,13 +322,13 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>High recall of governing context; robust to mis-leveling</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>More tokens; can introduce noise; needs careful budget control</li>
                     </ul>
@@ -377,14 +377,14 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Better continuity</li>
                       <li>Improves answers requiring sequence context</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>May pull irrelevant neighbors</li>
                       <li>Increases latency and context size</li>
@@ -431,13 +431,13 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Simple; effective for linear text; low structural requirements</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Overlap duplication; no awareness of section boundaries</li>
                       <li>Potential truncation issues</li>
@@ -487,13 +487,13 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Strong semantic grounding; resilient to phrasing variance</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Taxonomy drift/maintenance; clustering errors propagate to retrieval</li>
                     </ul>
@@ -542,13 +542,13 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Balanced precision/recall; efficient use of tokens</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Summarization risk; preprocessing overhead</li>
                       <li>Needs QA of summary quality</li>
@@ -599,14 +599,14 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Strong precision on entities/dates/numbers</li>
                       <li>Robust to embedding misses</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Added latency and infra</li>
                       <li>Threshold tuning; Dual-index maintenance</li>
@@ -656,14 +656,14 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>High-quality grounding</li>
                       <li>Reduces irrelevant parents</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Compute-heavy</li>
                       <li>Model updates/serving complexity</li>
@@ -713,14 +713,14 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Interpretable grounding; supports multi-hop reasoning</li>
                       <li>Enables cross-document context integration</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
-                    <p><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', verticalAlign: 'middle' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Higher complexity; graph maintenance overhead</li>
                       <li>Query planning costs and traversal latency</li>
