@@ -25,7 +25,7 @@ export const parentChildRetrievalDeck: Deck = {
               <h3 style={{ fontSize: '1.1em', marginTop: '30px', color: '#4fc3f7' }}>
                 For Reliable Grounded Generation
               </h3>
-              <p style={{ fontSize: '1em', marginTop: '30px', maxWidth: '900px' }}>
+              <p style={{ fontSize: '1em', marginTop: '30px' }}>
                 A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness
               </p>
               <div style={{ marginTop: '50px', display: 'flex', gap: '30px', alignItems: 'center', flexWrap: 'wrap' }}>

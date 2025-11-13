@@ -65,7 +65,7 @@ export const embeddingModelsDeck: Deck = {
                     <div style={{ fontSize: '0.85em', color: '#aaa' }}>Instructor-XL</div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '10px', gridColumn: '1 / -1', maxWidth: '400px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '10px', gridColumn: '1 / -1' }}>
                   <SvgIcon iconName="duo-shop" sizeName="2x" style={{ color: '#f06292' }} darkModeInvert={true} />
                   <div>
                     <strong>GTE (Alibaba)</strong>

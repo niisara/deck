@@ -51,7 +51,7 @@ export const promptEngineeringDeck: Deck = {
           title: 'Table of Contents',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.72em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
@@ -119,7 +119,7 @@ export const promptEngineeringDeck: Deck = {
           title: '1. Zero-shot Prompting',
           icon: { name: 'duo-bolt' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-bolt" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Ask the model to perform a task with clear instructions and no examples</h3>
@@ -183,7 +183,7 @@ in 3 bullets for executives:
           title: '2. Few-shot Prompting',
           icon: { name: 'duo-list-ol' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Guide the model with a few labeled examples to shape outputs</h3>
@@ -249,7 +249,7 @@ Classify: 'It was okay, but pricey.'"`}
           title: '3. Chain-of-Thought (CoT) Prompting',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-link" sizeName="2x" style={{ color: '#e67e22' }} />
             <h3>Ask the model to reason step-by-step before the final answer</h3>
@@ -315,7 +315,7 @@ Think step by step."`}
           title: 'Reasoning Techniques (4-6)',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
@@ -379,7 +379,7 @@ Think step by step."`}
           title: '7-8. Prompt Chaining & Tree of Thoughts',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-arrows-turn-to-dots" sizeName="3x" style={{ color: '#f39c12' }} />
             <SvgIcon iconName="duo-sitemap" sizeName="3x" style={{ color: '#e67e22' }} />
@@ -432,7 +432,7 @@ Think step by step."`}
           title: '9. Retrieval-Augmented Generation (RAG)',
           icon: { name: 'duo-database' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-database" sizeName="2x" style={{ color: '#2ecc71' }} />
             <h3>Retrieve external documents and condition the model on them to ground responses</h3>
@@ -505,7 +505,7 @@ work?"`}
           title: 'Agentic Techniques (10, 14-16)',
           icon: { name: 'duo-robot' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-robot" sizeName="3x" style={{ color: '#9b59b6' }} />
             <SvgIcon iconName="duo-code" sizeName="3x" style={{ color: '#3498db' }} />
@@ -572,7 +572,7 @@ work?"`}
           title: 'Hybrid Techniques (11-13)',
           icon: { name: 'duo-layer-group' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#f39c12' }} />
             <SvgIcon iconName="duo-sliders" sizeName="3x" style={{ color: '#e74c3c' }} />
@@ -631,7 +631,7 @@ work?"`}
           title: '17. Multimodal Chain-of-Thought',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-image" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Combine vision (and/or audio) with text in step-by-step reasoning</h3>
@@ -696,7 +696,7 @@ the answer step-by-step."`}
           title: '18. Graph Prompting',
           icon: { name: 'duo-circle-nodes' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-project-diagram" sizeName="2x" style={{ color: '#1abc9c' }} />
             <h3>Use graphs/knowledge graphs to structure context and reasoning for LLMs</h3>
@@ -762,7 +762,7 @@ Show the path used."`}
           title: 'Technique Complexity Overview',
           icon: { name: 'duo-table' },
           content: (
-        <div style={{ fontSize: '0.65em', maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ fontSize: '0.65em', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-chart-bar" sizeName="2x" />
             Complexity & Use Case Matrix
@@ -821,7 +821,7 @@ Show the path used."`}
           title: 'Best Practices & Recommendations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
@@ -879,7 +879,7 @@ Show the path used."`}
           title: 'Decision Framework',
           icon: { name: 'duo-compass' },
           content: (
-        <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.8em' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-route" sizeName="2x" style={{ color: '#3498db' }} />
             Which Technique Should You Use?
@@ -926,7 +926,7 @@ Show the path used."`}
           content: (
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>From Simple to Advanced</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', maxWidth: '800px', margin: '0 auto', fontSize: '0.85em' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', margin: '0 auto', fontSize: '0.85em' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
               <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
               <div style={{ textAlign: 'left' }}>

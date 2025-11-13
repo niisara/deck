@@ -25,7 +25,7 @@ export const nerApproachesDeck: Deck = {
               <p style={{ fontSize: '1.1em', marginTop: '30px' }}>
                 A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
               </p>
-              <div style={{ marginTop: '40px', fontSize: '0.85em', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', maxWidth: '800px' }}>
+              <div style={{ marginTop: '40px', fontSize: '0.85em', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                 <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                   <div style={{ marginTop: '5px' }}>Rule-Based</div>

@@ -48,7 +48,7 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Table of Contents',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <p style={{ textAlign: 'center', marginBottom: '20px', fontSize: '1.2em' }}>
             Each technique includes <strong>Goal</strong>, <strong>How It Works</strong>, <strong>When to Use</strong>, <strong>Pros</strong>, and <strong>Cons</strong>
           </p>
@@ -126,7 +126,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '1. Remove Boilerplate Noise',
           icon: { name: 'duo-broom' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#e74c3c' }} />
             <h3>Extract main content from noisy web pages and documents</h3>
@@ -200,7 +200,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '2. Deduplicate Repeated Text',
           icon: { name: 'duo-copy' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-copy" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Remove exact, near-duplicate, and semantically redundant text</h3>
@@ -276,7 +276,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '3. Normalize Whitespace & Formatting',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-align-left" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Create consistent spacing, line breaks, and punctuation</h3>
@@ -346,7 +346,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '4. Convert Tables to Structured Text',
           icon: { name: 'duo-table' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" style={{ color: '#1abc9c' }} />
             <h3>Make tables machine-usable for retrieval, QA, and analytics</h3>
@@ -414,7 +414,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '5. OCR Cleanup',
           icon: { name: 'duo-scanner' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-scanner" sizeName="2x" style={{ color: '#e67e22' }} />
             <h3>Fix OCR noise: broken words, wrong characters, artifacts</h3>
@@ -482,7 +482,7 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Text Segmentation (6-8)',
           icon: { name: 'duo-scissors' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-scissors" sizeName="3x" style={{ color: '#3498db' }} />
             <SvgIcon iconName="duo-puzzle-piece" sizeName="3x" style={{ color: '#9b59b6' }} />
@@ -539,7 +539,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '9. Text Normalization',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-text-width" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Standardize casing, numbers, dates, abbreviations to reduce sparsity</h3>
@@ -608,7 +608,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '10-11. Stopwords & Lemmatization',
           icon: { name: 'duo-filter' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-filter-circle-xmark" sizeName="3x" style={{ color: '#e74c3c' }} />
             <SvgIcon iconName="duo-seedling" sizeName="3x" style={{ color: '#2ecc71' }} />
@@ -664,7 +664,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '12-13. Keyphrase & Entity Extraction',
           icon: { name: 'duo-tags' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-key" sizeName="3x" style={{ color: '#f39c12' }} />
             <SvgIcon iconName="duo-tag" sizeName="3x" style={{ color: '#3498db' }} />
@@ -720,7 +720,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '14. Remove Dead Chunks',
           icon: { name: 'duo-trash' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-trash-can" sizeName="2x" style={{ color: '#e74c3c' }} />
             <h3>Drop low-value chunks (noise, artifacts, empty or repetitive text)</h3>
@@ -790,7 +790,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '15. Chunk Summary Metadata',
           icon: { name: 'duo-note-sticky' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-file-contract" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Provide compact previews of chunks for ranking and UX</h3>
@@ -859,7 +859,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '16. Domain Dictionary / Synonym Normalization',
           icon: { name: 'duo-book' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-book-bookmark" sizeName="2x" style={{ color: '#1abc9c' }} />
             <h3>Map aliases/synonyms to canonical concepts for consistency</h3>
@@ -928,7 +928,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '17. Temporal Labeling / Version Tagging',
           icon: { name: 'duo-calendar' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-clock" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Track when and which version content refers to</h3>
@@ -997,7 +997,7 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Minimal Viable Pipeline',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ margin: '0 auto' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="2x" style={{ color: '#3498db' }} />
             Example Starter Pipeline
@@ -1048,7 +1048,7 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Summary & Best Practices',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.85em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px' }}>
             <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '18px' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71' }}>

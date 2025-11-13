@@ -109,7 +109,7 @@ greet('World');
       content: (
         <div>
           <h3>Common Navigation Patterns</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', maxWidth: '600px', margin: '30px auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', margin: '30px auto' }}>
             <div style={{ textAlign: 'center' }}>
               <SvgIcon iconName="duo-house" sizeName="2x" />
               <p>Home</p>

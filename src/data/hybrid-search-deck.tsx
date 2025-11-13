@@ -25,7 +25,7 @@ export const hybridSearchDeck: Deck = {
               <p style={{ fontSize: '1.2em', marginTop: '30px' }}>
                 A practical cheat sheet for combining lexical and semantic search to build more powerful retrieval systems
               </p>
-              <div style={{ marginTop: '40px', fontSize: '0.9em', display: 'flex', gap: '15px', flexWrap: 'wrap', maxWidth: '900px' }}>
+              <div style={{ marginTop: '40px', fontSize: '0.9em', display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
                 <span>Weighted Hybrid</span>
                 <span>•</span>
                 <span>Two-Stage Retrieval</span>

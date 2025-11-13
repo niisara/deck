@@ -36,7 +36,7 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Table of Contents',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -98,7 +98,7 @@ export const sentimentAnalysisDeck: Deck = {
           title: '1. Lexicon-Based Sentiment Scoring',
           icon: { name: 'duo-book' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Dictionary/lexicon lookup with additive scoring</h3>
@@ -160,7 +160,7 @@ export const sentimentAnalysisDeck: Deck = {
           title: '2. Rule-Based Sentiment Classification',
           icon: { name: 'duo-brackets-square' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#9B59B6' }} />
             <h3>Handcrafted rules + patterns over tokens/syntax</h3>
@@ -221,7 +221,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 5,
           title: 'Classical ML Approaches (3-5)',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
             <SvgIcon iconName="duo-table" sizeName="3x" style={{ color: '#e67e22' }} />
@@ -268,7 +268,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 6,
           title: 'Modern NLP Tools (6-7)',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-comments" sizeName="3x" style={{ color: '#1abc9c' }} />
             <SvgIcon iconName="duo-language" sizeName="3x" style={{ color: '#9b59b6' }} />
@@ -320,7 +320,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 7,
           title: 'Deep Learning Models (8-10)',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-network-wired" sizeName="3x" style={{ color: '#e74c3c' }} />
             <SvgIcon iconName="duo-project-diagram" sizeName="3x" style={{ color: '#f39c12' }} />
@@ -379,7 +379,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 8,
           title: 'Transformer Models (11-13)',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-microchip" sizeName="3x" style={{ color: '#9b59b6' }} />
             <SvgIcon iconName="duo-brain-circuit" sizeName="3x" style={{ color: '#e67e22' }} />
@@ -445,7 +445,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 9,
           title: 'Advanced Techniques (14-15)',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-bullseye-arrow" sizeName="3x" style={{ color: '#e67e22' }} />
             <SvgIcon iconName="duo-photo-video" sizeName="3x" style={{ color: '#9b59b6' }} />
@@ -503,7 +503,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 10,
           title: 'Comparison Matrix',
           content: (
-        <div style={{ fontSize: '0.6em', maxWidth: '1100px', margin: '0 auto' }}>
+        <div style={{ fontSize: '0.6em', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-table-columns" sizeName="2x" />
             Key Dimensions Across All 15 Techniques
@@ -545,7 +545,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 11,
           title: 'Recommendations & Best Practices',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.85em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
@@ -599,7 +599,7 @@ export const sentimentAnalysisDeck: Deck = {
           id: 12,
           title: 'Implementation Roadmap',
           content: (
-        <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        <div style={{ margin: '0 auto' }}>
           <h3 style={{ marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-map" sizeName="2x" style={{ color: '#3498db' }} />
             Next Steps

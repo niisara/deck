@@ -46,7 +46,7 @@ export const queryRewritingDeck: Deck = {
           title: 'Why Query Rewriting?',
           icon: { name: 'duo-lightbulb' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.85em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '20px' }}>
@@ -100,7 +100,7 @@ export const queryRewritingDeck: Deck = {
           title: 'Impact on RAG Performance',
           icon: { name: 'duo-chart-line' },
           content: (
-        <div style={{ maxWidth: '900px', margin: '0 auto', fontSize: '0.85em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
             <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
               <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
@@ -140,7 +140,7 @@ export const queryRewritingDeck: Deck = {
           title: 'Implementation Workflow',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ maxWidth: '950px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>Step-by-Step Process</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
             <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
@@ -193,7 +193,7 @@ export const queryRewritingDeck: Deck = {
           title: '21 Strategies Overview',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.65em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
               <h4 style={{ color: '#3498db', marginBottom: '10px' }}>📈 Expansion & Enhancement</h4>
@@ -260,7 +260,7 @@ export const queryRewritingDeck: Deck = {
           title: '1. Query Expansion',
           icon: { name: 'duo-arrows-maximize' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '950px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ marginBottom: '20px' }}>
             <h3>Bridge vocabulary gaps, increase recall with synonyms/related terms</h3>
           </div>
@@ -324,7 +324,7 @@ export const queryRewritingDeck: Deck = {
           id: 7,
           title: '2-3. Reformulation & Decomposition',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
@@ -375,7 +375,7 @@ export const queryRewritingDeck: Deck = {
           id: 8,
           title: '4-5. Step-Back & HyDE',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
@@ -423,7 +423,7 @@ export const queryRewritingDeck: Deck = {
           id: 9,
           title: '6-7. Multi-Query & Context-Aware',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
@@ -476,7 +476,7 @@ export const queryRewritingDeck: Deck = {
           id: 10,
           title: '8-9. Clarification & Specification',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
@@ -526,7 +526,7 @@ export const queryRewritingDeck: Deck = {
           id: 11,
           title: '10-15. Semantic & Document Strategies',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.65em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '8px', padding: '12px' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>10. Semantic Bridging</h4>
@@ -580,7 +580,7 @@ export const queryRewritingDeck: Deck = {
           id: 12,
           title: '20-21. Domain & Intent-Based',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.72em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
@@ -629,7 +629,7 @@ export const queryRewritingDeck: Deck = {
           id: 13,
           title: 'Adaptive Strategies (22-24)',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
@@ -695,7 +695,7 @@ export const queryRewritingDeck: Deck = {
           title: 'Strategy Selection Guide',
           icon: { name: 'duo-compass' },
           content: (
-        <div style={{ maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '25px' }}>When to Use Each Strategy</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '18px' }}>
             <div style={{ padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', borderLeft: '4px solid #3498db' }}>
@@ -749,7 +749,7 @@ export const queryRewritingDeck: Deck = {
           title: 'Best Practices & Implementation',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
@@ -810,7 +810,7 @@ export const queryRewritingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>21 Strategies for Better RAG Retrieval</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', margin: '0 auto', fontSize: '0.75em' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
               <h4 style={{ color: '#3498db', marginBottom: '12px' }}>🎯 Core Strategies (1-9)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
@@ -833,7 +833,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Production optimization</p>
             </div>
           </div>
-          <div style={{ marginTop: '40px', padding: '25px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', maxWidth: '900px', margin: '40px auto 0' }}>
+          <div style={{ marginTop: '40px', padding: '25px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', margin: '40px auto 0' }}>
             <p style={{ fontSize: '1.1em', lineHeight: '1.8' }}>
               <strong>💡 Key Takeaway:</strong> Query rewriting is not one-size-fits-all. Start with 2-3 core strategies, measure impact on your metrics (Recall@k, MRR, grounding rate), then layer additional techniques based on your specific query patterns and domain needs.
             </p>

@@ -89,7 +89,7 @@ print(factorial(5))  # Output: 120
       content: (
         <div>
           <h3>Common Actions</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', maxWidth: '700px', margin: '40px auto' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '30px', margin: '40px auto' }}>
             <div style={{ textAlign: 'center' }}>
               <SvgIcon iconName="duo-pencil" sizeName="3x" />
               <p style={{ marginTop: '10px' }}>Edit</p>
