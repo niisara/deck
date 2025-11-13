@@ -165,7 +165,7 @@ function DeckPage() {
             to="/" 
             className={`home-button-overlay ${showHomeButton ? 'visible' : ''}`}
           >
-            ← Home
+            <SvgIcon iconName="duo-house" sizeName="lg" />
           </Link>
           
           <button 

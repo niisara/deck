@@ -34,6 +34,10 @@
   opacity: 0;
   transform: translateX(-10px);
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
 }
 
 .home-button-overlay.visible {
