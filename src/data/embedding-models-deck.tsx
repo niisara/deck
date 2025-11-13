@@ -36,7 +36,7 @@ export const embeddingModelsDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', fontSize: '0.9em', maxWidth: '900px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', fontSize: '0.9em' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(79, 195, 247, 0.1)', borderRadius: '10px' }}>
                   <SvgIcon iconName="duo-cloud" sizeName="2x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
                   <div>
@@ -65,7 +65,7 @@ export const embeddingModelsDeck: Deck = {
                     <div style={{ fontSize: '0.85em', color: '#aaa' }}>Instructor-XL</div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '10px', gridColumn: '1 / -1', maxWidth: '400px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '10px', gridColumn: '1 / -1' }}>
                   <SvgIcon iconName="duo-shop" sizeName="2x" style={{ color: '#f06292' }} darkModeInvert={true} />
                   <div>
                     <strong>GTE (Alibaba)</strong>
@@ -96,7 +96,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Proprietary embedding model (bi-encoder), 1536-dim vectors via API
                 </div>
@@ -105,7 +105,7 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Very low cost ($0.02 per 1M tokens)</li>
                     <li>Good quality vs price</li>
                     <li>Stable API & tooling</li>
@@ -135,7 +135,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Proprietary embedding model (bi-encoder), 3072-dim vectors via API
                 </div>
@@ -180,7 +180,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Open-source bi-encoder, 768-dim, max sequence length ~512 tokens
                 </div>
@@ -219,7 +219,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Open-source bi-encoder, 1024-dim, max sequence length ~512 tokens
                 </div>
@@ -262,7 +262,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Open-source bi-encoder, 768-dim, max sequence length ~512 tokens
                 </div>
@@ -300,7 +300,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Open-source bi-encoder, 1024-dim, max sequence length ~512 tokens
                 </div>
@@ -345,7 +345,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Instruction-finetuned bi-encoder, ~768-dim, max sequence length ~512 tokens
                 </div>
@@ -389,7 +389,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Open-source bi-encoder, 768-dim, max sequence length ~512 tokens
                 </div>
@@ -428,7 +428,7 @@ export const embeddingModelsDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#4fc3f7' }}>Model Type:</strong> Open-source bi-encoder, 1024-dim, max sequence length ~512 tokens
                 </div>
@@ -471,7 +471,7 @@ export const embeddingModelsDeck: Deck = {
           icon: { name: 'duo-compass' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '900px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '20px' }}>
                   <SvgIcon iconName="duo-map-location" sizeName="2x" darkModeInvert={true} />
                   How to Choose Your Embedding Model

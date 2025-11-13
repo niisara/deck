@@ -25,7 +25,7 @@ export const productionRagDeck: Deck = {
               <h3 style={{ fontSize: '1.2em', marginTop: '30px', color: '#4fc3f7' }}>
                 Proven designs for reliable, scalable Retrieval-Augmented Generation
               </h3>
-              <div style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px', maxWidth: '800px' }}>
+              <div style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" darkModeInvert={true} />
                   <span>Retrieval accuracy</span>
@@ -55,7 +55,7 @@ export const productionRagDeck: Deck = {
           id: 2,
           title: 'Agenda & Patterns Overview',
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.8em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.8em' }}>
               <h2 style={{ marginBottom: '20px' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Exploring 11 production-ready RAG architecture patterns
@@ -124,7 +124,7 @@ export const productionRagDeck: Deck = {
           title: '1) Basic RAG (Single Retrieve → Generate)',
           icon: { name: 'duo-arrow-right' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -196,7 +196,7 @@ export const productionRagDeck: Deck = {
           title: '2) RAG with Re-Ranking',
           icon: { name: 'duo-list-ol' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -268,7 +268,7 @@ export const productionRagDeck: Deck = {
           title: '3) RAG with Query Rewriting',
           icon: { name: 'duo-pencil' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -339,7 +339,7 @@ export const productionRagDeck: Deck = {
           title: '4) RAG with Multi-Query Retrieval',
           icon: { name: 'duo-copy' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -410,7 +410,7 @@ export const productionRagDeck: Deck = {
           title: '5) RAG with HyDE (Hypothetical Document Embeddings)',
           icon: { name: 'duo-lightbulb' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -480,7 +480,7 @@ export const productionRagDeck: Deck = {
           title: '6) RAG with Parent–Child Retrieval',
           icon: { name: 'duo-circle-nodes' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -550,7 +550,7 @@ export const productionRagDeck: Deck = {
           title: '7) RAG with Graph-Based Retrieval (GraphRAG)',
           icon: { name: 'duo-circle-nodes' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.7em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -623,7 +623,7 @@ export const productionRagDeck: Deck = {
           title: '8) RAG with External Tools / Agents',
           icon: { name: 'duo-gear' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -694,7 +694,7 @@ export const productionRagDeck: Deck = {
           title: '9) RAG + Fine-Tuned Model Hybrid',
           icon: { name: 'duo-brain-circuit' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -764,7 +764,7 @@ export const productionRagDeck: Deck = {
           title: '10) RAG with Multi-Step Retrieval Loops',
           icon: { name: 'duo-arrows-rotate' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -834,7 +834,7 @@ export const productionRagDeck: Deck = {
           title: '11) RAG with Context Compression / Summarization',
           icon: { name: 'duo-broom' },
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1000px', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Components:</strong></p>
@@ -903,7 +903,7 @@ export const productionRagDeck: Deck = {
           id: 14,
           title: 'Pattern Selection Guide & Tradeoffs',
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.7em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
               <h2 style={{ marginBottom: '20px' }}>
                 <SvgIcon iconName="duo-map" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Pattern Selection Guide & Tradeoffs

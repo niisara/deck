@@ -48,7 +48,7 @@ export const vectorDatabasesDeck: Deck = {
       title: 'Table of Contents',
       icon: { name: 'duo-list-check' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '900px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <h3 style={{ marginBottom: '30px', textAlign: 'center' }}>11 Vector Databases Covered</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
             <div>
@@ -119,7 +119,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 3,
           title: 'Pinecone',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -189,7 +189,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 4,
           title: 'Weaviate',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -258,7 +258,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 5,
           title: 'Qdrant',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -327,7 +327,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 6,
           title: 'Milvus',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -396,7 +396,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 7,
           title: 'Chroma',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -465,7 +465,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 8,
           title: 'Redis Vector Store',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -534,7 +534,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 9,
           title: 'Elasticsearch Vector',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -603,7 +603,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 10,
           title: 'Vespa',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -672,7 +672,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 11,
           title: 'PostgreSQL + pgvector',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -741,7 +741,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 12,
           title: 'MongoDB Vector Search',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -810,7 +810,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 13,
           title: 'LanceDB',
           content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginBottom: '10px' }}>
@@ -879,7 +879,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 14,
           title: 'Quick Comparison Summary',
           content: (
-        <div style={{ maxWidth: '1100px', margin: '0 auto', fontSize: '0.55em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.55em' }}>
           <h3 style={{ marginBottom: '15px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
             At-a-glance comparison of all 11 vector databases
@@ -995,7 +995,7 @@ export const vectorDatabasesDeck: Deck = {
           id: 15,
           title: 'Selection Guide',
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '25px', textAlign: 'center' }}>How to Choose the Right Vector Database</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>

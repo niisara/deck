@@ -25,7 +25,7 @@ export const nerApproachesDeck: Deck = {
               <p style={{ fontSize: '1.1em', marginTop: '30px' }}>
                 A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
               </p>
-              <div style={{ marginTop: '40px', fontSize: '0.85em', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', maxWidth: '800px' }}>
+              <div style={{ marginTop: '40px', fontSize: '0.85em', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                 <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                   <div style={{ marginTop: '5px' }}>Rule-Based</div>
@@ -63,7 +63,7 @@ export const nerApproachesDeck: Deck = {
           id: 2,
           title: 'Table of Contents',
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '900px', fontSize: '0.85em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.85em' }}>
               <h2 style={{ marginBottom: '30px' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Table of Contents
@@ -135,7 +135,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Deterministic rules, regexes, token patterns, heuristics.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -187,7 +187,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Lexicon/alias lookup with exact/fuzzy matching, optional normalization.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -237,7 +237,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Feature-based ML (TF-IDF/BoW, char n-grams, window features) + classifier (LogReg/SVM/Perceptron) at token/span level.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -288,7 +288,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Generative sequence model with transition/emission probabilities; Viterbi decoding.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -337,7 +337,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Discriminative sequence model over hand-crafted features; BIO/IOB tagging.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
@@ -387,7 +387,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-brain' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Neural sequence tagger: embeddings + BiLSTM encoder + CRF decoder.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -438,7 +438,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Character-level CNN (or LSTM) for subword features + word embeddings + BiLSTM (+ CRF/softmax).</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -489,7 +489,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Production-ready pipeline (transition-based CNN or transformer backends) with beam search; rule+ML integration.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -541,7 +541,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Transformer encoder (BERT) with token classification head (softmax) ± CRF layer.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.9em' }}>
@@ -591,7 +591,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Transformer variants; RoBERTa (accuracy-optimized), DistilBERT (compressed for speed) with token classification.</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
@@ -643,7 +643,7 @@ export const nerApproachesDeck: Deck = {
           icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
                   <p><strong>Model Type:</strong> Large instruction-tuned LMs prompted for extraction (zero-/few-shot) or lightly fine-tuned (PEFT/LoRA).</p>
                   <p style={{ marginTop: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
@@ -692,7 +692,7 @@ export const nerApproachesDeck: Deck = {
           id: 14,
           title: 'Summary & Comparison',
           content: (
-            <div style={{ textAlign: 'left', maxWidth: '1100px', fontSize: '0.7em' }}>
+            <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
               <h2 style={{ marginBottom: '25px' }}>
                 <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Summary & Comparison

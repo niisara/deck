@@ -136,7 +136,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-database" sizeName="3x" style={{ color: '#ff6b35' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ color: '#00ff00' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ color: '#ff6b35', marginBottom: '15px' }}>The simplest vector index with exact search guarantees</h3>
                 
                 <div style={{ marginBottom: '15px' }}>
@@ -191,7 +191,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#00d4ff' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ color: '#ff6b35' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ color: '#00d4ff', marginBottom: '15px' }}>Hierarchical Navigable Small World - High-recall approximate nearest neighbor search</h3>
                 
                 <div style={{ marginBottom: '15px' }}>
@@ -246,7 +246,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-folder-tree" sizeName="3x" style={{ color: '#4ecdc4' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ color: '#00d4ff' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ color: '#4ecdc4', marginBottom: '15px' }}>A coarse quantization-based approach for efficient vector indexing and retrieval</h3>
                 
                 <div style={{ marginBottom: '15px' }}>
@@ -300,7 +300,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-compress" sizeName="3x" style={{ color: '#ffc300' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-bolt" sizeName="2x" style={{ color: '#ff6b35' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ color: '#ffc300', marginBottom: '15px' }}>Inverted File Index combined with Product Quantization for efficient vector compression</h3>
                 
                 <div style={{ marginBottom: '12px' }}>
@@ -366,7 +366,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-tree" sizeName="3x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-brands-spotify" sizeName="2x" style={{ color: '#1db954' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '15px' }}>Approximate Nearest Neighbors Oh Yeah - Simple and Efficient Vector Search</h3>
                 
                 <div style={{ marginBottom: '15px' }}>
@@ -421,7 +421,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-brands-google" sizeName="3x" style={{ color: '#4285f4' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-bolt-lightning" sizeName="2x" style={{ color: '#ea4335' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
                 
                 <div style={{ marginBottom: '12px' }}>
@@ -488,7 +488,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-hashtag" sizeName="3x" style={{ color: '#e74c3c' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-table-cells" sizeName="2x" style={{ color: '#00d4ff' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>Probabilistic algorithm for approximate nearest neighbor search using hash collisions</h3>
                 
                 <div style={{ marginBottom: '12px' }}>
@@ -551,7 +551,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-project-diagram" sizeName="3x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-hard-drive" sizeName="2x" style={{ color: '#3498db' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '15px' }}>Navigable proximity graphs with controlled out-degree for efficient ANN search</h3>
                 
                 <div style={{ display: 'flex', gap: '20px', marginBottom: '12px' }}>
@@ -616,7 +616,7 @@ export const vectorIndexingDeck: Deck = {
                 <SvgIcon iconName="duo-binary" sizeName="3x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-microchip" sizeName="2x" style={{ color: '#e67e22' }} darkModeInvert={true} />
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.8em' }}>
+              <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ color: '#f1c40f', marginBottom: '15px' }}>Efficient exact search in Hamming space for binary and quantized representations</h3>
                 
                 <div style={{ marginBottom: '15px' }}>
@@ -668,7 +668,7 @@ export const vectorIndexingDeck: Deck = {
           title: 'Summary & Decision Guide',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '950px', fontSize: '0.7em' }}>
+              <div style={{ fontSize: '0.7em' }}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
                   <SvgIcon iconName="duo-map-location-dot" sizeName="2x" darkModeInvert={true} />
                   How to choose the right vector indexing scheme for your use case

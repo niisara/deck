@@ -31,7 +31,7 @@ export const ragLatencyDeck: Deck = {
             <SvgIcon iconName="file-lines" sizeName="lg" style={iconStyle} />
             Technical Guide
           </div>
-          <div style={{ fontSize: '1rem', lineHeight: '1.6', maxWidth: '900px', textAlign: 'left' }}>
+          <div style={{ fontSize: '1rem', lineHeight: '1.6', textAlign: 'left' }}>
             How to lower end-to-end latency across <span style={{ color: '#e06c75' }}>embedding</span>, 
             <span style={{ color: '#d19a66' }}> retrieval</span>, 
             <span style={{ color: '#98c379' }}> orchestration</span>, and 

@@ -84,7 +84,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Reduce textual variability so the same concepts map to similar tokens.</p>
                 <p><strong>How It Works:</strong> Apply unicode normalization, consistent casing, whitespace and punctuation fixes to standardize input.</p>
                 <p><strong>When to Use:</strong> Mixed sources, OCR, scraped web, user-generated content, legacy docs.</p>
@@ -127,7 +127,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Eliminate non-content text that dilutes embeddings.</p>
                 <p><strong>How It Works:</strong> Detect and strip headers/footers, nav, ads, cookie banners, email signatures, legal footers.</p>
                 <p><strong>When to Use:</strong> Web pages, PDFs, emails, repeated templates across documents.</p>
@@ -170,7 +170,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Split documents into coherent units that answer a question on their own.</p>
                 <p><strong>How It Works:</strong> Use structure and similarity to set chunk boundaries and optional overlaps.</p>
                 <p><strong>When to Use:</strong> Long documents, RAG pipelines, context-window constraints.</p>
@@ -213,7 +213,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Provide context and disambiguation for each chunk.</p>
                 <p><strong>How It Works:</strong> Prepend/bundle the document title and heading path with the chunk text/metadata.</p>
                 <p><strong>When to Use:</strong> Hierarchical docs, manuals, APIs, research papers.</p>
@@ -256,7 +256,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Reduce filler tokens while preserving meaning and negation.</p>
                 <p><strong>How It Works:</strong> Remove a conservative set of high-frequency function words outside code/data.</p>
                 <p><strong>When to Use:</strong> Tight token budgets, repetitive narrative text, noisy corpora.</p>
@@ -299,7 +299,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Enrich chunks with facetable concepts for better filtering and recall.</p>
                 <p><strong>How It Works:</strong> Extract keyphrases and map to a controlled vocabulary; store as metadata fields.</p>
                 <p><strong>When to Use:</strong> Large corpora, multi-domain search, governance/compliance filters.</p>
@@ -342,7 +342,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
               </div>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p><strong>Goal:</strong> Preserve relational information in a model-friendly linear form.</p>
                 <p><strong>How It Works:</strong> Linearize rows/columns into key–value sentences or compact JSON-like strings.</p>
                 <p><strong>When to Use:</strong> Specs, pricing sheets, CSVs, benchmarks, logs.</p>
@@ -383,7 +383,7 @@ export const embeddingQualityDeck: Deck = {
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '900px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-list-check" sizeName="2x" />
                   Recap: The 7 Techniques
@@ -426,7 +426,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ maxWidth: '800px', fontSize: '0.85em' }}>
+              <div style={{ fontSize: '0.85em' }}>
                 <p style={{ fontSize: '1.3em', lineHeight: '1.8', fontWeight: '300' }}>
                   Many embedding quality improvements come from <strong>better data preparation</strong>, not just model selection.
                 </p>

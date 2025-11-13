@@ -25,7 +25,7 @@ export const rerankingModelsDeck: Deck = {
           <h3 style={{ fontSize: '1.1em', marginTop: '30px', color: '#4fc3f7' }}>
             To Improve RAG Accuracy
           </h3>
-          <p style={{ fontSize: '1em', marginTop: '30px', maxWidth: '900px' }}>
+          <p style={{ fontSize: '1em', marginTop: '30px' }}>
             Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation
           </p>
           <div style={{ marginTop: '50px', display: 'flex', gap: '20px', alignItems: 'center' }}>
@@ -62,7 +62,7 @@ export const rerankingModelsDeck: Deck = {
       id: 2,
       title: 'Why Re-Ranking in RAG?',
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <h2 style={{ textAlign: 'left', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Why Re-Ranking Matters
@@ -147,7 +147,7 @@ export const rerankingModelsDeck: Deck = {
       title: '1) Cross-Encoder Ranker (MS MARCO family)',
       icon: { name: 'duo-brain-circuit' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
               <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
@@ -223,7 +223,7 @@ export const rerankingModelsDeck: Deck = {
       title: '2) BERT-based Cross Encoder (ms-marco-MiniLM)',
       icon: { name: 'duo-gauge-high' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
               <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong></p>
@@ -300,7 +300,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '3) MonoT5 Re-Ranker',
       icon: { name: 'duo-brain' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
               <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong></p>
@@ -376,7 +376,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '4-5) MonoBERT & ColBERT',
       icon: { name: 'duo-copy' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
             <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
               <h3 style={{ color: '#ba68c8', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -472,7 +472,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '6-7) E5-Ranker & LLM-as-a-Ranker',
       icon: { name: 'duo-rocket' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
             <div style={{ padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '8px' }}>
               <h3 style={{ color: '#64b5f6', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -570,7 +570,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '8-9) RRF & Fusion-in-Decoder',
       icon: { name: 'duo-arrows-spin' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
             <div style={{ padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '8px' }}>
               <h3 style={{ color: '#ffa726', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -650,7 +650,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: '10-11) DPR & BM25 + LLM Hybrid',
       icon: { name: 'duo-sliders' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1050px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
             <div style={{ padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '8px' }}>
               <h3 style={{ color: '#9575cd', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -754,7 +754,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: 'Model Comparison at a Glance',
       icon: { name: 'duo-table' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1100px', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', fontSize: '0.9em', borderCollapse: 'collapse' }}>
               <thead>
@@ -813,7 +813,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: 'Quick Recommendations by Use Case',
       icon: { name: 'duo-map' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
             <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
               <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -898,7 +898,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: 'Operational Tips & Trade-offs',
       icon: { name: 'duo-lightbulb' },
       content: (
-        <div style={{ textAlign: 'left', maxWidth: '1000px', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>

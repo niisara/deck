@@ -136,7 +136,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#42a5f5' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -203,7 +203,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#7e57c2' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -269,7 +269,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.7em' }}>
+              <div style={{ fontSize: '0.7em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#7e57c2' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -343,7 +343,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#7e57c2' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -412,7 +412,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.7em' }}>
+              <div style={{ fontSize: '0.7em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#26c6da' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -487,7 +487,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#42a5f5' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -559,7 +559,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#7e57c2' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -633,7 +633,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.7em' }}>
+              <div style={{ fontSize: '0.7em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#26c6da' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -711,7 +711,7 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
               </div>
-              <div style={{ maxWidth: '950px', fontSize: '0.75em' }}>
+              <div style={{ fontSize: '0.75em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <strong style={{ color: '#42a5f5' }}><SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
@@ -786,7 +786,7 @@ export const metadataEnrichmentDeck: Deck = {
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '1000px', fontSize: '0.65em' }}>
+              <div style={{ fontSize: '0.65em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#42a5f5', marginBottom: '10px' }}>
@@ -883,7 +883,7 @@ export const metadataEnrichmentDeck: Deck = {
           icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ maxWidth: '1000px', fontSize: '0.7em' }}>
+              <div style={{ fontSize: '0.7em' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px', marginBottom: '20px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ color: '#42a5f5', marginBottom: '8px' }}>
