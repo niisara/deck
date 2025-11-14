@@ -18,13 +18,6 @@ export const rerankingModelsDeck: Deck = {
       title: '11 Re-Ranking Models to Improve RAG Accuracy',
       content: (
         <div style={{ textAlign: 'left' }}>
-          <h2 style={{ marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
-            11 Re-Ranking Models
-          </h2>
-          <h3 style={{ fontSize: '1.1em', marginTop: '30px', color: '#4fc3f7' }}>
-            To Improve RAG Accuracy
-          </h3>
           <p style={{ fontSize: '1em', marginTop: '30px' }}>
             Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation
           </p>

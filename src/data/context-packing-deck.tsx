@@ -20,13 +20,6 @@ export const contextPackingDeck: Deck = {
           title: '13 Context Packing Techniques',
           content: (
             <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-compress" sizeName="2xl" style={{ marginRight: '1rem' }} />
-            CONTEXT PACKING TECHNIQUES
-          </div>
-          <div style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#98c379' }}>
-            13 Context Packing Techniques
-          </div>
           <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
             RAG and LLM-ready strategies to maximize answer quality within token limits
           </div>
@@ -57,11 +50,6 @@ export const contextPackingDeck: Deck = {
       title: 'Overview / Table of Contents',
       content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
-          <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-list-ol" sizeName="xl" style={{ marginRight: '0.8rem' }} />
-            <strong style={{ fontSize: '1.2rem' }}>13 Context Packing Techniques</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem 2rem' }}>
             <div>
               <div style={{ color: '#e06c75', marginBottom: '0.8rem', fontSize: '0.95rem' }}>

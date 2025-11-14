@@ -1300,10 +1300,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-heart', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '2.5rem', marginBottom: '2rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-thumbs-up" sizeName="3x" style={{ marginRight: '1rem' }} />
-            Thank You
-          </div>
           <div style={{ fontSize: '1.5rem', marginBottom: '3rem', color: '#98c379' }}>
             Questions? Feedback?
           </div>

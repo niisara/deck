@@ -20,13 +20,6 @@ export const entityNormalizationDeck: Deck = {
           title: '13 Entity Normalization & Disambiguation Techniques',
           content: (
             <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="2xl" style={{ marginRight: '1rem' }} />
-            ENTITY NORMALIZATION & DISAMBIGUATION
-          </div>
-          <div style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#98c379' }}>
-            13 Entity Normalization & Disambiguation Techniques
-          </div>
           <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
             A practical cheat sheet for NLP, data integration, and knowledge graphs
           </div>

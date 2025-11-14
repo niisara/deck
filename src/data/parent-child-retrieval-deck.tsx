@@ -18,10 +18,6 @@ export const parentChildRetrievalDeck: Deck = {
           title: 'Parent–Child Retrieval Designs for RAG',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <h2 style={{ marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Parent–Child Retrieval Design Patterns
-              </h2>
               <h3 style={{ fontSize: '1.1em', marginTop: '30px', color: '#4fc3f7' }}>
                 For Reliable Grounded Generation
               </h3>
@@ -744,10 +740,6 @@ export const parentChildRetrievalDeck: Deck = {
           title: 'Summary & Conclusion',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
-              <h2 style={{ marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Summary & Conclusion
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>
