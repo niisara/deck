@@ -21,14 +21,14 @@ export const ragLatencyDeck: Deck = {
       content: (
         <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-gauge-high" sizeName="2xl" style={{ marginRight: '1rem' }} />
+            <SvgIcon iconName="duo-gauge-high" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             RAG Optimization
           </div>
           <div style={{ fontSize: '1.3rem', marginBottom: '1.5rem', color: '#98c379' }}>
             Practical, production-ready optimizations for faster RAG
           </div>
           <div style={{ fontSize: '1rem', color: '#888', marginBottom: '2rem' }}>
-            <SvgIcon iconName="file-lines" sizeName="lg" style={iconStyle} />
+            <SvgIcon iconName="file-lines" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             Technical Guide
           </div>
           <div style={{ fontSize: '1rem', lineHeight: '1.6', textAlign: 'left' }}>
