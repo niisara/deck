@@ -86,7 +86,7 @@ By default, we use "strict exact match" - meaning both the span AND type must ma
         {
           id: 3,
           title: 'Metrics Covered',
-          icon: { name: 'duo-list-check', size: '5x' },
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <ol style={{ fontSize: '0.95em', lineHeight: '1.8' }}>
@@ -126,7 +126,7 @@ Don't worry if this seems like a lot - we'll break each one down into simple con
         {
           id: 4,
           title: 'Precision (Entity-Level)',
-          icon: { name: 'duo-bullseye', size: '5x' },
+          icon: { name: 'duo-bullseye' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -213,7 +213,7 @@ Key lesson: NEVER look at precision alone - always consider it with other metric
         {
           id: 6,
           title: 'Recall (Entity-Level)',
-          icon: { name: 'duo-magnifying-glass', size: '5x' },
+          icon: { name: 'duo-magnifying-glass' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -307,7 +307,7 @@ Key lesson: Like precision, NEVER use recall alone. You need to balance it with 
         {
           id: 8,
           title: 'F1 Score (Entity-Level)',
-          icon: { name: 'duo-scale-balanced', size: '5x' },
+          icon: { name: 'duo-scale-balanced' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -409,7 +409,7 @@ Pro tip: Always report F1 alongside precision, recall, AND per-class metrics. Do
         {
           id: 10,
           title: 'Exact Match Score (Sentence-Level)',
-          icon: { name: 'duo-check-double', size: '5x' },
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -505,7 +505,7 @@ Best practice: Use Exact Match for production gates, but combine it with F1, Pre
         {
           id: 12,
           title: 'Partial Match Score (IoU-Based)',
-          icon: { name: 'duo-circle-half-stroke', size: '5x' },
+          icon: { name: 'duo-circle-half-stroke' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -625,7 +625,7 @@ Best practice:
         {
           id: 14,
           title: 'Entity-Level Accuracy',
-          icon: { name: 'duo-percent', size: '5x' },
+          icon: { name: 'duo-percent' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -736,7 +736,7 @@ Best practice: Use Entity-Level Accuracy alongside F1/Precision/Recall for compl
         {
           id: 16,
           title: 'Confusion Matrix Analysis',
-          icon: { name: 'duo-table-cells', size: '5x' },
+          icon: { name: 'duo-table-cells' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
@@ -871,7 +871,7 @@ Best practice:
         {
           id: 18,
           title: 'Summary and Key Takeaways',
-          icon: { name: 'duo-clipboard-check', size: '5x' },
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>Guidance</h3>
@@ -994,7 +994,7 @@ Pro tips:
         {
           id: 20,
           title: 'Next Steps',
-          icon: { name: 'duo-rocket', size: '5x' },
+          icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>Action Items</h3>
