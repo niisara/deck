@@ -123,7 +123,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 3,
           title: '1) Parent–Child Chunking (Hierarchical Retrieval)',
-          icon: { name: 'duo-circle-nodes' },
+          icon: { name: 'duo-circle-nodes', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -182,7 +182,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 4,
           title: '2) Section-Header Anchored Retrieval',
-          icon: { name: 'duo-heading' },
+          icon: { name: 'duo-heading', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -239,7 +239,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 5,
           title: '3) Outline-Based Tree Retrieval',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -294,7 +294,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 6,
           title: '4) Top-k Parent Expansion',
-          icon: { name: 'duo-arrow-up-circle' },
+          icon: { name: 'duo-arrow-up-circle', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -349,7 +349,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 7,
           title: '5) Sibling-Aware Retrieval',
-          icon: { name: 'duo-arrows-rotate' },
+          icon: { name: 'duo-arrows-rotate', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -406,7 +406,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 8,
           title: '6) Windowed Retrieval (Sliding Context Windows)',
-          icon: { name: 'duo-arrows-spin' },
+          icon: { name: 'duo-arrows-spin', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -459,7 +459,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 9,
           title: '7) Semantic Hierarchy Retrieval',
-          icon: { name: 'duo-map' },
+          icon: { name: 'duo-map', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -514,7 +514,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 10,
           title: '8) Dynamic Context Folding',
-          icon: { name: 'duo-broom' },
+          icon: { name: 'duo-broom', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -570,7 +570,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 11,
           title: '9) Hybrid Parent-Child + BM25 Verification',
-          icon: { name: 'duo-shield-check' },
+          icon: { name: 'duo-shield-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -628,7 +628,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 12,
           title: '10) Parent Re-Ranking using Cross-Encoder',
-          icon: { name: 'duo-check-double' },
+          icon: { name: 'duo-check-double', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -685,7 +685,7 @@ export const parentChildRetrievalDeck: Deck = {
         {
           id: 13,
           title: '11) Graph / Knowledge-Node Parent Retrieval',
-          icon: { name: 'duo-circle-nodes' },
+          icon: { name: 'duo-circle-nodes', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>

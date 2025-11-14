@@ -57,7 +57,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 2,
           title: 'Hybrid Search: What and Why',
-          icon: { name: 'duo-lightbulb' },
+          icon: { name: 'duo-lightbulb', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.9em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
@@ -117,7 +117,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 3,
           title: 'Pattern 1 — Weighted Hybrid Scoring',
-          icon: { name: 'duo-sliders' },
+          icon: { name: 'duo-sliders', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -170,7 +170,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 4,
           title: 'Pattern 2 — Two-Stage Retrieval (BM25 → Vector Re-Rank)',
-          icon: { name: 'duo-filter' },
+          icon: { name: 'duo-filter', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -223,7 +223,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 5,
           title: 'Pattern 3 — Reverse Two-Stage (Vector → BM25 Re-Rank)',
-          icon: { name: 'duo-arrows-rotate' },
+          icon: { name: 'duo-arrows-rotate', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -276,7 +276,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 6,
           title: 'Pattern 4 — Term-Boosted Vector Search',
-          icon: { name: 'duo-gauge-high' },
+          icon: { name: 'duo-gauge-high', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -329,7 +329,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 7,
           title: 'Pattern 5 — Metadata-Filtered Hybrid Search',
-          icon: { name: 'duo-filter' },
+          icon: { name: 'duo-filter', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -382,7 +382,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 8,
           title: 'Pattern 6 — Field-Aware Hybrid Scoring (BM25F)',
-          icon: { name: 'duo-table' },
+          icon: { name: 'duo-table', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -435,7 +435,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 9,
           title: 'Pattern 7 — Hybrid Lexical + Semantic Expansion',
-          icon: { name: 'duo-book-open' },
+          icon: { name: 'duo-book-open', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -488,7 +488,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 10,
           title: 'Pattern 8 — Cross-Encoder Re-Ranking After Hybrid',
-          icon: { name: 'duo-check-double' },
+          icon: { name: 'duo-check-double', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -541,7 +541,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 11,
           title: 'Pattern 9 — Hybrid with Parent-Child Chunking',
-          icon: { name: 'duo-circle-nodes' },
+          icon: { name: 'duo-circle-nodes', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -594,7 +594,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 12,
           title: 'Pattern 10 — Approximate + Exact Hybrid (ANN + BM25)',
-          icon: { name: 'duo-rocket' },
+          icon: { name: 'duo-rocket', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -647,7 +647,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 13,
           title: 'Pattern 11 — Hybrid with Domain Dictionaries/Ontologies',
-          icon: { name: 'duo-book' },
+          icon: { name: 'duo-book', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -700,7 +700,7 @@ export const hybridSearchDeck: Deck = {
         {
           id: 14,
           title: 'Summary and Key Takeaways',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>

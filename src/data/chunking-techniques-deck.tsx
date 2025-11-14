@@ -46,7 +46,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 2,
           title: 'What is Chunking and Why It Matters',
-          icon: { name: 'duo-scissors' },
+          icon: { name: 'duo-scissors', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ marginBottom: '30px' }}>
@@ -111,7 +111,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 3,
           title: 'Overview of 26 Techniques',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
@@ -195,7 +195,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 4,
           title: 'Fixed-Size & Sliding Window (1-2)',
-          icon: { name: 'duo-ruler-horizontal' },
+          icon: { name: 'duo-ruler-horizontal', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
@@ -251,7 +251,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 5,
           title: 'Token & Sentence-Based (3-4)',
-          icon: { name: 'duo-paragraph' },
+          icon: { name: 'duo-paragraph', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
@@ -307,7 +307,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 6,
           title: 'Paragraph & Recursive (5-6)',
-          icon: { name: 'duo-paragraph' },
+          icon: { name: 'duo-paragraph', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
@@ -363,7 +363,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 7,
           title: 'Structure-Aware Techniques (7-9)',
-          icon: { name: 'duo-sitemap' },
+          icon: { name: 'duo-sitemap', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
@@ -421,7 +421,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 8,
           title: 'Markup & Specialized Structure (10-13)',
-          icon: { name: 'duo-code' },
+          icon: { name: 'duo-code', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
@@ -487,7 +487,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 9,
           title: 'Semantic Chunking (14-17)',
-          icon: { name: 'duo-brain' },
+          icon: { name: 'duo-brain', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
@@ -557,7 +557,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 10,
           title: 'Adaptive & LLM-Based (18-20)',
-          icon: { name: 'duo-wand-magic-sparkles' },
+          icon: { name: 'duo-wand-magic-sparkles', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
@@ -615,7 +615,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 11,
           title: 'Audio & Multimedia (21-22)',
-          icon: { name: 'duo-video' },
+          icon: { name: 'duo-video', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
@@ -674,7 +674,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 12,
           title: 'Special-Purpose Techniques (23-26)',
-          icon: { name: 'duo-wand-sparkles' },
+          icon: { name: 'duo-wand-sparkles', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
@@ -744,7 +744,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 13,
           title: 'Quick Reference: Default Sizing & Overlap',
-          icon: { name: 'duo-table' },
+          icon: { name: 'duo-table', size: '5x' },
           content: (
         <div style={{ margin: '0 auto', fontSize: '0.7em' }}>
           <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
@@ -828,7 +828,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 14,
           title: 'Selection Guide: Decision Flow',
-          icon: { name: 'duo-compass' },
+          icon: { name: 'duo-compass', size: '5x' },
           content: (
         <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
@@ -881,7 +881,7 @@ export const chunkingTechniquesDeck: Deck = {
         {
           id: 15,
           title: 'Best Practices & Key Takeaways',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
