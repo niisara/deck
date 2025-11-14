@@ -86,7 +86,7 @@ By default, we use "strict exact match" - meaning both the span AND type must ma
         {
           id: 3,
           title: 'Metrics Covered',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <ol style={{ fontSize: '0.95em', lineHeight: '1.8' }}>
@@ -994,7 +994,7 @@ Pro tips:
         {
           id: 20,
           title: 'Next Steps',
-          icon: { name: 'duo-rocket' },
+          icon: { name: 'duo-rocket', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>Action Items</h3>
