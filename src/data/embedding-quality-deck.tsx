@@ -385,7 +385,7 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.85em' }}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-list-check" sizeName="2x" />
+                  <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                   Recap: The 7 Techniques
                 </h3>
                 <p style={{ fontSize: '0.9em', lineHeight: '1.8' }}>
@@ -393,7 +393,7 @@ export const embeddingQualityDeck: Deck = {
                 </p>
                 
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-chart-line" sizeName="2x" />
+                  <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
                   What to Measure
                 </h3>
                 <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
@@ -403,7 +403,7 @@ export const embeddingQualityDeck: Deck = {
                 </ul>
 
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-map" sizeName="2x" />
+                  <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
                   Implementation Playbook
                 </h3>
                 <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
@@ -435,9 +435,9 @@ export const embeddingQualityDeck: Deck = {
                 </p>
               </div>
               <div style={{ marginTop: '50px', display: 'flex', gap: '20px' }}>
-                <SvgIcon iconName="duo-flask" sizeName="2x" />
-                <SvgIcon iconName="duo-rocket" sizeName="2x" />
-                <SvgIcon iconName="duo-star" sizeName="2x" />
+                <SvgIcon iconName="duo-flask" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-star" sizeName="2x" darkModeInvert={true} />
               </div>
             </div>
           ),
