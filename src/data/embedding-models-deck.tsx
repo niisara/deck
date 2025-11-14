@@ -33,7 +33,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 2,
           title: 'Model Families Overview',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', fontSize: '0.9em' }}>
@@ -91,7 +91,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 3,
           title: 'OpenAI text-embedding-3-small',
-          icon: { name: 'duo-cloud' },
+          icon: { name: 'duo-cloud', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -130,7 +130,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 4,
           title: 'OpenAI text-embedding-3-large',
-          icon: { name: 'duo-cloud' },
+          icon: { name: 'duo-cloud', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -175,7 +175,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 5,
           title: 'BGE Base (bge-base-en-v1.5)',
-          icon: { name: 'duo-code-branch' },
+          icon: { name: 'duo-code-branch', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -214,7 +214,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 6,
           title: 'BGE Large (bge-large-en-v1.5)',
-          icon: { name: 'duo-code-branch' },
+          icon: { name: 'duo-code-branch', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -257,7 +257,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 7,
           title: 'E5 Base',
-          icon: { name: 'duo-building' },
+          icon: { name: 'duo-building', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -295,7 +295,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 8,
           title: 'E5 Large',
-          icon: { name: 'duo-building' },
+          icon: { name: 'duo-building', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -340,7 +340,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 9,
           title: 'Instructor XL (hkunlp/instructor-xl)',
-          icon: { name: 'duo-graduation-cap' },
+          icon: { name: 'duo-graduation-cap', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -384,7 +384,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 10,
           title: 'GTE Base (thenlper/gte-base)',
-          icon: { name: 'duo-shop' },
+          icon: { name: 'duo-shop', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -423,7 +423,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 11,
           title: 'GTE Large (thenlper/gte-large)',
-          icon: { name: 'duo-shop' },
+          icon: { name: 'duo-shop', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -468,7 +468,7 @@ export const embeddingModelsDeck: Deck = {
         {
           id: 12,
           title: 'Model Selection Guide',
-          icon: { name: 'duo-compass' },
+          icon: { name: 'duo-compass', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.75em' }}>

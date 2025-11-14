@@ -128,7 +128,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 3,
       title: '1. Use Smaller Embedding Models',
-      icon: { name: 'duo-microchip' },
+      icon: { name: 'duo-microchip', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -205,7 +205,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 4,
       title: '2. Reduce Chunk Size',
-      icon: { name: 'duo-scissors' },
+      icon: { name: 'duo-scissors', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -283,7 +283,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 5,
       title: '3. Limit Top-K Retrieval',
-      icon: { name: 'duo-filter' },
+      icon: { name: 'duo-filter', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -361,7 +361,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 6,
       title: '4. Use Approximate Nearest Neighbor Indexes',
-      icon: { name: 'duo-network-wired' },
+      icon: { name: 'duo-network-wired', size: '5x' },
       content: (
         <div style={{ fontSize: '0.75rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -443,7 +443,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 7,
       title: '5. Cache Frequent Query Embeddings',
-      icon: { name: 'duo-database' },
+      icon: { name: 'duo-database', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -521,7 +521,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 8,
       title: '6. Cache Frequent Retrieval Results',
-      icon: { name: 'duo-floppy-disk' },
+      icon: { name: 'duo-floppy-disk', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -600,7 +600,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 9,
       title: '7. Use Re-Ranking Only on Top Few Results',
-      icon: { name: 'duo-ranking-star' },
+      icon: { name: 'duo-ranking-star', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -682,7 +682,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 10,
       title: '8. Use Context Compression Before LLM Call',
-      icon: { name: 'duo-compress' },
+      icon: { name: 'duo-compress', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -761,7 +761,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 11,
       title: '9. Parallelize Retrieval + Re-Rank',
-      icon: { name: 'duo-gears' },
+      icon: { name: 'duo-gears', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -840,7 +840,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 12,
       title: '10. Use Streaming / Partial Generation',
-      icon: { name: 'duo-stream' },
+      icon: { name: 'duo-stream', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
@@ -920,7 +920,7 @@ export const ragLatencyDeck: Deck = {
     {
       id: 13,
       title: '11. Use Distilled or Smaller LLM for RAG Answering',
-      icon: { name: 'duo-wand-magic-sparkles' },
+      icon: { name: 'duo-wand-magic-sparkles', size: '5x' },
       content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>

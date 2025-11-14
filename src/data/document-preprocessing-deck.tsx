@@ -46,7 +46,7 @@ export const documentPreprocessingDeck: Deck = {
     {
           id: 2,
           title: 'Table of Contents',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <p style={{ textAlign: 'center', marginBottom: '20px', fontSize: '1.2em' }}>
@@ -124,7 +124,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 3,
           title: '1. Remove Boilerplate Noise',
-          icon: { name: 'duo-broom' },
+          icon: { name: 'duo-broom', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -198,7 +198,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 4,
           title: '2. Deduplicate Repeated Text',
-          icon: { name: 'duo-copy' },
+          icon: { name: 'duo-copy', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -274,7 +274,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 5,
           title: '3. Normalize Whitespace & Formatting',
-          icon: { name: 'duo-gears' },
+          icon: { name: 'duo-gears', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -344,7 +344,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 6,
           title: '4. Convert Tables to Structured Text',
-          icon: { name: 'duo-table' },
+          icon: { name: 'duo-table', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -412,7 +412,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 7,
           title: '5. OCR Cleanup',
-          icon: { name: 'duo-scanner' },
+          icon: { name: 'duo-scanner', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -480,7 +480,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 8,
           title: 'Text Segmentation (6-8)',
-          icon: { name: 'duo-scissors' },
+          icon: { name: 'duo-scissors', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
@@ -537,7 +537,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 9,
           title: '9. Text Normalization',
-          icon: { name: 'duo-gears' },
+          icon: { name: 'duo-gears', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -606,7 +606,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 10,
           title: '10-11. Stopwords & Lemmatization',
-          icon: { name: 'duo-filter' },
+          icon: { name: 'duo-filter', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
@@ -662,7 +662,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 11,
           title: '12-13. Keyphrase & Entity Extraction',
-          icon: { name: 'duo-tags' },
+          icon: { name: 'duo-tags', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
@@ -718,7 +718,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 12,
           title: '14. Remove Dead Chunks',
-          icon: { name: 'duo-trash' },
+          icon: { name: 'duo-trash', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -788,7 +788,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 13,
           title: '15. Chunk Summary Metadata',
-          icon: { name: 'duo-note-sticky' },
+          icon: { name: 'duo-note-sticky', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -857,7 +857,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 14,
           title: '16. Domain Dictionary / Synonym Normalization',
-          icon: { name: 'duo-book' },
+          icon: { name: 'duo-book', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -926,7 +926,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 15,
           title: '17. Temporal Labeling / Version Tagging',
-          icon: { name: 'duo-calendar' },
+          icon: { name: 'duo-calendar', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
@@ -995,7 +995,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 16,
           title: 'Minimal Viable Pipeline',
-          icon: { name: 'duo-diagram-project' },
+          icon: { name: 'duo-diagram-project', size: '5x' },
           content: (
         <div style={{ margin: '0 auto' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
@@ -1046,7 +1046,7 @@ export const documentPreprocessingDeck: Deck = {
         {
           id: 17,
           title: 'Summary & Best Practices',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px' }}>

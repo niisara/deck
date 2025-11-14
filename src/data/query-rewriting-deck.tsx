@@ -44,7 +44,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 2,
           title: 'Why Query Rewriting?',
-          icon: { name: 'duo-lightbulb' },
+          icon: { name: 'duo-lightbulb', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
@@ -98,7 +98,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 3,
           title: 'Impact on RAG Performance',
-          icon: { name: 'duo-chart-line' },
+          icon: { name: 'duo-chart-line', size: '5x' },
           content: (
         <div style={{ margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
@@ -138,7 +138,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 4,
           title: 'Implementation Workflow',
-          icon: { name: 'duo-diagram-project' },
+          icon: { name: 'duo-diagram-project', size: '5x' },
           content: (
         <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>Step-by-Step Process</h3>
@@ -191,7 +191,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 5,
           title: '21 Strategies Overview',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
@@ -258,7 +258,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 6,
           title: '1. Query Expansion',
-          icon: { name: 'duo-arrows-maximize' },
+          icon: { name: 'duo-arrows-maximize', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ marginBottom: '20px' }}>
@@ -693,7 +693,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 14,
           title: 'Strategy Selection Guide',
-          icon: { name: 'duo-compass' },
+          icon: { name: 'duo-compass', size: '5x' },
           content: (
         <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '25px' }}>When to Use Each Strategy</h3>
@@ -747,7 +747,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 15,
           title: 'Best Practices & Implementation',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
@@ -806,7 +806,7 @@ export const queryRewritingDeck: Deck = {
         {
           id: 16,
           title: 'Summary: The Query Rewriting Playbook',
-          icon: { name: 'duo-book-open' },
+          icon: { name: 'duo-book-open', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>21 Strategies for Better RAG Retrieval</h2>

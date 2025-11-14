@@ -39,7 +39,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 2,
           title: 'What You\'ll Learn',
-          icon: { name: 'duo-graduation-cap' },
+          icon: { name: 'duo-graduation-cap', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
@@ -70,7 +70,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 3,
           title: 'Tip 1: Build a Domain-Specific Entity Dictionary',
-          icon: { name: 'duo-book' },
+          icon: { name: 'duo-book', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -114,7 +114,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 4,
           title: 'Tip 2: Create High-Quality Annotated Training Data',
-          icon: { name: 'duo-pen-to-square' },
+          icon: { name: 'duo-pen-to-square', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -158,7 +158,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 5,
           title: 'Tip 3: Use Consistent Annotation Guidelines',
-          icon: { name: 'duo-clipboard-list' },
+          icon: { name: 'duo-clipboard-list', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -202,7 +202,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 6,
           title: 'Tip 4: Label Data with Real Domain Context',
-          icon: { name: 'duo-file-lines' },
+          icon: { name: 'duo-file-lines', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -245,7 +245,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 7,
           title: 'Tip 5: Fine-Tune Pretrained Transformer Models',
-          icon: { name: 'duo-brain-circuit' },
+          icon: { name: 'duo-brain-circuit', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -289,7 +289,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 8,
           title: 'Tip 6: Use Data Augmentation for Rare Entities',
-          icon: { name: 'duo-copy' },
+          icon: { name: 'duo-copy', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -332,7 +332,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 9,
           title: 'Tip 7: Add Negative Examples to Reduce False Positives',
-          icon: { name: 'duo-shield-check' },
+          icon: { name: 'duo-shield-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -375,7 +375,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 10,
           title: 'Tip 8: Use Entity Boundary Correction Rules',
-          icon: { name: 'duo-brackets-square' },
+          icon: { name: 'duo-brackets-square', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -417,7 +417,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 11,
           title: 'Tip 9: Perform Iterative Error Analysis and Retraining',
-          icon: { name: 'duo-chart-line' },
+          icon: { name: 'duo-chart-line', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -460,7 +460,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 12,
           title: 'Summary and Next Steps',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -505,7 +505,7 @@ export const nerTrainingDeck: Deck = {
         {
           id: 13,
           title: 'Risks & Mitigations',
-          icon: { name: 'duo-triangle-exclamation' },
+          icon: { name: 'duo-triangle-exclamation', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
