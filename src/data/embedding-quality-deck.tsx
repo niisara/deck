@@ -32,7 +32,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 2,
           title: 'Overview: The 7 Techniques',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '0.9em' }}>
@@ -79,7 +79,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 3,
           title: '1. Clean and Normalize Text',
-          icon: { name: 'duo-broom' },
+          icon: { name: 'duo-broom', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -122,7 +122,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 4,
           title: '2. Remove Boilerplate and Noise',
-          icon: { name: 'duo-filter' },
+          icon: { name: 'duo-filter', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -165,7 +165,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 5,
           title: '3. Use Semantic Chunking',
-          icon: { name: 'duo-scissors' },
+          icon: { name: 'duo-scissors', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -208,7 +208,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 6,
           title: '4. Add Section Titles to Chunks',
-          icon: { name: 'duo-heading' },
+          icon: { name: 'duo-heading', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -251,7 +251,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 7,
           title: '5. Apply Light Stopword Trimming',
-          icon: { name: 'duo-eraser' },
+          icon: { name: 'duo-eraser', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -294,7 +294,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 8,
           title: '6. Add Keyphrase / Topic Tags as Metadata',
-          icon: { name: 'duo-tags' },
+          icon: { name: 'duo-tags', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -337,7 +337,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 9,
           title: '7. Convert Tables to Structured Text',
-          icon: { name: 'duo-table' },
+          icon: { name: 'duo-table', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -380,12 +380,12 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 10,
           title: 'Summary and Next Steps',
-          icon: { name: 'duo-clipboard-check' },
+          icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.85em' }}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-list-check" sizeName="2x" />
+                  <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                   Recap: The 7 Techniques
                 </h3>
                 <p style={{ fontSize: '0.9em', lineHeight: '1.8' }}>
@@ -393,7 +393,7 @@ export const embeddingQualityDeck: Deck = {
                 </p>
                 
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-chart-line" sizeName="2x" />
+                  <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
                   What to Measure
                 </h3>
                 <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
@@ -403,7 +403,7 @@ export const embeddingQualityDeck: Deck = {
                 </ul>
 
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
-                  <SvgIcon iconName="duo-map" sizeName="2x" />
+                  <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
                   Implementation Playbook
                 </h3>
                 <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
@@ -421,7 +421,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 11,
           title: 'Final Insight',
-          icon: { name: 'duo-lightbulb' },
+          icon: { name: 'duo-lightbulb', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
@@ -435,9 +435,9 @@ export const embeddingQualityDeck: Deck = {
                 </p>
               </div>
               <div style={{ marginTop: '50px', display: 'flex', gap: '20px' }}>
-                <SvgIcon iconName="duo-flask" sizeName="2x" />
-                <SvgIcon iconName="duo-rocket" sizeName="2x" />
-                <SvgIcon iconName="duo-star" sizeName="2x" />
+                <SvgIcon iconName="duo-flask" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-star" sizeName="2x" darkModeInvert={true} />
               </div>
             </div>
           ),

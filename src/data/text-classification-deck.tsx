@@ -21,7 +21,7 @@ export const textClassificationDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-tags" sizeName="2xl" style={{ marginRight: '1rem' }} />
+            <SvgIcon iconName="duo-tags" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             TEXT CLASSIFICATION
           </div>
           <div style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#98c379' }}>
@@ -31,7 +31,7 @@ export const textClassificationDeck: Deck = {
             A Comprehensive Cheat Sheet: From Rules to LLMs
           </div>
           <div style={{ fontSize: '1rem', color: '#888' }}>
-            <SvgIcon iconName="duo-calendar" sizeName="lg" style={iconStyle} />
+            <SvgIcon iconName="duo-calendar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             November 7, 2025
           </div>
         </div>
@@ -41,18 +41,18 @@ export const textClassificationDeck: Deck = {
     {
       id: 2,
       title: 'Table of Contents — 11 Approaches',
-      icon: { name: 'duo-list-check' },
+      icon: { name: 'duo-list-check', size: '5x' },
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.6', textAlign: 'left' }}>
           <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-list-ol" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-list-ol" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>11 Text Classification Approaches</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem 2rem', marginBottom: '1.5rem' }}>
             <div>
               <div style={{ color: '#e06c75', marginBottom: '1rem' }}>
-                <SvgIcon iconName="duo-brackets-square" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-brackets-square" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Rule-Based & Traditional</strong>
               </div>
               <div style={{ marginLeft: '1.5rem', lineHeight: '1.8' }}>
@@ -67,7 +67,7 @@ export const textClassificationDeck: Deck = {
             
             <div>
               <div style={{ color: '#c678dd', marginBottom: '1rem' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-brain-circuit" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Neural Networks & LLMs</strong>
               </div>
               <div style={{ marginLeft: '1.5rem', lineHeight: '1.8' }}>
@@ -97,18 +97,18 @@ export const textClassificationDeck: Deck = {
         {
           id: 3,
           title: '1. Rule-Based Classification',
-          icon: { name: 'duo-brackets-square' },
+          icon: { name: 'duo-brackets-square', size: '5x' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-brackets-square" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-brackets-square" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Deterministic rule engine (regex, patterns, domain-specific logic)</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -117,7 +117,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -151,7 +151,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -176,14 +176,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Heuristic scoring on keyword/phrase presence (with synonyms/stemming)</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -192,7 +192,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -226,7 +226,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -251,14 +251,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-chart-line" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-chart-line" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Linear classifier on sparse counts/ngrams</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -267,7 +267,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -300,7 +300,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -326,14 +326,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-shield-check" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-shield-check" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Linear SVM (e.g., LinearSVC) on TF-IDF features</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -342,7 +342,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -375,7 +375,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -400,14 +400,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Multinomial/Bernoulli NB on counts or TF-IDF</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -416,7 +416,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -449,7 +449,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -473,14 +473,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Ensemble of decision trees on sparse or reduced features</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -489,7 +489,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -522,7 +522,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -546,14 +546,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>1D Convolution over token/char embeddings + pooling</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -562,7 +562,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -594,7 +594,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -619,14 +619,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Recurrent network (LSTM/GRU) over token sequences</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -635,7 +635,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -667,7 +667,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -692,14 +692,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-eye" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-eye" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>BiLSTM encoder + attention mechanism</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -708,7 +708,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -740,7 +740,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -765,14 +765,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-brain" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-brain" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Pretrained Transformer (e.g., BERT/RoBERTa/DeBERTa) + classification head</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -781,7 +781,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -815,7 +815,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -842,14 +842,14 @@ export const textClassificationDeck: Deck = {
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
-            <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Prompted LLM (zero-/few-shot) with or without function calling</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-graduation-cap" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Training Data Needed</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -858,7 +858,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Best Use Case</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -894,7 +894,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -922,7 +922,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.75rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#61dafb', fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Key Takeaways</strong>
             </div>
             <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
@@ -935,7 +935,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#98c379', fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-compass" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-compass" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Quick Selector</strong>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -968,7 +968,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#c678dd', fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-scale-balanced" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-scale-balanced" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Requirements Spectrum</strong>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '8px' }}>
@@ -993,7 +993,7 @@ export const textClassificationDeck: Deck = {
 
           <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
             <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Recommended Approach</strong>
             </div>
             <ol style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>

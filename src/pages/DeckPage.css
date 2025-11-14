@@ -162,10 +162,39 @@
 }
 
 /* Fix slide overflow - ensure content fits within viewport */
+.reveal .slides section:not(.center) {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.reveal .slides section.center {
+  overflow: hidden !important;
+}
+
+.reveal .slides section h2 {
+  flex-shrink: 0;
+}
+
 .reveal .slides section > div {
-  max-height: 80vh;
+  flex: 1 1 0%;
   overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100vh - 120px);
   padding-right: 10px;
+  min-height: 0;
+}
+
+.reveal .slides section.center > div {
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Ensure nested content doesn't break scrolling */
+.reveal .slides section > div > div {
+  height: auto;
 }
 
 /* Custom scrollbar for better appearance */

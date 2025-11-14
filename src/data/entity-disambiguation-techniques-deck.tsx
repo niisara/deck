@@ -20,10 +20,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '13 Entity Normalization & Disambiguation Techniques',
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#bd93f9' }}>
-            <SvgIcon iconName="duo-brain-circuit" sizeName="2xl" style={{ marginRight: '1rem' }} />
-            13 Entity Normalization & Disambiguation Techniques
-          </div>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#8be9fd' }}>
             <SvgIcon iconName="duo-file-lines" sizeName="xl" style={iconStyle} />
             A practical cheat sheet for data scientists and NLP engineers
@@ -55,10 +51,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
       title: 'Table of Contents',
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
-          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#bd93f9' }}>
-            <SvgIcon iconName="duo-list" sizeName="2xl" style={iconStyle} />
-            <strong>Table of Contents</strong>
-          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div>
               <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
@@ -132,11 +124,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '1. String Normalization',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-              <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-                <SvgIcon iconName="duo-broom" sizeName="2xl" style={iconStyle} />
-                <strong>1. String Normalization</strong>
-              </div>
-              
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -217,11 +204,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '2. Lowercasing + Unicode Normalization',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-font" sizeName="2xl" style={iconStyle} />
-            <strong>2. Lowercasing + Unicode Normalization</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -305,11 +287,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '3. Fuzzy Matching (Edit Distance)',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-magnifying-glass" sizeName="2xl" style={iconStyle} />
-            <strong>3. Fuzzy Matching (Edit Distance)</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -394,11 +371,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '4. Token-Based Similarity (Jaccard / Cosine)',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-diagram-venn" sizeName="2xl" style={iconStyle} />
-            <strong>4. Token-Based Similarity (Jaccard / Cosine)</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -481,11 +453,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '5. Dictionary / Gazetteer Lookup',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-book-open" sizeName="2xl" style={iconStyle} />
-            <strong>5. Dictionary / Gazetteer Lookup</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -569,11 +536,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '6. Synonym / Alias Mapping',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-tags" sizeName="2xl" style={iconStyle} />
-            <strong>6. Synonym / Alias Mapping</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -657,11 +619,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '7. Rule-Based Context Matching',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-gavel" sizeName="2xl" style={iconStyle} />
-            <strong>7. Rule-Based Context Matching</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -744,11 +701,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '8. Embedding-Based Similarity Matching',
           content: (
         <div style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-brain-circuit" sizeName="2xl" style={iconStyle} />
-            <strong>8. Embedding-Based Similarity Matching</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -834,11 +786,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '9. Entity Linking with Knowledge Bases',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-database" sizeName="2xl" style={iconStyle} />
-            <strong>9. Entity Linking with Knowledge Bases</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -919,11 +866,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '10. Graph-Based Entity Disambiguation',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="2xl" style={iconStyle} />
-            <strong>10. Graph-Based Entity Disambiguation</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1006,11 +948,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '11. PageRank / Centrality-Based Disambiguation',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-ranking-star" sizeName="2xl" style={iconStyle} />
-            <strong>11. PageRank / Centrality-Based Disambiguation</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1095,11 +1032,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '12. Domain-Specific Ontology Mapping',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-book" sizeName="2xl" style={iconStyle} />
-            <strong>12. Domain-Specific Ontology Mapping</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1181,11 +1113,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '13. LLM-Based Entity Disambiguation',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1.5rem', color: '#ff79c6' }}>
-            <SvgIcon iconName="duo-robot" sizeName="2xl" style={iconStyle} />
-            <strong>13. LLM-Based Entity Disambiguation</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1267,11 +1194,6 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: 'Summary & Practical Guidance',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.7', textAlign: 'left' }}>
-              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#bd93f9' }}>
-                <SvgIcon iconName="duo-check-double" sizeName="2xl" style={iconStyle} />
-                <strong>Summary & Practical Guidance</strong>
-              </div>
-
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#bd93f9', marginBottom: '0.8rem', fontSize: '1rem' }}>

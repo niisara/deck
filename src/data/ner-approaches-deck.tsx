@@ -18,10 +18,6 @@ export const nerApproachesDeck: Deck = {
           title: 'Named Entity Recognition Approaches',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <h2 style={{ marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-tags" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Named Entity Recognition Approaches
-              </h2>
               <p style={{ fontSize: '1.1em', marginTop: '30px' }}>
                 A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
               </p>
@@ -64,10 +60,6 @@ export const nerApproachesDeck: Deck = {
           title: 'Table of Contents',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.85em' }}>
-              <h2 style={{ marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Table of Contents
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>1</span>
@@ -132,7 +124,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 3,
           title: '1) Rule-Based Pattern Matching',
-          icon: { name: 'duo-list-check' },
+          icon: { name: 'duo-list-check', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -184,7 +176,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 4,
           title: '2) Dictionary / Gazetteer Lookup',
-          icon: { name: 'duo-book' },
+          icon: { name: 'duo-book', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -234,7 +226,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 5,
           title: '3) TF-IDF + Classifier-Based NER',
-          icon: { name: 'duo-chart-line' },
+          icon: { name: 'duo-chart-line', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -285,7 +277,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 6,
           title: '4) Hidden Markov Model (HMM) NER',
-          icon: { name: 'duo-arrows-rotate' },
+          icon: { name: 'duo-arrows-rotate', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -334,7 +326,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 7,
           title: '5) Conditional Random Fields (CRF) NER',
-          icon: { name: 'duo-circle-nodes' },
+          icon: { name: 'duo-circle-nodes', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -384,7 +376,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 8,
           title: '6) BiLSTM + CRF',
-          icon: { name: 'duo-brain' },
+          icon: { name: 'duo-brain', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -435,7 +427,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 9,
           title: '7) CNN + BiLSTM NER',
-          icon: { name: 'duo-filter' },
+          icon: { name: 'duo-filter', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -486,7 +478,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 10,
           title: '8) spaCy Statistical NER',
-          icon: { name: 'duo-rocket' },
+          icon: { name: 'duo-rocket', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -538,7 +530,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 11,
           title: '9) BERT Fine-Tuned for NER',
-          icon: { name: 'duo-brain-circuit' },
+          icon: { name: 'duo-brain-circuit', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -588,7 +580,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 12,
           title: '10) RoBERTa / DistilBERT NER Models',
-          icon: { name: 'duo-gauge-high' },
+          icon: { name: 'duo-gauge-high', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -640,7 +632,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 13,
           title: '11) LLM / Zero-Shot NER',
-          icon: { name: 'duo-lightbulb' },
+          icon: { name: 'duo-lightbulb', size: '5x' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -693,10 +685,6 @@ export const nerApproachesDeck: Deck = {
           title: 'Summary & Comparison',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
-              <h2 style={{ marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Summary & Comparison
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>

@@ -18,10 +18,6 @@ export const productionRagDeck: Deck = {
           title: '11 Production RAG Architecture Patterns',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <h2 style={{ marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                11 Production RAG Architecture Patterns
-              </h2>
               <h3 style={{ fontSize: '1.2em', marginTop: '30px', color: '#4fc3f7' }}>
                 Proven designs for reliable, scalable Retrieval-Augmented Generation
               </h3>
@@ -122,7 +118,7 @@ export const productionRagDeck: Deck = {
         {
           id: 3,
           title: '1) Basic RAG (Single Retrieve → Generate)',
-          icon: { name: 'duo-arrow-right' },
+          icon: { name: 'duo-arrow-right', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -194,7 +190,7 @@ export const productionRagDeck: Deck = {
         {
           id: 4,
           title: '2) RAG with Re-Ranking',
-          icon: { name: 'duo-list-ol' },
+          icon: { name: 'duo-list-ol', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -266,7 +262,7 @@ export const productionRagDeck: Deck = {
         {
           id: 5,
           title: '3) RAG with Query Rewriting',
-          icon: { name: 'duo-pencil' },
+          icon: { name: 'duo-pencil', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -337,7 +333,7 @@ export const productionRagDeck: Deck = {
         {
           id: 6,
           title: '4) RAG with Multi-Query Retrieval',
-          icon: { name: 'duo-copy' },
+          icon: { name: 'duo-copy', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -408,7 +404,7 @@ export const productionRagDeck: Deck = {
         {
           id: 7,
           title: '5) RAG with HyDE (Hypothetical Document Embeddings)',
-          icon: { name: 'duo-lightbulb' },
+          icon: { name: 'duo-lightbulb', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -478,7 +474,7 @@ export const productionRagDeck: Deck = {
         {
           id: 8,
           title: '6) RAG with Parent–Child Retrieval',
-          icon: { name: 'duo-circle-nodes' },
+          icon: { name: 'duo-circle-nodes', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -548,7 +544,7 @@ export const productionRagDeck: Deck = {
         {
           id: 9,
           title: '7) RAG with Graph-Based Retrieval (GraphRAG)',
-          icon: { name: 'duo-circle-nodes' },
+          icon: { name: 'duo-circle-nodes', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
@@ -621,7 +617,7 @@ export const productionRagDeck: Deck = {
         {
           id: 10,
           title: '8) RAG with External Tools / Agents',
-          icon: { name: 'duo-gear' },
+          icon: { name: 'duo-gear', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -692,7 +688,7 @@ export const productionRagDeck: Deck = {
         {
           id: 11,
           title: '9) RAG + Fine-Tuned Model Hybrid',
-          icon: { name: 'duo-brain-circuit' },
+          icon: { name: 'duo-brain-circuit', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -762,7 +758,7 @@ export const productionRagDeck: Deck = {
         {
           id: 12,
           title: '10) RAG with Multi-Step Retrieval Loops',
-          icon: { name: 'duo-arrows-rotate' },
+          icon: { name: 'duo-arrows-rotate', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -832,7 +828,7 @@ export const productionRagDeck: Deck = {
         {
           id: 13,
           title: '11) RAG with Context Compression / Summarization',
-          icon: { name: 'duo-broom' },
+          icon: { name: 'duo-broom', size: '5x' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -904,10 +900,6 @@ export const productionRagDeck: Deck = {
           title: 'Pattern Selection Guide & Tradeoffs',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
-              <h2 style={{ marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-map" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Pattern Selection Guide & Tradeoffs
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                 <div>
                   <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
