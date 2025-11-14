@@ -20,10 +20,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '13 Underused RAG Evaluation Metrics',
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-chart-line" sizeName="2xl" style={{ marginRight: '1rem' }} />
-            13 Underused RAG Evaluation Metrics
-          </div>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#0ea5e9' }}>
             <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} />
             A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency
@@ -56,11 +52,6 @@ export const ragEvaluationMetricsDeck: Deck = {
       icon: { name: 'duo-diagram-project', size: '5x' },
       content: (
         <div style={{ fontSize: '1rem', lineHeight: '1.8', textAlign: 'left' }}>
-          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-diagram-project" sizeName="2xl" style={iconStyle} />
-            <strong>RAG System Overview</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
               <div style={{ fontSize: '1.3rem', color: '#3b82f6', marginBottom: '1rem' }}>
@@ -134,12 +125,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           icon: { name: 'duo-magnifying-glass', size: '5x' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-              <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-                <SvgIcon iconName="duo-magnifying-glass-plus" sizeName="2xl" style={iconStyle} />
-                <strong>1. Retrieval Recall@K</strong>
-                <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Retrieval Metric</span>
-              </div>
-              
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -226,12 +211,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           icon: { name: 'duo-bullseye', size: '5x' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-bullseye-arrow" sizeName="2xl" style={iconStyle} />
-            <strong>2. Retrieval Precision@K</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Retrieval Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -318,12 +297,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           icon: { name: 'duo-check-circle', size: '5x' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-circle-check" sizeName="2xl" style={iconStyle} />
-            <strong>3. Hit Rate</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Retrieval Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -409,12 +382,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '4. Context Overlap Score',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-circle-half-stroke" sizeName="2xl" style={iconStyle} />
-            <strong>4. Context Overlap Score</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Retrieval Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -500,12 +467,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '5. Context Relevance Score (LLM-Scored)',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-scale-balanced" sizeName="2xl" style={iconStyle} />
-            <strong>5. Context Relevance Score</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Context Quality Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -597,12 +558,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '6. Hallucination Rate',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-triangle-exclamation" sizeName="2xl" style={iconStyle} />
-            <strong>6. Hallucination Rate</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Answer Quality Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -692,12 +647,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '7. Grounded Answer Score',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-anchor" sizeName="2xl" style={iconStyle} />
-            <strong>7. Grounded Answer Score</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Answer Quality Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -786,12 +735,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '8. Faithfulness Score',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-shield-check" sizeName="2xl" style={iconStyle} />
-            <strong>8. Faithfulness Score</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Answer Quality Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -881,12 +824,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '9. Answer Completeness',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-list-check" sizeName="2xl" style={iconStyle} />
-            <strong>9. Answer Completeness</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Answer Quality Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -973,12 +910,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '10. Answer Specificity',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-crosshairs" sizeName="2xl" style={iconStyle} />
-            <strong>10. Answer Specificity</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Answer Quality Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1062,12 +993,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '11. Noise Density',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-chart-mixed" sizeName="2xl" style={iconStyle} />
-            <strong>11. Noise Density</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Efficiency Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1156,12 +1081,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '12. Context Compression Efficiency',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-compress" sizeName="2xl" style={iconStyle} />
-            <strong>12. Context Compression Efficiency</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Efficiency Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1248,12 +1167,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '13. Latency-Cost Tradeoff Score',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-scale-unbalanced" sizeName="2xl" style={iconStyle} />
-            <strong>13. Latency-Cost Tradeoff Score</strong>
-            <span style={{ fontSize: '1rem', marginLeft: '1rem', color: '#6b7280' }}>Efficiency Metric</span>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
@@ -1343,11 +1256,6 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: 'Summary & Next Steps',
           content: (
             <div style={{ fontSize: '0.95rem', lineHeight: '1.8', textAlign: 'left' }}>
-              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
-                <SvgIcon iconName="duo-flag-checkered" sizeName="2xl" style={iconStyle} />
-                <strong>Summary & Next Steps</strong>
-              </div>
-
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '1rem', fontSize: '1.2rem' }}>

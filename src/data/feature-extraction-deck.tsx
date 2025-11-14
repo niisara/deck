@@ -20,10 +20,6 @@ export const featureExtractionDeck: Deck = {
           title: '13 Feature Extraction Techniques',
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#e7ad52' }}>
-            <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2xl" style={{ marginRight: '1rem' }} />
-            13 Feature Extraction Techniques
-          </div>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#1b91e0' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} />
             Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders
@@ -55,10 +51,6 @@ export const featureExtractionDeck: Deck = {
       title: 'Overview',
       content: (
         <div style={{ fontSize: '0.95rem', lineHeight: '1.8', textAlign: 'left' }}>
-          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#e7ad52' }}>
-            <SvgIcon iconName="duo-sitemap" sizeName="2xl" style={iconStyle} />
-            <strong>Overview</strong>
-          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
               <div style={{ color: '#e7ad52', marginBottom: '1rem', fontSize: '1.2rem' }}>
@@ -160,11 +152,6 @@ export const featureExtractionDeck: Deck = {
           title: '1) Bag of Words (BoW)',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-              <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#e7ad52' }}>
-                <SvgIcon iconName="duo-bag-shopping" sizeName="2xl" style={iconStyle} />
-                <strong>1) Bag of Words (BoW)</strong>
-              </div>
-              
               <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.95rem' }}>
                 <SvgIcon iconName="duo-quote-left" sizeName="lg" style={iconStyle} />
                 Count-based vectorization: "The cat sat on the mat" → [1,1,1,1,2,0,...]
@@ -242,11 +229,6 @@ export const featureExtractionDeck: Deck = {
           title: '2) TF-IDF',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#e7ad52' }}>
-            <SvgIcon iconName="duo-scale-balanced" sizeName="2xl" style={iconStyle} />
-            <strong>2) TF-IDF</strong>
-          </div>
-          
           <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>
             <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
             <strong>Term Frequency × Inverse Document Frequency</strong>
@@ -329,11 +311,6 @@ export const featureExtractionDeck: Deck = {
           title: '3) Word2Vec (CBOW)',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
-            <SvgIcon iconName="duo-arrows-to-circle" sizeName="2xl" style={iconStyle} />
-            <strong>3) Word2Vec (CBOW)</strong>
-          </div>
-          
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} />
@@ -420,11 +397,6 @@ export const featureExtractionDeck: Deck = {
           title: '4) Word2Vec (Skip-Gram)',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
-            <SvgIcon iconName="duo-arrows-from-circle" sizeName="2xl" style={iconStyle} />
-            <strong>4) Word2Vec (Skip-Gram)</strong>
-          </div>
-          
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} />
@@ -510,11 +482,6 @@ export const featureExtractionDeck: Deck = {
           title: '5) GloVe',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
-            <SvgIcon iconName="duo-globe" sizeName="2xl" style={iconStyle} />
-            <strong>5) GloVe</strong>
-          </div>
-          
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-network-wired" sizeName="lg" style={iconStyle} />
@@ -598,11 +565,6 @@ export const featureExtractionDeck: Deck = {
           title: '6) FastText',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
-            <SvgIcon iconName="duo-bolt-lightning" sizeName="2xl" style={iconStyle} />
-            <strong>6) FastText</strong>
-          </div>
-          
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-text" sizeName="lg" style={iconStyle} />
@@ -688,11 +650,6 @@ export const featureExtractionDeck: Deck = {
           title: '7) Doc2Vec',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#1b91e0' }}>
-            <SvgIcon iconName="duo-file-lines" sizeName="2xl" style={iconStyle} />
-            <strong>7) Doc2Vec</strong>
-          </div>
-          
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-folder-open" sizeName="lg" style={iconStyle} />
@@ -778,11 +735,6 @@ export const featureExtractionDeck: Deck = {
           title: '8) ELMo',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#9b59b6' }}>
-            <SvgIcon iconName="duo-brain" sizeName="2xl" style={iconStyle} />
-            <strong>8) ELMo</strong>
-          </div>
-          
           <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-arrows-split-up-and-left" sizeName="lg" style={iconStyle} />
@@ -869,11 +821,6 @@ export const featureExtractionDeck: Deck = {
           title: '9) BERT Embeddings',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#9b59b6' }}>
-            <SvgIcon iconName="duo-brain-circuit" sizeName="2xl" style={iconStyle} />
-            <strong>9) BERT Embeddings</strong>
-          </div>
-          
           <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-grid" sizeName="lg" style={iconStyle} />
@@ -964,11 +911,6 @@ export const featureExtractionDeck: Deck = {
           title: '10) Sentence-BERT (SBERT)',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#9b59b6' }}>
-            <SvgIcon iconName="duo-code-compare" sizeName="2xl" style={iconStyle} />
-            <strong>10) Sentence-BERT (SBERT)</strong>
-          </div>
-          
           <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-code-branch" sizeName="lg" style={iconStyle} />
@@ -1055,11 +997,6 @@ export const featureExtractionDeck: Deck = {
           title: '11) Universal Sentence Encoder (USE)',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#2ecc71' }}>
-            <SvgIcon iconName="duo-atom" sizeName="2xl" style={iconStyle} />
-            <strong>11) Universal Sentence Encoder (USE)</strong>
-          </div>
-          
           <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-google" sizeName="lg" style={iconStyle} />
@@ -1142,11 +1079,6 @@ export const featureExtractionDeck: Deck = {
           title: '12) E5 Embeddings',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#2ecc71' }}>
-            <SvgIcon iconName="duo-bolt" sizeName="2xl" style={iconStyle} />
-            <strong>12) E5 Embeddings</strong>
-          </div>
-          
           <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-language" sizeName="lg" style={iconStyle} />
@@ -1237,11 +1169,6 @@ export const featureExtractionDeck: Deck = {
           title: '13) GTE Embeddings',
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#2ecc71' }}>
-            <SvgIcon iconName="duo-star" sizeName="2xl" style={iconStyle} />
-            <strong>13) GTE Embeddings</strong>
-          </div>
-          
           <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
               <SvgIcon iconName="duo-expand" sizeName="lg" style={iconStyle} />
@@ -1333,11 +1260,6 @@ export const featureExtractionDeck: Deck = {
           title: 'Summary & Comparison',
           content: (
             <div style={{ fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
-              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#e7ad52' }}>
-                <SvgIcon iconName="duo-table-list" sizeName="2xl" style={iconStyle} />
-                <strong>Summary & Comparison</strong>
-              </div>
-
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e7ad52', marginBottom: '0.8rem', fontSize: '1rem' }}>

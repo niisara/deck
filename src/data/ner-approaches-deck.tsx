@@ -18,10 +18,6 @@ export const nerApproachesDeck: Deck = {
           title: 'Named Entity Recognition Approaches',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <h2 style={{ marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-tags" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Named Entity Recognition Approaches
-              </h2>
               <p style={{ fontSize: '1.1em', marginTop: '30px' }}>
                 A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
               </p>
@@ -64,10 +60,6 @@ export const nerApproachesDeck: Deck = {
           title: 'Table of Contents',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.85em' }}>
-              <h2 style={{ marginBottom: '30px' }}>
-                <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Table of Contents
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>1</span>
@@ -693,10 +685,6 @@ export const nerApproachesDeck: Deck = {
           title: 'Summary & Comparison',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
-              <h2 style={{ marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Summary & Comparison
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>

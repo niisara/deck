@@ -20,10 +20,6 @@ export const graphRetrievalDeck: Deck = {
           title: '13 Graph-Based Retrieval Techniques',
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
-          <div style={{ fontSize: '3rem', marginBottom: '2rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="2xl" style={{ marginRight: '1rem' }} />
-            13 Graph-Based Retrieval Techniques
-          </div>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#0ea5e9' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} />
             A practical cheat-sheet for precision, reasoning, and reliable context
@@ -52,10 +48,6 @@ export const graphRetrievalDeck: Deck = {
       icon: { name: 'duo-list-check', size: '5x' },
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
-          <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '2rem', color: '#3b82f6' }}>
-            <SvgIcon iconName="duo-sitemap" sizeName="2xl" style={iconStyle} />
-            <strong>Overview: 13 Techniques at a Glance</strong>
-          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
@@ -1206,11 +1198,6 @@ export const graphRetrievalDeck: Deck = {
           icon: { name: 'duo-clipboard-check', size: '5x' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.7', textAlign: 'left' }}>
-              <div style={{ textAlign: 'left', fontSize: '2rem', marginBottom: '1.5rem', color: '#3b82f6' }}>
-                <SvgIcon iconName="duo-puzzle-piece" sizeName="2xl" style={iconStyle} />
-                <strong>Putting It Together: Patterns</strong>
-              </div>
-
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '10px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>

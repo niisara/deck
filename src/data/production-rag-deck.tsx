@@ -18,10 +18,6 @@ export const productionRagDeck: Deck = {
           title: '11 Production RAG Architecture Patterns',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <h2 style={{ marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                11 Production RAG Architecture Patterns
-              </h2>
               <h3 style={{ fontSize: '1.2em', marginTop: '30px', color: '#4fc3f7' }}>
                 Proven designs for reliable, scalable Retrieval-Augmented Generation
               </h3>
@@ -904,10 +900,6 @@ export const productionRagDeck: Deck = {
           title: 'Pattern Selection Guide & Tradeoffs',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
-              <h2 style={{ marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-map" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
-                Pattern Selection Guide & Tradeoffs
-              </h2>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                 <div>
                   <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
