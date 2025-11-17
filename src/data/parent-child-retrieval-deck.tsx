@@ -51,7 +51,7 @@ export const parentChildRetrievalDeck: Deck = {
           title: 'Table of Contents',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.85em' }}>
-              <h2 style={{ marginBottom: '30px' }}>
+              <h2 style={{ marginBottom: '30px', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Parent-Child Retrieval Design Patterns
               </h2>

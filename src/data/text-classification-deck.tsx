@@ -20,7 +20,7 @@ export const textClassificationDeck: Deck = {
           title: '11 Text Classification Approaches',
           content: (
             <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
+          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center' }}>
             <SvgIcon iconName="duo-tags" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             TEXT CLASSIFICATION
           </div>
@@ -44,7 +44,7 @@ export const textClassificationDeck: Deck = {
       icon: { name: 'duo-list-check' },
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.6', textAlign: 'left' }}>
-          <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb' }}>
+          <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb', display: 'flex', alignItems: 'center' }}>
             <SvgIcon iconName="duo-list-ol" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>11 Text Classification Approaches</strong>
           </div>

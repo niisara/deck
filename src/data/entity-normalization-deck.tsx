@@ -1268,7 +1268,7 @@ export const entityNormalizationDeck: Deck = {
           title: 'Conclusion & Key Takeaways',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem' }}>
+              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} />
                 <strong>Best Practices for Entity Normalization & Disambiguation</strong>
               </div>

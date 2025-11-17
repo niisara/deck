@@ -56,7 +56,7 @@ export const rerankingModelsDeck: Deck = {
       title: 'Why Re-Ranking in RAG?',
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
-          <h2 style={{ textAlign: 'left', marginBottom: '25px' }}>
+          <h2 style={{ textAlign: 'left', marginBottom: '25px', alignItems: 'center' }}>
             <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Why Re-Ranking Matters
           </h2>
