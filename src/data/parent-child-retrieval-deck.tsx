@@ -124,23 +124,24 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Reduces hallucination by always pairing fine-grained evidence (child) with its governing section (parent)</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Index children for recall; upon retrieval, attach their parent section using parent_id metadata</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Policies, legal docs, SOPs, manuals where section context defines constraints</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Policies, legal docs, SOPs, manuals where section context defines constraints</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Child chunks with embeddings; parent sections</p>
                   <p style={{ marginTop: '5px', fontSize: '0.9em', fontStyle: 'italic' }}>Fields: child_id, parent_id, parent_title, level, order</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Parse document into a tree; chunk children (200–400 tokens) and parents (800–1500)</li>
                     <li>Embed children; store parent metadata and text</li>
@@ -183,22 +184,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Reduces misinterpretation by anchoring chunks to their nearest header and breadcrumb path</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Always include header/title + short abstract with the retrieved chunk</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Docs with clear headings: wikis, product guides, knowledge bases</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Docs with clear headings: wikis, product guides, knowledge bases</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>header_text, header_path (e.g., H1 &gt; H2 &gt; H3), header_offset, optional header summary</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>header_text, header_path (e.g., H1 &gt; H2 &gt; H3), header_offset, optional header summary</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>During parsing, capture nearest header and path for each chunk</li>
                     <li>Retrieval attaches header + path + optional 1–2 sentence abstract</li>
@@ -240,22 +242,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Preserves narrative hierarchy by retrieving the path from root → ... → leaf</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Maintain explicit outline tree; child retrieval triggers inclusion of ancestors (path context)</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Long PDFs, textbooks, design docs, standards with deep nesting</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Long PDFs, textbooks, design docs, standards with deep nesting</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>Node tree (node_id, parent_id, level, order); embeddings at child and optionally at each node</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Node tree (node_id, parent_id, level, order); embeddings at child and optionally at each node</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Build outline; embed leaves (and optionally internal nodes)</li>
                     <li>Query → retrieve leaves → include ancestors to root; budget tokens; deduplicate</li>
@@ -295,22 +298,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Mitigates ambiguity by attaching multiple plausible parents (immediate + higher levels)</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>For each retrieved child, climb levels and add up to k parents (e.g., section, chapter)</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Deeply nested docs; content where constraints appear at multiple levels</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Deeply nested docs; content where constraints appear at multiple levels</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>parent_id chain with level_depth; per-level score weighting</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>parent_id chain with level_depth; per-level score weighting</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Retrieve children → for each, add parents up to k levels using a token budget heuristic</li>
                     <li>Score-combine child relevance with parent-level priors; deduplicate</li>
@@ -350,22 +354,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Maintains coherence across adjacent steps/paragraphs. Reduces out-of-context answers</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Retrieve neighboring siblings (prev/next within same parent) around the hit chunk</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Procedures, checklists, code blocks, numbered lists</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Procedures, checklists, code blocks, numbered lists</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>prev_id, next_id, sibling_order, section_boundary markers</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>prev_id, next_id, sibling_order, section_boundary markers</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>On child hit, add N siblings before/after up to boundary or token limit</li>
                     <li>Merge and deduplicate overlapping spans</li>
@@ -407,22 +412,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Captures local context beyond chunk edges without full parent overhead</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Expand the retrieved chunk by a fixed token/character window before and after</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Linear prose, transcripts, articles with weak headings</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Linear prose, transcripts, articles with weak headings</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>Character/token offsets per chunk; document-wide text offsets</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Character/token offsets per chunk; document-wide text offsets</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Chunk with offsets; on retrieval, compute window [start−W, end+W]; fetch and merge</p>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', fontSize: '0.85em' }}>
@@ -460,22 +466,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Reduces hallucination by grouping evidence under topic-level parents (taxonomy/clusters)</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Map chunks to taxonomy nodes or clusters; retrieve topic parent summary plus child hits</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Knowledge bases, FAQs, multi-product docs; content with synonym-rich topics</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Knowledge bases, FAQs, multi-product docs; content with synonym-rich topics</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>topic_id, parent_topic_id; cluster centroids; topic summaries; group embeddings</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>topic_id, parent_topic_id; cluster centroids; topic summaries; group embeddings</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Build/align taxonomy or perform clustering; compute group embeddings and summaries</li>
                     <li>Query → retrieve children and their topic parents; include top exemplars</li>
@@ -515,22 +522,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Fits long parents into tight budgets while keeping detailed child evidence</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Attach compressed/summarized parents + full child; adapt compression by budget</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Long sections, limited context windows, cost-sensitive deployments</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Long sections, limited context windows, cost-sensitive deployments</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>Parent summaries at multiple compression ratios; keyphrases; salience scores</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Parent summaries at multiple compression ratios; keyphrases; salience scores</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Precompute 30–70% parent compressions; store pointers</li>
                     <li>Retrieval picks compression level by token budget; attach full child + compressed parent</li>
@@ -571,22 +579,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Increases precision by lexically verifying semantic hits to reduce hallucinations</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Dense retrieve child; attach parent; re-score/verify parent with BM25/keyword constraints</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Compliance, legal, specs where exact terms/numbers matter</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Compliance, legal, specs where exact terms/numbers matter</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>Dense index for children; sparse (BM25) index for parents; term dictionaries</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Dense index for children; sparse (BM25) index for parents; term dictionaries</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Step1: Dense child retrieval</li>
                     <li>Step2: Attach parent</li>
@@ -629,22 +638,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Selects the most relevant section root to ground the answer</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Map retrieved children to candidate parents; cross-encode (query, parent) pairs; keep top-m parents</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> Very long documents with multiple plausible parent sections</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Very long documents with multiple plausible parent sections</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>Parent passages, child→parent mapping, Cross-encoder model/artifacts</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Parent passages, child→parent mapping, Cross-encoder model/artifacts</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Dense retrieve children → collect unique parents</li>
                     <li>Cross-encoder re-rank parents → select top-m → attach top parents + their best children</li>
@@ -686,22 +696,23 @@ export const parentChildRetrievalDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Disambiguates context via explicit relations and multi-hop traversal</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Convert sections/entities to nodes; retrieve nodes; traverse edges to parent/related nodes</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong> SOP dependencies, API interlinks, scientific corpora, cross-doc references</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>When to Use:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>SOP dependencies, API interlinks, scientific corpora, cross-doc references</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Data Structure Needed:</strong></p>
-                  <p style={{ marginTop: '5px', fontSize: '0.9em' }}>Graph DB (e.g., Neo4j); nodes: section, entity; edges: parent_of, cites, prerequisite_of. Node/edge embeddings for semantic retrieval</p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-table" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Data Structure Needed:</span></strong></p>
+                  <p style={{ marginTop: '5px' }}>Graph DB (e.g., Neo4j); nodes: section, entity; edges: parent_of, cites, prerequisite_of. Node/edge embeddings for semantic retrieval</p>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Workflow:</strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-ol" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Implementation Workflow:</span></strong></p>
                   <ol style={{ marginTop: '5px', paddingLeft: '20px', lineHeight: '1.6' }}>
                     <li>Build graph from structure and links; index nodes/edges</li>
                     <li>Query → retrieve nodes (dense/sparse) → k-hop expand to parents/anchors → compile context</li>

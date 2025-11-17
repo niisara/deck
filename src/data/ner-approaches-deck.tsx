@@ -22,29 +22,29 @@ export const nerApproachesDeck: Deck = {
                 A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons
               </p>
               <div style={{ marginTop: '40px', fontSize: '0.85em', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-                <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+                <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
-                  <div style={{ marginTop: '5px' }}>Rule-Based</div>
+                  <div>Rule-Based</div>
                 </div>
-                <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
+                <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-book" sizeName="2x" darkModeInvert={true} />
-                  <div style={{ marginTop: '5px' }}>Dictionary</div>
+                  <div>Dictionary</div>
                 </div>
-                <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
+                <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
-                  <div style={{ marginTop: '5px' }}>Statistical</div>
+                  <div>Statistical</div>
                 </div>
-                <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px' }}>
+                <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
-                  <div style={{ marginTop: '5px' }}>Neural</div>
+                  <div>Neural</div>
                 </div>
-                <div style={{ padding: '10px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px' }}>
+                <div style={{ padding: '10px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-brain-circuit" sizeName="2x" darkModeInvert={true} />
-                  <div style={{ marginTop: '5px' }}>Transformer</div>
+                  <div>Transformer</div>
                 </div>
-                <div style={{ padding: '10px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px' }}>
+                <div style={{ padding: '10px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                  <div style={{ marginTop: '5px' }}>LLM</div>
+                  <div>LLM</div>
                 </div>
               </div>
               <p style={{ fontSize: '0.8em', marginTop: '40px', color: '#aaa' }}>

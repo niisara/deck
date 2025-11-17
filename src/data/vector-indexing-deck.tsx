@@ -50,63 +50,63 @@ export const vectorIndexingDeck: Deck = {
                   </thead>
                   <tbody>
                     <tr style={{ backgroundColor: 'rgba(255, 107, 53, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-database" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Flat (Brute Force)</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-database" sizeName="1x" style={{ marginRight: '5px', verticalAlign: 'middle' }} darkModeInvert={true} />Flat (Brute Force)</td>
                       <td style={{ padding: '8px' }}>Slow O(N)</td>
                       <td style={{ padding: '8px' }}>High</td>
                       <td style={{ padding: '8px' }}>100%</td>
                       <td style={{ padding: '8px' }}>Small→Mid</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(0, 212, 255, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-layer-group" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />HNSW</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-layer-group" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />HNSW</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
                       <td style={{ padding: '8px' }}>High</td>
                       <td style={{ padding: '8px' }}>Excellent</td>
                       <td style={{ padding: '8px' }}>Mid→100M</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(78, 205, 196, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-folder-tree" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />IVF</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-folder-tree" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />IVF</td>
                       <td style={{ padding: '8px' }}>Fast</td>
                       <td style={{ padding: '8px' }}>Moderate</td>
                       <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(255, 195, 0, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-compress" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />IVF+PQ</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-compress" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />IVF+PQ</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
                       <td style={{ padding: '8px' }}>Low</td>
                       <td style={{ padding: '8px' }}>Med→High</td>
                       <td style={{ padding: '8px' }}>100M→B+</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(155, 89, 182, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-tree" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Annoy</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-tree" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Annoy</td>
                       <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Moderate</td>
                       <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Small→Mid</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-brands-google" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />ScaNN</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-brands-google" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />ScaNN</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
                       <td style={{ padding: '8px' }}>Low→Mod</td>
                       <td style={{ padding: '8px' }}>High</td>
                       <td style={{ padding: '8px' }}>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(231, 76, 60, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-hashtag" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />LSH</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-hashtag" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />LSH</td>
                       <td style={{ padding: '8px' }}>Fast</td>
                       <td style={{ padding: '8px' }}>High</td>
                       <td style={{ padding: '8px' }}>Approx</td>
                       <td style={{ padding: '8px' }}>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-project-diagram" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Graph-based ANN</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-project-diagram" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Graph-based ANN</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
                       <td style={{ padding: '8px' }}>Low→Mod</td>
                       <td style={{ padding: '8px' }}>Excellent</td>
                       <td style={{ padding: '8px' }}>100M→B+</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(241, 196, 15, 0.1)' }}>
-                      <td style={{ padding: '8px' }}><SvgIcon iconName="duo-binary" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Multi-Index Hashing</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-binary" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Multi-Index Hashing</td>
                       <td style={{ padding: '8px' }}>Fast Hamming</td>
                       <td style={{ padding: '8px' }}>Mod→High</td>
                       <td style={{ padding: '8px' }}>Exact (Hamming)</td>
@@ -161,7 +161,7 @@ export const vectorIndexingDeck: Deck = {
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                  <strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Notes:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Easiest to implement and maintain</li>
                     <li>Supports any distance metric (L2, cosine, IP, custom)</li>
@@ -216,7 +216,7 @@ export const vectorIndexingDeck: Deck = {
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                  <strong><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Important Notes:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Important Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Costly builds: Computationally expensive index construction</li>
                     <li>Updates/deletes: Expensive operations, may need partial rebuilds</li>
@@ -271,7 +271,7 @@ export const vectorIndexingDeck: Deck = {
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                  <strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Configuration Notes:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Configuration Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Requires training phase to generate cluster centroids</li>
                     <li>Performance depends on tuning nlist and nprobe</li>
@@ -330,7 +330,7 @@ export const vectorIndexingDeck: Deck = {
                 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Optimization:</strong>
+                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Optimization:</strong>
                     <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                       <li>OPQ rotation improves accuracy</li>
                       <li>Tune m (subquantizers) and nprobe</li>
@@ -338,7 +338,7 @@ export const vectorIndexingDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(255, 107, 53, 0.1)', borderRadius: '8px' }}>
-                    <strong><SvgIcon iconName="duo-wrench" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Requirements:</strong>
+                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-wrench" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Requirements:</strong>
                     <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                       <li>Training on representative data</li>
                       <li>Available in FAISS, Milvus, Qdrant</li>
@@ -391,7 +391,7 @@ export const vectorIndexingDeck: Deck = {
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(29, 185, 84, 0.1)', borderRadius: '8px' }}>
-                  <strong><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Features:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Features:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Multiple language implementations with Python bindings</li>
                     <li>Deterministic build with fixed random seed</li>
@@ -451,7 +451,7 @@ export const vectorIndexingDeck: Deck = {
                 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(66, 133, 244, 0.1)', borderRadius: '8px' }}>
-                    <strong><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Advantages:</strong>
+                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Advantages:</strong>
                     <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                       <li>Excellent TensorFlow integration</li>
                       <li>Google Cloud AI infrastructure</li>
@@ -459,7 +459,7 @@ export const vectorIndexingDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(234, 67, 53, 0.1)', borderRadius: '8px' }}>
-                    <strong><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Considerations:</strong>
+                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Considerations:</strong>
                     <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                       <li>Complex configuration required</li>
                       <li>Training and tuning needed</li>
@@ -514,7 +514,7 @@ export const vectorIndexingDeck: Deck = {
                 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                   <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <strong><SvgIcon iconName="duo-book" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />LSH Families:</strong>
+                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />LSH Families:</strong>
                     <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                       <li><strong>SimHash:</strong> Cosine similarity</li>
                       <li><strong>MinHash:</strong> Jaccard similarity</li>
@@ -522,7 +522,7 @@ export const vectorIndexingDeck: Deck = {
                     </ul>
                   </div>
                   <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                    <strong><SvgIcon iconName="duo-sliders" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Parameters:</strong>
+                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-sliders" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Parameters:</strong>
                     <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                       <li><strong>L:</strong> Number of hash tables</li>
                       <li><strong>k:</strong> Hashes per table</li>
@@ -586,7 +586,7 @@ export const vectorIndexingDeck: Deck = {
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                  <strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Notes:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Notes:</strong>
                   <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
                     <li>Complex build processes with careful pruning strategies</li>
                     <li>Difficult to update (mostly batch builds)</li>
@@ -641,7 +641,7 @@ export const vectorIndexingDeck: Deck = {
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px' }}>
-                  <strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Characteristics:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Characteristics:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Limited to Hamming/binary codes</li>
                     <li>Parameter m critical (depends on code length and query radius)</li>

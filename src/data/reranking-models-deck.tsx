@@ -110,10 +110,12 @@ export const rerankingModelsDeck: Deck = {
             </div>
           </div>
           <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
-            <p style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
+            <p style={{ fontSize: '0.95em', lineHeight: '1.5' , display: 'flex', alignItems: 'center' }}>
               <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
-              <strong>Without re-ranking,</strong> RAG systems often fail not because of poor embeddings or weak LLMs, 
-              but because they feed irrelevant information to the generation stage.
+              <p>
+                <strong>Without re-ranking,</strong> RAG systems often fail not because of poor embeddings or weak LLMs, 
+                but because they feed <strong>irrelevant information</strong> to the generation stage.
+              </p>
             </p>
           </div>
           <div style={{ marginTop: '20px', fontSize: '0.85em' }}>
@@ -143,15 +145,15 @@ export const rerankingModelsDeck: Deck = {
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal / What It Solves:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Maximizes precision through deep query-document understanding, overcoming the limitations of independent embedding comparisons.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Concatenate [CLS] query [SEP] doc → transformer → single relevance score. Understands semantic relationships between queries and documents.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
               <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
                 <li>Precision-critical tasks where accuracy trumps speed</li>
                 <li>Second-stage ranking (after initial retrieval)</li>
@@ -159,7 +161,7 @@ export const rerankingModelsDeck: Deck = {
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Input / Output:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output:</span></strong></p>
               <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
 {`pairs = [[query, doc_1], [query, doc_2]]<br/>
 scores = [0.92, 0.45, ...]  # 0-1 scale`}
@@ -219,15 +221,15 @@ scores = [0.92, 0.45, ...]  # 0-1 scale`}
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment. Production-ready reranking without heavy GPU requirements.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Knowledge distillation from larger BERT models. Fine-tuned on MS MARCO (8.8M query-passage pairs). Balance between semantic understanding and efficiency.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
               <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
                 <li>Production systems with moderate hardware</li>
                 <li>English-centric search applications</li>
@@ -235,7 +237,7 @@ scores = [0.92, 0.45, ...]  # 0-1 scale`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Code Example:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Code Example:</span></strong></p>
               <pre style={{ marginTop: '5px', fontSize: '0.75em', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
 {`model = CrossEncoder('ms-marco-MiniLM-L-6-v2')
 pairs = [["query", "doc1"], ["query", "doc2"]]
@@ -296,15 +298,15 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>High-accuracy pointwise generative reranking that frames relevance as a text generation problem. Superior accuracy through generative assessment.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>T5 encoder-decoder predicts "true" or "false" tokens for relevance. Higher P("true") = Higher relevance score.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />When to Use:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
               <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
                 <li>Web search and QA where accuracy is paramount</li>
                 <li>Transfer learning across domains (zero/few-shot)</li>
@@ -312,7 +314,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Prompt Format:</strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Prompt Format:</span></strong></p>
               <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
 {`"Query: {query} Document: {document} Relevant?"
 → P("true") = 0.85, P("false") = 0.15`}
@@ -943,10 +945,12 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
             </div>
           </div>
           <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
-            <p style={{ fontSize: '1em', lineHeight: '1.6' }}>
+            <p style={{ fontSize: '1em', lineHeight: '1.6', display: 'flex', alignItems: 'center' }}>
               <SvgIcon iconName="duo-rocket" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
-              <strong>Pro Tip:</strong> Start with ms-marco-MiniLM-L-6-v2 as your baseline, then A/B test against more specialized models 
-              based on your specific domain and performance requirements.
+              <p>
+                 <strong>Pro Tip:</strong> Start with ms-marco-MiniLM-L-6-v2 as your baseline, then A/B test against more specialized models 
+                <strong>based on your specific domain and performance requirements.</strong> <br/>
+              </p>
             </p>
           </div>
         </div>
