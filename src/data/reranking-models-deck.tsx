@@ -160,10 +160,10 @@ export const rerankingModelsDeck: Deck = {
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
               <p><strong><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Input / Output:</strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.85em', fontFamily: 'monospace' }}>
-                pairs = [[query, doc_1], [query, doc_2]]<br/>
-                scores = [0.92, 0.45, ...]  # 0-1 scale
-              </p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`pairs = [[query, doc_1], [query, doc_2]]<br/>
+scores = [0.92, 0.45, ...]  # 0-1 scale`}
+              </pre>
             </div>
           </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
@@ -313,10 +313,10 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
               <p><strong><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Prompt Format:</strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.85em', fontFamily: 'monospace' }}>
-                "Query: &#123;query&#125; Document: &#123;document&#125; Relevant?"<br/>
-                → P("true") = 0.85, P("false") = 0.15
-              </p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`"Query: {query} Document: {document} Relevant?"
+→ P("true") = 0.85, P("false") = 0.15`}
+              </pre>
             </div>
           </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
