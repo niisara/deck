@@ -21,24 +21,24 @@ export const featureExtractionDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#1b91e0' }}>
-            <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} />
+            <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} darkModeInvert={true} />
             Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders
           </div>
           <div style={{ fontSize: '1.2rem', color: '#9b59b6', marginTop: '3rem', lineHeight: '2' }}>
             <div style={{ marginBottom: '1rem' }}>
-              <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Traditional count-based methods</strong>
             </div>
             <div style={{ marginBottom: '1rem' }}>
-              <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Static word/document embeddings</strong>
             </div>
             <div style={{ marginBottom: '1rem' }}>
-              <SvgIcon iconName="duo-brain" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-brain" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Contextual token embeddings</strong>
             </div>
             <div style={{ marginBottom: '1rem' }}>
-              <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Modern sentence encoders</strong>
             </div>
           </div>
@@ -54,87 +54,87 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
               <div style={{ color: '#e7ad52', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-table" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-table" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Traditional (count-based)</strong>
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-1" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-1" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 Bag of Words (BoW)
               </div>
               <div>
-                <SvgIcon iconName="duo-2" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-2" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 TF-IDF
               </div>
             </div>
 
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-layer-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Static embeddings (word/doc level)</strong>
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-3" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-3" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 Word2Vec (CBOW)
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-4" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-4" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 Word2Vec (Skip-Gram)
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-5" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-5" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 GloVe
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-6" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-6" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 FastText
               </div>
               <div>
-                <SvgIcon iconName="duo-7" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-7" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 Doc2Vec
               </div>
             </div>
 
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Contextual embeddings</strong>
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-8" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-8" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 ELMo
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-9" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-9" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 BERT Embeddings
               </div>
               <div>
-                <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 Sentence-BERT (SBERT)
               </div>
             </div>
 
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Modern sentence encoders</strong>
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-atom" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-atom" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 Universal Sentence Encoder (USE)
               </div>
               <div style={{ marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bolt" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-bolt" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 E5 Embeddings
               </div>
               <div>
-                <SvgIcon iconName="duo-star" sizeName="sm" style={iconStyle} />
+                <SvgIcon iconName="duo-star" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                 GTE Embeddings
               </div>
             </div>
           </div>
 
           <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
-            <SvgIcon iconName="duo-info-circle" sizeName="lg" style={iconStyle} />
+            <SvgIcon iconName="duo-info-circle" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             <strong>Format per slide:</strong> Model Type • Representation Style • Best Use Case • Strengths • Weaknesses • Notes
           </div>
         </div>
@@ -153,21 +153,21 @@ export const featureExtractionDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
               <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-quote-left" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-quote-left" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 Count-based vectorization: "The cat sat on the mat" → [1,1,1,1,2,0,...]
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Model Type</strong>
                   </div>
                   <div>Count-based vectorization (classic IR/NLP)</div>
                 </div>
                 <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Representation Style</strong>
                   </div>
                   <div>Sparse vector of token counts/binary; optional n-grams</div>
@@ -176,7 +176,7 @@ export const featureExtractionDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Best Use Case</strong>
                 </div>
                 <div>Quick baselines, short-text classification with linear models, topic cues</div>
@@ -209,7 +209,7 @@ export const featureExtractionDeck: Deck = {
 
               <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Notes</strong>
                 </div>
                 <div>Consider stopword removal, n-gram ranges, hashing trick to cap dimensions</div>
@@ -230,7 +230,7 @@ export const featureExtractionDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '0.9rem' }}>
-            <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+            <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             <strong>Term Frequency × Inverse Document Frequency</strong>
             <div style={{ marginTop: '0.5rem', fontFamily: 'monospace' }}>
               TF-IDF = TF(t,d) × IDF(t)<br/>
@@ -241,14 +241,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Count-based with global weighting</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Sparse vectors weighted by TF × IDF</div>
@@ -257,7 +257,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Keyword-driven retrieval/ranking, classic classifiers, feature selection</div>
@@ -266,7 +266,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -277,7 +277,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -291,7 +291,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Use sublinear TF/log TF, document length normalization, n-grams, pruning min_df/max_df</div>
@@ -313,11 +313,11 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Continuous Bag of Words (CBOW) Architecture</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
-              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Predicts center word from surrounding context words
             </div>
             <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontStyle: 'italic' }}>
@@ -328,14 +328,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Neural static word embeddings (predict center from context)</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Dense word vectors (typically 100–300d)</div>
@@ -344,7 +344,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Large corpora; fast training; syntactic similarity features</div>
@@ -353,7 +353,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -364,7 +364,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -377,7 +377,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Use negative sampling; window ~5; pre-trained models available</div>
@@ -399,11 +399,11 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Skip-Gram: Predict context words from a target word</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
-              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Target → Context (opposite of CBOW)
             </div>
             <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontStyle: 'italic' }}>
@@ -414,14 +414,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Neural static word embeddings - predict context from center</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Dense word vectors (100–300d)</div>
@@ -430,7 +430,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Semantic relations; better for rare words; analogy tasks</div>
@@ -439,7 +439,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -449,7 +449,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -462,7 +462,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Negative sampling or hierarchical softmax; tune window and min_count</div>
@@ -484,11 +484,11 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-network-wired" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-network-wired" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Global Vectors for Word Representation</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
-              <SvgIcon iconName="duo-chart-network" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-network" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Trained on word co-occurrence statistics
             </div>
           </div>
@@ -496,14 +496,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Static word embeddings trained on global co-occurrence</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Dense word vectors (50–300d typical)</div>
@@ -512,7 +512,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Plug-and-play static embeddings; low-resource settings</div>
@@ -521,7 +521,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -532,7 +532,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -545,7 +545,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Choose domain-appropriate pretrained set (Wiki, Common Crawl)</div>
@@ -567,11 +567,11 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-text" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-text" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Subword-enriched embeddings</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-scissors" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-scissors" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Word: "playing" → Subwords: &lt;pla, play, layi, ayin, ying, ing&gt;
             </div>
             <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontStyle: 'italic' }}>
@@ -582,14 +582,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Static word embeddings with subword n-grams</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Dense word vectors enriched by character n-grams</div>
@@ -598,7 +598,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Morphologically rich languages, OOV handling</div>
@@ -607,7 +607,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -618,7 +618,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -630,7 +630,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Good default for multilingual tasks, pick aligned vectors if cross-lingual</div>
@@ -652,15 +652,15 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-folder-open" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-folder-open" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Document Vectors (Paragraph Vectors)</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-diagram-project" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-diagram-project" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               <strong>PV-DM:</strong> Predict word from document and context words
             </div>
             <div style={{ fontSize: '0.85rem' }}>
-              <SvgIcon iconName="duo-diagram-project" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-diagram-project" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               <strong>PV-DBOW:</strong> Predict words from document only
             </div>
           </div>
@@ -668,14 +668,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Static document/paragraph embeddings using PV-DM and PV-DBOW</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Dense vectors per document/paragraph</div>
@@ -684,7 +684,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Small/medium datasets needing fixed document vectors without transformers</div>
@@ -693,7 +693,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -703,7 +703,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -715,7 +715,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Tune DM vs DBOW; requires inference for unseen docs</div>
@@ -737,15 +737,15 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-arrows-split-up-and-left" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrows-split-up-and-left" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Bidirectional Language Model Architecture</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Forward LSTM → + Backward LSTM ← over Character CNN
             </div>
             <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-              <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Weighted Layer Combination → Contextual Embedding
             </div>
           </div>
@@ -753,14 +753,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Contextual word embeddings using BiLSTM language models</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Context-sensitive token vectors; aggregate to sentence if needed</div>
@@ -769,7 +769,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Token-level tasks (NER, POS), earlier-contextual baselines</div>
@@ -778,7 +778,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -789,7 +789,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -801,7 +801,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>2-layer BiLSTM over char CNN; 1024d typical; combine layers via learned weights</div>
@@ -823,19 +823,19 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-grid" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-grid" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Contextual token representations from bidirectional Transformer</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-brackets-square" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-brackets-square" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Input: [CLS] I love machine learning [SEP]
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
-              <SvgIcon iconName="duo-arrow-down" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-down" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               BERT Transformer Layers
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
-              <SvgIcon iconName="duo-arrow-down" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-down" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Output: Contextual vectors for each token or [CLS] for sentence
             </div>
           </div>
@@ -843,14 +843,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Transformer-based contextual embeddings at token-level</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Contextual token vectors; sentence via [CLS] or mean pooling</div>
@@ -859,7 +859,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Feature extraction for downstream models; token tasks</div>
@@ -868,7 +868,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -879,7 +879,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -891,7 +891,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>For sentence similarity prefer SBERT-style pooling/finetuning</div>
@@ -913,15 +913,15 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-code-branch" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-code-branch" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Siamese Network Architecture with Shared Weights</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-arrows-left-right" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrows-left-right" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Sentence A & B → Shared BERT/Transformer → Mean Pooling → Embeddings u & v
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
-              <SvgIcon iconName="duo-calculator" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-calculator" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Cosine Similarity = u·v/(||u||·||v||)
             </div>
           </div>
@@ -929,14 +929,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Siamese/Triplet fine-tuned transformer for sentence embeddings</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Fixed-size sentence vectors (384–768d) via mean pooling</div>
@@ -945,7 +945,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Semantic search, clustering, STS (Semantic Textual Similarity), retrieval</div>
@@ -954,7 +954,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -965,7 +965,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -977,7 +977,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Popular models: all-MiniLM-L6-v2, all-mpnet-base-v2; use cosine distance</div>
@@ -999,11 +999,11 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-google" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-google" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Google's Universal Sentence Encoder: Sentences to 512-d vectors</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-right" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Input: Sentences of any length → Encoder (Transformer or DAN) → Output: 512-d fixed vector
             </div>
           </div>
@@ -1011,14 +1011,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Transformer/DAN sentence encoder from Google</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>512-d sentence vectors</div>
@@ -1027,7 +1027,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Quick plug-in for similarity, clustering, classification baselines</div>
@@ -1036,7 +1036,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1047,7 +1047,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1059,7 +1059,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Variants: Transformer vs DAN; multilingual options exist</div>
@@ -1081,19 +1081,19 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-language" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-language" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Multilingual Embedding Model</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-message-question" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-message-question" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Query: "query: what is machine learning?"
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
-              <SvgIcon iconName="duo-file-lines" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-file-lines" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Passage: "passage: Machine learning is..."
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-globe" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-globe" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Supports 100+ languages: English, Spanish, Chinese, Arabic, and more
             </div>
           </div>
@@ -1101,14 +1101,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Contrastively trained multilingual sentence embeddings (e.g., intfloat/multilingual-e5-large, e5-large-v2)</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>Query/Passage embeddings; 768–1024d typical; cosine similarity</div>
@@ -1117,7 +1117,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Semantic search, RAG, retrieval, classification features (multilingual)</div>
@@ -1126,7 +1126,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1137,7 +1137,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1149,7 +1149,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Prefix inputs with "query:" or "passage:"; use cosine metric; batch/token limits apply</div>
@@ -1171,19 +1171,19 @@ export const featureExtractionDeck: Deck = {
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
             <div style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-expand" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-expand" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Long-context transformer++ architecture</strong>
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.5rem' }}>
-              <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               BERT Transformer Base + RoPE Positional Encoding + GLU Activation
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
-              <SvgIcon iconName="duo-window-maximize" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-window-maximize" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Context Window: up to 8k tokens
             </div>
             <div style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>
-              <SvgIcon iconName="duo-cube" sizeName="sm" style={iconStyle} />
+              <SvgIcon iconName="duo-cube" sizeName="sm" style={iconStyle} darkModeInvert={true} />
               Base: 768d, Large: 1024d
             </div>
           </div>
@@ -1191,14 +1191,14 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#1b91e0', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-tag" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Model Type</strong>
               </div>
               <div>Long-context transformer++ sentence embeddings (BERT + RoPE + GLU), English and multilingual variants</div>
             </div>
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#9b59b6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-cube" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Representation Style</strong>
               </div>
               <div>CLS-pooled sentence vectors, base 768d, large 1024d, context up to 8k tokens in v1.5</div>
@@ -1207,7 +1207,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#2ecc71', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Best Use Case</strong>
             </div>
             <div>Long-context retrieval/reranking, high MTEB performance within size class</div>
@@ -1216,7 +1216,7 @@ export const featureExtractionDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#2ecc71', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Strengths</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1228,7 +1228,7 @@ export const featureExtractionDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(231, 76, 60, 0.2)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#e74c3c', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Weaknesses</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1240,7 +1240,7 @@ export const featureExtractionDeck: Deck = {
 
           <div style={{ background: 'rgba(52, 152, 219, 0.2)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#3498db', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Notes</strong>
             </div>
             <div>Use Alibaba-NLP/gte-*-v1.5, enable unpadding/xformers for speed, cosine similarity, multilingual option: gte-Qwen1.5-7B-instruct</div>
@@ -1263,7 +1263,7 @@ export const featureExtractionDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e7ad52', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Traditional</strong>
                   </div>
                   <div style={{ fontSize: '0.85rem' }}>
@@ -1278,7 +1278,7 @@ export const featureExtractionDeck: Deck = {
 
                 <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#1b91e0', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Static word embeddings</strong>
                   </div>
                   <div style={{ fontSize: '0.85rem' }}>
@@ -1293,7 +1293,7 @@ export const featureExtractionDeck: Deck = {
 
                 <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#9b59b6', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-brain-circuit" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-brain-circuit" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Contextual embeddings</strong>
                   </div>
                   <div style={{ fontSize: '0.85rem' }}>
@@ -1308,7 +1308,7 @@ export const featureExtractionDeck: Deck = {
 
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#2ecc71', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-rocket" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Modern sentence encoders</strong>
                   </div>
                   <div style={{ fontSize: '0.85rem' }}>
@@ -1324,27 +1324,27 @@ export const featureExtractionDeck: Deck = {
 
               <div style={{ background: 'rgba(52, 152, 219, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#3498db', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Key Insights by Context Length</strong>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '0.8rem', fontSize: '0.8rem' }}>
                   <div>
-                    <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} />
+                    <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                     Traditional/Static: N/A
                   </div>
                   <div>
-                    <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} />
+                    <SvgIcon iconName="duo-circle" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                     ELMo/BERT/SBERT/USE/E5: 512 tokens
                   </div>
                   <div>
-                    <SvgIcon iconName="duo-star" sizeName="sm" style={iconStyle} />
+                    <SvgIcon iconName="duo-star" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                     GTE: 8192 tokens
                   </div>
                 </div>
               </div>
 
               <div style={{ marginTop: '1rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.2)', borderRadius: '8px', textAlign: 'left' }}>
-                <SvgIcon iconName="duo-compass" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-compass" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong style={{ fontSize: '1rem' }}>Similarity Metric:</strong> All dense embeddings use <strong>Cosine</strong> similarity
               </div>
             </div>

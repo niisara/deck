@@ -51,7 +51,7 @@ export const chunkingTechniquesDeck: Deck = {
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ marginBottom: '30px' }}>
             <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
-              <SvgIcon iconName="duo-book-open" sizeName="1x" />
+              <SvgIcon iconName="duo-book-open" sizeName="1x" darkModeInvert={true} />
               Definition
             </h3>
             <p style={{ fontSize: '1.1em', lineHeight: '1.6' }}>
@@ -61,7 +61,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-check-circle" sizeName="1x" />
+                <SvgIcon iconName="duo-check-circle" sizeName="1x" darkModeInvert={true} />
                 Why It's Important
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -71,7 +71,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <li>Combats "lost-in-the-middle" effect in LLMs</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-sliders" sizeName="1x" />
+                <SvgIcon iconName="duo-sliders" sizeName="1x" darkModeInvert={true} />
                 Key Variables
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -84,7 +84,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="1x" />
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Desired Outcomes
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -117,7 +117,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
               <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-ruler" sizeName="1x" />
+                <SvgIcon iconName="duo-ruler" sizeName="1x" darkModeInvert={true} />
                 Fixed/Token-based (1-3)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
@@ -126,7 +126,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <li>Token-Aware Chunking</li>
               </ul>
               <h4 style={{ color: '#2ecc71', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-paragraph" sizeName="1x" />
+                <SvgIcon iconName="duo-paragraph" sizeName="1x" darkModeInvert={true} />
                 Sentence/Paragraph (4-6)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
@@ -137,7 +137,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-sitemap" sizeName="1x" />
+                <SvgIcon iconName="duo-sitemap" sizeName="1x" darkModeInvert={true} />
                 Structure-aware (7-13)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
@@ -152,7 +152,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" />
+                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
                 Semantic/Adaptive (14-19)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
@@ -164,7 +164,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <li>Adaptive Length Chunking</li>
               </ul>
               <h4 style={{ color: '#e67e22', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-wand-sparkles" sizeName="1x" />
+                <SvgIcon iconName="duo-wand-sparkles" sizeName="1x" darkModeInvert={true} />
                 Special-Purpose (20-26)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
@@ -201,7 +201,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-ruler-horizontal" sizeName="1x" />
+                <SvgIcon iconName="duo-ruler-horizontal" sizeName="1x" darkModeInvert={true} />
                 1. Fixed-Size Chunking
               </h3>
               <p><strong>Size:</strong> 300–1000 tokens (start with 512)</p>
@@ -218,7 +218,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#1abc9c', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-window-maximize" sizeName="1x" />
+                <SvgIcon iconName="duo-window-maximize" sizeName="1x" darkModeInvert={true} />
                 2. Sliding Window Chunking
               </h3>
               <p><strong>Size:</strong> 300–800 tokens per window</p>
@@ -257,7 +257,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#9b59b6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-hashtag" sizeName="1x" />
+                <SvgIcon iconName="duo-hashtag" sizeName="1x" darkModeInvert={true} />
                 3. Token-Aware Chunking
               </h3>
               <p><strong>Size:</strong> 256–1024 tokens (match embedding model)</p>
@@ -274,7 +274,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#e67e22', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-quote-left" sizeName="1x" />
+                <SvgIcon iconName="duo-quote-left" sizeName="1x" darkModeInvert={true} />
                 4. Sentence-Level Chunking
               </h3>
               <p><strong>Size:</strong> 1–3 sentences (~50–150 tokens)</p>
@@ -313,7 +313,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#2ecc71', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-paragraph" sizeName="1x" />
+                <SvgIcon iconName="duo-paragraph" sizeName="1x" darkModeInvert={true} />
                 5. Paragraph-Level Chunking
               </h3>
               <p><strong>Size:</strong> 150–400 tokens (paragraph-bound)</p>
@@ -330,7 +330,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="1x" />
+                <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 6. Recursive Character Splitting
               </h3>
               <p><strong>Size:</strong> 400–800 tokens (typical)</p>
@@ -748,7 +748,7 @@ export const chunkingTechniquesDeck: Deck = {
           content: (
         <div style={{ margin: '0 auto', fontSize: '0.7em' }}>
           <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            <SvgIcon iconName="duo-table" sizeName="2x" />
+            <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
             Default Configurations
           </h3>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
@@ -835,7 +835,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-sitemap" sizeName="1x" />
+                <SvgIcon iconName="duo-sitemap" sizeName="1x" darkModeInvert={true} />
                 1. Is document structure reliable?
               </h4>
               <p><strong>Yes →</strong> Use structure-aware chunking (Heading-Anchor, Markdown/HTML, Structure-Aware)</p>
@@ -843,7 +843,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 2. Is latency/cost strict?
               </h4>
               <p><strong>Yes →</strong> Use simpler approaches (Fixed-Size, Token-Aware, Recursive Character)</p>
@@ -851,7 +851,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="1x" />
+                <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 3. Special content types?
               </h4>
               <p><strong>Code →</strong> Code-Aware chunking</p>
@@ -861,7 +861,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-list-check" sizeName="1x" />
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
                 Common Recommendations by Document Type
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -887,7 +887,7 @@ export const chunkingTechniquesDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
                 Key Takeaways
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -898,7 +898,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <li><strong>Consider costs:</strong> Embedding generation and storage</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="1x" />
+                <SvgIcon iconName="duo-chart-line" sizeName="1x" darkModeInvert={true} />
                 Evaluation Methods
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -910,7 +910,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-route" sizeName="1x" />
+                <SvgIcon iconName="duo-route" sizeName="1x" darkModeInvert={true} />
                 Recommended Path
               </h4>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>

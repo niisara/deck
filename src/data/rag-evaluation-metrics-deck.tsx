@@ -21,24 +21,24 @@ export const ragEvaluationMetricsDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#0ea5e9' }}>
-            <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} />
+            <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} darkModeInvert={true} />
             A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency
           </div>
           <div style={{ fontSize: '1.2rem', color: '#10b981', marginTop: '3rem', lineHeight: '2' }}>
             <div style={{ marginBottom: '1.5rem' }}>
-              <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>Retrieval Metrics</strong> — Metrics 1-4
             </div>
             <div style={{ marginBottom: '1.5rem' }}>
-              <SvgIcon iconName="duo-file-lines" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-file-lines" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>Context Quality</strong> — Metric 5
             </div>
             <div style={{ marginBottom: '1.5rem' }}>
-              <SvgIcon iconName="duo-message" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-message" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>Answer Quality</strong> — Metrics 6-10
             </div>
             <div>
-              <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>Efficiency Metrics</strong> — Metrics 11-13
             </div>
           </div>
@@ -55,7 +55,7 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
               <div style={{ fontSize: '1.3rem', color: '#3b82f6', marginBottom: '1rem' }}>
-                <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Retrieval Quality Metrics (1-4)</strong>
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem' }}>
@@ -68,7 +68,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
               <div style={{ fontSize: '1.3rem', color: '#0ea5e9', marginBottom: '1rem' }}>
-                <SvgIcon iconName="duo-file-lines" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-file-lines" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Context Quality Metric (5)</strong>
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem' }}>
@@ -80,7 +80,7 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
               <div style={{ fontSize: '1.3rem', color: '#10b981', marginBottom: '1rem' }}>
-                <SvgIcon iconName="duo-message" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-message" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Answer Quality Metrics (6-10)</strong>
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem' }}>
@@ -94,7 +94,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
             <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
               <div style={{ fontSize: '1.3rem', color: '#8b5cf6', marginBottom: '1rem' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Efficiency Metrics (11-13)</strong>
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem' }}>
@@ -106,7 +106,7 @@ export const ragEvaluationMetricsDeck: Deck = {
           </div>
 
           <div style={{ marginTop: '2rem', textAlign: 'left', fontSize: '1.1rem', fontStyle: 'italic', color: '#6b7280' }}>
-            <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+            <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             Goal: Diagnose failures precisely (missed retrieval vs. ungrounded reasoning vs. inefficient context)
           </div>
         </div>
@@ -128,14 +128,14 @@ export const ragEvaluationMetricsDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Goal / What It Measures</strong>
                   </div>
                   <div>Measures how many relevant documents were successfully retrieved in the top-K results, indicating retrieval coverage completeness.</div>
                 </div>
                 <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>How to Calculate</strong>
                   </div>
                   <div style={{ fontFamily: 'monospace', fontSize: '0.95rem' }}>
@@ -149,7 +149,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>When to Use</strong>
                 </div>
                 <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -162,7 +162,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Target / Good Value Benchmark</strong>
                 </div>
                 <div style={{ display: 'flex', gap: '1rem' }}>
@@ -173,7 +173,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Example</strong>
                 </div>
                 <div style={{ fontSize: '0.9rem' }}>
@@ -186,7 +186,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
               <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Impact on RAG</strong>
                 </div>
                 <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -214,14 +214,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Measures how relevant the top-K retrieved chunks are (relevance purity). Evaluates the accuracy and quality of the retrieval system's results.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontFamily: 'monospace', fontSize: '0.95rem' }}>
@@ -235,7 +235,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -248,7 +248,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -259,7 +259,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -271,7 +271,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -300,14 +300,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Fraction of queries where at least one relevant item appears in top-K results (minimum success criterion).</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>
@@ -321,7 +321,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -334,7 +334,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -345,7 +345,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -357,7 +357,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -385,14 +385,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Measures how much of the needed answer content is present in retrieved context, indicating answer coverage and retrieval completeness.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -406,7 +406,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -419,7 +419,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -430,7 +430,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -443,7 +443,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -470,14 +470,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>LLM-as-judge score of how relevant the retrieved chunks are to the query, measuring the quality of retrieval context alignment to user information needs.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -493,7 +493,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -506,7 +506,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -518,7 +518,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -533,7 +533,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -561,14 +561,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Measures the frequency of unsupported or invented claims in generated answers that cannot be traced back to the retrieved context.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -585,7 +585,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -598,7 +598,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -609,7 +609,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -622,7 +622,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -650,14 +650,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Measures whether answer cites retrieved facts correctly (especially in citation-enabled RAG systems that provide sources for their claims).</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -673,7 +673,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -686,7 +686,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -697,7 +697,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -710,7 +710,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -738,14 +738,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Checks whether claims in the generated answer are fully supported by the retrieved context, ensuring factual consistency between response and evidence.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -761,7 +761,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -774,7 +774,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -785,7 +785,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -799,7 +799,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -827,14 +827,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Measures whether the answer addresses all required parts of the query, especially for multi-part or complex questions.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -848,7 +848,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -861,7 +861,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -872,7 +872,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -885,7 +885,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -913,14 +913,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Evaluates whether responses avoid vague or generic phrasing, instead providing concrete, actionable details that are specific to the query context.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -932,7 +932,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -945,7 +945,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -956,7 +956,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -968,7 +968,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -996,14 +996,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Measures the percentage of irrelevant tokens in retrieved context (context pollution) that contribute to prompt inefficiency.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -1018,7 +1018,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1031,7 +1031,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -1043,7 +1043,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -1056,7 +1056,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1084,14 +1084,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>How compactly key information is expressed in the prompt while preserving coverage of essential information for answer generation.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
@@ -1104,7 +1104,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1117,7 +1117,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div>
@@ -1129,7 +1129,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -1142,7 +1142,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1170,14 +1170,14 @@ export const ragEvaluationMetricsDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Measures</strong>
               </div>
               <div>Overall efficiency of the RAG pipeline under latency and budget constraints, balancing performance with resource utilization.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.85rem' }}>
@@ -1191,7 +1191,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1205,7 +1205,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
@@ -1216,7 +1216,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Example</strong>
             </div>
             <div style={{ fontSize: '0.9rem' }}>
@@ -1231,7 +1231,7 @@ export const ragEvaluationMetricsDeck: Deck = {
 
           <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-arrow-trend-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Impact on RAG</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1259,24 +1259,24 @@ export const ragEvaluationMetricsDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                    <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} />
+                    <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                     <strong>Key Takeaways</strong>
                   </div>
                   <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem', marginBottom: 0 }}>
                     <li style={{ marginBottom: '0.8rem' }}>
-                      <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-magnifying-glass" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
                     </li>
                     <li style={{ marginBottom: '0.8rem' }}>
-                      <SvgIcon iconName="duo-file-lines" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-file-lines" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Context quality</strong> (5) evaluates relevance alignment
                     </li>
                     <li style={{ marginBottom: '0.8rem' }}>
-                      <SvgIcon iconName="duo-message" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-message" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
                     </li>
                     <li>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
                     </li>
                   </ul>
@@ -1284,24 +1284,24 @@ export const ragEvaluationMetricsDeck: Deck = {
 
                 <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
                   <div style={{ color: '#10b981', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} />
+                    <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                     <strong>Best Practices</strong>
                   </div>
                   <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem', marginBottom: 0 }}>
                     <li style={{ marginBottom: '0.8rem' }}>
-                      <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-layer-group" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Use multiple metrics together for full picture
                     </li>
                     <li style={{ marginBottom: '0.8rem' }}>
-                      <SvgIcon iconName="duo-chart-bar" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-chart-bar" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Start with retrieval & faithfulness baselines
                     </li>
                     <li style={{ marginBottom: '0.8rem' }}>
-                      <SvgIcon iconName="duo-arrows-rotate" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-arrows-rotate" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Continuously monitor in production
                     </li>
                     <li>
-                      <SvgIcon iconName="duo-bullseye" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-bullseye" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Balance quality with efficiency constraints
                     </li>
                   </ul>
@@ -1310,27 +1310,27 @@ export const ragEvaluationMetricsDeck: Deck = {
 
               <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px', marginBottom: '1.5rem' }}>
                 <div style={{ color: '#8b5cf6', marginBottom: '1rem', fontSize: '1.2rem' }}>
-                  <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                  <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                   <strong>Implementation Roadmap</strong>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '0.95rem' }}>
                   <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                     <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                      <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       Phase 1: Foundation
                     </div>
                     <div>Implement Recall@K, Precision@K, and Faithfulness Score</div>
                   </div>
                   <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                     <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                      <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       Phase 2: Quality
                     </div>
                     <div>Add Context Relevance, Answer Completeness, and Hallucination Rate</div>
                   </div>
                   <div style={{ background: 'rgba(245, 158, 11, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                     <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                      <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       Phase 3: Optimization
                     </div>
                     <div>Track Noise Density, Context Compression, and Latency-Cost Tradeoff</div>
@@ -1339,7 +1339,7 @@ export const ragEvaluationMetricsDeck: Deck = {
               </div>
 
               <div style={{ padding: '1.5rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left' }}>
-                <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong style={{ fontSize: '1.1rem' }}>Remember:</strong> No single metric tells the full story. Use combinations to diagnose root causes: missed retrieval vs. ungrounded reasoning vs. inefficient context.
               </div>
             </div>

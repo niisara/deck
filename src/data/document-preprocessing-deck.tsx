@@ -55,7 +55,7 @@ export const documentPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c' }}>
-                <SvgIcon iconName="duo-broom" sizeName="1x" />
+                <SvgIcon iconName="duo-broom" sizeName="1x" darkModeInvert={true} />
                 Content Cleaning (1-5)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -66,7 +66,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>5. OCR Cleanup</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-scissors" sizeName="1x" />
+                <SvgIcon iconName="duo-scissors" sizeName="1x" darkModeInvert={true} />
                 Text Segmentation (6-8)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -77,7 +77,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6' }}>
-                <SvgIcon iconName="duo-text" sizeName="1x" />
+                <SvgIcon iconName="duo-text" sizeName="1x" darkModeInvert={true} />
                 Text Normalization (9-11)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -86,7 +86,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>11. Lemmatization / Stemming</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1abc9c', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-tags" sizeName="1x" />
+                <SvgIcon iconName="duo-tags" sizeName="1x" darkModeInvert={true} />
                 Metadata Enrichment (12-13)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -96,7 +96,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12' }}>
-                <SvgIcon iconName="duo-filter" sizeName="1x" />
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
                 Quality & Enhancement (14-17)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -142,7 +142,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Reduce document noise before processing/embedding</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -152,7 +152,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>ML-based classification of content vs. boilerplate</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -163,7 +163,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -173,7 +173,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Reduces repetitive elements</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -216,7 +216,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Prevent overrepresentation in training data</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -227,7 +227,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Jaccard similarity for fuzzy matching</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -239,7 +239,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -249,7 +249,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>More balanced content representation</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -293,7 +293,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Prevent text processing issues from irregular formatting</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -306,7 +306,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -316,7 +316,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Makes downstream processing reliable</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -354,7 +354,7 @@ export const documentPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -364,7 +364,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Normalize complex tables with spanning cells</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -376,7 +376,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -386,7 +386,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Supports comparison operations</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -422,7 +422,7 @@ export const documentPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -433,7 +433,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Language identification for multi-lingual docs</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -445,7 +445,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -455,7 +455,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Enables more accurate embeddings</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -547,7 +547,7 @@ export const documentPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -558,7 +558,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Convert Unicode to ASCII equivalents when appropriate</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -570,7 +570,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -580,7 +580,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Makes cross-document comparison reliable</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -737,7 +737,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Filter out junk content that could pollute search results</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -750,7 +750,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -760,7 +760,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Better user experience with relevant results</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -807,7 +807,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Facilitate faster triage of information</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -819,7 +819,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -829,7 +829,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Can serve as context for further analysis</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -876,7 +876,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Enable consistent search and analytics</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -889,7 +889,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -900,7 +900,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Supports domain-specific precision</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -945,7 +945,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Establish content validity periods</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -958,7 +958,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -969,7 +969,7 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Facilitates audit trails and compliance</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -1052,7 +1052,7 @@ export const documentPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px' }}>
             <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '18px' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
                 Key Takeaways
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -1064,7 +1064,7 @@ export const documentPreprocessingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" />
+                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
                 Governance & QA
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -1077,7 +1077,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
           <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
             <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-              <SvgIcon iconName="duo-route" sizeName="1x" />
+              <SvgIcon iconName="duo-route" sizeName="1x" darkModeInvert={true} />
               Next Steps
             </h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>

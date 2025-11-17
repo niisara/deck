@@ -55,7 +55,7 @@ export const promptEngineeringDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" />
+                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
                 Reasoning Techniques (1-8, 17)
               </h4>
               <ul style={{ lineHeight: '1.7', fontSize: '0.95em' }}>
@@ -69,7 +69,7 @@ export const promptEngineeringDeck: Deck = {
                 <li>17. Multimodal Chain-of-Thought</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-database" sizeName="1x" />
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
                 Retrieval (9)
               </h4>
               <ul style={{ lineHeight: '1.7', fontSize: '0.95em' }}>
@@ -78,7 +78,7 @@ export const promptEngineeringDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-robot" sizeName="1x" />
+                <SvgIcon iconName="duo-robot" sizeName="1x" darkModeInvert={true} />
                 Agentic Techniques (10, 14-16)
               </h4>
               <ul style={{ lineHeight: '1.7', fontSize: '0.95em' }}>
@@ -88,7 +88,7 @@ export const promptEngineeringDeck: Deck = {
                 <li>16. Reflexion</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="1x" />
+                <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 Hybrid Techniques (7, 11-13, 18)
               </h4>
               <ul style={{ lineHeight: '1.7', fontSize: '0.95em' }}>
@@ -136,7 +136,7 @@ in 3 bullets for executives:
 [paste text here]"`}
               </pre>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul>
@@ -147,7 +147,7 @@ in 3 bullets for executives:
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" darkModeInvert={true} />
                 Complexity & Models
               </h4>
               <p><strong>Level:</strong> Simple</p>
@@ -201,7 +201,7 @@ Example: 'Loved it' -> positive
 Classify: 'It was okay, but pricey.'"`}
               </pre>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul>
@@ -212,7 +212,7 @@ Classify: 'It was okay, but pricey.'"`}
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" darkModeInvert={true} />
                 Complexity
               </h4>
               <p><strong>Level:</strong> Simple–Intermediate</p>
@@ -267,7 +267,7 @@ removed, what fraction are red now?
 Think step by step."`}
               </pre>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul>
@@ -278,7 +278,7 @@ Think step by step."`}
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" darkModeInvert={true} />
                 Complexity
               </h4>
               <p><strong>Level:</strong> Intermediate</p>
@@ -319,7 +319,7 @@ Think step by step."`}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 4. Meta Prompting
               </h4>
               <p><strong>Concept:</strong> Specify abstract structure, syntax, and format rather than content-specific examples</p>
@@ -333,7 +333,7 @@ Think step by step."`}
             </div>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-users" sizeName="1x" />
+                <SvgIcon iconName="duo-users" sizeName="1x" darkModeInvert={true} />
                 5. Self-Consistency
               </h4>
               <p><strong>Concept:</strong> Sample multiple CoT paths and select the majority/most consistent answer</p>
@@ -347,7 +347,7 @@ Think step by step."`}
             </div>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-book" sizeName="1x" />
+                <SvgIcon iconName="duo-book" sizeName="1x" darkModeInvert={true} />
                 6. Generate Knowledge
               </h4>
               <p><strong>Concept:</strong> First ask the model to generate background facts, then answer using those facts</p>
@@ -456,7 +456,7 @@ Question: How do mRNA COVID vaccines
 work?"`}
               </pre>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul>
@@ -467,7 +467,7 @@ work?"`}
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" darkModeInvert={true} />
                 Complexity
               </h4>
               <p><strong>Level:</strong> Intermediate</p>
@@ -649,7 +649,7 @@ relate them to text cues, then infer
 the answer step-by-step."`}
               </pre>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul>
@@ -660,7 +660,7 @@ the answer step-by-step."`}
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" darkModeInvert={true} />
                 Complexity
               </h4>
               <p><strong>Level:</strong> Advanced</p>
@@ -714,7 +714,7 @@ Using that graph, answer: <question>.
 Show the path used."`}
               </pre>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <ul>
@@ -725,7 +725,7 @@ Show the path used."`}
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" />
+                <SvgIcon iconName="duo-gauge-simple" sizeName="1x" darkModeInvert={true} />
                 Complexity
               </h4>
               <p><strong>Level:</strong> Advanced</p>
@@ -764,7 +764,7 @@ Show the path used."`}
           content: (
         <div style={{ fontSize: '0.65em', margin: '0 auto' }}>
           <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            <SvgIcon iconName="duo-chart-bar" sizeName="2x" />
+            <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
             Complexity & Use Case Matrix
           </h3>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.95em' }}>
@@ -825,7 +825,7 @@ Show the path used."`}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
                 Getting Started
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -835,7 +835,7 @@ Show the path used."`}
                 <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" />
+                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
                 Production Considerations
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -847,7 +847,7 @@ Show the path used."`}
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-wrench" sizeName="1x" />
+                <SvgIcon iconName="duo-wrench" sizeName="1x" darkModeInvert={true} />
                 When to Scale Up
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -858,7 +858,7 @@ Show the path used."`}
                 <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Common Pitfalls
               </h4>
               <ul style={{ lineHeight: '1.8' }}>

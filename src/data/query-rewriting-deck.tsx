@@ -50,7 +50,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 Problems It Solves
               </h3>
               <ul style={{ lineHeight: '2' }}>
@@ -68,7 +68,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '20px' }}>
-                <SvgIcon iconName="duo-check-double" sizeName="2x" />
+                <SvgIcon iconName="duo-check-double" sizeName="2x" darkModeInvert={true} />
                 Outcomes
               </h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', marginTop: '30px' }}>
@@ -267,7 +267,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <p>Add semantically related keywords via:</p>
@@ -288,7 +288,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -298,7 +298,7 @@ export const queryRewritingDeck: Deck = {
                 <li>Works with existing search engines</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -328,7 +328,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-pen-line" sizeName="1x" />
+                <SvgIcon iconName="duo-pen-line" sizeName="1x" darkModeInvert={true} />
                 2. Query Reformulation
               </h3>
               <p><strong>Goal:</strong> Make queries clearer, self-contained, and unambiguous</p>
@@ -343,7 +343,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="1x" />
+                <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 3. Query Decomposition
               </h3>
               <p><strong>Goal:</strong> Handle multi-hop/complex questions requiring multiple pieces of information</p>
@@ -379,7 +379,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-arrow-rotate-left" sizeName="1x" />
+                <SvgIcon iconName="duo-arrow-rotate-left" sizeName="1x" darkModeInvert={true} />
                 4. Step-Back Prompting
               </h3>
               <p><strong>Goal:</strong> Improve retrieval via abstraction and first principles thinking</p>
@@ -394,7 +394,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-file-lines" sizeName="1x" />
+                <SvgIcon iconName="duo-file-lines" sizeName="1x" darkModeInvert={true} />
                 5. HyDE (Hypothetical Document)
               </h3>
               <p><strong>Goal:</strong> Improve retrieval by embedding a synthetic hypothetical answer document</p>
@@ -427,7 +427,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-clone" sizeName="1x" />
+                <SvgIcon iconName="duo-clone" sizeName="1x" darkModeInvert={true} />
                 6. Multi-Query Generation
               </h3>
               <p><strong>Goal:</strong> Cover diverse intents/phrases to improve recall and handle ambiguity</p>
@@ -447,7 +447,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-comments" sizeName="1x" />
+                <SvgIcon iconName="duo-comments" sizeName="1x" darkModeInvert={true} />
                 7. Context-Aware Rewriting
               </h3>
               <p><strong>Goal:</strong> Make follow-up queries standalone by incorporating conversation context</p>
@@ -480,7 +480,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-question-circle" sizeName="1x" />
+                <SvgIcon iconName="duo-question-circle" sizeName="1x"  darkModeInvert={true} />
                 8. Query Clarification
               </h3>
               <p><strong>Goal:</strong> Resolve ambiguity in user queries before retrieval</p>
@@ -497,7 +497,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-filter" sizeName="1x" />
+                <SvgIcon iconName="duo-filter" sizeName="1x"  darkModeInvert={true} />
                 9. Query Specification
               </h3>
               <p><strong>Goal:</strong> Add explicit constraints (time, source, locale, format) to focus retrieval</p>
@@ -584,7 +584,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-hospital" sizeName="1x" />
+                <SvgIcon iconName="duo-hospital" sizeName="1x" darkModeInvert={true} />
                 20. Domain-Specific Rewriting
               </h3>
               <p><strong>Goal:</strong> Translate lay terms to domain jargon and fields</p>
@@ -599,7 +599,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-sitemap" sizeName="1x" />
+                <SvgIcon iconName="duo-sitemap" sizeName="1x" darkModeInvert={true} />
                 21. Intent Classification & Rewriting
               </h3>
               <p><strong>Goal:</strong> Match rewriting strategy to specific task types</p>
@@ -633,7 +633,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-chart-network" sizeName="1x" />
+                <SvgIcon iconName="duo-chart-network" sizeName="1x" darkModeInvert={true} />
                 22. Diverse Multi-Query (DMQR)
               </h4>
               <p><strong>Goal:</strong> Maximize diversity among rewrites to cover multiple facets</p>
@@ -652,7 +652,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-chart-line-up" sizeName="1x" />
+                <SvgIcon iconName="duo-chart-line-up" sizeName="1x" darkModeInvert={true} />
                 23. Feedback-Based Rewriting
               </h4>
               <p><strong>Goal:</strong> Learn from user interactions (clicks, ratings, session data)</p>
@@ -663,7 +663,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-wand-sparkles" sizeName="1x" />
+                <SvgIcon iconName="duo-wand-sparkles" sizeName="1x" darkModeInvert={true} />
                 24. Prompt-Based & Adaptive
               </h4>
               <p><strong>Prompt-Based:</strong> Use compact, reusable prompts to standardize rewrites with minimal engineering</p>
@@ -753,7 +753,7 @@ export const queryRewritingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" />
+                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
                 Getting Started
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -763,7 +763,7 @@ export const queryRewritingDeck: Deck = {
                 <li><strong>A/B Test:</strong> Compare strategies on your specific data</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" />
+                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
                 Production Guardrails
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -776,7 +776,7 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="1x" />
+                <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 Combining Strategies
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -786,7 +786,7 @@ export const queryRewritingDeck: Deck = {
                 <li><strong>Conditional:</strong> Intent Classification → Strategy router</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Common Pitfalls
               </h4>
               <ul style={{ lineHeight: '1.8' }}>

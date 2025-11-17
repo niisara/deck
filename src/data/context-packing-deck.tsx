@@ -25,19 +25,19 @@ export const contextPackingDeck: Deck = {
           </div>
           <div style={{ fontSize: '1rem', color: '#888', lineHeight: '1.8' }}>
             <div style={{ marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               When and how to pack context for retrieval-augmented generation
             </div>
             <div style={{ marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               Practical workflows for 13 techniques with examples
             </div>
             <div style={{ marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-scale-balanced" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-scale-balanced" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               Trade-offs, risks, and implementation tips
             </div>
             <div style={{ marginTop: '1rem', color: '#c678dd' }}>
-              <SvgIcon iconName="duo-users-group" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-users-group" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Audience:</strong> ML engineers, data/knowledge engineers, LLM application builders
             </div>
           </div>
@@ -53,7 +53,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem 2rem' }}>
             <div>
               <div style={{ color: '#e06c75', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-scissors" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-scissors" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Chunking & Windowing</strong>
               </div>
               <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
@@ -65,7 +65,7 @@ export const contextPackingDeck: Deck = {
             
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-compress" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-compress" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Summarization & Compression</strong>
               </div>
               <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
@@ -77,7 +77,7 @@ export const contextPackingDeck: Deck = {
 
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-ranking-star" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-ranking-star" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Relevance & Optimization</strong>
               </div>
               <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
@@ -89,7 +89,7 @@ export const contextPackingDeck: Deck = {
             
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Structure & Deduplication</strong>
               </div>
               <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
@@ -102,7 +102,7 @@ export const contextPackingDeck: Deck = {
           </div>
 
           <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} />
+            <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             <strong>Key insight:</strong> Combine multiple techniques to balance answer quality, token efficiency, and inference speed.
           </div>
         </div>
@@ -121,14 +121,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-scissors" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-scissors" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Preserve meaning boundaries; reduce mid-sentence cuts</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -137,7 +137,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -149,7 +149,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -158,7 +158,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -170,7 +170,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -186,7 +186,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -196,7 +196,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -220,14 +220,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-arrows-rotate" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-arrows-rotate" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Maintain continuity across chunk boundaries</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -236,7 +236,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -248,7 +248,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -257,7 +257,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -269,7 +269,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -284,7 +284,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -293,7 +293,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -317,14 +317,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Disambiguate details with hierarchical context</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -333,7 +333,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -345,7 +345,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -354,7 +354,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -366,7 +366,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -381,7 +381,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -391,7 +391,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -416,14 +416,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Fit long sections within tight budgets</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -432,7 +432,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -444,7 +444,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -453,7 +453,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -465,7 +465,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -480,7 +480,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -490,7 +490,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -515,14 +515,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-network-wired" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Preserve big picture while keeping crucial details</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -531,7 +531,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -543,7 +543,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -552,7 +552,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -564,7 +564,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -579,7 +579,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -588,7 +588,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -613,14 +613,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
-            <SvgIcon iconName="duo-ranking-star" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-ranking-star" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Maximize utility by prioritizing high-relevance chunks</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -629,7 +629,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -641,7 +641,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -650,7 +650,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -662,7 +662,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -677,7 +677,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -687,7 +687,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -712,14 +712,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Shrink verbose passages while retaining facts</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -728,7 +728,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -740,7 +740,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -749,7 +749,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -761,7 +761,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -776,7 +776,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -786,7 +786,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -811,14 +811,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Include only fields relevant to the answer type</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -827,7 +827,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -839,7 +839,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -848,7 +848,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -860,7 +860,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -875,7 +875,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -884,7 +884,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -909,14 +909,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-table" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-table" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Increase information density via structure</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -925,7 +925,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -937,7 +937,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -946,7 +946,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -958,7 +958,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -973,7 +973,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -983,7 +983,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1008,14 +1008,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-copy" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-copy" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Remove overlapping/near-duplicate chunks before packing</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1024,7 +1024,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1036,7 +1036,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1045,7 +1045,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1057,7 +1057,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1072,7 +1072,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1082,7 +1082,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1107,14 +1107,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Guarantee fits within model context window</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1123,7 +1123,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1135,7 +1135,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1144,7 +1144,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1156,7 +1156,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1171,7 +1171,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1181,7 +1181,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1206,14 +1206,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-sliders" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-sliders" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Use fewer or more chunks depending on query complexity</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1222,7 +1222,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1234,7 +1234,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1243,7 +1243,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1255,7 +1255,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1270,7 +1270,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1280,7 +1280,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1305,14 +1305,14 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-link" sizeName="xl" style={{ marginRight: '0.8rem' }} />
+            <SvgIcon iconName="duo-link" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
             <strong style={{ fontSize: '1.2rem' }}>Order context to match reasoning flow</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1321,7 +1321,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1333,7 +1333,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1342,7 +1342,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-arrow-right" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Example (Before → After)</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
@@ -1354,7 +1354,7 @@ export const contextPackingDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#e5c07b', marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
@@ -1369,7 +1369,7 @@ export const contextPackingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1379,7 +1379,7 @@ export const contextPackingDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginRight: 0 }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1404,19 +1404,19 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
               <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} />
+                <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
                 <strong>Best Practices for Context Packing</strong>
               </div>
 
               <div style={{ marginBottom: '1.5rem' }}>
                 <div style={{ color: '#98c379', marginBottom: '1rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-check-circle" sizeName="xl" style={iconStyle} />
+                  <SvgIcon iconName="duo-check-circle" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                   <strong>Key Takeaways</strong>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                   <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
                     <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       <strong>Combine techniques</strong>
                     </div>
                     <div style={{ fontSize: '0.85rem' }}>
@@ -1425,7 +1425,7 @@ export const contextPackingDeck: Deck = {
                   </div>
                   <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
                     <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-gauge-high" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       <strong>Track token budget</strong>
                     </div>
                     <div style={{ fontSize: '0.85rem' }}>
@@ -1434,7 +1434,7 @@ export const contextPackingDeck: Deck = {
                   </div>
                   <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
                     <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                      <SvgIcon iconName="duo-circle-nodes" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-circle-nodes" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       <strong>Add hierarchy</strong>
                     </div>
                     <div style={{ fontSize: '0.85rem' }}>
@@ -1443,7 +1443,7 @@ export const contextPackingDeck: Deck = {
                   </div>
                   <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
                     <div style={{ marginBottom: '0.5rem', fontSize: '0.9rem' }}>
-                      <SvgIcon iconName="duo-link" sizeName="lg" style={iconStyle} />
+                      <SvgIcon iconName="duo-link" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                       <strong>Optimize order</strong>
                     </div>
                     <div style={{ fontSize: '0.85rem' }}>
@@ -1455,7 +1455,7 @@ export const contextPackingDeck: Deck = {
 
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ color: '#e5c07b', marginBottom: '1rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Implementation Tips</strong>
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8' }}>
@@ -1466,7 +1466,7 @@ export const contextPackingDeck: Deck = {
 
             <div>
               <div style={{ color: '#61dafb', marginBottom: '1rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong>Next Steps</strong>
               </div>
               <div style={{ background: 'rgba(97, 218, 251, 0.15)', padding: '1rem', borderRadius: '8px' }}>
