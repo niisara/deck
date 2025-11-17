@@ -53,7 +53,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 2,
           title: 'Overview: Why Multi-Step Retrieval?',
-          icon: { name: 'duo-lightbulb', size: '5x' },
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.9em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
@@ -104,7 +104,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 3,
           title: 'The 9 Strategies',
-          icon: { name: 'duo-list-check', size: '5x' },
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', fontSize: '0.85em' }}>
@@ -159,7 +159,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 4,
           title: '1. Iterative Retrieve-and-Refine',
-          icon: { name: 'duo-arrows-rotate', size: '5x' },
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -214,7 +214,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 5,
           title: '2. HyDE (Hypothetical Document Generation)',
-          icon: { name: 'duo-file-lines', size: '5x' },
+          icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -268,7 +268,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 6,
           title: '3. Query Decomposition + Sequential Retrieval',
-          icon: { name: 'duo-list-check', size: '5x' },
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -323,7 +323,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 7,
           title: '4. Chain-of-Thought Guided Retrieval',
-          icon: { name: 'duo-brain', size: '5x' },
+          icon: { name: 'duo-brain' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -376,7 +376,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 8,
           title: '5. Step-Back Reasoning Retrieval',
-          icon: { name: 'duo-arrow-left', size: '5x' },
+          icon: { name: 'duo-arrow-left' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -430,7 +430,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 9,
           title: '6. Multi-Hop Graph Traversal Retrieval',
-          icon: { name: 'duo-circle-nodes', size: '5x' },
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -484,7 +484,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 10,
           title: '7. Context-Summarize-and-Retrieve',
-          icon: { name: 'duo-book-open', size: '5x' },
+          icon: { name: 'duo-book-open' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -538,7 +538,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 11,
           title: '8. Answer-Conditioned Re-Retrieval',
-          icon: { name: 'duo-check-double', size: '5x' },
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -590,7 +590,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 12,
           title: '9. Feedback-Based Retrieval Loop',
-          icon: { name: 'duo-chart-line', size: '5x' },
+          icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -644,7 +644,7 @@ export const multiStepRetrievalDeck: Deck = {
         {
           id: 13,
           title: 'Summary and How to Choose',
-          icon: { name: 'duo-clipboard-check', size: '5x' },
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>

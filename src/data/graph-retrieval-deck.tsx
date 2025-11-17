@@ -45,7 +45,7 @@ export const graphRetrievalDeck: Deck = {
     {
       id: 2,
       title: 'Overview: 13 Techniques at a Glance',
-      icon: { name: 'duo-list-check', size: '5x' },
+      icon: { name: 'duo-list-check' },
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -119,7 +119,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 3,
           title: '1. Node-Level Retrieval',
-          icon: { name: 'duo-circle-dot', size: '5x' },
+          icon: { name: 'duo-circle-dot' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '1rem' }}>
@@ -199,7 +199,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 4,
           title: '2. Edge-Weighted Retrieval',
-          icon: { name: 'duo-arrow-right-arrow-left', size: '5x' },
+          icon: { name: 'duo-arrow-right-arrow-left' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -282,7 +282,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 5,
           title: '3. Neighborhood Expansion',
-          icon: { name: 'duo-circle-nodes', size: '5x' },
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -365,7 +365,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 6,
           title: '4. Path-Based Retrieval',
-          icon: { name: 'duo-route', size: '5x' },
+          icon: { name: 'duo-route' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -448,7 +448,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 7,
           title: '5. Community / Cluster Retrieval',
-          icon: { name: 'duo-object-group', size: '5x' },
+          icon: { name: 'duo-object-group' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -531,7 +531,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 8,
           title: '6. Hierarchical Graph Retrieval',
-          icon: { name: 'duo-sitemap', size: '5x' },
+          icon: { name: 'duo-sitemap' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -614,7 +614,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 9,
           title: '7. Graph + Dense Vector Hybrid',
-          icon: { name: 'duo-layer-group', size: '5x' },
+          icon: { name: 'duo-layer-group' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -697,7 +697,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 10,
           title: '8. Graph + BM25 Hybrid',
-          icon: { name: 'duo-magnifying-glass-chart', size: '5x' },
+          icon: { name: 'duo-magnifying-glass-chart' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -780,7 +780,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 11,
           title: '9. Semantic Graph Traversal',
-          icon: { name: 'duo-diagram-next', size: '5x' },
+          icon: { name: 'duo-diagram-next' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -863,7 +863,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 12,
           title: '10. Graph Walk-Based Ranking',
-          icon: { name: 'duo-ranking-star', size: '5x' },
+          icon: { name: 'duo-ranking-star' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -946,7 +946,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 13,
           title: '11. Query Graph Construction',
-          icon: { name: 'duo-diagram-project', size: '5x' },
+          icon: { name: 'duo-diagram-project' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -1029,7 +1029,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 14,
           title: '12. Context Path Stitching',
-          icon: { name: 'duo-link', size: '5x' },
+          icon: { name: 'duo-link' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -1112,7 +1112,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 15,
           title: '13. LLM-Guided Graph Expansion',
-          icon: { name: 'duo-robot', size: '5x' },
+          icon: { name: 'duo-robot' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -1195,7 +1195,7 @@ export const graphRetrievalDeck: Deck = {
         {
           id: 16,
           title: 'Putting It Together: Patterns',
-          icon: { name: 'duo-clipboard-check', size: '5x' },
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '0.9rem', lineHeight: '1.7', textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>

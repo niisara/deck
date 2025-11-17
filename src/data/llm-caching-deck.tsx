@@ -41,7 +41,7 @@ export const llmCachingDeck: Deck = {
     {
       id: 2,
       title: 'Why Caching Matters in LLM Systems',
-      icon: { name: 'duo-lightbulb', size: '5x' },
+      icon: { name: 'duo-lightbulb' },
       content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
@@ -118,7 +118,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 3,
           title: 'Pattern 1: Query Embedding Cache',
-          icon: { name: 'duo-brain', size: '5x' },
+          icon: { name: 'duo-brain' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -202,7 +202,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 4,
           title: 'Pattern 2: Retrieval Results Cache',
-          icon: { name: 'duo-magnifying-glass', size: '5x' },
+          icon: { name: 'duo-magnifying-glass' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -286,7 +286,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 5,
           title: 'Pattern 3: Prompt Template Cache',
-          icon: { name: 'duo-file-lines', size: '5x' },
+          icon: { name: 'duo-file-lines' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -370,7 +370,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 6,
           title: 'Pattern 4: RAG Answer Cache',
-          icon: { name: 'duo-message-square', size: '5x' },
+          icon: { name: 'duo-message-square' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -454,7 +454,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 7,
           title: 'Pattern 5: Chunk-Level Cache',
-          icon: { name: 'duo-scissors', size: '5x' },
+          icon: { name: 'duo-scissors' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -538,7 +538,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 8,
           title: 'Pattern 6: Session Conversation Cache',
-          icon: { name: 'duo-message-square', size: '5x' },
+          icon: { name: 'duo-message-square' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -624,7 +624,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 9,
           title: 'Pattern 7: User Profile / Preference Cache',
-          icon: { name: 'duo-user', size: '5x' },
+          icon: { name: 'duo-user' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -708,7 +708,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 10,
           title: 'Pattern 8: Token-Level KV Cache',
-          icon: { name: 'duo-brain-circuit', size: '5x' },
+          icon: { name: 'duo-brain-circuit' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -792,7 +792,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 11,
           title: 'Pattern 9: Model Output Logit Cache',
-          icon: { name: 'duo-chart-line', size: '5x' },
+          icon: { name: 'duo-chart-line' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -876,7 +876,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 12,
           title: 'Pattern 10: Semantic Similarity Cache',
-          icon: { name: 'duo-circle-nodes', size: '5x' },
+          icon: { name: 'duo-circle-nodes' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -962,7 +962,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 13,
           title: 'Pattern 11: Ranked Results Cache (Post Re-Ranker)',
-          icon: { name: 'duo-ranking-star', size: '5x' },
+          icon: { name: 'duo-ranking-star' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -1048,7 +1048,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 14,
           title: 'Pattern 12: Summarization Cache',
-          icon: { name: 'duo-compress', size: '5x' },
+          icon: { name: 'duo-compress' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -1132,7 +1132,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 15,
           title: 'Pattern 13: Final Answer Cache with TTL',
-          icon: { name: 'duo-check-circle', size: '5x' },
+          icon: { name: 'duo-check-circle' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ marginBottom: '1rem' }}>
@@ -1218,7 +1218,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 16,
           title: 'Key Takeaways',
-          icon: { name: 'duo-clipboard-check', size: '5x' },
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
               <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem' }}>
@@ -1297,7 +1297,7 @@ export const llmCachingDeck: Deck = {
         {
           id: 17,
           title: 'Thank You',
-          icon: { name: 'duo-heart', size: '5x' },
+          icon: { name: 'duo-heart' },
           content: (
             <div style={{ textAlign: 'left' }}>
           <div style={{ fontSize: '1.5rem', marginBottom: '3rem', color: '#98c379' }}>

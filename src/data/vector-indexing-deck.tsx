@@ -33,7 +33,7 @@ export const vectorIndexingDeck: Deck = {
         {
           id: 2,
           title: 'Overview & Quick Comparison',
-          icon: { name: 'duo-table', size: '5x' },
+          icon: { name: 'duo-table' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>Comparing 9 Vector Indexing Schemes across Key Dimensions</h3>
@@ -129,7 +129,7 @@ export const vectorIndexingDeck: Deck = {
         {
           id: 3,
           title: 'Flat (Brute Force)',
-          icon: { name: 'duo-list', size: '5x' },
+          icon: { name: 'duo-list' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
@@ -184,7 +184,7 @@ export const vectorIndexingDeck: Deck = {
         {
           id: 4,
           title: 'HNSW',
-          icon: { name: 'duo-diagram-project', size: '5x' },
+          icon: { name: 'duo-diagram-project' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
@@ -239,7 +239,7 @@ export const vectorIndexingDeck: Deck = {
         {
           id: 5,
           title: 'IVF (Inverted File Index)',
-          icon: { name: 'duo-folder-tree', size: '5x' },
+          icon: { name: 'duo-folder-tree' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
