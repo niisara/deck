@@ -20,7 +20,7 @@ export const ragLatencyDeck: Deck = {
       title: '11 Techniques to Reduce RAG Latency',
       content: (
         <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
+          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center' }}>
             <SvgIcon iconName="duo-gauge-high" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             RAG Optimization
           </div>

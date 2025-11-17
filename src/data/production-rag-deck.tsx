@@ -52,7 +52,7 @@ export const productionRagDeck: Deck = {
           title: 'Agenda & Patterns Overview',
           content: (
             <div style={{ textAlign: 'left', fontSize: '0.8em' }}>
-              <h2 style={{ marginBottom: '20px' }}>
+              <h2 style={{ marginBottom: '20px', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Exploring 11 production-ready RAG architecture patterns
               </h2>

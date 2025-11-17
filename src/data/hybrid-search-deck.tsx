@@ -18,7 +18,7 @@ export const hybridSearchDeck: Deck = {
           title: '11 Hybrid Search Patterns',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <h2 style={{ marginBottom: '20px' }}>
+              <h2 style={{ marginBottom: '20px', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Vector + BM25
               </h2>

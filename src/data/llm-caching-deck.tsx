@@ -20,7 +20,7 @@ export const llmCachingDeck: Deck = {
           title: '13 Caching Patterns That Save Cost in LLM Systems',
           content: (
             <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb' }}>
+          <div style={{ fontSize: '1.8rem', marginBottom: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center' }}>
             <SvgIcon iconName="duo-microchip" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             LLM CACHING PATTERNS
           </div>
@@ -1221,7 +1221,7 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem' }}>
+              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
                 <strong>Strategic Caching for LLM Systems</strong>
               </div>
