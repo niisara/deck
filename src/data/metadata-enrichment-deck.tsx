@@ -41,7 +41,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 2,
           title: 'Overview: The 9 Enrichment Tricks',
-          icon: { name: 'duo-list-check', size: '5x' },
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', fontSize: '0.75em' }}>
@@ -131,7 +131,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 3,
           title: '1. Section-Level Titles as Metadata',
-          icon: { name: 'duo-heading', size: '5x' },
+          icon: { name: 'duo-heading' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -198,7 +198,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 4,
           title: '2. Document Type Labels',
-          icon: { name: 'duo-file-lines', size: '5x' },
+          icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -264,7 +264,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 5,
           title: '3. Entity Tagging (NER)',
-          icon: { name: 'duo-user-tag', size: '5x' },
+          icon: { name: 'duo-user-tag' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -338,7 +338,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 6,
           title: '4. Topic / Category Tags (Taxonomy Mapping)',
-          icon: { name: 'duo-tag', size: '5x' },
+          icon: { name: 'duo-tag' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -407,7 +407,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 7,
           title: '5. Time/Version Metadata',
-          icon: { name: 'duo-clock', size: '5x' },
+          icon: { name: 'duo-clock' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -482,7 +482,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 8,
           title: '6. Semantic Summary Metadata',
-          icon: { name: 'duo-align-left', size: '5x' },
+          icon: { name: 'duo-align-left' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -554,7 +554,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 9,
           title: '7. Keyword Highlights / Key-Phrase Extraction',
-          icon: { name: 'duo-highlighter', size: '5x' },
+          icon: { name: 'duo-highlighter' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -628,7 +628,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 10,
           title: '8. Source Confidence/Trust Score',
-          icon: { name: 'duo-certificate', size: '5x' },
+          icon: { name: 'duo-certificate' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -706,7 +706,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 11,
           title: '9. Parent–Child Structural Metadata',
-          icon: { name: 'duo-diagram-nested', size: '5x' },
+          icon: { name: 'duo-diagram-nested' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '20px' }}>
@@ -783,7 +783,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 12,
           title: 'Best Practices for Metadata-Driven RAG',
-          icon: { name: 'duo-clipboard-check', size: '5x' },
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.65em' }}>
@@ -880,7 +880,7 @@ export const metadataEnrichmentDeck: Deck = {
         {
           id: 13,
           title: 'Conclusion & Next Steps',
-          icon: { name: 'duo-check-double', size: '5x' },
+          icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.7em' }}>

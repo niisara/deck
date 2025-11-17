@@ -124,7 +124,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 3,
           title: '1) Rule-Based Pattern Matching',
-          icon: { name: 'duo-list-check', size: '5x' },
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -176,7 +176,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 4,
           title: '2) Dictionary / Gazetteer Lookup',
-          icon: { name: 'duo-book', size: '5x' },
+          icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -226,7 +226,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 5,
           title: '3) TF-IDF + Classifier-Based NER',
-          icon: { name: 'duo-chart-line', size: '5x' },
+          icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -277,7 +277,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 6,
           title: '4) Hidden Markov Model (HMM) NER',
-          icon: { name: 'duo-arrows-rotate', size: '5x' },
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -326,7 +326,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 7,
           title: '5) Conditional Random Fields (CRF) NER',
-          icon: { name: 'duo-circle-nodes', size: '5x' },
+          icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -376,7 +376,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 8,
           title: '6) BiLSTM + CRF',
-          icon: { name: 'duo-brain', size: '5x' },
+          icon: { name: 'duo-brain' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -427,7 +427,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 9,
           title: '7) CNN + BiLSTM NER',
-          icon: { name: 'duo-filter', size: '5x' },
+          icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -478,7 +478,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 10,
           title: '8) spaCy Statistical NER',
-          icon: { name: 'duo-rocket', size: '5x' },
+          icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -530,7 +530,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 11,
           title: '9) BERT Fine-Tuned for NER',
-          icon: { name: 'duo-brain-circuit', size: '5x' },
+          icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -580,7 +580,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 12,
           title: '10) RoBERTa / DistilBERT NER Models',
-          icon: { name: 'duo-gauge-high', size: '5x' },
+          icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
@@ -632,7 +632,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 13,
           title: '11) LLM / Zero-Shot NER',
-          icon: { name: 'duo-lightbulb', size: '5x' },
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>

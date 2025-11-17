@@ -218,7 +218,7 @@ function DeckPage() {
                       {slide.icon && (
                         <SvgIcon 
                           iconName={slide.icon.name as any} 
-                          sizeName={(slide.icon.size || "2x") as any} 
+                          sizeName={(slide.icon.size || "5x") as any} 
                           style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
                         />
                       )}
@@ -252,7 +252,7 @@ function DeckPage() {
                   {slide.icon && (
                     <SvgIcon 
                       iconName={slide.icon.name as any} 
-                      sizeName={(slide.icon.size || "2x") as any} 
+                      sizeName={(slide.icon.size || "5x") as any} 
                       style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
                     />
                   )}

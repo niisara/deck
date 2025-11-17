@@ -32,7 +32,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 2,
           title: 'Overview: The 7 Techniques',
-          icon: { name: 'duo-list-check', size: '5x' },
+          icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '0.9em' }}>
@@ -79,7 +79,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 3,
           title: '1. Clean and Normalize Text',
-          icon: { name: 'duo-broom', size: '5x' },
+          icon: { name: 'duo-broom' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -122,7 +122,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 4,
           title: '2. Remove Boilerplate and Noise',
-          icon: { name: 'duo-filter', size: '5x' },
+          icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -165,7 +165,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 5,
           title: '3. Use Semantic Chunking',
-          icon: { name: 'duo-scissors', size: '5x' },
+          icon: { name: 'duo-scissors' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -208,7 +208,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 6,
           title: '4. Add Section Titles to Chunks',
-          icon: { name: 'duo-heading', size: '5x' },
+          icon: { name: 'duo-heading' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -251,7 +251,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 7,
           title: '5. Apply Light Stopword Trimming',
-          icon: { name: 'duo-eraser', size: '5x' },
+          icon: { name: 'duo-eraser' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -294,7 +294,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 8,
           title: '6. Add Keyphrase / Topic Tags as Metadata',
-          icon: { name: 'duo-tags', size: '5x' },
+          icon: { name: 'duo-tags' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -337,7 +337,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 9,
           title: '7. Convert Tables to Structured Text',
-          icon: { name: 'duo-table', size: '5x' },
+          icon: { name: 'duo-table' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '25px' }}>
@@ -380,7 +380,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 10,
           title: 'Summary and Next Steps',
-          icon: { name: 'duo-clipboard-check', size: '5x' },
+          icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.85em' }}>
@@ -421,7 +421,7 @@ export const embeddingQualityDeck: Deck = {
         {
           id: 11,
           title: 'Final Insight',
-          icon: { name: 'duo-lightbulb', size: '5x' },
+          icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>

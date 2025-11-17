@@ -41,7 +41,7 @@ export const textClassificationDeck: Deck = {
     {
       id: 2,
       title: 'Table of Contents — 11 Approaches',
-      icon: { name: 'duo-list-check', size: '5x' },
+      icon: { name: 'duo-list-check' },
       content: (
         <div style={{ fontSize: '0.9rem', lineHeight: '1.6', textAlign: 'left' }}>
           <div style={{ marginBottom: '2rem', textAlign: 'left', color: '#61dafb' }}>
@@ -97,7 +97,7 @@ export const textClassificationDeck: Deck = {
         {
           id: 3,
           title: '1. Rule-Based Classification',
-          icon: { name: 'duo-brackets-square', size: '5x' },
+          icon: { name: 'duo-brackets-square' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>

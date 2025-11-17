@@ -138,7 +138,7 @@ export const rerankingModelsDeck: Deck = {
     {
       id: 3,
       title: '1) Cross-Encoder Ranker (MS MARCO family)',
-      icon: { name: 'duo-brain-circuit', size: '5x' },
+      icon: { name: 'duo-brain-circuit' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
@@ -214,7 +214,7 @@ export const rerankingModelsDeck: Deck = {
     {
       id: 4,
       title: '2) BERT-based Cross Encoder (ms-marco-MiniLM)',
-      icon: { name: 'duo-gauge-high', size: '5x' },
+      icon: { name: 'duo-gauge-high' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
@@ -291,7 +291,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 5,
       title: '3) MonoT5 Re-Ranker',
-      icon: { name: 'duo-brain', size: '5x' },
+      icon: { name: 'duo-brain' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
@@ -367,7 +367,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 6,
       title: '4-5) MonoBERT & ColBERT',
-      icon: { name: 'duo-copy', size: '5x' },
+      icon: { name: 'duo-copy' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -463,7 +463,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 7,
       title: '6-7) E5-Ranker & LLM-as-a-Ranker',
-      icon: { name: 'duo-rocket', size: '5x' },
+      icon: { name: 'duo-rocket' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -561,7 +561,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 8,
       title: '8-9) RRF & Fusion-in-Decoder',
-      icon: { name: 'duo-arrows-spin', size: '5x' },
+      icon: { name: 'duo-arrows-spin' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -641,7 +641,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 9,
       title: '10-11) DPR & BM25 + LLM Hybrid',
-      icon: { name: 'duo-sliders', size: '5x' },
+      icon: { name: 'duo-sliders' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -745,7 +745,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 10,
       title: 'Model Comparison at a Glance',
-      icon: { name: 'duo-table', size: '5x' },
+      icon: { name: 'duo-table' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
           <div style={{ overflowX: 'auto' }}>
@@ -804,7 +804,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 11,
       title: 'Quick Recommendations by Use Case',
-      icon: { name: 'duo-map', size: '5x' },
+      icon: { name: 'duo-map' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -889,7 +889,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     {
       id: 12,
       title: 'Operational Tips & Trade-offs',
-      icon: { name: 'duo-lightbulb', size: '5x' },
+      icon: { name: 'duo-lightbulb' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
