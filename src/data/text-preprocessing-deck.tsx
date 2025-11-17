@@ -53,7 +53,7 @@ export const textPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-scissors" sizeName="1x" />
+                <SvgIcon iconName="duo-scissors" sizeName="1x" darkModeInvert={true} />
                 Basic Normalization (1-5)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -64,7 +64,7 @@ export const textPreprocessingDeck: Deck = {
                 <li>5. Punctuation Normalization</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-filter" sizeName="1x" />
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
                 Filtering & Reduction (6-7)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -74,7 +74,7 @@ export const textPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-seedling" sizeName="1x" />
+                <SvgIcon iconName="duo-seedling" sizeName="1x" darkModeInvert={true} />
                 Morphological Analysis (8-10)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -83,7 +83,7 @@ export const textPreprocessingDeck: Deck = {
                 <li>10. Part-of-Speech Tagging</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="1x" />
+                <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 Feature Engineering (11-12)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -93,7 +93,7 @@ export const textPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e67e22', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="1x" />
+                <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="1x" darkModeInvert={true} />
                 Error Correction (13-15)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -102,7 +102,7 @@ export const textPreprocessingDeck: Deck = {
                 <li>15. Contraction Expansion</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-broom" sizeName="1x" />
+                <SvgIcon iconName="duo-broom" sizeName="1x" darkModeInvert={true} />
                 Cleaning & Structuring (16-21)
               </h4>
               <ul style={{ lineHeight: '1.6' }}>
@@ -141,12 +141,12 @@ export const textPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <p>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-list-ol" sizeName="1x" />
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
                 Steps
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -157,14 +157,14 @@ export const textPreprocessingDeck: Deck = {
                 <li>Validate token counts</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <p>Almost always as an early step before feature extraction or modeling</p>
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -173,7 +173,7 @@ export const textPreprocessingDeck: Deck = {
                 <li>Standardizes input format</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -203,7 +203,7 @@ export const textPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-text-width" sizeName="1x" />
+                <SvgIcon iconName="duo-text-width" sizeName="1x" darkModeInvert={true} />
                 2. Lowercasing
               </h4>
               <p><strong>Goal:</strong> Reduce case-related variance to shrink vocabulary</p>
@@ -214,7 +214,7 @@ export const textPreprocessingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-globe" sizeName="1x" />
+                <SvgIcon iconName="duo-globe" sizeName="1x" darkModeInvert={true} />
                 3. Unicode Normalization
               </h4>
               <p><strong>Goal:</strong> Ensure canonical representation to avoid duplicate forms</p>
@@ -225,7 +225,7 @@ export const textPreprocessingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-align-left" sizeName="1x" />
+                <SvgIcon iconName="duo-align-left" sizeName="1x" darkModeInvert={true} />
                 4. Whitespace Normalization
               </h4>
               <p><strong>Goal:</strong> Standardize spacing to make token boundaries predictable</p>
@@ -236,7 +236,7 @@ export const textPreprocessingDeck: Deck = {
             </div>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-ellipsis" sizeName="1x" />
+                <SvgIcon iconName="duo-ellipsis" sizeName="1x" darkModeInvert={true} />
                 5. Punctuation Normalization
               </h4>
               <p><strong>Goal:</strong> Reduce punctuation variants and noise</p>
@@ -632,12 +632,12 @@ export const textPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gears" sizeName="1x" />
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <p>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-list-ol" sizeName="1x" />
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
                 Steps
               </h4>
               <ul style={{ fontSize: '0.95em' }}>
@@ -648,14 +648,14 @@ export const textPreprocessingDeck: Deck = {
                 <li>Monitor code-switching scenarios</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" />
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
               <p>Multilingual corpora; language-specific pipelines or content moderation</p>
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
               <ul>
@@ -665,7 +665,7 @@ export const textPreprocessingDeck: Deck = {
                 <li>Enables targeted preprocessing</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" />
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
@@ -756,7 +756,7 @@ export const textPreprocessingDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="1x" />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />
                 Do's
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -772,7 +772,7 @@ export const textPreprocessingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-ban" sizeName="1x" />
+                <SvgIcon iconName="duo-ban" sizeName="1x" darkModeInvert={true} />
                 Don'ts
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -805,42 +805,42 @@ export const textPreprocessingDeck: Deck = {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-magnifying-glass" sizeName="1x" />
+                <SvgIcon iconName="duo-magnifying-glass" sizeName="1x" darkModeInvert={true} />
                 Information Retrieval Pipeline
               </h4>
               <p><strong>1.</strong> Tokenization → <strong>2.</strong> Lowercasing → <strong>3.</strong> Unicode Normalization → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Stemming → <strong>6.</strong> N-grams → <strong>7.</strong> Phrase Detection</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-face-smile" sizeName="1x" />
+                <SvgIcon iconName="duo-face-smile" sizeName="1x" darkModeInvert={true} />
                 Sentiment Analysis Pipeline
               </h4>
               <p><strong>1.</strong> Spell Correction → <strong>2.</strong> Contraction Expansion → <strong>3.</strong> Tokenization → <strong>4.</strong> Light Stopword Trimming → <strong>5.</strong> Lemmatization → <strong>6.</strong> Special Character Filtering (keep emoji!)</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-tag" sizeName="1x" />
+                <SvgIcon iconName="duo-tag" sizeName="1x" darkModeInvert={true} />
                 Named Entity Recognition Pipeline
               </h4>
               <p><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization → <strong>4.</strong> Sentence Segmentation → <strong>5.</strong> POS Tagging → <strong>6.</strong> Keep Case!</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-book" sizeName="1x" />
+                <SvgIcon iconName="duo-book" sizeName="1x" darkModeInvert={true} />
                 Topic Modeling Pipeline
               </h4>
               <p><strong>1.</strong> Boilerplate Removal → <strong>2.</strong> Tokenization → <strong>3.</strong> Lowercasing → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Lemmatization → <strong>6.</strong> Phrase Detection → <strong>7.</strong> N-grams</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-file-pdf" sizeName="1x" />
+                <SvgIcon iconName="duo-file-pdf" sizeName="1x" darkModeInvert={true} />
                 OCR Document Processing Pipeline
               </h4>
               <p><strong>1.</strong> OCR Error Correction → <strong>2.</strong> Unicode Normalization → <strong>3.</strong> Whitespace Normalization → <strong>4.</strong> Spell Correction → <strong>5.</strong> Sentence Segmentation → <strong>6.</strong> Deduplication</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '10px', border: '2px solid #1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" />
+                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
                 Neural NLP (Transformers) Pipeline
               </h4>
               <p><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization (Subword BPE/WordPiece) → <strong>4.</strong> Minimal processing (model handles rest!)</p>

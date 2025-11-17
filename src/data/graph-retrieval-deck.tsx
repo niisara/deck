@@ -21,20 +21,20 @@ export const graphRetrievalDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#0ea5e9' }}>
-            <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} />
+            <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} darkModeInvert={true} />
             A practical cheat-sheet for precision, reasoning, and reliable context
           </div>
           <div style={{ fontSize: '1.2rem', color: '#10b981', marginTop: '3rem', lineHeight: '2' }}>
             <div style={{ marginBottom: '1.5rem' }}>
-              <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>Audience:</strong> RAG engineers, search engineers, data scientists
             </div>
             <div style={{ marginBottom: '1.5rem' }}>
-              <SvgIcon iconName="duo-list-check" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-list-check" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>What you'll get:</strong> 13 techniques, when to use them, simple steps, pros/cons
             </div>
             <div>
-              <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} />
+              <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} darkModeInvert={true} />
               <strong>Note:</strong> Simple visuals only (no complex diagrams)
             </div>
           </div>
@@ -51,57 +51,57 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Node-Level Retrieval</strong> — Retrieve individual concept/entity nodes
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Edge-Weighted Retrieval</strong> — Rank nodes by relationship strength
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Neighborhood Expansion</strong> — Node plus directly connected neighbors
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-4" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-4" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Path-Based Retrieval</strong> — Sequences of connected nodes (multi-hop)
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-5" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-5" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Community/Cluster Retrieval</strong> — Densely related node groups (topics)
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-6" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-6" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Hierarchical Graph Retrieval</strong> — Parent → subtopic → leaf chunks
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-7" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-7" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Graph + Dense Vector Hybrid</strong> — Combine embeddings with connectivity
               </div>
             </div>
             <div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-8" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-8" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Graph + BM25 Hybrid</strong> — Validate with keyword BM25
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-9" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-9" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Semantic Graph Traversal</strong> — Follow edges via similarity thresholds
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-ranking-star" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-ranking-star" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Graph Walk-Based Ranking</strong> — PageRank/Personalized PageRank ranking
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-diagram-project" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Query Graph Construction</strong> — Build a mini-graph from the query
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-link" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-link" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Context Path Stitching</strong> — Stitch paths into coherent context
               </div>
               <div style={{ marginBottom: '0.7rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-robot" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-robot" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>LLM-Guided Graph Expansion</strong> — Adaptive traversal via LLM
               </div>
             </div>
@@ -128,14 +128,14 @@ export const graphRetrievalDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Goal / What It Solves</strong>
                   </div>
                   <div>Precise entity/topic lookup; reduces noise and hallucination.</div>
                 </div>
                 <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>How It Works</strong>
                   </div>
                   <div>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</div>
@@ -144,7 +144,7 @@ export const graphRetrievalDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>When to Use</strong>
                 </div>
                 <div>FAQs, glossaries, entity-centric KBs, short queries.</div>
@@ -152,7 +152,7 @@ export const graphRetrievalDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Data Needed</strong>
                 </div>
                 <div>Node metadata (title, aliases), text chunks, node embeddings, optional entity linker.</div>
@@ -160,7 +160,7 @@ export const graphRetrievalDeck: Deck = {
 
               <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+                  <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                   <strong>Implementation Steps</strong>
                 </div>
                 <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -173,14 +173,14 @@ export const graphRetrievalDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Pros</strong>
                   </div>
                   <div>High precision, simple, fast.</div>
                 </div>
                 <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     <strong>Cons</strong>
                   </div>
                   <div>May miss context or relationships; brittle for long, multi-hop queries.</div>
@@ -208,14 +208,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Prioritize stronger, more meaningful relationships.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Use edge weights (e.g., citations, co-occurrence, confidence) to rank candidate nodes.</div>
@@ -224,7 +224,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Heterogeneous graphs with rich edge metadata; trust/scoring matters.</div>
@@ -232,7 +232,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Edge weights/types, node embeddings (optional), normalization scheme.</div>
@@ -240,7 +240,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -256,14 +256,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Trust-aware ranking; interpretable via weights.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Requires good edge weighting; can bias to popular nodes.</div>
@@ -291,14 +291,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Adds immediate context (definitions, examples, references).</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Retrieve seed node plus its 1-hop neighbors with filters.</div>
@@ -307,7 +307,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Need local context around a concept (API, ontology, doc sections).</div>
@@ -315,7 +315,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Adjacency lists, node/edge types, optional neighbor caps per type.</div>
@@ -323,7 +323,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -339,14 +339,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Simple, contextual, low-latency.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Can introduce noise; misses longer reasoning paths.</div>
@@ -374,14 +374,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Multi-hop reasoning and evidence chains.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Search for high-relevance paths connecting seed(s) to target concepts.</div>
@@ -390,7 +390,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Why/how questions, causal chains, compliance dependencies.</div>
@@ -398,7 +398,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Edge types, path constraints, path scoring (length, weights, semantics).</div>
@@ -406,7 +406,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -422,14 +422,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Supports reasoning; traceable evidence.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>More expensive; path explosion without constraints.</div>
@@ -457,14 +457,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Thematic coverage and diversity within a topic.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Detect communities (Louvain/Leiden/semantic clusters) and retrieve top nodes from a cluster.</div>
@@ -473,7 +473,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Broad queries, topic exploration, overviews.</div>
@@ -481,7 +481,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Cluster labels, membership scores, intra-cluster rankings.</div>
@@ -489,7 +489,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -505,14 +505,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Broad coverage; reduces narrow bias.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Lower precision; depends on clustering quality.</div>
@@ -540,14 +540,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Navigates taxonomies; right granularity (parent→child).</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Traverse up/down hierarchy to match query specificity.</div>
@@ -556,7 +556,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Docs with sections, product catalogs, ontologies.</div>
@@ -564,7 +564,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Parent-child edges, level metadata, leaf chunks.</div>
@@ -572,7 +572,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -588,14 +588,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Granularity control; structured summaries.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Requires clean hierarchy; cross-links complicate.</div>
@@ -623,14 +623,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Combine semantic match with structural relevance.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Blend embedding similarity with graph features (degree, proximity, edge weights).</div>
@@ -639,7 +639,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Ambiguous queries; noisy graphs; heterogeneous data.</div>
@@ -647,7 +647,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Node embeddings, edge features, fusion/scoring formula.</div>
@@ -655,7 +655,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -671,14 +671,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Better precision/recall balance.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Tuning fusion weights is non-trivial.</div>
@@ -706,14 +706,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Keyword grounding and lexical precision.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Cross-validate dense/graph candidates using BM25; or intersect/union strategies.</div>
@@ -722,7 +722,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Technical terms, exact codes, sparse text.</div>
@@ -730,7 +730,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Inverted index, BM25 scores, graph/embedding candidates.</div>
@@ -738,7 +738,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -754,14 +754,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Reduces semantically-close-but-wrong picks.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Misses paraphrases; two retrieval systems to maintain.</div>
@@ -789,14 +789,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Adaptive follow of semantically strong links.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Move along edges only if node/edge similarity crosses a threshold.</div>
@@ -805,7 +805,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Noisy graphs; need to avoid drift while exploring.</div>
@@ -813,7 +813,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Node/edge embeddings, similarity thresholds, stop criteria.</div>
@@ -821,7 +821,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -837,14 +837,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Precision during traversal.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Threshold tuning; may miss useful weak links.</div>
@@ -872,14 +872,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Identify authoritative/central nodes for a query.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Random walk with restart from seed set; rank by stationary probabilities.</div>
@@ -888,7 +888,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Citation graphs, knowledge graphs, when centrality implies usefulness.</div>
@@ -896,7 +896,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Transition matrix, restart set, damping, edge weights.</div>
@@ -904,7 +904,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -920,14 +920,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Global signal; robust to noise.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Compute cost; sensitive to seed choice.</div>
@@ -955,14 +955,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Structured intent capture; precise matching.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Parse query into entities/relations; build mini-graph; match against KB.</div>
@@ -971,7 +971,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Complex relational queries, compliance, troubleshooting.</div>
@@ -979,7 +979,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>NER/RE models, schema, subgraph matching algo.</div>
@@ -987,7 +987,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1003,14 +1003,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Highly precise; explainable matches.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Extraction errors; setup complexity.</div>
@@ -1038,14 +1038,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Converts disjoint paths into readable context.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Order and merge path snippets; deduplicate; add bridging sentences.</div>
@@ -1054,7 +1054,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Long-form answers; evidence synthesis.</div>
@@ -1062,7 +1062,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Path lists, node texts, summarizer/ordering heuristic.</div>
@@ -1070,7 +1070,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1086,14 +1086,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Coherent context; reduces hallucinations.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Extra latency; needs good summarization.</div>
@@ -1121,14 +1121,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#3b82f6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Goal / What It Solves</strong>
               </div>
               <div>Adaptive exploration under a token/latency budget.</div>
             </div>
             <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#0ea5e9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>LLM chooses next nodes/edges to expand based on current context and uncertainty.</div>
@@ -1137,7 +1137,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#10b981', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Open-ended queries; large graphs; interactive Q&A.</div>
@@ -1145,7 +1145,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#8b5cf6', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-database" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Data Needed</strong>
             </div>
             <div>Node summaries, expansion API, budget policy, feedback signals.</div>
@@ -1153,7 +1153,7 @@ export const graphRetrievalDeck: Deck = {
 
           <div style={{ marginBottom: '1rem', background: 'rgba(245, 158, 11, 0.15)', padding: '1rem', borderRadius: '8px' }}>
             <div style={{ color: '#f59e0b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} />
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Implementation Steps</strong>
             </div>
             <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
@@ -1169,14 +1169,14 @@ export const graphRetrievalDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#10b981', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Flexible; focuses on promising areas.</div>
             </div>
             <div style={{ background: 'rgba(239, 68, 68, 0.15)', padding: '1rem', borderRadius: '8px' }}>
               <div style={{ color: '#ef4444', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} />
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Costly; needs guardrails for drift.</div>
@@ -1201,20 +1201,20 @@ export const graphRetrievalDeck: Deck = {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1rem', borderRadius: '10px' }}>
                   <div style={{ color: '#3b82f6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
-                    <SvgIcon iconName="duo-layer-group" sizeName="xl" style={iconStyle} />
+                    <SvgIcon iconName="duo-layer-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                     <strong>Common Combos</strong>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
                     <li style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Hybrid:</strong> Dense + Graph (7) + BM25 (8)
                     </li>
                     <li style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-brain" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-brain" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Reasoning:</strong> Path (4) + Stitching (12) + PPR (10)
                     </li>
                     <li>
-                      <SvgIcon iconName="duo-chart-network" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-chart-network" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       <strong>Coverage:</strong> Cluster (5) + Hierarchical (6) + Neighborhood (3)
                     </li>
                   </ul>
@@ -1222,20 +1222,20 @@ export const graphRetrievalDeck: Deck = {
 
                 <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1rem', borderRadius: '10px' }}>
                   <div style={{ color: '#10b981', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="xl" style={iconStyle} />
+                    <SvgIcon iconName="duo-gears" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                     <strong>Operational Tips</strong>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.9rem', marginBottom: 0 }}>
                     <li style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-gauge-high" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Cap neighbors per type; cache frequent seeds
                     </li>
                     <li style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-clipboard-list" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-clipboard-list" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Log edge decisions; tune thresholds offline
                     </li>
                     <li>
-                      <SvgIcon iconName="duo-chart-line" sizeName="sm" style={iconStyle} />
+                      <SvgIcon iconName="duo-chart-line" sizeName="sm" style={iconStyle} darkModeInvert={true} />
                       Measure utility via answer F1 and citation hit-rate
                     </li>
                   </ul>
@@ -1244,27 +1244,27 @@ export const graphRetrievalDeck: Deck = {
 
               <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.2rem', borderRadius: '10px' }}>
                 <div style={{ color: '#8b5cf6', marginBottom: '0.8rem', fontSize: '1.1rem' }}>
-                  <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} />
+                  <SvgIcon iconName="duo-rocket" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                   <strong>Next Steps</strong>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '0.9rem' }}>
                   <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
-                    <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     Pick 2–3 techniques to pilot
                   </div>
                   <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
-                    <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     Establish metrics and budgets (latency, tokens)
                   </div>
                   <div style={{ background: 'rgba(239, 68, 68, 0.2)', padding: '0.8rem', borderRadius: '8px' }}>
-                    <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} />
+                    <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                     Add safety rails for LLM-guided expansion
                   </div>
                 </div>
               </div>
 
               <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} />
+                <SvgIcon iconName="duo-lightbulb" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                 <strong style={{ fontSize: '1rem' }}>Remember:</strong> Start simple, measure impact, and iterate based on your specific use case and constraints.
               </div>
             </div>
