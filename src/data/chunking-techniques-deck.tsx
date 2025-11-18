@@ -20,17 +20,17 @@ export const chunkingTechniquesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-file" sizeName="4x" style={{ color: '#3498db' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Document</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-scissors" sizeName="4x" style={{ color: '#f39c12' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Chunking</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-cubes" sizeName="4x" style={{ color: '#2ecc71' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Retrievable Units</p>
             </div>
@@ -113,14 +113,14 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Overview of 26 Techniques',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em', color: '#4ad786' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
               <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <SvgIcon iconName="duo-ruler" sizeName="1x" darkModeInvert={true} />
                 Fixed/Token-based (1-3)
               </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
+              <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#3498db' }}>
                 <li>Fixed-Size Chunking</li>
                 <li>Sliding Window Chunking</li>
                 <li>Token-Aware Chunking</li>
@@ -129,7 +129,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <SvgIcon iconName="duo-paragraph" sizeName="1x" darkModeInvert={true} />
                 Sentence/Paragraph (4-6)
               </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
+              <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#2ecc71' }}>
                 <li>Sentence-Level Chunking</li>
                 <li>Paragraph-Level Chunking</li>
                 <li>Windowed Sentence Grouping</li>
@@ -140,7 +140,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <SvgIcon iconName="duo-sitemap" sizeName="1x" darkModeInvert={true} />
                 Structure-aware (7-13)
               </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
+              <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#9b59b6' }}>
                 <li>Structure-Aware Chunking</li>
                 <li>Content-Aware Chunking</li>
                 <li>Heading/Title Anchor</li>
@@ -155,7 +155,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
                 Semantic/Adaptive (14-19)
               </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
+              <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#f39c12' }}>
                 <li>Semantic (Embedding-Based)</li>
                 <li>TextTiling</li>
                 <li>Discourse/RST Chunking</li>
@@ -167,7 +167,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <SvgIcon iconName="duo-wand-sparkles" sizeName="1x" darkModeInvert={true} />
                 Special-Purpose (20-26)
               </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '0.95em' }}>
+              <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#e67e22' }}>
                 <li>Summarization-Based</li>
                 <li>Audio/ASR Time-Based</li>
                 <li>Speaker-Turn Chunking</li>
@@ -183,7 +183,7 @@ export const chunkingTechniquesDeck: Deck = {
           </p>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#11512c',
       notes: '26 techniques organized into 5 categories: Fixed/Token, Sentence/Paragraph, Structure-aware, Semantic/Adaptive, and Special-Purpose'
         }
       ]
@@ -197,9 +197,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Fixed-Size & Sliding Window (1-2)',
           icon: { name: 'duo-ruler-horizontal' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#52ace7' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h3 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-ruler-horizontal" sizeName="1x" darkModeInvert={true} />
                 1. Fixed-Size Chunking
@@ -216,7 +216,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Low (Beginner)
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h3 style={{ color: '#1abc9c', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-window-maximize" sizeName="1x" darkModeInvert={true} />
                 2. Sliding Window Chunking
@@ -239,7 +239,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#3498DB',
+      backgroundColor: '#133c57',
       notes: 'Fixed-size for simplicity and predictability; Sliding window for context continuity with overlap'
         }
       ]
@@ -253,9 +253,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Token & Sentence-Based (3-4)',
           icon: { name: 'duo-paragraph' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#b755e1' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h3 style={{ color: '#9b59b6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-hashtag" sizeName="1x" darkModeInvert={true} />
                 3. Token-Aware Chunking
@@ -272,7 +272,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Low (Beginner)
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-quote-left" sizeName="1x" darkModeInvert={true} />
                 4. Sentence-Level Chunking
@@ -295,7 +295,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#421f51',
       notes: 'Token-aware for model compatibility; Sentence-level for natural atomic units with semantic boundaries'
         }
       ]
@@ -309,9 +309,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Paragraph & Recursive (5-6)',
           icon: { name: 'duo-paragraph' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#11cf61' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px', color: '#2ecc71' }}>
               <h3 style={{ color: '#2ecc71', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-paragraph" sizeName="1x" darkModeInvert={true} />
                 5. Paragraph-Level Chunking
@@ -328,7 +328,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Low (Beginner)
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h3 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 6. Recursive Character Splitting
@@ -351,7 +351,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#114f2b',
       notes: 'Paragraph-level for natural units; Recursive character splitting for intelligent fallback hierarchy'
         }
       ]
@@ -365,9 +365,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Structure-Aware Techniques (7-9)',
           icon: { name: 'duo-sitemap' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#b84ee5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>7. Structure-Aware</h4>
               <p><strong>Size:</strong> 300–1200 tokens (by section)</p>
               <p><strong>Overlap:</strong> Minimal across sections</p>
@@ -379,7 +379,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium (Intermediate)
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '8px' }}>8. Content-Aware</h4>
               <p><strong>Size:</strong> 200–800 tokens (dynamic)</p>
               <p><strong>Overlap:</strong> 0–15% based on content type</p>
@@ -391,7 +391,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium (Intermediate)
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '12px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>9. Heading/Title Anchor</h4>
               <p><strong>Size:</strong> 200–1200 tokens (section-bounded)</p>
               <p><strong>Overlap:</strong> 0–5% between sections</p>
@@ -409,7 +409,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#421f51',
       notes: 'Structure-aware techniques leverage document organization: headers, content types, and navigation structure'
         }
       ]
@@ -423,9 +423,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Markup & Specialized Structure (10-13)',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em', color: '#f39644' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '8px' }}>10. Markdown/HTML Structure</h4>
               <p><strong>Size:</strong> 300–800 tokens (preserve element boundaries)</p>
               <p><strong>Overlap:</strong> 0–10%</p>
@@ -436,7 +436,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Tools:</strong> BeautifulSoup, lxml, LangChain HTML splitters
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>11. Table-Aware Chunking</h4>
               <p><strong>Size:</strong> Full table as single chunk (~250 tokens typical)</p>
               <p><strong>Overlap:</strong> Include surrounding context</p>
@@ -447,7 +447,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Tools:</strong> Unstructured.io, Camelot (PDF), table parsers
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '8px' }}>12. Code-Aware Chunking</h4>
               <p><strong>Size:</strong> 400 tokens or one function (include signature+docstring)</p>
               <p><strong>Overlap:</strong> Include context (imports, class definition)</p>
@@ -458,7 +458,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Tools:</strong> Tree-sitter, language AST parsers, LangChain CodeTextSplitter
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>13. Page-Preservation</h4>
               <p><strong>Size:</strong> Per page (variable)</p>
               <p><strong>Overlap:</strong> Minimal</p>
@@ -475,7 +475,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#E67E22',
+      backgroundColor: '#673911',
       notes: 'Specialized structure techniques: Markdown/HTML, Table-aware, Code-aware, and Page-preservation'
         }
       ]
@@ -489,9 +489,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Semantic Chunking (14-17)',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#e9685b' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '12px', color: '#e74c3c' }}>
               <h4 style={{ color: '#e74c3c', marginBottom: '8px' }}>14. Semantic (Embedding-Based)</h4>
               <p><strong>Size:</strong> 200–600 tokens per semantic unit</p>
               <p><strong>Overlap:</strong> 0–10% (minimal, semantic boundaries)</p>
@@ -503,7 +503,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium–High (Intermediate–Advanced)
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '12px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>15. TextTiling</h4>
               <p><strong>Size:</strong> Variable by tile/window (200–800 tokens)</p>
               <p><strong>Overlap:</strong> None (algorithm handles transitions)</p>
@@ -515,7 +515,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium (Intermediate)
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>16. Discourse/RST Chunking</h4>
               <p><strong>Size:</strong> Combine EDUs to ~150–400 tokens</p>
               <p><strong>Overlap:</strong> None by default (discourse boundaries)</p>
@@ -527,7 +527,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> High (Advanced)
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '8px' }}>17. Graph-Based Semantic</h4>
               <p><strong>Size:</strong> Variable based on graph communities</p>
               <p><strong>Overlap:</strong> None (graph partitioning)</p>
@@ -545,7 +545,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#C0392B',
+      backgroundColor: '#6d1f17',
       notes: 'Semantic chunking: Embedding-based, TextTiling, Discourse/RST, and Graph-based for topic-coherent chunks'
         }
       ]
@@ -559,9 +559,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Adaptive & LLM-Based (18-20)',
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#ff6700' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '8px' }}>18. Windowed Sentence Grouping</h4>
               <p><strong>Size:</strong> 3–5 sentences per chunk</p>
               <p><strong>Overlap:</strong> Stride of 2 sentences</p>
@@ -573,7 +573,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Low (Beginner)
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>19. Adaptive Length Chunking</h4>
               <p><strong>Size:</strong> Dynamic based on content complexity</p>
               <p><strong>Overlap:</strong> Adaptive</p>
@@ -585,7 +585,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> High (Advanced)
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>20. Summarization-Based</h4>
               <p><strong>Size:</strong> Generate compact summaries (~150 tokens)</p>
               <p><strong>Overlap:</strong> None (summaries are independent)</p>
@@ -603,7 +603,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#D35400',
+      backgroundColor: '#7b3709',
       notes: 'Adaptive techniques: Windowed sentence grouping, adaptive length, and LLM-based summarization'
         }
       ]
@@ -617,13 +617,13 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Audio & Multimedia (21-22)',
           icon: { name: 'duo-video' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#319bdf' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-microphone" sizeName="3x" style={{ color: '#3498db' }} />
             <SvgIcon iconName="duo-waveform-lines" sizeName="3x" style={{ color: '#1abc9c' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px', color: '#3498db' }}>
               <h3 style={{ color: '#3498db', marginBottom: '12px' }}>21. Audio/ASR Time-Based Chunking</h3>
               <p><strong>Size:</strong> 30-second windows</p>
               <p><strong>Overlap:</strong> 2-second overlap</p>
@@ -641,7 +641,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Low–Medium (Beginner–Intermediate)
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '18px', color: '#1abc9c' }}>
               <h3 style={{ color: '#1abc9c', marginBottom: '12px' }}>22. Speaker-Turn Chunking</h3>
               <p><strong>Size:</strong> 1–3 turns per chunk (~200 tokens typical)</p>
               <p><strong>Overlap:</strong> Optional previous turn for context</p>
@@ -662,7 +662,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#184d6f',
       notes: 'Audio/multimedia chunking: Time-based for consistent segments, Speaker-turn for conversational context'
         }
       ]
@@ -676,9 +676,9 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Special-Purpose Techniques (23-26)',
           icon: { name: 'duo-wand-sparkles' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#18e5bd' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>23. QA-Focused Chunking</h4>
               <p><strong>Size:</strong> 300 tokens around answer candidates</p>
               <p><strong>Overlap:</strong> Context-dependent</p>
@@ -690,7 +690,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium–High (Intermediate–Advanced)
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>24. Caption + Context Chunking</h4>
               <p><strong>Size:</strong> 200 tokens near caption/figure</p>
               <p><strong>Overlap:</strong> Include surrounding paragraphs</p>
@@ -702,7 +702,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium (Intermediate)
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '8px' }}>25. Metadata-Aware Chunking</h4>
               <p><strong>Size:</strong> Variable</p>
               <p><strong>Overlap:</strong> Based on metadata boundaries</p>
@@ -714,7 +714,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <strong>Complexity:</strong> Medium (Intermediate)
               </p>
             </div>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '12px', color: '#2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '8px' }}>26. Hybrid Chunking</h4>
               <p><strong>Size:</strong> Combines multiple strategies</p>
               <p><strong>Overlap:</strong> Strategy-dependent</p>
@@ -732,7 +732,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#0a5748',
       notes: 'Special-purpose: QA-focused, Caption+Context, Metadata-aware, and Hybrid chunking for specific scenarios'
         }
       ]
@@ -830,10 +830,10 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Selection Guide: Decision Flow',
           icon: { name: 'duo-compass' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.75em', color: '#13c55e' }}>
           <h3 style={{ marginBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-sitemap" sizeName="1x" darkModeInvert={true} />
                 1. Is document structure reliable?
@@ -841,7 +841,7 @@ export const chunkingTechniquesDeck: Deck = {
               <p><strong>Yes →</strong> Use structure-aware chunking (Heading-Anchor, Markdown/HTML, Structure-Aware)</p>
               <p><strong>No →</strong> Consider semantic approaches (Semantic, TextTiling)</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
                 2. Is latency/cost strict?
@@ -849,7 +849,7 @@ export const chunkingTechniquesDeck: Deck = {
               <p><strong>Yes →</strong> Use simpler approaches (Fixed-Size, Token-Aware, Recursive Character)</p>
               <p><strong>No →</strong> Use advanced techniques (LLM-Based, Graph-Semantic, Discourse/RST)</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 3. Special content types?
@@ -859,7 +859,7 @@ export const chunkingTechniquesDeck: Deck = {
               <p><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
               <p><strong>QA Tasks →</strong> QA-Focused chunking</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', color: '#2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
                 Common Recommendations by Document Type
@@ -875,7 +875,7 @@ export const chunkingTechniquesDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#104928',
       notes: 'Decision flow for selecting chunking strategy based on document structure, latency constraints, and content types'
         },
         {

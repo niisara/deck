@@ -20,17 +20,17 @@ export const textPreprocessingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>From Tokenization to Language Detection</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-file-lines" sizeName="4x" style={{ color: '#e74c3c' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Raw Text</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-gears" sizeName="4x" style={{ color: '#f39c12' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Preprocessing</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-sparkles" sizeName="4x" style={{ color: '#2ecc71' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Clean Data</p>
             </div>
@@ -56,7 +56,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-scissors" sizeName="1x" darkModeInvert={true} />
                 Basic Normalization (1-5)
               </h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#3498db' }}>
                 <li>1. Tokenization</li>
                 <li>2. Lowercasing</li>
                 <li>3. Unicode Normalization</li>
@@ -67,7 +67,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
                 Filtering & Reduction (6-7)
               </h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#9b59b6' }}>
                 <li>6. Stopword Removal</li>
                 <li>7. Light Stopword Trimming</li>
               </ul>
@@ -77,7 +77,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-seedling" sizeName="1x" darkModeInvert={true} />
                 Morphological Analysis (8-10)
               </h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#2ecc71' }}>
                 <li>8. Stemming</li>
                 <li>9. Lemmatization</li>
                 <li>10. Part-of-Speech Tagging</li>
@@ -86,7 +86,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 Feature Engineering (11-12)
               </h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#f39c12' }}>
                 <li>11. N-gram Generation</li>
                 <li>12. Phrase Detection</li>
               </ul>
@@ -96,7 +96,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="1x" darkModeInvert={true} />
                 Error Correction (13-15)
               </h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#e67e22' }}>
                 <li>13. Spell Correction</li>
                 <li>14. OCR Error Correction</li>
                 <li>15. Contraction Expansion</li>
@@ -105,7 +105,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-broom" sizeName="1x" darkModeInvert={true} />
                 Cleaning & Structuring (16-21)
               </h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#e74c3c' }}>
                 <li>16. Number Normalization</li>
                 <li>17. Special Character Filtering</li>
                 <li>18. Removing Boilerplate Text</li>
@@ -185,7 +185,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#3498DB',
+      backgroundColor: '#195177',
       notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
@@ -199,9 +199,9 @@ export const textPreprocessingDeck: Deck = {
           title: 'Basic Normalization (2-5)',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#d180f3' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-text-width" sizeName="1x" darkModeInvert={true} />
                 2. Lowercasing
@@ -212,7 +212,7 @@ export const textPreprocessingDeck: Deck = {
               <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Smaller vocab, improved generalization, simpler matching</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Loses case signals (named entities, sentence starts)</p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-globe" sizeName="1x" darkModeInvert={true} />
                 3. Unicode Normalization
@@ -223,7 +223,7 @@ export const textPreprocessingDeck: Deck = {
               <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Stable comparisons, fewer hidden duplicates, safer tokenization</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> NFKC may alter appearance/semantics, grapheme edge cases</p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-align-left" sizeName="1x" darkModeInvert={true} />
                 4. Whitespace Normalization
@@ -234,7 +234,7 @@ export const textPreprocessingDeck: Deck = {
               <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Cleaner tokens, consistent parsing, fewer edge cases</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> May lose layout cues (tables, code), affects alignment</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-ellipsis" sizeName="1x" darkModeInvert={true} />
                 5. Punctuation Normalization
@@ -251,7 +251,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#3f1e4d',
       notes: 'Basic normalization: Lowercasing, Unicode, Whitespace, and Punctuation normalization for consistent text'
         }
       ]
@@ -265,13 +265,13 @@ export const textPreprocessingDeck: Deck = {
           title: '6-7. Stopword Techniques',
           icon: { name: 'duo-filter' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#e9412f' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-filter-circle-xmark" sizeName="3x" style={{ color: '#e74c3c' }} />
             <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#f39c12' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px', color: '#e74c3c' }}>
               <h3 style={{ color: '#e74c3c', marginBottom: '12px' }}>6. Stopword Removal</h3>
               <p><strong>Goal:</strong> Remove very frequent function words that add little topical value</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Filter tokens against a language-specific stopword list</p>
@@ -280,7 +280,7 @@ export const textPreprocessingDeck: Deck = {
                 <p><strong style={{ color: '#2ecc71' }}>✓</strong> Reduces dimensionality, speeds training, improves topic signal</p>
                 <p><strong style={{ color: '#e74c3c' }}>✗</strong> Risk of meaning loss, harms sequence/transformer setups, domain sensitivity</p>
               </div>
-              <h4 style={{ marginTop: '12px' }}>Steps:</h4>
+              <h4 style={{ marginTop: '12px', color: '#e74c3c' }}>Steps:</h4>
               <ul style={{ fontSize: '0.95em' }}>
                 <li>Select stoplist per language/domain</li>
                 <li>Keep negations/intensifiers if needed</li>
@@ -288,7 +288,7 @@ export const textPreprocessingDeck: Deck = {
                 <li>Review impact on metrics</li>
               </ul>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
               <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>7. Light Stopword Trimming</h3>
               <p><strong>Goal:</strong> Conservatively remove only the most generic function words while keeping nuance</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Use minimal curated list or importance scores (e.g., TF-IDF) to trim lightly</p>
@@ -297,7 +297,7 @@ export const textPreprocessingDeck: Deck = {
                 <p><strong style={{ color: '#2ecc71' }}>✓</strong> Preserves meaning better than full removal, balanced noise reduction</p>
                 <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires tuning, residual noise may remain, risky for very short texts</p>
               </div>
-              <h4 style={{ marginTop: '12px' }}>Steps:</h4>
+              <h4 style={{ marginTop: '12px', color: '#f39c12' }}>Steps:</h4>
               <ul style={{ fontSize: '0.95em' }}>
                 <li>Define light stopword list</li>
                 <li>Whitelist negations/domain terms</li>
@@ -308,7 +308,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#C0392B',
+      backgroundColor: '#691b13',
       notes: 'Stopword techniques: Full removal for dimensionality reduction, light trimming for preserving meaning'
         }
       ]
@@ -322,14 +322,14 @@ export const textPreprocessingDeck: Deck = {
           title: 'Morphological Analysis (8-10)',
           icon: { name: 'duo-seedling' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#34c972' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-seedling" sizeName="3x" style={{ color: '#2ecc71' }} />
             <SvgIcon iconName="duo-leaf" sizeName="3x" style={{ color: '#27ae60' }} />
             <SvgIcon iconName="duo-tags" sizeName="3x" style={{ color: '#16a085' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px', color: '#2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px' }}>8. Stemming</h4>
               <p><strong>Goal:</strong> Reduce inflected words to stems to merge variants</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes</p>
@@ -340,7 +340,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 Example: running, runs, ran → run
               </p>
             </div>
-            <div style={{ border: '2px solid #27ae60', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #27ae60', borderRadius: '10px', padding: '15px', color: '#27ae60' }}>
               <h4 style={{ color: '#27ae60', marginBottom: '10px' }}>9. Lemmatization</h4>
               <p><strong>Goal:</strong> Map tokens to dictionary base forms (lemmas)</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Morphological analysis using lexicons and POS/context</p>
@@ -351,7 +351,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 Example: better → good, was → be
               </p>
             </div>
-            <div style={{ border: '2px solid #16a085', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #16a085', borderRadius: '10px', padding: '15px', color: '#16a085' }}>
               <h4 style={{ color: '#16a085', marginBottom: '10px' }}>10. Part-of-Speech Tagging</h4>
               <p><strong>Goal:</strong> Assign grammatical categories (noun, verb, etc.) to tokens</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Sequence labeling via HMM/CRF/neural models</p>
@@ -368,7 +368,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#0d3d21',
       notes: 'Morphological analysis: Stemming for quick reduction, Lemmatization for accurate base forms, POS tagging for grammar'
         }
       ]
@@ -382,9 +382,9 @@ export const textPreprocessingDeck: Deck = {
           title: '11-12. Feature Engineering',
           icon: { name: 'duo-layer-group' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ffaa5e' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
               <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>11. N-gram Generation</h3>
               <p><strong>Goal:</strong> Capture local context by creating contiguous token sequences</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Sliding window to build bigrams/trigrams/etc.; optional weighting</p>
@@ -393,7 +393,7 @@ export const textPreprocessingDeck: Deck = {
                 <p><strong style={{ color: '#2ecc71' }}>✓</strong> Encodes order, improves predictive power over unigrams</p>
                 <p><strong style={{ color: '#e74c3c' }}>✗</strong> Feature explosion, sparsity, brittle to noise and rephrasing</p>
               </div>
-              <h4 style={{ marginTop: '12px' }}>Steps:</h4>
+              <h4 style={{ marginTop: '12px', color: '#f39c12' }}>Steps:</h4>
               <ul style={{ fontSize: '0.95em' }}>
                 <li>Choose n values (2, 3, etc.)</li>
                 <li>Generate n-grams</li>
@@ -405,7 +405,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 "New York City" → bigrams: (New, York), (York, City)
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', marginBottom: '12px' }}>12. Phrase Detection</h3>
               <p><strong>Goal:</strong> Treat multiword expressions as single units (e.g., "New York")</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Statistical collocation metrics (PMI, t-score) or model-based detection</p>
@@ -414,7 +414,7 @@ export const textPreprocessingDeck: Deck = {
                 <p><strong style={{ color: '#2ecc71' }}>✓</strong> Better semantics, reduces fragmentation, improves retrieval and topics</p>
                 <p><strong style={{ color: '#e74c3c' }}>✗</strong> Threshold tuning, domain dependence, false positives/negatives</p>
               </div>
-              <h4 style={{ marginTop: '12px' }}>Steps:</h4>
+              <h4 style={{ marginTop: '12px', color: '#e67e22' }}>Steps:</h4>
               <ul style={{ fontSize: '0.95em' }}>
                 <li>Compute n-gram statistics</li>
                 <li>Set thresholds (PMI/frequency)</li>
@@ -428,7 +428,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#E67E22',
+      backgroundColor: '#854a15',
       notes: 'Feature engineering: N-grams capture word order, Phrase detection treats multiword expressions as units'
         }
       ]
@@ -442,14 +442,14 @@ export const textPreprocessingDeck: Deck = {
           title: 'Error Correction (13-15)',
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#3ea9ed' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-spell-check" sizeName="3x" style={{ color: '#3498db' }} />
             <SvgIcon iconName="duo-scanner" sizeName="3x" style={{ color: '#9b59b6' }} />
             <SvgIcon iconName="duo-expand" sizeName="3x" style={{ color: '#1abc9c' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '10px' }}>13. Spell Correction</h4>
               <p><strong>Goal:</strong> Fix misspellings to improve readability and model input quality</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Candidate generation via edit distance, ranking by frequency/context</p>
@@ -460,7 +460,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 "recieve" → "receive"
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px' }}>14. OCR Error Correction</h4>
               <p><strong>Goal:</strong> Correct systematic errors from optical character recognition</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Rule-based replacements, confusion matrices, dictionaries, post-OCR LMs</p>
@@ -471,7 +471,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 "0/O", "l/1", "rn/m" confusion pairs
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '10px' }}>15. Contraction Expansion</h4>
               <p><strong>Goal:</strong> Expand contractions (e.g., "don't" → "do not") for clarity</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Regex + mapping dictionary; optional context-aware models</p>
@@ -488,7 +488,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#123c57',
       notes: 'Error correction: Spell correction for typos, OCR correction for scan errors, Contraction expansion for clarity'
         }
       ]
@@ -502,13 +502,13 @@ export const textPreprocessingDeck: Deck = {
           title: '16-17. Number & Character Handling',
           icon: { name: 'duo-broom' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#f98335' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-hashtag" sizeName="3x" style={{ color: '#e67e22' }} />
             <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#e74c3c' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', marginBottom: '12px' }}>16. Number Normalization</h3>
               <p><strong>Goal:</strong> Standardize numeric expressions for comparability and reduced sparsity</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Parse numerals/words; normalize format; unit conversion; masking (e.g., &lt;NUM&gt;)</p>
@@ -517,7 +517,7 @@ export const textPreprocessingDeck: Deck = {
                 <p><strong style={{ color: '#2ecc71' }}>✓</strong> Improves generalization, eases matching, reduces vocab size</p>
                 <p><strong style={{ color: '#e74c3c' }}>✗</strong> Potential loss of precision, unit handling is tricky, context-sensitive</p>
               </div>
-              <h4 style={{ marginTop: '12px' }}>Steps:</h4>
+              <h4 style={{ marginTop: '12px', color: '#e67e22' }}>Steps:</h4>
               <ul style={{ fontSize: '0.95em' }}>
                 <li>Detect numbers in text</li>
                 <li>Choose strategy (keep, scale, mask)</li>
@@ -528,7 +528,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 "5,000" → "5000" or "&lt;NUM&gt;"
               </p>
             </div>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px', color: '#e74c3c' }}>
               <h3 style={{ color: '#e74c3c', marginBottom: '12px' }}>17. Special Character Filtering</h3>
               <p><strong>Goal:</strong> Control or remove emojis, symbols, control chars, and non-text artifacts</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Use Unicode categories; whitelists/blacklists; regex filters or mappings</p>
@@ -537,7 +537,7 @@ export const textPreprocessingDeck: Deck = {
                 <p><strong style={{ color: '#2ecc71' }}>✓</strong> Cleaner tokens, prevents parsing/rendering issues, mitigates injection</p>
                 <p><strong style={{ color: '#e74c3c' }}>✗</strong> May remove meaningful signals (emoji/emoticons), language-specific character risk</p>
               </div>
-              <h4 style={{ marginTop: '12px' }}>Steps:</h4>
+              <h4 style={{ marginTop: '12px', color: '#e74c3c' }}>Steps:</h4>
               <ul style={{ fontSize: '0.95em' }}>
                 <li>Define allowed character sets</li>
                 <li>Strip/map disallowed chars</li>
@@ -551,7 +551,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#D35400',
+      backgroundColor: '#5b2501',
       notes: 'Number normalization standardizes numerics; Special character filtering removes symbols and artifacts'
         }
       ]
@@ -565,14 +565,14 @@ export const textPreprocessingDeck: Deck = {
           title: 'Cleaning & Structuring (18-20)',
           icon: { name: 'duo-broom' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#23bb9c' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-broom" sizeName="3x" style={{ color: '#1abc9c' }} />
             <SvgIcon iconName="duo-copy" sizeName="3x" style={{ color: '#9b59b6' }} />
             <SvgIcon iconName="duo-paragraph" sizeName="3x" style={{ color: '#3498db' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '10px' }}>18. Removing Boilerplate Text</h4>
               <p><strong>Goal:</strong> Remove template-like non-content (headers, footers, nav, ads)</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> HTML/DOM parsing; text-density heuristics; boilerplate detectors</p>
@@ -583,7 +583,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 Tools: Boilerpipe, JusText, Trafilatura
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px' }}>19. Removing Duplicate Sentences</h4>
               <p><strong>Goal:</strong> Eliminate exact/near-duplicate sentences to reduce bias and leakage</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes</p>
@@ -594,7 +594,7 @@ export const textPreprocessingDeck: Deck = {
                 💡 Use: MD5/SHA for exact, embeddings for semantic
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '10px' }}>20. Sentence Boundary Segmentation</h4>
               <p><strong>Goal:</strong> Split text into sentences for sentence-level processing</p>
               <p style={{ marginTop: '8px' }}><strong>How:</strong> Rule-based with abbreviations + ML/neural models for edge cases</p>
@@ -611,7 +611,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#084337',
       notes: 'Cleaning: Remove boilerplate from web content, deduplicate sentences, segment text into sentences'
         }
       ]
@@ -625,7 +625,7 @@ export const textPreprocessingDeck: Deck = {
           title: '21. Language Detection and Filtering',
           icon: { name: 'duo-globe' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#2e9fe9' }}>
           <div style={{ marginBottom: '20px' }}>
             <h3>Identify language and route/filter text accordingly</h3>
           </div>
@@ -684,7 +684,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#0e2e43',
       notes: 'Language detection: Identify and filter text by language for proper routing and mono-lingual datasets'
         }
       ]
@@ -729,7 +729,7 @@ export const textPreprocessingDeck: Deck = {
               <strong>🔍 For Search/IR:</strong>
               <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Stopword Removal, Stemming, Phrase Detection, Spell Correction</p>
             </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(52, 73, 94, 0.1)', borderRadius: '8px', borderLeft: '4px solid #34495e' }}>
+            <div style={{ padding: '12px', backgroundColor: 'rgba(0, 127, 255, 0.1)', borderRadius: '8px', borderLeft: '4px solid #3198ff' }}>
               <strong>📖 For OCR/Scanned Docs:</strong>
               <p style={{ marginTop: '6px', fontSize: '0.95em' }}>OCR Error Correction, Spell Correction, Whitespace Normalization</p>
             </div>
@@ -752,14 +752,14 @@ export const textPreprocessingDeck: Deck = {
           title: 'Best Practices',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#38f787' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
                 <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />
                 Do's
               </h4>
-              <ul style={{ lineHeight: '1.8' }}>
+              <ul style={{ lineHeight: '1.8', color: '#2ecc71' }}>
                 <li><strong>Start Simple:</strong> Begin with basic normalization</li>
                 <li><strong>Keep Raw Copy:</strong> Always preserve original text</li>
                 <li><strong>Pipeline Order:</strong> Tokenization early, cleaning before modeling</li>
@@ -775,7 +775,7 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-ban" sizeName="1x" darkModeInvert={true} />
                 Don'ts
               </h4>
-              <ul style={{ lineHeight: '1.8' }}>
+              <ul style={{ lineHeight: '1.8', color: '#e74c3c' }}>
                 <li><strong>Over-process:</strong> Don't apply every technique blindly</li>
                 <li><strong>Lose Context:</strong> Be careful removing stopwords for sentiment</li>
                 <li><strong>Ignore Domain:</strong> Generic stoplists may harm specialized text</li>
@@ -792,7 +792,7 @@ export const textPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#135930',
       notes: 'Best practices: Start simple, keep raw copy, validate changes, tailor to task, avoid over-processing'
         },
         {
@@ -800,7 +800,7 @@ export const textPreprocessingDeck: Deck = {
           title: 'Common Pipeline Examples',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.75em', color: '#30ddbc' }}>
           <h3 style={{ marginBottom: '30px' }}>Task-Specific Preprocessing Pipelines</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
@@ -808,47 +808,47 @@ export const textPreprocessingDeck: Deck = {
                 <SvgIcon iconName="duo-magnifying-glass" sizeName="1x" darkModeInvert={true} />
                 Information Retrieval Pipeline
               </h4>
-              <p><strong>1.</strong> Tokenization → <strong>2.</strong> Lowercasing → <strong>3.</strong> Unicode Normalization → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Stemming → <strong>6.</strong> N-grams → <strong>7.</strong> Phrase Detection</p>
+              <p style={{ color: '#3498db' }}><strong>1.</strong> Tokenization → <strong>2.</strong> Lowercasing → <strong>3.</strong> Unicode Normalization → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Stemming → <strong>6.</strong> N-grams → <strong>7.</strong> Phrase Detection</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-face-smile" sizeName="1x" darkModeInvert={true} />
                 Sentiment Analysis Pipeline
               </h4>
-              <p><strong>1.</strong> Spell Correction → <strong>2.</strong> Contraction Expansion → <strong>3.</strong> Tokenization → <strong>4.</strong> Light Stopword Trimming → <strong>5.</strong> Lemmatization → <strong>6.</strong> Special Character Filtering (keep emoji!)</p>
+              <p style={{ color: '#2ecc71' }}><strong>1.</strong> Spell Correction → <strong>2.</strong> Contraction Expansion → <strong>3.</strong> Tokenization → <strong>4.</strong> Light Stopword Trimming → <strong>5.</strong> Lemmatization → <strong>6.</strong> Special Character Filtering (keep emoji!)</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-tag" sizeName="1x" darkModeInvert={true} />
                 Named Entity Recognition Pipeline
               </h4>
-              <p><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization → <strong>4.</strong> Sentence Segmentation → <strong>5.</strong> POS Tagging → <strong>6.</strong> Keep Case!</p>
+              <p style={{ color: '#9b59b6' }}><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization → <strong>4.</strong> Sentence Segmentation → <strong>5.</strong> POS Tagging → <strong>6.</strong> Keep Case!</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-book" sizeName="1x" darkModeInvert={true} />
                 Topic Modeling Pipeline
               </h4>
-              <p><strong>1.</strong> Boilerplate Removal → <strong>2.</strong> Tokenization → <strong>3.</strong> Lowercasing → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Lemmatization → <strong>6.</strong> Phrase Detection → <strong>7.</strong> N-grams</p>
+              <p style={{ color: '#f39c12' }}><strong>1.</strong> Boilerplate Removal → <strong>2.</strong> Tokenization → <strong>3.</strong> Lowercasing → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Lemmatization → <strong>6.</strong> Phrase Detection → <strong>7.</strong> N-grams</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-file-pdf" sizeName="1x" darkModeInvert={true} />
                 OCR Document Processing Pipeline
               </h4>
-              <p><strong>1.</strong> OCR Error Correction → <strong>2.</strong> Unicode Normalization → <strong>3.</strong> Whitespace Normalization → <strong>4.</strong> Spell Correction → <strong>5.</strong> Sentence Segmentation → <strong>6.</strong> Deduplication</p>
+              <p style={{ color: '#e67e22' }}><strong>1.</strong> OCR Error Correction → <strong>2.</strong> Unicode Normalization → <strong>3.</strong> Whitespace Normalization → <strong>4.</strong> Spell Correction → <strong>5.</strong> Sentence Segmentation → <strong>6.</strong> Deduplication</p>
             </div>
             <div style={{ padding: '15px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '10px', border: '2px solid #1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
                 Neural NLP (Transformers) Pipeline
               </h4>
-              <p><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization (Subword BPE/WordPiece) → <strong>4.</strong> Minimal processing (model handles rest!)</p>
+              <p style={{ color: '#1abc9c' }}><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization (Subword BPE/WordPiece) → <strong>4.</strong> Minimal processing (model handles rest!)</p>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#0b594a',
       notes: 'Common pipelines for different tasks: IR, Sentiment, NER, Topic Modeling, OCR, and Neural NLP'
         },
         {
@@ -859,42 +859,42 @@ export const textPreprocessingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>21 Techniques for Clean Text</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', margin: '0 auto', fontSize: '0.75em' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '12px' }}>🔧 Foundational (1-5)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
                 Tokenization, Lowercasing, Unicode/Whitespace/Punctuation Normalization
               </p>
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: All projects</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px', color: '#2ecc71' }}>
               <h4 style={{ color: '#2ecc71', marginBottom: '12px' }}>🌱 Linguistic (6-10)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
                 Stopwords, Stemming, Lemmatization, POS Tagging
               </p>
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Traditional ML/IR</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '12px' }}>🔨 Feature Eng (11-12)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
                 N-grams, Phrase Detection
               </p>
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Text classification</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '12px' }}>✨ Correction (13-15)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
                 Spell, OCR, Contraction fixes
               </p>
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Noisy text</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(230, 126, 34, 0.15)', borderRadius: '10px' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(230, 126, 34, 0.15)', borderRadius: '10px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '12px' }}>🧹 Cleaning (16-20)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
                 Number/Character handling, Boilerplate removal, Deduplication, Segmentation
               </p>
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Corpus building</p>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
+            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '12px' }}>🌍 Multilingual (21)</h4>
               <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
                 Language Detection & Filtering

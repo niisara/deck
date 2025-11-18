@@ -20,19 +20,19 @@ export const promptEngineeringDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '30px' }}>A Comprehensive Guide to Advanced Prompting Patterns</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
               <p style={{ marginTop: '10px', fontSize: '0.9em' }}>Reasoning</p>
             </div>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
               <p style={{ marginTop: '10px', fontSize: '0.9em' }}>Retrieval</p>
             </div>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
               <p style={{ marginTop: '10px', fontSize: '0.9em' }}>Agentic</p>
             </div>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
               <p style={{ marginTop: '10px', fontSize: '0.9em' }}>Hybrid</p>
             </div>
@@ -119,7 +119,7 @@ export const promptEngineeringDeck: Deck = {
           title: '1. Zero-shot Prompting',
           icon: { name: 'duo-bolt' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#3b9ad9' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-bolt" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Ask the model to perform a task with clear instructions and no examples</h3>
@@ -152,8 +152,8 @@ in 3 bullets for executives:
               </h4>
               <p><strong>Level:</strong> Simple</p>
               <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Limitations
               </h4>
               <ul>
@@ -169,7 +169,7 @@ in 3 bullets for executives:
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#103e5d',
       notes: 'Zero-shot: Direct instructions without examples, good for baselines and well-known tasks'
         }
       ]
@@ -183,7 +183,7 @@ in 3 bullets for executives:
           title: '2. Few-shot Prompting',
           icon: { name: 'duo-list-ol' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#6da3c9' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Guide the model with a few labeled examples to shape outputs</h3>
@@ -217,8 +217,8 @@ Classify: 'It was okay, but pricey.'"`}
               </h4>
               <p><strong>Level:</strong> Simple–Intermediate</p>
               <p><strong>Models:</strong> Mid-size models benefit noticeably</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Limitations
               </h4>
               <ul>
@@ -235,7 +235,7 @@ Classify: 'It was okay, but pricey.'"`}
           </div>
         </div>
       ),
-      backgroundColor: '#3498DB',
+      backgroundColor: '#284d67',
       notes: 'Few-shot: Provide labeled examples to guide format, tone, and edge case handling'
         }
       ]
@@ -249,7 +249,7 @@ Classify: 'It was okay, but pricey.'"`}
           title: '3. Chain-of-Thought (CoT) Prompting',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#fdb17f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-link" sizeName="2x" style={{ color: '#e67e22' }} />
             <h3>Ask the model to reason step-by-step before the final answer</h3>
@@ -283,8 +283,8 @@ Think step by step."`}
               </h4>
               <p><strong>Level:</strong> Intermediate</p>
               <p><strong>Output:</strong> Intermediate reasoning + final answer</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Limitations
               </h4>
               <ul>
@@ -301,7 +301,7 @@ Think step by step."`}
           </div>
         </div>
       ),
-      backgroundColor: '#D35400',
+      backgroundColor: '#91420e',
       notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
         }
       ]
@@ -315,7 +315,7 @@ Think step by step."`}
           title: 'Reasoning Techniques (4-6)',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#c17ddd' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
             <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
@@ -331,7 +331,7 @@ Think step by step."`}
                 💼 Unified incident report format across teams
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-users" sizeName="1x" darkModeInvert={true} />
                 5. Self-Consistency
@@ -345,7 +345,7 @@ Think step by step."`}
                 💼 Benchmark problem sets (GSM8K) with voting
               </p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-book" sizeName="1x" darkModeInvert={true} />
                 6. Generate Knowledge
@@ -365,7 +365,7 @@ Think step by step."`}
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#421e51',
       notes: 'Meta prompting for schemas, self-consistency for voting, generate knowledge for fact-grounded answers'
         }
       ]
@@ -379,13 +379,13 @@ Think step by step."`}
           title: '7-8. Prompt Chaining & Tree of Thoughts',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#d9a16f' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-arrows-turn-to-dots" sizeName="3x" style={{ color: '#f39c12' }} />
             <SvgIcon iconName="duo-sitemap" sizeName="3x" style={{ color: '#e67e22' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
               <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>7. Prompt Chaining (Hybrid)</h3>
               <p><strong>Concept:</strong> Break a task into subtasks across multiple prompts where outputs feed subsequent prompts</p>
               <p style={{ marginTop: '10px' }}><strong>Complexity:</strong> Intermediate</p>
@@ -400,7 +400,7 @@ Think step by step."`}
                 <strong>💼 Real Example:</strong> Legal brief generation from case documents via extract→summarize→draft chain
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', marginBottom: '12px' }}>8. Tree of Thoughts (ToT)</h3>
               <p><strong>Concept:</strong> Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam)</p>
               <p style={{ marginTop: '10px' }}><strong>Complexity:</strong> Advanced</p>
@@ -418,7 +418,7 @@ Think step by step."`}
           </div>
         </div>
       ),
-      backgroundColor: '#E67E22',
+      backgroundColor: '#7f4b1c',
       notes: 'Prompt chaining for pipelines, Tree of Thoughts for exploring multiple reasoning branches'
         }
       ]
@@ -432,7 +432,7 @@ Think step by step."`}
           title: '9. Retrieval-Augmented Generation (RAG)',
           icon: { name: 'duo-database' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#4ed184' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-database" sizeName="2x" style={{ color: '#2ecc71' }} />
             <h3>Retrieve external documents and condition the model on them to ground responses</h3>
@@ -472,8 +472,8 @@ work?"`}
               </h4>
               <p><strong>Level:</strong> Intermediate</p>
               <p><strong>Requirements:</strong> Needs retriever/vector DB</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Limitations
               </h4>
               <ul>
@@ -491,7 +491,7 @@ work?"`}
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#1a673a',
       notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
         }
       ]
@@ -505,14 +505,14 @@ work?"`}
           title: 'Agentic Techniques (10, 14-16)',
           icon: { name: 'duo-robot' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#c558f3' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-robot" sizeName="3x" style={{ color: '#9b59b6' }} />
             <SvgIcon iconName="duo-code" sizeName="3x" style={{ color: '#3498db' }} />
             <SvgIcon iconName="duo-arrows-spin" sizeName="3x" style={{ color: '#e67e22' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>10. Automatic Reasoning & Tool-use (ART)</h4>
               <p><strong>Concept:</strong> Use LLM to auto-generate multi-step reasoning and interleave tool calls with observations</p>
               <p style={{ marginTop: '6px' }}><strong>When:</strong> Tasks needing external tools, search integration, code execution, database queries</p>
@@ -522,7 +522,7 @@ work?"`}
                 💼 Zero-shot research assistant mixing search + calculation
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '8px' }}>14. Program-Aided LMs (PAL)</h4>
               <p><strong>Concept:</strong> Model writes code as intermediate steps and delegates execution to an interpreter</p>
               <p style={{ marginTop: '6px' }}><strong>When:</strong> Arithmetic tasks, symbolic reasoning, algorithmic problems</p>
@@ -532,7 +532,7 @@ work?"`}
                 💼 Operations optimization via dynamic programming utilities
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>15. ReAct</h4>
               <p><strong>Concept:</strong> Interleave reasoning traces with actions and observations (think→act→observe loops)</p>
               <p style={{ marginTop: '6px' }}><strong>When:</strong> Knowledge-intensive QA, web tasks, interactive environments</p>
@@ -542,7 +542,7 @@ work?"`}
                 💼 Shopping agent planning and verifying specifications
               </p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>16. Reflexion</h4>
               <p><strong>Concept:</strong> Agents self-evaluate outcomes and write linguistic feedback to improve future attempts</p>
               <p style={{ marginTop: '6px' }}><strong>When:</strong> Trial-and-error tasks, code development, planning scenarios, multi-episode agents</p>
@@ -558,7 +558,7 @@ work?"`}
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#55186f',
       notes: 'Agentic techniques: ART for tool use, PAL for code execution, ReAct for action loops, Reflexion for self-improvement'
         }
       ]
@@ -572,13 +572,13 @@ work?"`}
           title: 'Hybrid Techniques (11-13)',
           icon: { name: 'duo-layer-group' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#eba264' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#f39c12' }} />
             <SvgIcon iconName="duo-sliders" sizeName="3x" style={{ color: '#e74c3c' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '10px' }}>11. Automatic Prompt Engineer (APE)</h4>
               <p><strong>Concept:</strong> Automatically generate and rank candidate instructions based on I/O demonstrations</p>
               <p style={{ marginTop: '8px' }}><strong>Level:</strong> Advanced</p>
@@ -589,7 +589,7 @@ work?"`}
                 💼 Customer service platform auto-tunes routing prompts
               </p>
             </div>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px', color: '#e74c3c' }}>
               <h4 style={{ color: '#e74c3c', marginBottom: '10px' }}>12. Active-Prompt</h4>
               <p><strong>Concept:</strong> Select uncertain examples for human CoT annotation to adapt few-shot exemplars</p>
               <p style={{ marginTop: '8px' }}><strong>Level:</strong> Advanced</p>
@@ -600,8 +600,8 @@ work?"`}
                 💼 Math word-problem tutor adapting to student cohorts
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '10px' }}>13. Directional Stimulus Prompting (DSP)</h4>
+            <div style={{ border: '2px solid #cd79ef', borderRadius: '10px', padding: '15px', color: '#cd79ef' }}>
+              <h4 style={{ color: '#cd79ef', marginBottom: '10px' }}>13. Directional Stimulus Prompting (DSP)</h4>
               <p><strong>Concept:</strong> Use a small policy model to generate instance-specific hints to steer a larger LLM</p>
               <p style={{ marginTop: '8px' }}><strong>Level:</strong> Advanced</p>
               <p><strong>When:</strong> Precision framing, compliance content, pedagogical guidance, specialized summaries</p>
@@ -617,7 +617,7 @@ work?"`}
           </div>
         </div>
       ),
-      backgroundColor: '#E67E22',
+      backgroundColor: '#835833',
       notes: 'Hybrid techniques: APE for prompt optimization, Active-Prompt for adaptive examples, DSP for guided outputs'
         }
       ]
@@ -631,7 +631,7 @@ work?"`}
           title: '17. Multimodal Chain-of-Thought',
           icon: { name: 'duo-brain' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#c686e1' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-image" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Combine vision (and/or audio) with text in step-by-step reasoning</h3>
@@ -665,8 +665,8 @@ the answer step-by-step."`}
               </h4>
               <p><strong>Level:</strong> Advanced</p>
               <p><strong>Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Limitations
               </h4>
               <ul>
@@ -682,7 +682,7 @@ the answer step-by-step."`}
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#442551',
       notes: 'Multimodal CoT: Combines vision/audio with text for step-by-step reasoning on images, charts, and diagrams'
         }
       ]
@@ -696,7 +696,7 @@ the answer step-by-step."`}
           title: '18. Graph Prompting',
           icon: { name: 'duo-circle-nodes' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#39cdb0' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-project-diagram" sizeName="2x" style={{ color: '#1abc9c' }} />
             <h3>Use graphs/knowledge graphs to structure context and reasoning for LLMs</h3>
@@ -731,8 +731,8 @@ Show the path used."`}
               <p><strong>Level:</strong> Advanced</p>
               <p><strong>Requirements:</strong> LLM + graph tools/DB</p>
               <p><strong>Output:</strong> Graph-grounded explanation and answer</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffb74d', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} />
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Limitations
               </h4>
               <ul>
@@ -748,7 +748,7 @@ Show the path used."`}
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#0b5345',
       notes: 'Graph Prompting: Structure context and reasoning using knowledge graphs for multi-hop and entity-linking tasks'
         }
       ]
@@ -821,7 +821,7 @@ Show the path used."`}
           title: 'Best Practices & Recommendations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#48cb80' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
@@ -871,7 +871,7 @@ Show the path used."`}
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#145d33',
       notes: 'Best practices: Start simple, scale up judiciously, monitor production, avoid over-engineering'
         },
         {

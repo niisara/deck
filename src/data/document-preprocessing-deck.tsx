@@ -126,7 +126,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '1. Remove Boilerplate Noise',
           icon: { name: 'duo-broom' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ffbba0' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#e74c3c' }} />
             <h3>Extract main content from noisy web pages and documents</h3>
@@ -186,7 +186,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#C0392B',
+      backgroundColor: '#9d281c',
       notes: 'Remove boilerplate: Extract main content from noisy HTML/PDF, strip navigation, ads, headers/footers'
         }
       ]
@@ -200,7 +200,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '2. Deduplicate Repeated Text',
           icon: { name: 'duo-copy' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#cc8ce7' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-copy" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Remove exact, near-duplicate, and semantically redundant text</h3>
@@ -262,7 +262,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#611083',
       notes: 'Deduplication: Remove exact and near-duplicate text using hashing, LSH, and semantic similarity'
         }
       ]
@@ -276,7 +276,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '3. Normalize Whitespace & Formatting',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em',color: '#4dadeb' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-align-left" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Create consistent spacing, line breaks, and punctuation</h3>
@@ -332,7 +332,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#114567',
       notes: 'Whitespace normalization: Standardize spacing, line breaks, Unicode, and punctuation for consistent tokenization'
         }
       ]
@@ -346,7 +346,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '4. Convert Tables to Structured Text',
           icon: { name: 'duo-table' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#50dbc0' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-table" sizeName="2x" style={{ color: '#1abc9c' }} />
             <h3>Make tables machine-usable for retrieval, QA, and analytics</h3>
@@ -400,7 +400,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#207363',
       notes: 'Table conversion: Transform visual tabular data into structured JSON/CSV for better retrieval and QA'
         }
       ]
@@ -414,7 +414,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '5. OCR Cleanup',
           icon: { name: 'duo-scanner' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff6e0c' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-scanner" sizeName="2x" style={{ color: '#e67e22' }} />
             <h3>Fix OCR noise: broken words, wrong characters, artifacts</h3>
@@ -468,7 +468,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#D35400',
+      backgroundColor: '#7f3f14',
       notes: 'OCR cleanup: Fix common OCR errors using spell-checking, confusion sets, dehyphenation, and language models'
         }
       ]
@@ -539,7 +539,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '9. Text Normalization',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#c878e9' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-text-width" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Standardize casing, numbers, dates, abbreviations to reduce sparsity</h3>
@@ -594,7 +594,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#561173',
       notes: 'Text normalization: Standardize casing, contractions, numbers, dates to reduce vocabulary sparsity'
         }
       ]
@@ -608,13 +608,13 @@ export const documentPreprocessingDeck: Deck = {
           title: '10-11. Stopwords & Lemmatization',
           icon: { name: 'duo-filter' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#61e79a' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
             <SvgIcon iconName="duo-filter-circle-xmark" sizeName="3x" style={{ color: '#e74c3c' }} />
             <SvgIcon iconName="duo-seedling" sizeName="3x" style={{ color: '#2ecc71' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px', color: '#e74c3c' }}>
               <h3 style={{ color: '#e74c3c', marginBottom: '12px' }}>10. Light Stopword Trimming</h3>
               <p><strong>Goal:</strong> Reduce high-frequency function words while preserving meaning</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Curated stoplist (a, the, is, of), POS-aware removal, keep negations/modals</p>
@@ -650,7 +650,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#0f7139',
       notes: 'Stopwords & Lemmatization: Reduce vocabulary for classical ML/IR, but often unnecessary for modern transformers'
         }
       ]
@@ -670,7 +670,7 @@ export const documentPreprocessingDeck: Deck = {
             <SvgIcon iconName="duo-tag" sizeName="3x" style={{ color: '#3498db' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
               <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>12. Keyphrase Extraction</h3>
               <p><strong>Goal:</strong> Identify salient terms/phrases for tagging and retrieval</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Unsupervised (TF-IDF, RAKE, TextRank) or supervised ML, embedding-based ranking + MMR</p>
@@ -685,7 +685,7 @@ export const documentPreprocessingDeck: Deck = {
                 💡 Generate candidates from noun phrases, score and rank
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px', color: '#3498db' }}>
               <h3 style={{ color: '#3498db', marginBottom: '12px' }}>13. Entity Tagging (NER)</h3>
               <p><strong>Goal:</strong> Detect people, orgs, products, locations, and custom entities</p>
               <p style={{ marginTop: '10px' }}><strong>How:</strong> Sequence labeling (BIO) with spaCy/transformers, rule-based patterns, optional entity linking</p>
@@ -720,7 +720,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '14. Remove Dead Chunks',
           icon: { name: 'duo-trash' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#f97c6f' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-trash-can" sizeName="2x" style={{ color: '#e74c3c' }} />
             <h3>Drop low-value chunks (noise, artifacts, empty or repetitive text)</h3>
@@ -776,7 +776,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#C0392B',
+      backgroundColor: '#892015',
       notes: 'Remove dead chunks: Filter low-quality chunks using entropy, length, stopword density, and embedding metrics'
         }
       ]
@@ -790,7 +790,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '15. Chunk Summary Metadata',
           icon: { name: 'duo-note-sticky' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#cc6ff3' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-file-contract" sizeName="2x" style={{ color: '#9b59b6' }} />
             <h3>Provide compact previews of chunks for ranking and UX</h3>
@@ -845,7 +845,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#591277',
       notes: 'Chunk summaries: Generate 1-2 sentence previews for better ranking, snippets, and user experience in RAG'
         }
       ]
@@ -859,7 +859,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '16. Domain Dictionary / Synonym Normalization',
           icon: { name: 'duo-book' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#49dfc1' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-book-bookmark" sizeName="2x" style={{ color: '#1abc9c' }} />
             <h3>Map aliases/synonyms to canonical concepts for consistency</h3>
@@ -914,7 +914,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#0e594a',
       notes: 'Domain dictionary: Normalize synonyms, acronyms, and variant terminology to canonical forms for consistency'
         }
       ]
@@ -928,7 +928,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '17. Temporal Labeling / Version Tagging',
           icon: { name: 'duo-calendar' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#5fb2e7' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
             <SvgIcon iconName="duo-clock" sizeName="2x" style={{ color: '#3498db' }} />
             <h3>Track when and which version content refers to</h3>
@@ -983,7 +983,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#113d59',
       notes: 'Temporal labeling: Track dates, versions, and validity periods for time-aware retrieval and compliance'
         }
       ]
@@ -997,38 +997,38 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Minimal Viable Pipeline',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ margin: '0 auto' }}>
+        <div style={{ margin: '0 auto', color: '#3fc779' }}>
           <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="2x" style={{ color: '#3498db' }} />
             Example Starter Pipeline
           </h3>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px', minWidth: '140px' }}>
+            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#e74c3c' }} />
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>1. Boilerplate<br/>Removal</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px', minWidth: '140px' }}>
+            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <SvgIcon iconName="duo-text-width" sizeName="2x" style={{ color: '#9b59b6' }} />
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>2. Normalize<br/>Text</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', minWidth: '140px' }}>
+            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <SvgIcon iconName="duo-puzzle-piece" sizeName="2x" style={{ color: '#3498db' }} />
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>3. Semantic<br/>Chunking</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px', minWidth: '140px' }}>
+            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <SvgIcon iconName="duo-trash-can" sizeName="2x" style={{ color: '#e74c3c' }} />
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>4. Dead-Chunk<br/>Filter</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px', minWidth: '140px' }}>
+            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <SvgIcon iconName="duo-tags" sizeName="2x" style={{ color: '#2ecc71' }} />
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>5. Add<br/>Metadata</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px', minWidth: '140px' }}>
+            <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <SvgIcon iconName="duo-database" sizeName="2x" style={{ color: '#f39c12' }} />
               <p style={{ marginTop: '10px', fontWeight: 'bold' }}>6. Index</p>
             </div>
@@ -1040,7 +1040,7 @@ export const documentPreprocessingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#11552e',
       notes: 'Minimal viable pipeline: Start with 6 core steps, iterate and add techniques based on results'
         },
         {
@@ -1050,9 +1050,9 @@ export const documentPreprocessingDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px' }}>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '18px', color: '#2ecc71' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ color: '#2ecc71' }} />
                 Key Takeaways
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -1062,9 +1062,9 @@ export const documentPreprocessingDeck: Deck = {
                 <li>Building modular pipelines enables easy adaptation</li>
               </ul>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px', color: '#3498db' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ color: '#3498db' }} />
                 Governance & QA
               </h4>
               <ul style={{ lineHeight: '1.8' }}>
@@ -1075,9 +1075,9 @@ export const documentPreprocessingDeck: Deck = {
               </ul>
             </div>
           </div>
-          <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px' }}>
+          <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
             <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-              <SvgIcon iconName="duo-route" sizeName="1x" darkModeInvert={true} />
+              <SvgIcon iconName="duo-route" sizeName="2x" style={{ color: '#f39c12' }} />
               Next Steps
             </h4>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
