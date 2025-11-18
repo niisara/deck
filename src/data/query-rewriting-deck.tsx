@@ -20,17 +20,17 @@ export const queryRewritingDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
           <h2 style={{ marginBottom: '40px' }}>Practical patterns, prompts, and examples for better retrieval</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '50px' }}>
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-pen-to-square" sizeName="4x" style={{ color: '#3498db' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Rewrite</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#2ecc71' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Retrieve</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-bullseye" sizeName="4x" style={{ color: '#f39c12' }} />
               <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Precision</p>
             </div>
@@ -100,29 +100,37 @@ export const queryRewritingDeck: Deck = {
           title: 'Impact on RAG Performance',
           icon: { name: 'duo-chart-line' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '0.85em' }}>
+        <div style={{ margin: '0 auto', fontSize: '0.85em', color: '#509dd1' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
-              <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
-              <h4 style={{ marginTop: '15px', color: '#3498db' }}>Recall@k</h4>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
+                <h4 style={{ color: '#3498db' }}>Recall@k</h4>
+              </div>
               <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>15-40%</p>
               <p>Improvement in relevant document retrieval</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
-              <SvgIcon iconName="duo-ranking-star" sizeName="3x" style={{ color: '#9b59b6' }} />
-              <h4 style={{ marginTop: '15px', color: '#9b59b6' }}>MRR/NDCG</h4>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px', color: '#9b59b6', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="3x" style={{ color: '#9b59b6' }} />
+               <h4 style={{ color: '#9b59b6' }}>MRR/NDCG</h4>
+              </div>
               <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>10-25%</p>
               <p>Boost in ranking quality metrics</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
-              <SvgIcon iconName="duo-anchor" sizeName="3x" style={{ color: '#2ecc71' }} />
-              <h4 style={{ marginTop: '15px', color: '#2ecc71' }}>Grounded-rate</h4>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px', color: '#2ecc71', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-anchor" sizeName="3x" style={{ color: '#2ecc71' }} />
+                <h4 style={{ color: '#2ecc71' }}>Grounded-rate</h4>
+              </div>
               <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>20-45%</p>
               <p>More answers properly grounded in retrieved context</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
-              <SvgIcon iconName="duo-award" sizeName="3x" style={{ color: '#f39c12' }} />
-              <h4 style={{ marginTop: '15px', color: '#f39c12' }}>Eval pass@1</h4>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px', color: '#f39c12', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-award" sizeName="3x" style={{ color: '#f39c12' }} />
+                <h4 style={{ color: '#f39c12' }}>Eval pass@1</h4>
+              </div>
               <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>15-30%</p>
               <p>Improvement in single-attempt success rate</p>
             </div>
@@ -132,7 +140,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#16496b',
       notes: 'Query rewriting significantly improves recall (15-40%), ranking (10-25%), grounding (20-45%), and success rates (15-30%)'
         },
         {
@@ -143,40 +151,52 @@ export const queryRewritingDeck: Deck = {
         <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
           <h3 style={{ marginBottom: '30px' }}>Step-by-Step Process</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#3498db' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#3498db', marginBottom: '10px' }}>1</div>
-              <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ color: '#3498db' }} />
-              <h4 style={{ marginTop: '10px' }}>Parse Intent & Context</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ color: '#3498db' }} />
+                <h4 style={{ marginTop: '10px', color: '#3498db' }}>Parse Intent & Context</h4>
+              </div>
               <p style={{ marginTop: '8px' }}>Extract user intent and relevant contextual information from history and profile</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#9b59b6' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#9b59b6', marginBottom: '10px' }}>2</div>
-              <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ color: '#9b59b6' }} />
-              <h4 style={{ marginTop: '10px' }}>Pick Rewriting Policy</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ color: '#9b59b6' }} />
+                <h4 style={{ marginTop: '10px', color: '#9b59b6' }}>Pick Rewriting Policy</h4>
+              </div>
               <p style={{ marginTop: '8px' }}>Select appropriate rule-based, ML-based, or agent-based approach</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#2ecc71' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#2ecc71', marginBottom: '10px' }}>3</div>
-              <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" style={{ color: '#2ecc71' }} />
-              <h4 style={{ marginTop: '10px' }}>Transform Query</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" style={{ color: '#2ecc71' }} />
+                <h4 style={{ marginTop: '10px', color: '#2ecc71' }}>Transform Query</h4>
+              </div>
               <p style={{ marginTop: '8px' }}>Apply one or more rewriting strategies based on query type and intent</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#f39c12' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#f39c12', marginBottom: '10px' }}>4</div>
-              <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ color: '#f39c12' }} />
-              <h4 style={{ marginTop: '10px' }}>Retrieve</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                 <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ color: '#f39c12' }} />
+                 <h4 style={{ marginTop: '10px', color: '#f39c12' }}>Retrieve</h4>
+              </div>
               <p style={{ marginTop: '8px' }}>Execute retrieval using hybrid search methods (sparse + dense) and reranking</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22' }}>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#e67e22' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#e67e22', marginBottom: '10px' }}>5</div>
-              <SvgIcon iconName="duo-clipboard-check" sizeName="2x" style={{ color: '#e67e22' }} />
-              <h4 style={{ marginTop: '10px' }}>Check Coverage</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-clipboard-check" sizeName="2x" style={{ color: '#e67e22' }} />
+                <h4 style={{ marginTop: '10px', color: '#e67e22' }}>Check Coverage</h4>
+              </div>
               <p style={{ marginTop: '8px' }}>Evaluate retrieved content coverage; iterate if needed</p>
             </div>
-            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c' }}>
+            <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#e74c3c' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#e74c3c', marginBottom: '10px' }}>6</div>
-              <SvgIcon iconName="duo-chart-column" sizeName="2x" style={{ color: '#e74c3c' }} />
-              <h4 style={{ marginTop: '10px' }}>Log & Adapt</h4>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-chart-column" sizeName="2x" style={{ color: '#e74c3c' }} />
+                <h4 style={{ marginTop: '10px', color: '#e74c3c' }}>Log & Adapt</h4>
+              </div>
               <p style={{ marginTop: '8px' }}>Capture feedback and metrics to continuously improve rewriting policy</p>
             </div>
           </div>
@@ -193,11 +213,11 @@ export const queryRewritingDeck: Deck = {
           title: '21 Strategies Overview',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em', color: '#5bbf84' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
               <h4 style={{ color: '#3498db', marginBottom: '10px' }}>📈 Expansion & Enhancement</h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#3498db' }}>
                 <li>1. Query Expansion</li>
                 <li>2. Query Reformulation</li>
                 <li>5. HyDE (Hypothetical Document)</li>
@@ -205,7 +225,7 @@ export const queryRewritingDeck: Deck = {
                 <li>15. Query2Doc</li>
               </ul>
               <h4 style={{ color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>🔍 Context & Conversation</h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#9b59b6' }}>
                 <li>7. Context-Aware Rewriting</li>
                 <li>8. Query Clarification</li>
                 <li>20. Intent Classification</li>
@@ -213,14 +233,14 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px' }}>🧩 Decomposition & Structure</h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#2ecc71' }}>
                 <li>3. Query Decomposition</li>
                 <li>4. Step-Back Prompting</li>
                 <li>16. ITER-RETGEN</li>
                 <li>17. Template-Based</li>
               </ul>
               <h4 style={{ color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>🎯 Specification & Filtering</h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#f39c12' }}>
                 <li>9. Query Specification</li>
                 <li>18. Entity-Centric</li>
                 <li>19. Temporal Rewriting</li>
@@ -228,12 +248,12 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ color: '#e67e22', marginBottom: '10px' }}>🔬 Domain & Semantic</h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#e67e22' }}>
                 <li>10. Semantic Bridging</li>
                 <li>20. Domain-Specific</li>
               </ul>
               <h4 style={{ color: '#e74c3c', marginTop: '15px', marginBottom: '10px' }}>🔄 Adaptive & Learning</h4>
-              <ul style={{ lineHeight: '1.6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#e74c3c' }}>
                 <li>21. Diverse Multi-Query</li>
                 <li>22. Feedback-Based</li>
                 <li>23. Prompt-Based</li>
@@ -246,7 +266,7 @@ export const queryRewritingDeck: Deck = {
           </p>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#194f2f',
       notes: '21 strategies grouped into 6 categories: Expansion, Context, Decomposition, Specification, Domain, and Adaptive'
         }
       ]
@@ -260,7 +280,7 @@ export const queryRewritingDeck: Deck = {
           title: '1. Query Expansion',
           icon: { name: 'duo-arrows-maximize' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#42a1e3' }}>
           <div style={{ marginBottom: '20px' }}>
             <h3>Bridge vocabulary gaps, increase recall with synonyms/related terms</h3>
           </div>
@@ -311,7 +331,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#3498DB',
+      backgroundColor: '#1e557b',
       notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
@@ -324,9 +344,9 @@ export const queryRewritingDeck: Deck = {
           id: 7,
           title: '2-3. Reformulation & Decomposition',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#bc59e5' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-pen-line" sizeName="1x" darkModeInvert={true} />
                 2. Query Reformulation
@@ -341,7 +361,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '10px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Improved precision, self-contained for caching</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires conversation context, risk of over-specification</p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-diagram-project" sizeName="1x" darkModeInvert={true} />
                 3. Query Decomposition
@@ -362,7 +382,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#341541',
       notes: 'Reformulation makes queries self-contained; Decomposition breaks complex questions into sub-questions'
         }
       ]
@@ -375,9 +395,9 @@ export const queryRewritingDeck: Deck = {
           id: 8,
           title: '4-5. Step-Back & HyDE',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#2fbda0' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h3 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-arrow-rotate-left" sizeName="1x" darkModeInvert={true} />
                 4. Step-Back Prompting
@@ -392,7 +412,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '10px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Robust to query wording, better generalization</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Risk of over-abstraction, may lose specificity</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h3 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-file-lines" sizeName="1x" darkModeInvert={true} />
                 5. HyDE (Hypothetical Document)
@@ -410,7 +430,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#064135',
       notes: 'Step-Back uses abstraction for broader context; HyDE generates hypothetical answer document for better semantic matching'
         }
       ]
@@ -423,9 +443,9 @@ export const queryRewritingDeck: Deck = {
           id: 9,
           title: '6-7. Multi-Query & Context-Aware',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#46a3e3' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h3 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-clone" sizeName="1x" darkModeInvert={true} />
                 6. Multi-Query Generation
@@ -445,7 +465,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '10px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Robust to ambiguity, higher hit-rate, better coverage</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Increased cost/latency, requires deduplication and fusion</p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-comments" sizeName="1x" darkModeInvert={true} />
                 7. Context-Aware Rewriting
@@ -463,7 +483,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
+      backgroundColor: '#164565',
       notes: 'Multi-Query explores diverse interpretations; Context-Aware makes follow-ups standalone with conversation history'
         }
       ]
@@ -476,9 +496,9 @@ export const queryRewritingDeck: Deck = {
           id: 10,
           title: '8-9. Clarification & Specification',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#e56f1f' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-question-circle" sizeName="1x"  darkModeInvert={true} />
                 8. Query Clarification
@@ -495,7 +515,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '10px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Significantly improves precision, better user alignment</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Adds interaction step (latency), may frustrate users seeking quick answers</p>
             </div>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px', color: '#e74c3c' }}>
               <h3 style={{ color: '#e74c3c', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-filter" sizeName="1x"  darkModeInvert={true} />
                 9. Query Specification
@@ -513,7 +533,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#D35400',
+      backgroundColor: '#612700',
       notes: 'Clarification asks users for disambiguation; Specification adds explicit constraints like time, source, file type'
         }
       ]
@@ -526,39 +546,39 @@ export const queryRewritingDeck: Deck = {
           id: 11,
           title: '10-15. Semantic & Document Strategies',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em', color: '#38cf76' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '8px', padding: '12px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '8px', padding: '12px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>10. Semantic Bridging</h4>
               <p><strong>Goal:</strong> Map user language to domain ontology/taxonomy</p>
               <p style={{ marginTop: '6px' }}><strong>Example:</strong> "heart attack treatment" → "myocardial infarction (MI) management" OR "acute coronary syndrome therapy"</p>
               <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Closes vocabulary gap, improves recall in domain searches</p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '8px', padding: '12px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '8px', padding: '12px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '8px' }}>15. Query2Doc</h4>
               <p><strong>Goal:</strong> Turn query into pseudo-document reflecting likely content</p>
               <p style={{ marginTop: '6px' }}><strong>Example:</strong> "vector DB HNSW tuning" → 150-word pseudo-doc explaining HNSW parameters, tuning tradeoffs</p>
               <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Strong recall, richer semantic matching with dense retrieval</p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '8px', padding: '12px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '8px', padding: '12px', color: '#9b59b6' }}>
               <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>16. ITER-RETGEN</h4>
               <p><strong>Goal:</strong> Self-refine via iterative retrieve→generate cycles</p>
               <p style={{ marginTop: '6px' }}><strong>How:</strong> Draft identifies gaps → generate follow-up queries → retrieve → refine → repeat</p>
               <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Better coverage without over-fetching, handles complex questions</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '8px', padding: '12px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '8px', padding: '12px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', marginBottom: '8px' }}>17. Template-Based</h4>
               <p><strong>Goal:</strong> Standardize rewrites for recurring intents</p>
               <p style={{ marginTop: '6px' }}><strong>Example:</strong> "compare s3 vs gcs pricing" → "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1–10 TB, standard tier, 2024"</p>
               <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Consistent quality, fast execution, predictable behavior</p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '8px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '8px', padding: '12px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>18. Entity-Centric</h4>
               <p><strong>Goal:</strong> Disambiguate and ground queries to specific entities</p>
               <p style={{ marginTop: '6px' }}><strong>Example:</strong> "jaguar speed" → "Jaguar (animal:Panthera onca) top speed; exclude Jaguar (brand:automobile)"</p>
               <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Significantly improves precision, solves homonym issues</p>
             </div>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '8px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '8px', padding: '12px', color: '#e74c3c' }}>
               <h4 style={{ color: '#e74c3c', marginBottom: '8px' }}>19. Temporal Rewriting</h4>
               <p><strong>Goal:</strong> Make time references explicit and current</p>
               <p style={{ marginTop: '6px' }}><strong>Example:</strong> "latest OpenAI API quotas" → "OpenAI API rate limits as of 2025-11; changes in 2024–2025"</p>
@@ -567,7 +587,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#11552d',
       notes: 'Semantic bridging, Query2Doc, ITER-RETGEN, Template-based, Entity-centric, and Temporal strategies'
         }
       ]
@@ -580,9 +600,9 @@ export const queryRewritingDeck: Deck = {
           id: 12,
           title: '20-21. Domain & Intent-Based',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em', color: '#bd6ce1' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h3 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-hospital" sizeName="1x" darkModeInvert={true} />
                 20. Domain-Specific Rewriting
@@ -597,7 +617,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '10px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> High precision in specialized corpora, better matching to expert terminology</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires domain-specific knowledge/lexicons, harder to maintain, needs separate models per domain</p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
               <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
                 <SvgIcon iconName="duo-sitemap" sizeName="1x" darkModeInvert={true} />
                 21. Intent Classification & Rewriting
@@ -616,7 +636,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#471e59',
       notes: 'Domain-Specific translates to expert terminology; Intent Classification routes to appropriate rewriting strategy'
         }
       ]
@@ -629,9 +649,9 @@ export const queryRewritingDeck: Deck = {
           id: 13,
           title: 'Adaptive Strategies (22-24)',
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#f3b57d' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-chart-network" sizeName="1x" darkModeInvert={true} />
                 22. Diverse Multi-Query (DMQR)
@@ -650,7 +670,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Comprehensive coverage, better handles ambiguous queries</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Fusion/dedup cost, requires careful reranking</p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-chart-line-up" sizeName="1x" darkModeInvert={true} />
                 23. Feedback-Based Rewriting
@@ -661,7 +681,7 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Improves over time, user-aligned, adapts to changing content</p>
               <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires data pipeline, cold-start issues, privacy considerations</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-wand-sparkles" sizeName="1x" darkModeInvert={true} />
                 24. Prompt-Based & Adaptive
@@ -681,7 +701,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#E67E22',
+      backgroundColor: '#915520',
       notes: 'Adaptive strategies: Diverse Multi-Query for facet coverage, Feedback-Based learning, Prompt-Based simplicity, Adaptive policy selection'
         }
       ]
@@ -730,7 +750,7 @@ export const queryRewritingDeck: Deck = {
               <strong>🔄 Production system with feedback?</strong>
               <p style={{ marginTop: '6px', fontSize: '0.95em' }}>→ Feedback-Based, Adaptive Rewriting</p>
             </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(52, 73, 94, 0.1)', borderRadius: '8px', borderLeft: '4px solid #34495e' }}>
+            <div style={{ padding: '12px', backgroundColor: 'rgba(0, 127, 255, 0.1)', borderRadius: '8px', borderLeft: '4px solid #68adf1' }}>
               <strong>⚡ Quick prototype?</strong>
               <p style={{ marginTop: '6px', fontSize: '0.95em' }}>→ Prompt-Based Rewriting, Query Reformulation</p>
             </div>
@@ -749,14 +769,14 @@ export const queryRewritingDeck: Deck = {
           title: 'Best Practices & Implementation',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#13d162' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
                 <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
                 Getting Started
               </h4>
-              <ul style={{ lineHeight: '1.8' }}>
+              <ul style={{ lineHeight: '1.8', color: '#2ecc71' }}>
                 <li><strong>Start Simple:</strong> Begin with Query Reformulation or Expansion</li>
                 <li><strong>Measure Baseline:</strong> Track Recall@k, MRR, grounding rate</li>
                 <li><strong>Add Complexity:</strong> Layer strategies based on query patterns</li>
@@ -766,7 +786,7 @@ export const queryRewritingDeck: Deck = {
                 <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
                 Production Guardrails
               </h4>
-              <ul style={{ lineHeight: '1.8' }}>
+              <ul style={{ lineHeight: '1.8', color: '#3498db' }}>
                 <li><strong>Token Caps:</strong> Limit LLM rewriting costs</li>
                 <li><strong>Quality Gates:</strong> Evaluate rewritten query quality</li>
                 <li><strong>Traceability:</strong> Log transformations for debugging</li>
@@ -779,7 +799,7 @@ export const queryRewritingDeck: Deck = {
                 <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
                 Combining Strategies
               </h4>
-              <ul style={{ lineHeight: '1.8' }}>
+              <ul style={{ lineHeight: '1.8', color: '#f39c12' }}>
                 <li><strong>Serial:</strong> Context-Aware → Expansion → Specification</li>
                 <li><strong>Parallel:</strong> Multi-Query + HyDE → Fusion</li>
                 <li><strong>Iterative:</strong> ITER-RETGEN for complex questions</li>
@@ -789,7 +809,7 @@ export const queryRewritingDeck: Deck = {
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} />
                 Common Pitfalls
               </h4>
-              <ul style={{ lineHeight: '1.8' }}>
+              <ul style={{ lineHeight: '1.8', color: '#e74c3c' }}>
                 <li><strong>Over-rewriting:</strong> Too many transformations dilute intent</li>
                 <li><strong>Context bloat:</strong> Adding too much context degrades retrieval</li>
                 <li><strong>Query drift:</strong> Rewrite strays from original intent</li>
@@ -800,7 +820,7 @@ export const queryRewritingDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#03612a',
       notes: 'Best practices: Start simple, measure baselines, add guardrails, combine strategies thoughtfully, avoid common pitfalls'
         },
         {

@@ -40,7 +40,7 @@ export const sentimentAnalysisDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-book" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-book" sizeName="2x" darkModeInvert={true} />
                 Traditional & Classical ML
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
@@ -51,7 +51,7 @@ export const sentimentAnalysisDeck: Deck = {
                 <li>5. Naive Bayes</li>
               </ul>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-                <SvgIcon iconName="duo-tools" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-tools" sizeName="2x" darkModeInvert={true} />
                 Modern NLP Tools
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
@@ -61,7 +61,7 @@ export const sentimentAnalysisDeck: Deck = {
             </div>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
                 Deep Learning & Transformers
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
@@ -73,7 +73,7 @@ export const sentimentAnalysisDeck: Deck = {
                 <li>13. GPT/LLM Zero-Shot</li>
               </ul>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
                 Advanced
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
@@ -100,7 +100,7 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#3498db' }} />
+            <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#00ffcd' }} />
             <h3>Dictionary/lexicon lookup with additive scoring</h3>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
@@ -109,7 +109,7 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
-              <ul>
+              <ul style={{ color: '#b4fff0' }}>
                 <li>Interpretable word-level contributions</li>
                 <li>Fast, minimal compute</li>
                 <li>No training data needed</li>
@@ -119,7 +119,7 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
-              <ul>
+              <ul style={{ color: '#b4fff0' }}>
                 <li>Poor context and negation handling</li>
                 <li>Struggles with sarcasm</li>
                 <li>Brittle to slang/domain terms</li>
@@ -131,17 +131,17 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
                 Data Requirement
               </h4>
-              <p>No labels; optional domain lexicon curation</p>
+              <p style={{ color: '#b4fff0' }}>No labels; optional domain lexicon curation</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
-              <p>Low-resource, explainable baseline; predictable vocabulary domains</p>
+              <p style={{ color: '#b4fff0' }}>Low-resource, explainable baseline; predictable vocabulary domains</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
                 Notes
               </h4>
-              <p>Consider enhancing with custom rules for negation and intensifiers. Domain-specific lexicons significantly improve performance.</p>
+              <p style={{ color: '#b4fff0' }}>Consider enhancing with custom rules for negation and intensifiers. Domain-specific lexicons significantly improve performance.</p>
             </div>
           </div>
         </div>
@@ -162,7 +162,7 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#9B59B6' }} />
+            <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#edc1ff' }} />
             <h3>Handcrafted rules + patterns over tokens/syntax</h3>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
@@ -171,7 +171,7 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
               </h4>
-              <ul>
+              <ul style={{ color: '#eab9ff' }}>
                 <li>Deterministic and fully auditable</li>
                 <li>Predictable latency</li>
                 <li>No training data needed</li>
@@ -181,7 +181,7 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
-              <ul>
+              <ul style={{ color: '#eab9ff' }}>
                 <li>Hard to scale and maintain</li>
                 <li>Limited adaptability</li>
                 <li>Weak on nuance</li>
@@ -193,17 +193,17 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
                 Data Requirement
               </h4>
-              <p>No labels, but significant rule engineering</p>
+              <p style={{ color: '#eab9ff' }}>No labels, but significant rule engineering</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
                 Best Use Case
               </h4>
-              <p>Compliance/regulated settings; narrow domain heuristics</p>
+              <p style={{ color: '#eab9ff' }}>Compliance/regulated settings; narrow domain heuristics</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
                 Notes
               </h4>
-              <p>Use regex patterns and dependency parses. Implement comprehensive unit tests and maintain versioned rulebooks.</p>
+              <p style={{ color: '#eab9ff' }}>Use regex patterns and dependency parses. Implement comprehensive unit tests and maintain versioned rulebooks.</p>
             </div>
           </div>
         </div>
@@ -223,34 +223,34 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '30px' }}>
-            <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
+            <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#9bd7ff' }} />
             <SvgIcon iconName="duo-table" sizeName="3x" style={{ color: '#e67e22' }} />
-            <SvgIcon iconName="duo-calculator" sizeName="3x" style={{ color: '#1abc9c' }} />
+            <SvgIcon iconName="duo-calculator" sizeName="3x" style={{ color: '#3bdbbc' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#3498db' }}>3. BoW + Logistic Regression</h4>
-              <p><strong>Data:</strong> 1k-50k labeled</p>
-              <p><strong>Use:</strong> Short texts/reviews</p>
-              <p><strong>Pros:</strong> Fast, interpretable weights, strong baseline</p>
-              <p><strong>Cons:</strong> Ignores word order, sparse features</p>
+            <div style={{ border: '2px solid #9bd7ff', borderRadius: '10px', padding: '15px' }}>
+              <h4 style={{ color: '#9bd7ff' }}>3. BoW + Logistic Regression</h4>
+              <p style={{ color: '#9bd7ff' }}><strong>Data:</strong> 1k-50k labeled</p>
+              <p style={{ color: '#9bd7ff' }}><strong>Use:</strong> Short texts/reviews</p>
+              <p style={{ color: '#9bd7ff' }}><strong>Pros:</strong> Fast, interpretable weights, strong baseline</p>
+              <p style={{ color: '#9bd7ff' }}><strong>Cons:</strong> Ignores word order, sparse features</p>
             </div>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
               <h4 style={{ color: '#e67e22' }}>4. TF-IDF + SVM</h4>
-              <p><strong>Data:</strong> 5k-100k labeled</p>
-              <p><strong>Use:</strong> High-dimensional sparse text</p>
-              <p><strong>Pros:</strong> Strong accuracy, handles sparsity well</p>
-              <p><strong>Cons:</strong> Needs calibration, less interpretable</p>
+              <p style={{ color: '#e67e22' }}><strong>Data:</strong> 5k-100k labeled</p>
+              <p style={{ color: '#e67e22' }}><strong>Use:</strong> High-dimensional sparse text</p>
+              <p style={{ color: '#e67e22' }}><strong>Pros:</strong> Strong accuracy, handles sparsity well</p>
+              <p style={{ color: '#e67e22' }}><strong>Cons:</strong> Needs calibration, less interpretable</p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#1abc9c' }}>5. Naive Bayes</h4>
-              <p><strong>Data:</strong> Hundreds+ examples</p>
-              <p><strong>Use:</strong> Tweets/short messages</p>
-              <p><strong>Pros:</strong> Extremely fast, works with limited data</p>
-              <p><strong>Cons:</strong> Independence assumption, performance ceiling</p>
+            <div style={{ border: '2px solid #3bdbbc', borderRadius: '10px', padding: '15px' }}>
+              <h4 style={{ color: '#3bdbbc' }}>5. Naive Bayes</h4>
+              <p style={{ color: '#3bdbbc' }}><strong>Data:</strong> Hundreds+ examples</p>
+              <p style={{ color: '#3bdbbc' }}><strong>Use:</strong> Tweets/short messages</p>
+              <p style={{ color: '#3bdbbc' }}><strong>Pros:</strong> Extremely fast, works with limited data</p>
+              <p style={{ color: '#3bdbbc' }}><strong>Cons:</strong> Independence assumption, performance ceiling</p>
             </div>
           </div>
-          <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
+          <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', color: '#9bd7ff' }}>
             <strong>💡 Tip:</strong> These classical ML methods provide strong baselines with interpretability and low compute requirements
           </div>
         </div>
@@ -270,38 +270,38 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
-            <SvgIcon iconName="duo-comments" sizeName="3x" style={{ color: '#1abc9c' }} />
-            <SvgIcon iconName="duo-language" sizeName="3x" style={{ color: '#9b59b6' }} />
+            <SvgIcon iconName="duo-comments" sizeName="3x" style={{ color: '#39e7c5' }} />
+            <SvgIcon iconName="duo-language" sizeName="3x" style={{ color: '#a34ac7' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '20px' }}>
-              <h3 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-hashtag" sizeName="1x" darkModeInvert={true} />
+            <div style={{ border: '2px solid #39e7c5', borderRadius: '10px', padding: '20px', color: '#39e7c5' }}>
+              <h3 style={{ color: '#39e7c5', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-hashtag" sizeName="2x" style={{ color: '#39e7c5' }} />
                 6. VADER Sentiment Scoring
               </h3>
               <p><strong>Type:</strong> Lexicon + rules for social media</p>
               <p><strong>Data:</strong> None required</p>
               <p><strong>Best for:</strong> Tweets, chats, emojis, punctuation</p>
               <div style={{ marginTop: '15px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Handles negation, boosters, emojis, ALL CAPS</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Outputs pos/neu/neg + compound scores</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Fast, lightweight, no training needed</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Domain transfer limits, sarcasm challenges</p>
+                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Handles negation, boosters, emojis, ALL CAPS</p>
+                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Outputs pos/neu/neg + compound scores</p>
+                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Fast, lightweight, no training needed</p>
+                <p><strong style={{ color: '#ff1800' }}>✗</strong> Domain transfer limits, sarcasm challenges</p>
               </div>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '20px' }}>
-              <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-flask" sizeName="1x" darkModeInvert={true} />
+            <div style={{ border: '2px solid #d27ff3', borderRadius: '10px', padding: '20px', color: '#d27ff3' }}>
+              <h3 style={{ color: '#d27ff3', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-flask" sizeName="2x" style={{ color: '#a34ac7' }} />
                 7. TextBlob Polarity Scoring
               </h3>
               <p><strong>Type:</strong> Rule/lexicon-based with polarity & subjectivity</p>
               <p><strong>Data:</strong> None required</p>
               <p><strong>Best for:</strong> Quick prototypes, educational purposes</p>
               <div style={{ marginTop: '15px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Simple, intuitive API</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Polarity (-1 to +1) & subjectivity (0 to 1)</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Includes NLP utilities (POS, NP extraction)</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Older lexicons, primarily English-centric</p>
+                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Simple, intuitive API</p>
+                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Polarity (-1 to +1) & subjectivity (0 to 1)</p>
+                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Includes NLP utilities (POS, NP extraction)</p>
+                <p><strong style={{ color: '#ff1800' }}>✗</strong> Older lexicons, primarily English-centric</p>
               </div>
             </div>
           </div>
@@ -322,13 +322,13 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="3x" style={{ color: '#e74c3c' }} />
+            <SvgIcon iconName="duo-network-wired" sizeName="3x" style={{ color: '#ff7b6d' }} />
             <SvgIcon iconName="duo-project-diagram" sizeName="3x" style={{ color: '#f39c12' }} />
-            <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#3498db' }} />
+            <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#68bef7' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#e74c3c' }}>8. LSTM-Based</h4>
+            <div style={{ border: '2px solid #ff7b6d', borderRadius: '10px', padding: '15px', color: '#ff7b6d' }}>
+              <h4 style={{ color: '#ff7b6d' }}>8. LSTM-Based</h4>
               <p><strong>Data:</strong> 10k-100k+ labeled</p>
               <p><strong>Use:</strong> Longer texts with dependencies</p>
               <p><strong>✓</strong> Captures sequential patterns</p>
@@ -338,7 +338,7 @@ export const sentimentAnalysisDeck: Deck = {
                 💡 Use pretrained embeddings (GloVe/fastText)
               </p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ color: '#f39c12' }}>9. BiLSTM + Attention</h4>
               <p><strong>Data:</strong> 10k-100k+ labeled</p>
               <p><strong>Use:</strong> Aspect tagging, long reviews</p>
@@ -349,8 +349,8 @@ export const sentimentAnalysisDeck: Deck = {
                 💡 Visualize attention for QA/debugging
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#3498db' }}>10. CNN for Sentiment</h4>
+            <div style={{ border: '2px solid #68bef7', borderRadius: '10px', padding: '15px', color: '#68bef7' }}>
+              <h4 style={{ color: '#68bef7' }}>10. CNN for Sentiment</h4>
               <p><strong>Data:</strong> 5k-100k labeled</p>
               <p><strong>Use:</strong> Short texts, key phrase detection</p>
               <p><strong>✓</strong> Highly parallelizable</p>
@@ -361,12 +361,12 @@ export const sentimentAnalysisDeck: Deck = {
               </p>
             </div>
           </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
+          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', textAlign: 'center', color: '#ff7b6d' }}>
             <strong>⚡ Key Takeaway:</strong> Deep learning models need substantial data but capture context better than classical ML
           </div>
         </div>
       ),
-      backgroundColor: '#C0392B',
+      backgroundColor: '#9f2d21',
       notes: 'Deep learning: LSTM for sequences, BiLSTM+Attention for interpretability, CNN for efficient n-gram capture'
         }
       ]
@@ -381,13 +381,13 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-microchip" sizeName="3x" style={{ color: '#9b59b6' }} />
+            <SvgIcon iconName="duo-microchip" sizeName="3x" style={{ color: '#bc6add' }} />
             <SvgIcon iconName="duo-brain-circuit" sizeName="3x" style={{ color: '#e67e22' }} />
             <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="3x" style={{ color: '#3498db' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px' }}>
-              <h4 style={{ color: '#9b59b6' }}>11. BERT Fine-Tuned</h4>
+            <div style={{ border: '2px solid #bc6add', borderRadius: '10px', padding: '12px', color: '#bc6add' }}>
+              <h4 style={{ color: '#bc6add' }}>11. BERT Fine-Tuned</h4>
               <p><strong>Data:</strong> 2k-100k labeled</p>
               <p><strong>Use:</strong> Nuanced language, complex sentiment</p>
               <p><strong>✓</strong> High accuracy across domains</p>
@@ -399,7 +399,7 @@ export const sentimentAnalysisDeck: Deck = {
                 💡 Use DistilBERT for reduced latency
               </p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
               <h4 style={{ color: '#e67e22' }}>12. RoBERTa/DistilBERT</h4>
               <p><strong>Data:</strong> 2k-100k labeled</p>
               <p><strong>Use:</strong> Social media, production with latency constraints</p>
@@ -412,7 +412,7 @@ export const sentimentAnalysisDeck: Deck = {
                 💡 Monitor performance drift, retrain periodically
               </p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
               <h4 style={{ color: '#3498db' }}>13. GPT/LLM Zero-Shot</h4>
               <p><strong>Data:</strong> None (zero-shot), few examples help</p>
               <p><strong>Use:</strong> Cross-domain, multilingual, long texts</p>
@@ -427,12 +427,12 @@ export const sentimentAnalysisDeck: Deck = {
               </p>
             </div>
           </div>
-          <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
+          <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', textAlign: 'center', color: '#bc6add' }}>
             <strong>🚀 State-of-the-Art:</strong> Transformers provide best accuracy but consider cost/latency trade-offs
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#581375',
       notes: 'Transformers: BERT for nuanced sentiment, RoBERTa/DistilBERT for production, GPT for zero-shot cross-domain'
         }
       ]
@@ -448,12 +448,12 @@ export const sentimentAnalysisDeck: Deck = {
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
           <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
             <SvgIcon iconName="duo-bullseye-arrow" sizeName="3x" style={{ color: '#e67e22' }} />
-            <SvgIcon iconName="duo-photo-video" sizeName="3x" style={{ color: '#9b59b6' }} />
+            <SvgIcon iconName="duo-photo-video" sizeName="3x" style={{ color: '#c664ed' }} />
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '20px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '20px', color: '#e67e22' }}>
               <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-crosshairs" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-crosshairs" sizeName="2x" style={{ color: '#e67e22' }} />
                 14. Aspect-Based Sentiment (ABSA)
               </h3>
               <p><strong>Type:</strong> Pipeline (AE/OE/ASC) or end-to-end with transformers/GCNs</p>
@@ -469,9 +469,9 @@ export const sentimentAnalysisDeck: Deck = {
                 💡 Use domain-adapted BERT/GCN; leverage public datasets (SemEval, MAMS)
               </p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '20px' }}>
-              <h3 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-video" sizeName="1x" darkModeInvert={true} />
+            <div style={{ border: '2px solid #c664ed', borderRadius: '10px', padding: '20px', color: '#c664ed' }}>
+              <h3 style={{ color: '#c664ed', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-video" sizeName="2x" style={{ color: '#c664ed' }} />
                 15. Multimodal Sentiment Analysis
               </h3>
               <p><strong>Type:</strong> Fusion models over text, audio, visual streams</p>
@@ -490,7 +490,7 @@ export const sentimentAnalysisDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#D35400',
+      backgroundColor: '#8f410d',
       notes: 'Advanced: ABSA for fine-grained aspect-level insights, Multimodal for audio/video with non-verbal cues'
         }
       ]
@@ -547,44 +547,44 @@ export const sentimentAnalysisDeck: Deck = {
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
-                <SvgIcon iconName="duo-play" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-play" sizeName="2x" style={{ color: '#3498db' }} />
                 Start with Baselines
               </h4>
               <p>Begin with VADER/TextBlob and TF-IDF+LinearSVC to establish metrics and error buckets</p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6' }}>
-                <SvgIcon iconName="duo-arrow-trend-up" sizeName="1x" darkModeInvert={true} />
+            <div style={{ border: '2px solid #bd5ee3', borderRadius: '10px', padding: '15px', color: '#bd5ee3' }}>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#bd5ee3' }}>
+                <SvgIcon iconName="duo-arrow-trend-up" sizeName="2x" style={{ color: '#bd5ee3' }} />
                 Scale Up Judiciously
               </h4>
               <p>Move to BERT/RoBERTa when nuance demands it; consider DistilBERT for latency constraints</p>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e67e22' }}>
-                <SvgIcon iconName="duo-crosshairs" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-crosshairs" sizeName="2x" style={{ color: '#e67e22' }} />
                 For Granularity
               </h4>
               <p>Use ABSA when you need actionable, aspect-level insights; plan for labeling or weak supervision</p>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c' }}>
-                <SvgIcon iconName="duo-video" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-video" sizeName="2x" style={{ color: '#1abc9c' }} />
                 For Conversational/Video
               </h4>
               <p>Consider multimodal only when audio/visual add clear value; address privacy/compliance</p>
             </div>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px', color: '#e74c3c' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c' }}>
-                <SvgIcon iconName="duo-gear" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-gear" sizeName="2x" style={{ color: '#e74c3c' }} />
                 Operationalize
               </h4>
               <p>Add calibration, drift monitoring, bias checks. Define re-training cadence based on domain volatility</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px' }}>
+            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12' }}>
-                <SvgIcon iconName="duo-shield-halved" sizeName="1x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ color: '#f39c12' }} />
                 Guardrails for LLMs
               </h4>
               <p>Constrain outputs, cache results, log prompts/responses. Establish cost/governance controls</p>
@@ -592,14 +592,14 @@ export const sentimentAnalysisDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#27AE60',
+      backgroundColor: '#17733e',
       notes: 'Best practices: Start simple, scale judiciously, operationalize with monitoring, implement guardrails for production'
         },
         {
           id: 12,
           title: 'Implementation Roadmap',
           content: (
-        <div style={{ margin: '0 auto' }}>
+        <div style={{ margin: '0 auto', color: '#2cc3a6' }}>
           <h3 style={{ marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-map" sizeName="2x" style={{ color: '#3498db' }} />
             Next Steps
@@ -619,7 +619,7 @@ export const sentimentAnalysisDeck: Deck = {
                 flexShrink: 0
               }}>1</div>
               <div style={{ textAlign: 'left' }}>
-                <h4 style={{ margin: '0 0 8px 0' }}>Select 2-3 Candidates</h4>
+                <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Select 2-3 Candidates</h4>
                 <p style={{ margin: 0, opacity: 0.9 }}>Choose methods based on your domain complexity, data availability, and explainability needs</p>
               </div>
             </div>
@@ -637,7 +637,7 @@ export const sentimentAnalysisDeck: Deck = {
                 flexShrink: 0
               }}>2</div>
               <div style={{ textAlign: 'left' }}>
-                <h4 style={{ margin: '0 0 8px 0' }}>Run Pilot Project</h4>
+                <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Run Pilot Project</h4>
                 <p style={{ margin: 0, opacity: 0.9 }}>Test performance on your domain-specific data with consistent evaluation metrics</p>
               </div>
             </div>
@@ -655,7 +655,7 @@ export const sentimentAnalysisDeck: Deck = {
                 flexShrink: 0
               }}>3</div>
               <div style={{ textAlign: 'left' }}>
-                <h4 style={{ margin: '0 0 8px 0' }}>Optimize & Deploy</h4>
+                <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Optimize & Deploy</h4>
                 <p style={{ margin: 0, opacity: 0.9 }}>Fine-tune performance, establish monitoring, and implement serving infrastructure</p>
               </div>
             </div>
@@ -667,7 +667,7 @@ export const sentimentAnalysisDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#146152',
       notes: 'Three-step roadmap: Select candidates, pilot test with domain data, then optimize and deploy with monitoring'
         }
       ]
