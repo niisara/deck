@@ -140,28 +140,28 @@ function DeckPage() {
       }
       
       // Inject dark theme CSS into speaker notes window
-      // window.addEventListener('message', (event) => {
-      //   // Listen for speaker notes window messages
-      //   if (event.data && typeof event.data === 'string') {
-      //     try {
-      //       const data = JSON.parse(event.data);
-      //       if (data.namespace === 'reveal-notes' && data.type === 'connected') {
-      //         // Speaker notes window is connected, inject dark theme
-      //         setTimeout(() => {
-      //           const speakerWindow = window.open('', 'reveal.js - Notes');
-      //           if (speakerWindow && speakerWindow.document) {
-      //             const link = speakerWindow.document.createElement('link');
-      //             link.rel = 'stylesheet';
-      //             link.href = '/speaker-dark.css';
-      //             speakerWindow.document.head.appendChild(link);
-      //           }
-      //         }, 500);
-      //       }
-      //     } catch (e) {
-      //       // Ignore parse errors
-      //     }
-      //   }
-      // });
+      window.addEventListener('message', (event) => {
+        // Listen for speaker notes window messages
+        if (event.data && typeof event.data === 'string') {
+          try {
+            const data = JSON.parse(event.data);
+            if (data.namespace === 'reveal-notes' && data.type === 'connected') {
+              // Speaker notes window is connected, inject dark theme
+              setTimeout(() => {
+                const speakerWindow = window.open('', 'reveal.js - Notes');
+                if (speakerWindow && speakerWindow.document) {
+                  const link = speakerWindow.document.createElement('link');
+                  link.rel = 'stylesheet';
+                  link.href = '/speaker-dark.css';
+                  speakerWindow.document.head.appendChild(link);
+                }
+              }, 500);
+            }
+          } catch (e) {
+            // Ignore parse errors
+          }
+        }
+      });
     });
     revealInstanceRef.current = revealInstance;
 
