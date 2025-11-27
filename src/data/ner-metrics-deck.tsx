@@ -43,13 +43,22 @@ And here's something really important to remember: Evaluating a model is just as
         },
         {
           id: 2,
-          title: 'How to Evaluate NER: Overview',
-          content: `
-            <div style="text-align: left;">
-              <h3>Context</h3>
-              <p>NER predicts entities as spans with types (e.g., PERSON, ORG)</p>
+          title: 'How to Evaluate NER: Overview of 7 Metrics',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-circle-info" sizeName="2x" darkModeInvert={true} />
+                <h3>Context</h3>
+              </div>
+              <ul>
+                <li>NER predicts entities as spans with types (e.g., PERSON, ORG)</li>
+                <li>Default unless noted: entity-level, strict exact match on span + type, micro-averaged over all entities</li>
+              </ul>
               
-              <h3>Key Notation</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-key" sizeName="2x" darkModeInvert={true} />
+                <h3>Key Notation</h3>
+              </div>
               <ul>
                 <li><strong>TP:</strong> predicted entity exactly matches a gold entity (span + type)</li>
                 <li><strong>FP:</strong> predicted entity with no matching gold</li>
@@ -57,7 +66,7 @@ And here's something really important to remember: Evaluating a model is just as
                 <li><strong>IoU(span):</strong> overlap tokens / union tokens</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#34495E',
           notes: `Alright, before we jump into the metrics, let me make sure we're all on the same page about some fundamental concepts.
 
@@ -130,16 +139,23 @@ Now, I know seven metrics might sound like a lot. But don't worry! We're going t
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Of all predicted entities, how many are correct (exact span + type)</p>
+              <ul>
+                <li>Of all predicted entities, how many are correct (exact span + type)</li>
+              </ul>
               
               <h3>Formula</h3>
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
+              <ul>
+                <li>TP: predicted entities with a one-to-one exact match to gold</li>
+                <li>FP: predicted entities without a match</li>
+                <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
+                <li>Typically micro-averaged across types</li>
+              </ul>
               
               <h3>When to Use</h3>
               <ul>
                 <li>When false positives are costly</li>
-                <li>High-precision applications (e.g., automated actions)</li>
                 <li>Tuning decision thresholds</li>
+                <li>High-precision applications (e.g., automated actions)</li>
               </ul>
             </div>
           ),
@@ -161,22 +177,28 @@ The key insight here: High precision means when your model says "this is an enti
         {
           id: 5,
           title: 'Precision: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Intuitive; useful for threshold calibration</li>
                 <li>Not inflated by abundant O tokens</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
                 <li>Ignores missed entities (FN)</li>
                 <li>Can be gamed by predicting fewer entities</li>
                 <li>Rare-class issues can be masked by micro-averaging</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#16A085',
           notes: `Now, let's be completely honest here. Precision is useful, but it's not perfect. Like every metric, it has its strengths and its weaknesses. And understanding these trade-offs? That's what separates beginners from experienced practitioners.
 
@@ -213,10 +235,17 @@ So here's the key lesson: Never, ever look at precision alone. Always pair it wi
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Of all gold (true) entities, how many did the model find correctly</p>
+              <ul>
+                <li>Of all gold (true) entities, how many did the model find correctly</li>
+              </ul>
               
               <h3>Formula</h3>
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]' }} />
+              <ul>
+                <li>TP: exact matches (span + type)</li>
+                <li>FN: gold entities without a matching prediction</li>
+                <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]' }} />
+                <li>Typically micro-averaged across types</li>
+              </ul>
               
               <h3>When to Use</h3>
               <ul>
@@ -250,22 +279,28 @@ But here's the trade-off, and this is important: You could get one hundred perce
         {
           id: 7,
           title: 'Recall: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Captures model coverage</li>
                 <li>Highlights under-detection and data gaps</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
                 <li>Ignores false positives</li>
                 <li>Can be inflated by very permissive prediction</li>
                 <li>Micro-averaging can hide minority class gaps</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#D35400',
           notes: `Okay, just like we did with precision, let's be honest about recall's strengths and weaknesses.
 
@@ -304,10 +339,16 @@ But here's the key lesson, and I really want to emphasize this: just like precis
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Balance between precision and recall (harmonic mean)</p>
+              <ul>
+                <li>Balance between precision and recall (harmonic mean)</li>
+              </ul>
               
               <h3>Formula</h3>
+              <ul>
               <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
+                <li>Usually micro-F1 across all entities</li>
+                <li>Macro-F1 averages per type (treats classes equally)</li>
+              </ul>
               
               <h3>When to Use</h3>
               <ul>
@@ -343,23 +384,29 @@ Here's the key insight: F1 Score is your go-to metric for most NER tasks. It's t
         {
           id: 9,
           title: 'F1 Score: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Balances FP and FN</li>
                 <li>Widely understood</li>
                 <li>Comparable across models</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
                 <li>Hides trade-offs between precision and recall</li>
                 <li>Macro vs micro choices can change conclusions</li>
                 <li>Threshold-sensitive</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#9B59B6',
           notes: `F1 Score is fantastic, but let me tell you something important: it's not perfect. No metric is. So let's talk about when F1 really shines and when it might actually mislead you.
 
@@ -398,11 +445,13 @@ So here's my pro tip: always report F1 alongside precision, recall, and per-clas
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Percentage of sentences/documents where the entire set of predicted entities exactly equals the gold set</p>
+              <ul>
+                <li>Percentage of sentences/documents where the entire set of predicted entities (spans + types) exactly equals the gold set</li>
+              </ul>
               
               <h3>Formula</h3>
               <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{EM}_i = \\begin{cases} 1 & \\text{if predicted set == gold set} \\\\ 0 & \\text{otherwise} \\end{cases}\\]' }} />
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Exact Match Score} = \\text{mean}(\\text{EM}_i)\\]' }} />
+              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Exact Match Score} = \\text{mean}_i(\\text{EM}_i)\\]' }} />
               
               <h3>When to Use</h3>
               <ul>
@@ -440,21 +489,27 @@ Here's the key insight: this metric is harsh, but it's honest. It tells you "wha
         {
           id: 11,
           title: 'Exact Match: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Very strict; reflects true task completeness</li>
                 <li>Sensitive to any error</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
                 <li>All-or-nothing; punishes minor boundary/label mistakes</li>
                 <li>Not decomposable or diagnostic on its own</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#E74C3C',
           notes: `Exact Match is powerful, but it's also brutal. So let's talk about when this strictness is valuable and when it might be too harsh.
 
@@ -497,11 +552,18 @@ So here's the best practice: use Exact Match for production gates, for making de
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Credit for near-miss spans to reduce sensitivity to boundary noise</p>
+              <ul>
+                <li>Credit for near-miss spans to reduce sensitivity to boundary noise while still checking types</li>
+              </ul>
               
               <h3>How It Works</h3>
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{IoU} = \\frac{|\\text{tokens}_\\text{overlap}|}{|\\text{tokens}_\\text{union}|}\\]' }} />
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: 'Define a match if \\(\\text{IoU} \\geq \\tau\\) (common \\(\\tau = 0.5\\)) and types match' }} />
+              <ul>
+                <li>Span IoU = |tokens_overlap| / |tokens_union|</li>
+                <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{IoU} = \\frac{|\\text{tokens}_\\text{overlap}|}{|\\text{tokens}_\\text{union}|}\\]' }} />
+                <li>Define a match if IoU ≥ τ (common τ = 0.5) and types match</li>
+                <li>One-to-one matching (greedy or Hungarian algorithm)</li>
+                <li>Compute TP/FP/FN under this fuzzy rule and report Partial-F1</li>
+              </ul>
               
               <h3>When to Use</h3>
               <ul>
@@ -543,23 +605,29 @@ Here's the key insight: Partial Match acknowledges that boundary detection is ha
         {
           id: 13,
           title: 'Partial Match: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Rewards close spans</li>
                 <li>More stable with annotation noise</li>
-                <li>Tunable strictness via \\(\\tau\\) threshold</li>
+                <li>Tunable strictness via τ threshold</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
-                <li>Not standardized (choice of \\(\\tau\\) and matching algorithm matters)</li>
+                <li>Not standardized (choice of τ and matching algorithm matters)</li>
                 <li>Can mask consistent boundary errors</li>
                 <li>Less comparable across papers if definitions differ</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#16A085',
           notes: `Partial Match is more forgiving and flexible, but that flexibility comes with its own trade-offs. Let's explore both sides.
 
@@ -602,11 +670,17 @@ So here's the best practice: report both Exact Match and Partial Match. Clearly 
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Accuracy of entity type classification when spans are given (gold spans)</p>
-              <p>Isolates typing from detection to focus solely on classification quality</p>
+              <ul>
+                <li>Accuracy of entity type classification when spans are given (gold spans)</li>
+                <li>Isolates typing from detection to focus solely on classification quality</li>
+              </ul>
               
               <h3>Formula</h3>
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
+              <ul>
+                <li>Use gold entity spans only; model predicts a type for each</li>
+                <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
+                <li>Option: macro-averaged over types for class balance</li>
+              </ul>
               
               <h3>When to Use</h3>
               <ul>
@@ -642,23 +716,29 @@ Here's the key insight: this is a diagnostic metric. It helps you understand if 
         {
           id: 15,
           title: 'Entity-Level Accuracy: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Clear diagnostic of typing component</li>
                 <li>Unaffected by detection errors</li>
                 <li>Interpretable</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
                 <li>Not end-to-end</li>
                 <li>Can overstate real-world performance</li>
                 <li>Influenced by class imbalance unless macro-averaged</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#2980B9',
           notes: `Entity-Level Accuracy is a great diagnostic tool, but it has important limitations. Let's understand when it's useful and when it might mislead you.
 
@@ -700,19 +780,23 @@ So here's the best practice: use Entity-Level Accuracy alongside F1, precision, 
       slides: [
         {
           id: 16,
-          title: 'Confusion Matrix Analysis',
+          title: 'Confusion Matrix Analysis (By Entity Type)',
           icon: { name: 'duo-table-cells' },
           content: (
             <div style={{ textAlign: 'left' }}>
               <h3>What It Measures</h3>
-              <p>Where the model confuses types and how often</p>
+              <ul>
+                <li>Where the model confuses types and how often</li>
+                <li>Error patterns across entity classes</li>
+              </ul>
               
               <h3>How It Works</h3>
               <ul>
+                <li>On matched entities (exact or partial per your setting), build matrix:</li>
                 <li>Rows = gold types, cols = predicted types</li>
                 <li>Include counts of Missed (FN) and Spurious (FP) as margins</li>
                 <li>Normalize rows to get per-class recall</li>
-                <li>Derive per-class precision/recall/F1</li>
+                <li>Derive per-class precision/recall/F1 and macro averages</li>
               </ul>
               
               <h3>When to Use</h3>
@@ -753,23 +837,29 @@ Here's the key insight: confusion matrices don't give you a single score to brag
         {
           id: 17,
           title: 'Confusion Matrix: Pros & Cons',
-          content: `
-            <div style="text-align: left;">
-              <h3>✅ Pros</h3>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                <h3>Pros</h3>
+              </div>
               <ul>
                 <li>Highly diagnostic for targeted improvements</li>
                 <li>Reveals minority-class issues often hidden by averaging</li>
                 <li>Supports data-driven schema refinement</li>
               </ul>
               
-              <h3>⚠️ Cons</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                <h3>Cons</h3>
+              </div>
               <ul>
                 <li>Not a single-number metric (harder to compare)</li>
                 <li>Requires enough data per class for significance</li>
                 <li>Depends on chosen matching rule (strict vs partial)</li>
               </ul>
             </div>
-          `,
+          ),
           backgroundColor: '#D35400',
           notes: `Confusion matrices are incredibly valuable for debugging, but they have their limitations too. Let's understand when they shine and when they fall short.
 
@@ -818,7 +908,7 @@ So here's the best practice. Use confusion matrices during development for debug
               <h3>Guidance</h3>
               <ul style={{ fontSize: '0.9em', lineHeight: '1.7' }}>
                 <li>Use micro Precision/Recall/F1 with exact matching for standard reporting</li>
-                <li>Add Partial-F1 (IoU) when boundary noise is expected</li>
+                <li>Add Partial-F1 (IoU) when boundary noise is expected and document τ</li>
                 <li>Track Exact Match (sentence-level) for production readiness</li>
                 <li>Use Entity-Level Accuracy (on gold spans) and confusion matrices for diagnosis</li>
               </ul>
@@ -858,13 +948,19 @@ And remember this crucial point: metrics are tools for understanding your model.
                 <SvgIcon iconName="duo-circle-check" sizeName="3x" style={{ color: '#27AE60' }} />
                 <SvgIcon iconName="duo-circle-xmark" sizeName="3x" style={{ color: '#E74C3C' }} />
               </div>
-              <h3>✅ Do's</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                <h3>Do's</h3>
+              </div>
               <ul style={{ fontSize: '0.9em', lineHeight: '1.7' }}>
-                <li>Define matching rule (strict vs partial), averaging (micro vs macro), and evaluation scope</li>
+                <li>Define matching rule (strict vs partial), averaging (micro vs macro), and evaluation scope (entity vs token)</li>
                 <li>Report per-class metrics alongside micro-F1 for imbalanced datasets</li>
               </ul>
               
-              <h3>❌ Don'ts</h3>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                <h3>Don'ts</h3>
+              </div>
               <ul style={{ fontSize: '0.9em', lineHeight: '1.7' }}>
                 <li>Don't rely on token accuracy or overall accuracy including O tokens</li>
                 <li>Don't compare results without aligning evaluation settings</li>
