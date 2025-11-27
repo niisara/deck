@@ -31,18 +31,15 @@ export const nerMetricsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `Welcome everyone! Today we're going to learn about evaluating Named Entity Recognition (NER) models.
+          notes: `Hello everyone! Welcome to today's session. I'm really excited to walk you through this important topic with you.
 
-For freshers: NER is like teaching a computer to identify important information in text - like finding person names, company names, or locations in a sentence.
+So, let's start with the basics. What is NER, or Named Entity Recognition? Think of it as teaching a computer to spot important pieces of information in text. Just like how you can identify names, companies, or places when you read, we want computers to do the same thing.
 
-Think of it this way: If I say "Apple launched a new iPhone in California", NER should identify:
-- "Apple" as an Organization
-- "iPhone" as a Product
-- "California" as a Location
+Let me give you a quick example. If I say: "Apple launched a new iPhone in California" - what are the important entities here? Well, Apple is a company, an organization. iPhone is a product. And California is a location. That's what NER does - it finds and labels these entities.
 
-But how do we know if our NER model is doing a good job? That's what these 7 metrics help us measure. We'll learn each one step by step, starting from the basics.
+Now here's the big question: How do we know if our NER model is doing a good job? That's exactly what we're going to cover today. I'm going to show you seven different metrics - seven different ways to evaluate your NER models.
 
-Remember: Evaluating a model is just as important as building it - you can't improve what you can't measure!`
+And here's something really important to remember: Evaluating a model is just as crucial as building it. You can't improve what you can't measure, right? So let's dive in and learn these metrics step by step.`
         },
         {
           id: 2,
@@ -51,7 +48,6 @@ Remember: Evaluating a model is just as important as building it - you can't imp
             <div style="text-align: left;">
               <h3>Context</h3>
               <p>NER predicts entities as spans with types (e.g., PERSON, ORG)</p>
-              <p><small>Default: entity-level, strict exact match on span + type, micro-averaged</small></p>
               
               <h3>Key Notation</h3>
               <ul>
@@ -63,25 +59,23 @@ Remember: Evaluating a model is just as important as building it - you can't imp
             </div>
           `,
           backgroundColor: '#34495E',
-          notes: `Let me explain the basics before we dive into metrics.
+          notes: `Alright, before we jump into the metrics, let me make sure we're all on the same page about some fundamental concepts.
 
-For freshers: NER predicts "entities" - which are spans (sequences of words) with types (labels like PERSON, ORG, LOCATION).
+So when we talk about NER, we're dealing with entities. These entities have two parts: first, the span - that's the actual words or sequence of words. And second, the type - that's the label we give it, like PERSON, ORGANIZATION, or LOCATION.
 
-Example: In "John works at Microsoft", we have:
-- "John" (span: word 1, type: PERSON)
-- "Microsoft" (span: word 4, type: ORG)
+Let me show you with an example. Take the sentence: "John works at Microsoft." Here we have two entities. "John" - that's our first entity, it's a PERSON. And "Microsoft" - that's an ORGANIZATION. Simple enough, right?
 
-Now, the key notation you'll see everywhere:
+Now, I need to introduce you to some terminology that you'll hear constantly in this field.
 
-TP (True Positive): When our model correctly predicts an entity with the right span AND right type. Like correctly identifying "Microsoft" as ORG.
+First, TP - True Positive. This is when our model gets it right. It finds an entity, gets the words right, and labels it correctly. Like correctly identifying "Microsoft" as an organization.
 
-FP (False Positive): When our model predicts something as an entity, but it's wrong. Like saying "works" is an ORG - that's a false alarm!
+Second, FP - False Positive. This is a false alarm. Our model thinks something is an entity when it's not. Imagine if the model said "works" is an organization - that would be completely wrong!
 
-FN (False Negative): When our model misses a real entity. Like not detecting "John" as a PERSON - we missed it!
+Third, FN - False Negative. This is when we miss something. There's a real entity there, but our model doesn't catch it. Like if we completely missed "John" as a person.
 
-IoU (Intersection over Union): A way to measure overlap between predicted and actual spans. Don't worry, we'll see this in detail later.
+And finally, IoU - Intersection over Union. This measures how much overlap there is between what we predicted and what's actually correct. Don't worry about this too much right now - we'll come back to it in detail later.
 
-By default, we use "strict exact match" - meaning both the span AND type must match perfectly. This is the most common approach.`
+One more thing: by default, we use what's called "strict exact match." That means both the span and the type must be perfect. Most researchers use this approach, so it's the standard.`
         },
         {
           id: 3,
@@ -101,21 +95,27 @@ By default, we use "strict exact match" - meaning both the span AND type must ma
             </div>
           ),
           backgroundColor: '#2980B9',
-          notes: `Here's our roadmap for today - 7 metrics that will help you evaluate NER models like a pro!
+          notes: `Okay, let's talk about our roadmap for today. I'm going to teach you seven different metrics. Think of these as seven different lenses through which you can look at your model's performance.
 
-For freshers: Think of these metrics as different ways to grade your model's performance. Just like in exams you might have multiple marks for different sections, here we have multiple metrics to understand different aspects of model quality.
+You know how in school, you don't just get one overall grade? You get grades for different subjects, different assignments? It's the same idea here. Each metric tells us something unique about how well our model is performing.
 
-1. Precision: How accurate are the predictions?
-2. Recall: How many entities did we find?
-3. F1 Score: The balance between precision and recall
-4. Exact Match: Did we get everything perfect?
-5. Partial Match: Did we get close enough?
-6. Entity-Level Accuracy: How good is our classification?
-7. Confusion Matrix: Where does our model get confused?
+So here's what we're covering:
 
-Each metric tells us something different about our model. We'll go through each one with examples so you understand when and why to use them.
+First, Precision - this tells us: how accurate are our predictions?
 
-Don't worry if this seems like a lot - we'll break each one down into simple concepts!`
+Second, Recall - this answers: how many entities did we actually find?
+
+Third, F1 Score - this is the sweet spot, the balance between precision and recall.
+
+Fourth, Exact Match Score - this asks: did we get absolutely everything perfect?
+
+Fifth, Partial Match Score - a more forgiving metric that asks: did we get close enough?
+
+Sixth, Entity-Level Accuracy - this focuses on: how good is our classification?
+
+And seventh, Confusion Matrix Analysis - this reveals: where exactly does our model get confused?
+
+Now, I know seven metrics might sound like a lot. But don't worry! We're going to take our time with each one. I'll give you examples, show you when to use them, and by the end, you'll understand exactly why we need all seven. Ready? Let's go!`
         }
       ]
     },
@@ -144,27 +144,19 @@ Don't worry if this seems like a lot - we'll break each one down into simple con
             </div>
           ),
           backgroundColor: '#27AE60',
-          notes: `Let's start with Precision - this is all about accuracy!
+          notes: `Alright, let's dive into our first metric: Precision. This one's all about accuracy.
 
-For freshers: Precision asks "When my model says something is an entity, how often is it correct?"
+So, here's the question precision answers: When my model says something is an entity, how often is it actually correct?
 
-Think of it like a student who only answers questions they're absolutely sure about. They might not answer everything, but what they DO answer is usually correct. That's high precision!
+Let me give you an analogy. Think about that student in your class who only raises their hand when they're absolutely, one hundred percent sure they know the answer. They might not participate in every question, but when they do answer, they're usually right. That student has high precision!
 
-Real-world example:
-Your model identifies 10 entities in a document:
-- 8 of them are correct (True Positives)
-- 2 of them are wrong (False Positives)
-Precision = 8/(8+2) = 0.8 or 80%
+Now let's look at a real example. Say your model identifies ten entities in a document. Eight of them are correct - these are your true positives. But two of them are wrong - these are false positives, false alarms. So your precision is eight divided by ten, which gives you point eight, or eighty percent.
 
-When do you care about precision?
-- When false alarms are expensive (like automatically sending emails based on detected names)
-- When you're building a system that takes automated actions
-- When wrong predictions could cause serious problems
+Now, when should you really care about precision? Well, think about situations where false alarms are costly. Imagine you're building a system that automatically sends emails based on detected names. If you make a mistake, you could send an email to the wrong person! Or think about any system that takes automated actions based on your predictions. In these cases, wrong predictions can cause real problems, so precision becomes super important.
 
-Formula breakdown:
-Precision = TP/(TP + FP) = Correct predictions / All predictions made
+The formula is straightforward: Precision equals TP divided by TP plus FP. In other words, it's your correct predictions divided by all the predictions you made.
 
-Key insight: High precision means "When I say it's an entity, trust me - I'm usually right!"`
+The key insight here: High precision means when your model says "this is an entity," you can trust it. It's usually right!`
         },
         {
           id: 5,
@@ -186,23 +178,27 @@ Key insight: High precision means "When I say it's an entity, trust me - I'm usu
             </div>
           `,
           backgroundColor: '#16A085',
-          notes: `Now let's be honest - Precision isn't perfect. It has strengths and weaknesses.
+          notes: `Now, let's be completely honest here. Precision is useful, but it's not perfect. Like every metric, it has its strengths and its weaknesses. And understanding these trade-offs? That's what separates beginners from experienced practitioners.
 
-For freshers: Every metric has trade-offs. Understanding these helps you choose the right metric for your situation.
+So let's start with the good stuff - the pros.
 
-PROS (Good things):
-1. Intuitive: Easy to understand and explain to non-technical people
-2. Useful for calibration: Helps you tune your model's confidence threshold
-3. Not inflated by "O" tokens: In NER, most words aren't entities (they're tagged "O" for Outside). Precision ignores these, which is good!
+First, it's intuitive. You can explain precision to anyone, even non-technical stakeholders. "It's how often we're right when we make a prediction." Simple.
 
-CONS (Watch out for these):
-1. Ignores missed entities: You could have 100% precision by only predicting one entity (that you're super confident about), but you'd miss 99 others! This is called "gaming the metric"
-2. Can hide problems: If you predict very few entities, your precision might look great even though your model is useless
-3. Micro-averaging issues: When averaging across all entities, rare entity types might perform poorly but get hidden in the overall number
+Second, it's useful for calibration. When you're tuning your model, adjusting confidence thresholds, precision helps guide those decisions.
 
-Real scenario: Imagine a model that only identifies "obvious" names like "John" and "Mary" but misses complex names like "Jean-Baptiste Colbert". It might have 95% precision but miss most entities - not very useful!
+Third, it's not inflated by what we call "O" tokens. See, in NER, most words aren't entities at all - they're just regular words. Precision focuses only on the predictions we actually make, which is good!
 
-Key lesson: NEVER look at precision alone - always consider it with other metrics!`
+But now, let me warn you about the cons. These are the gotchas.
+
+First big problem: precision completely ignores missed entities. Think about this: I could build a model that only predicts one entity - the one it's absolutely sure about. I'd have one hundred percent precision! But I'd miss ninety-nine other entities. Is that a good model? Of course not! This is what we call "gaming the metric."
+
+Second issue: precision can hide serious problems. If your model is very conservative and barely predicts anything, precision might look fantastic even though the model is practically useless.
+
+Third: micro-averaging can mask issues with rare entity types. They might be performing terribly, but they get lost in the overall numbers.
+
+Here's a real scenario: imagine a model that only catches obvious names like "John" or "Mary," but completely misses complex names like "Jean-Baptiste Colbert." It might show ninety-five percent precision, but it's missing most entities!
+
+So here's the key lesson: Never, ever look at precision alone. Always pair it with other metrics. That's crucial!`
         }
       ]
     },
@@ -231,29 +227,25 @@ Key lesson: NEVER look at precision alone - always consider it with other metric
             </div>
           ),
           backgroundColor: '#E67E22',
-          notes: `Now let's talk about Recall - the opposite side of the coin!
+          notes: `Now let's talk about Recall - this is the flip side of precision.
 
-For freshers: Recall asks "Of all the entities that actually exist, how many did my model find?"
+So recall asks a different question: Of all the entities that actually exist in the text, how many did my model successfully find?
 
-Think of it like a treasure hunt. If there are 10 treasures hidden in a room, and you find 7 of them, your recall is 70%. It doesn't matter if you also picked up some fake treasures (that's precision) - recall only cares about how many real treasures you found.
+Let me give you a fun analogy. Imagine you're on a treasure hunt. There are ten treasures hidden in a room. You search around and you find seven of them. Your recall is seventy percent. Notice something important here: it doesn't matter if you also picked up some fake treasures along the way - that's precision's problem. Recall only cares about one thing: how many of the real treasures did you find?
 
-Real-world example:
-A document has 10 person names:
-- Your model correctly finds 8 of them (True Positives)
-- Your model misses 2 of them (False Negatives)
-Recall = 8/(8+2) = 0.8 or 80%
+Let's look at a concrete example. Say a document has ten person names. Your model correctly finds eight of them - those are true positives. But it misses two of them - those are false negatives. So your recall is eight divided by ten, which is point eight, or eighty percent.
 
-When do you care about recall?
-- When missing entities is costly (like missing a patient name in medical records)
-- When you need complete coverage (extracting all company names from financial documents)
-- When you're evaluating if your training data is sufficient
+Now when should you really care about recall? Let me give you some scenarios.
 
-Formula breakdown:
-Recall = TP/(TP + FN) = Found correctly / All that should exist
+Think about medical records. If you miss a patient name, that could be a serious problem. Or imagine you're extracting all company names from financial documents for compliance purposes. You need complete coverage - missing entities could mean legal issues.
 
-Key insight: High recall means "I find most of what's there - I don't miss much!"
+Recall is also crucial when you're evaluating whether your training data is sufficient. Low recall might indicate you need more training examples.
 
-The trade-off: You can get 100% recall by predicting EVERYTHING as an entity, but then your precision would be terrible!`
+The formula: Recall equals TP divided by TP plus FN. That's "what you found correctly" divided by "everything that should exist."
+
+The key insight: High recall means "I find most of what's there. I don't miss much!"
+
+But here's the trade-off, and this is important: You could get one hundred percent recall by just predicting everything as an entity. But then your precision would be terrible! So we need balance.`
         },
         {
           id: 7,
@@ -275,28 +267,29 @@ The trade-off: You can get 100% recall by predicting EVERYTHING as an entity, bu
             </div>
           `,
           backgroundColor: '#D35400',
-          notes: `Let's look at the pros and cons of Recall - it's powerful but has limitations.
+          notes: `Okay, just like we did with precision, let's be honest about recall's strengths and weaknesses.
 
-For freshers: Understanding these trade-offs helps you decide when to optimize for recall versus precision.
+Let's start with the pros.
 
-PROS (Good things):
-1. Measures coverage: Tells you if your model is finding most entities - crucial for many applications
-2. Highlights under-detection: Shows if your model is too conservative (missing too much)
-3. Reveals data gaps: Low recall might mean you need more training data for certain entity types
+First, recall measures coverage. It tells you: is your model finding most of the entities? For many applications, this is absolutely critical.
 
-CONS (Watch out for these):
-1. Ignores false positives: A model could have 100% recall by labeling every word as an entity, but it would be useless!
-2. Can be inflated: If your model is too aggressive and predicts everything, recall looks great but the model is actually terrible
-3. Micro-averaging hides problems: Just like precision, averaging across all entities can hide poor performance on rare entity types
+Second, it highlights under-detection. If your recall is low, it's a clear signal that your model is being too conservative, too cautious. It's missing too much.
 
-Real scenario: Imagine a spam detector that marks EVERY email as spam. It would have 100% recall (catches all spam) but terrible precision (marks good emails as spam too). Not useful!
+Third, it reveals data gaps. Low recall on certain entity types? That's often a sign you need more training data for those specific categories.
 
-When recall matters most:
-- Medical diagnosis systems (can't afford to miss diseases)
-- Security applications (must catch all threats)
-- Compliance/audit scenarios (need to find ALL relevant information)
+Now for the cons, and these are important to understand.
 
-Key lesson: Like precision, NEVER use recall alone. You need to balance it with precision!`
+First major issue: recall completely ignores false positives. Here's an extreme example: I could build a model that labels every single word as an entity. Boom! One hundred percent recall! But would that model be useful? Absolutely not!
+
+Second problem: recall can be artificially inflated. If your model is too aggressive and over-predicts, recall will look fantastic, but the model is actually terrible in practice.
+
+Third issue: just like precision, micro-averaging can hide problems. Poor performance on rare entity types gets buried in the overall average.
+
+Let me give you a great analogy. Imagine a spam detector that marks every single email as spam. It would have one hundred percent recall - it catches all the spam! But it would have terrible precision because it's also marking all your legitimate emails as spam. Would you use that spam detector? No way!
+
+So when does recall matter most? Medical diagnosis systems - you cannot afford to miss diseases. Security applications - you must catch all threats. Compliance and audit scenarios - you need to find all relevant information. In these cases, missing something is worse than having a few false alarms.
+
+But here's the key lesson, and I really want to emphasize this: just like precision, never use recall alone. You need the full picture!`
         }
       ]
     },
@@ -325,33 +318,27 @@ Key lesson: Like precision, NEVER use recall alone. You need to balance it with 
             </div>
           ),
           backgroundColor: '#8E44AD',
-          notes: `F1 Score - the most popular metric in NER! This combines precision and recall into one number.
+          notes: `Now we come to the F1 Score - and this is probably the most popular metric in NER. This is what you'll see in most research papers, most leaderboards.
 
-For freshers: F1 is the "harmonic mean" of precision and recall. Don't worry about the math term - it just means it's a special type of average that balances both metrics fairly.
+So what is F1? It combines precision and recall into a single number. Technically, it's the harmonic mean of precision and recall. Now, don't let the fancy math term intimidate you - it's just a special type of average that balances both metrics fairly.
 
-Why do we need F1?
-Remember: High precision + low recall = finds few but correct
-High recall + low precision = finds many but with errors
-F1 Score = the sweet spot between both!
+So why do we need F1? Well, think about what we've learned so far. High precision with low recall means you're finding few entities, but the ones you find are correct. High recall with low precision means you're finding many entities, but making lots of errors. F1 Score? That's the sweet spot between both!
 
-Real-world example:
-Model A: Precision=90%, Recall=40% (too conservative)
-Model B: Precision=50%, Recall=95% (too aggressive)
-Model C: Precision=70%, Recall=75% (balanced)
+Let me show you with an example. Imagine three models:
 
-Model C's F1 would be highest because it balances both aspects!
+Model A: ninety percent precision, forty percent recall. Too conservative, right? It's playing it too safe.
 
-Formula breakdown:
-F1 = 2 × (Precision × Recall) / (Precision + Recall)
+Model B: fifty percent precision, ninety-five percent recall. Too aggressive! It's finding everything but making lots of mistakes.
 
-The "2×" ensures the result is between 0 and 1 (or 0% to 100%).
+Model C: seventy percent precision, seventy-five percent recall. Now we're talking! This is balanced.
 
-When to use F1:
-- Model comparison: "Which model is better overall?"
-- Leaderboard reporting: Standard metric everyone uses
-- General-purpose evaluation: When you care about both precision and recall equally
+Model C would have the highest F1 score because it balances both aspects.
 
-Key insight: F1 Score is your "go-to" metric for most NER tasks. It's the industry standard for a reason - it's fair and balanced!`
+The formula is: F1 equals two times precision times recall, divided by precision plus recall. That "two times" part ensures the result stays between zero and one, or zero to one hundred percent.
+
+When should you use F1? Well, pretty much always! Use it for model comparison - "which model is better overall?" Use it for leaderboard reporting - it's what everyone else uses, so you can compare your results. Use it for general-purpose evaluation when you care about both precision and recall equally.
+
+Here's the key insight: F1 Score is your go-to metric for most NER tasks. It's the industry standard for a reason - it's fair, it's balanced, and it's widely understood!`
         },
         {
           id: 9,
@@ -374,31 +361,29 @@ Key insight: F1 Score is your "go-to" metric for most NER tasks. It's the indust
             </div>
           `,
           backgroundColor: '#9B59B6',
-          notes: `F1 Score is great, but it's not perfect. Let's understand when it helps and when it might mislead you.
+          notes: `F1 Score is fantastic, but let me tell you something important: it's not perfect. No metric is. So let's talk about when F1 really shines and when it might actually mislead you.
 
-For freshers: Even the most popular metrics have limitations. Being aware of these makes you a better ML engineer!
+First, the pros - why everyone loves F1.
 
-PROS (Why everyone uses F1):
-1. Balances FP and FN: Considers both types of errors fairly
-2. Widely understood: Easy to compare your model with others in papers/leaderboards
-3. Single number: Convenient for reporting and tracking progress
-4. Fair to both precision and recall: Can't game it by optimizing just one
+Number one: it balances false positives and false negatives. It treats both types of errors fairly, which is usually what you want.
 
-CONS (Hidden dangers):
-1. Hides trade-offs: Two models with same F1 might have very different precision/recall profiles
-   Example: Model A (P=60%, R=90%, F1=72%) vs Model B (P=90%, R=60%, F1=72%)
-   Same F1, but very different behavior! Which is better depends on your use case.
+Number two: it's widely understood. When you publish a paper or share results with colleagues, everyone knows what F1 means. You can directly compare your work with others.
 
-2. Micro vs Macro confusion: 
-   - Micro-F1: Treats all entities equally (common entity types dominate)
-   - Macro-F1: Averages per-class F1 scores (treats all classes equally)
-   These can give VERY different numbers on imbalanced datasets!
+Number three: it's a single number. Super convenient for tracking progress, for reporting to stakeholders, for comparing models.
 
-3. Threshold-sensitive: Changing your model's confidence threshold changes F1 dramatically
+Number four: it's fair to both precision and recall. You can't game it by just optimizing one aspect.
 
-Real scenario: Your model has F1=85% overall, but only 20% F1 on rare entity types like "DISEASE". The high F1 hides the poor performance on important rare classes!
+But now, let me warn you about the hidden dangers - the cons.
 
-Pro tip: Always report F1 alongside precision, recall, AND per-class metrics. Don't rely on a single number to tell the whole story!`
+First big issue: F1 hides trade-offs. Two models could have the exact same F1 score but behave completely differently! Let me give you an example: Model A has sixty percent precision and ninety percent recall - F1 of seventy-two. Model B has ninety percent precision and sixty percent recall - also F1 of seventy-two. Same F1! But which is better? Well, that depends entirely on your use case! The F1 score doesn't tell you this crucial difference.
+
+Second issue: the micro versus macro confusion. This is huge. Micro-F1 treats all entities equally, so common entity types dominate the score. Macro-F1 averages per-class F1 scores, treating all classes equally. These can give you very different numbers, especially on imbalanced datasets!
+
+Third issue: threshold sensitivity. Change your model's confidence threshold, and your F1 changes dramatically.
+
+Let me give you a real scenario. Your model shows eighty-five percent F1 overall. Looks great, right? But when you dig deeper, you discover it only has twenty percent F1 on rare but important entity types like "DISEASE." The high overall F1 was hiding this critical problem!
+
+So here's my pro tip: always report F1 alongside precision, recall, and per-class metrics. Don't let a single number tell the whole story. That's how you avoid getting fooled!`
         }
       ]
     },
@@ -428,31 +413,29 @@ Pro tip: Always report F1 alongside precision, recall, AND per-class metrics. Do
             </div>
           ),
           backgroundColor: '#C0392B',
-          notes: `Exact Match Score - the strictest metric in NER! This is the "all or nothing" approach.
+          notes: `Alright, now let's talk about Exact Match Score. This is the strictest, most unforgiving metric in NER. I call it the "all or nothing" approach.
 
-For freshers: Imagine taking an exam where you only get points if you get EVERY question right. One mistake = zero marks. That's Exact Match!
+Imagine taking an exam where you only get points if you get every single question right. One mistake, just one, and you get zero marks for the entire exam. That's Exact Match!
 
-What does it measure?
-For each sentence/document, did the model get EVERYTHING perfectly correct? Same entities, same boundaries, same labels - perfect match.
+So what does it measure? For each sentence or document, did the model get absolutely everything perfectly correct? Same entities, same boundaries, same labels. Perfect match. Anything less than perfect? Zero score.
 
-Real-world example:
-Sentence: "Apple CEO Tim Cook visited Tesla."
-Gold entities: [Apple:ORG, Tim Cook:PERSON, Tesla:ORG]
+Let me walk you through some examples. Say we have this sentence: "Apple CEO Tim Cook visited Tesla."
 
-Prediction 1: [Apple:ORG, Tim Cook:PERSON, Tesla:ORG] → EM = 1 (Perfect!)
-Prediction 2: [Apple:ORG, Tim Cook:PERSON, Tesla:LOCATION] → EM = 0 (One wrong!)
-Prediction 3: [Apple:ORG, Tim Cook:PERSON] → EM = 0 (Missed Tesla!)
-Prediction 4: [Apple:ORG, Tim:PERSON, Cook:PERSON, Tesla:ORG] → EM = 0 (Wrong boundaries!)
+The gold standard says these are the entities: Apple as an organization, Tim Cook as a person, and Tesla as an organization.
 
-If you have 100 sentences and get 73 exactly right, Exact Match Score = 73%.
+Now, prediction one: Apple organization, Tim Cook person, Tesla organization. Perfect! Exact Match equals one.
 
-When to use Exact Match:
-- Production readiness: Is your model reliable enough to deploy?
-- Quality gates: Ensuring minimum reliability standards
-- Downstream tasks: When later systems need perfect extraction (e.g., knowledge graphs)
-- High-stakes applications: Medical, legal, financial domains
+Prediction two: Apple organization, Tim Cook person, but Tesla as a location instead of organization. One label wrong! Exact Match equals zero.
 
-Key insight: This metric is harsh but honest. It tells you "what percentage of documents are you 100% correct on?" - crucial for production systems!`
+Prediction three: Apple organization, Tim Cook person, but we completely missed Tesla. Exact Match? Zero.
+
+Prediction four: We got the labels right but split "Tim Cook" into "Tim" as a person and "Cook" as a person. Wrong boundaries! Exact Match? Zero.
+
+See how strict this is? If you process one hundred sentences and get seventy-three exactly right, your Exact Match Score is seventy-three percent.
+
+So when do you use this harsh metric? Well, when you're checking production readiness. Is your model reliable enough to deploy? When you need quality gates - ensuring minimum reliability standards. When downstream systems need perfect extraction, like when you're building knowledge graphs. In high-stakes domains like medical, legal, or financial applications.
+
+Here's the key insight: this metric is harsh, but it's honest. It tells you "what percentage of documents am I one hundred percent correct on?" And that's crucial information for production systems!`
         },
         {
           id: 11,
@@ -473,28 +456,33 @@ Key insight: This metric is harsh but honest. It tells you "what percentage of d
             </div>
           `,
           backgroundColor: '#E74C3C',
-          notes: `Exact Match is powerful but brutal. Let's understand its strengths and limitations.
+          notes: `Exact Match is powerful, but it's also brutal. So let's talk about when this strictness is valuable and when it might be too harsh.
 
-For freshers: This "all or nothing" approach has important uses but can be too harsh for some scenarios.
+First, the pros - when this metric really matters.
 
-PROS (When it's valuable):
-1. Very strict: Reflects true task completeness - no partial credit!
-2. Production-relevant: In real applications, "almost correct" often means "not useful"
-3. Sensitive to any error: Catches both major and minor mistakes
-4. Honest metric: Can't hide behind "good enough" - it's either perfect or it's not
+Number one: it's very strict. It reflects true task completeness. There's no partial credit here. It's either perfect or it's not.
 
-Example where this matters:
-Extracting contract terms for legal analysis - you NEED 100% accuracy. Missing one clause or getting one date wrong could be disastrous.
+Number two: it's production-relevant. In real-world applications, "almost correct" often means "not useful at all." Think about it - would you want a medical system that gets most things right?
 
-CONS (Why it can be problematic):
-1. All-or-nothing punishes minor errors: Getting 9 out of 10 entities correct = same score as getting 0 out of 10 correct (both get 0!)
-2. Not diagnostic: Doesn't tell you WHAT went wrong or WHERE to improve
-3. Discouraging for development: During model development, this metric can seem depressingly low
-4. Overly harsh for noisy data: If your gold labels have inconsistent boundaries, Exact Match will be artificially low
+Number three: it's sensitive to any error. It catches both major mistakes and minor ones. Nothing escapes.
 
-Real scenario: Your model correctly identifies all entities in 100 sentences, but makes tiny boundary errors (including "the" in "the Microsoft" instead of just "Microsoft"). Your Exact Match Score = 0% even though the model is 95% correct!
+Number four: it's honest. You can't hide behind "good enough." It forces you to face reality.
 
-Best practice: Use Exact Match for production gates, but combine it with F1, Precision, Recall during development to understand progress and diagnose issues.`
+Let me give you an example where this really matters. Imagine you're extracting contract terms for legal analysis. You need one hundred percent accuracy. Missing one clause? Getting one date wrong? That could be absolutely disastrous!
+
+But now let's talk about the cons - why this metric can be problematic.
+
+The all-or-nothing nature punishes minor errors harshly. Here's what I mean: getting nine out of ten entities correct gives you the same score as getting zero out of ten correct. Both get zero! That seems unfair, doesn't it?
+
+Second problem: it's not diagnostic. When you get a zero, it doesn't tell you what went wrong or where to improve. You just know something was wrong.
+
+Third issue: it can be discouraging during development. When you're building a model, this metric can seem depressingly low even when you're making good progress.
+
+Fourth problem: it's overly harsh for noisy data. If your gold labels have inconsistent boundaries - which is common in real datasets - Exact Match will be artificially low.
+
+Let me give you a real scenario. Your model correctly identifies all entities in one hundred sentences. Great, right? But it makes tiny boundary errors. Like including the word "the" in "the Microsoft" instead of just "Microsoft." Your Exact Match Score? Zero percent! Even though the model is ninety-five percent correct!
+
+So here's the best practice: use Exact Match for production gates, for making deployment decisions. But during development, combine it with F1, precision, and recall to understand your progress and diagnose issues. That's the smart way to use this metric!`
         }
       ]
     },
@@ -524,43 +512,33 @@ Best practice: Use Exact Match for production gates, but combine it with F1, Pre
             </div>
           ),
           backgroundColor: '#1ABC9C',
-          notes: `Partial Match Score - a more forgiving approach! This gives credit for "close enough" answers.
+          notes: `Now let's look at Partial Match Score - this is a much more forgiving approach. This one says: "if you got close to the right answer, we'll give you some credit!"
 
-For freshers: Remember how Exact Match was harsh? Partial Match says "if you got close to the right answer, we'll give you some credit!"
+Remember how harsh Exact Match was? Partial Match is the opposite. It acknowledges that sometimes "close enough" is actually good enough.
 
-How does it work?
-Uses IoU (Intersection over Union) to measure overlap between predicted and gold spans.
+So how does it work? It uses something called IoU - Intersection over Union - to measure overlap between your predicted span and the gold standard span.
 
-IoU calculation (step by step):
-1. Overlap tokens: How many words match between prediction and gold?
-2. Union tokens: Total unique words in both spans
-3. IoU = Overlap / Union
+Let me break down the IoU calculation step by step, because this is important.
 
-Real-world example:
-Gold entity: "Tim Cook" (2 tokens)
-Prediction: "Tim" (1 token)
+Step one: count the overlap tokens. How many words match between your prediction and the gold standard?
 
-Overlap = 1 token ("Tim")
-Union = 2 tokens ("Tim", "Cook")
-IoU = 1/2 = 0.5
+Step two: count the union tokens. That's the total number of unique words in both spans combined.
 
-If we set threshold τ=0.5 (common choice), this counts as a match! We also need the types to match (both PERSON).
+Step three: divide overlap by union. That's your IoU!
 
-Another example:
-Gold: "New York City" (3 tokens)
-Prediction: "York City" (2 tokens)
+Okay, let me show you with a real example. The gold entity is "Tim Cook" - that's two tokens. Your model predicts just "Tim" - that's one token.
 
-Overlap = 2 tokens ("York", "City")
-Union = 3 tokens ("New", "York", "City")
-IoU = 2/3 = 0.67 → Match! (if τ ≤ 0.67)
+So, overlap equals one token, the word "Tim." Union equals two tokens - "Tim" and "Cook." IoU equals one divided by two, which is point five, or fifty percent.
 
-When to use Partial Match:
-- Noisy boundaries: When your training data has inconsistent annotation boundaries
-- Weak supervision: When annotations might not be perfect
-- Fair comparison: Reduces penalty for boundary disagreements
-- Focus on detection: When finding the entity matters more than exact boundaries
+Now, if we set our threshold tau at point five - which is the most common choice - this counts as a match! We also need the types to match, so both need to be labeled as PERSON.
 
-Key insight: Partial Match acknowledges that boundary detection is hard and sometimes subjective. It's more practical for real-world scenarios!`
+Let me give you another example. Gold standard: "New York City" - three tokens. Your prediction: "York City" - two tokens.
+
+Overlap: two tokens, "York" and "City." Union: three tokens - "New," "York," "City." IoU equals two divided by three, which is point six seven. If your threshold tau is point five or lower, that's a match!
+
+So when should you use Partial Match? When your training data has noisy boundaries - inconsistent annotations. When you're using weak supervision and annotations might not be perfect. When you want fair comparison between models, reducing the penalty for boundary disagreements. When finding the entity matters more than getting exact boundaries.
+
+Here's the key insight: Partial Match acknowledges that boundary detection is hard and sometimes subjective. It's more practical for real-world scenarios where perfect boundaries might not even be clearly defined!`
         },
         {
           id: 13,
@@ -583,38 +561,33 @@ Key insight: Partial Match acknowledges that boundary detection is hard and some
             </div>
           `,
           backgroundColor: '#16A085',
-          notes: `Partial Match is more forgiving, but this flexibility comes with trade-offs. Let's explore both sides.
+          notes: `Partial Match is more forgiving and flexible, but that flexibility comes with its own trade-offs. Let's explore both sides.
 
-For freshers: More flexible metrics are easier to achieve but harder to standardize across different projects.
+First, let's talk about the advantages - the pros.
 
-PROS (Advantages):
-1. Rewards close spans: Getting "New York" instead of "New York City" isn't a complete failure
-2. More stable with annotation noise: If different annotators have different boundary preferences, Partial Match is more robust
-3. Tunable strictness: You can adjust τ threshold:
-   - τ=1.0: Requires exact match (strictest)
-   - τ=0.5: Requires 50% overlap (common)
-   - τ=0.3: Very forgiving (rarely used)
-4. Reflects practical use: In many applications, "approximately right" is good enough
+Number one: it rewards close spans. Getting "New York" instead of "New York City"? That's not treated as a complete failure anymore. You get some credit!
 
-Real scenario where this helps:
-Extracting company names from news. Getting "Apple Inc" vs "Apple" both point to the same entity. Partial Match with τ=0.5 would credit both, while Exact Match would fail.
+Number two: it's more stable with annotation noise. If different annotators have different preferences for boundaries - which happens all the time in real projects - Partial Match is more robust. It doesn't penalize these inconsistencies as harshly.
 
-CONS (Limitations):
-1. Not standardized: Different papers use different τ values and matching algorithms - hard to compare!
-2. Can mask real problems: If your model consistently makes the same boundary error, Partial Match might hide it
-3. Less comparable: Results depend heavily on your choice of τ
-4. Potential for confusion: Need to clearly document your settings
+Number three: tunable strictness. You can adjust your tau threshold to fit your needs. Tau equals one point zero? That's exact match, super strict. Tau equals point five? That's the common middle ground, requires fifty percent overlap. Tau equals point three? Very forgiving. You have control!
 
-Common pitfalls:
-- Using τ=0.3 in development but τ=0.7 in production → Scores aren't comparable!
-- Not documenting which matching algorithm you used
-- Comparing your results to papers that used different τ values
+Number four: it reflects practical use. In many real applications, "approximately right" is actually good enough to be useful.
 
-Best practice: 
-- Report both Exact Match AND Partial Match
-- Clearly state your τ threshold
-- Use standard values (0.5 is most common) for comparability
-- Consider your application needs when choosing τ`
+Let me give you a scenario where this really helps. You're extracting company names from news articles. Sometimes you get "Apple Inc" and sometimes you get "Apple." Both clearly refer to the same entity, right? Partial Match with tau point five would credit both, while Exact Match would fail one of them.
+
+But now, the cons - the limitations you need to be aware of.
+
+First major issue: it's not standardized. Different research papers use different tau values, different matching algorithms. This makes comparison really hard!
+
+Second problem: it can mask real problems. If your model consistently makes the same boundary error - maybe it always misses the last word - Partial Match might hide this systematic issue.
+
+Third: less comparable across studies. Your results depend heavily on your choice of tau. A paper using tau point three versus tau point seven? Those results aren't comparable!
+
+Fourth: potential for confusion. You need to clearly document all your settings, or people won't know how to interpret your numbers.
+
+Let me warn you about common pitfalls. Using tau equals point three during development but tau equals point seven in production? Now your scores aren't comparable! Not documenting which matching algorithm you used? That's a problem! Comparing your results to papers that used different tau values? That's misleading!
+
+So here's the best practice: report both Exact Match and Partial Match. Clearly state your tau threshold - write it down, document it. Use standard values, point five is most common, for comparability with other work. And consider your application needs when choosing tau. Don't just pick a number randomly!`
         }
       ]
     },
@@ -644,39 +617,27 @@ Best practice:
             </div>
           ),
           backgroundColor: '#3498DB',
-          notes: `Entity-Level Accuracy - this metric isolates one specific skill: classification!
+          notes: `Now let's talk about Entity-Level Accuracy. This metric isolates one very specific skill: classification!
 
-For freshers: Imagine you're given a list of entities with their boundaries already marked, and you just need to label them correctly. That's what this metric measures!
+So here's the idea. Imagine someone gives you a list of entities with their boundaries already marked. Your only job? Label them correctly. That's what this metric measures!
 
-What makes it different?
-All other metrics combine two tasks:
-1. Finding the entity (detection/span identification)
-2. Labeling it correctly (classification)
+Here's what makes it different from everything else we've talked about. All the other metrics combine two tasks: number one, finding the entity - that's detection or span identification. And number two, labeling it correctly - that's classification.
 
-Entity-Level Accuracy ONLY measures #2 by using gold (correct) spans!
+Entity-Level Accuracy only measures task number two. It uses gold spans - the correct boundaries are given to you.
 
-Real-world example:
-Text: "Apple CEO Tim Cook announced..."
-Gold spans provided: ["Apple", "Tim Cook"]
+Let me walk you through an example. Here's our text: "Apple CEO Tim Cook announced something..."
 
-Your job: Just label them!
-Your prediction: Apple→ORG ✓, Tim Cook→PERSON ✓
-Accuracy = 2/2 = 100%
+Now, the gold spans are provided to you. They tell you: okay, "Apple" is one entity, and "Tim Cook" is another entity. Your job is just to label them!
 
-Another scenario:
-Gold spans: ["Apple", "Tim Cook", "iPhone"]
-Your prediction: Apple→ORG ✓, Tim Cook→ORG ✗, iPhone→PRODUCT ✓
-Accuracy = 2/3 = 67%
+Your prediction: Apple is an organization. Correct! Tim Cook is a person. Correct! Accuracy equals two out of two, which is one hundred percent!
 
-Notice: We don't care if you would have FOUND these spans on your own - that's already given!
+Another scenario. Gold spans: "Apple," "Tim Cook," and "iPhone." Your prediction: Apple is an organization - correct! Tim Cook is an organization - wrong! Should be person. iPhone is a product - correct! Accuracy equals two out of three, which is sixty-seven percent.
 
-When to use Entity-Level Accuracy:
-- Pipeline analysis: Isolate your classifier's performance from your span detector
-- Diagnosing label confusions: Is your model mixing up ORG vs PERSON?
-- Ablation studies: Testing different classification approaches
-- Component-level debugging: Which part of your model needs improvement?
+Notice something important here: we don't care whether you would have found these spans on your own. That's already given to you! We're only measuring classification.
 
-Key insight: This is a DIAGNOSTIC metric. It helps you understand if your classification component is working well, separate from span detection. Very useful during development!`
+So when do you use Entity-Level Accuracy? For pipeline analysis - isolating your classifier's performance from your span detector. For diagnosing label confusions - is your model mixing up organization versus person? For ablation studies - testing different classification approaches. For component-level debugging - which part of your model needs improvement?
+
+Here's the key insight: this is a diagnostic metric. It helps you understand if your classification component is working well, separate from span detection. It's incredibly useful during development when you're trying to figure out where the problems are!`
         },
         {
           id: 15,
@@ -699,33 +660,37 @@ Key insight: This is a DIAGNOSTIC metric. It helps you understand if your classi
             </div>
           `,
           backgroundColor: '#2980B9',
-          notes: `Entity-Level Accuracy is a great diagnostic tool, but it has important limitations. Let's understand when it's useful and when it's misleading.
+          notes: `Entity-Level Accuracy is a great diagnostic tool, but it has important limitations. Let's understand when it's useful and when it might mislead you.
 
-For freshers: This metric is like testing one component of a car engine in isolation - useful for debugging but doesn't tell you if the whole car runs well!
+First, let's talk about its diagnostic power - the pros.
 
-PROS (Diagnostic power):
-1. Clear diagnostic: Tells you EXACTLY how good your classifier is at labeling
-2. Unaffected by detection errors: You can evaluate classification quality even if span detection is poor
-3. Interpretable: Easy to understand - "X% of entities are labeled correctly"
-4. Useful for pipelines: If you're building a two-stage system (detect, then classify), this measures stage 2
+Number one: it's a clear diagnostic. It tells you exactly how good your classifier is at labeling. No ambiguity.
 
-Example where this helps:
-Your end-to-end F1 is only 40%. Is it because you're missing entities or mislabeling them?
-- If Entity-Level Accuracy is 90%, problem is detection (not finding entities)
-- If Entity-Level Accuracy is 45%, problem is classification (mislabeling found entities)
+Number two: it's unaffected by detection errors. You can evaluate classification quality even if your span detection is terrible. That's powerful for debugging!
 
-CONS (Can be misleading):
-1. Not end-to-end: Doesn't reflect real-world performance where you must both detect AND classify
-2. Overstates performance: Model might get 95% accuracy on given spans but only 60% F1 end-to-end
-3. Affected by class imbalance: If 90% of your entities are PERSON, you could get 90% accuracy by always predicting PERSON!
-4. Ignores the hard part: In practice, finding the right spans is often harder than labeling them
+Number three: it's interpretable. Super easy to understand. "X percent of entities are labeled correctly." Anyone can grasp that.
 
-Real scenario:
-Your model has 95% Entity-Level Accuracy but only 45% F1 Score. What does this mean?
+Number four: it's useful for pipelines. If you're building a two-stage system - first detect, then classify - this measures stage two in isolation.
 
-Answer: Your classifier is excellent! But your span detector is terrible - you're missing most entities or getting wrong boundaries. Without Entity-Level Accuracy, you wouldn't know this!
+Let me give you an example where this really helps. Say your end-to-end F1 is only forty percent. That's bad, but why? Is it because you're missing entities, or because you're mislabeling them?
 
-Best practice: Use Entity-Level Accuracy alongside F1/Precision/Recall for complete picture. It's a diagnostic tool, not a replacement for end-to-end metrics!`
+Well, check Entity-Level Accuracy. If it's ninety percent, the problem is detection. You're not finding the entities. But if Entity-Level Accuracy is also forty-five percent, the problem is classification. You're finding entities but mislabeling them! See how diagnostic that is?
+
+Now let's talk about the cons - why this metric can be misleading.
+
+First issue: it's not end-to-end. It doesn't reflect real-world performance where you must both detect and classify entities.
+
+Second: it can overstate performance. Your model might get ninety-five percent accuracy on given spans, but only sixty percent F1 end-to-end. That's a huge gap!
+
+Third: it's affected by class imbalance. If ninety percent of your entities are labeled PERSON, you could get ninety percent accuracy by always predicting PERSON! That's not a good model, but the accuracy looks great!
+
+Fourth: it ignores the hard part. In practice, finding the right spans is often much harder than labeling them once you've found them.
+
+Let me give you a real scenario. Your model has ninety-five percent Entity-Level Accuracy but only forty-five percent F1 Score. What does this tell you?
+
+It means your classifier is excellent! Really good at labeling. But your span detector is terrible. You're missing most entities or getting wrong boundaries. Without Entity-Level Accuracy, you wouldn't know this! You might waste time trying to improve your classifier when the real problem is your detector.
+
+So here's the best practice: use Entity-Level Accuracy alongside F1, precision, and recall for the complete picture. It's a diagnostic tool, not a replacement for end-to-end metrics. Use it to understand where your problems are, then use the other metrics to measure overall performance!`
         }
       ]
     },
@@ -759,48 +724,31 @@ Best practice: Use Entity-Level Accuracy alongside F1/Precision/Recall for compl
             </div>
           ),
           backgroundColor: '#E67E22',
-          notes: `Confusion Matrix Analysis - the ultimate diagnostic tool! This shows you EXACTLY where your model gets confused.
+          notes: `Now we come to the Confusion Matrix Analysis - and this is the ultimate diagnostic tool! This shows you exactly where your model gets confused.
 
-For freshers: A confusion matrix is like a detailed report card showing which mistakes your model makes most often.
+So think of a confusion matrix as a detailed report card. It shows you which specific mistakes your model makes most often.
 
-How to read it:
-- Rows: True/Gold labels (what it should be)
-- Columns: Predicted labels (what your model said)
-- Diagonal cells: Correct predictions (good!)
-- Off-diagonal cells: Mistakes (need attention!)
+How do you read it? Let me explain. Rows represent the true labels, the gold standard - what it should be. Columns represent the predicted labels - what your model actually said. The diagonal cells? Those are correct predictions. That's the good stuff! The off-diagonal cells? Those are mistakes. That's where you need to focus your attention.
 
-Example confusion matrix:
-                Predicted
-              PERSON  ORG  LOC
-True PERSON     120    5    2   ← 5 persons mislabeled as ORG!
-     ORG         8    95    3   ← 8 orgs mislabeled as PERSON!
-     LOC         1    2   108   ← Pretty good at LOC!
+Let me show you an example confusion matrix. Across the top we have predicted labels: PERSON, ORG, LOC. Down the side we have the true labels: PERSON, ORG, LOC.
 
-What this tells us:
-1. PERSON recognition is good (120 correct out of 127)
-2. But we confuse PERSON ↔ ORG sometimes (13 mistakes between them)
-3. LOC is most accurate (108/111 correct)
+True PERSON row: one hundred twenty predicted as PERSON - correct! Five predicted as ORG - that's an error! Two predicted as LOC - another error! So we're mislabeling five persons as organizations.
 
-Advanced insights:
-- Margins show Missed (FN) and Spurious (FP) counts
-- Row normalization gives per-class recall
-- Column normalization gives per-class precision
+True ORG row: eight predicted as PERSON, ninety-five predicted as ORG correctly, three predicted as LOC. So we're mislabeling eight organizations as persons!
 
-When to use Confusion Matrix:
-- Diagnosing specific confusions: "Why do I mix up ORG and PRODUCT?"
-- Guiding data collection: If GPE (geopolitical entity) is confused, collect more GPE training examples
-- Schema refinement: Maybe ORG and INSTITUTION are too similar - consider merging them
-- Understanding rare class behavior: See if minority classes are being ignored
+True LOC row: one predicted as PERSON, two predicted as ORG, one hundred eight predicted correctly as LOC. Pretty good at locations!
 
-Real diagnostic session:
-Your F1 is 70%, but confusion matrix shows:
-- PERSON, ORG, LOC: 90%+ F1 each
-- DISEASE, DRUG: 20% F1 each
-- Most DISEASE/DRUG are labeled as "O" (not an entity)
+So what does this tell us? First, PERSON recognition is good - one hundred twenty correct out of one hundred twenty-seven total. Second, we're confusing PERSON and ORG sometimes - thirteen mistakes between them. Third, LOC is our most accurate category - one hundred eight out of one hundred eleven correct.
 
-Action: Need more training data for medical entities!
+Now, more advanced insights. The margins can show missed entities - false negatives - and spurious predictions - false positives. Row normalization gives you per-class recall. Column normalization gives you per-class precision.
 
-Key insight: Confusion matrices don't give you a single score but provide actionable insights for improvement!`
+When should you use Confusion Matrix? For diagnosing specific confusions - "why do I mix up ORG and PRODUCT?" For guiding data collection - if GPE is confused with LOC, collect more GPE training examples. For schema refinement - maybe ORG and INSTITUTION are too similar, consider merging them. For understanding rare class behavior - see if minority classes are being ignored by your model.
+
+Let me walk you through a real diagnostic session. Your F1 is seventy percent. But the confusion matrix reveals something interesting. PERSON, ORG, and LOC each have over ninety percent F1. But DISEASE and DRUG? Only twenty percent F1 each! And most DISEASE and DRUG entities are being labeled as "O" - not an entity at all!
+
+What's the action? You need more training data for medical entities! The confusion matrix told you exactly where the problem is.
+
+Here's the key insight: confusion matrices don't give you a single score to brag about, but they provide actionable insights for improvement. They tell you what to fix and how to fix it!`
         },
         {
           id: 17,
@@ -823,44 +771,37 @@ Key insight: Confusion matrices don't give you a single score but provide action
             </div>
           `,
           backgroundColor: '#D35400',
-          notes: `Confusion matrices are incredibly valuable for debugging, but they have limitations too. Let's understand when they shine and when they fall short.
+          notes: `Confusion matrices are incredibly valuable for debugging, but they have their limitations too. Let's understand when they shine and when they fall short.
 
-For freshers: Think of confusion matrix as a detailed medical test - gives lots of info but requires expertise to interpret!
+First, let's talk about their diagnostic superpowers - the pros.
 
-PROS (Diagnostic superpowers):
-1. Highly diagnostic: Shows EXACTLY which entity types are confused with each other
-2. Reveals minority-class issues: Hidden problems with rare entities become visible
-   Example: Overall F1=80% looks good, but confusion matrix shows CHEMICAL entities are 0% - completely missed!
-3. Supports targeted improvements: 
-   - See ORG vs PRODUCT confusion? → Collect more distinctive examples
-   - See everything labeled as "O"? → Model is too conservative, adjust thresholds
-4. Guides schema design: If two classes are constantly confused, maybe they're too similar and should be merged
+Number one: highly diagnostic. This shows you exactly which entity types get confused with each other. No guessing, you see the actual confusion patterns!
 
-Real debugging story:
-Team had 75% F1, couldn't improve. Confusion matrix revealed:
-- 40% of FACILITY entities labeled as LOC
-- These were things like "Boston General Hospital" - is it a place or facility?
+Number two: reveals minority-class issues. Problems with rare entities that are hidden in overall metrics? They become visible in the confusion matrix!
 
-Solution: Refined annotation guidelines to be clearer about FACILITY vs LOC distinction. F1 jumped to 82%!
+Let me give you an example. Overall F1 of eighty percent looks pretty good, right? But the confusion matrix shows CHEMICAL entities are at zero percent - completely missed! Without the matrix, you wouldn't see this!
 
-CONS (Limitations):
-1. Not a single-number metric: Can't easily say "Model A is better than Model B" with confusion matrices
-2. Hard to compare: Each model has its own confusion pattern - which is "better" depends on your priorities
-3. Requires sufficient data: Need enough examples of each class for patterns to be meaningful
-   If you only have 5 examples of DISEASE, confusion matrix won't be reliable for that class
-4. Depends on matching rule: Results differ between strict vs partial matching
+Number three: supports targeted improvements. You see ORG versus PRODUCT confusion? Go collect more distinctive examples. You see everything labeled as "O"? Your model is too conservative - adjust those thresholds!
 
-Additional considerations:
-- Large matrices (many entity types) become hard to visualize and interpret
-- Need to decide: per-document, per-entity, or aggregated across dataset?
-- Should you include the "O" (Outside) class? Usually no, but sometimes insightful
+Number four: guides schema design. If two classes are constantly confused with each other, maybe they're too similar. Maybe they should be merged into one class!
 
-Best practice:
-- Use confusion matrix during development for debugging
-- Use F1/Precision/Recall for model comparison and leaderboards
-- Generate confusion matrices per-class and look for systematic errors
-- Visualize with heatmaps for easier interpretation
-- Focus on off-diagonal cells - those are your improvement opportunities!`
+Let me tell you a real debugging story. A team had seventy-five percent F1 and couldn't improve no matter what they tried. Then they looked at the confusion matrix. It revealed that forty percent of FACILITY entities were being labeled as LOC - locations! Things like "Boston General Hospital" - is that a place or a facility? The confusion matrix showed the pattern.
+
+Their solution? They refined their annotation guidelines to be much clearer about FACILITY versus LOC distinction. After that, their F1 jumped to eighty-two percent! The confusion matrix showed them exactly what to fix.
+
+Now let's talk about the limitations - the cons.
+
+First: it's not a single-number metric. You can't easily say "Model A is better than Model B" using confusion matrices. They're complex to compare.
+
+Second: each model has its own confusion pattern. Which pattern is "better"? Well, that depends entirely on your priorities and your application.
+
+Third: it requires sufficient data. You need enough examples of each class for the patterns to be meaningful and statistically reliable. If you only have five examples of DISEASE, the confusion matrix won't be reliable for that class.
+
+Fourth: it depends on your matching rule. The results differ significantly between strict matching and partial matching.
+
+Some additional considerations to keep in mind. Large matrices with many entity types become really hard to visualize and interpret. You need to decide: are you analyzing per-document, per-entity, or aggregated across your entire dataset? Should you include the "O" class - the outside class? Usually no, but sometimes it gives you insights.
+
+So here's the best practice. Use confusion matrices during development for debugging. They're invaluable for understanding what's wrong. Use F1, precision, and recall for model comparison and leaderboards - those single numbers are easier to compare. Generate per-class confusion matrices and look for systematic errors - those patterns tell you what to fix. Visualize them with heatmaps for easier interpretation - color coding makes patterns jump out. And focus on those off-diagonal cells - those are your improvement opportunities! That's where the action items are!`
         }
       ]
     },
@@ -884,43 +825,29 @@ Best practice:
             </div>
           ),
           backgroundColor: '#27AE60',
-          notes: `Now let's put it all together! Here's your practical guide for choosing and using these metrics.
+          notes: `Alright, let's put everything together! After learning all seven metrics, you might be wondering: which ones should I actually use in my projects? Let me give you a practical guide.
 
-For freshers: After learning 7 different metrics, you might wonder "Which ones should I actually use?" Here's the answer!
+For standard reporting - and you should do this for every single project - start with micro-averaged Precision, Recall, and F1 with exact matching. Why? Because it's the industry standard. It's what everyone uses. Your results will be comparable across research papers and other projects. This gives you one number per metric across all entity types.
 
-Standard reporting (do this for every project):
-1. Micro-averaged Precision, Recall, F1 with exact matching
-   - Why: Industry standard, comparable across papers
-   - Reports one number per metric across all entity types
-   
-2. Add Partial-F1 with IoU (τ=0.5) when:
-   - Your data has noisy/inconsistent boundaries
-   - You're working with long entity spans
-   - Boundary precision isn't critical for your application
+Now, when should you add Partial-F1 with IoU? When your data has noisy or inconsistent boundaries. When you're working with long entity spans. When boundary precision isn't critical for your application. In these cases, set tau to point five - that's the standard.
 
-3. Track Exact Match (sentence-level) for:
-   - Production readiness assessment
-   - Understanding end-to-end reliability
-   - Setting quality gates before deployment
+Next, track Exact Match at the sentence level. When? For production readiness assessment. For understanding end-to-end reliability. For setting quality gates before you deploy to production. This tells you: what percentage of sentences am I getting completely perfect?
 
-4. Use Entity-Level Accuracy (on gold spans) for:
-   - Debugging classification vs detection issues
-   - Pipeline analysis in multi-stage systems
-   - Isolating component performance
+Use Entity-Level Accuracy on gold spans for debugging. When you need to separate classification issues from detection issues. For pipeline analysis in multi-stage systems. For isolating component performance. This is your diagnostic tool!
 
-5. Generate confusion matrices for:
-   - Development/debugging phase
-   - Understanding systematic errors
-   - Guiding data collection priorities
-   - Refining annotation schemas
+And generate confusion matrices during development and debugging. For understanding systematic errors. For guiding your data collection priorities. For refining your annotation schemas. This shows you exactly where to focus your improvement efforts!
 
-Real-world workflow:
-Week 1: Check F1/Precision/Recall - is the model learning?
-Week 2: Add confusion matrix - where is it failing?
-Week 3: Use Entity-Level Accuracy - is it detection or classification?
-Week 4: Track Exact Match - ready for production?
+Let me walk you through a real-world workflow, week by week.
 
-Remember: Metrics are tools for understanding, not just numbers to optimize!`
+Week one: Check F1, precision, and recall. Basic question: is the model even learning? Are the numbers improving?
+
+Week two: Add the confusion matrix. Now you're asking: where exactly is it failing? What patterns do I see?
+
+Week three: Use Entity-Level Accuracy. Is the problem detection or classification? Where should I focus my efforts?
+
+Week four: Track Exact Match. Final question: is this ready for production? What's my sentence-level accuracy?
+
+And remember this crucial point: metrics are tools for understanding your model. They're not just numbers to optimize blindly. Use them to gain insights, to guide your decisions, to understand what's working and what isn't. That's the real value!`
         },
         {
           id: 19,
@@ -945,51 +872,29 @@ Remember: Metrics are tools for understanding, not just numbers to optimize!`
             </div>
           ),
           backgroundColor: '#8E44AD',
-          notes: `Critical best practices - these are lessons learned from real projects. Following these will save you from common pitfalls!
+          notes: `Now let me share some critical best practices with you. These are lessons learned from real projects, from years of industry experience. Following these will save you from so many common pitfalls!
 
-For freshers: These "do's and don'ts" come from years of industry experience. Learn from others' mistakes!
+Let's start with the do's - what you should always do.
 
-✅ DO'S (Follow these always):
+First: Define your evaluation settings clearly. You must document your matching rule. Is it exact or partial? If it's partial, what's your tau value? Document your averaging method. Is it micro or macro? Remember, micro treats all entities equally, macro treats all classes equally. Document your evaluation scope. Is it sentence-level or document-level?
 
-1. Define your evaluation settings clearly:
-   - Matching rule: Exact or partial? If partial, what τ?
-   - Averaging: Micro or macro? (Micro treats all entities equally, macro treats all classes equally)
-   - Evaluation scope: Sentence-level or document-level?
-   Example: "We report micro-F1 with strict exact matching at entity level"
+For example, you might write: "We report micro-F1 with strict exact matching at entity level." That's clear, that's unambiguous. Anyone reading your work knows exactly what you did.
 
-2. Report per-class metrics for imbalanced datasets:
-   Why: Micro-F1 of 85% might hide that rare classes have 20% F1
-   Do: Show a table with precision/recall/F1 for each entity type
-   This reveals if your model is just memorizing common classes!
+Second: Report per-class metrics for imbalanced datasets. This is crucial! Why? Because micro-F1 of eighty-five percent might hide the fact that rare classes have only twenty percent F1. Show a table with precision, recall, and F1 for each entity type. This reveals if your model is just memorizing the common classes and ignoring the rare ones!
 
-3. Document everything:
-   - Which evaluation script/library?
-   - How do you handle partial overlaps?
-   - What about nested entities?
+Third: Document everything. Which evaluation script or library did you use? How do you handle partial overlaps? What about nested entities - entities within entities? Write it all down. Future you will thank present you!
 
-❌ DON'TS (Avoid these mistakes):
+Now let's talk about the don'ts - mistakes you must avoid.
 
-1. Don't rely on token accuracy:
-   Bad metric: "97% token accuracy"
-   Why bad: Most tokens are "O" (not entities), so this is inflated!
-   Example: 1000 tokens, 50 are entities. Get all non-entities right = 95% accuracy even if you found ZERO entities!
+First: Don't rely on token accuracy. This is a terrible metric for NER! Let me show you why. Say you have one thousand tokens and fifty are entities. If you get all the non-entities right but miss every single entity, you still get ninety-five percent accuracy! You found zero entities but the metric looks great. That's completely misleading!
 
-2. Don't use overall accuracy including O tokens:
-   This tells you almost nothing about NER performance
-   It's like measuring a spam detector's accuracy when 99.9% of emails aren't spam
+Second: Don't use overall accuracy including "O" tokens. The "O" means "outside" - not an entity. Most words in any text aren't entities! So this metric tells you almost nothing about NER performance. It's like measuring a spam detector's accuracy when ninety-nine point nine percent of emails aren't spam. The numbers are meaningless!
 
-3. Don't compare results without aligned settings:
-   Paper A: Partial match, τ=0.3, macro-F1
-   Paper B: Exact match, micro-F1
-   These numbers are NOT comparable!
+Third: Don't compare results without aligned settings. If Paper A uses partial match with tau point three and macro-F1, and Paper B uses exact match with micro-F1, those numbers are not comparable! You can't say one model is better than another when you're measuring completely different things!
 
-Real horror story:
-Team reported 95% accuracy to management. Turned out it was token-level accuracy including O tokens. Actual entity F1 was 40%. Project almost got canceled when reality hit!
+Let me tell you a horror story. A team reported ninety-five percent accuracy to their management. Everyone was excited! Turned out, it was token-level accuracy including O tokens. The actual entity F1? Forty percent! When reality hit during deployment, the project almost got canceled. Don't let this happen to you!
 
-Pro tips:
-- Use established evaluation libraries (seqeval, nereval)
-- Write unit tests for your evaluation code
-- Always sanity-check: Do the numbers make intuitive sense?`
+So here are my pro tips. Use established evaluation libraries like seqeval or nereval. Don't reinvent the wheel. Write unit tests for your evaluation code. Bugs in evaluation are silent killers! And always sanity-check your numbers. Do they make intuitive sense? If something looks too good to be true, investigate. There might be a bug or a misunderstanding. Trust your instincts!`
         },
         {
           id: 20,
@@ -1012,54 +917,29 @@ Pro tips:
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `Congratulations! You've learned all 7 metrics. Now let's turn this knowledge into action!
+          notes: `Congratulations everyone! You've learned all seven metrics. That's a huge accomplishment! But learning is just the first step. Now we need to turn this knowledge into action. Let me give you a clear action plan.
 
-For freshers: Learning is just the first step - now you need to apply this in your projects. Here's your action plan:
+Action item number one: Set evaluation config in code. Create a config file or constants for your evaluation settings. Define MATCHING_TYPE - is it "exact" or "partial"? If partial, set IOU_THRESHOLD - commonly point five. Set your AVERAGING method - "micro" or "macro." List your METRICS - precision, recall, F1, exact match, whatever you're using.
 
-1. Set evaluation config in code:
-   Create a config file or constants for your evaluation settings:
-   - MATCHING_TYPE = "exact" or "partial"
-   - IOU_THRESHOLD = 0.5
-   - AVERAGING = "micro"
-   - METRICS = ["precision", "recall", "f1", "exact_match"]
-   
-   Why: Ensures consistency across experiments and makes results reproducible
+Why is this important? It ensures consistency across all your experiments. It makes your results reproducible. When you come back to this project in six months, you'll know exactly what settings you used. When a colleague wants to reproduce your work, they can!
 
-2. Add unit tests for span matching:
-   Test cases should cover:
-   - Exact matches (should count as TP)
-   - Partial overlaps (should be TP or FP depending on τ)
-   - Wrong types (should be FP)
-   - Missed entities (should be FN)
-   
-   Why: Evaluation bugs are silent killers - you'll think your model is improving when it's not!
+Action item number two: Add unit tests for span matching. Your test cases should cover multiple scenarios. Exact matches that should count as true positives. Partial overlaps that should be true positive or false positive depending on your tau threshold. Wrong types that should be false positives. Missed entities that should be false negatives.
 
-3. Automate per-class reports:
-   Script that generates:
-   - Overall micro-F1
-   - Per-class precision/recall/F1 table
-   - Confusion matrix visualization
-   - Examples of errors for each class
-   
-   Why: Manual analysis doesn't scale and you'll miss important patterns
+Why unit tests? Because evaluation bugs are silent killers! You'll think your model is improving when it's actually not. Or worse, you'll think it's getting worse when it's actually improving. Bad evaluation code has destroyed more projects than I can count. Don't let it happen to you!
 
-4. Include evaluation metrics in model documentation:
-   Every model card should have:
-   - All metrics with clear definitions
-   - Per-class breakdown
-   - Known limitations
-   - Evaluation dataset details
-   
-   Why: Future you (and your teammates) need to understand model performance
+Action item number three: Automate per-class reports. Write a script that generates several things automatically. Overall micro-F1 for quick reference. A per-class table showing precision, recall, and F1 for every entity type. A confusion matrix visualization so you can see patterns at a glance. And examples of errors for each class so you understand what's going wrong!
 
-Next steps for learning:
-- Practice implementing these metrics on sample datasets
-- Read papers and understand which metrics they use and why
-- Build a portfolio project showcasing proper NER evaluation
+Why automate? Manual analysis doesn't scale. When you're running fifty experiments, you can't manually analyze each one. You'll miss important patterns. Automation catches everything!
 
-Thank you for your attention! Questions?
+Action item number four: Include evaluation metrics in model documentation. Every model card, every model description should have several things. All your metrics with clear definitions - no ambiguity! Per-class breakdown - don't hide behind overall numbers! Known limitations - be honest about where the model struggles! Evaluation dataset details - what data did you test on? This is crucial for reproducibility!
 
-Remember: Good evaluation is the foundation of good machine learning. Master this and you're ahead of 80% of beginners!`
+Why document? Because future you needs to understand model performance. Your teammates need to know what to expect. Your users or clients need realistic expectations. Good documentation prevents so many problems down the line!
+
+Now, for your next steps in learning. Practice implementing these metrics on sample datasets. Get your hands dirty! Read research papers and understand which metrics they use and why. Notice the patterns. Build a portfolio project showcasing proper NER evaluation. Show employers you know this stuff!
+
+Thank you all so much for your attention! I hope this was helpful. Do you have any questions? I'm happy to clarify anything!
+
+And remember this final point: Good evaluation is the foundation of good machine learning. Master evaluation, and you're already ahead of eighty percent of beginners. This knowledge will serve you throughout your entire career! Good luck with your projects!`
         }
       ]
     }
