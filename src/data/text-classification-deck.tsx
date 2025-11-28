@@ -24,9 +24,6 @@ export const textClassificationDeck: Deck = {
             <SvgIcon iconName="duo-tags" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             TEXT CLASSIFICATION
           </div>
-          <div style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#98c379' }}>
-            11 Text Classification Approaches
-          </div>
           <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
             A Comprehensive Cheat Sheet: From Rules to LLMs
           </div>
@@ -102,7 +99,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-brackets-square" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Deterministic rule engine (regex, patterns, domain-specific logic)</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Deterministic rule engine (regex, patterns, domain-specific logic)</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -129,7 +126,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Fully interpretable</li>
@@ -139,7 +136,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Brittle to language variation</li>
@@ -177,7 +174,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-magnifying-glass" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Heuristic scoring on keyword/phrase presence (with synonyms/stemming)</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Heuristic scoring on keyword/phrase presence (with synonyms/stemming)</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -204,7 +201,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Fast</li>
@@ -214,7 +211,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Misses paraphrases</li>
@@ -252,7 +249,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-chart-line" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Linear classifier on sparse counts/ngrams</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Linear classifier on sparse counts/ngrams</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -279,7 +276,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Strong baseline</li>
@@ -289,7 +286,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Ignores word order/long context</li>
@@ -327,7 +324,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-shield-check" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Linear SVM (e.g., LinearSVC) on TF-IDF features</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Linear SVM (e.g., LinearSVC) on TF-IDF features</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -354,7 +351,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Often top traditional performer</li>
@@ -364,7 +361,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Probabilities need calibration</li>
@@ -401,7 +398,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
             <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Multinomial/Bernoulli NB on counts or TF-IDF</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Multinomial/Bernoulli NB on counts or TF-IDF</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -428,7 +425,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Extremely fast</li>
@@ -438,7 +435,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Independence assumption</li>
@@ -474,7 +471,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
             <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Ensemble of decision trees on sparse or reduced features</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Ensemble of decision trees on sparse or reduced features</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -501,7 +498,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Nonlinear boundaries</li>
@@ -511,7 +508,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Less effective on very high-dimensional sparse BOW</li>
@@ -547,7 +544,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>1D Convolution over token/char embeddings + pooling</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: 1D Convolution over token/char embeddings + pooling</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -574,7 +571,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Fast inference</li>
@@ -584,7 +581,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Limited long-range dependency modeling</li>
@@ -620,7 +617,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Recurrent network (LSTM/GRU) over token sequences</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Recurrent network (LSTM/GRU) over token sequences</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -647,7 +644,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Models sequence and context</li>
@@ -656,7 +653,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Slower training</li>
@@ -693,7 +690,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
             <SvgIcon iconName="duo-eye" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>BiLSTM encoder + attention mechanism</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: BiLSTM encoder + attention mechanism</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -720,7 +717,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Highlights important spans</li>
@@ -729,7 +726,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Heavier than vanilla LSTM</li>
@@ -766,7 +763,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
             <SvgIcon iconName="duo-brain" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Pretrained Transformer (e.g., BERT/RoBERTa/DeBERTa) + classification head</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Pretrained Transformer (e.g., BERT/RoBERTa/DeBERTa) + classification head</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -793,7 +790,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>State-of-the-art</li>
@@ -803,7 +800,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Heavier compute</li>
@@ -843,7 +840,7 @@ export const textClassificationDeck: Deck = {
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
           <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
             <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Prompted LLM (zero-/few-shot) with or without function calling</strong>
+            <strong style={{ fontSize: '1.2rem' }}>Model Type: Prompted LLM (zero-/few-shot) with or without function calling</strong>
           </div>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
@@ -870,7 +867,7 @@ export const textClassificationDeck: Deck = {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784', marginBottom: '0.25rem' }} /> <strong>Strengths:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>No training</li>
@@ -881,7 +878,7 @@ export const textClassificationDeck: Deck = {
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
               <div style={{ marginBottom: '0.5rem' }}>
-                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d', marginBottom: '0.25rem' }} /> <strong>Limitations:</strong></p>
               </div>
               <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
                 <li>Variability</li>
