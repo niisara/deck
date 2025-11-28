@@ -44,7 +44,7 @@ export const nerApproachesDeck: Deck = {
                 </div>
                 <div style={{ padding: '10px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                  <div>LLM</div>
+                  <div>LLMs</div>
                 </div>
               </div>
               <p style={{ fontSize: '0.8em', marginTop: '40px', color: '#aaa' }}>
@@ -129,14 +129,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Deterministic rules, regexes, token patterns, heuristics.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Deterministic rules, regexes, token patterns, heuristics.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`regex: r"\\b[A-Z][a-z]+ [A-Z][a-z]+\\b"`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None to build; small annotated set recommended for validation.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> None to build; small annotated set recommended for validation.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Highly structured domains (dates, IDs, emails), compliance/extraction with strict formats, low-resource settings.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Highly structured domains (dates, IDs, emails), compliance/extraction with strict formats, low-resource settings.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -179,14 +188,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Lexicon/alias lookup with exact/fuzzy matching, optional normalization.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Lexicon/alias lookup with exact/fuzzy matching, optional normalization.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`entity_dict.get(text.lower(), None)`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None; requires curated dictionaries/gazetteers; optional frequency stats for ranking.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> None; requires curated dictionaries/gazetteers; optional frequency stats for ranking.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Products/catalogs, locations (GeoNames), biomedical ontologies, entity normalization tasks.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Products/catalogs, locations (GeoNames), biomedical ontologies, entity normalization tasks.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -227,14 +245,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Feature-based ML (TF-IDF/BoW, char n-grams, window features) + classifier (LogReg/SVM/Perceptron) at token/span level.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Feature-based ML (TF-IDF/BoW, char n-grams, window features) + classifier (LogReg/SVM/Perceptron) at token/span level.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`X = tfidf_vectorizer.transform(tokens); y_pred = classifier.predict(X)`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled tokens/spans (thousands–tens of thousands); optional pre-chunking.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Labeled tokens/spans (thousands–tens of thousands); optional pre-chunking.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Lightweight baselines, domains with strong lexical cues, constrained schemas.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Lightweight baselines, domains with strong lexical cues, constrained schemas.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -276,14 +303,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Generative sequence model with transition/emission probabilities; Viterbi decoding.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Generative sequence model with transition/emission probabilities; Viterbi decoding.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`P(tag_i|tag_{i-1}) × P(word_i|tag_i)`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences preferred; can leverage semi-supervised counts and lexicons.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Labeled sequences preferred; can leverage semi-supervised counts and lexicons.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Educational baseline, low-resource scenarios, when probabilistic interpretability is desired.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Educational baseline, low-resource scenarios, when probabilistic interpretability is desired.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -323,14 +359,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Discriminative sequence model over hand-crafted features; BIO/IOB tagging.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Discriminative sequence model over hand-crafted features; BIO/IOB tagging.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`CRF(features=[word.lower(), word[-3:], word.isupper(), prev_word, next_word])`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences (5k–100k sentences) + feature templates (orthographic, lexicon, context).</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Labeled sequences (5k–100k sentences) + feature templates (orthographic, lexicon, context).</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Strong non-neural baseline, small/medium data, domains with informative surface features.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Strong non-neural baseline, small/medium data, domains with informative surface features.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -371,14 +416,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Neural sequence tagger: embeddings + BiLSTM encoder + CRF decoder.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Neural sequence tagger: embeddings + BiLSTM encoder + CRF decoder.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`BiLSTM(embed) → CRF(tag_sequence)`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences (10k–100k sentences); benefits from pretrained word/subword embeddings.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Labeled sequences (10k–100k sentences); benefits from pretrained word/subword embeddings.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> General-purpose NER with moderate data; multilingual and domain setups without massive compute.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> General-purpose NER with moderate data; multilingual and domain setups without massive compute.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -420,14 +474,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Character-level CNN (or LSTM) for subword features + word embeddings + BiLSTM (+ CRF/softmax).</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Character-level CNN (or LSTM) for subword features + word embeddings + BiLSTM (+ CRF/softmax).</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`char_cnn + word_emb → BiLSTM → CRF/softmax`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled sequences (10k–100k); character and word vocabularies.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Labeled sequences (10k–100k); character and word vocabularies.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Morphologically rich languages, noisy text (typos, social media), OOV-heavy domains.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Morphologically rich languages, noisy text (typos, social media), OOV-heavy domains.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -469,14 +532,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Production-ready pipeline (transition-based CNN or transformer backends) with beam search; rule+ML integration.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Production-ready pipeline (transition-based CNN or transformer backends) with beam search; rule+ML integration.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`nlp = spacy.load("en_core_web_sm")`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None to use pretrained; domain customization with labeled examples; config-driven training in spaCy v3.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> None to use pretrained; domain customization with labeled examples; config-driven training in spaCy v3.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Rapid deployment, practical pipelines combining rules, gazetteers, and statistical NER.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Rapid deployment, practical pipelines combining rules, gazetteers, and statistical NER.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -519,14 +591,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Transformer encoder (BERT) with token classification head (softmax) ± CRF layer.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Transformer encoder (BERT) with token classification head (softmax) ± CRF layer.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`BertForTokenClassification(num_labels=9)`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Labeled BIO/IOB sequences (5k–50k sentences) leveraging large-scale pretraining.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Labeled BIO/IOB sequences (5k–50k sentences) leveraging large-scale pretraining.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> High-accuracy NER, domain adaptation via domain-specific BERT (e.g., BioBERT, FinBERT).</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> High-accuracy NER, domain adaptation via domain-specific BERT (e.g., BioBERT, FinBERT).</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -567,14 +648,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Transformer variants; RoBERTa (accuracy-optimized), DistilBERT (compressed for speed) with token classification.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Transformer variants; RoBERTa (accuracy-optimized), DistilBERT (compressed for speed) with token classification.</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`from transformers import AutoTokenizer, AutoModelForTokenClassification`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> Same as BERT; fine-tune on labeled NER data; distillation handled in pretraining of DistilBERT.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> Same as BERT; fine-tune on labeled NER data; distillation handled in pretraining of DistilBERT.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Balancing accuracy and latency; edge/real-time constraints; production cost optimization.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Balancing accuracy and latency; edge/real-time constraints; production cost optimization.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
@@ -617,14 +707,23 @@ export const nerApproachesDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px' }}>
-                  <p><strong>Model Type:</strong> Large instruction-tuned LMs prompted for extraction (zero-/few-shot) or lightly fine-tuned (PEFT/LoRA).</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Model Type:</strong> Large instruction-tuned LMs prompted for extraction (zero-/few-shot) or lightly fine-tuned (PEFT/LoRA).</p>
+                  </div>
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`prompt: "Extract person and organization names from this text: {text}"`}</pre>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-graduation-cap" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Training Data Needed:</strong> None for zero-shot; few-shot examples in prompt; optional small labeled set for prompt-tuning.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Training Data Needed:</strong> None for zero-shot; few-shot examples in prompt; optional small labeled set for prompt-tuning.</p>
+                  </div>
                 </div>
                 <div style={{ marginBottom: '15px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong> Rapid prototyping, new schemas, low-data domains, complex instructions, multilingual scenarios.</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                    <p><strong>Best Use Case:</strong> Rapid prototyping, new schemas, low-data domains, complex instructions, multilingual scenarios.</p>
+                  </div>
                 </div>
                 <div style={{ display: 'flex', gap: '20px', marginTop: '20px', fontSize: '0.85em' }}>
                   <div style={{ flex: 1 }}>
