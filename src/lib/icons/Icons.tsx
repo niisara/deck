@@ -78,6 +78,7 @@ export const icons: IconsMap = {
   "duo-arrow-left": "/icons/svg/duotone/arrow-left.svg",
   // Icons for UpcomingPlanChanges
   "duo-calendar-alt": "/icons/svg/duotone/calendar.svg",
+  "duo-cube": "/icons/svg/duotone/cube.svg",
   // Icons for UI components
   "duo-chevron-right": "/icons/svg/duotone/chevron-right.svg",
   "duo-chevron-left": "/icons/svg/duotone/chevron-left.svg",
@@ -107,6 +108,7 @@ export const icons: IconsMap = {
   "duo-face-smile": "/icons/svg/duotone/face-smile.svg",
   "duo-dumbbell": "/icons/svg/duotone/dumbbell.svg",
   "duo-trophy": "/icons/svg/duotone/trophy.svg",
+  "duo-split": "/icons/svg/duotone/split.svg",
   // PoseFeedback icons
   "duo-volume-high": "/icons/svg/duotone/volume-high.svg",
   "duo-volume-xmark": "/icons/svg/duotone/volume-xmark.svg",
@@ -353,6 +355,7 @@ export const icons: IconsMap = {
   "duo-tools": "/icons/svg/duotone/tools.svg",
   "duo-list": "/icons/svg/duotone/list.svg",
   "duo-folder-tree": "/icons/svg/duotone/folder-tree.svg",
+  "duo-folder-open": "/icons/svg/duotone/folder-open.svg",
   "duo-message": "/icons/svg/duotone/message.svg",
   "duo-cloud": "/icons/svg/duotone/cloud.svg",
   "duo-code-branch": "/icons/svg/duotone/code-branch.svg",
