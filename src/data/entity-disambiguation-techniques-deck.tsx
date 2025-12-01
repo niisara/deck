@@ -20,25 +20,21 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           title: '13 Entity Normalization & Disambiguation Techniques',
           content: (
             <div style={{ textAlign: 'left', padding: '2rem' }}>
-          <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#8be9fd' }}>
-            <SvgIcon iconName="duo-file-lines" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+          <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#8be9fd', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <SvgIcon iconName="duo-file-lines" sizeName="xl" darkModeInvert={true} />
             A practical cheat sheet for data scientists and NLP engineers
           </div>
-          <div style={{ fontSize: '1.2rem', color: '#f1fa8c', marginBottom: '2rem' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+          <div style={{ fontSize: '1.2rem', color: '#f1fa8c', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
             <strong>What you'll get:</strong>
           </div>
+          <ul>
+            <li>13 techniques with Goal, How It Works, When to Use, Steps, Pros, Cons</li>
+            <li>Selection tips and hybrid pipeline patterns</li>
+          </ul>
           <div style={{ fontSize: '1.1rem', color: '#f8f8f2', lineHeight: '2' }}>
-            <div style={{ marginBottom: '1rem' }}>
-              <SvgIcon iconName="duo-circle-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-              13 techniques with Goal, How It Works, When to Use, Steps, Pros, Cons
-            </div>
-            <div style={{ marginBottom: '1rem' }}>
-              <SvgIcon iconName="duo-chart-simple" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-              Selection tips and hybrid pipeline patterns
-            </div>
-            <div style={{ color: '#6272a4', fontSize: '1rem', marginTop: '2rem' }}>
-              <SvgIcon iconName="duo-calendar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ fontSize: '1rem', marginTop: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-calendar" sizeName="lg" darkModeInvert={true} />
               2025-11-07
             </div>
           </div>
@@ -53,59 +49,58 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         <div style={{ fontSize: '0.9rem', lineHeight: '1.8', textAlign: 'left' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-1" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                String Normalization
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>1</span>
+                <span>String Normalization</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-2" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Lowercasing + Unicode Normalization
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>2</span>
+                <span>Lowercasing + Unicode Normalization</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-3" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Fuzzy Matching (Edit Distance)
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>3</span>
+                <span>Fuzzy Matching (Edit Distance)</span>
+              </div><div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>4</span>
+                <span>Token-Based Similarity (Jaccard / Cosine)</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-4" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Token-Based Similarity (Jaccard / Cosine)
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>5</span>
+                <span>Dictionary / Gazetteer Lookup</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-5" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Dictionary / Gazetteer Lookup
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>6</span>
+                <span>Synonym / Alias Mapping</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-6" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Synonym / Alias Mapping
-              </div>
-              <div style={{ marginBottom: '0.8rem', color: '#8be9fd' }}>
-                <SvgIcon iconName="duo-7" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Rule-Based Context Matching
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>7</span>
+                <span>Rule-Based Context Matching</span>
               </div>
             </div>
             <div>
-              <div style={{ marginBottom: '0.8rem', color: '#f1fa8c' }}>
-                <SvgIcon iconName="duo-8" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Embedding-Based Similarity Matching
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>8</span>
+                <span>Embedding-Based Similarity Matching</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#f1fa8c' }}>
-                <SvgIcon iconName="duo-9" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Entity Linking with Knowledge Bases
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>9</span>
+                <span>Entity Linking with Knowledge Bases</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#f1fa8c' }}>
-                <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Graph-Based Entity Disambiguation
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>10</span>
+                <span>Graph-Based Entity Disambiguation</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#f1fa8c' }}>
-                <SvgIcon iconName="duo-ranking-star" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                PageRank / Centrality-Based Disambiguation
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>11</span>
+                <span>PageRank / Centrality-Based Disambiguation</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#f1fa8c' }}>
-                <SvgIcon iconName="duo-book" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Domain-Specific Ontology Mapping
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>12</span>
+                <span>Domain-Specific Ontology Mapping</span>
               </div>
-              <div style={{ marginBottom: '0.8rem', color: '#f1fa8c' }}>
-                <SvgIcon iconName="duo-robot" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                LLM-Based Entity Disambiguation
+              <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>13</span>
+                <span>LLM-Based Entity Disambiguation</span>
               </div>
             </div>
           </div>
@@ -126,15 +121,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                     <strong>Goal</strong>
                   </div>
                   <div>Standardize text by removing superficial differences (spacing, punctuation, diacritics).</div>
                 </div>
                 <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                     <strong>How It Works</strong>
                   </div>
                   <div>Trim/collapse whitespace, unify quotes/dashes, normalize punctuation spacing, optionally strip diacritics and normalize numerals.</div>
@@ -142,16 +137,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
               </div>
 
               <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
                   <strong>When to Use</strong>
                 </div>
                 <div>Preprocessing noisy inputs (logs, forms, scraped text) before any matching.</div>
               </div>
 
               <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                  <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
                   <strong>Steps</strong>
                 </div>
                 <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -165,15 +160,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                 <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>Pros</strong>
                   </div>
                   <div>Simple, fast, deterministic; boosts downstream match rates.</div>
                 </div>
                 <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                     <strong>Cons</strong>
                   </div>
                   <div>Possible information loss; language-specific quirks; does not resolve ambiguity.</div>
@@ -206,15 +201,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Eliminate variation due to case and Unicode compatibility forms.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Apply Unicode normalization (NFC/NFKC/NFD) and casefolding (locale-aware) to map equivalent code points.</div>
@@ -222,16 +217,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Multilingual data, mixed encodings, merging cross-source strings.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -245,15 +240,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Robust across scripts; reduces duplicates substantially.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>May alter semantics (math symbols, ß→ss); locale pitfalls; must log transforms.</div>
@@ -289,15 +284,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Match strings with typos/insertions/deletions.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Compute edit distance (Levenshtein/Damerau); accept matches under a threshold; use BK-tree/VP-tree for speed.</div>
@@ -305,16 +300,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Short names, IDs, user-entered fields with small errors; small/medium catalogs.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -328,15 +323,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Catches typos; interpretable distances; easy to implement.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Poor on token swaps/long strings; threshold tuning; scaling costs.</div>
@@ -373,15 +368,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Compare overlap/angle between token sets or vectors.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Tokenize; compute Jaccard over sets or cosine over TF/TF-IDF; optionally char n-grams.</div>
@@ -389,16 +384,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Longer names/titles; reorderings; partial overlaps.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -412,15 +407,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Order-invariant; scalable with sparse ops; robust to extras/missing tokens.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>No semantics; sensitive to stopwords; struggles with synonyms/abbreviations.</div>
@@ -455,15 +450,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Map mentions to canonical entities via a curated lexicon.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Exact/prefix/fuzzy lookup over ID-labeled entries (trie/FST/inverted index).</div>
@@ -471,16 +466,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Closed-world domains (places, products), compliance-lists, catalogs.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -494,15 +489,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>High precision; fast; explainable.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Coverage gaps; maintenance burden; open-domain brittleness.</div>
@@ -538,15 +533,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Consolidate variants/abbreviations into canonical forms.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Alias→canonical mapping table applied during preprocessing or post-match.</div>
@@ -554,16 +549,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Organizations, drug names, SKUs, product families.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -577,15 +572,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Simple and precise when covered; low runtime cost.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Manual effort; poor generalization to unseen variants; language/locale issues.</div>
@@ -621,15 +616,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Use surrounding context and heuristics to disambiguate.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Regex/patterns, keyword proximity, section headers, positional cues with scoring.</div>
@@ -637,16 +632,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Structured/semi-structured text (resumes, forms), policy-driven systems.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -659,15 +654,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Transparent, controllable, fast.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Labor-intensive; brittle to shifts; limited coverage at scale.</div>
@@ -703,15 +698,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
         <div style={{ fontSize: '0.8rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Capture semantic similarity beyond surface form.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Encode mentions/entities with embeddings (SBERT, fastText, domain models); score via cosine.</div>
@@ -719,16 +714,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Synonyms/paraphrases; multilingual/cross-lingual; sparse data.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -742,15 +737,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Handles semantics; robust to wording; multilingual.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Infra cost; drift/bias; less explainable; threshold calibration needed.</div>
@@ -788,15 +783,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Link mentions to KB entities (e.g., Wikidata) with unique IDs.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Candidate generation (alias tables/search) + context-aware ranking using KB facts/types.</div>
@@ -804,16 +799,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Open-domain text; need rich metadata and disambiguation.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -826,15 +821,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Resolves ambiguity; provides attributes; interoperable IDs.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Heavy infra; KB gaps/outdated data; domain mismatch risk.</div>
@@ -868,15 +863,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Jointly pick entities for multiple mentions to maximize coherence.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Build graph of mentions/candidates with edges for relatedness; run global optimization.</div>
@@ -884,16 +879,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Documents with many mentions (news, bios); coherence matters.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -906,15 +901,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Enforces global consistency; strong accuracy.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Complex; computationally heavier; sensitive to graph design.</div>
@@ -950,15 +945,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Select candidates with highest centrality in the candidate graph.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Run PageRank/HITS/degree centrality on weighted graph; pick top per mention.</div>
@@ -966,16 +961,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Need scalable unsupervised ranking with coherence signal.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -989,15 +984,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Efficient; simple; leverages structure without labels.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Bias toward popular nodes; relies on good edge weights; error propagation.</div>
@@ -1034,15 +1029,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Map mentions to controlled vocabularies (e.g., UMLS, SNOMED, MeSH, HS codes).</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>String/semantic matching constrained by ontology concepts, types, and hierarchies.</div>
@@ -1050,16 +1045,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Regulated/technical domains needing consistent coding and reasoning.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -1072,15 +1067,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>High precision; interoperability; supports analytics/reasoning.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Setup complexity; licensing/updates; domain lock-in.</div>
@@ -1115,15 +1110,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#bd93f9', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
                 <strong>Goal</strong>
               </div>
               <div>Use large language models to resolve ambiguous mentions with context and tools.</div>
             </div>
             <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem' }}>
-                <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#8be9fd', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <div>Prompt/fine-tune to choose among candidates or generate canonical IDs; tool-augmented with retrieval/KB.</div>
@@ -1131,16 +1126,16 @@ export const entityDisambiguationTechniquesDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-clock" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#50fa7b', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clock" sizeName="lg" darkModeInvert={true} />
               <strong>When to Use</strong>
             </div>
             <div>Long-range context, tail cases, sparse data, rapid prototyping.</div>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div style={{ color: '#f1fa8c', marginBottom: '0.5rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
             <ol style={{ marginLeft: '1.5rem', marginBottom: 0 }}>
@@ -1154,15 +1149,15 @@ export const entityDisambiguationTechniquesDeck: Deck = {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#50fa7b', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#50fa7b', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
               <div>Strong zero/few-shot; flexible; good with complex context.</div>
             </div>
             <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-              <div style={{ color: '#ff79c6', marginBottom: '0.5rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#ff79c6', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
               <div>Cost/latency; hallucinations; needs guardrails/evaluation.</div>
@@ -1196,8 +1191,8 @@ export const entityDisambiguationTechniquesDeck: Deck = {
             <div style={{ fontSize: '0.85rem', lineHeight: '1.7', textAlign: 'left' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(189, 147, 249, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#bd93f9', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-layer-group" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#bd93f9', marginBottom: '0.8rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="lg" darkModeInvert={true} />
                     <strong>Layered Pipeline</strong>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1209,8 +1204,8 @@ export const entityDisambiguationTechniquesDeck: Deck = {
                 </div>
 
                 <div style={{ background: 'rgba(139, 233, 253, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#8be9fd', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-sliders" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#8be9fd', marginBottom: '0.8rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-sliders" sizeName="lg" darkModeInvert={true} />
                     <strong>Technique Selection</strong>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1222,8 +1217,8 @@ export const entityDisambiguationTechniquesDeck: Deck = {
                 </div>
 
                 <div style={{ background: 'rgba(80, 250, 123, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#50fa7b', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-gear" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#50fa7b', marginBottom: '0.8rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gear" sizeName="lg" darkModeInvert={true} />
                     <strong>Operational Tips</strong>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1235,8 +1230,8 @@ export const entityDisambiguationTechniquesDeck: Deck = {
                 </div>
 
                 <div style={{ background: 'rgba(241, 250, 140, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#f1fa8c', marginBottom: '0.8rem', fontSize: '1rem' }}>
-                    <SvgIcon iconName="duo-chart-line" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ color: '#f1fa8c', marginBottom: '0.8rem', fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-chart-line" sizeName="lg" darkModeInvert={true} />
                     <strong>Evaluation Methods</strong>
                   </div>
                   <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
@@ -1249,25 +1244,25 @@ export const entityDisambiguationTechniquesDeck: Deck = {
               </div>
 
               <div style={{ background: 'rgba(255, 121, 198, 0.2)', padding: '1.2rem', borderRadius: '10px', marginTop: '1rem' }}>
-                <div style={{ color: '#ff79c6', marginBottom: '0.8rem', fontSize: '1.1rem', textAlign: 'left' }}>
-                  <SvgIcon iconName="duo-star" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                <div style={{ color: '#ff79c6', marginBottom: '0.8rem', fontSize: '1.1rem', textAlign: 'left', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <SvgIcon iconName="duo-star" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                   <strong>Best Practices for Entity Normalization</strong>
                 </div>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', fontSize: '0.85rem' }}>
-                  <div>
-                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-check" sizeName="lg" darkModeInvert={true} />
                     Consider domain specificity before technique selection
                   </div>
-                  <div>
-                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-check" sizeName="lg" darkModeInvert={true} />
                     Create feedback loops to improve over time
                   </div>
-                  <div>
-                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-check" sizeName="lg" darkModeInvert={true} />
                     Document decisions for transparency & maintenance
                   </div>
-                  <div>
-                    <SvgIcon iconName="duo-check" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-check" sizeName="lg" darkModeInvert={true} />
                     Use hybrid approaches for complex domains
                   </div>
                 </div>
