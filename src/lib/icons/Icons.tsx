@@ -382,6 +382,7 @@ export const icons: IconsMap = {
   "duo-object-group": "/icons/svg/duotone/object-group.svg",
   "duo-diagram-next": "/icons/svg/duotone/diagram-next.svg",
   "duo-crosshairs": "/icons/svg/duotone/crosshairs.svg",
+  "duo-scanner-keyboard": "/icons/svg/duotone/scanner-keyboard.svg",
 };
 
 export const size: SizeMap = {
