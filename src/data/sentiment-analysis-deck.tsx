@@ -41,17 +41,23 @@ export const sentimentAnalysisDeck: Deck = {
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-book" sizeName="2x" darkModeInvert={true} />
-                Traditional & Classical ML
+                Traditional/Rule-based
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
                 <li>1. Lexicon-Based Sentiment Scoring</li>
-                <li>2. Rule-Based Classification</li>
-                <li>3. BoW + Logistic Regression</li>
-                <li>4. TF-IDF + SVM</li>
-                <li>5. Naive Bayes</li>
+                <li>2. Rule-Based Sentiment Classification</li>
               </ul>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-                <SvgIcon iconName="duo-tools" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-brackets-square" sizeName="2x" darkModeInvert={true} />
+                Classical ML
+              </h3>
+              <ul style={{ fontSize: '0.9em' }}>
+                <li>3. BoW + Logistic Regression</li>
+                <li>4. TF-IDF + SVM</li>
+                <li>5. Naive Bayes Sentiment Model</li>
+              </ul>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+                <SvgIcon iconName="duo-toolbox" sizeName="2x" darkModeInvert={true} />
                 Modern NLP Tools
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
@@ -62,23 +68,37 @@ export const sentimentAnalysisDeck: Deck = {
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
-                Deep Learning & Transformers
+                Deep Learning
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
                 <li>8. LSTM-Based Classification</li>
                 <li>9. BiLSTM with Attention</li>
-                <li>10. CNN for Sentiment</li>
-                <li>11. BERT Fine-Tuned</li>
-                <li>12. RoBERTa/DistilBERT</li>
-                <li>13. GPT/LLM Zero-Shot</li>
+                <li>10. CNN for Sentiment Classification</li>
+              </ul>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+                <SvgIcon iconName="duo-leaf" sizeName="2x" darkModeInvert={true} />
+                Transformer-based
+              </h3>
+              <ul style={{ fontSize: '0.9em' }}>
+                <li>11. BERT Fine-Tuned for Sentiment</li>
+                <li>12. RoBERTa/DistilBERT Models</li>
+                <li>13. GPT/LLM Zero-Shot Classification</li>
               </ul>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
                 <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
                 Advanced
               </h3>
               <ul style={{ fontSize: '0.9em' }}>
-                <li>14. Aspect-Based Sentiment</li>
-                <li>15. Multimodal Analysis</li>
+                <li>14. Aspect-Based Sentiment Analysis</li>
+                <li>15. Multimodal Sentiment Analysis</li>
+              </ul>
+              <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+                <SvgIcon iconName="duo-plus-large" sizeName="2x" darkModeInvert={true} />
+                Additional
+              </h3>
+              <ul style={{ fontSize: '0.9em' }}>
+                <li>Comparison Matrix</li>
+                <li>Recommendations & Best Practices</li>
               </ul>
             </div>
           </div>
@@ -99,9 +119,12 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-book' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#00ffcd' }} />
-            <h3>Dictionary/lexicon lookup with additive scoring</h3>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#00ffcd' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#b4fff0' }}>Dictionary/lexicon lookup with additive scoring (e.g., AFINN, SentiWordNet)</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
             <div>
@@ -110,8 +133,8 @@ export const sentimentAnalysisDeck: Deck = {
                 Pros
               </h4>
               <ul style={{ color: '#b4fff0' }}>
-                <li>Interpretable word-level contributions</li>
-                <li>Fast, minimal compute</li>
+                <li>Interpretable results with word-level contributions</li>
+                <li>Fast implementation with minimal compute requirements</li>
                 <li>No training data needed</li>
                 <li>Multilingual lexicons available</li>
               </ul>
@@ -120,10 +143,10 @@ export const sentimentAnalysisDeck: Deck = {
                 Cons
               </h4>
               <ul style={{ color: '#b4fff0' }}>
-                <li>Poor context and negation handling</li>
-                <li>Struggles with sarcasm</li>
-                <li>Brittle to slang/domain terms</li>
-                <li>Lower accuracy vs ML</li>
+                <li>Poor handling of context and negation</li>
+                <li>Struggles with sarcasm and idioms</li>
+                <li>Brittle to slang and domain-specific terminology</li>
+                <li>Lower accuracy compared to ML approaches</li>
               </ul>
             </div>
             <div>
@@ -141,12 +164,12 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
                 Notes
               </h4>
-              <p style={{ color: '#b4fff0' }}>Consider enhancing with custom rules for negation and intensifiers. Domain-specific lexicons significantly improve performance.</p>
+              <p style={{ color: '#b4fff0' }}>Consider enhancing with custom rules for negation and intensifiers. Domain-specific lexicons can significantly improve performance for specialized vocabularies.</p>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
+      backgroundColor: '#0e7762',
       notes: 'Lexicon-based: Uses dictionaries like AFINN, SentiWordNet for word-level scoring'
         }
       ]
@@ -161,9 +184,12 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brackets-square' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#edc1ff' }} />
-            <h3>Handcrafted rules + patterns over tokens/syntax</h3>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#edc1ff' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#eab9ff' }}>Handcrafted rules + patterns over tokens/syntax; often layered on lexicons</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
             <div>
@@ -173,19 +199,19 @@ export const sentimentAnalysisDeck: Deck = {
               </h4>
               <ul style={{ color: '#eab9ff' }}>
                 <li>Deterministic and fully auditable</li>
-                <li>Predictable latency</li>
+                <li>Predictable latency for production</li>
                 <li>No training data needed</li>
-                <li>Direct domain expertise</li>
+                <li>Can incorporate domain expertise directly</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
                 <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul style={{ color: '#eab9ff' }}>
-                <li>Hard to scale and maintain</li>
-                <li>Limited adaptability</li>
-                <li>Weak on nuance</li>
-                <li>Labor-intensive to update</li>
+                <li>Hard to scale and maintain as rules grow</li>
+                <li>Limited adaptability to new expressions</li>
+                <li>Weak on nuance and contextual meaning</li>
+                <li>Labor-intensive to create and update</li>
               </ul>
             </div>
             <div>
@@ -203,295 +229,863 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
                 Notes
               </h4>
-              <p style={{ color: '#eab9ff' }}>Use regex patterns and dependency parses. Implement comprehensive unit tests and maintain versioned rulebooks.</p>
+              <p style={{ color: '#eab9ff' }}>Use regex patterns and dependency parses for complex rules. Implement comprehensive unit tests and maintain versioned rulebooks to track changes and ensure consistency.</p>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#8E44AD',
+      backgroundColor: '#5e2b73',
       notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
         }
       ]
     },
     {
-      id: 'techniques-3-5',
-      title: 'Classical ML Approaches (3-5)',
+      id: 'technique-3',
+      title: '3. Bag-of-Words + Logistic Regression',
       slides: [
         {
           id: 5,
-          title: 'Classical ML Approaches (3-5)',
+          title: '3. Bag-of-Words + Logistic Regression',
+          icon: { name: 'duo-brain-circuit' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '30px' }}>
-            <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#9bd7ff' }} />
-            <SvgIcon iconName="duo-table" sizeName="3x" style={{ color: '#e67e22' }} />
-            <SvgIcon iconName="duo-calculator" sizeName="3x" style={{ color: '#3bdbbc' }} />
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f76ed5' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#f76ed5' }}>Linear classifier on unigram/bigram counts</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-            <div style={{ border: '2px solid #9bd7ff', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#9bd7ff' }}>3. BoW + Logistic Regression</h4>
-              <p style={{ color: '#9bd7ff' }}><strong>Data:</strong> 1k-50k labeled</p>
-              <p style={{ color: '#9bd7ff' }}><strong>Use:</strong> Short texts/reviews</p>
-              <p style={{ color: '#9bd7ff' }}><strong>Pros:</strong> Fast, interpretable weights, strong baseline</p>
-              <p style={{ color: '#9bd7ff' }}><strong>Cons:</strong> Ignores word order, sparse features</p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#f76ed5' }}>
+                <li>Fast to train and deploy</li>
+                <li>Strong baseline performance</li>
+                <li>Easy regularization options</li>
+                <li>Interpretable feature weights</li>
+                <li>Works with smaller datasets</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#f76ed5' }}>
+                <li>Ignores word order and context</li>
+                <li>Limited capability for nuanced sentiment</li>
+                <li>Sparse feature representation</li>
+                <li>Struggles with out-of-vocabulary words</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#e67e22' }}>4. TF-IDF + SVM</h4>
-              <p style={{ color: '#e67e22' }}><strong>Data:</strong> 5k-100k labeled</p>
-              <p style={{ color: '#e67e22' }}><strong>Use:</strong> High-dimensional sparse text</p>
-              <p style={{ color: '#e67e22' }}><strong>Pros:</strong> Strong accuracy, handles sparsity well</p>
-              <p style={{ color: '#e67e22' }}><strong>Cons:</strong> Needs calibration, less interpretable</p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#f76ed5' }}>Small–moderate labeled set (~1k–50k)</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#f76ed5' }}>Short texts/reviews; need interpretable feature weights</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#f76ed5' }}>Use n-grams to capture some word order; apply class weights for imbalanced data; implement L2 regularization to prevent overfitting; validate with stratified cross-validation.</p>
             </div>
-            <div style={{ border: '2px solid #3bdbbc', borderRadius: '10px', padding: '15px' }}>
-              <h4 style={{ color: '#3bdbbc' }}>5. Naive Bayes</h4>
-              <p style={{ color: '#3bdbbc' }}><strong>Data:</strong> Hundreds+ examples</p>
-              <p style={{ color: '#3bdbbc' }}><strong>Use:</strong> Tweets/short messages</p>
-              <p style={{ color: '#3bdbbc' }}><strong>Pros:</strong> Extremely fast, works with limited data</p>
-              <p style={{ color: '#3bdbbc' }}><strong>Cons:</strong> Independence assumption, performance ceiling</p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', color: '#9bd7ff' }}>
-            <strong>💡 Tip:</strong> These classical ML methods provide strong baselines with interpretability and low compute requirements
           </div>
         </div>
       ),
-      backgroundColor: '#2980B9',
-      notes: 'Classical ML approaches: Fast, interpretable baselines with modest data requirements'
+      backgroundColor: '#732b61',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
         }
       ]
     },
     {
-      id: 'techniques-6-7',
-      title: 'Modern NLP Tools (6-7)',
+      id: 'technique-4',
+      title: '4. TF-IDF + SVM Sentiment Classifier',
       slides: [
         {
           id: 6,
-          title: 'Modern NLP Tools (6-7)',
+          title: '4. TF-IDF + SVM Sentiment Classifier',
+          icon: { name: 'duo-shield-check' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
-            <SvgIcon iconName="duo-comments" sizeName="3x" style={{ color: '#39e7c5' }} />
-            <SvgIcon iconName="duo-language" sizeName="3x" style={{ color: '#a34ac7' }} />
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#63e188' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#63e188' }}>Linear SVM (e.g., LinearSVC) on TF-IDF features</p>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
-            <div style={{ border: '2px solid #39e7c5', borderRadius: '10px', padding: '20px', color: '#39e7c5' }}>
-              <h3 style={{ color: '#39e7c5', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-hashtag" sizeName="2x" style={{ color: '#39e7c5' }} />
-                6. VADER Sentiment Scoring
-              </h3>
-              <p><strong>Type:</strong> Lexicon + rules for social media</p>
-              <p><strong>Data:</strong> None required</p>
-              <p><strong>Best for:</strong> Tweets, chats, emojis, punctuation</p>
-              <div style={{ marginTop: '15px' }}>
-                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Handles negation, boosters, emojis, ALL CAPS</p>
-                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Outputs pos/neu/neg + compound scores</p>
-                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Fast, lightweight, no training needed</p>
-                <p><strong style={{ color: '#ff1800' }}>✗</strong> Domain transfer limits, sarcasm challenges</p>
-              </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#63e188' }}>
+                <li>Strong accuracy for classical ML approaches</li>
+                <li>Handles high-dimensional feature spaces efficiently</li>
+                <li>Good with sparse text representation</li>
+                <li>More robust to noise and outliers than many alternatives</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#63e188' }}>
+                <li>Probability calibration needed for confidence scores</li>
+                <li>Less interpretable than logistic regression</li>
+                <li>Feature engineering still required</li>
+                <li>Higher memory usage with large vocabularies</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #d27ff3', borderRadius: '10px', padding: '20px', color: '#d27ff3' }}>
-              <h3 style={{ color: '#d27ff3', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-flask" sizeName="2x" style={{ color: '#a34ac7' }} />
-                7. TextBlob Polarity Scoring
-              </h3>
-              <p><strong>Type:</strong> Rule/lexicon-based with polarity & subjectivity</p>
-              <p><strong>Data:</strong> None required</p>
-              <p><strong>Best for:</strong> Quick prototypes, educational purposes</p>
-              <div style={{ marginTop: '15px' }}>
-                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Simple, intuitive API</p>
-                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Polarity (-1 to +1) & subjectivity (0 to 1)</p>
-                <p><strong style={{ color: '#00ff6c' }}>✓</strong> Includes NLP utilities (POS, NP extraction)</p>
-                <p><strong style={{ color: '#ff1800' }}>✗</strong> Older lexicons, primarily English-centric</p>
-              </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#63e188' }}>5k–100k labeled examples</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#63e188' }}>High-dimensional sparse text; robust baseline in noisy domains</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#63e188' }}>Tune C parameter for regularization strength; use Platt scaling for proper probability estimates; prune features to reduce memory footprint; consider n-gram ranges beyond unigrams.</p>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#16A085',
-      notes: 'Modern NLP tools: VADER for social media, TextBlob for quick prototyping - both require no training data'
+      backgroundColor: '#2b7340',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
         }
       ]
     },
     {
-      id: 'techniques-8-10',
-      title: 'Deep Learning Models (8-10)',
+      id: 'technique-5',
+      title: '5. Naive Bayes Sentiment Model',
       slides: [
         {
           id: 7,
-          title: 'Deep Learning Models (8-10)',
+          title: '5. Naive Bayes Sentiment Model',
+          icon: { name: 'duo-brain-circuit' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="3x" style={{ color: '#ff7b6d' }} />
-            <SvgIcon iconName="duo-project-diagram" sizeName="3x" style={{ color: '#f39c12' }} />
-            <SvgIcon iconName="duo-layer-group" sizeName="3x" style={{ color: '#68bef7' }} />
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#956efb' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#956efb' }}>Multinomial Naive Bayes on counts/TF-IDF</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #ff7b6d', borderRadius: '10px', padding: '15px', color: '#ff7b6d' }}>
-              <h4 style={{ color: '#ff7b6d' }}>8. LSTM-Based</h4>
-              <p><strong>Data:</strong> 10k-100k+ labeled</p>
-              <p><strong>Use:</strong> Longer texts with dependencies</p>
-              <p><strong>✓</strong> Captures sequential patterns</p>
-              <p><strong>✓</strong> Handles variable-length inputs</p>
-              <p><strong>✗</strong> High compute, slower inference</p>
-              <p style={{ fontSize: '0.9em', marginTop: '10px', opacity: 0.9 }}>
-                💡 Use pretrained embeddings (GloVe/fastText)
-              </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#956efb' }}>
+                <li>Extremely fast training and inference</li>
+                <li>Good with sparse/noisy text</li>
+                <li>Works well with limited training data</li>
+                <li>Simple probabilistic approach</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#956efb' }}>
+                <li>Independence assumption between words (naive)</li>
+                <li>Performance ceiling vs. SVM/NN approaches</li>
+                <li>Limited contextual understanding</li>
+                <li>Feature engineering often needed for best results</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
-              <h4 style={{ color: '#f39c12' }}>9. BiLSTM + Attention</h4>
-              <p><strong>Data:</strong> 10k-100k+ labeled</p>
-              <p><strong>Use:</strong> Aspect tagging, long reviews</p>
-              <p><strong>✓</strong> Bidirectional context</p>
-              <p><strong>✓</strong> Interpretable attention weights</p>
-              <p><strong>✗</strong> More parameters, careful tuning</p>
-              <p style={{ fontSize: '0.9em', marginTop: '10px', opacity: 0.9 }}>
-                💡 Visualize attention for QA/debugging
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#956efb' }}>Works with very small labeled sets (hundreds+)</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#956efb' }}>Tweets/short messages; quick baselines</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#956efb' }}>Try NB-SVM (log-count ratios) for stronger results; be careful with stopword removal as it can impact performance. Consider Laplace smoothing for handling zero probabilities.</p>
             </div>
-            <div style={{ border: '2px solid #68bef7', borderRadius: '10px', padding: '15px', color: '#68bef7' }}>
-              <h4 style={{ color: '#68bef7' }}>10. CNN for Sentiment</h4>
-              <p><strong>Data:</strong> 5k-100k labeled</p>
-              <p><strong>Use:</strong> Short texts, key phrase detection</p>
-              <p><strong>✓</strong> Highly parallelizable</p>
-              <p><strong>✓</strong> Fast inference, captures n-grams</p>
-              <p><strong>✗</strong> Limited long-range context</p>
-              <p style={{ fontSize: '0.9em', marginTop: '10px', opacity: 0.9 }}>
-                💡 Use 3-5 filter sizes (e.g., 3/4/5)
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', textAlign: 'center', color: '#ff7b6d' }}>
-            <strong>⚡ Key Takeaway:</strong> Deep learning models need substantial data but capture context better than classical ML
           </div>
         </div>
       ),
-      backgroundColor: '#9f2d21',
-      notes: 'Deep learning: LSTM for sequences, BiLSTM+Attention for interpretability, CNN for efficient n-gram capture'
+      backgroundColor: '#3f2b73',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
         }
       ]
     },
     {
-      id: 'techniques-11-13',
-      title: 'Transformer Models (11-13)',
+      id: 'technique-6',
+      title: '6. VADER Sentiment Scoring',
       slides: [
         {
           id: 8,
-          title: 'Transformer Models (11-13)',
+          title: '6. VADER Sentiment Scoring',
+          icon: { name: 'duo-gauge-high' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.72em' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '30px', marginBottom: '20px' }}>
-            <SvgIcon iconName="duo-microchip" sizeName="3x" style={{ color: '#bc6add' }} />
-            <SvgIcon iconName="duo-brain-circuit" sizeName="3x" style={{ color: '#e67e22' }} />
-            <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="3x" style={{ color: '#3498db' }} />
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5e5e' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#ed5e5e' }}>Lexicon + rules optimized for social media</p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #bc6add', borderRadius: '10px', padding: '12px', color: '#bc6add' }}>
-              <h4 style={{ color: '#bc6add' }}>11. BERT Fine-Tuned</h4>
-              <p><strong>Data:</strong> 2k-100k labeled</p>
-              <p><strong>Use:</strong> Nuanced language, complex sentiment</p>
-              <p><strong>✓</strong> High accuracy across domains</p>
-              <p><strong>✓</strong> Strong transfer learning</p>
-              <p><strong>✓</strong> Multilingual variants (mBERT)</p>
-              <p><strong>✗</strong> Computationally expensive</p>
-              <p><strong>✗</strong> Higher latency</p>
-              <p style={{ marginTop: '8px', opacity: 0.9 }}>
-                💡 Use DistilBERT for reduced latency
-              </p>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#ed5e5e' }}>
+                <li>Handles negation, boosters, emojis, ALL CAPS</li>
+                <li>Outputs pos/neu/neg + compound scores</li>
+                <li>Fast, lightweight implementation</li>
+                <li>No training data required</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#ed5e5e' }}>
+                <li>Domain transfer limits</li>
+                <li>Sarcasm still challenging</li>
+                <li>Less accurate than ML models on formal text</li>
+                <li>Fixed lexicon (unless modified)</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
-              <h4 style={{ color: '#e67e22' }}>12. RoBERTa/DistilBERT</h4>
-              <p><strong>Data:</strong> 2k-100k labeled</p>
-              <p><strong>Use:</strong> Social media, production with latency constraints</p>
-              <p><strong>✓</strong> RoBERTa often outperforms BERT</p>
-              <p><strong>✓</strong> DistilBERT: 40% smaller, 60% faster</p>
-              <p><strong>✓</strong> Domain-adapted checkpoints available</p>
-              <p><strong>✗</strong> Still requires GPU for fine-tuning</p>
-              <p><strong>✗</strong> Model drift over time</p>
-              <p style={{ marginTop: '8px', opacity: 0.9 }}>
-                💡 Monitor performance drift, retrain periodically
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#ed5e5e' }}>None; optional domain tweaks</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#ed5e5e' }}>Tweets, chats, emojis, punctuation emphasis</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#ed5e5e' }}>Use compound thresholds (e.g., &gt;0.05 positive); can extend lexicon for niche terms. Optimized for social media with special handling for punctuation and capitalization.</p>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db' }}>13. GPT/LLM Zero-Shot</h4>
-              <p><strong>Data:</strong> None (zero-shot), few examples help</p>
-              <p><strong>Use:</strong> Cross-domain, multilingual, long texts</p>
-              <p><strong>✓</strong> Strong contextual understanding</p>
-              <p><strong>✓</strong> No retraining needed</p>
-              <p><strong>✓</strong> Can provide explanations</p>
-              <p><strong>✗</strong> High API costs at scale</p>
-              <p><strong>✗</strong> Latency issues</p>
-              <p><strong>✗</strong> Nondeterministic results</p>
-              <p style={{ marginTop: '8px', opacity: 0.9 }}>
-                💡 Constrain outputs, cache results
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', textAlign: 'center', color: '#bc6add' }}>
-            <strong>🚀 State-of-the-Art:</strong> Transformers provide best accuracy but consider cost/latency trade-offs
           </div>
         </div>
       ),
-      backgroundColor: '#581375',
-      notes: 'Transformers: BERT for nuanced sentiment, RoBERTa/DistilBERT for production, GPT for zero-shot cross-domain'
+      backgroundColor: '#732b2b',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
         }
       ]
     },
     {
-      id: 'techniques-14-15',
-      title: 'Advanced Techniques (14-15)',
+      id: 'technique-7',
+      title: '7. TextBlob Polarity Scoring',
       slides: [
         {
           id: 9,
-          title: 'Advanced Techniques (14-15)',
+          title: '7. TextBlob Polarity Scoring',
+          icon: { name: 'duo-brain-circuit' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '30px' }}>
-            <SvgIcon iconName="duo-bullseye-arrow" sizeName="3x" style={{ color: '#e67e22' }} />
-            <SvgIcon iconName="duo-photo-video" sizeName="3x" style={{ color: '#c664ed' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '20px', color: '#e67e22' }}>
-              <h3 style={{ color: '#e67e22', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-crosshairs" sizeName="2x" style={{ color: '#e67e22' }} />
-                14. Aspect-Based Sentiment (ABSA)
-              </h3>
-              <p><strong>Type:</strong> Pipeline (AE/OE/ASC) or end-to-end with transformers/GCNs</p>
-              <p><strong>Data:</strong> Aspect-annotated corpora (costly to label)</p>
-              <p><strong>Use:</strong> Product/service analytics, Voice of Customer insights</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Fine-grained, actionable per-aspect signals</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Multiple sentiments in one text</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Annotation-heavy, hard domain transfer</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Complex implementation</p>
-              </div>
-              <p style={{ marginTop: '12px', fontSize: '0.95em', opacity: 0.9 }}>
-                💡 Use domain-adapted BERT/GCN; leverage public datasets (SemEval, MAMS)
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ff4bea' }} />
+              <h4>Model Type</h4>
             </div>
-            <div style={{ border: '2px solid #c664ed', borderRadius: '10px', padding: '20px', color: '#c664ed' }}>
-              <h3 style={{ color: '#c664ed', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-video" sizeName="2x" style={{ color: '#c664ed' }} />
-                15. Multimodal Sentiment Analysis
-              </h3>
-              <p><strong>Type:</strong> Fusion models over text, audio, visual streams</p>
-              <p><strong>Data:</strong> Synchronized multimodal data (e.g., MOSI/MOSEI)</p>
-              <p><strong>Use:</strong> Calls, meetings, video reviews with sarcasm/prosody</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Higher accuracy via multiple channels</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Detects non-verbal cues (tone, facial)</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Complex data capture/synchronization</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Privacy concerns, expensive deployment</p>
-              </div>
-              <p style={{ marginTop: '12px', fontSize: '0.95em', opacity: 0.9 }}>
-                💡 Use text transformer + wav2vec (audio) + ViT (visual) with cross-attention
-              </p>
+            <p style={{ color: '#ff4bea' }}>Rule/lexicon-based (Pattern) with polarity and subjectivity scores</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#ff4bea' }}>
+                <li>Simple, intuitive API with minimal setup</li>
+                <li>Provides both polarity (-1 to +1) and subjectivity (0 to 1) scores</li>
+                <li>Includes additional NLP utilities (POS-tagging, noun phrase extraction)</li>
+                <li>Easy integration with Python data analysis workflows</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#ff4bea' }}>
+                <li>Based on older lexicons (Pattern library)</li>
+                <li>Primarily English-centric with limited multilingual support</li>
+                <li>Slower performance than VADER in practice</li>
+                <li>Limited context understanding and sarcasm detection</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#ff4bea' }}>None</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#ff4bea' }}>Quick prototypes; subjectivity filtering; educational purposes</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#ff4bea' }}>Great for teaching/demos and quick experiments. For production systems, prefer retrainable models or VADER. Can be combined with its spelling correction to handle minor text errors.</p>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#8f410d',
-      notes: 'Advanced: ABSA for fine-grained aspect-level insights, Multimodal for audio/video with non-verbal cues'
+      backgroundColor: '#792d70',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-8',
+      title: '8. LSTM-Based Sentiment Classification',
+      slides: [
+        {
+          id: 10,
+          title: '8. LSTM-Based Sentiment Classification',
+          icon: { name: 'duo-circle-nodes' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#a665ff' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#a665ff' }}>RNN (LSTM) over token sequences + embeddings</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#a665ff' }}>
+                <li>Captures sequential patterns and word order</li>
+                <li>Better context modeling than traditional ML</li>
+                <li>Handles variable-length inputs naturally</li>
+                <li>Memory cells retain long-range dependencies</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#a665ff' }}>
+                <li>Training requires substantial data</li>
+                <li>Higher computational cost than traditional ML</li>
+                <li>Slower inference time than CNN models</li>
+                <li>Outperformed by transformer architectures</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#a665ff' }}>10k–100k+ labeled texts</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#a665ff' }}>Longer texts with dependencies; domains lacking pretrained transformers</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#a665ff' }}>Use pretrained embeddings (GloVe/fastText) to improve performance. Apply dropout and gradient clipping to prevent overfitting and training instability.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#4d2d79',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-9',
+      title: '9. BiLSTM with Attention',
+      slides: [
+        {
+          id: 11,
+          title: '9. BiLSTM with Attention',
+          icon: { name: 'duo-brain-circuit' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#d9d44b' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#d9d44b' }}>Bidirectional LSTM + attention mechanism</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#d9d44b' }}>
+                <li>Captures context from both directions</li>
+                <li>Attention helps focus on most relevant parts of text</li>
+                <li>Better handling of long-range dependencies</li>
+                <li>Provides interpretable attention weights</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#d9d44b' }}>
+                <li>More parameters than standard LSTM</li>
+                <li>Careful tuning needed for optimal results</li>
+                <li>Slower inference than CNN models</li>
+                <li>Requires quality labeled data</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#d9d44b' }}>10k–100k+ labeled examples</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#d9d44b' }}>Aspect tagging and longer reviews; interpretability via attention</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#d9d44b' }}>Visualize attention for QA; consider self-attention or CRF for sequence labels. Use regularization (dropout) to prevent overfitting. Pre-trained embeddings can improve results.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#79762d',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-10',
+      title: '10. CNN for Sentiment Classification',
+      slides: [
+        {
+          id: 12,
+          title: '10. CNN for Sentiment Classification',
+          icon: { name: 'duo-network-wired' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4edbc7' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#4edbc7' }}>1D Text CNN (multi-filter widths + max pooling)</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#4edbc7' }}>
+                <li>Efficient, highly parallelizable training</li>
+                <li>Strong classic deep learning baseline</li>
+                <li>Excellent at capturing local patterns and n-grams</li>
+                <li>Faster inference compared to RNNs/LSTMs</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#4edbc7' }}>
+                <li>Limited long-range contextual understanding</li>
+                <li>May miss sequential dependencies important for sentiment</li>
+                <li>Often requires hybrid approaches for complex texts</li>
+                <li>Static window sizes can miss important patterns</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#4edbc7' }}>5k–100k labeled examples</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#4edbc7' }}>Short texts; key phrase/n-gram detection</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#4edbc7' }}>Combine 3–5 filter sizes (e.g., 3/4/5) to capture different n-gram patterns. Consider CNN-BiLSTM hybrid architectures for improved performance on longer texts with complex sentiment expressions.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#2d796e',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-11',
+      title: '11. BERT Fine-Tuned for Sentiment',
+      slides: [
+        {
+          id: 13,
+          title: '11. BERT Fine-Tuned for Sentiment',
+          icon: { name: 'duo-brain-circuit' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5df9' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#ed5df9' }}>Transformer encoder fine-tuned for classification</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#ed5df9' }}>
+                <li>High accuracy across diverse domains</li>
+                <li>Strong transfer learning from pre-trained knowledge</li>
+                <li>Multilingual variants available (mBERT, XLM-R)</li>
+                <li>Robust to context, negation, and complex syntax</li>
+                <li>Attention visualizations provide some interpretability</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#ed5df9' }}>
+                <li>Computationally expensive for training and inference</li>
+                <li>Significant latency compared to classical models</li>
+                <li>Requires careful deployment for production scale</li>
+                <li>Limited context window (512 tokens for BERT-base)</li>
+                <li>Less interpretable than simpler models</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#ed5df9' }}>2k–100k labeled examples; few-shot learning possible with smaller datasets</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#ed5df9' }}>Most domains with nuanced language; complex sentiment in ambiguous texts; multi-class sentiment classification</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#ed5df9' }}>Consider using DistilBERT or ALBERT for reduced latency. For small datasets, freeze lower layers during fine-tuning. Always calibrate probability outputs and monitor for domain drift.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#732d79',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-12',
+      title: '12. RoBERTa / DistilBERT Sentiment Models',
+      slides: [
+        {
+          id: 14,
+          title: '12. RoBERTa / DistilBERT Sentiment Models',
+          icon: { name: 'duo-gauge-high' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4fd75d' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#4fd75d' }}>RoBERTa-base/large (robust pretraining) or DistilBERT (lighter variant)</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#4fd75d' }}>
+                <li>RoBERTa often outperforms BERT due to improved pretraining</li>
+                <li>DistilBERT reduces latency/cost (40% smaller, 60% faster)</li>
+                <li>Strong pretrained models available for specific domains</li>
+                <li>Good multilingual support with mBERT variants</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#4fd75d' }}>
+                <li>RoBERTa is computationally heavier than BERT</li>
+                <li>DistilBERT trades some accuracy (~3%) for efficiency</li>
+                <li>Still requires GPU for efficient fine-tuning</li>
+                <li>Model drift over time requires retraining</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#4fd75d' }}>Similar to BERT (2k-100k labeled examples; few-shot learning possible)</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#4fd75d' }}>Social media (e.g., cardiffnlp/twitter-roberta-base-sentiment), general reviews, production environments with latency constraints</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#4fd75d' }}>Start with domain-adapted checkpoints when available. Monitor performance drift over time. Use mixed precision training for faster fine-tuning. For production, consider knowledge distillation to optimize further.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#2d7935',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-13',
+      title: '13. GPT / LLM Zero-Shot Sentiment Classification',
+      slides: [
+        {
+          id: 15,
+          title: '13. GPT / LLM Zero-Shot Sentiment Classification',
+          icon: { name: 'duo-wand-magic-sparkles' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f7417d' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#f7417d' }}>Prompted LLM (zero/few-shot) via API or local models</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#f7417d' }}>
+                <li>Strong contextual understanding of nuanced language</li>
+                <li>Works across multiple domains without retraining</li>
+                <li>Can provide explanations/rationales for classifications</li>
+                <li>Handles complex emotion detection beyond binary sentiment</li>
+                <li>Adaptable to custom sentiment categories via prompt engineering</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#f7417d' }}>
+                <li>API costs can be high at scale</li>
+                <li>Latency issues for real-time applications</li>
+                <li>Results can be nondeterministic (inconsistent)</li>
+                <li>Potential for bias in sentiment judgments</li>
+                <li>Limited control over model internals</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#f7417d' }}>None for zero-shot; few examples improve reliability</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#f7417d' }}>Rapid, cross-domain/multilingual, long-form texts</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#f7417d' }}>Constrain outputs with structured prompts; use evaluation harness to test consistency; cache results to reduce costs; implement guardrails to monitor bias and prevent information leakage; consider few-shot examples for improved accuracy and reliability.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#792d46',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-14',
+      title: '14. Aspect-Based Sentiment Analysis (ABSA)',
+      slides: [
+        {
+          id: 16,
+          title: '14. Aspect-Based Sentiment Analysis (ABSA)',
+          icon: { name: 'duo-crosshairs' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#e1d23d' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#e1d23d' }}>Pipeline (AE/OE/ASC) or end-to-end (AOPE/ASTE/ASQP) with transformers/GCNs</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#e1d23d' }}>
+                <li>Fine-grained, actionable signals per aspect/entity</li>
+                <li>Can identify multiple sentiment polarities within one text</li>
+                <li>Helps prioritize improvements by aspect importance</li>
+                <li>More nuanced insights than document-level sentiment</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#e1d23d' }}>
+                <li>Annotation-heavy; domain transfer is hard</li>
+                <li>Complex evaluation metrics across subtasks</li>
+                <li>More challenging to implement than general sentiment</li>
+                <li>Often requires multiple models or complex architectures</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#e1d23d' }}>Aspect-annotated corpora; costly to label</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#e1d23d' }}>Product/service analytics; Voice of Customer insights at feature level</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#e1d23d' }}>Use domain-adapted BERT/GCN; leverage public datasets (SemEval, MAMS); consider weak supervision for reducing annotation costs; pipeline approaches are simpler but end-to-end models often perform better</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#79722d',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
+        }
+      ]
+    },
+    {
+      id: 'technique-15',
+      title: '15. Multimodal Sentiment Analysis (Text + Audio/Video)',
+      slides: [
+        {
+          id: 17,
+          title: '15. Multimodal Sentiment Analysis (Text + Audio/Video)',
+          icon: { name: 'duo-video' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#43cfdb' }} />
+              <h4>Model Type</h4>
+            </div>
+            <p style={{ color: '#43cfdb' }}>Fusion models (early/late/hybrid; attention) over text, audio, visual streams</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '0.85em' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul style={{ color: '#43cfdb' }}>
+                <li>Higher accuracy by combining multiple information channels</li>
+                <li>Detects non-verbal emotional cues (tone, facial expressions)</li>
+                <li>Better at identifying sarcasm and subtle emotions</li>
+                <li>Robust to noise in individual modalities</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul style={{ color: '#43cfdb' }}>
+                <li>Complex data capture and synchronization requirements</li>
+                <li>Privacy and ethics concerns with video/audio processing</li>
+                <li>Computationally expensive and deployment challenges</li>
+                <li>Limited available training datasets</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-database" sizeName="1x" darkModeInvert={true} />
+                Data Requirement
+              </h4>
+              <p style={{ color: '#43cfdb' }}>Synchronized multimodal data (e.g., MOSI/MOSEI); consent/privacy controls</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Best Use Case
+              </h4>
+              <p style={{ color: '#43cfdb' }}>Calls, meetings, video reviews; sarcasm/prosody cues</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ color: '#f39c12' }} />
+                Notes
+              </h4>
+              <p style={{ color: '#43cfdb' }}>Encoders: text transformer, wav2vec for audio, Vision Transformer (ViT) for visual. Cross-attention mechanisms improve modality fusion. Ensure robust time alignment between modalities for accurate sentiment correlation.</p>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#2d7379',
+      notes: 'Rule-based: Pattern matching with handcrafted rules, good for compliance and regulatory environments'
         }
       ]
     },
@@ -500,7 +1094,7 @@ export const sentimentAnalysisDeck: Deck = {
       title: 'Summary',
       slides: [
         {
-          id: 10,
+          id: 18,
           title: 'Comparison Matrix',
           content: (
         <div style={{ fontSize: '0.6em', margin: '0 auto' }}>
@@ -542,24 +1136,24 @@ export const sentimentAnalysisDeck: Deck = {
       notes: 'Comprehensive comparison showing trade-offs: Traditional/Classical offer explainability, Transformers offer accuracy, Advanced offer granularity'
         },
         {
-          id: 11,
+          id: 19,
           title: 'Recommendations & Best Practices',
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
-                <SvgIcon iconName="duo-play" sizeName="2x" style={{ color: '#3498db' }} />
+                <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ color: '#3498db' }} />
                 Start with Baselines
               </h4>
               <p>Begin with VADER/TextBlob and TF-IDF+LinearSVC to establish metrics and error buckets</p>
             </div>
             <div style={{ border: '2px solid #bd5ee3', borderRadius: '10px', padding: '15px', color: '#bd5ee3' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#bd5ee3' }}>
-                <SvgIcon iconName="duo-arrow-trend-up" sizeName="2x" style={{ color: '#bd5ee3' }} />
+                <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={{ color: '#bd5ee3' }} />
                 Scale Up Judiciously
               </h4>
-              <p>Move to BERT/RoBERTa when nuance demands it; consider DistilBERT for latency constraints</p>
+              <p>Move to BERT/RoBERTa when nuance or accuracy demands it; consider DistilBERT for latency</p>
             </div>
             <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e67e22' }}>
@@ -580,14 +1174,18 @@ export const sentimentAnalysisDeck: Deck = {
                 <SvgIcon iconName="duo-gear" sizeName="2x" style={{ color: '#e74c3c' }} />
                 Operationalize
               </h4>
-              <p>Add calibration, drift monitoring, bias checks. Define re-training cadence based on domain volatility</p>
+              <ul>
+                <li>Add calibration, drift monitoring, bias/fairness checks</li>
+                <li>Cache LLM outputs to reduce API costs</li>
+                <li>Define re-training cadence based on domain volatility</li>
+              </ul>
             </div>
             <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12' }}>
                 <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ color: '#f39c12' }} />
                 Guardrails for LLMs
               </h4>
-              <p>Constrain outputs, cache results, log prompts/responses. Establish cost/governance controls</p>
+              <p>Constrain outputs, add validation, log prompts/responses; establish cost/governance controls</p>
             </div>
           </div>
         </div>
@@ -596,7 +1194,7 @@ export const sentimentAnalysisDeck: Deck = {
       notes: 'Best practices: Start simple, scale judiciously, operationalize with monitoring, implement guardrails for production'
         },
         {
-          id: 12,
+          id: 20,
           title: 'Implementation Roadmap',
           content: (
         <div style={{ margin: '0 auto', color: '#2cc3a6' }}>
@@ -643,7 +1241,7 @@ export const sentimentAnalysisDeck: Deck = {
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
               <div style={{ 
-                backgroundColor: '#2ecc71', 
+                backgroundColor: '#b93838', 
                 borderRadius: '50%', 
                 width: '60px', 
                 height: '60px', 
@@ -661,8 +1259,11 @@ export const sentimentAnalysisDeck: Deck = {
             </div>
           </div>
           <div style={{ marginTop: '50px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
-            <p style={{ fontSize: '1.1em', margin: 0 }}>
-              <strong>⚖️ Remember:</strong> Balance accuracy, explainability, cost, and maintenance based on your specific use case
+            <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+              <SvgIcon iconName="duo-scale-balanced" sizeName="4x" style={{ color: '#29bfa4' }} />
+              <p style={{ fontSize: '1.5em' }}>
+                <strong>Remember:</strong> Balance accuracy, explainability, cost, and maintenance based on your specific use case
+              </p>
             </p>
           </div>
         </div>
@@ -677,7 +1278,7 @@ export const sentimentAnalysisDeck: Deck = {
       title: 'Thank You!',
       slides: [
         {
-          id: 13,
+          id: 21,
           title: 'Thank You!',
           content: (
             <div style={{ textAlign: 'left' }}>
@@ -688,9 +1289,7 @@ export const sentimentAnalysisDeck: Deck = {
             <SvgIcon iconName="duo-star" sizeName="4x" style={{ color: '#f39c12' }} />
           </div>
           <div style={{ fontSize: '1.1em', lineHeight: '1.8' }}>
-            <p>From traditional lexicon-based approaches</p>
-            <p>to cutting-edge transformer models</p>
-            <p>and multimodal analysis</p>
+            <p>From traditional lexicon-based approaches to cutting-edge transformer models and multimodal analysis</p>
           </div>
           <div style={{ marginTop: '50px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
             <SvgIcon iconName="duo-graduation-cap" sizeName="2x" style={{ color: '#3498db' }} />
