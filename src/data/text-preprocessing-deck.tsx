@@ -18,7 +18,7 @@ export const textPreprocessingDeck: Deck = {
           title: '21 Text Preprocessing Techniques',
           content: (
             <div style={{ textAlign: 'left' }}>
-          <h2 style={{ marginBottom: '40px' }}>From Tokenization to Language Detection</h2>
+          <h2 style={{ marginBottom: '40px' }}>From tokenization to language detection with practical cheat sheets</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-file-lines" sizeName="4x" style={{ color: '#e74c3c' }} />
@@ -135,27 +135,18 @@ export const textPreprocessingDeck: Deck = {
           icon: { name: 'duo-scissors' },
           content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
-          <div style={{ marginBottom: '20px' }}>
-            <h3>Split text into meaningful units (tokens) such as words, subwords, or sentences</h3>
-          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Split text into meaningful units (tokens) such as words, subwords, or sentences.</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
               <p>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
-                Steps
-              </h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Choose granularity (word/subword/sentence)</li>
-                <li>Select tokenizer appropriate for language</li>
-                <li>Configure language-specific rules</li>
-                <li>Apply tokenization</li>
-                <li>Validate token counts</li>
-              </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
@@ -163,6 +154,17 @@ export const textPreprocessingDeck: Deck = {
               <p>Almost always as an early step before feature extraction or modeling</p>
             </div>
             <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Choose granularity (word/subword/sentence)</li>
+                <li>Select tokenizer appropriate for language</li>
+                <li>Configure language-specific rules</li>
+                <li>Apply tokenization</li>
+                <li>Validate token counts</li>
+              </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
@@ -191,428 +193,1251 @@ export const textPreprocessingDeck: Deck = {
       ]
     },
     {
-      id: 'techniques-2-5',
-      title: 'Basic Normalization (2-5)',
+      id: 'technique-2',
+      title: '2. Lowercasing',
       slides: [
         {
           id: 4,
-          title: 'Basic Normalization (2-5)',
-          icon: { name: 'duo-gears' },
+          title: '2. Lowercasing',
+          icon: { name: 'duo-text-width' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#d180f3' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-text-width" sizeName="1x" darkModeInvert={true} />
-                2. Lowercasing
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#29dfc4' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
               </h4>
-              <p><strong>Goal:</strong> Reduce case-related variance to shrink vocabulary</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Convert to lowercase or Unicode casefolding</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Case-insensitive tasks (IR, topic modeling) or noisy user text</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Smaller vocab, improved generalization, simpler matching</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Loses case signals (named entities, sentence starts)</p>
-            </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
-              <h4 style={{ color: '#1abc9c', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-globe" sizeName="1x" darkModeInvert={true} />
-                3. Unicode Normalization
+              <p>Reduce case-related variance to shrink vocabulary and improve robustness.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
               </h4>
-              <p><strong>Goal:</strong> Ensure canonical representation to avoid duplicate forms</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Mixed sources, accented characters, search/dedup pipelines</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Stable comparisons, fewer hidden duplicates, safer tokenization</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> NFKC may alter appearance/semantics, grapheme edge cases</p>
-            </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-align-left" sizeName="1x" darkModeInvert={true} />
-                4. Whitespace Normalization
+              <p>Convert text to lowercase or Unicode casefolding for broader equivalence.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
               </h4>
-              <p><strong>Goal:</strong> Standardize spacing to make token boundaries predictable</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Collapse multiple spaces, normalize tabs/newlines, trim</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Before tokenization, after OCR, logs and scraped text</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Cleaner tokens, consistent parsing, fewer edge cases</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> May lose layout cues (tables, code), affects alignment</p>
+              <p>Case-insensitive tasks (IR, topic modeling) or noisy user text.</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
-              <h4 style={{ color: '#f39c12', display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-ellipsis" sizeName="1x" darkModeInvert={true} />
-                5. Punctuation Normalization
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
               </h4>
-              <p><strong>Goal:</strong> Reduce punctuation variants and noise</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Map curly to straight quotes, unify hyphen/dash, collapse repeated</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Prior to tokenization/features, noisy UGC, cross-locale corpora</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Fewer token variants, better matching, improved sentence splitting</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Language/script-specific, may remove emotive/semantic cues</p>
+              <ul>
+                <li>Decide lower vs casefold</li>
+                <li>Define exceptions (acronyms, proper nouns)</li>
+                <li>Apply</li>
+                <li>Spot-check impact</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Smaller vocab</li>
+                <li>Improved generalization</li>
+                <li>Simpler matching</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Loses case signals (named entities, sentence starts)</li>
+                <li>Can harm tasks relying on casing</li>
+              </ul>
             </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🔧 Basic Normalization:</strong> Foundation techniques that standardize text representation for consistent processing
           </div>
         </div>
       ),
-      backgroundColor: '#3f1e4d',
-      notes: 'Basic normalization: Lowercasing, Unicode, Whitespace, and Punctuation normalization for consistent text'
+      backgroundColor: '#197769',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
     },
     {
-      id: 'techniques-6-7',
-      title: '6-7. Stopword Techniques',
+      id: 'technique-3',
+      title: '3. Unicode Normalization',
       slides: [
         {
           id: 5,
-          title: '6-7. Stopword Techniques',
-          icon: { name: 'duo-filter' },
+          title: '3. Unicode Normalization',
+          icon: { name: 'duo-globe' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#e9412f' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-filter-circle-xmark" sizeName="3x" style={{ color: '#e74c3c' }} />
-            <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#f39c12' }} />
-          </div>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#f9f931' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px', color: '#e74c3c' }}>
-              <h3 style={{ color: '#e74c3c', marginBottom: '12px' }}>6. Stopword Removal</h3>
-              <p><strong>Goal:</strong> Remove very frequent function words that add little topical value</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Filter tokens against a language-specific stopword list</p>
-              <p style={{ marginTop: '10px' }}><strong>When:</strong> Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Reduces dimensionality, speeds training, improves topic signal</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Risk of meaning loss, harms sequence/transformer setups, domain sensitivity</p>
-              </div>
-              <h4 style={{ marginTop: '12px', color: '#e74c3c' }}>Steps:</h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Select stoplist per language/domain</li>
-                <li>Keep negations/intensifiers if needed</li>
-                <li>Filter tokens</li>
-                <li>Review impact on metrics</li>
-              </ul>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Ensure canonical representation of characters to avoid duplicate forms.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose/compatibility-normalize.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Mixed sources, accented characters, search/dedup pipelines, cross-platform data.</p>
             </div>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
-              <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>7. Light Stopword Trimming</h3>
-              <p><strong>Goal:</strong> Conservatively remove only the most generic function words while keeping nuance</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Use minimal curated list or importance scores (e.g., TF-IDF) to trim lightly</p>
-              <p style={{ marginTop: '10px' }}><strong>When:</strong> Sentiment analysis, short texts, tasks sensitive to negation/modality</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Preserves meaning better than full removal, balanced noise reduction</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires tuning, residual noise may remain, risky for very short texts</p>
-              </div>
-              <h4 style={{ marginTop: '12px', color: '#f39c12' }}>Steps:</h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Define light stopword list</li>
-                <li>Whitelist negations/domain terms</li>
-                <li>Filter conservatively</li>
-                <li>Iterate with validation</li>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Pick form (NFC common, NFKC for compatibility)</li>
+                <li>Normalize strings</li>
+                <li>Test tricky cases (combining marks)</li>
+                <li>Log conversions</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Stable comparisons</li>
+                <li>Fewer hidden duplicates</li>
+                <li>Safer tokenization</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>NFKC may alter appearance/semantics</li>
+                <li>Grapheme cluster edge cases</li>
               </ul>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#691b13',
-      notes: 'Stopword techniques: Full removal for dimensionality reduction, light trimming for preserving meaning'
+      backgroundColor: '#777719',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
     },
     {
-      id: 'techniques-8-10',
-      title: 'Morphological Analysis (8-10)',
+      id: 'technique-4',
+      title: '4. Whitespace Normalization',
       slides: [
         {
           id: 6,
-          title: 'Morphological Analysis (8-10)',
-          icon: { name: 'duo-seedling' },
+          title: '4. Whitespace Normalization',
+          icon: { name: 'duo-align-left' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#34c972' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-seedling" sizeName="3x" style={{ color: '#2ecc71' }} />
-            <SvgIcon iconName="duo-leaf" sizeName="3x" style={{ color: '#27ae60' }} />
-            <SvgIcon iconName="duo-tags" sizeName="3x" style={{ color: '#16a085' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px', color: '#2ecc71' }}>
-              <h4 style={{ color: '#2ecc71', marginBottom: '10px' }}>8. Stemming</h4>
-              <p><strong>Goal:</strong> Reduce inflected words to stems to merge variants</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> IR, topic modeling, when lexical precision is not critical</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Cuts dimensionality, robust to inflectional variation</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Produces non-words, may conflate unrelated terms</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '5px' }}>
-                💡 Example: running, runs, ran → run
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff5242' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Standardize spacing to make token boundaries predictable.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Collapse multiple spaces; normalize tabs/newlines; trim leading/trailing whitespace.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Before tokenization; after OCR; logs and scraped text.</p>
             </div>
-            <div style={{ border: '2px solid #27ae60', borderRadius: '10px', padding: '15px', color: '#27ae60' }}>
-              <h4 style={{ color: '#27ae60', marginBottom: '10px' }}>9. Lemmatization</h4>
-              <p><strong>Goal:</strong> Map tokens to dictionary base forms (lemmas)</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Morphological analysis using lexicons and POS/context</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Need precise base forms, linguistic analysis, better semantic grouping</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> More accurate than stemming, preserves meaning, aids downstream tasks</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Slower, requires models/resources, errors under domain shift</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(39, 174, 96, 0.1)', borderRadius: '5px' }}>
-                💡 Example: better → good, was → be
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Replace runs of whitespace with single space</li>
+                <li>Standardize newline to \n</li>
+                <li>Trim</li>
+                <li>Preserve intentional separators if needed</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Cleaner tokens</li>
+                <li>Consistent parsing</li>
+                <li>Fewer edge cases</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>May lose layout cues (tables, code)</li>
+                <li>Affects alignment-sensitive text</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #16a085', borderRadius: '10px', padding: '15px', color: '#16a085' }}>
-              <h4 style={{ color: '#16a085', marginBottom: '10px' }}>10. Part-of-Speech Tagging</h4>
-              <p><strong>Goal:</strong> Assign grammatical categories (noun, verb, etc.) to tokens</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Sequence labeling via HMM/CRF/neural models</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Before lemmatization, parsing, NER, feature engineering</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Enables syntax-aware features, improves lemmatization and parsing</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Errors propagate, domain/language coverage varies, ambiguous tokens</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(22, 160, 133, 0.1)', borderRadius: '5px' }}>
-                💡 Example: book (noun) vs book (verb)
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🌱 Morphological Analysis:</strong> Stemming for speed, Lemmatization for accuracy, POS tagging for syntax
           </div>
         </div>
       ),
-      backgroundColor: '#0d3d21',
-      notes: 'Morphological analysis: Stemming for quick reduction, Lemmatization for accurate base forms, POS tagging for grammar'
+      backgroundColor: '#631710',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
     },
     {
-      id: 'techniques-11-12',
-      title: '11-12. Feature Engineering',
+      id: 'technique-5',
+      title: '5. Punctuation Normalization',
       slides: [
         {
           id: 7,
-          title: '11-12. Feature Engineering',
-          icon: { name: 'duo-layer-group' },
+          title: '5. Punctuation Normalization',
+          icon: { name: 'duo-leaf' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ffaa5e' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#60ed38' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
-              <h3 style={{ color: '#f39c12', marginBottom: '12px' }}>11. N-gram Generation</h3>
-              <p><strong>Goal:</strong> Capture local context by creating contiguous token sequences</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Sliding window to build bigrams/trigrams/etc.; optional weighting</p>
-              <p style={{ marginTop: '10px' }}><strong>When:</strong> Linear models, IR, text classification, feature engineering</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Encodes order, improves predictive power over unigrams</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Feature explosion, sparsity, brittle to noise and rephrasing</p>
-              </div>
-              <h4 style={{ marginTop: '12px', color: '#f39c12' }}>Steps:</h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Choose n values (2, 3, etc.)</li>
-                <li>Generate n-grams</li>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Reduce punctuation variants and noise.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Define mapping table</li>
+                <li>Substitute</li>
+                <li>Remove extraneous marks</li>
+                <li>Preserve meaningful punctuation as needed</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Fewer token variants</li>
+                <li>Better matching</li>
+                <li>Improved sentence splitting</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Language/script-specific</li>
+                <li>May remove emotive or semantic cues</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#226310',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-6',
+      title: '6. Stopword Removal',
+      slides: [
+        {
+          id: 8,
+          title: '6. Stopword Removal',
+          icon: { name: 'duo-filter-circle-xmark' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#30c7f1' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Remove very frequent function words that add little topical value.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Filter tokens against a language-specific stopword list.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Select stoplist per language/domain</li>
+                <li>Keep negations/intensifiers if needed</li>
+                <li>Filter</li>
+                <li>Review impact on metrics</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Reduces dimensionality</li>
+                <li>Speeds training</li>
+                <li>Can improve topic signal</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Risk of meaning loss</li>
+                <li>Harms sequence/transformer setups</li>
+                <li>Domain sensitivity</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#105163',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-7',
+      title: '7. Light Stopword Trimming',
+      slides: [
+        {
+          id: 9,
+          title: '7. Light Stopword Trimming',
+          icon: { name: 'duo-filter' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#eb35e7' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Conservatively remove only the most generic function words while keeping nuance.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Sentiment, short texts, tasks sensitive to negation/modality.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Define light list</li>
+                <li>Whitelist negations/domain terms</li>
+                <li>Filter</li>
+                <li>Iterate with validation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Preserves meaning better than full removal</li>
+                <li>Balanced noise reduction</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Requires tuning</li>
+                <li>Residual noise may remain</li>
+                <li>Still risky for very short texts</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#631061',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-8',
+      title: '8. Stemming',
+      slides: [
+        {
+          id: 10,
+          title: '8. Stemming',
+          icon: { name: 'duo-seedling' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#7777ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Reduce inflected words to stems to merge variants.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>IR, topic modeling, when lexical precision is not critical.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Choose language stemmer</li>
+                <li>Apply</li>
+                <li>Sample-check for over/under-stemming</li>
+                <li>Adjust algorithm if available</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Cuts dimensionality</li>
+                <li>Robust to inflectional variation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Produces non-words</li>
+                <li>May conflate unrelated terms</li>
+                <li>Language-dependent rules</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#101063',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-9',
+      title: '9. Lemmatization',
+      slides: [
+        {
+          id: 11,
+          title: '9. Lemmatization',
+          icon: { name: 'duo-leaf' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#5ff792' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Map tokens to dictionary base forms (lemmas).</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Morphological analysis using lexicons and POS/context.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Need precise base forms; linguistic analysis; better semantic grouping.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Tokenize</li>
+                <li>POS tag</li>
+                <li>Lemmatize with language model</li>
+                <li>Handle OOV/proper nouns separately</li>
+                <li>Validate</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>More accurate than stemming</li>
+                <li>Preserves meaning</li>
+                <li>Aids downstream tasks</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Slower</li>
+                <li>Requires models/resources</li>
+                <li>Errors under domain shift</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#10632c',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-10',
+      title: '10. Part-of-Speech Tagging',
+      slides: [
+        {
+          id: 12,
+          title: '10. Part-of-Speech Tagging',
+          icon: { name: 'duo-tags' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff59a7' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Before lemmatization, parsing, NER, feature engineering.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Select tagset (e.g., Universal POS)</li>
+                <li>Load model</li>
+                <li>Tokenize</li>
+                <li>Tag</li>
+                <li>Evaluate on a sample</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Enables syntax-aware features</li>
+                <li>Improves lemmatization and parsing</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Errors propagate</li>
+                <li>Domain/language coverage varies</li>
+                <li>Ambiguous tokens</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#631037',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-11',
+      title: '11. N-gram Generation',
+      slides: [
+        {
+          id: 13,
+          title: '11. N-gram Generation',
+          icon: { name: 'duo-hashtag' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#f7f732' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Capture local context by creating contiguous token sequences.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Linear models, IR, text classification, feature engineering.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Choose n values</li>
+                <li>Generate</li>
                 <li>Prune rare n-grams</li>
                 <li>Compute TF-IDF/PMI</li>
                 <li>Cap feature size</li>
               </ul>
-              <p style={{ marginTop: '10px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '5px' }}>
-                💡 "New York City" → bigrams: (New, York), (York, City)
-              </p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Encodes order</li>
+                <li>Improves predictive power over unigrams</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Feature explosion</li>
+                <li>Sparsity</li>
+                <li>Brittle to noise and rephrasing</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px', color: '#e67e22' }}>
-              <h3 style={{ color: '#e67e22', marginBottom: '12px' }}>12. Phrase Detection</h3>
-              <p><strong>Goal:</strong> Treat multiword expressions as single units (e.g., "New York")</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Statistical collocation metrics (PMI, t-score) or model-based detection</p>
-              <p style={{ marginTop: '10px' }}><strong>When:</strong> IR, topic modeling, entity-heavy domains, prior to tokenization updates</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Better semantics, reduces fragmentation, improves retrieval and topics</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Threshold tuning, domain dependence, false positives/negatives</p>
-              </div>
-              <h4 style={{ marginTop: '12px', color: '#e67e22' }}>Steps:</h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Compute n-gram statistics</li>
-                <li>Set thresholds (PMI/frequency)</li>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#636310',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-12',
+      title: '12. Phrase Detection',
+      slides: [
+        {
+          id: 14,
+          title: '12. Phrase Detection',
+          icon: { name: 'duo-puzzle-piece' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#f537e1' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Treat multiword expressions as single units (e.g., "New York").</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Compute n-gram stats</li>
+                <li>Set thresholds</li>
                 <li>Join phrases with delimiter</li>
                 <li>Iterate for higher-order phrases</li>
               </ul>
-              <p style={{ marginTop: '10px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '5px' }}>
-                💡 "machine learning" → "machine_learning"
-              </p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#854a15',
-      notes: 'Feature engineering: N-grams capture word order, Phrase detection treats multiword expressions as units'
-        }
-      ]
-    },
-    {
-      id: 'techniques-13-15',
-      title: 'Error Correction (13-15)',
-      slides: [
-        {
-          id: 8,
-          title: 'Error Correction (13-15)',
-          icon: { name: 'duo-wand-magic-sparkles' },
-          content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#3ea9ed' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-spell-check" sizeName="3x" style={{ color: '#3498db' }} />
-            <SvgIcon iconName="duo-scanner" sizeName="3x" style={{ color: '#9b59b6' }} />
-            <SvgIcon iconName="duo-expand" sizeName="3x" style={{ color: '#1abc9c' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '10px' }}>13. Spell Correction</h4>
-              <p><strong>Goal:</strong> Fix misspellings to improve readability and model input quality</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Candidate generation via edit distance, ranking by frequency/context</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> User-generated content, noisy forms, query logs</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Improves recall/precision, cleaner features, better accuracy</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Overcorrection risk, language/locale-specific, computational overhead</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                💡 "recieve" → "receive"
-              </p>
-            </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '10px' }}>14. OCR Error Correction</h4>
-              <p><strong>Goal:</strong> Correct systematic errors from optical character recognition</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Rule-based replacements, confusion matrices, dictionaries, post-OCR LMs</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Scanned books, PDFs, historical documents</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Large quality gains on OCR text, addresses domain-specific noise</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Corpus-specific tuning needed, residual errors remain, setup effort</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                💡 "0/O", "l/1", "rn/m" confusion pairs
-              </p>
-            </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
-              <h4 style={{ color: '#1abc9c', marginBottom: '10px' }}>15. Contraction Expansion</h4>
-              <p><strong>Goal:</strong> Expand contractions (e.g., "don't" → "do not") for clarity</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Regex + mapping dictionary; optional context-aware models</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Sentiment analysis, rule-based parsing, tasks expecting full forms</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Clearer negation and syntax, more consistent tokens</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Ambiguities (he'd = he had/would), may alter tone, locale-dependent</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '5px' }}>
-                💡 "won't" → "will not", "I'm" → "I am"
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>✨ Error Correction:</strong> Spell correction for UGC, OCR correction for scanned docs, Contraction expansion for clarity
-          </div>
-        </div>
-      ),
-      backgroundColor: '#123c57',
-      notes: 'Error correction: Spell correction for typos, OCR correction for scan errors, Contraction expansion for clarity'
-        }
-      ]
-    },
-    {
-      id: 'techniques-16-17',
-      title: '16-17. Number & Character Handling',
-      slides: [
-        {
-          id: 9,
-          title: '16-17. Number & Character Handling',
-          icon: { name: 'duo-broom' },
-          content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#f98335' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-hashtag" sizeName="3x" style={{ color: '#e67e22' }} />
-            <SvgIcon iconName="duo-filter" sizeName="3x" style={{ color: '#e74c3c' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '18px', color: '#e67e22' }}>
-              <h3 style={{ color: '#e67e22', marginBottom: '12px' }}>16. Number Normalization</h3>
-              <p><strong>Goal:</strong> Standardize numeric expressions for comparability and reduced sparsity</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Parse numerals/words; normalize format; unit conversion; masking (e.g., &lt;NUM&gt;)</p>
-              <p style={{ marginTop: '10px' }}><strong>When:</strong> De-identification, aggregation, generalization in models</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Improves generalization, eases matching, reduces vocab size</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Potential loss of precision, unit handling is tricky, context-sensitive</p>
-              </div>
-              <h4 style={{ marginTop: '12px', color: '#e67e22' }}>Steps:</h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Detect numbers in text</li>
-                <li>Choose strategy (keep, scale, mask)</li>
-                <li>Handle units/currencies</li>
-                <li>Format consistently</li>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Better semantics</li>
+                <li>Reduces fragmentation</li>
+                <li>Improves retrieval and topics</li>
               </ul>
-              <p style={{ marginTop: '10px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '5px' }}>
-                💡 "5,000" → "5000" or "&lt;NUM&gt;"
-              </p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Threshold tuning</li>
+                <li>Domain dependence</li>
+                <li>False positives/negatives</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '18px', color: '#e74c3c' }}>
-              <h3 style={{ color: '#e74c3c', marginBottom: '12px' }}>17. Special Character Filtering</h3>
-              <p><strong>Goal:</strong> Control or remove emojis, symbols, control chars, and non-text artifacts</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Use Unicode categories; whitelists/blacklists; regex filters or mappings</p>
-              <p style={{ marginTop: '10px' }}><strong>When:</strong> Formal documents, security sanitization, systems with limited character sets</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Cleaner tokens, prevents parsing/rendering issues, mitigates injection</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> May remove meaningful signals (emoji/emoticons), language-specific character risk</p>
-              </div>
-              <h4 style={{ marginTop: '12px', color: '#e74c3c' }}>Steps:</h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Define allowed character sets</li>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#63105a',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-13',
+      title: '13. Spell Correction',
+      slides: [
+        {
+          id: 15,
+          title: '13. Spell Correction',
+          icon: { name: 'duo-spell-check' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff9b4a' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Fix misspellings to improve readability and model input quality.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>User-generated content, noisy forms, query logs.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Detect errors</li>
+                <li>Generate candidates</li>
+                <li>Rank</li>
+                <li>Apply with confidence threshold</li>
+                <li>Log corrections for QA</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Improves recall/precision</li>
+                <li>Cleaner features</li>
+                <li>Better downstream accuracy</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Overcorrection risk</li>
+                <li>Language/locale-specific</li>
+                <li>Computational overhead</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#633510',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-14',
+      title: '14. OCR Error Correction',
+      slides: [
+        {
+          id: 16,
+          title: '14. OCR Error Correction',
+          icon: { name: 'duo-wand-sparkles' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#4dfb35' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Correct systematic errors from optical character recognition.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Scanned books, PDFs, historical documents.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Analyze error patterns</li>
+                <li>Build rules/models</li>
+                <li>Apply</li>
+                <li>Evaluate on gold samples</li>
+                <li>Iterate</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Large quality gains on OCR text</li>
+                <li>Addresses domain-specific noise</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Corpus-specific tuning needed</li>
+                <li>Residual errors remain</li>
+                <li>Setup effort</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1a6310',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-15',
+      title: '15. Contraction Expansion',
+      slides: [
+        {
+          id: 17,
+          title: '15. Contraction Expansion',
+          icon: { name: 'duo-expand' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#fb56ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Expand contractions (e.g., "don't" → "do not") for clarity and handling negation.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Regex + mapping dictionary; optional context-aware models.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Sentiment, rule-based parsing, tasks expecting full forms.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Define mapping incl. locale variants</li>
+                <li>Preserve casing</li>
+                <li>Expand</li>
+                <li>Handle slang and possessives carefully</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Clearer negation and syntax</li>
+                <li>More consistent tokens</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Ambiguities (he'd = he had/would)</li>
+                <li>May alter tone</li>
+                <li>Locale-dependent</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#611063',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-16',
+      title: '16. Number Normalization',
+      slides: [
+        {
+          id: 18,
+          title: '16. Number Normalization',
+          icon: { name: 'duo-hashtag' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff5353' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Standardize numeric expressions for comparability and reduced sparsity.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>De-identification, aggregation, generalization in models.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Detect numbers</li>
+                <li>choose strategy (keep, scale, mask)</li>
+                <li>handle units/currencies</li>
+                <li>format consistently</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Improves generalization</li>
+                <li>Eases matching</li>
+                <li>Reduces vocab size</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Potential loss of precision</li>
+                <li>Unit handling is tricky</li>
+                <li>Context-sensitive</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#631010',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-17',
+      title: '17. Special Character Filtering',
+      slides: [
+        {
+          id: 19,
+          title: '17. Special Character Filtering',
+          icon: { name: 'duo-filter' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#4fe6eb' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Formal documents, security sanitization, systems with limited character sets.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Define allowed sets</li>
                 <li>Strip/map disallowed chars</li>
                 <li>Log removals</li>
                 <li>Review edge cases (accent marks, emoji)</li>
               </ul>
-              <p style={{ marginTop: '10px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '5px' }}>
-                💡 Remove: ™, ®, ©, control chars
-              </p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Cleaner tokens</li>
+                <li>Prevents parsing/rendering issues</li>
+                <li>Mitigates injection</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>May remove meaningful signals (emoji/emoticons)</li>
+                <li>Language-specific characters risk</li>
+              </ul>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#5b2501',
-      notes: 'Number normalization standardizes numerics; Special character filtering removes symbols and artifacts'
+      backgroundColor: '#106063',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
     },
     {
-      id: 'techniques-18-20',
-      title: 'Cleaning & Structuring (18-20)',
+      id: 'technique-18',
+      title: '18. Removing Boilerplate Text',
       slides: [
         {
-          id: 10,
-          title: 'Cleaning & Structuring (18-20)',
+          id: 20,
+          title: '18. Removing Boilerplate Text',
           icon: { name: 'duo-broom' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#23bb9c' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-broom" sizeName="3x" style={{ color: '#1abc9c' }} />
-            <SvgIcon iconName="duo-copy" sizeName="3x" style={{ color: '#9b59b6' }} />
-            <SvgIcon iconName="duo-paragraph" sizeName="3x" style={{ color: '#3498db' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '18px' }}>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
-              <h4 style={{ color: '#1abc9c', marginBottom: '10px' }}>18. Removing Boilerplate Text</h4>
-              <p><strong>Goal:</strong> Remove template-like non-content (headers, footers, nav, ads)</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> HTML/DOM parsing; text-density heuristics; boilerplate detectors</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Web/news scraping, emails, PDFs, templated reports</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Cleaner corpora, better topic and summarization performance</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Risk of removing content, site-specific maintenance, complex layouts</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '5px' }}>
-                💡 Tools: Boilerpipe, JusText, Trafilatura
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#e5854e' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Remove template-like non-content (headers, footers, nav, ads).</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Web/news scraping, emails, PDFs, templated reports.</p>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '10px' }}>19. Removing Duplicate Sentences</h4>
-              <p><strong>Goal:</strong> Eliminate exact/near-duplicate sentences to reduce bias and leakage</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Dataset building, deduplication before training/evaluation</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Smaller, cleaner datasets; faster training; reduces overfitting</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Computational cost, risk of dropping legitimate repetitions, threshold tuning</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                💡 Use: MD5/SHA for exact, embeddings for semantic
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Parse document</li>
+                <li>identify content blocks</li>
+                <li>drop low-density/repetitive regions</li>
+                <li>keep main body</li>
+                <li>validate</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Cleaner corpora</li>
+                <li>Better topic and summarization performance</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Risk of removing content</li>
+                <li>Site-specific maintenance</li>
+                <li>Complex layouts</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '10px' }}>20. Sentence Boundary Segmentation</h4>
-              <p><strong>Goal:</strong> Split text into sentences for sentence-level processing</p>
-              <p style={{ marginTop: '8px' }}><strong>How:</strong> Rule-based with abbreviations + ML/neural models for edge cases</p>
-              <p style={{ marginTop: '8px' }}><strong>When:</strong> Summarization, translation, sentiment at sentence granularity</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Enables sentence-level features, manageable chunks, better alignment</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Noisy text and missing punctuation hurt accuracy, multilingual challenges</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '8px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                💡 Tools: NLTK Punkt, spaCy, Stanza
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🧹 Cleaning:</strong> Remove boilerplate for cleaner corpora, deduplicate for unbiased data, segment for structure
           </div>
         </div>
       ),
-      backgroundColor: '#084337',
-      notes: 'Cleaning: Remove boilerplate from web content, deduplicate sentences, segment text into sentences'
+      backgroundColor: '#632e10',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-19',
+      title: '19. Removing Duplicate Sentences',
+      slides: [
+        {
+          id: 21,
+          title: '19. Removing Duplicate Sentences',
+          icon: { name: 'duo-copy' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#47b3ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Dataset building, deduplication before training/evaluation.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Normalize text</li>
+                <li>Compute signatures/embeddings</li>
+                <li>Set similarity threshold</li>
+                <li>Remove</li>
+                <li>Keep canonical</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Smaller</li>
+                <li>Cleaner datasets</li>
+                <li>Faster training</li>
+                <li>Reduces overfitting</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Computational cost</li>
+                <li>Risk of dropping legitimate repetitions</li>
+                <li>Threshold tuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#104163',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
+        }
+      ]
+    },
+    {
+      id: 'technique-20',
+      title: '20. Sentence Boundary Segmentation',
+      slides: [
+        {
+          id: 22,
+          title: '20. Sentence Boundary Segmentation',
+          icon: { name: 'duo-scissors' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#d756fb' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Split text into sentences for sentence-level processing.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                How It Works
+              </h4>
+              <p>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                When to Use
+              </h4>
+              <p>Summarization, translation, sentiment at sentence granularity.</p>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Choose segmenter</li>
+                <li>Configure abbreviation lists</li>
+                <li>Apply</li>
+                <li>Validate tricky cases (quotes, decimals, ellipses)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Enables sentence-level features</li>
+                <li>Manageable chunks</li>
+                <li>Better downstream alignment</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Noisy text and missing punctuation hurt accuracy</li>
+                <li>Multilingual challenges</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#511063',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
     },
@@ -621,39 +1446,41 @@ export const textPreprocessingDeck: Deck = {
       title: '21. Language Detection and Filtering',
       slides: [
         {
-          id: 11,
+          id: 23,
           title: '21. Language Detection and Filtering',
-          icon: { name: 'duo-globe' },
+          icon: { name: 'duo-code' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#2e9fe9' }}>
-          <div style={{ marginBottom: '20px' }}>
-            <h3>Identify language and route/filter text accordingly</h3>
-          </div>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#f7ef4f' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
             <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="1x" darkModeInvert={true} />
+                Goal
+              </h4>
+              <p>Identify language and route/filter text accordingly.</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
                 How It Works
               </h4>
-              <p>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
-                Steps
-              </h4>
-              <ul style={{ fontSize: '0.95em' }}>
-                <li>Pick detector (fastText, CLD3, langdetect)</li>
-                <li>Set confidence threshold</li>
-                <li>Detect per document/sentence</li>
-                <li>Filter or route based on language</li>
-                <li>Monitor code-switching scenarios</li>
-              </ul>
+              <p>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
                 When to Use
               </h4>
-              <p>Multilingual corpora; language-specific pipelines or content moderation</p>
+              <p>Multilingual corpora; language-specific pipelines or content moderation.</p>
             </div>
             <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-list-ol" sizeName="1x" darkModeInvert={true} />
+                Steps
+              </h4>
+              <ul>
+                <li>Pick DifficultySelector</li>
+                <li>Set confidence threshold</li>
+                <li>Detect per document/sentence</li>
+                <li>Filter or route</li>
+                <li>Monitor code-switching</li>
+              </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
                 Pros
@@ -661,256 +1488,23 @@ export const textPreprocessingDeck: Deck = {
               <ul>
                 <li>Cleaner mono-lingual datasets</li>
                 <li>Correct model routing</li>
-                <li>Better performance with language-specific models</li>
-                <li>Enables targeted preprocessing</li>
+                <li>Better performance</li>
               </ul>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                 <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
                 Cons
               </h4>
               <ul>
-                <li>Short texts are hard to classify</li>
-                <li>Code-switching challenges</li>
+                <li>Short texts are hard</li>
+                <li>Code-switching</li>
                 <li>Similar scripts/languages may confuse models</li>
-                <li>Requires threshold tuning</li>
-              </ul>
-              <div style={{ marginTop: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
-                <strong>💡 Example:</strong><br/>
-                "Hello world" → English (0.99)<br/>
-                "Bonjour le monde" → French (0.98)<br/>
-                "你好世界" → Chinese (0.97)
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#0e2e43',
-      notes: 'Language detection: Identify and filter text by language for proper routing and mono-lingual datasets'
-        }
-      ]
-    },
-    {
-      id: 'summary',
-      title: 'Summary',
-      slides: [
-        {
-          id: 12,
-          title: 'Technique Selection Guide',
-          icon: { name: 'duo-compass' },
-          content: (
-        <div style={{ margin: '0 auto', fontSize: '0.72em' }}>
-          <h3 style={{ marginBottom: '25px' }}>When to Use Each Technique</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', borderLeft: '4px solid #3498db' }}>
-              <strong>🔤 Always Start With:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Tokenization → Whitespace/Unicode Normalization</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
-              <strong>📝 For Traditional ML/IR:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Lowercasing, Stopword Removal, Stemming/Lemmatization, N-grams</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', borderLeft: '4px solid #2ecc71' }}>
-              <strong>🤖 For Neural Models:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Light/No stopword removal, Keep case for NER, Skip stemming</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', borderLeft: '4px solid #f39c12' }}>
-              <strong>📊 For Topic Modeling:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Stopword Removal, Lemmatization, N-grams, Phrase Detection</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e67e22' }}>
-              <strong>💬 For Sentiment Analysis:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Light Stopword Trimming (keep negations!), Contraction Expansion, Spell Correction</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e74c3c' }}>
-              <strong>📄 For Document Cleaning:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Boilerplate Removal, Deduplication, Sentence Segmentation</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '8px', borderLeft: '4px solid #1abc9c' }}>
-              <strong>🔍 For Search/IR:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Stopword Removal, Stemming, Phrase Detection, Spell Correction</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(0, 127, 255, 0.1)', borderRadius: '8px', borderLeft: '4px solid #3198ff' }}>
-              <strong>📖 For OCR/Scanned Docs:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>OCR Error Correction, Spell Correction, Whitespace Normalization</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(149, 165, 166, 0.1)', borderRadius: '8px', borderLeft: '4px solid #95a5a6' }}>
-              <strong>🌍 For Multilingual:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Language Detection, Unicode Normalization, Language-specific Lemmatization</p>
-            </div>
-            <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '8px', borderLeft: '4px solid #8e44ad' }}>
-              <strong>🎯 For Named Entity Recognition:</strong>
-              <p style={{ marginTop: '6px', fontSize: '0.95em' }}>Keep Case, POS Tagging, Light/No Stopword Removal, Sentence Segmentation</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#34495E',
-      notes: 'Selection guide: Match preprocessing techniques to your specific task requirements'
-        },
-        {
-          id: 13,
-          title: 'Best Practices',
-          icon: { name: 'duo-clipboard-check' },
-          content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#38f787' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} />
-                Do's
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#2ecc71' }}>
-                <li><strong>Start Simple:</strong> Begin with basic normalization</li>
-                <li><strong>Keep Raw Copy:</strong> Always preserve original text</li>
-                <li><strong>Pipeline Order:</strong> Tokenization early, cleaning before modeling</li>
-                <li><strong>Language-Aware:</strong> Use appropriate tools per language</li>
-                <li><strong>Task-Specific:</strong> Tailor preprocessing to your use case</li>
-                <li><strong>Validate:</strong> Spot-check samples after each step</li>
-                <li><strong>Log Changes:</strong> Track transformations for debugging</li>
-                <li><strong>Test Impact:</strong> Measure effect on downstream metrics</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-ban" sizeName="1x" darkModeInvert={true} />
-                Don'ts
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#e74c3c' }}>
-                <li><strong>Over-process:</strong> Don't apply every technique blindly</li>
-                <li><strong>Lose Context:</strong> Be careful removing stopwords for sentiment</li>
-                <li><strong>Ignore Domain:</strong> Generic stoplists may harm specialized text</li>
-                <li><strong>Skip Validation:</strong> Always check processed output</li>
-                <li><strong>Forget Case Needs:</strong> NER requires case information</li>
-                <li><strong>Remove All Numbers:</strong> Context matters (dates, IDs, amounts)</li>
-                <li><strong>Aggressive Stemming:</strong> Can conflate unrelated words</li>
-                <li><strong>One-Size-Fits-All:</strong> Different tasks need different preprocessing</li>
               </ul>
             </div>
           </div>
-          <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
-            <strong>💡 Golden Rule:</strong> Less is often more. Start minimal, add preprocessing only when it improves your target metrics.
-          </div>
         </div>
       ),
-      backgroundColor: '#135930',
-      notes: 'Best practices: Start simple, keep raw copy, validate changes, tailor to task, avoid over-processing'
-        },
-        {
-          id: 14,
-          title: 'Common Pipeline Examples',
-          icon: { name: 'duo-diagram-project' },
-          content: (
-        <div style={{ margin: '0 auto', fontSize: '0.75em', color: '#30ddbc' }}>
-          <h3 style={{ marginBottom: '30px' }}>Task-Specific Preprocessing Pipelines</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-magnifying-glass" sizeName="1x" darkModeInvert={true} />
-                Information Retrieval Pipeline
-              </h4>
-              <p style={{ color: '#3498db' }}><strong>1.</strong> Tokenization → <strong>2.</strong> Lowercasing → <strong>3.</strong> Unicode Normalization → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Stemming → <strong>6.</strong> N-grams → <strong>7.</strong> Phrase Detection</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
-              <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-face-smile" sizeName="1x" darkModeInvert={true} />
-                Sentiment Analysis Pipeline
-              </h4>
-              <p style={{ color: '#2ecc71' }}><strong>1.</strong> Spell Correction → <strong>2.</strong> Contraction Expansion → <strong>3.</strong> Tokenization → <strong>4.</strong> Light Stopword Trimming → <strong>5.</strong> Lemmatization → <strong>6.</strong> Special Character Filtering (keep emoji!)</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-tag" sizeName="1x" darkModeInvert={true} />
-                Named Entity Recognition Pipeline
-              </h4>
-              <p style={{ color: '#9b59b6' }}><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization → <strong>4.</strong> Sentence Segmentation → <strong>5.</strong> POS Tagging → <strong>6.</strong> Keep Case!</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
-              <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-book" sizeName="1x" darkModeInvert={true} />
-                Topic Modeling Pipeline
-              </h4>
-              <p style={{ color: '#f39c12' }}><strong>1.</strong> Boilerplate Removal → <strong>2.</strong> Tokenization → <strong>3.</strong> Lowercasing → <strong>4.</strong> Stopword Removal → <strong>5.</strong> Lemmatization → <strong>6.</strong> Phrase Detection → <strong>7.</strong> N-grams</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '10px', border: '2px solid #e67e22' }}>
-              <h4 style={{ color: '#e67e22', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-file-pdf" sizeName="1x" darkModeInvert={true} />
-                OCR Document Processing Pipeline
-              </h4>
-              <p style={{ color: '#e67e22' }}><strong>1.</strong> OCR Error Correction → <strong>2.</strong> Unicode Normalization → <strong>3.</strong> Whitespace Normalization → <strong>4.</strong> Spell Correction → <strong>5.</strong> Sentence Segmentation → <strong>6.</strong> Deduplication</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '10px', border: '2px solid #1abc9c' }}>
-              <h4 style={{ color: '#1abc9c', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
-                Neural NLP (Transformers) Pipeline
-              </h4>
-              <p style={{ color: '#1abc9c' }}><strong>1.</strong> Unicode Normalization → <strong>2.</strong> Whitespace Normalization → <strong>3.</strong> Tokenization (Subword BPE/WordPiece) → <strong>4.</strong> Minimal processing (model handles rest!)</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#0b594a',
-      notes: 'Common pipelines for different tasks: IR, Sentiment, NER, Topic Modeling, OCR, and Neural NLP'
-        },
-        {
-          id: 15,
-          title: 'Summary: The Preprocessing Toolkit',
-          icon: { name: 'duo-toolbox' },
-          content: (
-            <div style={{ textAlign: 'left' }}>
-          <h2 style={{ marginBottom: '30px' }}>21 Techniques for Clean Text</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', margin: '0 auto', fontSize: '0.75em' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '12px' }}>🔧 Foundational (1-5)</h4>
-              <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                Tokenization, Lowercasing, Unicode/Whitespace/Punctuation Normalization
-              </p>
-              <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: All projects</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px', color: '#2ecc71' }}>
-              <h4 style={{ color: '#2ecc71', marginBottom: '12px' }}>🌱 Linguistic (6-10)</h4>
-              <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                Stopwords, Stemming, Lemmatization, POS Tagging
-              </p>
-              <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Traditional ML/IR</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px', color: '#f39c12' }}>
-              <h4 style={{ color: '#f39c12', marginBottom: '12px' }}>🔨 Feature Eng (11-12)</h4>
-              <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                N-grams, Phrase Detection
-              </p>
-              <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Text classification</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '12px' }}>✨ Correction (13-15)</h4>
-              <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                Spell, OCR, Contraction fixes
-              </p>
-              <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Noisy text</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(230, 126, 34, 0.15)', borderRadius: '10px', color: '#e67e22' }}>
-              <h4 style={{ color: '#e67e22', marginBottom: '12px' }}>🧹 Cleaning (16-20)</h4>
-              <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                Number/Character handling, Boilerplate removal, Deduplication, Segmentation
-              </p>
-              <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Corpus building</p>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '12px' }}>🌍 Multilingual (21)</h4>
-              <p style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                Language Detection & Filtering
-              </p>
-              <p style={{ marginTop: '10px', fontWeight: 'bold' }}>Use for: Mixed languages</p>
-            </div>
-          </div>
-          <div style={{ marginTop: '40px', padding: '25px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', margin: '40px auto 0' }}>
-            <p style={{ fontSize: '1.1em', lineHeight: '1.8' }}>
-              <strong>🎯 Key Principle:</strong> Preprocessing is not a checklist. Choose techniques based on your task, data characteristics, and target metrics. Start minimal, measure impact, and add complexity only when it helps.
-            </p>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#2C3E50',
-      notes: 'Summary: 21 techniques in 6 groups - choose based on task, start minimal, measure impact'
+      backgroundColor: '#635f10',
+      notes: 'Tokenization: Foundation technique that splits text into tokens using rule-based or model-based methods'
         }
       ]
     }
