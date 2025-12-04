@@ -35,34 +35,34 @@ export const embeddingQualityDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '0.9em' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <div style={{ fontSize: '0.9em' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#4fc3f7' }} />
-                  <span>1. Clean and Normalize Text</span>
+                  <span>1. Clean and Normalize Text — reduce variability and token fragmentation</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-filter" sizeName="2x" style={{ color: '#81c784' }} />
-                  <span>2. Remove Boilerplate and Noise</span>
+                  <span>2. Remove Boilerplate and Noise — keep only the main content</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-scissors" sizeName="2x" style={{ color: '#ffb74d' }} />
-                  <span>3. Use Semantic Chunking</span>
+                  <span>3. Use Semantic Chunking — split into coherent, retrievable units</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-heading" sizeName="2x" style={{ color: '#ba68c8' }} />
-                  <span>4. Add Section Titles to Chunks</span>
+                  <span>4. Add Section Titles to Chunks — add context and disambiguation</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-eraser" sizeName="2x" style={{ color: '#f06292' }} />
-                  <span>5. Apply Light Stopword Trimming</span>
+                  <span>5. Apply Light Stopword Trimming — trim filler without losing meaning</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-tags" sizeName="2x" style={{ color: '#64b5f6' }} />
-                  <span>6. Add Keyphrase/Topic Tags</span>
+                  <span>6. Add Keyphrase/Topic Tags as Metadata — enrich retrieval signals</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', gridColumn: '1 / -1', justifyContent: 'flex-start' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '14px 0' }}>
                   <SvgIcon iconName="duo-table" sizeName="2x" style={{ color: '#aed581' }} />
-                  <span>7. Convert Tables to Structured Text</span>
+                  <span>7. Convert Tables to Structured Text — linearize tabular data for models</span>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Mixed sources, OCR, scraped web, user-generated content, legacy docs.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Normalize Unicode (NFC/NFKC); fix mojibake</li>
                     <li>Standardize quotes/dashes; collapse whitespace; trim</li>
                     <li>Normalize bullets/lists; unify line breaks</li>
@@ -100,11 +100,17 @@ export const embeddingQualityDeck: Deck = {
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>More consistent tokenization, fewer artifacts</p>
+                    <ul>
+                      <li>More consistent tokenization and better deduplication</li>
+                      <li>Fewer artifacts from encoding/scraping</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Over-normalization can remove signals</p>
+                    <ul>
+                      <li>Over-normalization can remove signals (case, emphasis)</li>
+                      <li>Requires testing per language/domain</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -133,7 +139,7 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Web pages, PDFs, emails, repeated templates across documents.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Parse DOM or PDF; keep main content via readability heuristics</li>
                     <li>Drop nav/aside/footer; remove ads, cookie text, A/B test fragments</li>
                     <li>Strip repeated headers/footers; remove tracking IDs</li>
@@ -143,11 +149,17 @@ export const embeddingQualityDeck: Deck = {
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Higher signal-to-noise; better retrieval precision</p>
+                    <ul>
+                      <li>Higher signal-to-noise; smaller index size</li>
+                      <li>Better retrieval precision</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Risk of deleting useful context</p>
+                    <ul>
+                      <li>Risk of deleting useful context if rules too aggressive</li>
+                      <li>Needs maintenance across sources</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -176,7 +188,7 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Long documents, RAG pipelines, context-window constraints.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Choose target chunk size (e.g., 200–400 tokens) and small overlap (e.g., 10–20%)</li>
                     <li>Anchor boundaries at headings, paragraphs, lists</li>
                     <li>Within sections, group paragraphs by embedding similarity/cohesion</li>
@@ -187,10 +199,18 @@ export const embeddingQualityDeck: Deck = {
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
                     <p style={{ marginTop: '5px', marginLeft: '20px' }}>Improves recall/precision; reduces hallucinations</p>
+                    <ul>
+                      <li>Improves recall/precision in retrieval</li>
+                      <li>Reduces context stuffing and hallucinations</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
                     <p style={{ marginTop: '5px', marginLeft: '20px' }}>More complex pipeline; requires tuning</p>
+                    <ul>
+                      <li>More complex pipeline; overlap increases storage</li>
+                      <li>Requires tuning per corpus</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -219,7 +239,7 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Hierarchical docs, manuals, APIs, research papers.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Extract breadcrumb (Doc Title &gt; H1 &gt; H2 &gt; H3)</li>
                     <li>Build a concise chunk title; prepend or store in metadata</li>
                     <li>Keep under token budget; avoid repeating long titles</li>
@@ -229,11 +249,17 @@ export const embeddingQualityDeck: Deck = {
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Stronger semantic cues; easier tracing</p>
+                    <ul>
+                      <li>Stronger semantic cues; better filtering and ranking</li>
+                      <li>Easier tracing back to source</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Extra tokens; requires robust heading extraction</p>
+                    <ul>
+                      <li>Extra tokens if in-text; may skew similarity if titles are very generic</li>
+                      <li>Requires robust heading extraction</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -262,7 +288,7 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Tight token budgets, repetitive narrative text, noisy corpora.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Start with a small, language-specific stoplist</li>
                     <li>Protect negations (not, never), numerals, dates, units, named entities</li>
                     <li>Skip trimming inside code blocks, formulas, or commands</li>
@@ -272,11 +298,17 @@ export const embeddingQualityDeck: Deck = {
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Smaller, denser chunks; faster indexing</p>
+                    <ul>
+                      <li>Smaller, denser chunks; faster indexing</li>
+                      <li>Can improve signal-to-noise</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Over-trimming harms semantics and QA</p>
+                    <ul>
+                      <li>Over-trimming harms semantics and QA</li>
+                      <li>Multilingual handling adds complexity</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -305,7 +337,7 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Large corpora, multi-domain search, governance/compliance filters.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Run keyphrase extraction (e.g., RAKE/YAKE/KeyBERT or noun-phrase heuristics)</li>
                     <li>Normalize (lowercase, lemmatize), dedupe, map synonyms</li>
                     <li>Attach tags (topics, entities, products, versions) to chunks</li>
@@ -315,11 +347,17 @@ export const embeddingQualityDeck: Deck = {
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Better recall/precision; enables facets</p>
+                    <ul>
+                      <li>Better recall/precision and navigability</li>
+                      <li>Enables facets, access controls, analytics</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Extraction noise; taxonomy maintenance</p>
+                    <ul>
+                      <li>Extraction noise; needs QA and thresholding</li>
+                      <li>Taxonomy maintenance over time</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -348,21 +386,27 @@ export const embeddingQualityDeck: Deck = {
                 <p><strong>When to Use:</strong> Specs, pricing sheets, CSVs, benchmarks, logs.</p>
                 <div style={{ marginTop: '20px' }}>
                   <p><strong>Steps:</strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                  <ul style={{ fontSize: '0.6em' }}>
                     <li>Keep header row as schema; identify primary key columns</li>
                     <li>Emit per-row sentences: "RowID=X; Column: Value (Unit)"</li>
                     <li>Verticalize wide tables; group related columns</li>
-                    <li>Include summary stats (min/mean/max) when helpful; attach original CSV/JSON path</li>
+                    <li>Include summary stats (min/mean/max) when helpful; attach original CSV/JSON path as metadata</li>
                   </ul>
                 </div>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px', fontSize: '0.8em' }}>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Pros:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Better matching for row-level queries</p>
+                    <ul>
+                      <li>Better matching for row-level queries</li>
+                      <li>Works across models without layout awareness</li>
+                    </ul>
                   </div>
                   <div>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Cons:</strong></p>
-                    <p style={{ marginTop: '5px', marginLeft: '20px' }}>Higher token count; careful formatting needed</p>
+                    <ul>
+                      <li>Higher token count; potential loss of layout cues</li>
+                      <li>Requires careful formatting for very large tables</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -388,15 +432,23 @@ export const embeddingQualityDeck: Deck = {
                   <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                   Recap: The 7 Techniques
                 </h3>
-                <p style={{ fontSize: '0.9em', lineHeight: '1.8' }}>
-                  1. Clean/Normalize &nbsp;|&nbsp; 2. De-boilerplate &nbsp;|&nbsp; 3. Semantic Chunking &nbsp;|&nbsp; 4. Section Titles &nbsp;|&nbsp; 5. Stopword Trimming &nbsp;|&nbsp; 6. Keyphrase Tags &nbsp;|&nbsp; 7. Structured Tables
+                <p style={{ fontSize: '0.6em', lineHeight: '1.8' }}>
+                  <ul>
+                    <li>1. Clean/Normalize</li>
+                    <li>2. De-boilerplate</li>
+                    <li>3. Semantic Chunking</li>
+                    <li>4. Section Titles</li>
+                    <li>5. Stopword Trimming</li>
+                    <li>6. Keyphrase Tags</li>
+                    <li>7. Structured Tables</li>
+                  </ul>
                 </p>
                 
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
                   What to Measure
                 </h3>
-                <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                <ul style={{ fontSize: '0.6em' }}>
                   <li>Relevance metrics: nDCG/MRR@k, recall@k, hit rate</li>
                   <li>Performance metrics: latency, index size, embedding time</li>
                   <li>A/B test with your application's end-user metrics</li>
@@ -406,11 +458,22 @@ export const embeddingQualityDeck: Deck = {
                   <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
                   Implementation Playbook
                 </h3>
-                <ul style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+                <ul style={{ fontSize: '0.6em' }}>
                   <li>Start with cleaning + de-boilerplate (biggest ROI)</li>
                   <li>Add semantic chunking + titles (improves retrieval precision)</li>
                   <li>Enrich with keyphrase tags; convert tables to structured text</li>
                   <li>Carefully test light stopword trimming (most sensitive to tuning)</li>
+                </ul>
+
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
+                  <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
+                  Next Steps
+                </h3>
+                <ul style={{ fontSize: '0.6em' }}>
+                  <li>Build a small labeled eval set</li>
+                  <li>Run ablations per trick</li>
+                  <li>Choose defaults per corpus</li>
+                  <li>Automate QA sampling</li>
                 </ul>
               </div>
             </div>
