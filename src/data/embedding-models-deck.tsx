@@ -112,14 +112,26 @@ export const embeddingModelsDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Vendor lock-in, data residency/compliance considerations, requires API access
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Vendor lock-in</li>
+                    <li>Data residency/compliance considerations</li>
+                    <li>Requires API access</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 400–800 tokens (can go higher; practical chunking for RAG efficiency)
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Successor to ada-002 with improved quality. Use cosine similarity with normalized vectors. Great for high-volume indexing where budget matters.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul>
+                    <li>Successor to ada-002 with improved quality</li>
+                    <li>Use cosine similarity with normalized vectors</li>
+                    <li>Great for high-volume indexing where budget matters</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -144,21 +156,32 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Top-tier accuracy across many tasks</li>
                     <li>Robust multilingual support</li>
                     <li>Strong ecosystem</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Higher cost ($0.13 per 1M tokens) vs small; API dependency
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Higher cost ($0.13 per 1M tokens) vs small</li>
+                    <li>API dependency</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 400–800 tokens (can handle larger; tune for latency/cost)
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Choose when accuracy is paramount and budget allows. Normalize embeddings; cosine similarity recommended. Pair with reranking for best end-to-end RAG.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Choose when accuracy is paramount and budget allows</li>
+                    <li>Normalize embeddings; cosine similarity recommended</li>
+                    <li>Pair with reranking for best end-to-end RAG</li>
+                  </ul> 
                 </div>
               </div>
             </div>
@@ -189,21 +212,32 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Strong MTEB scores for size</li>
                     <li>Easy to self-host</li>
                     <li>Broad community support</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> 512-token limit (truncation risk on long docs); may need reranker for precision
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>512-token limit (truncation risk on long docs)</li>
+                    <li>May need reranker for precision</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens (to avoid truncation and keep latency low)
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> v1.5 improves similarity distribution; instructions optional for queries. Normalize embeddings for cosine similarity. For best results in RAG: retrieve top-K with BGE, rerank with bge-reranker-large.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>v1.5 improves similarity distribution; instructions optional for queries</li>
+                    <li>Normalize embeddings for cosine similarity</li>
+                    <li>For best results in RAG: retrieve top-K with BGE, rerank with bge-reranker-large</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -228,19 +262,30 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>SOTA-level performance on MTEB/C-MTEB among open-source embedders</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> 512-token cap; larger model requires more memory/compute than base
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>512-token cap</li>
+                    <li>Larger model requires more memory/compute than base</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Use normalize_embeddings=True for cosine. Add query instruction only if it empirically helps (v1.5 often fine without). Combine with bge-reranker for accuracy-critical ranking.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Use normalize_embeddings=True for cosine</li>
+                    <li>Add query instruction only if it empirically helps (v1.5 often fine without)</li>
+                    <li>Combine with bge-reranker for accuracy-critical ranking</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -271,20 +316,31 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Strong zero-shot performance</li>
                     <li>Multilingual option supports ~100 languages</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Requires prefixes ("query:", "passage:") for best results; 512-token cap
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Requires prefixes ("query:", "passage:") for best results</li>
+                    <li>512-token cap</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(255, 183, 77, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Variants: e5-base-v2 (English), multilingual-e5-base (multilingual). Train/finetune uses low temperature; expect high cosine values; rely on relative ranking. Always prepend the proper prefix to avoid performance drops.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Variants: e5-base-v2 (English), multilingual-e5-base (multilingual)</li>
+                    <li>Train/finetune uses low temperature; expect high cosine values; rely on relative ranking</li>
+                    <li>Always prepend the proper prefix to avoid performance drops</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -309,21 +365,33 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Improved performance over base</li>
                     <li>Strong BEIR/MTEB results</li>
                     <li>Multilingual variants</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Heavier than base; strict prefixing; 512-token cap
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Heavier than base</li>
+                    <li>strict prefixing</li>
+                    <li>512-token cap</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(255, 183, 77, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Use "query:" and "passage:" consistently (even for non-English). Normalize embeddings; use cosine similarity. Consider reranking for mission-critical relevance.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Use "query:" and "passage:" consistently (even for non-English)</li>
+                    <li>Normalize embeddings; use cosine similarity</li>
+                    <li>Consider reranking for mission-critical relevance</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -354,20 +422,31 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Task-aware vectors without finetuning</li>
                     <li>Flexible prompts tailor embeddings to objectives</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> Requires crafting consistent instructions; heavier and slower than base models
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Requires crafting consistent instructions</li>
+                    <li>Heavier and slower than base models</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Input format: [[instruction, text]]; keep instructions stable across corpora. Normalize embeddings; cosine similarity. Great for specialized domains when generic embedders underperform.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Input format: [[instruction, text]]; keep instructions stable across corpora</li>
+                    <li>Normalize embeddings; cosine similarity</li>
+                    <li>Great for specialized domains when generic embedders underperform</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -398,21 +477,33 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Competitive MTEB performance</li>
                     <li>Lightweight and fast</li>
                     <li>Easy to deploy</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> English-focused; 512-token cap; may trail BGE-large on some retrieval tasks
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>English-focused</li>
+                    <li>512-token cap</li>
+                    <li>May trail BGE-large on some retrieval tasks</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Normalize for cosine similarity. Good default for self-hosted RAG when resources are limited. Use reranking for tighter precision on top-K.
+                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Normalize for cosine similarity</li>
+                    <li>Good default for self-hosted RAG when resources are limited</li>
+                    <li>Use reranking for tighter precision on top-K</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -437,21 +528,32 @@ export const embeddingModelsDeck: Deck = {
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ marginTop: '5px', lineHeight: '1.5' }}>
+                  <ul style={{ marginTop: '5px' }}>
                     <li>Strong MTEB scores</li>
                     <li>Efficient for its quality</li>
                     <li>Widely supported in vector DBs</li>
                   </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p> English-only; 512-token cap; may need reranker for best precision
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Weaknesses:</strong></p>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>English-only</li>
+                    <li>512-token cap</li>
+                    <li>May need reranker for best precision</li>
+                  </ul>
                 </div>
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#ffb74d' }}>Typical Chunk Size:</strong> 200–400 tokens
                 </div>
                 <div style={{ fontSize: '0.85em', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
-                  <strong>Notes:</strong> Normalize embeddings; cosine similarity. Solid open-source alternative when you want quality close to BGE-large without vendor ties.
+                  <div>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                    <strong>Notes:</strong>
+                  </div>
+                  <ul style={{ marginTop: '5px' }}>
+                    <li>Normalize embeddings; cosine similarity</li>
+                    <li>Solid open-source alternative when you want quality close to BGE-large without vendor ties</li>
+                  </ul>
                 </div>
               </div>
             </div>
