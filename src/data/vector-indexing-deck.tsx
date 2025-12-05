@@ -43,30 +43,34 @@ export const vectorIndexingDeck: Deck = {
                     <tr style={{ borderBottom: '2px solid #00d4ff' }}>
                       <th style={{ padding: '10px' }}>Scheme</th>
                       <th style={{ padding: '10px' }}>Speed</th>
-                      <th style={{ padding: '10px' }}>Memory</th>
+                      <th style={{ padding: '10px' }}>Memory Use</th>
                       <th style={{ padding: '10px' }}>Recall</th>
+                      <th style={{ padding: '10px' }}>Updates</th>
                       <th style={{ padding: '10px' }}>Scale</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr style={{ backgroundColor: 'rgba(255, 107, 53, 0.1)' }}>
                       <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-database" sizeName="1x" style={{ marginRight: '5px', verticalAlign: 'middle' }} darkModeInvert={true} />Flat (Brute Force)</td>
-                      <td style={{ padding: '8px' }}>Slow O(N)</td>
+                      <td style={{ padding: '8px' }}>Slow exact (O(N))</td>
                       <td style={{ padding: '8px' }}>High</td>
                       <td style={{ padding: '8px' }}>100%</td>
+                      <td style={{ padding: '8px' }}>Excellent</td>
                       <td style={{ padding: '8px' }}>Small→Mid</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(0, 212, 255, 0.1)' }}>
                       <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-layer-group" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />HNSW</td>
-                      <td style={{ padding: '8px' }}>Very fast</td>
+                      <td style={{ padding: '8px' }}>Fast</td>
                       <td style={{ padding: '8px' }}>High</td>
-                      <td style={{ padding: '8px' }}>Excellent</td>
+                      <td style={{ padding: '8px' }}>High</td>
+                      <td style={{ padding: '8px' }}>Limited</td>
                       <td style={{ padding: '8px' }}>Mid→100M</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(78, 205, 196, 0.1)' }}>
                       <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-folder-tree" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />IVF</td>
-                      <td style={{ padding: '8px' }}>Fast</td>
+                      <td style={{ padding: '8px' }}>Fast (nprobe-driven)</td>
                       <td style={{ padding: '8px' }}>Moderate</td>
+                      <td style={{ padding: '8px' }}>High-Approx</td>
                       <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Large</td>
                     </tr>
@@ -74,42 +78,48 @@ export const vectorIndexingDeck: Deck = {
                       <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-compress" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />IVF+PQ</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
                       <td style={{ padding: '8px' }}>Low</td>
-                      <td style={{ padding: '8px' }}>Med→High</td>
+                      <td style={{ padding: '8px' }}>Med→High (with re-rank)</td>
+                      <td style={{ padding: '8px' }}>OK</td>
                       <td style={{ padding: '8px' }}>100M→B+</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(155, 89, 182, 0.1)' }}>
-                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-tree" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Annoy</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-expand" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Annoy</td>
                       <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Moderate</td>
-                      <td style={{ padding: '8px' }}>Good</td>
+                      <td style={{ padding: '8px' }}>Approx</td>
+                      <td style={{ padding: '8px' }}>Poor (read-only)</td>
                       <td style={{ padding: '8px' }}>Small→Mid</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)' }}>
-                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-brands-google" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />ScaNN</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-pen-to-square" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />ScaNN</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
                       <td style={{ padding: '8px' }}>Low→Mod</td>
                       <td style={{ padding: '8px' }}>High</td>
+                      <td style={{ padding: '8px' }}>Limited</td>
                       <td style={{ padding: '8px' }}>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(231, 76, 60, 0.1)' }}>
                       <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-hashtag" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />LSH</td>
-                      <td style={{ padding: '8px' }}>Fast</td>
-                      <td style={{ padding: '8px' }}>High</td>
+                      <td style={{ padding: '8px' }}>Fast (for supported metrics)</td>
+                      <td style={{ padding: '8px' }}>High (many tables)</td>
                       <td style={{ padding: '8px' }}>Approx</td>
+                      <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)' }}>
-                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-project-diagram" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Graph-based ANN</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Graph-based ANN</td>
                       <td style={{ padding: '8px' }}>Very fast</td>
-                      <td style={{ padding: '8px' }}>Low→Mod</td>
-                      <td style={{ padding: '8px' }}>Excellent</td>
-                      <td style={{ padding: '8px' }}>100M→B+</td>
+                      <td style={{ padding: '8px' }}>Low→High (variant)</td>
+                      <td style={{ padding: '8px' }}>High</td>
+                      <td style={{ padding: '8px' }}>Hard</td>
+                      <td style={{ padding: '8px' }}>100M→B (DiskANN)</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(241, 196, 15, 0.1)' }}>
-                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-binary" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Multi-Index Hashing</td>
-                      <td style={{ padding: '8px' }}>Fast Hamming</td>
+                      <td style={{ padding: '8px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-floppy-disk" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Multi-Index Hashing</td>
+                      <td style={{ padding: '8px' }}>Fast for Hamming</td>
                       <td style={{ padding: '8px' }}>Mod→High</td>
                       <td style={{ padding: '8px' }}>Exact (Hamming)</td>
+                      <td style={{ padding: '8px' }}>Good</td>
                       <td style={{ padding: '8px' }}>Large (binary)</td>
                     </tr>
                   </tbody>
@@ -117,9 +127,9 @@ export const vectorIndexingDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#111',
+          backgroundColor: '#1a0f0a',
           notes: 'Comparison table showing all 9 indexing schemes across key performance dimensions'
-        }
+        },
       ]
     },
     {
@@ -147,26 +157,35 @@ export const vectorIndexingDeck: Deck = {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(255, 107, 53, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Slow O(N·d) per query. Returns exact top-k results. Good throughput with batching and GPU.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Slow O(N·d) per query, where N is collection size and d is vector dimension. Returns exact top-k results. Good throughput possible with batching and GPU acceleration. Predictable latency independent of data distribution.</p>
                   </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(255, 107, 53, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-memory" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>High - Stores full vectors. Memory scales linearly. Requires 4·N·d bytes for 32-bit floats.</p>
+                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>High - Stores full vectors in memory with minimal overhead. Memory usage scales linearly with dataset size and dimension. Typically requires 4·N·d bytes for 32-bit float vectors.</p>
                   </div>
                 </div>
                 
                 <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                   <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
                   <p style={{ marginTop: '5px' }}>Exact search • Small-to-mid datasets • High update rates • Streaming • Datasets under ~1-10M vectors</p>
+                  <ul>
+                    <li>Exact search</li>
+                    <li>Small-to-mid datasets</li>
+                    <li>High update rates</li>
+                    <li>Streaming</li>
+                    <li>Ideal for applications requiring perfect accuracy, supporting heavy write workloads, or serving as a baseline for evaluating approximate algorithms</li>
+                    <li>Works well for datasets under ~1-10M vectors depending on hardware</li>
+                  </ul>
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                   <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Easiest to implement and maintain</li>
-                    <li>Supports any distance metric (L2, cosine, IP, custom)</li>
-                    <li>Trivially sharded across multiple machines</li>
-                    <li>GPU implementations available (FAISS, Qdrant, Weaviate)</li>
+                    <li>Supports any distance metric (L2, cosine, IP, custom functions)</li>
+                    <li>Trivially sharded/partitioned across multiple machines</li>
+                    <li>Often available as GPU implementation (FAISS, Qdrant, Weaviate)</li>
+                    <li>Used as refine step after approximate search in hybrid retrieval</li>
                   </ul>
                 </div>
               </div>
@@ -202,26 +221,32 @@ export const vectorIndexingDeck: Deck = {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#4fc3f7' }}><SvgIcon iconName="duo-gauge-high" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Very Fast sub-linear time. Millisecond-level queries at million-scale. Recall controlled by efSearch.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Very Fast sub-linear time complexity. Millisecond-level queries at million-scale. Recall rate precisely controlled by efSearch parameter.</p>
                   </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#4fc3f7' }}><SvgIcon iconName="duo-memory" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>High due to graph edges (2-3× raw vector memory). Higher temp memory during construction.</p>
+                    <strong style={{ color: '#4fc3f7' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>High memory footprint due to graph edges storage (typically 2-3× the raw vector memory). Higher temporary memory during index construction.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '5px' }}>Low-latency, high-recall ANN search • Datasets up to ~100M vectors • Read-heavy workloads • Semi-static datasets where query performance is critical</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Ideal for applications requiring low-latency</li>
+                    <li>high-recall approximate nearest neighbor search with datasets up to ~100M vectors</li>
+                    <li>Best suited for read-heavy or semi-static datasets where query performance is critical</li>
+                  </ul>
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
                   <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Important Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
-                    <li>Costly builds: Computationally expensive index construction</li>
-                    <li>Updates/deletes: Expensive operations, may need partial rebuilds</li>
+                    <li>Costly builds: Index construction is computationally expensive</li>
+                    <li>Updates/deletes: Expensive operations that may require partial rebuilds</li>
+                    <li>Distance metrics: Supports L2, cosine similarity, and inner product</li>
                     <li>Parameter tuning: Tune M and ef* for recall/performance trade-offs</li>
-                    <li>Wide availability: FAISS, nmslib, Milvus, Qdrant, and more</li>
+                    <li>Wide availability: Implemented in FAISS, nmslib, Milvus, Qdrant, and other vector databases</li>
+                    <li>Performance tip: Higher M improves recall but increases memory usage</li>
                   </ul>
                 </div>
               </div>
@@ -257,26 +282,31 @@ export const vectorIndexingDeck: Deck = {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Fast with proper nprobe. Sub-linear time. Controllable recall/latency trade-off.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Fast with proper nprobe configuration; sub-linear time complexity; controllable recall/latency trade-off by adjusting the number of clusters probed.</p>
                   </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-memory" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Moderate - Stores full vectors plus centroids and list metadata.</p>
+                    <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Moderate - Stores full vectors plus centroids and list metadata; memory usage scales with vector dimensionality and number of clusters.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#ba68c8' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '5px' }}>Large datasets needing high throughput and tunable recall • Online insertions required • Moderate memory constraints but high recall requirements</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Large datasets needing high throughput and tunable recall</li>
+                    <li>Environments where online insertions are required</li>
+                    <li>Systems with moderate memory constraints but high recall requirements</li>
+                  </ul>
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
                   <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Configuration Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Requires training phase to generate cluster centroids</li>
-                    <li>Performance depends on tuning nlist and nprobe</li>
-                    <li>Sensitive to data distribution - unbalanced clusters impact performance</li>
-                    <li>Often combined with re-ranking for higher recall</li>
+                    <li>Performance heavily depends on tuning nlist (number of clusters) and nprobe (clusters examined)</li>
+                    <li>Sensitive to data distribution - unbalanced clusters may impact performance</li>
+                    <li>Often combined with re-ranking strategies for higher recall</li>
+                    <li>Widely implemented in libraries like FAISS, Hnswlib, and Milvus</li>
                   </ul>
                 </div>
               </div>
@@ -305,45 +335,37 @@ export const vectorIndexingDeck: Deck = {
                 
                 <div style={{ marginBottom: '12px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                  <p style={{ marginTop: '3px', lineHeight: '1.4' }}>IVF coarse quantizer (k-means clustering) plus PQ codes for residuals. Stores compact codes instead of raw vectors. Uses lookup tables (LUT) and Asymmetric Distance Computation (ADC) for efficient scoring.</p>
+                  <p style={{ marginTop: '3px', lineHeight: '1.4' }}>IVF coarse quantizer (k-means clustering) plus PQ codes for residuals. Stores compact codes instead of raw vectors. Uses lookup tables (LUT) and Asymmetric Distance Computation (ADC) for efficient scoring. Optional refine step can leverage raw vectors for higher precision.</p>
                 </div>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '12px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', marginBottom: '12px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-gauge-high" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Very fast via table lookups. High QPS even on CPU.</p>
+                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-gauge-high" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Very fast due to table lookups and cache-friendly operations. Achieves high QPS (queries per second) even on standard CPU hardware. Search complexity depends on nprobe (number of clusters searched) and k (number of results).</p>
                   </div>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-compress-arrows-alt" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>8-16 bytes/vector. Billion-scale in RAM.</p>
-                  </div>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Recall:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Med-High. Boost with re-ranking.</p>
+                    <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Low memory footprint compared to exact methods. Typically compresses vectors to 8–16 bytes per vector (from original 100s-1000s of bytes). This compression enables billion-scale vector search within standard RAM limits.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '12px', padding: '10px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '3px' }}>Memory-constrained large-scale ANN search (100M-B+ vectors) • Read-heavy workloads • Acceptable approximation in recall</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Ideal for memory-constrained large-scale approximate nearest neighbor search (100M-B+ vectors)</li>
+                    <li>Well-suited for read-heavy workloads where some approximation in recall is acceptable</li>
+                    <li>Particularly effective when paired with a refinement step for critical results</li>
+                  </ul>
                 </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Optimization:</strong>
-                    <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
-                      <li>OPQ rotation improves accuracy</li>
-                      <li>Tune m (subquantizers) and nprobe</li>
-                      <li>Re-ranking boosts recall</li>
-                    </ul>
-                  </div>
-                  <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(255, 107, 53, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-wrench" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Requirements:</strong>
-                    <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
-                      <li>Training on representative data</li>
-                      <li>Available in FAISS, Milvus, Qdrant</li>
-                    </ul>
-                  </div>
+
+                <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Notes:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Requires training on representative data sample</li>
+                    <li>Consider OPQ (Optimized Product Quantization) rotation for better accuracy</li>
+                    <li>Critical parameters include m (number of subquantizers), code size, and nprobe (clusters to search)</li>
+                    <li>Adding a refine stage significantly boosts recall at the cost of extra latency</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -363,40 +385,47 @@ export const vectorIndexingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-tree" sizeName="3x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-brands-spotify" sizeName="2x" style={{ color: '#1db954' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-expand" sizeName="3x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-star" sizeName="2x" style={{ color: '#1db954' }} darkModeInvert={true} />
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '15px' }}>Approximate Nearest Neighbors Oh Yeah - Simple and Efficient Vector Search</h3>
                 
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                  <p style={{ marginTop: '5px', lineHeight: '1.5' }}>Forest of random projection trees where each tree partitions vectors based on random hyperplanes. Index can be saved to disk and memory-mapped for efficient loading. Supports angular (cosine) and Euclidean distance metrics.</p>
+                  <p style={{ marginTop: '5px', lineHeight: '1.5' }}>Forest of random projection trees where each tree partitions vectors based on random hyperplanes. Index can be saved to disk and memory-mapped for efficient loading. Primarily supports angular (cosine) and Euclidean distance metrics.</p>
                 </div>
                 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ba68c8' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Good performance with O(log n) per tree. Depends on n_trees and search_k parameters.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Good performance with sufficient trees. Query time scales with O(log n) per tree. Performance depends on n_trees and search_k parameters. Generally slower than HNSW when very high recall is required, but offers good speed-recall tradeoff.</p>
                   </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ba68c8' }}><SvgIcon iconName="duo-memory" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Moderate. Memory-mapped files support minimal RAM footprint. ~50-100 bytes per vector per tree.</p>
+                    <strong style={{ color: '#ba68c8' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Moderate memory requirements. Memory usage scales with number of trees. Can operate with minimal RAM footprint when using memory-mapped files. More trees increase both disk and memory usage but improve recall. Typically uses around 50-100 bytes per vector per tree.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '5px' }}>Simple deployment • Read-only applications • Quick startup/cold start • Small-to-mid datasets • Production services with fixed indexes • Recommendation systems</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Simple deployment</li>
+                    <li>Read-only applications</li>
+                    <li>Quick startup/cold start</li>
+                    <li>Small-to-mid datasets</li>
+                    <li>Production services with fixed indexes</li>
+                    <li>Particularly well-suited for recommendation systems, content-based search, and embedding lookup in applications with infrequent index updates</li>
+                  </ul>
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(29, 185, 84, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Features:</strong>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Notes:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
-                    <li>Multiple language implementations with Python bindings</li>
-                    <li>Deterministic build with fixed random seed</li>
-                    <li>Tuning: n_trees (recall/memory) and search_k (recall/speed)</li>
-                    <li>No dynamic deletes (effectively read-only after build)</li>
+                    <li>No dynamic deletes and limited update capabilities (effectively read-only after build)</li>
+                    <li>Index build process is deterministic with a fixed random seed</li>
+                    <li>Key tuning parameters: n_trees (more trees = higher recall but more memory) and search_k (more candidates = higher recall but slower)</li>
+                    <li>Implemented in multiple languages with Python bindings being most popular</li>
                     <li>Used extensively at Spotify for music recommendations</li>
                   </ul>
                 </div>
@@ -418,54 +447,54 @@ export const vectorIndexingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-brands-google" sizeName="3x" style={{ color: '#4285f4' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-bolt-lightning" sizeName="2x" style={{ color: '#ea4335' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#4285f4' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-brain" sizeName="2x" style={{ color: '#ea4335' }} darkModeInvert={true} />
               </div>
               <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
                 
                 <div style={{ marginBottom: '12px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                  <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. Multi-stage architecture with partitioning → quantization → re-ranking.</p>
+                  <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. ScaNN uses a multi-stage architecture:</p>
+                  <ul>
+                    <li>Partitioning</li>
+                    <li>Quantization</li>
+                    <li>Re-ranking</li>
+                  </ul>
                 </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '12px' }}>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(66, 133, 244, 0.1)', borderRadius: '8px', textAlign: 'left' }}>
-                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ color: '#4285f4' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}><strong>Very Fast</strong><br/>CPU/TPU Efficient</p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
+                  <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
+                    <strong style={{ color: '#ba68c8' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Very fast on CPU/TPU; near-SOTA recall-latency trade-offs. Especially optimized for high-throughput vector search scenarios with excellent parallelization.</p>
                   </div>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(52, 168, 83, 0.1)', borderRadius: '8px', textAlign: 'left' }}>
-                    <SvgIcon iconName="duo-memory" sizeName="2x" style={{ color: '#34a853' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}><strong>Low→Moderate</strong><br/>With Quantization</p>
-                  </div>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(251, 188, 5, 0.1)', borderRadius: '8px', textAlign: 'left' }}>
-                    <SvgIcon iconName="duo-star" sizeName="2x" style={{ color: '#fbbc05' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}><strong>High Recall</strong><br/>Near-SOTA</p>
+                  <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
+                    <strong style={{ color: '#ba68c8' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Low→Moderate with quantization; extra structures for partitions and re-ranking. Memory usage can be tuned based on performance requirements.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '12px', padding: '10px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '3px' }}>Large-scale semantic search with inner product/cosine • TensorFlow/TF-Serving pipelines • Production deployments with high QPS requirements • Large-scale systems</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Large-scale semantic search with inner product/cosine distance metrics</li>
+                    <li>TensorFlow/TF-Serving pipelines</li>
+                    <li>Production deployments with high QPS requirements</li>
+                    <li>Semantic Search</li>
+                    <li>High QPS Systems</li>
+                    <li>Ecosystem</li>
+                  </ul>
                 </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(66, 133, 244, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-thumbs-up" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Advantages:</strong>
-                    <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
-                      <li>Excellent TensorFlow integration</li>
-                      <li>Google Cloud AI infrastructure</li>
-                      <li>Near-SOTA recall-latency tradeoffs</li>
-                    </ul>
-                  </div>
-                  <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(234, 67, 53, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Considerations:</strong>
-                    <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
-                      <li>Complex configuration required</li>
-                      <li>Training and tuning needed</li>
-                      <li>Updates less friendly</li>
-                    </ul>
-                  </div>
+
+                <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(29, 185, 84, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Notes:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Requires training and careful configuration</li>
+                    <li>Updates less friendly</li>
+                    <li>Open-source by Google</li>
+                    <li>Complex but performant</li>
+                    <li>Excellent integration with TensorFlow serving and Google Cloud AI infrastructure</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -499,36 +528,33 @@ export const vectorIndexingDeck: Deck = {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ff6b6b' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Sub-linear for supported metrics. Depends on L (tables) and k (hashes). Query touches small subset of buckets.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Sub-linear for supported metrics. Performance depends on number of tables (L) and hash functions per table (k). Query only touches a small subset of buckets, providing significant speedup over brute force for large datasets. Collision quality directly impacts search accuracy.</p>
                   </div>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ff6b6b' }}><SvgIcon iconName="duo-memory" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>High due to many tables. Each vector stored multiple times. Scales O(nL).</p>
+                    <strong style={{ color: '#ff6b6b' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>High due to many tables and duplicated vector entries. Each vector is stored multiple times (once per table it hashes to). Memory usage scales with O(nL) where n is dataset size and L is number of hash tables. Trades memory for query speed and recall.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '12px', padding: '10px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '3px' }}>Sparse or high-dimensional data • Streaming scenarios requiring fast updates • Applications needing theoretical guarantees • Specialized metrics with good LSH families</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Sparse or high-dimensional data where traditional methods struggle</li>
+                    <li>Streaming scenarios requiring fast updates</li>
+                    <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
+                    <li>Particularly effective for specialized metrics with good LSH families</li>
+                  </ul>
                 </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />LSH Families:</strong>
-                    <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
-                      <li><strong>SimHash:</strong> Cosine similarity</li>
-                      <li><strong>MinHash:</strong> Jaccard similarity</li>
-                      <li><strong>p-stable:</strong> Euclidean (L2)</li>
-                    </ul>
-                  </div>
-                  <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-sliders" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Parameters:</strong>
-                    <ul style={{ marginTop: '3px', lineHeight: '1.5', marginLeft: '15px' }}>
-                      <li><strong>L:</strong> Number of hash tables</li>
-                      <li><strong>k:</strong> Hashes per table</li>
-                      <li>Insertions/deletions: straightforward</li>
-                    </ul>
-                  </div>
+
+                <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(29, 185, 84, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-star" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Notes:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
+                    <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
+                    <li>Insertions and deletions are straightforward</li>
+                    <li>Recall degrades without careful tuning</li>
+                    <li>Better theoretical understanding compared to graph-based methods</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -548,8 +574,8 @@ export const vectorIndexingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-project-diagram" sizeName="3x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
-                <SvgIcon iconName="duo-hard-drive" sizeName="2x" style={{ color: '#3498db' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-shield-check" sizeName="3x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-check-double" sizeName="2x" style={{ color: '#3498db' }} darkModeInvert={true} />
               </div>
               <div style={{ fontSize: '0.75em' }}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '15px' }}>Navigable proximity graphs with controlled out-degree for efficient ANN search</h3>
@@ -564,25 +590,26 @@ export const vectorIndexingDeck: Deck = {
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Proximity graphs with controlled out-degree (NSG/Vamana) or SSD-aware layouts (DiskANN). Single-layer navigable graphs where each node connects to its approximate nearest neighbors while maintaining graph navigability properties.</p>
                 </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '12px' }}>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', textAlign: 'left' }}>
-                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}><strong>Very Fast</strong><br/>Sub-ms latency</p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
+                    <strong style={{ color: '#ff6b6b' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Very fast with excellent memory-latency trade-offs. DiskANN enables sub-millisecond latency even when vectors are stored on SSDs. Search begins from entry points and greedily traverses to nearest neighbors using beam search.</p>
                   </div>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', textAlign: 'left' }}>
-                    <SvgIcon iconName="duo-memory" sizeName="2x" style={{ color: '#3498db' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}><strong>Low→Moderate</strong><br/>Sparse graphs</p>
-                  </div>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', textAlign: 'left' }}>
-                    <SvgIcon iconName="duo-hard-drive" sizeName="2x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}><strong>DiskANN</strong><br/>SSD-offloaded</p>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
+                    <strong style={{ color: '#ff6b6b' }}><SvgIcon iconName="duo-brain" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                    <p style={{ fontSize: '0.9em', marginTop: '3px' }}>Low→Moderate for NSG/Vamana (sparse graphs with controlled degree); DiskANN offloads vectors to SSD with small RAM graph core, enabling billion-scale indices with modest RAM footprint.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '12px', padding: '10px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '3px' }}>Web-scale search under RAM constraints • Production environments with strict latency SLOs • Read-heavy workloads with billions of vectors • DiskANN for billion-scale with modest RAM</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Web-scale search under RAM constraints</li>
+                    <li>Production environments with strict latency SLOs</li>
+                    <li>Read-heavy workloads with billions of vectors</li>
+                    <li>DiskANN specifically addresses the RAM bottleneck for very large indices</li>
+                  </ul>
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
@@ -591,8 +618,8 @@ export const vectorIndexingDeck: Deck = {
                     <li>Complex build processes with careful pruning strategies</li>
                     <li>Difficult to update (mostly batch builds)</li>
                     <li>Tune graph degree and beam search width for optimal performance</li>
-                    <li>DiskANN enables sub-millisecond latency even on SSDs</li>
                     <li>Achieves strong recall with careful construction</li>
+                    <li>DiskANN provides excellent disk-based performance but requires SSD storage</li>
                   </ul>
                 </div>
               </div>
@@ -613,7 +640,7 @@ export const vectorIndexingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '25px' }}>
-                <SvgIcon iconName="duo-binary" sizeName="3x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
+                <SvgIcon iconName="duo-brackets-square" sizeName="3x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
                 <SvgIcon iconName="duo-microchip" sizeName="2x" style={{ color: '#e67e22' }} darkModeInvert={true} />
               </div>
               <div style={{ fontSize: '0.8em' }}>
@@ -627,28 +654,33 @@ export const vectorIndexingDeck: Deck = {
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(241, 196, 15, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#f39c12' }}><SvgIcon iconName="duo-gauge" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Fast exact/radius search in Hamming space; sub-linear for small radii. Efficient for exact queries with small Hamming distances.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Fast exact/radius search in Hamming space; sub-linear for small radii. Complexity depends on radius and distribution of codes. Particularly efficient for exact queries with small Hamming distances.</p>
                   </div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(241, 196, 15, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#f39c12' }}><SvgIcon iconName="duo-memory" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Moderate→High (multiple indices). Creates m separate hash tables with pointers.</p>
+                    <p style={{ fontSize: '0.9em', marginTop: '5px' }}>Moderate→High (multiple indices); depends on code length and m. Creates m separate hash tables, each with pointers to original vectors. Memory overhead increases with higher values of m.</p>
                   </div>
                 </div>
-                
-                <div style={{ marginBottom: '15px', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                  <strong style={{ color: '#4ecdc4' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
-                  <p style={{ marginTop: '5px' }}>Binary embeddings or PQ code matching • Refine stage for IVF-PQ • Exact Hamming kNN needed • Image fingerprinting • Duplicate detection • Compact binary feature matching</p>
+
+                <div style={{ marginBottom: '15px', fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
+                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-check-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Best Use Case:</strong>
+                  <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
+                    <li>Binary embeddings or PQ code matching</li>
+                    <li>Refine stage for IVF-PQ</li>
+                    <li>When exact Hamming kNN is needed</li>
+                    <li>Ideal for applications requiring precise matching in binary space such as image fingerprinting, duplicate detection, and compact binary feature matching</li>
+                  </ul>
                 </div>
                 
                 <div style={{ fontSize: '0.85em', padding: '12px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px' }}>
                   <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Key Characteristics:</strong>
                   <ul style={{ marginTop: '5px', lineHeight: '1.6', marginLeft: '20px' }}>
                     <li>Limited to Hamming/binary codes</li>
-                    <li>Parameter m critical (depends on code length and query radius)</li>
-                    <li>GPU-friendly with bitwise operations</li>
-                    <li>Common in large-scale code search pipelines</li>
-                    <li>Well-suited for hardware acceleration</li>
-                    <li>Efficient for binary hashes from LSH techniques</li>
+                    <li>parameter m critical</li>
+                    <li>GPU-friendly; common in large-scale code search pipelines</li>
+                    <li>Optimal m typically depends on code length and query radius</li>
+                    <li>Well-suited for hardware acceleration with bitwise operations</li>
+                    <li>Efficient for binary hashes from techniques like LSH</li>
                   </ul>
                 </div>
               </div>
@@ -704,11 +736,11 @@ export const vectorIndexingDeck: Deck = {
                     <span>RAM-constrained billion-scale?</span>
                   </div>
                   <div style={{ padding: '8px', backgroundColor: 'rgba(255, 195, 0, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
-                    → IVF+PQ (with refine)
+                    → IVF+PQ (with refine on top-k)
                   </div>
                   
                   <div style={{ padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-feather" sizeName="1x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-expand" sizeName="1x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
                     <span>Simple, read-only, easy deploy?</span>
                   </div>
                   <div style={{ padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
@@ -716,15 +748,23 @@ export const vectorIndexingDeck: Deck = {
                   </div>
                   
                   <div style={{ padding: '8px', backgroundColor: 'rgba(66, 133, 244, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-brands-google" sizeName="1x" style={{ color: '#4285f4' }} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-shield-check" sizeName="1x" style={{ color: '#4285f4' }} darkModeInvert={true} />
                     <span>Inner-product/cosine at high throughput?</span>
                   </div>
                   <div style={{ padding: '8px', backgroundColor: 'rgba(66, 133, 244, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → ScaNN
                   </div>
+
+                  <div style={{ padding: '8px', backgroundColor: 'rgba(66, 133, 244, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-hashtag" sizeName="1x" style={{ color: '#4285f4' }} darkModeInvert={true} />
+                    <span>Streaming with metric-specific LSH family?</span>
+                  </div>
+                  <div style={{ padding: '8px', backgroundColor: 'rgba(66, 133, 244, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
+                    → LSH (cosine/L2/Jaccard)
+                  </div>
                   
                   <div style={{ padding: '8px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-hard-drive" sizeName="1x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-check-double" sizeName="1x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
                     <span>SSD-backed web scale, tight RAM?</span>
                   </div>
                   <div style={{ padding: '8px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
@@ -732,11 +772,19 @@ export const vectorIndexingDeck: Deck = {
                   </div>
                   
                   <div style={{ padding: '8px', backgroundColor: 'rgba(241, 196, 15, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-binary" sizeName="1x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-brackets-square" sizeName="1x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
                     <span>Binary/Hamming or PQ-code exact search?</span>
                   </div>
                   <div style={{ padding: '8px', backgroundColor: 'rgba(241, 196, 15, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → MIH
+                  </div>
+
+                  <div style={{ padding: '8px', backgroundColor: 'rgba(241, 196, 15, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-microchip" sizeName="1x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
+                    <span>Hardware acceleration important?</span>
+                  </div>
+                  <div style={{ padding: '8px', backgroundColor: 'rgba(241, 196, 15, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
+                    → FAISS GPU (Flat, IVF, IVFPQ)
                   </div>
                 </div>
 
@@ -746,14 +794,16 @@ export const vectorIndexingDeck: Deck = {
                     <strong style={{ fontSize: '1.1em' }}>Tuning & Optimization Tips</strong>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.95em' }}>
-                    <div>• Always measure recall@k vs latency tradeoff</div>
-                    <div>• Use re-ranking with heavy compression (IVF+PQ, ScaNN)</div>
-                    <div>• Batch queries together for better throughput</div>
-                    <div>• Shard large indices for parallelism</div>
-                    <div>• Normalize vectors for cosine similarity</div>
-                    <div>• Consider dimensionality reduction (PCA)</div>
-                    <div>• Explore hybrid strategies (ScaNN+refine)</div>
-                    <div>• Test with realistic data distributions</div>
+                    <ul>
+                      <li>Always measure recall@k vs latency tradeoff for your specific data</li>
+                      <li>Batch queries together for better throughput</li>
+                      <li>Normalize vectors for cosine similarity before indexing</li>
+                      <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
+                      <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
+                      <li>Shard large indices by coarse partitions for parallelism</li>
+                      <li>Consider dimensionality reduction (PCA) before indexing</li>
+                      <li>For production, test with realistic data distributions and queries</li>
+                    </ul>
                   </div>
                 </div>
               </div>
