@@ -39,8 +39,9 @@ export const parentChildRetrievalDeck: Deck = {
                 </div>
               </div>
               <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>
-                For ML engineers, data engineers, applied researchers • 2025-11-07
+                For ML engineers, data engineers, applied researchers
               </p>
+              <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>2025-11-07</p>
             </div>
           ),
           backgroundColor: '#1a1a2e',
@@ -614,7 +615,8 @@ export const parentChildRetrievalDeck: Deck = {
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Added latency and infra</li>
-                      <li>Threshold tuning; Dual-index maintenance</li>
+                      <li>Threshold tuning</li>
+                      <li>Dual-index maintenance</li>
                     </ul>
                   </div>
                 </div>
@@ -686,11 +688,11 @@ export const parentChildRetrievalDeck: Deck = {
     },
     {
       id: 'pattern-11',
-      title: 'Graph / Knowledge-Node Parent Retrieval',
+      title: 'Graph / Knowledge-Node Parent Retrieval (RAG-KG Hybrid)',
       slides: [
         {
           id: 13,
-          title: '11) Graph / Knowledge-Node Parent Retrieval',
+          title: '11) Graph / Knowledge-Node Parent Retrieval (RAG-KG Hybrid)',
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
