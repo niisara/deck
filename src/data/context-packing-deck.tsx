@@ -120,11 +120,6 @@ export const contextPackingDeck: Deck = {
           title: '1) Semantic Chunking',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-              <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-scissors" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Preserve meaning boundaries; reduce mid-sentence cuts</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -219,11 +214,6 @@ export const contextPackingDeck: Deck = {
           title: '2) Dynamic Sliding Window',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-arrows-rotate" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Maintain continuity across chunk boundaries</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -316,11 +306,6 @@ export const contextPackingDeck: Deck = {
           title: '3) Parent–Child Context Packing',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Disambiguate details with hierarchical context</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -415,11 +400,6 @@ export const contextPackingDeck: Deck = {
           title: '4) Context Summarization Before Packing',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Fit long sections within tight budgets</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -514,11 +494,6 @@ export const contextPackingDeck: Deck = {
           title: '5) Hybrid Local + Global Summaries',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-network-wired" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Preserve big picture while keeping crucial details</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -612,11 +587,6 @@ export const contextPackingDeck: Deck = {
           title: '6) Relevance Weighted Packing',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e5c07b' }}>
-            <SvgIcon iconName="duo-ranking-star" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Maximize utility by prioritizing high-relevance chunks</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -711,11 +681,6 @@ export const contextPackingDeck: Deck = {
           title: '7) Passage Compression (LLM Shortening)',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-compress" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Shrink verbose passages while retaining facts</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -810,11 +775,6 @@ export const contextPackingDeck: Deck = {
           title: '8) Answer-conditioned Retrieval / Packing',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-filter" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Include only fields relevant to the answer type</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -908,11 +868,6 @@ export const contextPackingDeck: Deck = {
           title: '9) Table / Structured Context Packing',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-table" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Increase information density via structure</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1007,11 +962,6 @@ export const contextPackingDeck: Deck = {
           title: '10) Semantic Deduplication',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#e06c75' }}>
-            <SvgIcon iconName="duo-copy" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Remove overlapping/near-duplicate chunks before packing</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1106,11 +1056,6 @@ export const contextPackingDeck: Deck = {
           title: '11) Token-Budget Aware Packing',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#98c379' }}>
-            <SvgIcon iconName="duo-gauge-high" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Guarantee fits within model context window</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1205,11 +1150,6 @@ export const contextPackingDeck: Deck = {
           title: '12) Adaptive k Retrieval (Variable Cutoff)',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#61dafb' }}>
-            <SvgIcon iconName="duo-sliders" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Use fewer or more chunks depending on query complexity</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1304,11 +1244,6 @@ export const contextPackingDeck: Deck = {
           title: '13) Chain-of-Context Packing (CoC)',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem', color: '#c678dd' }}>
-            <SvgIcon iconName="duo-link" sizeName="xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-            <strong style={{ fontSize: '1.2rem' }}>Order context to match reasoning flow</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1403,11 +1338,6 @@ export const contextPackingDeck: Deck = {
           title: 'Summary / Best Practices',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-                <strong>Best Practices for Context Packing</strong>
-              </div>
-
               <div style={{ marginBottom: '1.5rem' }}>
                 <div style={{ color: '#98c379', marginBottom: '1rem', fontSize: '1rem' }}>
                   <SvgIcon iconName="duo-check-circle" sizeName="xl" style={iconStyle} darkModeInvert={true} />
@@ -1461,6 +1391,7 @@ export const contextPackingDeck: Deck = {
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.9rem', lineHeight: '1.8' }}>
                 <li>Cache summaries/compressions; log provenance per chunk</li>
                 <li>Measure with answer-grounding and citation metrics</li>
+                <li>Start simple (k, relevance) → iterate with adaptive and CoC</li>
               </ul>
             </div>
 
@@ -1471,7 +1402,6 @@ export const contextPackingDeck: Deck = {
               </div>
               <div style={{ background: 'rgba(97, 218, 251, 0.15)', padding: '1rem', borderRadius: '8px' }}>
                 <ol style={{ marginLeft: '1.5rem', fontSize: '0.9rem', marginBottom: 0, lineHeight: '1.8' }}>
-                  <li>Start simple (k, relevance) → iterate with adaptive and CoC</li>
                   <li>Pilot on one corpus; A/B two packing variants</li>
                   <li>Instrument latency, cost, and answer quality</li>
                 </ol>
