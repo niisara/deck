@@ -156,15 +156,25 @@ export const rerankingModelsDeck: Deck = {
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
               <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
                 <li>Precision-critical tasks where accuracy trumps speed</li>
+                <li>When working with short to medium-length passages</li>
+                <li>For ambiguous or complex queries needing contextual understanding</li>
                 <li>Second-stage ranking (after initial retrieval)</li>
                 <li>When GPU resources are available</li>
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output:</span></strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.5em' }}>Input: Pairs of query and document texts</p>
               <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
-{`pairs = [[query, doc_1], [query, doc_2]]<br/>
-scores = [0.92, 0.45, ...]  # 0-1 scale`}
+{`pairs = [
+  [query, document_1], 
+  [query, document_2],
+  ...
+]`}
+              </pre>
+              <p style={{ marginTop: '5px', fontSize: '0.5em' }}>Output: Relevance scores between 0 and 1 for each pair</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`scores = [0.92, 0.45, ...]  # Higher = more relevant`}
               </pre>
             </div>
           </div>
@@ -193,18 +203,23 @@ scores = [0.92, 0.45, ...]  # 0-1 scale`}
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Accuracy Contextual Robust</p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
-                <li>Best accuracy (20-35% over bi-encoders)</li>
-                <li>Fine-grained relevance scoring</li>
-                <li>Well-studied with many pre-trained models</li>
+                <li>Best accuracy among classical rerankers (20-35% over bi-encoders)</li>
+                <li>Understands semantic relationships beyond keyword similarity</li>
+                <li>Fine-grained relevance scoring (0-1 scale)</li>
+                <li>Well-studied with many pre-trained models available</li>
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Latency Scaling Resources</p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
-                <li>Higher latency: O(k·L)</li>
-                <li>GPU recommended</li>
-                <li>512 token limit (can truncate documents)</li>
+                <li>Higher latency: O(k·L) where k = # docs, L = sequence length</li>
+                <li>Not suitable for first-stage retrieval of large corpora</li>
+                <li>Typically limited to reranking top-50 documents</li>
+                <li>GPU recommended for production use</li>
+                <li>512 token limit in many models (can truncate documents)</li>
               </ul>
             </div>
           </div>
@@ -215,33 +230,55 @@ scores = [0.92, 0.45, ...]  # 0-1 scale`}
     },
     {
       id: 4,
-      title: '2) BERT-based Cross Encoder (ms-marco-MiniLM)',
+      title: '2) BERT-based Cross Encoder (ms-marco-MiniLM-L-6-v2)',
       icon: { name: 'duo-gauge-high' },
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment. Production-ready reranking without heavy GPU requirements.</p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment:</p>
+              <ul>
+                <li>Balance between semantic understanding and computational efficiency</li>
+                <li>Production-ready reranking without heavy GPU requirements</li>
+                <li>Improved latency while maintaining competitive accuracy</li>
+              </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Knowledge distillation from larger BERT models. Fine-tuned on MS MARCO (8.8M query-passage pairs). Balance between semantic understanding and efficiency.</p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Knowledge distillation from larger BERT models into compact architecture:</p>
+              <ul>
+                <li>Uses MiniLM/DistilBERT techniques to compress model while preserving ranking capabilities</li>
+                <li>Fine-tuned specifically on MS MARCO passage ranking dataset (8.8M query-passage pairs)</li>
+              </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
               <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
-                <li>Production systems with moderate hardware</li>
-                <li>English-centric search applications</li>
+                <li>When deployment efficiency and response time matter</li>
+                <li>For English-centric search applications</li>
+                <li>In production systems with moderate hardware</li>
+                <li>When reranking 20-100 candidates efficiently</li>
                 <li>As default starting point for most RAG pipelines</li>
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Code Example:</span></strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query-document pairs (same as standard cross-encoders)</p>
               <pre style={{ marginTop: '5px', fontSize: '0.75em', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
-{`model = CrossEncoder('ms-marco-MiniLM-L-6-v2')
-pairs = [["query", "doc1"], ["query", "doc2"]]
-scores = model.predict(pairs)  # [0.87, 0.65]`}
+{`from sentence_transformers import CrossEncoder
+
+model = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
+pairs = [
+  ["diabetic medication", "Article about insulin..."],
+  ["diabetic medication", "New glucose monitors..."]
+]
+`}
+              </pre>
+              <p>Output: Calibrated relevance scores</p>
+              <pre style={{ marginTop: '5px', fontSize: '0.75em', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
+{`scores = model.predict(pairs)
+# [0.87, 0.65]  # Higher = more relevant`}
               </pre>
             </div>
           </div>
@@ -260,9 +297,9 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
               <div>
                 <p><strong>Ranking:</strong></p>
                 <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → B) ACE inhibitor adverse effects</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.41 → A) General diabetes treatment</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.32 → C) Hypertension guidelines</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → B) ACE inhibitor adverse effects in diabetic patients</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.41 → A) General diabetes treatment overview</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.32 → C) Hypertension medication guidelines</div>
                 </div>
               </div>
             </div>
@@ -270,18 +307,24 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Efficient Practical Low Footprint</p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
-                <li>2-4x faster than full BERT</li>
-                <li>Only 90MB model size (vs. 440MB+)</li>
-                <li>Works well on CPU</li>
+                <li>2-4x faster than full BERT cross-encoders</li>
+                <li>Only 90MB model size (vs. 440MB+ for base BERT)</li>
+                <li>Works well on CPU for moderate throughput</li>
+                <li>Strong performance on standard benchmarks (87% of full model accuracy)</li>
+                <li>Widely available in libraries like sentence-transformers</li>
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>English-centric Truncation Specialized</p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
-                <li>English-centric (MS MARCO dataset)</li>
-                <li>512 token truncation</li>
-                <li>Less effective on non-web domains</li>
+                <li>Primarily trained on English MS MARCO dataset</li>
+                <li>512 token truncation limits long document scoring</li>
+                <li>Still slower than pure bi-encoders (1-3 orders of magnitude)</li>
+                <li>Less effective on domains far from web search (e.g., code, legal)</li>
+                <li>Lower accuracy than full-sized cross-encoders in complex reasoning</li>
               </ul>
             </div>
           </div>
@@ -299,25 +342,38 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>High-accuracy pointwise generative reranking that frames relevance as a text generation problem. Superior accuracy through generative assessment.</p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>High-accuracy pointwise generative reranking approach that frames relevance as a text generation problem.</p>
+              <ul>
+                <li>Provides superior accuracy through generative assessment</li>
+                <li>Offers strong zero-shot and few-shot capabilities</li>
+                <li>Better handles complex semantic relationships than classification-only models</li>
+              </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
               <p style={{ marginTop: '5px', fontSize: '0.95em' }}>T5 encoder-decoder predicts "true" or "false" tokens for relevance. Higher P("true") = Higher relevance score.</p>
+              <p>Key mechanism: Convert relevance judgment into a text generation task, predicting "true" or "false" tokens</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
               <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
               <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
-                <li>Web search and QA where accuracy is paramount</li>
-                <li>Transfer learning across domains (zero/few-shot)</li>
-                <li>When GPU resources are available</li>
+                <li>Web search and QA datasets where accuracy is paramount</li>
+                <li>When higher latency is acceptable for better precision</li>
+                <li>For transfer learning across domains (zero/few-shot)</li>
+                <li>Complex information needs requiring strong reasoning</li>
+                <li>When GPU resources are available for inference</li>
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Prompt Format:</span></strong></p>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Formatted text prompt combining query and document</p>
               <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
-{`"Query: {query} Document: {document} Relevant?"
-→ P("true") = 0.85, P("false") = 0.15`}
+{`prompt = f"Query: {query} Document: {document} Relevant?"`}
+              </pre>
+              <p>Output: Probability of generating "true" token as relevance score</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`score = model.predict(prompt)  
+# Higher probability of "true" = higher relevance`}
               </pre>
             </div>
           </div>
@@ -346,18 +402,24 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Top Accuracy Flexible Zero-shot</p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
-                <li>Excellent accuracy, often outperforming BERT</li>
+                <li>Excellent accuracy, often outperforming BERT-based rankers</li>
                 <li>Strong transfer learning to new domains</li>
-                <li>Flexible prompting</li>
+                <li>Flexible prompting allows adapting to different tasks</li>
+                <li>T5's encoder-decoder architecture enables better understanding</li>
+                <li>Works with standard huggingface/transformers library</li>
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
               <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Latency Resources Cost</p>
               <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
-                <li>Higher latency (encoder-decoder)</li>
+                <li>Higher latency due to encoder-decoder architecture</li>
                 <li>Larger models (up to billions of parameters)</li>
-                <li>Higher inference cost</li>
+                <li>More computationally expensive than BERT-based models</li>
+                <li>Requires significant GPU memory for larger versions</li>
+                <li>Higher inference cost in production environments</li>
               </ul>
             </div>
           </div>
@@ -368,73 +430,151 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
     },
     {
       id: 6,
-      title: '4-5) MonoBERT & ColBERT',
+      title: '4) MonoBERT Re-Ranker',
       icon: { name: 'duo-copy' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-            <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#ba68c8', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-brain-circuit" sizeName="1x" darkModeInvert={true} />
-                4) MonoBERT Re-Ranker
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Strong transformer-based reranking without encoder-decoder complexity.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> [CLS] query [SEP] document [SEP] → BERT → classification head → score</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Classic IR pipelines, medium latency budgets, English-language corpora</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Solid accuracy</li>
-                      <li>Widely available</li>
-                      <li>Well-tested</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Slower than MiniLM</li>
-                      <li>512 token limit</li>
-                      <li>Domain shift issues</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Strong transformer-based reranking without the complexity and overhead of encoder-decoder architectures.</p>
+              <ul>
+                <li>Provides efficient relevance scoring for passages</li>
+                <li>Offers semantic understanding beyond keyword matching</li>
+                <li>Balances accuracy and computational efficiency</li>
+              </ul>
             </div>
-            <div style={{ padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#f06292', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="1x" darkModeInvert={true} />
-                5) ColBERT / ColBERTv2
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Precise token-level matching while maintaining efficiency. Late interaction pattern.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> MaxSim operation matches each query token to its most similar document token, then aggregates scores</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Term-by-term alignment important (technical/medical), long documents, balance between efficiency and deep matching</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Token-level matching</li>
-                      <li>Maintains efficiency</li>
-                      <li>ColBERTv2 improvements</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Complex implementation</li>
-                      <li>Higher storage requirements</li>
-                      <li>Specialized infrastructure</li>
-                    </ul>
-                  </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses BERT architecture with a classification head to output relevance scores:</p>
+              <ul>
+                <li>Single-pass pointwise scoring for query-document pairs</li>
+              </ul>
+              <p>Key mechanism: [CLS] query [SEP] document [SEP] → BERT → classification head → relevance score</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>Classic Information Retrieval (IR) pipelines</li>
+                <li>When you have medium latency budgets</li>
+                <li>Primarily for English-language corpora</li>
+                <li>When you need better semantic understanding than BM25</li>
+                <li>As a reranking step after initial retrieval</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query and document pairs as text</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`inputs = {
+  "query": "TLS vs mTLS security",
+  "documents": ["doc1_text", "doc2_text", ...] 
+}`}
+              </pre>
+              <p>Output: Relevance scores or binary classifications (relevant/not relevant)</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`scores = [0.87, 0.42, ...]  # Higher = more relevant`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+              <div>
+                <p><strong>Query:</strong> "TLS vs mTLS"</p>
+                <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                  <li>A) Basic TLS overview</li>
+                  <li>B) Client authentication in mTLS</li>
+                  <li>C) General network security</li>
+                </ul>
+              </div>
+              <div>
+                <p><strong>Ranking:</strong></p>
+                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → B) Client authentication in mTLS</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.56 → A) Basic TLS overview</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.32 → C) General network security</div>
                 </div>
               </div>
             </div>
           </div>
-          <div style={{ marginTop: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-            <h4 style={{ marginBottom: '8px', color: '#4fc3f7' }}>Example: ColBERT Token Matching</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.85em' }}>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Reliable Available Established</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Solid accuracy above traditional retrieval methods</li>
+                <li>Widely available pre-trained checkpoints</li>
+                <li>Well-tested in production environments</li>
+                <li>Good baseline model for reranking tasks</li>
+                <li>Simpler to deploy than encoder-decoder models</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Speed Length Domain</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Slower than MiniLM and other distilled variants</li>
+                <li>Limited by BERT's 512 token truncation</li>
+                <li>Performance degrades with domain shift</li>
+                <li>Lower accuracy than more recent models (MonoT5, ColBERT)</li>
+                <li>Less effective for multi-hop or complex reasoning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
+    },
+    {
+      id: 7,
+      title: '5) ColBERT / ColBERTv2 (Late Interaction)',
+      icon: { name: 'duo-graduation-cap' },
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Provides precise token-level matching between queries and documents while maintaining efficiency and scalability.</p>
+              <ul>
+                <li>Balances deep semantic understanding with computational efficiency</li>
+                <li>Preserves term-specific representations instead of single-vector compression</li>
+                <li>Enables fine-grained contextual matching across tokens</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Employs late interaction pattern: encodes queries and documents independently, but performs fine-grained token-level matching.</p>
+              <p>Key mechanism: MaxSim operation matches each query token to its most similar document token, then aggregates scores</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>When term-by-term alignment is important (technical/medical content)</li>
+                <li>For long documents where specific sections may be relevant</li>
+                <li>When you need balance between efficiency and deep matching</li>
+                <li>Systems requiring both scalable indexing and high-precision ranking</li>
+                <li>When handling complex, multi-term queries with specific terminology</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query tokens and document tokens (as separate embeddings)</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`query_embeddings = model.encode_query(query)  # [Q tokens × dim]
+doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
+              </pre>
+              <p>Output: MaxSim-based relevance score from token interactions</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`score = colbert.score(query_embeddings, doc_embeddings)  # Scalar score`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
                 <p><strong>Query:</strong> "Rotate S3 access keys safely"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
@@ -445,94 +585,200 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
                 </ul>
               </div>
               <div>
-                <p><strong>ColBERT Ranking (token-level):</strong></p>
+                <p><strong>Ranking:</strong></p>
                 <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
                   <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → C) S3 key rotation procedure</div>
                   <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.56 → B) S3 policy documentation</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.31 → A) AWS general overview</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.32 → A) AWS general overview</div>
                 </div>
-                <p style={{ marginTop: '8px', fontSize: '0.8em', fontStyle: 'italic', color: '#aaa' }}>
-                  ColBERT finds best token alignments: "rotate" ↔ "rotation", "keys" ↔ "key", "S3" ↔ "S3"
-                </p>
               </div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Precision Efficiency Scalable</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Token-level matching captures nuanced relevance signals</li>
+                <li>Maintains efficiency of separate encoding with accuracy of cross-attention</li>
+                <li>Indexes can be compressed and queried with ANN techniques</li>
+                <li>Flexible scoring allows for detailed similarity analysis</li>
+                <li>ColBERTv2 adds significant storage and query efficiency improvements</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Complexity Storage Setup</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>More complex to implement than standard bi/cross encoders</li>
+                <li>Higher storage requirements than single-vector models</li>
+                <li>Requires specialized indexing infrastructure</li>
+                <li>MaxSim operation has higher computational cost than simple dot products</li>
+                <li>Not as widely supported in off-the-shelf RAG frameworks</li>
+              </ul>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#0f3460',
-      notes: 'Models 4-5: MonoBERT and ColBERT approaches'
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
     },
     {
-      id: 7,
-      title: '6-7) E5-Ranker & LLM-as-a-Ranker',
-      icon: { name: 'duo-rocket' },
+      id: 8,
+      title: '6) E5-Ranker (e.g., intfloat/e5-mistral) as Bi-Encoder Re-Rank',
+      icon: { name: 'duo-brain-circuit' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-            <div style={{ padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#64b5f6', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
-                6) E5-Ranker (Bi-Encoder)
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Fast and efficient rescoring using sentence embeddings while maintaining reasonable accuracy.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> Encode query and docs separately → compute cosine similarity → rerank</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Low-latency applications, CPU-only environments, high-throughput systems, multilingual applications</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Very fast (5-20x speedup)</li>
-                      <li>Works on CPUs</li>
-                      <li>Pre-computed embeddings</li>
-                      <li>Multilingual</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Lower precision (10-15% gap)</li>
-                      <li>Limited reasoning</li>
-                      <li>Information loss from single vector</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Enables fast and efficient rescoring of documents using strong sentence embeddings while maintaining reasonable accuracy.</p>
+              <ul>
+                <li>Provides efficient alternative to computationally intensive cross-encoders</li>
+                <li>Balances speed and accuracy for high-throughput applications</li>
+                <li>Supports multilingual reranking (depending on checkpoint)</li>
+              </ul>
             </div>
-            <div style={{ padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#aed581', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
-                7) LLM-as-a-Ranker (RankGPT)
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Leverages LLMs' reasoning capabilities for sophisticated relevance ranking beyond traditional re-rankers.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> Prompt LLM to compare documents → reason about relevance → output ordered ranking</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> High-stakes QA, ambiguous queries, new domains without training data, complex relevance criteria</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Superior reasoning</li>
-                      <li>Zero-shot performance</li>
-                      <li>Adaptable via prompting</li>
-                      <li>Explainable</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Highest cost (10-50x more)</li>
-                      <li>High latency (1-5 seconds)</li>
-                      <li>API rate limits</li>
-                    </ul>
-                  </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Processes query and documents separately with same encoder, then computes similarity.</p>
+              <p>Key mechanism: Encode query_emb and doc_emb independently → compute cosine similarity → rerank top-K</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>Low-latency applications where speed is critical</li>
+                <li>CPU-only environments without GPU acceleration</li>
+                <li>High-throughput systems requiring efficient scaling</li>
+                <li>Multilingual applications (especially with e5-mistral variants)</li>
+                <li>When cross-encoder latency is prohibitive</li>
+                <li>For initial rescoring before applying heavier models</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query and document texts processed separately</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`// Encode separately
+query_emb = model.encode(query)
+doc_embs = [model.encode(doc) for doc in documents]
+
+// Compute similarity
+scores = [cosine_similarity(query_emb, doc_emb) 
+          for doc_emb in doc_embs]`}
+              </pre>
+              <p>Output: Similarity scores between -1 and 1 (typically normalized to 0-1)</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`scores = [0.87, 0.65, 0.42, ...]  # Higher = more relevant`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+              <div>
+                <p><strong>Query:</strong> "GDPR data deletion timeline"</p>
+                <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                  <li>A) Generic GDPR compliance article</li>
+                  <li>B) Data retention policy document</li>
+                  <li>C) Article with explicit 30-day deletion window</li>
+                </ul>
+              </div>
+              <div>
+                <p><strong>Ranking:</strong></p>
+                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → C) Article with explicit 30-day deletion window</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.72 → B) Data retention policy document</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.64 → A) Generic GDPR compliance article</div>
                 </div>
               </div>
             </div>
           </div>
-          <div style={{ marginTop: '15px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '8px' }}>
-            <h4 style={{ marginBottom: '8px', color: '#ffa726' }}>Example: LLM Reasoning</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.85em' }}>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Speed Efficiency Scalable Multilingual</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Very fast compared to cross-encoders (5-20x speedup)</li>
+                <li>Works well on CPUs without requiring GPU acceleration</li>
+                <li>Efficient for high-volume production systems</li>
+                <li>Document embeddings can be pre-computed and cached</li>
+                <li>Strong multilingual performance with mistral variants</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Precision Reasoning Context</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Lower precision than cross-encoders (10-15% accuracy gap)</li>
+                <li>Limited reasoning about relationships between query and document</li>
+                <li>Information loss from compressing documents into single vectors</li>
+                <li>May miss nuanced relevance that requires joint processing</li>
+                <li>Domain-specific performance may require fine-tuning</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
+    },
+    {
+      id: 9,
+      title: '7) LLM-as-a-Ranker (RankGPT-style)',
+      icon: { name: 'duo-rocket' },
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Leverages large language models' reasoning capabilities to perform sophisticated relevance ranking beyond traditional re-rankers.</p>
+              <ul>
+                <li>Handles complex, multi-criteria document evaluation</li>
+                <li>Performs listwise ranking rather than just pairwise comparisons</li>
+                <li>Zero-shot adaptation to new domains without retraining</li>
+                <li>Combines semantic understanding with world knowledge</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a large language model's reasoning abilities to evaluate and rank document relevance.</p>
+              <p>Key mechanism: Prompt LLM to compare documents → reason about relevance → output ordered ranking</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>High-stakes QA applications where accuracy trumps cost</li>
+                <li>For ambiguous or multi-hop queries requiring reasoning</li>
+                <li>When dealing with new domains without training data</li>
+                <li>For complex relevance criteria (freshness, authority, specificity)</li>
+                <li>When processing latency isn't a critical constraint</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query and numbered documents list in a prompt</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`prompt = f"""
+Rank these passages based on relevance to query: 
+"{query}"
+
+[1] {document_1}
+[2] {document_2}
+...
+Return ranking as: [3, 1, 2, ...]
+"""`}
+              </pre>
+              <p>Output: Ordered list of document IDs based on relevance</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`[3, 1, 5, 2, 4]  # Most to least relevant`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
                 <p><strong>Query:</strong> "Pros/cons of eventual consistency for checkout systems?"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
@@ -541,202 +787,495 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
                   <li>B) E-commerce design patterns</li>
                   <li>C) System design with consistency trade-offs</li>
                 </ul>
+                <p style={{ marginTop: '5px' }}><strong>LLM reasoning:</strong></p>
+                <p>"Doc C directly addresses consistency trade-offs in systems. Doc B covers e-commerce patterns which may include checkout. Doc A is too general."</p>
               </div>
               <div>
-                <p><strong>LLM Reasoning:</strong></p>
-                <p style={{ fontSize: '0.85em', marginTop: '5px', fontStyle: 'italic', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px' }}>
-                  "Doc C directly addresses consistency trade-offs in systems. Doc B covers e-commerce patterns which may include checkout. Doc A is too general."
-                </p>
-                <div style={{ marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>1st → C) System design</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>2nd → B) E-commerce patterns</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>3rd → A) Database concepts</div>
+                <p><strong>Ranking:</strong></p>
+                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>1st → C) System design with consistency trade-offs</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>2nd → B) E-commerce design patterns</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>3rd → A) General database concepts</div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      ),
-      backgroundColor: '#1a1a2e',
-      notes: 'Models 6-7: Fast bi-encoder and LLM-based reasoning'
-    },
-    {
-      id: 8,
-      title: '8-9) RRF & Fusion-in-Decoder',
-      icon: { name: 'duo-arrows-spin' },
-      content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-            <div style={{ padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#ffa726', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="1x" darkModeInvert={true} />
-                8) RRF (Reciprocal Rank Fusion)
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Combines multiple ranking signals into a single ranking without requiring relevance scores or training.</p>
-                <p style={{ marginTop: '8px' }}><strong>Formula:</strong> RRF(d) = Σ 1/(k + rank<sub>r</sub>(d)) where k typically = 60</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Combining multiple retrievers (BM25 + neural), heterogeneous collections, simple baseline</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>No training needed</li>
-                      <li>Lightweight computation</li>
-                      <li>Often outperforms individuals</li>
-                      <li>Handles outliers gracefully</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>No semantic understanding</li>
-                      <li>Parameter k may need tuning</li>
-                      <li>Depends on input quality</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ marginTop: '8px', padding: '8px', background: 'rgba(0,0,0,0.2)', borderRadius: '4px', fontSize: '0.8em' }}>
-                  <p><strong>Example:</strong> DocA ranks #2, #3, #1 → RRF = 1/62 + 1/63 + 1/61 = 0.044</p>
-                </div>
-              </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Reasoning Zero-shot Adaptable Multilingual</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Superior reasoning about complex relevance criteria</li>
+                <li>Excellent zero-shot performance without task-specific training</li>
+                <li>Adaptable to changing ranking requirements via prompting</li>
+                <li>Strong cross-lingual capabilities</li>
+                <li>Can explain ranking decisions (interpretability)</li>
+              </ul>
             </div>
-            <div style={{ padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#ef5350', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-circle-nodes" sizeName="1x" darkModeInvert={true} />
-                9) Fusion-in-Decoder (FiD)
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Enables effective multi-document evidence fusion with specialized encoder-decoder architecture.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> Encode each doc separately with shared encoder → decoder attends across all encodings → output answer + doc scores</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Multi-hop QA, complex queries needing synthesis, end-to-end RAG with combined ranking + generation</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Superior multi-doc QA</li>
-                      <li>Handles many passages</li>
-                      <li>Single model for rank + gen</li>
-                      <li>Cross-document relationships</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Higher compute requirements</li>
-                      <li>Context length limitations</li>
-                      <li>Indirect ranking (from attention)</li>
-                      <li>Complex to implement</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ marginTop: '8px', padding: '8px', background: 'rgba(0,0,0,0.2)', borderRadius: '4px', fontSize: '0.8em' }}>
-                  <p><strong>Example:</strong> Query: "Who founded X and when?" → Answer: "John Smith founded X in 1995" + Doc scores: [0.85, 0.82]</p>
-                </div>
-              </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Cost Latency Scaling</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Highest cost among re-ranking approaches (10-50x more expensive)</li>
+                <li>High latency (1-5 seconds per query)</li>
+                <li>Prompt engineering sensitivity and potential inconsistency</li>
+                <li>API rate limits for hosted models</li>
+                <li>Limited scale for high-throughput systems</li>
+              </ul>
             </div>
           </div>
         </div>
       ),
       backgroundColor: '#16213e',
-      notes: 'Models 8-9: Fusion approaches for combining signals'
+      notes: 'Model 3: T5-based generative reranking'
     },
     {
-      id: 9,
-      title: '10-11) DPR & BM25 + LLM Hybrid',
-      icon: { name: 'duo-sliders' },
+      id: 10,
+      title: '8) RRF (Reciprocal Rank Fusion)',
+      icon: { name: 'duo-list-ol' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-            <div style={{ padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#9575cd', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-magnifying-glass" sizeName="1x" darkModeInvert={true} />
-                10) DPR Re-Ranker
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Dense Passage Retrieval provides efficient semantic matching specifically optimized for QA tasks.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> Dual-encoder fine-tuned on QA pairs → independent encoding → vector similarity → score-based reranking</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Open-domain QA systems, low-latency reranking, domain fine-tuning possible, cost-sensitive production</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Fast and efficient</li>
-                      <li>Battle-tested in production</li>
-                      <li>Domain fine-tunable</li>
-                      <li>Easy vector DB integration</li>
-                    </ul>
-                  </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Less precise than cross-encoders</li>
-                      <li>Needs domain fine-tuning</li>
-                      <li>Limited to high-level semantics</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Combines multiple ranking signals into a single, unified ranking without requiring relevance scores or training.</p>
+              <ul>
+                <li>Effectively merges results from diverse retrieval methods (BM25, dense, etc.)</li>
+                <li>Creates robust rankings that benefit from the strengths of each underlying system</li>
+                <li>Improves overall ranking quality without adding new models</li>
+              </ul>
             </div>
-            <div style={{ padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#66bb6a', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-arrows-rotate" sizeName="1x" darkModeInvert={true} />
-                11) BM25 + LLM Reranking
-              </h3>
-              <div style={{ fontSize: '0.9em' }}>
-                <p><strong>Goal:</strong> Combines lexical precision of keyword matching with semantic reasoning for robust, explainable ranking.</p>
-                <p style={{ marginTop: '8px' }}><strong>How:</strong> BM25 keyword-based retrieval → LLM analyzes semantic meaning → reranks considering both relevance and BM25 scores</p>
-                <p style={{ marginTop: '8px' }}><strong>When:</strong> Technical domains with specific terminology, exact keyword matching crucial, transparency matters</p>
-                <div style={{ marginTop: '10px', display: 'flex', gap: '8px' }}>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✓ Pros:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Strong real-world performance</li>
-                      <li>Resilient to out-of-domain</li>
-                      <li>Keyword + semantic power</li>
-                      <li>Explainable rankings</li>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a simple yet effective formula to combine rankings based on document positions:</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`RRF(d) = Σ₍ᵣ∈R₎ 1 / (k + rankᵣ(d))`}
+              </pre>
+              <p style={{ marginTop: '5px' }}><strong>Where:</strong></p>
+              <ul>
+                <li>d = document being ranked</li>
+                <li>R = set of ranking systems being fused</li>
+                <li>k = constant (typically 60) to manage highly ranked items</li>
+                <li>rankr(d) = position of document d in ranker r</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>When combining multiple retrieval methods (e.g., BM25 + neural)</li>
+                <li>For heterogeneous document collections with varying characteristics</li>
+                <li>As a simple baseline before implementing more complex re-rankers</li>
+                <li>For multilingual collections where different retrievers may excel</li>
+                <li>To quickly improve existing systems without new model training</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Multiple ranked lists of documents from different systems</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`ranker_1 = ["doc_A", "doc_C", "doc_B", ...]
+ranker_2 = ["doc_B", "doc_A", "doc_D", ...]
+ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
+              </pre>
+              <p>Output: A single, fused ranking of documents</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`rrf_ranking = ["doc_A", "doc_B", "doc_C", ...]`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+              <div>
+                <p><strong>Query:</strong> "Cloud storage security best practices"</p>
+                <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                  <li>A) Security guide</li>
+                  <li>B) General cloud info</li>
+                  <li>C) Implementation steps</li>
+                </ul>
+                <p style={{ marginTop: '5px' }}><strong>RRF Ranks:</strong></p>
+                <p>DocA &gt; DocB &gt; DocC</p>
+                <p>DocA ranks highest despite not being #1 in most systems (balanced signals)</p>
+              </div>
+              <div>
+                <p><strong>Ranking:</strong></p>
+                <div style={{ display: 'flex', gap: '20px' }}>
+                  <div>
+                    <p style={{ marginTop: '5px' }}><strong>BM25 Rank:</strong></p>
+                    <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                      <li>DocA: 2</li>
+                      <li>DocB: 1</li>
+                      <li>DocC: 5</li>
                     </ul>
                   </div>
-                  <div style={{ flex: 1, padding: '8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '4px' }}>
-                    <p style={{ fontSize: '0.85em' }}><strong>✗ Cons:</strong></p>
-                    <ul style={{ fontSize: '0.85em', paddingLeft: '16px', lineHeight: '1.3' }}>
-                      <li>Pipeline complexity</li>
-                      <li>Fusion weight tuning needed</li>
-                      <li>LLM latency + cost</li>
-                    </ul>
+                  <div>
+                     <p style={{ marginTop: '5px' }}><strong>Dense Rank:</strong></p>
+                  <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                    <li>DocA: 3</li>
+                    <li>DocB: 4</li>
+                    <li>DocC: 1</li>
+                  </ul>
+                  </div>
+
+                  <div>
+                    <p style={{ marginTop: '5px' }}><strong>Hybrid Rank:</strong></p>
+                  <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                    <li>DocA: 1</li>
+                    <li>DocB: 3</li>
+                    <li>DocC: 4</li>
+                  </ul>
+                  </div>
+
+                  <div>
+                    <p style={{ marginTop: '5px' }}><strong>RRF Score:</strong></p>
+                  <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                    <li>DocA: 0.044</li>
+                    <li>DocB: 0.038</li>
+                    <li>DocC: 0.037</li>
+                  </ul>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div style={{ marginTop: '15px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-            <h4 style={{ marginBottom: '8px', color: '#4fc3f7' }}>Example: BM25 + LLM Hybrid</h4>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', fontSize: '0.85em' }}>
-              <div>
-                <p><strong>Query:</strong> "error E101 on firmware v2.3"</p>
-                <p style={{ marginTop: '5px' }}><strong>BM25 Initial Rank:</strong></p>
-                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
-                  <li>A) E101 error documentation (0.85)</li>
-                  <li>B) Firmware update v2.3 notes (0.72)</li>
-                  <li>C) E101 troubleshooting steps (0.63)</li>
-                </ul>
-              </div>
-              <div>
-                <p><strong>After LLM Rerank (Hybrid):</strong></p>
-                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.94 → C) Troubleshooting steps</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.79 → A) Error documentation</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.65 → B) Firmware notes</div>
-                </div>
-                <p style={{ marginTop: '8px', fontSize: '0.8em', fontStyle: 'italic', color: '#aaa' }}>
-                  LLM understands "troubleshooting" is most relevant for error context
-                </p>
-              </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Simple Fast Robust No Training</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Requires no training data or model optimization</li>
+                <li>Lightweight computation (just basic math operations)</li>
+                <li>Often outperforms individual rankers and complex methods</li>
+                <li>Model-agnostic: works with any retrieval system</li>
+                <li>Handles outliers gracefully: one bad ranker won't ruin results</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>No semantics Parameter k Quality ceiling</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>No semantic understanding (just combines existing rankings)</li>
+                <li>Parameter k may need tuning for optimal performance</li>
+                <li>Final quality depends on input rankers' quality</li>
+                <li>May struggle with ambiguous queries where one system is clearly better</li>
+                <li>Cannot leverage relevance scores, only ranks</li>
+              </ul>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#0f3460',
-      notes: 'Models 10-11: DPR and hybrid BM25+LLM approaches'
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
+    },
+    {
+      id: 11,
+      title: '9) Fusion-in-Decoder (FiD) as Re-Rank/Fusion',
+      icon: { name: 'duo-microchip' },
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Enables more effective multi-document evidence fusion with a specialized encoder-decoder architecture that processes many documents simultaneously.</p>
+              <ul>
+                <li>Combines information from multiple passages in the decoder stage</li>
+                <li>Improves answers requiring evidence from multiple sources</li>
+                <li>Provides implicit document ranking through attention mechanisms</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a specialized fusion architecture for handling multiple documents.</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>Multi-hop question answering requiring facts from multiple documents</li>
+                <li>Complex queries where information synthesis is needed</li>
+                <li>When implicit document ranking/scoring is desired as a side effect</li>
+                <li>End-to-end RAG systems where generation and ranking are combined</li>
+                <li>When working with many short, potentially complementary passages</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query and multiple document passages</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`inputs = {
+  "query": "Who founded X and what year?",
+  "passages": [
+    "John Smith founded...", 
+    "Company X was established in 1995...",
+    ...
+  ]
+}`}
+              </pre>
+              <p>Output: Generated answer and optional document salience scores</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`output = {
+  "answer": "John Smith founded X in 1995",
+  "doc_scores": [0.8, 0.7, 0.2, ...] # Optional
+}`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+              <div>
+                <p><strong>Query:</strong> "Who founded X and in what year?"</p>
+                <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                  <li>A) "John Smith is credited as the founder of company X."</li>
+                  <li>B) "Company X was formally established in 1995 in California."</li>
+                </ul>
+                <p style={{ marginTop: '5px' }}><strong>FiD Output:</strong></p>
+                <p>Answer: "John Smith founded company X in 1995."</p>
+              </div>
+              <div>
+                <p><strong>Ranking:</strong></p>
+                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.85 → A) Founder information</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.82 → B) Year information</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Fusion Multi-hop End-to-end</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Superior performance on complex multi-document QA tasks</li>
+                <li>Efficiently handles many input passages simultaneously</li>
+                <li>Implicitly ranks document importance through attention signals</li>
+                <li>Single model handles both ranking and generation</li>
+                <li>Can extract cross-document relationships and resolve conflicts</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Resource Complexity Indirect</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Higher training and inference compute requirements</li>
+                <li>Maximum context length limitations (typically 2048-8192 tokens)</li>
+                <li>Re-ranking capabilities are indirect (extracted from attention)</li>
+                <li>More complex to implement and train than pure rerankers</li>
+                <li>Document scores may be less calibrated than dedicated rerankers</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
+    },
+    {
+      id: 12,
+      title: '10) DPR Re-Ranker (Dense Passage Retrieval)',
+      icon: { name: 'duo-stream' },
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Dense Passage Retrieval (DPR) as a re-ranker provides efficient semantic matching specifically optimized for question-answering tasks.</p>
+              <ul>
+                <li>Overcomes lexical matching limitations of traditional retrievers</li>
+                <li>Enables fast semantic similarity scoring for candidate documents</li>
+                <li>Bridges the gap between simple vector search and expensive cross-encoders</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a dual-encoder architecture fine-tuned on question-answer pairs.</p>
+              <p>Key mechanism: Independent encoding → vector similarity → score-based reranking</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>Open-domain question answering systems</li>
+                <li>Low-latency reranking after initial retrieval</li>
+                <li>When domain knowledge can be incorporated via fine-tuning</li>
+                <li>Production environments sensitive to computational costs</li>
+                <li>When working with already-embedded document collections</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query embedding and passage embeddings</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`query_embedding = query_encoder(query)
+passage_embeddings = [passage_encoder(p) for p in passages]
+
+# For reranking
+scores = []
+for emb in passage_embeddings:
+    score = cosine_similarity(query_embedding, emb)
+    scores.append(score)`}
+              </pre>
+              <p>Output: Similarity scores for reranking passages</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`ranked_passages = [p for _, p in 
+                  sorted(zip(scores, passages), 
+                  key=lambda x: x[0], reverse=True)]`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+              <div>
+                <p><strong>Query:</strong> "Capital gains tax allowance UK 2024"</p>
+                <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                  <li>A) Generic UK tax guide</li>
+                  <li>B) 2024 tax thresholds and rates</li>
+                  <li>C) Investment strategies</li>
+                </ul>
+              </div>
+              <div>
+                <p><strong>Ranking:</strong></p>
+                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → B) 2024 tax thresholds and rates</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.67 → A) Generic UK tax guide</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.45 → C) Investment strategies</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Speed Efficiency QA-optimized</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Fast and efficient compared to cross-encoders</li>
+                <li>Battle-tested in production QA systems</li>
+                <li>Can be fine-tuned for specific domains/tasks</li>
+                <li>Supports indexing for sub-linear retrieval time</li>
+                <li>Easy to integrate with existing vector databases</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Precision Domain Drift Complexity</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Less precise than cross-encoders (no direct query-document interaction)</li>
+                <li>Performance degrades without domain-specific fine-tuning</li>
+                <li>Limited to capturing high-level semantic relationships</li>
+                <li>Vector dimensionality constrains representational capacity</li>
+                <li>Requires careful negative sampling during training</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
+    },
+    {
+      id: 13,
+      title: '11) BM25 + LLM Reranking Hybrid)',
+      icon: { name: 'duo-stream' },
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Combines lexical precision of keyword matching with semantic reasoning capabilities to create a robust, explainable ranking system.</p>
+              <ul>
+                <li>Bridges the gap between traditional search and neural approaches</li>
+                <li>Reduces hallucination risk through strong keyword grounding</li>
+                <li>Improves relevance for keyword-heavy and technical content</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Two-stage pipeline that leverages both traditional IR and advanced neural methods.</p>
+              <p>Key mechanism: BM25 provides initial keyword-based retrieval → LLM analyzes semantic meaning and reranks considering both relevance and BM25 scores</p>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+                <li>Technical or specialized domains with domain-specific terminology</li>
+                <li>When exact keyword matching is crucial (e.g., error codes, product IDs)</li>
+                <li>Content with structured or semi-structured format</li>
+                <li>When transparency and explainability of results matter</li>
+                <li>Systems requiring resilience to out-of-distribution queries</li>
+              </ul>
+            </div>
+            <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p>Input: Query, documents with BM25 scores, and optional embedding similarities</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`hybrid_inputs = {
+  "query": "error E101 on firmware v2.3",
+  "documents": [
+    {"content": "...", "bm25_score": 0.85},
+    {"content": "...", "bm25_score": 0.72},
+  ]
+}`}
+              </pre>
+              <p>Output: Reranked documents with combined relevance scores</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+{`results = [
+  {"doc_id": 3, "score": 0.89, "bm25": 0.72, "llm": 0.95},
+  {"doc_id": 1, "score": 0.76, "bm25": 0.85, "llm": 0.70},
+]`}
+              </pre>
+            </div>
+          </div>
+          <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
+            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+              <div>
+                <p><strong>Query:</strong> "error E101 on firmware v2.3"</p>
+                <p style={{ marginTop: '5px' }}><strong>BM25 Rank:</strong></p>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                  <li>A) E101 error documentation</li>
+                  <li>B) Firmware update v2.3 release notes</li>
+                  <li>C) E101 troubleshooting steps</li>
+                </ul>
+              </div>
+              <div>
+                <p><strong>LLM Rerank:</strong></p>
+                <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.94 → C) E101 troubleshooting steps</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.79 → A) E101 error documentation</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.65 → B) Firmware update v2.3 release notes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p>Robust Explainable Adaptable</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Strong real-world performance across diverse query types</li>
+                <li>Resilient to out-of-domain phrases and terminology</li>
+                <li>Maintains keyword precision while adding semantic understanding</li>
+                <li>Can provide transparent, explainable rankings (BM25 + LLM reasons)</li>
+                <li>Adaptable to different domains and content types</li>
+              </ul>
+            </div>
+            <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p>Complexity Tuning Cost</p>
+              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                <li>Pipeline complexity increases development and maintenance overhead</li>
+                <li>Requires careful tuning of fusion weights between BM25 and LLM signals</li>
+                <li>LLM pass adds latency (200-500ms) and API costs</li>
+                <li>Multiple components create more potential failure points</li>
+                <li>BM25 component may need periodic reindexing for dynamic content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#16213e',
+      notes: 'Model 3: T5-based generative reranking'
     }
       ]
     },
@@ -745,7 +1284,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       title: 'Summary & Recommendations',
       slides: [
     {
-      id: 10,
+      id: 14,
       title: 'Model Comparison at a Glance',
       icon: { name: 'duo-table' },
       content: (
@@ -804,7 +1343,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       notes: 'Comprehensive comparison table of all 11 models'
     },
     {
-      id: 11,
+      id: 15,
       title: 'Quick Recommendations by Use Case',
       icon: { name: 'duo-map' },
       content: (
@@ -889,7 +1428,7 @@ scores = model.predict(pairs)  # [0.87, 0.65]`}
       notes: 'Quick recommendations organized by use case'
     },
     {
-      id: 12,
+      id: 16,
       title: 'Operational Tips & Trade-offs',
       icon: { name: 'duo-lightbulb' },
       content: (
