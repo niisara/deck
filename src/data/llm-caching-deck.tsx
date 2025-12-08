@@ -24,11 +24,8 @@ export const llmCachingDeck: Deck = {
             <SvgIcon iconName="duo-microchip" sizeName="2xl" style={{ marginRight: '1rem' }} darkModeInvert={true} />
             LLM CACHING PATTERNS
           </div>
-          <div style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#98c379' }}>
-            13 Caching Patterns That Save Cost in LLM Systems
-          </div>
           <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
-            Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers
+            Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers.
           </div>
           <div style={{ fontSize: '1rem', color: '#888' }}>
             <SvgIcon iconName="duo-calendar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
@@ -54,8 +51,6 @@ export const llmCachingDeck: Deck = {
                 <li>Tokenization, embedding generation, vector search operations</li>
                 <li>Re-ranking of retrieved content</li>
                 <li>Generation tokens, prompt processing, and tool calls</li>
-                <li>Repeated preprocessing and tokenization steps</li>
-                <li>Redundant retrieval operations</li>
               </ul>
             </div>
             
@@ -65,10 +60,9 @@ export const llmCachingDeck: Deck = {
                 <strong style={{ fontSize: '1.1rem' }}>What Caching Saves</strong>
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.9rem' }}>
-                <li>Lower TTFT (time to first token)</li>
-                <li>Reduced tail latency</li>
-                <li>Significant cost reduction on repeated operations</li>
-                <li>Improved user experience</li>
+                <li>Repeated preprocessing and tokenization steps</li>
+                <li>Redundant retrieval operations</li>
+                <li>Lower TTFT (time to first token) and tail latency</li>
               </ul>
             </div>
           </div>
@@ -102,8 +96,15 @@ export const llmCachingDeck: Deck = {
           </div>
 
           <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-            <strong>Caching Principles:</strong> Stable cache keys with version tags • Balanced TTLs and invalidation strategies • Privacy and security considerations for sensitive data
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <strong>Caching Principles:</strong>
+            </div>
+            <ul style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
+              <li>Stable cache keys with version tags</li>
+              <li>Balanced TTLs and invalidation strategies</li>
+              <li>Privacy and security considerations for sensitive data</li>
+            </ul>
           </div>
         </div>
       ),
@@ -121,10 +122,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-brain' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache query embedding vectors and normalization artifacts</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -132,7 +129,10 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Query embedding vectors (and normalization artifacts) • Processed vector representations of user queries
+                <ul>
+                  <li>Query embedding vectors (and normalization artifacts)</li>
+                  <li>Processed vector representations of user queries</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -141,7 +141,10 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                hash(normalized_query + embedding_model + version + dim)
+                <ul>
+                  <li>hash(normalized_query + embedding_model + version + dim)</li>
+                  <li>Includes model version to ensure embedding consistency</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -153,7 +156,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Redis/KeyDB for hot cache • Optional S3/object store for cold cache • Co-located per region
+                <ul>
+                  <li>Redis/KeyDB for hot cache</li>
+                  <li>Optional S3/object store for cold cache</li>
+                  <li>Co-located per region for lower latency</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -162,7 +169,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Long TTL (7–30 days) • Version-bump invalidation • LFU/LRU eviction
+                <ul>
+                  <li>Long TTL (7–30 days)</li>
+                  <li>Version-bump invalidation</li>
+                  <li>LFU/LRU eviction policy for memory management</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -205,10 +216,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-magnifying-glass' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache top-k document IDs and scores from vector search</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -216,7 +223,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Top-k document IDs + scores • Optional document snippets/previews • Results from expensive retrieval operations
+                <ul>
+                  <li>Top-k document IDs + scores from vector search</li>
+                  <li>Optional document snippets/previews</li>
+                  <li>Results from expensive retrieval operations</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -225,7 +236,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                hash(query_norm or quantized_embedding + index_snapshot_id + k + filters)
+                <ul>
+                  <li>hash(query_norm or quantized_embedding + index_snapshot_id + k + filters)</li>
+                  <li>Includes index version to ensure result consistency</li>
+                  <li>Filter parameters included to maintain result accuracy</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -237,7 +252,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Redis/Memcached for fast access • Optional edge/CDN caching for public FAQs • Regional deployment
+                <ul>
+                  <li>Redis/Memcached for fast, in-memory access</li>
+                  <li>Optional edge/CDN caching for public FAQs</li>
+                  <li>Regional deployment to minimize latency</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -246,7 +265,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Short TTL (5–60 minutes) • Purge on index refresh • Event-driven invalidation
+                <ul>
+                  <li>Short TTL (5–60 minutes)</li>
+                  <li>Purge on index refresh or collection update</li>
+                  <li>Event-driven invalidation when knowledge base changes</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -289,10 +312,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-file-lines' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache rendered system/instruction templates and tokenized IDs</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -300,7 +319,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Rendered system/instruction templates and tokenized IDs • Pre-processed templates per model/locale • Common static prompt components
+                <ul>
+                  <li>Rendered system/instruction templates and tokenized IDs</li>
+                  <li>Pre-processed templates per model/locale</li>
+                  <li>Common static prompt components</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -309,7 +332,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                template_id + template_version + model_id + locale + formatting_mode
+                <ul>
+                  <li>template_id + template_version + model_id</li>
+                  <li>locale + formatting_mode</li>
+                  <li>Hash of all template parameters combined</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -321,7 +348,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                In-process memory for token IDs • Redis for cross-instance sharing • Application-level memory
+                <ul>
+                  <li>In-process memory for token IDs</li>
+                  <li>Redis for cross-instance sharing</li>
+                  <li>Application-level memory for high access frequency</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -330,7 +361,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Very long TTL (weeks to months) • Invalidate on template update or model switch
+                <ul>
+                  <li>Very long TTL (weeks to months)</li>
+                  <li>Invalidate on template update or model switch</li>
+                  <li>Version-based cache invalidation triggers</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -373,10 +408,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-message-square' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache final LLM answer with citations conditioned on query</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -384,7 +415,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Final LLM answer (with citations) • Complete generated responses • Full response with source document references
+                <ul>
+                  <li>Final LLM answer (with citations) conditioned on query</li>
+                  <li>Complete generated responses including retrieved context set</li>
+                  <li>Full response with source document references</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -393,7 +428,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                hash(query_norm + context_doc_ids/hashes) + prompt_version + model + decoding_params
+                <ul>
+                  <li>hash(query_norm + context_doc_ids/hashes)</li>
+                  <li>prompt_version + model + decoding_params</li>
+                  <li>Must include all context sources for consistency</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -405,7 +444,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Redis for hot cache items • Durable KV/DB for high-value queries • Encrypt if sensitive data included
+                <ul>
+                  <li>Redis for hot cache items</li>
+                  <li>Durable KV/DB for high-value queries</li>
+                  <li>Encrypt if sensitive data is included</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -414,7 +457,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Medium TTL (1–7 days) • Event-based invalidation on source doc change • Content-dependent staleness
+                <ul>
+                  <li>Medium TTL (1–7 days)</li>
+                  <li>Event-based invalidation on any source doc change</li>
+                  <li>Content-dependent staleness policies</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -457,10 +504,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-scissors' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache per-chunk embeddings and tokenized text</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -468,7 +511,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Per-chunk embeddings and tokenized text • Reranker features and metadata • Pre-processed document fragments
+                <ul>
+                  <li>Per-chunk embeddings and tokenized text</li>
+                  <li>Reranker features and metadata</li>
+                  <li>Pre-processed document fragments</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -477,7 +524,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                doc_id + chunk_index + chunk_hash + pipeline_version + embedding_model_id
+                <ul>
+                  <li>doc_id + chunk_index + chunk_hash</li>
+                  <li>pipeline_version (for compatibility tracking)</li>
+                  <li>Optional embedding model identifier</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -489,7 +540,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Object store (S3/GCS/Azure) for persistence • Metadata DB for quick reference • Redis tier for hot chunks
+                <ul>
+                  <li>Object store (S3/GCS/Azure) for persistence</li>
+                  <li>Metadata DB for quick reference lookup</li>
+                  <li>Redis tier for hot/frequently accessed chunks</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -498,7 +553,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                No fixed TTL (content-driven) • Invalidate on document update/re-index • Lazy refresh strategy
+                <ul>
+                  <li>No fixed TTL (content-driven expiration)</li>
+                  <li>Invalidate on document update/re-index</li>
+                  <li>Lazy refresh strategy for efficiency</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -541,10 +600,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-message-square' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache recent conversation turns and distilled summaries</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -552,7 +607,12 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Recent turns window in conversation • Distilled conversation summaries • Tool call results and context • Optional session KV cache offload
+                <ul>
+                  <li>Recent turns window in conversation</li>
+                  <li>Distilled conversation summaries</li>
+                  <li>Tool call results and context</li>
+                  <li>Optional session KV cache offload</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -561,7 +621,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                session_id + user_id + history_hash + model_id
+                <ul>
+                  <li>session_id + user_id + history_hash + model_id</li>
+                  <li>Unique per conversation thread</li>
+                  <li>Includes model ID for version consistency</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -573,7 +637,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Redis/KeyDB with encryption • Optional archival DB for long-lived sessions • Secure storage with encryption at rest
+                <ul>
+                  <li>Redis/KeyDB with encryption</li>
+                  <li>Optional archival DB for long-lived sessions</li>
+                  <li>Secure storage with encryption at rest</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -582,7 +650,12 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Sliding TTL (15–60 min active) • Archive for 7–30 days • Purge on logout/PII request
+                <ul>
+                  <li>Sliding TTL (15–60 min active)</li>
+                  <li>Archive for 7–30 days</li>
+                  <li>Purge on logout/PII request</li>
+                  <li>Reset on session boundaries</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -627,10 +700,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-user' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache compact user profile data and preferences</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -638,7 +707,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Compact user profile data (embeddings, preferences) • Style, tone, tools preferences • Domain defaults and personalization parameters
+                <ul>
+                  <li>Compact user profile data (embeddings, preferences)</li>
+                  <li>Style, tone, tools preferences, timezone settings</li>
+                  <li>Domain defaults and personalization parameters</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -647,7 +720,10 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                user_id + profile_version + tenant_id + namespace/region
+                <ul>
+                  <li>user_id + profile_version + tenant_id</li>
+                  <li>May include namespace or region for multi-region systems</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -659,7 +735,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Secure KV/DB (Redis + KMS) • DynamoDB/Firestore for persistent profiles • Encryption at rest required
+                <ul>
+                  <li>Secure KV/DB (Redis + KMS)</li>
+                  <li>DynamoDB/Firestore for persistent profiles</li>
+                  <li>Encryption at rest required for sensitive data</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -668,7 +748,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Long TTL with sliding refresh • Invalidate on explicit profile updates • Purge after extended inactivity
+                <ul>
+                  <li>Long TTL with sliding refresh mechanism</li>
+                  <li>Invalidate on explicit profile updates</li>
+                  <li>Purge after extended user inactivity</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -711,10 +795,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache transformer attention K/V tensors per layer</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -722,7 +802,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Transformer attention K/V tensors per layer for prompt tokens • Intermediate computation results • Layer-specific key-value pairs
+                <ul>
+                  <li>Transformer attention K/V tensors per layer for prompt tokens</li>
+                  <li>Intermediate computation results of attention mechanisms</li>
+                  <li>Layer-specific key-value pairs for each processed token</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -731,7 +815,10 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                request_id/session_id + prompt_token_range + model_id + shard/block_id
+                <ul>
+                  <li>request_id/session_id + prompt_token_range + model_id + shard/block_id</li>
+                  <li>Tied to specific model architecture and parameter versions</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -743,7 +830,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                GPU VRAM (primary storage) • Offload to CPU RAM or NVMe when needed • Managed by PagedAttention, vLLM, or TensorRT-LLM
+                <ul>
+                  <li>GPU VRAM (primary storage for fast access)</li>
+                  <li>Offload to CPU RAM or NVMe when needed</li>
+                  <li>Managed by PagedAttention, vLLM, or TensorRT-LLM</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -752,7 +843,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Lives for request/session duration • LRU/LFU eviction under memory pressure • Freed upon completion
+                <ul>
+                  <li>Lives for the duration of request/session</li>
+                  <li>LRU/LFU eviction under memory pressure</li>
+                  <li>Freed upon completion or context window overflow</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -795,10 +890,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-chart-line' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache next-token logits/probabilities for frequent prefixes</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -806,7 +897,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Next-token logits/probabilities for frequent prefixes • Optional top-k most likely tokens only • Output probability distributions
+                <ul>
+                  <li>Next-token logits/probabilities for frequent prefixes</li>
+                  <li>Optional top-k most likely tokens only</li>
+                  <li>Output probability distributions at the token level</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -815,7 +910,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                hash(prefix_token_ids + model_id + logits_version) + decoding_bias/temperature
+                <ul>
+                  <li>hash(prefix_token_ids + model_id + logits_version)</li>
+                  <li>Includes decoding_bias/temperature parameters</li>
+                  <li>Versioned to handle model updates</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -827,7 +926,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                CPU RAM or Redis for fast access • mmap files for large lookup tables • Regional deployment
+                <ul>
+                  <li>CPU RAM or Redis for fast access</li>
+                  <li>Map files for large lookup tables</li>
+                  <li>Regional deployment for lower latency</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -836,7 +939,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Short TTL (minutes–hours) • Purge on model/quantization change • Frequency-based eviction
+                <ul>
+                  <li>Short TTL (minutes–hours)</li>
+                  <li>Purge on model/quantization change</li>
+                  <li>Frequency-based eviction for memory management</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -879,10 +986,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-circle-nodes' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache intent embeddings mapped to prior answers/contexts</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -890,7 +993,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Intent embeddings mapped to prior answers/contexts • Thresholded ANN lookup for similar queries • Similar question embeddings with confidence scores
+                <ul>
+                  <li>Intent embeddings mapped to prior answers/contexts</li>
+                  <li>Thresholded ANN lookup for similar queries</li>
+                  <li>Similar question embeddings with confidence scores</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -899,7 +1006,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Vector index entry (not traditional key-value) • Metadata: model_id, prompt_version, locale • Freshness score
+                <ul>
+                  <li>Vector index entry (not traditional key-value)</li>
+                  <li>Metadata: model_id, prompt_version, locale</li>
+                  <li>Freshness score for recency weighting</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -911,7 +1022,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Vector DB (FAISS/Milvus/pgvector/RedisVL) • Spill to disk for large datasets • Distributed index for high-volume
+                <ul>
+                  <li>Vector DB (FAISS/Milvus/pgvector/RedisVL)</li>
+                  <li>Spill to disk for large datasets</li>
+                  <li>Distributed index for high-volume systems</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -920,7 +1035,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                1–14 days with recency weighting • Invalidate when sources change • Progressive aging
+                <ul>
+                  <li>1–14 days with recency weighting</li>
+                  <li>Invalidate when sources change</li>
+                  <li>Progressive aging for less frequently accessed entries</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -965,10 +1084,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-ranking-star' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache final reranked candidate list with scores</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -976,7 +1091,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Final reranked candidate list with scores • Cross-encoder or LLM re-ranker results • Ordered document list with relevance scores
+                <ul>
+                  <li>Final reranked candidate list with scores</li>
+                  <li>Cross-encoder or LLM re-ranker results</li>
+                  <li>Ordered document list with relevance scores</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -985,7 +1104,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                hash(query_norm + candidate_ids + reranker_version + topN + filters)
+                <ul>
+                  <li>hash(query_norm + candidate_ids + reranker_version + topN + filters)</li>
+                  <li>Includes reranker model version for consistency</li>
+                  <li>Incorporates filter parameters for context-specific ranking</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -997,7 +1120,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Redis with TTL support • Region-scoped to align with retrieval services • Optional compression for large candidate lists
+                <ul>
+                  <li>Redis with TTL support</li>
+                  <li>Region-scoped to align with retrieval services</li>
+                  <li>Optional compression for large candidate lists</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -1006,7 +1133,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Short TTL (5–30 minutes) • Purge when candidate document set changes • Event-based invalidation
+                <ul>
+                  <li>Short TTL (5–30 minutes)</li>
+                  <li>Purge when candidate document set changes</li>
+                  <li>Event-based invalidation on reranker model updates</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1051,10 +1182,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-compress' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache multi-granularity summaries and conversation abstracts</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1062,7 +1189,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Multi-granularity summaries (doc/section/chunk) • Conversation summaries and embeddings • Abstract representations of longer content
+                <ul>
+                  <li>Multi-granularity summaries (doc/section/chunk)</li>
+                  <li>Conversation summaries and embeddings</li>
+                  <li>Abstract representations of longer content</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -1071,7 +1202,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                doc_id + segment_id/hash + summary_prompt_version + model_id + locale
+                <ul>
+                  <li>doc_id + segment_id/hash + summary_prompt_version</li>
+                  <li>model_id + locale</li>
+                  <li>Include model version to ensure consistent summaries</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1083,7 +1218,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Object store + metadata index (SQL/NoSQL) • Redis for hot summaries • Distributed storage for durability
+                <ul>
+                  <li>Object store + metadata index (SQL/NoSQL)</li>
+                  <li>Redis for hot (frequently accessed) summaries</li>
+                  <li>Distributed storage for durability and scale</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -1092,7 +1231,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Long TTL (weeks to months) • Event-driven invalidation on source updates • Periodic refresh
+                <ul>
+                  <li>Long TTL (weeks to months)</li>
+                  <li>Event-driven invalidation on source document updates</li>
+                  <li>Periodic refresh for high-importance content</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1135,10 +1278,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-check-circle' },
           content: (
         <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
-          <div style={{ marginBottom: '1rem' }}>
-            <strong style={{ fontSize: '1.2rem' }}>Cache exact query → final answer mapping</strong>
-          </div>
-          
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
@@ -1146,7 +1285,11 @@ export const llmCachingDeck: Deck = {
                 <strong>What is Cached</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Exact query → final answer mapping • Optionally citations/links to sources • Typically using temperature=0 for consistency
+                <ul>
+                  <li>Exact query → final answer mapping</li>
+                  <li>Optionally citations/links to sources</li>
+                  <li>Typically using temperature=0 for consistency</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -1155,7 +1298,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Key</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                hash(normalized_query + language + model_id) + prompt_version + decoding_params
+                <ul>
+                  <li>hash(normalized_query + language + model_id)</li>
+                  <li>+ prompt_version + decoding_params</li>
+                  <li>Query normalization critical for hit rate</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1167,7 +1314,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Cache Storage Location</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Redis for high throughput applications • CDN/edge caching for public endpoints • Encryption required for private user data
+                <ul>
+                  <li>Redis for high throughput applications</li>
+                  <li>CDN/edge caching for public endpoints</li>
+                  <li>Encryption required for private user data</li>
+                </ul>
               </div>
             </div>
             <div>
@@ -1176,7 +1327,11 @@ export const llmCachingDeck: Deck = {
                 <strong>Expiration Strategy / TTL</strong>
               </div>
               <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '0.9rem' }}>
-                Minutes to days based on data volatility • Manual purge hooks for emergency hotfixes • Shorter TTL for rapidly changing info
+                <ul>
+                  <li>Minutes to days based on data volatility</li>
+                  <li>Manual purge hooks for emergency hotfixes</li>
+                  <li>Shorter TTL for rapidly changing information</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1221,11 +1376,6 @@ export const llmCachingDeck: Deck = {
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
-              <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem' }} darkModeInvert={true} />
-                <strong>Strategic Caching for LLM Systems</strong>
-              </div>
-
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
                   <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '1rem' }}>
@@ -1275,13 +1425,6 @@ export const llmCachingDeck: Deck = {
                   <div style={{ fontSize: '0.85rem' }}>
                     Begin with exact-match and retrieval caches for early wins; add semantic similarity and KV/logit layers as your system matures and scale grows.
                   </div>
-                </div>
-              </div>
-
-              <div style={{ marginTop: '2rem', padding: '1.2rem', background: 'rgba(97, 218, 251, 0.15)', borderRadius: '10px', textAlign: 'left' }}>
-                <div style={{ color: '#61dafb', fontSize: '1.1rem', marginBottom: '0.5rem' }}>
-                  <SvgIcon iconName="duo-chart-line" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-                  <strong>Impact: Caching can reduce LLM costs by 50-90% and improve latency by 3-10x</strong>
                 </div>
               </div>
             </div>
