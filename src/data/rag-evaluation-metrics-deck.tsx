@@ -22,7 +22,7 @@ export const ragEvaluationMetricsDeck: Deck = {
             <div style={{ textAlign: 'left', padding: '2rem' }}>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#0ea5e9' }}>
             <SvgIcon iconName="duo-clipboard-list" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-            A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency
+            A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems
           </div>
           <div style={{ fontSize: '1.2rem', color: '#10b981', marginTop: '3rem', lineHeight: '2' }}>
             <div style={{ marginBottom: '1.5rem' }}>
@@ -62,7 +62,7 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <li>Retrieval Recall@K: Coverage of relevant information</li>
                 <li>Retrieval Precision@K: Relevance of retrieved chunks</li>
                 <li>Hit Rate: At least one relevant document in top-K</li>
-                <li>Context Overlap: Answer content present in retrieval</li>
+                <li>Context Overlap Score: Answer content present in retrieval</li>
               </ul>
             </div>
 
@@ -99,8 +99,8 @@ export const ragEvaluationMetricsDeck: Deck = {
               </div>
               <ul style={{ marginLeft: '1.5rem', fontSize: '0.95rem' }}>
                 <li>Noise Density: Irrelevant token percentage</li>
-                <li>Context Compression: Information density in prompt</li>
-                <li>Latency-Cost Tradeoff: Efficiency under constraints</li>
+                <li>Context Compression Efficiency: Information density in prompt</li>
+                <li>Latency-Cost Tradeoff Score: Efficiency under constraints</li>
               </ul>
             </div>
           </div>
@@ -139,10 +139,16 @@ export const ragEvaluationMetricsDeck: Deck = {
                     <strong>How to Calculate</strong>
                   </div>
                   <div style={{ fontFamily: 'monospace', fontSize: '0.95rem' }}>
-                    Recall@K = |Rel ∩ TopK| / |Rel|
+                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Recall@K = |Rel ∩ TopK| / |Rel|`}
+              </pre>
                     <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
-                      Where |Rel ∩ TopK| = relevant docs in top-K, |Rel| = total relevant docs
+                      Where:
                     </div>
+                    <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                      <li>|Rel ∩ TopK| = Number of relevant documents in the top-K results</li>
+                      <li>|Rel| = Total number of relevant documents in the corpus</li>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -166,8 +172,11 @@ export const ragEvaluationMetricsDeck: Deck = {
                   <strong>Target / Good Value Benchmark</strong>
                 </div>
                 <div style={{ display: 'flex', gap: '1rem' }}>
-                  <div>• ≥0.80 for carefully curated question-answer sets</div>
-                  <div>• ≥0.60 for broad open-domain queries</div>
+                  <ul>
+                    <li>≥0.80 for carefully curated question-answer sets</li>
+                    <li>≥0.60 for broad open-domain queries</li>
+                    <li>Higher values critical for comprehensive information needs</li>
+                  </ul>
                 </div>
               </div>
 
@@ -225,10 +234,16 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontFamily: 'monospace', fontSize: '0.95rem' }}>
-                Precision@K = |Rel ∩ TopK| / K
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Precision@K = |Rel ∩ TopK| / K`}
+              </pre>
                 <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
-                  Where |Rel ∩ TopK| = relevant docs in top-K, K = total retrieved docs
+                  Where:
                 </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>|Rel ∩ TopK| = Number of relevant documents in the top-K results</li>
+                  <li>K = Total number of retrieved documents being evaluated</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -252,8 +267,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.70 typical for general RAG applications</div>
-              <div>• ≥0.85 for systems with small context windows</div>
+              <ul>
+                <li>≥0.70 typical for general RAG applications</li>
+                <li>≥0.85 for systems with small context windows</li>
+                <li>Higher values critical when LLM context capacity is limited</li>
+              </ul>
             </div>
           </div>
 
@@ -311,10 +329,17 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontFamily: 'monospace', fontSize: '0.9rem' }}>
-                HitRate@K = (1/N) Σ 1[|Rel ∩ TopK| ≥ 1]
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`HitRate@K = (1/N) Σ 1[|Rel ∩ TopK| ≥ 1]`}
+              </pre>
                 <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
-                  N = total queries, indicator = 1 if ≥1 relevant doc in top-K
+                  Where:
                 </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>N = Total number of queries</li>
+                  <li>1[|Rel ∩ TopK| ≥ 1] = 1 if at least one relevant document appears in top-K, 0 otherwise</li>
+                  <li>Σ = Sum over all queries</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -338,8 +363,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.95 for FAQs or narrow/specialized corpora</div>
-              <div>• ≥0.80 for broad or diverse document collections</div>
+              <ul>
+                <li>≥0.95 for FAQs or narrow/specialized corpora</li>
+                <li>≥0.80 for broad or diverse document collections</li>
+                <li>Lower values indicate need for embedding model or chunking improvements</li>
+              </ul>
             </div>
           </div>
 
@@ -396,10 +424,16 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                Overlap = |Answer facts in context| / |Answer facts|
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  Or: Token/phrase F1 score between reference answer and context
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Overlap = |Answer facts in context| / |Answer facts|`}
+              </pre>
+                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                  Alternatively:
                 </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Token/phrase F1 score between reference answer and context</li>
+                  <li>Semantic similarity between expected answer elements and retrieved chunks</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -423,8 +457,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.70 for general use cases</div>
-              <div>• ≥0.85 for high-stakes applications</div>
+              <ul>
+                <li>≥0.70 for general use cases</li>
+                <li>≥0.85 for high-stakes applications</li>
+                <li>Context window size often limits feasible target values</li>
+              </ul>
             </div>
           </div>
 
@@ -481,12 +518,18 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                Context Relevance = mean(score_i)
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  • LLM judges each chunk's relevance on 0-1 scale<br/>
-                  • Optional: Weight by chunk length<br/>
-                  • Compute mean across all retrieved chunks
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Context Relevance = mean(score_i)
+where score_i ∈ [0,1] for each chunk`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                Where:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Have an LLM judge each chunk's relevance to the query on a 0-1 scale</li>
+                  <li>Optional: Weight by chunk length for more accurate representation</li>
+                  <li>Compute mean across all retrieved chunks</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -510,9 +553,12 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.70 considered good performance</div>
-              <div>• ≥0.80 indicates strong retrieval alignment</div>
-              <div>• &lt;0.50 often signals problematic retrieval</div>
+              <ul>
+                <li>≥0.70 considered good performance</li>
+                <li>≥0.80 indicates strong retrieval alignment</li>
+                <li>Scores &lt;0.50 often signal problematic retrieval</li>
+                <li>Thresholds may vary by domain complexity</li>
+              </ul>
             </div>
           </div>
 
@@ -572,13 +618,19 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                HallucinationRate = 1 - Faithfulness<br/>
-                = (# unsupported claims) / (# total claims)
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  • Extract all factual claims from answer<br/>
-                  • Check each against retrieved context<br/>
-                  • Count unsupported claims
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`HallucinationRate = 1 - Faithfulness
+= (# unsupported claims) / (# total claims)`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                Where:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Extract all factual claims from the answer</li>
+                  <li>Check each claim against the retrieved context</li>
+                  <li>Count claims without supporting evidence</li>
+                  <li>Implementation options: HHEM-2.1-Open model or LLM judge</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -602,8 +654,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• &lt;5% for high-stakes applications (medical, legal, financial)</div>
-              <div>• &lt;10-15% for general-purpose applications</div>
+              <ul>
+                <li>&lt;5% for high-stakes applications (medical, legal, financial)</li>
+                <li>&lt;10-15% for general-purpose applications</li>
+                <li>Zero tolerance for critical facts in regulated domains</li>
+              </ul>
             </div>
           </div>
 
@@ -661,12 +716,17 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                GAS = (# claims with correct citation) / (# total claims)
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  • Identify each claim in the answer<br/>
-                  • For each claim with citation, verify cited span supports it<br/>
-                  • Count correctly supported claims
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`GAS = (# claims with correct citation-supported spans) / (# total claims)`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+              Process:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Identify each claim in the generated answer</li>
+                  <li>For each claim with a citation, verify the cited span supports the claim</li>
+                  <li>Count correctly supported claims and divide by total claims</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -690,8 +750,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.90 for general applications</div>
-              <div>• ≥0.95 for strict domains (legal, medical, financial)</div>
+              <ul>
+                <li>≥0.90 for general applications</li>
+                <li>≥0.95 for strict domains (legal, medical, financial)</li>
+                <li>Lower scores indicate inaccurate citation or attribution issues</li>
+              </ul>
             </div>
           </div>
 
@@ -749,12 +812,17 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                Faithfulness = (# supported claims) / (# total claims)
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  • Extract individual claims from answer<br/>
-                  • Check each claim against retrieved context<br/>
-                  • Use RAGAS or HHEM-2.1-Open frameworks
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Faithfulness = (# supported claims) / (# total claims)`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+              Implementation:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Extract individual claims from the generated answer</li>
+                  <li>Check each claim against retrieved context</li>
+                  <li>Frameworks like RAGAS or HHEM-2.1-Open automate this</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -778,8 +846,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.80 for general-purpose RAG applications</div>
-              <div>• ≥0.90 for high-stakes domains (medical, legal, finance)</div>
+              <ul>
+                <li>≥0.80 for general-purpose RAG applications</li>
+                <li>≥0.90 for high-stakes domains (medical, legal, finance)</li>
+                <li>Consider sampling confidence intervals when evaluating</li>
+              </ul>
             </div>
           </div>
 
@@ -838,10 +909,16 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                Completeness = (# required sub-answers present) / (# required)
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  • Can use reference decomposition or LLM judge checklist to identify parts
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Completeness = (# required sub-answers present) / (# required)`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+              Where:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Required sub-answers = Parts of the query that need addressing</li>
+                  <li>Can use reference decomposition or LLM judge checklist to identify parts</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -865,8 +942,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.85 typical for general applications</div>
-              <div>• ≥0.95 for high-stakes domains (medical, legal, finance)</div>
+              <ul>
+                <li>≥0.85 typical for general applications</li>
+                <li>≥0.95 for high-stakes domains (medical, legal, finance)</li>
+                <li>Balance with other metrics like faithfulness and relevance</li>
+              </ul>
             </div>
           </div>
 
@@ -924,8 +1004,18 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                <strong>Option 1:</strong> LLM-judged specificity score [0-1]<br/>
-                <strong>Option 2:</strong> Info-density = (# named entities + numbers) / answer tokens
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`Option 1: LLM-judged specificity score [0-1]
+Option 2: Info-density = (# named entities + numbers) / answer tokens`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                Approaches:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>LLM judge evaluates specificity based on detail level and concreteness</li>
+                  <li>Info density measures content-to-token ratio (normalized to [0-1])</li>
+                  <li>Entity recognition counts named objects, dates, quantities, etc.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -949,8 +1039,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.60 with faithfulness gate in place</div>
-              <div>• ≥0.70 for domain-tuned systems</div>
+              <ul>
+                <li>≥0.60 with faithfulness gate in place</li>
+                <li>≥0.70 for domain-tuned systems</li>
+                <li>Balance with brevity goals - overly specific responses can be verbose</li>
+              </ul>
             </div>
           </div>
 
@@ -1007,11 +1100,17 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                NoiseDensity = (Irrelevant tokens) / (Total context tokens)
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  • Per-chunk relevance × chunk length<br/>
-                  • Token-level labeling via LLM or embedding
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`NoiseDensity = (Irrelevant tokens in context) / (Total context tokens)`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                Approaches:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Per-chunk relevance × chunk length</li>
+                  <li>Token-level labeling via LLM or embedding relevance</li>
+                  <li>Manual evaluation of token necessity</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1035,9 +1134,12 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• &lt;20% for long context systems</div>
-              <div>• &lt;30% for short context windows</div>
-              <div>• &lt;15% for high-performing targeted domains</div>
+              <ul>
+                <li>&lt;30% for short context windows</li>
+                <li>&lt;20% for long context systems</li>
+                <li>Lower is better - aim to minimize irrelevant content</li>
+                <li>High-performing systems may achieve &lt;15% for targeted domains</li>
+              </ul>
             </div>
           </div>
 
@@ -1095,9 +1197,18 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.9rem' }}>
-                CCE = Coverage_τ / Tokens<br/>
-                <strong>OR</strong><br/>
-                Compute MinimalTokens achieving Coverage ≥ τ
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`CCE = Coverage_τ / Tokens
+- OR -
+Compute MinimalTokens achieving Coverage ≥ τ`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                Where:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>Coverage_τ is contextual recall at threshold τ</li>
+                  <li>Tokens is the token count used in context</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1120,11 +1231,11 @@ export const ragEvaluationMetricsDeck: Deck = {
               <SvgIcon iconName="duo-chart-bar" sizeName="lg" style={iconStyle} darkModeInvert={true} />
               <strong>Target / Good Value Benchmark</strong>
             </div>
-            <div>
-              • Seek higher CCE vs. baseline<br/>
-              • Typically aim for ≥20–40% token reduction at same coverage level<br/>
-              • Compare different compression approaches against each other
-            </div>
+            <ul>
+              <li>Seek higher CCE vs. baseline</li>
+              <li>Typically aim for ≥20–40% token reduction at same coverage level</li>
+              <li>Compare different compression approaches against each other</li>
+            </ul>
           </div>
 
           <div style={{ marginBottom: '1rem', background: 'rgba(139, 92, 246, 0.15)', padding: '1rem', borderRadius: '8px' }}>
@@ -1181,10 +1292,17 @@ export const ragEvaluationMetricsDeck: Deck = {
                 <strong>How to Calculate</strong>
               </div>
               <div style={{ fontSize: '0.85rem' }}>
-                LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]
-                <div style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
-                  α = weight parameter (0-1) for latency vs. cost importance
-                </div>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+{`LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]`}
+              </pre>
+              <div style={{ marginTop: '0.5rem', fontSize: '0.85rem', fontFamily: 'inherit' }}>
+                Where:
+              </div>
+                <ul style={{ fontSize: '0.85rem', fontFamily: 'inherit'}}>
+                  <li>α = weight parameter (0-1) for latency vs. cost importance</li>
+                  <li>p50 latency = median response time</li>
+                  <li>Result is clipped to range [0,1]</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -1209,8 +1327,12 @@ export const ragEvaluationMetricsDeck: Deck = {
               <strong>Target / Good Value Benchmark</strong>
             </div>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <div>• ≥0.70 is generally acceptable</div>
-              <div>• ≥0.85 indicates strong performance</div>
+              <ul>
+                <li>≥0.70 is generally acceptable</li>
+                <li>≥0.85 indicates strong performance</li>
+                <li>Adjust thresholds based on specific application requirements</li>
+                <li>Higher-priority applications may require stricter thresholds</li>
+              </ul>
             </div>
           </div>
 
@@ -1224,7 +1346,8 @@ export const ragEvaluationMetricsDeck: Deck = {
               • α = 0.6 (latency slightly more important than cost)<br/>
               • Latency use: 70% of budget (0.7)<br/>
               • Cost use: 50% of budget (0.5)<br/>
-              <strong style={{ color: '#8b5cf6' }}>LCTS = 1 − [0.6·0.7 + 0.4·0.5] = 1 − [0.42 + 0.20] = 0.38</strong><br/>
+              <strong style={{ color: '#8b5cf6' }}>LCTS = 1 − [0.6·0.7 + 0.4·0.5]</strong><br/>
+              <strong style={{ color: '#8b5cf6' }}>LCTS = 1 − [0.42 + 0.20] = 0.38</strong><br/>
               <em style={{ color: '#ef4444' }}>This indicates suboptimal performance that needs optimization.</em>
             </div>
           </div>
