@@ -18,7 +18,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '26 Chunking Techniques & Cheat Sheet',
           content: (
             <div style={{ textAlign: 'left' }}>
-          <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval</h2>
+          <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval in RAG and NLP applications</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-file" sizeName="4x" style={{ color: '#3498db' }} />
@@ -127,7 +127,7 @@ export const chunkingTechniquesDeck: Deck = {
               </ul>
               <h4 style={{ color: '#2ecc71', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <SvgIcon iconName="duo-paragraph" sizeName="1x" darkModeInvert={true} />
-                Sentence/Paragraph (4-6)
+                Sentence/Paragraph-based (4-6)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#2ecc71' }}>
                 <li>Sentence-Level Chunking</li>
@@ -143,11 +143,11 @@ export const chunkingTechniquesDeck: Deck = {
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#9b59b6' }}>
                 <li>Structure-Aware Chunking</li>
                 <li>Content-Aware Chunking</li>
-                <li>Heading/Title Anchor</li>
-                <li>Markdown/HTML Structure</li>
+                <li>Heading/Title Anchor Chunking</li>
+                <li>Markdown/HTML Structure Chunking</li>
                 <li>Table-Aware Chunking</li>
                 <li>Code-Aware Chunking</li>
-                <li>Page-Preservation</li>
+                <li>Page-Preservation Chunking</li>
               </ul>
             </div>
             <div>
@@ -156,11 +156,11 @@ export const chunkingTechniquesDeck: Deck = {
                 Semantic/Adaptive (14-19)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#f39c12' }}>
-                <li>Semantic (Embedding-Based)</li>
+                <li>Semantic Chunking (Embedding-Based)</li>
                 <li>TextTiling</li>
                 <li>Discourse/RST Chunking</li>
-                <li>Graph-Based Semantic</li>
-                <li>Recursive Character Splitting</li>
+                <li>Graph-Based Semantic Chunking</li>
+                <li>Recursive Character Text Splitting</li>
                 <li>Adaptive Length Chunking</li>
               </ul>
               <h4 style={{ color: '#e67e22', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -168,12 +168,12 @@ export const chunkingTechniquesDeck: Deck = {
                 Special-Purpose (20-26)
               </h4>
               <ul style={{ lineHeight: '1.5', fontSize: '0.95em', color: '#e67e22' }}>
-                <li>Summarization-Based</li>
-                <li>Audio/ASR Time-Based</li>
+                <li>Summarization-Based Chunking</li>
+                <li>Audio/ASR Time-Based Chunking</li>
                 <li>Speaker-Turn Chunking</li>
-                <li>QA-Focused</li>
-                <li>Caption + Context</li>
-                <li>Metadata-Aware</li>
+                <li>QA-Focused Chunking</li>
+                <li>Caption + Context Chunking</li>
+                <li>Metadata-Aware Chunking</li>
                 <li>Hybrid Chunking</li>
               </ul>
             </div>
@@ -189,551 +189,2476 @@ export const chunkingTechniquesDeck: Deck = {
       ]
     },
     {
-      id: 'techniques-1-2',
-      title: 'Fixed-Size & Sliding Window (1-2)',
+      id: 'strategy-1',
+      title: '1. Fixed-Size Chunking',
       slides: [
         {
           id: 4,
-          title: 'Fixed-Size & Sliding Window (1-2)',
-          icon: { name: 'duo-ruler-horizontal' },
+          title: '1. Fixed-Size Chunking',
+          icon: { name: 'duo-wand-sparkles' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#52ace7' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#c985ff' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-ruler-horizontal" sizeName="1x" darkModeInvert={true} />
-                1. Fixed-Size Chunking
-              </h3>
-              <p><strong>Size:</strong> 300–1000 tokens (start with 512)</p>
-              <p><strong>Overlap:</strong> 10–20% (50–150 tokens)</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Simple, predictable, fast; baseline for A/B tests</p>
-              <p><strong style={{ color: '#2ecc71' }}>✓</strong> Consistent chunk sizes for embedding models</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Ignores semantics; may split sentences</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Risk of context dilution at boundaries</p>
-              <p style={{ marginTop: '10px', padding: '8px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px', fontSize: '0.95em' }}>
-                <strong>Use:</strong> Logs, FAQs, baseline RAG, uniform text<br/>
-                <strong>Tools:</strong> LangChain, LlamaIndex, Haystack<br/>
-                <strong>Complexity:</strong> Low (Beginner)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Simple, predictable, fast; baseline for A/B tests</li>
+                <li>Consistent chunk sizes for embedding models</li>
+                <li>Easy to implement and debug</li>
+                <li>Predictable storage requirements</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Ignores semantics; may split sentences</li>
+                <li>Risk of context dilution at boundaries</li>
+                <li>Related information may span chunks</li>
+                <li>Suboptimal for structured documents</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>300–1000 tokens (start with 512)</li>
+                <li>Varies by embedding model and content density</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>10–20% of chunk size (50–150 tokens)</li>
+                <li>Helps preserve context across chunk boundaries</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
-              <h3 style={{ color: '#1abc9c', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-window-maximize" sizeName="1x" darkModeInvert={true} />
-                2. Sliding Window Chunking
-              </h3>
-              <p><strong>Size:</strong> 300–800 tokens per window</p>
-              <p><strong>Overlap:</strong> 15–30% (1–2 sentences)</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Preserves continuity and context between chunks</p>
-              <p><strong style={{ color: '#2ecc71' }}>✓</strong> Reduces information loss at boundaries</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Introduces redundancy in storage</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Increases embedding costs (same content embedded multiple times)</p>
-              <p style={{ marginTop: '10px', padding: '8px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '5px', fontSize: '0.95em' }}>
-                <strong>Use:</strong> Technical specs, legal docs, academic papers<br/>
-                <strong>Tools:</strong> LangChain sliding window, LlamaIndex<br/>
-                <strong>Complexity:</strong> Low–Medium (Beginner)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Low</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Logs, FAQs, short documents</li>
+                <li>Uniform text content</li>
+                <li>Baseline RAG implementations</li>
+                <li>Simple knowledge bases</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Logs, FAQs, short documentLangChain Character/Token splitters</li>
+                <li>LlamaIndex, Haystack</li>
+                <li>Chroma, Weaviate, Pinecone</li>
+                <li>Custom implementations (simple)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Beginner</li>
+              </ul>
             </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>📏 Start Here:</strong> Fixed-size for baselines, Sliding window for better context preservation
           </div>
         </div>
       ),
-      backgroundColor: '#133c57',
-      notes: 'Fixed-size for simplicity and predictability; Sliding window for context continuity with overlap'
+      backgroundColor: '#521e7b',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-3-4',
-      title: 'Token & Sentence-Based (3-4)',
+      id: 'strategy-2',
+      title: '2. Sentence-Level Chunking',
       slides: [
         {
           id: 5,
-          title: 'Token & Sentence-Based (3-4)',
+          title: '2. Sentence-Level Chunking',
           icon: { name: 'duo-paragraph' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#b755e1' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ff6464' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '15px', color: '#9b59b6' }}>
-              <h3 style={{ color: '#9b59b6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-hashtag" sizeName="1x" darkModeInvert={true} />
-                3. Token-Aware Chunking
-              </h3>
-              <p><strong>Size:</strong> 256–1024 tokens (match embedding model)</p>
-              <p><strong>Overlap:</strong> 10–20% (50–100 tokens)</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Honors tokenizer limits; predictable fit</p>
-              <p><strong style={{ color: '#2ecc71' }}>✓</strong> Avoids truncation by embedding models</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> May split syntax/meaning; tokenizer variance</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Not aligned with semantic boundaries</p>
-              <p style={{ marginTop: '10px', padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px', fontSize: '0.95em' }}>
-                <strong>Use:</strong> Production RAG, strict window budgets<br/>
-                <strong>Tools:</strong> tiktoken, HuggingFace tokenizers, LangChain<br/>
-                <strong>Complexity:</strong> Low (Beginner)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Coherent atomic units; good for precision</li>
+                <li>Preserves natural language boundaries</li>
+                <li>Avoids cutting mid-sentence</li>
+                <li>Each chunk has clear semantic meaning</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Uneven sizes; may be too granular</li>
+                <li>Short chunks might lack broader context</li>
+                <li>Variable token counts complicate batching</li>
+                <li>Requires sentence boundary detection</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>1–3 sentences (~50–150 tokens)</li>
+                <li>Depends on sentence complexity and domain</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>Optional 1 sentence</li>
+                <li>Often unnecessary as sentences form natural boundaries</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
-              <h3 style={{ color: '#e67e22', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-quote-left" sizeName="1x" darkModeInvert={true} />
-                4. Sentence-Level Chunking
-              </h3>
-              <p><strong>Size:</strong> 1–3 sentences (~50–150 tokens)</p>
-              <p><strong>Overlap:</strong> Optional 1 sentence</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Coherent atomic units; good for precision</p>
-              <p><strong style={{ color: '#2ecc71' }}>✓</strong> Preserves natural language boundaries</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Uneven sizes; may be too granular</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Short chunks might lack broader context</p>
-              <p style={{ marginTop: '10px', padding: '8px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '5px', fontSize: '0.95em' }}>
-                <strong>Use:</strong> FAQ systems, QA over short facts, snippet retrieval<br/>
-                <strong>Tools:</strong> spaCy, NLTK sent_tokenize, Stanza<br/>
-                <strong>Complexity:</strong> Medium (Beginner–Intermediate)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires sentence segmentation processing</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>QA over short facts</li>
+                <li>Classification tasks</li>
+                <li>Snippet retrieval</li>
+                <li>FAQ systems and knowledge bases</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>spaCy sentence segmenter</li>
+                <li>NLTK sent_tokenize</li>
+                <li>Stanza sentence splitter</li>
+                <li>syntok and other sentence tokenizers</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Simple concept with some NLP preprocessing</li>
+                <li>Beginner–Intermediate</li>
+              </ul>
             </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🎯 Token-Aware:</strong> Best for matching model limits • <strong>Sentence-Level:</strong> Best for precise, atomic retrieval
           </div>
         </div>
       ),
-      backgroundColor: '#421f51',
-      notes: 'Token-aware for model compatibility; Sentence-level for natural atomic units with semantic boundaries'
+      backgroundColor: '#651c1c',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-5-6',
-      title: 'Paragraph & Recursive (5-6)',
+      id: 'strategy-3',
+      title: '3. Paragraph-Level Chunking',
       slides: [
         {
           id: 6,
-          title: 'Paragraph & Recursive (5-6)',
-          icon: { name: 'duo-paragraph' },
+          title: '3. Paragraph-Level Chunking',
+          icon: { name: 'duo-layer-group' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#11cf61' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#68ff95' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '15px', color: '#2ecc71' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-paragraph" sizeName="1x" darkModeInvert={true} />
-                5. Paragraph-Level Chunking
-              </h3>
-              <p><strong>Size:</strong> 150–400 tokens (paragraph-bound)</p>
-              <p><strong>Overlap:</strong> 0–1 sentence</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Natural units; preserves local context</p>
-              <p><strong style={{ color: '#2ecc71' }}>✓</strong> Respects author-defined text boundaries</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Paragraphs can be long or inconsistent</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Document formatting affects quality</p>
-              <p style={{ marginTop: '10px', padding: '8px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '5px', fontSize: '0.95em' }}>
-                <strong>Use:</strong> Articles, essays, blogs, reports<br/>
-                <strong>Tools:</strong> Markdown/HTML splitters, simple regex<br/>
-                <strong>Complexity:</strong> Low (Beginner)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Natural units; preserves local context</li>
+                <li>Respects author-defined text boundaries</li>
+                <li>Maintains topical coherence within paragraphs</li>
+                <li>Simpler implementation than semantic methods</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Paragraphs can be long or inconsistent</li>
+                <li>Document formatting affects quality</li>
+                <li>May create uneven chunk sizes</li>
+                <li>Doesn't work well for documents without clear paragraphs</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>150–400 tokens (paragraph-bound)</li>
+                <li>Size varies based on document formatting</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–1 sentence</li>
+                <li>Minimal overlap needed as paragraphs are natural breaks</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="1x" darkModeInvert={true} />
-                6. Recursive Character Splitting
-              </h3>
-              <p><strong>Size:</strong> 400–800 tokens (typical)</p>
-              <p><strong>Overlap:</strong> 50–150 tokens (20%)</p>
-              <p style={{ marginTop: '8px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Smart fallback separators (\\n\\n, \\n, space, char)</p>
-              <p><strong style={{ color: '#2ecc71' }}>✓</strong> Better respects text boundaries than fixed-size</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Still rule-based; semantics not guaranteed</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires tuning separator hierarchy</p>
-              <p style={{ marginTop: '10px', padding: '8px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px', fontSize: '0.95em' }}>
-                <strong>Use:</strong> General-purpose baseline, mixed format docs, PDFs<br/>
-                <strong>Tools:</strong> LangChain RecursiveCharacterTextSplitter<br/>
-                <strong>Complexity:</strong> Low (Beginner)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Low</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Blogs, reports, knowledge articles</li>
+                <li>Well-structured documents</li>
+                <li>Content with clear paragraph delineation</li>
+                <li>Articles and essays</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Markdown/HTML splitters</li>
+                <li>Regex/newline heuristics</li>
+                <li>Common text processing libraries</li>
+                <li>Simple string split on double newlines</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Beginner</li>
+              </ul>
             </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>📄 Paragraph:</strong> Natural for well-structured docs • <strong>Recursive:</strong> Flexible fallback for mixed content
           </div>
         </div>
       ),
-      backgroundColor: '#114f2b',
-      notes: 'Paragraph-level for natural units; Recursive character splitting for intelligent fallback hierarchy'
+      backgroundColor: '#1c6532',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-7-9',
-      title: 'Structure-Aware Techniques (7-9)',
+      id: 'strategy-4',
+      title: '4. Recursive Character Text Splitting',
       slides: [
         {
           id: 7,
-          title: 'Structure-Aware Techniques (7-9)',
-          icon: { name: 'duo-sitemap' },
+          title: '4. Recursive Character Text Splitting',
+          icon: { name: 'duo-brain-circuit' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#b84ee5' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>7. Structure-Aware</h4>
-              <p><strong>Size:</strong> 300–1200 tokens (by section)</p>
-              <p><strong>Overlap:</strong> Minimal across sections</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Respects headers/sections; better coherence</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Parsing can be brittle; needs well-structured docs</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Technical reports, legal docs, manuals<br/>
-                <strong>Tools:</strong> Unstructured.io, Azure Document Layout<br/>
-                <strong>Complexity:</strong> Medium (Intermediate)
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#8db7ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Smart fallback separators (\n\n, \n, space, char)</li>
+                <li>Balances size vs structure preservation</li>
+                <li>Better respects text boundaries than fixed-size</li>
+                <li>More natural chunks than character-only splitting</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Still rule-based; semantics not guaranteed</li>
+                <li>Requires tuning separator hierarchy</li>
+                <li>May produce uneven chunk sizes</li>
+                <li>No awareness of document structure or headings</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>400–800 tokens (typical)</li>
+                <li>Depends on document structure and separator frequency</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>50–150 tokens</li>
+                <li>Higher overlap (20%) for complex content with many separators</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '8px' }}>8. Content-Aware</h4>
-              <p><strong>Size:</strong> 200–800 tokens (dynamic)</p>
-              <p><strong>Overlap:</strong> 0–15% based on content type</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Heuristics by content type (lists, bullets, code, tables)</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Rules require tuning; domain-specific heuristics</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Formatting-rich docs, ebooks, technical guides<br/>
-                <strong>Tools:</strong> Custom heuristics, Coveo strategies<br/>
-                <strong>Complexity:</strong> Medium (Intermediate)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Simple string operations, slightly more than fixed-size</li>
+                <li>Low</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Mixed formatting documents</li>
+                <li>PDFs post-extraction</li>
+                <li>Text with varying structure</li>
+                <li>General-purpose chunking baseline</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LangChain RecursiveCharacterTextSplitter</li>
+                <li>n8n integration nodes</li>
+                <li>Snowflake SPLIT_TEXT_RECURSIVE_CHARACTER</li>
+                <li>Easy to implement custom in any language</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Simple to implement and use, with minimal tuning required</li>
+                <li>Beginner</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '12px', color: '#1abc9c' }}>
-              <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>9. Heading/Title Anchor</h4>
-              <p><strong>Size:</strong> 200–1200 tokens (section-bounded)</p>
-              <p><strong>Overlap:</strong> 0–5% between sections</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Strong alignment to document navigation; great for docs sites</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires clean headings; uneven chunk sizes</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Wikis, developer docs, API references<br/>
-                <strong>Tools:</strong> Markdown parsers, LangChain MarkdownTextSplitter<br/>
-                <strong>Complexity:</strong> Low–Medium (Beginner–Intermediate)
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🏗️ Structure-Aware:</strong> Leverages document organization for semantically meaningful chunks
           </div>
         </div>
       ),
-      backgroundColor: '#421f51',
-      notes: 'Structure-aware techniques leverage document organization: headers, content types, and navigation structure'
+      backgroundColor: '#1c3765',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-10-13',
-      title: 'Markup & Specialized Structure (10-13)',
+      id: 'strategy-5',
+      title: '5. Structure-Aware Chunking',
       slides: [
         {
           id: 8,
-          title: 'Markup & Specialized Structure (10-13)',
-          icon: { name: 'duo-code' },
+          title: '5. Structure-Aware Chunking',
+          icon: { name: 'duo-sitemap' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em', color: '#f39644' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px', color: '#f39c12' }}>
-              <h4 style={{ color: '#f39c12', marginBottom: '8px' }}>10. Markdown/HTML Structure</h4>
-              <p><strong>Size:</strong> 300–800 tokens (preserve element boundaries)</p>
-              <p><strong>Overlap:</strong> 0–10%</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Preserves lists, code blocks, tables, HTML/Markdown elements</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires well-structured source; boilerplate/noise unless filtered</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Documentation sites, web pages, wikis<br/>
-                <strong>Tools:</strong> BeautifulSoup, lxml, LangChain HTML splitters
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#58ff64' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Respects headers/sections; better coherence</li>
+                <li>Preserves document structure and hierarchy</li>
+                <li>Keeps related content together logically</li>
+                <li>Maintains semantic integrity of document sections</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Parsing/layout extraction can be brittle</li>
+                <li>Requires well-structured documents</li>
+                <li>May produce uneven chunk sizes</li>
+                <li>Quality depends on document formatting</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>300–1200 tokens (by section)</li>
+                <li>Sizes vary based on document structure and heading levels</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>Minimal across sections</li>
+                <li>Only necessary to maintain cross-sectional references</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
-              <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>11. Table-Aware Chunking</h4>
-              <p><strong>Size:</strong> Full table as single chunk (~250 tokens typical)</p>
-              <p><strong>Overlap:</strong> Include surrounding context</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Keeps table data together; enables structured QA</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Large tables may exceed token limits; needs special handling</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Financial reports, pricing tables, data-heavy docs<br/>
-                <strong>Tools:</strong> Unstructured.io, Camelot (PDF), table parsers
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Structure parsing and analysis requirements</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Manuals, whitepapers, SOWs</li>
+                <li>Documentation sites</li>
+                <li>Academic papers with clear sections</li>
+                <li>Technical reports, legal documents</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Azure Document Layout</li>
+                <li>Unstructured.io</li>
+                <li>Docling</li>
+                <li>LangChain HTML/MD splitters</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires structure parsing knowledge</li>
+                <li>Intermediate</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '8px' }}>12. Code-Aware Chunking</h4>
-              <p><strong>Size:</strong> 400 tokens or one function (include signature+docstring)</p>
-              <p><strong>Overlap:</strong> Include context (imports, class definition)</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Respects functions/classes; preserves semantic units</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Long functions/classes may be too large; language-specific</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Code repos, API documentation, technical tutorials<br/>
-                <strong>Tools:</strong> Tree-sitter, language AST parsers, LangChain CodeTextSplitter
-              </p>
-            </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>13. Page-Preservation</h4>
-              <p><strong>Size:</strong> Per page (variable)</p>
-              <p><strong>Overlap:</strong> Minimal</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Maintains page references; useful for citations</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Page boundaries arbitrary; may split context</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Academic papers, legal documents, books<br/>
-                <strong>Tools:</strong> PyPDF2, pdfplumber, page-aware PDF parsers
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🔧 Specialized Structure:</strong> Format-specific chunking for HTML, tables, code, and page-bounded content
           </div>
         </div>
       ),
-      backgroundColor: '#673911',
-      notes: 'Specialized structure techniques: Markdown/HTML, Table-aware, Code-aware, and Page-preservation'
+      backgroundColor: '#1c6521',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-14-17',
-      title: 'Semantic Chunking (14-17)',
+      id: 'strategy-6',
+      title: '6. Content-Aware Chunking',
       slides: [
         {
           id: 9,
-          title: 'Semantic Chunking (14-17)',
-          icon: { name: 'duo-brain' },
+          title: '6. Content-Aware Chunking',
+          icon: { name: 'duo-brain-circuit' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#e9685b' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '12px', color: '#e74c3c' }}>
-              <h4 style={{ color: '#e74c3c', marginBottom: '8px' }}>14. Semantic (Embedding-Based)</h4>
-              <p><strong>Size:</strong> 200–600 tokens per semantic unit</p>
-              <p><strong>Overlap:</strong> 0–10% (minimal, semantic boundaries)</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Topic-coherent chunks; high retrieval precision</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires embeddings; adds computation cost</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Multi-topic documents, knowledge bases, product docs<br/>
-                <strong>Tools:</strong> sentence-transformers, LlamaIndex SemanticSplitter<br/>
-                <strong>Complexity:</strong> Medium–High (Intermediate–Advanced)
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#83ffec' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Heuristics by content type (lists, bullets, code, tables)</li>
+                <li>Preserves meaning of special content elements</li>
+                <li>Adapts to document formatting patterns</li>
+                <li>Better chunk boundaries for mixed content</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Rules require tuning for different domains</li>
+                <li>Domain-specific heuristics needed</li>
+                <li>Harder to maintain than simpler methods</li>
+                <li>May break on unusual formatting</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>200–800 tokens (dynamic)</li>
+                <li>Varies based on content type and complexity</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–15% depending on content type</li>
+                <li>More for complex content, less for structured elements</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '12px', color: '#1abc9c' }}>
-              <h4 style={{ color: '#1abc9c', marginBottom: '8px' }}>15. TextTiling</h4>
-              <p><strong>Size:</strong> Variable by tile/window (200–800 tokens)</p>
-              <p><strong>Overlap:</strong> None (algorithm handles transitions)</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Topic segmentation via cohesion drops; classic, explainable</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Sensitive to parameters; domain variance</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Multi-topic documents, articles, transcripts<br/>
-                <strong>Tools:</strong> NLTK implementations, custom Python<br/>
-                <strong>Complexity:</strong> Medium (Intermediate)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Ebooks and technical guides</li>
+                <li>Documentation sites and wikis</li>
+                <li>Mixed content with lists/tables/code</li>
+                <li>Formatting-rich documents</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Custom heuristics (often bespoke)</li>
+                <li>Coveo chunking strategies</li>
+                <li>Unstructured.io content extractors</li>
+                <li>Rule-based custom splitters</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Intermediate</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>16. Discourse/RST Chunking</h4>
-              <p><strong>Size:</strong> Combine EDUs to ~150–400 tokens</p>
-              <p><strong>Overlap:</strong> None by default (discourse boundaries)</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Uses discourse units (EDUs); high fidelity semantics</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Parsers computationally heavy; not turnkey</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Complex reasoning, academic papers, legal docs<br/>
-                <strong>Tools:</strong> Research-grade RST parsers, NLTK-RST<br/>
-                <strong>Complexity:</strong> High (Advanced)
-              </p>
-            </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '8px' }}>17. Graph-Based Semantic</h4>
-              <p><strong>Size:</strong> Variable based on graph communities</p>
-              <p><strong>Overlap:</strong> None (graph partitioning)</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Uses entity/concept graphs; finds related content</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Complex implementation; high computational cost</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Knowledge graphs, research papers, interconnected docs<br/>
-                <strong>Tools:</strong> Neo4j, NetworkX, custom graph algorithms<br/>
-                <strong>Complexity:</strong> High (Advanced)
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🧠 Semantic Methods:</strong> Understanding meaning and topic boundaries for high-quality retrieval
           </div>
         </div>
       ),
-      backgroundColor: '#6d1f17',
-      notes: 'Semantic chunking: Embedding-based, TextTiling, Discourse/RST, and Graph-based for topic-coherent chunks'
+      backgroundColor: '#1c655a',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-18-20',
-      title: 'Adaptive & LLM-Based (18-20)',
+      id: 'strategy-7',
+      title: '7. Semantic Chunking (Embedding-Based)',
       slides: [
         {
           id: 10,
-          title: 'Adaptive & LLM-Based (18-20)',
-          icon: { name: 'duo-wand-magic-sparkles' },
+          title: '7. Semantic Chunking (Embedding-Based)',
+          icon: { name: 'duo-wand-sparkles' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em', color: '#ff6700' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '12px', color: '#f39c12' }}>
-              <h4 style={{ color: '#f39c12', marginBottom: '8px' }}>18. Windowed Sentence Grouping</h4>
-              <p><strong>Size:</strong> 3–5 sentences per chunk</p>
-              <p><strong>Overlap:</strong> Stride of 2 sentences</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Natural boundaries with context</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Variable token counts</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Narrative text, stories<br/>
-                <strong>Tools:</strong> Custom implementations<br/>
-                <strong>Complexity:</strong> Low (Beginner)
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#7b7bff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Topic-coherent chunks; high retrieval precision</li>
+                <li>Better semantic understanding and context preservation</li>
+                <li>Groups similar content regardless of physical proximity</li>
+                <li>Improved relevance in retrieval results</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Requires embeddings; adds computation cost</li>
+                <li>Tuning similarity thresholds can be challenging</li>
+                <li>Quality depends on embedding model choice</li>
+                <li>More implementation complexity than fixed methods</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>200–600 tokens per semantic unit</li>
+                <li>Varies based on topic cohesion and content density</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–10% (minimal overlap needed)</li>
+                <li>Semantic boundaries reduce need for significant overlap</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
-              <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>19. Adaptive Length Chunking</h4>
-              <p><strong>Size:</strong> Dynamic based on content complexity</p>
-              <p><strong>Overlap:</strong> Adaptive</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Adjusts to content density</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Complex to implement and tune</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Mixed content types<br/>
-                <strong>Tools:</strong> Custom ML models<br/>
-                <strong>Complexity:</strong> High (Advanced)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Embedding generation and similarity calculations add overhead</li>
+                <li>Medium–High</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Multi-topic documents and research papers</li>
+                <li>Knowledge bases with diverse content</li>
+                <li>Product documentation libraries</li>
+                <li>When retrieval precision is critical</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Sentence-transformers library</li>
+                <li>Pinecone examples and guides</li>
+                <li>Superlinked VectorHub</li>
+                <li>LlamaIndex SemanticSplitter</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires understanding of embeddings and similarity thresholds</li>
+                <li>Intermediate–Advanced</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>20. Summarization-Based</h4>
-              <p><strong>Size:</strong> Generate compact summaries (~150 tokens)</p>
-              <p><strong>Overlap:</strong> None (summaries are independent)</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Compact representation; improves retrieval efficiency</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> LLM cost; potential information loss</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Long documents, hierarchical retrieval<br/>
-                <strong>Tools:</strong> GPT-4, Claude, summarization models<br/>
-                <strong>Complexity:</strong> Medium–High (Intermediate–Advanced)
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🔄 Adaptive Methods:</strong> Dynamic chunking that adjusts to content characteristics and complexity
           </div>
         </div>
       ),
-      backgroundColor: '#7b3709',
-      notes: 'Adaptive techniques: Windowed sentence grouping, adaptive length, and LLM-based summarization'
+      backgroundColor: '#1c1c65',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-21-22',
-      title: 'Audio & Multimedia (21-22)',
+      id: 'strategy-8',
+      title: '8. TextTiling',
       slides: [
         {
           id: 11,
-          title: 'Audio & Multimedia (21-22)',
-          icon: { name: 'duo-video' },
+          title: '8. TextTiling',
+          icon: { name: 'duo-gauge-high' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#319bdf' }}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', marginBottom: '25px' }}>
-            <SvgIcon iconName="duo-microphone" sizeName="3x" style={{ color: '#3498db' }} />
-            <SvgIcon iconName="duo-waveform-lines" sizeName="3x" style={{ color: '#1abc9c' }} />
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '18px', color: '#3498db' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '12px' }}>21. Audio/ASR Time-Based Chunking</h3>
-              <p><strong>Size:</strong> 30-second windows</p>
-              <p><strong>Overlap:</strong> 2-second overlap</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Fixed time intervals aligned with transcription timestamps</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Consistent time-based segments</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Easy to align with audio timestamps</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Predictable chunk sizes</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> May split sentences or phrases mid-thought</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Doesn't respect semantic boundaries</p>
-              </div>
-              <p style={{ marginTop: '12px', padding: '10px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                <strong>Use Cases:</strong> Podcast transcripts, meeting recordings, lectures<br/>
-                <strong>Tools:</strong> Whisper timestamps, Rev.ai, AssemblyAI<br/>
-                <strong>Complexity:</strong> Low–Medium (Beginner–Intermediate)
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ff6eef' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Topic segmentation via cohesion drops; classic, explainable</li>
+                <li>Finds natural topic boundaries in text</li>
+                <li>Good for documents with distinct topic shifts</li>
+                <li>Based on linguistic principles of lexical cohesion</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Sensitive to parameters; domain variance</li>
+                <li>Can struggle with gradual topic transitions</li>
+                <li>Requires preprocessing and tuning</li>
+                <li>Performance varies with text style and genre</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Variable by tile/window (often 200–800 tokens)</li>
+                <li>Based on topic boundaries, not fixed size</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>None</li>
+                <li>Algorithm itself handles transitions between topics</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '18px', color: '#1abc9c' }}>
-              <h3 style={{ color: '#1abc9c', marginBottom: '12px' }}>22. Speaker-Turn Chunking</h3>
-              <p><strong>Size:</strong> 1–3 turns per chunk (~200 tokens typical)</p>
-              <p><strong>Overlap:</strong> Optional previous turn for context</p>
-              <p style={{ marginTop: '10px' }}><strong>How:</strong> Group by speaker diarization boundaries</p>
-              <div style={{ marginTop: '12px' }}>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Preserves conversational context</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Natural dialogue boundaries</p>
-                <p><strong style={{ color: '#2ecc71' }}>✓</strong> Speaker attribution maintained</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Variable chunk sizes based on speaker</p>
-                <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires accurate speaker diarization</p>
-              </div>
-              <p style={{ marginTop: '12px', padding: '10px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '5px' }}>
-                <strong>Use Cases:</strong> Interviews, customer support calls, panel discussions<br/>
-                <strong>Tools:</strong> Pyannote, AssemblyAI speaker labels<br/>
-                <strong>Complexity:</strong> Medium (Intermediate)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires lexical cohesion calculations across text segments</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Articles, transcripts with topic shifts</li>
+                <li>Academic papers, technical documentation</li>
+                <li>Long-form content with distinct sections</li>
+                <li>Multi-topic document segmentation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>NLTK-style implementations</li>
+                <li>Open-source repos (DeepTiling)</li>
+                <li>Custom Python implementations</li>
+                <li>Research-oriented NLP libraries</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires understanding of lexical cohesion and parameter tuning</li>
+                <li>Intermediate</li>
+              </ul>
             </div>
           </div>
         </div>
       ),
-      backgroundColor: '#184d6f',
-      notes: 'Audio/multimedia chunking: Time-based for consistent segments, Speaker-turn for conversational context'
+      backgroundColor: '#651c5d',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
     {
-      id: 'techniques-23-26',
-      title: 'Special-Purpose Techniques (23-26)',
+      id: 'strategy-9',
+      title: '9. Discourse / RST Chunking',
       slides: [
         {
           id: 12,
-          title: 'Special-Purpose Techniques (23-26)',
-          icon: { name: 'duo-wand-sparkles' },
+          title: '9. Discourse / RST Chunking',
+          icon: { name: 'duo-brain-circuit' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.68em', color: '#18e5bd' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
-            <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '12px', color: '#e67e22' }}>
-              <h4 style={{ color: '#e67e22', marginBottom: '8px' }}>23. QA-Focused Chunking</h4>
-              <p><strong>Size:</strong> 300 tokens around answer candidates</p>
-              <p><strong>Overlap:</strong> Context-dependent</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Optimized for QA retrieval; includes question context</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires identifying answer locations; domain-specific</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> FAQ systems, customer support, educational content<br/>
-                <strong>Tools:</strong> Custom QA pipelines, SQuAD-style chunking<br/>
-                <strong>Complexity:</strong> Medium–High (Intermediate–Advanced)
-              </p>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#63ffae' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Uses discourse units (EDUs) and relations for high fidelity semantics</li>
+                <li>Captures rhetorical structure and text organization</li>
+                <li>Preserves argumentative flow and logical connections</li>
+                <li>Excellent for long-form content comprehension</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Parsers are computationally heavy</li>
+                <li>Not turnkey; requires specialized knowledge</li>
+                <li>Lower throughput than simpler methods</li>
+                <li>Limited availability of production-ready tools</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Combine Elementary Discourse Units (EDUs) to ~150–400 tokens</li>
+                <li>Size based on discourse relation boundaries, not fixed counts</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>None by default (discourse boundaries are respected)</li>
+                <li>Optional minimal overlap when coherence requires it</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #9b59b6', borderRadius: '10px', padding: '12px', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '8px' }}>24. Caption + Context Chunking</h4>
-              <p><strong>Size:</strong> 200 tokens near caption/figure</p>
-              <p><strong>Overlap:</strong> Include surrounding paragraphs</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Pairs visuals with explanatory text; multimodal retrieval</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires image/caption detection; manual curation often needed</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Academic papers, technical manuals, visual content<br/>
-                <strong>Tools:</strong> Unstructured.io, custom image extractors<br/>
-                <strong>Complexity:</strong> Medium (Intermediate)
-              </p>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>High</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Long-form question answering</li>
+                <li>Summarization grounding</li>
+                <li>Academic papers and legal documents</li>
+                <li>Complex reasoning over structured arguments</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Research-grade RST parsers</li>
+                <li>Discourse segmentation toolkits</li>
+                <li>Custom NLP pipelines</li>
+                <li>Academic libraries (e.g., NLTK-RST)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Advanced</li>
+              </ul>
             </div>
-            <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '12px', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '8px' }}>25. Metadata-Aware Chunking</h4>
-              <p><strong>Size:</strong> Variable</p>
-              <p><strong>Overlap:</strong> Based on metadata boundaries</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Enriches chunks with metadata; improves filtering and routing</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Requires metadata extraction; complexity increases</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Enterprise docs, versioned content, multi-author systems<br/>
-                <strong>Tools:</strong> Custom metadata extractors, document management systems<br/>
-                <strong>Complexity:</strong> Medium (Intermediate)
-              </p>
-            </div>
-            <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '12px', color: '#2ecc71' }}>
-              <h4 style={{ color: '#2ecc71', marginBottom: '8px' }}>26. Hybrid Chunking</h4>
-              <p><strong>Size:</strong> Combines multiple strategies</p>
-              <p><strong>Overlap:</strong> Strategy-dependent</p>
-              <p style={{ marginTop: '6px' }}><strong style={{ color: '#2ecc71' }}>✓</strong> Best of multiple approaches; adapts to content type</p>
-              <p><strong style={{ color: '#e74c3c' }}>✗</strong> Complex to implement; requires orchestration</p>
-              <p style={{ marginTop: '8px', fontSize: '0.95em', padding: '6px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '5px' }}>
-                <strong>Use:</strong> Mixed document collections, production RAG systems<br/>
-                <strong>Tools:</strong> Custom pipelines, LlamaIndex hybrid strategies<br/>
-                <strong>Complexity:</strong> High (Advanced)
-              </p>
-            </div>
-          </div>
-          <div style={{ marginTop: '15px', padding: '10px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px', textAlign: 'center' }}>
-            <strong>🎯 Special-Purpose:</strong> Task-specific and hybrid approaches for specialized use cases
           </div>
         </div>
       ),
-      backgroundColor: '#0a5748',
-      notes: 'Special-purpose: QA-focused, Caption+Context, Metadata-aware, and Hybrid chunking for specific scenarios'
+      backgroundColor: '#1c653f',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-10',
+      title: '10. Token-Aware Chunking',
+      slides: [
+        {
+          id: 13,
+          title: '10. Token-Aware Chunking',
+          icon: { name: 'duo-code' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#eeff82' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Honors tokenizer limits; predictable fit</li>
+                <li>Avoids truncation by embedding models</li>
+                <li>Matches exact token windows of models</li>
+                <li>More accurate size estimation than characters</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>May split syntax/meaning; tokenizer variance</li>
+                <li>Different models tokenize differently</li>
+                <li>Requires tokenizer access</li>
+                <li>Not aligned with semantic boundaries</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>256–1024 tokens (match embedding model)</li>
+                <li>Should align with context window of target model</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>10–20% (50–100 tokens typical)</li>
+                <li>Helps preserve context across token boundaries</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Low</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Any embedding pipeline; strict window budgets</li>
+                <li>When using specific models with token limits</li>
+                <li>Cross-model compatibility</li>
+                <li>Production RAG systems</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Tiktoken (OpenAI)</li>
+                <li>Hugging Face tokenizers</li>
+                <li>LangChain Token splitter</li>
+                <li>spaCy tokenizers</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Beginner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#5b651c',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-11',
+      title: '11. Heading / Title Anchor Chunking',
+      slides: [
+        {
+          id: 14,
+          title: '11. Heading / Title Anchor Chunking',
+          icon: { name: 'duo-heading' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#7adcff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Strong alignment to document navigation; great for docs sites</li>
+                <li>Preserves document hierarchy and structure</li>
+                <li>Makes retrieval context clearer with heading metadata</li>
+                <li>Natural semantic boundaries for content</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Requires clean headings; won't work for unstructured text</li>
+                <li>Uneven chunk sizes based on section length</li>
+                <li>Some sections may be too large for context windows</li>
+                <li>Different heading styles may cause inconsistencies</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Section-bounded (200–1200 tokens)</li>
+                <li>Varies based on document structure and heading density</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–5% between sections</li>
+                <li>Sometimes includes parent heading for context</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Low–Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Markdown documentation and README files</li>
+                <li>API references and technical docs sites</li>
+                <li>Knowledge bases with clear structure</li>
+                <li>Wikis and developer documentation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Markdown heading parsers</li>
+                <li>GitHub Flavored Markdown (GFM) anchors</li>
+                <li>Static site generators (Jekyll, MkDocs)</li>
+                <li>LangChain's MarkdownTextSplitter</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Beginner–Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1c5265',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-12',
+      title: '12. Markdown / HTML Structure Chunking',
+      slides: [
+        {
+          id: 15,
+          title: '12. Markdown / HTML Structure Chunking',
+          icon: { name: 'duo-code' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ee77ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Preserves lists, code blocks, tables, and other HTML/Markdown elements</li>
+                <li>Maintains document structure and hierarchy</li>
+                <li>Rich metadata extraction from headings, tags, and attributes</li>
+                <li>Natural boundaries align with content meaning</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Requires well-structured source documents</li>
+                <li>Boilerplate/noise unless filtered</li>
+                <li>HTML parsing can be complex/brittle</li>
+                <li>Format-specific implementation needed</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Element-grouped 300–900 tokens</li>
+                <li>Varies by element type (paragraph vs. section)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–10% between elements or sections</li>
+                <li>Often header/context overlap</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Parser overhead and DOM/AST processing requirements</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Web pages, docs portals, blogs</li>
+                <li>Markdown documentation repositories</li>
+                <li>Technical blogs and wikis</li>
+                <li>API documentation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>BeautifulSoup, jsdom for HTML</li>
+                <li>LangChain HTMLTextSplitter</li>
+                <li>Markdown parsers (marked, remark)</li>
+                <li>Documentation frameworks</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires HTML/Markdown parsing knowledge and structure handling</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#5c1c65',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-13',
+      title: '13. Table-Aware Chunking',
+      slides: [
+        {
+          id: 16,
+          title: '13. Table-Aware Chunking',
+          icon: { name: 'duo-table' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ffe983' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Extracts tables intact; supports downstream parsing</li>
+                <li>Preserves tabular relationships and formats</li>
+                <li>Enables structured data retrieval</li>
+                <li>Maintains row/column associations</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Extraction quality varies across formats</li>
+                <li>Formatting loss risk during conversion</li>
+                <li>Complex tables require special handling</li>
+                <li>May miss context around tables</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Per table (convert to Markdown/JSON)</li>
+                <li>100–500 tokens typical per table</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0 (tables are typically self-contained units)</li>
+                <li>Consider including caption or immediately adjacent text</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Table detection and extraction requires specialized processing</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Financial reports with tabular data</li>
+                <li>Technical specifications documents</li>
+                <li>Benchmarking reports</li>
+                <li>Research papers with data tables</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Camelot (for PDF tables)</li>
+                <li>Tabula</li>
+                <li>pdfplumber</li>
+                <li>Unstructured.io</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires table detection and specialized extraction</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#65581c',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-14',
+      title: '14. Code-Aware Chunking',
+      slides: [
+        {
+          id: 17,
+          title: '14. Code-Aware Chunking',
+          icon: { name: 'duo-code' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#7ad0ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Split by function/class/module; preserves semantics</li>
+                <li>Maintains code integrity and logical structure</li>
+                <li>Keeps related declarations together</li>
+                <li>Enhances retrieval relevance for code questions</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Language-specific tuning required</li>
+                <li>Struggles with very long functions</li>
+                <li>May miss cross-function relationships</li>
+                <li>Parser dependency adds complexity</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>200–800 tokens or 50–150 LOC</li>
+                <li>Function/class-based rather than fixed-size</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>Include signature + docstring (20–80 tokens)</li>
+                <li>Function headers/imports may need to be included</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Code search and documentation</li>
+                <li>RAG on code repositories</li>
+                <li>API assistants and guides</li>
+                <li>Developer documentation generation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LangChain code splitters</li>
+                <li>Tree-sitter parsers</li>
+                <li>Ripgrep + heuristics</li>
+                <li>Language-specific AST parsers</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1c4b65',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-15',
+      title: '15. Windowed Sentence Grouping',
+      slides: [
+        {
+          id: 18,
+          title: '15. Windowed Sentence Grouping',
+          icon: { name: 'duo-paragraph' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#dc8aff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Sentence-coherent with sliding stride; good balance</li>
+                <li>Preserves natural language boundaries</li>
+                <li>Better context preservation than fixed-size</li>
+                <li>Minimizes sentence fragmentation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Redundancy; increases storage requirements</li>
+                <li>Parameter tuning needed (window/stride size)</li>
+                <li>Uneven chunk sizes based on sentence lengths</li>
+                <li>Requires sentence boundary detection</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>2–5 sentences (~100–300 tokens)</li>
+                <li>Varies based on content complexity and sentence length</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>1–2 sentences</li>
+                <li>Stride of 1-2 sentences between window starts</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires sentence detection and window management</li>
+                <li>Low–Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>News articles</li>
+                <li>Product guides and documentation</li>
+                <li>Transcripts and conversational content</li>
+                <li>Content with natural narrative flow</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>spaCy + custom grouping</li>
+                <li>NLTK sentence tokenizers</li>
+                <li>Custom implementations</li>
+                <li>LangChain extensions and utilities</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires sentence boundary detection and window management</li>
+                <li>Beginner–Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#4f1c65',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-16',
+      title: '16. Adaptive Length Chunking',
+      slides: [
+        {
+          id: 19,
+          title: '16. Adaptive Length Chunking',
+          icon: { name: 'duo-gauge-high' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ff8787' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Sizes adapt to complexity/density; token-efficient</li>
+                <li>Better context preservation for complex content</li>
+                <li>Optimizes for both quality and efficiency</li>
+                <li>Can allocate resources where most needed</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Requires good complexity metric; harder to debug</li>
+                <li>Parameter tuning can be challenging</li>
+                <li>More complex implementation</li>
+                <li>Unpredictable storage requirements</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>200–1000 tokens (dynamic)</li>
+                <li>Complex content: smaller chunks (200-400 tokens)</li>
+                <li>Simple content: larger chunks (600-1000 tokens)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>5–20% (dynamic)</li>
+                <li>Higher overlap for complex content</li>
+                <li>Lower overlap for simpler sections</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires complexity analysis for each document section</li>
+                <li>Medium–High</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Mixed-density documents (e.g., textbooks)</li>
+                <li>Technical documentation with varying complexity</li>
+                <li>Documents with both narrative and technical sections</li>
+                <li>Knowledge bases with heterogeneous content</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Custom heuristics (lexical density, perplexity)</li>
+                <li>LangChain custom splitter implementations</li>
+                <li>Text complexity analysis libraries</li>
+                <li>Advanced text processing frameworks</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires expertise in text analysis and complexity metrics</li>
+                <li>Advanced</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#651c1c',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-17',
+      title: '17. Summarization-Based Chunking',
+      slides: [
+        {
+          id: 20,
+          title: '17. Summarization-Based Chunking',
+          icon: { name: 'duo-brain-circuit' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ff7af6' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Adds summaries/context to chunks; boosts recall</li>
+                <li>Preserves high-level document meaning</li>
+                <li>Improves chunk relevance in long contexts</li>
+                <li>Enables retrieval of conceptual connections</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Expensive to generate summaries</li>
+                <li>Risk of summary drift or hallucination</li>
+                <li>Increases storage requirements</li>
+                <li>LLM quality affects summary accuracy</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Base 400–800 tokens + brief summary (50-150 tokens)</li>
+                <li>Can be combined with other chunking methods</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–10% of base chunk size</li>
+                <li>Summary provides cross-chunk context, reducing need for large overlaps</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires LLM inference for summary generation</li>
+                <li>High</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Very long documents (books, reports)</li>
+                <li>Agent memory systems</li>
+                <li>Knowledge distillation</li>
+                <li>Multi-hop reasoning tasks</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LLMs (OpenAI, Anthropic, DBRX)</li>
+                <li>LangChain map-reduce chains</li>
+                <li>LlamaIndex summarization nodes</li>
+                <li>Anthropic's contextual retrieval</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires LLM prompting expertise and pipeline optimization</li>
+                <li>Advanced</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#651c60',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-18',
+      title: '18. Graph-Based Semantic Chunking',
+      slides: [
+        {
+          id: 21,
+          title: '18. Graph-Based Semantic Chunking',
+          icon: { name: 'duo-circle-nodes' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#95ff7a' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Community detection over sentence graph creates topic-pure chunks</li>
+                <li>Captures complex semantic relationships between sentences</li>
+                <li>Produces coherent chunks with high semantic integrity</li>
+                <li>Better for multi-topic documents than simple approaches</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Complex implementation requiring graph algorithms</li>
+                <li>Compute-heavy with large matrices for similarity</li>
+                <li>Parameter-sensitive (clustering thresholds)</li>
+                <li>Results vary based on embedding quality</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Variable by communities (~150–600 tokens)</li>
+                <li>Determined by graph structure and topic cohesion</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0 (typically no overlap)</li>
+                <li>Communities form natural boundaries without need for overlap</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>High</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Research papers with multiple topics</li>
+                <li>Multi-topic reports and analyses</li>
+                <li>Complex technical documentation</li>
+                <li>Academic literature with dense concepts</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>sentence-transformers for embeddings</li>
+                <li>NetworkX/igraph for graph algorithms</li>
+                <li>Scikit-learn clustering implementations</li>
+                <li>Custom research implementations</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Advanced</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#2b651c',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-19',
+      title: '19. Audio / ASR Time-Based Chunking',
+      slides: [
+        {
+          id: 22,
+          title: '19. Audio / ASR Time-Based Chunking',
+          icon: { name: 'duo-microphone' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#8197ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Sync with timestamps; stream-friendly</li>
+                <li>Preserves audio-to-text alignment</li>
+                <li>Natural for audio/video content</li>
+                <li>Enables seeking to specific audio segments</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Time slices may cut semantics; ASR errors propagate</li>
+                <li>Variable information density in segments</li>
+                <li>May need post-processing for coherence</li>
+                <li>Audio quality affects chunk boundaries</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>15–60 seconds audio (or 150–500 tokens text)</li>
+                <li>Balances completeness vs processing requirements</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>1–2 seconds (or 10–30 tokens)</li>
+                <li>Helps maintain context across time-based boundaries</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>ASR processing and timestamp alignment requirements</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Podcasts, earnings calls, lectures</li>
+                <li>Meeting summarization</li>
+                <li>Video content indexing</li>
+                <li>Real-time speech processing</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Whisper (OpenAI)</li>
+                <li>AWS Transcribe</li>
+                <li>Google Speech-to-Text</li>
+                <li>Pyannote (for diarization)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires audio processing pipelines and ASR integration</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1c2965',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-20',
+      title: '20. Speaker-Turn Chunking',
+      slides: [
+        {
+          id: 23,
+          title: '20. Speaker-Turn Chunking',
+          icon: { name: 'duo-rocket' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ff81aa' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Preserves dialog structure and conversation flow</li>
+                <li>Improves speaker attribution in transcripts</li>
+                <li>Maintains natural conversational segments</li>
+                <li>Better context for Q&A pairs in dialogues</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Turn lengths vary significantly (some speakers talk more)</li>
+                <li>Requires speaker diarization preprocessing</li>
+                <li>Speaker detection can be error-prone</li>
+                <li>May combine unrelated topics if same speaker continues</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Per turn or grouped 2–3 turns (~100–300 tokens)</li>
+                <li>Adaptive to conversation dynamics and speaker patterns</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–1 turn</li>
+                <li>Helps maintain context between speaker transitions</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Implementation complexity and processing requirements</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Meeting transcripts and summaries</li>
+                <li>Customer support chats and conversations</li>
+                <li>Podcast and interview transcriptions</li>
+                <li>Multi-speaker audio processing</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Pyannote audio diarization library</li>
+                <li>AWS Transcribe with speaker diarization</li>
+                <li>Whisper + diarization pipelines</li>
+                <li>Google Speech-to-Text with speaker recognition</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Required expertise and implementation difficulty</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#651c34',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-21',
+      title: '21. QA-Focused Chunking',
+      slides: [
+        {
+          id: 24,
+          title: '21. QA-Focused Chunking',
+          icon: { name: 'duo-eraser' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ffff6f' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Tailored to answer spans; high precision for QA</li>
+                <li>Optimized for question-answer retrieval</li>
+                <li>Improves relevance in QA systems</li>
+                <li>Better context for specific questions</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Needs label generation or heuristics; setup cost</li>
+                <li>Requires understanding of question patterns</li>
+                <li>May not generalize well to non-QA tasks</li>
+                <li>More upfront work to implement properly</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>100–400 tokens around candidate answers</li>
+                <li>Sized to capture complete answer contexts</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–10% (minimal overlap needed)</li>
+                <li>Focus on answer boundaries rather than arbitrary overlaps</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires additional processing to identify potential answers</li>
+                <li>Medium–High</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Knowledge bases</li>
+                <li>Policy QA, FAQ systems</li>
+                <li>Support documentation</li>
+                <li>Information extraction from longer texts</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LlamaIndex QuestionGenerator</li>
+                <li>Rerankers (Cohere, Jina)</li>
+                <li>Custom QA pipelines</li>
+                <li>SentenceTransformers + question generation</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires QA expertise and significant tuning</li>
+                <li>Advanced</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#65651c',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-22',
+      title: '22. Page-Preservation Chunking',
+      slides: [
+        {
+          id: 25,
+          title: '22. Page-Preservation Chunking',
+          icon: { name: 'duo-star' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#aa80ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Simple for PDFs; keeps page context and references</li>
+                <li>Maintains original document's page structure</li>
+                <li>Easy to cite and reference by page number</li>
+                <li>Works well with documents that have page-based organization</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Pages aren't semantic units; variable density</li>
+                <li>May split logical content across pages</li>
+                <li>Can be inefficient for dense or sparse pages</li>
+                <li>References may lose context at page boundaries</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Per page (variable tokens)</li>
+                <li>Typically ranges from 300-1200 tokens depending on page density</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>0–5% between pages (optional)</li>
+                <li>May include headers/footers for continuity</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Simple extraction with potential formatting challenges</li>
+                <li>Low–Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Scanned documents</li>
+                <li>Page-referenced citations</li>
+                <li>Legal documents with page numbers</li>
+                <li>Academic papers with page references</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>pdfplumber</li>
+                <li>PyPDF2</li>
+                <li>Unstructured.io</li>
+                <li>PDF extraction libraries</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Straightforward implementation with minimal tuning</li>
+                <li>Beginner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#341c65',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-23',
+      title: '23. Caption + Context Chunking',
+      slides: [
+        {
+          id: 26,
+          title: '23. Caption + Context Chunking',
+          icon: { name: 'duo-compress' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#82ff96' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Pairs figure/table captions with nearby text</li>
+                <li>Boosts multimodal grounding</li>
+                <li>Preserves visual-textual relationships</li>
+                <li>Enhances retrieval of visual content</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Requires reliable layout detection</li>
+                <li>Struggles with complex document layouts</li>
+                <li>Needs tuning of window size around captions</li>
+                <li>Limited to documents with explicit figures/tables</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>100–400 tokens near caption</li>
+                <li>Include caption text plus surrounding explanatory paragraphs</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>1–2 sentences around region</li>
+                <li>Enough to connect with surrounding content sections</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Requires layout analysis and figure/caption detection</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Scientific papers with figures</li>
+                <li>Reports with tables and charts</li>
+                <li>Technical documentation with diagrams</li>
+                <li>Educational materials with illustrations</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>Unstructured.io</li>
+                <li>DocTR (Document Text Recognition)</li>
+                <li>LayoutParser</li>
+                <li>Custom PDF extractors with layout awareness</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires document structure and layout understanding</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1c6528',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-24',
+      title: '24. Metadata-Aware Chunking',
+      slides: [
+        {
+          id: 27,
+          title: '24. Metadata-Aware Chunking',
+          icon: { name: 'duo-tags' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#e086ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Adds filters (section, author, date) to chunks</li>
+                <li>Improves retrieval routing and precision</li>
+                <li>Enables faceted search and filtering</li>
+                <li>Better document provenance tracking</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Metadata extraction requires additional effort</li>
+                <li>Governance and schema management needed</li>
+                <li>Increased storage requirements</li>
+                <li>Quality depends on metadata accuracy</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Inherit from base chunking method (e.g., 300–800 tokens)</li>
+                <li>Metadata is orthogonal to chunk size decisions</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>Same as base chunking method</li>
+                <li>Metadata enhancement doesn't affect overlap strategy</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Base chunking cost plus metadata extraction overhead</li>
+                <li>Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Enterprise search with facets</li>
+                <li>Regulatory/compliance document retrieval</li>
+                <li>Multi-domain knowledge bases</li>
+                <li>Content governance requirements</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LangChain Document schemas</li>
+                <li>Weaviate with filters</li>
+                <li>Azure Cognitive Search</li>
+                <li>Pinecone, Chroma with metadata filtering</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires schema design and metadata extraction</li>
+                <li>Intermediate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#521c65',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-25',
+      title: '25. Hybrid Chunking',
+      slides: [
+        {
+          id: 28,
+          title: '25. Hybrid Chunking',
+          icon: { name: 'duo-compass' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#ff83a2' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Best of multiple methods; adaptable by document type</li>
+                <li>Can handle mixed content in heterogeneous corpora</li>
+                <li>Optimizes for both context and relevance</li>
+                <li>More flexible for enterprise applications</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>More moving parts; requires evals to tune</li>
+                <li>Higher development and maintenance overhead</li>
+                <li>Harder to debug retrieval issues</li>
+                <li>Requires careful orchestration of techniques</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>Varies based on component techniques</li>
+                <li>E.g., structure-aware for sections + semantic refinement within sections</li>
+                <li>Typically 300-800 tokens after composition</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>Varies by component technique</li>
+                <li>Typically 10-20% for boundary smoothing</li>
+                <li>Strategic overlaps at semantic boundaries</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Depends on component techniques and pipeline complexity</li>
+                <li>Variable</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Production RAG systems</li>
+                <li>Heterogeneous document collections</li>
+                <li>Enterprise knowledge management</li>
+                <li>Multi-modal content (docs + code + tables)</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LangChain/LlamaIndex composition</li>
+                <li>Custom pipelines and orchestration</li>
+                <li>MLOps frameworks with pipeline support</li>
+                <li>Enterprise RAG platforms</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Requires expertise in multiple chunking methods and evaluation</li>
+                <li>Intermediate–Advanced</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#651c2e',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
+        }
+      ]
+    },
+    {
+      id: 'strategy-26',
+      title: '26. Sliding Window Chunking',
+      slides: [
+        {
+          id: 29,
+          title: '26. Sliding Window Chunking',
+          icon: { name: 'duo-table' },
+          content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em', color: '#78f9ff' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="1x" darkModeInvert={true} />
+                Pros
+              </h4>
+              <ul>
+                <li>Preserves continuity and context between chunks</li>
+                <li>Reduces information loss at boundaries</li>
+                <li>Better semantic coherence across transitions</li>
+                <li>Improves retrieval for context-dependent queries</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                <SvgIcon iconName="duo-circle-xmark" sizeName="1x" darkModeInvert={true} />
+                Cons
+              </h4>
+              <ul>
+                <li>Introduces redundancy in storage</li>
+                <li>Increases embedding costs (same content embedded multiple times)</li>
+                <li>Can create duplicated results without filtering</li>
+                <li>Overlap size requires tuning for optimal performance</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-gears" sizeName="1x" darkModeInvert={true} />
+                Best Chunk Size
+              </h4>
+              <ul>
+                <li>300–800 tokens for each window</li>
+                <li>Larger sizes for complex documents with long contextual dependencies</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
+                Overlap Size
+              </h4>
+              <ul>
+                <li>15–30% of chunk size (or 1–2 sentences)</li>
+                <li>Larger overlap for documents with complex cross-references</li>
+              </ul>
+            </div>
+            <div>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-filter" sizeName="1x" darkModeInvert={true} />
+                Computational Cost
+              </h4>
+              <ul>
+                <li>Slightly higher than fixed-size due to overlap management</li>
+                <li>Low–Medium</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-list-check" sizeName="1x" darkModeInvert={true} />
+                Use Cases / Examples
+              </h4>
+              <ul>
+                <li>Legal documents and contracts</li>
+                <li>Academic papers and research reports</li>
+                <li>Policy documents where cross-references matter</li>
+                <li>Technical specifications with interdependent sections</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-network-wired" sizeName="1x" darkModeInvert={true} />
+                Tooling Support
+              </h4>
+              <ul>
+                <li>LangChain sliding window implementations</li>
+                <li>LlamaIndex text splitters with overlap</li>
+                <li>Custom token window implementations</li>
+                <li>Most vector databases support overlapping chunks</li>
+              </ul>
+              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="1x" darkModeInvert={true} />
+                Complexity Level
+              </h4>
+              <ul>
+                <li>Straightforward implementation with slightly more complexity than fixed-size</li>
+                <li>Beginner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1c6265',
+      notes: 'Query Expansion: Add synonyms and related terms via thesaurus, embeddings, or LLM to improve recall'
         }
       ]
     },
@@ -742,7 +2667,7 @@ export const chunkingTechniquesDeck: Deck = {
       title: 'Summary',
       slides: [
         {
-          id: 13,
+          id: 30,
           title: 'Quick Reference: Default Sizing & Overlap',
           icon: { name: 'duo-table' },
           content: (
@@ -826,7 +2751,7 @@ export const chunkingTechniquesDeck: Deck = {
       notes: 'Default sizing and overlap recommendations for each major chunking technique'
         },
         {
-          id: 14,
+          id: 31,
           title: 'Selection Guide: Decision Flow',
           icon: { name: 'duo-compass' },
           content: (
@@ -879,7 +2804,7 @@ export const chunkingTechniquesDeck: Deck = {
       notes: 'Decision flow for selecting chunking strategy based on document structure, latency constraints, and content types'
         },
         {
-          id: 15,
+          id: 32,
           title: 'Best Practices & Key Takeaways',
           icon: { name: 'duo-clipboard-check' },
       content: (
