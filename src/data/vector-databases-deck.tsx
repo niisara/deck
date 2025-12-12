@@ -135,7 +135,7 @@ export const vectorDatabasesDeck: Deck = {
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#2ecc71' }}>
                 <strong>Vertical scaling:</strong> Increase pod size (x1→x2→x4→x8) with zero downtime.<br/>
-                <strong>Horizontal scaling:</strong> Add replicas to increase throughput (QPS) or create new indexes from collections to expand capacity.
+                <strong>Horizontal scaling:</strong> Add replicas to increase throughput (QPS) or create new indexes from collections to expand capacity or change pod types.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
@@ -299,9 +299,9 @@ export const vectorDatabasesDeck: Deck = {
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#1abc9c' }}>
-                <li>Rich payload filters (geo, ranges, text), sparse vectors support</li>
+                <li>Features rich payload filters (geo, ranges, text), sparse vectors support, and OpenAPI v3 client generation</li>
                 <li>Written in Rust for performance</li>
-                <li>Binary quantization provides up to 40x faster search while reducing memory</li>
+                <li>Binary quantization provides up to 40x faster search while reducing memory footprint</li>
                 <li>Hybrid and private cloud deployment options available</li>
               </ul>
             </div>
@@ -493,17 +493,17 @@ export const vectorDatabasesDeck: Deck = {
                 Best Use Case
               </h4>
                 <p style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#9b59b6' }}>
-                  Excels in <strong>real-time personalization, recommendation systems</strong> requiring immediate responses, and session-based retrieval workloads. Ideal for organizations with existing Redis deployments seeking to add vector search capabilities. Perfect for low-latency, high-throughput applications.
+                  Excels in <strong>real-time personalization, recommendation systems</strong> requiring immediate responses, and session-based retrieval workloads. Ideal for organizations with existing Redis deployments seeking to add vector search capabilities. Perfect for low-latency, high-throughput vector search applications.
                 </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c', marginTop: '15px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-note-sticky" sizeName="1x" darkModeInvert={true} />
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#1abc9c' }}>
-                <li>Uniquely combines caching and search in a single system</li>
-                <li>Strong throughput with minimal operational complexity</li>
+                <li>Uniquely combines caching and search capabilities in a single system</li>
+                <li>Delivers strong throughput with minimal operational complexity for teams already familiar with Redis</li>
                 <li>Benefits from extensive Redis ecosystem and tooling</li>
-                <li>Requires careful memory management for large vector datasets</li>
+                <li>Requires careful memory management strategies for large vector datasets</li>
               </ul>
             </div>
           </div>
@@ -530,7 +530,7 @@ export const vectorDatabasesDeck: Deck = {
                 Index Type
               </h4>
               <p style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#3498db' }}>
-                Built on Lucene HNSW implementation with additional compression and quantization options. Features <strong>DiskBBQ</strong> for memory-efficient vector storage and <strong>ACORN-1 algorithm</strong> specifically optimized for filtered vector search performance.
+                Built on Lucene HNSW implementation with additional compression and quantization options. Features DiskBBQ for memory-efficient vector storage and ACORN-1 algorithm specifically optimized for filtered vector search performance.
               </p>
               <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginTop: '15px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-arrows-maximize" sizeName="1x" darkModeInvert={true} />
@@ -704,7 +704,7 @@ export const vectorDatabasesDeck: Deck = {
                 <li>Tune HNSW/IVF parameters for workload optimization</li>
                 <li>Consider pgvectorscale for enhanced performance</li>
                 <li>Leverages PostgreSQL strengths: SQL, transactions, joins, rich data types</li>
-                <li>Combines vector search with traditional database features</li>
+                <li>Combines vector search with traditional database features in a single system</li>
               </ul>
             </div>
           </div>
@@ -769,7 +769,7 @@ export const vectorDatabasesDeck: Deck = {
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#1abc9c' }}>
                 <li>Extensive tooling and SDKs across multiple languages</li>
-                <li>Comprehensive benchmarks and deployment guides</li>
+                <li>Comprehensive benchmarks and deployment guides in documentation</li>
                 <li>Integrates well with Atlas Search for unified text + vector queries</li>
                 <li>MongoDB Compass provides visual tools for vector index management</li>
               </ul>
@@ -835,7 +835,7 @@ export const vectorDatabasesDeck: Deck = {
                 Notes
               </h4>
               <ul style={{ lineHeight: '1.6', fontSize: '0.95em', color: '#1abc9c' }}>
-                <li>Built on the columnar Lance format for efficient storage</li>
+                <li>Built on the columnar Lance format for efficient storage and retrieval</li>
                 <li>Provides excellent I/O locality for disk-based operations</li>
                 <li>Integrates seamlessly with Python/Apache Arrow ecosystem</li>
                 <li>Perfect for data science and analytics workflows</li>
