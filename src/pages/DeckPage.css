@@ -2,6 +2,16 @@
   width: 100vw;
   height: 100vh;
   position: relative;
+  scroll-behavior: smooth;
+}
+
+/* Smooth scrolling for reveal container */
+.reveal {
+  scroll-behavior: smooth;
+}
+
+.reveal .slides {
+  scroll-behavior: smooth;
 }
 
 .deck-page-error {
@@ -263,4 +273,25 @@
   text-align: left !important;
   margin-left: 0 !important;
   margin-right: auto !important;
+}
+
+/* Enhanced smooth scrolling and transitions */
+.reveal .slides section {
+  transition: transform 0.4s ease, opacity 0.4s ease !important;
+}
+
+/* Smooth page navigation */
+.reveal .slides section.past,
+.reveal .slides section.future {
+  transition: transform 0.4s ease !important;
+}
+
+/* Smooth transitions for slide fragments */
+.reveal .slides section .fragment {
+  transition: all 0.3s ease !important;
+}
+
+/* Smooth background transitions */
+.reveal .backgrounds .slide-background {
+  transition: all 0.4s ease !important;
 }

@@ -4,3 +4,43 @@
      background-color: black !important;
     color: #7f7f7f !important;
 }
+
+/* Smooth scrolling for speaker notes interface */
+html {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    scroll-behavior: smooth !important;
+}
+
+.speaker-controls-notes {
+    scroll-behavior: smooth !important;
+}
+
+.preview-viewport {
+    transition: all 0.3s ease !important;
+}
+
+/* Smooth scrolling for any scrollable content in speaker notes */
+* {
+    scroll-behavior: smooth !important;
+}
+
+/* Smooth transitions for speaker notes navigation */
+.speaker-controls-time,
+.speaker-controls-notes,
+.speaker-controls-navigation {
+    transition: all 0.2s ease !important;
+}
+
+/* Smooth slide transitions in speaker preview */
+.reveal .slides section {
+    transition: transform 0.3s ease !important;
+}
+
+/* Ensure smooth scrolling for speaker notes content */
+.speaker-notes {
+    scroll-behavior: smooth !important;
+    transition: scroll 0.3s ease !important;
+}

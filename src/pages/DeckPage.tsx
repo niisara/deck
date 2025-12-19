@@ -114,6 +114,8 @@ function DeckPage() {
       center: false, // Default to false, individual slides can override with data-center attribute
       hash: true,
       transition: 'slide',
+      transitionSpeed: 'default',
+      backgroundTransition: 'fade',
       width: '100%',
       height: '100%',
       margin: 0.04,
@@ -121,6 +123,9 @@ function DeckPage() {
       maxScale: 2.0,
       pdfMaxPagesPerSlide: 1,
       pdfSeparateFragments: false,
+      mouseWheel: true,
+      hideInactiveCursor: true,
+      hideCursorTime: 5000,
       keyboard: {
         33: null, // Disable Page Up key (keycode 33) - let browser handle scrolling
         34: null  // Disable Page Down key (keycode 34) - let browser handle scrolling
