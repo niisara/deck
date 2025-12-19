@@ -121,6 +121,10 @@ function DeckPage() {
       maxScale: 2.0,
       pdfMaxPagesPerSlide: 1,
       pdfSeparateFragments: false,
+      keyboard: {
+        33: null, // Disable Page Up key (keycode 33) - let browser handle scrolling
+        34: null  // Disable Page Down key (keycode 34) - let browser handle scrolling
+      } as any, // Type assertion needed because TypeScript definitions are incomplete
       plugins: [
         RevealHighlight,
         RevealMarkdown,
