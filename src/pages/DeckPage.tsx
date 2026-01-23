@@ -201,21 +201,18 @@ function DeckPage() {
               
               // Target the .speaker-controls-notes element which should be scrollable with our CSS
               const notesContainer = doc.querySelector('.speaker-controls-notes') as HTMLElement;
-              console.log('[Speaker Scroll] Notes container:', notesContainer);
               
               if (notesContainer) {
-                console.log('[Speaker Scroll] scrollHeight:', notesContainer.scrollHeight, 'clientHeight:', notesContainer.clientHeight);
-                console.log('[Speaker Scroll] Current scrollTop:', notesContainer.scrollTop);
-                
-                if (event.key === 'ArrowDown') {
-                  notesContainer.scrollTop += scrollAmount;
-                } else {
-                  notesContainer.scrollTop -= scrollAmount;
-                }
-                console.log('[Speaker Scroll] New scrollTop:', notesContainer.scrollTop);
+                // Use smooth scrolling with smaller steps
+                notesContainer.scrollBy({
+                  top: event.key === 'ArrowDown' ? scrollAmount : -scrollAmount,
+                  behavior: 'smooth'
+                });
               } else {
-                console.log('[Speaker Scroll] Notes container not found, trying body');
-                speakerWin.scrollBy(0, event.key === 'ArrowDown' ? scrollAmount : -scrollAmount);
+                speakerWin.scrollBy({
+                  top: event.key === 'ArrowDown' ? scrollAmount : -scrollAmount,
+                  behavior: 'smooth'
+                });
               }
             } catch (err) {
               console.error('[Speaker Scroll] Error scrolling speaker window:', err);
