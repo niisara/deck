@@ -43,6 +43,7 @@ function DeckPage() {
   const { deckId } = useParams<{ deckId: string }>();
   const revealRef = useRef<HTMLDivElement>(null);
   const revealInstanceRef = useRef<Reveal.Api | null>(null);
+  const speakerWindowRef = useRef<Window | null>(null);
   const [showHomeButton, setShowHomeButton] = useState(true);
   const hideTimeoutRef = useRef<number | null>(null);
 
@@ -151,18 +152,21 @@ function DeckPage() {
       // Inject dark theme CSS into speaker notes window
       window.addEventListener('message', (event) => {
         // Listen for speaker notes window messages
+        console.log('[Speaker Message] Received message:', event.data);
         if (event.data && typeof event.data === 'string') {
           try {
             const data = JSON.parse(event.data);
             if (data.namespace === 'reveal-notes' && data.type === 'connected') {
+              console.log('[Speaker Message] Speaker notes connected!');
               // Speaker notes window is connected, inject dark theme
               setTimeout(() => {
-                const speakerWindow = window.open('', 'reveal.js - Notes');
-                if (speakerWindow && speakerWindow.document) {
-                  const link = speakerWindow.document.createElement('link');
+                speakerWindowRef.current = window.open('', 'reveal.js - Notes');
+                console.log('[Speaker Message] Got speaker window ref:', speakerWindowRef.current);
+                if (speakerWindowRef.current && speakerWindowRef.current.document) {
+                  const link = speakerWindowRef.current.document.createElement('link');
                   link.rel = 'stylesheet';
                   link.href = '/speaker-dark.css';
-                  speakerWindow.document.head.appendChild(link);
+                  speakerWindowRef.current.document.head.appendChild(link);
                 }
               }, 500);
             }
@@ -171,12 +175,68 @@ function DeckPage() {
           }
         }
       });
+
+      // Global keyboard shortcuts for scrolling speaker notes (Ctrl+Alt+Arrow)
+      // Use capture phase to intercept before Reveal.js handles the event
+      const handleSpeakerScroll = (event: KeyboardEvent) => {
+        if (event.ctrlKey && event.altKey && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
+          console.log('[Speaker Scroll] Key detected:', event.key);
+          
+          // Try to get speaker window ref if not already set
+          if (!speakerWindowRef.current || speakerWindowRef.current.closed) {
+            console.log('[Speaker Scroll] Attempting to get speaker window...');
+            speakerWindowRef.current = window.open('', 'reveal.js - Notes');
+            console.log('[Speaker Scroll] Got window:', speakerWindowRef.current);
+          }
+          event.preventDefault();
+          event.stopPropagation();
+          event.stopImmediatePropagation();
+          const speakerWin = speakerWindowRef.current;
+          console.log('[Speaker Scroll] Speaker window ref:', speakerWin);
+          console.log('[Speaker Scroll] Window closed?', speakerWin?.closed);
+          if (speakerWin && !speakerWin.closed) {
+            try {
+              const scrollAmount = 100;
+              const doc = speakerWin.document;
+              
+              // Target the .speaker-controls-notes element which should be scrollable with our CSS
+              const notesContainer = doc.querySelector('.speaker-controls-notes') as HTMLElement;
+              console.log('[Speaker Scroll] Notes container:', notesContainer);
+              
+              if (notesContainer) {
+                console.log('[Speaker Scroll] scrollHeight:', notesContainer.scrollHeight, 'clientHeight:', notesContainer.clientHeight);
+                console.log('[Speaker Scroll] Current scrollTop:', notesContainer.scrollTop);
+                
+                if (event.key === 'ArrowDown') {
+                  notesContainer.scrollTop += scrollAmount;
+                } else {
+                  notesContainer.scrollTop -= scrollAmount;
+                }
+                console.log('[Speaker Scroll] New scrollTop:', notesContainer.scrollTop);
+              } else {
+                console.log('[Speaker Scroll] Notes container not found, trying body');
+                speakerWin.scrollBy(0, event.key === 'ArrowDown' ? scrollAmount : -scrollAmount);
+              }
+            } catch (err) {
+              console.error('[Speaker Scroll] Error scrolling speaker window:', err);
+            }
+          }
+        }
+      };
+      window.addEventListener('keydown', handleSpeakerScroll, true); // true = capture phase
+      (window as any).__speakerScrollHandler = handleSpeakerScroll;
     });
     revealInstanceRef.current = revealInstance;
 
     return () => {
       if (revealInstanceRef.current) {
         revealInstanceRef.current.destroy();
+      }
+      // Clean up speaker scroll handler
+      const handler = (window as any).__speakerScrollHandler;
+      if (handler) {
+        window.removeEventListener('keydown', handler, true); // true = capture phase
+        delete (window as any).__speakerScrollHandler;
       }
     };
   }, [deck]);

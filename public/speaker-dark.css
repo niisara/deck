@@ -16,6 +16,18 @@ body {
 
 .speaker-controls-notes {
     scroll-behavior: smooth !important;
+    overflow-y: auto !important;
+    max-height: 88% !important;
+}
+
+.speaker-controls-time, .speaker-controls-pace{
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 10px !important;
+}
+
+body[data-speaker-layout="notes-only"] #speaker-controls {
+    padding-top: 0px !important;
 }
 
 .preview-viewport {
