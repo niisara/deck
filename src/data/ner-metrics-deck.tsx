@@ -31,7 +31,11 @@ export const nerMetricsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: `Hello everyone! Welcome to today's session. I'm really excited to walk you through this important topic with you.
+          notes: `
+          Hello everyone! Welcome to today's session. I'm really excited to walk you through this important topic with you.
+
+          This is a raw, unedited conversation—no cuts, no filters.
+“We’re keeping this episode real: raw and unedited.
 
 So, let's start with the basics. What is NER, or Named Entity Recognition? Think of it as teaching a computer to spot important pieces of information in text. Just like how you can identify names, companies, or places when you read, we want computers to do the same thing.
 
