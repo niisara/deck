@@ -61,7 +61,7 @@ Hey there! Thanks for joining me today! I'm super excited to dive into this with
 So before we jump in, let me make sure we're all on the same page. **NER** stands for **Named Entity Recognition**. It's about teaching computers to find important things in text - things like names, places, companies, and dates.
 
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Input["📝 Input Text"]
         T["Apple opened a store in Tokyo"]
     end
@@ -242,7 +242,7 @@ We'll go through each one in detail. I'll explain exactly **when to use it** and
 Alright, **approach number one!** Rule-Based Pattern Matching. This is the **simplest method** you'll ever encounter. No AI, no training, just pure rules that you write by hand!
 #### 📋 What Kind of Rules?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Rules["📋 Pattern Rules"]
         R1["Capital Letter → Name?"]
         R2["xxx@xxx.com → Email"]
@@ -271,7 +271,7 @@ Let's talk about the good stuff first. It's completely **transparent** - you kno
 #### ❌ Cons
 But here's where it gets tricky:
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     P["Pattern: [A-Z][a-z]+"] --> |✅| W1["Tim Cook"]
     P --> |❌| W2["TIM COOK"]
     P --> |❌| W3["tim cook"]
@@ -342,7 +342,7 @@ Now that we've seen rules, let's look at something similar but different. **Appr
 
 #### 💡 The Idea
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Dict["📚 City Dictionary"]
         D1["Tokyo"]
         D2["Paris"]
@@ -442,7 +442,7 @@ What if "Apple" is in BOTH your fruit dictionary AND your company dictionary? Wh
 
 #### 📊 What is TF-IDF?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph TFIDF["📊 TF-IDF"]
         TF["Term Frequency"] 
         IDF["Inverse Doc Frequency"]
@@ -461,7 +461,7 @@ Don't worry about the math behind it. The key idea is simple: TF-IDF measures **
 
 #### 🔄 How It Works for NER
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     W["Words"] --> T["TF-IDF\nVectorizer"] --> N["Numbers"] --> C["Classifier\n(LogReg/SVM)"] --> P["Predictions\nPERSON/ORG/LOC"]
     style T fill:#4fc3f7,color:#000
     style C fill:#ba68c8,color:#000
@@ -656,7 +656,7 @@ Here's the key difference: HMM tries to model the whole world - how words and ta
 
 #### 🏆 The Big Win: Rich Features
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Features["🔧 CRF Features"]
         F1["word.lower()"]
         F2["word.isupper()"]
@@ -777,7 +777,7 @@ Let me break that down for you. **LSTM** stands for Long Short-Term Memory - it'
 
 #### 🤝 Why Add CRF on Top?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph BiLSTM["BiLSTM Output"]
         P1["O"]
         P2["B-PER"]
@@ -888,7 +888,7 @@ CNN stands for Convolutional Neural Network, and they're amazing at finding patt
 
 #### 💡 Why Does This Help?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Typo["❓ Unknown Word"]
         T["Microsift"]
     end
@@ -903,10 +903,10 @@ flowchart LR
     style Result fill:#81c784,color:#000
 \`\`\`
 
-The big win is handling **out-of-vocabulary words**! A BiLSTM alone might not recognize "Microsift" - it's not in any dictionary. But the character CNN sees it looks very similar to "Microsoft"! It **handles typos**, it handles **rare words**, and it handles **morphology** in languages like German or Finnish where words can be very long and compound.
+The big win is handling **out-of-vocabulary words**! A BiLSTM alone might not recognize "Microsift" - it's not in any dictionary. But the character CNN sees it looks very similar to "Microsoft"! It **handles typos**, it handles **rare words**, and it handles **morphology** in languages like German where words can be very long and compound.
 
 #### 🎯 When to Use This?
-Use CNN+BiLSTM when dealing with **noisy text** like social media or user-generated content. It's also great for **languages with rich morphology** like German, Turkish, or Finnish. And it shines in **domains with lots of new or rare words** that wouldn't be in standard vocabularies.
+Use CNN+BiLSTM when dealing with **noisy text** like social media or user-generated content. It's also great for **languages with rich morphology** like German or Turkish. And it shines in **domains with lots of new or rare words** that wouldn't be in standard vocabularies.
 
 #### ✅ Pros
 It's **robust to typos** and spelling variants. It captures **spelling patterns** automatically. And it was the strongest non-transformer baseline for years!
@@ -976,7 +976,7 @@ On the downside, it's **more complex to tune** with all those hyperparameters. I
 
 #### 🚀 What is spaCy?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph spaCy["🚀 spaCy Pipeline"]
         direction TB
         T["Tokenizer"] --> P["POS Tagger"] --> N["NER"] --> D["Dep Parser"]
@@ -989,7 +989,7 @@ spaCy is a Python library for NLP that's **fast, production-ready, and incredibl
 
 #### 🎬 Demo: How Easy Is It?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Code["🐍 Python Code"]
         L1["nlp = spacy.load('en_core_web_sm')"]
         L2["doc = nlp('Apple is in California')"]
@@ -1090,7 +1090,7 @@ BERT is a neural network that was pretrained on **MASSIVE amounts of text** - we
 
 #### 🏗️ How Do We Use It for NER?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph Architecture["🏗️ BERT for NER"]
         I["Input Tokens"] --> B["BERT\nEncoder"] --> H["Classification\nHead"] --> O["B-PER, I-PER,\nB-ORG, O..."]
     end
@@ -1183,7 +1183,7 @@ The downsides: it's **compute-heavy** and really needs a GPU to run efficiently.
 
 #### 🏆 RoBERTa: The Accuracy Champion
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph RoBERTa["🏆 RoBERTa = Robustly Optimized BERT"]
         R1["Same architecture"]
         R2["More training data"]
@@ -1215,7 +1215,7 @@ DistilBERT is a **smaller, faster** version. It has 40% fewer parameters and run
 
 #### 🎯 When to Use Which?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     Q{"What do you need?"}
     Q --> |"Best accuracy"| R["🏆 RoBERTa"]
     Q --> |"Speed/Edge"| D["⚡ DistilBERT"]
@@ -1292,7 +1292,7 @@ And finally... **the newest approach!** Approach eleven: Large Language Models w
 
 #### 🎯 What is Zero-Shot?
 \`\`\`mermaid
-flowchart LR
+flowchart TB
     subgraph ZeroShot["🎯 Zero-Shot = No Training!"]
         N["No labeled data"]
         N --> J["Just prompting"]
@@ -1329,7 +1329,7 @@ This is **incredibly powerful** for several reasons. Need a new entity type you'
 > 🎤 Sounds perfect, right? But there are some important tradeoffs...
 
 #### ❌ Cons
-First, **hallucinations** - sometimes the model makes things up that aren't there. Second, it's **expensive** - API calls cost money and latency is high, maybe seconds per call. Third, there are **privacy concerns** - you're sending your data to an external API. And fourth, **output parsing** can be tricky because the format might vary between calls.
+First, **hallucinations** - sometimes the model makes things up that aren't there. Second, it's **expensive** - API calls cost money and latency is high. Third, there are **privacy concerns** - you're sending your data to an external API. And fourth, **output parsing** can be tricky because the format might vary between calls.
 
 #### 🎯 When to Use LLMs for NER?
 Use LLMs for **rapid prototyping** when you're testing ideas quickly. They're perfect when you have **NO training data** at all. And they shine with **complex, changing schemas** where you need flexibility.

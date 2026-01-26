@@ -28,7 +28,7 @@ Rewrite the speaker notes for a live presentation to freshers/beginners.
 ### Visual Elements
 - Include **Mermaid diagrams** where helpful to visualize concepts:
 ```mermaid
-flowchart LR
+flowchart TB
     A["Input"] --> B["Process"] --> C["Output"]
     style A fill:#4fc3f7,color:#000
     style C fill:#81c784,color:#000
