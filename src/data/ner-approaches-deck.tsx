@@ -240,7 +240,6 @@ We'll go through each one in detail. I'll explain exactly **when to use it** and
           backgroundColor: '#0f3460',
           notes: `# 1️⃣ Rule-Based Pattern Matching
 Alright, **approach number one!** Rule-Based Pattern Matching. This is the **simplest method** you'll ever encounter. No AI, no training, just pure rules that you write by hand!
-
 #### 📋 What Kind of Rules?
 \`\`\`mermaid
 flowchart LR
