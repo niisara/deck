@@ -176,6 +176,37 @@ function DeckPage() {
         }
       });
 
+      // Scroll speaker notes to top when slide changes
+      const handleSlideChange = () => {
+        // Try to get speaker window ref if not already set
+        if (!speakerWindowRef.current || speakerWindowRef.current.closed) {
+          speakerWindowRef.current = window.open('', 'reveal.js - Notes');
+        }
+        
+        const speakerWin = speakerWindowRef.current;
+        if (speakerWin && !speakerWin.closed) {
+          try {
+            const doc = speakerWin.document;
+            
+            // Target the .speaker-controls-notes element which contains the notes
+            const notesContainer = doc.querySelector('.speaker-controls-notes') as HTMLElement;
+            
+            if (notesContainer) {
+              // Scroll to top instantly when slide changes
+              notesContainer.scrollTo({
+                top: 0,
+                behavior: 'instant'
+              });
+            }
+          } catch (err) {
+            console.error('[Speaker Notes] Error scrolling speaker notes to top:', err);
+          }
+        }
+      };
+      
+      // Listen for slide change events
+      revealInstance.on('slidechanged', handleSlideChange);
+
       // Global keyboard shortcuts for scrolling speaker notes (Ctrl+Alt+Arrow)
       // Use capture phase to intercept before Reveal.js handles the event
       const handleSpeakerScroll = (event: KeyboardEvent) => {
