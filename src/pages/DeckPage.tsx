@@ -178,15 +178,10 @@ function DeckPage() {
 
       // Scroll speaker notes to top when slide changes
       const handleSlideChange = () => {
-        // Try to get speaker window ref if not already set
-        if (!speakerWindowRef.current || speakerWindowRef.current.closed) {
-          speakerWindowRef.current = window.open('', 'reveal.js - Notes');
-        }
-        
-        const speakerWin = speakerWindowRef.current;
-        if (speakerWin && !speakerWin.closed) {
+        // Only scroll if speaker window is already open - don't try to open it
+        if (speakerWindowRef.current && !speakerWindowRef.current.closed) {
           try {
-            const doc = speakerWin.document;
+            const doc = speakerWindowRef.current.document;
             
             // Target the .speaker-controls-notes element which contains the notes
             const notesContainer = doc.querySelector('.speaker-controls-notes') as HTMLElement;
