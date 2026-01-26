@@ -55,19 +55,10 @@ export const nerApproachesDeck: Deck = {
           ),
           backgroundColor: '#1a1a2e',
           notes: `# 👋 Welcome!
-
-Hey there! Thanks for joining me today!
-
-Super excited to dive into this with you.
-We're gonna explore **eleven different ways** to build NER systems!
-
----
+Hey there! Thanks for joining me today! I'm super excited to dive into this with you. We're gonna explore **eleven different ways** to build NER systems, and by the end, you'll know exactly which approach to pick for your project.
 
 #### 🔍 Quick Refresher: What is NER?
-
-**NER** stands for **Named Entity Recognition**.
-It's teaching computers to find important things in text.
-Names. Places. Companies. Dates.
+So before we jump in, let me make sure we're all on the same page. **NER** stands for **Named Entity Recognition**. It's about teaching computers to find important things in text - things like names, places, companies, and dates.
 
 \`\`\`mermaid
 flowchart LR
@@ -88,27 +79,10 @@ flowchart LR
     style O3 fill:#81c784,color:#000
 \`\`\`
 
-In this sentence...
-- **"Apple"** is a company.
-- **"Tokyo"** is a location.
+Let me show you with an example. Take this sentence: "Apple opened a store in Tokyo." An NER system would identify that **"Apple"** is a company - an organization - and **"Tokyo"** is a location. Pretty cool, right? The system finds and labels these automatically!
 
-NER finds and labels these automatically!
-
----
-
-## 🎯 What We'll Cover
-
-Now... there's not just ONE way to do NER.
-There are **MANY approaches**!
-
-Old-school rules. Dictionaries. Machine learning. Deep learning. Even ChatGPT!
-
-Today I'll show you **eleven of them**.
-From simplest to most advanced.
-
-By the end... you'll know which one to pick for YOUR project.
-
-**Let's dive in!**`
+#### 🎯 What We'll Cover Today
+Now here's the thing - there's not just ONE way to do NER. There are actually **MANY approaches**! We've got old-school rules, dictionaries, machine learning, deep learning, and even ChatGPT-style methods. Today I'll walk you through **eleven of them**, going from the simplest to the most advanced. By the end of this session, you'll know exactly which one to pick for YOUR project. So... **let's dive in!**`
         },
         {
           id: 2,
@@ -169,11 +143,7 @@ By the end... you'll know which one to pick for YOUR project.
           ),
           backgroundColor: '#16213e',
           notes: `# 📋 Roadmap
-
-Here's our roadmap.
-**Eleven approaches.** Plus a summary at the end.
-
-Let me group them for you.
+Here's our roadmap for today. We've got **eleven approaches** to cover, plus a comprehensive summary at the end. Let me group them for you so it's easier to follow.
 
 \`\`\`mermaid
 flowchart TB
@@ -206,30 +176,10 @@ flowchart TB
     style LLM fill:#81c784,color:#000
 \`\`\`
 
----
+#### 📚 The Groups Explained
+The **first two approaches** are simple - no machine learning needed at all. Just rules and dictionaries. Then the **next three** use classical machine learning techniques - these were really popular before deep learning came along. After that, we have **neural networks** - these learn patterns automatically from data. Then come the **transformers** - these are the current state-of-the-art and incredibly powerful! And finally, we have **Large Language Models** - like ChatGPT!
 
-## 📚 The Groups
-
-**First two** are simple. No machine learning needed.
-
-**Next three** use classical machine learning.
-These were popular before deep learning.
-
-**Then we have neural networks.**
-These learn patterns automatically.
-
-**Next... the transformers.**
-These are the current state-of-the-art. Very powerful!
-
-**And finally... Large Language Models.**
-Like ChatGPT!
-
----
-
-We'll go through each one.
-I'll explain **when to use it** and **when NOT to use it**.
-
-Ready? Let's start with the simplest approach!`
+We'll go through each one in detail. I'll explain exactly **when to use it** and more importantly, **when NOT to use it**. Ready? Let's start with the simplest approach!`
         }
       ]
     },
@@ -289,18 +239,9 @@ Ready? Let's start with the simplest approach!`
           ),
           backgroundColor: '#0f3460',
           notes: `# 1️⃣ Rule-Based Pattern Matching
+Alright, **approach number one!** Rule-Based Pattern Matching. This is the **simplest method** you'll ever encounter. No AI, no training, just pure rules that you write by hand!
 
-**Approach number one!**
-
-Rule-Based Pattern Matching.
-This is the **simplest method**.
-
-No AI. No training. Just rules!
-
----
-
-## 📋 What Kind of Rules?
-
+#### 📋 What Kind of Rules?
 \`\`\`mermaid
 flowchart LR
     subgraph Rules["📋 Pattern Rules"]
@@ -320,39 +261,16 @@ flowchart LR
     style Match fill:#81c784,color:#000
 \`\`\`
 
-Simple patterns like this. Or **regular expressions**.
+So what kind of rules are we talking about? Simple patterns like these, or **regular expressions** if you need more power. You basically write something like: "Find anything that looks like an email address." And the computer follows your rule exactly! That regex pattern I showed says: capital letter, lowercase letters, space, capital again, lowercase again. That matches things like "Tim Cook" or "New York"!
 
-You write: *"Find anything that looks like an email."*
-The computer follows your rule exactly.
+#### 🎯 When to Use This?
+This approach shines when you have **very structured data**. Think about dates in specific formats, phone numbers, email addresses, product IDs, or anything with a predictable pattern that doesn't change much.
 
-The regex pattern says: Capital letter, lowercase letters, space, capital, lowercase.
-That matches "Tim Cook" or "New York"!
+#### ✅ Pros
+Let's talk about the good stuff first. It's completely **transparent** - you know exactly what it's doing. It's **super fast** because there's no model inference. And you need **zero training data**!
 
----
-
-## 🎯 When to Use This?
-
-When you have **very structured data**:
-- Dates
-- Phone numbers
-- Email addresses
-- IDs
-- Things with predictable formats!
-
----
-
-### ✅ Pros
-
-The good stuff:
-- It's **transparent**. You know exactly what it does.
-- It's **fast**. Super fast.
-- **No training data** needed!
-
-### ❌ Cons
-
-The problems:
-- It **breaks easily**.
-
+#### ❌ Cons
+But here's where it gets tricky:
 \`\`\`mermaid
 flowchart LR
     P["Pattern: [A-Z][a-z]+"] --> |✅| W1["Tim Cook"]
@@ -363,14 +281,7 @@ flowchart LR
     style W3 fill:#ef5350,color:#000
 \`\`\`
 
-"Tim Cook" works. But "TIM COOK" fails.
-You have to think of **EVERY variation**.
-High maintenance!
-
----
-
-Think of it like a **recipe**.
-Very precise. But if you miss one ingredient... it fails!`
+It **breaks easily**! "Tim Cook" works, but "TIM COOK" in all caps? Fails. "tim cook" in lowercase? Also fails. You have to think of **EVERY possible variation**, and that's high maintenance. Think of it like a **cooking recipe** - very precise, but if you miss one ingredient or step, the whole thing falls apart!`
         }
       ]
     },
@@ -428,19 +339,9 @@ Very precise. But if you miss one ingredient... it fails!`
           ),
           backgroundColor: '#1a1a2e',
           notes: `# 2️⃣ Dictionary / Gazetteer Lookup
+Now that we've seen rules, let's look at something similar but different. **Approach two: Dictionary Lookup**, also called "Gazetteer" lookup. What's a gazetteer, you ask? It's just a fancy word for **"a list of known things."**
 
-Now that we've seen rules... let's try something similar.
-
-**Approach two: Dictionary Lookup.**
-Also called "Gazetteer" lookup.
-
-What's a gazetteer?
-Just a fancy word for **"a list of known things."**
-
----
-
-## 💡 The Idea
-
+#### 💡 The Idea
 \`\`\`mermaid
 flowchart LR
     subgraph Dict["📚 City Dictionary"]
@@ -458,38 +359,16 @@ flowchart LR
     style L fill:#4fc3f7,color:#000
 \`\`\`
 
-You create a list of all cities.
-When the computer sees "Tokyo" in text...
-It checks: *"Is Tokyo in my city list? Yes! → Label it CITY."*
+Here's how it works. You create a list of all cities in the world. When the computer sees "Tokyo" in some text, it checks: "Is Tokyo in my city list? Yes! So let's label it as CITY." Simple, right?
 
-> 🎤 Simple, right?
+#### 🎯 When to Use This?
+This approach is great for **known entities** that don't change much. Think product catalogs, country names, disease names in medical text, or any domain where you can build a comprehensive list.
 
----
+#### ✅ Pros
+Why it's good? You get **very high precision** for things you know about. It's **easy to update** - just add new items to the list! And it works in any language, as long as you have the dictionary for that language.
 
-## 🎯 When to Use This?
-
-This is great for **known entities**:
-- Product catalogs
-- Country names
-- Disease names
-- Things that don't change much
-
----
-
-### ✅ Pros
-
-Why it's good:
-- Very **high precision** for known things.
-- **Easy to update**. Just add to the list!
-- Works in any language... if you have the dictionary.
-
-### ❌ Cons
-
-The problems:
-- It can't find **NEW things**.
-  - If "SpaceX" isn't in your list... you miss it.
-- **Ambiguity!**
-
+#### ❌ Cons
+But here's the catch. It can't find **NEW things**. If "SpaceX" isn't in your company list, you'll miss it completely. And then there's the **ambiguity problem**:
 \`\`\`mermaid
 flowchart TB
     A["'Apple' in text"] --> F{"Which dictionary?"}
@@ -501,14 +380,7 @@ flowchart TB
     style Q fill:#ffb74d,color:#000
 \`\`\`
 
-"Apple" is in your fruit dictionary AND your company dictionary.
-Which one is it? **You need context!**
-
----
-
-Think of it like a **phone book**.
-Great for finding people you know.
-Useless for finding strangers!`
+What if "Apple" is in BOTH your fruit dictionary AND your company dictionary? Which one is it? **You need context to decide!** Think of it like a **phone book** - great for finding people you already know, but useless for finding strangers!`
         }
       ]
     },
@@ -567,15 +439,9 @@ Useless for finding strangers!`
           ),
           backgroundColor: '#16213e',
           notes: `# 3️⃣ TF-IDF + Classifier-Based NER
+**Now we're entering machine learning territory!** Approach three: TF-IDF plus a Classifier. This is where things start getting interesting.
 
-**Now we're entering machine learning territory!**
-
-Approach three: TF-IDF plus a Classifier.
-
----
-
-## 📊 What is TF-IDF?
-
+#### 📊 What is TF-IDF?
 \`\`\`mermaid
 flowchart LR
     subgraph TFIDF["📊 TF-IDF"]
@@ -592,16 +458,9 @@ flowchart LR
     style S2 fill:#81c784,color:#000
 \`\`\`
 
-Don't worry about the math.
+Don't worry about the math behind it. The key idea is simple: TF-IDF measures **"How important is this word?"** Common words like "the" or "and" get **low scores** because they appear everywhere. But special words like "Microsoft" get **high scores** because they're distinctive and meaningful.
 
-It just means: **"How important is this word?"**
-- Common words like "the" get **low scores**.
-- Special words like "Microsoft" get **high scores**.
-
----
-
-## 🔄 How It Works for NER
-
+#### 🔄 How It Works for NER
 \`\`\`mermaid
 flowchart LR
     W["Words"] --> T["TF-IDF\nVectorizer"] --> N["Numbers"] --> C["Classifier\n(LogReg/SVM)"] --> P["Predictions\nPERSON/ORG/LOC"]
@@ -610,42 +469,16 @@ flowchart LR
     style P fill:#81c784,color:#000
 \`\`\`
 
-**Step 1:** Turn each word into numbers using TF-IDF.
-**Step 2:** Feed those numbers to a classifier.
-**Step 3:** The classifier predicts: PERSON? ORG? LOCATION? NONE?
+Here's the pipeline: **Step 1** - turn each word into numbers using TF-IDF. **Step 2** - feed those numbers to a classifier like Logistic Regression or SVM. **Step 3** - the classifier predicts: is this a PERSON? ORG? LOCATION? Or nothing special? These are old-school classifiers, but they're fast, simple, and interpretable.
 
-These are old-school classifiers.
-Fast. Simple. Interpretable.
+#### 🎯 When to Use This?
+Use this as a **quick baseline** to see how hard your problem is. It's also great when you have **limited compute** resources or need something **lightweight** that runs anywhere.
 
----
+#### ✅ Pros
+The good stuff: It's **very fast** to train - we're talking minutes, not hours. You can see which features matter, so it's interpretable. And it **runs on any laptop** without needing a GPU!
 
-## 🎯 When to Use This?
-
-- As a **quick baseline**.
-- When you have **limited compute**.
-- When you need something **lightweight**.
-
----
-
-### ✅ Pros
-
-The good stuff:
-- **Very fast** to train.
-- You can see which features matter.
-- **Runs on any laptop!**
-
-### ❌ Cons
-
-The problems:
-- Each word is predicted **independently**.
-- **No context!**
-- "New" and "York" are separate. The model doesn't know they're one entity.
-- Also... you need to **engineer features manually**.
-
----
-
-This is a good starting point.
-But modern methods are **much better!**`
+#### ❌ Cons
+But here's the big problem: each word is predicted **independently**. There's **no context**! The words "New" and "York" are treated separately, so the model doesn't know they form a single entity "New York". Also, you need to **engineer features manually**, which takes time and expertise. This is a good starting point, but modern methods are **much better**!`
         }
       ]
     },
@@ -702,19 +535,10 @@ But modern methods are **much better!**`
           ),
           backgroundColor: '#0f3460',
           notes: `# 4️⃣ Hidden Markov Model (HMM) NER
+**Approach four: Hidden Markov Models**, or HMM for short. This is a **classic** - it's taught in every NLP course out there. If you've studied natural language processing, you've definitely encountered this one.
 
-**Approach four: Hidden Markov Models.**
-HMM for short.
-
-This is a **classic!** Taught in every NLP course.
-
----
-
-## 💡 The Big Idea
-
-HMM thinks about **SEQUENCES**.
-Not just one word... but the whole sentence!
-
+#### 💡 The Big Idea
+What makes HMM special is that it thinks about **SEQUENCES**, not just individual words. It considers the whole sentence!
 \`\`\`mermaid
 stateDiagram-v2
     [*] --> O: Start
@@ -730,12 +554,9 @@ stateDiagram-v2
     I_LOC --> O: 100%
 \`\`\`
 
-It models: *"What tag is likely AFTER this tag?"*
+The model learns transition probabilities: "What tag is likely to come AFTER this tag?" So if we're in the middle of a person's name, we probably stay in the person name, not suddenly jump to a location.
 
----
-
-## 🌤️ Weather Analogy
-
+#### 🌤️ Weather Analogy
 \`\`\`mermaid
 stateDiagram-v2
     direction LR
@@ -745,39 +566,16 @@ stateDiagram-v2
     Rainy --> Sunny: 40%
 \`\`\`
 
-If it's sunny today... probably sunny tomorrow too.
+Here's a simple analogy. If it's sunny today, it's probably sunny tomorrow too - there's momentum in weather patterns. **HMM works the same way for NER tags!** If we just started a person name with B-PERSON, we're likely to continue that person name with I-PERSON, not suddenly switch to something else.
 
-**HMM works the same way for tags!**
-If we start a person name (B-PERSON)... probably still in a person name (I-PERSON)!
+#### 🎯 When to Use HMM?
+Honestly, HMM is mostly used for **learning and education** these days. It's a great baseline to understand sequence modeling. It can also work in **very low-resource scenarios** where you have almost no training data.
 
----
+#### ✅ Pros
+The good stuff: It's **fast and efficient** - very quick to train and run. It naturally handles sequences. And it's **probabilistic**, meaning it gives you confidence scores, not just predictions!
 
-## 🎯 When to Use HMM?
-
-- Mostly for **learning!** It's a great educational baseline.
-- **Low-resource scenarios** where you have very little data.
-
----
-
-### ✅ Pros
-
-The good stuff:
-- **Fast and efficient.**
-- Handles sequences naturally.
-- **Probabilistic.** Gives you confidence scores!
-
-### ❌ Cons
-
-The problems:
-- Makes **strong assumptions**.
-- "Each word only depends on its tag."
-- That's too simple for real text!
-- Limited features. Can't use modern tricks.
-
----
-
-HMM was state-of-the-art in the 90s.
-Now we have better options. **But good to know!**`
+#### ❌ Cons
+The problems: It makes **strong independence assumptions** that often don't hold in real text. It has limited feature flexibility - you can't just throw in any features you want. And it's typically **outperformed by CRF and neural models**. HMM was state-of-the-art back in the 90s. Now we have better options, but it's still **good to know** for understanding the foundations!`
         }
       ]
     },
@@ -835,18 +633,9 @@ Now we have better options. **But good to know!**`
           ),
           backgroundColor: '#1a1a2e',
           notes: `# 5️⃣ Conditional Random Fields (CRF) NER
+Now that we've seen HMM, let me introduce you to its **smarter cousin**. **Approach five: Conditional Random Fields**, or CRF! This was **THE method** before deep learning took over, and honestly, it's still used today.
 
-Now that we've seen HMM... here's its **smarter cousin**.
-
-**Approach five: Conditional Random Fields.**
-CRF!
-
-This was **THE method** before deep learning.
-
----
-
-## 🔄 What's Different from HMM?
-
+#### 🔄 What's Different from HMM?
 \`\`\`mermaid
 flowchart TB
     subgraph HMM["🔮 HMM - Generative"]
@@ -864,17 +653,9 @@ flowchart TB
     style CRF fill:#81c784,color:#000
 \`\`\`
 
-- HMM tries to model the whole world.
-- CRF only focuses on: *"Given this text, what are the tags?"*
+Here's the key difference: HMM tries to model the whole world - how words and tags are generated together. CRF is smarter - it only focuses on what we actually care about: "Given this text, what are the tags?" That's much more efficient!
 
-That's more efficient!
-
----
-
-## 🏆 The Big Win
-
-You can add **LOTS of features!**
-
+#### 🏆 The Big Win: Rich Features
 \`\`\`mermaid
 flowchart LR
     subgraph Features["🔧 CRF Features"]
@@ -903,41 +684,16 @@ flowchart LR
     style Example fill:#4fc3f7,color:#000
 \`\`\`
 
-- Is the word capitalized?
-- Does it end in "-tion"?
-- What's the word before it?
+You can add **LOTS of features**! Is the word capitalized? Does it end in "-tion"? What's the word before it? What's the word after it? What's the shape of the word? **CRF uses all of this information!**
 
-**CRF uses all of this!**
+#### 🎯 When to Use CRF?
+Use CRF when you have **small to medium-sized datasets**. It's perfect when you want a **solid non-neural baseline** that's well understood. And it's great when **interpretability matters** - you can see exactly which features drive the predictions.
 
----
+#### ✅ Pros
+CRF captures **label dependencies** beautifully. It knows that B-PERSON should be followed by I-PERSON, not suddenly B-ORG. It's **very stable and well-understood** with decades of research behind it.
 
-## 🎯 When to Use CRF?
-
-- When you have **small to medium data**.
-- When you want a **solid non-neural baseline**.
-- When **interpretability** matters!
-
----
-
-### ✅ Pros
-
-The good stuff:
-- Captures **label dependencies**.
-- "B-PERSON should be followed by I-PERSON, not B-ORG."
-- Very **stable and well-understood**.
-
-### ❌ Cons
-
-The problems:
-- You have to **engineer features manually**.
-- Takes time and expertise!
-- Also... **limited context**. Can't see the whole document.
-
----
-
-CRF is **still used today!**
-Often combined with neural networks.
-We'll see that next!`
+#### ❌ Cons
+The downside? You have to **engineer features manually**, which takes time and domain expertise. It also has **limited context** - it can't see the whole document, just local windows. And compared to modern pretrained transformers, **domain transfer is weaker**. But here's the thing - CRF is **still used today**, often combined with neural networks. We'll see that in the next approach!`
         }
       ]
     },
@@ -996,18 +752,9 @@ We'll see that next!`
           ),
           backgroundColor: '#16213e',
           notes: `# 6️⃣ BiLSTM + CRF
+**Now we're entering the neural network era!** Approach six: BiLSTM plus CRF. This was the **breakthrough architecture** that dominated NER from around 2015 to 2018, and it's still a solid choice today.
 
-**Now we're entering the neural network era!**
-
-Approach six: BiLSTM plus CRF.
-
-This was the **breakthrough architecture**.
-It dominated NER from around 2015 to 2018!
-
----
-
-## 🧠 What is BiLSTM?
-
+#### 🧠 What is BiLSTM?
 \`\`\`mermaid
 flowchart TB
     subgraph Input["📝 Input Sentence"]
@@ -1027,20 +774,9 @@ flowchart TB
     style Backward fill:#f06292,color:#000
 \`\`\`
 
-Let me break that down.
+Let me break that down for you. **LSTM** stands for Long Short-Term Memory - it's a neural network that can remember sequences. The **"Bi"** means bidirectional, which means it reads the text left-to-right AND right-to-left! So for every word, it knows what comes **BEFORE** it and what comes **AFTER** it. That's powerful context!
 
-**LSTM** is a neural network that remembers sequences.
-**"Bi"** means bidirectional. It reads left-to-right AND right-to-left!
-
-So it knows what comes **BEFORE** and **AFTER** each word.
-
----
-
-## 🤝 Why Add CRF on Top?
-
-BiLSTM predicts each word independently.
-CRF makes sure the sequence **makes sense**.
-
+#### 🤝 Why Add CRF on Top?
 \`\`\`mermaid
 flowchart LR
     subgraph BiLSTM["BiLSTM Output"]
@@ -1058,33 +794,16 @@ flowchart LR
     style C3 fill:#81c784,color:#000
 \`\`\`
 
-CRF says: *"Wait, I-ORG can't follow B-PER. Let me fix that."*
+Here's the clever part. BiLSTM predicts each word somewhat independently, but sometimes it makes mistakes. The CRF layer on top makes sure the sequence **makes sense**. It says things like: "Wait, I-ORG can't follow B-PER - that's an invalid transition. Let me fix that to I-PER." It's the **best of both worlds**!
 
-**Best of both worlds!**
+#### 🎯 When to Use This?
+Use BiLSTM+CRF for general-purpose NER when you have **moderate amounts of data**. It's great when you don't have huge compute budgets but still want good accuracy. And it works really well for **multilingual scenarios**!
 
----
+#### ✅ Pros
+The big win: it **learns features automatically**! No more manual feature engineering. It's context-aware and gives strong accuracy with reasonable compute.
 
-## 🎯 When to Use This?
-
-- General-purpose NER with **moderate data**.
-- When you don't have huge compute budgets.
-- **Multilingual scenarios!**
-
----
-
-### ✅ Pros
-
-- Learns features **automatically!** No manual engineering.
-- Good accuracy with reasonable compute.
-
-### ❌ Cons
-
-- Needs **GPU for training**.
-- Needs more data than CRF alone.
-
----
-
-This was the **gold standard**... until transformers arrived!`
+#### ❌ Cons
+The downsides: you **need a GPU for training**, which not everyone has access to. It needs more data than CRF alone, and hyperparameter tuning can be tricky. This was the **gold standard** for several years, until transformers arrived and changed everything!`
         }
       ]
     },
@@ -1143,14 +862,9 @@ This was the **gold standard**... until transformers arrived!`
           ),
           backgroundColor: '#0f3460',
           notes: `# 7️⃣ CNN + BiLSTM NER
+**Approach seven: CNN plus BiLSTM.** This adds one more clever ingredient to the BiLSTM recipe we just saw!
 
-**Approach seven: CNN plus BiLSTM.**
-This adds one more ingredient to the recipe!
-
----
-
-## 🔤 What's a CNN?
-
+#### 🔤 What's a CNN?
 \`\`\`mermaid
 flowchart TB
     subgraph CharCNN["🔤 Character CNN"]
@@ -1171,18 +885,9 @@ flowchart TB
     style Combined fill:#ba68c8,color:#000
 \`\`\`
 
-CNNs are great at finding patterns in small windows.
-Here... we use them on **CHARACTERS**.
+CNN stands for Convolutional Neural Network, and they're amazing at finding patterns in small windows. In this architecture, we use CNNs on **CHARACTERS**. The CNN looks at character patterns within words and learns things like: "Words ending in -soft might be company names" or "Words starting with Mc- might be person names."
 
-The CNN looks at character patterns.
-It learns: *"Words ending in -soft might be companies."*
-
----
-
-## 💡 Why Does This Help?
-
-**Out-of-vocabulary words!**
-
+#### 💡 Why Does This Help?
 \`\`\`mermaid
 flowchart LR
     subgraph Typo["❓ Unknown Word"]
@@ -1199,36 +904,16 @@ flowchart LR
     style Result fill:#81c784,color:#000
 \`\`\`
 
-BiLSTM alone might not know "Microsift."
-But the character CNN sees it looks like "Microsoft."
+The big win is handling **out-of-vocabulary words**! A BiLSTM alone might not recognize "Microsift" - it's not in any dictionary. But the character CNN sees it looks very similar to "Microsoft"! It **handles typos**, it handles **rare words**, and it handles **morphology** in languages like German or Finnish where words can be very long and compound.
 
-**Handles typos! Handles rare words! Handles morphology!**
+#### 🎯 When to Use This?
+Use CNN+BiLSTM when dealing with **noisy text** like social media or user-generated content. It's also great for **languages with rich morphology** like German, Turkish, or Finnish. And it shines in **domains with lots of new or rare words** that wouldn't be in standard vocabularies.
 
----
+#### ✅ Pros
+It's **robust to typos** and spelling variants. It captures **spelling patterns** automatically. And it was the strongest non-transformer baseline for years!
 
-## 🎯 When to Use This?
-
-- **Noisy text.** Social media. User-generated content.
-- **Languages with rich morphology.** German. Turkish. Finnish.
-- **Domains with lots of new/rare words.**
-
----
-
-### ✅ Pros
-
-- **Robust** to typos and variants.
-- Captures **spelling patterns**.
-- Strong non-transformer baseline!
-
-### ❌ Cons
-
-- More **complex to tune**.
-- **Slower** than plain BiLSTM.
-- Still not as good as transformers.
-
----
-
-This was the **peak of pre-transformer NER!**`
+#### ❌ Cons
+On the downside, it's **more complex to tune** with all those hyperparameters. It's **slower** than plain BiLSTM because of the extra CNN layer. And honestly, it's **still not as good as transformers**. This was the **peak of pre-transformer NER** - after this came BERT and changed everything!`
         }
       ]
     },
@@ -1288,14 +973,9 @@ This was the **peak of pre-transformer NER!**`
           ),
           backgroundColor: '#1a1a2e',
           notes: `# 8️⃣ spaCy Statistical NER
+**Approach eight: spaCy!** This is the **practical engineer's choice** - the library that just works out of the box.
 
-**Approach eight: spaCy!**
-This is the **practical engineer's choice**.
-
----
-
-## 🚀 What is spaCy?
-
+#### 🚀 What is spaCy?
 \`\`\`mermaid
 flowchart LR
     subgraph spaCy["🚀 spaCy Pipeline"]
@@ -1306,15 +986,9 @@ flowchart LR
     style spaCy fill:#4fc3f7,color:#000
 \`\`\`
 
-It's a Python library for NLP.
-**Fast. Production-ready. Well-documented.**
+spaCy is a Python library for NLP that's **fast, production-ready, and incredibly well-documented**. It gives you a complete pipeline - tokenization, part-of-speech tagging, NER, dependency parsing - all in one package. It's what you use when you need to ship something that actually works.
 
----
-
-### 🎬 Demo
-
-Let me show you how easy it is.
-
+#### 🎬 Demo: How Easy Is It?
 \`\`\`mermaid
 flowchart LR
     subgraph Code["🐍 Python Code"]
@@ -1331,44 +1005,19 @@ flowchart LR
     style O2 fill:#81c784,color:#000
 \`\`\`
 
-**Three lines of code!**
-You get: Apple → ORG, California → GPE
+Let me show you how easy this is. Three lines of code - that's it! You load the model, process your text, and you get Apple labeled as ORG and California labeled as GPE. Done! You can start extracting entities in literally 30 seconds.
 
-Done!
+#### 🔧 Under the Hood
+What's actually running? spaCy uses neural networks internally - transition-based parsing with CNNs by default. But here's the cool part: you can also plug in **transformer backends** for even better accuracy when you need it!
 
----
+#### 🎯 When to Use spaCy?
+Use spaCy for **rapid prototyping** when you need something working quickly. It's perfect when you need a working pipeline **RIGHT NOW** with no fuss. And it's great for **production systems** that need speed - spaCy is seriously optimized for performance.
 
-## 🔧 Under the Hood
+#### ✅ Pros
+The inference is **incredibly fast** - it's one of the fastest NLP libraries out there. It's easy to customize and extend with your own components. And the **documentation and community** are outstanding - you'll always find answers.
 
-spaCy uses neural networks.
-- Transition-based parsing with CNNs.
-- Or you can use **transformer backends!**
-
----
-
-## 🎯 When to Use spaCy?
-
-- **Rapid prototyping.** Quick deployment.
-- When you need a working pipeline **NOW**.
-- **Production systems** that need speed!
-
----
-
-### ✅ Pros
-
-- **Incredibly fast** inference.
-- Easy to customize and extend.
-- **Great documentation** and community!
-
-### ❌ Cons
-
-- Accuracy depends on **domain fit**.
-- Custom entities need training data.
-- Black box for pretrained models.
-
----
-
-If you're building a product... **start with spaCy!**`
+#### ❌ Cons
+The accuracy depends heavily on **domain fit** - if your text is very different from what it was trained on, results may vary. Custom entity types need training data to add. And the pretrained models are somewhat of a black box when things go wrong. If you're building a product... **start with spaCy!** You can always upgrade later.`
         }
       ]
     },
@@ -1426,18 +1075,9 @@ If you're building a product... **start with spaCy!**`
           ),
           backgroundColor: '#16213e',
           notes: `# 9️⃣ BERT Fine-Tuned for NER
+**Now we enter the transformer era!** Approach nine: BERT fine-tuned for NER. **This changed everything.** BERT came out in 2018 and absolutely broke all the records. It was a paradigm shift in NLP.
 
-**Now we enter the transformer era!**
-
-Approach nine: BERT fine-tuned for NER.
-
-**This changed everything.**
-BERT came out in 2018 and broke all the records!
-
----
-
-## 🤖 What is BERT?
-
+#### 🤖 What is BERT?
 \`\`\`mermaid
 flowchart TB
     subgraph BERT["🤖 BERT = Bidirectional Encoder Representations from Transformers"]
@@ -1447,14 +1087,9 @@ flowchart TB
     style BERT fill:#f06292,color:#000
 \`\`\`
 
-It's a neural network pretrained on **MASSIVE text**.
-Wikipedia. Books. The entire internet!
-It learns the patterns of language.
+BERT is a neural network that was pretrained on **MASSIVE amounts of text** - we're talking Wikipedia, books, the entire internet! Through this pretraining, it learns the deep patterns and structure of language. It knows how words relate to each other, what contexts they appear in, and so much more.
 
----
-
-## 🏗️ How Do We Use It for NER?
-
+#### 🏗️ How Do We Use It for NER?
 \`\`\`mermaid
 flowchart LR
     subgraph Architecture["🏗️ BERT for NER"]
@@ -1464,16 +1099,9 @@ flowchart LR
     style H fill:#4fc3f7,color:#000
 \`\`\`
 
-We add a simple layer on top.
-For each word: predict PERSON, ORG, LOC, or NONE.
-Then we **"fine-tune"** on our NER data!
+Here's the beautiful part - we just add a simple classification layer on top of BERT. For each word, it predicts: is this a PERSON, ORG, LOCATION, or nothing? Then we **"fine-tune"** the whole thing on our NER training data. The pretrained knowledge transfers over!
 
----
-
-## ✨ Why Is This So Powerful?
-
-BERT understands **CONTEXT deeply**.
-
+#### ✨ Why Is This So Powerful?
 \`\`\`mermaid
 flowchart TB
     A["Apple"] --> Q{"Context?"}
@@ -1483,37 +1111,16 @@ flowchart TB
     style C fill:#4fc3f7,color:#000
 \`\`\`
 
-BERT sees the whole sentence.
-- "I ate an Apple" → fruit.
-- "I bought Apple stock" → company.
+BERT understands **CONTEXT deeply** because it sees the whole sentence at once. When it sees "Apple," it looks at the surrounding words. "I ate an Apple" → clearly fruit. "I bought Apple stock" → clearly the company. **Pure magic!**
 
-**Magic!**
+#### 🎯 When to Use BERT?
+Use BERT when you need the **highest accuracy** possible. It works great with **5K to 50K labeled examples**. And there are domain-specific versions too: BioBERT for biomedical text, FinBERT for financial text, LegalBERT for legal documents - pick the one that matches your domain!
 
----
+#### ✅ Pros
+BERT gives you **state-of-the-art accuracy** - it's the best you can get. It has incredibly strong **context understanding**. And it **transfers well** to new domains, even with limited training data!
 
-## 🎯 When to Use BERT?
-
-- When you need **high accuracy**.
-- When you have **5K-50K labeled examples**.
-- Domain-specific BERT exists too! BioBERT. FinBERT. LegalBERT.
-
----
-
-### ✅ Pros
-
-- **State-of-the-art** accuracy.
-- Strong **context understanding**.
-- **Transfers well** to new domains!
-
-### ❌ Cons
-
-- **Compute-heavy.** Needs GPU.
-- **Slower inference** than classical methods.
-- Subword alignment can be tricky.
-
----
-
-This is the **current gold standard!**`
+#### ❌ Cons
+The downsides: it's **compute-heavy** and really needs a GPU to run efficiently. **Inference is slower** than classical methods - we're talking 10-100x slower. And dealing with subword tokenization can be tricky when aligning predictions back to words. But this is the **current gold standard** for NER accuracy!`
         }
       ]
     },
@@ -1573,14 +1180,9 @@ This is the **current gold standard!**`
           ),
           backgroundColor: '#0f3460',
           notes: `# 🔟 RoBERTa / DistilBERT NER Models
+**Approach ten: RoBERTa and DistilBERT.** These are BERT's **optimized cousins** - same family, but each tuned for different goals!
 
-**Approach ten: RoBERTa and DistilBERT.**
-These are BERT's **optimized cousins!**
-
----
-
-## 🏆 RoBERTa
-
+#### 🏆 RoBERTa: The Accuracy Champion
 \`\`\`mermaid
 flowchart LR
     subgraph RoBERTa["🏆 RoBERTa = Robustly Optimized BERT"]
@@ -1592,15 +1194,9 @@ flowchart LR
     style RoBERTa fill:#ba68c8,color:#000
 \`\`\`
 
-Same architecture as BERT.
-But trained **BETTER**. More data. Longer. Smarter tricks.
+RoBERTa uses the same architecture as BERT, but it was trained **BETTER**. The researchers used more training data, trained for longer, and applied smarter optimization tricks. The result? **Even higher accuracy** than BERT on most benchmarks! If you want the absolute best quality, RoBERTa is your choice.
 
-Result? **Even higher accuracy!**
-
----
-
-## ⚡ DistilBERT
-
+#### ⚡ DistilBERT: The Speed Demon
 \`\`\`mermaid
 flowchart TB
     subgraph Distil["⚡ DistilBERT = Distilled BERT"]
@@ -1616,19 +1212,9 @@ flowchart TB
     style Small fill:#81c784,color:#000
 \`\`\`
 
-This one is **SMALLER**.
-- 40% fewer parameters.
-- 60% faster!
-- But keeps **97% of BERT's accuracy**.
+DistilBERT is a **smaller, faster** version. It has 40% fewer parameters and runs 60% faster than BERT. But here's the amazing part - it still keeps **97% of BERT's accuracy**! How is this possible? Through a technique called **knowledge distillation**. The big BERT model acts as a "teacher" and trains the smaller DistilBERT "student" to mimic its behavior. The student learns to produce similar outputs, even with fewer parameters!
 
-**How?** Knowledge distillation.
-The big model "teaches" the small model.
-The small model learns to mimic the big one!
-
----
-
-## 🎯 When to Use Which?
-
+#### 🎯 When to Use Which?
 \`\`\`mermaid
 flowchart LR
     Q{"What do you need?"}
@@ -1638,26 +1224,13 @@ flowchart LR
     style D fill:#4fc3f7,color:#000
 \`\`\`
 
-- **RoBERTa** for research. Maximum quality.
-- **DistilBERT** for production. Real-time systems. Mobile. Edge.
+Simple decision: use **RoBERTa** when you're doing research or when maximum quality is critical - accuracy is king. Use **DistilBERT** for production systems where latency matters, for real-time applications, for mobile apps, or for edge deployment. Both are excellent choices!
 
----
+#### ✅ Pros
+**RoBERTa** gives you the best accuracy in the transformer family. **DistilBERT** offers a fantastic speed-accuracy tradeoff. And both are extremely well-supported in the **HuggingFace ecosystem** - you can get started in minutes!
 
-### ✅ Pros
-
-- **RoBERTa:** best accuracy.
-- **DistilBERT:** great speed-accuracy tradeoff.
-- Both well-supported in **HuggingFace!**
-
-### ❌ Cons
-
-- Still need **GPUs for training**.
-- DistilBERT slightly less accurate.
-- May need **quantization** for edge.
-
----
-
-These are your **production transformers!**`
+#### ❌ Cons
+You still **need GPUs for training** these models. DistilBERT is slightly less accurate than full BERT, which might matter for some use cases. And for edge deployment, you may need to apply additional **quantization** to get the latency down. These are your **production-ready transformers** - pick the one that fits your constraints!`
         }
       ]
     },
@@ -1716,17 +1289,9 @@ These are your **production transformers!**`
           ),
           backgroundColor: '#1a1a2e',
           notes: `# 11 Large Language Models — Zero-Shot NER
+And finally... **the newest approach!** Approach eleven: Large Language Models with **Zero-shot NER**! This is the cutting edge of what's possible today.
 
-And finally... **the newest approach!**
-
-Approach eleven: *Large Language Models*.
-
-**Zero-shot NER!**
-
----
-
-## What is Zero-Shot?
-
+#### 🎯 What is Zero-Shot?
 \`\`\`mermaid
 flowchart LR
     subgraph ZeroShot["🎯 Zero-Shot = No Training!"]
@@ -1736,14 +1301,9 @@ flowchart LR
     style ZeroShot fill:#81c784,color:#000
 \`\`\`
 
-You don't train anything.
+Here's the amazing part - you don't train anything at all. You just **ASK** the model to do NER for you! Zero training examples, zero labeled data, zero fine-tuning. Just a well-written prompt and you're extracting entities.
 
-You just **ASK** the model to do NER!
-
----
-
-## How It Works
-
+#### 💬 How It Works
 \`\`\`mermaid
 flowchart TB
     subgraph Prompt["💬 Your Prompt"]
@@ -1762,53 +1322,23 @@ flowchart TB
     style Response fill:#81c784,color:#000
 \`\`\`
 
-You give it a prompt like this.
+You give the LLM a prompt that describes what you want. The LLM reads it, understands your request, and responds with the extracted entities. It's just like chatting with ChatGPT! You describe the entity types you want, maybe give an example or two, and it does the extraction.
 
-The LLM reads it and responds with the entities.
+#### ✨ The Power of LLMs
+This is **incredibly powerful** for several reasons. Need a new entity type you've never seen before? Just describe it in the prompt - no retraining! Working with a new language? Many LLMs are multilingual out of the box. Have complex or nuanced instructions? LLMs can follow them in ways traditional models can't.
 
-*Just like chatting with ChatGPT!*
+> 🎤 Sounds perfect, right? But there are some important tradeoffs...
 
----
+#### ❌ Cons
+First, **hallucinations** - sometimes the model makes things up that aren't there. Second, it's **expensive** - API calls cost money and latency is high, maybe seconds per call. Third, there are **privacy concerns** - you're sending your data to an external API. And fourth, **output parsing** can be tricky because the format might vary between calls.
 
-## The Power of LLMs
+#### 🎯 When to Use LLMs for NER?
+Use LLMs for **rapid prototyping** when you're testing ideas quickly. They're perfect when you have **NO training data** at all. And they shine with **complex, changing schemas** where you need flexibility.
 
-This is **incredibly powerful**:
-- **New entity types?** Just describe them in the prompt
-- **New language?** Many LLMs are multilingual
-- **Complex instructions?** LLMs can follow them!
+#### ✅ Pros
+The upsides: **No labeled data** needed - just start prompting! It's incredibly **flexible** and can handle new entity types easily. And it can **reason and follow complex instructions** that would be impossible with traditional models.
 
----
-
-> 🎤 **Sounds perfect, right?**
-
----
-
-But... there are problems.
-
-### ❌ Cons
-- **Hallucinations** — Sometimes it makes things up
-- **Expensive** — API calls cost money. High latency
-- **Privacy concerns** — You're sending data to an API
-- **Output parsing** — The format might vary
-
----
-
-## When to Use LLMs for NER?
-
-- Rapid prototyping — testing ideas fast
-- When you have **NO training data**
-- Complex, changing schemas
-
----
-
-### ✅ Pros
-- No labeled data needed!
-- Flexible — can handle new entity types easily
-- Can reason and follow complex instructions
-
----
-
-*This is the future... but use with caution!*`
+This is the future of NER... but **use with caution!** For production systems with high volume, you'll probably want a dedicated model.`
         }
       ]
     },
@@ -1868,35 +1398,16 @@ But... there are problems.
           ),
           backgroundColor: '#16213e',
           notes: `# Summary Overview
+Alright! We've covered **all eleven approaches** - from simple rules all the way to GPT-style LLMs. Now let's put it all together and give you a practical guide for choosing the right approach.
 
-Alright! We've covered **all eleven approaches**.
+#### 📋 This Summary Section Covers 5 Key Areas:
+**First: Quick Selection Guide** - I'll give you a simple decision tree for picking the right approach based on your situation. What constraints do you have? What resources? We'll match those to the best approach.
+**Second: Data Needs Spectrum** - A breakdown of how much training data each approach requires. This is often the biggest factor in your decision, so we'll cover it in detail.
+**Third: Compute & Latency** - How fast each approach runs in production. If you're building a real-time system, latency matters a lot, so we'll compare all the options.
+**Fourth: Maintenance & Deployment** - What ongoing work does each approach need? Models don't just run themselves - there's maintenance involved, and it varies a lot by approach.
+**And Fifth: Deployment Tips** - Best practices for putting NER into production based on hard-won experience from real systems.
 
-Now let's put it all together!
-
----
-
-## This Summary Section Covers 5 Key Areas:
-
-### 1. Quick Selection Guide
-How to pick the right approach for your situation
-
-### 2. Data Needs Spectrum
-How much training data each approach requires
-
-### 3. Compute & Latency
-How fast each approach runs in production
-
-### 4. Maintenance & Deployment
-What ongoing work each approach needs
-
-### 5. Deployment Tips
-Best practices for putting NER into production
-
----
-
-**Let's dive into each one!**
-
-*Press down arrow to explore.*`
+Let's dive into each one! Press the down arrow to explore the sub-slides.`
         },
         {
           id: 15,
@@ -1943,60 +1454,27 @@ Best practices for putting NER into production
               ),
               backgroundColor: '#16213e',
               notes: `# Quick Selection Guide
+Here's your decision guide - this is the slide you'll want to come back to when choosing an approach. Let's go through each scenario step by step.
 
-Here's your decision guide!
+#### 🚫 No training data and strict formats?
+If you have no labeled data and your entities follow strict formats, go with **Rule-Based** or **Gazetteer** approaches. These are perfect for extracting things like product IDs, email addresses, dates in specific formats, or anything with a predictable pattern. No training required, just pattern matching.
 
-Let's go through each scenario.
+#### 📊 Have small data and stable entity types?
+If you have a small labeled dataset, maybe a few thousand examples, and your entity types aren't changing much, then **CRF** or **spaCy** work great. They're efficient, reliable, and you don't need a GPU to run them. Very practical choice for many production systems.
 
----
+#### 📈 Got moderate data and need good accuracy?
+With moderate data - think 10,000 to 50,000 examples - you can train deep learning models like **BiLSTM+CRF** or **CNN+BiLSTM**. These learn features automatically and handle complex patterns well. They really shine in this data range.
 
-## Scenario-Based Selection
+#### 🏆 Need the absolute best accuracy?
+If accuracy is your top priority and you have enough data, go with **BERT** or **RoBERTa**. These are state-of-the-art transformers that understand context deeply. They're the current gold standard for NER accuracy.
 
-### 🚫 No training data and strict formats?
-→ Use **Rule-Based** or **Gazetteer** approaches
+#### ⚡ Deploying to edge or need low latency?
+For edge deployment, mobile apps, or real-time systems where latency matters, choose **DistilBERT** or optimized **spaCy**. DistilBERT gives you 97% of BERT's accuracy at 60% faster speed. That's often the right tradeoff.
 
-*Perfect for extracting IDs, dates, emails*
+#### 🆕 New entity types with no data?
+If you have a brand new entity type and zero training data, try **LLM Zero-shot** or **Few-shot** approaches! Just describe what you want in natural language and the LLM will extract it.
 
----
-
-### 📊 Small data and stable entity types?
-→ **CRF** or **spaCy** work great
-
-*Efficient and reliable*
-
----
-
-### 📈 Moderate data and need accuracy?
-→ **BiLSTM+CRF** or **CNN+BiLSTM**
-
-*These deep learning models shine here*
-
----
-
-### 🏆 Need the absolute best accuracy?
-→ Go with **BERT** or **RoBERTa**
-
-*State-of-the-art transformers*
-
----
-
-### ⚡ Deploying to edge or need low latency?
-→ **DistilBERT** or optimized **spaCy**
-
-*Fast enough for real-time*
-
----
-
-### 🆕 New entity types with no data?
-→ **LLM Zero-shot** or **Few-shot**!
-
-*Just describe what you want*
-
----
-
-> 💡 **Remember... start simple!**
-> 
-> You can always upgrade later.`
+> 💡 **Pro tip: Always start simple!** You can always upgrade to more complex models later. Many production systems run on CRF or spaCy because they're fast and good enough.`
         },
         {
           id: 16,
@@ -2090,59 +1568,26 @@ Let's go through each scenario.
           ),
               backgroundColor: '#16213e',
               notes: `# Data Needs Spectrum
+Let's talk about data requirements, because this is often the **biggest factor** in choosing an approach. If you don't have labeled data, many options are simply off the table. So let me walk you through what each approach needs.
 
-Let's talk about data requirements!
+#### Rule-Based and Gazetteer
+**Zero** training examples needed! You don't train anything - you just write rules or build dictionaries by hand. This is why these approaches are so attractive when you're starting from scratch or working in a domain where labeling is expensive.
 
-*This is often the biggest factor in choosing an approach.*
+#### CRF and HMM Models
+These classical models need about **1,000 to 5,000** labeled examples. That's actually quite manageable for most teams - you could label that in a few weeks with a small team. And the nice thing is they're quite data-efficient, so you get decent results even at the lower end.
 
----
+#### Transformers like BERT
+Typically need **3,000 to 30,000** examples. Now, here's an important nuance - because BERT is pre-trained on massive text, it already understands language structure. So it needs less NER-specific data than you might expect. The pre-training does a lot of the heavy lifting.
 
-## Training Data by Approach
+#### BiLSTM Models
+These are hungry - they need **5,000 to 50,000** examples. Why more than BERT? Because BiLSTM doesn't have pre-training. It's learning everything from scratch on your data, so it needs more examples to learn both language patterns and NER patterns.
 
-### Rule-Based and Gazetteer
-**Zero** training examples needed!
+#### Zero-shot LLMs
+This is amazing - just **0 to 10** examples right in the prompt! The LLM already knows language deeply from its massive pre-training. You just describe what you want, maybe show a couple examples, and it works. Game-changer for rapid prototyping!
 
-You just write rules or build dictionaries.
-
----
-
-### CRF and HMM models
-Need about **1,000 to 5,000** labeled examples
-
-*That's manageable for most teams*
-
----
-
-### Transformers (BERT)
-Typically **3,000 to 30,000** examples
-
-But they're pre-trained, so less than you'd think!
-
----
-
-### BiLSTM models
-These are hungry! **5,000 to 50,000** examples
-
-*No pre-training to help here*
-
----
-
-### Zero-shot LLMs
-Amazing! Just **0 to 10** examples in the prompt
-
-*The model already knows language*
-
----
-
-## Two Important Tips
-
-### ✅ Quality beats quantity
-Clean labels matter more than volume
-
-### 🔄 Use active learning!
-Start small, label what the model struggles with
-
-*Iterate and improve*`
+#### 🎯 Two Critical Tips
+**Quality beats quantity every time.** Clean, consistent labels matter more than having huge volumes of noisy data. Spend time on your annotation guidelines.
+**Use active learning!** Start with a small labeled set, train a model, look at what it struggles with, and label those examples specifically. This gets you the best bang for your labeling buck.`
             },
             {
           id: 17,
@@ -2213,66 +1658,28 @@ Start small, label what the model struggles with
               ),
               backgroundColor: '#16213e',
               notes: `# Compute & Latency
+**Speed matters in production!** If you're building a real-time system, latency can make or break the user experience. Let me walk you through the latency comparison for each approach.
 
-**Speed matters in production!**
+#### Rule-Based and Gazetteer ⚡
+**Under 1 millisecond** - lightning fast! These run instantly because it's just pattern matching and dictionary lookups. No GPU needed, tiny memory footprint around 10 megabytes. If you need the absolute fastest option, this is it.
 
-Let's compare inference times.
+#### CRF and HMM
+**5 to 10 milliseconds** - still very fast! You can run these on CPU only, no GPU required, and they only take about 50 megabytes of memory. Very practical for most production systems where you need good speed without special hardware.
 
----
+#### BiLSTM+CRF
+**20 to 50 milliseconds** - getting slower but still reasonable. A GPU helps speed things up but isn't strictly required. You can run this on CPU if you batch your requests smartly. Memory usage is around 200 megabytes.
 
-## Latency Comparison
+#### DistilBERT
+**20 to 100 milliseconds** - this is where we enter transformer territory. DistilBERT offers a good balance of speed and accuracy. A GPU is recommended here - you can run on CPU but it'll be on the slower end of that range. About 250 megabytes of memory.
 
-### Rule-Based and Gazetteer ⚡
-**Under 1 millisecond!** Lightning fast.
+#### Full BERT or RoBERTa
+**50 to 200 milliseconds** - the full transformer experience. You really want a GPU here for practical latency. Without a GPU, you might be looking at seconds per request, which isn't great for real-time applications. Memory footprint around 450 megabytes.
 
-No GPU needed. Tiny memory footprint.
+#### LLMs like GPT-4 🐢
+**500 milliseconds to 5 seconds or more!** This is the slowest option by far. You're making API calls over the network, there's queue time, inference time, and network round-trip. Great for prototyping, but be careful about production volume.
 
----
-
-### CRF and HMM
-**5 to 10 milliseconds** — still very fast
-
-CPU only. About 50 megabytes.
-
----
-
-### BiLSTM+CRF
-**20 to 50 milliseconds**
-
-GPU helps but not required.
-
----
-
-### DistilBERT
-**20 to 100 milliseconds**
-
-Good balance of speed and accuracy. GPU recommended.
-
----
-
-### Full BERT or RoBERTa
-**50 to 200 milliseconds**
-
-GPU really needed here.
-
----
-
-### LLMs (GPT-4) 🐢
-**500 milliseconds to 5 seconds!**
-
-Network latency adds up.
-
----
-
-## ⚡ Optimization Tips
-
-Want to speed things up?
-
-- Use **ONNX runtime**
-- **Quantize** your models
-- **Batch** your requests
-
-*Can get 2 to 5x faster!*`
+#### ⚡ Optimization Tips
+Want to speed things up? Here are three powerful techniques. First, use **ONNX runtime** - it can give you 2x speedup over native PyTorch. Second, **quantize your models** - INT8 quantization can cut latency in half with minimal accuracy loss. Third, **batch your requests** when possible - processing 10 texts at once is often faster than 10 individual calls. Combined, these can give you 2 to 5x faster inference!`
             },
             {
           id: 18,
@@ -2336,52 +1743,22 @@ Want to speed things up?
               ),
               backgroundColor: '#16213e',
               notes: `# Maintenance & Deployment
+**Deployment is just the beginning!** Once your model is in production, the real work starts. Each approach has very different maintenance needs, so let me break this down for you.
 
-**Deployment is just the beginning!**
+#### 📋 Rules and Gazetteers
+Rules need **frequent manual updates**. When new entities appear in your domain - new companies, new products, new terminology - someone has to add them to your rules. This means you need ongoing involvement from domain experts who understand the patterns. The good news? It's **easy to debug and explain**! When something goes wrong, you can point to exactly which rule caused it and fix it directly. Version control your patterns just like code.
 
-Each approach has different maintenance needs.
+#### 📊 Classical ML (CRF and HMM)
+These need **periodic retraining** - typically monthly or quarterly depending on how fast your domain changes. You'll need to maintain your **feature pipelines** - if you're using external resources like gazetteers or word embeddings, those need updates too. Set up proper **model versioning** so you can roll back if a new model performs worse. And consider A/B testing frameworks to compare model versions in production.
 
----
+#### 🧠 Transformers
+Transformers need **retraining when your domain shifts** significantly. The model that worked great last year might struggle with this year's data if the language patterns have changed. You need to **budget for GPU infrastructure** - either cloud GPUs or on-premise hardware, and that's a significant cost. Set up a proper model registry and model serving infrastructure. Most importantly, **monitor for data drift** - track your model's confidence scores and error rates over time.
 
-## 📋 Rules and Gazetteers
+#### 🤖 LLMs
+With LLMs, your prompts are your code, so **version control your prompts** carefully! Build robust **output parsing** because the format can vary - LLMs don't always return exactly what you asked for. **Watch your API costs** closely - at scale, LLM API calls can get expensive fast. And add **guardrails** for weird edge cases where the model might hallucinate or produce unexpected outputs.
 
-- Need **frequent manual updates**
-- When new entities appear, you add them
-- ✅ Good news: *easy to debug and explain!*
-
----
-
-## 📊 Classical ML (CRF)
-
-- Periodic retraining — monthly or quarterly
-- Maintain your **feature pipelines**
-- Set up proper **model versioning**
-
----
-
-## 🧠 Transformers
-
-- Retrain when **domain shifts**
-- Budget for **GPU infrastructure**
-- Set up model registry and serving
-- **Monitor for data drift!**
-
----
-
-## 🤖 LLMs
-
-- Version control your **prompts!**
-- Build robust **output parsing**
-- Watch your **API costs**
-- Add **guardrails** for weird edge cases
-
----
-
-## Bottom Line
-
-> Simpler models = simpler maintenance
-> 
-> *But sometimes complexity is worth it!*`
+#### 📌 Bottom Line
+Here's the key insight: **simpler models mean simpler maintenance.** A CRF running on CPU is much easier to maintain than a transformer cluster. But sometimes the accuracy improvement is worth the operational complexity. Make this tradeoff consciously based on your team's capacity and the business requirements.`
             },
             {
           id: 19,
@@ -2446,78 +1823,28 @@ Each approach has different maintenance needs.
               ),
               backgroundColor: '#16213e',
               notes: `# Deployment Tips
+**Final tips for production!** These come from real-world experience building NER systems at scale. Let me share six battle-tested lessons.
 
-**Final tips for production!**
+#### 🔗 Tip 1: Combine Methods!
+**Hybrid approaches win.** The best production NER systems I've seen combine multiple approaches. Use rules to catch known patterns perfectly - things like specific product codes, date formats, or well-defined entities. Then use ML to handle the fuzzy stuff where patterns aren't so clear. Together they perform better than either alone. Rules give you precision on known cases, ML gives you coverage on unknown cases.
 
-*These come from real-world experience.*
+#### 🔄 Tip 2: Add Entity Linking!
+Don't just find entities - **normalize them!** The same entity can appear in many forms. "NYC", "New York City", "New York, NY", "The Big Apple" - these should all map to the same canonical entity ID. This is called entity linking, and it's incredibly valuable for downstream applications. Link to knowledge bases like Wikidata when possible, or build your own internal entity database.
 
----
+#### 📈 Tip 3: Monitor for Drift!
+Language changes over time, but your model stays frozen. New terms emerge, usage patterns shift, new entities appear. **Track your prediction confidence** over time - if average confidence is dropping, your model might be drifting. Flag uncertain outputs for **human review** so you can catch problems early and collect data for retraining.
 
-## 🔗 Tip 1: Combine Methods!
+#### 🔒 Tip 4: Privacy Compliance!
+**PII detection is serious business.** If you're extracting person names, locations, or other personally identifiable information, you're touching GDPR, HIPAA, CCPA, and other privacy regulations. Make sure you understand the compliance requirements in your domain. For sensitive data, consider **on-premise deployment** rather than cloud APIs to keep data within your security perimeter.
 
-**Hybrid approaches win.**
+#### ⚡ Tip 5: Quantize for Edge!
+**INT8 quantization is magic** for edge deployment. You can often get 4x smaller model size with almost the same accuracy - we're talking 1-2% accuracy drop for 4x speedup. This is essential for mobile apps, edge devices, or any scenario with limited compute. Modern frameworks like ONNX and TensorRT make this easy.
 
-- Rules catch known patterns *perfectly*
-- ML handles the fuzzy stuff
-
-*Together? Better than either alone.*
-
----
-
-## 🔄 Tip 2: Add Entity Linking!
-
-Don't just find entities... **normalize them!**
-
-"NYC" and "New York City" should map to same ID.
-
-*Link to knowledge bases when possible.*
-
----
-
-## 📈 Tip 3: Monitor for Drift!
-
-Language changes. Your model doesn't.
-
-- Track **prediction confidence**
-- Flag uncertain outputs for **human review**
-
----
-
-## 🔒 Tip 4: Privacy Compliance!
-
-**PII detection is serious business.**
-
-GDPR, HIPAA, CCPA...
-
-*Consider on-premise for sensitive data.*
-
----
-
-## ⚡ Tip 5: Quantize for Edge!
-
-**INT8 quantization is magic.**
-
-4x smaller, almost same accuracy.
-
-*Essential for mobile and edge devices.*
-
----
-
-## 🧪 Tip 6: Test Extensively!
-
-- Build **diverse test sets**
-- Include weird **edge cases**
-- Test **adversarial examples**
-
----
+#### 🧪 Tip 6: Test Extensively!
+Build **diverse test sets** that cover all your entity types and use cases. Don't just test on clean data - include weird **edge cases** like text with typos, unusual formatting, or multilingual content. Test **adversarial examples** where entities are intentionally confusing. Your test set should be harder than production data.
 
 # 🎉 And that's a wrap!
-
-You now know everything about NER approaches.
-
-**Go build something amazing!**
-
-*Any questions?*`
+You now know everything about NER approaches - from simple rules to cutting-edge LLMs. You know when to use each one, what data you need, how fast they run, and how to maintain them. **Go build something amazing!** Any questions?`
         }
       ]
     }
