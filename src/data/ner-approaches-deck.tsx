@@ -16,6 +16,7 @@ export const nerApproachesDeck: Deck = {
         {
           id: 1,
           title: 'Named Entity Recognition Approaches',
+          center: true,
           content: (
             <div style={{ textAlign: 'left' }}>
               <p style={{ fontSize: '1.1em', marginTop: '30px' }}>
@@ -53,7 +54,49 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: 'Title slide introducing 11 NER approaches across different model types'
+          notes: `Hey everyone! Welcome! [pause]
+
+Today we're going to explore something really cool.
+
+Eleven different ways to build NER systems!
+
+[pause]
+
+Quick refresher. What is NER? [pause]
+
+NER stands for Named Entity Recognition.
+
+It's teaching computers to find important things in text.
+
+Names. Places. Companies. Dates.
+
+[write on screen: "Apple opened a store in Tokyo"]
+
+In this sentence... [pause]
+
+"Apple" is a company.
+
+"Tokyo" is a location.
+
+NER finds and labels these automatically!
+
+[pause]
+
+Now... there's not just ONE way to do NER.
+
+There are MANY approaches! [pause]
+
+Old-school rules. Dictionaries. Machine learning. Deep learning. Even ChatGPT!
+
+Today I'll show you eleven of them.
+
+From simplest to most advanced.
+
+[pause]
+
+By the end... you'll know which one to pick for YOUR project.
+
+Let's dive in!`
         },
         {
           id: 2,
@@ -113,7 +156,53 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#16213e',
-          notes: 'Table of contents showing all 11 NER approaches plus summary'
+          notes: `Here's our roadmap. [pause]
+
+Eleven approaches. Plus a summary at the end.
+
+[point to the list]
+
+Let me group them for you. [pause]
+
+[write on screen: "Simple: Rules, Dictionary"]
+
+First two are simple. No machine learning needed.
+
+[write on screen: "Classical ML: TF-IDF, HMM, CRF"]
+
+Next three use classical machine learning.
+
+These were popular before deep learning.
+
+[write on screen: "Neural: BiLSTM, CNN+BiLSTM, spaCy"]
+
+Then we have neural networks.
+
+These learn patterns automatically.
+
+[write on screen: "Transformers: BERT, RoBERTa, DistilBERT"]
+
+Next... the transformers. [pause]
+
+These are the current state-of-the-art.
+
+Very powerful!
+
+[write on screen: "LLMs: Zero-shot NER"]
+
+And finally... Large Language Models.
+
+Like ChatGPT!
+
+[pause]
+
+We'll go through each one.
+
+I'll explain when to use it.
+
+And when NOT to use it.
+
+Ready? Let's start with the simplest approach!`
         }
       ]
     },
@@ -172,7 +261,79 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0f3460',
-          notes: 'Approach 1: Rule-based pattern matching using regexes and heuristics'
+          notes: `Approach number one! [pause]
+
+Rule-Based Pattern Matching.
+
+This is the simplest method. [pause]
+
+No AI. No training. Just rules!
+
+[pause]
+
+What kind of rules? [pause]
+
+[write on screen: "If word starts with capital letter → might be a name"]
+
+Simple patterns like this.
+
+Or regular expressions. [pause]
+
+[write on screen: "Email pattern: xxx@xxx.com"]
+
+You write: "Find anything that looks like an email."
+
+The computer follows your rule exactly.
+
+[pause]
+
+Let me show you a regex example. [pause]
+
+[write on screen: "[A-Z][a-z]+ [A-Z][a-z]+"]
+
+This pattern says: Capital letter, lowercase letters, space, capital, lowercase.
+
+That matches "Tim Cook" or "New York"!
+
+[pause]
+
+When should you use this? [pause]
+
+When you have very structured data.
+
+Dates. Phone numbers. Email addresses. IDs.
+
+Things with predictable formats!
+
+[pause]
+
+[point to Pros]
+
+The good stuff:
+
+It's transparent. You know exactly what it does.
+
+It's fast. Super fast.
+
+No training data needed!
+
+[point to Cons]
+
+The problems:
+
+It breaks easily. [pause]
+
+"Tim Cook" works. But "TIM COOK" fails.
+
+You have to think of EVERY variation.
+
+High maintenance!
+
+[pause]
+
+Think of it like a recipe. [pause]
+
+Very precise. But if you miss one ingredient... it fails!`
         }
       ]
     },
@@ -229,7 +390,75 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: 'Approach 2: Dictionary and gazetteer lookup for known entities'
+          notes: `Now that we've seen rules... let's try something similar. [pause]
+
+Approach two: Dictionary Lookup.
+
+Also called "Gazetteer" lookup. [pause]
+
+What's a gazetteer? [pause]
+
+Just a fancy word for "a list of known things."
+
+[pause]
+
+Here's the idea. [pause]
+
+[write on screen: "Dictionary of cities: Tokyo, Paris, London..."]
+
+You create a list of all cities.
+
+When the computer sees "Tokyo" in text...
+
+It checks: "Is Tokyo in my city list? Yes! → Label it CITY."
+
+[pause]
+
+Simple, right? [ask audience]
+
+[pause]
+
+This is great for known entities. [pause]
+
+Product catalogs. Country names. Disease names.
+
+Things that don't change much.
+
+[pause]
+
+[point to Pros]
+
+Why it's good:
+
+Very high precision for known things.
+
+Easy to update. Just add to the list!
+
+Works in any language... if you have the dictionary.
+
+[point to Cons]
+
+The problems:
+
+It can't find NEW things. [pause]
+
+If "SpaceX" isn't in your list... you miss it.
+
+Also... ambiguity! [pause]
+
+[write on screen: "Apple → fruit or company?"]
+
+"Apple" is in your fruit dictionary AND your company dictionary.
+
+Which one is it? You need context!
+
+[pause]
+
+Think of it like a phone book. [pause]
+
+Great for finding people you know.
+
+Useless for finding strangers!`
         }
       ]
     },
@@ -287,7 +516,81 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#16213e',
-          notes: 'Approach 3: TF-IDF based classifier approach with traditional ML'
+          notes: `Now we're entering machine learning territory! [pause]
+
+Approach three: TF-IDF plus a Classifier.
+
+[pause]
+
+What is TF-IDF? [pause]
+
+[write on screen: "TF-IDF = Term Frequency × Inverse Document Frequency"]
+
+Don't worry about the math. [pause]
+
+It just means: "How important is this word?"
+
+Common words like "the" get low scores.
+
+Special words like "Microsoft" get high scores.
+
+[pause]
+
+Here's how it works for NER. [pause]
+
+Step 1: Turn each word into numbers using TF-IDF.
+
+Step 2: Feed those numbers to a classifier.
+
+Step 3: The classifier predicts: PERSON? ORG? LOCATION? NONE?
+
+[pause]
+
+[write on screen: "Classifier examples: Logistic Regression, SVM"]
+
+These are old-school classifiers.
+
+Fast. Simple. Interpretable.
+
+[pause]
+
+When should you use this? [pause]
+
+As a quick baseline. [pause]
+
+When you have limited compute.
+
+When you need something lightweight.
+
+[pause]
+
+[point to Pros]
+
+The good stuff:
+
+Very fast to train.
+
+You can see which features matter.
+
+Runs on any laptop!
+
+[point to Cons]
+
+The problems:
+
+Each word is predicted independently. [pause]
+
+No context! [pause]
+
+"New" and "York" are separate. The model doesn't know they're one entity.
+
+Also... you need to engineer features manually.
+
+[pause]
+
+This is a good starting point.
+
+But modern methods are much better!`
         }
       ]
     },
@@ -343,7 +646,77 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0f3460',
-          notes: 'Approach 4: Hidden Markov Model for sequence tagging'
+          notes: `Approach four: Hidden Markov Models. [pause]
+
+HMM for short.
+
+This is a classic! Taught in every NLP course. [pause]
+
+[pause]
+
+What's the big idea? [pause]
+
+HMM thinks about SEQUENCES. [pause]
+
+Not just one word... but the whole sentence!
+
+[write on screen: "Word → Tag → Next Tag → Next Word"]
+
+It models: "What tag is likely AFTER this tag?"
+
+[pause]
+
+Let me give you an analogy. [pause]
+
+Weather prediction! [pause]
+
+[write on screen: "Sunny → 70% stays Sunny, 30% becomes Rainy"]
+
+If it's sunny today... probably sunny tomorrow too.
+
+HMM works the same way for tags!
+
+[write on screen: "B-PERSON → 80% followed by I-PERSON"]
+
+If we start a person name... probably still in a person name!
+
+[pause]
+
+When to use HMM? [pause]
+
+Mostly for learning! It's a great educational baseline.
+
+Low-resource scenarios where you have very little data.
+
+[pause]
+
+[point to Pros]
+
+The good stuff:
+
+Fast and efficient.
+
+Handles sequences naturally.
+
+Probabilistic. Gives you confidence scores!
+
+[point to Cons]
+
+The problems:
+
+Makes strong assumptions. [pause]
+
+"Each word only depends on its tag."
+
+That's too simple for real text!
+
+Limited features. Can't use modern tricks.
+
+[pause]
+
+HMM was state-of-the-art in the 90s.
+
+Now we have better options. But good to know!`
         }
       ]
     },
@@ -400,7 +773,82 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: 'Approach 5: CRF for discriminative sequence labeling'
+          notes: `Now that we've seen HMM... here's its smarter cousin. [pause]
+
+Approach five: Conditional Random Fields.
+
+CRF! [pause]
+
+This was THE method before deep learning. [pause]
+
+[pause]
+
+What's different from HMM? [pause]
+
+[write on screen: "HMM: Generative (models everything)"]
+[write on screen: "CRF: Discriminative (focuses on the task)"]
+
+HMM tries to model the whole world.
+
+CRF only focuses on: "Given this text, what are the tags?"
+
+That's more efficient!
+
+[pause]
+
+The big win? [pause]
+
+You can add LOTS of features! [pause]
+
+[write on screen: "Features: word shape, prefix, suffix, neighbors..."]
+
+Is the word capitalized?
+
+Does it end in "-tion"?
+
+What's the word before it?
+
+CRF uses all of this!
+
+[pause]
+
+When to use CRF? [pause]
+
+When you have small to medium data.
+
+When you want a solid non-neural baseline.
+
+When interpretability matters!
+
+[pause]
+
+[point to Pros]
+
+The good stuff:
+
+Captures label dependencies. [pause]
+
+"B-PERSON should be followed by I-PERSON, not B-ORG."
+
+Very stable and well-understood.
+
+[point to Cons]
+
+The problems:
+
+You have to engineer features manually. [pause]
+
+Takes time and expertise!
+
+Also... limited context. Can't see the whole document.
+
+[pause]
+
+CRF is still used today! [pause]
+
+Often combined with neural networks.
+
+We'll see that next!`
         }
       ]
     },
@@ -458,7 +906,73 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#16213e',
-          notes: 'Approach 6: BiLSTM + CRF neural sequence tagger'
+          notes: `Now we're entering the neural network era! [pause]
+
+Approach six: BiLSTM plus CRF.
+
+[pause]
+
+This was the breakthrough architecture. [pause]
+
+It dominated NER from around 2015 to 2018!
+
+[pause]
+
+What is BiLSTM? [pause]
+
+[write on screen: "BiLSTM = Bidirectional Long Short-Term Memory"]
+
+Let me break that down. [pause]
+
+LSTM is a neural network that remembers sequences.
+
+"Bi" means bidirectional. It reads left-to-right AND right-to-left!
+
+[draw on screen: arrows going both directions through a sentence]
+
+So it knows what comes BEFORE and AFTER each word.
+
+[pause]
+
+Why add CRF on top? [pause]
+
+BiLSTM predicts each word independently.
+
+CRF makes sure the sequence makes sense. [pause]
+
+[write on screen: "BiLSTM says O, B-PER, I-ORG ← CRF fixes this!"]
+
+CRF says: "Wait, I-ORG can't follow B-PER. Let me fix that."
+
+Best of both worlds!
+
+[pause]
+
+When to use this? [pause]
+
+General-purpose NER with moderate data.
+
+When you don't have huge compute budgets.
+
+Multilingual scenarios!
+
+[pause]
+
+[point to Pros]
+
+Learns features automatically! No manual engineering.
+
+Good accuracy with reasonable compute.
+
+[point to Cons]
+
+Needs GPU for training.
+
+Needs more data than CRF alone.
+
+[pause]
+
+This was the gold standard... until transformers arrived!`
         }
       ]
     },
@@ -516,7 +1030,71 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0f3460',
-          notes: 'Approach 7: CNN + BiLSTM for character-aware NER'
+          notes: `Approach seven: CNN plus BiLSTM. [pause]
+
+This adds one more ingredient to the recipe!
+
+[pause]
+
+What's a CNN? [pause]
+
+[write on screen: "CNN = Convolutional Neural Network"]
+
+CNNs are great at finding patterns in small windows.
+
+Here... we use them on CHARACTERS. [pause]
+
+[write on screen: "M-i-c-r-o-s-o-f-t → character patterns"]
+
+The CNN looks at character patterns.
+
+It learns: "Words ending in -soft might be companies."
+
+[pause]
+
+Why does this help? [pause]
+
+Out-of-vocabulary words! [pause]
+
+[write on screen: "New word: 'Microsift' (typo)"]
+
+BiLSTM alone might not know "Microsift."
+
+But the character CNN sees it looks like "Microsoft."
+
+Handles typos! Handles rare words! Handles morphology!
+
+[pause]
+
+When to use this? [pause]
+
+Noisy text. Social media. User-generated content.
+
+Languages with rich morphology. German. Turkish. Finnish.
+
+Domains with lots of new/rare words.
+
+[pause]
+
+[point to Pros]
+
+Robust to typos and variants.
+
+Captures spelling patterns.
+
+Strong non-transformer baseline!
+
+[point to Cons]
+
+More complex to tune.
+
+Slower than plain BiLSTM.
+
+Still not as good as transformers.
+
+[pause]
+
+This was the peak of pre-transformer NER!`
         }
       ]
     },
@@ -575,7 +1153,77 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: 'Approach 8: spaCy production-ready NER pipeline'
+          notes: `Approach eight: spaCy! [pause]
+
+This is the practical engineer's choice. [pause]
+
+[pause]
+
+What is spaCy? [pause]
+
+[write on screen: "spaCy = Industrial-strength NLP library"]
+
+It's a Python library for NLP.
+
+Fast. Production-ready. Well-documented.
+
+[pause]
+
+[demo]
+
+Let me show you how easy it is. [pause]
+
+[write on screen: "nlp = spacy.load('en_core_web_sm')"]
+[write on screen: "doc = nlp('Apple is in California')"]
+[write on screen: "for ent in doc.ents: print(ent.text, ent.label_)"]
+
+Three lines of code! [pause]
+
+You get: Apple → ORG, California → GPE
+
+Done!
+
+[pause]
+
+Under the hood? [pause]
+
+spaCy uses neural networks.
+
+Transition-based parsing with CNNs.
+
+Or you can use transformer backends!
+
+[pause]
+
+When to use spaCy? [pause]
+
+Rapid prototyping. Quick deployment.
+
+When you need a working pipeline NOW.
+
+Production systems that need speed!
+
+[pause]
+
+[point to Pros]
+
+Incredibly fast inference.
+
+Easy to customize and extend.
+
+Great documentation and community!
+
+[point to Cons]
+
+Accuracy depends on domain fit.
+
+Custom entities need training data.
+
+Black box for pretrained models.
+
+[pause]
+
+If you're building a product... start with spaCy!`
         }
       ]
     },
@@ -632,7 +1280,87 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#16213e',
-          notes: 'Approach 9: BERT fine-tuned for high-accuracy NER'
+          notes: `Now we enter the transformer era! [pause]
+
+Approach nine: BERT fine-tuned for NER.
+
+[pause]
+
+This changed everything. [pause]
+
+BERT came out in 2018 and broke all the records!
+
+[pause]
+
+What is BERT? [pause]
+
+[write on screen: "BERT = Bidirectional Encoder Representations from Transformers"]
+
+It's a neural network pretrained on MASSIVE text.
+
+Wikipedia. Books. The entire internet!
+
+It learns the patterns of language.
+
+[pause]
+
+How do we use it for NER? [pause]
+
+[write on screen: "BERT → Token Classification Head"]
+
+We add a simple layer on top.
+
+For each word: predict PERSON, ORG, LOC, or NONE.
+
+Then we "fine-tune" on our NER data!
+
+[pause]
+
+Why is this so powerful? [pause]
+
+BERT understands CONTEXT deeply. [pause]
+
+[write on screen: "Apple: fruit or company?"]
+
+BERT sees the whole sentence.
+
+"I ate an Apple" → fruit.
+
+"I bought Apple stock" → company.
+
+Magic!
+
+[pause]
+
+When to use BERT? [pause]
+
+When you need high accuracy.
+
+When you have 5K-50K labeled examples.
+
+Domain-specific BERT exists too! BioBERT. FinBERT. LegalBERT.
+
+[pause]
+
+[point to Pros]
+
+State-of-the-art accuracy.
+
+Strong context understanding.
+
+Transfers well to new domains!
+
+[point to Cons]
+
+Compute-heavy. Needs GPU.
+
+Slower inference than classical methods.
+
+Subword alignment can be tricky.
+
+[pause]
+
+This is the current gold standard!`
         }
       ]
     },
@@ -691,7 +1419,76 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0f3460',
-          notes: 'Approach 10: RoBERTa/DistilBERT for optimized performance'
+          notes: `Approach ten: RoBERTa and DistilBERT. [pause]
+
+These are BERT's optimized cousins!
+
+[pause]
+
+Let's start with RoBERTa. [pause]
+
+[write on screen: "RoBERTa = Robustly Optimized BERT"]
+
+Same architecture as BERT.
+
+But trained BETTER. More data. Longer. Smarter tricks.
+
+Result? Even higher accuracy!
+
+[pause]
+
+Now DistilBERT. [pause]
+
+[write on screen: "DistilBERT = Distilled BERT"]
+
+This one is SMALLER. [pause]
+
+40% fewer parameters.
+
+60% faster!
+
+But keeps 97% of BERT's accuracy.
+
+[pause]
+
+How? Knowledge distillation. [pause]
+
+The big model "teaches" the small model.
+
+The small model learns to mimic the big one!
+
+[pause]
+
+When to use which? [pause]
+
+[write on screen: "Need best accuracy? → RoBERTa"]
+[write on screen: "Need speed/edge deployment? → DistilBERT"]
+
+RoBERTa for research. Maximum quality.
+
+DistilBERT for production. Real-time systems. Mobile. Edge.
+
+[pause]
+
+[point to Pros]
+
+RoBERTa: best accuracy.
+
+DistilBERT: great speed-accuracy tradeoff.
+
+Both well-supported in HuggingFace!
+
+[point to Cons]
+
+Still need GPUs for training.
+
+DistilBERT slightly less accurate.
+
+May need quantization for edge.
+
+[pause]
+
+These are your production transformers!`
         }
       ]
     },
@@ -749,7 +1546,83 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: 'Approach 11: LLM zero-shot NER for rapid prototyping'
+          notes: `And finally... the newest approach! [pause]
+
+Approach eleven: Large Language Models.
+
+Zero-shot NER! [pause]
+
+[pause]
+
+What does zero-shot mean? [pause]
+
+[write on screen: "Zero-shot = No training data!"]
+
+You don't train anything.
+
+You just ASK the model to do NER!
+
+[pause]
+
+[write on screen: "Prompt: Extract person and org names from: ..."]
+
+You give it a prompt like this.
+
+The LLM reads it and responds with the entities.
+
+Just like chatting with ChatGPT!
+
+[pause]
+
+This is incredibly powerful. [pause]
+
+New entity types? Just describe them in the prompt.
+
+New language? Many LLMs are multilingual.
+
+Complex instructions? LLMs can follow them!
+
+[pause]
+
+[ask audience] Sounds perfect, right?
+
+[pause]
+
+But... there are problems. [pause]
+
+[point to Cons]
+
+Hallucinations. Sometimes it makes things up.
+
+Expensive. API calls cost money. High latency.
+
+Privacy concerns. You're sending data to an API.
+
+Output parsing. The format might vary.
+
+[pause]
+
+When to use LLMs for NER? [pause]
+
+Rapid prototyping. Testing ideas fast.
+
+When you have NO training data.
+
+Complex, changing schemas.
+
+[pause]
+
+[point to Pros]
+
+No labeled data needed!
+
+Flexible. Can handle new entity types easily.
+
+Can reason and follow complex instructions.
+
+[pause]
+
+This is the future... but use with caution!`
         }
       ]
     },
@@ -842,7 +1715,91 @@ export const nerApproachesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#16213e',
-          notes: 'Summary and comparison of all 11 NER approaches with selection guide'
+          notes: `Alright! We've covered all eleven approaches. [pause]
+
+Let's put it all together!
+
+[pause]
+
+[write on screen: "Decision tree for NER"]
+
+Here's how to choose. [pause]
+
+Question 1: Do you have training data? [pause]
+
+No data? → Rules, Dictionary, or Zero-shot LLM.
+
+[pause]
+
+Question 2: How much data? [pause]
+
+Small data (1K-5K)? → CRF or spaCy.
+
+Medium data (5K-50K)? → BiLSTM+CRF or BERT.
+
+Large data (50K+)? → Go full transformer!
+
+[pause]
+
+Question 3: What about speed? [pause]
+
+[write on screen: "Speed ranking"]
+
+Fastest: Rules, Dictionary. Under 1ms.
+
+Fast: CRF, spaCy. 5-20ms.
+
+Medium: BiLSTM, DistilBERT. 20-100ms.
+
+Slow: BERT, RoBERTa. 50-200ms.
+
+Slowest: LLMs. Seconds!
+
+[pause]
+
+[point to Quick Selection Guide]
+
+Let me summarize. [pause]
+
+Strict formats? → Rules.
+
+Known entities? → Dictionary.
+
+Small data, need accuracy? → CRF.
+
+General purpose? → spaCy or BiLSTM.
+
+Best accuracy? → BERT or RoBERTa.
+
+No data, need flexibility? → LLM.
+
+[pause]
+
+[point to Deployment Tips]
+
+Final tips! [pause]
+
+Combine methods! Rules + ML works great.
+
+Add entity linking for normalization.
+
+Monitor for drift. Text changes over time.
+
+Think about privacy. Especially for PII!
+
+[pause]
+
+And that's it! [pause]
+
+You now know eleven ways to do NER.
+
+[ask audience] Any questions?
+
+[pause]
+
+Thank you so much!
+
+Good luck with your NER projects!`
         }
       ]
     }
