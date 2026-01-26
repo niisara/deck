@@ -49,16 +49,16 @@ export const nerApproachesDeck: Deck = {
                 </div>
               </div>
               <p style={{ fontSize: '0.8em', marginTop: '40px', color: '#aaa' }}>
-                Prepared by: Genspark AI Slides • Date: 2025-11-07
+                Prepared by: Nisar A • Date: 2026-Jan-1
               </p>
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: `Hey everyone! Welcome! [pause]
+          notes: `Hey there! Thanks for joining me today! [pause]
 
-Today we're going to explore something really cool.
+Super excited to dive into this with you.
 
-Eleven different ways to build NER systems!
+We're gonna explore eleven different ways to build NER systems!
 
 [pause]
 
@@ -323,6 +323,8 @@ The problems:
 
 It breaks easily. [pause]
 
+[write on screen:]
+
 "Tim Cook" works. But "TIM COOK" fails.
 
 You have to think of EVERY variation.
@@ -445,8 +447,6 @@ It can't find NEW things. [pause]
 If "SpaceX" isn't in your list... you miss it.
 
 Also... ambiguity! [pause]
-
-[write on screen: "Apple → fruit or company?"]
 
 "Apple" is in your fruit dictionary AND your company dictionary.
 
