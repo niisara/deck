@@ -12,6 +12,7 @@ import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
 import { loadTheme } from '../utils/themeLoader';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { marked } from 'marked';
 import './DeckPage.css';
 
 // Helper function to lighten or darken a color
@@ -314,9 +315,10 @@ function DeckPage() {
                     )}
                     {slide.notes && (
                       <aside className="notes">
-                        <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', margin: 0 }}>
-                          {slide.notes}
-                        </pre>
+                        <div 
+                          style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', margin: 0 }}
+                          dangerouslySetInnerHTML={{ __html: marked(slide.notes) }}
+                        />
                       </aside>
                     )}
                   </section>
@@ -348,9 +350,10 @@ function DeckPage() {
                 )}
                 {slide.notes && (
                   <aside className="notes">
-                    <pre style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', margin: 0 }}>
-                      {slide.notes}
-                    </pre>
+                    <div 
+                      style={{ whiteSpace: 'pre-wrap', fontFamily: 'inherit', margin: 0 }}
+                      dangerouslySetInnerHTML={{ __html: marked(slide.notes) }}
+                    />
                   </aside>
                 )}
               </section>
