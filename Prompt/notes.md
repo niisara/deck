@@ -14,11 +14,11 @@ Include delivery cues like: [pause], [demo], [ask audience].
 
 Also include cues where I should draw a formula or write text on screen using a pen, like:
 
-[draw formula: …]
+draw formula: Mermaid diagrams
 
-Formula example: E = mc^2
-
-[write on screen: …]
+actual Mermaid diagrams
 
 etc
+
+Also use proper markdown formatting for better readability.
 

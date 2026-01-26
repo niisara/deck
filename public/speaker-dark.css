@@ -56,3 +56,24 @@ body[data-speaker-layout="notes-only"] #speaker-controls {
     scroll-behavior: smooth !important;
     transition: scroll 0.3s ease !important;
 }
+
+/* Mermaid diagram styles for speaker notes */
+.mermaid-diagram {
+    background: rgba(30, 30, 30, 0.5) !important;
+    border-radius: 8px !important;
+    padding: 15px !important;
+    margin: 15px 0 !important;
+    overflow-x: auto !important;
+}
+
+.mermaid-diagram svg {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+/* Fix mermaid text colors for dark theme */
+.mermaid-diagram .nodeLabel,
+.mermaid-diagram .edgeLabel,
+.mermaid-diagram text {
+    fill: #e0e0e0 !important;
+}

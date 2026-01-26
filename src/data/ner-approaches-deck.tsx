@@ -62,7 +62,26 @@ Quick refresher. What is NER? [pause]
 NER stands for Named Entity Recognition.
 It's teaching computers to find important things in text.
 Names. Places. Companies. Dates.
-[write on screen: "Apple opened a store in Tokyo"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Input["📝 Input Text"]
+        T["Apple opened a store in Tokyo"]
+    end
+    subgraph NER["🔍 NER Process"]
+        T --> A["Apple"]
+        T --> S["opened a store in"]
+        T --> K["Tokyo"]
+    end
+    subgraph Output["🏷️ Labeled Entities"]
+        A --> |ORG| O1["🏢 Apple"]
+        S --> |O| O2["---"]
+        K --> |LOC| O3["📍 Tokyo"]
+    end
+    style O1 fill:#4fc3f7,color:#000
+    style O3 fill:#81c784,color:#000
+\`\`\`
+
 In this sentence... [pause]
 "Apple" is a company.
 "Tokyo" is a location.
@@ -139,19 +158,46 @@ Let's dive in!`
 Eleven approaches. Plus a summary at the end.
 [point to the list]
 Let me group them for you. [pause]
-[write on screen: "Simple: Rules, Dictionary"]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph Simple["📋 Simple - No ML"]
+        R["1. Rules"]
+        D["2. Dictionary"]
+    end
+    subgraph Classical["📊 Classical ML"]
+        TF["3. TF-IDF"]
+        HMM["4. HMM"]
+        CRF["5. CRF"]
+    end
+    subgraph Neural["🧠 Neural Networks"]
+        BI["6. BiLSTM"]
+        CNN["7. CNN+BiLSTM"]
+        SP["8. spaCy"]
+    end
+    subgraph Trans["🤖 Transformers"]
+        BERT["9. BERT"]
+        ROB["10. RoBERTa/DistilBERT"]
+    end
+    subgraph LLM["💡 LLMs"]
+        ZS["11. Zero-shot"]
+    end
+    Simple --> Classical --> Neural --> Trans --> LLM
+    style Simple fill:#4fc3f7,color:#000
+    style Classical fill:#ffb74d,color:#000
+    style Neural fill:#ba68c8,color:#000
+    style Trans fill:#f06292,color:#000
+    style LLM fill:#81c784,color:#000
+\`\`\`
+
 First two are simple. No machine learning needed.
-[write on screen: "Classical ML: TF-IDF, HMM, CRF"]
 Next three use classical machine learning.
 These were popular before deep learning.
-[write on screen: "Neural: BiLSTM, CNN+BiLSTM, spaCy"]
 Then we have neural networks.
 These learn patterns automatically.
-[write on screen: "Transformers: BERT, RoBERTa, DistilBERT"]
 Next... the transformers. [pause]
 These are the current state-of-the-art.
 Very powerful!
-[write on screen: "LLMs: Zero-shot NER"]
 And finally... Large Language Models.
 Like ChatGPT!
 [pause]
@@ -223,16 +269,32 @@ This is the simplest method. [pause]
 No AI. No training. Just rules!
 [pause]
 What kind of rules? [pause]
-[write on screen: "If word starts with capital letter → might be a name"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Rules["📋 Pattern Rules"]
+        R1["Capital Letter → Name?"]
+        R2["xxx@xxx.com → Email"]
+        R3["[A-Z][a-z]+ [A-Z][a-z]+"]
+    end
+    subgraph Match["✅ Matches"]
+        M1["Tim Cook"]
+        M2["user@email.com"]
+        M3["New York"]
+    end
+    R1 --> M1
+    R2 --> M2
+    R3 --> M3
+    style Rules fill:#4fc3f7,color:#000
+    style Match fill:#81c784,color:#000
+\`\`\`
+
 Simple patterns like this.
 Or regular expressions. [pause]
-[write on screen: "Email pattern: xxx@xxx.com"]
 You write: "Find anything that looks like an email."
 The computer follows your rule exactly.
 [pause]
-Let me show you a regex example. [pause]
-[write on screen: "[A-Z][a-z]+ [A-Z][a-z]+"]
-This pattern says: Capital letter, lowercase letters, space, capital, lowercase.
+The regex pattern says: Capital letter, lowercase letters, space, capital, lowercase.
 That matches "Tim Cook" or "New York"!
 [pause]
 When should you use this? [pause]
@@ -248,7 +310,17 @@ No training data needed!
 [point to Cons]
 The problems:
 It breaks easily. [pause]
-[write on screen:]
+
+\`\`\`mermaid
+flowchart LR
+    P["Pattern: [A-Z][a-z]+"] --> |✅| W1["Tim Cook"]
+    P --> |❌| W2["TIM COOK"]
+    P --> |❌| W3["tim cook"]
+    style W1 fill:#81c784,color:#000
+    style W2 fill:#ef5350,color:#000
+    style W3 fill:#ef5350,color:#000
+\`\`\`
+
 "Tim Cook" works. But "TIM COOK" fails.
 You have to think of EVERY variation.
 High maintenance!
@@ -318,7 +390,24 @@ What's a gazetteer? [pause]
 Just a fancy word for "a list of known things."
 [pause]
 Here's the idea. [pause]
-[write on screen: "Dictionary of cities: Tokyo, Paris, London..."]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Dict["📚 City Dictionary"]
+        D1["Tokyo"]
+        D2["Paris"]
+        D3["London"]
+        D4["..."]
+    end
+    subgraph Process["🔍 Lookup"]
+        T["Text: 'Visit Tokyo'"] --> Q{"Tokyo in list?"}
+        Q --> |"Yes ✅"| L["Label: CITY"]
+    end
+    Dict --> Q
+    style Dict fill:#81c784,color:#000
+    style L fill:#4fc3f7,color:#000
+\`\`\`
+
 You create a list of all cities.
 When the computer sees "Tokyo" in text...
 It checks: "Is Tokyo in my city list? Yes! → Label it CITY."
@@ -339,6 +428,18 @@ The problems:
 It can't find NEW things. [pause]
 If "SpaceX" isn't in your list... you miss it.
 Also... ambiguity! [pause]
+
+\`\`\`mermaid
+flowchart TB
+    A["'Apple' in text"] --> F{"Which dictionary?"}
+    F --> |"Fruit Dict"| FR["🍎 Fruit"]
+    F --> |"Company Dict"| CO["🏢 Company"]
+    F --> |"???"| Q["❓ Need Context!"]
+    style FR fill:#81c784,color:#000
+    style CO fill:#4fc3f7,color:#000
+    style Q fill:#ffb74d,color:#000
+\`\`\`
+
 "Apple" is in your fruit dictionary AND your company dictionary.
 Which one is it? You need context!
 [pause]
@@ -406,18 +507,42 @@ Useless for finding strangers!`
 Approach three: TF-IDF plus a Classifier.
 [pause]
 What is TF-IDF? [pause]
-[write on screen: "TF-IDF = Term Frequency × Inverse Document Frequency"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph TFIDF["📊 TF-IDF"]
+        TF["Term Frequency"] 
+        IDF["Inverse Doc Frequency"]
+        TF --- X["×"] --- IDF
+    end
+    subgraph Score["📈 Word Importance"]
+        S1["'the' → 0.01 (low)"]
+        S2["'Microsoft' → 0.89 (high)"]
+    end
+    TFIDF --> Score
+    style S1 fill:#ef5350,color:#fff
+    style S2 fill:#81c784,color:#000
+\`\`\`
+
 Don't worry about the math. [pause]
 It just means: "How important is this word?"
 Common words like "the" get low scores.
 Special words like "Microsoft" get high scores.
 [pause]
 Here's how it works for NER. [pause]
+
+\`\`\`mermaid
+flowchart LR
+    W["Words"] --> T["TF-IDF\nVectorizer"] --> N["Numbers"] --> C["Classifier\n(LogReg/SVM)"] --> P["Predictions\nPERSON/ORG/LOC"]
+    style T fill:#4fc3f7,color:#000
+    style C fill:#ba68c8,color:#000
+    style P fill:#81c784,color:#000
+\`\`\`
+
 Step 1: Turn each word into numbers using TF-IDF.
 Step 2: Feed those numbers to a classifier.
 Step 3: The classifier predicts: PERSON? ORG? LOCATION? NONE?
 [pause]
-[write on screen: "Classifier examples: Logistic Regression, SVM"]
 These are old-school classifiers.
 Fast. Simple. Interpretable.
 [pause]
@@ -502,16 +627,39 @@ This is a classic! Taught in every NLP course. [pause]
 What's the big idea? [pause]
 HMM thinks about SEQUENCES. [pause]
 Not just one word... but the whole sentence!
-[write on screen: "Word → Tag → Next Tag → Next Word"]
+
+\`\`\`mermaid
+stateDiagram-v2
+    [*] --> O: Start
+    O --> O: 85%
+    O --> B_PER: 10%
+    O --> B_LOC: 5%
+    B_PER --> I_PER: 80%
+    B_PER --> O: 20%
+    I_PER --> I_PER: 60%
+    I_PER --> O: 40%
+    B_LOC --> I_LOC: 75%
+    B_LOC --> O: 25%
+    I_LOC --> O: 100%
+\`\`\`
+
 It models: "What tag is likely AFTER this tag?"
 [pause]
 Let me give you an analogy. [pause]
 Weather prediction! [pause]
-[write on screen: "Sunny → 70% stays Sunny, 30% becomes Rainy"]
+
+\`\`\`mermaid
+stateDiagram-v2
+    direction LR
+    Sunny --> Sunny: 70%
+    Sunny --> Rainy: 30%
+    Rainy --> Rainy: 60%
+    Rainy --> Sunny: 40%
+\`\`\`
+
 If it's sunny today... probably sunny tomorrow too.
 HMM works the same way for tags!
-[write on screen: "B-PERSON → 80% followed by I-PERSON"]
-If we start a person name... probably still in a person name!
+If we start a person name (B-PERSON)... probably still in a person name (I-PERSON)!
 [pause]
 When to use HMM? [pause]
 Mostly for learning! It's a great educational baseline.
@@ -593,15 +741,59 @@ CRF! [pause]
 This was THE method before deep learning. [pause]
 [pause]
 What's different from HMM? [pause]
-[write on screen: "HMM: Generative (models everything)"]
-[write on screen: "CRF: Discriminative (focuses on the task)"]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph HMM["🔮 HMM - Generative"]
+        H1["Models P(words, tags)"]
+        H2["Models everything"]
+        H3["Strong assumptions"]
+    end
+    subgraph CRF["🎯 CRF - Discriminative"]
+        C1["Models P(tags | words)"]
+        C2["Focuses on the task"]
+        C3["Rich features"]
+    end
+    HMM ---|"vs"| CRF
+    style HMM fill:#ffb74d,color:#000
+    style CRF fill:#81c784,color:#000
+\`\`\`
+
 HMM tries to model the whole world.
 CRF only focuses on: "Given this text, what are the tags?"
 That's more efficient!
 [pause]
 The big win? [pause]
 You can add LOTS of features! [pause]
-[write on screen: "Features: word shape, prefix, suffix, neighbors..."]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Features["🔧 CRF Features"]
+        F1["word.lower()"]
+        F2["word.isupper()"]
+        F3["word[-3:] suffix"]
+        F4["prev_word"]
+        F5["next_word"]
+        F6["word_shape"]
+    end
+    subgraph Example["📝 'Microsoft'"]
+        E1["microsoft"]
+        E2["False"]
+        E3["oft"]
+        E4["from"]
+        E5["announced"]
+        E6["Xxxxx"]
+    end
+    F1 --> E1
+    F2 --> E2
+    F3 --> E3
+    F4 --> E4
+    F5 --> E5
+    F6 --> E6
+    style Features fill:#ba68c8,color:#000
+    style Example fill:#4fc3f7,color:#000
+\`\`\`
+
 Is the word capitalized?
 Does it end in "-tion"?
 What's the word before it?
@@ -690,17 +882,52 @@ This was the breakthrough architecture. [pause]
 It dominated NER from around 2015 to 2018!
 [pause]
 What is BiLSTM? [pause]
-[write on screen: "BiLSTM = Bidirectional Long Short-Term Memory"]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph Input["📝 Input Sentence"]
+        W1["Tim"] --- W2["Cook"] --- W3["works"] --- W4["at"] --- W5["Apple"]
+    end
+    subgraph BiLSTM["🧠 BiLSTM = Bidirectional LSTM"]
+        direction LR
+        subgraph Forward["→ Forward"]
+            F1[" "] --> F2[" "] --> F3[" "] --> F4[" "] --> F5[" "]
+        end
+        subgraph Backward["← Backward"]
+            B5[" "] --> B4[" "] --> B3[" "] --> B2[" "] --> B1[" "]
+        end
+    end
+    Input --> BiLSTM
+    style Forward fill:#4fc3f7,color:#000
+    style Backward fill:#f06292,color:#000
+\`\`\`
+
 Let me break that down. [pause]
 LSTM is a neural network that remembers sequences.
 "Bi" means bidirectional. It reads left-to-right AND right-to-left!
-[draw on screen: arrows going both directions through a sentence]
 So it knows what comes BEFORE and AFTER each word.
 [pause]
 Why add CRF on top? [pause]
 BiLSTM predicts each word independently.
 CRF makes sure the sequence makes sense. [pause]
-[write on screen: "BiLSTM says O, B-PER, I-ORG ← CRF fixes this!"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph BiLSTM["BiLSTM Output"]
+        P1["O"]
+        P2["B-PER"]
+        P3["I-ORG ❌"]
+    end
+    subgraph CRF["CRF Correction"]
+        C1["O"]
+        C2["B-PER"]
+        C3["I-PER ✅"]
+    end
+    BiLSTM --> |"CRF fixes"| CRF
+    style P3 fill:#ef5350,color:#fff
+    style C3 fill:#81c784,color:#000
+\`\`\`
+
 CRF says: "Wait, I-ORG can't follow B-PER. Let me fix that."
 Best of both worlds!
 [pause]
@@ -778,16 +1005,51 @@ This was the gold standard... until transformers arrived!`
 This adds one more ingredient to the recipe!
 [pause]
 What's a CNN? [pause]
-[write on screen: "CNN = Convolutional Neural Network"]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph CharCNN["🔤 Character CNN"]
+        C["M-i-c-r-o-s-o-f-t"]
+        C --> Conv["Convolution Filters"]
+        Conv --> P["Patterns: '-soft', 'Micro-'"]
+    end
+    subgraph WordEmb["📝 Word Embedding"]
+        W["Microsoft"]
+    end
+    subgraph Combined["🧠 BiLSTM"]
+        B["Combined Features"]
+    end
+    CharCNN --> Combined
+    WordEmb --> Combined
+    style CharCNN fill:#f06292,color:#000
+    style WordEmb fill:#4fc3f7,color:#000
+    style Combined fill:#ba68c8,color:#000
+\`\`\`
+
 CNNs are great at finding patterns in small windows.
 Here... we use them on CHARACTERS. [pause]
-[write on screen: "M-i-c-r-o-s-o-f-t → character patterns"]
 The CNN looks at character patterns.
 It learns: "Words ending in -soft might be companies."
 [pause]
 Why does this help? [pause]
 Out-of-vocabulary words! [pause]
-[write on screen: "New word: 'Microsift' (typo)"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Typo["❓ Unknown Word"]
+        T["Microsift"]
+    end
+    subgraph CharCNN["🔤 Char CNN"]
+        P["Sees: 'Micro-' + '-sift'\nSimilar to 'Microsoft'!"]
+    end
+    subgraph Result["✅ Still Works!"]
+        R["→ ORG"]
+    end
+    Typo --> CharCNN --> Result
+    style Typo fill:#ffb74d,color:#000
+    style Result fill:#81c784,color:#000
+\`\`\`
+
 BiLSTM alone might not know "Microsift."
 But the character CNN sees it looks like "Microsoft."
 Handles typos! Handles rare words! Handles morphology!
@@ -869,15 +1131,39 @@ This was the peak of pre-transformer NER!`
 This is the practical engineer's choice. [pause]
 [pause]
 What is spaCy? [pause]
-[write on screen: "spaCy = Industrial-strength NLP library"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph spaCy["🚀 spaCy Pipeline"]
+        direction TB
+        T["Tokenizer"] --> P["POS Tagger"] --> N["NER"] --> D["Dep Parser"]
+    end
+    I["Input Text"] --> spaCy --> O["Doc Object"]
+    style spaCy fill:#4fc3f7,color:#000
+\`\`\`
+
 It's a Python library for NLP.
 Fast. Production-ready. Well-documented.
 [pause]
 [demo]
 Let me show you how easy it is. [pause]
-[write on screen: "nlp = spacy.load('en_core_web_sm')"]
-[write on screen: "doc = nlp('Apple is in California')"]
-[write on screen: "for ent in doc.ents: print(ent.text, ent.label_)"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Code["🐍 Python Code"]
+        L1["nlp = spacy.load('en_core_web_sm')"]
+        L2["doc = nlp('Apple is in California')"]
+        L3["for ent in doc.ents: print(...)"]
+    end
+    subgraph Output["📤 Result"]
+        O1["Apple → ORG 🏢"]
+        O2["California → GPE 📍"]
+    end
+    Code --> Output
+    style O1 fill:#4fc3f7,color:#000
+    style O2 fill:#81c784,color:#000
+\`\`\`
+
 Three lines of code! [pause]
 You get: Apple → ORG, California → GPE
 Done!
@@ -965,20 +1251,47 @@ This changed everything. [pause]
 BERT came out in 2018 and broke all the records!
 [pause]
 What is BERT? [pause]
-[write on screen: "BERT = Bidirectional Encoder Representations from Transformers"]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph BERT["🤖 BERT = Bidirectional Encoder Representations from Transformers"]
+        direction LR
+        PT["Pre-trained on:\nWikipedia + Books"] --> E["Language\nUnderstanding"]
+    end
+    style BERT fill:#f06292,color:#000
+\`\`\`
+
 It's a neural network pretrained on MASSIVE text.
 Wikipedia. Books. The entire internet!
 It learns the patterns of language.
 [pause]
 How do we use it for NER? [pause]
-[write on screen: "BERT → Token Classification Head"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph Architecture["🏗️ BERT for NER"]
+        I["Input Tokens"] --> B["BERT\nEncoder"] --> H["Classification\nHead"] --> O["B-PER, I-PER,\nB-ORG, O..."]
+    end
+    style B fill:#ba68c8,color:#000
+    style H fill:#4fc3f7,color:#000
+\`\`\`
+
 We add a simple layer on top.
 For each word: predict PERSON, ORG, LOC, or NONE.
 Then we "fine-tune" on our NER data!
 [pause]
 Why is this so powerful? [pause]
 BERT understands CONTEXT deeply. [pause]
-[write on screen: "Apple: fruit or company?"]
+
+\`\`\`mermaid
+flowchart TB
+    A["Apple"] --> Q{"Context?"}
+    Q --> |"I ate an Apple"| F["🍎 Fruit"]
+    Q --> |"I bought Apple stock"| C["🏢 Company"]
+    style F fill:#81c784,color:#000
+    style C fill:#4fc3f7,color:#000
+\`\`\`
+
 BERT sees the whole sentence.
 "I ate an Apple" → fruit.
 "I bought Apple stock" → company.
@@ -1061,13 +1374,39 @@ This is the current gold standard!`
 These are BERT's optimized cousins!
 [pause]
 Let's start with RoBERTa. [pause]
-[write on screen: "RoBERTa = Robustly Optimized BERT"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph RoBERTa["🏆 RoBERTa = Robustly Optimized BERT"]
+        R1["Same architecture"]
+        R2["More training data"]
+        R3["Better hyperparameters"]
+        R4["→ Higher accuracy!"]
+    end
+    style RoBERTa fill:#ba68c8,color:#000
+\`\`\`
+
 Same architecture as BERT.
 But trained BETTER. More data. Longer. Smarter tricks.
 Result? Even higher accuracy!
 [pause]
 Now DistilBERT. [pause]
-[write on screen: "DistilBERT = Distilled BERT"]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph Distil["⚡ DistilBERT = Distilled BERT"]
+        D1["40% fewer parameters"]
+        D2["60% faster"]
+        D3["97% of BERT accuracy"]
+    end
+    subgraph KD["🎓 Knowledge Distillation"]
+        Big["Big BERT\n(Teacher)"] --> |"teaches"| Small["DistilBERT\n(Student)"]
+    end
+    style Distil fill:#4fc3f7,color:#000
+    style Big fill:#f06292,color:#000
+    style Small fill:#81c784,color:#000
+\`\`\`
+
 This one is SMALLER. [pause]
 40% fewer parameters.
 60% faster!
@@ -1078,8 +1417,16 @@ The big model "teaches" the small model.
 The small model learns to mimic the big one!
 [pause]
 When to use which? [pause]
-[write on screen: "Need best accuracy? → RoBERTa"]
-[write on screen: "Need speed/edge deployment? → DistilBERT"]
+
+\`\`\`mermaid
+flowchart LR
+    Q{"What do you need?"}
+    Q --> |"Best accuracy"| R["🏆 RoBERTa"]
+    Q --> |"Speed/Edge"| D["⚡ DistilBERT"]
+    style R fill:#ba68c8,color:#000
+    style D fill:#4fc3f7,color:#000
+\`\`\`
+
 RoBERTa for research. Maximum quality.
 DistilBERT for production. Real-time systems. Mobile. Edge.
 [pause]
@@ -1155,11 +1502,38 @@ Approach eleven: Large Language Models.
 Zero-shot NER! [pause]
 [pause]
 What does zero-shot mean? [pause]
-[write on screen: "Zero-shot = No training data!"]
+
+\`\`\`mermaid
+flowchart LR
+    subgraph ZeroShot["🎯 Zero-Shot = No Training!"]
+        N["No labeled data"]
+        N --> J["Just prompting"]
+    end
+    style ZeroShot fill:#81c784,color:#000
+\`\`\`
+
 You don't train anything.
 You just ASK the model to do NER!
 [pause]
-[write on screen: "Prompt: Extract person and org names from: ..."]
+
+\`\`\`mermaid
+flowchart TB
+    subgraph Prompt["💬 Your Prompt"]
+        P["Extract person and org names from:\n'Tim Cook announced the new iPhone at Apple Park'"]
+    end
+    subgraph LLM["🤖 LLM (GPT-4, etc.)"]
+        L["Processing..."]
+    end
+    subgraph Response["📤 Output"]
+        R1["Person: Tim Cook"]
+        R2["Org: Apple"]
+    end
+    Prompt --> LLM --> Response
+    style Prompt fill:#4fc3f7,color:#000
+    style LLM fill:#ba68c8,color:#000
+    style Response fill:#81c784,color:#000
+\`\`\`
+
 You give it a prompt like this.
 The LLM reads it and responds with the entities.
 Just like chatting with ChatGPT!

@@ -13,7 +13,44 @@ import { decks } from '../data/decks';
 import { loadTheme } from '../utils/themeLoader';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { marked } from 'marked';
+import mermaid from 'mermaid';
 import './DeckPage.css';
+
+// Initialize mermaid with dark theme for speaker notes
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'dark',
+  securityLevel: 'loose',
+  flowchart: {
+    useMaxWidth: true,
+    htmlLabels: true,
+  },
+});
+
+// Function to render mermaid diagrams in a document
+const renderMermaidInDocument = async (doc: Document) => {
+  const mermaidBlocks = doc.querySelectorAll('pre code.language-mermaid');
+  
+  for (let i = 0; i < mermaidBlocks.length; i++) {
+    const codeBlock = mermaidBlocks[i];
+    const pre = codeBlock.parentElement;
+    if (!pre) continue;
+    
+    const mermaidCode = codeBlock.textContent || '';
+    const id = `mermaid-diagram-${Date.now()}-${i}`;
+    
+    try {
+      const { svg } = await mermaid.render(id, mermaidCode);
+      const container = doc.createElement('div');
+      container.className = 'mermaid-diagram';
+      container.innerHTML = svg;
+      container.style.cssText = 'background: transparent; padding: 10px; margin: 10px 0; overflow-x: auto;';
+      pre.replaceWith(container);
+    } catch (err) {
+      console.error('[Mermaid] Error rendering diagram:', err);
+    }
+  }
+};
 
 // Helper function to lighten or darken a color
 const adjustColor = (color: string, amount: number): string => {
@@ -159,8 +196,8 @@ function DeckPage() {
             const data = JSON.parse(event.data);
             if (data.namespace === 'reveal-notes' && data.type === 'connected') {
               console.log('[Speaker Message] Speaker notes connected!');
-              // Speaker notes window is connected, inject dark theme
-              setTimeout(() => {
+              // Speaker notes window is connected, inject dark theme and render mermaid
+              setTimeout(async () => {
                 speakerWindowRef.current = window.open('', 'reveal.js - Notes');
                 console.log('[Speaker Message] Got speaker window ref:', speakerWindowRef.current);
                 if (speakerWindowRef.current && speakerWindowRef.current.document) {
@@ -168,6 +205,9 @@ function DeckPage() {
                   link.rel = 'stylesheet';
                   link.href = '/speaker-dark.css';
                   speakerWindowRef.current.document.head.appendChild(link);
+                  
+                  // Render mermaid diagrams in speaker notes
+                  await renderMermaidInDocument(speakerWindowRef.current.document);
                 }
               }, 500);
             }
@@ -177,8 +217,8 @@ function DeckPage() {
         }
       });
 
-      // Scroll speaker notes to top when slide changes
-      const handleSlideChange = () => {
+      // Scroll speaker notes to top when slide changes and render mermaid diagrams
+      const handleSlideChange = async () => {
         // Only scroll if speaker window is already open - don't try to open it
         if (speakerWindowRef.current && !speakerWindowRef.current.closed) {
           try {
@@ -194,6 +234,15 @@ function DeckPage() {
                 behavior: 'instant'
               });
             }
+            
+            // Render mermaid diagrams in the new notes content after a short delay
+            setTimeout(async () => {
+              try {
+                await renderMermaidInDocument(doc);
+              } catch (err) {
+                console.error('[Mermaid] Error rendering diagrams on slide change:', err);
+              }
+            }, 100);
           } catch (err) {
             console.error('[Speaker Notes] Error scrolling speaker notes to top:', err);
           }
