@@ -1634,172 +1634,738 @@ This is the future... but use with caution!`
           id: 14,
           title: 'Summary & Comparison',
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
-                    Quick Selection Guide
-                  </h3>
-                  <ul style={{ fontSize: '0.95em', lineHeight: '1.8', listStyle: 'none', paddingLeft: 0 }}>
-                    <li><strong>No data, strict formats:</strong> Rule-Based, Gazetteer</li>
-                    <li><strong>Small data, stable schemas:</strong> CRF, spaCy</li>
-                    <li><strong>Moderate data, accuracy:</strong> BiLSTM+CRF, CNN+BiLSTM</li>
-                    <li><strong>Best accuracy:</strong> BERT/RoBERTa</li>
-                    <li><strong>Low latency/edge:</strong> DistilBERT, optimized spaCy</li>
-                    <li><strong>New schema/zero data:</strong> LLM Zero-/Few-Shot</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#81c784', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
-                    Data Needs Spectrum
-                  </h3>
-                  <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                    <p><strong>Training examples needed:</strong></p>
-                    <ul style={{ fontSize: '0.9em' }}>
-                      <li>Rule-Based, Gazetteer: <span style={{ color: '#4fc3f7' }}>0 examples</span></li>
-                      <li>CRF/HMM: <span style={{ color: '#81c784' }}>1,000-5,000 examples</span></li>
-                      <li>BiLSTM models: <span style={{ color: '#ffb74d' }}>5,000-50,000 examples</span></li>
-                      <li>Transformers: <span style={{ color: '#ba68c8' }}>3,000-30,000 examples</span></li>
-                      <li>Zero-shot LLMs: <span style={{ color: '#f06292' }}>0-10 examples in prompt</span></li>
-                    </ul>
+            <div style={{ textAlign: 'left' }}>
+              <p style={{ fontSize: '1.1em', marginBottom: '30px' }}>
+                A complete overview of NER approach selection, data requirements, performance characteristics, and deployment considerations
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                <div style={{ padding: '20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
+                  <div>
+                    <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>Quick Selection Guide</div>
+                    <div style={{ fontSize: '0.85em', opacity: 0.8 }}>Match approach to your needs</div>
                   </div>
                 </div>
-                <div>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ffb74d', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" darkModeInvert={true} />
-                    Compute & Latency
-                  </h3>
-                  <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                    <p><strong>Inference time (100 tokens):</strong></p>
-                    <ul style={{ fontSize: '0.9em' }}>
-                      <li>Rule-Based/Gazetteer: <span style={{ color: '#4fc3f7' }}>&lt;1ms</span></li>
-                      <li>CRF/HMM: <span style={{ color: '#81c784' }}>~5-10ms</span></li>
-                      <li>BiLSTM+CRF: <span style={{ color: '#ffb74d' }}>~20-50ms</span></li>
-                      <li>DistilBERT: <span style={{ color: '#ba68c8' }}>~20-100ms</span></li>
-                      <li>BERT/RoBERTa: <span style={{ color: '#f06292' }}>~50-200ms</span></li>
-                      <li>LLMs: <span style={{ color: '#ef5350' }}>500ms-5s+</span></li>
-                    </ul>
+                <div style={{ padding: '20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                  <div>
+                    <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>Data Needs Spectrum</div>
+                    <div style={{ fontSize: '0.85em', opacity: 0.8 }}>Training data requirements</div>
                   </div>
                 </div>
-                <div>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ba68c8', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
-                    Maintenance & Deployment
-                  </h3>
-                  <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
-                    <p><strong>Maintenance:</strong></p>
-                    <ul style={{ fontSize: '0.9em' }}>
-                      <li>Rules/Gazetteers: frequent manual updates</li>
-                      <li>Classical ML: periodic retraining</li>
-                      <li>Transformers: retrain/fine-tune when domain shifts</li>
-                      <li>LLMs: prompt monitoring, guardrails, parsing</li>
-                    </ul>
+                <div style={{ padding: '20px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <SvgIcon iconName="duo-clock" sizeName="2x" darkModeInvert={true} />
+                  <div>
+                    <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>Compute & Latency</div>
+                    <div style={{ fontSize: '0.85em', opacity: 0.8 }}>Inference speed comparison</div>
+                  </div>
+                </div>
+                <div style={{ padding: '20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '15px' }}>
+                  <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
+                  <div>
+                    <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>Maintenance & Deployment</div>
+                    <div style={{ fontSize: '0.85em', opacity: 0.8 }}>Ongoing operational needs</div>
+                  </div>
+                </div>
+                <div style={{ padding: '20px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', gap: '15px', gridColumn: 'span 2' }}>
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                  <div>
+                    <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>Deployment Tips</div>
+                    <div style={{ fontSize: '0.85em', opacity: 0.8 }}>Best practices for production</div>
                   </div>
                 </div>
               </div>
-              <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
-                  Deployment Tips
-                </h4>
-                <ul style={{ fontSize: '0.9em', lineHeight: '1.6', marginBottom: 0 }}>
-                  <li>Combine methods (rules+ML) for better results</li>
-                  <li>Add normalization/entity linking step</li>
-                  <li>Monitor for concept drift</li>
-                  <li>Consider privacy compliance for PII</li>
-                  <li>Quantize models when possible for edge</li>
-                </ul>
-              </div>
+              <p style={{ fontSize: '0.85em', marginTop: '30px', textAlign: 'center', opacity: 0.7 }}>
+                Press ↓ to explore each topic in detail
+              </p>
             </div>
           ),
           backgroundColor: '#16213e',
           notes: `Alright! We've covered all eleven approaches. [pause]
 
-Let's put it all together!
+Now let's put it all together!
 
 [pause]
 
-[write on screen: "Decision tree for NER"]
-
-Here's how to choose. [pause]
-
-Question 1: Do you have training data? [pause]
-
-No data? → Rules, Dictionary, or Zero-shot LLM.
+This summary section covers five key areas.
 
 [pause]
 
-Question 2: How much data? [pause]
+First... Quick Selection Guide.
 
-Small data (1K-5K)? → CRF or spaCy.
-
-Medium data (5K-50K)? → BiLSTM+CRF or BERT.
-
-Large data (50K+)? → Go full transformer!
+How to pick the right approach for your situation.
 
 [pause]
 
-Question 3: What about speed? [pause]
+Second... Data Needs Spectrum.
 
-[write on screen: "Speed ranking"]
-
-Fastest: Rules, Dictionary. Under 1ms.
-
-Fast: CRF, spaCy. 5-20ms.
-
-Medium: BiLSTM, DistilBERT. 20-100ms.
-
-Slow: BERT, RoBERTa. 50-200ms.
-
-Slowest: LLMs. Seconds!
+How much training data each approach requires.
 
 [pause]
 
-[point to Quick Selection Guide]
+Third... Compute & Latency.
 
-Let me summarize. [pause]
-
-Strict formats? → Rules.
-
-Known entities? → Dictionary.
-
-Small data, need accuracy? → CRF.
-
-General purpose? → spaCy or BiLSTM.
-
-Best accuracy? → BERT or RoBERTa.
-
-No data, need flexibility? → LLM.
+How fast each approach runs in production.
 
 [pause]
 
-[point to Deployment Tips]
+Fourth... Maintenance & Deployment.
 
-Final tips! [pause]
-
-Combine methods! Rules + ML works great.
-
-Add entity linking for normalization.
-
-Monitor for drift. Text changes over time.
-
-Think about privacy. Especially for PII!
+What ongoing work each approach needs.
 
 [pause]
 
-And that's it! [pause]
+And finally... Deployment Tips.
 
-You now know eleven ways to do NER.
-
-[ask audience] Any questions?
+Best practices for putting NER into production.
 
 [pause]
 
-Thank you so much!
+Let's dive into each one!
 
-Good luck with your NER projects!`
+Press down arrow to explore.`
+        },
+        {
+          id: 15,
+          title: 'Quick Selection Guide',
+              content: (
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                    <SvgIcon iconName="duo-map" sizeName="3x" darkModeInvert={true} />
+                    <div>
+                      <h2 style={{ margin: 0, color: '#4fc3f7' }}>Quick Selection Guide</h2>
+                      <p style={{ margin: 0, opacity: 0.8 }}>Choose the right NER approach for your use case</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.85em' }}>
+                    <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', borderLeft: '4px solid #4fc3f7' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🚫 No training data, strict formats</div>
+                      <div style={{ color: '#4fc3f7' }}>→ Rule-Based, Gazetteer</div>
+                    </div>
+                    <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', borderLeft: '4px solid #81c784' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📊 Small data, stable schemas</div>
+                      <div style={{ color: '#81c784' }}>→ CRF, spaCy</div>
+                    </div>
+                    <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ffb74d' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📈 Moderate data, need accuracy</div>
+                      <div style={{ color: '#ffb74d' }}>→ BiLSTM+CRF, CNN+BiLSTM</div>
+                    </div>
+                    <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ba68c8' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🏆 Best possible accuracy</div>
+                      <div style={{ color: '#ba68c8' }}>→ BERT, RoBERTa</div>
+                    </div>
+                    <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px', borderLeft: '4px solid #f06292' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>⚡ Low latency / edge deployment</div>
+                      <div style={{ color: '#f06292' }}>→ DistilBERT, optimized spaCy</div>
+                    </div>
+                    <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px', borderLeft: '4px solid #64b5f6' }}>
+                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🆕 New schema / zero data</div>
+                      <div style={{ color: '#64b5f6' }}>→ LLM Zero-/Few-Shot</div>
+                    </div>
+                  </div>
+                  <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px', fontSize: '0.9em' }}>
+                    <strong>💡 Pro Tip:</strong> Start simple! Try rules or dictionaries first, then move to ML if needed.
+                  </div>
+                </div>
+              ),
+              backgroundColor: '#16213e',
+              notes: `Here's your decision guide! [pause]
+
+Let's go through each scenario.
+
+[pause]
+
+No training data and strict formats? [pause]
+
+Use Rule-Based or Gazetteer approaches.
+
+Perfect for things like extracting IDs, dates, emails.
+
+[pause]
+
+Have small data and stable entity types? [pause]
+
+CRF or spaCy work great.
+
+They're efficient and reliable.
+
+[pause]
+
+Got moderate data and need accuracy? [pause]
+
+BiLSTM+CRF or CNN+BiLSTM.
+
+These deep learning models shine here.
+
+[pause]
+
+Need the absolute best accuracy? [pause]
+
+Go with BERT or RoBERTa.
+
+State-of-the-art transformers.
+
+[pause]
+
+Deploying to edge or need low latency? [pause]
+
+DistilBERT or optimized spaCy.
+
+Fast enough for real-time.
+
+[pause]
+
+New entity types with no data? [pause]
+
+LLM Zero-shot or Few-shot!
+
+Just describe what you want.
+
+[pause]
+
+Remember... start simple!
+
+You can always upgrade later.`
+        },
+        {
+          id: 16,
+          title: 'Data Needs Spectrum',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                <SvgIcon iconName="duo-graduation-cap" sizeName="3x" darkModeInvert={true} />
+                <div>
+                  <h2 style={{ margin: 0, color: '#81c784' }}>Data Needs Spectrum</h2>
+                  <p style={{ margin: 0, opacity: 0.8 }}>How much training data does each approach need?</p>
+                </div>
+              </div>
+              <div style={{ fontSize: '0.8em' }}>
+                <div style={{ marginBottom: '25px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Rule-Based / Gazetteer</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #4fc3f7 1%, rgba(79, 195, 247, 0.1) 1%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(79, 195, 247, 0.3)' }}>
+                      <span style={{ color: '#4fc3f7', fontWeight: 'bold', fontSize: '1.05em' }}>0 labeled examples</span>
+                    </div>
+                  </div>
+                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    ✓ Just write patterns and dictionaries by hand
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '25px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>CRF / HMM</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #81c784 20%, rgba(129, 199, 132, 0.1) 20%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(129, 199, 132, 0.3)' }}>
+                      <span style={{ color: '#81c784', fontWeight: 'bold', fontSize: '1.05em' }}>1,000 - 5,000</span>
+                    </div>
+                  </div>
+                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    ✓ Good for simple, stable entity schemas
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '25px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Transformers (BERT)</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ba68c8 35%, rgba(186, 104, 200, 0.1) 35%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(186, 104, 200, 0.3)' }}>
+                      <span style={{ color: '#ba68c8', fontWeight: 'bold', fontSize: '1.05em' }}>3,000 - 30,000</span>
+                    </div>
+                  </div>
+                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    ✓ Pre-trained, so needs less data than BiLSTM
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '25px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>BiLSTM models</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ffb74d 60%, rgba(255, 183, 77, 0.1) 60%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(255, 183, 77, 0.3)' }}>
+                      <span style={{ color: '#ffb74d', fontWeight: 'bold', fontSize: '1.05em' }}>5,000 - 50,000</span>
+                    </div>
+                  </div>
+                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    ✓ Trained from scratch, needs more examples
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '25px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
+                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Zero-shot LLMs</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #f06292 2%, rgba(240, 98, 146, 0.1) 2%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(240, 98, 146, 0.3)' }}>
+                      <span style={{ color: '#f06292', fontWeight: 'bold', fontSize: '1.05em' }}>0 - 10 in prompt</span>
+                    </div>
+                  </div>
+                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    ✓ Few-shot examples given directly in the prompt
+                  </div>
+                </div>
+              </div>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', marginTop: '25px' }}>
+                <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', borderLeft: '3px solid #81c784' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '5px', fontSize: '0.9em' }}>✅ Quality {'>'} Quantity</div>
+                  <div style={{ fontSize: '0.85em', lineHeight: '1.4' }}>Clean, consistent labels beat larger noisy datasets</div>
+                </div>
+                <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', borderLeft: '3px solid #ffb74d' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '5px', fontSize: '0.9em' }}>🔄 Active Learning</div>
+                  <div style={{ fontSize: '0.85em', lineHeight: '1.4' }}>Start small, label strategically, iterate</div>
+                </div>
+                <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', borderLeft: '3px solid #ba68c8' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '5px', fontSize: '0.9em' }}>📊 Balance Mix</div>
+                  <div style={{ fontSize: '0.85em', lineHeight: '1.4' }}>Diverse examples across all entity types</div>
+                </div>
+              </div>
+            </div>
+          ),
+              backgroundColor: '#16213e',
+              notes: `Let's talk about data requirements! [pause]
+
+This is often the biggest factor in choosing an approach.
+
+[pause]
+
+Rule-Based and Gazetteer? [pause]
+
+Zero training examples needed!
+
+You just write rules or build dictionaries.
+
+[pause]
+
+CRF and HMM models? [pause]
+
+Need about 1,000 to 5,000 labeled examples.
+
+That's manageable for most teams.
+
+[pause]
+
+Transformers like BERT? [pause]
+
+Typically 3,000 to 30,000 examples.
+
+But they're pre-trained, so less than you'd think!
+
+[pause]
+
+BiLSTM models? [pause]
+
+These are hungry! 5,000 to 50,000 examples.
+
+No pre-training to help here.
+
+[pause]
+
+Zero-shot LLMs? [pause]
+
+Amazing! Just 0 to 10 examples in the prompt.
+
+The model already knows language.
+
+[pause]
+
+Two important tips! [pause]
+
+Quality beats quantity.
+
+Clean labels matter more than volume.
+
+[pause]
+
+And use active learning!
+
+Start small, label what the model struggles with.
+
+Iterate and improve.`
+            },
+            {
+          id: 17,
+              title: 'Compute & Latency',
+              content: (
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                    <SvgIcon iconName="duo-clock" sizeName="3x" darkModeInvert={true} />
+                    <div>
+                      <h2 style={{ margin: 0, color: '#ffb74d' }}>Compute & Latency</h2>
+                      <p style={{ margin: 0, opacity: 0.8 }}>Inference time comparison (100 tokens)</p>
+                    </div>
+                  </div>
+                  <div style={{ fontSize: '0.85em' }}>
+                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '2px solid rgba(255,255,255,0.3)' }}>
+                          <th style={{ textAlign: 'left', padding: '10px', width: '35%' }}>Approach</th>
+                          <th style={{ textAlign: 'left', padding: '10px', width: '25%' }}>Latency</th>
+                          <th style={{ textAlign: 'left', padding: '10px', width: '20%' }}>GPU Required</th>
+                          <th style={{ textAlign: 'left', padding: '10px', width: '20%' }}>Memory</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <td style={{ padding: '10px' }}>Rule-Based / Gazetteer</td>
+                          <td style={{ padding: '10px', color: '#4fc3f7', fontWeight: 'bold' }}>&lt;1ms ⚡</td>
+                          <td style={{ padding: '10px' }}>No</td>
+                          <td style={{ padding: '10px' }}>~10MB</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <td style={{ padding: '10px' }}>CRF / HMM</td>
+                          <td style={{ padding: '10px', color: '#81c784', fontWeight: 'bold' }}>5-10ms</td>
+                          <td style={{ padding: '10px' }}>No</td>
+                          <td style={{ padding: '10px' }}>~50MB</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <td style={{ padding: '10px' }}>BiLSTM + CRF</td>
+                          <td style={{ padding: '10px', color: '#ffb74d', fontWeight: 'bold' }}>20-50ms</td>
+                          <td style={{ padding: '10px' }}>Helpful</td>
+                          <td style={{ padding: '10px' }}>~200MB</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <td style={{ padding: '10px' }}>DistilBERT</td>
+                          <td style={{ padding: '10px', color: '#ba68c8', fontWeight: 'bold' }}>20-100ms</td>
+                          <td style={{ padding: '10px' }}>Recommended</td>
+                          <td style={{ padding: '10px' }}>~250MB</td>
+                        </tr>
+                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                          <td style={{ padding: '10px' }}>BERT / RoBERTa</td>
+                          <td style={{ padding: '10px', color: '#f06292', fontWeight: 'bold' }}>50-200ms</td>
+                          <td style={{ padding: '10px' }}>Required</td>
+                          <td style={{ padding: '10px' }}>~450MB</td>
+                        </tr>
+                        <tr>
+                          <td style={{ padding: '10px' }}>LLMs (GPT-4, etc.)</td>
+                          <td style={{ padding: '10px', color: '#ef5350', fontWeight: 'bold' }}>500ms - 5s+ 🐢</td>
+                          <td style={{ padding: '10px' }}>API / Large GPU</td>
+                          <td style={{ padding: '10px' }}>~GB+ / API</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', fontSize: '0.9em' }}>
+                    <strong>⚡ Optimization Tips:</strong> Use ONNX runtime, model quantization, and batching to reduce latency by 2-5x
+                  </div>
+                </div>
+              ),
+              backgroundColor: '#16213e',
+              notes: `Speed matters in production! [pause]
+
+Let's compare inference times.
+
+[pause]
+
+Rule-Based and Gazetteer? [pause]
+
+Under 1 millisecond! Lightning fast.
+
+No GPU needed. Tiny memory footprint.
+
+[pause]
+
+CRF and HMM? [pause]
+
+5 to 10 milliseconds. Still very fast.
+
+CPU only. About 50 megabytes.
+
+[pause]
+
+BiLSTM+CRF? [pause]
+
+20 to 50 milliseconds.
+
+GPU helps but not required.
+
+[pause]
+
+DistilBERT? [pause]
+
+20 to 100 milliseconds.
+
+Good balance of speed and accuracy.
+
+GPU recommended.
+
+[pause]
+
+Full BERT or RoBERTa? [pause]
+
+50 to 200 milliseconds.
+
+GPU really needed here.
+
+[pause]
+
+LLMs like GPT-4? [pause]
+
+500 milliseconds to 5 seconds!
+
+Network latency adds up.
+
+[pause]
+
+Want to speed things up? [pause]
+
+Use ONNX runtime.
+
+Quantize your models.
+
+Batch your requests.
+
+Can get 2 to 5x faster!`
+            },
+            {
+          id: 18,
+              title: 'Maintenance & Deployment',
+              content: (
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="3x" darkModeInvert={true} />
+                    <div>
+                      <h2 style={{ margin: 0, color: '#ba68c8' }}>Maintenance & Deployment</h2>
+                      <p style={{ margin: 0, opacity: 0.8 }}>Ongoing operational requirements</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '0.85em' }}>
+                    <div style={{ padding: '20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px' }}>
+                      <h4 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <span>📋</span> Rules & Gazetteers
+                      </h4>
+                      <ul style={{ lineHeight: '1.8', paddingLeft: '20px', margin: 0 }}>
+                        <li>Frequent manual updates</li>
+                        <li>Domain expert involvement</li>
+                        <li>Version control for patterns</li>
+                        <li>Easy to debug & explain</li>
+                      </ul>
+                    </div>
+                    <div style={{ padding: '20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px' }}>
+                      <h4 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <span>📊</span> Classical ML (CRF/HMM)
+                      </h4>
+                      <ul style={{ lineHeight: '1.8', paddingLeft: '20px', margin: 0 }}>
+                        <li>Periodic retraining (monthly/quarterly)</li>
+                        <li>Feature pipeline maintenance</li>
+                        <li>Model versioning</li>
+                        <li>A/B testing frameworks</li>
+                      </ul>
+                    </div>
+                    <div style={{ padding: '20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px' }}>
+                      <h4 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <span>🧠</span> Transformers
+                      </h4>
+                      <ul style={{ lineHeight: '1.8', paddingLeft: '20px', margin: 0 }}>
+                        <li>Retrain on domain shifts</li>
+                        <li>GPU infrastructure costs</li>
+                        <li>Model registry & serving</li>
+                        <li>Monitoring for drift</li>
+                      </ul>
+                    </div>
+                    <div style={{ padding: '20px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '10px' }}>
+                      <h4 style={{ color: '#f06292', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <span>🤖</span> LLMs
+                      </h4>
+                      <ul style={{ lineHeight: '1.8', paddingLeft: '20px', margin: 0 }}>
+                        <li>Prompt versioning & testing</li>
+                        <li>Output parsing & validation</li>
+                        <li>Rate limiting & cost control</li>
+                        <li>Guardrails for edge cases</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              ),
+              backgroundColor: '#16213e',
+              notes: `Deployment is just the beginning! [pause]
+
+Each approach has different maintenance needs.
+
+[pause]
+
+Rules and Gazetteers? [pause]
+
+Need frequent manual updates.
+
+When new entities appear, you add them.
+
+Good news: easy to debug and explain!
+
+[pause]
+
+Classical ML like CRF? [pause]
+
+Periodic retraining. Monthly or quarterly.
+
+Maintain your feature pipelines.
+
+Set up proper model versioning.
+
+[pause]
+
+Transformers? [pause]
+
+Retrain when domain shifts.
+
+Budget for GPU infrastructure.
+
+Set up model registry and serving.
+
+Monitor for data drift!
+
+[pause]
+
+LLMs? [pause]
+
+Version control your prompts!
+
+Build robust output parsing.
+
+Watch your API costs.
+
+Add guardrails for weird edge cases.
+
+[pause]
+
+Bottom line? [pause]
+
+Simpler models = simpler maintenance.
+
+But sometimes complexity is worth it!`
+            },
+            {
+          id: 19,
+              title: 'Deployment Tips',
+              content: (
+                <div style={{ textAlign: 'left' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="3x" darkModeInvert={true} />
+                    <div>
+                      <h2 style={{ margin: 0, color: '#64b5f6' }}>Deployment Tips</h2>
+                      <p style={{ margin: 0, opacity: 0.8 }}>Best practices for production NER</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.85em' }}>
+                    <div style={{ padding: '18px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <span style={{ fontSize: '1.5em' }}>🔗</span>
+                      <div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Combine Methods</div>
+                        <div style={{ opacity: 0.9 }}>Rules + ML hybrid outperforms either alone. Use rules for known patterns, ML for fuzzy matching.</div>
+                      </div>
+                    </div>
+                    <div style={{ padding: '18px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <span style={{ fontSize: '1.5em' }}>🔄</span>
+                      <div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Add Entity Linking</div>
+                        <div style={{ opacity: 0.9 }}>Normalize entities to canonical forms. Link to knowledge bases (Wikidata, internal DBs).</div>
+                      </div>
+                    </div>
+                    <div style={{ padding: '18px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <span style={{ fontSize: '1.5em' }}>📈</span>
+                      <div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Monitor for Drift</div>
+                        <div style={{ opacity: 0.9 }}>Text evolves! Track prediction confidence, flag low-confidence outputs for review.</div>
+                      </div>
+                    </div>
+                    <div style={{ padding: '18px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <span style={{ fontSize: '1.5em' }}>🔒</span>
+                      <div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Privacy Compliance</div>
+                        <div style={{ opacity: 0.9 }}>PII detection needs special handling. Consider on-premise for sensitive data.</div>
+                      </div>
+                    </div>
+                    <div style={{ padding: '18px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <span style={{ fontSize: '1.5em' }}>⚡</span>
+                      <div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Quantize for Edge</div>
+                        <div style={{ opacity: 0.9 }}>INT8 quantization cuts size 4x with minimal accuracy loss. Essential for mobile/edge.</div>
+                      </div>
+                    </div>
+                    <div style={{ padding: '18px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <span style={{ fontSize: '1.5em' }}>🧪</span>
+                      <div>
+                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Test Extensively</div>
+                        <div style={{ opacity: 0.9 }}>Build diverse test sets. Include edge cases, adversarial examples, and domain-specific text.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(100, 181, 246, 0.3)', borderRadius: '8px', textAlign: 'center', fontSize: '1em' }}>
+                    <strong>🎯 Remember:</strong> The best NER system is the one that works reliably in YOUR production environment!
+                  </div>
+                </div>
+              ),
+              backgroundColor: '#16213e',
+              notes: `Final tips for production! [pause]
+
+These come from real-world experience.
+
+[pause]
+
+Tip 1: Combine methods! [pause]
+
+Hybrid approaches win.
+
+Rules catch known patterns perfectly.
+
+ML handles the fuzzy stuff.
+
+Together? Better than either alone.
+
+[pause]
+
+Tip 2: Add entity linking! [pause]
+
+Don't just find entities... normalize them!
+
+"NYC" and "New York City" should map to same ID.
+
+Link to knowledge bases when possible.
+
+[pause]
+
+Tip 3: Monitor for drift! [pause]
+
+Language changes. Your model doesn't.
+
+Track prediction confidence.
+
+Flag uncertain outputs for human review.
+
+[pause]
+
+Tip 4: Privacy compliance! [pause]
+
+PII detection is serious business.
+
+GDPR, HIPAA, CCPA...
+
+Consider on-premise for sensitive data.
+
+[pause]
+
+Tip 5: Quantize for edge! [pause]
+
+INT8 quantization is magic.
+
+4x smaller, almost same accuracy.
+
+Essential for mobile and edge devices.
+
+[pause]
+
+Tip 6: Test extensively! [pause]
+
+Build diverse test sets.
+
+Include weird edge cases.
+
+Test adversarial examples.
+
+[pause]
+
+And that's a wrap! [pause]
+
+You now know everything about NER approaches.
+
+Go build something amazing!
+
+Any questions?`
         }
       ]
     }
