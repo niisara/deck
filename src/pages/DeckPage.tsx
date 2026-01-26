@@ -206,24 +206,15 @@ function DeckPage() {
       // Use capture phase to intercept before Reveal.js handles the event
       const handleSpeakerScroll = (event: KeyboardEvent) => {
         if (event.ctrlKey && event.altKey && (event.key === 'ArrowDown' || event.key === 'ArrowUp')) {
-          console.log('[Speaker Scroll] Key detected:', event.key);
-          
-          // Try to get speaker window ref if not already set
-          if (!speakerWindowRef.current || speakerWindowRef.current.closed) {
-            console.log('[Speaker Scroll] Attempting to get speaker window...');
-            speakerWindowRef.current = window.open('', 'reveal.js - Notes');
-            console.log('[Speaker Scroll] Got window:', speakerWindowRef.current);
-          }
-          event.preventDefault();
-          event.stopPropagation();
-          event.stopImmediatePropagation();
-          const speakerWin = speakerWindowRef.current;
-          console.log('[Speaker Scroll] Speaker window ref:', speakerWin);
-          console.log('[Speaker Scroll] Window closed?', speakerWin?.closed);
-          if (speakerWin && !speakerWin.closed) {
+          // Only scroll if speaker window is already open - don't try to open it
+          if (speakerWindowRef.current && !speakerWindowRef.current.closed) {
+            event.preventDefault();
+            event.stopPropagation();
+            event.stopImmediatePropagation();
+            
             try {
               const scrollAmount = 100;
-              const doc = speakerWin.document;
+              const doc = speakerWindowRef.current.document;
               
               // Target the .speaker-controls-notes element which should be scrollable with our CSS
               const notesContainer = doc.querySelector('.speaker-controls-notes') as HTMLElement;
@@ -235,7 +226,7 @@ function DeckPage() {
                   behavior: 'smooth'
                 });
               } else {
-                speakerWin.scrollBy({
+                speakerWindowRef.current.scrollBy({
                   top: event.key === 'ArrowDown' ? scrollAmount : -scrollAmount,
                   behavior: 'smooth'
                 });
