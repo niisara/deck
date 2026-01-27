@@ -408,7 +408,7 @@ export const nerTrainingDeck: Deck = {
               </div>
           ),
           backgroundColor: '#770022',
-          notes: 'Tip 5: Fine-tuning pretrained transformer models for NER'
+          notes: ''
         },
         {
           id: 16,
