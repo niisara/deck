@@ -1465,12 +1465,12 @@ If you have a brand new entity type and zero training data, try **LLM Zero-shot*
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Rule-Based / Gazetteer</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #4fc3f7 1%, rgba(79, 195, 247, 0.1) 1%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(79, 195, 247, 0.3)' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>Rule-Based / Gazetteer</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #4fc3f7 1%, rgba(79, 195, 247, 0.1) 1%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(79, 195, 247, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>0 labeled examples</span>
-                      <div style={{ float: 'right', fontSize: '0.5em', opacity: 0.7, marginBottom: '3px' }}>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Just write patterns and dictionaries by hand
-                  </div>
+                  </span>
                     </div>
                   </div>
                   
@@ -1478,12 +1478,12 @@ If you have a brand new entity type and zero training data, try **LLM Zero-shot*
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>CRF / HMM</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #81c784 20%, rgba(129, 199, 132, 0.1) 20%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(129, 199, 132, 0.3)' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>CRF / HMM</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #81c784 20%, rgba(129, 199, 132, 0.1) 20%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(129, 199, 132, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>1,000 - 5,000</span>
-                      <div style={{ float: 'right', fontSize: '0.5em', opacity: 0.7, marginBottom: '3px' }}>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Good for simple, stable entity schemas
-                  </div>
+                  </span>
                     </div>
                   </div>
                   
@@ -1491,12 +1491,12 @@ If you have a brand new entity type and zero training data, try **LLM Zero-shot*
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Transformers (BERT)</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ba68c8 35%, rgba(186, 104, 200, 0.1) 35%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(186, 104, 200, 0.3)' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>Transformers (BERT)</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ba68c8 35%, rgba(186, 104, 200, 0.1) 35%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(186, 104, 200, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>3,000 - 30,000</span>
-                      <div style={{ float: 'right', fontSize: '0.5em', opacity: 0.7, marginBottom: '3px' }}>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Pre-trained, so needs less data than BiLSTM
-                  </div>
+                  </span>
                     </div>
                   </div>
                   
@@ -1504,12 +1504,12 @@ If you have a brand new entity type and zero training data, try **LLM Zero-shot*
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>BiLSTM models</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ffb74d 60%, rgba(255, 183, 77, 0.1) 60%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(255, 183, 77, 0.3)' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>BiLSTM models</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ffb74d 60%, rgba(255, 183, 77, 0.1) 60%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(255, 183, 77, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>5,000 - 50,000</span>
-                      <div style={{ float: 'right', fontSize: '0.5em', opacity: 0.7, marginBottom: '3px' }}>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Trained from scratch, needs more examples
-                  </div>
+                  </span>
                     </div>
                   </div>
                   
@@ -1517,12 +1517,12 @@ If you have a brand new entity type and zero training data, try **LLM Zero-shot*
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Zero-shot LLMs</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #f06292 2%, rgba(240, 98, 146, 0.1) 2%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(240, 98, 146, 0.3)' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>Zero-shot LLMs</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #f06292 2%, rgba(240, 98, 146, 0.1) 2%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(240, 98, 146, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>0 - 10 in prompt</span>
-                      <div style={{ float: 'right', fontSize: '0.5em', opacity: 0.7, marginBottom: '3px' }}>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Few-shot examples given directly in the prompt
-                  </div>
+                  </span>
                     </div>
                   </div>
                   
@@ -1573,13 +1573,7 @@ This is amazing - just **0 to 10** examples right in the prompt! The LLM already
               title: 'Compute & Latency',
               content: (
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="3x" darkModeInvert={true} />
-                    <div>
-                      <h2 style={{ margin: 0, color: '#ffb74d' }}>Compute & Latency</h2>
-                      <p style={{ margin: 0, opacity: 0.8 }}>Inference time comparison (100 tokens)</p>
-                    </div>
-                  </div>
+                  
                   <div style={{ fontSize: '0.85em' }}>
                     <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                       <thead>
@@ -1668,7 +1662,6 @@ Want to speed things up? Here are three powerful techniques. First, use **ONNX r
                   <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="3x" darkModeInvert={true} />
                     <div>
-                      <h2 style={{ margin: 0, color: '#ba68c8' }}>Maintenance & Deployment</h2>
                       <p style={{ margin: 0, opacity: 0.8 }}>Ongoing operational requirements</p>
                     </div>
                   </div>
@@ -1744,14 +1737,7 @@ Here's the key insight: **simpler models mean simpler maintenance.** A CRF runni
               title: 'Deployment Tips',
               content: (
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="3x" darkModeInvert={true} />
-                    <div>
-                      <h2 style={{ margin: 0, color: '#64b5f6' }}>Deployment Tips</h2>
-                      <p style={{ margin: 0, opacity: 0.8 }}>Best practices for production NER</p>
-                    </div>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.85em' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.64em' }}>
                     <div style={{ padding: '18px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <span style={{ fontSize: '1.5em' }}>🔗</span>
                       <div>
