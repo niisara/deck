@@ -17,14 +17,15 @@ export const featureExtractionDeck: Deck = {
       slides: [
         {
           id: 1,
+          center: true,
           title: '13 Feature Extraction Techniques',
           content: (
-            <div style={{ textAlign: 'left', padding: '2rem' }}>
+            <div>
           <div style={{ fontSize: '1.5rem', marginBottom: '2rem', color: '#1b91e0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <SvgIcon iconName="duo-diagram-project" sizeName="5x" style={{ color: '#2190e0' }} darkModeInvert={true} />
             Cheat sheets for Traditional, Static, Contextual, and Modern Sentence Encoders
           </div>
-          <div style={{ fontSize: '1.2rem', color: '#9b59b6', marginTop: '3rem', lineHeight: '2' }}>
+          <div style={{ fontSize: '1.2rem', color: '#9b59b6', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <div style={{ marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
               <SvgIcon iconName="duo-cube" sizeName="3x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
               <strong>Traditional count-based methods</strong>
@@ -42,6 +43,9 @@ export const featureExtractionDeck: Deck = {
               <strong>Modern sentence encoders</strong>
             </div>
           </div>
+          <p><strong>Prepared by:</strong> Nisar A</p>
+          <p><strong>Date:</strong> November 7, 2025</p>
+          <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
         </div>
       ),
       notes: 'Title slide introducing the 13 feature extraction techniques'
@@ -50,90 +54,90 @@ export const featureExtractionDeck: Deck = {
       id: 2,
       title: 'Overview',
       content: (
-        <div style={{ fontSize: '0.95rem', lineHeight: '1.8', textAlign: 'left' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.8', textAlign: 'left' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
             <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
-              <div style={{ color: '#e7ad52', marginBottom: '1rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ color: '#e7ad52', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <SvgIcon iconName="duo-cube" sizeName="xl" style={{ color: '#e7ad52' }} darkModeInvert={true} />
                 <strong>Traditional (count-based)</strong>
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e7ad52' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e7ad52', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>1</span>
                 Bag of Words (BoW)
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e7ad52' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#e7ad52', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>2</span>
                 TF-IDF
               </div>
             </div>
 
             <div style={{ background: 'rgba(27, 145, 224, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
-              <div style={{ color: '#1b91e0', marginBottom: '1rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ color: '#1b91e0', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <SvgIcon iconName="duo-layer-group" sizeName="xl" style={{ color: '#1b91e0' }} darkModeInvert={true} />
                 <strong>Static embeddings (word/doc level)</strong>
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>3</span>
                 Word2Vec (CBOW)
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>4</span>
                 Word2Vec (Skip-Gram)
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>5</span>
                 GloVe
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>6</span>
                 FastText
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#1b91e0', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>7</span>
                 Doc2Vec
               </div>
             </div>
 
             <div style={{ background: 'rgba(155, 89, 182, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
-              <div style={{ color: '#9b59b6', marginBottom: '1rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ color: '#9b59b6', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <SvgIcon iconName="duo-brain-circuit" sizeName="xl" style={{ color: '#9b59b6' }} darkModeInvert={true} />
-                <strong>Contextual embeddings (token/sentence aware):</strong>
+                <strong>Contextual token embeddings</strong>
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9b59b6' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9b59b6', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>8</span>
                 ELMo
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9b59b6' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9b59b6', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>9</span>
                 BERT Embeddings
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9b59b6' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9b59b6', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>10</span>
                 Sentence-BERT (SBERT)
               </div>
             </div>
 
             <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
-              <div style={{ color: '#2ecc71', marginBottom: '1rem', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ color: '#2ecc71', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <SvgIcon iconName="duo-rocket" sizeName="xl" style={{ color: '#2ecc71' }} darkModeInvert={true} />
                 <strong>Modern sentence encoders</strong>
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2ecc71' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2ecc71', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>11</span>
                 Universal Sentence Encoder (USE)
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2ecc71' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2ecc71', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>12</span>
                 E5 Embeddings
               </div>
-              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2ecc71' }}>
+              <div style={{ marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#2ecc71', fontSize: '1.2rem' }}>
                 <span style={{ fontSize: '1.2em', fontWeight: 'bold' }}>13</span>
                 GTE Embeddings
               </div>
             </div>
           </div>
 
-          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
+          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(231, 173, 82, 0.15)', borderRadius: '8px', textAlign: 'left', fontSize: '1.2rem' }}>
             <SvgIcon iconName="duo-info-circle" sizeName="lg" style={iconStyle} darkModeInvert={true} />
             <strong>Format per slide:</strong> Model Type • Representation Style • Best Use Case • Strengths • Weaknesses • Notes
           </div>
