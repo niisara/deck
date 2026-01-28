@@ -217,9 +217,7 @@ We'll go through each one in detail. I'll explain exactly **when to use it** and
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
-                      <li>Transparent</li>
-                      <li>Fast</li>
-                      <li>Consistent</li>
+                      <li>Transparent and Fast</li>
                       <li>No labeled data required</li>
                       <li>Easy to enforce constraints</li>
                     </ul>
@@ -230,7 +228,6 @@ We'll go through each one in detail. I'll explain exactly **when to use it** and
                       <li>Brittle to variations</li>
                       <li>High maintenance</li>
                       <li>Limited recall/coverage</li>
-                      <li>Poor generalization</li>
                     </ul>
                   </div>
                 </div>
@@ -318,7 +315,6 @@ It **breaks easily**! "Tim Cook" works, but "TIM COOK" in all caps? Fails. "tim 
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong>Pros:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
-                      <li>Simple</li>
                       <li>High precision for known entities</li>
                       <li>Easy to update lists</li>
                       <li>Multilingual-ready with the right lexicons</li>
@@ -420,14 +416,12 @@ What if "Apple" is in BOTH your fruit dictionary AND your company dictionary? Wh
                       <li>Fast to train</li>
                       <li>Interpretable features</li>
                       <li>Low compute requirements</li>
-                      <li>Minimal memory usage</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong>Cons:</strong></p>
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Weak context modeling</li>
-                      <li>Lower accuracy than sequence models</li>
                       <li>No explicit label dependencies</li>
                       <li>Requires feature engineering</li>
                     </ul>
@@ -615,7 +609,6 @@ The problems: It makes **strong independence assumptions** that often don't hold
                       <li>Captures label dependencies</li>
                       <li>Robust</li>
                       <li>Well-understood</li>
-                      <li>Stable</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
@@ -732,7 +725,6 @@ The downside? You have to **engineer features manually**, which takes time and d
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Learns features automatically</li>
                       <li>Context-aware</li>
-                      <li>Strong accuracy with reasonable compute</li>
                       <li>Leverages pretrained embeddings</li>
                     </ul>
                   </div>
@@ -741,7 +733,6 @@ The downside? You have to **engineer features manually**, which takes time and d
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Needs GPU for training</li>
                       <li>Complex hyperparameter tuning</li>
-                      <li>Data-hungry vs. rules/CRF</li>
                       <li>OOV handling depends on char/subword modeling</li>
                     </ul>
                   </div>
@@ -843,7 +834,6 @@ The downsides: you **need a GPU for training**, which not everyone has access to
                       <li>Captures morphology/spelling</li>
                       <li>Improves robustness to OOV/variants</li>
                       <li>Strong non-transformer baseline</li>
-                      <li>Better at handling character variations</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
@@ -852,7 +842,6 @@ The downsides: you **need a GPU for training**, which not everyone has access to
                       <li>More components/hyperparameters</li>
                       <li>Increased training complexity</li>
                       <li>Slower than plain BiLSTM</li>
-                      <li>Usually below transformer SOTA accuracy</li>
                     </ul>
                   </div>
                 </div>
@@ -953,8 +942,6 @@ On the downside, it's **more complex to tune** with all those hyperparameters. I
                       <li>Fast inference</li>
                       <li>Easy to train/tune/deploy</li>
                       <li>Strong tooling</li>
-                      <li>Multilingual models out-of-the-box</li>
-                      <li>Rule integration capability</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
@@ -963,7 +950,6 @@ On the downside, it's **more complex to tune** with all those hyperparameters. I
                       <li>Quality depends on pretrained model/domain fit</li>
                       <li>Custom labels need data</li>
                       <li>Limited transparency into pretrained errors</li>
-                      <li>Model size vs. accuracy tradeoffs</li>
                     </ul>
                   </div>
                 </div>
@@ -1056,7 +1042,6 @@ The accuracy depends heavily on **domain fit** - if your text is very different 
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>Strong context modeling</li>
                       <li>Performs well with moderate data</li>
-                      <li>Transferable and robust</li>
                       <li>Pre-trained language knowledge</li>
                     </ul>
                   </div>
@@ -1159,9 +1144,7 @@ The downsides: it's **compute-heavy** and really needs a GPU to run efficiently.
                     <ul style={{ fontSize: '0.95em', lineHeight: '1.5' }}>
                       <li>RoBERTa often outperforms BERT</li>
                       <li>DistilBERT is smaller/faster</li>
-                      <li>Good accuracy retention</li>
                       <li>Better suited for production</li>
-                      <li>Optimized training techniques</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
@@ -1170,7 +1153,6 @@ The downsides: it's **compute-heavy** and really needs a GPU to run efficiently.
                       <li>DistilBERT has slightly lower accuracy</li>
                       <li>Still benefits from GPUs</li>
                       <li>Requires careful tuning</li>
-                      <li>Quantization may be required</li>
                     </ul>
                   </div>
                 </div>
@@ -1270,7 +1252,6 @@ You still **need GPUs for training** these models. DistilBERT is slightly less a
                       <li>No labeled data needed</li>
                       <li>Flexible schemas</li>
                       <li>Can reason and follow instructions</li>
-                      <li>Fast iteration</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
@@ -1279,7 +1260,6 @@ You still **need GPUs for training** these models. DistilBERT is slightly less a
                       <li>Hallucinations/inconsistency</li>
                       <li>Privacy/regulatory concerns</li>
                       <li>Higher cost/latency</li>
-                      <li>Output parsing needed</li>
                     </ul>
                   </div>
                 </div>
@@ -1350,7 +1330,7 @@ This is the future of NER... but **use with caution!** For production systems wi
           title: 'Summary & Comparison',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <p style={{ fontSize: '1.1em', marginBottom: '30px' }}>
+              <p style={{ fontSize: '1em', marginBottom: '30px' }}>
                 A complete overview of NER approach selection, data requirements, performance characteristics, and deployment considerations
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
@@ -1386,13 +1366,10 @@ This is the future of NER... but **use with caution!** For production systems wi
                   <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                   <div>
                     <div style={{ fontWeight: 'bold', fontSize: '1.1em' }}>Deployment Tips</div>
-                    <div style={{ fontSize: '0.85em', opacity: 0.8 }}>Best practices for production</div>
                   </div>
                 </div>
               </div>
-              <p style={{ fontSize: '0.85em', marginTop: '30px', textAlign: 'center', opacity: 0.7 }}>
-                Press ↓ to explore each topic in detail
-              </p>
+              
             </div>
           ),
           backgroundColor: '#16213e',
@@ -1416,7 +1393,6 @@ Let's dive into each one! Press the down arrow to explore the sub-slides.`
                   <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
                     <SvgIcon iconName="duo-map" sizeName="3x" darkModeInvert={true} />
                     <div>
-                      <h2 style={{ margin: 0, color: '#4fc3f7' }}>Quick Selection Guide</h2>
                       <p style={{ margin: 0, opacity: 0.8 }}>Choose the right NER approach for your use case</p>
                     </div>
                   </div>
@@ -1483,69 +1459,73 @@ If you have a brand new entity type and zero training data, try **LLM Zero-shot*
               <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
                 <SvgIcon iconName="duo-graduation-cap" sizeName="3x" darkModeInvert={true} />
                 <div>
-                  <h2 style={{ margin: 0, color: '#81c784' }}>Data Needs Spectrum</h2>
                   <p style={{ margin: 0, opacity: 0.8 }}>How much training data does each approach need?</p>
                 </div>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Rule-Based / Gazetteer</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #4fc3f7 1%, rgba(79, 195, 247, 0.1) 1%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(79, 195, 247, 0.3)' }}>
-                      <span style={{ color: '#4fc3f7', fontWeight: 'bold', fontSize: '1.05em' }}>0 labeled examples</span>
-                    </div>
-                  </div>
-                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>Rule-Based / Gazetteer</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #4fc3f7 1%, rgba(79, 195, 247, 0.1) 1%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(79, 195, 247, 0.3)' }}>
+                      <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>0 labeled examples</span>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Just write patterns and dictionaries by hand
+                  </span>
+                    </div>
                   </div>
+                  
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>CRF / HMM</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #81c784 20%, rgba(129, 199, 132, 0.1) 20%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(129, 199, 132, 0.3)' }}>
-                      <span style={{ color: '#81c784', fontWeight: 'bold', fontSize: '1.05em' }}>1,000 - 5,000</span>
-                    </div>
-                  </div>
-                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>CRF / HMM</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #81c784 20%, rgba(129, 199, 132, 0.1) 20%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(129, 199, 132, 0.3)' }}>
+                      <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>1,000 - 5,000</span>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Good for simple, stable entity schemas
+                  </span>
+                    </div>
                   </div>
+                  
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Transformers (BERT)</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ba68c8 35%, rgba(186, 104, 200, 0.1) 35%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(186, 104, 200, 0.3)' }}>
-                      <span style={{ color: '#ba68c8', fontWeight: 'bold', fontSize: '1.05em' }}>3,000 - 30,000</span>
-                    </div>
-                  </div>
-                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>Transformers (BERT)</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ba68c8 35%, rgba(186, 104, 200, 0.1) 35%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(186, 104, 200, 0.3)' }}>
+                      <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>3,000 - 30,000</span>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Pre-trained, so needs less data than BiLSTM
+                  </span>
+                    </div>
                   </div>
+                  
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>BiLSTM models</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ffb74d 60%, rgba(255, 183, 77, 0.1) 60%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(255, 183, 77, 0.3)' }}>
-                      <span style={{ color: '#ffb74d', fontWeight: 'bold', fontSize: '1.05em' }}>5,000 - 50,000</span>
-                    </div>
-                  </div>
-                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>BiLSTM models</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ffb74d 60%, rgba(255, 183, 77, 0.1) 60%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(255, 183, 77, 0.3)' }}>
+                      <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>5,000 - 50,000</span>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
                     ✓ Trained from scratch, needs more examples
+                  </span>
+                    </div>
                   </div>
+                  
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '10px' }}>
-                    <div style={{ width: '200px', fontWeight: 'bold', fontSize: '1.05em' }}>Zero-shot LLMs</div>
-                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #f06292 2%, rgba(240, 98, 146, 0.1) 2%)', borderRadius: '6px', display: 'flex', alignItems: 'center', paddingLeft: '12px', border: '1px solid rgba(240, 98, 146, 0.3)' }}>
-                      <span style={{ color: '#f06292', fontWeight: 'bold', fontSize: '1.05em' }}>0 - 10 in prompt</span>
+                    <div style={{ width: '400px', fontWeight: 'bold', fontSize: '1.05em' }}>Zero-shot LLMs</div>
+                    <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #f06292 2%, rgba(240, 98, 146, 0.1) 2%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(240, 98, 146, 0.3)' }}>
+                      <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.05em' }}>0 - 10 in prompt</span>
+                      <span style={{ fontSize: '0.85em', opacity: 0.7 }}>
+                    ✓ Few-shot examples given directly in the prompt
+                  </span>
                     </div>
                   </div>
-                  <div style={{ paddingLeft: '212px', fontSize: '0.9em', opacity: 0.7, marginBottom: '3px' }}>
-                    ✓ Few-shot examples given directly in the prompt
-                  </div>
+                  
                 </div>
               </div>
               
@@ -1593,13 +1573,7 @@ This is amazing - just **0 to 10** examples right in the prompt! The LLM already
               title: 'Compute & Latency',
               content: (
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="3x" darkModeInvert={true} />
-                    <div>
-                      <h2 style={{ margin: 0, color: '#ffb74d' }}>Compute & Latency</h2>
-                      <p style={{ margin: 0, opacity: 0.8 }}>Inference time comparison (100 tokens)</p>
-                    </div>
-                  </div>
+                  
                   <div style={{ fontSize: '0.85em' }}>
                     <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                       <thead>
@@ -1688,7 +1662,6 @@ Want to speed things up? Here are three powerful techniques. First, use **ONNX r
                   <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="3x" darkModeInvert={true} />
                     <div>
-                      <h2 style={{ margin: 0, color: '#ba68c8' }}>Maintenance & Deployment</h2>
                       <p style={{ margin: 0, opacity: 0.8 }}>Ongoing operational requirements</p>
                     </div>
                   </div>
@@ -1764,14 +1737,7 @@ Here's the key insight: **simpler models mean simpler maintenance.** A CRF runni
               title: 'Deployment Tips',
               content: (
                 <div style={{ textAlign: 'left' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="3x" darkModeInvert={true} />
-                    <div>
-                      <h2 style={{ margin: 0, color: '#64b5f6' }}>Deployment Tips</h2>
-                      <p style={{ margin: 0, opacity: 0.8 }}>Best practices for production NER</p>
-                    </div>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.85em' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '0.64em' }}>
                     <div style={{ padding: '18px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <span style={{ fontSize: '1.5em' }}>🔗</span>
                       <div>
