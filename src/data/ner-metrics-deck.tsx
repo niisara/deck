@@ -69,7 +69,7 @@ Ready? Let's go!`        },
                 <li>NER predicts entities as spans with types (e.g., PERSON, ORG)</li>
                 <li>Default unless noted: entity-level, strict exact match on span + type, micro-averaged over all entities</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-key" sizeName="2x" darkModeInvert={true} />
                 <h3>Key Notation</h3>
@@ -171,7 +171,7 @@ Let's go!`
               <ul>
                 <li>Of all predicted entities, how many are correct (exact span + type)</li>
               </ul>
-              
+
               <h3>Formula</h3>
               <ul>
                 <li>TP: predicted entities with a one-to-one exact match to gold</li>
@@ -179,7 +179,7 @@ Let's go!`
                 <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
                 <li>Typically micro-averaged across types</li>
               </ul>
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>When false positives are costly</li>
@@ -232,7 +232,7 @@ I might not find everything... but what I find is correct.`
                 <li>Intuitive; useful for threshold calibration</li>
                 <li>Not inflated by abundant O tokens</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -300,7 +300,7 @@ Always!`
               <ul>
                 <li>Of all gold (true) entities, how many did the model find correctly</li>
               </ul>
-              
+
               <h3>Formula</h3>
               <ul>
                 <li>TP: exact matches (span + type)</li>
@@ -308,7 +308,7 @@ Always!`
                 <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]' }} />
                 <li>Typically micro-averaged across types</li>
               </ul>
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>When missing entities is costly</li>
@@ -364,7 +364,7 @@ I might make some extra guesses... but I don't miss much.`
                 <li>Captures model coverage</li>
                 <li>Highlights under-detection and data gaps</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -431,14 +431,14 @@ And that brings us to... F1 Score!`
               <ul>
                 <li>Balance between precision and recall (harmonic mean)</li>
               </ul>
-              
+
               <h3>Formula</h3>
               <ul>
-              <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
+                <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
                 <li>Usually micro-F1 across all entities</li>
                 <li>Macro-F1 averages per type (treats classes equally)</li>
               </ul>
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>General-purpose single-number comparison</li>
@@ -500,7 +500,7 @@ Remember that!`
                 <li>Widely understood</li>
                 <li>Comparable across models</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -565,11 +565,11 @@ Don't let one number fool you!`
               <ul>
                 <li>Percentage of sentences/documents where the entire set of predicted entities (spans + types) exactly equals the gold set</li>
               </ul>
-              
+
               <h3>Formula</h3>
               <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{EM}_i = \\begin{cases} 1 & \\text{if predicted set == gold set} \\\\ 0 & \\text{otherwise} \\end{cases}\\]' }} />
               <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Exact Match Score} = \\text{mean}_i(\\text{EM}_i)\\]' }} />
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>End-to-end reliability</li>
@@ -626,7 +626,7 @@ It tells you: "How often am I 100% right?"`
                 <li>Very strict; reflects true task completeness</li>
                 <li>Sensitive to any error</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -693,7 +693,7 @@ They're less harsh. More helpful.`
               <ul>
                 <li>Credit for near-miss spans to reduce sensitivity to boundary noise while still checking types</li>
               </ul>
-              
+
               <h3>How It Works</h3>
               <ul>
                 <li>Span IoU = |tokens_overlap| / |tokens_union|</li>
@@ -702,7 +702,7 @@ They're less harsh. More helpful.`
                 <li>One-to-one matching (greedy or Hungarian algorithm)</li>
                 <li>Compute TP/FP/FN under this fuzzy rule and report Partial-F1</li>
               </ul>
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>Datasets with noisy boundaries</li>
@@ -765,7 +765,7 @@ It's more forgiving. More practical. More real-world.`
                 <li>More stable with annotation noise</li>
                 <li>Tunable strictness via τ threshold</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -833,14 +833,14 @@ That's the most common. Makes comparison easier.`
                 <li>Accuracy of entity type classification when spans are given (gold spans)</li>
                 <li>Isolates typing from detection to focus solely on classification quality</li>
               </ul>
-              
+
               <h3>Formula</h3>
               <ul>
                 <li>Use gold entity spans only; model predicts a type for each</li>
                 <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
                 <li>Option: macro-averaged over types for class balance</li>
               </ul>
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>Pipeline analysis</li>
@@ -901,7 +901,7 @@ Very helpful during development!`
                 <li>Unaffected by detection errors</li>
                 <li>Interpretable</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -969,7 +969,7 @@ Use F1 for the real score.`
                 <li>Where the model confuses types and how often</li>
                 <li>Error patterns across entity classes</li>
               </ul>
-              
+
               <h3>How It Works</h3>
               <ul>
                 <li>On matched entities (exact or partial per your setting), build matrix:</li>
@@ -978,7 +978,7 @@ Use F1 for the real score.`
                 <li>Normalize rows to get per-class recall</li>
                 <li>Derive per-class precision/recall/F1 and macro averages</li>
               </ul>
-              
+
               <h3>When to Use</h3>
               <ul>
                 <li>Diagnosing confusions (e.g., ORG vs PRODUCT)</li>
@@ -1045,7 +1045,7 @@ This is your roadmap for improvement!`
                 <li>Reveals minority-class issues often hidden by averaging</li>
                 <li>Supports data-driven schema refinement</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h3>Cons</h3>
@@ -1174,7 +1174,7 @@ Use them wisely!`
                 <li>Define matching rule (strict vs partial), averaging (micro vs macro), and evaluation scope (entity vs token)</li>
                 <li>Report per-class metrics alongside micro-F1 for imbalanced datasets</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                 <h3>Don'ts</h3>
@@ -1245,7 +1245,7 @@ Don't let this happen to you!`
                 <li>Automate per-class reports</li>
                 <li>Include evaluation metrics in model documentation</li>
               </ul>
-              
+
               <div style={{ marginTop: '40px' }}>
                 <p style={{ fontSize: '1.2em' }}><strong>Thank you!</strong></p>
                 <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
