@@ -20,7 +20,7 @@ export const nerTrainingDeck: Deck = {
           content: (
             <div>
               <h4>for Domain-Specific Use Cases</h4>
-              <p style={{  display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '30px',  fontSize: '36px' }}>
+              <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '30px', fontSize: '36px' }}>
                 <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
                 Cheat sheets for practical, high-accuracy NER in specialized domains
               </p>
@@ -63,26 +63,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 1: Build a Domain-Specific Entity Dictionary',
           icon: { name: 'duo-book' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Boost recall and speed up labeling with authoritative entity lists.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>Limited labeled data, high domain jargon, recall-critical tasks.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Boost recall and speed up labeling with authoritative entity lists.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Limited labeled data, high domain jargon, recall-critical tasks.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#1a3a52',
           notes: ''
@@ -118,7 +118,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Accelerates annotation</li>
                 <li>Domain control</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -144,26 +144,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 2: Create High-Quality Annotated Training Data',
           icon: { name: 'duo-pen-to-square' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Provide reliable supervision for entity types and boundaries.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>New domain/schema; training from scratch or fine-tuning.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Provide reliable supervision for entity types and boundaries.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>New domain/schema; training from scratch or fine-tuning.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#2d5016',
           notes: ''
@@ -199,7 +199,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Trustworthy eval</li>
                 <li>Reusable assets</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -225,26 +225,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 3: Use Consistent Annotation Guidelines',
           icon: { name: 'duo-clipboard-list' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Reduce label noise and ensure reproducibility across annotators.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>A clear style guide defines boundaries, inclusion/exclusion, and tie-breakers with examples.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>Multiple annotators, long projects, or outsourced labeling.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Reduce label noise and ensure reproducibility across annotators.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>A clear style guide defines boundaries, inclusion/exclusion, and tie-breakers with examples.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Multiple annotators, long projects, or outsourced labeling.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#4a4e69',
           notes: ''
@@ -280,7 +280,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Faster labeling</li>
                 <li>Fewer reworks</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -306,26 +306,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 4: Label Data with Real Domain Context (Not Synthetic Only)',
           icon: { name: 'duo-file-lines' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Ensure models generalize to production text and edge cases.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Use in-the-wild data with real noise, formats, and abbreviations; supplement with synthetic.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>Messy sources (EHRs, logs, contracts), unique jargon, compliance contexts.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Ensure models generalize to production text and edge cases.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Use in-the-wild data with real noise, formats, and abbreviations; supplement with synthetic.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Messy sources (EHRs, logs, contracts), unique jargon, compliance contexts.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#3e2c57',
           notes: ''
@@ -360,7 +360,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Captures rare patterns</li>
                 <li>Better reflects production environments</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -386,26 +386,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 5: Fine-Tune Pretrained Transformer Models',
           icon: { name: 'duo-brain-circuit' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Achieve strong accuracy with less labeled data via transfer learning.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>Limited data, complex language, multilingual, or domain-adapted models available.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Achieve strong accuracy with less labeled data via transfer learning.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Limited data, complex language, multilingual, or domain-adapted models available.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#770022',
           notes: ''
@@ -441,7 +441,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Faster convergence</li>
                 <li>Reusable</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -467,26 +467,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 6: Use Data Augmentation for Rare Entities',
           icon: { name: 'duo-copy' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Improve recall for low-frequency classes and long-tail entities.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>Class imbalance; few-shot entities; costly labeling.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Improve recall for low-frequency classes and long-tail entities.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Class imbalance; few-shot entities; costly labeling.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#10508f',
           notes: ''
@@ -520,7 +520,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Better coverage</li>
                 <li>Cheaper than new labels</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -546,26 +546,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 7: Add Negative Examples to Reduce False Positives',
           icon: { name: 'duo-shield-check' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Increase precision by teaching the model what is not an entity.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>High false-positive rates; ambiguous terminology; rule-assisted pre-annotations.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Increase precision by teaching the model what is not an entity.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>High false-positive rates; ambiguous terminology; rule-assisted pre-annotations.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#304f1a',
           notes: ''
@@ -599,7 +599,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Precision gains</li>
                 <li>Better disambiguation</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -624,26 +624,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 8: Use Entity Boundary Correction Rules',
           icon: { name: 'duo-brackets-square' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Fix systematic boundary errors without retraining.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>Consistent punctuation/units/brackets issues; hyphenated terms; titles.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Fix systematic boundary errors without retraining.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Consistent punctuation/units/brackets issues; hyphenated terms; titles.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#7b2b00',
           notes: ''
@@ -677,7 +677,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Transparent</li>
                 <li>Easy to revert</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -703,26 +703,26 @@ export const nerTrainingDeck: Deck = {
           title: 'Tip 9: Perform Iterative Error Analysis and Retraining',
           icon: { name: 'duo-chart-line' },
           content: (
-              <div style={{ textAlign: 'left' }}>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>Goal</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Drive continuous improvement aligned with business impact.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                    <li>Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</li>
-                  </ul>
-                </div>
-                <div style={{ marginBottom: '0.7em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
-                   <li>After baseline; after data/model changes; ongoing operations.</li>
-                  </ul>
-                </div>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>Goal</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Drive continuous improvement aligned with business impact.</li>
+                </ul>
               </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>How It Works</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</li>
+                </ul>
+              </div>
+              <div style={{ marginBottom: '0.7em' }}>
+                <h4>When to Use</h4>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>After baseline; after data/model changes; ongoing operations.</li>
+                </ul>
+              </div>
+            </div>
           ),
           backgroundColor: '#7b1fa2',
           notes: ''
@@ -757,7 +757,7 @@ export const nerTrainingDeck: Deck = {
                 <li>Focused data spend</li>
                 <li>Robust models</li>
               </ul>
-              
+
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                 <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                 <h4>Cons</h4>
@@ -795,7 +795,7 @@ export const nerTrainingDeck: Deck = {
                   <li>Control precision/recall via negatives and boundary rules</li>
                   <li>Improve iteratively with error analysis and targeted retraining</li>
                 </ul>
-                
+
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
                   <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
                   Metrics to Monitor
