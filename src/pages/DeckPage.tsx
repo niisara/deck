@@ -441,8 +441,11 @@ function DeckPage() {
                 {group.slides.map((slide) => (
                   <section
                     key={slide.id}
-                    data-background-color={slide.backgroundColor || '#2c3e50'}
-                    className={slide.center ? 'center' : ''}
+                    data-background-color={slide.backgroundImage ? undefined : (slide.backgroundColor || '#2c3e50')}
+                    data-background-image={slide.backgroundImage}
+                    data-background-size="cover"
+                    data-background-position="center"
+                    className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''}`}
                   >
                     <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                       {slide.icon && (
@@ -476,8 +479,11 @@ function DeckPage() {
             deck.slides.map((slide) => (
               <section
                 key={slide.id}
-                data-background-color={slide.backgroundColor || '#2c3e50'}
-                className={slide.center ? 'center' : ''}
+                data-background-color={slide.backgroundImage ? undefined : (slide.backgroundColor || '#2c3e50')}
+                data-background-image={slide.backgroundImage}
+                data-background-size="cover"
+                data-background-position="center"
+                className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''}`}
               >
                 <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                   {slide.icon && (

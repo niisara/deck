@@ -34,7 +34,7 @@ export const nerTrainingDeck: Deck = {
               </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1e3a5f',
+          backgroundImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
           notes: `### Slide 1: 9 Custom NER Training Tips for Domain-Specific Use Cases
 Welcome everyone! Today we're going to explore something really exciting in the world of Natural Language Processing, or NLP. We'll be talking about **Named Entity Recognition**, commonly called NER.
 #### 🎯 What is NER?
