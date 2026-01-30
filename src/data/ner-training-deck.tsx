@@ -181,7 +181,7 @@ Let's look at the specific steps next.`
             </div>
           ),
           backgroundColor: '#1a3a52',
-          notes: `### Slide 4: Tip 1 - Steps
+          notes: `### Tip 1 - Steps
 Now let's walk through the practical steps to build your entity dictionary.
 #### Step 1: Aggregate Your Sources
 Start by gathering entity names from everywhere you can find them. This might include internal documents, product catalogs, medical coding systems like ICD-10 or SNOMED, or industry-standard ontologies. Cast a wide net here!
@@ -226,7 +226,7 @@ Now let's look at the trade-offs of this approach.`
             </div>
           ),
           backgroundColor: '#1a3a52',
-          notes: `### Slide 5: Tip 1 - Pros & Cons
+          notes: `### Tip 1 - Pros & Cons
 Let's be honest about the trade-offs with entity dictionaries.
 #### ✅ Pros
 The good stuff: First, you get **rapid recall gains**. If a drug name is in your dictionary, you'll catch it every time it appears. Second, it **accelerates your annotation process** dramatically. Instead of annotators searching through text for entities, they're just reviewing and correcting pre-highlighted suggestions. Third, you maintain **domain control**; you decide exactly what should and shouldn't be recognized.
@@ -276,7 +276,7 @@ Ready for Tip 2? Let's talk about creating high-quality training data, which is 
             </div>
           ),
           backgroundColor: '#2d5016',
-          notes: `### Slide 6: Tip 2 - Create High-Quality Annotated Training Data
+          notes: `### Tip 2 - Create High-Quality Annotated Training Data
 Now we're getting to something fundamental. If Tip 1 was about building a helpful shortcut, Tip 2 is about creating the **gold standard** that your model will learn from.
 #### 🎯 The Goal
 We want to provide **reliable supervision** for our model. This means teaching it exactly what each entity type looks like, where entities start and end (the boundaries), and how to distinguish between similar-looking things.
@@ -331,7 +331,7 @@ Let's look at how to actually do this.`
             </div>
           ),
           backgroundColor: '#2d5016',
-          notes: `### Slide 7: Tip 2 - Steps
+          notes: `### Tip 2 - Steps
 Let me walk you through how to create a solid annotation pipeline.
 #### Step 1: Define Your Entity Schema
 Before anyone starts labeling, you need a crystal-clear **schema**. This is your rulebook that defines what each entity type means, with examples and **counter-examples** (things that look like entities but aren't). For instance: "'Aspirin' is a DRUG, but 'aspirin therapy' as a concept is NOT a DRUG."
@@ -376,7 +376,7 @@ Now let's honestly assess the trade-offs.`
             </div>
           ),
           backgroundColor: '#2d5016',
-          notes: `### Slide 8: Tip 2 - Pros & Cons
+          notes: `### Tip 2 - Pros & Cons
 Let's weigh the benefits against the costs of high-quality annotation.
 #### ✅ Pros
 The good stuff: With quality data, you get a **higher model ceiling**. Your model can only be as good as its training data, so better data means a better possible model. You also get **trustworthy evaluation**. If your test set is noisy, you can't trust your metrics; are you improving the model or just fitting to annotation errors? Finally, annotated data is a **reusable asset**. You can use it to train new model architectures, benchmark different approaches, or fine-tune other models.
@@ -426,7 +426,7 @@ Speaking of quality, our next tip is about keeping that quality *consistent* acr
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### Slide 9: Tip 3 - Use Consistent Annotation Guidelines
+          notes: `### Tip 3 - Use Consistent Annotation Guidelines
 Now, Tip 2 was about *having* good data. Tip 3 is about *keeping* it good, especially when multiple people are involved.
 #### 🎯 The Goal
 We want to **reduce label noise** and ensure **reproducibility**. Label noise is when the same text gets labeled differently by different people, or even by the same person on different days! This noise directly hurts your model because it's learning from inconsistent examples.
@@ -478,7 +478,7 @@ Let's see what goes into good guidelines.`
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### Slide 10: Tip 3 - Steps
+          notes: `### Tip 3 - Steps
 Here's how to create and maintain effective annotation guidelines.
 #### Step 1: Write Boundary Rules
 This is often where disagreements happen. Explicitly state: Do you include titles like "Dr." or "Mr."? Do you include trailing punctuation? How do you handle units like "500 mg"? Is it "500" (DOSAGE) + "mg" (UNIT) or one combined entity? What about hyphenated terms like "COVID-19-related"?
@@ -524,7 +524,7 @@ What are the trade-offs here?`
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### Slide 11: Tip 3 - Pros & Cons
+          notes: `### Tip 3 - Pros & Cons
 Let's look at both sides of maintaining strict guidelines.
 #### ✅ Pros
 The good stuff: You'll see **higher agreement** between annotators, which directly translates to cleaner training data. **Faster labeling** follows because annotators spend less time wondering "what should I do here?" and more time actually labeling. And you'll have **fewer reworks** since clear rules prevent mistakes that would need to be fixed later.
@@ -574,7 +574,7 @@ Now that we've covered *how* to annotate, let's talk about *what* data to annota
             </div>
           ),
           backgroundColor: '#3e2c57',
-          notes: `### Slide 12: Tip 4 - Label Data with Real Domain Context
+          notes: `### Tip 4 - Label Data with Real Domain Context
 This tip addresses a common mistake that even experienced teams make.
 #### 🎯 The Goal
 We want our models to **generalize to production text** and handle **edge cases**. A model trained on clean, synthetic examples often fails spectacularly when it encounters messy real-world data.
@@ -618,7 +618,7 @@ How do we do this practically?`
             </div>
           ),
           backgroundColor: '#3e2c57',
-          notes: `### Slide 13: Tip 4 - Steps
+          notes: `### Tip 4 - Steps
 Let me walk you through how to work with real-world data responsibly.
 #### Step 1: Source Data Ethically
 This is critical. Real data often contains sensitive information. If you're in healthcare, there are HIPAA regulations. In finance, there are PII concerns. Always **de-identify** data as needed: replace real patient names with fake ones, mask credit card numbers, etc. And make sure you have proper approvals to use the data for ML training.
@@ -666,7 +666,7 @@ Let's look at the trade-offs.`
             </div>
           ),
           backgroundColor: '#3e2c57',
-          notes: `### Slide 14: Tip 4 - Pros & Cons
+          notes: `### Tip 4 - Pros & Cons
 Using real data comes with significant benefits and some challenges.
 #### ✅ Pros
 The good stuff: You get **robust performance** because your model learns from the same messy patterns it will see in production. It **captures rare patterns** that synthetic generators would never think to create. And it **better reflects production environments**, reducing the gap between training and deployment.
@@ -724,7 +724,7 @@ Now let's talk about something exciting: using pretrained models to give you a m
             </div>
           ),
           backgroundColor: '#770022',
-          notes: `### Slide 15: Tip 5 - Fine-Tune Pretrained Transformer Models
+          notes: `### Tip 5 - Fine-Tune Pretrained Transformer Models
 Alright, this tip is where modern NLP really shines. If you've heard of BERT, GPT, or transformers in general, this is where that technology comes into play.
 #### 🎯 The Goal
 We want to achieve **strong accuracy with less labeled data** by leveraging **transfer learning**. Instead of training a model from scratch (which requires millions of examples), we start with a model that already understands language and just teach it our specific task.
@@ -778,7 +778,7 @@ This is your go-to approach when you have **limited labeled data** (hundreds to 
             </div>
           ),
           backgroundColor: '#770022',
-          notes: `### Slide 16: Tip 5 - Steps
+          notes: `### Tip 5 - Steps
 Let's walk through the technical process of fine-tuning.
 #### Step 1: Choose Your Base Model
 Start by selecting a pretrained model. For general English, BERT or RoBERTa work well. For specialized domains, look for domain-adapted models: BioBERT or PubMedBERT for biomedical, FinBERT for financial, LegalBERT for legal text. These models were pretrained on domain-specific text and will give you a head start.
@@ -823,7 +823,7 @@ What are the trade-offs?`
             </div>
           ),
           backgroundColor: '#770022',
-          notes: `### Slide 17: Tip 5 - Pros & Cons
+          notes: `### Tip 5 - Pros & Cons
 Let's honestly assess transformer fine-tuning.
 #### ✅ Pros
 The good stuff: You get **strong baselines** out of the box. Even with a few hundred labeled examples, fine-tuned BERT often outperforms traditional CRF models trained on thousands. **Faster convergence** means you need fewer epochs and less data to reach good performance. And these models are **reusable**; once trained, you can apply them anywhere or continue improving them.
@@ -873,7 +873,7 @@ Our next tip addresses a common problem: what do you do when some entity types r
             </div>
           ),
           backgroundColor: '#10508f',
-          notes: `### Slide 18: Tip 6 - Use Data Augmentation for Rare Entities
+          notes: `### Tip 6 - Use Data Augmentation for Rare Entities
 Now we tackle one of the trickiest problems in NER: the **long tail** of rare entity types.
 #### 🎯 The Goal
 We want to **improve recall for low-frequency classes** and handle **long-tail entities**. In most datasets, some entity types appear thousands of times, while others might appear only a few dozen times. Models tend to get good at the common ones and terrible at the rare ones.
@@ -926,7 +926,7 @@ Use augmentation when you have **class imbalance**, when certain entities are **
             </div>
           ),
           backgroundColor: '#10508f',
-          notes: `### Slide 19: Tip 6 - Steps
+          notes: `### Tip 6 - Steps
 Here's how to implement data augmentation safely.
 #### Step 1: Identify Rare Classes
 Start by analyzing your **label distribution**. Plot a histogram of entity counts by type. Which entities have fewer than 100 examples? 50? 20? These are your candidates for augmentation.
@@ -973,7 +973,7 @@ Let's see the trade-offs.`
             </div>
           ),
           backgroundColor: '#10508f',
-          notes: `### Slide 20: Tip 6 - Pros & Cons
+          notes: `### Tip 6 - Pros & Cons
 Let's weigh the benefits and risks of augmentation.
 #### ✅ Pros
 The good stuff: You get **better coverage** of rare entity types without waiting months to collect more real examples. It's **cheaper than labeling new data** since you're generating examples programmatically. And when done right, it can significantly boost recall for underrepresented classes.
@@ -1031,7 +1031,7 @@ Now let's flip the script. We've been talking about finding more entities. What 
             </div>
           ),
           backgroundColor: '#304f1a',
-          notes: `### Slide 21: Tip 7 - Add Negative Examples to Reduce False Positives
+          notes: `### Tip 7 - Add Negative Examples to Reduce False Positives
 Time to address precision. We've been focused on finding more entities (recall), but sometimes the bigger problem is finding *too many* fake entities (false positives).
 #### 🎯 The Goal
 We want to **increase precision** by teaching the model what is *not* an entity. This is about saying "no" correctly.
@@ -1081,7 +1081,7 @@ Apply this when you have **high false-positive rates**, when your domain has **a
             </div>
           ),
           backgroundColor: '#304f1a',
-          notes: `### Slide 22: Tip 7 - Steps
+          notes: `### Tip 7 - Steps
 Here's how to systematically add negative examples.
 #### Step 1: Log False Positives
 Set up logging in your dev and production environments to capture what the model is incorrectly tagging as entities. Don't just look at aggregate metrics; actually look at the specific mistakes. You might be surprised at the patterns you find.
@@ -1123,7 +1123,7 @@ Let's look at the trade-offs.`
             </div>
           ),
           backgroundColor: '#304f1a',
-          notes: `### Slide 23: Tip 7 - Pros & Cons
+          notes: `### Tip 7 - Pros & Cons
 Let's assess the negative examples approach.
 #### ✅ Pros
 The good stuff: You get clear **precision gains** by teaching the model to be more selective. **Better disambiguation** comes naturally; the model learns the contextual cues that distinguish "Apple the company" from "apple the fruit." And you're directly addressing your model's actual weaknesses by learning from its mistakes.
@@ -1180,7 +1180,7 @@ Now let's talk about a quick win that doesn't require retraining at all: boundar
             </div>
           ),
           backgroundColor: '#7b2b00',
-          notes: `### Slide 24: Tip 8 - Use Entity Boundary Correction Rules
+          notes: `### Tip 8 - Use Entity Boundary Correction Rules
 Sometimes your model gets the entity *almost* right, but the boundaries are slightly off. This tip is about fixing those systematic errors without retraining.
 #### 🎯 The Goal
 We want to **fix systematic boundary errors** quickly and cheaply, without going through the whole retraining cycle.
@@ -1224,7 +1224,7 @@ This works great for **consistent patterns** like punctuation issues, unit handl
             </div>
           ),
           backgroundColor: '#7b2b00',
-          notes: `### Slide 25: Tip 8 - Steps
+          notes: `### Tip 8 - Steps
 Here's how to implement boundary correction rules.
 #### Step 1: Analyze Error Patterns
 First, systematically study your model's boundary mistakes. Look at false positives and false negatives, but specifically focus on cases where the entity is *partially* correct. Group these by:
@@ -1275,7 +1275,7 @@ What are the trade-offs?`
             </div>
           ),
           backgroundColor: '#7b2b00',
-          notes: `### Slide 26: Tip 8 - Pros & Cons
+          notes: `### Tip 8 - Pros & Cons
 Let's weigh the benefits and risks of rule-based post-processing.
 #### ✅ Pros
 The good stuff: **Quick wins** are the biggest advantage. You can fix a known pattern in hours instead of days of retraining. Rules are **transparent**; you know exactly what they do, making debugging easy. And they're **easy to revert** if something goes wrong; just comment out the rule.
@@ -1332,7 +1332,7 @@ Now for our final tip: the meta-strategy that ties everything together: iterativ
             </div>
           ),
           backgroundColor: '#7b1fa2',
-          notes: `### Slide 27: Tip 9 - Perform Iterative Error Analysis and Retraining
+          notes: `### Tip 9 - Perform Iterative Error Analysis and Retraining
 Our final tip is perhaps the most important one, because it's the strategy that makes all the other tips work together over time.
 #### 🎯 The Goal
 We want to drive **continuous improvement aligned with business impact**. NER isn't a one-time project; it's an ongoing process of getting better and better.
@@ -1385,7 +1385,7 @@ Always! But especially after establishing a baseline, after any significant data
             </div>
           ),
           backgroundColor: '#7b1fa2',
-          notes: `### Slide 28: Tip 9 - Steps
+          notes: `### Tip 9 - Steps
 Here's how to set up an effective error analysis and retraining cycle.
 #### Step 1: Build Slice Metrics and Confusion Matrices
 Don't just look at overall F1 score. Break down performance by **slices**: by entity type, by document source, by text length, by time period. Build **confusion matrices** to see which entity types get confused with each other. This reveals where your model is weak.
@@ -1434,7 +1434,7 @@ Let's look at the trade-offs.`
             </div>
           ),
           backgroundColor: '#7b1fa2',
-          notes: `### Slide 29: Tip 9 - Pros & Cons
+          notes: `### Tip 9 - Pros & Cons
 Let's honestly assess the iterative improvement approach.
 #### ✅ Pros
 The good stuff: You get **compounding gains**. Each improvement cycle builds on the last, and over time, these small improvements add up to dramatic progress. Your resources are **focused** on the highest-impact problems rather than scattered randomly. And your models become **robust** because you're specifically addressing weaknesses rather than hoping they go away.
@@ -1527,7 +1527,7 @@ Now let's bring it all together with a summary!`
             </div>
           ),
           backgroundColor: '#283593',
-          notes: `### Slide 30: Summary
+          notes: `### Summary
 Alright, let's bring together everything we've learned! We've covered 9 tips for building high-accuracy domain-specific NER systems.
 #### 💡 Key Takeaways
 First, **mix multiple strategies**. Domain dictionaries give you quick recall wins, real-context data ensures generalization, and pretrained transformers give you a powerful foundation. These approaches work best together, not in isolation.
@@ -1574,7 +1574,7 @@ Ready for concrete next steps?`
             </div>
           ),
           backgroundColor: '#283593',
-          notes: `### Slide 31: Next Steps
+          notes: `### Next Steps
 Here's a practical roadmap for getting started with your own domain-specific NER project.
 #### Step 1: Draft Schema and Guidelines
 Before you touch any data, clearly define your entity types. What are you trying to find? Write a draft of your annotation guidelines with examples. Share it with stakeholders and domain experts for feedback. This upfront clarity prevents painful rework later.
@@ -1633,7 +1633,7 @@ Finally, let's talk about risks to watch out for.`
             </div>
           ),
           backgroundColor: '#283593',
-          notes: `### Slide 32: Risks & Mitigations
+          notes: `### Risks & Mitigations
 Let's wrap up by talking about the real-world risks you'll face and how to handle them.
 #### 🔒 Data Access and Privacy
 This is often the biggest blocker. You need real data, but that data might contain sensitive information. The mitigation is **de-identification**: systematically remove or replace names, addresses, medical records, financial details. Work with your legal and compliance teams early to get data access approvals. Don't leave this for the last minute!
