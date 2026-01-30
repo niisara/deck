@@ -35,11 +35,11 @@ export const nerTrainingDeck: Deck = {
             </div>
           ),
           backgroundImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
-          notes: `### Slide 1: 9 Custom NER Training Tips for Domain-Specific Use Cases
+          notes: `### 9 Custom NER Training Tips for Domain-Specific Use Cases
 Welcome everyone! Today we're going to explore something really exciting in the world of Natural Language Processing, or NLP. We'll be talking about **Named Entity Recognition**, commonly called NER.
 #### 🎯 What is NER?
 Before we dive in, let me explain what NER actually means. Imagine you're reading a news article and you want a computer to automatically highlight all the names of people, companies, locations, and dates mentioned in that text. That's exactly what NER does! It's like giving a computer a highlighter and teaching it which words are "special" or "important" in a particular way.
-For example, in the sentence "Apple announced a new iPhone in Cupertino", a NER system would identify "Apple" as a company, "iPhone" as a product, and "Cupertino" as a location. Pretty cool, right?
+For example, in the sentence "Apple announced a new iPhone in India", a NER system would identify "Apple" as a company, "iPhone" as a product, and "India" as a location. Pretty cool, right?
 #### 🏥 Why "Domain-Specific"?
 Now, here's the catch. The NER systems you might find online are trained on general text like news articles. But what if you're working in healthcare and need to identify drug names? Or in legal documents where you need to find contract clauses? That's where **domain-specific** NER comes in. We need to customize these systems to understand the special vocabulary and patterns in your specific field.
 Think of it like this: a general doctor knows a lot about medicine, but if you have a heart problem, you'd want to see a cardiologist who *specializes* in hearts. Similarly, we want NER models that specialize in our domain.
@@ -73,19 +73,18 @@ Over the next few slides, I'll share 9 practical tips that will help you build h
             </div>
           ),
           backgroundColor: '#2d4a6f',
-          notes: `### Slide 2: What You'll Learn
+          notes: `### What You'll Learn
 Let me give you a quick roadmap of what we'll cover today so you know exactly what to expect.
 #### 📚 The Structure
 We're going to walk through **9 actionable tips** for building domain-specific NER models. These aren't just theoretical concepts; they're practical techniques that you can start using right away in your projects.
 For each tip, I'll use a consistent **cheat-sheet format** to make it easy to follow along and refer back later. Each tip will cover:
-- **Goal**: What are we trying to achieve?
-- **How It Works**: The core idea behind the technique
-- **When to Use**: The right situations to apply this tip
-- **Steps**: A practical walkthrough
-- **Pros and Cons**: The trade-offs you should know about
+- **Goal**
+- **How It Works**
+- **When to Use**
+- **Steps**
+- **Pros and Cons**
 At the end, we'll wrap up with a **summary and concrete next steps** so you can go from learning to doing.
-> 🙋 Quick question for the audience: How many of you have worked with any NLP or text processing before? Don't worry if you haven't; we'll explain everything from scratch!
-This format is designed to be like a reference guide you can come back to whenever you're building a custom NER system. Ready? Let's jump into our first tip!`
+`
         }
       ]
     },
@@ -126,7 +125,7 @@ This format is designed to be like a reference guide you can come back to whenev
             </div>
           ),
           backgroundColor: '#1a3a52',
-          notes: `### Slide 3: Tip 1 - Build a Domain-Specific Entity Dictionary
+          notes: `### Tip 1 - Build a Domain-Specific Entity Dictionary
 Our first tip is all about building a **domain-specific entity dictionary**. This might sound technical, but it's actually a very intuitive concept.
 #### 📖 What's an Entity Dictionary?
 Think of an entity dictionary like a master list or a phone book for your domain. If you're working in healthcare, this might be a list of all drug names, disease names, and medical procedures. If you're in finance, it could be company names, stock tickers, and financial terms.
