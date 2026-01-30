@@ -3,6 +3,7 @@ import SvgIcon from '../lib/icons/SvgIcon';
 import { AnimatedEmoji } from '../components/AnimatedEmoji';
 import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import mermaid from 'mermaid';
 
 const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string }) => {
@@ -31,10 +32,111 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
     }
   }, [isOpen, diagram]);
 
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const modal = isOpen ? (
+    <div
+      onClick={handleClose}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 2147483647, // Maximum z-index value
+        padding: '20px',
+        margin: 0,
+      }}
+    >
+      <div
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          backgroundColor: '#1e1e1e',
+          borderRadius: '8px',
+          padding: '24px',
+          maxWidth: '900px',
+          maxHeight: '85vh',
+          overflow: 'auto',
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.7)',
+          position: 'relative',
+        }}
+      >
+        <button
+          onClick={handleClose}
+          style={{
+            position: 'absolute',
+            top: '12px',
+            right: '12px',
+            width: '32px',
+            height: '32px',
+            padding: 0,
+            backgroundColor: '#ff5252',
+            color: '#fff',
+            border: 'none',
+            borderRadius: '50%',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontSize: '18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 1,
+          }}
+          aria-label="Close"
+        >
+          ×
+        </button>
+        {title && (
+          <h3 style={{ marginTop: 0, marginBottom: '20px', marginRight: '40px', color: '#fff' }}>
+            {title}
+          </h3>
+        )}
+        <div
+          ref={mermaidRef}
+          style={{
+            backgroundColor: '#2d2d2d',
+            padding: '20px',
+            borderRadius: '4px',
+            overflow: 'auto',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            minHeight: '200px',
+          }}
+          dangerouslySetInnerHTML={{ __html: renderedSvg }}
+        />
+        <button
+          onClick={handleClose}
+          style={{
+            marginTop: '20px',
+            padding: '12px 24px',
+            backgroundColor: '#4fc3f7',
+            color: '#000',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            fontWeight: 'bold',
+            fontSize: '14px',
+            width: '100%',
+          }}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  ) : null;
+
   return (
     <>
       <span
         onClick={(e) => {
+          e.preventDefault();
           e.stopPropagation();
           setIsOpen(true);
         }}
@@ -46,84 +148,13 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
           verticalAlign: 'middle',
           opacity: 0.7,
           transition: 'opacity 0.2s',
-          position: 'relative',
-          zIndex: 1,
         }}
         onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
         onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
       >
         <SvgIcon iconName="duo-diagram-project" sizeName="sm" />
       </span>
-      {isOpen && (
-        <div
-          onClick={() => setIsOpen(false)}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0, 0, 0, 0.85)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 999999,
-            padding: '20px',
-          }}
-        >
-          <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              backgroundColor: '#1e1e1e',
-              borderRadius: '8px',
-              padding: '24px',
-              maxWidth: '900px',
-              maxHeight: '85vh',
-              overflow: 'auto',
-              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.7)',
-              position: 'relative',
-              zIndex: 1000000,
-            }}
-          >
-            {title && (
-              <h3 style={{ marginTop: 0, marginBottom: '20px', color: '#fff' }}>
-                {title}
-              </h3>
-            )}
-            <div
-              ref={mermaidRef}
-              style={{
-                backgroundColor: '#2d2d2d',
-                padding: '20px',
-                borderRadius: '4px',
-                overflow: 'auto',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                minHeight: '200px',
-              }}
-              dangerouslySetInnerHTML={{ __html: renderedSvg }}
-            />
-            <button
-              onClick={() => setIsOpen(false)}
-              style={{
-                marginTop: '20px',
-                padding: '10px 20px',
-                backgroundColor: '#4fc3f7',
-                color: '#000',
-                border: 'none',
-                borderRadius: '4px',
-                cursor: 'pointer',
-                fontWeight: 'bold',
-                fontSize: '14px',
-                width: '100%',
-              }}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      {modal && createPortal(modal, document.body)}
     </>
   );
 };
