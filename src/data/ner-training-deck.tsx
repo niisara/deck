@@ -45,12 +45,12 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
         left: 0,
         right: 0,
         bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.9)',
+        backgroundColor: 'rgba(0, 0, 0, 0.95)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 2147483647, // Maximum z-index value
-        padding: '20px',
+        padding: 0,
         margin: 0,
       }}
     >
@@ -59,22 +59,24 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
         style={{
           backgroundColor: '#1e1e1e',
           borderRadius: '8px',
-          padding: '24px',
-          maxWidth: '900px',
-          maxHeight: '85vh',
+          padding: '32px',
+          width: '95vw',
+          height: '95vh',
           overflow: 'auto',
           boxShadow: '0 8px 32px rgba(0, 0, 0, 0.7)',
           position: 'relative',
+          display: 'flex',
+          flexDirection: 'column',
         }}
       >
         <button
           onClick={handleClose}
           style={{
             position: 'absolute',
-            top: '12px',
-            right: '12px',
-            width: '32px',
-            height: '32px',
+            top: '16px',
+            right: '16px',
+            width: '40px',
+            height: '40px',
             padding: 0,
             backgroundColor: '#ff5252',
             color: '#fff',
@@ -82,7 +84,7 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
             borderRadius: '50%',
             cursor: 'pointer',
             fontWeight: 'bold',
-            fontSize: '18px',
+            fontSize: '24px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -93,7 +95,7 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
           ×
         </button>
         {title && (
-          <h3 style={{ marginTop: 0, marginBottom: '20px', marginRight: '40px', color: '#fff' }}>
+          <h3 style={{ marginTop: 0, marginBottom: '24px', marginRight: '60px', color: '#fff', fontSize: '1.5em' }}>
             {title}
           </h3>
         )}
@@ -101,28 +103,29 @@ const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string })
           ref={mermaidRef}
           style={{
             backgroundColor: '#2d2d2d',
-            padding: '20px',
+            padding: '32px',
             borderRadius: '4px',
             overflow: 'auto',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            minHeight: '200px',
+            flex: 1,
+            minHeight: 0,
           }}
           dangerouslySetInnerHTML={{ __html: renderedSvg }}
         />
         <button
           onClick={handleClose}
           style={{
-            marginTop: '20px',
-            padding: '12px 24px',
+            marginTop: '24px',
+            padding: '14px 28px',
             backgroundColor: '#4fc3f7',
             color: '#000',
             border: 'none',
             borderRadius: '4px',
             cursor: 'pointer',
             fontWeight: 'bold',
-            fontSize: '14px',
+            fontSize: '16px',
             width: '100%',
           }}
         >
