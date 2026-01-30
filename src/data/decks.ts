@@ -14,11 +14,9 @@ import { parentChildRetrievalDeck } from './parent-child-retrieval-deck';
 import { productionRagDeck } from './production-rag-deck';
 import { rerankingModelsDeck } from './reranking-models-deck';
 import { ragLatencyDeck } from './rag-latency-deck';
-import { textClassificationDeck } from './text-classification-deck';
 import { llmCachingDeck } from './llm-caching-deck';
 import { contextPackingDeck } from './context-packing-deck';
 import { entityNormalizationDeck } from './entity-normalization-deck';
-import { entityDisambiguationTechniquesDeck } from './entity-disambiguation-techniques-deck';
 import { featureExtractionDeck } from './feature-extraction-deck';
 import { graphRetrievalDeck } from './graph-retrieval-deck';
 import { ragEvaluationMetricsDeck } from './rag-evaluation-metrics-deck';
@@ -48,11 +46,9 @@ export const decks = [
   productionRagDeck,
   rerankingModelsDeck,
   ragLatencyDeck,
-  textClassificationDeck,
   llmCachingDeck,
   contextPackingDeck,
   entityNormalizationDeck,
-  entityDisambiguationTechniquesDeck,
   featureExtractionDeck,
   graphRetrievalDeck,
   ragEvaluationMetricsDeck,
