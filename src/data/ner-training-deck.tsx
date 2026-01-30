@@ -16,10 +16,9 @@ export const nerTrainingDeck: Deck = {
         {
           id: 1,
           center: true,
-          title: '9 Custom NER Training Tips',
+          title: '9 Custom NER Training Tips for Domain-Specific Use Cases',
           content: (
             <div>
-              <h4>for Domain-Specific Use Cases</h4>
               <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '30px', fontSize: '36px' }}>
                 <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
                 Cheat sheets for practical, high-accuracy NER in specialized domains

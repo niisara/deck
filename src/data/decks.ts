@@ -30,8 +30,10 @@ import { textPreprocessingDeck } from './text-preprocessing-deck';
 import { chunkingTechniquesDeck } from './chunking-techniques-deck';
 import { vectorDatabasesDeck } from './vector-databases-deck';
 
+const isProd = import.meta.env.VITE_IS_PROD === 'true';
+
 export const decks = [
-  demoDeck,
+  ...(!isProd ? [demoDeck] : []),
   sampleDeck,
   nerMetricsDeck,
   embeddingQualityDeck,
