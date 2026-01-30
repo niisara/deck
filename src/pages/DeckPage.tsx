@@ -258,6 +258,9 @@ function DeckPage() {
         const currentSlide = revealInstance.getCurrentSlide();
         if (!currentSlide) return;
         
+        // Get animation delay from environment variable (default to 1000ms)
+        const baseDelay = parseInt(import.meta.env.VITE_GSAP_ANIMATION_DELAY || '1000');
+        
         // Find all GSAP animated elements in the current slide
         const animatedElements = currentSlide.querySelectorAll('[data-gsap-animation]');
         
@@ -267,9 +270,13 @@ function DeckPage() {
           const duration = parseFloat(htmlElement.getAttribute('data-gsap-duration') || '0.8');
           const delay = parseFloat(htmlElement.getAttribute('data-gsap-delay') || '0');
           
-          // Reset and animate
+          // Set initial hidden state immediately
           if (animationType) {
-            animateElement(htmlElement, animationType, duration, delay);
+            setInitialState(htmlElement, animationType);
+            // Animate after base delay + element's own delay
+            setTimeout(() => {
+              animateElement(htmlElement, animationType, duration, 0);
+            }, baseDelay + (delay * 1000));
           }
         });
         
@@ -282,13 +289,38 @@ function DeckPage() {
           
           const items = htmlList.querySelectorAll('.gsap-stagger-item');
           if (items.length > 0) {
-            gsap.fromTo(
-              items,
-              { y: 30, opacity: 0 },
-              { y: 0, opacity: 1, duration, stagger, ease: 'power2.out' }
-            );
+            // Set initial hidden state
+            gsap.set(items, { y: 30, opacity: 0 });
+            // Animate after base delay
+            setTimeout(() => {
+              gsap.fromTo(
+                items,
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1, duration, stagger, ease: 'power2.out' }
+              );
+            }, baseDelay);
           }
         });
+      };
+      
+      // Helper function to set initial hidden state
+      const setInitialState = (element: HTMLElement, animation: string) => {
+        const initialStates: Record<string, any> = {
+          fadeIn: { opacity: 0 },
+          slideInLeft: { x: -100, opacity: 0 },
+          slideInRight: { x: 100, opacity: 0 },
+          slideInTop: { y: -100, opacity: 0 },
+          slideInBottom: { y: 100, opacity: 0 },
+          scaleIn: { scale: 0, opacity: 0 },
+          bounceIn: { scale: 0, opacity: 0 },
+          rotateIn: { rotation: -180, scale: 0, opacity: 0 },
+          flipCard: { rotationY: -180, opacity: 0 }
+        };
+        
+        const state = initialStates[animation];
+        if (state) {
+          gsap.set(element, state);
+        }
       };
       
       // Helper function to animate individual elements

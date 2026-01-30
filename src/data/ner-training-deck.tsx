@@ -152,13 +152,33 @@ Let's look at the specific steps next.`
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Aggregate sources (docs, catalogs, codes, ontologies)</li>
-                <li>Normalize (casefold, stemming/lemmatization, canonical forms, aliases)</li>
-                <li>Deduplicate, type each entry, track versions</li>
-                <li>Integrate as pre-annotations, matchers, or distant supervision</li>
-                <li>Evaluate precision/recall; add disambiguation and stoplists</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Aggregate sources (docs, catalogs, codes, ontologies)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Normalize (casefold, stemming/lemmatization, canonical forms, aliases)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Deduplicate, type each entry, track versions</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Integrate as pre-annotations, matchers, or distant supervision</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={5}>
+                    <li>Evaluate precision/recall; add disambiguation and stoplists</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a3a52',
@@ -181,25 +201,29 @@ Now let's look at the trade-offs of this approach.`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Rapid recall gains</li>
-                <li>Accelerates annotation</li>
-                <li>Domain control</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Rapid recall gains</li>
+                  <li>Accelerates annotation</li>
+                  <li>Domain control</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Maintenance overhead</li>
-                <li>Ambiguity can raise false positives</li>
-                <li>May miss contextual variants</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Maintenance overhead</li>
+                  <li>Ambiguity can raise false positives</li>
+                  <li>May miss contextual variants</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a3a52',
@@ -226,24 +250,30 @@ Ready for Tip 2? Let's talk about creating high-quality training data, which is 
           icon: { name: 'duo-pen-to-square' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Provide reliable supervision for entity types and boundaries.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>New domain/schema; training from scratch or fine-tuning.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Provide reliable supervision for entity types and boundaries.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Expert human annotations with QA, double-labeling, and adjudication form a gold standard.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>New domain/schema; training from scratch or fine-tuning.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2d5016',
@@ -272,13 +302,33 @@ Let's look at how to actually do this.`
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Define entity schema with examples and counter-examples</li>
-                <li>Sample a representative corpus (sources, time ranges, formats)</li>
-                <li>Train annotators; run calibration rounds</li>
-                <li>Double-annotate 10–20%; adjudicate; measure IAA (F1/Kappa)</li>
-                <li>Split gold/dev/test; document decisions</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Define entity schema with examples and counter-examples</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Sample a representative corpus (sources, time ranges, formats)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Train annotators; run calibration rounds</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Double-annotate 10–20%; adjudicate; measure IAA (F1/Kappa)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={5}>
+                    <li>Split gold/dev/test; document decisions</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#2d5016',
@@ -301,25 +351,29 @@ Now let's honestly assess the trade-offs.`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Higher model ceiling</li>
-                <li>Trustworthy eval</li>
-                <li>Reusable assets</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Higher model ceiling</li>
+                  <li>Trustworthy eval</li>
+                  <li>Reusable assets</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Costly</li>
-                <li>Time-consuming</li>
-                <li>Requires expert availability</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Costly</li>
+                  <li>Time-consuming</li>
+                  <li>Requires expert availability</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2d5016',
@@ -346,24 +400,30 @@ Speaking of quality, our next tip is about keeping that quality *consistent* acr
           icon: { name: 'duo-clipboard-list' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Reduce label noise and ensure reproducibility across annotators.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>A clear style guide defines boundaries, inclusion/exclusion, and tie-breakers with examples.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Multiple annotators, long projects, or outsourced labeling.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Reduce label noise and ensure reproducibility across annotators.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>A clear style guide defines boundaries, inclusion/exclusion, and tie-breakers with examples.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Multiple annotators, long projects, or outsourced labeling.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4a4e69',
@@ -389,13 +449,33 @@ Let's see what goes into good guidelines.`
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Write rules for boundaries (titles, punctuation, units, hyphens)</li>
-                <li>Specify entity linking rules and overlapping entities policy</li>
-                <li>Add tricky-case examples and decision trees</li>
-                <li>Maintain a changelog; communicate updates</li>
-                <li>Audit samples weekly; monitor IAA</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Write rules for boundaries (titles, punctuation, units, hyphens)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Specify entity linking rules and overlapping entities policy</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Add tricky-case examples and decision trees</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Maintain a changelog; communicate updates</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={5}>
+                    <li>Audit samples weekly; monitor IAA</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4a4e69',
@@ -419,25 +499,29 @@ What are the trade-offs here?`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Higher agreement</li>
-                <li>Faster labeling</li>
-                <li>Fewer reworks</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Higher agreement</li>
+                  <li>Faster labeling</li>
+                  <li>Fewer reworks</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Upfront effort</li>
-                <li>May seem rigid</li>
-                <li>Needs maintenance</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Upfront effort</li>
+                  <li>May seem rigid</li>
+                  <li>Needs maintenance</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4a4e69',
@@ -464,24 +548,30 @@ Now that we've covered *how* to annotate, let's talk about *what* data to annota
           icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Ensure models generalize to production text and edge cases.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Use in-the-wild data with real noise, formats, and abbreviations; supplement with synthetic.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Messy sources (EHRs, logs, contracts), unique jargon, compliance contexts.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Ensure models generalize to production text and edge cases.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Use in-the-wild data with real noise, formats, and abbreviations; supplement with synthetic.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Messy sources (EHRs, logs, contracts), unique jargon, compliance contexts.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#3e2c57',
@@ -504,12 +594,28 @@ How do we do this practically?`
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Source data ethically; de-identify as needed</li>
-                <li>Stratify by source, time, author style, and difficulty</li>
-                <li>Complement with targeted synthetic to balance classes</li>
-                <li>Track domain shift; refresh samples periodically</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Source data ethically; de-identify as needed</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Stratify by source, time, author style, and difficulty</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Complement with targeted synthetic to balance classes</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Track domain shift; refresh samples periodically</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#3e2c57',
@@ -535,25 +641,29 @@ Let's look at the trade-offs.`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Robust performance</li>
-                <li>Captures rare patterns</li>
-                <li>Better reflects production environments</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Robust performance</li>
+                  <li>Captures rare patterns</li>
+                  <li>Better reflects production environments</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Access/privacy constraints</li>
-                <li>Harder, slower annotation</li>
-                <li>May require legal/compliance review</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Access/privacy constraints</li>
+                  <li>Harder, slower annotation</li>
+                  <li>May require legal/compliance review</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#3e2c57',
@@ -588,24 +698,30 @@ Now let's talk about something exciting: using pretrained models to give you a m
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Achieve strong accuracy with less labeled data via transfer learning.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Limited data, complex language, multilingual, or domain-adapted models available.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Achieve strong accuracy with less labeled data via transfer learning.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Add a token-classification head (optionally CRF) on a pretrained encoder and fine-tune on your labels.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Limited data, complex language, multilingual, or domain-adapted models available.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#770022',
@@ -633,13 +749,33 @@ This is your go-to approach when you have **limited labeled data** (hundreds to 
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Choose base (e.g., BERT/RoBERTa + domain variants)</li>
-                <li>Tokenize; align labels to wordpieces; handle sub-token tags</li>
-                <li>Set hyperparams (lr, batch size, weight decay, early stopping)</li>
-                <li>Use class weighting or focal loss for imbalance</li>
-                <li>Validate; consider PEFT/LoRA for efficiency; export for serving</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Choose base (e.g., BERT/RoBERTa + domain variants)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Tokenize; align labels to wordpieces; handle sub-token tags</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Set hyperparams (lr, batch size, weight decay, early stopping)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Use class weighting or focal loss for imbalance</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={5}>
+                    <li>Validate; consider PEFT/LoRA for efficiency; export for serving</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#770022',
@@ -662,25 +798,29 @@ What are the trade-offs?`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Strong baselines</li>
-                <li>Faster convergence</li>
-                <li>Reusable</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Strong baselines</li>
+                  <li>Faster convergence</li>
+                  <li>Reusable</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Compute/latency costs</li>
-                <li>Risk of overfitting/forgetting</li>
-                <li>Careful tuning needed</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Compute/latency costs</li>
+                  <li>Risk of overfitting/forgetting</li>
+                  <li>Careful tuning needed</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#770022',
@@ -707,24 +847,30 @@ Our next tip addresses a common problem: what do you do when some entity types r
           icon: { name: 'duo-copy' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Improve recall for low-frequency classes and long-tail entities.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Class imbalance; few-shot entities; costly labeling.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Improve recall for low-frequency classes and long-tail entities.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Generate realistic variants via synonym/alias swaps, back-translation, masked-LM infill, and pattern templates.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Class imbalance; few-shot entities; costly labeling.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#10508f',
@@ -756,12 +902,28 @@ Use augmentation when you have **class imbalance**, when certain entities are **
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Identify rare classes via label distribution</li>
-                <li>Define safe ops that preserve meaning and boundaries</li>
-                <li>Generate candidates; human-review a sample</li>
-                <li>Mix 10–30% augmented with real data; monitor metrics</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Identify rare classes via label distribution</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Define safe ops that preserve meaning and boundaries</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Generate candidates; human-review a sample</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Mix 10–30% augmented with real data; monitor metrics</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#10508f',
@@ -787,24 +949,28 @@ Let's see the trade-offs.`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Better coverage</li>
-                <li>Cheaper than new labels</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Better coverage</li>
+                  <li>Cheaper than new labels</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Artifacts can mislead model</li>
-                <li>Unrealistic text</li>
-                <li>Boundary drift risk</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Artifacts can mislead model</li>
+                  <li>Unrealistic text</li>
+                  <li>Boundary drift risk</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#10508f',
@@ -839,24 +1005,30 @@ Now let's flip the script. We've been talking about finding more entities. What 
           icon: { name: 'duo-shield-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Increase precision by teaching the model what is not an entity.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>High false-positive rates; ambiguous terminology; rule-assisted pre-annotations.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Increase precision by teaching the model what is not an entity.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Include near-miss spans and ambiguous terms labeled as O; mine hard negatives from model errors.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>High false-positive rates; ambiguous terminology; rule-assisted pre-annotations.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#304f1a',
@@ -885,12 +1057,28 @@ Apply this when you have **high false-positive rates**, when your domain has **a
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Log false positives from dev/prod</li>
-                <li>Mine hard negatives and add to training with weights</li>
-                <li>Create stoplists and context rules (e.g., titles vs names)</li>
-                <li>Rebalance batches; track PR curves and thresholds</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Log false positives from dev/prod</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Mine hard negatives and add to training with weights</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Create stoplists and context rules (e.g., titles vs names)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Rebalance batches; track PR curves and thresholds</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#304f1a',
@@ -912,23 +1100,27 @@ Let's look at the trade-offs.`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Precision gains</li>
-                <li>Better disambiguation</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Precision gains</li>
+                  <li>Better disambiguation</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>May reduce recall</li>
-                <li>Needs ongoing curation</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>May reduce recall</li>
+                  <li>Needs ongoing curation</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#304f1a',
@@ -962,24 +1154,30 @@ Now let's talk about a quick win that doesn't require retraining at all: boundar
           icon: { name: 'duo-brackets-square' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Fix systematic boundary errors without retraining.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Consistent punctuation/units/brackets issues; hyphenated terms; titles.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Fix systematic boundary errors without retraining.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Apply deterministic post-processing (regex/heuristics) or decoding constraints to trim/expand spans.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Consistent punctuation/units/brackets issues; hyphenated terms; titles.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b2b00',
@@ -1007,11 +1205,23 @@ This works great for **consistent patterns** like punctuation issues, unit handl
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Analyze error patterns by entity and token type</li>
-                <li>Write rules (e.g., include units, exclude trailing punctuation, merge hyphenated tokens)</li>
-                <li>Insert a post-processing step in the pipeline; add unit tests</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Analyze error patterns by entity and token type</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Write rules (e.g., include units, exclude trailing punctuation, merge hyphenated tokens)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Insert a post-processing step in the pipeline; add unit tests</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7b2b00',
@@ -1040,25 +1250,29 @@ What are the trade-offs?`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Quick wins</li>
-                <li>Transparent</li>
-                <li>Easy to revert</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Quick wins</li>
+                  <li>Transparent</li>
+                  <li>Easy to revert</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Brittle</li>
-                <li>Domain/language-specific</li>
-                <li>Maintenance needed</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Brittle</li>
+                  <li>Domain/language-specific</li>
+                  <li>Maintenance needed</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b2b00',
@@ -1092,24 +1306,30 @@ Now for our final tip: the meta-strategy that ties everything together: iterativ
           icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Drive continuous improvement aligned with business impact.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>After baseline; after data/model changes; ongoing operations.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Drive continuous improvement aligned with business impact.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Bucket errors, collect targeted new data, retrain, and re-evaluate on stable benchmarks.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>After baseline; after data/model changes; ongoing operations.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b1fa2',
@@ -1141,12 +1361,28 @@ Always! But especially after establishing a baseline, after any significant data
           title: 'Steps',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
-                <li>Build slice metrics and confusion matrices</li>
-                <li>Create error taxonomy (boundary, type, context, OOV)</li>
-                <li>Prioritize by impact; collect/label new examples</li>
-                <li>Retrain; A/B test; monitor drift and regression</li>
-              </ol>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Build slice metrics and confusion matrices</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Create error taxonomy (boundary, type, context, OOV)</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Prioritize by impact; collect/label new examples</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Retrain; A/B test; monitor drift and regression</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7b1fa2',
@@ -1173,25 +1409,29 @@ Let's look at the trade-offs.`
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <h4>Pros</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Compounding gains</li>
-                <li>Focused data spend</li>
-                <li>Robust models</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
+                  <h4>Pros</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Compounding gains</li>
+                  <li>Focused data spend</li>
+                  <li>Robust models</li>
+                </ul>
+              </GSAPAnimated>
 
-              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <h4>Cons</h4>
-              </div>
-              <ul style={{ fontSize: '0.7em' }}>
-                <li>Requires sustained effort</li>
-                <li>Risk of overfitting to test</li>
-                <li>Ops overhead</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
+                  <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                  <h4>Cons</h4>
+                </div>
+                <ul style={{ fontSize: '0.7em' }}>
+                  <li>Requires sustained effort</li>
+                  <li>Risk of overfitting to test</li>
+                  <li>Ops overhead</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b1fa2',
@@ -1227,27 +1467,63 @@ Now let's bring it all together with a summary!`
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '0.8em' }}>
-                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                  Key Takeaways
-                </h3>
-                <ul style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
-                  <li>Mix domain dictionaries, real-context data, and strong pretrained models</li>
-                  <li>Enforce consistent guidelines; invest in gold data and IAA</li>
-                  <li>Control precision/recall via negatives and boundary rules</li>
-                  <li>Improve iteratively with error analysis and targeted retraining</li>
-                </ul>
+                <GSAPAnimated animation="fadeIn" delay={0.1}>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                    Key Takeaways
+                  </h3>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Mix domain dictionaries, real-context data, and strong pretrained models</li>
+                    </ul>
+                  </div>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Enforce consistent guidelines; invest in gold data and IAA</li>
+                    </ul>
+                  </div>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Control precision/recall via negatives and boundary rules</li>
+                    </ul>
+                  </div>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Improve iteratively with error analysis and targeted retraining</li>
+                    </ul>
+                  </div>
+                </GSAPStaggerList>
 
-                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-                  <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
-                  Metrics to Monitor
-                </h3>
-                <ul style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
-                  <li>Precision/Recall/F1 per entity</li>
-                  <li>Boundary accuracy</li>
-                  <li>Slice metrics (document types, entity frequencies)</li>
-                  <li>Inference latency</li>
-                </ul>
+                <GSAPAnimated animation="fadeIn" delay={0.8}>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
+                    Metrics to Monitor
+                  </h3>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Precision/Recall/F1 per entity</li>
+                    </ul>
+                  </div>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Boundary accuracy</li>
+                    </ul>
+                  </div>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Slice metrics (document types, entity frequencies)</li>
+                    </ul>
+                  </div>
+                  <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                    <ul style={{ fontSize: '1em' }}>
+                      <li>Inference latency</li>
+                    </ul>
+                  </div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
@@ -1274,12 +1550,28 @@ Ready for concrete next steps?`
           icon: { name: 'duo-list-ol' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <ol style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
-                <li>Draft schema and guidelines</li>
-                <li>Build v1 dictionary and sample real data</li>
-                <li>Fine-tune a baseline model; set eval harness</li>
-                <li>Start error log; plan augmentation and negatives</li>
-              </ol>
+              <GSAPStaggerList stagger={0.2} duration={0.6}>
+                <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                  <ol style={{ fontSize: '1em' }}>
+                    <li>Draft schema and guidelines</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                  <ol style={{ fontSize: '1em' }} start={2}>
+                    <li>Build v1 dictionary and sample real data</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                  <ol style={{ fontSize: '1em' }} start={3}>
+                    <li>Fine-tune a baseline model; set eval harness</li>
+                  </ol>
+                </div>
+                <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+                  <ol style={{ fontSize: '1em' }} start={4}>
+                    <li>Start error log; plan augmentation and negatives</li>
+                  </ol>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#283593',
@@ -1314,24 +1606,30 @@ Finally, let's talk about risks to watch out for.`
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ fontSize: '0.95em' }}>
-                <div style={{ marginBottom: '25px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-lock" sizeName="2x" style={{ color: '#e91e63' }} darkModeInvert={true} />
-                    <strong>Data access/privacy</strong> → de-identification, approvals
-                  </p>
-                </div>
-                <div style={{ marginBottom: '25px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-arrow-trend-down" sizeName="2x" style={{ color: '#ff5722' }} darkModeInvert={true} />
-                    <strong>Model drift</strong> → scheduled refresh, monitoring, versioning
-                  </p>
-                </div>
-                <div style={{ marginBottom: '25px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-battery-quarter" sizeName="2x" style={{ color: '#ffc107' }} darkModeInvert={true} />
-                    <strong>Resource constraints</strong> → prioritize entity types, phase rollouts
-                  </p>
-                </div>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                  <div style={{ marginBottom: '25px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <SvgIcon iconName="duo-lock" sizeName="2x" style={{ color: '#e91e63' }} darkModeInvert={true} />
+                      <strong>Data access/privacy</strong> → de-identification, approvals
+                    </p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div style={{ marginBottom: '25px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <SvgIcon iconName="duo-arrow-trend-down" sizeName="2x" style={{ color: '#ff5722' }} darkModeInvert={true} />
+                      <strong>Model drift</strong> → scheduled refresh, monitoring, versioning
+                    </p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                  <div style={{ marginBottom: '25px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                      <SvgIcon iconName="duo-battery-quarter" sizeName="2x" style={{ color: '#ffc107' }} darkModeInvert={true} />
+                      <strong>Resource constraints</strong> → prioritize entity types, phase rollouts
+                    </p>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
