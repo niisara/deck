@@ -1,6 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { AnimatedEmoji } from '../components/AnimatedEmoji';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
 
 export const nerTrainingDeck: Deck = {
   id: 'ner-training-deck',
@@ -20,13 +21,17 @@ export const nerTrainingDeck: Deck = {
           title: '9 Custom NER Training Tips for Domain-Specific Use Cases',
           content: (
             <div>
-              <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '30px', fontSize: '36px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
-                Cheat sheets for practical, high-accuracy NER in specialized domains
-              </p>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0.2}>
+                <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '30px', fontSize: '36px' }}>
+                  <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
+                  Cheat sheets for practical, high-accuracy NER in specialized domains
+                </p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e3a5f',
@@ -48,13 +53,23 @@ Over the next few slides, I'll share 9 practical tips that will help you build h
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '1em' }}>
-                <ul style={{ lineHeight: '' }}>
-                  <li><strong>9 actionable tips</strong> for building domain-specific NER models</li>
-                  <li><strong>Cheat-sheet structure</strong> per tip: Goal, How It Works, When to Use, Steps, Pros, Cons</li>
-                  <li><strong>Summary and next steps</strong> for implementation</li>
-                </ul>
-              </div>
+              <GSAPStaggerList stagger={0.2} duration={0.6}>
+                <div style={{ fontSize: '1em' }}>
+                  <ul style={{ lineHeight: '' }}>
+                    <li><strong>9 actionable tips</strong> for building domain-specific NER models</li>
+                  </ul>
+                </div>
+                <div style={{ fontSize: '1em' }}>
+                  <ul style={{ lineHeight: '' }}>
+                    <li><strong>Cheat-sheet structure</strong> per tip: Goal, How It Works, When to Use, Steps, Pros, Cons</li>
+                  </ul>
+                </div>
+                <div style={{ fontSize: '1em' }}>
+                  <ul style={{ lineHeight: '' }}>
+                    <li><strong>Summary and next steps</strong> for implementation</li>
+                  </ul>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#2d4a6f',
@@ -84,24 +99,30 @@ This format is designed to be like a reference guide you can come back to whenev
           icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>Goal</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Boost recall and speed up labeling with authoritative entity lists.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>How It Works</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
-                </ul>
-              </div>
-              <div style={{ marginBottom: '0.7em' }}>
-                <h4>When to Use</h4>
-                <ul style={{ fontSize: '0.7em' }}>
-                  <li>Limited labeled data, high domain jargon, recall-critical tasks.</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>Goal</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Boost recall and speed up labeling with authoritative entity lists.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>How It Works</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.7em' }}>
+                    <li>Limited labeled data, high domain jargon, recall-critical tasks.</li>
+                  </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a3a52',
