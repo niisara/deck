@@ -2,6 +2,131 @@ import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { AnimatedEmoji } from '../components/AnimatedEmoji';
 import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { useState, useEffect, useRef } from 'react';
+import mermaid from 'mermaid';
+
+const MermaidPopover = ({ diagram, title }: { diagram: string; title?: string }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [renderedSvg, setRenderedSvg] = useState<string>('');
+  const mermaidRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (isOpen && diagram) {
+      const renderDiagram = async () => {
+        try {
+          mermaid.initialize({
+            startOnLoad: false,
+            theme: 'dark',
+            securityLevel: 'loose',
+          });
+          const id = `mermaid-${Date.now()}`;
+          const { svg } = await mermaid.render(id, diagram);
+          setRenderedSvg(svg);
+        } catch (error) {
+          console.error('Error rendering Mermaid diagram:', error);
+          setRenderedSvg('<p style="color: #ff6b6b;">Error rendering diagram</p>');
+        }
+      };
+      renderDiagram();
+    }
+  }, [isOpen, diagram]);
+
+  return (
+    <>
+      <span
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsOpen(true);
+        }}
+        style={{
+          marginLeft: '8px',
+          cursor: 'pointer',
+          display: 'inline-flex',
+          alignItems: 'center',
+          verticalAlign: 'middle',
+          opacity: 0.7,
+          transition: 'opacity 0.2s',
+          position: 'relative',
+          zIndex: 1,
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
+        onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
+      >
+        <SvgIcon iconName="duo-diagram-project" sizeName="sm" />
+      </span>
+      {isOpen && (
+        <div
+          onClick={() => setIsOpen(false)}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 999999,
+            padding: '20px',
+          }}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              backgroundColor: '#1e1e1e',
+              borderRadius: '8px',
+              padding: '24px',
+              maxWidth: '900px',
+              maxHeight: '85vh',
+              overflow: 'auto',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.7)',
+              position: 'relative',
+              zIndex: 1000000,
+            }}
+          >
+            {title && (
+              <h3 style={{ marginTop: 0, marginBottom: '20px', color: '#fff' }}>
+                {title}
+              </h3>
+            )}
+            <div
+              ref={mermaidRef}
+              style={{
+                backgroundColor: '#2d2d2d',
+                padding: '20px',
+                borderRadius: '4px',
+                overflow: 'auto',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minHeight: '200px',
+              }}
+              dangerouslySetInnerHTML={{ __html: renderedSvg }}
+            />
+            <button
+              onClick={() => setIsOpen(false)}
+              style={{
+                marginTop: '20px',
+                padding: '10px 20px',
+                backgroundColor: '#4fc3f7',
+                color: '#000',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                fontWeight: 'bold',
+                fontSize: '14px',
+                width: '100%',
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 
 export const nerTrainingDeck: Deck = {
   id: 'ner-training-deck',
@@ -108,7 +233,18 @@ At the end, we'll wrap up with a **summary and concrete next steps** so you can 
               </GSAPAnimated>
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
                 <div style={{ marginBottom: '0.7em' }}>
-                  <h4>How It Works</h4>
+                  <h4>
+                    How It Works
+                    <MermaidPopover
+                      title="Entity Dictionary Flow"
+                      diagram={`flowchart LR
+    A["📋 Entity List"] --> B["🔍 Pattern Matcher"]
+    B --> C["📄 Raw Text"]
+    C --> D["✨ Pre-tagged Text"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`}
+                    />
+                  </h4>
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Use curated gazetteers/ontologies (names, codes, aliases) to pre-tag text, add features, or generate weak labels.</li>
                   </ul>
