@@ -49,10 +49,10 @@ Over the next few slides, I'll share 9 practical tips that will help you build h
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ fontSize: '1em' }}>
-                <ul style={{ lineHeight: '2' }}>
-                  <li><AnimatedEmoji emoji="🎯" animation="pulse" size="1em" /> <strong>9 actionable tips</strong> for building domain-specific NER models</li>
-                  <li><AnimatedEmoji emoji="📋" animation="pulse" size="1em" /> <strong>Cheat-sheet structure</strong> per tip: Goal, How It Works, When to Use, Steps, Pros, Cons</li>
-                  <li><AnimatedEmoji emoji="🚀" animation="pulse" size="1em" /> <strong>Summary and next steps</strong> for implementation</li>
+                <ul style={{ lineHeight: '' }}>
+                  <li><strong>9 actionable tips</strong> for building domain-specific NER models</li>
+                  <li><strong>Cheat-sheet structure</strong> per tip: Goal, How It Works, When to Use, Steps, Pros, Cons</li>
+                  <li><strong>Summary and next steps</strong> for implementation</li>
                 </ul>
               </div>
             </div>
