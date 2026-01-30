@@ -20,6 +20,11 @@ body {
     max-height: 88% !important;
 }
 
+.speaker-controls-notes h1, .speaker-controls-notes h2, .speaker-controls-notes h3, .speaker-controls-notes h4, .speaker-controls-notes h5, .speaker-controls-notes p {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
 .speaker-controls-time, .speaker-controls-pace{
     padding: 0px !important;
     margin: 0px !important;
