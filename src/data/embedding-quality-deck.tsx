@@ -87,11 +87,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Reduce textual variability so the same concepts map to similar tokens.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Reduce textual variability so the same concepts map to similar tokens.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Apply unicode normalization, consistent casing, whitespace and punctuation fixes to standardize input.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Apply unicode normalization, consistent casing, whitespace and punctuation fixes to standardize input.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Mixed sources, OCR, scraped web, user-generated content, legacy docs.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Mixed sources, OCR, scraped web, user-generated content, legacy docs.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -118,16 +118,16 @@ export const embeddingQualityDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>More consistent tokenization and better deduplication</li>
-                <li>Fewer artifacts from encoding/scraping</li>
+                  <li>More consistent tokenization and better deduplication</li>
+                  <li>Fewer artifacts from encoding/scraping</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Over-normalization can remove signals (case, emphasis)</li>
-                <li>Requires testing per language/domain</li>
+                  <li>Over-normalization can remove signals (case, emphasis)</li>
+                  <li>Requires testing per language/domain</li>
                 </ul>
               </div>
             </div>
@@ -149,11 +149,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Eliminate non-content text that dilutes embeddings.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Eliminate non-content text that dilutes embeddings.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Detect and strip headers/footers, nav, ads, cookie banners, email signatures, legal footers.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Detect and strip headers/footers, nav, ads, cookie banners, email signatures, legal footers.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Web pages, PDFs, emails, repeated templates across documents.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Web pages, PDFs, emails, repeated templates across documents.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -180,16 +180,16 @@ export const embeddingQualityDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Higher signal-to-noise; smaller index size</li>
-                      <li>Better retrieval precision</li>
+                  <li>Higher signal-to-noise; smaller index size</li>
+                  <li>Better retrieval precision</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Risk of deleting useful context if rules too aggressive</li>
-                      <li>Needs maintenance across sources</li>
+                  <li>Risk of deleting useful context if rules too aggressive</li>
+                  <li>Needs maintenance across sources</li>
                 </ul>
               </div>
             </div>
@@ -211,11 +211,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Split documents into coherent units that answer a question on their own.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Split documents into coherent units that answer a question on their own.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Use structure and similarity to set chunk boundaries and optional overlaps.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Use structure and similarity to set chunk boundaries and optional overlaps.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Long documents, RAG pipelines, context-window constraints.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Long documents, RAG pipelines, context-window constraints.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -243,8 +243,8 @@ export const embeddingQualityDeck: Deck = {
                 </h4>
                 <p style={{ marginTop: '5px', marginLeft: '20px' }}>Improves recall/precision; reduces hallucinations</p>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Improves recall/precision in retrieval</li>
-                      <li>Reduces context stuffing and hallucinations</li>
+                  <li>Improves recall/precision in retrieval</li>
+                  <li>Reduces context stuffing and hallucinations</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
@@ -252,8 +252,8 @@ export const embeddingQualityDeck: Deck = {
                 </h4>
                 <p style={{ marginTop: '5px', marginLeft: '20px' }}>More complex pipeline; requires tuning</p>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>More complex pipeline; overlap increases storage</li>
-                      <li>Requires tuning per corpus</li>
+                  <li>More complex pipeline; overlap increases storage</li>
+                  <li>Requires tuning per corpus</li>
                 </ul>
               </div>
             </div>
@@ -275,11 +275,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Provide context and disambiguation for each chunk.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Provide context and disambiguation for each chunk.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Prepend/bundle the document title and heading path with the chunk text/metadata.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Prepend/bundle the document title and heading path with the chunk text/metadata.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Hierarchical docs, manuals, APIs, research papers.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Hierarchical docs, manuals, APIs, research papers.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -306,16 +306,16 @@ export const embeddingQualityDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Stronger semantic cues; better filtering and ranking</li>
-                      <li>Easier tracing back to source</li>
+                  <li>Stronger semantic cues; better filtering and ranking</li>
+                  <li>Easier tracing back to source</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Extra tokens if in-text; may skew similarity if titles are very generic</li>
-                      <li>Requires robust heading extraction</li>
+                  <li>Extra tokens if in-text; may skew similarity if titles are very generic</li>
+                  <li>Requires robust heading extraction</li>
                 </ul>
               </div>
             </div>
@@ -337,11 +337,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Reduce filler tokens while preserving meaning and negation.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Reduce filler tokens while preserving meaning and negation.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Remove a conservative set of high-frequency function words outside code/data.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Remove a conservative set of high-frequency function words outside code/data.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Tight token budgets, repetitive narrative text, noisy corpora.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Tight token budgets, repetitive narrative text, noisy corpora.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -368,16 +368,16 @@ export const embeddingQualityDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Smaller, denser chunks; faster indexing</li>
-                      <li>Can improve signal-to-noise</li>
+                  <li>Smaller, denser chunks; faster indexing</li>
+                  <li>Can improve signal-to-noise</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Over-trimming harms semantics and QA</li>
-                      <li>Multilingual handling adds complexity</li>
+                  <li>Over-trimming harms semantics and QA</li>
+                  <li>Multilingual handling adds complexity</li>
                 </ul>
               </div>
             </div>
@@ -399,11 +399,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Enrich chunks with facetable concepts for better filtering and recall.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Enrich chunks with facetable concepts for better filtering and recall.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Extract keyphrases and map to a controlled vocabulary; store as metadata fields.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Extract keyphrases and map to a controlled vocabulary; store as metadata fields.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Large corpora, multi-domain search, governance/compliance filters.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Large corpora, multi-domain search, governance/compliance filters.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -430,16 +430,16 @@ export const embeddingQualityDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Better recall/precision and navigability</li>
-                      <li>Enables facets, access controls, analytics</li>
+                  <li>Better recall/precision and navigability</li>
+                  <li>Enables facets, access controls, analytics</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Extraction noise; needs QA and thresholding</li>
-                      <li>Taxonomy maintenance over time</li>
+                  <li>Extraction noise; needs QA and thresholding</li>
+                  <li>Taxonomy maintenance over time</li>
                 </ul>
               </div>
             </div>
@@ -461,11 +461,11 @@ export const embeddingQualityDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>Goal:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Preserve relational information in a model-friendly linear form.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Preserve relational information in a model-friendly linear form.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>How It Works:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Linearize rows/columns into key–value sentences or compact JSON-like strings.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Linearize rows/columns into key–value sentences or compact JSON-like strings.</span></p>
                 <p style={{ fontSize: '2rem', display: 'flex', flexDirection: 'column', gap: '16px' }}><strong>When to Use:</strong>
-                <span style={{ fontSize: '1.2rem' }}>Specs, pricing sheets, CSVs, benchmarks, logs.</span></p>
+                  <span style={{ fontSize: '1.2rem' }}>Specs, pricing sheets, CSVs, benchmarks, logs.</span></p>
                 <div>
                   <p style={{ fontSize: '2rem' }}><strong>Steps:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
@@ -492,16 +492,16 @@ export const embeddingQualityDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Better matching for row-level queries</li>
-                      <li>Works across models without layout awareness</li>
+                  <li>Better matching for row-level queries</li>
+                  <li>Works across models without layout awareness</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Higher token count; potential loss of layout cues</li>
-                      <li>Requires careful formatting for very large tables</li>
+                  <li>Higher token count; potential loss of layout cues</li>
+                  <li>Requires careful formatting for very large tables</li>
                 </ul>
               </div>
             </div>
@@ -526,16 +526,16 @@ export const embeddingQualityDeck: Deck = {
                   <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                   Recap: The 7 Techniques
                 </h3>
-                  <ul style={{ fontSize: '1.2rem' }} >
-                    <li>1. Clean/Normalize</li>
-                    <li>2. De-boilerplate</li>
-                    <li>3. Semantic Chunking</li>
-                    <li>4. Section Titles</li>
-                    <li>5. Stopword Trimming</li>
-                    <li>6. Keyphrase Tags</li>
-                    <li>7. Structured Tables</li>
-                  </ul>
-                
+                <ul style={{ fontSize: '1.2rem' }} >
+                  <li>1. Clean/Normalize</li>
+                  <li>2. De-boilerplate</li>
+                  <li>3. Semantic Chunking</li>
+                  <li>4. Section Titles</li>
+                  <li>5. Stopword Trimming</li>
+                  <li>6. Keyphrase Tags</li>
+                  <li>7. Structured Tables</li>
+                </ul>
+
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
                   What to Measure
@@ -591,12 +591,12 @@ export const embeddingQualityDeck: Deck = {
           icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-                <p style={{ fontSize: '2rem', fontWeight: '300' }}>
-                  Many embedding quality improvements come from <strong>better data preparation</strong>, not just model selection.
-                </p>
-                <p style={{ fontSize: '2rem', color: '#aed581' }}>
-                  Even small preprocessing changes can yield meaningful performance gains.
-                </p>
+              <p style={{ fontSize: '2rem', fontWeight: '300' }}>
+                Many embedding quality improvements come from <strong>better data preparation</strong>, not just model selection.
+              </p>
+              <p style={{ fontSize: '2rem', color: '#aed581' }}>
+                Even small preprocessing changes can yield meaningful performance gains.
+              </p>
             </div>
           ),
           backgroundColor: '#1a237e',
