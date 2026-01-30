@@ -1,6 +1,4 @@
-# Speaker Notes Generation Prompt
-
-Rewrite the speaker notes for a live presentation to freshers/beginners.
+Write the speaker notes for a live presentation to freshers/beginners.
 
 ## Requirements
 
