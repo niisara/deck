@@ -1,5 +1,4 @@
-import { useEffect, useRef, ReactNode } from 'react';
-import { slideAnimations } from '../utils/gsapAnimations';
+import { useRef, ReactNode } from 'react';
 
 interface GSAPAnimatedProps {
   children: ReactNode;
@@ -12,7 +11,7 @@ interface GSAPAnimatedProps {
 }
 
 /**
- * Wrapper component for GSAP animations
+ * Wrapper component for GSAP animations that triggers on slide change
  * Usage: <GSAPAnimated animation="fadeIn" delay={0.2}>Your content</GSAPAnimated>
  */
 export const GSAPAnimated: React.FC<GSAPAnimatedProps> = ({
@@ -25,17 +24,15 @@ export const GSAPAnimated: React.FC<GSAPAnimatedProps> = ({
 }) => {
   const elementRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (elementRef.current) {
-      const animationFn = slideAnimations[animation];
-      if (animationFn) {
-        animationFn(elementRef.current, duration, delay);
-      }
-    }
-  }, [animation, duration, delay]);
-
   return (
-    <div ref={elementRef} className={className} style={style}>
+    <div 
+      ref={elementRef} 
+      className={className} 
+      style={style}
+      data-gsap-animation={animation}
+      data-gsap-duration={duration}
+      data-gsap-delay={delay}
+    >
       {children}
     </div>
   );
@@ -50,7 +47,7 @@ interface GSAPStaggerListProps {
 }
 
 /**
- * Component for stagger animations on lists
+ * Component for stagger animations on lists that triggers on slide change
  * Usage: <GSAPStaggerList stagger={0.15}>{items}</GSAPStaggerList>
  */
 export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
@@ -62,17 +59,13 @@ export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (containerRef.current) {
-      const items = containerRef.current.querySelectorAll('.gsap-stagger-item');
-      if (items.length > 0) {
-        slideAnimations.staggerList(items, duration, stagger);
-      }
-    }
-  }, [duration, stagger]);
-
   return (
-    <div ref={containerRef} className={className}>
+    <div 
+      ref={containerRef} 
+      className={className}
+      data-gsap-stagger={stagger}
+      data-gsap-duration={duration}
+    >
       {children.map((child, index) => (
         <div key={index} className={`gsap-stagger-item ${itemClassName || ''}`}>
           {child}

@@ -14,6 +14,7 @@ import { loadTheme } from '../utils/themeLoader';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { marked } from 'marked';
 import mermaid from 'mermaid';
+import gsap from 'gsap';
 import './DeckPage.css';
 
 // Initialize mermaid with dark theme for speaker notes
@@ -219,6 +220,9 @@ function DeckPage() {
 
       // Scroll speaker notes to top when slide changes and render mermaid diagrams
       const handleSlideChange = async () => {
+        // Trigger GSAP animations for the current slide
+        triggerSlideAnimations();
+        
         // Only scroll if speaker window is already open - don't try to open it
         if (speakerWindowRef.current && !speakerWindowRef.current.closed) {
           try {
@@ -248,6 +252,67 @@ function DeckPage() {
           }
         }
       };
+      
+      // Function to trigger GSAP animations for current slide
+      const triggerSlideAnimations = () => {
+        const currentSlide = revealInstance.getCurrentSlide();
+        if (!currentSlide) return;
+        
+        // Find all GSAP animated elements in the current slide
+        const animatedElements = currentSlide.querySelectorAll('[data-gsap-animation]');
+        
+        animatedElements.forEach((element: Element) => {
+          const htmlElement = element as HTMLElement;
+          const animationType = htmlElement.getAttribute('data-gsap-animation');
+          const duration = parseFloat(htmlElement.getAttribute('data-gsap-duration') || '0.8');
+          const delay = parseFloat(htmlElement.getAttribute('data-gsap-delay') || '0');
+          
+          // Reset and animate
+          if (animationType) {
+            animateElement(htmlElement, animationType, duration, delay);
+          }
+        });
+        
+        // Handle stagger lists
+        const staggerLists = currentSlide.querySelectorAll('[data-gsap-stagger]');
+        staggerLists.forEach((list: Element) => {
+          const htmlList = list as HTMLElement;
+          const duration = parseFloat(htmlList.getAttribute('data-gsap-duration') || '0.5');
+          const stagger = parseFloat(htmlList.getAttribute('data-gsap-stagger') || '0.1');
+          
+          const items = htmlList.querySelectorAll('.gsap-stagger-item');
+          if (items.length > 0) {
+            gsap.fromTo(
+              items,
+              { y: 30, opacity: 0 },
+              { y: 0, opacity: 1, duration, stagger, ease: 'power2.out' }
+            );
+          }
+        });
+      };
+      
+      // Helper function to animate individual elements
+      const animateElement = (element: HTMLElement, animation: string, duration: number, delay: number) => {
+        const animations: Record<string, any> = {
+          fadeIn: { from: { opacity: 0 }, to: { opacity: 1, duration, delay, ease: 'power2.out' } },
+          slideInLeft: { from: { x: -100, opacity: 0 }, to: { x: 0, opacity: 1, duration, delay, ease: 'power3.out' } },
+          slideInRight: { from: { x: 100, opacity: 0 }, to: { x: 0, opacity: 1, duration, delay, ease: 'power3.out' } },
+          slideInTop: { from: { y: -100, opacity: 0 }, to: { y: 0, opacity: 1, duration, delay, ease: 'power3.out' } },
+          slideInBottom: { from: { y: 100, opacity: 0 }, to: { y: 0, opacity: 1, duration, delay, ease: 'power3.out' } },
+          scaleIn: { from: { scale: 0, opacity: 0 }, to: { scale: 1, opacity: 1, duration, delay, ease: 'back.out(1.7)' } },
+          bounceIn: { from: { scale: 0, opacity: 0 }, to: { scale: 1, opacity: 1, duration, delay, ease: 'elastic.out(1, 0.5)' } },
+          rotateIn: { from: { rotation: -180, scale: 0, opacity: 0 }, to: { rotation: 0, scale: 1, opacity: 1, duration, delay, ease: 'back.out(1.7)' } },
+          flipCard: { from: { rotationY: -180, opacity: 0 }, to: { rotationY: 0, opacity: 1, duration, delay, ease: 'power2.out' } }
+        };
+        
+        const anim = animations[animation];
+        if (anim) {
+          gsap.fromTo(element, anim.from, anim.to);
+        }
+      };
+      
+      // Trigger animations for the initial slide
+      setTimeout(() => triggerSlideAnimations(), 100);
       
       // Listen for slide change events
       revealInstance.on('slidechanged', handleSlideChange);
