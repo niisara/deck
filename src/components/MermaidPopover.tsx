@@ -34,6 +34,49 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
     }
   }, [isOpen, diagram]);
 
+  // Handle ESC key to close modal and prevent other keyboard shortcuts
+  useEffect(() => {
+    if (isOpen) {
+      const handleKeydown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          setIsOpen(false);
+        }
+        // Prevent all keyboard shortcuts from reaching Reveal.js
+        event.stopPropagation();
+      };
+      
+      document.addEventListener('keydown', handleKeydown, true);
+      return () => {
+        document.removeEventListener('keydown', handleKeydown, true);
+      };
+    }
+  }, [isOpen]);
+
+  // Hide slide navigation controls when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      const controls = document.querySelector('.reveal .controls');
+      const progressBar = document.querySelector('.reveal .progress');
+      const slideNumber = document.querySelector('.reveal .slide-number');
+      const slideMenu = document.querySelector('.slide-menu-button');
+      const slideMenuPanel = document.querySelector('.slide-menu');
+      
+      if (controls) (controls as HTMLElement).style.display = 'none';
+      if (progressBar) (progressBar as HTMLElement).style.display = 'none';
+      if (slideNumber) (slideNumber as HTMLElement).style.display = 'none';
+      if (slideMenu) (slideMenu as HTMLElement).style.display = 'none';
+      if (slideMenuPanel) (slideMenuPanel as HTMLElement).style.display = 'none';
+      
+      return () => {
+        if (controls) (controls as HTMLElement).style.display = '';
+        if (progressBar) (progressBar as HTMLElement).style.display = '';
+        if (slideNumber) (slideNumber as HTMLElement).style.display = '';
+        if (slideMenu) (slideMenu as HTMLElement).style.display = '';
+        if (slideMenuPanel) (slideMenuPanel as HTMLElement).style.display = '';
+      };
+    }
+  }, [isOpen]);
+
   const handleClose = () => {
     setIsOpen(false);
   };
