@@ -205,6 +205,8 @@ Clean up your list by removing duplicates, assign each entry to an entity type (
 Now put it to work! You can use your dictionary to automatically pre-annotate text before human review, as features fed into your ML model, or for **distant supervision** where matches automatically become training labels (though be careful with this one; it can be noisy).
 #### Step 5: Evaluate and Refine
 Finally, measure how well it's working. Are you getting too many false matches (low precision)? Add a **stoplist** of terms to ignore. Are some entities too ambiguous? Add disambiguation rules.
+
+---------------------
 Now let's look at the trade-offs of this approach.`
         },
         {

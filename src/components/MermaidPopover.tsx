@@ -159,23 +159,6 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
           }}
           dangerouslySetInnerHTML={{ __html: renderedSvg }}
         />
-        <button
-          onClick={handleClose}
-          style={{
-            marginTop: '24px',
-            padding: '14px 28px',
-            backgroundColor: '#4fc3f7',
-            color: '#000',
-            border: 'none',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            fontWeight: 'bold',
-            fontSize: '16px',
-            width: '100%',
-          }}
-        >
-          Close
-        </button>
       </div>
     </div>
   ) : null;

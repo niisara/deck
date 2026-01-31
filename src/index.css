@@ -74,3 +74,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Reveal.js heading spacing */
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+  margin-bottom: 0px !important;
+  margin-top: 5px !important;
+}
