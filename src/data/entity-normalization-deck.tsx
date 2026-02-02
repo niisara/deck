@@ -20,12 +20,12 @@ export const entityNormalizationDeck: Deck = {
           center: true,
           title: '13 Entity Normalization & Disambiguation Techniques',
           content: (
-            <div style={{ textAlign: 'left' }}>
-              <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '1rem' }}>
+            <div>
+              <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '1rem', marginTop: '1rem' }}>
                 A practical cheat sheet for NLP, data integration, and knowledge graphs
               </div>
-              <div style={{ fontSize: '1rem', color: '#888', lineHeight: '1.8', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+              <div style={{ fontSize: '2rem', color: '#888', lineHeight: '1.8', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
                     <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginBottom: '0.5rem' }} darkModeInvert={true} />
                     <div style={{ color: '#c678dd' }}>Knowledge Graphs</div>
@@ -40,7 +40,7 @@ export const entityNormalizationDeck: Deck = {
                   </div>
                 </div>
                 <div style={{ color: '#98c379' }}>
-                  <SvgIcon iconName="duo-users-group" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                   <strong>Audience:</strong> Data scientists, NLP engineers, knowledge graph practitioners
                 </div>
                 <p><strong>Prepared by:</strong> Nisar A</p>
@@ -57,6 +57,8 @@ export const entityNormalizationDeck: Deck = {
           title: 'Table of Contents',
           content: (
             <div style={{ textAlign: 'left', fontSize: '1.8rem' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.15)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px', gridColumn: 'span 2' }}>
                   <SvgIcon iconName="duo-book" sizeName="2x" style={{ color: '#ffd700' }} darkModeInvert={true} />
@@ -129,6 +131,8 @@ export const entityNormalizationDeck: Deck = {
           title: 'Introduction: Normalization vs. Disambiguation',
           content: (
             <div style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
                   <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -199,6 +203,8 @@ export const entityNormalizationDeck: Deck = {
           title: '1) String Normalization',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -253,8 +259,11 @@ export const entityNormalizationDeck: Deck = {
           id: 5,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-              <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
                   <strong>Pros</strong>
@@ -274,6 +283,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Locale-specific rules can be brittle</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#1a523d',
@@ -290,6 +300,8 @@ export const entityNormalizationDeck: Deck = {
           title: '2) Lowercasing + Unicode Normalization',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -343,7 +355,10 @@ export const entityNormalizationDeck: Deck = {
           id: 7,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -364,6 +379,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Case folding may harm brand/style-sensitive fields</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#52401a',
@@ -380,6 +396,8 @@ export const entityNormalizationDeck: Deck = {
           title: '3) Fuzzy Matching (Edit Distance)',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -434,7 +452,10 @@ export const entityNormalizationDeck: Deck = {
           id: 9,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -455,6 +476,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Can be slow without indexing; weak on semantics</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#521a1a',
@@ -471,6 +493,8 @@ export const entityNormalizationDeck: Deck = {
           title: '4) Token-Based Similarity (Jaccard / Cosine)',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -525,7 +549,10 @@ export const entityNormalizationDeck: Deck = {
           id: 11,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -546,6 +573,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Needs careful tokenization and stopword handling</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#3b521a',
@@ -562,6 +590,8 @@ export const entityNormalizationDeck: Deck = {
           title: '5) Dictionary / Gazetteer Lookup',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -616,7 +646,10 @@ export const entityNormalizationDeck: Deck = {
           id: 13,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -637,6 +670,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Ambiguity remains if multiple entries match</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#1a3152',
@@ -653,6 +687,8 @@ export const entityNormalizationDeck: Deck = {
           title: '6) Synonym / Alias Mapping',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+                <div style={{ marginBottom: '30px' }}>
+                </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -707,7 +743,10 @@ export const entityNormalizationDeck: Deck = {
           id: 15,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -728,6 +767,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Ambiguity if alias maps to multiple entities</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#521a3c',
@@ -744,6 +784,8 @@ export const entityNormalizationDeck: Deck = {
           title: '7) Rule-Based Context Matching',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -798,7 +840,10 @@ export const entityNormalizationDeck: Deck = {
           id: 17,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -819,6 +864,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Hard to scale/maintain large rule sets</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#1a1c52',
@@ -835,6 +881,8 @@ export const entityNormalizationDeck: Deck = {
           title: '8) Embedding-Based Similarity Matching',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -889,7 +937,10 @@ export const entityNormalizationDeck: Deck = {
           id: 19,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -910,6 +961,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Requires GPU/compute and monitoring</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#1a524a',
@@ -926,6 +978,8 @@ export const entityNormalizationDeck: Deck = {
           title: '9) Entity Linking with Knowledge Bases (e.g., Wikidata)',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -980,7 +1034,10 @@ export const entityNormalizationDeck: Deck = {
           id: 21,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -1001,6 +1058,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Heavier infra and maintenance</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#4d521a',
@@ -1017,6 +1075,8 @@ export const entityNormalizationDeck: Deck = {
           title: '10) Graph-Based Entity Disambiguation',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1071,7 +1131,10 @@ export const entityNormalizationDeck: Deck = {
           id: 23,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -1092,6 +1155,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Requires good edge weighting and tuning</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#3c1a52',
@@ -1108,6 +1172,8 @@ export const entityNormalizationDeck: Deck = {
           title: '11) PageRank / Centrality-Based Disambiguation',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1162,7 +1228,10 @@ export const entityNormalizationDeck: Deck = {
           id: 25,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -1183,6 +1252,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Needs careful combination with local evidence</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#521a3f',
@@ -1199,6 +1269,8 @@ export const entityNormalizationDeck: Deck = {
           title: '12) Domain-Specific Ontology Mapping',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1253,7 +1325,10 @@ export const entityNormalizationDeck: Deck = {
           id: 27,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -1274,6 +1349,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Requires domain expertise</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#1a4652',
@@ -1290,6 +1366,8 @@ export const entityNormalizationDeck: Deck = {
           title: '13) LLM-Based Entity Disambiguation',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
                   <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -1344,7 +1422,10 @@ export const entityNormalizationDeck: Deck = {
           id: 29,
           title: 'Pros & Cons',
           content: (
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                 <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
@@ -1365,6 +1446,7 @@ export const entityNormalizationDeck: Deck = {
                   <li>Needs grounding, evaluation, and privacy controls</li>
                 </ul>
               </div>
+              </div>
             </div>
           ),
           backgroundColor: '#523b1a',
@@ -1381,6 +1463,8 @@ export const entityNormalizationDeck: Deck = {
           title: 'Conclusion & Key Takeaways',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ marginBottom: '1.5rem', textAlign: 'left', color: '#61dafb', display: 'flex', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="2xl" style={{ marginRight: '0.8rem', marginBottom: '1.5rem' }} darkModeInvert={true} />
                 <strong>Best Practices for Entity Normalization & Disambiguation</strong>
@@ -1447,6 +1531,8 @@ export const entityNormalizationDeck: Deck = {
           title: 'Best Practices',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e06c75' }}>
                 <div style={{ color: '#e06c75', marginBottom: '0.8rem', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-shield-check" sizeName="lg" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
