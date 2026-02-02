@@ -21,7 +21,7 @@ export const nerTrainingDeck: Deck = {
           center: true,
           title: '9 Custom NER Training Tips for Domain-Specific Use Cases',
           content: (
-            <div>
+            <div style={{ color: '#fff' }}>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.2}>
                 <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '30px', fontSize: '36px' }}>
                   <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
@@ -51,7 +51,7 @@ Over the next few slides, I'll share 9 practical tips that will help you build h
           title: 'What You\'ll Learn',
           icon: { name: 'duo-graduation-cap' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPStaggerList stagger={0.2} duration={0.6}>
@@ -98,7 +98,9 @@ At the end, we'll wrap up with a **summary and concrete next steps** so you can 
           title: 'Tip 1: Build a Domain-Specific Entity Dictionary',
           icon: { name: 'duo-book' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -162,7 +164,9 @@ Let's look at the specific steps next.`
           id: 4,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -213,7 +217,9 @@ Now let's look at the trade-offs of this approach.`
           id: 5,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -262,7 +268,9 @@ Ready for Tip 2? Let's talk about creating high-quality training data, which is 
           title: 'Tip 2: Create High-Quality Annotated Training Data',
           icon: { name: 'duo-pen-to-square' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -326,7 +334,9 @@ Let's look at how to actually do this.`
           id: 7,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -375,7 +385,9 @@ Now let's honestly assess the trade-offs.`
           id: 8,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -424,7 +436,9 @@ Speaking of quality, our next tip is about keeping that quality *consistent* acr
           title: 'Tip 3: Use Consistent Annotation Guidelines',
           icon: { name: 'duo-clipboard-list' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -473,7 +487,9 @@ Let's see what goes into good guidelines.`
           id: 10,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -523,7 +539,9 @@ What are the trade-offs here?`
           id: 11,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -572,7 +590,9 @@ Now that we've covered *how* to annotate, let's talk about *what* data to annota
           title: 'Tip 4: Label Data with Real Domain Context (Not Synthetic Only)',
           icon: { name: 'duo-file-lines' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -618,7 +638,9 @@ How do we do this practically?`
           id: 13,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -665,7 +687,9 @@ Let's look at the trade-offs.`
           id: 14,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -739,7 +763,9 @@ Now let's talk about something exciting: using pretrained models to give you a m
           title: 'Tip 5: Fine-Tune Pretrained Transformer Models',
           icon: { name: 'duo-brain-circuit' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -801,7 +827,9 @@ This is your go-to approach when you have **limited labeled data** (hundreds to 
           id: 16,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -850,7 +878,9 @@ What are the trade-offs?`
           id: 17,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -899,7 +929,9 @@ Our next tip addresses a common problem: what do you do when some entity types r
           title: 'Tip 6: Use Data Augmentation for Rare Entities',
           icon: { name: 'duo-copy' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -965,7 +997,9 @@ Use augmentation when you have **class imbalance**, when certain entities are **
           id: 19,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -1012,7 +1046,9 @@ Let's see the trade-offs.`
           id: 20,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -1085,7 +1121,9 @@ Now let's flip the script. We've been talking about finding more entities. What 
           title: 'Tip 7: Add Negative Examples to Reduce False Positives',
           icon: { name: 'duo-shield-check' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -1148,7 +1186,9 @@ Apply this when you have **high false-positive rates**, when your domain has **a
           id: 22,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -1191,7 +1231,9 @@ Let's look at the trade-offs.`
           id: 23,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -1261,7 +1303,9 @@ Now let's talk about a quick win that doesn't require retraining at all: boundar
           title: 'Tip 8: Use Entity Boundary Correction Rules',
           icon: { name: 'duo-brackets-square' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -1322,7 +1366,9 @@ This works great for **consistent patterns** like punctuation issues, unit handl
           id: 25,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -1367,7 +1413,9 @@ What are the trade-offs?`
           id: 26,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -1439,7 +1487,9 @@ Now for our final tip: the meta-strategy that ties everything together: iterativ
           title: 'Tip 9: Perform Iterative Error Analysis and Retraining',
           icon: { name: 'duo-chart-line' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>Goal</h4>
@@ -1508,7 +1558,9 @@ Always! But especially after establishing a baseline, after any significant data
           id: 28,
           title: 'Steps',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
                 <div style={{ fontSize: '0.7em', lineHeight: '1.5' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -1556,7 +1608,9 @@ Let's look at the trade-offs.`
           id: 29,
           title: 'Precision: Pros & Cons',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                   <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
@@ -1630,7 +1684,9 @@ Now let's bring it all together with a summary!`
           title: 'Summary',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.1}>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -1714,7 +1770,9 @@ Ready for concrete next steps?`
           title: 'Next Steps',
           icon: { name: 'duo-list-ol' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.2} duration={0.6}>
                 <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
                   <ol style={{ fontSize: '1em' }}>
@@ -1779,7 +1837,7 @@ Finally, let's talk about risks to watch out for.`
           title: 'Risks & Mitigations',
           icon: { name: 'duo-triangle-exclamation' },
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ fontSize: '0.95em' }}>
