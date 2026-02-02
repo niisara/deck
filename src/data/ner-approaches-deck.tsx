@@ -136,27 +136,27 @@ export const nerApproachesDeck: Deck = {
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
-                    <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Model Type:</strong></p>
+                      <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                      <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Model Type:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>Deterministic rules, regexes, token patterns, heuristics.</span>
                   </div>
                   <pre style={{ marginTop: '26px', fontSize: '1.2rem' }}>{`regex: r"\\b[A-Z][a-z]+ [A-Z][a-z]+\\b"`}</pre>
                 </div>
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <div style={{ display: 'flex',flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
-                    <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Training Data Needed:</strong></p>
+                      <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Training Data Needed:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>None to build; small annotated set recommended for validation.</span>
                   </div>
                 </div>
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <div style={{ display: 'flex',flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
-                    <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Best Use Case:</strong></p>
+                      <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                      <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Best Use Case:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>Highly structured domains (dates, IDs, emails), compliance/extraction with strict formats, low-resource settings.</span>
                   </div>
@@ -180,9 +180,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Transparent and Fast</li>
-                      <li>No labeled data required</li>
-                      <li>Easy to enforce constraints</li>
+                    <li>Transparent and Fast</li>
+                    <li>No labeled data required</li>
+                    <li>Easy to enforce constraints</li>
                   </ul>
                 </div>
                 <div>
@@ -190,9 +190,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Brittle to variations</li>
-                      <li>High maintenance</li>
-                      <li>Limited recall/coverage</li>
+                    <li>Brittle to variations</li>
+                    <li>High maintenance</li>
+                    <li>Limited recall/coverage</li>
                   </ul>
                 </div>
               </div>
@@ -263,9 +263,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>High precision for known entities</li>
-                      <li>Easy to update lists</li>
-                      <li>Multilingual-ready with the right lexicons</li>
+                    <li>High precision for known entities</li>
+                    <li>Easy to update lists</li>
+                    <li>Multilingual-ready with the right lexicons</li>
                   </ul>
                 </div>
                 <div>
@@ -273,9 +273,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Misses out-of-vocabulary/new entities</li>
-                      <li>Ambiguity without context</li>
-                      <li>Alias/variant management overhead</li>
+                    <li>Misses out-of-vocabulary/new entities</li>
+                    <li>Ambiguity without context</li>
+                    <li>Alias/variant management overhead</li>
                   </ul>
                 </div>
               </div>
@@ -302,8 +302,8 @@ export const nerApproachesDeck: Deck = {
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
-                    <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Model Type:</strong></p>
+                      <SvgIcon iconName="duo-code" sizeName="2x" darkModeInvert={true} />
+                      <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Model Type:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>Feature-based ML (TF-IDF/BoW, char n-grams, window features) + classifier (LogReg/SVM/Perceptron) at token/span level.</span>
                   </div>
@@ -312,8 +312,8 @@ export const nerApproachesDeck: Deck = {
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
-                    <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Training Data Needed:</strong></p>
+                      <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
+                      <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Training Data Needed:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>Labeled tokens/spans (thousands–tens of thousands); optional pre-chunking.</span>
                   </div>
@@ -321,8 +321,8 @@ export const nerApproachesDeck: Deck = {
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
-                    <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Best Use Case:</strong></p>
+                      <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                      <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Best Use Case:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>Lightweight baselines, domains with strong lexical cues, constrained schemas.</span>
                   </div>
@@ -346,9 +346,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Fast to train</li>
-                      <li>Interpretable features</li>
-                      <li>Low compute requirements</li>
+                    <li>Fast to train</li>
+                    <li>Interpretable features</li>
+                    <li>Low compute requirements</li>
                   </ul>
                 </div>
                 <div>
@@ -356,9 +356,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Weak context modeling</li>
-                      <li>No explicit label dependencies</li>
-                      <li>Requires feature engineering</li>
+                    <li>Weak context modeling</li>
+                    <li>No explicit label dependencies</li>
+                    <li>Requires feature engineering</li>
                   </ul>
                 </div>
               </div>
@@ -429,9 +429,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Efficient decoding</li>
-                      <li>Handles sequence structure</li>
-                      <li>Probabilistic treatment of uncertainty</li>
+                    <li>Efficient decoding</li>
+                    <li>Handles sequence structure</li>
+                    <li>Probabilistic treatment of uncertainty</li>
                   </ul>
                 </div>
                 <div>
@@ -439,9 +439,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Strong independence assumptions</li>
-                      <li>Limited feature flexibility</li>
-                      <li>Typically outperformed by CRF/neural models</li>
+                    <li>Strong independence assumptions</li>
+                    <li>Limited feature flexibility</li>
+                    <li>Typically outperformed by CRF/neural models</li>
                   </ul>
                 </div>
               </div>
@@ -512,9 +512,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Captures label dependencies</li>
-                      <li>Robust</li>
-                      <li>Well-understood</li>
+                    <li>Captures label dependencies</li>
+                    <li>Robust</li>
+                    <li>Well-understood</li>
                   </ul>
                 </div>
                 <div>
@@ -522,9 +522,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Heavy feature engineering</li>
-                      <li>Limited long-range context</li>
-                      <li>Weaker domain transfer vs. pretrained transformers</li>
+                    <li>Heavy feature engineering</li>
+                    <li>Limited long-range context</li>
+                    <li>Weaker domain transfer vs. pretrained transformers</li>
                   </ul>
                 </div>
               </div>
@@ -567,7 +567,7 @@ export const nerApproachesDeck: Deck = {
                     <span style={{ fontSize: '1.2rem' }}>Labeled sequences (10k–100k sentences); benefits from pretrained word/subword embeddings.</span>
                   </div>
                 </div>
-                  <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
+                <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
@@ -595,9 +595,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Learns features automatically</li>
-                      <li>Context-aware</li>
-                      <li>Leverages pretrained embeddings</li>
+                    <li>Learns features automatically</li>
+                    <li>Context-aware</li>
+                    <li>Leverages pretrained embeddings</li>
                   </ul>
                 </div>
                 <div>
@@ -605,9 +605,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Needs GPU for training</li>
-                      <li>Complex hyperparameter tuning</li>
-                      <li>OOV handling depends on char/subword modeling</li>
+                    <li>Needs GPU for training</li>
+                    <li>Complex hyperparameter tuning</li>
+                    <li>OOV handling depends on char/subword modeling</li>
                   </ul>
                 </div>
               </div>
@@ -678,9 +678,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Captures morphology/spelling</li>
-                      <li>Improves robustness to OOV/variants</li>
-                      <li>Strong non-transformer baseline</li>
+                    <li>Captures morphology/spelling</li>
+                    <li>Improves robustness to OOV/variants</li>
+                    <li>Strong non-transformer baseline</li>
                   </ul>
                 </div>
                 <div>
@@ -688,9 +688,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>More components/hyperparameters</li>
-                      <li>Increased training complexity</li>
-                      <li>Slower than plain BiLSTM</li>
+                    <li>More components/hyperparameters</li>
+                    <li>Increased training complexity</li>
+                    <li>Slower than plain BiLSTM</li>
                   </ul>
                 </div>
               </div>
@@ -736,7 +736,7 @@ export const nerApproachesDeck: Deck = {
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-trophy" sizeName="2x" darkModeInvert={true} />
                       <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Best Use Case:</strong></p>
                     </div>
                     <span style={{ fontSize: '1.2rem' }}>Rapid deployment, practical pipelines combining rules, gazetteers, and statistical NER.</span>
@@ -761,9 +761,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Fast inference</li>
-                      <li>Easy to train/tune/deploy</li>
-                      <li>Strong tooling</li>
+                    <li>Fast inference</li>
+                    <li>Easy to train/tune/deploy</li>
+                    <li>Strong tooling</li>
                   </ul>
                 </div>
                 <div>
@@ -771,9 +771,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Quality depends on pretrained model/domain fit</li>
-                      <li>Custom labels need data</li>
-                      <li>Limited transparency into pretrained errors</li>
+                    <li>Quality depends on pretrained model/domain fit</li>
+                    <li>Custom labels need data</li>
+                    <li>Limited transparency into pretrained errors</li>
                   </ul>
                 </div>
               </div>
@@ -844,9 +844,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Strong context modeling</li>
-                      <li>Performs well with moderate data</li>
-                      <li>Pre-trained language knowledge</li>
+                    <li>Strong context modeling</li>
+                    <li>Performs well with moderate data</li>
+                    <li>Pre-trained language knowledge</li>
                   </ul>
                 </div>
                 <div>
@@ -854,9 +854,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Compute/latency heavy</li>
-                      <li>Subword alignment adds complexity</li>
-                      <li>Privacy/compliance considerations</li>
+                    <li>Compute/latency heavy</li>
+                    <li>Subword alignment adds complexity</li>
+                    <li>Privacy/compliance considerations</li>
                   </ul>
                 </div>
               </div>
@@ -927,9 +927,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Strong context modeling</li>
-                      <li>Performs well with moderate data</li>
-                      <li>Pre-trained language knowledge</li>
+                    <li>Strong context modeling</li>
+                    <li>Performs well with moderate data</li>
+                    <li>Pre-trained language knowledge</li>
                   </ul>
                 </div>
                 <div>
@@ -937,9 +937,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Compute/latency heavy</li>
-                      <li>Subword alignment adds complexity</li>
-                      <li>Privacy/compliance considerations</li>
+                    <li>Compute/latency heavy</li>
+                    <li>Subword alignment adds complexity</li>
+                    <li>Privacy/compliance considerations</li>
                   </ul>
                 </div>
               </div>
@@ -974,7 +974,7 @@ export const nerApproachesDeck: Deck = {
                   <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`prompt: "Extract person and organization names from this text: {text}"`}</pre>
                 </div>
                 <div style={{ marginBottom: '30px', padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                       <SvgIcon iconName="duo-graduation-cap" sizeName="2x" darkModeInvert={true} />
                       <p style={{ display: 'flex', alignItems: 'center', fontSize: '2rem' }}><strong>Training Data Needed:</strong></p>
@@ -1010,9 +1010,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} />
                     <strong>Pros:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>No labeled data needed</li>
-                      <li>Flexible schemas</li>
-                      <li>Can reason and follow instructions</li>
+                    <li>No labeled data needed</li>
+                    <li>Flexible schemas</li>
+                    <li>Can reason and follow instructions</li>
                   </ul>
                 </div>
                 <div>
@@ -1020,9 +1020,9 @@ export const nerApproachesDeck: Deck = {
                     <SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} />
                     <strong>Cons:</strong></p>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Hallucinations/inconsistency</li>
-                      <li>Privacy/regulatory concerns</li>
-                      <li>Higher cost/latency</li>
+                    <li>Hallucinations/inconsistency</li>
+                    <li>Privacy/regulatory concerns</li>
+                    <li>Higher cost/latency</li>
                   </ul>
                 </div>
               </div>
@@ -1083,7 +1083,7 @@ export const nerApproachesDeck: Deck = {
                   </div>
                 </div>
               </div>
-              
+
             </div>
           ),
           backgroundColor: '#471d6f',
@@ -1092,49 +1092,49 @@ export const nerApproachesDeck: Deck = {
         {
           id: 22,
           title: 'Quick Selection Guide',
-              content: (
-                <div style={{ textAlign: 'left' }}>
-                  <div style={{ marginBottom: '30px' }}>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-                    <SvgIcon iconName="duo-map" sizeName="3x" darkModeInvert={true} />
-                    <div>
-                      <p style={{ fontSize: '2rem' }}>Choose the right NER approach for your use case</p>
-                    </div>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '2rem' }}>
-                    <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', borderLeft: '4px solid #4fc3f7' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🚫 No training data, strict formats</div>
-                      <div style={{ color: '#4fc3f7' }}>→ Rule-Based, Gazetteer</div>
-                    </div>
-                    <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', borderLeft: '4px solid #81c784' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📊 Small data, stable schemas</div>
-                      <div style={{ color: '#81c784' }}>→ CRF, spaCy</div>
-                    </div>
-                    <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ffb74d' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📈 Moderate data, need accuracy</div>
-                      <div style={{ color: '#ffb74d' }}>→ BiLSTM+CRF, CNN+BiLSTM</div>
-                    </div>
-                    <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ba68c8' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🏆 Best possible accuracy</div>
-                      <div style={{ color: '#ba68c8' }}>→ BERT, RoBERTa</div>
-                    </div>
-                    <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px', borderLeft: '4px solid #f06292' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>⚡ Low latency / edge deployment</div>
-                      <div style={{ color: '#f06292' }}>→ DistilBERT, optimized spaCy</div>
-                    </div>
-                    <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px', borderLeft: '4px solid #64b5f6' }}>
-                      <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🆕 New schema / zero data</div>
-                      <div style={{ color: '#64b5f6' }}>→ LLM Zero-/Few-Shot</div>
-                    </div>
-                  </div>
-                  <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px', fontSize: '1.2rem' }}>
-                    <strong>💡 Pro Tip:</strong> Start simple! Try rules or dictionaries first, then move to ML if needed.
-                  </div>
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                <SvgIcon iconName="duo-map" sizeName="3x" darkModeInvert={true} />
+                <div>
+                  <p style={{ fontSize: '2rem' }}>Choose the right NER approach for your use case</p>
                 </div>
-              ),
-              backgroundColor: '#471d6f',
-              notes: ``
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '2rem' }}>
+                <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', borderLeft: '4px solid #4fc3f7' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🚫 No training data, strict formats</div>
+                  <div style={{ color: '#4fc3f7' }}>→ Rule-Based, Gazetteer</div>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', borderLeft: '4px solid #81c784' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📊 Small data, stable schemas</div>
+                  <div style={{ color: '#81c784' }}>→ CRF, spaCy</div>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ffb74d' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📈 Moderate data, need accuracy</div>
+                  <div style={{ color: '#ffb74d' }}>→ BiLSTM+CRF, CNN+BiLSTM</div>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ba68c8' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🏆 Best possible accuracy</div>
+                  <div style={{ color: '#ba68c8' }}>→ BERT, RoBERTa</div>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px', borderLeft: '4px solid #f06292' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>⚡ Low latency / edge deployment</div>
+                  <div style={{ color: '#f06292' }}>→ DistilBERT, optimized spaCy</div>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px', borderLeft: '4px solid #64b5f6' }}>
+                  <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🆕 New schema / zero data</div>
+                  <div style={{ color: '#64b5f6' }}>→ LLM Zero-/Few-Shot</div>
+                </div>
+              </div>
+              <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px', fontSize: '1.2rem' }}>
+                <strong>💡 Pro Tip:</strong> Start simple! Try rules or dictionaries first, then move to ML if needed.
+              </div>
+            </div>
+          ),
+          backgroundColor: '#471d6f',
+          notes: ``
         },
         {
           id: 23,
@@ -1156,8 +1156,8 @@ export const nerApproachesDeck: Deck = {
                     <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #4fc3f7 1%, rgba(79, 195, 247, 0.1) 1%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(79, 195, 247, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>0 labeled examples</span>
                       <span style={{ fontSize: '1.2rem' }}>
-                    ✓ Just write patterns and dictionaries by hand
-                  </span>
+                        ✓ Just write patterns and dictionaries by hand
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -1168,11 +1168,11 @@ export const nerApproachesDeck: Deck = {
                     <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #81c784 20%, rgba(129, 199, 132, 0.1) 20%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(129, 199, 132, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>1,000 - 5,000</span>
                       <span style={{ fontSize: '1.2rem' }}>
-                    ✓ Good for simple, stable entity schemas
-                  </span>
+                        ✓ Good for simple, stable entity schemas
+                      </span>
                     </div>
                   </div>
-                  
+
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
@@ -1181,11 +1181,11 @@ export const nerApproachesDeck: Deck = {
                     <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #ba68c8 35%, rgba(186, 104, 200, 0.1) 35%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(186, 104, 200, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>3,000 - 30,000</span>
                       <span style={{ fontSize: '1.2rem' }}>
-                    ✓ Pre-trained, so needs less data than BiLSTM
-                  </span>
+                        ✓ Pre-trained, so needs less data than BiLSTM
+                      </span>
                     </div>
                   </div>
-                  
+
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
@@ -1194,11 +1194,11 @@ export const nerApproachesDeck: Deck = {
                     <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg,rgb(129, 88, 25) 60%, rgba(255, 183, 77, 0.1) 60%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(255, 183, 77, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>5,000 - 50,000</span>
                       <span style={{ fontSize: '1.2rem' }}>
-                    ✓ Trained from scratch, needs more examples
-                  </span>
+                        ✓ Trained from scratch, needs more examples
+                      </span>
                     </div>
                   </div>
-                  
+
                 </div>
 
                 <div style={{ marginBottom: '25px' }}>
@@ -1207,13 +1207,13 @@ export const nerApproachesDeck: Deck = {
                     <div style={{ flex: 1, height: '35px', background: 'linear-gradient(90deg, #f06292 2%, rgba(240, 98, 146, 0.1) 2%)', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingLeft: '12px', paddingRight: '12px', border: '1px solid rgba(240, 98, 146, 0.3)' }}>
                       <span style={{ color: '#ffffff', fontWeight: 'bold', fontSize: '1.2rem' }}>0 - 10 in prompt</span>
                       <span style={{ fontSize: '1.2rem' }}>
-                    ✓ Few-shot examples given directly in the prompt
-                  </span>
+                        ✓ Few-shot examples given directly in the prompt
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', marginTop: '25px' }}>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', borderLeft: '3px solid #81c784' }}>
                   <div style={{ fontWeight: 'bold', marginBottom: '5px', fontSize: '2rem' }}>✅ Quality {'>'} Quantity</div>
@@ -1230,196 +1230,196 @@ export const nerApproachesDeck: Deck = {
               </div>
             </div>
           ),
-              backgroundColor: '#471d6f',
-              notes: ``
-            },
-            {
+          backgroundColor: '#471d6f',
+          notes: ``
+        },
+        {
           id: 24,
-              title: 'Compute & Latency',
-              content: (
-                <div style={{ textAlign: 'left' }}>
-                  <div style={{ marginBottom: '30px' }}>
-                  </div>
-                  <div style={{ fontSize: '2rem' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
-                      <thead>
-                        <tr style={{ borderBottom: '2px solid rgba(255,255,255,0.3)' }}>
-                          <th style={{ textAlign: 'left', padding: '10px', width: '35%' }}>Approach</th>
-                          <th style={{ textAlign: 'left', padding: '10px', width: '25%' }}>Latency</th>
-                          <th style={{ textAlign: 'left', padding: '10px', width: '20%' }}>GPU Required</th>
-                          <th style={{ textAlign: 'left', padding: '10px', width: '20%' }}>Memory</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
-                          <td style={{ padding: '10px' }}>Rule-Based / Gazetteer</td>
-                          <td style={{ padding: '10px', color: '#4fc3f7', fontWeight: 'bold' }}>&lt;1ms ⚡</td>
-                          <td style={{ padding: '10px' }}>No</td>
-                          <td style={{ padding: '10px' }}>~10MB</td>
-                        </tr>
-                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
-                          <td style={{ padding: '10px' }}>CRF / HMM</td>
-                          <td style={{ padding: '10px', color: '#81c784', fontWeight: 'bold' }}>5-10ms</td>
-                          <td style={{ padding: '10px' }}>No</td>
-                          <td style={{ padding: '10px' }}>~50MB</td>
-                        </tr>
-                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
-                          <td style={{ padding: '10px' }}>BiLSTM + CRF</td>
-                          <td style={{ padding: '10px', color: '#ffb74d', fontWeight: 'bold' }}>20-50ms</td>
-                          <td style={{ padding: '10px' }}>Helpful</td>
-                          <td style={{ padding: '10px' }}>~200MB</td>
-                        </tr>
-                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
-                          <td style={{ padding: '10px' }}>DistilBERT</td>
-                          <td style={{ padding: '10px', color: '#ba68c8', fontWeight: 'bold' }}>20-100ms</td>
-                          <td style={{ padding: '10px' }}>Recommended</td>
-                          <td style={{ padding: '10px' }}>~250MB</td>
-                        </tr>
-                        <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
-                          <td style={{ padding: '10px' }}>BERT / RoBERTa</td>
-                          <td style={{ padding: '10px', color: '#f06292', fontWeight: 'bold' }}>50-200ms</td>
-                          <td style={{ padding: '10px' }}>Required</td>
-                          <td style={{ padding: '10px' }}>~450MB</td>
-                        </tr>
-                        <tr style={{ fontSize: '1.2rem' }}>
-                          <td style={{ padding: '10px' }}>LLMs (GPT-4, etc.)</td>
-                          <td style={{ padding: '10px', color: '#ef5350', fontWeight: 'bold' }}>500ms - 5s+ 🐢</td>
-                          <td style={{ padding: '10px' }}>API / Large GPU</td>
-                          <td style={{ padding: '10px' }}>~GB+ / API</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', fontSize: '1.2rem' }}>
-                    <strong>⚡ Optimization Tips:</strong> Use ONNX runtime, model quantization, and batching to reduce latency by 2-5x
-                  </div>
-                </div>
-              ),
-              backgroundColor: '#471d6f',
-              notes: ``
-            },
-            {
+          title: 'Compute & Latency',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ fontSize: '2rem' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                  <thead>
+                    <tr style={{ borderBottom: '2px solid rgba(255,255,255,0.3)' }}>
+                      <th style={{ textAlign: 'left', padding: '10px', width: '35%' }}>Approach</th>
+                      <th style={{ textAlign: 'left', padding: '10px', width: '25%' }}>Latency</th>
+                      <th style={{ textAlign: 'left', padding: '10px', width: '20%' }}>GPU Required</th>
+                      <th style={{ textAlign: 'left', padding: '10px', width: '20%' }}>Memory</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
+                      <td style={{ padding: '10px' }}>Rule-Based / Gazetteer</td>
+                      <td style={{ padding: '10px', color: '#4fc3f7', fontWeight: 'bold' }}>&lt;1ms ⚡</td>
+                      <td style={{ padding: '10px' }}>No</td>
+                      <td style={{ padding: '10px' }}>~10MB</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
+                      <td style={{ padding: '10px' }}>CRF / HMM</td>
+                      <td style={{ padding: '10px', color: '#81c784', fontWeight: 'bold' }}>5-10ms</td>
+                      <td style={{ padding: '10px' }}>No</td>
+                      <td style={{ padding: '10px' }}>~50MB</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
+                      <td style={{ padding: '10px' }}>BiLSTM + CRF</td>
+                      <td style={{ padding: '10px', color: '#ffb74d', fontWeight: 'bold' }}>20-50ms</td>
+                      <td style={{ padding: '10px' }}>Helpful</td>
+                      <td style={{ padding: '10px' }}>~200MB</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
+                      <td style={{ padding: '10px' }}>DistilBERT</td>
+                      <td style={{ padding: '10px', color: '#ba68c8', fontWeight: 'bold' }}>20-100ms</td>
+                      <td style={{ padding: '10px' }}>Recommended</td>
+                      <td style={{ padding: '10px' }}>~250MB</td>
+                    </tr>
+                    <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)', fontSize: '1.2rem' }}>
+                      <td style={{ padding: '10px' }}>BERT / RoBERTa</td>
+                      <td style={{ padding: '10px', color: '#f06292', fontWeight: 'bold' }}>50-200ms</td>
+                      <td style={{ padding: '10px' }}>Required</td>
+                      <td style={{ padding: '10px' }}>~450MB</td>
+                    </tr>
+                    <tr style={{ fontSize: '1.2rem' }}>
+                      <td style={{ padding: '10px' }}>LLMs (GPT-4, etc.)</td>
+                      <td style={{ padding: '10px', color: '#ef5350', fontWeight: 'bold' }}>500ms - 5s+ 🐢</td>
+                      <td style={{ padding: '10px' }}>API / Large GPU</td>
+                      <td style={{ padding: '10px' }}>~GB+ / API</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', fontSize: '1.2rem' }}>
+                <strong>⚡ Optimization Tips:</strong> Use ONNX runtime, model quantization, and batching to reduce latency by 2-5x
+              </div>
+            </div>
+          ),
+          backgroundColor: '#471d6f',
+          notes: ``
+        },
+        {
           id: 25,
-              title: 'Maintenance & Deployment',
-              content: (
-                <div style={{ textAlign: 'left' }}>
-                  <div style={{ marginBottom: '30px' }}>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
-                    <SvgIcon iconName="duo-rocket" sizeName="3x" darkModeInvert={true} />
-                    <div>
-                      <p style={{ fontSize: '2rem' }}>Ongoing operational requirements</p>
-                    </div>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '2rem' }}>
-                    <div style={{ padding: '20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px' }}>
-                      <h4 style={{ color: '#4fc3f7', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <span>📋</span> Rules & Gazetteers
-                      </h4>
-                      <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-                        <li>Frequent manual updates</li>
-                        <li>Domain expert involvement</li>
-                        <li>Version control for patterns</li>
-                        <li>Easy to debug & explain</li>
-                      </ul>
-                    </div>
-                    <div style={{ padding: '20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px' }}>
-                      <h4 style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <span>📊</span> Classical ML (CRF/HMM)
-                      </h4>
-                      <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-                        <li>Periodic retraining (monthly/quarterly)</li>
-                        <li>Feature pipeline maintenance</li>
-                        <li>Model versioning</li>
-                        <li>A/B testing frameworks</li>
-                      </ul>
-                    </div>
-                    <div style={{ padding: '20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px' }}>
-                      <h4 style={{ color: '#ba68c8', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <span>🧠</span> Transformers
-                      </h4>
-                      <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-                        <li>Retrain on domain shifts</li>
-                        <li>GPU infrastructure costs</li>
-                        <li>Model registry & serving</li>
-                        <li>Monitoring for drift</li>
-                      </ul>
-                    </div>
-                    <div style={{ padding: '20px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '10px' }}>
-                      <h4 style={{ color: '#f06292', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                        <span>🤖</span> LLMs
-                      </h4>
-                      <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
-                        <li>Prompt versioning & testing</li>
-                        <li>Output parsing & validation</li>
-                        <li>Rate limiting & cost control</li>
-                        <li>Guardrails for edge cases</li>
-                      </ul>
-                    </div>
-                  </div>
+          title: 'Maintenance & Deployment',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '30px' }}>
+                <SvgIcon iconName="duo-rocket" sizeName="3x" darkModeInvert={true} />
+                <div>
+                  <p style={{ fontSize: '2rem' }}>Ongoing operational requirements</p>
                 </div>
-              ),
-              backgroundColor: '#471d6f',
-              notes: ``
-            },
-            {
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', fontSize: '2rem' }}>
+                <div style={{ padding: '20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px' }}>
+                  <h4 style={{ color: '#4fc3f7', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span>📋</span> Rules & Gazetteers
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+                    <li>Frequent manual updates</li>
+                    <li>Domain expert involvement</li>
+                    <li>Version control for patterns</li>
+                    <li>Easy to debug & explain</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px' }}>
+                  <h4 style={{ color: '#81c784', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span>📊</span> Classical ML (CRF/HMM)
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+                    <li>Periodic retraining (monthly/quarterly)</li>
+                    <li>Feature pipeline maintenance</li>
+                    <li>Model versioning</li>
+                    <li>A/B testing frameworks</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px' }}>
+                  <h4 style={{ color: '#ba68c8', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span>🧠</span> Transformers
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+                    <li>Retrain on domain shifts</li>
+                    <li>GPU infrastructure costs</li>
+                    <li>Model registry & serving</li>
+                    <li>Monitoring for drift</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '20px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '10px' }}>
+                  <h4 style={{ color: '#f06292', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span>🤖</span> LLMs
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
+                    <li>Prompt versioning & testing</li>
+                    <li>Output parsing & validation</li>
+                    <li>Rate limiting & cost control</li>
+                    <li>Guardrails for edge cases</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ),
+          backgroundColor: '#471d6f',
+          notes: ``
+        },
+        {
           id: 26,
-              title: 'Deployment Tips',
-              content: (
-                <div style={{ textAlign: 'left' }}>
-                  <div style={{ marginBottom: '30px' }}>
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
-                    <div style={{ padding: '18px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '1.5em' }}>🔗</span>
-                      <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Combine Methods</div>
-                        <div style={{ fontSize: '1.2rem' }}>Rules + ML hybrid outperforms either alone. Use rules for known patterns, ML for fuzzy matching.</div>
-                      </div>
-                    </div>
-                    <div style={{ padding: '18px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '1.5em' }}>🔄</span>
-                      <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Add Entity Linking</div>
-                        <div style={{ fontSize: '1.2rem' }}>Normalize entities to canonical forms. Link to knowledge bases (Wikidata, internal DBs).</div>
-                      </div>
-                    </div>
-                    <div style={{ padding: '18px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '1.5em' }}>📈</span>
-                      <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Monitor for Drift</div>
-                        <div style={{ fontSize: '1.2rem' }}>Text evolves! Track prediction confidence, flag low-confidence outputs for review.</div>
-                      </div>
-                    </div>
-                    <div style={{ padding: '18px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '1.5em' }}>🔒</span>
-                      <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Privacy Compliance</div>
-                        <div style={{ fontSize: '1.2rem' }}>PII detection needs special handling. Consider on-premise for sensitive data.</div>
-                      </div>
-                    </div>
-                    <div style={{ padding: '18px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '1.5em' }}>⚡</span>
-                      <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Quantize for Edge</div>
-                        <div style={{ fontSize: '1.2rem' }}>INT8 quantization cuts size 4x with minimal accuracy loss. Essential for mobile/edge.</div>
-                      </div>
-                    </div>
-                    <div style={{ padding: '18px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-                      <span style={{ fontSize: '1.5em' }}>🧪</span>
-                      <div>
-                        <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Test Extensively</div>
-                        <div style={{ fontSize: '1.2rem' }}>Build diverse test sets. Include edge cases, adversarial examples, and domain-specific text.</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(100, 181, 246, 0.3)', borderRadius: '8px', textAlign: 'center', fontSize: '1.2rem' }}>
-                    <strong>🎯 Remember:</strong> The best NER system is the one that works reliably in YOUR production environment!
+          title: 'Deployment Tips',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+                <div style={{ padding: '18px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ fontSize: '1.5em' }}>🔗</span>
+                  <div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Combine Methods</div>
+                    <div style={{ fontSize: '1.2rem' }}>Rules + ML hybrid outperforms either alone. Use rules for known patterns, ML for fuzzy matching.</div>
                   </div>
                 </div>
-              ),
-              backgroundColor: '#471d6f',
-              notes: ``
+                <div style={{ padding: '18px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ fontSize: '1.5em' }}>🔄</span>
+                  <div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Add Entity Linking</div>
+                    <div style={{ fontSize: '1.2rem' }}>Normalize entities to canonical forms. Link to knowledge bases (Wikidata, internal DBs).</div>
+                  </div>
+                </div>
+                <div style={{ padding: '18px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ fontSize: '1.5em' }}>📈</span>
+                  <div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Monitor for Drift</div>
+                    <div style={{ fontSize: '1.2rem' }}>Text evolves! Track prediction confidence, flag low-confidence outputs for review.</div>
+                  </div>
+                </div>
+                <div style={{ padding: '18px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ fontSize: '1.5em' }}>🔒</span>
+                  <div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Privacy Compliance</div>
+                    <div style={{ fontSize: '1.2rem' }}>PII detection needs special handling. Consider on-premise for sensitive data.</div>
+                  </div>
+                </div>
+                <div style={{ padding: '18px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ fontSize: '1.5em' }}>⚡</span>
+                  <div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Quantize for Edge</div>
+                    <div style={{ fontSize: '1.2rem' }}>INT8 quantization cuts size 4x with minimal accuracy loss. Essential for mobile/edge.</div>
+                  </div>
+                </div>
+                <div style={{ padding: '18px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '10px', display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                  <span style={{ fontSize: '1.5em' }}>🧪</span>
+                  <div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '5px' }}>Test Extensively</div>
+                    <div style={{ fontSize: '1.2rem' }}>Build diverse test sets. Include edge cases, adversarial examples, and domain-specific text.</div>
+                  </div>
+                </div>
+              </div>
+              <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(100, 181, 246, 0.3)', borderRadius: '8px', textAlign: 'center', fontSize: '1.2rem' }}>
+                <strong>🎯 Remember:</strong> The best NER system is the one that works reliably in YOUR production environment!
+              </div>
+            </div>
+          ),
+          backgroundColor: '#471d6f',
+          notes: ``
         }
       ]
     }
