@@ -56,6 +56,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Overview',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.8', textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
                 <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1.2rem', borderRadius: '10px' }}>
                   <div style={{ color: '#e7ad52', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -158,6 +160,8 @@ export const featureExtractionDeck: Deck = {
           title: '1) Bag of Words (BoW) — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '1rem' }}>
                 <SvgIcon iconName="duo-quote-left" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 Count-based vectorization: "The cat sat on the mat" → [1,1,1,1,2,0,...]
@@ -205,6 +209,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -249,6 +255,8 @@ export const featureExtractionDeck: Deck = {
           title: '2) TF-IDF — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(231, 173, 82, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', fontSize: '1rem' }}>
                 <SvgIcon iconName="duo-calculator" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Term Frequency × Inverse Document Frequency</strong>
@@ -300,6 +308,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -343,6 +353,8 @@ export const featureExtractionDeck: Deck = {
           title: '3) Word2Vec (CBOW) — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-diagram-project" sizeName="lg" darkModeInvert={true} />
@@ -399,6 +411,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -441,6 +455,8 @@ export const featureExtractionDeck: Deck = {
           title: '4) Word2Vec (Skip-Gram) — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-diagram-project" sizeName="lg" darkModeInvert={true} />
@@ -497,6 +513,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -538,6 +556,8 @@ export const featureExtractionDeck: Deck = {
           title: '5) GloVe — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-network-wired" sizeName="lg" darkModeInvert={true} />
@@ -591,6 +611,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -633,6 +655,8 @@ export const featureExtractionDeck: Deck = {
           title: '6) FastText — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-text" sizeName="lg" darkModeInvert={true} />
@@ -689,6 +713,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -730,6 +756,8 @@ export const featureExtractionDeck: Deck = {
           title: '7) Doc2Vec — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(27, 145, 224, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-folder-open" sizeName="lg" darkModeInvert={true} />
@@ -787,6 +815,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -827,6 +857,8 @@ export const featureExtractionDeck: Deck = {
           title: '8) ELMo — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-split" sizeName="lg" darkModeInvert={true} />
@@ -888,6 +920,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -929,6 +963,8 @@ export const featureExtractionDeck: Deck = {
           title: '9) BERT Embeddings — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
@@ -990,6 +1026,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -1031,6 +1069,8 @@ export const featureExtractionDeck: Deck = {
           title: '10) Sentence-BERT (SBERT) — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(155, 89, 182, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-code-branch" sizeName="lg" darkModeInvert={true} />
@@ -1088,6 +1128,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -1129,6 +1171,8 @@ export const featureExtractionDeck: Deck = {
           title: '11) Universal Sentence Encoder (USE) — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-gears" sizeName="lg" darkModeInvert={true} />
@@ -1182,6 +1226,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -1223,6 +1269,8 @@ export const featureExtractionDeck: Deck = {
           title: '12) E5 Embeddings — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-globe" sizeName="lg" darkModeInvert={true} />
@@ -1276,6 +1324,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -1317,6 +1367,8 @@ export const featureExtractionDeck: Deck = {
           title: '13) GTE Embeddings — Cheat Sheet',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ background: 'rgba(46, 204, 113, 0.15)', padding: '1rem', borderRadius: '8px', marginBottom: '1rem' }}>
                 <div style={{ fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <SvgIcon iconName="duo-expand" sizeName="lg" darkModeInvert={true} />
@@ -1366,6 +1418,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(46, 204, 113, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ marginBottom: '0.5rem' }}>
@@ -1408,6 +1462,8 @@ export const featureExtractionDeck: Deck = {
           title: 'Summary & Comparison',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5', textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div style={{ background: 'rgba(231, 173, 82, 0.2)', padding: '1rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e7ad52', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
