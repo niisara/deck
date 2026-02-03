@@ -18,7 +18,7 @@ export const sentimentAnalysisDeck: Deck = {
           center: true,
           title: '15 Sentiment Analysis Techniques',
           content: (
-            <div>
+            <div style={{ marginTop: '20px', color: '#fff' }}>
               <h2>From Rule-Based Scores to Transformers and Multimodal Analysis</h2>
               <p style={{ fontSize: '1.2em' }}>A Comprehensive Cheat Sheet for NLP Practitioners</p>
               <p><strong>Prepared by:</strong> Nisar A</p>
@@ -34,7 +34,9 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Table of Contents',
           icon: { name: 'duo-list-check' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
@@ -117,6 +119,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#00ffcd' }} />
@@ -153,6 +157,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -194,6 +200,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brackets-square' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#edc1ff' }} />
@@ -230,6 +238,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -271,6 +281,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f76ed5' }} />
@@ -307,6 +319,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -349,6 +363,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-shield-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#63e188' }} />
@@ -385,6 +401,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -426,6 +444,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#956efb' }} />
@@ -462,6 +482,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -503,6 +525,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5e5e' }} />
@@ -539,6 +563,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -580,6 +606,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ff4bea' }} />
@@ -616,6 +644,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -657,6 +687,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#a665ff' }} />
@@ -693,6 +725,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -734,6 +768,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#d9d44b' }} />
@@ -770,6 +806,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -811,6 +849,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-network-wired' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4edbc7' }} />
@@ -847,6 +887,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -888,6 +930,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5df9' }} />
@@ -924,6 +968,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -967,6 +1013,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4fd75d' }} />
@@ -1003,6 +1051,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -1044,6 +1094,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-wand-magic-sparkles' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f7417d' }} />
@@ -1080,6 +1132,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -1123,6 +1177,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-crosshairs' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#e1d23d' }} />
@@ -1159,6 +1215,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -1200,6 +1258,8 @@ export const sentimentAnalysisDeck: Deck = {
           icon: { name: 'duo-video' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#43cfdb' }} />
@@ -1236,6 +1296,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
@@ -1276,11 +1338,13 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Comparison Matrix',
           content: (
             <div style={{ fontSize: '0.6em', margin: '0 auto' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-table-columns" sizeName="2x" darkModeInvert={true} />
                 Key Dimensions Across All 15 Techniques
               </h3>
-              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center' }}>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', marginTop: '20px' }}>
                 <thead>
                   <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
                     <th style={{ padding: '8px', border: '1px solid #555' }}>Category</th>
@@ -1318,6 +1382,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Recommendations & Best Practices',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                 <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
@@ -1376,6 +1442,8 @@ export const sentimentAnalysisDeck: Deck = {
           title: 'Implementation Roadmap',
           content: (
             <div style={{ margin: '0 auto', color: '#2cc3a6' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <h3 style={{ marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
                 <SvgIcon iconName="duo-map" sizeName="2x" style={{ color: '#3498db' }} />
                 Next Steps
