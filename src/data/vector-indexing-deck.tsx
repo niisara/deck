@@ -84,7 +84,7 @@ export const vectorIndexingDeck: Deck = {
                       <td>100M→B+</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(155, 89, 182, 0.1)', fontSize: '1.2rem' }}>
-                      <td style={{  display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-expand" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Annoy</td>
+                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-expand" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Annoy</td>
                       <td>Good</td>
                       <td>Moderate</td>
                       <td>Approx</td>
@@ -92,7 +92,7 @@ export const vectorIndexingDeck: Deck = {
                       <td>Small→Mid</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', fontSize: '1.2rem' }}>
-                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-pen-to-square" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />ScaNN</td>
+                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-pen-to-square" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />ScaNN</td>
                       <td>Very fast</td>
                       <td>Low→Mod</td>
                       <td>High</td>
@@ -100,7 +100,7 @@ export const vectorIndexingDeck: Deck = {
                       <td>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(231, 76, 60, 0.1)', fontSize: '1.2rem' }}>
-                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-hashtag" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />LSH</td>
+                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-hashtag" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />LSH</td>
                       <td>Fast (for supported metrics)</td>
                       <td>High (many tables)</td>
                       <td>Approx</td>
@@ -108,7 +108,7 @@ export const vectorIndexingDeck: Deck = {
                       <td>Large</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', fontSize: '1.2rem' }}>
-                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Graph-based ANN</td>
+                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Graph-based ANN</td>
                       <td>Very fast</td>
                       <td>Low→High (variant)</td>
                       <td>High</td>
@@ -116,7 +116,7 @@ export const vectorIndexingDeck: Deck = {
                       <td>100M→B (DiskANN)</td>
                     </tr>
                     <tr style={{ backgroundColor: 'rgba(241, 196, 15, 0.1)', fontSize: '1.2rem' }}>
-                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-floppy-disk" sizeName="1x" style={{ marginRight: '5px' }}darkModeInvert={true} />Multi-Index Hashing</td>
+                      <td style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-floppy-disk" sizeName="1x" style={{ marginRight: '5px' }} darkModeInvert={true} />Multi-Index Hashing</td>
                       <td>Fast for Hamming</td>
                       <td>Mod→High</td>
                       <td>Exact (Hamming)</td>
@@ -147,12 +147,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#ff6b35', marginBottom: '15px' }}>The simplest vector index with exact search guarantees</h3>
-                
+
                 <div style={{ marginBottom: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '5px' }}>No index; raw vectors stored contiguously in memory. Each query computes distance against all vectors in the collection. Often accelerated with SIMD instructions or GPU computation for performance.</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(255, 107, 53, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ffb74d' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -234,12 +234,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#00d4ff' }}>Hierarchical Navigable Small World - High-recall approximate nearest neighbor search</h3>
-                
+
                 <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '5px' }}>Hierarchical navigable small-world graph with multi-layer proximity graph structure. Key parameters include M (max connections per node), efConstruction (search width during build), and efSearch (search width during query).</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#4fc3f7', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -267,7 +267,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Ideal for applications requiring low-latency</li>
+                    <li>Ideal for applications requiring low-latency</li>
                     <li>high-recall approximate nearest neighbor search with datasets up to ~100M vectors</li>
                     <li>Best suited for read-heavy or semi-static datasets where query performance is critical</li>
                   </ul>
@@ -319,12 +319,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#4ecdc4', marginBottom: '15px' }}>A coarse quantization-based approach for efficient vector indexing and retrieval</h3>
-                
+
                 <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '5px' }}>Coarse quantizer (k-means) with nlist clusters; vectors assigned to inverted lists; probe nprobe lists during search; typically performs exhaustive search within retrieved lists (often using Flat search).</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#81c784' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -352,7 +352,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Large datasets needing high throughput and tunable recall</li>
+                    <li>Large datasets needing high throughput and tunable recall</li>
                     <li>Environments where online insertions are required</li>
                     <li>Systems with moderate memory constraints but high recall requirements</li>
                   </ul>
@@ -403,12 +403,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#ffc300', marginBottom: '15px' }}>Inverted File Index combined with Product Quantization for efficient vector compression</h3>
-                
+
                 <div style={{ marginBottom: '12px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '3px' }}>IVF coarse quantizer (k-means clustering) plus PQ codes for residuals. Stores compact codes instead of raw vectors. Uses lookup tables (LUT) and Asymmetric Distance Computation (ADC) for efficient scoring. Optional refine step can leverage raw vectors for higher precision.</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px', marginBottom: '12px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ffb74d', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -436,7 +436,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Ideal for memory-constrained large-scale approximate nearest neighbor search (100M-B+ vectors)</li>
+                    <li>Ideal for memory-constrained large-scale approximate nearest neighbor search (100M-B+ vectors)</li>
                     <li>Well-suited for read-heavy workloads where some approximation in recall is acceptable</li>
                     <li>Particularly effective when paired with a refinement step for critical results</li>
                   </ul>
@@ -458,7 +458,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Requires training on representative data sample</li>
+                    <li>Requires training on representative data sample</li>
                     <li>Consider OPQ (Optimized Product Quantization) rotation for better accuracy</li>
                     <li>Critical parameters include m (number of subquantizers), code size, and nprobe (clusters to search)</li>
                     <li>Adding a refine stage significantly boosts recall at the cost of extra latency</li>
@@ -486,12 +486,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '15px' }}>Approximate Nearest Neighbors Oh Yeah - Simple and Efficient Vector Search</h3>
-                
+
                 <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '5px' }}>Forest of random projection trees where each tree partitions vectors based on random hyperplanes. Index can be saved to disk and memory-mapped for efficient loading. Primarily supports angular (cosine) and Euclidean distance metrics.</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ba68c8', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -519,7 +519,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Simple deployment</li>
+                    <li>Simple deployment</li>
                     <li>Read-only applications</li>
                     <li>Quick startup/cold start</li>
                     <li>Small-to-mid datasets</li>
@@ -544,7 +544,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>No dynamic deletes and limited update capabilities (effectively read-only after build)</li>
+                    <li>No dynamic deletes and limited update capabilities (effectively read-only after build)</li>
                     <li>Index build process is deterministic with a fixed random seed</li>
                     <li>Key tuning parameters: n_trees (more trees = higher recall but more memory) and search_k (more candidates = higher recall but slower)</li>
                     <li>Implemented in multiple languages with Python bindings being most popular</li>
@@ -573,7 +573,7 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
-                
+
                 <div style={{ marginBottom: '12px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. ScaNN uses a multi-stage architecture:</p>
@@ -611,7 +611,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
                   <ul>
-                  <li>Large-scale semantic search with inner product/cosine distance metrics</li>
+                    <li>Large-scale semantic search with inner product/cosine distance metrics</li>
                     <li>TensorFlow/TF-Serving pipelines</li>
                     <li>Production deployments with high QPS requirements</li>
                     <li>Semantic Search</li>
@@ -636,7 +636,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
                   <ul>
-                  <li>Requires training and careful configuration</li>
+                    <li>Requires training and careful configuration</li>
                     <li>Updates less friendly</li>
                     <li>Open-source by Google</li>
                     <li>Complex but performant</li>
@@ -665,12 +665,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>Probabilistic algorithm for approximate nearest neighbor search using hash collisions</h3>
-                
+
                 <div style={{ marginBottom: '12px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Multiple hash tables using LSH families (e.g., SimHash for cosine similarity, p-stable distributions for L2 distance). Query candidates are collected from matching buckets across tables. Each table uses a different hash function to increase collision probability for similar items.</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ color: '#ff6b6b', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -698,7 +698,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Sparse or high-dimensional data where traditional methods struggle</li>
+                    <li>Sparse or high-dimensional data where traditional methods struggle</li>
                     <li>Streaming scenarios requiring fast updates</li>
                     <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
                     <li>Particularly effective for specialized metrics with good LSH families</li>
@@ -721,7 +721,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                   <ul>
-                  <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
+                    <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
                     <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
                     <li>Insertions and deletions are straightforward</li>
                     <li>Recall degrades without careful tuning</li>
@@ -750,13 +750,13 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '15px' }}>Navigable proximity graphs with controlled out-degree for efficient ANN search</h3>
-                
+
                 <div style={{ display: 'flex', gap: '20px', marginBottom: '12px', fontSize: '1.2rem' }}>
                   <div style={{ padding: '8px 15px', backgroundColor: 'rgba(46, 204, 113, 0.2)', borderRadius: '8px', fontWeight: 'bold' }}>NSG</div>
                   <div style={{ padding: '8px 15px', backgroundColor: 'rgba(52, 152, 219, 0.2)', borderRadius: '8px', fontWeight: 'bold' }}>Vamana</div>
                   <div style={{ padding: '8px 15px', backgroundColor: 'rgba(155, 89, 182, 0.2)', borderRadius: '8px', fontWeight: 'bold' }}>DiskANN</div>
                 </div>
-                
+
                 <div style={{ marginBottom: '12px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Proximity graphs with controlled out-degree (NSG/Vamana) or SSD-aware layouts (DiskANN). Single-layer navigable graphs where each node connects to its approximate nearest neighbors while maintaining graph navigability properties.</p>
@@ -789,7 +789,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
                   <ul>
-                  <li>Web-scale search under RAM constraints</li>
+                    <li>Web-scale search under RAM constraints</li>
                     <li>Production environments with strict latency SLOs</li>
                     <li>Read-heavy workloads with billions of vectors</li>
                     <li>DiskANN specifically addresses the RAM bottleneck for very large indices</li>
@@ -812,7 +812,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
                   <ul>
-                  <li>Complex build processes with careful pruning strategies</li>
+                    <li>Complex build processes with careful pruning strategies</li>
                     <li>Difficult to update (mostly batch builds)</li>
                     <li>Tune graph degree and beam search width for optimal performance</li>
                     <li>Achieves strong recall with careful construction</li>
@@ -841,12 +841,12 @@ export const vectorIndexingDeck: Deck = {
               </div>
               <div style={{ fontSize: '2rem' }}>
                 <h3 style={{ color: '#f1c40f', marginBottom: '15px' }}>Efficient exact search in Hamming space for binary and quantized representations</h3>
-                
+
                 <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                   <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
                   <p style={{ marginTop: '5px', lineHeight: '1.5' }}>Split binary code into m substrings; build m hash tables; intersect buckets for candidates; used for Hamming/PQ code search. Each substring is used as a key to index into its corresponding hash table.</p>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
                     <strong style={{ color: '#f39c12', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
@@ -874,7 +874,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
                   <ul>
-                  <li>Binary embeddings or PQ code matching</li>
+                    <li>Binary embeddings or PQ code matching</li>
                     <li>Refine stage for IVF-PQ</li>
                     <li>When exact Hamming kNN is needed</li>
                     <li>Ideal for applications requiring precise matching in binary space such as image fingerprinting, duplicate detection, and compact binary feature matching</li>
@@ -897,7 +897,7 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
                   <ul>
-                  <li>Limited to Hamming/binary codes</li>
+                    <li>Limited to Hamming/binary codes</li>
                     <li>parameter m critical</li>
                     <li>GPU-friendly; common in large-scale code search pipelines</li>
                     <li>Optimal m typically depends on code length and query radius</li>
@@ -930,7 +930,7 @@ export const vectorIndexingDeck: Deck = {
                   <SvgIcon iconName="duo-map-location-dot" sizeName="2x" darkModeInvert={true} />
                   How to choose the right vector indexing scheme for your use case
                 </h3>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '10px', marginBottom: '15px', marginTop: '15px' }}>
                   <div style={{ padding: '8px', backgroundColor: 'rgba(255, 107, 53, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-bullseye" sizeName="1x" style={{ color: '#ff6b35' }} darkModeInvert={true} />
@@ -939,7 +939,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(255, 107, 53, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → Flat (GPU for speed)
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="1x" style={{ color: '#00d4ff' }} darkModeInvert={true} />
                     <span>Low-latency high-recall, semi-static data?</span>
@@ -947,7 +947,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(0, 212, 255, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → HNSW or NSG/Vamana
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-sliders" sizeName="1x" style={{ color: '#4ecdc4' }} darkModeInvert={true} />
                     <span>Tunable speed/recall for large data?</span>
@@ -955,7 +955,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(78, 205, 196, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → IVF (with refine)
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(255, 195, 0, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-compress" sizeName="1x" style={{ color: '#ffc300' }} darkModeInvert={true} />
                     <span>RAM-constrained billion-scale?</span>
@@ -963,7 +963,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(255, 195, 0, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → IVF+PQ (with refine on top-k)
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-expand" sizeName="1x" style={{ color: '#9b59b6' }} darkModeInvert={true} />
                     <span>Simple, read-only, easy deploy?</span>
@@ -971,7 +971,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → Annoy
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(66, 133, 244, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-shield-check" sizeName="1x" style={{ color: '#4285f4' }} darkModeInvert={true} />
                     <span>Inner-product/cosine at high throughput?</span>
@@ -987,7 +987,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(66, 133, 244, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → LSH (cosine/L2/Jaccard)
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-check-double" sizeName="1x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
                     <span>SSD-backed web scale, tight RAM?</span>
@@ -995,7 +995,7 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '8px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '6px', fontWeight: 'bold' }}>
                     → DiskANN
                   </div>
-                  
+
                   <div style={{ padding: '8px', backgroundColor: 'rgba(241, 196, 15, 0.1)', borderRadius: '6px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-brackets-square" sizeName="1x" style={{ color: '#f1c40f' }} darkModeInvert={true} />
                     <span>Binary/Hamming or PQ-code exact search?</span>
@@ -1029,14 +1029,14 @@ export const vectorIndexingDeck: Deck = {
               <div>
                 <div style={{ padding: '12px', backgroundColor: '#663', borderRadius: '8px' }}>
                   <ul>
-                  <li>Always measure recall@k vs latency tradeoff for your specific data</li>
-                      <li>Batch queries together for better throughput</li>
-                      <li>Normalize vectors for cosine similarity before indexing</li>
-                      <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
-                      <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
-                      <li>Shard large indices by coarse partitions for parallelism</li>
-                      <li>Consider dimensionality reduction (PCA) before indexing</li>
-                      <li>For production, test with realistic data distributions and queries</li>
+                    <li>Always measure recall@k vs latency tradeoff for your specific data</li>
+                    <li>Batch queries together for better throughput</li>
+                    <li>Normalize vectors for cosine similarity before indexing</li>
+                    <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
+                    <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
+                    <li>Shard large indices by coarse partitions for parallelism</li>
+                    <li>Consider dimensionality reduction (PCA) before indexing</li>
+                    <li>For production, test with realistic data distributions and queries</li>
                   </ul>
                 </div>
               </div>
