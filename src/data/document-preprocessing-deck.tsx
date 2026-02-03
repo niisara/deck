@@ -18,9 +18,9 @@ export const documentPreprocessingDeck: Deck = {
           center: true,
           title: '17 Document Preprocessing Techniques',
           content: (
-            <div>
+            <div style={{ marginTop: '30px', color: '#fff' }}>
               <h2 style={{}}>A practical cheat sheet for NLP and data processing pipelines</h2>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '30px' }}>
                 <div style={{ textAlign: 'center' }}>
                   <SvgIcon iconName="duo-file-lines" sizeName="4x" style={{ color: '#e74c3c' }} />
                   <p style={{ marginTop: '10px', fontSize: '0.8em' }}>Raw</p>
@@ -52,7 +52,9 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Table of Contents',
           icon: { name: 'duo-list-check' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <p style={{ textAlign: 'center', marginBottom: '20px', fontSize: '1.6rem' }}>
                 Each technique includes <strong>Goal</strong>, <strong>How It Works</strong>, <strong>When to Use</strong>, <strong>Implementation Steps</strong>, <strong>Pros</strong>, and <strong>Cons</strong>
               </p>
@@ -130,7 +132,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '1. Remove Boilerplate Noise',
           icon: { name: 'duo-broom' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffbba0' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -186,7 +188,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 4,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffbba0' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -225,7 +227,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '2. Deduplicate Repeated Text',
           icon: { name: 'duo-copy' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#cc8ce7' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -283,7 +285,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 6,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#cc8ce7' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -322,7 +324,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '3. Normalize Whitespace & Formatting',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#4dadeb' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -382,7 +384,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 8,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#4dadeb' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -423,7 +425,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '4. Convert Tables into Structured Text',
           icon: { name: 'duo-table' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#50dbc0' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -482,7 +484,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 10,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#50dbc0' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -522,7 +524,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '5. OCR Cleanup',
           icon: { name: 'duo-scanner-keyboard' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6e0c' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -580,7 +582,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 12,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6e0c' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -619,7 +621,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '6. Sentence Boundary Detection',
           icon: { name: 'duo-scissors' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83d344' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -678,7 +680,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 14,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83d344' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -719,7 +721,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '7. Semantic Chunking',
           icon: { name: 'duo-brain-circuit' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7a87ff' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -777,7 +779,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 16,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7a87ff' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -816,7 +818,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '8. Contextual Chunk Linking (Parent–Child)',
           icon: { name: 'duo-link' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fb6fec' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -875,7 +877,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 18,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fb6fec' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -916,7 +918,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '9. Text Normalization',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c878e9' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -976,7 +978,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 20,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c878e9' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1017,7 +1019,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '10. Light Stopword Trimming',
           icon: { name: 'duo-eraser' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe365' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1074,7 +1076,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 22,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe365' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1113,7 +1115,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '11. Lemmatization / Stemming',
           icon: { name: 'duo-seedling' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7777' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1170,7 +1172,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 24,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7777' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1209,7 +1211,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '12. Keyphrase Extraction',
           icon: { name: 'duo-tags' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc3afb' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1266,7 +1268,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 26,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc3afb' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1305,7 +1307,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '13. Entity Tagging (NER)',
           icon: { name: 'duo-user-tag' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#50f94d' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1362,7 +1364,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 28,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#50f94d' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1401,7 +1403,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '14. Remove Dead Chunks',
           icon: { name: 'duo-trash' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#f97c6f' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1459,7 +1461,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 30,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#f97c6f' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1498,7 +1500,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '15. Chunk Summary Metadata',
           icon: { name: 'duo-note-sticky' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#cc6ff3' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1555,7 +1557,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 32,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#cc6ff3' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1594,7 +1596,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '16. Domain Dictionary / Synonym Normalization',
           icon: { name: 'duo-book' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#49dfc1' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1654,7 +1656,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 34,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#49dfc1' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1695,7 +1697,7 @@ export const documentPreprocessingDeck: Deck = {
           title: '17. Temporal Labeling / Version Tagging',
           icon: { name: 'duo-calendar' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#5fb2e7' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1755,7 +1757,7 @@ export const documentPreprocessingDeck: Deck = {
           id: 36,
           title: 'Pros and Cons',
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#5fb2e7' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
@@ -1796,12 +1798,14 @@ export const documentPreprocessingDeck: Deck = {
           title: 'Minimal Viable Pipeline',
           icon: { name: 'duo-diagram-project' },
           content: (
-            <div style={{ margin: '0 auto', color: '#3fc779' }}>
+            <div style={{ margin: '0 auto', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <h3 style={{ marginBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
                 <SvgIcon iconName="duo-diagram-project" sizeName="2x" style={{ color: '#3498db' }} />
                 Example Starter Pipeline
               </h3>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', justifyContent: 'center', flexWrap: 'wrap', marginTop: '30px' }}>
                 <div style={{ textAlign: 'center', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px', minWidth: '140px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#e74c3c' }} />
                   <p style={{ marginTop: '10px', fontWeight: 'bold' }}>1. Boilerplate<br />Removal</p>
@@ -1849,6 +1853,8 @@ export const documentPreprocessingDeck: Deck = {
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px' }}>
                 <div style={{ border: '2px solid #2ecc71', borderRadius: '10px', padding: '18px', color: '#2ecc71' }}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71' }}>
@@ -1886,6 +1892,8 @@ export const documentPreprocessingDeck: Deck = {
           icon: { name: 'duo-route' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#5fb2e7' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div>
                 <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '18px', color: '#f39c12' }}>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
