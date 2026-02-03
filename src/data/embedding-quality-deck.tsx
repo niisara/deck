@@ -18,7 +18,7 @@ export const embeddingQualityDeck: Deck = {
           center: true,
           title: '7 Tricks to Improve Embedding Quality',
           content: (
-            <div>
+            <div style={{ marginTop: '30px' }}>
               <h2>Without Changing the Model</h2>
               <p style={{ fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
