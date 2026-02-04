@@ -22,9 +22,9 @@ export const metadataEnrichmentDeck: Deck = {
               <h2>Cheat-sheets, patterns, and practical implementations</h2>
               <div style={{ marginTop: '20px', fontSize: '0.9em', lineHeight: '1.8' }}>
                 <div>What you'll get:</div>
-                  <p>9 field-proven enrichment techniques</p>
-                  <p>Implementation steps and metadata examples</p>
-                  <p>Best practices to scale enrichment and retrieval</p>
+                <p>9 field-proven enrichment techniques</p>
+                <p>Implementation steps and metadata examples</p>
+                <p>Best practices to scale enrichment and retrieval</p>
               </div>
               <p><strong>Prepared by:</strong> Nisar A</p>
               <p><strong>Date:</strong> November 7, 2025</p>
@@ -66,7 +66,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#7e57c2', marginBottom: '15px' }}>
                     <SvgIcon iconName="duo-folder-tree" sizeName="2x" darkModeInvert={true} />
@@ -95,7 +95,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </div>
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#26c6da', marginBottom: '15px' }}>
                     <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
@@ -139,7 +139,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Boosts retrieval precision and reduces hallucinations by preserving section intent</p>
-                    
+
                     <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Parse headers (H1–H3) and nearest title per chunk; store section_title, heading_level, section_path</p>
 
@@ -150,7 +150,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>During retrieval, filter/boost on section_title or path</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: '#315f43', borderRadius: '8px' }}>
                     <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -161,7 +161,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -189,23 +189,23 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Strong intent signal</li>
-                        <li>Better reranking</li>
-                        <li>Improved explainability</li>
+                  <li>Strong intent signal</li>
+                  <li>Better reranking</li>
+                  <li>Improved explainability</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Weak on poorly structured docs</li>
-                <li>Requires robust parsing</li>
+                  <li>Weak on poorly structured docs</li>
+                  <li>Requires robust parsing</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#315f43', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Section titles provide essential contextual intent that helps models understand what information chunks contain, reducing hallucinations and improving response relevance.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Section titles provide essential contextual intent that helps models understand what information chunks contain, reducing hallucinations and improving response relevance.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#1a4d2e',
@@ -222,7 +222,7 @@ export const metadataEnrichmentDeck: Deck = {
           title: '2. Document Type Labels',
           icon: { name: 'duo-file-lines' },
           content: (
-            <div style={{ textAlign: 'left',color: '#fff' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ fontSize: '0.75em' }}>
@@ -230,7 +230,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Improves precision by matching user intent to doc role (FAQ, Policy, Email, SOP)</p>
-                    
+
                     <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Classify each document/chunk into doc_type via rules + ML (file path, layout, keywords)</p>
 
@@ -241,7 +241,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Store doc_type and optionally department/audience; filter or boost at retrieval</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                     <strong>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -252,7 +252,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -280,25 +280,25 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Fast filter for retrieval</li>
-                        <li>Reduces irrelevant context</li>
-                        <li>Good for governance</li>
-                        <li>Improves user satisfaction</li>
+                  <li>Fast filter for retrieval</li>
+                  <li>Reduces irrelevant context</li>
+                  <li>Good for governance</li>
+                  <li>Improves user satisfaction</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Initial labeling effort</li>
-                        <li>Classifier drift needs audits</li>
-                        <li>Requires governance of labels</li>
+                  <li>Initial labeling effort</li>
+                  <li>Classifier drift needs audits</li>
+                  <li>Requires governance of labels</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#31365f', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Document type labels provide contextual relevance for different user intents, ensuring that responses match the appropriate document format and purpose.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Document type labels provide contextual relevance for different user intents, ensuring that responses match the appropriate document format and purpose.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#1a1f4d',
@@ -323,7 +323,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Precision via entity filters; disambiguation; cross-linking across sources</p>
-                    
+
                     <strong style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Run NER; normalize entities to canonical IDs; store arrays by type</p>
 
@@ -334,7 +334,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Store entities by type; enable faceted filtering and boosting</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                     <strong>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -344,7 +344,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.8em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -375,24 +375,24 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Powerful filters</li>
-                        <li>Better grounding</li>
-                        <li>Enables per-entity analytics</li>
+                  <li>Powerful filters</li>
+                  <li>Better grounding</li>
+                  <li>Enables per-entity analytics</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Compute cost</li>
-                        <li>PII handling</li>
-                        <li>Normalization complexity</li>
+                  <li>Compute cost</li>
+                  <li>PII handling</li>
+                  <li>Normalization complexity</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f3156', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Entity recognition provides structured disambiguation of key references in text, allowing for precise filtering and more accurate responses when domain-specific entities are critical to understanding.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Entity recognition provides structured disambiguation of key references in text, allowing for precise filtering and more accurate responses when domain-specific entities are critical to understanding.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#4d1a43',
@@ -417,7 +417,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Improves both recall and precision with consistent domain labels</p>
-                    
+
                     <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Map chunks to a controlled taxonomy using multi-label classifiers or LLM tagging</p>
 
@@ -428,7 +428,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Store topics and topic_ids; use for filters and UI facets</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -439,7 +439,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -469,24 +469,24 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Stable navigation and filters</li>
-                        <li>Good for reporting and analytics</li>
-                        <li>Enhances user interface organization</li>
+                  <li>Stable navigation and filters</li>
+                  <li>Good for reporting and analytics</li>
+                  <li>Enhances user interface organization</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Taxonomy governance needed</li>
-                        <li>Re-tag on taxonomy changes</li>
-                        <li>Initial setup complexity</li>
+                  <li>Taxonomy governance needed</li>
+                  <li>Re-tag on taxonomy changes</li>
+                  <li>Initial setup complexity</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f5731', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>A well-maintained taxonomy provides consistent categorization across documents, enabling powerful filtering capabilities and improving both search precision and recall across heterogeneous document collections.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>A well-maintained taxonomy provides consistent categorization across documents, enabling powerful filtering capabilities and improving both search precision and recall across heterogeneous document collections.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#4d441a',
@@ -511,7 +511,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Freshness control; retrieves latest/final data; reduces outdated answers</p>
-                    
+
                     <strong style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Extract timestamps (created, updated, effective) and version fields; maintain validity windows</p>
 
@@ -522,7 +522,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Retrieval: filter by date range; sort/boost is_latest and newest version</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -534,7 +534,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.8em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -564,24 +564,24 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Time-aware answers</li>
-                        <li>Easy recency enforcement</li>
-                        <li>Clear versioning support</li>
+                  <li>Time-aware answers</li>
+                  <li>Easy recency enforcement</li>
+                  <li>Clear versioning support</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Requires consistent source dates</li>
-                        <li>Backfill can be tedious</li>
-                        <li>Date format standardization needed</li>
+                  <li>Requires consistent source dates</li>
+                  <li>Backfill can be tedious</li>
+                  <li>Date format standardization needed</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f3131', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Adding temporal awareness to your RAG system ensures users get the most current information and reduces confusion caused by outdated or superseded content.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Adding temporal awareness to your RAG system ensures users get the most current information and reduces confusion caused by outdated or superseded content.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#4d1a1a',
@@ -598,7 +598,7 @@ export const metadataEnrichmentDeck: Deck = {
           title: '6. Semantic Summary Metadata',
           icon: { name: 'duo-align-left' },
           content: (
-            <div style={{ textAlign: 'left',color: '#fff' }}>
+            <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ fontSize: '0.75em' }}>
@@ -606,7 +606,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Speeds candidate pruning; improves reranking; reduces hallucinations with intent-aligned blurbs</p>
-                    
+
                     <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Generate 1–3 sentence, query-agnostic summaries per chunk via LLM; store alongside content</p>
 
@@ -617,7 +617,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Use summary field in hybrid BM25 + vector search and in UI previews</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                     <strong>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -627,7 +627,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -654,22 +654,22 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Strong relevance signals</li>
-                        <li>Improves user scanability</li>
+                  <li>Strong relevance signals</li>
+                  <li>Improves user scanability</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>LLM cost</li>
-                        <li>Periodic refresh as content changes</li>
+                  <li>LLM cost</li>
+                  <li>Periodic refresh as content changes</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#42315f', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Semantic summaries provide distilled context that's easier for retrieval systems to match against queries and for users to quickly scan, improving both automated relevance and human review.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Semantic summaries provide distilled context that's easier for retrieval systems to match against queries and for users to quickly scan, improving both automated relevance and human review.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#2d1a4d',
@@ -694,7 +694,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Strong lexical signals for hybrid search and explainable matches</p>
-                    
+
                     <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Extract salient keyphrases (RAKE, KeyBERT, YAKE) + domain dictionaries; dedupe/stem</p>
 
@@ -705,7 +705,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Index as separate BM25 field; boost matches</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                     <strong>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -715,7 +715,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -746,22 +746,22 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Cheap to compute</li>
-                        <li>Great for hybrid retrieval</li>
+                  <li>Cheap to compute</li>
+                  <li>Great for hybrid retrieval</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Can be noisy</li>
-                        <li>Requires periodic curation</li>
+                  <li>Can be noisy</li>
+                  <li>Requires periodic curation</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f5d31', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Keyword extraction provides explicit lexical bridges between user queries and documents, making retrieval more efficient and results more explainable than purely semantic methods.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Keyword extraction provides explicit lexical bridges between user queries and documents, making retrieval more efficient and results more explainable than purely semantic methods.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#4d4b1a',
@@ -786,10 +786,10 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Reliability and governance; prioritizes authoritative sources</p>
-                    
+
                     <strong style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Compute trust_score using source type, authorship, verification, recency; store 0–1 score</p>
-                    
+
                     <div style={{ marginTop: '12px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                       <strong>Trust Score Examples:</strong>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginTop: '8px', fontSize: '1.2rem' }}>
@@ -807,7 +807,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Retrieval: threshold or boost by trust_score; expose in UI</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                     <strong>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -818,7 +818,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '10px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.8em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -847,25 +847,25 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Reduces low-quality context</li>
-                        <li>Auditable</li>
-                        <li>Prioritizes reliable sources</li>
-                        <li>Increases answer confidence</li>
+                  <li>Reduces low-quality context</li>
+                  <li>Auditable</li>
+                  <li>Prioritizes reliable sources</li>
+                  <li>Increases answer confidence</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Potential bias</li>
-                        <li>Needs upkeep and reviewer workflows</li>
-                        <li>Subjective scoring criteria</li>
+                  <li>Potential bias</li>
+                  <li>Needs upkeep and reviewer workflows</li>
+                  <li>Subjective scoring criteria</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#315f3d', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Not all information sources deserve equal weight. Trust scoring ensures models prioritize verified, authoritative content over informal or unverified sources, reducing hallucinations and improving response reliability.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Not all information sources deserve equal weight. Trust scoring ensures models prioritize verified, authoritative content over informal or unverified sources, reducing hallucinations and improving response reliability.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#1a4d27',
@@ -890,7 +890,7 @@ export const metadataEnrichmentDeck: Deck = {
                   <div>
                     <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Goal:</strong>
                     <p style={{ marginTop: '5px' }}>Preserves document hierarchy; enables fetching sibling/ancestor context</p>
-                    
+
                     <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />How It Works:</strong>
                     <p style={{ marginTop: '5px' }}>Assign stable IDs at doc/section/paragraph; store parent_id and ancestors path per chunk</p>
 
@@ -901,7 +901,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Keep referential integrity on re-ingest via content hashing</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                     <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
                     <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
@@ -912,7 +912,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                     <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
@@ -945,24 +945,24 @@ export const metadataEnrichmentDeck: Deck = {
                   Pros
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>Better coherence</li>
-                        <li>Fewer orphan chunks</li>
-                        <li>Improves contextual understanding</li>
+                  <li>Better coherence</li>
+                  <li>Fewer orphan chunks</li>
+                  <li>Improves contextual understanding</li>
                 </ul>
                 <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                   Cons
                 </h4>
                 <ul style={{ fontSize: '1.2rem' }}>
-                <li>More complex pipeline</li>
-                        <li>Migration/versioning concerns</li>
-                        <li>Requires document structure</li>
+                  <li>More complex pipeline</li>
+                  <li>Migration/versioning concerns</li>
+                  <li>Requires document structure</li>
                 </ul>
               </div>
               <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f3152', borderRadius: '8px' }}>
-                  <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
-                  <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Maintaining hierarchical relationships between document chunks allows RAG systems to intelligently expand context beyond individual fragments, preserving the original document's logical structure.</p>
-                </div>
+                <strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px', color: '#ffd54f' }} darkModeInvert={true} />Key Insight:</strong>
+                <p style={{ marginTop: '5px', fontStyle: 'italic' }}>Maintaining hierarchical relationships between document chunks allows RAG systems to intelligently expand context beyond individual fragments, preserving the original document's logical structure.</p>
+              </div>
             </div>
           ),
           backgroundColor: '#4d1a3e',
@@ -996,7 +996,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Implement version control for metadata schema evolution</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#7e57c2', marginBottom: '10px' }}>
                       <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1009,7 +1009,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Audit and retrain quarterly to prevent drift</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#26c6da', marginBottom: '10px' }}>
                       <SvgIcon iconName="duo-magnifying-glass-chart" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1052,7 +1052,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Create fallback strategies when metadata is incomplete</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#81c784', marginBottom: '10px' }}>
                       <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1067,7 +1067,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: 'rgba(255, 215, 0, 0.15)', borderRadius: '8px' }}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffd700', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-star" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1110,7 +1110,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Parent-child relationships</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ color: '#7e57c2', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-folder-tree" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1123,7 +1123,7 @@ export const metadataEnrichmentDeck: Deck = {
                       <li>Keywords/key-phrases</li>
                     </ul>
                   </div>
-                  
+
                   <div style={{ padding: '12px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                     <h4 style={{ color: '#26c6da', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1135,7 +1135,7 @@ export const metadataEnrichmentDeck: Deck = {
                     </ul>
                   </div>
                 </div>
-                
+
                 <div style={{ padding: '15px', backgroundColor: 'rgba(129, 199, 132, 0.15)', borderRadius: '8px', marginBottom: '15px' }}>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#81c784' }}>
                     <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
@@ -1192,7 +1192,7 @@ export const metadataEnrichmentDeck: Deck = {
                     Most importantly, these techniques reduce hallucinations by providing better context and grounding for LLMs.
                   </p>
                 </div>
-                
+
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#42a5f5', marginBottom: '8px' }}>
                     <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
