@@ -188,15 +188,14 @@ export const slideAnimations = {
  * React hook for GSAP animations
  */
 export const useGSAPAnimation = (
-  animationType: keyof typeof slideAnimations,
-  dependencies: any[] = []
+  animationType: keyof typeof slideAnimations
 ) => {
   return (element: HTMLElement | null) => {
     if (!element) return;
     
     const animation = slideAnimations[animationType];
-    if (typeof animation === 'function') {
-      animation(element);
+    if (typeof animation === 'function' && animationType !== 'staggerList') {
+      (animation as (element: HTMLElement, duration?: number, delay?: number) => void)(element, 0.8, 0);
     }
   };
 };
