@@ -253,7 +253,7 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Strong recall lift</li>
+                      <li>Strong recall lift</li>
                       <li>Bridges vocabulary gaps</li>
                       <li>Simple to add to existing pipelines</li>
                     </ul>
@@ -261,14 +261,14 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Can anchor to hallucinations</li>
+                      <li>Can anchor to hallucinations</li>
                       <li>May pull loosely related documents</li>
                       <li>Extra generation cost</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Particularly effective when direct keyword matching fails due to vocabulary mismatch between queries and documents
+                  Particularly effective when direct keyword matching fails due to vocabulary mismatch between queries and documents
                 </p>
               </div>
             </div>
@@ -322,7 +322,7 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Modular approach to complex questions</li>
+                      <li>Modular approach to complex questions</li>
                       <li>Interpretable reasoning steps</li>
                       <li>Parallelizable for performance</li>
                     </ul>
@@ -330,14 +330,14 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Planning overhead</li>
+                      <li>Planning overhead</li>
                       <li>Error propagation across steps</li>
                       <li>Longer pipelines</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Best for multi-dimensional questions where separate aspects can be addressed individually before synthesis
+                  Best for multi-dimensional questions where separate aspects can be addressed individually before synthesis
                 </p>
               </div>
             </div>
@@ -390,21 +390,21 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>High precision</li>
+                      <li>High precision</li>
                       <li>Transparent reasoning-evidence links</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Verbose</li>
+                      <li>Verbose</li>
                       <li>Prompt-sensitive</li>
                       <li>May overfit to early reasoning errors</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Ideal for complex reasoning tasks that need precise evidence at each reasoning step
+                  Ideal for complex reasoning tasks that need precise evidence at each reasoning step
                 </p>
               </div>
             </div>
@@ -457,7 +457,7 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Robust to noise</li>
+                      <li>Robust to noise</li>
                       <li>Reduces myopic retrieval</li>
                       <li>Good for learning tasks</li>
                     </ul>
@@ -465,14 +465,14 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>May pull generic info</li>
+                      <li>May pull generic info</li>
                       <li>Requires careful prompting</li>
                       <li>Extra hops increase latency</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Best for questions where zooming out to understand core concepts before diving into specifics improves answer quality
+                  Best for questions where zooming out to understand core concepts before diving into specifics improves answer quality
                 </p>
               </div>
             </div>
@@ -525,7 +525,7 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Structured multi-hop reasoning</li>
+                      <li>Structured multi-hop reasoning</li>
                       <li>Strong for relational queries</li>
                       <li>Transparent path discovery</li>
                     </ul>
@@ -533,14 +533,14 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Requires graph infrastructure or extraction</li>
+                      <li>Requires graph infrastructure or extraction</li>
                       <li>Tuning complexity for path relevance</li>
                       <li>Potential path explosion with many hops</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Ideal for questions requiring connection of information across multiple documents or knowledge graph nodes
+                  Ideal for questions requiring connection of information across multiple documents or knowledge graph nodes
                 </p>
               </div>
             </div>
@@ -593,7 +593,7 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Controls token growth</li>
+                      <li>Controls token growth</li>
                       <li>Maintains focus</li>
                       <li>Good for ongoing tasks</li>
                     </ul>
@@ -601,14 +601,14 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Summarization loss/bias</li>
+                      <li>Summarization loss/bias</li>
                       <li>Summary drift</li>
                       <li>Requires careful evaluation</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Especially useful for extended conversations and research sessions where context management is essential
+                  Especially useful for extended conversations and research sessions where context management is essential
                 </p>
               </div>
             </div>
@@ -661,20 +661,20 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>High precision and auditability</li>
+                      <li>High precision and auditability</li>
                       <li>Good for compliance</li>
                     </ul>
                   </div>
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Extra passes increase cost/latency</li>
+                      <li>Extra passes increase cost/latency</li>
                       <li>Risk of circularity if initial draft is weak</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Ideal for scenarios requiring factual accuracy, citations, and verification of information
+                  Ideal for scenarios requiring factual accuracy, citations, and verification of information
                 </p>
               </div>
             </div>
@@ -727,7 +727,7 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Pros:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Personalization</li>
+                      <li>Personalization</li>
                       <li>Continuous improvement</li>
                       <li>Data-driven tuning</li>
                     </ul>
@@ -735,14 +735,14 @@ export const multiStepRetrievalDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Cons:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Needs logging/UX</li>
+                      <li>Needs logging/UX</li>
                       <li>Privacy concerns</li>
                       <li>Benefits may be delayed</li>
                     </ul>
                   </div>
                 </div>
                 <p style={{ marginTop: '15px', fontSize: '1.2rem', fontStyle: 'italic' }}>
-                Best suited for systems with user interaction where feedback can be collected and used to refine future results
+                  Best suited for systems with user interaction where feedback can be collected and used to refine future results
                 </p>
               </div>
             </div>
@@ -809,7 +809,7 @@ export const multiStepRetrievalDeck: Deck = {
               <div style={{ marginTop: '10px', padding: '10px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', textAlign: 'left' }}>
                 <p style={{ fontSize: '1rem', margin: 0 }}>
                   <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '10px' }} darkModeInvert={true} />
-                  <strong>Pro Tip:</strong> Consider combining strategies: use simple techniques for initial query understanding, 
+                  <strong>Pro Tip:</strong> Consider combining strategies: use simple techniques for initial query understanding,
                   then more complex ones for evidence gathering and verification
                 </p>
               </div>
