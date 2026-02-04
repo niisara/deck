@@ -158,7 +158,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Simple, tunable weighting (alpha)</li>
+                      <li>Simple, tunable weighting (alpha)</li>
                       <li>Works with most engines and scales well</li>
                       <li>Deterministic and easy to explain</li>
                     </ul>
@@ -166,7 +166,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Requires careful score normalization</li>
+                      <li>Requires careful score normalization</li>
                       <li>One alpha rarely fits all queries</li>
                       <li>May surface duplicates from each list</li>
                     </ul>
@@ -225,7 +225,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Efficient first-pass recall; uses inverted index</li>
+                      <li>Efficient first-pass recall; uses inverted index</li>
                       <li>Good precision at low compute cost</li>
                       <li>Easy to retrofit onto existing search</li>
                     </ul>
@@ -233,7 +233,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>BM25 must not miss relevant docs (query mismatch risk)</li>
+                      <li>BM25 must not miss relevant docs (query mismatch risk)</li>
                       <li>Needs embedding infra for re-rank</li>
                       <li>May require query expansion to avoid early miss</li>
                     </ul>
@@ -292,7 +292,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Strong semantic recall up front</li>
+                      <li>Strong semantic recall up front</li>
                       <li>BM25 re-rank improves precision and control</li>
                       <li>Good for multilingual/paraphrase-heavy content</li>
                     </ul>
@@ -300,7 +300,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Requires ANN filter support or careful post-filtering</li>
+                      <li>Requires ANN filter support or careful post-filtering</li>
                       <li>Lexical re-rank can demote valid paraphrases</li>
                       <li>Extra roundtrip/join by doc IDs</li>
                     </ul>
@@ -359,7 +359,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Guards against semantic drift</li>
+                      <li>Guards against semantic drift</li>
                       <li>Enforces critical terms or phrases</li>
                       <li>Tunable blend; transparent boosts</li>
                     </ul>
@@ -367,7 +367,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Feature engineering needed</li>
+                      <li>Feature engineering needed</li>
                       <li>Over-boosting can harm recall</li>
                       <li>More complex scoring config</li>
                     </ul>
@@ -426,7 +426,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Enforces hard constraints; safer RAG grounding</li>
+                      <li>Enforces hard constraints; safer RAG grounding</li>
                       <li>Smaller candidate set → faster and better precision</li>
                       <li>Works well with caching by filter key</li>
                     </ul>
@@ -434,7 +434,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>ANN filtering support varies by engine</li>
+                      <li>ANN filtering support varies by engine</li>
                       <li>Narrow filters can hurt recall</li>
                       <li>More complex index/partition strategy</li>
                     </ul>
@@ -493,7 +493,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Reflects editorial importance</li>
+                      <li>Reflects editorial importance</li>
                       <li>Reduces noise from long bodies</li>
                       <li>Explainable scoring</li>
                     </ul>
@@ -501,7 +501,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Requires tuning per index/domain</li>
+                      <li>Requires tuning per index/domain</li>
                       <li>Per-field embeddings increase storage/ingest cost</li>
                       <li>Risk of overfitting to title-heavy docs</li>
                     </ul>
@@ -560,7 +560,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Higher recall without losing precision (with weights)</li>
+                      <li>Higher recall without losing precision (with weights)</li>
                       <li>Robust to synonyms and abbreviations</li>
                       <li>Domain-tunable with curated lists</li>
                     </ul>
@@ -568,7 +568,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Query drift if poorly curated</li>
+                      <li>Query drift if poorly curated</li>
                       <li>Extra latency for expansion</li>
                       <li>Needs monitoring and fallbacks</li>
                     </ul>
@@ -627,7 +627,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Best-in-class relevance on hard ranking cases</li>
+                      <li>Best-in-class relevance on hard ranking cases</li>
                       <li>Captures fine-grained interactions and negation</li>
                       <li>Works on top of any hybrid method</li>
                     </ul>
@@ -635,7 +635,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Highest latency/cost; needs batching</li>
+                      <li>Highest latency/cost; needs batching</li>
                       <li>Throughput constraints; careful caching required</li>
                       <li>Model/domain drift requires evaluation</li>
                     </ul>
@@ -678,7 +678,7 @@ export const hybridSearchDeck: Deck = {
                 </div>
               </div>
             </div>
-            
+
           ),
           backgroundColor: '#406b17',
           notes: ''
@@ -695,7 +695,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Better context and coherence in results</li>
+                      <li>Better context and coherence in results</li>
                       <li>Reduces fragmentation and hallucination</li>
                       <li>Works with both BM25 and vectors</li>
                     </ul>
@@ -703,7 +703,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Data modeling and join overhead</li>
+                      <li>Data modeling and join overhead</li>
                       <li>Risk of over-including irrelevant siblings</li>
                       <li>Needs careful dedup and tie-breaking</li>
                     </ul>
@@ -762,7 +762,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>High throughput with strong relevance</li>
+                      <li>High throughput with strong relevance</li>
                       <li>Tunable recall–latency trade-offs</li>
                       <li>Resilient to index and query variance</li>
                     </ul>
@@ -770,7 +770,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>ANN recall tuning (ef, M, nprobe) is non-trivial</li>
+                      <li>ANN recall tuning (ef, M, nprobe) is non-trivial</li>
                       <li>Multiple indices to manage and monitor</li>
                       <li>Score normalization adds complexity</li>
                     </ul>
@@ -829,7 +829,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>High precision and explainability</li>
+                      <li>High precision and explainability</li>
                       <li>Handles acronyms and codes (e.g., UMLS, SNOMED)</li>
                       <li>Improves recall on specialized jargon</li>
                     </ul>
@@ -837,7 +837,7 @@ export const hybridSearchDeck: Deck = {
                   <div style={{ flex: 1 }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Limitations:</strong></p>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Ongoing curation and maintenance</li>
+                      <li>Ongoing curation and maintenance</li>
                       <li>Coverage gaps cause blind spots</li>
                       <li>Cross-lingual alignment can be hard</li>
                     </ul>
@@ -914,7 +914,7 @@ export const hybridSearchDeck: Deck = {
               <div style={{ marginTop: '25px', padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', textAlign: 'left' }}>
                 <p style={{ fontSize: '1.2rem' }}>
                   <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '10px' }} darkModeInvert={true} />
-                  <strong>Remember:</strong> Hybrid search is about combining the strengths of lexical and semantic approaches. 
+                  <strong>Remember:</strong> Hybrid search is about combining the strengths of lexical and semantic approaches.
                   Start simple, measure everything, and iterate based on real user feedback.
                 </p>
               </div>
