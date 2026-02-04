@@ -382,7 +382,3 @@ import { MermaidPopover } from '../components/MermaidPopover';
 - Error/Problem: `#ffcdd2` (red)
 - Highlight/Goal: `#ffd700` (gold)
 - Special: `#e1bee7` (purple)
-
----
-
-*Use this unified prompt to create comprehensive, engaging, and professional presentation decks!*
