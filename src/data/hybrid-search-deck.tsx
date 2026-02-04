@@ -61,7 +61,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <div>
@@ -123,7 +123,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-sliders' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Blend BM25 and embedding similarity into one normalized score.</p>
@@ -151,8 +151,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -190,7 +188,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Recall with fast BM25, then re-rank candidates using embedding similarity.</p>
@@ -218,8 +216,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -257,7 +253,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Recall with vector ANN, then re-rank by BM25 to emphasize exact terms.</p>
@@ -285,8 +281,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -324,7 +318,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Add keyword boosts/must-haves to vector similarity to control precision.</p>
@@ -352,8 +346,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -391,7 +383,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Apply faceted/ACL metadata filters, then run hybrid scoring within the slice.</p>
@@ -419,8 +411,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -458,7 +448,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-table' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Weight important fields (e.g., title &gt; body) in hybrid lexical + vector scoring.</p>
@@ -486,8 +476,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -525,7 +513,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-book-open' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Expand the query with lexical synonyms and semantic neighbors before hybrid retrieval.</p>
@@ -553,8 +541,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -592,7 +578,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Use a cross-encoder to re-rank a small hybrid candidate set for maximal precision.</p>
@@ -620,8 +606,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -659,7 +643,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Retrieve on small child chunks (vectors), return ranked parent chunks for context.</p>
@@ -688,8 +672,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -727,7 +709,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Combine fast ANN vector recall with exact BM25 ranking/fusion for scale and quality.</p>
@@ -755,8 +737,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -794,7 +774,7 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
+              <div style={{ marginBottom: '45px' }}>
               </div>
               <div style={{ fontSize: '0.8em' }}>
                 <p><strong>Idea / Pattern Summary:</strong> Inject domain ontologies, synonyms, and entity linking into hybrid retrieval.</p>
@@ -822,8 +802,6 @@ export const hybridSearchDeck: Deck = {
           title: 'Strengths and Limitations',
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
@@ -856,7 +834,7 @@ export const hybridSearchDeck: Deck = {
       title: 'Summary',
       slides: [
         {
-          id: 14,
+          id: 25,
           title: 'Summary and Key Takeaways',
           icon: { name: 'duo-clipboard-check' },
           content: (
