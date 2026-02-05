@@ -15,43 +15,46 @@ export const productionRagDeck: Deck = {
       slides: [
         {
           id: 1,
+          center: true,
           title: '11 Production RAG Architecture Patterns',
           content: (
-            <div style={{ textAlign: 'left' }}>
-              <h3 style={{ fontSize: '1.2em', marginTop: '30px', color: '#4fc3f7' }}>
+            <div>
+              <h3 style={{ fontSize: '2rem', marginTop: '30px', color: '#4fc3f7' }}>
                 Proven designs for reliable, scalable Retrieval-Augmented Generation
               </h3>
-              <div style={{ marginTop: '50px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+              <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" darkModeInvert={true} />
                   <span>Retrieval accuracy</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
                   <span>Context handling</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
                   <span>Answer quality</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
                   <span>Scalability</span>
                 </div>
               </div>
-              <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>
-                Enterprise AI Architecture Team • November 7, 2025
-              </p>
+              <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
-          notes: 'Title slide introducing 11 production RAG architecture patterns'
+          backgroundColor: '#3c1651',
+          notes: ''
         },
         {
           id: 2,
           title: 'Agenda & Patterns Overview',
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.8em' }}>
+            <div style={{ textAlign: 'left', fontSize: '2rem' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <h2 style={{ marginBottom: '20px', alignItems: 'center' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Exploring 11 production-ready RAG architecture patterns
@@ -65,56 +68,68 @@ export const productionRagDeck: Deck = {
                 <li>Answer quality and hallucination mitigation</li>
                 <li>Scalability and operational reliability</li>
               </ul>
+            </div>
+          ),
+          backgroundColor: '#3c1651',
+          notes: ''
+        },
+        {
+          id: 3,
+          title: 'Cheat sheets and Selection guidance',
+          content: (
+            <div style={{ textAlign: 'left', fontSize: '2rem' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                 <div>
-                  <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-star" sizeName="1x" darkModeInvert={true} />
+                  <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-star" sizeName="2x" darkModeInvert={true} />
                     Foundation Patterns
                   </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.9em' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '1.2rem' }}>
                     <div style={{ padding: '8px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>1. Basic RAG (Single Retrieve → Generate)</div>
                     <div style={{ padding: '8px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>2. RAG with Re-Ranking</div>
                   </div>
                 </div>
                 <div>
-                  <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-magnifying-glass" sizeName="1x" darkModeInvert={true} />
+                  <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" darkModeInvert={true} />
                     Query Optimization Patterns
                   </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.9em' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '1.2rem' }}>
                     <div style={{ padding: '8px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>3. RAG with Query Rewriting</div>
                     <div style={{ padding: '8px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>4. RAG with Multi-Query Retrieval</div>
                     <div style={{ padding: '8px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>5. RAG with HyDE (Hypothetical Document Embeddings)</div>
                   </div>
                 </div>
                 <div>
-                  <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
+                  <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
                     Advanced Retrieval Patterns
                   </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.9em' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '1.2rem' }}>
                     <div style={{ padding: '8px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>6. RAG with Parent–Child Retrieval</div>
                     <div style={{ padding: '8px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>7. RAG with Graph-Based Retrieval</div>
                     <div style={{ padding: '8px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>8. RAG with External Tools / Agents</div>
                   </div>
                 </div>
                 <div>
-                  <h3 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-sliders" sizeName="1x" darkModeInvert={true} />
+                  <h3 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
                     Hybrid & Optimization Patterns
                   </h3>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.9em' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '1.2rem' }}>
                     <div style={{ padding: '8px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>9. RAG + Fine-Tuned Model Hybrid</div>
                     <div style={{ padding: '8px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>10. RAG with Multi-Step Retrieval Loops</div>
                     <div style={{ padding: '8px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>11. RAG with Context Compression / Summarization</div>
                   </div>
                 </div>
               </div>
-              <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>Today we'll explore 11 production-tested patterns with detailed implementation cheat sheets and selection guidance.</p>
+              <p style={{ fontSize: '1.2rem', marginTop: '50px', color: '#aaa' }}>Today we'll explore 11 production-tested patterns with detailed implementation cheat sheets and selection guidance.</p>
             </div>
           ),
-          backgroundColor: '#16213e',
-          notes: 'Overview of all 11 patterns organized by category'
+          backgroundColor: '#3c1651',
+          notes: ''
         }
       ]
     },
@@ -123,15 +138,17 @@ export const productionRagDeck: Deck = {
       title: 'Basic RAG',
       slides: [
         {
-          id: 3,
+          id: 4,
           title: '1) Basic RAG (Single Retrieve → Generate)',
           icon: { name: 'duo-arrow-right' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>LLM (text generation)</li>
                     <li>Embedding model (text → vectors)</li>
                     <li>Chunker/splitter (document processing)</li>
@@ -141,9 +158,9 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
                   <p style={{ marginTop: '5px' }}>Semantic Top-K with optional hybrid lexical search:</p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Encode query as vector embedding</li>
                     <li>Find closest K chunks by similarity</li>
                     <li>Optional BM25/keyword boost</li>
@@ -151,8 +168,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Simple concatenation of K chunks</li>
                     <li>Basic prompt instructions</li>
                     <li>Optional citation formatting</li>
@@ -161,8 +178,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Internal knowledge bases / FAQs</li>
                     <li>Small to medium document collections</li>
                     <li>Proof of concept implementations</li>
@@ -171,10 +188,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#136b5e',
+          notes: ''
+        },
+        {
+          id: 5,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Easiest to implement and understand</li>
                     <li>Low latency (single retrieval step)</li>
                     <li>Minimal operational complexity</li>
@@ -183,8 +212,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Rigid recall/precision tradeoffs</li>
                     <li>Brittle on vague/ambiguous queries</li>
                     <li>Limited by chunk quality/boundaries</li>
@@ -195,8 +224,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#0f3460',
-          notes: 'Pattern 1: Basic RAG - simplest foundation pattern'
+          backgroundColor: '#136b5e',
+          notes: ''
         }
       ]
     },
@@ -205,15 +234,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Re-Ranking',
       slides: [
         {
-          id: 4,
+          id: 6,
           title: '2) RAG with Re-Ranking',
           icon: { name: 'duo-list-ol' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Base retriever (vector DB + embeddings)</li>
                     <li>Reranker (e.g., Cohere/Voyage/bge-reranker)</li>
                     <li>Rank fusion mechanism</li>
@@ -223,8 +254,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Retrieve broad initial set (N=100–300)</li>
                     <li>Rerank with cross-encoder model for precision</li>
                     <li>Select top M highest-scored chunks</li>
@@ -233,8 +264,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Pack top-M highest scoring passages</li>
                     <li>Include source metadata and relevance scores</li>
                     <li>Ordered by reranker score (not original retrieval)</li>
@@ -243,8 +274,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Enterprise QA with large knowledge bases</li>
                     <li>Support search requiring high precision</li>
                     <li>Applications prioritizing answer quality over latency</li>
@@ -253,10 +284,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#714425',
+          notes: ''
+        },
+        {
+          id: 7,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Significant precision boost over basic RAG</li>
                     <li>Effectively filters noise in large corpora</li>
                     <li>Better handling of nuanced queries</li>
@@ -265,8 +308,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Extra cost/latency from reranking step</li>
                     <li>Needs quality reranker matched to domain</li>
                     <li>May require more engineering/tuning</li>
@@ -277,8 +320,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
-          notes: 'Pattern 2: Adding re-ranking for precision boost'
+          backgroundColor: '#714425',
+          notes: ''
         }
       ]
     },
@@ -287,15 +330,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Query Rewriting',
       slides: [
         {
-          id: 5,
+          id: 8,
           title: '3) RAG with Query Rewriting',
           icon: { name: 'duo-pencil' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Rewriter LLM (canonicalize/expand/clarify)</li>
                     <li>Query router/taxonomy classifier</li>
                     <li>Domain-specific dictionaries/synonyms</li>
@@ -304,8 +349,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Transform user query before retrieval</li>
                     <li>Normalize entities, expand synonyms</li>
                     <li>"Step-back" for broad queries</li>
@@ -314,8 +359,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Include original + rewritten query in prompt</li>
                     <li>Provide transparency for transformations</li>
                     <li>Similar to basic RAG otherwise</li>
@@ -324,8 +369,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Customer support/portal applications</li>
                     <li>Systems with domain-specific terminology</li>
                     <li>Public-facing interfaces with varied phrasing</li>
@@ -334,10 +379,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#391f5f',
+          notes: ''
+        },
+        {
+          id: 9,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Handles ambiguity and vague questions</li>
                     <li>Improves hit rate on messy user queries</li>
                     <li>Normalizes variations in terminology</li>
@@ -346,8 +403,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Possible over-constraint or intent drift</li>
                     <li>Additional latency from rewriting step</li>
                     <li>Needs careful auditing and evaluation</li>
@@ -358,8 +415,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#16213e',
-          notes: 'Pattern 3: Query rewriting for handling ambiguous queries'
+          backgroundColor: '#391f5f',
+          notes: ''
         }
       ]
     },
@@ -368,15 +425,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Multi-Query Retrieval',
       slides: [
         {
-          id: 6,
+          id: 10,
           title: '4) RAG with Multi-Query Retrieval',
           icon: { name: 'duo-copy' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>LLM for query variation generation</li>
                     <li>Hybrid retrievers (embedding + keyword)</li>
                     <li>Reciprocal rank fusion algorithm</li>
@@ -386,8 +445,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Generate diverse query variations (3-5)</li>
                     <li>Create facet/intent variants</li>
                     <li>Parallel retrieval for each variant</li>
@@ -397,8 +456,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Deduplicate overlapping chunks</li>
                     <li>Diversify by source when possible</li>
                     <li>Include brief per-chunk rationale</li>
@@ -408,8 +467,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Research-oriented queries</li>
                     <li>Multi-faceted or complex questions</li>
                     <li>Broad knowledge bases with diverse content</li>
@@ -419,10 +478,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#2f600f',
+          notes: ''
+        },
+        {
+          id: 11,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Strong recall across diverse content</li>
                     <li>Robust to query phrasing variations</li>
                     <li>Better coverage of multi-faceted topics</li>
@@ -432,8 +503,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Increased API calls and token usage</li>
                     <li>Higher latency (multiple retrieval steps)</li>
                     <li>Potential for duplicated information</li>
@@ -445,8 +516,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#0f3460',
-          notes: 'Pattern 4: Multi-query approach for better recall'
+          backgroundColor: '#2f600f',
+          notes: ''
         }
       ]
     },
@@ -455,15 +526,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with HyDE',
       slides: [
         {
-          id: 7,
+          id: 12,
           title: '5) RAG with HyDE (Hypothetical Document Embeddings)',
           icon: { name: 'duo-lightbulb' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Hypothetical document generator (LLM)</li>
                     <li>Embedding model for hypo-docs</li>
                     <li>Vector database for real documents</li>
@@ -473,8 +546,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Generate hypothetical answer/document from query</li>
                     <li>Embed hypothetical content (not the query)</li>
                     <li>Search by intent/answer similarity</li>
@@ -483,8 +556,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Use retrieved real documents for final context</li>
                     <li>Usually exclude hypothetical content from prompt</li>
                     <li>Include original query for transparency</li>
@@ -493,8 +566,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Sparse-label domains with little training</li>
                     <li>Cold-start document collections</li>
                     <li>Web/FAQ search with varied phrasing</li>
@@ -503,10 +576,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#1a2d2e',
+          notes: ''
+        },
+        {
+          id: 13,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Zero-shot retrieval performance gains</li>
                     <li>Better handling of ambiguous/short queries</li>
                     <li>Bridges vocabulary mismatch gap</li>
@@ -515,8 +600,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Can mislead if LLM is out-of-domain</li>
                     <li>Extra latency from LLM generation step</li>
                     <li>Quality depends on hypo-doc generation</li>
@@ -527,8 +612,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
-          notes: 'Pattern 5: HyDE for zero-shot performance improvement'
+          backgroundColor: '#1a2d2e',
+          notes: ''
         }
       ]
     },
@@ -537,15 +622,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Parent–Child Retrieval',
       slides: [
         {
-          id: 8,
+          id: 14,
           title: '6) RAG with Parent–Child Retrieval',
           icon: { name: 'duo-circle-nodes' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Two-level chunking system (child/parent)</li>
                     <li>Hierarchical document processor</li>
                     <li>Child chunk embedding pipeline</li>
@@ -555,8 +642,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Index small child chunks for precise matching</li>
                     <li>Search for matching child chunks</li>
                     <li>Retrieve corresponding parent documents</li>
@@ -565,8 +652,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Pack full parent spans for broader context</li>
                     <li>Optional sliding window for overlapping context</li>
                     <li>Include document structure metadata</li>
@@ -575,8 +662,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Technical documentation and manuals</li>
                     <li>Legal and regulatory documents</li>
                     <li>Academic papers and research</li>
@@ -585,10 +672,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#3e1625',
+          notes: ''
+        },
+        {
+          id: 15,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Balances precise matching with rich context</li>
                     <li>Improves answer coherence and accuracy</li>
                     <li>Reduces hallucinations with fuller context</li>
@@ -597,8 +696,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>More complex ingestion pipeline</li>
                     <li>Higher token consumption (larger contexts)</li>
                     <li>Additional storage requirements</li>
@@ -609,8 +708,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#16213e',
-          notes: 'Pattern 6: Parent-child for better context and coherence'
+          backgroundColor: '#3e1625',
+          notes: ''
         }
       ]
     },
@@ -619,15 +718,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Graph-Based Retrieval',
       slides: [
         {
-          id: 9,
+          id: 16,
           title: '7) RAG with Graph-Based Retrieval (GraphRAG)',
           icon: { name: 'duo-circle-nodes' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Knowledge graph (e.g., Neo4j)</li>
                     <li>Entity/relationship extraction</li>
                     <li>Vector database (semantic search)</li>
@@ -638,8 +739,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Graph-enhanced vector search</li>
                     <li>Entity linking to relevant nodes</li>
                     <li>Multi-hop traversal with depth control</li>
@@ -650,8 +751,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Include path structure and relationships</li>
                     <li>Entity-focused contextual assembly</li>
                     <li>Incorporate community summaries</li>
@@ -662,8 +763,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Compliance and regulatory applications</li>
                     <li>Enterprise knowledge management</li>
                     <li>Complex research analysis</li>
@@ -674,10 +775,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#58600f',
+          notes: ''
+        },
+        {
+          id: 17,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Explicit relationship understanding</li>
                     <li>Multi-hop reasoning capabilities</li>
                     <li>Explainable retrieval paths</li>
@@ -688,8 +801,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Heavy ingestion/ontology requirements</li>
                     <li>Higher complexity in maintenance</li>
                     <li>Entity extraction quality dependencies</li>
@@ -702,8 +815,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#0f3460',
-          notes: 'Pattern 7: Graph-based approach for complex relationships'
+          backgroundColor: '#58600f',
+          notes: ''
         }
       ]
     },
@@ -712,15 +825,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with External Tools / Agents',
       slides: [
         {
-          id: 10,
+          id: 18,
           title: '8) RAG with External Tools / Agents',
           icon: { name: 'duo-gear' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Agent planner (ReAct, Plan-Execute)</li>
                     <li>Toolset (SQL, APIs, search engines, code)</li>
                     <li>External knowledge sources (databases, APIs)</li>
@@ -730,8 +845,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Tool-augmented retrieval (SQL, API calls)</li>
                     <li>Iterative planning with decomposition</li>
                     <li>Multi-tool orchestration</li>
@@ -740,8 +855,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Scratchpad traces for tool executions</li>
                     <li>Selective tool outputs (summarized)</li>
                     <li>Citation of retrieved information</li>
@@ -750,8 +865,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Business intelligence assistants</li>
                     <li>Operations/SRE copilots</li>
                     <li>Research analysis agents</li>
@@ -761,10 +876,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#2e1e1a',
+          notes: ''
+        },
+        {
+          id: 19,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Handles complex, multi-step tasks</li>
                     <li>Accesses live/external data sources</li>
                     <li>Flexible orchestration capabilities</li>
@@ -773,8 +900,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Increased latency (multiple tool calls)</li>
                     <li>Higher cost per interaction</li>
                     <li>Monitoring/debugging complexity</li>
@@ -786,8 +913,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
-          notes: 'Pattern 8: Agents with external tools for complex tasks'
+          backgroundColor: '#2e1e1a',
+          notes: ''
         }
       ]
     },
@@ -796,16 +923,16 @@ export const productionRagDeck: Deck = {
       title: 'RAG + Fine-Tuned Model Hybrid',
       slides: [
         {
-          id: 11,
+          id: 20,
           title: '9) RAG + Fine-Tuned Model Hybrid',
           icon: { name: 'duo-brain-circuit' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
-                    <li>Fine-tuned domain-specific LLM</li>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Base/general LLM for retrieval</li>
                     <li>Retriever (vector store + embedding model)</li>
                     <li>Evaluator for quality control</li>
@@ -814,8 +941,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Standard advanced retrieval approaches</li>
                     <li>Domain-optimized retrieval parameters</li>
                     <li>Tighter similarity thresholds (domain focus)</li>
@@ -824,8 +951,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Leaner prompts (less instruction overhead)</li>
                     <li>Schema-aware formatting instructions</li>
                     <li>Domain-specific templates</li>
@@ -834,8 +961,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>High-volume domain QA systems</li>
                     <li>Structured output generation</li>
                     <li>Regulated industries with format requirements</li>
@@ -845,10 +972,21 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#163e3e',
+          notes: ''
+        },
+        {
+          id: 21,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Higher quality responses in specialized domains</li>
                     <li>Better formatting/style adherence</li>
                     <li>Lower prompt overhead at scale</li>
@@ -858,8 +996,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Higher development and MLOps burden</li>
                     <li>Version drift between model and retrieval</li>
                     <li>More complex governance and evaluation</li>
@@ -871,8 +1009,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#16213e',
-          notes: 'Pattern 9: Fine-tuned model hybrid for domain specialization'
+          backgroundColor: '#163e3e',
+          notes: ''
         }
       ]
     },
@@ -881,15 +1019,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Multi-Step Retrieval Loops',
       slides: [
         {
-          id: 12,
+          id: 22,
           title: '10) RAG with Multi-Step Retrieval Loops',
           icon: { name: 'duo-arrows-rotate' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Iterative retriever (multi-hop)</li>
                     <li>Hypothesis generator (CoT reasoning)</li>
                     <li>Question decomposition module</li>
@@ -900,8 +1040,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Self-ask/multi-hop retrieval loops</li>
                     <li>Plan-execute-refine sequences</li>
                     <li>Breadth-then-depth exploration</li>
@@ -911,8 +1051,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Maintain working context set across turns</li>
                     <li>Prune redundant/irrelevant information</li>
                     <li>Merge complementary evidence</li>
@@ -922,8 +1062,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Legal reasoning and case research</li>
                     <li>Academic/scientific literature review</li>
                     <li>Investigative analysis</li>
@@ -933,10 +1073,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#3e600f',
+          notes: ''
+        },
+        {
+          id: 23,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Solves compositional/multi-hop questions</li>
                     <li>Handles complex reasoning chains</li>
                     <li>Can discover unexpected relationships</li>
@@ -946,8 +1098,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Higher latency/cost (multiple LLM calls)</li>
                     <li>Risk of reasoning drift/hallucination chains</li>
                     <li>More complex implementation and debugging</li>
@@ -959,8 +1111,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#0f3460',
-          notes: 'Pattern 10: Multi-step loops for complex reasoning'
+          backgroundColor: '#3e600f',
+          notes: ''
         }
       ]
     },
@@ -969,15 +1121,17 @@ export const productionRagDeck: Deck = {
       title: 'RAG with Context Compression',
       slides: [
         {
-          id: 13,
+          id: 24,
           title: '11) RAG with Context Compression / Summarization',
           icon: { name: 'duo-broom' },
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Contextual retrieval (contextualized embeddings)</li>
                     <li>Contextual BM25 (contextual lexical matching)</li>
                     <li>Context compressors (extractive/abstractive)</li>
@@ -987,8 +1141,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Add context to chunks before embedding</li>
                     <li>Hybrid recall with contextual embeddings + BM25</li>
                     <li>Compress retrieved content to salient spans</li>
@@ -997,8 +1151,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Include snippets with source lines/citations</li>
                     <li>Provide concise summaries with context</li>
                     <li>Use reference markers for traceability</li>
@@ -1007,8 +1161,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '0.9em', lineHeight: '1.5', marginTop: '5px', paddingLeft: '20px' }}>
+                  <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Enterprise systems with huge document collections</li>
                     <li>Long document analysis (academic papers, legal docs)</li>
                     <li>Latency or cost-sensitive applications</li>
@@ -1017,10 +1171,22 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
               </div>
+            </div>
+          ),
+          backgroundColor: '#2e1a2e',
+          notes: ''
+        },
+        {
+          id: 25,
+          title: 'Strengths and Limitations',
+          content: (
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Improved retrieval accuracy (up to 67% reduction in failure)</li>
                     <li>Higher signal density in context window</li>
                     <li>Lower token usage (cost efficiency)</li>
@@ -1029,8 +1195,8 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '0.85em', lineHeight: '1.4', marginTop: '5px', paddingLeft: '18px' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                  <ul style={{ fontSize: '1.2rem' }}>
                     <li>Higher preprocessing complexity and cost</li>
                     <li>Potential loss of nuance in compression</li>
                     <li>Additional latency during retrieval step</li>
@@ -1041,8 +1207,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#1a1a2e',
-          notes: 'Pattern 11: Context compression for efficiency'
+          backgroundColor: '#2e1a2e',
+          notes: ''
         }
       ]
     },
@@ -1051,17 +1217,19 @@ export const productionRagDeck: Deck = {
       title: 'Summary',
       slides: [
         {
-          id: 14,
+          id: 26,
           title: 'Pattern Selection Guide & Tradeoffs',
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.7em' }}>
+            <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                 <div>
-                  <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="1x" darkModeInvert={true} />
+                  <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                     Quick Pattern Selection Guide
                   </h3>
-                  <ul style={{ fontSize: '0.95em', lineHeight: '1.7', listStyle: 'none', paddingLeft: 0 }}>
+                  <ul style={{ fontSize: '1.2rem', lineHeight: '1.7', listStyle: 'none', paddingLeft: 0 }}>
                     <li><strong>Start with:</strong> Basic RAG → add Re-Ranking as corpus grows</li>
                     <li><strong>Ambiguous queries:</strong> Query Rewriting + Multi-Query</li>
                     <li><strong>Zero-shot domains:</strong> HyDE (Hypothetical Document Embeddings)</li>
@@ -1073,11 +1241,11 @@ export const productionRagDeck: Deck = {
                   </ul>
                 </div>
                 <div>
-                  <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-table" sizeName="1x" darkModeInvert={true} />
+                  <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
                     RAG Pattern Comparison Matrix
                   </h3>
-                  <table style={{ fontSize: '0.85em', width: '100%', borderCollapse: 'collapse' }}>
+                  <table style={{ fontSize: '1.2rem', width: '100%', borderCollapse: 'collapse' }}>
                     <thead>
                       <tr style={{ borderBottom: '2px solid rgba(79, 195, 247, 0.5)' }}>
                         <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Pattern</th>
@@ -1109,11 +1277,11 @@ export const productionRagDeck: Deck = {
                 </div>
               </div>
               <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
-                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', color: '#ffb74d' }}>
-                  <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', color: '#ffb74d', fontSize: '2rem' }}>
+                  <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
                   Next Steps for RAG Implementation
                 </h3>
-                <ul style={{ fontSize: '0.9em', lineHeight: '1.6', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                <ul style={{ fontSize: '1.2rem', lineHeight: '1.6', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                   <li>Instrument evaluation metrics (relevance, hallucination rate, latency)</li>
                   <li>A/B test retrieval parameters (K, fusion methods, reranker configs)</li>
                   <li>Implement feedback loops for continuous improvement</li>
@@ -1124,8 +1292,8 @@ export const productionRagDeck: Deck = {
               </div>
             </div>
           ),
-          backgroundColor: '#16213e',
-          notes: 'Summary with pattern selection guide, comparison matrix, and implementation next steps'
+          backgroundColor: '#3e1616',
+          notes: ''
         }
       ]
     }
