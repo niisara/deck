@@ -366,6 +366,62 @@ Now let's look at the practical steps to implement this...`
 
 ---
 
+## Part 4: Glass Morphism Card Styling
+
+Add a modern glass morphism effect to deck cards on the homepage using the first slide's background image.
+
+### When to Apply Glass Morphism
+
+Use glass morphism for decks that:
+- Have visually striking background images on the first slide
+- Want to stand out on the homepage
+- Benefit from a premium, modern aesthetic
+- Have high-quality photography or space/tech imagery
+
+### How to Add Glass Morphism
+
+Add these properties to your deck configuration (right after the `theme` property):
+
+```typescript
+export const yourDeck: Deck = {
+  id: 'your-deck-id',
+  name: 'Your Deck Name',
+  description: 'Your deck description',
+  category: 'NLP',
+  theme: 'moon',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
+  slides: [],
+  slideGroups: [
+    // ... your slides
+  ]
+};
+```
+
+### Example with Real URL
+
+```typescript
+cardClassName: 'glass-morphism',
+cardStyle: {
+  backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
+},
+```
+
+### Notes
+
+- The glass morphism CSS is already defined in `src/pages/HomePage.css`
+- No need to modify CSS files unless you want deck-specific customizations
+- The effect works best with high-contrast, visually interesting background images
+- Text color automatically changes to white for readability
+
+---
+
 ## Workflow Summary
 
 When creating a new deck:
@@ -375,11 +431,16 @@ When creating a new deck:
    - GSAP animations for visual engagement
    - MermaidPopover components for any diagrams in the notes
    - Proper structure and styling
-3. **Review** to ensure:
+3. **Add glass morphism styling** (optional):
+   - If the first slide has a striking background image
+   - Add `cardClassName: 'glass-morphism'` and `cardStyle` with the background image
+   - Creates a premium frosted glass effect on the homepage card
+4. **Review** to ensure:
    - Notes flow naturally when read aloud
    - Every mermaid diagram in notes has a corresponding MermaidPopover in content
    - Animations are varied and purposeful
    - Content is beginner-friendly
+   - Glass morphism (if applied) displays correctly with readable text
 
 ---
 
