@@ -37,4 +37,6 @@ export interface Deck {
   theme?: RevealTheme;
   slides: Slide[];
   slideGroups?: SlideGroup[]; // Optional: if provided, use groups instead of flat slides
+  cardStyle?: React.CSSProperties; // Optional: custom styling for the deck card on homepage
+  cardClassName?: string; // Optional: custom CSS class for the deck card
 }
