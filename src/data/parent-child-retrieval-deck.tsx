@@ -22,7 +22,7 @@ export const parentChildRetrievalDeck: Deck = {
           content: (
             <div style={{ color: '#fff' }}>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.2}>
-                <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '40px', fontSize: '32px' }}>
+                <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', marginBottom: '20px', fontSize: '32px' }}>
                   <SvgIcon iconName="duo-circle-nodes" sizeName="2x" darkModeInvert={true} />
                   For Reliable Grounded Generation
                 </p>
@@ -129,58 +129,60 @@ At the end, you'll get a **selection guide** and **implementation tips** for pro
           icon: { name: 'duo-clipboard-list' },
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPStaggerList stagger={0.1} duration={0.4}>
                 {[
-                <div key="grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                  <div style={{ padding: '12px 15px', background: 'rgba(79, 195, 247, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#4fc3f7', minWidth: '28px' }}>1</span>
-                    <span style={{ fontSize: '0.85em' }}>Parent-Child Chunking</span>
+                  <div key="grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                    <div style={{ padding: '12px 15px', background: 'rgba(79, 195, 247, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#4fc3f7', minWidth: '28px' }}>1</span>
+                      <span style={{ fontSize: '0.85em' }}>Parent-Child Chunking</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#81c784', minWidth: '28px' }}>2</span>
+                      <span style={{ fontSize: '0.85em' }}>Section-Header Anchored Retrieval</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ffb74d', minWidth: '28px' }}>3</span>
+                      <span style={{ fontSize: '0.85em' }}>Outline-Based Tree Retrieval</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ba68c8', minWidth: '28px' }}>4</span>
+                      <span style={{ fontSize: '0.85em' }}>Top-k Parent Expansion</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(240, 98, 146, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#f06292', minWidth: '28px' }}>5</span>
+                      <span style={{ fontSize: '0.85em' }}>Sibling-Aware Retrieval</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(100, 181, 246, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#64b5f6', minWidth: '28px' }}>6</span>
+                      <span style={{ fontSize: '0.85em' }}>Windowed Retrieval</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(174, 213, 129, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#aed581', minWidth: '28px' }}>7</span>
+                      <span style={{ fontSize: '0.85em' }}>Semantic Hierarchy Retrieval</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(255, 167, 38, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ffa726', minWidth: '28px' }}>8</span>
+                      <span style={{ fontSize: '0.85em' }}>Dynamic Context Folding</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(239, 83, 80, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ef5350', minWidth: '28px' }}>9</span>
+                      <span style={{ fontSize: '0.85em' }}>Hybrid Parent-Child + BM25</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(149, 117, 205, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#9575cd', minWidth: '28px' }}>10</span>
+                      <span style={{ fontSize: '0.85em' }}>Parent Re-Ranking (Cross-Encoder)</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(102, 187, 106, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                      <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#66bb6a', minWidth: '28px' }}>11</span>
+                      <span style={{ fontSize: '0.85em' }}>Graph / KG Parent Retrieval</span>
+                    </div>
+                    <div style={{ padding: '12px 15px', background: 'rgba(79, 195, 247, 0.25)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px', gridColumn: 'span 2' }}>
+                      <SvgIcon iconName="duo-trophy" sizeName="1x" style={{ color: '#ffd700' }} darkModeInvert={true} />
+                      <span style={{ fontWeight: 'bold', fontSize: '0.9em' }}>Summary & Selection Guide</span>
+                    </div>
                   </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#81c784', minWidth: '28px' }}>2</span>
-                    <span style={{ fontSize: '0.85em' }}>Section-Header Anchored Retrieval</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ffb74d', minWidth: '28px' }}>3</span>
-                    <span style={{ fontSize: '0.85em' }}>Outline-Based Tree Retrieval</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ba68c8', minWidth: '28px' }}>4</span>
-                    <span style={{ fontSize: '0.85em' }}>Top-k Parent Expansion</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(240, 98, 146, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#f06292', minWidth: '28px' }}>5</span>
-                    <span style={{ fontSize: '0.85em' }}>Sibling-Aware Retrieval</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(100, 181, 246, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#64b5f6', minWidth: '28px' }}>6</span>
-                    <span style={{ fontSize: '0.85em' }}>Windowed Retrieval</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(174, 213, 129, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#aed581', minWidth: '28px' }}>7</span>
-                    <span style={{ fontSize: '0.85em' }}>Semantic Hierarchy Retrieval</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(255, 167, 38, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ffa726', minWidth: '28px' }}>8</span>
-                    <span style={{ fontSize: '0.85em' }}>Dynamic Context Folding</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(239, 83, 80, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ef5350', minWidth: '28px' }}>9</span>
-                    <span style={{ fontSize: '0.85em' }}>Hybrid Parent-Child + BM25</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(149, 117, 205, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#9575cd', minWidth: '28px' }}>10</span>
-                    <span style={{ fontSize: '0.85em' }}>Parent Re-Ranking (Cross-Encoder)</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(102, 187, 106, 0.15)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <span style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#66bb6a', minWidth: '28px' }}>11</span>
-                    <span style={{ fontSize: '0.85em' }}>Graph / KG Parent Retrieval</span>
-                  </div>
-                  <div style={{ padding: '12px 15px', background: 'rgba(79, 195, 247, 0.25)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '12px', gridColumn: 'span 2' }}>
-                    <SvgIcon iconName="duo-trophy" sizeName="1x" style={{ color: '#ffd700' }} darkModeInvert={true} />
-                    <span style={{ fontWeight: 'bold', fontSize: '0.9em' }}>Summary & Selection Guide</span>
-                  </div>
-                </div>
                 ]}
               </GSAPStaggerList>
             </div>
@@ -288,7 +290,7 @@ This pattern works best for structured documents like policies, legal documents,
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -298,7 +300,7 @@ This pattern works best for structured documents like policies, legal documents,
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -434,7 +436,7 @@ Perfect for documents with clear heading structures like wikis, product document
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -444,7 +446,7 @@ Perfect for documents with clear heading structures like wikis, product document
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -574,7 +576,7 @@ Perfect for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -584,7 +586,7 @@ Perfect for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -700,7 +702,7 @@ Ideal for deeply nested documents where constraints cascade from multiple levels
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -710,7 +712,7 @@ Ideal for deeply nested documents where constraints cascade from multiple levels
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -750,7 +752,7 @@ Store:
         {
           id: 12,
           title: '5) Sibling-Aware Retrieval',
-          icon: { name: 'duo-arrows-left-right' },
+          icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
@@ -843,7 +845,7 @@ Perfect for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -853,7 +855,7 @@ Perfect for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -971,7 +973,7 @@ Ideal for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -981,7 +983,7 @@ Ideal for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1111,7 +1113,7 @@ Great for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1121,7 +1123,7 @@ Great for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1238,7 +1240,7 @@ Essential for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1248,7 +1250,7 @@ Essential for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1371,19 +1373,19 @@ Essential for:
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.5}>
                 {[
-                <div key="workflow" style={{ marginBottom: '1em' }}>
-                  <h4>Implementation Workflow</h4>
-                  <ol style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
-                    <li>Dense child retrieval</li>
-                    <li>Attach parent sections</li>
-                    <li>BM25 score against parent; threshold/gate; optional hybrid union/intersection</li>
-                  </ol>
-                </div>
+                  <div key="workflow" style={{ marginBottom: '1em' }}>
+                    <h4>Implementation Workflow</h4>
+                    <ol style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
+                      <li>Dense child retrieval</li>
+                      <li>Attach parent sections</li>
+                      <li>BM25 score against parent; threshold/gate; optional hybrid union/intersection</li>
+                    </ol>
+                  </div>
                 ]}
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1393,7 +1395,7 @@ Essential for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1510,7 +1512,7 @@ Best for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1520,7 +1522,7 @@ Best for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1653,7 +1655,7 @@ Essential for:
                 <div style={{ display: 'flex', gap: '30px', marginTop: '20px' }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-thumbs-up" sizeName="1x" darkModeInvert={true} style={{ color: '#81c784' }} />
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} style={{ color: '#81c784' }} />
                       <h4 style={{ margin: 0 }}>Pros</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1663,7 +1665,7 @@ Essential for:
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
-                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} style={{ color: '#ffb74d' }} />
                       <h4 style={{ margin: 0 }}>Cons</h4>
                     </div>
                     <ul style={{ fontSize: '0.7em', lineHeight: '1.6' }}>
@@ -1804,48 +1806,48 @@ Here's a quick reference for choosing the right pattern.
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                  <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '0.75em', margin: 0 }}>
-                      <SvgIcon iconName="duo-database" sizeName="1x" style={{ marginRight: '8px' }} darkModeInvert={true} />
-                      Store explicit <strong>parent_id</strong>, <strong>path</strong>, and <strong>offsets</strong>
-                    </p>
-                  </div>
-                  <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '0.75em', margin: 0 }}>
-                      <SvgIcon iconName="duo-filter" sizeName="1x" style={{ marginRight: '8px' }} darkModeInvert={true} />
-                      <strong>Deduplicate</strong> parents to avoid redundancy
-                    </p>
-                  </div>
-                  <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '0.75em', margin: 0 }}>
-                      <SvgIcon iconName="duo-gauge" sizeName="1x" style={{ marginRight: '8px' }} darkModeInvert={true} />
-                      Enforce <strong>token budgets</strong> based on LLM limits
-                    </p>
-                  </div>
-                  <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '0.75em', margin: 0 }}>
-                      <SvgIcon iconName="duo-chart-line" sizeName="1x" style={{ marginRight: '8px' }} darkModeInvert={true} />
-                      <strong>Log which pattern</strong> fired for observability
-                    </p>
-                  </div>
-                  <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '0.75em', margin: 0 }}>
-                      <SvgIcon iconName="duo-layer-group" sizeName="1x" style={{ marginRight: '8px' }} darkModeInvert={true} />
-                      Consider <strong>progressive loading</strong>: essential first
-                    </p>
-                  </div>
-                  <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '8px' }}>
-                    <p style={{ fontSize: '0.75em', margin: 0 }}>
-                      <SvgIcon iconName="duo-vial" sizeName="1x" style={{ marginRight: '8px' }} darkModeInvert={true} />
-                      <strong>Test retrieval quality</strong> with diverse queries
-                    </p>
-                  </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
+                  <p style={{ fontSize: '1.6rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginRight: '8px' }} darkModeInvert={true} />
+                    <span>Store explicit parent_id, path, and offsets</span>
+                  </p>
                 </div>
+                <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
+                  <p style={{ fontSize: '1.6rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <SvgIcon iconName="duo-filter" sizeName="2x" style={{ marginRight: '8px' }} darkModeInvert={true} />
+                    <span>Deduplicate parents to avoid redundancy</span>
+                  </p>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '8px' }}>
+                  <p style={{ fontSize: '1.6rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <SvgIcon iconName="duo-gauge" sizeName="2x" style={{ marginRight: '8px' }} darkModeInvert={true} />
+                    <span>Enforce token budgets based on LLM limits</span>
+                  </p>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
+                  <p style={{ fontSize: '1.6rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginRight: '8px' }} darkModeInvert={true} />
+                    <span>Log which pattern fired for observability</span>
+                  </p>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
+                  <p style={{ fontSize: '1.6rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginRight: '8px' }} darkModeInvert={true} />
+                    <span>Consider progressive loading: essential first</span>
+                  </p>
+                </div>
+                <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '8px' }}>
+                  <p style={{ fontSize: '1.6rem', margin: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <SvgIcon iconName="duo-sliders" sizeName="2x" style={{ marginRight: '8px' }} darkModeInvert={true} />
+                    <span>Test retrieval quality with diverse queries</span>
+                  </p>
+                </div>
+              </div>
               <GSAPAnimated animation="fadeIn" delay={1}>
                 <div style={{ marginTop: '25px', padding: '20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '12px' }}>
-                  <p style={{ fontSize: '0.9em', margin: 0, display: 'flex', alignItems: 'center', gap: '12px' }}>
-                    <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
+                  <p style={{ fontSize: '2rem', margin: 0, display: 'flex', alignItems: 'center', gap: '12px' }}>
+                    <SvgIcon iconName="duo-shield-check" sizeName="4x" darkModeInvert={true} />
                     <span><strong>Remember:</strong> Parent-child patterns are essential for reducing hallucination and improving answer correctness in RAG systems. Choose wisely based on your document structure and requirements.</span>
                   </p>
                 </div>

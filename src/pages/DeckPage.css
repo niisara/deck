@@ -252,6 +252,7 @@
   max-height: calc(100vh - 120px);
   overflow-y: auto;
   overflow-x: hidden;
+  margin-top: 20px;
 }
 
 /* Ensure nested content doesn't break scrolling */
