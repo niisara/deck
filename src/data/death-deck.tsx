@@ -15,7 +15,7 @@ export const deathDeck: Deck = {
         {
           id: 1,
           center: true,
-          title: 'This will happen to me. Not in theory. Not someday. To this body.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This will happen to me.<br/>
@@ -192,7 +192,7 @@ export const deathDeck: Deck = {
         {
           id: 8,
           center: true,
-          title: 'This decay will claim me. Not in fantasy. Not eventually. To these bones and flesh.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This decay will claim me.<br/>
@@ -401,7 +401,7 @@ export const deathDeck: Deck = {
         {
           id: 16,
           center: true,
-          title: 'This isolation will hollow me. Not as metaphor. Not as possibility. In lived experience.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This isolation will hollow me.<br/>
@@ -588,7 +588,7 @@ export const deathDeck: Deck = {
         {
           id: 23,
           center: true,
-          title: 'This terror will find me. Not in nightmares. Not theoretically. In the darkness at 3 AM.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This terror will find me.<br/>
@@ -783,7 +783,7 @@ export const deathDeck: Deck = {
         {
           id: 30,
           center: true,
-          title: 'This pain will consume me. Not hypothetically. Not far off. In this suffering vessel.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This pain will consume me.<br/>
@@ -975,7 +975,7 @@ export const deathDeck: Deck = {
         {
           id: 37,
           center: true,
-          title: 'This regret will haunt me. Not as warning. Not as lesson. As lived truth.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This regret will haunt me.<br/>
@@ -1135,7 +1135,7 @@ export const deathDeck: Deck = {
         {
           id: 43,
           center: true,
-          title: 'This loss of self will erase me. Not gradually. Not gently. Piece by piece.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This loss of self will erase me.<br/>
@@ -1289,7 +1289,7 @@ export const deathDeck: Deck = {
         {
           id: 49,
           center: true,
-          title: 'This ending will claim me. Not as abstract. Not later. Now. Always now.',
+          title: '',
           content: `
             <p style="font-size: 1.5em; font-style: italic; color: #e74c3c;">
               This ending will claim me.<br/>
@@ -1506,7 +1506,7 @@ export const deathDeck: Deck = {
         {
           id: 57,
           center: true,
-          title: 'Sit with this',
+          title: '',
           content: `
             <p style="font-size: 1.2em; margin-top: 2em;">
               Don't distract yourself.<br/>
