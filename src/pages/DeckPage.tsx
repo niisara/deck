@@ -89,8 +89,23 @@ function DeckPage() {
 
   const deck = decks.find((d) => d.id === deckId);
 
+  // Get category from URL params to navigate back to the correct filtered view
+  const searchParams = new URLSearchParams(window.location.search);
+  const categoryParam = searchParams.get('category');
+
   // Check if we're in PDF export mode
-  const isPrintPdf = new URLSearchParams(window.location.search).has('print-pdf');
+  const isPrintPdf = searchParams.has('print-pdf');
+
+  // Handle back navigation to the correct category view
+  const handleBackNavigation = () => {
+    if (categoryParam) {
+      // Navigate to home with the category state
+      navigate('/', { state: { selectedCategory: categoryParam } });
+    } else {
+      // Fallback to browser back
+      navigate(-1);
+    }
+  };
 
   // Handle PDF export
   const handlePdfExport = () => {
@@ -407,7 +422,7 @@ function DeckPage() {
     return (
       <div className="deck-page-error">
         <h1>Deck not found</h1>
-        <button onClick={() => navigate(-1)} className="home-button">← Back</button>
+        <button onClick={handleBackNavigation} className="home-button">← Back</button>
       </div>
     );
   }
@@ -417,7 +432,7 @@ function DeckPage() {
       {!isPrintPdf && (
         <>
           <button 
-            onClick={() => navigate(-1)}
+            onClick={handleBackNavigation}
             className={`back-button-overlay ${showBackButton ? 'visible' : ''}`}
             title="Go Back"
           >
