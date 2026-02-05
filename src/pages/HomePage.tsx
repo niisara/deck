@@ -1,12 +1,20 @@
-import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useMemo, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { decks } from '../data/decks';
 import Navigation from '../components/Navigation';
 import './HomePage.css';
 
 function HomePage() {
+  const location = useLocation();
   const [selectedCategory, setSelectedCategory] = useState<'NLP' | 'RAG' | 'Demo' | 'Other' | 'All'>('NLP');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Check if we're navigating back with a category state
+  useEffect(() => {
+    if (location.state && (location.state as any).selectedCategory) {
+      setSelectedCategory((location.state as any).selectedCategory);
+    }
+  }, [location.state]);
 
   // Filter decks based on category and search query
   const filteredDecks = useMemo(() => {
@@ -59,7 +67,7 @@ function HomePage() {
                 return (
                   <Link 
                     key={deck.id} 
-                    to={`/deck/${deck.id}`} 
+                    to={`/deck/${deck.id}?category=${selectedCategory}`} 
                     className={`deck-card ${deck.cardClassName || ''}`}
                     style={deck.cardStyle}
                   >

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import Reveal from 'reveal.js';
 import RevealHighlight from 'reveal.js/plugin/highlight/highlight';
 import RevealMarkdown from 'reveal.js/plugin/markdown/markdown';
@@ -80,16 +80,32 @@ const getIconColor = (bgColor: string = '#2c3e50'): string => {
 
 function DeckPage() {
   const { deckId } = useParams<{ deckId: string }>();
+  const navigate = useNavigate();
   const revealRef = useRef<HTMLDivElement>(null);
   const revealInstanceRef = useRef<Reveal.Api | null>(null);
   const speakerWindowRef = useRef<Window | null>(null);
-  const [showHomeButton, setShowHomeButton] = useState(true);
+  const [showBackButton, setShowBackButton] = useState(true);
   const hideTimeoutRef = useRef<number | null>(null);
 
   const deck = decks.find((d) => d.id === deckId);
 
+  // Get category from URL params to navigate back to the correct filtered view
+  const searchParams = new URLSearchParams(window.location.search);
+  const categoryParam = searchParams.get('category');
+
   // Check if we're in PDF export mode
-  const isPrintPdf = new URLSearchParams(window.location.search).has('print-pdf');
+  const isPrintPdf = searchParams.has('print-pdf');
+
+  // Handle back navigation to the correct category view
+  const handleBackNavigation = () => {
+    if (categoryParam) {
+      // Navigate to home with the category state
+      navigate('/', { state: { selectedCategory: categoryParam } });
+    } else {
+      // Fallback to browser back
+      navigate(-1);
+    }
+  };
 
   // Handle PDF export
   const handlePdfExport = () => {
@@ -99,10 +115,10 @@ function DeckPage() {
     window.location.href = url.toString();
   };
 
-  // Handle mouse movement to show/hide home button
+  // Handle mouse movement to show/hide back button
   useEffect(() => {
     const handleMouseMove = () => {
-      setShowHomeButton(true);
+      setShowBackButton(true);
       
       // Clear existing timeout
       if (hideTimeoutRef.current !== null) {
@@ -111,7 +127,7 @@ function DeckPage() {
       
       // Set new timeout to hide after 3 seconds
       hideTimeoutRef.current = window.setTimeout(() => {
-        setShowHomeButton(false);
+        setShowBackButton(false);
       }, 3000);
     };
 
@@ -119,7 +135,7 @@ function DeckPage() {
     
     // Initial timeout
     hideTimeoutRef.current = window.setTimeout(() => {
-      setShowHomeButton(false);
+      setShowBackButton(false);
     }, 3000);
 
     return () => {
@@ -406,7 +422,7 @@ function DeckPage() {
     return (
       <div className="deck-page-error">
         <h1>Deck not found</h1>
-        <Link to="/" className="home-button">← Back to Home</Link>
+        <button onClick={handleBackNavigation} className="home-button">← Back</button>
       </div>
     );
   }
@@ -415,16 +431,17 @@ function DeckPage() {
     <div className="deck-page">
       {!isPrintPdf && (
         <>
-          <Link 
-            to="/" 
-            className={`home-button-overlay ${showHomeButton ? 'visible' : ''}`}
+          <button 
+            onClick={handleBackNavigation}
+            className={`back-button-overlay ${showBackButton ? 'visible' : ''}`}
+            title="Go Back"
           >
-            <SvgIcon iconName="duo-house" sizeName="lg" />
-          </Link>
+            <SvgIcon iconName="duo-arrow-left" sizeName="lg" />
+          </button>
           
           <button 
             onClick={handlePdfExport}
-            className={`pdf-export-button ${showHomeButton ? 'visible' : ''}`}
+            className={`pdf-export-button ${showBackButton ? 'visible' : ''}`}
             title="Export to PDF"
           >
             <SvgIcon iconName="duo-file-pdf" sizeName="lg" />
