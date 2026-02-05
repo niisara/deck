@@ -15,33 +15,36 @@ export const parentChildRetrievalDeck: Deck = {
       slides: [
         {
           id: 1,
+          center: true,
           title: 'Parent–Child Retrieval Designs for RAG',
           content: (
-            <div style={{ textAlign: 'left' }}>
-              <h3 style={{ fontSize: '1.1em', marginTop: '30px', color: '#4fc3f7' }}>
+            <div style={{ marginTop: '20px' }}>
+              <h3 style={{ fontSize: '2rem', color: '#4fc3f7' }}>
                 For Reliable Grounded Generation
               </h3>
-              <p style={{ fontSize: '1em', marginTop: '30px' }}>
+              <p style={{ fontSize: '1.6rem', marginTop: '20px' }}>
                 A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness
               </p>
-              <div style={{ marginTop: '50px', display: 'flex', gap: '30px', alignItems: 'center', flexWrap: 'wrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 25px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+              <div style={{ marginTop: '20px', display: 'flex', gap: '30px', alignItems: 'center', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '5px 10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
-                  <span>Reduces Hallucination</span>
+                  <span style={{ fontSize: '1.2rem' }}>Reduces Hallucination</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 25px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '5px 10px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-check-double" sizeName="2x" darkModeInvert={true} />
-                  <span>Improves Correctness</span>
+                  <span style={{ fontSize: '1.2rem' }}>Improves Correctness</span>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '15px 25px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '5px 10px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
                   <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
-                  <span>Better Context</span>
+                  <span style={{ fontSize: '1.2rem' }}>Better Context</span>
                 </div>
               </div>
-              <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>
+              <p style={{ fontSize: '2rem', marginTop: '20px' }}>
                 For ML engineers, data engineers, applied researchers
               </p>
-              <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>2025-11-07</p>
+              <p><strong>Prepared by:</strong> Nisar A</p>
+              <p><strong>Date:</strong> November 7, 2025</p>
+              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
             </div>
           ),
           backgroundColor: '#1a1a2e',
@@ -51,8 +54,10 @@ export const parentChildRetrievalDeck: Deck = {
           id: 2,
           title: 'Table of Contents',
           content: (
-            <div style={{ textAlign: 'left', fontSize: '0.85em' }}>
-              <h2 style={{ marginBottom: '30px', alignItems: 'center' }}>
+            <div style={{ textAlign: 'left', fontSize: '2rem' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <h2 style={{ marginBottom: '30px', alignItems: 'center', fontSize: '2rem' }}>
                 <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
                 Parent-Child Retrieval Design Patterns
               </h2>
