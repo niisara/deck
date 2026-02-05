@@ -804,13 +804,13 @@ Now let's talk about something exciting: using pretrained models to give you a m
           ),
           backgroundColor: '#770022',
           notes: `### Tip 5 - Fine-Tune Pretrained Transformer Models
-Alright, this tip is where modern NLP really shines. If you've heard of BERT, GPT, or transformers in general, this is where that technology comes into play.
+Alright, this tip is where modern NLP really shines. If you've heard of BERT 👉 'burt', GPT, or transformers in general, this is where that technology comes into play.
 #### 🎯 The Goal
 We want to achieve **strong accuracy with less labeled data** by leveraging **transfer learning**. Instead of training a model from scratch (which requires millions of examples), we start with a model that already understands language and just teach it our specific task.
 #### 📖 The Analogy
 Think of it like hiring someone who already speaks English fluently and teaching them medical terminology. You don't have to teach them grammar, vocabulary, or sentence structure; they already know all that. You just teach them the new stuff specific to medicine. That's *much* faster than teaching a baby from scratch!
 #### ⚙️ How It Works
-Pretrained models like BERT, RoBERTa, or domain-specific variants (BioBERT for medical, FinBERT for finance) have learned from billions of words. They understand language deeply. We add a **token-classification head** on top (a simple layer that predicts entity labels) and fine-tune the whole thing on our labeled data.
+Pretrained models like BERT 👉 'burt', RoBERTa 👉 'roh-BER-tuh', or domain-specific variants (BioBERT for medical, FinBERT for finance) have learned from billions of words. They understand language deeply. We add a **token-classification head** on top (a simple layer that predicts entity labels) and fine-tune the whole thing on our labeled data.
 \`\`\`mermaid
 flowchart TB
     A["🧠 Pretrained BERT"] --> B["➕ Token Classification Head"]
@@ -862,15 +862,15 @@ This is your go-to approach when you have **limited labeled data** (hundreds to 
           notes: `### Tip 5 - Steps
 Let's walk through the technical process of fine-tuning.
 #### Step 1: Choose Your Base Model
-Start by selecting a pretrained model. For general English, BERT or RoBERTa work well. For specialized domains, look for domain-adapted models: BioBERT or PubMedBERT for biomedical, FinBERT for financial, LegalBERT for legal text. These models were pretrained on domain-specific text and will give you a head start.
+Start by selecting a pretrained model. For general English, BERT or RoBERTa work well. For specialized domains, look for domain-adapted models: BioBERT or PubMedBERT 👉 'pub-med-burt' for biomedical, FinBERT for financial, LegalBERT for legal text. These models were pretrained on domain-specific text and will give you a head start.
 #### Step 2: Handle Tokenization Carefully
 Transformers use subword tokenization, which can split words into pieces. The word "COVID-19" might become ["CO", "##VID", "-", "19"]. You need to **align your entity labels to these wordpieces**. Typically, only the first subword gets the B- (beginning) tag, and subsequent subwords get I- (inside) or are ignored. This is a common source of bugs, so pay attention!
 #### Step 3: Set Hyperparameters
-Key settings include: **learning rate** (usually 2e-5 to 5e-5 for fine-tuning), **batch size** (8-32 depending on your GPU), **weight decay** for regularization, and **early stopping** to prevent overfitting. Start with published defaults and tune from there.
+Key settings include: **learning rate** (usually 2e-5 'two e minus five' to 5e-5 'five e minus five' for fine-tuning), **batch size** (8-32 depending on your GPU), **weight decay** for regularization, and **early stopping** to prevent overfitting. Start with published defaults and tune from there.
 #### Step 4: Handle Class Imbalance
 Some entity types are rare. Use **class weighting** to give rare classes more importance, or try **focal loss** which automatically focuses on hard examples. Don't let common entities dominate your gradients.
 #### Step 5: Validate and Optimize
-Track performance on your dev set. Consider **PEFT/LoRA** techniques if you need to train efficiently with limited compute. When you're happy, export your model for serving.
+Track performance on your dev set. Consider **PEFT/LoRA** 👉 'peft' and 'lora' techniques if you need to train efficiently with limited compute. When you're happy, export your model for serving.
 What are the trade-offs?`
         },
         {
@@ -911,7 +911,7 @@ Let's honestly assess transformer fine-tuning.
 #### ✅ Pros
 The good stuff: You get **strong baselines** out of the box. Even with a few hundred labeled examples, fine-tuned BERT often outperforms traditional CRF models trained on thousands. **Faster convergence** means you need fewer epochs and less data to reach good performance. And these models are **reusable**; once trained, you can apply them anywhere or continue improving them.
 #### ⚠️ Cons
-The problems: **Compute and latency costs** are real. Transformers are big and slow compared to simpler models. A BERT model might have 110 million parameters, and inference can take tens of milliseconds per example. There's also a **risk of overfitting or catastrophic forgetting** if you're not careful. The model might forget its general language understanding while learning your specific task. And **careful tuning is needed**; learning rate, batch size, and training duration all matter a lot.
+The problems: **Compute and latency costs** are real. Transformers are big and slow compared to simpler models. A BERT model might have 110 million parameters, and inference can take tens of milliseconds per example. There's also a **risk of overfitting or catastrophic forgetting** if you're not careful. The model might forget its general language understanding while learning your specific task. And **careful tuning is needed**; learning rate, batch size, and training duration all matter a lot. Small changes in learning rate from 2e-5 'two e minus five' to 5e-5 'five e minus five' can significantly impact results.
 #### 💡 Practical Tips
 Start with the smallest model that works for your task. DistilBERT is 60% smaller and 60% faster than BERT, with only minor accuracy loss. Use mixed-precision training (FP16) to speed things up and reduce memory usage. And always monitor your dev set performance to catch overfitting early.
 > 🚀 Fun fact: A well-tuned fine-tuned BERT with 500 labeled examples often beats a traditional CRF model with 10,000 examples. That's the power of transfer learning!

@@ -22,12 +22,27 @@ Write the speaker notes for a live presentation to freshers/beginners.
 - Connect ideas smoothly within paragraphs - don't just list disconnected points
 - Include smooth **transitions between sections** (e.g., "Now that we've seen X, let's look at Y...")
 
+### Pronunciation Guides
+- **Scientific notation**: Always bracket how to read it
+  - Example: `2e-5` → "2e-5 (two e minus five)"
+  - Example: `1e-3` → "1e-3 (one e minus three)"
+  - Example: `5e6` → "5e6 (five e six)"
+- **Technical terms/acronyms**: Add pronunciation guide with 👉 for new or difficult terms
+  - Example: `RoBERTa` → "RoBERTa 👉 'roh-BER-tuh'"
+  - Example: `BERT` → "BERT 👉 'burt'"
+  - Example: `spaCy` → "spaCy 👉 'spay-see'"
+  - Example: `NVIDIA` → "NVIDIA 👉 'en-VID-ee-uh'"
+- **Greek letters**: Include English name
+  - Example: `λ` → "λ (lambda)"
+  - Example: `α` → "α (alpha)"
+
 ### Content Guidelines
 - Explain every concept in **very simple words** - assume zero background knowledge
 - Add **small examples or analogies** (1-2 lines) wherever helpful to illustrate points
 - For technical concepts, explain the "why" not just the "what"
 - Include rhetorical questions to engage the audience (e.g., "Simple, right?", "But what about...?")
 - End each slide's notes with a natural lead-in to the next topic
+- **Always include pronunciation guides** for scientific notation and technical terms on first mention
 
 ### Visual Elements in Notes
 - Include **Mermaid diagrams** in the notes where helpful to visualize concepts:
@@ -382,7 +397,3 @@ import { MermaidPopover } from '../components/MermaidPopover';
 - Error/Problem: `#ffcdd2` (red)
 - Highlight/Goal: `#ffd700` (gold)
 - Special: `#e1bee7` (purple)
-
----
-
-*Use this unified prompt to create comprehensive, engaging, and professional presentation decks!*
