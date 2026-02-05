@@ -6,6 +6,13 @@ This unified prompt will help you create complete, presentation-ready decks with
 
 ## Part 1: Speaker Notes Generation
 
+### Deck Structure Requirements
+1. **First Slide (Title Slide)**: Always add `center: true` property to vertically center the content
+2. **SlideGroups Organization**: Break each major topic/pattern into multiple slides:
+   - Maintain `slideGroups` structure with logical groupings
+   - Each `slideGroup` should have an `id`, `title`, and `slides` array
+   - Group related concepts together under meaningful topic headings
+
 Write the speaker notes for a live presentation to freshers/beginners.
 
 ### Format & Structure
@@ -422,20 +429,160 @@ cardStyle: {
 
 ---
 
+## Part 4: Deck Structure Example
+
+### Complete Deck with SlideGroups
+
+```tsx
+import type { Deck } from './types';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
+
+export const exampleDeck: Deck = {
+  id: 'example-deck',
+  name: 'Example Topic',
+  description: 'Understanding the fundamentals',
+  category: 'RAG',
+  theme: 'night',
+  slideGroups: [
+    {
+      id: 'introduction',
+      title: 'Introduction',
+      slides: [
+        {
+          id: 1,
+          title: 'Example Topic',
+          center: true, // ALWAYS add center: true for title slides
+          content: (
+            <div>
+              <h2>Example Topic</h2>
+              <p>Understanding the fundamentals</p>
+            </div>
+          ),
+          backgroundColor: '#2c3e50',
+          notes: 'Welcome note...'
+        }
+      ]
+    },
+    {
+      id: 'core-concepts',
+      title: 'Core Concepts',
+      slides: [
+        {
+          id: 2,
+          title: 'What is X?',
+          content: (
+            <GSAPAnimated animation="fadeIn">
+              <h3>What is X?</h3>
+              <p>Definition and explanation...</p>
+            </GSAPAnimated>
+          ),
+          backgroundColor: '#34495e',
+          notes: 'Explanation of X...'
+        },
+        {
+          id: 3,
+          title: 'Key Components',
+          content: (
+            <div>
+              <GSAPAnimated animation="slideInTop">
+                <h4>
+                  Components Overview
+                  <MermaidPopover
+                    title="System Architecture"
+                    diagram={\`flowchart TB
+    A["Input"] --> B["Process"]
+    B --> C["Output"]
+    style A fill:#4fc3f7,color:#000\`}
+                  />
+                </h4>
+              </GSAPAnimated>
+              <GSAPStaggerList items={['Component 1', 'Component 2', 'Component 3']} />
+            </div>
+          ),
+          backgroundColor: '#34495e',
+          notes: 'Breaking down the components...'
+        }
+      ]
+    },
+    {
+      id: 'implementation',
+      title: 'Implementation Details',
+      slides: [
+        {
+          id: 4,
+          title: 'How to Implement',
+          content: (
+            <GSAPAnimated animation="slideInLeft">
+              <h3>Implementation Steps</h3>
+              <ol>
+                <li>Step 1</li>
+                <li>Step 2</li>
+                <li>Step 3</li>
+              </ol>
+            </GSAPAnimated>
+          ),
+          backgroundColor: '#2980b9',
+          notes: 'Step-by-step guide...'
+        }
+      ]
+    },
+    {
+      id: 'best-practices',
+      title: 'Best Practices',
+      slides: [
+        {
+          id: 5,
+          title: 'Tips & Tricks',
+          content: (
+            <GSAPAnimated animation="zoomIn">
+              <h3>Best Practices</h3>
+              <p>Follow these guidelines...</p>
+            </GSAPAnimated>
+          ),
+          backgroundColor: '#27ae60',
+          notes: 'Important tips...'
+        }
+      ]
+    }
+  ]
+};
+```
+
+### SlideGroup Organization Guidelines
+
+1. **Logical Grouping**: Group related slides under meaningful topics
+2. **Group Size**: 2-5 slides per group typically works well
+3. **Progression**: Order groups to build knowledge progressively
+4. **Naming**: Use clear, descriptive `id` and `title` for each group
+
+**Common Group Patterns:**
+- Introduction → Core Concepts → Implementation → Best Practices
+- Problem → Solution → Examples → Trade-offs
+- Overview → Deep Dive → Use Cases → Summary
+
+---
+
 ## Workflow Summary
 
 When creating a new deck:
 
 1. **Write speaker notes** with clear explanations, examples, and mermaid diagrams
-2. **Create slide content** with:
+2. **Structure the deck**:
+   - Set `center: true` on the first (title) slide
+   - Organize slides into logical `slideGroups`
+   - Break major topics into multiple slides within each group
+3. **Create slide content** with:
    - GSAP animations for visual engagement
    - MermaidPopover components for any diagrams in the notes
    - Proper structure and styling
-3. **Add glass morphism styling** (optional):
+4. **Add glass morphism styling** (optional):
    - If the first slide has a striking background image
    - Add `cardClassName: 'glass-morphism'` and `cardStyle` with the background image
    - Creates a premium frosted glass effect on the homepage card
-4. **Review** to ensure:
+5. **Review** to ensure:
+   - Title slide has `center: true`
+   - Slides are properly grouped in `slideGroups`
    - Notes flow naturally when read aloud
    - Every mermaid diagram in notes has a corresponding MermaidPopover in content
    - Animations are varied and purposeful
