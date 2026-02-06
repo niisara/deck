@@ -186,34 +186,6 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
-                <strong>Pros</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                <li>Faster inference (2-10x speedup)</li>
-                <li>Lower compute costs & RAM</li>
-                <li>Smaller vector indexes</li>
-                <li>Reduced RAM requirements</li>
-                <li>Higher query throughput</li>
-              </ul>
-            </div>
-            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                <strong>Cons</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                <li>Potential recall drop on nuanced queries</li>
-                <li>May underperform on long-tail cases</li>
-                <li>Reindexing cost when switching models</li>
-                <li>Possible multilingual performance gaps</li>
-              </ul>
-            </div>
-          </div>
         </div>
       ),
       backgroundColor: '#6b1d1d',
@@ -264,22 +236,23 @@ export const ragLatencyDeck: Deck = {
       title: 'The 11 Techniques',
       slides: [
     {
-      id: 4,
+      id: 5,
       title: '2. Reduce Chunk Size',
       icon: { name: 'duo-scissors' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
+              <div><strong>Goal:</strong></div>
               <p>Cut retrieval time and LLM prompt tokens while maintaining or improving retrieval quality.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Long documents or technical content</li>
                 <li>Limited LLM context windows</li>
                 <li>High per-token LLM costs</li>
@@ -288,11 +261,11 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <p>Split documents into smaller, overlapping chunks so retrieval finds more specific, relevant context and the LLM processes fewer tokens:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Reduces the total context window size passed to the LLM</li>
                 <li>Ensures each chunk focuses on a coherent topic or concept</li>
                 <li>Creates overlap between chunks to maintain contextual continuity</li>
@@ -306,7 +279,7 @@ export const ragLatencyDeck: Deck = {
               <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Set initial chunk size: Start with 200–400 tokens per chunk</li>
                 <li>Configure overlap: Use 10–20% overlap between consecutive chunks</li>
@@ -316,15 +289,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#6b1d4d',
+      notes: ''
+    },
+    {
+      id: 6,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Lower prompt size reduces token usage</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Lower prompt size reduces token usage</li>
                 <li>Improved time to first token (TTFT)</li>
                 <li>Better focus for re-rankers</li>
                 <li>More precise retrieval results</li>
@@ -332,12 +315,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>More chunks to store and search</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>More chunks to store and search</li>
                 <li>Risk of losing global document context</li>
                 <li>Requires careful overlap tuning</li>
                 <li>May split semantic units like paragraphs</li>
@@ -346,7 +329,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 2: Reduce chunk size to improve retrieval precision and reduce LLM token usage'
+      backgroundColor: '#6b1d4d',
+      notes: ''
     }
       ]
     },
@@ -355,22 +339,23 @@ export const ragLatencyDeck: Deck = {
       title: 'The 11 Techniques',
       slides: [
     {
-      id: 5,
+      id: 7,
       title: '3. Limit Top-K Retrieval',
       icon: { name: 'duo-filter' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
+              <div><strong>Goal:</strong></div>
               <p>Reduce downstream processing and prompt size by retrieving only the most relevant content.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Latency-sensitive applications (chat/voice)</li>
                 <li>When using re-rankers in the pipeline</li>
                 <li>Systems with strong embedding models</li>
@@ -379,11 +364,11 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <p>Retrieve only the minimal number of documents (K) that maintains answer quality while reducing processing overhead:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Set a minimal K value that preserves acceptable result quality</li>
                 <li>Apply relevance score thresholds to filter low-quality matches (e.g., cosine_similarity ≥ 0.75)</li>
                 <li>Implement token budgets to cap total context size</li>
@@ -394,10 +379,10 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Start conservative: Begin with K=5-8 for most applications</li>
                 <li>Measure quality: Track answer accuracy and latency metrics</li>
@@ -407,15 +392,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#571d6b',
+      notes: ''
+    },
+    {
+      id: 8,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Faster retrieval processing</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Faster retrieval processing</li>
                 <li>Smaller context prompts to LLM</li>
                 <li>Lower token usage and API costs</li>
                 <li>Reduced likelihood of distracting context</li>
@@ -423,12 +418,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Risk of missing critical context for complex queries</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Risk of missing critical context for complex queries</li>
                 <li>Requires careful tuning and monitoring</li>
                 <li>May underperform on edge cases or ambiguous queries</li>
                 <li>Can increase hallucinations if context is insufficient</li>
@@ -437,282 +432,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 3: Limit top-K retrieval to reduce processing overhead and focus on most relevant content'
-    }
-      ]
-    },
-    {
-      id: 'the-11-techniques',
-      title: 'The 11 Techniques',
-      slides: [
-    {
-      id: 6,
-      title: '4. Use Approximate Nearest Neighbor Indexes',
-      icon: { name: 'duo-network-wired' },
-      content: (
-        <div style={{ fontSize: '0.75rem', lineHeight: '1.5' }}>
-          <div>
-              <p><strong>Goal:</strong></p>
-              <p>Accelerate vector search at scale without sacrificing too much accuracy.</p>
-            </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
-            <div>
-              <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
-                <strong>When to Use</strong>
-              </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
-                <li>Collections with 1M+ vectors</li>
-                <li>Applications with strict p95 latency targets</li>
-                <li>CPU-bound search environments</li>
-                <li>Large-scale production RAG systems</li>
-              </ul>
-            </div>
-            <div>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
-                <strong>How It Works</strong>
-              </div>
-              <p>Two popular approaches for approximate nearest neighbor search:</p>
-              <div style={{ marginLeft: '1rem', fontSize: '0.85rem' }}>
-                <ul>
-                  <li>HNSW (Hierarchical Navigable Small World): Uses multi-layer graph structure with "shortcuts" at higher layers for efficient navigation. Parameters to tune include M (max connections), efSearch (search quality), and efConstruction (index quality).</li>
-                  <li>IVF (Inverted File): Partitions vector space into nlist clusters, searches only nprobe most relevant clusters. Can be combined with PQ (Product Quantization) to reduce memory.</li>
-                </ul>
-                <p>Both methods trade exact results for approximate ones that are "good enough" for most cases, drastically improving search speed.</p>
-              </div>
-            </div>
-          </div>
-
-          <div style={{ marginBottom: '1rem' }}>
-            <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
-              <strong>Steps</strong>
-            </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
-              <ul>
-                <li>For HNSW: Start with M=16-32, efSearch=64-128, efConstruction=200-400</li>
-                <li>For IVF: Choose nlist ≈ sqrt(N) where N is collection size, set nprobe to balance recall vs speed</li>
-                <li>Memory optimization: Consider IVF+PQ for lower RAM usage if memory is constrained</li>
-                <li>Test with filters: Evaluate performance with attribute filters as they can impact latency</li>
-                <li>Benchmark: Compare accuracy and latency across parameter settings to find optimal configuration</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
-                <strong>Pros</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Order-of-magnitude speedups (10-100x faster)</li>
-                <li>Scalable to billions of vectors</li>
-                <li>Well-supported in major vector DB platforms</li>
-                <li>Configurable performance-accuracy tradeoff</li>
-                <li>Enables real-time search in large datasets</li>
-              </ul>
-            </div>
-            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
-                <strong>Cons</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>HNSW has higher memory overhead</li>
-                <li>Only approximate recall (not 100% exact matches)</li>
-                <li>Requires parameter tuning and testing</li>
-                <li>Filtered searches can be slower (especially with HNSW)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ),
-      notes: 'Technique 4: Use ANN indexes like HNSW or IVF to dramatically speed up vector search at scale'
-    }
-      ]
-    },
-    {
-      id: 'the-11-techniques',
-      title: 'The 11 Techniques',
-      slides: [
-    {
-      id: 7,
-      title: '5. Cache Frequent Query Embeddings',
-      icon: { name: 'duo-database' },
-      content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div>
-              <p><strong>Goal:</strong></p>
-              <p>Avoid recomputing embeddings for repeated queries, significantly reducing embedding model latency and API costs.</p>
-            </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
-            <div>
-              <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
-                <strong>When to Use</strong>
-              </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
-                <li>FAQs and support bots with repetitive queries</li>
-                <li>Dashboard or analytics applications</li>
-                <li>Systems with bursty traffic patterns</li>
-                <li>Applications with predictable query patterns</li>
-              </ul>
-            </div>
-            <div>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
-                <strong>How It Works</strong>
-              </div>
-              <p>Store and reuse embeddings for previously seen queries to bypass the embedding model:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
-                <li>Implement LRU+TTL cache keyed by normalized query text</li>
-                <li>Store vector embeddings for frequent queries in memory or distributed cache</li>
-                <li>Optionally implement semantic cache to match similar but non-identical queries</li>
-                <li>For semantic caching, use nearest-neighbor lookup of query embeddings with a similarity threshold</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ marginBottom: '1rem' }}>
-            <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
-              <strong>Steps</strong>
-            </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
-              <ul>
-                <li>Normalize queries: Lowercase, trim whitespace, redact PII, standardize format</li>
-                <li>Configure cache parameters: Set TTL (1-24h) and size based on traffic patterns</li>
-                <li>Implement hit/miss tracking: Monitor cache performance metrics</li>
-                <li>For semantic caching: Reuse embedding if cosine similarity ≥ threshold (e.g., δ ≥ 0.92)</li>
-                <li>Add versioning mechanism: Invalidate cache when embedding model changes</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
-                <strong>Pros</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Instant reuse for identical queries</li>
-                <li>Drastically reduces embedding model API calls</li>
-                <li>Stabilizes latency under load</li>
-                <li>Improves throughput and cost efficiency</li>
-                <li>Zero quality impact for exact matches</li>
-              </ul>
-            </div>
-            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
-                <strong>Cons</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Risk of staleness with long TTLs</li>
-                <li>Memory overhead for large cache sizes</li>
-                <li>Versioning/invalidation complexity</li>
-                <li>Semantic cache tuning challenges</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ),
-      notes: 'Technique 5: Cache query embeddings to eliminate redundant embedding model calls for frequent queries'
-    }
-      ]
-    },
-    {
-      id: 'the-11-techniques',
-      title: 'The 11 Techniques',
-      slides: [
-    {
-      id: 8,
-      title: '6. Cache Frequent Retrieval Results',
-      icon: { name: 'duo-floppy-disk' },
-      content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
-          <div>
-              <p><strong>Goal:</strong></p>
-              <p>Skip vector DB operations for repeated queries, eliminating expensive similarity search operations.</p>
-            </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
-            <div>
-              <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
-                <strong>When to Use</strong>
-              </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
-                <li>Mostly static document corpora</li>
-                <li>Applications with frequent repeat questions (FAQs)</li>
-                <li>Voice IVR/customer support systems</li>
-                <li>High-traffic applications where DB is a bottleneck</li>
-              </ul>
-            </div>
-            <div>
-              <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
-                <strong>How It Works</strong>
-              </div>
-              <p>Store and reuse search results for queries that have been previously processed:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
-                <li>Cache top-k document IDs and snippets using query text or embedding hash as key</li>
-                <li>Implement LRU (Least Recently Used) + TTL (Time To Live) cache structure</li>
-                <li>Set up cache invalidation triggers when documents are updated or added</li>
-                <li>Optionally implement semantic caching: reuse results for semantically similar queries</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ marginBottom: '1rem' }}>
-            <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
-              <strong>Steps</strong>
-            </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
-              <ul>
-                <li>Create cache key: Use hash(query) or hash(rounded_embedding) as lookup key</li>
-                <li>Store rich results: Cache document IDs, relevance scores, and short snippets</li>
-                <li>Set appropriate TTL: Configure 15–120 minute expiration based on update frequency</li>
-                <li>Implement invalidation: On document updates, invalidate by namespace/collection/version</li>
-                <li>Monitor hit rate: Track and tune cache size based on hit/miss metrics</li>
-              </ul>
-            </div>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
-                <strong>Pros</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Dramatic latency reduction (often 10-100x)</li>
-                <li>Significantly fewer vector DB calls</li>
-                <li>Lower operational costs</li>
-                <li>More stable and predictable performance</li>
-                <li>Reduced infrastructure requirements</li>
-              </ul>
-            </div>
-            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
-                <strong>Cons</strong>
-              </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Risk of serving stale results</li>
-                <li>Complex invalidation logic required</li>
-                <li>Cache warm-up period needed</li>
-                <li>Memory overhead for storing cached results</li>
-                <li>Potential cache consistency issues</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ),
-      notes: 'Technique 6: Cache retrieval results to eliminate expensive vector DB operations for common queries'
+      backgroundColor: '#571d6b',
+      notes: ''
     }
       ]
     },
@@ -722,21 +443,333 @@ export const ragLatencyDeck: Deck = {
       slides: [
     {
       id: 9,
-      title: '7. Use Re-Ranking Only on Top Few Results',
-      icon: { name: 'duo-ranking-star' },
+      title: '4. Use Approximate Nearest Neighbor Indexes',
+      icon: { name: 'duo-network-wired' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
-              <p>Improve precision with minimal latency overhead by applying high-quality but slower ranking only to a small subset of retrieved results.</p>
+              <div><strong>Goal:</strong></div>
+              <p style={{ margin: '0px' }}>Accelerate vector search at scale without sacrificing too much accuracy.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                <li>Collections with 1M+ vectors</li>
+                <li>Applications with strict p95 latency targets</li>
+                <li>CPU-bound search environments</li>
+                <li>Large-scale production RAG systems</li>
+              </ul>
+            </div>
+            <div>
+              <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                <strong>How It Works</strong>
+              </div>
+              <p style={{ margin: '0px' }}>Two popular approaches for approximate nearest neighbor search:</p>
+              <div style={{ marginLeft: '1rem', fontSize: '1.2rem' }}>
+                <ul>
+                  <li>HNSW (Hierarchical Navigable Small World): Uses multi-layer graph structure with "shortcuts" at higher layers for efficient navigation. Parameters to tune include M (max connections), efSearch (search quality), and efConstruction (index quality).</li>
+                  <li>IVF (Inverted File): Partitions vector space into nlist clusters, searches only nprobe most relevant clusters. Can be combined with PQ (Product Quantization) to reduce memory.</li>
+                </ul>
+                <p style={{ margin: '0px' }}>Both methods trade exact results for approximate ones that are "good enough" for most cases, drastically improving search speed.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
+              <strong>Steps</strong>
+            </div>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
+              <ul>
+                <li>For HNSW: Start with M=16-32, efSearch=64-128, efConstruction=200-400</li>
+                <li>For IVF: Choose nlist ≈ sqrt(N) where N is collection size, set nprobe to balance recall vs speed</li>
+                <li>Memory optimization: Consider IVF+PQ for lower RAM usage if memory is constrained</li>
+                <li>Test with filters: Evaluate performance with attribute filters as they can impact latency</li>
+                <li>Benchmark: Compare accuracy and latency across parameter settings to find optimal configuration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#281d6b',
+      notes: ''
+    },
+    {
+      id: 10,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
+                <strong>Pros</strong>
+              </div>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Order-of-magnitude speedups (10-100x faster)</li>
+                <li>Scalable to billions of vectors</li>
+                <li>Well-supported in major vector DB platforms</li>
+                <li>Configurable performance-accuracy tradeoff</li>
+                <li>Enables real-time search in large datasets</li>
+              </ul>
+            </div>
+            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
+                <strong>Cons</strong>
+              </div>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>HNSW has higher memory overhead</li>
+                <li>Only approximate recall (not 100% exact matches)</li>
+                <li>Requires parameter tuning and testing</li>
+                <li>Filtered searches can be slower (especially with HNSW)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#281d6b',
+      notes: ''
+    }
+      ]
+    },
+    {
+      id: 'the-11-techniques',
+      title: 'The 11 Techniques',
+      slides: [
+    {
+      id: 11,
+      title: '5. Cache Frequent Query Embeddings',
+      icon: { name: 'duo-database' },
+      content: (
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
+          <div>
+              <div><strong>Goal:</strong></div>
+              <p style={{ margin: '6px 0' }}>Avoid recomputing embeddings for repeated queries, significantly reducing embedding model latency and API costs.</p>
+            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
+            <div>
+              <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
+                <strong>When to Use</strong>
+              </div>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                <li>FAQs and support bots with repetitive queries</li>
+                <li>Dashboard or analytics applications</li>
+                <li>Systems with bursty traffic patterns</li>
+                <li>Applications with predictable query patterns</li>
+              </ul>
+            </div>
+            <div>
+              <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} /> 
+                <strong>How It Works</strong>
+              </div>
+              <p style={{ marginBottom: '0px' }}>Store and reuse embeddings for previously seen queries to bypass the embedding model:</p>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                <li>Implement LRU+TTL cache keyed by normalized query text</li>
+                <li>Store vector embeddings for frequent queries in memory or distributed cache</li>
+                <li>Optionally implement semantic cache to match similar but non-identical queries</li>
+                <li>For semantic caching, use nearest-neighbor lookup of query embeddings with a similarity threshold</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
+              <strong>Steps</strong>
+            </div>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
+              <ul>
+                <li>Normalize queries: Lowercase, trim whitespace, redact PII, standardize format</li>
+                <li>Configure cache parameters: Set TTL (1-24h) and size based on traffic patterns</li>
+                <li>Implement hit/miss tracking: Monitor cache performance metrics</li>
+                <li>For semantic caching: Reuse embedding if cosine similarity ≥ threshold (e.g., δ ≥ 0.92)</li>
+                <li>Add versioning mechanism: Invalidate cache when embedding model changes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1d416b',
+      notes: ''
+    },
+    {
+      id: 12,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
+                <strong>Pros</strong>
+              </div>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Instant reuse for identical queries</li>
+                <li>Drastically reduces embedding model API calls</li>
+                <li>Stabilizes latency under load</li>
+                <li>Improves throughput and cost efficiency</li>
+                <li>Zero quality impact for exact matches</li>
+              </ul>
+            </div>
+            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
+                <strong>Cons</strong>
+              </div>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Risk of staleness with long TTLs</li>
+                <li>Memory overhead for large cache sizes</li>
+                <li>Versioning/invalidation complexity</li>
+                <li>Semantic cache tuning challenges</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1d416b',
+      notes: ''
+    }
+      ]
+    },
+    {
+      id: 'the-11-techniques',
+      title: 'The 11 Techniques',
+      slides: [
+    {
+      id: 13,
+      title: '6. Cache Frequent Retrieval Results',
+      icon: { name: 'duo-floppy-disk' },
+      content: (
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
+          <div>
+              <div><strong>Goal:</strong></div>
+              <p style={{ margin: '6px 0' }}>Skip vector DB operations for repeated queries, eliminating expensive similarity search operations.</p>
+            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
+            <div>
+              <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
+                <strong>When to Use</strong>
+              </div>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                <li>Mostly static document corpora</li>
+                <li>Applications with frequent repeat questions (FAQs)</li>
+                <li>Voice IVR/customer support systems</li>
+                <li>High-traffic applications where DB is a bottleneck</li>
+              </ul>
+            </div>
+            <div>
+              <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                <strong>How It Works</strong>
+              </div>
+              <p style={{ marginBottom: '0px' }}>Store and reuse search results for queries that have been previously processed:</p>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                <li>Cache top-k document IDs and snippets using query text or embedding hash as key</li>
+                <li>Implement LRU (Least Recently Used) + TTL (Time To Live) cache structure</li>
+                <li>Set up cache invalidation triggers when documents are updated or added</li>
+                <li>Optionally implement semantic caching: reuse results for semantically similar queries</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
+              <strong>Steps</strong>
+            </div>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
+              <ul>
+                <li>Create cache key: Use hash(query) or hash(rounded_embedding) as lookup key</li>
+                <li>Store rich results: Cache document IDs, relevance scores, and short snippets</li>
+                <li>Set appropriate TTL: Configure 15–120 minute expiration based on update frequency</li>
+                <li>Implement invalidation: On document updates, invalidate by namespace/collection/version</li>
+                <li>Monitor hit rate: Track and tune cache size based on hit/miss metrics</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1d6b63',
+      notes: ''
+    },
+    {
+      id: 14,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
+                <strong>Pros</strong>
+              </div>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Dramatic latency reduction (often 10-100x)</li>
+                <li>Significantly fewer vector DB calls</li>
+                <li>Lower operational costs</li>
+                <li>More stable and predictable performance</li>
+                <li>Reduced infrastructure requirements</li>
+              </ul>
+            </div>
+            <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
+                <strong>Cons</strong>
+              </div>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Risk of serving stale results</li>
+                <li>Complex invalidation logic required</li>
+                <li>Cache warm-up period needed</li>
+                <li>Memory overhead for storing cached results</li>
+                <li>Potential cache consistency issues</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      ),
+      backgroundColor: '#1d6b63',
+      notes: ''
+    }
+      ]
+    },
+    {
+      id: 'the-11-techniques',
+      title: 'The 11 Techniques',
+      slides: [
+    {
+      id: 15,
+      title: '7. Use Re-Ranking Only on Top Few Results',
+      icon: { name: 'duo-ranking-star' },
+      content: (
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
+          <div>
+              <div><strong>Goal:</strong></div>
+              <p style={{ margin: '6px 0' }}>Improve precision with minimal latency overhead by applying high-quality but slower ranking only to a small subset of retrieved results.</p>
+            </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
+            <div>
+              <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
+                <strong>When to Use</strong>
+              </div>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Need quality boost beyond vector search</li>
                 <li>Latency budget is tight</li>
                 <li>Complex semantic matching needs</li>
@@ -745,11 +778,11 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
-              <p>Two-stage retrieval process that combines speed and quality:</p>
-              <ul>
+              <p style={{ marginBottom: '0px' }}>Two-stage retrieval process that combines speed and quality:</p>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>First stage: Fast ANN vector search retrieves larger set (K1) of candidates</li>
                 <li>Second stage: Cross-encoder or reranker model evaluates only a subset (m) of those candidates</li>
                 <li>Only the top m ≪ K1 candidates go through reranking (e.g., 10-20 out of 50-100)</li>
@@ -760,11 +793,11 @@ export const ragLatencyDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem' }}>
-            <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
+            <div style={{ color: '#d19a66', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Initial retrieval: Retrieve K1=50–100 documents quickly using vector search</li>
                 <li>Subset selection: Pass only top m=10–20 candidates to reranker</li>
@@ -775,15 +808,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#1d6b29',
+      notes: ''
+    },
+    {
+      id: 16,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Higher relevance with bounded cost</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Higher relevance with bounded cost</li>
                 <li>Stable user experience</li>
                 <li>Better handling of semantic nuances</li>
                 <li>Minimizes compute on expensive models</li>
@@ -791,12 +834,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Extra component to maintain</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Extra component to maintain</li>
                 <li>Additional GPU/throughput costs</li>
                 <li>Requires careful batching</li>
                 <li>If first stage misses relevant docs, reranker can't recover</li>
@@ -806,7 +849,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 7: Apply expensive reranking models only to a small subset of initially retrieved results for quality-efficiency balance'
+      backgroundColor: '#1d6b29',
+      notes: ''
     }
       ]
     },
@@ -815,22 +859,23 @@ export const ragLatencyDeck: Deck = {
       title: 'The 11 Techniques',
       slides: [
     {
-      id: 10,
+      id: 17,
       title: '8. Use Context Compression Before LLM Call',
       icon: { name: 'duo-compress' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
+              <div><strong>Goal:</strong></div>
               <p>Reduce tokens sent to the LLM, lowering Time to First Token (TTFT) and cost while preserving essential information.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Applications with long retrieved chunks</li>
                 <li>When using expensive LLMs</li>
                 <li>Systems with strict TTFT targets</li>
@@ -839,7 +884,7 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <p>Apply intelligent reduction techniques to minimize prompt size without losing critical context:</p>
@@ -854,10 +899,10 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Compress retrieved documents: Transform N retrieved docs into concise passages (keep citations/IDs)</li>
                 <li>Set token budget: Cap final context (e.g., 800–1500 tokens) with safety margin for LLM response</li>
@@ -867,15 +912,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#4a6b1d',
+      notes: ''
+    },
+    {
+      id: 18,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Faster generation (reduced TTFT)</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Faster generation (reduced TTFT)</li>
                 <li>Lower LLM inference costs</li>
                 <li>Improved focus by removing distracting content</li>
                 <li>Fits more context in limited windows</li>
@@ -883,12 +938,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Risk of dropping critical details</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Risk of dropping critical details</li>
                 <li>Adds extra model call to the pipeline</li>
                 <li>May reduce answer completeness</li>
                 <li>Requires careful tuning and monitoring</li>
@@ -898,7 +953,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 8: Apply intelligent context compression to reduce prompt size without losing critical information'
+      backgroundColor: '#4a6b1d',
+      notes: ''
     }
       ]
     },
@@ -907,22 +963,23 @@ export const ragLatencyDeck: Deck = {
       title: 'The 11 Techniques',
       slides: [
     {
-      id: 11,
+      id: 19,
       title: '9. Parallelize Retrieval + Re-Rank',
       icon: { name: 'duo-gears' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
+              <div><strong>Goal:</strong></div>
               <p>Shorten the critical path via concurrency and parallelization to reduce overall RAG latency.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Applications with heterogeneous data sources</li>
                 <li>Systems with significant network I/O wait times</li>
                 <li>RAG pipelines with high p95 latency variance</li>
@@ -931,11 +988,11 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <p>Execute multiple search operations concurrently and process results as they arrive:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Issue retrieval requests to multiple sources simultaneously (vector DB, keyword search, APIs)</li>
                 <li>Stream retrieved chunks into reranker as they arrive rather than waiting for all retrievals to complete</li>
                 <li>Implement pipeline parallelism where each stage begins processing partial results from previous stage</li>
@@ -946,10 +1003,10 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Configure async retrievals: Set up concurrent API calls with Promise.all() or async/await patterns</li>
                 <li>Implement timeouts: Set per-source deadlines (e.g., 200-500ms) and circuit breakers</li>
@@ -959,15 +1016,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#6b641d',
+      notes: ''
+    },
+    {
+      id: 20,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Significant wall-clock time reduction</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Significant wall-clock time reduction</li>
                 <li>Resilience to slow or failing data sources</li>
                 <li>Better utilization of compute resources</li>
                 <li>Improved perceived user response time</li>
@@ -975,12 +1042,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Increased implementation complexity</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Increased implementation complexity</li>
                 <li>Potential resource contention issues</li>
                 <li>Non-deterministic result ordering</li>
                 <li>Harder to debug and maintain</li>
@@ -990,7 +1057,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 9: Use concurrency and parallelization to reduce overall RAG pipeline latency'
+      backgroundColor: '#6b641d',
+      notes: ''
     }
       ]
     },
@@ -999,22 +1067,23 @@ export const ragLatencyDeck: Deck = {
       title: 'The 11 Techniques',
       slides: [
     {
-      id: 12,
+      id: 21,
       title: '10. Use Streaming / Partial Generation',
       icon: { name: 'duo-stream' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
+              <div><strong>Goal:</strong></div>
               <p>Reduce perceived latency (time-to-first-token) and enable early text-to-speech conversion for better user experience.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Chat/agent applications with conversational UIs</li>
                 <li>Live voice assistants and call centers</li>
                 <li>Customer support applications</li>
@@ -1023,11 +1092,11 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <p>Rather than waiting for the complete LLM response, stream tokens incrementally as they're generated:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Use Server-Sent Events (SSE) or WebSockets to stream tokens from server to client</li>
                 <li>Progressively render UI elements as tokens arrive, creating typing-like effect</li>
                 <li>For voice applications, buffer complete sentences before TTS conversion</li>
@@ -1039,10 +1108,10 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Enable streaming API: Configure LLM provider's streaming endpoint (stream=True)</li>
                 <li>Set performance targets: Establish first-token SLA (e.g., &lt;300ms) and token heartbeat rate</li>
@@ -1052,15 +1121,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#6b471d',
+      notes: ''
+    },
+    {
+      id: 22,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Dramatically improves perceived responsiveness</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Dramatically improves perceived responsiveness</li>
                 <li>Allows users to interrupt generation to save cost</li>
                 <li>Reduces wait frustration for end-users</li>
                 <li>Masks backend processing variance</li>
@@ -1068,12 +1147,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>More complex client/server implementation</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>More complex client/server implementation</li>
                 <li>Harder post-processing for partial structured outputs</li>
                 <li>Requires retry/guardrail handling for interrupted content</li>
                 <li>Can complicate analytics and logging pipelines</li>
@@ -1083,7 +1162,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 10: Stream LLM responses incrementally to dramatically improve perceived responsiveness'
+      backgroundColor: '#6b471d',
+      notes: ''
     }
       ]
     },
@@ -1092,22 +1172,23 @@ export const ragLatencyDeck: Deck = {
       title: 'The 11 Techniques',
       slides: [
     {
-      id: 13,
+      id: 23,
       title: '11. Use Distilled or Smaller LLM for RAG Answering',
       icon: { name: 'duo-wand-magic-sparkles' },
       content: (
-        <div style={{ fontSize: '0.8rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div>
-              <p><strong>Goal:</strong></p>
+              <div><strong>Goal:</strong></div>
               <p>Lower TTFT (Time To First Token) and total generation time with acceptable accuracy for RAG applications.</p>
             </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Latency-critical tasks (real-time chat/voice)</li>
                 <li>Straightforward Q&A applications</li>
                 <li>High throughput requirements</li>
@@ -1116,11 +1197,11 @@ export const ragLatencyDeck: Deck = {
             </div>
             <div>
               <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-circle-check" sizeName="lg" darkModeInvert={true} />
+                <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                 <strong>How It Works</strong>
               </div>
               <p>Replace large models with smaller but efficient alternatives while maintaining acceptable quality:</p>
-              <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+              <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
                 <li>Use Small Language Models (SLMs) like Gemini Flash 8B, Claude Haiku, Mistral 7B, Llama 3.1 8B</li>
                 <li>Apply quantization techniques (INT8/INT4) for additional speedup</li>
                 <li>Implement context caching for frequent queries</li>
@@ -1132,10 +1213,10 @@ export const ragLatencyDeck: Deck = {
 
           <div style={{ marginBottom: '1rem' }}>
             <div style={{ color: '#d19a66', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-list-ol" sizeName="lg" darkModeInvert={true} />
+              <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
               <strong>Steps</strong>
             </div>
-            <div style={{ fontSize: '0.85rem', marginLeft: '1rem' }}>
+            <div style={{ fontSize: '1.2rem', marginLeft: '1rem' }}>
               <ul>
                 <li>Benchmark performance: Compare small vs large models on your task set; establish accuracy floor</li>
                 <li>Apply quantization: Test INT8/INT4 quantization if supported by your infrastructure</li>
@@ -1145,15 +1226,25 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
           </div>
-
+        </div>
+      ),
+      backgroundColor: '#6b1d1d',
+      notes: ''
+    },
+    {
+      id: 24,
+      title: 'Pros and Cons',
+      content: (
+        <div>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
             <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-thumbs-up" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Pros</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Significantly faster response times (3-10x)</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Significantly faster response times (3-10x)</li>
                 <li>Much lower compute costs per query</li>
                 <li>Higher throughput for busy applications</li>
                 <li>Reduced infrastructure requirements</li>
@@ -1161,12 +1252,12 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{  marginTop: '12px' }} darkModeInvert={true} />
                 <strong>Cons</strong>
               </div>
-              <ul style={{ marginLeft: '1.2rem', fontSize: '0.8rem', marginBottom: 0 }}>
-                <li>Potential loss of reasoning capabilities</li>
+              <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+              <li>Potential loss of reasoning capabilities</li>
                 <li>Reduced accuracy on complex edge cases</li>
                 <li>More sensitive to prompt engineering</li>
                 <li>Smaller context windows in many SLMs</li>
@@ -1176,7 +1267,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Technique 11: Replace large LLMs with smaller, distilled models to reduce latency while maintaining acceptable quality'
+      backgroundColor: '#6b1d1d',
+      notes: ''
     }
       ]
     },
@@ -1185,16 +1277,17 @@ export const ragLatencyDeck: Deck = {
       title: 'Summary',
       slides: [
     {
-      id: 14,
+      id: 25,
       title: 'Summary and Comparison',
       content: (
-        <div style={{ fontSize: '0.75rem', lineHeight: '1.5' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ marginBottom: '1rem' }}>
-            <div style={{ color: '#61dafb', fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-lightbulb" sizeName="lg" darkModeInvert={true} />
+            <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
               <strong>Key Takeaways</strong>
             </div>
-            <ul style={{ marginLeft: '1.5rem', fontSize: '0.85rem' }}>
+            <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
               <li><strong>Fix perceived latency first</strong> (Streaming), then critical-path bottlenecks (Retrieval, LLM)</li>
               <li><strong>Cache aggressively</strong> where correctness isn't impacted; invalidate reliably</li>
               <li><strong>Two-stage retrieval</strong> with light reranking often yields best quality-speed tradeoff</li>
@@ -1203,34 +1296,45 @@ export const ragLatencyDeck: Deck = {
           </div>
 
           <div style={{ marginBottom: '1rem' }}>
-            <div style={{ color: '#98c379', fontSize: '1rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-compass" sizeName="lg" darkModeInvert={true} />
+            <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-compass" sizeName="2x" darkModeInvert={true} />
               <strong>Quick Chooser</strong>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                <strong style={{ color: '#61dafb' }}>Immediate UX improvement:</strong>
-                <div style={{ marginTop: '0.3rem' }}>→ <strong>10</strong> Streaming / Partial Generation</div>
+                <strong style={{ color: '#61dafb', fontSize: '1.2rem' }}>Immediate UX improvement:</strong>
+                <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>10</strong> Streaming / Partial Generation</div>
               </div>
               <div style={{ background: 'rgba(209, 154, 102, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                <strong style={{ color: '#d19a66' }}>Retrieval-bound system:</strong>
-                <div style={{ marginTop: '0.3rem' }}>→ <strong>3</strong> Limit Top-K, <strong>4</strong> HNSW/IVF, <strong>2</strong> Smaller chunks</div>
+                <strong style={{ color: '#d19a66', fontSize: '1.2rem' }}>Retrieval-bound system:</strong>
+                <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>3</strong> Limit Top-K, <strong>4</strong> HNSW/IVF, <strong>2</strong> Smaller chunks</div>
               </div>
               <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                <strong style={{ color: '#e06c75' }}>Compute-bound system:</strong>
-                <div style={{ marginTop: '0.3rem' }}>→ <strong>1</strong> Smaller embeddings, <strong>11</strong> Smaller LLM</div>
+                <strong style={{ color: '#e06c75', fontSize: '1.2rem' }}>Compute-bound system:</strong>
+                <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>1</strong> Smaller embeddings, <strong>11</strong> Smaller LLM</div>
               </div>
               <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                <strong style={{ color: '#98c379' }}>Cost optimization:</strong>
-                <div style={{ marginTop: '0.3rem' }}>→ <strong>5, 6</strong> Caching, <strong>8</strong> Compression</div>
+                <strong style={{ color: '#98c379', fontSize: '1.2rem' }}>Cost optimization:</strong>
+                <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>5, 6</strong> Caching, <strong>8</strong> Compression</div>
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#1d6b1f',
+      notes: ''
+    },
+    {
+      id: 26,
+      title: 'Summary and Comparison',
+      content: (
+        <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
+          <div style={{ marginBottom: '30px' }}></div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
-              <div style={{ color: '#c678dd', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-scale-balanced" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#c678dd', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-scale-balanced" sizeName="2x" darkModeInvert={true} />
                 <strong>Speed vs Recall</strong>
               </div>
               <p>These techniques involve balance between speed and retrieval accuracy:</p>
@@ -1243,8 +1347,8 @@ export const ragLatencyDeck: Deck = {
               </ul>
             </div>
             <div>
-              <div style={{ color: '#e5c07b', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                <SvgIcon iconName="duo-stream" sizeName="lg" darkModeInvert={true} />
+              <div style={{ color: '#e5c07b', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <SvgIcon iconName="duo-stream" sizeName="2x" darkModeInvert={true} />
                 <strong>Quality vs Cost</strong>
               </div>
               <p>These techniques balance answer quality against operational costs:</p>
@@ -1257,11 +1361,11 @@ export const ragLatencyDeck: Deck = {
           </div>
 
           <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
-            <div style={{ color: '#61dafb', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <SvgIcon iconName="duo-clipboard-check" sizeName="lg" darkModeInvert={true} />
+            <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <SvgIcon iconName="duo-clipboard-check" sizeName="2x" darkModeInvert={true} />
               <strong>Next Steps</strong>
             </div>
-            <ol style={{ marginLeft: '1.2rem', fontSize: '0.85rem', marginBottom: 0 }}>
+            <ol style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
               <li>Establish baseline metrics (TTFT, p95 latency, recall@k, cost/query)</li>
               <li>Introduce 2-3 techniques that address your bottlenecks first</li>
               <li>A/B test changes to measure impact on both speed and answer quality</li>
@@ -1270,7 +1374,8 @@ export const ragLatencyDeck: Deck = {
           </div>
         </div>
       ),
-      notes: 'Summary with key takeaways, quick chooser for common scenarios, and tradeoff comparison'
+      backgroundColor: '#1d6b1f',
+      notes: ''
     }
       ]
     }
