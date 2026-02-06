@@ -177,7 +177,7 @@ export const rerankingModelsDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#0f3460',
+      backgroundColor: '#371c6d',
       notes: ''
     },
     {
@@ -211,7 +211,7 @@ export const rerankingModelsDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#0f3460',
+      backgroundColor: '#371c6d',
       notes: ''
     },
     {
@@ -246,7 +246,7 @@ export const rerankingModelsDeck: Deck = {
           </div>
         </div>
       ),
-      backgroundColor: '#0f3460',
+      backgroundColor: '#371c6d',
       notes: ''
     }
       ]
@@ -256,15 +256,17 @@ export const rerankingModelsDeck: Deck = {
       title: 'The 11 Models',
       slides: [
     {
-      id: 4,
+      id: 6,
       title: '2) BERT-based Cross Encoder (ms-marco-MiniLM-L-6-v2)',
       icon: { name: 'duo-gauge-high' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment:</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Provides cross-encoder accuracy with a lighter, faster model for practical deployment:</p>
               <ul>
                 <li>Balance between semantic understanding and computational efficiency</li>
                 <li>Production-ready reranking without heavy GPU requirements</li>
@@ -272,16 +274,16 @@ export const rerankingModelsDeck: Deck = {
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Knowledge distillation from larger BERT models into compact architecture:</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Knowledge distillation from larger BERT models into compact architecture:</p>
               <ul>
                 <li>Uses MiniLM/DistilBERT techniques to compress model while preserving ranking capabilities</li>
                 <li>Fine-tuned specifically on MS MARCO passage ranking dataset (8.8M query-passage pairs)</li>
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>When deployment efficiency and response time matter</li>
                 <li>For English-centric search applications</li>
                 <li>In production systems with moderate hardware</li>
@@ -290,9 +292,9 @@ export const rerankingModelsDeck: Deck = {
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Query-document pairs (same as standard cross-encoders)</p>
-              <pre style={{ marginTop: '5px', fontSize: '0.75em', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
+              <pre style={{ marginTop: '5px', fontSize: '1rem', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
 {`from sentence_transformers import CrossEncoder
 
 model = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
@@ -303,17 +305,29 @@ pairs = [
 `}
               </pre>
               <p>Output: Calibrated relevance scores</p>
-              <pre style={{ marginTop: '5px', fontSize: '0.75em', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
+              <pre style={{ marginTop: '5px', fontSize: '1rem', background: 'rgba(0,0,0,0.3)', padding: '6px', borderRadius: '3px', overflow: 'auto' }}>
 {`scores = model.predict(pairs)
 # [0.87, 0.65]  # Higher = more relevant`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#50215d',
+      notes: ''
+    },
+    {
+      id: 7,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example: Medical Query</strong></p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+            <p style={{ fontSize: '2rem' }}><strong>Example: Medical Query</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
               <div>
-                <p><strong>Query:</strong> "Side effects of ACE inhibitors in diabetics?"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Side effects of ACE inhibitors in diabetics?"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) General diabetes treatment overview</li>
@@ -331,11 +345,23 @@ pairs = [
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#50215d',
+      notes: ''
+    },
+    {
+      id: 8,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Efficient Practical Low Footprint</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>2-4x faster than full BERT cross-encoders</li>
                 <li>Only 90MB model size (vs. 440MB+ for base BERT)</li>
                 <li>Works well on CPU for moderate throughput</li>
@@ -344,9 +370,9 @@ pairs = [
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>English-centric Truncation Specialized</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Primarily trained on English MS MARCO dataset</li>
                 <li>512 token truncation limits long document scoring</li>
                 <li>Still slower than pure bi-encoders (1-3 orders of magnitude)</li>
@@ -357,8 +383,8 @@ pairs = [
           </div>
         </div>
       ),
-      backgroundColor: '#1a1a2e',
-      notes: 'Model 2: Distilled model for practical deployment'
+      backgroundColor: '#50215d',
+      notes: ''
     }
       ]
     },
@@ -367,15 +393,17 @@ pairs = [
       title: 'The 11 Models',
       slides: [
     {
-      id: 5,
+      id: 9,
       title: '3) MonoT5 Re-Ranker',
       icon: { name: 'duo-brain' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>High-accuracy pointwise generative reranking approach that frames relevance as a text generation problem.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>High-accuracy pointwise generative reranking approach that frames relevance as a text generation problem.</p>
               <ul>
                 <li>Provides superior accuracy through generative assessment</li>
                 <li>Offers strong zero-shot and few-shot capabilities</li>
@@ -383,13 +411,13 @@ pairs = [
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>T5 encoder-decoder predicts "true" or "false" tokens for relevance. Higher P("true") = Higher relevance score.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>T5 encoder-decoder predicts "true" or "false" tokens for relevance. Higher P("true") = Higher relevance score.</p>
               <p>Key mechanism: Convert relevance judgment into a text generation task, predicting "true" or "false" tokens</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Web search and QA datasets where accuracy is paramount</li>
                 <li>When higher latency is acceptable for better precision</li>
                 <li>For transfer learning across domains (zero/few-shot)</li>
@@ -398,23 +426,35 @@ pairs = [
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Formatted text prompt combining query and document</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`prompt = f"Query: {query} Document: {document} Relevant?"`}
               </pre>
               <p>Output: Probability of generating "true" token as relevance score</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`score = model.predict(prompt)  
 # Higher probability of "true" = higher relevance`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#257556',
+      notes: ''
+    },
+    {
+      id: 10,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example: RAG Query</strong></p>
+            <p style={{ fontSize: '2rem' }}><strong>Example: RAG Query</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
-                <p><strong>Query:</strong> "What is FiD in RAG?"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "What is FiD in RAG?"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) Fusion-in-Decoder definition</li>
@@ -432,11 +472,23 @@ pairs = [
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#257556',
+      notes: ''
+    },
+    {
+      id: 11,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Top Accuracy Flexible Zero-shot</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Excellent accuracy, often outperforming BERT-based rankers</li>
                 <li>Strong transfer learning to new domains</li>
                 <li>Flexible prompting allows adapting to different tasks</li>
@@ -445,9 +497,9 @@ pairs = [
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Latency Resources Cost</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Higher latency due to encoder-decoder architecture</li>
                 <li>Larger models (up to billions of parameters)</li>
                 <li>More computationally expensive than BERT-based models</li>
@@ -458,8 +510,8 @@ pairs = [
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#257556',
+      notes: ''
     }
       ]
     },
@@ -468,15 +520,17 @@ pairs = [
       title: 'The 11 Models',
       slides: [
     {
-      id: 6,
+      id: 12,
       title: '4) MonoBERT Re-Ranker',
       icon: { name: 'duo-copy' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Strong transformer-based reranking without the complexity and overhead of encoder-decoder architectures.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Strong transformer-based reranking without the complexity and overhead of encoder-decoder architectures.</p>
               <ul>
                 <li>Provides efficient relevance scoring for passages</li>
                 <li>Offers semantic understanding beyond keyword matching</li>
@@ -484,16 +538,16 @@ pairs = [
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses BERT architecture with a classification head to output relevance scores:</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses BERT architecture with a classification head to output relevance scores:</p>
               <ul>
                 <li>Single-pass pointwise scoring for query-document pairs</li>
               </ul>
               <p>Key mechanism: [CLS] query [SEP] document [SEP] → BERT → classification head → relevance score</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Classic Information Retrieval (IR) pipelines</li>
                 <li>When you have medium latency budgets</li>
                 <li>Primarily for English-language corpora</li>
@@ -502,25 +556,37 @@ pairs = [
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Query and document pairs as text</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`inputs = {
   "query": "TLS vs mTLS security",
   "documents": ["doc1_text", "doc2_text", ...] 
 }`}
               </pre>
               <p>Output: Relevance scores or binary classifications (relevant/not relevant)</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`scores = [0.87, 0.42, ...]  # Higher = more relevant`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#73262e',
+      notes: ''
+    },
+    {
+      id: 13,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
               <div>
-                <p><strong>Query:</strong> "TLS vs mTLS"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "TLS vs mTLS"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) Basic TLS overview</li>
@@ -538,11 +604,23 @@ pairs = [
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#73262e',
+      notes: ''
+    },
+    {
+      id: 14,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Reliable Available Established</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Solid accuracy above traditional retrieval methods</li>
                 <li>Widely available pre-trained checkpoints</li>
                 <li>Well-tested in production environments</li>
@@ -551,9 +629,9 @@ pairs = [
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Speed Length Domain</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Slower than MiniLM and other distilled variants</li>
                 <li>Limited by BERT's 512 token truncation</li>
                 <li>Performance degrades with domain shift</li>
@@ -564,9 +642,9 @@ pairs = [
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
-    },
+      backgroundColor: '#73262e',
+      notes: ''
+    }
       ]
     },
     {
@@ -574,15 +652,17 @@ pairs = [
       title: 'The 11 Models',
       slides: [
     {
-      id: 7,
+      id: 15,
       title: '5) ColBERT / ColBERTv2 (Late Interaction)',
       icon: { name: 'duo-graduation-cap' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Provides precise token-level matching between queries and documents while maintaining efficiency and scalability.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Provides precise token-level matching between queries and documents while maintaining efficiency and scalability.</p>
               <ul>
                 <li>Balances deep semantic understanding with computational efficiency</li>
                 <li>Preserves term-specific representations instead of single-vector compression</li>
@@ -590,13 +670,13 @@ pairs = [
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Employs late interaction pattern: encodes queries and documents independently, but performs fine-grained token-level matching.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Employs late interaction pattern: encodes queries and documents independently, but performs fine-grained token-level matching.</p>
               <p>Key mechanism: MaxSim operation matches each query token to its most similar document token, then aggregates scores</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>When term-by-term alignment is important (technical/medical content)</li>
                 <li>For long documents where specific sections may be relevant</li>
                 <li>When you need balance between efficiency and deep matching</li>
@@ -605,23 +685,36 @@ pairs = [
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Query tokens and document tokens (as separate embeddings)</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`query_embeddings = model.encode_query(query)  # [Q tokens × dim]
 doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               </pre>
               <p>Output: MaxSim-based relevance score from token interactions</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
-{`score = colbert.score(query_embeddings, doc_embeddings)  # Scalar score`}
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
+{`score = colbert.score(query_embeddings, doc_embeddings)
+ # Scalar score`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#486d24',
+      notes: ''
+    },
+    {
+      id: 16,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
               <div>
-                <p><strong>Query:</strong> "Rotate S3 access keys safely"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Rotate S3 access keys safely"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) AWS general overview</li>
@@ -639,11 +732,23 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#486d24',
+      notes: ''
+    },
+    {
+      id: 17,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Precision Efficiency Scalable</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Token-level matching captures nuanced relevance signals</li>
                 <li>Maintains efficiency of separate encoding with accuracy of cross-attention</li>
                 <li>Indexes can be compressed and queried with ANN techniques</li>
@@ -652,9 +757,9 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Complexity Storage Setup</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>More complex to implement than standard bi/cross encoders</li>
                 <li>Higher storage requirements than single-vector models</li>
                 <li>Requires specialized indexing infrastructure</li>
@@ -665,8 +770,8 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#486d24',
+      notes: ''
     }
       ]
     },
@@ -675,15 +780,17 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
       title: 'The 11 Models',
       slides: [
     {
-      id: 8,
+      id: 18,
       title: '6) E5-Ranker (e.g., intfloat/e5-mistral) as Bi-Encoder Re-Rank',
       icon: { name: 'duo-brain-circuit' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Enables fast and efficient rescoring of documents using strong sentence embeddings while maintaining reasonable accuracy.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Enables fast and efficient rescoring of documents using strong sentence embeddings while maintaining reasonable accuracy.</p>
               <ul>
                 <li>Provides efficient alternative to computationally intensive cross-encoders</li>
                 <li>Balances speed and accuracy for high-throughput applications</li>
@@ -691,13 +798,13 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Processes query and documents separately with same encoder, then computes similarity.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Processes query and documents separately with same encoder, then computes similarity.</p>
               <p>Key mechanism: Encode query_emb and doc_emb independently → compute cosine similarity → rerank top-K</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Low-latency applications where speed is critical</li>
                 <li>CPU-only environments without GPU acceleration</li>
                 <li>High-throughput systems requiring efficient scaling</li>
@@ -707,9 +814,9 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Query and document texts processed separately</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`// Encode separately
 query_emb = model.encode(query)
 doc_embs = [model.encode(doc) for doc in documents]
@@ -719,16 +826,28 @@ scores = [cosine_similarity(query_emb, doc_emb)
           for doc_emb in doc_embs]`}
               </pre>
               <p>Output: Similarity scores between -1 and 1 (typically normalized to 0-1)</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`scores = [0.87, 0.65, 0.42, ...]  # Higher = more relevant`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#541d5f',
+      notes: ''
+    },
+    {
+      id: 19,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
               <div>
-                <p><strong>Query:</strong> "GDPR data deletion timeline"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "GDPR data deletion timeline"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) Generic GDPR compliance article</li>
@@ -746,11 +865,23 @@ scores = [cosine_similarity(query_emb, doc_emb)
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#541d5f',
+      notes: ''
+    },
+    {
+      id: 20,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Speed Efficiency Scalable Multilingual</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Very fast compared to cross-encoders (5-20x speedup)</li>
                 <li>Works well on CPUs without requiring GPU acceleration</li>
                 <li>Efficient for high-volume production systems</li>
@@ -759,9 +890,9 @@ scores = [cosine_similarity(query_emb, doc_emb)
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Precision Reasoning Context</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Lower precision than cross-encoders (10-15% accuracy gap)</li>
                 <li>Limited reasoning about relationships between query and document</li>
                 <li>Information loss from compressing documents into single vectors</li>
@@ -772,8 +903,8 @@ scores = [cosine_similarity(query_emb, doc_emb)
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#541d5f',
+      notes: ''
     }
       ]
     },
@@ -782,15 +913,17 @@ scores = [cosine_similarity(query_emb, doc_emb)
       title: 'The 11 Models',
       slides: [
     {
-      id: 9,
+      id: 21,
       title: '7) LLM-as-a-Ranker (RankGPT-style)',
       icon: { name: 'duo-rocket' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Leverages large language models' reasoning capabilities to perform sophisticated relevance ranking beyond traditional re-rankers.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Leverages large language models' reasoning capabilities to perform sophisticated relevance ranking beyond traditional re-rankers.</p>
               <ul>
                 <li>Handles complex, multi-criteria document evaluation</li>
                 <li>Performs listwise ranking rather than just pairwise comparisons</li>
@@ -799,13 +932,13 @@ scores = [cosine_similarity(query_emb, doc_emb)
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a large language model's reasoning abilities to evaluate and rank document relevance.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a large language model's reasoning abilities to evaluate and rank document relevance.</p>
               <p>Key mechanism: Prompt LLM to compare documents → reason about relevance → output ordered ranking</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>High-stakes QA applications where accuracy trumps cost</li>
                 <li>For ambiguous or multi-hop queries requiring reasoning</li>
                 <li>When dealing with new domains without training data</li>
@@ -814,13 +947,12 @@ scores = [cosine_similarity(query_emb, doc_emb)
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
-              <p>Input: Query and numbered documents list in a prompt</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}>Input: Query and numbered documents list in a prompt</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`prompt = f"""
 Rank these passages based on relevance to query: 
 "{query}"
-
 [1] {document_1}
 [2] {document_2}
 ...
@@ -828,27 +960,39 @@ Return ranking as: [3, 1, 2, ...]
 """`}
               </pre>
               <p>Output: Ordered list of document IDs based on relevance</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`[3, 1, 5, 2, 4]  # Most to least relevant`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#54611f',
+      notes: ''
+    },
+    {
+      id: 22,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
               <div>
-                <p><strong>Query:</strong> "Pros/cons of eventual consistency for checkout systems?"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Pros/cons of eventual consistency for checkout systems?"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) General database concepts</li>
                   <li>B) E-commerce design patterns</li>
                   <li>C) System design with consistency trade-offs</li>
                 </ul>
-                <p style={{ marginTop: '5px' }}><strong>LLM reasoning:</strong></p>
+                <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>LLM reasoning:</strong></p>
                 <p>"Doc C directly addresses consistency trade-offs in systems. Doc B covers e-commerce patterns which may include checkout. Doc A is too general."</p>
               </div>
               <div>
-                <p><strong>Ranking:</strong></p>
+                <p style={{ margin: '0px' }}><strong>Ranking:</strong></p>
                 <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
                   <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>1st → C) System design with consistency trade-offs</div>
                   <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>2nd → B) E-commerce design patterns</div>
@@ -857,11 +1001,23 @@ Return ranking as: [3, 1, 2, ...]
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#54611f',
+      notes: ''
+    },
+    {
+      id: 23,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Reasoning Zero-shot Adaptable Multilingual</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Superior reasoning about complex relevance criteria</li>
                 <li>Excellent zero-shot performance without task-specific training</li>
                 <li>Adaptable to changing ranking requirements via prompting</li>
@@ -870,9 +1026,9 @@ Return ranking as: [3, 1, 2, ...]
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Cost Latency Scaling</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Highest cost among re-ranking approaches (10-50x more expensive)</li>
                 <li>High latency (1-5 seconds per query)</li>
                 <li>Prompt engineering sensitivity and potential inconsistency</li>
@@ -883,8 +1039,8 @@ Return ranking as: [3, 1, 2, ...]
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#54611f',
+      notes: ''
     }
       ]
     },
@@ -893,15 +1049,17 @@ Return ranking as: [3, 1, 2, ...]
       title: 'The 11 Models',
       slides: [
     {
-      id: 10,
+      id: 24,
       title: '8) RRF (Reciprocal Rank Fusion)',
       icon: { name: 'duo-list-ol' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Combines multiple ranking signals into a single, unified ranking without requiring relevance scores or training.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Combines multiple ranking signals into a single, unified ranking without requiring relevance scores or training.</p>
               <ul>
                 <li>Effectively merges results from diverse retrieval methods (BM25, dense, etc.)</li>
                 <li>Creates robust rankings that benefit from the strengths of each underlying system</li>
@@ -909,12 +1067,12 @@ Return ranking as: [3, 1, 2, ...]
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a simple yet effective formula to combine rankings based on document positions:</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a simple yet effective formula to combine rankings based on document positions:</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`RRF(d) = Σ₍ᵣ∈R₎ 1 / (k + rankᵣ(d))`}
               </pre>
-              <p style={{ marginTop: '5px' }}><strong>Where:</strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>Where:</strong></p>
               <ul>
                 <li>d = document being ranked</li>
                 <li>R = set of ranking systems being fused</li>
@@ -923,8 +1081,8 @@ Return ranking as: [3, 1, 2, ...]
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>When combining multiple retrieval methods (e.g., BM25 + neural)</li>
                 <li>For heterogeneous document collections with varying characteristics</li>
                 <li>As a simple baseline before implementing more complex re-rankers</li>
@@ -933,24 +1091,36 @@ Return ranking as: [3, 1, 2, ...]
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Multiple ranked lists of documents from different systems</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`ranker_1 = ["doc_A", "doc_C", "doc_B", ...]
 ranker_2 = ["doc_B", "doc_A", "doc_D", ...]
 ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </pre>
               <p>Output: A single, fused ranking of documents</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>
 {`rrf_ranking = ["doc_A", "doc_B", "doc_C", ...]`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#71461b',
+      notes: ''
+    },
+    {
+      id: 25,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
-                <p><strong>Query:</strong> "Cloud storage security best practices"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Cloud storage security best practices"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) Security guide</li>
@@ -958,14 +1128,14 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                   <li>C) Implementation steps</li>
                 </ul>
                 <p style={{ marginTop: '5px' }}><strong>RRF Ranks:</strong></p>
-                <p>DocA &gt; DocB &gt; DocC</p>
-                <p>DocA ranks highest despite not being #1 in most systems (balanced signals)</p>
+                <p style={{ fontSize: '1.2rem' }}>DocA &gt; DocB &gt; DocC</p>
+                <p style={{ fontSize: '1.2rem' }}>DocA ranks highest despite not being #1 in most systems (balanced signals)</p>
               </div>
               <div>
-                <p><strong>Ranking:</strong></p>
+                <p style={{ margin: '0px' }}><strong>Ranking:</strong></p>
                 <div style={{ display: 'flex', gap: '20px' }}>
                   <div>
-                    <p style={{ marginTop: '5px' }}><strong>BM25 Rank:</strong></p>
+                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>BM25 Rank:</strong></p>
                     <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                       <li>DocA: 2</li>
                       <li>DocB: 1</li>
@@ -973,7 +1143,7 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                     </ul>
                   </div>
                   <div>
-                     <p style={{ marginTop: '5px' }}><strong>Dense Rank:</strong></p>
+                     <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>Dense Rank:</strong></p>
                   <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                     <li>DocA: 3</li>
                     <li>DocB: 4</li>
@@ -982,7 +1152,7 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                   </div>
 
                   <div>
-                    <p style={{ marginTop: '5px' }}><strong>Hybrid Rank:</strong></p>
+                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>Hybrid Rank:</strong></p>
                   <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                     <li>DocA: 1</li>
                     <li>DocB: 3</li>
@@ -991,7 +1161,7 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                   </div>
 
                   <div>
-                    <p style={{ marginTop: '5px' }}><strong>RRF Score:</strong></p>
+                    <p style={{ marginTop: '5px', fontSize: '1.2rem' }}><strong>RRF Score:</strong></p>
                   <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                     <li>DocA: 0.044</li>
                     <li>DocB: 0.038</li>
@@ -1002,11 +1172,23 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#71461b',
+      notes: ''
+    },
+    {
+      id: 26,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Simple Fast Robust No Training</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Requires no training data or model optimization</li>
                 <li>Lightweight computation (just basic math operations)</li>
                 <li>Often outperforms individual rankers and complex methods</li>
@@ -1015,9 +1197,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>No semantics Parameter k Quality ceiling</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>No semantic understanding (just combines existing rankings)</li>
                 <li>Parameter k may need tuning for optimal performance</li>
                 <li>Final quality depends on input rankers' quality</li>
@@ -1028,8 +1210,8 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#71461b',
+      notes: ''
     }
       ]
     },
@@ -1038,15 +1220,17 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
       title: 'The 11 Models',
       slides: [
     {
-      id: 11,
+      id: 27,
       title: '9) Fusion-in-Decoder (FiD) as Re-Rank/Fusion',
       icon: { name: 'duo-microchip' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Enables more effective multi-document evidence fusion with a specialized encoder-decoder architecture that processes many documents simultaneously.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Enables more effective multi-document evidence fusion with a specialized encoder-decoder architecture that processes many documents simultaneously.</p>
               <ul>
                 <li>Combines information from multiple passages in the decoder stage</li>
                 <li>Improves answers requiring evidence from multiple sources</li>
@@ -1054,12 +1238,12 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a specialized fusion architecture for handling multiple documents.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a specialized fusion architecture for handling multiple documents.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Multi-hop question answering requiring facts from multiple documents</li>
                 <li>Complex queries where information synthesis is needed</li>
                 <li>When implicit document ranking/scoring is desired as a side effect</li>
@@ -1068,9 +1252,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
-              <p>Input: Query and multiple document passages</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}>Input: Query and multiple document passages</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
 {`inputs = {
   "query": "Who founded X and what year?",
   "passages": [
@@ -1080,8 +1264,8 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
   ]
 }`}
               </pre>
-              <p>Output: Generated answer and optional document salience scores</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <p style={{ margin: '0px' }}>Output: Generated answer and optional document salience scores</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
 {`output = {
   "answer": "John Smith founded X in 1995",
   "doc_scores": [0.8, 0.7, 0.2, ...] # Optional
@@ -1089,11 +1273,23 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#5f1944',
+      notes: ''
+    },
+    {
+      id: 28,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
-                <p><strong>Query:</strong> "Who founded X and in what year?"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Who founded X and in what year?"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) "John Smith is credited as the founder of company X."</li>
@@ -1103,19 +1299,31 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
                 <p>Answer: "John Smith founded company X in 1995."</p>
               </div>
               <div>
-                <p><strong>Ranking:</strong></p>
+                <p style={{ margin: '0px' }}><strong>Ranking:</strong></p>
                 <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.85 → A) Founder information</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.82 → B) Year information</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px', fontSize: '1.2rem' }}>0.85 → A) Founder information</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px', fontSize: '1.2rem' }}>0.82 → B) Year information</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#5f1944',
+      notes: ''
+    },
+    {
+      id: 29,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Fusion Multi-hop End-to-end</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Superior performance on complex multi-document QA tasks</li>
                 <li>Efficiently handles many input passages simultaneously</li>
                 <li>Implicitly ranks document importance through attention signals</li>
@@ -1124,9 +1332,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Resource Complexity Indirect</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Higher training and inference compute requirements</li>
                 <li>Maximum context length limitations (typically 2048-8192 tokens)</li>
                 <li>Re-ranking capabilities are indirect (extracted from attention)</li>
@@ -1137,8 +1345,8 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#5f1944',
+      notes: ''
     }
       ]
     },
@@ -1147,15 +1355,16 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
       title: 'The 11 Models',
       slides: [
     {
-      id: 12,
+      id: 30,
       title: '10) DPR Re-Ranker (Dense Passage Retrieval)',
       icon: { name: 'duo-stream' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Dense Passage Retrieval (DPR) as a re-ranker provides efficient semantic matching specifically optimized for question-answering tasks.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Dense Passage Retrieval (DPR) as a re-ranker provides efficient semantic matching specifically optimized for question-answering tasks.</p>
               <ul>
                 <li>Overcomes lexical matching limitations of traditional retrievers</li>
                 <li>Enables fast semantic similarity scoring for candidate documents</li>
@@ -1163,13 +1372,13 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Uses a dual-encoder architecture fine-tuned on question-answer pairs.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Uses a dual-encoder architecture fine-tuned on question-answer pairs.</p>
               <p>Key mechanism: Independent encoding → vector similarity → score-based reranking</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Open-domain question answering systems</li>
                 <li>Low-latency reranking after initial retrieval</li>
                 <li>When domain knowledge can be incorporated via fine-tuning</li>
@@ -1178,9 +1387,9 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
-              <p>Input: Query embedding and passage embeddings</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}>Input: Query embedding and passage embeddings</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
 {`query_embedding = query_encoder(query)
 passage_embeddings = [passage_encoder(p) for p in passages]
 
@@ -1190,19 +1399,30 @@ for emb in passage_embeddings:
     score = cosine_similarity(query_embedding, emb)
     scores.append(score)`}
               </pre>
-              <p>Output: Similarity scores for reranking passages</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <p style={{ margin: '0px' }}>Output: Similarity scores for reranking passages</p>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
 {`ranked_passages = [p for _, p in 
                   sorted(zip(scores, passages), 
                   key=lambda x: x[0], reverse=True)]`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#611919',
+      notes: ''
+    },
+    {
+      id: 31,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
-                <p><strong>Query:</strong> "Capital gains tax allowance UK 2024"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Capital gains tax allowance UK 2024"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) Generic UK tax guide</li>
@@ -1211,20 +1431,31 @@ for emb in passage_embeddings:
                 </ul>
               </div>
               <div>
-                <p><strong>Ranking:</strong></p>
+                <p style={{ margin: '0px' }}><strong>Ranking:</strong></p>
                 <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.89 → B) 2024 tax thresholds and rates</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.67 → A) Generic UK tax guide</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.45 → C) Investment strategies</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px', fontSize: '1.2rem' }}>0.89 → B) 2024 tax thresholds and rates</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px', fontSize: '1.2rem' }}>0.67 → A) Generic UK tax guide</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px', fontSize: '1.2rem' }}>0.45 → C) Investment strategies</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#611919',
+      notes: ''
+    },
+    {
+      id: 32,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Speed Efficiency QA-optimized</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Fast and efficient compared to cross-encoders</li>
                 <li>Battle-tested in production QA systems</li>
                 <li>Can be fine-tuned for specific domains/tasks</li>
@@ -1233,9 +1464,9 @@ for emb in passage_embeddings:
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Precision Domain Drift Complexity</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Less precise than cross-encoders (no direct query-document interaction)</li>
                 <li>Performance degrades without domain-specific fine-tuning</li>
                 <li>Limited to capturing high-level semantic relationships</li>
@@ -1246,8 +1477,8 @@ for emb in passage_embeddings:
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#611919',
+      notes: ''
     }
       ]
     },
@@ -1256,15 +1487,16 @@ for emb in passage_embeddings:
       title: 'The 11 Models',
       slides: [
     {
-      id: 13,
+      id: 33,
       title: '11) BM25 + LLM Reranking Hybrid)',
       icon: { name: 'duo-stream' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Combines lexical precision of keyword matching with semantic reasoning capabilities to create a robust, explainable ranking system.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Combines lexical precision of keyword matching with semantic reasoning capabilities to create a robust, explainable ranking system.</p>
               <ul>
                 <li>Bridges the gap between traditional search and neural approaches</li>
                 <li>Reduces hallucination risk through strong keyword grounding</li>
@@ -1272,13 +1504,13 @@ for emb in passage_embeddings:
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Two-stage pipeline that leverages both traditional IR and advanced neural methods.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Two-stage pipeline that leverages both traditional IR and advanced neural methods.</p>
               <p>Key mechanism: BM25 provides initial keyword-based retrieval → LLM analyzes semantic meaning and reranks considering both relevance and BM25 scores</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Technical or specialized domains with domain-specific terminology</li>
                 <li>When exact keyword matching is crucial (e.g., error codes, product IDs)</li>
                 <li>Content with structured or semi-structured format</li>
@@ -1287,9 +1519,9 @@ for emb in passage_embeddings:
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
               <p>Input: Query, documents with BM25 scores, and optional embedding similarities</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
 {`hybrid_inputs = {
   "query": "error E101 on firmware v2.3",
   "documents": [
@@ -1299,7 +1531,7 @@ for emb in passage_embeddings:
 }`}
               </pre>
               <p>Output: Reranked documents with combined relevance scores</p>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
+              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>
 {`results = [
   {"doc_id": 3, "score": 0.89, "bm25": 0.72, "llm": 0.95},
   {"doc_id": 1, "score": 0.76, "bm25": 0.85, "llm": 0.70},
@@ -1307,11 +1539,22 @@ for emb in passage_embeddings:
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#236521',
+      notes: ''
+    },
+    {
+      id: 34,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example:</strong></p>
+            <p style={{ fontSize: '2rem' }}><strong>Example:</strong></p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
               <div>
-                <p><strong>Query:</strong> "error E101 on firmware v2.3"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "error E101 on firmware v2.3"</p>
                 <p style={{ marginTop: '5px' }}><strong>BM25 Rank:</strong></p>
                 <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
                   <li>A) E101 error documentation</li>
@@ -1320,20 +1563,31 @@ for emb in passage_embeddings:
                 </ul>
               </div>
               <div>
-                <p><strong>LLM Rerank:</strong></p>
+                <p style={{ margin: '0px' }}><strong>LLM Rerank:</strong></p>
                 <div style={{ marginTop: '5px', display: 'flex', flexDirection: 'column', gap: '3px' }}>
-                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px' }}>0.94 → C) E101 troubleshooting steps</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px' }}>0.79 → A) E101 error documentation</div>
-                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px' }}>0.65 → B) Firmware update v2.3 release notes</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(129, 199, 132, 0.3)', borderRadius: '3px', fontSize: '1.2rem' }}>0.94 → C) E101 troubleshooting steps</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '3px', fontSize: '1.2rem' }}>0.79 → A) E101 error documentation</div>
+                  <div style={{ padding: '4px 8px', background: 'rgba(239, 83, 80, 0.2)', borderRadius: '3px', fontSize: '1.2rem' }}>0.65 → B) Firmware update v2.3 release notes</div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#236521',
+      notes: ''
+    },
+    {
+      id: 35,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Robust Explainable Adaptable</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Strong real-world performance across diverse query types</li>
                 <li>Resilient to out-of-domain phrases and terminology</li>
                 <li>Maintains keyword precision while adding semantic understanding</li>
@@ -1342,9 +1596,9 @@ for emb in passage_embeddings:
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Complexity Tuning Cost</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Pipeline complexity increases development and maintenance overhead</li>
                 <li>Requires careful tuning of fusion weights between BM25 and LLM signals</li>
                 <li>LLM pass adds latency (200-500ms) and API costs</li>
@@ -1355,8 +1609,8 @@ for emb in passage_embeddings:
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Model 3: T5-based generative reranking'
+      backgroundColor: '#236521',
+      notes: ''
     }
       ]
     },
@@ -1365,13 +1619,15 @@ for emb in passage_embeddings:
       title: 'Summary & Recommendations',
       slides: [
     {
-      id: 14,
+      id: 36,
       title: 'Model Comparison at a Glance',
       icon: { name: 'duo-table' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.7em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', fontSize: '0.9em', borderCollapse: 'collapse' }}>
+            <table style={{ width: '100%', fontSize: '1.2rem', borderCollapse: 'collapse' }}>
               <thead>
                 <tr style={{ background: 'rgba(79, 195, 247, 0.2)', borderBottom: '2px solid rgba(79, 195, 247, 0.5)' }}>
                   <th style={{ padding: '10px', textAlign: 'left' }}>Model Type</th>
@@ -1417,87 +1673,112 @@ for emb in passage_embeddings:
                 ))}
               </tbody>
             </table>
+            <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '8px' }}>
+            <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+              <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
+              Key Performance Metrics
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px', fontSize: '1.2rem' }}>
+              <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
+                <div>Latency Impact</div>
+                <div style={{ fontWeight: 'bold', color: '#4fc3f7', marginTop: '5px' }}>+200-500ms</div>
+                <div>Per reranking pass</div>
+              </div>
+              <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
+                <div>Accuracy Gain</div>
+                <div style={{ fontWeight: 'bold', color: '#81c784', marginTop: '5px' }}>+20-35%</div>
+                <div>Precision improvement</div>
+              </div>
+              <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
+                <div>Optimal Depth</div>
+                <div style={{ fontWeight: 'bold', color: '#ffb74d', marginTop: '5px' }}>20-50 → 5-10</div>
+                <div>Retrieve → Rerank</div>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       ),
-      backgroundColor: '#1a1a2e',
-      notes: 'Comprehensive comparison table of all 11 models'
+      backgroundColor: '#481967',
+      notes: ''
     },
     {
-      id: 15,
+      id: 37,
       title: 'Quick Recommendations by Use Case',
       icon: { name: 'duo-map' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
             <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-star" sizeName="2x" darkModeInvert={true} />
                 Default / General Purpose
               </h3>
-              <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>ms-marco-MiniLM-L-6-v2</strong></p>
-                <p style={{ fontSize: '0.9em', color: '#aaa', marginTop: '5px' }}>
+                <p>
                   Rerank top-20→top-5 with this cross-encoder for best accuracy/speed balance
                 </p>
               </div>
             </div>
             <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-globe" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-globe" sizeName="2x" darkModeInvert={true} />
                 Multilingual & Non-English
               </h3>
-              <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>BGE Reranker / LLM-as-Ranker</strong></p>
-                <p style={{ fontSize: '0.9em', color: '#aaa', marginTop: '5px' }}>
+                <p>
                   BGE for efficiency, LLM-as-ranker for rare languages with complex reasoning
                 </p>
               </div>
             </div>
             <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
                 High Throughput / Low Cost
               </h3>
-              <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>E5/DPR + RRF + BM25</strong></p>
-                <p style={{ fontSize: '0.9em', color: '#aaa', marginTop: '5px' }}>
+                <p>
                   Bi-encoder cosine rerank + RRF with BM25 for robust baseline at scale
                 </p>
               </div>
             </div>
             <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-file-lines" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#ba68c8', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-file-lines" sizeName="2x" darkModeInvert={true} />
                 Long Documents & Term Alignment
               </h3>
-              <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>ColBERT/v2</strong></p>
-                <p style={{ fontSize: '0.9em', color: '#aaa', marginTop: '5px' }}>
+                <p>
                   Optimized for fine-grained token-level matching across passages
                 </p>
               </div>
             </div>
             <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#f06292', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#f06292', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
                 Complex Reasoning / Multi-Hop QA
               </h3>
-              <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>LLM-as-Ranker / FiD</strong></p>
-                <p style={{ fontSize: '0.9em', color: '#aaa', marginTop: '5px' }}>
+                <p>
                   When relationships between documents matter; consider distilling for production
                 </p>
               </div>
             </div>
             <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#64b5f6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-sliders" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#64b5f6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
                 Hybrid Robust Baseline
               </h3>
-              <div style={{ fontSize: '0.95em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>BM25 + Dense + RRF</strong></p>
-                <p style={{ fontSize: '0.9em', color: '#aaa', marginTop: '5px' }}>
+                <p>
                   Add cross-encoder for top-10 refinement; balances keyword precision with semantics
                 </p>
               </div>
@@ -1505,22 +1786,24 @@ for emb in passage_embeddings:
           </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Quick recommendations organized by use case'
+      backgroundColor: '#481967',
+      notes: ''
     },
     {
-      id: 16,
+      id: 38,
       title: 'Operational Tips & Trade-offs',
       icon: { name: 'duo-lightbulb' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div>
-              <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-gear" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-gear" sizeName="2x" darkModeInvert={true} />
                 Operational Tips
               </h3>
-              <ul style={{ fontSize: '0.95em', lineHeight: '1.8', paddingLeft: '20px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.8', paddingLeft: '20px' }}>
                 <li><strong>Batch processing:</strong> Process pairs in batches to amortize overhead; use async for parallel scoring</li>
                 <li><strong>Caching:</strong> Store reranking results for frequent queries; invalidate when corpus changes</li>
                 <li><strong>Truncation:</strong> Truncate strategically (middle vs end) based on content type</li>
@@ -1529,11 +1812,11 @@ for emb in passage_embeddings:
               </ul>
             </div>
             <div>
-              <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-sliders" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
                 Trade-off Considerations
               </h3>
-              <ul style={{ fontSize: '0.95em', lineHeight: '1.8', paddingLeft: '20px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.8', paddingLeft: '20px' }}>
                 <li><strong>Latency vs. accuracy:</strong> Optimize for your specific user experience requirements</li>
                 <li><strong>Re-ranking depth:</strong> More documents = higher recall but diminishing returns after ~50</li>
                 <li><strong>Pre-ranking quality:</strong> Better first-stage retrieval means less re-ranking needed</li>
@@ -1541,33 +1824,10 @@ for emb in passage_embeddings:
               </ul>
             </div>
           </div>
-          <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '8px' }}>
-            <h3 style={{ color: '#ffb74d', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <SvgIcon iconName="duo-chart-line" sizeName="1x" darkModeInvert={true} />
-              Key Performance Metrics
-            </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '15px', fontSize: '0.9em' }}>
-              <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
-                <div style={{ fontSize: '0.8em', color: '#aaa' }}>Latency Impact</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7', marginTop: '5px' }}>+200-500ms</div>
-                <div style={{ fontSize: '0.75em', marginTop: '3px' }}>Per reranking pass</div>
-              </div>
-              <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
-                <div style={{ fontSize: '0.8em', color: '#aaa' }}>Accuracy Gain</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#81c784', marginTop: '5px' }}>+20-35%</div>
-                <div style={{ fontSize: '0.75em', marginTop: '3px' }}>Precision improvement</div>
-              </div>
-              <div style={{ padding: '10px', background: 'rgba(0,0,0,0.2)', borderRadius: '5px' }}>
-                <div style={{ fontSize: '0.8em', color: '#aaa' }}>Optimal Depth</div>
-                <div style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ffb74d', marginTop: '5px' }}>20-50 → 5-10</div>
-                <div style={{ fontSize: '0.75em', marginTop: '3px' }}>Retrieve → Rerank</div>
-              </div>
-            </div>
-          </div>
-          <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
-            <p style={{ fontSize: '1em', lineHeight: '1.6', display: 'flex', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-rocket" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
-              <p>
+          <div style={{ marginTop: '20px', padding: '10px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
+            <p style={{ margin: '0px', display: 'flex', alignItems: 'center' }}>
+              <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
+              <p style={{ margin: '0px' }}>
                  <strong>Pro Tip:</strong> Start with ms-marco-MiniLM-L-6-v2 as your baseline, then A/B test against more specialized models 
                 <strong>based on your specific domain and performance requirements.</strong> <br/>
               </p>
@@ -1575,8 +1835,8 @@ for emb in passage_embeddings:
           </div>
         </div>
       ),
-      backgroundColor: '#0f3460',
-      notes: 'Practical operational tips and trade-off considerations'
+      backgroundColor: '#481967',
+      notes: ''
     }
       ]
     }
