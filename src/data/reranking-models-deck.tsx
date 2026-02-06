@@ -15,58 +15,61 @@ export const rerankingModelsDeck: Deck = {
       slides: [
     {
       id: 1,
+      center: true,
       title: '11 Re-Ranking Models to Improve RAG Accuracy',
       content: (
-        <div style={{ textAlign: 'left' }}>
-          <p style={{ fontSize: '1em', marginTop: '30px' }}>
+        <div>
+          <p style={{ fontSize: '1em', marginTop: '10px' }}>
             Practical patterns, trade-offs, and examples to boost precision in Retrieval-Augmented Generation
           </p>
-          <div style={{ marginTop: '50px', display: 'flex', gap: '20px', alignItems: 'center' }}>
+          <div style={{ marginTop: '20px', display: 'flex', gap: '20px', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ padding: '20px 30px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
               <SvgIcon iconName="duo-magnifying-glass" sizeName="3x" darkModeInvert={true} />
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.9em', color: '#aaa' }}>Retrieve</div>
+                <div style={{ fontSize: '2rem' }}>Retrieve</div>
               </div>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
             <div style={{ padding: '20px 30px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
               <SvgIcon iconName="duo-list-ol" sizeName="3x" darkModeInvert={true} />
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.9em', color: '#aaa' }}>Re-Rank</div>
+                <div style={{ fontSize: '2rem' }}>Re-Rank</div>
               </div>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
             <div style={{ padding: '20px 30px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', display: 'flex', alignItems: 'center', gap: '15px' }}>
               <SvgIcon iconName="duo-lightbulb" sizeName="3x" darkModeInvert={true} />
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.9em', color: '#aaa' }}>Generate</div>
+                <div style={{ fontSize: '2rem' }}>Generate</div>
               </div>
             </div>
           </div>
-          <p style={{ fontSize: '0.8em', marginTop: '50px', color: '#aaa' }}>
-            Advanced RAG Systems • November 2023
-          </p>
+          <p><strong>Prepared by:</strong> Nisar A</p>
+              <p><strong>Date:</strong> November 7, 2025</p>
+              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
         </div>
       ),
-      backgroundColor: '#1a1a2e',
-      notes: 'Title slide introducing 11 re-ranking models for RAG'
+      backgroundColor: '#1f3263',
+      notes: ''
     },
     {
       id: 2,
       title: 'Why Re-Ranking in RAG?',
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <h2 style={{ textAlign: 'left', marginBottom: '25px', alignItems: 'center' }}>
             <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginRight: '10px', verticalAlign: 'middle' }} darkModeInvert={true} />
             Why Re-Ranking Matters
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '25px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '30px', marginTop: '30px' }}>
             <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#4fc3f7', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#4fc3f7', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
                 Two-Stage Architecture
               </h3>
-              <div style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <div style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
                 <p><strong>Stage 1 (Recall):</strong> Cast a wide net</p>
                 <ul style={{ paddingLeft: '20px', marginTop: '8px' }}>
                   <li>BM25 / bi-encoder / hybrid retrieval</li>
@@ -82,54 +85,46 @@ export const rerankingModelsDeck: Deck = {
               </div>
             </div>
             <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
-              <h3 style={{ color: '#81c784', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="1x" darkModeInvert={true} />
+              <h3 style={{ color: '#81c784', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
                 Key Benefits
               </h3>
-              <ul style={{ fontSize: '0.9em', lineHeight: '1.6', paddingLeft: '20px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.6', paddingLeft: '20px' }}>
                 <li><strong>Filters noisy candidates:</strong> Improves grounding and reduces hallucinations</li>
                 <li><strong>Optimal flow:</strong> Retrieve 20-50 → Re-rank to top 5-10 for the LLM</li>
                 <li><strong>ROI:</strong> +200-500 ms latency often yields 20-35% precision gains</li>
               </ul>
               <div style={{ marginTop: '15px', padding: '12px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '5px' }}>
-                <p style={{ fontSize: '0.85em' }}>
+                <p style={{ fontSize: '2rem' }}>
                   <strong>Quality Impact:</strong>
                 </p>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '8px' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: '8px' }}>
                   <div>
-                    <div style={{ fontSize: '0.85em', color: '#aaa' }}>Initial Retrieval</div>
-                    <div style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#ffb74d' }}>65-80% relevant</div>
+                    <div style={{ fontSize: '1.2rem' }}>Initial Retrieval</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 'bold', color: '#ffb74d' }}>65-80% relevant</div>
                   </div>
                   <div style={{ fontSize: '1.5em', color: '#4fc3f7' }}>→</div>
                   <div>
-                    <div style={{ fontSize: '0.85em', color: '#aaa' }}>After Re-Ranking</div>
-                    <div style={{ fontSize: '1.1em', fontWeight: 'bold', color: '#81c784' }}>85-95% relevant</div>
+                    <div style={{ fontSize: '1.2rem' }}>After Re-Ranking</div>
+                    <div style={{ fontSize: '1rem', fontWeight: 'bold', color: '#81c784' }}>85-95% relevant</div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
-            <p style={{ fontSize: '0.95em', lineHeight: '1.5' , display: 'flex', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-triangle-exclamation" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
-              <p>
+          <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
+            <p style={{ display: 'flex', alignItems: 'center' }}>
+              <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
+              <p style={{ fontSize: '1rem', margin: '0px' }}>
                 <strong>Without re-ranking,</strong> RAG systems often fail not because of poor embeddings or weak LLMs, 
                 but because they feed <strong>irrelevant information</strong> to the generation stage.
               </p>
             </p>
           </div>
-          <div style={{ marginTop: '20px', fontSize: '0.85em' }}>
-            <h4 style={{ color: '#4fc3f7', marginBottom: '8px' }}>Key Decision Axes:</h4>
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
-              {['Query complexity', 'Language support', 'Latency budget', 'Cost constraints', 'Infrastructure (CPU/GPU)'].map((item, i) => (
-                <span key={i} style={{ padding: '5px 12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '4px' }}>{item}</span>
-              ))}
-            </div>
-          </div>
         </div>
       ),
-      backgroundColor: '#16213e',
-      notes: 'Overview of why re-ranking is critical for RAG accuracy'
+      backgroundColor: '#1f3263',
+      notes: ''
     }
       ]
     },
@@ -142,19 +137,21 @@ export const rerankingModelsDeck: Deck = {
       title: '1) Cross-Encoder Ranker (MS MARCO family)',
       icon: { name: 'duo-brain-circuit' },
       content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>Goal / What It Solves:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Maximizes precision through deep query-document understanding, overcoming the limitations of independent embedding comparisons.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Goal / What It Solves:</span></strong></p>
+              <p style={{ fontSize: '1.2rem', margin: '0px' }}>Maximizes precision through deep query-document understanding, overcoming the limitations of independent embedding comparisons.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px' }}>How It Works:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.95em' }}>Concatenate [CLS] query [SEP] doc → transformer → single relevance score. Understands semantic relationships between queries and documents.</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>How It Works:</span></strong></p>
+              <p style={{ fontSize: '1.2rem', margin: '0px' }}>Concatenate [CLS] query [SEP] doc → transformer → single relevance score. Understands semantic relationships between queries and documents.</p>
             </div>
             <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>When to Use:</span></strong></p>
-              <ul style={{ marginTop: '5px', paddingLeft: '18px', fontSize: '0.9em', lineHeight: '1.4' }}>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>When to Use:</span></strong></p>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.4' }}>
                 <li>Precision-critical tasks where accuracy trumps speed</li>
                 <li>When working with short to medium-length passages</li>
                 <li>For ambiguous or complex queries needing contextual understanding</li>
@@ -163,8 +160,8 @@ export const rerankingModelsDeck: Deck = {
               </ul>
             </div>
             <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-              <p><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span>Input / Output Format:</span></strong></p>
-              <p style={{ marginTop: '5px', fontSize: '0.5em' }}>Input: Pairs of query and document texts</p>
+              <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-code" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Input / Output Format:</span></strong></p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Input: Pairs of query and document texts</p>
               <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
 {`pairs = [
   [query, document_1], 
@@ -172,19 +169,31 @@ export const rerankingModelsDeck: Deck = {
   ...
 ]`}
               </pre>
-              <p style={{ marginTop: '5px', fontSize: '0.5em' }}>Output: Relevance scores between 0 and 1 for each pair</p>
+              <p style={{ marginTop: '5px', fontSize: '1.2rem' }}>Output: Relevance scores between 0 and 1 for each pair</p>
               <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>
 {`scores = [0.92, 0.45, ...]  # Higher = more relevant`}
               </pre>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#0f3460',
+      notes: ''
+    },
+    {
+      id: 4,
+      title: 'Example',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ marginTop: '12px', padding: '10px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px' }}>
-            <p style={{ fontSize: '0.9em', marginBottom: '8px' }}><strong>Example: Password Reset Query</strong></p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.85em' }}>
+            <p style={{ fontSize: '2rem' }}><strong>Example: Password Reset Query</strong></p>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '1.2rem' }}>
               <div>
-                <p><strong>Query:</strong> "Reset password steps?"</p>
+                <p style={{ margin: '0px' }}><strong>Query:</strong> "Reset password steps?"</p>
                 <p style={{ marginTop: '5px' }}><strong>Docs:</strong></p>
-                <ul style={{ paddingLeft: '18px', lineHeight: '1.4' }}>
+                <ul style={{ paddingLeft: '18px', lineHeight: '1.4', }}>
                   <li>A) Billing policy</li>
                   <li>B) Account reset guide</li>
                   <li>C) Login tips</li>
@@ -200,11 +209,23 @@ export const rerankingModelsDeck: Deck = {
               </div>
             </div>
           </div>
+        </div>
+      ),
+      backgroundColor: '#0f3460',
+      notes: ''
+    },
+    {
+      id: 5,
+      title: 'Strength and Limitations',
+      content: (
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+          <div style={{ marginBottom: '30px' }}>
+          </div>
           <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="1x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
               <p>Accuracy Contextual Robust</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Best accuracy among classical rerankers (20-35% over bi-encoders)</li>
                 <li>Understands semantic relationships beyond keyword similarity</li>
                 <li>Fine-grained relevance scoring (0-1 scale)</li>
@@ -212,9 +233,9 @@ export const rerankingModelsDeck: Deck = {
               </ul>
             </div>
             <div style={{ flex: 1, padding: '10px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-              <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="1x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+              <p style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '2rem' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
               <p>Latency Scaling Resources</p>
-              <ul style={{ fontSize: '0.85em', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
+              <ul style={{ fontSize: '1.2rem', lineHeight: '1.3', marginTop: '5px', paddingLeft: '16px' }}>
                 <li>Higher latency: O(k·L) where k = # docs, L = sequence length</li>
                 <li>Not suitable for first-stage retrieval of large corpora</li>
                 <li>Typically limited to reranking top-50 documents</li>
@@ -226,8 +247,14 @@ export const rerankingModelsDeck: Deck = {
         </div>
       ),
       backgroundColor: '#0f3460',
-      notes: 'Model 1: Cross-Encoder for maximum precision'
+      notes: ''
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 4,
       title: '2) BERT-based Cross Encoder (ms-marco-MiniLM-L-6-v2)',
@@ -332,7 +359,13 @@ pairs = [
       ),
       backgroundColor: '#1a1a2e',
       notes: 'Model 2: Distilled model for practical deployment'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 5,
       title: '3) MonoT5 Re-Ranker',
@@ -427,7 +460,13 @@ pairs = [
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 6,
       title: '4) MonoBERT Re-Ranker',
@@ -528,6 +567,12 @@ pairs = [
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
     },
+      ]
+    },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 7,
       title: '5) ColBERT / ColBERTv2 (Late Interaction)',
@@ -622,7 +667,13 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 8,
       title: '6) E5-Ranker (e.g., intfloat/e5-mistral) as Bi-Encoder Re-Rank',
@@ -723,7 +774,13 @@ scores = [cosine_similarity(query_emb, doc_emb)
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 9,
       title: '7) LLM-as-a-Ranker (RankGPT-style)',
@@ -828,7 +885,13 @@ Return ranking as: [3, 1, 2, ...]
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 10,
       title: '8) RRF (Reciprocal Rank Fusion)',
@@ -967,7 +1030,13 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 11,
       title: '9) Fusion-in-Decoder (FiD) as Re-Rank/Fusion',
@@ -1070,7 +1139,13 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 12,
       title: '10) DPR Re-Ranker (Dense Passage Retrieval)',
@@ -1173,7 +1248,13 @@ for emb in passage_embeddings:
       ),
       backgroundColor: '#16213e',
       notes: 'Model 3: T5-based generative reranking'
+    }
+      ]
     },
+    {
+      id: 'the-11-models',
+      title: 'The 11 Models',
+      slides: [
     {
       id: 13,
       title: '11) BM25 + LLM Reranking Hybrid)',
