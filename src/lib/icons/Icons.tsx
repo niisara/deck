@@ -157,6 +157,7 @@ export const icons: IconsMap = {
   // Refund policy page icons
   "duo-file": "/icons/svg/duotone/file.svg",
   "duo-file-pdf": "/icons/svg/duotone/file-pdf.svg",
+  "duo-tower-broadcast": "/icons/svg/duotone/tower-broadcast.svg",
   // SinglePoseDetection page icons
   "duo-video-play": "/icons/svg/duotone/video.svg",
   "duo-pause-circle": "/icons/svg/duotone/pause.svg",
