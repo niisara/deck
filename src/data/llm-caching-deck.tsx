@@ -558,7 +558,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 5: Chunk-Level Cache',
       slides: [
         {
-          id: 7,
+          id: 11,
           title: 'Pattern 5: Chunk-Level Cache',
           icon: { name: 'duo-scissors' },
           content: (
@@ -627,7 +627,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 10,
+          id: 12,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -668,7 +668,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 6: Session Conversation Cache',
       slides: [
         {
-          id: 11,
+          id: 13,
           title: 'Pattern 6: Session Conversation Cache',
           icon: { name: 'duo-message-square' },
           content: (
@@ -739,7 +739,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 12,
+          id: 14,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -782,7 +782,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 7: User Profile / Preference Cache',
       slides: [
         {
-          id: 13,
+          id: 15,
           title: 'Pattern 7: User Profile / Preference Cache',
           icon: { name: 'duo-user' },
           content: (
@@ -850,7 +850,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 14,
+          id: 16,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -891,7 +891,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 8: Token-Level KV Cache',
       slides: [
         {
-          id: 15,
+          id: 17,
           title: 'Pattern 8: Token-Level KV Cache',
           icon: { name: 'duo-brain-circuit' },
           content: (
@@ -959,7 +959,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 16,
+          id: 18,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -1000,7 +1000,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 9: Model Output Logit Cache',
       slides: [
         {
-          id: 17,
+          id: 19,
           title: 'Pattern 9: Model Output Logit Cache',
           icon: { name: 'duo-chart-line' },
           content: (
@@ -1069,7 +1069,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 18,
+          id: 20,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -1110,7 +1110,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 10: Semantic Similarity Cache',
       slides: [
         {
-          id: 19,
+          id: 21,
           title: 'Pattern 10: Semantic Similarity Cache',
           icon: { name: 'duo-circle-nodes' },
           content: (
@@ -1179,7 +1179,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 20,
+          id: 22,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -1222,7 +1222,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 11: Ranked Results Cache (Post Re-Ranker)',
       slides: [
         {
-          id: 21,
+          id: 23,
           title: 'Pattern 11: Ranked Results Cache (Post Re-Ranker)',
           icon: { name: 'duo-ranking-star' },
           content: (
@@ -1291,7 +1291,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 22,
+          id: 24,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -1334,7 +1334,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 12: Summarization Cache',
       slides: [
         {
-          id: 23,
+          id: 25,
           title: 'Pattern 12: Summarization Cache',
           icon: { name: 'duo-compress' },
           content: (
@@ -1403,7 +1403,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 24,
+          id: 26,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -1444,7 +1444,7 @@ export const llmCachingDeck: Deck = {
       title: 'Pattern 13: Final Answer Cache with TTL',
       slides: [
         {
-          id: 25,
+          id: 27,
           title: 'Pattern 13: Final Answer Cache with TTL',
           icon: { name: 'duo-check-circle' },
           content: (
@@ -1513,7 +1513,7 @@ export const llmCachingDeck: Deck = {
           notes: ''
         },
         {
-          id: 26,
+          id: 28,
           title: 'Strengths and Limitations',
           content: (
             <div>
@@ -1556,7 +1556,7 @@ export const llmCachingDeck: Deck = {
       title: 'Key Takeaways',
       slides: [
         {
-          id: 16,
+          id: 29,
           title: 'Key Takeaways',
           icon: { name: 'duo-clipboard-check' },
           content: (
