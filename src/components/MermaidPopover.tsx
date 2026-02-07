@@ -68,14 +68,16 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
       const slideMenu = document.querySelector('.slide-menu-button') as HTMLElement;
       const slideMenuPanel = document.querySelector('.slide-menu') as HTMLElement;
       
-      // Save original display values in ref
-      originalDisplaysRef.current = {
-        controls: controls?.style.display || '',
-        progressBar: progressBar?.style.display || '',
-        slideNumber: slideNumber?.style.display || '',
-        slideMenu: slideMenu?.style.display || '',
-        slideMenuPanel: slideMenuPanel?.style.display || '',
-      };
+      // Save original display values in ref (only if not already saved)
+      if (!originalDisplaysRef.current) {
+        originalDisplaysRef.current = {
+          controls: controls?.style.display || '',
+          progressBar: progressBar?.style.display || '',
+          slideNumber: slideNumber?.style.display || '',
+          slideMenu: slideMenu?.style.display || '',
+          slideMenuPanel: slideMenuPanel?.style.display || '',
+        };
+      }
       
       // Hide controls
       if (controls) controls.style.display = 'none';
@@ -92,6 +94,8 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
           if (slideNumber) slideNumber.style.display = originalDisplaysRef.current.slideNumber;
           if (slideMenu) slideMenu.style.display = originalDisplaysRef.current.slideMenu;
           if (slideMenuPanel) slideMenuPanel.style.display = originalDisplaysRef.current.slideMenuPanel;
+          // Reset the ref for next time
+          originalDisplaysRef.current = null;
         }
       };
     }
