@@ -137,3 +137,73 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* ── Mobile Responsive Adjustments ── */
+
+/* For mobile devices and tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .slide-audio-controls {
+    bottom: 80px; /* Move higher up from bottom for better visibility */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    flex-direction: row;
+    gap: 16px; /* Slightly larger gap for touch targets */
+  }
+
+  .slide-audio-btn {
+    width: 52px; /* Slightly larger for easier touch interaction */
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    max-width: 52px;
+    max-height: 52px;
+  }
+
+  /* Keep dev controls positioned above the regular controls */
+  .slide-audio-controls-dev {
+    bottom: 148px; /* Adjusted to be above new mobile position */
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 16px;
+  }
+
+  .slide-audio-controls-dev .slide-audio-btn {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+    max-width: 52px;
+    max-height: 52px;
+  }
+}
+
+/* For smaller mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .slide-audio-controls {
+    bottom: 70px; /* Adjust position for smaller screens */
+    gap: 12px;
+  }
+
+  .slide-audio-btn {
+    width: 48px; /* Slightly smaller for very small screens */
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+  }
+
+  .slide-audio-controls-dev {
+    bottom: 132px;
+    gap: 12px;
+  }
+
+  .slide-audio-controls-dev .slide-audio-btn {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    max-width: 48px;
+    max-height: 48px;
+  }
+}
