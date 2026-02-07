@@ -118,52 +118,119 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
     [contentTTS, notesTTS, notes]
   );
 
-  return (
-    <div className="slide-audio-controls">
-      {/* Read slide content */}
-      <button
-        className={`slide-audio-btn ${contentTTS.status !== 'idle' ? 'active' : ''}`}
-        onClick={handleContentClick}
-        title={
-          contentTTS.status === 'playing'
-            ? 'Stop reading slide'
-            : contentTTS.status === 'loading'
-            ? 'Loading…'
-            : 'Read slide content'
-        }
-        aria-label="Read slide content"
-      >
-        <SvgIcon
-          iconName="duo-volume-high"
-          sizeName="lg"
-          style={{ color: iconColor }}
-        />
-        <StatusDot status={contentTTS.status} />
-      </button>
+  const handleRegenerateContent = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      // Stop both channels
+      contentTTS.stop();
+      notesTTS.stop();
+      // Regenerate and save to blob storage
+      contentTTS.regenerate(slideContent);
+    },
+    [contentTTS, notesTTS, slideContent]
+  );
 
-      {/* Read speaker notes */}
-      {notes && (
+  const handleRegenerateNotes = useCallback(
+    (e: React.MouseEvent) => {
+      e.stopPropagation();
+      // Stop both channels
+      contentTTS.stop();
+      notesTTS.stop();
+      // Regenerate and save to blob storage
+      notesTTS.regenerate(notes || '');
+    },
+    [contentTTS, notesTTS, notes]
+  );
+
+  // Check if we're in development mode
+  const isDev = import.meta.env.VITE_IS_PROD === 'false' || !import.meta.env.VITE_IS_PROD;
+
+  return (
+    <>
+      {/* Development-only: TTS Regeneration Controls */}
+      {isDev && (
+        <div className="slide-audio-controls slide-audio-controls-dev">
+          <button
+            className={`slide-audio-btn ${contentTTS.status === 'loading' ? 'active' : ''}`}
+            onClick={handleRegenerateContent}
+            title="Regenerate slide content TTS and save to cache"
+            aria-label="Regenerate slide content TTS"
+            disabled={contentTTS.status === 'loading'}
+          >
+            <SvgIcon
+              iconName="duo-rotate-right"
+              sizeName="lg"
+              style={{ color: iconColor }}
+            />
+            <StatusDot status={contentTTS.status} />
+          </button>
+
+          {notes && (
+            <button
+              className={`slide-audio-btn ${notesTTS.status === 'loading' ? 'active' : ''}`}
+              onClick={handleRegenerateNotes}
+              title="Regenerate speaker notes TTS and save to cache"
+              aria-label="Regenerate speaker notes TTS"
+              disabled={notesTTS.status === 'loading'}
+            >
+              <SvgIcon
+                iconName="duo-arrows-rotate"
+                sizeName="lg"
+                style={{ color: iconColor }}
+              />
+              <StatusDot status={notesTTS.status} />
+            </button>
+          )}
+        </div>
+      )}
+
+      {/* Regular playback controls */}
+      <div className="slide-audio-controls">
+        {/* Read slide content */}
         <button
-          className={`slide-audio-btn ${notesTTS.status !== 'idle' ? 'active' : ''}`}
-          onClick={handleNotesClick}
+          className={`slide-audio-btn ${contentTTS.status !== 'idle' ? 'active' : ''}`}
+          onClick={handleContentClick}
           title={
-            notesTTS.status === 'playing'
-              ? 'Stop reading notes'
-              : notesTTS.status === 'loading'
+            contentTTS.status === 'playing'
+              ? 'Stop reading slide'
+              : contentTTS.status === 'loading'
               ? 'Loading…'
-              : 'Read speaker notes'
+              : 'Read slide content'
           }
-          aria-label="Read speaker notes"
+          aria-label="Read slide content"
         >
           <SvgIcon
-            iconName="duo-note-sticky"
+            iconName="duo-volume-high"
             sizeName="lg"
             style={{ color: iconColor }}
           />
-          <StatusDot status={notesTTS.status} />
+          <StatusDot status={contentTTS.status} />
         </button>
-      )}
-    </div>
+
+        {/* Read speaker notes */}
+        {notes && (
+          <button
+            className={`slide-audio-btn ${notesTTS.status !== 'idle' ? 'active' : ''}`}
+            onClick={handleNotesClick}
+            title={
+              notesTTS.status === 'playing'
+                ? 'Stop reading notes'
+                : notesTTS.status === 'loading'
+                ? 'Loading…'
+                : 'Read speaker notes'
+            }
+            aria-label="Read speaker notes"
+          >
+            <SvgIcon
+              iconName="duo-note-sticky"
+              sizeName="lg"
+              style={{ color: iconColor }}
+            />
+            <StatusDot status={notesTTS.status} />
+          </button>
+        )}
+      </div>
+    </>
   );
 };
 

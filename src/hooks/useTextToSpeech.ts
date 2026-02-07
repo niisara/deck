@@ -24,6 +24,8 @@ interface UseTextToSpeechReturn {
   status: TTSStatus;
   /** Start speaking the given text. Stops any current playback first. */
   speak: (text: string) => Promise<void>;
+  /** Regenerate TTS audio, bypassing cache, and save to blob storage */
+  regenerate: (text: string) => Promise<void>;
   /** Stop current playback */
   stop: () => void;
   /** Error message if status === 'error' */
@@ -242,5 +244,73 @@ export function useTextToSpeech(options: TTSOptions = {}): UseTextToSpeechReturn
     [stop]
   );
 
-  return { status, speak, stop, error };
+  const regenerate = useCallback(
+    async (text: string) => {
+      // Stop any existing playback first
+      stop();
+
+      // Sanitize text: remove code blocks, mermaid diagrams, HTML, LaTeX, etc.
+      const cleanText = sanitizeTTSText(text);
+      if (!cleanText.trim()) return;
+
+      setStatus('loading');
+      setError(null);
+
+      const controller = new AbortController();
+      abortRef.current = controller;
+
+      try {
+        const provider = getTTSProvider();
+        const voiceKey = provider === 'elevenlabs'
+          ? (import.meta.env.VITE_ELEVENLABS_VOICE_ID || 'default')
+          : voice;
+        const cacheKey = await ttsCacheKey(provider, voiceKey, cleanText);
+
+        // Force regeneration - always call TTS provider, bypassing cache check
+        let blob: Blob;
+        if (provider === 'elevenlabs') {
+          blob = await fetchElevenLabsTTS(cleanText, controller.signal);
+        } else {
+          blob = await fetchAzureTTS(cleanText, voice, instructions, controller.signal);
+        }
+
+        // Store in cache (overwriting any existing cached version)
+        await putCachedAudio(cacheKey, blob);
+        console.log('[TTS] Regenerated and cached:', cacheKey);
+
+        const url = URL.createObjectURL(blob);
+
+        const audio = new Audio(url);
+        audioRef.current = audio;
+
+        audio.onended = () => {
+          URL.revokeObjectURL(url);
+          audioRef.current = null;
+          setStatus('idle');
+        };
+
+        audio.onerror = () => {
+          URL.revokeObjectURL(url);
+          audioRef.current = null;
+          setError('Audio playback failed.');
+          setStatus('error');
+        };
+
+        await audio.play();
+        setStatus('playing');
+      } catch (err: any) {
+        if (err.name === 'AbortError') {
+          // Intentional abort – don't treat as error
+          setStatus('idle');
+          return;
+        }
+        console.error('[TTS] Regenerate error:', err);
+        setError(err.message || 'Unknown TTS error');
+        setStatus('error');
+      }
+    },
+    [stop, voice, instructions]
+  );
+
+  return { status, speak, stop, regenerate, error };
 }
