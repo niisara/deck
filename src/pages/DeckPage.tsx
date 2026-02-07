@@ -10,6 +10,7 @@ import RevealZoom from 'reveal.js/plugin/zoom/zoom';
 import 'reveal.js/dist/reveal.css';
 import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
+import SlideAudioControls from '../components/SlideAudioControls';
 import { loadTheme } from '../utils/themeLoader';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { marked } from 'marked';
@@ -77,6 +78,18 @@ const isDarkColor = (color: string): boolean => {
 const getIconColor = (bgColor: string = '#2c3e50'): string => {
   // If background is dark, lighten it; if light, darken it
   return isDarkColor(bgColor) ? adjustColor(bgColor, 80) : adjustColor(bgColor, -80);
+};
+
+// Extract plain text from slide content (strip HTML tags)
+const extractPlainText = (content: string | React.ReactNode): string => {
+  if (typeof content === 'string') {
+    // Strip HTML tags to get raw text
+    const tmp = document.createElement('div');
+    tmp.innerHTML = content;
+    return tmp.textContent || tmp.innerText || '';
+  }
+  // For React nodes, return empty – callers should render to string themselves
+  return '';
 };
 
 function DeckPage() {
@@ -515,6 +528,13 @@ function DeckPage() {
                         />
                       </aside>
                     )}
+                    {!isPrintPdf && (
+                      <SlideAudioControls
+                        slideContent={`${slide.title}. ${extractPlainText(slide.content)}`}
+                        notes={slide.notes}
+                        iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
+                      />
+                    )}
                   </section>
                 ))}
               </section>
@@ -552,6 +572,13 @@ function DeckPage() {
                       dangerouslySetInnerHTML={{ __html: marked(slide.notes) }}
                     />
                   </aside>
+                )}
+                {!isPrintPdf && (
+                  <SlideAudioControls
+                    slideContent={`${slide.title}. ${extractPlainText(slide.content)}`}
+                    notes={slide.notes}
+                    iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
+                  />
                 )}
               </section>
             ))

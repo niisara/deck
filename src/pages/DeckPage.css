@@ -293,7 +293,7 @@
   flex-shrink: 0;
 }
 
-.reveal .slides section > div {
+.reveal .slides section > div:not(.slide-audio-controls) {
   flex: 1 1 0%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -302,7 +302,7 @@
   min-height: 0;
 }
 
-.reveal .slides section.center > div {
+.reveal .slides section.center > div:not(.slide-audio-controls) {
   max-height: calc(100vh - 120px);
   overflow-y: auto;
   overflow-x: hidden;
@@ -310,7 +310,7 @@
 }
 
 /* Ensure nested content doesn't break scrolling */
-.reveal .slides section > div > div {
+.reveal .slides section > div:not(.slide-audio-controls) > div {
   height: auto;
 }
 
