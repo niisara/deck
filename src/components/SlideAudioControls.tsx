@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 import { useTextToSpeech, type TTSStatus, type TTSVoice } from '../hooks/useTextToSpeech';
 import SvgIcon from '../lib/icons/SvgIcon';
 import './SlideAudioControls.css';
@@ -18,6 +18,10 @@ interface SlideAudioControlsProps {
   notesVoice?: TTSVoice;
   /** Instructions for speaker notes speech style */
   notesInstructions?: string;
+  /** Auto-play slide content when slide changes */
+  autoPlayContent?: boolean;
+  /** Auto-play speaker notes when slide changes */
+  autoPlayNotes?: boolean;
 }
 
 /** Small status indicator dot */
@@ -55,6 +59,8 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
   contentInstructions = `Voice: Laid-back, mellow, and effortlessly cool, like a surfer who's never in a rush. Tone: Relaxed and reassuring, keeping things light and chill. Speech Mannerisms: Use casual, friendly phrasing with surfer slang like dude, gnarly, and boom to keep the conversation chill. Pronunciation: Soft and drawn-out, with slightly stretched vowels and a naturally wavy rhythm in speech. Tempo: Slow and easygoing, with a natural flow that never feels rushed, creating a calming effect.`,
   notesVoice = 'verse',
   notesInstructions = `Voice: Laid-back, mellow, and effortlessly cool, like a surfer who's never in a rush. Tone: Relaxed and reassuring, keeping things light even when discussing complex details. Speech Mannerisms: Use casual, friendly phrasing with surfer slang like dude, gnarly, and boom to keep things chill. Pronunciation: Soft and drawn-out, with slightly stretched vowels and a naturally wavy rhythm. Tempo: Slow and easygoing, with a natural flow that creates a calming, informative vibe.`,
+  autoPlayContent = false,
+  autoPlayNotes = false,
 }) => {
   const contentTTS = useTextToSpeech({
     voice: contentVoice,
@@ -64,6 +70,25 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
     voice: notesVoice,
     instructions: notesInstructions,
   });
+
+  // Track the previous slide content to detect changes
+  const prevSlideContentRef = useRef<string>('');
+
+  // Auto-play on slide change
+  useEffect(() => {
+    // Only trigger if slide content has actually changed (new slide)
+    if (slideContent && slideContent !== prevSlideContentRef.current) {
+      prevSlideContentRef.current = slideContent;
+
+      // Prioritize: if both are enabled, play notes first, then content
+      // (in practice, only one should be enabled at a time)
+      if (autoPlayNotes && notes) {
+        notesTTS.speak(notes);
+      } else if (autoPlayContent) {
+        contentTTS.speak(slideContent);
+      }
+    }
+  }, [slideContent, notes, autoPlayContent, autoPlayNotes, contentTTS, notesTTS]);
 
   const handleContentClick = useCallback(
     (e: React.MouseEvent) => {

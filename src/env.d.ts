@@ -10,6 +10,7 @@ interface ImportMetaEnv {
   readonly VITE_ELEVENLABS_VOICE_ID: string
   readonly VITE_AZURE_STORAGE_ACCOUNT: string
   readonly VITE_AZURE_STORAGE_KEY: string
+  readonly VITE_SETTINGS_PASSWORD: string
 }
 
 interface ImportMeta {

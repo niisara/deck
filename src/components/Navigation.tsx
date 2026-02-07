@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -50,6 +51,11 @@ function Navigation({ selectedCategory, onCategoryChange, searchQuery, onSearchC
           />
           <span className="search-icon">🔍</span>
         </div>
+
+        {/* Settings Link */}
+        <Link to="/settings" className="nav-settings" title="Settings">
+          ⚙️
+        </Link>
       </div>
     </nav>
   );

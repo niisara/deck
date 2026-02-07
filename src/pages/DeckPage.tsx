@@ -12,6 +12,7 @@ import 'reveal.js/plugin/highlight/monokai.css';
 import { decks } from '../data/decks';
 import SlideAudioControls from '../components/SlideAudioControls';
 import { loadTheme } from '../utils/themeLoader';
+import { useSettings } from '../hooks/useSettings';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { marked } from 'marked';
 import mermaid from 'mermaid';
@@ -95,6 +96,7 @@ const extractPlainText = (content: string | React.ReactNode): string => {
 function DeckPage() {
   const { deckId } = useParams<{ deckId: string }>();
   const navigate = useNavigate();
+  const { settings } = useSettings();
   const revealRef = useRef<HTMLDivElement>(null);
   const revealInstanceRef = useRef<Reveal.Api | null>(null);
   const speakerWindowRef = useRef<Window | null>(null);
@@ -533,6 +535,8 @@ function DeckPage() {
                         slideContent={`${slide.title}. ${extractPlainText(slide.content)}`}
                         notes={slide.notes}
                         iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
+                        autoPlayContent={settings.autoPlayContent}
+                        autoPlayNotes={settings.autoPlayNotes}
                       />
                     )}
                   </section>
@@ -578,6 +582,8 @@ function DeckPage() {
                     slideContent={`${slide.title}. ${extractPlainText(slide.content)}`}
                     notes={slide.notes}
                     iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
+                    autoPlayContent={settings.autoPlayContent}
+                    autoPlayNotes={settings.autoPlayNotes}
                   />
                 )}
               </section>
