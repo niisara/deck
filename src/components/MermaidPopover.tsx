@@ -55,24 +55,46 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
   // Hide slide navigation controls when modal is open
   useEffect(() => {
     if (isOpen) {
-      const controls = document.querySelector('.reveal .controls');
-      const progressBar = document.querySelector('.reveal .progress');
-      const slideNumber = document.querySelector('.reveal .slide-number');
-      const slideMenu = document.querySelector('.slide-menu-button');
-      const slideMenuPanel = document.querySelector('.slide-menu');
+      // Query DOM elements only when modal is open
+      const controls = document.querySelector('.reveal .controls') as HTMLElement;
+      const progressBar = document.querySelector('.reveal .progress') as HTMLElement;
+      const slideNumber = document.querySelector('.reveal .slide-number') as HTMLElement;
+      const slideMenu = document.querySelector('.slide-menu-button') as HTMLElement;
+      const slideMenuPanel = document.querySelector('.slide-menu') as HTMLElement;
       
-      if (controls) (controls as HTMLElement).style.display = 'none';
-      if (progressBar) (progressBar as HTMLElement).style.display = 'none';
-      if (slideNumber) (slideNumber as HTMLElement).style.display = 'none';
-      if (slideMenu) (slideMenu as HTMLElement).style.display = 'none';
-      if (slideMenuPanel) (slideMenuPanel as HTMLElement).style.display = 'none';
+      // Helper function to restore display property
+      const restoreDisplay = (element: HTMLElement | null, originalValue: string) => {
+        if (element) {
+          if (originalValue === '') {
+            element.style.removeProperty('display');
+          } else {
+            element.style.display = originalValue;
+          }
+        }
+      };
+      
+      // Save original inline display values and hide controls
+      const originalDisplays = {
+        controls: controls?.style.display || '',
+        progressBar: progressBar?.style.display || '',
+        slideNumber: slideNumber?.style.display || '',
+        slideMenu: slideMenu?.style.display || '',
+        slideMenuPanel: slideMenuPanel?.style.display || '',
+      };
+      
+      if (controls) controls.style.display = 'none';
+      if (progressBar) progressBar.style.display = 'none';
+      if (slideNumber) slideNumber.style.display = 'none';
+      if (slideMenu) slideMenu.style.display = 'none';
+      if (slideMenuPanel) slideMenuPanel.style.display = 'none';
       
       return () => {
-        if (controls) (controls as HTMLElement).style.display = '';
-        if (progressBar) (progressBar as HTMLElement).style.display = '';
-        if (slideNumber) (slideNumber as HTMLElement).style.display = '';
-        if (slideMenu) (slideMenu as HTMLElement).style.display = '';
-        if (slideMenuPanel) (slideMenuPanel as HTMLElement).style.display = '';
+        // Restore original display values
+        restoreDisplay(controls, originalDisplays.controls);
+        restoreDisplay(progressBar, originalDisplays.progressBar);
+        restoreDisplay(slideNumber, originalDisplays.slideNumber);
+        restoreDisplay(slideMenu, originalDisplays.slideMenu);
+        restoreDisplay(slideMenuPanel, originalDisplays.slideMenuPanel);
       };
     }
   }, [isOpen]);
