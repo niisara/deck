@@ -1,5 +1,6 @@
 import { useRef, useState, useCallback } from 'react';
 import { sanitizeTTSText } from '../utils/sanitizeTTSText';
+import { ttsCacheKey, getCachedAudio, putCachedAudio } from '../utils/ttsCache';
 
 export type TTSStatus = 'idle' | 'loading' | 'playing' | 'error';
 
@@ -178,12 +179,24 @@ export function useTextToSpeech(options: TTSOptions = {}): UseTextToSpeechReturn
 
       try {
         const provider = getTTSProvider();
-        let blob: Blob;
+        const voiceKey = provider === 'elevenlabs'
+          ? (import.meta.env.VITE_ELEVENLABS_VOICE_ID || 'default')
+          : voice;
+        const cacheKey = await ttsCacheKey(provider, voiceKey, cleanText);
 
-        if (provider === 'elevenlabs') {
-          blob = await fetchElevenLabsTTS(cleanText, controller.signal);
-        } else {
-          blob = await fetchAzureTTS(cleanText, voice, instructions, controller.signal);
+        // 1. Try blob storage cache first
+        let blob = await getCachedAudio(cacheKey, controller.signal);
+
+        if (!blob) {
+          // 2. Cache miss → generate via TTS provider
+          if (provider === 'elevenlabs') {
+            blob = await fetchElevenLabsTTS(cleanText, controller.signal);
+          } else {
+            blob = await fetchAzureTTS(cleanText, voice, instructions, controller.signal);
+          }
+
+          // 3. Store in cache (fire-and-forget)
+          putCachedAudio(cacheKey, blob);
         }
 
         const url = URL.createObjectURL(blob);
