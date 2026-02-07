@@ -55,24 +55,35 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
   // Hide slide navigation controls when modal is open
   useEffect(() => {
     if (isOpen) {
-      const controls = document.querySelector('.reveal .controls');
-      const progressBar = document.querySelector('.reveal .progress');
-      const slideNumber = document.querySelector('.reveal .slide-number');
-      const slideMenu = document.querySelector('.slide-menu-button');
-      const slideMenuPanel = document.querySelector('.slide-menu');
+      const controls = document.querySelector('.reveal .controls') as HTMLElement;
+      const progressBar = document.querySelector('.reveal .progress') as HTMLElement;
+      const slideNumber = document.querySelector('.reveal .slide-number') as HTMLElement;
+      const slideMenu = document.querySelector('.slide-menu-button') as HTMLElement;
+      const slideMenuPanel = document.querySelector('.slide-menu') as HTMLElement;
       
-      if (controls) (controls as HTMLElement).style.display = 'none';
-      if (progressBar) (progressBar as HTMLElement).style.display = 'none';
-      if (slideNumber) (slideNumber as HTMLElement).style.display = 'none';
-      if (slideMenu) (slideMenu as HTMLElement).style.display = 'none';
-      if (slideMenuPanel) (slideMenuPanel as HTMLElement).style.display = 'none';
+      // Save original display values
+      const originalDisplays = {
+        controls: controls?.style.display || '',
+        progressBar: progressBar?.style.display || '',
+        slideNumber: slideNumber?.style.display || '',
+        slideMenu: slideMenu?.style.display || '',
+        slideMenuPanel: slideMenuPanel?.style.display || '',
+      };
       
+      // Hide controls
+      if (controls) controls.style.display = 'none';
+      if (progressBar) progressBar.style.display = 'none';
+      if (slideNumber) slideNumber.style.display = 'none';
+      if (slideMenu) slideMenu.style.display = 'none';
+      if (slideMenuPanel) slideMenuPanel.style.display = 'none';
+      
+      // Cleanup function to restore original display values
       return () => {
-        if (controls) (controls as HTMLElement).style.display = '';
-        if (progressBar) (progressBar as HTMLElement).style.display = '';
-        if (slideNumber) (slideNumber as HTMLElement).style.display = '';
-        if (slideMenu) (slideMenu as HTMLElement).style.display = '';
-        if (slideMenuPanel) (slideMenuPanel as HTMLElement).style.display = '';
+        if (controls) controls.style.display = originalDisplays.controls;
+        if (progressBar) progressBar.style.display = originalDisplays.progressBar;
+        if (slideNumber) slideNumber.style.display = originalDisplays.slideNumber;
+        if (slideMenu) slideMenu.style.display = originalDisplays.slideMenu;
+        if (slideMenuPanel) slideMenuPanel.style.display = originalDisplays.slideMenuPanel;
       };
     }
   }, [isOpen]);
