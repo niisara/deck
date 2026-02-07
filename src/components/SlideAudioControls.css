@@ -161,7 +161,7 @@
 
   /* Keep dev controls positioned above the regular controls */
   .slide-audio-controls-dev {
-    bottom: 148px; /* Adjusted to be above new mobile position */
+    bottom: 148px; /* 80px (controls position) + 52px (button height) + 16px (gap) */
     left: 50%;
     transform: translateX(-50%);
     gap: 16px;
@@ -194,7 +194,7 @@
   }
 
   .slide-audio-controls-dev {
-    bottom: 132px;
+    bottom: 132px; /* 70px (controls position) + 48px (button height) + 14px (spacing) */
     gap: 12px;
   }
 
