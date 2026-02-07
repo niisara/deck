@@ -54,14 +54,26 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
 
   // Hide slide navigation controls when modal is open
   useEffect(() => {
-    const controls = document.querySelector('.reveal .controls') as HTMLElement;
-    const progressBar = document.querySelector('.reveal .progress') as HTMLElement;
-    const slideNumber = document.querySelector('.reveal .slide-number') as HTMLElement;
-    const slideMenu = document.querySelector('.slide-menu-button') as HTMLElement;
-    const slideMenuPanel = document.querySelector('.slide-menu') as HTMLElement;
-    
     if (isOpen) {
-      // Save original inline display values (empty string if not set)
+      // Query DOM elements only when modal is open
+      const controls = document.querySelector('.reveal .controls') as HTMLElement;
+      const progressBar = document.querySelector('.reveal .progress') as HTMLElement;
+      const slideNumber = document.querySelector('.reveal .slide-number') as HTMLElement;
+      const slideMenu = document.querySelector('.slide-menu-button') as HTMLElement;
+      const slideMenuPanel = document.querySelector('.slide-menu') as HTMLElement;
+      
+      // Helper function to restore display property
+      const restoreDisplay = (element: HTMLElement | null, originalValue: string) => {
+        if (element) {
+          if (originalValue === '') {
+            element.style.removeProperty('display');
+          } else {
+            element.style.display = originalValue;
+          }
+        }
+      };
+      
+      // Save original inline display values and hide controls
       const originalDisplays = {
         controls: controls?.style.display || '',
         progressBar: progressBar?.style.display || '',
@@ -70,7 +82,6 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
         slideMenuPanel: slideMenuPanel?.style.display || '',
       };
       
-      // Hide controls by setting inline style
       if (controls) controls.style.display = 'none';
       if (progressBar) progressBar.style.display = 'none';
       if (slideNumber) slideNumber.style.display = 'none';
@@ -78,42 +89,12 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
       if (slideMenuPanel) slideMenuPanel.style.display = 'none';
       
       return () => {
-        // Restore by removing inline style (let CSS take over) or restoring original inline value
-        if (controls) {
-          if (originalDisplays.controls === '') {
-            controls.style.removeProperty('display');
-          } else {
-            controls.style.display = originalDisplays.controls;
-          }
-        }
-        if (progressBar) {
-          if (originalDisplays.progressBar === '') {
-            progressBar.style.removeProperty('display');
-          } else {
-            progressBar.style.display = originalDisplays.progressBar;
-          }
-        }
-        if (slideNumber) {
-          if (originalDisplays.slideNumber === '') {
-            slideNumber.style.removeProperty('display');
-          } else {
-            slideNumber.style.display = originalDisplays.slideNumber;
-          }
-        }
-        if (slideMenu) {
-          if (originalDisplays.slideMenu === '') {
-            slideMenu.style.removeProperty('display');
-          } else {
-            slideMenu.style.display = originalDisplays.slideMenu;
-          }
-        }
-        if (slideMenuPanel) {
-          if (originalDisplays.slideMenuPanel === '') {
-            slideMenuPanel.style.removeProperty('display');
-          } else {
-            slideMenuPanel.style.display = originalDisplays.slideMenuPanel;
-          }
-        }
+        // Restore original display values
+        restoreDisplay(controls, originalDisplays.controls);
+        restoreDisplay(progressBar, originalDisplays.progressBar);
+        restoreDisplay(slideNumber, originalDisplays.slideNumber);
+        restoreDisplay(slideMenu, originalDisplays.slideMenu);
+        restoreDisplay(slideMenuPanel, originalDisplays.slideMenuPanel);
       };
     }
   }, [isOpen]);
