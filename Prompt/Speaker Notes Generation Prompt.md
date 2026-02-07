@@ -28,11 +28,8 @@ Write the speaker notes for a live presentation to freshers/beginners.
   - Example: `2e-5` → "2e-5 (two e minus five)"
   - Example: `1e-3` → "1e-3 (one e minus three)"
   - Example: `5e6` → "5e6 (five e six)"
-- **Technical terms/acronyms**: Add pronunciation guide with 👉 for new or difficult terms
-  - Example: `RoBERTa` → "RoBERTa 👉 'roh-BER-tuh'"
-  - Example: `BERT` → "BERT 👉 'burt'"
-  - Example: `spaCy` → "spaCy 👉 'spay-see'"
-  - Example: `NVIDIA` → "NVIDIA 👉 'en-VID-ee-uh'"
+- **Technical terms/acronyms**: Add pronunciation guide 
+
 - **Greek letters**: Include English name
   - Example: `λ` → "λ (lambda)"
   - Example: `α` → "α (alpha)"
