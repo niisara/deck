@@ -28,15 +28,17 @@ export const deathDeck: Deck = {
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 1 — Opening: This Will Happen to Me
-#### 🎯 Purpose
-This is not an introduction. This is a confrontation. Let these words land slowly, heavily. The audience should feel the weight of personal mortality from the first breath.
-#### 🎭 Delivery
-Read each line slowly. Pause between them. Let silence do the work. This isn't about information — it's about *presence*. Make eye contact if you can. Let them feel that you mean *them*. Not humanity in general. Not a philosophical abstraction. *Them*.
-#### 💡 The Shift
-Most of us spend our lives in comfortable denial. We know death exists, but we keep it at arm's length — something that happens to other people, in other places, at other times. This slide shatters that distance. It says: *No. You. This body you're sitting in right now.*
-> Let the silence after this slide last at least 5 seconds before moving on.
-The next slides will begin exploring how the body fails — not dramatically, not heroically, but in small, humiliating ways that strip away our dignity piece by piece.`
+          notes: `This will happen to me.
+Not in theory. Not someday. To this body.
+
+Not humanity in general. Not a philosophical thought experiment.
+This body. These hands. These lungs. This heartbeat.
+
+Every person who has ever lived has died. Every single one.
+I am not the exception. There is no exception.
+
+The comfortable distance I keep between myself and death — that's a lie I tell myself to get through the day.
+It doesn't change anything.`
         },
         {
           id: 2,
@@ -73,16 +75,22 @@ The next slides will begin exploring how the body fails — not dramatically, no
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 2 — The Body Will Fail — Not Heroically
-#### 🎯 Purpose
-We imagine decline as dramatic — a sudden stroke, a tragic accident. But for most, it's far more insidious. It's the slow erosion of the things we take for granted, starting with the most fundamental: **the ability to speak our own thoughts**.
-#### 🎭 Delivery
-Read this slowly. Let each line build on the last. The frustration should be palpable — not shouted, but *felt*. The final line about nodding should land like resignation, not anger.
-#### 💡 The Horror
-This isn't about losing speech entirely. It's about the *gap* between what you think and what you can express. Your mind is still sharp, still *you*, but your body has become a prison. And worse — people will assume your silence means agreement. They'll decide what you meant. They'll correct you about *your own thoughts*.
-#### 🌊 The Emotional Arc
-This slide introduces a theme that will recur: the slow stripping away of agency. You're not dying yet — you're just becoming less yourself, one small loss at a time.
-The next slide goes even more intimate — bodily control.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this body.
+
+The body will fail — not heroically.
+Not in some dramatic cinematic moment. In small, humiliating ways nobody warns you about.
+
+One day, your words will not come out right.
+Picture it — you're trying to tell your daughter something important. The thought is crystal clear in your mind. But your tongue won't cooperate. The word sits right there, you can almost taste it, and it won't come out.
+
+You will know exactly what you want to say — and your mouth will not obey.
+So people jump in. They finish your sentences. They get it wrong. They tell you what you meant. And you just nod, because fighting it takes more energy than you have left.
+
+You will be corrected about your own intentions.
+By the people who love you most. And you'll let them, because correcting them hurts more than being misunderstood.`
         },
         {
           id: 3,
@@ -120,16 +128,22 @@ The next slide goes even more intimate — bodily control.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 3 — Control Will Leave Before Life Does
-#### 🎯 Purpose
-This is perhaps the most viscerally uncomfortable slide. We don't talk about incontinence. We don't talk about being cleaned by strangers. But this is the reality that awaits most of us if we live long enough.
-#### 🎭 Delivery
-Don't rush past the discomfort. Let it sit. The audience will want to look away — that's the point. Read "As routine" with weight. The final line about apologizing should be almost whispered.
-#### 💡 The Stripped Dignity
-Notice what happens here: the body betrays you in the most intimate way possible, and your response isn't rage or grief — it's *embarrassment*. You feel shame for something you cannot control. You apologize for existing in a body that is falling apart.
-#### 🌊 Why This Matters
-This slide isn't cruelty for its own sake. It's about facing what we avoid. Most people plan their finances for retirement but never emotionally prepare for the indignities of physical decline. This forces that reckoning.
-Now we move to identity — your face becoming unfamiliar.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this body.
+
+Control will leave before life does.
+Your body will stop asking permission.
+
+At some point, your body will release waste without asking you.
+Not once, as some terrible accident. As routine. Tuesday. Thursday. Saturday. Every time someone has to clean you.
+
+You won't feel dramatic sorrow.
+You'll feel your face burn with shame. You'll apologize. Over and over. To the nurse, to your daughter, to your son. For something you can't control. For existing in a body that has already quit on you.
+
+The worst part isn't the mess.
+It's knowing you used to be someone who took care of others. And now you can't take care of yourself.`
         },
         {
           id: 4,
@@ -167,16 +181,22 @@ Now we move to identity — your face becoming unfamiliar.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 4 — Your Face Will Become Unfamiliar
-#### 🎯 Purpose
-The face is our primary symbol of identity. When we think of ourselves, we picture our face. This slide confronts the strange dissociation that comes with aging — the gap between who we feel we are inside and who looks back at us from mirrors.
-#### 🎭 Delivery
-The line "Not metaphorically. Literally." should land hard. Pause before it. Let the audience realize you're not being poetic — you're describing a neurological reality. The final line should be delivered with a sense of Groundhog Day horror.
-#### 💡 The Uncanny
-There's something deeply unsettling about seeing a stranger in your own reflection. It's not that you've forgotten who you are — it's that your internal image of yourself hasn't caught up with decades of change. You still feel thirty inside. Then you see eighty looking back.
-#### 🌊 The Cruelty of Remembering
-The final line is key: "Each time will feel like the first time." This isn't just about not recognizing yourself once. It's about re-discovering your own aging *repeatedly*, with fresh shock each time. Memory doesn't protect you from this grief.
-Next: pain as your constant weather.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this face.
+
+Your face will become unfamiliar.
+You will catch your reflection and for a split second wonder who that old person is. Then it hits you.
+
+Not metaphorically. Literally.
+Your brain still pictures you at thirty-five. Full of energy. Sharp jaw. Clear eyes. Then a mirror ambushes you in a store window and you see someone your parents' age staring back. Except it's you.
+
+Sometimes you'll forget you're old. Then catch your reflection. And remember.
+Like being told terrible news for the first time, every time. You never get used to it. The shock resets overnight. You wake up feeling like yourself, and then the mirror tells you the truth again.
+
+Each time will feel like the first time.
+That's the cruelty — your brain refuses to update the file.`
         },
         {
           id: 5,
@@ -214,16 +234,22 @@ Next: pain as your constant weather.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 5 — Pain Will Become Your Weather
-#### 🎯 Purpose
-We think of pain as an event — something that happens and then passes. But chronic pain is different. It becomes the backdrop of your existence, as constant and unavoidable as weather. This slide captures that exhausting normalization.
-#### 🎭 Delivery
-The list of pain types (Sharp. Dull. Throbbing. Constant. Shooting.) should be read almost clinically, like someone who has described their pain so many times it's become rote. The final line should be dry, almost darkly funny.
-#### 💡 The Vocabulary of Suffering
-Notice how the slide mentions "rating pain on scales." Anyone who's been in chronic pain knows this ritual — the 1-to-10 scale, asked by every nurse, every doctor, every time. It becomes meaningless. How do you rate something that never leaves?
-#### 🌊 Boredom as Horror
-The final line is deliberately jarring: "It will bore you before it kills you." This isn't about pain being less terrible — it's about pain being so constant that even suffering becomes tedious. That's a different kind of horror.
-Next: the betrayal of the mind.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this body.
+
+Pain will become your weather.
+Not a storm that passes. The sky itself. Always there. The background to everything you do.
+
+You will wake up in pain.
+Before your eyes open, before any thought forms, pain is there first. Waiting. It slept with you. It will have breakfast with you. It will sit beside you for every hour of every day, and it will never leave.
+
+You will become an expert in types of ache.
+Sharp — that's the hip. Dull — that's the lower back. Throbbing — the knees. Constant — everywhere. You'll describe it to doctors so many times the words lose all meaning.
+
+It will bore you before it kills you.
+That's the thing no one tells you. Pain gets tedious. The same suffering, the same complaints, the same helplessness, day after day. Even agony becomes monotonous.`
         },
         {
           id: 6,
@@ -261,16 +287,22 @@ Next: the betrayal of the mind.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 6 — Your Mind Will Betray You Quietly
-#### 🎯 Purpose
-If losing bodily control is humiliating, losing mental control is existential. This slide captures the quiet horror of cognitive decline — not the dramatic "forgetting who you are" of movies, but the small erosions that accumulate until you're no longer quite yourself.
-#### 🎭 Delivery
-Read this with a sense of creeping dread. The details are mundane — wrong names, repeated stories — but let their accumulation feel sinister. The final line should land like a philosophical gut-punch.
-#### 💡 The Disappearing Self
-"The you that remembers will fade before the you that exists." This is the cruelest paradox of dementia: you will still be alive, still present, still breathing — but the continuous thread of memory that makes you *you* will have snapped. You will exist without knowing who you are.
-#### 🌊 The Complicity of Others
-Notice the detail about people smiling patiently. This is the world around you already treating you as diminished, already accommodating your decline, while you remain unaware. You're the last to know you're fading.
-The final slide in this section: becoming a burden.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this mind.
+
+Your mind will betray you quietly.
+Not with a dramatic collapse. With small, creeping thefts you barely notice until the damage is done.
+
+You will forget the word for common things.
+You'll point at the toaster and say "the thing." You'll call your son by your brother's name. You'll do it and not even realize.
+
+You will tell the same story three times in one hour.
+And people will smile patiently, the way you smile at a child. Each time will feel like the first. They'll exchange glances. You won't notice. That's the mercy and the horror — you don't know you're fading.
+
+The you that remembers will fade before the you that exists.
+Your body will keep going. Your heart will keep beating. But the thread that connects who you were yesterday to who you are today will snap. And you won't even know it snapped.`
         },
         {
           id: 7,
@@ -309,16 +341,22 @@ The final slide in this section: becoming a burden.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 7 — You Will Become a Burden
-#### 🎯 Purpose
-This is the slide people fear most — not death itself, but being a burden on those they love. It captures the shame of dependence, the guilt of needing, and the terrible awareness of being too much for others.
-#### 🎭 Delivery
-Read the details about seeing frustration, forced smiles, controlled patience — these should feel like observations, not accusations. The person experiencing this isn't angry at their caretakers. They understand. That's what makes it worse.
-#### 💡 The Unbearable Awareness
-"You will apologize for existing." This is perhaps the most devastating line in this section. Not apologizing for a specific inconvenience — apologizing for *being*. For taking up space. For having needs. For not having the decency to die faster.
-#### 🌊 The Final Cut
-"And you will mean it." This isn't performed guilt. It's genuine. You will genuinely wish you weren't a burden. You will genuinely feel that your existence is an imposition. And there's no comfortable resolution to that feeling.
-> Let this section end in silence. The next section will shift to physical decay.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this life.
+
+You will become a burden.
+Not because they say so. Because you'll see it in their eyes before they can hide it.
+
+You will need help getting dressed.
+Buttons your fingers can't manage. Shoes you can't reach. The flicker of frustration on their face as they kneel down to help — they'll mask it with a smile, but you'll catch it. You'll always catch it.
+
+You will hear them sigh when they think you can't hear.
+They're exhausted. They have their own lives. Their own children needing them. And here you are — another obligation, another task, another thing they have to do before they can live their day.
+
+You will apologize for existing. For needing. For still being here.
+And you will mean it. Not as a gesture. You will genuinely wish you could disappear, that you could stop being a weight on the people you love most in this world.`
         }
       ]
     },
@@ -341,16 +379,17 @@ Read the details about seeing frustration, forced smiles, controlled patience �
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 8 — Section Opening: Physical Decay
-#### 🎯 Purpose
-This is a section transition. We move from the failures of agency and mind to the explicit physical breakdown of the body. The language shifts from the abstract to the visceral — bones and flesh, not self and identity.
-#### 🎭 Delivery
-Same pacing as the first section opener. Slow. Heavy. Let each line land. This is a reset — the audience has absorbed one form of horror, and now we're introducing another.
-#### 💡 The Shift in Focus
-The previous section was about *experience* — what it feels like to decline. This section is about *mechanics* — what literally happens to your body. It's more clinical, more graphic, more unavoidable.
-#### 🌊 Setting the Stage
-The slides that follow will go through organ systems, tissues, and structures. Skin. Bones. Heart. Eyes. Teeth. Each one failing in its own way. Prepare the audience for specificity.
-The body itself becomes the subject now.`
+          notes: `This decay will claim me.
+Not in fantasy. Not eventually.
+To these bones and flesh.
+
+The previous horror was about experience — what it feels like to lose agency, to lose your mind, to become a burden.
+
+Now we enter the body itself.
+The actual physical machinery failing. Skin tearing. Bones cracking. Heart stuttering. Eyes dimming. Teeth falling.
+
+This is what decomposition looks like while you're still alive.
+The body doesn't wait until you die to begin falling apart. It starts early and picks up speed.`
         },
         {
           id: 9,
@@ -389,16 +428,19 @@ The body itself becomes the subject now.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 9 — Your Skin Will Paper and Tear
-#### 🎯 Purpose
-Skin is our boundary with the world. It's what holds us together, literally. This slide describes how that boundary becomes fragile — how the container itself starts to fail.
-#### 🎭 Delivery
-The visceral details here — blood seeping through bandages, wounds refusing to heal — should be read matter-of-factly. This isn't dramatic description; it's clinical reality. The "roadmap of decay" line can have a hint of dark poetry.
-#### 💡 The Test
-The detail about pulling at loose skin is something anyone can try right now. Pinch the skin on the back of your hand and release it. At twenty, it snaps back instantly. At eighty, it stays. You can watch your own collagen disappearing in real-time.
-#### 🌊 Visible Decay
-Unlike internal organ failure, skin deterioration is *visible*. You see it every day. Every glance at your hands reminds you that you're decomposing slowly, while still alive.
-Next: the skeleton itself.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this skin.
+
+Your skin will become thin as tissue paper.
+Run your finger across the back of your hand right now. Feel that? That elasticity? That bounce? It won't be there. Pull the skin up — someday it will stay where you left it. Tent up. Take minutes to settle back down. Like a science experiment you're performing on yourself.
+
+A simple bump will tear it open.
+Hit your arm on a doorframe — it splits. Blood pools under skin so thin you can see it spreading. Purple and blue like spilled ink. Wounds will refuse to heal. The bandage comes off and the tear is still there, angry and raw, week after week.
+
+Your hands will show every vein.
+A roadmap drawn in purple and blue, running under translucent skin. These are your hands. The ones that held children, that built things, that touched the people you loved. Now they look like they belong to a corpse.`
         },
         {
           id: 10,
@@ -437,16 +479,22 @@ Next: the skeleton itself.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 10 — Your Bones Will Hollow and Crack
-#### 🎯 Purpose
-We think of bones as permanent — the skeleton as the lasting frame. But bones are alive, constantly rebuilding themselves. When that process fails, you become fragile in ways that seem absurd: breaking bones from ordinary movements.
-#### 🎭 Delivery
-The list of ordinary activities causing fractures (coughing, standing, sitting) should feel increasingly absurd and horrifying. These aren't accidents — they're just *existing*.
-#### 💡 Osteoporosis
-This is the reality of severe osteoporosis. The bones become like honeycomb — full of air, structurally compromised. A compression fracture from sitting in a chair. A rib breaking from a cough. These aren't exaggerations.
-#### 🌊 Collapsing Inward
-"The body you stand in will collapse inward." This captures both the literal reality (spinal compression, shrinking height) and the metaphorical sense of the self caving in on itself. You become smaller. Less.
-The heart comes next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these bones.
+
+Your bones will hollow and crack.
+They'll become porous, light, fragile — like honeycomb. The frame that held you upright for decades will turn against you.
+
+You will break a rib from coughing. A hip from standing. A vertebra from sitting wrong.
+That's not exaggeration. That's osteoporosis. A cough. A chair. Standing up from bed. These aren't accidents — these are just existing. Your skeleton can't handle the weight of ordinary life anymore.
+
+Each fracture will heal slower than the last. If it heals at all.
+And while you lie in bed waiting, the muscles waste away, the pneumonia sets in, the blood clots form. One broken bone starts a chain reaction that doesn't stop.
+
+The body you stand in will collapse inward.
+You will shrink. Your spine will curve. You will become physically smaller, folding in on yourself like a building being demolished in slow motion.`
         },
         {
           id: 11,
@@ -485,16 +533,22 @@ The heart comes next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 11 — Your Heart Will Strain and Stutter
-#### 🎯 Purpose
-The heart is the engine. When it fails, everything fails. This slide captures the experience of cardiac decline — not the dramatic heart attack, but the slow weakening that turns every movement into a calculation of energy.
-#### 🎭 Delivery
-The sequence of symptoms (skipping, racing, pausing) should feel irregular, like the heart itself. The detail about needing to rest halfway to the bathroom should be delivered with exhaustion in your voice. The final line should shock.
-#### 💡 The Arithmetic of Energy
-When your heart can't pump efficiently, you start rationing energy. Is this trip to the kitchen worth the exhaustion? Can I make it to the bathroom without stopping? Every action requires calculation.
-#### 🌊 The Dark Turn
-"Then be disappointed it wasn't." This is the slide where we first acknowledge that death might be preferable to continued existence. This isn't suicidal ideation — it's the exhausted recognition that continued life in this state is its own form of suffering.
-Organ failure cascade next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this heart.
+
+Your heart will strain and stutter.
+The engine that never stopped, not once, since before you were born — it's wearing out. And you'll feel it.
+
+You will feel it skip beats. Race for no reason. Pause for too long.
+Lying in bed at night, you'll feel it — that flutter, that missed beat, that extra-hard thump that makes you hold your breath. Is this it? Is this the one? Then it settles. Until next time.
+
+Walking to the bathroom will exhaust you.
+Fifteen feet. That's all. And halfway there you'll need to sit down, chest heaving, arms shaking, wondering how something so small became so impossible.
+
+Then be disappointed it wasn't.
+At some point, the skipped beat won't scare you anymore. It'll feel like a promise that keeps getting broken. You'll welcome it. And that's when you know something inside you has already died.`
         },
         {
           id: 12,
@@ -530,16 +584,22 @@ Organ failure cascade next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 12 — Your Organs Will Fail in Sequence
-#### 🎯 Purpose
-Organ failure is rarely sudden. It's a cascade — one system stressing another, toxins accumulating, the body slowly poisoning itself. This slide makes that process viscerally real through sensory details.
-#### 🎭 Delivery
-The list of failing organs should feel like dominoes falling. The sensory details — tasting metal, smelling decay — should be delivered as facts, not dramatizations. The final image is meant to be grotesque.
-#### 💡 The Body Betraying Itself
-When kidneys fail, waste builds up. When lungs fail, oxygen drops. When the liver fails, toxins accumulate. Your body becomes a hostile environment for itself. You can literally taste your own decline.
-#### 🌊 The Final Image
-"Pregnant with your own death" — this image is deliberately disturbing. The swelling, the distension, the body filling with what it cannot process. You are carrying something that will kill you, watching it grow.
-Muscles next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these organs.
+
+Your organs will fail in sequence.
+Not all at once. Like dominoes. One fails, stresses the next, which stresses the next. A cascade.
+
+Your kidneys will filter less. Your liver will process slower. Your lungs will capture less oxygen.
+Toxins build up in your blood. You taste metal at the back of your throat. Your breath smells like something rotting — because something is. You are. From the inside.
+
+Your body will retain fluid. Your ankles will swell. Your belly will distend.
+The body filling up with what it can no longer process. Carrying its own poison, expanding with it.
+
+You will look pregnant with your own death.
+That's not metaphor. That's what end-stage organ failure looks like. Swollen, distended, bloated with the waste your body can no longer expel. Growing something that will kill you.`
         },
         {
           id: 13,
@@ -578,16 +638,22 @@ Muscles next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 13 — Your Muscles Will Waste and Atrophy
-#### 🎯 Purpose
-Muscles are action. They're how we interact with the world, how we do things. Losing them means losing the ability to *do* — reduced first to clumsiness, then to helplessness, then to being fed like an infant.
-#### 🎭 Delivery
-The progression here is a descent: from weakness to trembling to dropping things to having food cut for you to being fed. Read each step as a further humiliation. The final two lines should feel like a one-two punch.
-#### 💡 Sarcopenia
-This is called sarcopenia — age-related muscle loss. Your body, unable to maintain muscle, starts cannibalizing it. You literally eat yourself from the inside. And unlike fat, muscle is hard to rebuild in old age.
-#### 🌊 The Return to Infancy
-The final lines echo childhood: having food cut, being fed. You end as you began — dependent, helpless, unable to care for yourself. But unlike childhood, there's no growth ahead. Only decline.
-Eyes next — losing the world.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these muscles.
+
+Your muscles will consume themselves for fuel.
+Your body, starving for energy, will eat its own meat. Your arms will thin until the bones show through. Your legs will barely hold you upright. Your hands will tremble from the effort of holding a cup of tea.
+
+You will drop things. Spill things. Break things.
+The glass slips. The plate crashes. The book falls from fingers that can no longer grip. Every object in the world becomes a test you're failing.
+
+People will start cutting your food for you.
+Someone at the table will lean over and cut your steak into small pieces. The way you once did for your children. The reversal is so complete it's almost poetic. Almost.
+
+Then feeding you.
+Spoon to your lips. Wiping the spill from your chin. You end the way you began — dependent, helpless, and unable to do the most basic thing a human being can do for themselves.`
         },
         {
           id: 14,
@@ -626,16 +692,22 @@ Eyes next — losing the world.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 14 — Your Eyes Will Fail You
-#### 🎯 Purpose
-Vision is how most of us primarily experience the world. Losing it means losing access to everything — reading, faces, beauty, danger. This slide traces that loss from blur to darkness.
-#### 🎭 Delivery
-The progression should feel like the world slowly dimming. Read it like a sunset that never reverses. The final line — "Then light itself will go" — should feel like a door closing.
-#### 💡 The Layered Loss
-Notice the sequence: first clarity, then color, then detail, then shape, then light. Each stage takes something irreplaceable. You lose books. You lose the faces of people you love. You lose the ability to navigate your own home.
-#### 🌊 The Metaphor Within
-Vision loss is also a metaphor for how decline works: gradual, then sudden. You adjust to blurriness, then to dimness, then suddenly you realize you can't see at all. The adjustment obscures the cliff until you've fallen.
-Finally: teeth.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these eyes.
+
+Your world will become blurry, then dark.
+The world you've spent your entire life looking at — it's going to leave you. Not all at once. The edges go first.
+
+Colors will fade to gray. Faces will become shadows.
+Imagine your daughter walks into the room. You hear her voice. You know it's her. But you can't see her face. Just a shape in the doorway. A blur where features used to be.
+
+Reading will become impossible. Then recognizing faces.
+Books — gone. Newspapers — gone. The faces of people you love — gone. You will live among strangers you recognize only by their voices. Your world reduced to sound and touch.
+
+Then light itself will go.
+The last thing to leave. Not sight, not detail, not color — light. The world will simply go dark. And it won't come back.`
         },
         {
           id: 15,
@@ -674,16 +746,22 @@ Finally: teeth.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 15 — Your Teeth Will Loosen and Fall
-#### 🎯 Purpose
-Teeth are bone visible. They're also central to our appearance, our smile, our ability to eat. Losing them is both functionally debilitating and symbolically devastating — you start to look like the corpse you will become.
-#### 🎭 Delivery
-The image of finding teeth in food, on pillows, in your hand — these should feel both mundane and horrifying. The final line about smiling like a corpse should land as a dark mirror.
-#### 💡 The Physical Reality
-Without teeth, the face collapses. The jaw shrinks. The lips fold inward. The structural support of the lower face disappears. This isn't just cosmetic — it affects eating, speaking, breathing.
-#### 🌊 The Corpse in the Mirror
-"You will smile and look like a corpse." This is perhaps the most brutal image in this section. You're still alive, but your face has begun to preview what death will look like. Every smile is a reminder.
-> End of physical decay section. Transition to isolation.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these teeth.
+
+Your gums will recede and bleed.
+They pull back from your teeth like tide going out. The bone underneath dissolves. Your teeth, untethered, begin to move.
+
+Your teeth will wiggle when you touch them. Then fall out one by one.
+You'll find them in your food. Bite into an apple and leave a tooth behind. Find one on your pillow in the morning. Cough into your hand and see a tooth sitting there, root and all, like it was never attached to you.
+
+Your face will collapse inward.
+Without teeth, the jaw shrinks. The lips fold in. The chin meets the nose. The structural architecture of your face caves. You look in the mirror and see the skull underneath, barely disguised.
+
+You will smile and look like a corpse.
+That's not cruelty — that's anatomy. Your face is already previewing what death will look like. Every smile is a rehearsal.`
         }
       ]
     },
@@ -706,16 +784,15 @@ Without teeth, the face collapses. The jaw shrinks. The lips fold inward. The st
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 16 — Section Opening: Isolation
-#### 🎯 Purpose
-We shift from physical decay to social decay. The body fails, yes — but so does your world. People leave. People die. The circles of connection that gave life meaning shrink until you're alone.
-#### 🎭 Delivery
-Same slow pace as previous openers. Let "In lived experience" land hard. This isn't philosophical loneliness — it's the concrete reality of isolation that most elderly people face.
-#### 💡 The Other Death
-We focus on physical death, but there's another death that precedes it: social death. The death of connection. The death of relevance. The death of being seen and known by others.
-#### 🌊 What's Coming
-The slides ahead will cover: outliving everyone, decreasing visits, talking to yourself, being forgotten, becoming invisible, sleeping alone. Each is a different face of isolation.
-This section may hit harder than physical decay. Bodies fail — we know this. But being abandoned? That cuts deeper.`
+          notes: `This isolation will hollow me.
+Not as metaphor. Not as possibility.
+In lived experience.
+
+The body fails, yes — that's horrifying enough.
+But the world around you fails too. People leave. People die. The circles of connection that gave life meaning shrink until there's nothing left but silence.
+
+There's a death before death.
+Social death. The death of connection. The death of being seen, known, needed by anyone. It comes first. The body just catches up later.`
         },
         {
           id: 17,
@@ -755,16 +832,19 @@ This section may hit harder than physical decay. Bodies fail — we know this. B
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 17 — You Will Outlive Everyone You Love
-#### 🎯 Purpose
-Longevity has a cost: you get to watch everyone you love die before you. Each death takes not just a person but a piece of shared history — inside jokes, memories, the validation that your past was real.
-#### 🎭 Delivery
-The list — friends, siblings, children — should feel like a toll. The phrase "If you're unlucky enough" before "your children" should land as the worst of the losses. The final lines should feel like an echo in an empty room.
-#### 💡 The Archaeology of Loss
-When someone dies, the shared memories go with them. You become the only person who remembers that summer, that conversation, that look. You're the last witness. And when your memory fails, those moments will cease to have ever existed.
-#### 🌊 The Compounding Grief
-This isn't one funeral. It's funeral after funeral. The grief accumulates. Eventually, you stop being surprised. Death becomes routine. That normalization is its own kind of horror.
-Visits will decrease next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this heart.
+
+You will attend funeral after funeral.
+Not one grief. Not two. A procession. The people who made your life — leaving, one by one. Friends. Siblings. Colleagues. Lovers. And if you're cursed with enough years — your own children.
+
+Each death will take a piece of your history.
+The inside jokes die with them. The shared memories — that trip, that night, that look you gave each other across the room — gone. No one else was there. No one else remembers. You become the sole witness to a life no one can verify.
+
+Then you will forget them too.
+The last keeper of the memories loses the memories. The faces blur. The voices fade. The stories scramble. And there's no one left to remind you what you've lost. No one left at all.`
         },
         {
           id: 18,
@@ -804,16 +884,19 @@ Visits will decrease next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 18 — People Will Visit Less and Less
-#### 🎯 Purpose
-Even before everyone dies, they drift away. Life pulls them. You're no longer central to anyone's story. The visits decrease with mathematical certainty, and you watch yourself become an obligation rather than a priority.
-#### 🎭 Delivery
-The countdown — weekly to monthly to holidays — should feel like a countdown to zero. "You are not the center anymore" should be matter-of-fact, not self-pitying. The final line should have dignity despite its sadness.
-#### 💡 The Calculus of Obligation
-People don't stop caring. They stop having time. Their lives are full. You become an item on a checklist, squeezed between other obligations. They love you, but love doesn't guarantee presence.
-#### 🌊 The Grace of Understanding
-"You will not blame them. But you will notice." This is the terrible maturity of old age — understanding why people don't come, not resenting them for it, but still feeling every absence. Understanding doesn't fill the silence.
-Self-dialogue comes next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In this lived life.
+
+People will visit less and less.
+At first, they come often. They bring flowers. They stay for hours. Then once a week. Then once a month. Then on Christmas if you're lucky. Then not at all.
+
+You will understand. They have lives.
+Responsibilities. Children. Jobs. You are no longer the center of anyone's world. You're an item on a checklist, squeezed between groceries and dentist appointments. They love you. But love doesn't mean presence.
+
+You will wait by the phone for calls that don't come.
+Sitting in the chair, glancing at the phone, willing it to ring. It doesn't. And you won't blame them. But you will notice. God, you will notice every empty hour.`
         },
         {
           id: 19,
@@ -852,16 +935,19 @@ Self-dialogue comes next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 19 — You Will Talk to Yourself
-#### 🎯 Purpose
-When no one else is there, you become your own company. Self-narration begins as a way to fill silence and becomes the only conversation you have. This slide captures the mundane reality of extreme isolation.
-#### 🎭 Delivery
-The quoted self-talk should be delivered naturally, like you're actually making tea. Let the phrases hang in the silence. "Because there are no others" should land like a door closing.
-#### 💡 The Sound of Your Own Voice
-Most people have never gone days without hearing another human voice. But for the isolated elderly, this is reality. You talk to yourself not because you're crazy but because silence becomes unbearable.
-#### 🌊 The Mirror's Absence
-"You will forget what your voice sounds like to others." Your voice exists only in your own head now. There's no one to respond, no one to mirror you, no one to confirm you're real. You become a ghost haunting your own home.
-Being forgotten is next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In this silence.
+
+Days will pass without another voice.
+Not a day. Days. The last person you spoke to was the pharmacist, three days ago. Before that, nobody. After that, nobody.
+
+You will narrate your actions to the empty room.
+"Now I'll make tea." "Time for lunch." "Where did I put that?" You'll answer yourself. Have full conversations alone. Not because you're losing your mind — because the silence is unbearable.
+
+You will forget what your voice sounds like to others.
+Because there are no others. No one to respond. No one to say your name. No one to confirm you're still real. You become a ghost haunting your own house, talking to walls that don't answer back.`
         },
         {
           id: 20,
@@ -901,16 +987,19 @@ Being forgotten is next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 20 — The World Will Forget You Exist
-#### 🎯 Purpose
-Before you die, you become irrelevant. Your voice no longer carries weight. Your presence is unnoticed. This slide confronts the social death that often precedes physical death — the realization that you no longer matter.
-#### 🎭 Delivery
-Read the dismissals (outdated, repetitive, optional) without bitterness — just acceptance. The realization about dying and no one noticing should land like a stone dropped into water. "Or months" should be even heavier.
-#### 💡 The Test of Impact
-How would the world change if you disappeared? This is a brutal question, but honest. For most of us, especially in old age, the answer is: minimally. Life flows around our absence without noticing.
-#### 🌊 The Continuation
-"Life would continue exactly as it does now." This is the hardest truth: the world doesn't need you. Never did. Your absence creates a ripple, not a wave. And ripples fade.
-Invisibility comes next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this existence.
+
+The world will forget you exist.
+Your emails go unanswered. Your calls unreturned. Not out of cruelty — out of irrelevance. You simply don't register anymore.
+
+Your opinions will be dismissed as outdated. Your stories as repetitive. Your presence as optional.
+You've been filed away. The world moved on while you were still in it.
+
+You could die tomorrow and most people wouldn't know for weeks.
+Sit with that. Really sit with it. The mail would pile up. The milk would expire. The phone would ring into nothing. Weeks. Maybe months. And life would continue exactly as it does now, without a single ripple.`
         },
         {
           id: 21,
@@ -948,16 +1037,19 @@ Invisibility comes next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 21 — You Will Become Invisible
-#### 🎯 Purpose
-Old people become invisible in public spaces. They're looked through, talked over, served last. This slide captures the experience of still being present but no longer being seen — a kind of living erasure.
-#### 🎭 Delivery
-The list of small indignities should accumulate. None is dramatic, but together they paint a picture of constant dismissal. The final question should hang in the air, genuinely uncertain.
-#### 💡 The Vanishing
-This isn't paranoia. Studies show that elderly people receive less attention, less service, less acknowledgment in public spaces. Youth-oriented cultures simply stop seeing people past a certain age.
-#### 🌊 The Existential Question
-"You will wonder if you've already died and no one told you." This is played as absurdist, but it touches on something real: when no one responds to you, when no one sees you, what proof do you have that you exist?
-Sleeping alone is next — the final isolation.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this person.
+
+People will look through you in public.
+Not at you. Through you. Like glass. Like you've already become part of the background.
+
+Waiters will serve you last. Store clerks will ignore you. Young people will talk over you.
+You'll stand in line and be skipped. You'll raise your hand and not be called on. You'll speak and people will not hear you. Your words fall out of your mouth and dissolve before they reach anyone.
+
+You will wonder if you've already died and no one told you.
+And it won't feel like a joke. It will feel like a genuine question. When no one sees you, when no one responds, what proof do you have that you still exist?`
         },
         {
           id: 22,
@@ -998,16 +1090,22 @@ Sleeping alone is next — the final isolation.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 22 — You Will Sleep Alone
-#### 🎯 Purpose
-Of all isolation, this may be the most intimate: the empty bed. The person you shared decades with, gone. And every morning, you wake up and have to remember they're dead all over again.
-#### 🎭 Delivery
-The short sentences at the start (too big, too cold, too quiet) should feel sparse, like the bed itself. The reaching out in the night should feel like a reflex. "Every single morning" should carry the weight of thousands of mornings.
-#### 💡 The Cruelty of Sleep
-Sleep resets memory. Every night, your dreaming brain forgets the loss. Every morning, you wake expecting them to be there, reach out, and re-experience the absence. It's grief on infinite loop.
-#### 🌊 The One-Sided Conversation
-"It will not answer." The photo becomes a companion. You tell it about your day, ask its advice, say goodnight. But there's no response. Just your voice and the silence it falls into.
-> End of isolation section. Transition to fear.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In this bed.
+
+The bed will be too big. Too cold. Too quiet.
+You'll lie on your side, the way you always did, and there's nothing behind you but empty space. Cold sheets. No warmth. No breathing. No weight beside you.
+
+You will reach out in the night for someone who isn't there.
+It's a reflex. Decades of reaching. Your arm moves before your brain remembers. Then your hand lands on nothing, and you remember. Again.
+
+You will wake up and forget they're gone. Then remember. Every single morning.
+Sleep resets the grief. For those few groggy seconds, everything is normal. Then reality floods in. They're gone. Every morning is the morning after they died.
+
+You will talk to their photo. It will not answer.
+You'll say goodnight. You'll tell them about your day. You'll ask what they think. And the silence that follows will be the loneliest sound in the world.`
         }
       ]
     },
@@ -1030,16 +1128,15 @@ Sleep resets memory. Every night, your dreaming brain forgets the loss. Every mo
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 23 — Section Opening: Fear
-#### 🎯 Purpose
-Aging brings specific fears: falling, dying alone, hospitals, forgetting, being a burden, pain. This section catalogs them — not to frighten, but to name what most people feel but rarely say.
-#### 🎭 Delivery
-"In the darkness at 3 AM" — this is when fear is loudest. When you can't sleep and the thoughts spiral. Let this feel like that hour: quiet, dark, unavoidable.
-#### 💡 Why Fear Matters
-We talk about death philosophically, but the *experience* of approaching death is dominated by fear. These aren't abstract concerns — they're the things that wake people at night, that they don't admit to their families.
-#### 🌊 What's Coming
-Falling. Dying alone. Hospitals. Forgetting. Being a burden. Pain. Each fear has its own slide. Each is valid. Each is terrifying.
-Let's begin with falling — the fear that starts the cascade.`
+          notes: `This terror will find me.
+Not in nightmares. Not theoretically.
+In the darkness at 3 AM.
+
+3 AM is when it comes.
+The house is silent. The darkness is thick. And your mind starts its work. Every fear you pushed down during the day climbs out and sits on your chest.
+
+Falling. Dying alone. Hospitals. Forgetting. Being a burden. Pain.
+These aren't abstract concerns. These are the things that wake people at night, that they never admit to their families, that they carry alone in the dark.`
         },
         {
           id: 24,
@@ -1080,16 +1177,19 @@ Let's begin with falling — the fear that starts the cascade.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 24 — You Will Be Afraid of Falling
-#### 🎯 Purpose
-For the elderly, falling is not a minor accident — it's potentially a death sentence. This slide captures the constant vigilance, the life-limiting fear, and the domino logic of decline.
-#### 🎭 Delivery
-Read the physical behaviors (gripping, shuffling, looking down) as someone describing their own habits. The cascade at the end — hip to bedridden to pneumonia to death — should feel inevitable.
-#### 💡 The Fall Cascade
-This is medically accurate. Hip fractures in the elderly have a one-year mortality rate of 20-30%. Immobilization leads to pneumonia, blood clots, muscle wasting. A fall doesn't kill you directly — it starts a chain reaction.
-#### 🌊 Life Narrowing
-Fear of falling shrinks your life. You stop going out. Stop climbing stairs. Stop visiting places. Your world contracts to the few safe paths you've memorized. Freedom is traded for survival.
-Next: dying alone.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these legs.
+
+Every step will be a calculation.
+Look down. Is the floor wet? Is the rug loose? Is the step even? Your entire world becomes a risk assessment. Every surface, every threshold, every stair is a potential ending.
+
+You will grip railings with white knuckles. Shuffle instead of walk.
+You'll refuse dinner invitations because of stairs. Cancel plans because it rained and the sidewalk might be slick. Your life will shrink to the few safe paths you've memorized. Freedom traded for survival.
+
+You will know that one fall could be the last.
+A broken hip means bedridden. Bedridden means pneumonia. Pneumonia means death. That's not paranoia — that's a 20-30% one-year mortality rate for elderly hip fractures. One stumble. One wet floor. One uneven step. That's all it takes.`
         },
         {
           id: 25,
@@ -1129,16 +1229,19 @@ Next: dying alone.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 25 — You Will Be Afraid of Being Alone When It Happens
-#### 🎯 Purpose
-The fear isn't just death — it's dying alone and undiscovered. The bathroom fall no one finds. The choking with no one to call 911. The slow death that goes unwitnessed.
-#### 🎭 Delivery
-The scenarios should feel like intrusive thoughts — the kind that come at 3 AM. The detail about the phone being charged but wondering if you can dial captures the helplessness.
-#### 💡 The News Stories
-"Elderly person found dead after three days" — these stories appear regularly in local news. They represent a specific terror: not just dying, but dying without anyone noticing, decomposing before anyone thinks to check.
-#### 🌊 The Inadequacy of Technology
-The phone is supposed to be the lifeline. But what if you can't reach it? Can't unlock it? Can't speak clearly? Technology promises safety but can't actually guarantee it.
-Hospitals next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In this apartment.
+
+You will imagine the scenarios.
+Falling in the bathroom. Face down on cold tile. Hip shattered. Unable to reach the phone. Lying there for hours. Days. Choking on dinner with no one to grab you from behind. The heart attack at 2 AM — gasping in the dark, alone.
+
+You will keep your phone charged at all times.
+Within reach. Always. But you'll wonder — when the moment comes, when the pain hits, when the world goes sideways — will your hands work? Will you be able to dial? Will you be able to speak?
+
+You will see the news stories. Elderly person found dead after three days.
+Found by a neighbor who noticed the mail. Found by a landlord who smelled something. Found by a daughter who finally thought to check. And you will know, with absolute certainty, that could be you.`
         },
         {
           id: 26,
@@ -1178,16 +1281,19 @@ Hospitals next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 26 — You Will Be Afraid of Hospitals
-#### 🎯 Purpose
-Hospitals are supposed to heal, but for the elderly, they're often where you go to die. This fear leads to dangerous behavior — downplaying symptoms, avoiding care — because the hospital represents a point of no return.
-#### 🎭 Delivery
-"I'll be fine" should sound like denial covering fear. The trailing off — "Leave notes for what to do if—" — should feel like someone who can't complete the thought. The final line names the avoidance.
-#### 💡 The Hospital as Terminus
-For elderly patients, hospitalization often accelerates decline. Hospital-acquired infections. Delirium from unfamiliar environments. The cascade of interventions that each bring their own risks.
-#### 🌊 The Packed Bag
-The detail about packing "just in case" is heartbreaking — the preparation for a one-way trip. The notes left behind. The affairs put in order. Every hospital visit treated as potentially final.
-Fear of forgetting next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In that building.
+
+You will know that going in doesn't mean coming out.
+Every ambulance ride could be the last trip you take. Every hospital bed could be the last bed you sleep in. You've seen too many people — friends, siblings, your own parents — go in for something simple and never come home.
+
+You will resist calling the ambulance. Downplay symptoms.
+"I'll be fine." You'll say this with chest pain. You'll say this barely breathing. Because the hospital is where they take your clothes, your dignity, your autonomy — and sometimes your life.
+
+You will pack a bag "just in case."
+Leave notes on the counter. Put your affairs in order. Treat every hospital visit like a potential farewell. And the sentence you try to write — "If I don't come back..." — you can't finish it. Your hand stops. Your mind won't let you.`
         },
         {
           id: 27,
@@ -1229,16 +1335,19 @@ Fear of forgetting next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 27 — You Will Be Afraid of Forgetting
-#### 🎯 Purpose
-Dementia is perhaps the most terrifying fate — worse than death for many people. Losing yourself while your body continues. This slide captures the hypervigilance of those who fear it, constantly testing themselves.
-#### 🎭 Delivery
-The self-tests (What day? What did I eat? What's my daughter's name?) should feel like anxious rituals. The final line should land as the worst outcome — not death, but surviving the loss of self.
-#### 💡 The Monitoring
-Every forgotten word becomes a sign. Every misplaced key becomes evidence. The fear of dementia creates constant self-surveillance, where normal lapses become terrifying portents.
-#### 🌊 Worse Than Death
-"And still being alive when it's all gone." Many people say they'd prefer death to advanced dementia. The self — the memories, the personality, the continuous thread of identity — is what makes life worth living. Losing it while the body persists is a unique horror.
-Fear of being a burden next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this brain.
+
+Every memory lapse will terrify you.
+You forgot where you put your keys. Normal? Or is it starting? You blanked on a word mid-sentence. Everyone does that. Right? Right?
+
+You will test yourself constantly.
+What day is it? Wednesday. Good. What did I eat for breakfast? Eggs. Good. What's my daughter's name? ... The pause. That pause. Even if the answer comes a second later, the pause is the thing that haunts you.
+
+You will fear becoming a stranger to yourself.
+Losing your memories. Your personality. Your self. The person you spent a lifetime becoming — erased. And the worst part: still being alive when it's all gone. A breathing body with no one inside.`
         },
         {
           id: 28,
@@ -1279,16 +1388,22 @@ Fear of being a burden next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 28 — You Will Be Afraid of Being a Burden
-#### 🎯 Purpose
-This fear often exceeds fear of death itself. Being a burden means watching your existence cost others — money, time, freedom, youth. This slide captures that calculus and where it leads.
-#### 🎭 Delivery
-Read the hiding, pretending, refusing help as protective mechanisms born of shame. The unfinished sentence — "if you just—" — should trail off. Everyone knows how it ends. You don't need to say it.
-#### 💡 The Dark Thought
-The unspoken conclusion: "if you just died." This thought isn't suicidal ideation in the clinical sense. It's the logical endpoint of burden calculation. If your existence costs others, your non-existence would be a gift.
-#### 🌊 The Frequency
-"You will think it often." Not once. Not in a crisis. Regularly. The thought becomes a companion, checking in, asking if today is the day you became too much.
-Fear of pain is last.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this conscience.
+
+This fear will consume you more than death itself.
+You can make peace with dying. What you can't make peace with is ruining your children's lives in the process.
+
+You will hide how much you're struggling.
+Pretend you can manage. Refuse help until you absolutely can't. Because the moment you accept help is the moment you become a project. A responsibility. A weight.
+
+You will calculate the cost of your care.
+Your children's inheritance disappearing. Their vacation cancelled because of you. Their careers stalled. Their marriages strained. The math is brutal and it runs in your head all day.
+
+You will think about how much easier it would be for everyone if you just—
+You will think it often. Not as a dark impulse. As basic arithmetic.`
         },
         {
           id: 29,
@@ -1330,16 +1445,21 @@ Fear of pain is last.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 29 — You Will Be Afraid It Will Hurt
-#### 🎯 Purpose
-We don't just fear death — we fear the process. Will it hurt? Will it be slow? Will we be alone? This slide confronts the specific terror of how we will die, informed by watching others go before us.
-#### 🎭 Delivery
-The three options (slow/painful, fast/terrifying, peaceful/lonely) should feel like a terrible menu with no good choices. The memories of others dying should be vivid but not graphic. The final line should land as identification.
-#### 💡 Witnessing Death
-Most elderly people have watched others die. They know what it looks like. They've seen the morphine-glazed eyes, heard the labored breathing, watched consciousness fade. They know what awaits.
-#### 🌊 The Mirror
-"And you will know those eyes will be yours." This is the cruelest knowledge — not just that you will die, but that you've already seen a preview. The fear in their eyes will become the fear in yours.
-> End of fear section. Transition to pain.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this body.
+
+You will wonder which kind of death awaits you.
+Slow and painful? Fast but terrifying? Peaceful but lonely? There's no menu. No choice. It will come however it comes.
+
+You will pray for quick. Hope for painless. Fear neither will come.
+Because you've seen how it usually goes. You've seen the morphine drip, the glazed eyes, the labored breathing that goes on for days. You've stood at bedsides and watched people you love suffer through the exit.
+
+You will have watched others die. Seen the fear in their eyes.
+Not movie fear. Real fear. Animal fear. The kind that strips away everything — dignity, composure, faith — and leaves only the raw, screaming desire to not stop existing.
+
+And you will know those eyes will be yours.`
         }
       ]
     },
@@ -1362,15 +1482,15 @@ Most elderly people have watched others die. They know what it looks like. They'
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 30 — Section Opening: Pain
-#### 🎯 Purpose
-Pain is the great isolator. No one can feel it for you. No one can fully understand it. This section explores chronic, unrelenting pain — not as an event but as a permanent state of being.
-#### 🎭 Delivery
-"In this suffering vessel" — the body as container for pain. Let this phrase sit. The body stops being *you* and becomes a thing you're trapped inside of.
-#### 💡 The Shift
-Previous sections discussed fears *about* suffering. This section is about living *inside* suffering. The difference is immense. Fear is anticipatory. Pain is present.
-#### 🌊 What's Coming
-Constant pain. Begging for relief. Wishing for death. Isolation in suffering. Normalization. Loss of self. Each slide is another facet of the experience of chronic, terminal pain.`
+          notes: `This pain will consume me.
+Not hypothetically. Not far off.
+In this suffering vessel.
+
+The body is a container for pain.
+It stops being yours and becomes something you're trapped inside. A cage made of nerve endings, every one of them firing.
+
+The previous sections talked about fear.
+This section is what the fear was about. Not the anticipation of suffering — the living inside of it. The difference is everything.`
         },
         {
           id: 31,
@@ -1411,16 +1531,19 @@ Constant pain. Begging for relief. Wishing for death. Isolation in suffering. No
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 31 — Pain Will Become Your Constant Companion
-#### 🎯 Purpose
-Chronic pain rewrites your relationship with your body. It's no longer a tool for living — it's a source of suffering. This slide captures the totalizing nature of pain that never stops.
-#### 🎭 Delivery
-The repetition (wake up, sleep, dream) should feel like a trap. The negations (no position, no medication, no escape) should close off all exits. "The norm" should land as surrender.
-#### 💡 Forgetting Comfort
-"You will forget what it felt like to simply exist without hurting." This is one of the cruelest aspects of chronic pain — you lose access even to the memory of comfort. Pain becomes your only reality.
-#### 🌊 The New Normal
-Pain as baseline, not exception. Your best days aren't pain-free; they're just less pain. You stop asking "when will it stop?" and start asking "how much can I endure today?"
-Begging comes next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this body.
+
+You will wake up in pain. You will go to sleep in pain. You will dream of pain.
+There is no escape. No position that brings relief. No pillow arrangement. No medication that truly works. You will shift in bed fifty times a night, trying to find a way to exist that doesn't hurt. There isn't one.
+
+You will forget what it felt like to simply exist without hurting.
+Try to remember a time before pain. You can't. It's been so long the memory of comfort is gone. Pain has overwritten everything. It's not the exception anymore.
+
+It's the norm.
+Your best days aren't pain-free. They're just less. A four instead of a seven. And you're grateful for a four. That's what your life has become — gratitude for slightly less agony.`
         },
         {
           id: 32,
@@ -1461,16 +1584,19 @@ Begging comes next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 32 — You Will Beg for It to Stop
-#### 🎯 Purpose
-There's a level of pain where dignity disappears. You beg — to God, to nurses, to anyone, to no one. This slide captures that breaking point, the place where language fails and only pleading remains.
-#### 🎭 Delivery
-The list of who you beg to should feel increasingly desperate. "To no one" is the emptiest — begging the universe, begging the pain itself. The final line should feel like stone.
-#### 💡 The Indifference
-"Indifferent to your suffering." Pain has no ears. It doesn't respond to negotiation. It doesn't care how much you beg. This is perhaps the cruelest aspect — suffering is not a dialogue.
-#### 🌊 The Breaking Point
-At some point, the person you were before pain disappears. You become only the pain and the plea for it to stop. This is not weakness — it's what happens when suffering exceeds human capacity.
-Wishing for death next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this voice.
+
+There will be moments when the pain is so intense you will beg.
+To God — if you believe. To nurses — if they're there. To anyone who will listen. To no one. To the empty ceiling above your bed, because you've run out of people to ask.
+
+You will say "please" until it loses meaning.
+You will cry until there are no tears left. Your voice will break from screaming. And none of it — not one word, not one tear, not one scream — will make any difference at all.
+
+And the pain will continue. Indifferent to your suffering.
+Pain doesn't have ears. It doesn't negotiate. It doesn't care how good a person you were, how much you've already endured, how little you deserve this. It just is. Relentless. Mechanical. Indifferent.`
         },
         {
           id: 33,
@@ -1509,16 +1635,19 @@ Wishing for death next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 33 — You Will Wish for Death
-#### 🎯 Purpose
-This isn't about suicidal ideation in the traditional sense. It's about the rational recognition that when suffering is unbearable and unending, death becomes not a tragedy but a mercy.
-#### 🎭 Delivery
-"Another day feels like a sentence" — let this double meaning land. A prison sentence. "Getting better sounds like a cruel joke" — read this with the weariness of someone who's heard false hope too many times.
-#### 💡 Understanding, Not Judging
-"Not from weakness. But from exhaustion." This reframes "giving up" not as moral failure but as the natural result of finite human endurance meeting infinite suffering.
-#### 🌊 The Finite Will
-"The will to live is not infinite." We romanticize the life force, the survival instinct. But it can be worn down. Pain is patient. Pain wins eventually. Understanding this is not defeatism — it's honesty.
-Isolation in pain next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In this exhaustion.
+
+There will come a point when death seems merciful.
+When another day feels like a sentence — not a gift, a sentence. When morning light brings dread instead of hope. When someone says "You'll get better" and it sounds like the cruelest thing anyone has ever said to you.
+
+You will understand why people give up.
+Not from weakness. From exhaustion. There's a difference. Weakness breaks quickly. Exhaustion is what happens when strength runs out over months, over years, one impossible day at a time.
+
+The will to live is not infinite.
+We treat it like some sacred, bottomless well. It isn't. Pain is patient. Pain has all the time in the world. And your will to live has an expiration date. Pain will find it.`
         },
         {
           id: 34,
@@ -1562,16 +1691,19 @@ Isolation in pain next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 34 — No One Can Feel It for You
-#### 🎯 Purpose
-Pain is the ultimate solitary experience. No matter how much people care, they cannot feel what you feel. This slide confronts the fundamental isolation of suffering.
-#### 🎭 Delivery
-"They don't. They can't." — These should be matter-of-fact, not bitter. It's not a failing of empathy; it's a limitation of existence. "Trapped in a body that only you inhabit" — this is both literal and philosophical.
-#### 💡 The Island of Suffering
-You can show signs of pain. You can describe it. But no one else has access to the actual sensation. Your nervous system is a locked room. Others can only see through the keyhole.
-#### 🌊 The Loneliest Truth
-"No one can take it from you. No one can share it." This is both the horror and, strangely, the dignity of suffering. It is yours alone. Utterly, irrevocably yours.
-Normalization of suffering next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+In this isolation.
+
+People will say they understand. They don't. They can't.
+They can see your face twist. They can hear you moan. They can hold your hand and cry with you. But they will never feel what you feel. Not even close.
+
+You are alone in your pain.
+Trapped in a body that only you inhabit. Your nervous system is a locked room. Others can press their faces against the window. They can see you suffering. But they can't come inside. No one can.
+
+No one can take it from you. No one can share it.
+This is the loneliest truth there is. Your suffering is yours. Completely, utterly, irrevocably yours. And you will bear it alone because there is no other option.`
         },
         {
           id: 35,
@@ -1611,16 +1743,19 @@ Normalization of suffering next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 35 — Your Suffering Will Be Normalized
-#### 🎯 Purpose
-Compassion fatigue is real. The people who care about you will grow tired. Not because they don't love you, but because sustained crisis is exhausting for everyone. Your extraordinary pain becomes ordinary.
-#### 🎭 Delivery
-Show the arc: the initial rush of concern, then the slow retreat. "Background noise" should feel almost clinical. "Your agony will become routine" — this is the terrible adaptation, for everyone.
-#### 💡 The Economics of Care
-There's a finite supply of attention and energy, even in love. People have their own lives, their own problems. Eventually, your suffering gets filed away, checked in on but not felt.
-#### 🌊 Becoming Invisible
-"Your agony will become routine." This is one of the loneliest realizations — that your ongoing catastrophe has become mundane to others. They've adjusted to your suffering. You haven't.
-Loss of self to pain next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this agony.
+
+At first, people will be alarmed by your pain.
+They'll rush in. Adjust your pillows. Call the doctor. Stay late. Hold your hand through the night. They'll treat it like the emergency it is.
+
+But pain that doesn't end becomes background noise.
+They'll grow tired. Not of you — of the situation. They have their own lives to live. Their own exhaustion. The initial crisis fades into routine. Your screams become the furniture of the room — always there, no longer noticed.
+
+Your agony will become routine.
+The same pain that once made everyone drop everything now gets a "How's the pain today?" asked while scrolling a phone. Your catastrophe has been filed under "ongoing." And you're still inside it. You've never left.`
         },
         {
           id: 36,
@@ -1660,16 +1795,19 @@ Loss of self to pain next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 36 — You Will Lose Yourself to Pain
-#### 🎯 Purpose
-Chronic pain changes who you are. It strips away patience, humor, kindness. The person you spent a lifetime building gets eroded by suffering, and you watch it happen, helpless.
-#### 🎭 Delivery
-The list of negative traits should feel like an indictment — not of the person, but of what pain does. "Hate yourself for it" carries the cruel irony: you know you're being impossible, but you can't stop.
-#### 💡 The Cruelty of Self-Awareness
-This isn't about losing awareness — it's about being fully aware while being unable to change. Watching yourself become someone you don't recognize, someone you'd never choose to be.
-#### 🌊 No Room for Grace
-"Pain leaves no room for grace." When every nerve is screaming, there's nothing left for politeness, patience, or kindness. Pain is greedy — it takes everything.
-Regret section begins next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this personality.
+
+Pain will take your personality.
+The person you spent a lifetime becoming — patient, kind, funny, generous — pain will take all of it. Strip it out day by day.
+
+You will become irritable. Demanding. Bitter. Angry.
+You'll snap at the people who love you. Bark at your daughter for bringing the wrong cup. Snarl at your son for talking too loud. Push them away with both hands. Hate yourself for it. But you can't stop.
+
+Pain leaves no room for grace.
+When every nerve in your body is screaming, there is nothing left for kindness. Nothing left for patience. Nothing left for the person you used to be. Pain is greedy. It takes everything and leaves you with someone you don't recognize.`
         }
       ]
     },
@@ -1694,16 +1832,15 @@ Regret section begins next.`
             </div>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 37 — Regret: Section Opening
-#### 🎯 Purpose
-We enter the sixth confrontation — regret. Not hypothetical regret, not cautionary tales, but the visceral experience of looking back at a life and knowing it's too late to change anything.
-#### 🎭 Delivery
-"As lived truth" distinguishes this from platitudes. These aren't fortune-cookie warnings about seizing the day. This is standing at the end with a clear view of everything you didn't do.
-#### 💡 The Weight of "Lived"
-Abstract regret is manageable. "I wish I had traveled more" said at 30 is different from saying it at 80 when traveling is impossible. Lived regret has no escape clause.
-#### 🌊 Transition
-Pain section complete. Now we confront the inventory of unlived life.
-What you didn't do comes next.`
+          notes: `This regret will haunt me.
+Not as warning. Not as lesson.
+As lived truth.
+
+Not fortune-cookie wisdom. Not motivational posters.
+Lived regret. The kind that comes at the end, when you can see everything clearly and can change nothing. When the view is perfect and the door is locked.
+
+Standing at the end with a clear view of everything you didn't do.
+And no way back.`
         },
         {
           id: 38,
@@ -1743,16 +1880,19 @@ What you didn't do comes next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 38 — You Will Remember What You Didn't Do
-#### 🎯 Purpose
-Deathbed regret is dominated not by what we did wrong, but by what we didn't do at all. The unlived life. The postponed dreams. This slide forces confrontation with postponement.
-#### 🎭 Delivery
-Make the list feel personal — these are universal regrets. "There's always tomorrow. Except there isn't." — let the reversal land with finality. "Terrible clarity" is the curse of dying: you finally see everything clearly when you can no longer act.
-#### 💡 The Cruelty of Clarity
-Why do we only gain perspective at the end? When all the noise of daily life fades, what remains is the clear view of what mattered and what we neglected. This clarity would have been useful earlier. It arrives too late.
-#### 🌊 The Catalog
-"Cataloging missed opportunities" — at night, in the darkness, the mind becomes an accountant of regret, tallying every postponed dream.
-Relationships regret next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this life.
+
+The trip you postponed. The book you never wrote. The words you never said.
+"There's always tomorrow." You said it a thousand times. And you believed it a thousand times. And a thousand tomorrows passed while you waited.
+
+You will lie in bed cataloging missed opportunities.
+The business you didn't start. The country you didn't visit. The person you didn't call back. The conversation you avoided because it was too hard. Doors you walked past. Chances you were too afraid to take.
+
+And you will know, with terrible clarity: it's too late now.
+Not "nearly too late." Not "it's getting late." Too late. Past tense. Finished. The window closed and you were standing outside it watching.`
         },
         {
           id: 39,
@@ -1791,16 +1931,22 @@ Relationships regret next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 39 — You Will Remember Who You Hurt
-#### 🎯 Purpose
-Beyond inaction lies the weight of harmful action. The people you wounded. This isn't about guilt as punishment but as the simple cost of being human — we all hurt people, and we will remember.
-#### 🎭 Delivery
-"Their faces will come to you at night" — this is visceral. We don't remember abstractions; we remember expressions, tones, the moment of impact. Pause on "They're already gone." Some debts cannot be paid.
-#### 💡 The Impossibility of Repair
-"Some you can no longer apologize to." Death closes accounts. "Others wouldn't accept your apology anyway." Some wounds don't heal, regardless of remorse. Both paths lead to carrying the weight.
-#### 🌊 The Permanent Record
-"You will carry this to the grave." These aren't metaphorical burdens. They're the faces that visit at 3am, the memories that ambush you in quiet moments.
-Unlived life next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this conscience.
+
+The cruel words you said in anger. The trust you betrayed. The love you took for granted.
+You'll remember every one. At 3 AM, their faces will find you. The exact look in their eyes when you cut them. You'll see it perfectly, even when you can't remember what you had for lunch.
+
+Some you can no longer apologize to. They're already gone.
+The words you should have said are stuck inside you permanently. There's no one to receive them. No grave hears confessions. No headstone offers forgiveness.
+
+Others wouldn't accept your apology anyway.
+Because you didn't just hurt them — you broke something. Trust. Love. Faith. Some things don't repair.
+
+You will carry this to the grave.
+Every face. Every wound. Every word you can't take back. They ride with you all the way to the end.`
         },
         {
           id: 40,
@@ -1839,16 +1985,19 @@ Unlived life next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 40 — You Will Mourn the Life You Didn't Live
-#### 🎯 Purpose
-We don't live one life — we live one while abandoning countless others. Every choice eliminates alternatives. Near the end, the ghost of the unchosen life becomes painfully visible.
-#### 🎭 Delivery
-"There was another version of you" — speak to that phantom self. The branching paths are real: "Different loves. Different endings." Let "Only that it wasn't" land as the final verdict.
-#### 💡 The Road Not Taken
-This isn't about wrong choices — many choices were reasonable. It's about the mathematics of finitude. You can't live every life. You chose one path. The others died. You mourn them.
-#### 🌊 The Ghost Life
-Every major decision created a ghost: the person you would have become if you'd chosen differently. At the end, all the ghosts gather, and you see the family reunion of selves that never existed.
-Wasted time next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this awareness.
+
+There was another version of you.
+The one who took that risk. Who said yes instead of no. Who left the job. Who booked the ticket. Who made the call. Who didn't let fear decide.
+
+That person had a different life. Different loves. Different endings.
+Maybe better. Maybe worse. You'll never know. That's the thing — you'll never know. The wondering is the wound.
+
+You will never know what could have been.
+Only that it wasn't. The ghost of the life you didn't live will sit at the foot of your bed and look at you, and you'll look at it, and neither of you will speak because there's nothing left to say.`
         },
         {
           id: 41,
@@ -1889,16 +2038,19 @@ Wasted time next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 41 — You Will Regret the Time You Wasted
-#### 🎯 Purpose
-Time is the only truly non-renewable resource, and most of us waste staggering amounts of it. This slide confronts the retrospective horror of realizing how much time evaporated into nothing.
-#### 🎭 Delivery
-"Hours scrolling through nothing" — this should sting with contemporary recognition. "Decades worrying about things that never happened" — anxiety's cruelest trick. "And you're still waiting" — the pattern persists even as death approaches.
-#### 💡 The Waiting Trap
-We wait for conditions to be perfect. We wait for permission we don't need. We wait because starting is scary. And then we run out of time while waiting to begin. The tragedy is the consistency — we never learn.
-#### 🌊 The Unspent Currency
-Time spent is gone forever. Time unspent but unused is the same as time that never existed. The hours you didn't use are functionally identical to hours you never had.
-Unspoken love next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To these years.
+
+The hours scrolling through nothing. The years in jobs you hated. The decades worrying about things that never happened.
+Add it up. Do the math. If you spent two hours a day on nothing — which is generous, it was probably more — that's thirty hours a week. Sixty thousand hours in a lifetime. Seven years of your life. Wasted on nothing.
+
+You had time. So much time. And you spent it waiting.
+For the right moment. For enough money. For permission. For someone to tell you it was okay to begin. Nobody came. Nobody was supposed to.
+
+Now the time is gone. And you're still waiting.
+The pattern never broke. Even now, at the end, you're waiting for something. You're waiting for death, the way you waited for everything else — passively, patiently, and too late.`
         },
         {
           id: 42,
@@ -1938,16 +2090,19 @@ Unspoken love next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 42 — You Will Wish You Had Said "I Love You" More
-#### 🎯 Purpose
-Of all deathbed regrets, this may be the most universal: unspoken love. We assumed. We showed it other ways. But we didn't say it, and now the words have nowhere to go.
-#### 🎭 Delivery
-"You assumed they knew" — start matter-of-fact. The list of showing love is noble: providing, staying, sacrificing. But: "You didn't say it enough." The final image — words heavy in the throat, useless, too late — should feel physical.
-#### 💡 The Substitution Problem
-We substitute action for words because action feels more concrete. But words have their own power, their own necessity. Some things need to be spoken. Actions show love; words name it.
-#### 🌊 The Closed Door
-"They cannot hear you anymore." Death is deaf. You can speak to graves, but graves don't listen. The opportunity for verbal love ends with the last heartbeat.
-Loss of Self section begins next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this throat.
+
+You assumed they knew.
+You showed it in other ways. You provided for them. You stayed. You sacrificed. You drove them to school and fixed their things and showed up every time they needed you. Actions speak louder than words, right?
+
+But you didn't say it enough.
+How many times? Count them. How many times did you look your mother in the eyes and say "I love you"? Your father? Your child? Your partner? Not enough. Never enough.
+
+Now some of them are gone. And the words sit unsaid in your throat.
+Heavy. Useless. Too late. You say them now, to empty rooms, to photographs, to headstones. They cannot hear you anymore. And the silence after you speak their name is the loudest thing you've ever heard.`
         }
       ]
     },
@@ -1972,16 +2127,14 @@ Loss of Self section begins next.`
             </div>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 43 — Loss of Self: Section Opening
-#### 🎯 Purpose
-The seventh confrontation — the dissolution of identity. Not just losing abilities but losing the sense of who you are. The self you built over a lifetime disassembled.
-#### 🎭 Delivery
-"Piece by piece" is the key phrase — not a sudden disappearance but a slow disintegration. You watch yourself being taken apart. This is perhaps the most existentially terrifying section.
-#### 💡 The Constructed Self
-We build identity from roles, abilities, memories, relationships. Each can be removed. What remains when enough pieces are gone? Is there a "you" underneath, or only the collection?
-#### 🌊 Transition
-Regret section complete. Now we face the erosion of identity itself.
-Loss of roles comes next.`
+          notes: `This loss of self will erase me.
+Not gradually. Not gently.
+Piece by piece.
+
+Identity is built from pieces.
+Roles. Abilities. Memories. Relationships. Each one can be removed. Each one will be removed. And the question nobody can answer: what's left when enough pieces are gone? Is there a "you" underneath? Or were you only ever the pieces?
+
+You're about to find out.`
         },
         {
           id: 44,
@@ -2018,16 +2171,21 @@ Loss of roles comes next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 44 — You Will Lose Your Roles
-#### 🎯 Purpose
-Identity is largely constructed from roles: worker, provider, parent, friend. As we age and decline, these roles are stripped away one by one. What's left when the roles are gone?
-#### 🎭 Delivery
-The parallel structure — "You were... Then you..." — shows the reversals. Each one is a small death. "And have no answer" should feel like standing at the edge of a void.
-#### 💡 The Role-Based Self
-We know who we are by what we do. I am a teacher, a mother, a runner. Remove these and the question "Who am I?" becomes genuinely unanswerable.
-#### 🌊 The Stripping
-"Your career. Your independence. Your usefulness." These aren't just losses — they're amputations of identity. Without them, you're not a diminished version of yourself. You're a stranger.
-Loss of dignity next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this identity.
+
+You were a worker. Then you retired.
+You were a provider. Then you needed providing for.
+You were strong. Then you became weak.
+One by one, the things that defined you will be taken. Not stolen — just gone. Like leaves in autumn, except the tree doesn't grow new ones.
+
+Your career. Your independence. Your usefulness.
+Gone. You will wonder who you are without them. This question will sit in front of you like a blank wall. You will stare at it for hours.
+
+And have no answer.
+Because maybe there isn't one. Maybe you were only ever what you did. And now you can't do anything.`
         },
         {
           id: 45,
@@ -2066,16 +2224,19 @@ Loss of dignity next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 45 — You Will Lose Your Dignity
-#### 🎯 Purpose
-Dignity — that sense of being respected, of having bodily autonomy — is often the first casualty of medical decline. This slide confronts the institutional reduction of personhood.
-#### 🎭 Delivery
-The clinical details — "naked," "touch you intimately" — should feel intrusive. The third-person quotes ("He needs to be turned") demonstrate erasure. You're present but not acknowledged as a subject.
-#### 💡 The Object Position
-To become an object is to be discussed rather than addressed. Grammar reveals treatment: "the patient in 412" versus a name, a history, a person. Medical systems optimize for efficiency, not humanity.
-#### 🌊 Dehumanization
-"Not a person anymore." This is the end of the slide but also the end of something essential. When others stop treating you as fully human, do you remain fully human to yourself?
-Loss of privacy next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this body.
+
+Strangers will see you naked.
+Touch you in places only lovers were allowed. Discuss your body as if you're furniture. "He needs to be turned." "She had an accident again." Spoken over your head, about your body, while you're right there.
+
+You will be talked about in third person while you're in the room.
+As a patient. A case. A room number. They'll check your chart. They'll adjust your IV. They'll never ask how you're feeling. Not really.
+
+You will be a patient, a case, a room number. Not a person anymore.
+You had a name. A life. Stories. Accomplishments. Now you're the hip replacement in room 412. The incontinence case on floor three. The one who doesn't have visitors.`
         },
         {
           id: 46,
@@ -2114,16 +2275,19 @@ Loss of privacy next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 46 — You Will Lose Your Privacy
-#### 🎯 Purpose
-Privacy is foundational to personhood — the ability to have thoughts, spaces, and moments that are yours alone. Institutional care often eliminates this entirely.
-#### 🎭 Delivery
-The monitoring list — eating, sleeping, bathroom — should feel surveilling. "Without knocking... without asking... without consulting" — the repeated structure emphasizes systematic removal of agency.
-#### 💡 The Transparent Life
-Privacy isn't just about hiding things. It's about having control over what's revealed and when. When that control vanishes, so does a fundamental aspect of being a self.
-#### 🌊 No Room of One's Own
-"No space that is yours alone." Even your interior space — your thoughts, your feelings — becomes subject to assessment. "How are we feeling today?" asked without expecting honesty.
-Loss of voice next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this life.
+
+Everything will be monitored.
+What you eat. When you sleep. When you use the bathroom. Whether you took your pills. Your life becomes a data set. A chart on the wall. A file in a system.
+
+Doors will be opened without knocking.
+Belongings moved without asking. Decisions made without consulting you. Someone else decides when you eat, when you sleep, when you bathe. Your preferences aren't preferences anymore — they're notes in a file that nobody reads.
+
+You will have no secrets. No space that is yours alone.
+Even your thoughts get assessed. "How are we feeling today?" they ask, using "we" as if your suffering is a group project. Using a smile that wants a simple answer. Fine. You're fine. That's what they want to hear.`
         },
         {
           id: 47,
@@ -2162,16 +2326,19 @@ Loss of voice next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 47 — You Will Lose Your Voice
-#### 🎯 Purpose
-Voice is metaphorical here — not larynx but agency. The power to make decisions about your own life is progressively transferred to others, often with the best of intentions.
-#### 🎭 Delivery
-Distinguish "voice" from physical voice immediately. "Authority. Agency. Your say." These are weighted words. "Well-meaning strangers" is particularly cutting — benevolence doesn't make disempowerment less real.
-#### 💡 The Demotion
-"Preferences will become suggestions." Watch the status of your desires devolve: from commands, to requests, to preferences, to suggestions, to ignored noise. Each step is a loss of power.
-#### 🌊 The Silencing
-"Then ignored entirely." At the end, you may be physically present, even speaking, but your words carry no weight. You've become advisory to your own existence.
-Becoming unrecognizable next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this authority.
+
+Not just your physical voice. Your authority. Your agency. Your say.
+The power to decide what happens to your own life — that power is being transferred, form by form, conversation by conversation, to other people.
+
+Others will decide what's best for you.
+Where you live. What you eat. When you sleep. Your family, your doctor, well-meaning strangers who've known you for three weeks — all of them know better than you now. Or so they've decided.
+
+Your preferences will become suggestions. Then ignored entirely.
+Watch it happen. Watch your words go from commands to requests to preferences to background noise. You're still speaking. But no one is listening. You've become advisory to your own existence.`
         },
         {
           id: 48,
@@ -2210,16 +2377,22 @@ Becoming unrecognizable next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 48 — You Will Become Unrecognizable to Yourself
-#### 🎯 Purpose
-The final estrangement — not just from others but from your own history. Looking at photos and feeling no connection to the vibrant person there. You become a stranger to yourself.
-#### 🎭 Delivery
-"Who was that person?" — this question should feel genuinely unanswerable. The parallel "So full of" list emphasizes what's been lost. "The person you were is already dead" — multiple deaths before the final one.
-#### 💡 Serial Selves
-We're not one continuous person — we're a succession of selves, each dying to make room for the next. The final self looks back at all the others and feels... nothing. No connection. Just evidence of someone who used to exist.
-#### 🌊 The Husk
-"Only the husk remains." What's left when identity is stripped away? A body, a name, a collection of physical characteristics. The interior — the essential self — has already departed.
-Final Ending section begins next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this person.
+
+You will look at old photos and wonder: Who was that person?
+So full of energy. So full of plans. So full of life. Smiling at the camera like the future was infinite. So sure of themselves. So alive.
+
+You will not feel connected to them.
+It will seem like someone else's story. Someone else's wedding. Someone else's children. The gap between who you were and who you are is so vast that the old photos feel like fiction.
+
+The person you were is already dead.
+Dead in the sense that they no longer exist. The young you. The strong you. The ambitious you. All gone. They died quietly, one by one, over decades.
+
+Only the husk remains.
+And the husk looks at old photos and tries to feel something. Anything. A connection, a continuity, a thread that ties the old face to the new. There's nothing there.`
         }
       ]
     },
@@ -2244,16 +2417,15 @@ Final Ending section begins next.`
             </div>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `### 49 — The Ending: Section Opening
-#### 🎯 Purpose
-The final section. Not preparation, not fear, not regret — the ending itself. The moment that waits for all of us, that is in some sense already happening.
-#### 🎭 Delivery
-"Now. Always now." — This is the key phrase. Death is not a future event; it's a present process. Every moment is occurring within death's domain. Let this hit with its full paradox.
-#### 💡 The Eternal Present
-We speak of death as "later." But what is later? Every later becomes now. There is no "later" — only endless "now," and death inhabits every now.
-#### 🌊 Transition
-Loss of Self complete. Now we confront the present tense of dying.
-Dying right now next.`
+          notes: `This ending will claim me.
+Not as abstract. Not later.
+Now. Always now.
+
+Death is not a future event.
+It's a present process. Every moment is a moment closer. There is no "later" — only endless "now," and death inhabits every now. It was always here.
+
+The loss of self is complete.
+Now we face the end itself. Not the process. The end.`
         },
         {
           id: 50,
@@ -2293,16 +2465,19 @@ Dying right now next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 50 — You Are Dying Right Now
-#### 🎯 Purpose
-This slide collapses the distance between audience and death. Not "you will die" but "you are dying." Right now. This breath. This heartbeat. The biological reality.
-#### 🎭 Delivery
-"Every breath is one less" — start with the immediate, the breath you just took. Telomeres, DNA — these aren't metaphors; they're happening in every cell as you speak. "Death in progress" is the reframe.
-#### 💡 The Present Tense
-We speak of death in future tense. That's a lie. Death is present tense. It's not something waiting for you; it's something you're inside of, have been inside of since conception.
-#### 🌊 Birth as Beginning of Death
-"Began the moment you were born." Birth isn't the opposite of death — it's the inauguration of death. The countdown started immediately. You've been dying since you were born.
-The last day next.`
+          notes: `This is happening to me.
+Not in theory.
+Not someday.
+Right now.
+
+Every breath is one less you'll take.
+The one you just took — gone. Added to the count. Subtracted from the total. Every heartbeat is a countdown. Every moment passes and will not return. Ever.
+
+The cells in your body are dying right now.
+Your telomeres are shortening. Your DNA is degrading. Right now. As you sit here. The machinery of your own destruction is running at this very second, has been running since the moment you were born.
+
+You are not moving toward death. You are death in progress.
+A slow-motion decay that started at birth. You didn't begin to die at some point. You were born dying. Every candle on every birthday cake was a marker on the countdown.`
         },
         {
           id: 51,
@@ -2341,16 +2516,19 @@ The last day next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 51 — There Is No Preparing
-#### 🎯 Purpose
-We comfort ourselves with preparation — meditation, philosophy, acceptance. But this slide cuts through that comfort. When death arrives, all preparation falls away. You face it raw.
-#### 🎭 Delivery
-Acknowledge the preparations — they're valid, they help some. Then: "But when it comes—" The dash creates suspension. "All your preparation will mean nothing" — not cruel, just true.
-#### 💡 The First Time
-Death is always a first time. You can't practice. You can't rehearse. Every coping mechanism you've developed is hypothetical until the moment arrives, and then it's real in a way no hypothesis could capture.
-#### 🌊 Equal Terror
-"As afraid as anyone ever was." Death is the great equalizer. The philosopher dies as frightened as the fool. Preparation may help the lead-up, but the moment itself? Unknowable until experienced.
-Ordinary last thoughts next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this illusion of readiness.
+
+You cannot practice dying.
+You can think about it. Plan for it. Meditate on it. Read books about it. Accept it philosophically over a glass of wine with candles lit. But that's not dying. That's talking about dying.
+
+When it comes — when you feel your body shutting down — when the darkness closes in —
+All your preparation will mean nothing. The books won't help. The meditation won't help. The philosophy won't help. You will be as terrified as a child in the dark.
+
+You will be as afraid as anyone ever was.
+The philosopher dies as frightened as the fool. There are no experts in dying. Everyone is a beginner. And there is no second attempt.`
         },
         {
           id: 52,
@@ -2396,16 +2574,22 @@ Ordinary last thoughts next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 52 — Your Last Thoughts Will Be Ordinary
-#### 🎯 Purpose
-We romanticize last thoughts — the deathbed revelation, the life review, the profound peace. Reality is messier. Bodies demand attention even at the end. The body's needs don't pause for transcendence.
-#### 🎭 Delivery
-The expected list (life review, meaning, closure) should feel earnest. Then: "But you won't." The list of physical concerns (cold, thirsty, needing to pee) should feel bathetic, deflating. "Or nothing at all" — perhaps the most likely option.
-#### 💡 The Persistent Body
-Even in death, the body makes demands. It doesn't care about your existential closure. It wants warmth, hydration, relief. And it will occupy your consciousness with these demands until consciousness ends.
-#### 🌊 Anticlimactic Exit
-"I'm cold." Not "I understand everything now." Not "I forgive everyone." Just... cold. The mundane persists to the end. This is both disappointing and, strangely, comforting.
-Everything stops next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this mind.
+
+You imagine you'll think profound things.
+Review your life. Find meaning in the suffering. Achieve closure. Make peace. Speak some final words that give your children strength.
+
+But you won't.
+The body doesn't care about your existential closure. It wants warmth. It wants water. It wants to stop hurting. It will occupy every last shred of your consciousness with its animal demands.
+
+Your last thought will probably be: "I'm cold."
+Or "I'm thirsty." Or "It hurts." Not "I understand now." Not "I forgive everyone." Not "It was all worth it." Just the body making its final, desperate, mundane request.
+
+Or nothing at all.
+Just a quiet dimming. Like a television turning off. No final thought. No grand revelation. Just gone.`
         },
         {
           id: 53,
@@ -2447,16 +2631,19 @@ Everything stops next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 53 — Everything You Are Will Stop
-#### 🎯 Purpose
-This is the core confrontation — not the process of dying but the state of being dead. The absolute cessation of experience. Not unconsciousness, which implies a sleeper who might wake. Nothing.
-#### 🎭 Delivery
-"Not sleeping. Not dreaming. Not anything." — Rule out the comforting comparisons. "The you reading this" — make it direct, personal. "Just... nothing. Forever." — the ellipsis, the pause, then the infinite duration.
-#### 💡 The Inconceivable
-We cannot imagine non-existence because imagining requires an imaginer. Every attempt to picture "nothing" puts you outside, observing. But there's no outside. There's no observing. There's no you.
-#### 🌊 The Relief
-"You will not know it." Here's the strange comfort: death is only terrible from the outside. From the inside, there is no inside. The horror of death belongs entirely to the living.
-World continues next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this consciousness.
+
+Your thoughts will cease. Your awareness will end. You will not exist.
+Not sleeping. Not dreaming. Not floating. Not watching from above. Not anything. The "you" that is processing these words — that awareness, that spark — will be gone. Completely. Permanently.
+
+The you reading this will be erased. As if it never was.
+Every memory. Every skill you learned. Every person you loved. Every sunrise you saw. Every laugh, every cry, every breath — all of it, gone. Not stored somewhere. Not preserved. Gone.
+
+There will be no you to know it.
+And that's the part your brain can't process. You try to imagine not existing and you picture yourself observing the nothing. But there's no observer. There's nobody. There's just... nothing. Forever.`
         },
         {
           id: 54,
@@ -2496,16 +2683,21 @@ World continues next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 54 — The World Will Continue Without You
-#### 🎯 Purpose
-The world feels centered on us — we're always at its center. But we're not. The world doesn't notice individual departures. It just... continues. This slide confronts cosmic indifference.
-#### 🎭 Delivery
-"The sun will rise" — start with the certain, the beautiful, the indifferent. The mundane list (breakfast, work, jokes, love) shows life persisting. "You don't matter" — not cruel, just scale.
-#### 💡 The Continuity
-Every person who ever died discovered this: the world doesn't pause. There's no moment of cosmic recognition. The machinery of existence grinds on, heedless of any particular cog.
-#### 🌊 Insignificance as Freedom
-"You don't matter." This could be crushing or liberating. If your death doesn't dent the universe, neither do your mistakes. The same insignificance that makes death lonely makes life lighter.
-Being forgotten next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this world without me.
+
+The sun will rise the day you die. And every day after.
+It won't pause. It won't dim. It won't acknowledge in any way that you're gone. It will just rise, the way it rose four and a half billion years before you existed.
+
+People will eat breakfast. Go to work. Laugh at jokes. Fall in love.
+On the day they lower you into the ground, somewhere a couple will have their first kiss. Someone will learn to ride a bike. A baby will be born. The world doesn't stop for funerals.
+
+Because to the world, you don't matter.
+That's not cruelty. That's scale. Eight billion people. One gone. The math doesn't flinch.
+
+And soon, no one will remember you did.`
         },
         {
           id: 55,
@@ -2545,16 +2737,21 @@ Being forgotten next.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `### 55 — You Will Be Forgotten
-#### 🎯 Purpose
-Memory is our secular afterlife — we live on in others' minds. But memory is finite and generational. In a few generations, you're a name, then a story, then nothing. The final death.
-#### 🎭 Delivery
-Track the decay: children (vivid), grandchildren (stories), great-grandchildren (nothing). "Three generations. Maybe four." — clinical, mathematical. The last mention by someone who "gets the details wrong" — even the memory is inaccurate.
-#### 💡 The Second Death
-They say you die twice: once when your heart stops, once when your name is spoken for the last time. Most people experience both within a century. The second death is quieter but more complete.
-#### 🌊 Complete Erasure
-"As if you never existed at all." From the universe's perspective, this is literally true. A hundred years from now, there will be no evidence you ever lived except perhaps a headstone no one visits.
-How does that make you feel next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this name.
+
+Your children will remember you.
+Vividly. They'll hear your voice in their heads. See your face when they close their eyes. Miss you so hard it bends them double.
+
+Then your grandchildren will remember stories about you.
+Second-hand memories. "Your grandfather used to say..." They'll know facts about you, not you. Your laugh, your smell, the way your hand felt — gone. Reduced to anecdotes at dinner tables.
+
+Then their children will not remember you at all.
+Three generations. Maybe four. Then your name will be spoken for the last time. By someone who never knew you. Who gets the details wrong. And after that — never again.
+
+As if you never existed at all.`
         },
         {
           id: 56,
@@ -2595,16 +2792,19 @@ How does that make you feel next.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `### 56 — This Is Not Avoidable
-#### 🎯 Purpose
-Every exemption has been tried. Wealth, fame, religion, medicine — none provide escape. This slide closes all exits. There is no negotiating with mortality.
-#### 🎭 Delivery
-The triads ("no amount... no achievement... no belief") should feel like doors closing. "You cannot negotiate. You cannot bargain. You cannot cheat." — each denial more final. "And you know it" — you've always known.
-#### 💡 The Non-Negotiable
-Humans are negotiators. We solve problems, find workarounds, discover loopholes. Death has none. It's the one absolute in an otherwise flexible universe.
-#### 🌊 The Known Unknown
-"And you know it." This isn't news. You've known since childhood. But knowing and *knowing* are different. This presentation has been an attempt to move death from the first kind of knowing to the second.
-Final confrontation next.`
+          notes: `This will happen to me.
+Not in theory.
+Not someday.
+To this certainty.
+
+No amount of money will save you.
+No achievement will exempt you. No belief will rescue you. The richest person who ever lived is dead. The most powerful person who ever lived is dead. The most beloved person who ever lived is dead.
+
+You cannot negotiate with death. You cannot bargain. You cannot cheat.
+Every workaround, every loophole, every escape route you can think of — tried. By millions. By billions. None worked. Not one. Not ever.
+
+You will die. And you know it.
+You've known since childhood. The first time you understood the word "forever." The first time someone didn't come back. You've carried this knowledge your entire life. And it hasn't helped at all.`
         },
         {
           id: 57,
@@ -2644,17 +2844,21 @@ Final confrontation next.`
             </div>
           ),
           backgroundColor: '#000000',
-          notes: `### 57 — Final Confrontation: Now What?
-#### 🎯 Purpose
-This is the end of the meditation. No more concepts, no more descriptions. Just the direct address: this is real, this is you, this is certain. And the question: now what?
-#### 🎭 Delivery
-Slow and direct. "This body. This mind. This awareness reading these words." — Point to yourself, point to the audience. Each word should land like a stone. "You will die." — Let this sit. Let there be silence. "Now what?" — This question is the gift. The entire meditation leads here.
-#### 💡 The Gift of the Question
-This meditation isn't meant to despair. It's meant to clarify. With death truly accepted — not intellectually but viscerally — the question "Now what?" becomes urgent and meaningful. What will you do with your diminishing time?
-#### 🌊 The Open End
-There is no slide 58. No tidy conclusion. No "but here's the bright side." The meditation ends in openness, in the question that each person must answer for themselves. What will you do now that you truly know you will die?
+          notes: `Don't distract yourself.
+Don't rationalize.
+Don't look away.
 
-End of meditation. Allow silence. Allow the question to remain unanswered.`        }
+Don't reach for your phone. Don't start planning dinner. Don't think about work. Stay here. In this feeling. This is the only honest moment you've had in weeks.
+
+This will happen to you. To this body. This mind. This awareness reading these words.
+Not to someone else. Not later. To you.
+
+You will die.
+
+Now what?
+What will you do with the time that's left? Not the time you think you have — the time you actually have. Which is less than you think. Always less than you think.
+
+What will you do now?`        }
       ]
     }
   ]
