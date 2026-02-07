@@ -114,7 +114,7 @@ async function fetchElevenLabsTTS(
         ],
         model_id: 'eleven_v3',
         settings: {
-          stability: 0.0,
+          stability: 0.5,
           similarity_boost: 0.8
         }
       }),
