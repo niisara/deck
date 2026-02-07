@@ -28,17 +28,17 @@ export const deathDeck: Deck = {
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This will happen to me.
-Not in theory. Not someday. To this body.
+          notes: `[slowly] This will happen to me.
+Not in theory. Not someday. [darkly] To this body.
 
-Not humanity in general. Not a philosophical thought experiment.
+[measured] Not humanity in general. Not a philosophical thought experiment.
 This body. These hands. These lungs. This heartbeat.
 
-Every person who has ever lived has died. Every single one.
-I am not the exception. There is no exception.
+[gravely] Every person who has ever lived has died. Every single one.
+[whisper] I am not the exception. There is no exception.
 
-The comfortable distance I keep between myself and death — that's a lie I tell myself to get through the day.
-It doesn't change anything.`
+[softly] The comfortable distance I keep between myself and death — that's a lie I tell myself to get through the day.
+[pause] It doesn't change anything.`
         },
         {
           id: 2,
@@ -75,22 +75,22 @@ It doesn't change anything.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this body.
+[darkly] To this body.
 
-The body will fail — not heroically.
-Not in some dramatic cinematic moment. In small, humiliating ways nobody warns you about.
+[bitterly] The body will fail — not heroically.
+Not in some dramatic cinematic moment. [with disgust] In small, humiliating ways nobody warns you about.
 
-One day, your words will not come out right.
-Picture it — you're trying to tell your daughter something important. The thought is crystal clear in your mind. But your tongue won't cooperate. The word sits right there, you can almost taste it, and it won't come out.
+[softly] One day, your words will not come out right.
+[gently] Picture it — you're trying to tell your daughter something important. The thought is crystal clear in your mind. But your tongue won't cooperate. The word sits right there, you can almost taste it, and it won't come out.
 
-You will know exactly what you want to say — and your mouth will not obey.
-So people jump in. They finish your sentences. They get it wrong. They tell you what you meant. And you just nod, because fighting it takes more energy than you have left.
+[frustrated] You will know exactly what you want to say — and your mouth will not obey.
+[resigned] So people jump in. They finish your sentences. They get it wrong. They tell you what you meant. And you just nod, because fighting it takes more energy than you have left.
 
-You will be corrected about your own intentions.
-By the people who love you most. And you'll let them, because correcting them hurts more than being misunderstood.`
+[sadly] You will be corrected about your own intentions.
+By the people who love you most. [whisper] And you'll let them, because correcting them hurts more than being misunderstood.`
         },
         {
           id: 3,
@@ -128,22 +128,22 @@ By the people who love you most. And you'll let them, because correcting them hu
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this body.
+[darkly] To this body.
 
-Control will leave before life does.
+[gravely] Control will leave before life does.
 Your body will stop asking permission.
 
-At some point, your body will release waste without asking you.
-Not once, as some terrible accident. As routine. Tuesday. Thursday. Saturday. Every time someone has to clean you.
+[with shame] At some point, your body will release waste without asking you.
+[flatly] Not once, as some terrible accident. As routine. Tuesday. Thursday. Saturday. Every time someone has to clean you.
 
-You won't feel dramatic sorrow.
-You'll feel your face burn with shame. You'll apologize. Over and over. To the nurse, to your daughter, to your son. For something you can't control. For existing in a body that has already quit on you.
+[softly] You won't feel dramatic sorrow.
+[voice breaking] You'll feel your face burn with shame. You'll apologize. Over and over. To the nurse, to your daughter, to your son. For something you can't control. For existing in a body that has already quit on you.
 
-The worst part isn't the mess.
-It's knowing you used to be someone who took care of others. And now you can't take care of yourself.`
+[sadly] The worst part isn't the mess.
+[whisper] It's knowing you used to be someone who took care of others. And now you can't take care of yourself.`
         },
         {
           id: 4,
@@ -181,22 +181,22 @@ It's knowing you used to be someone who took care of others. And now you can't t
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this face.
+[darkly] To this face.
 
-Your face will become unfamiliar.
-You will catch your reflection and for a split second wonder who that old person is. Then it hits you.
+[haunted] Your face will become unfamiliar.
+You will catch your reflection and for a split second wonder who that old person is. [pause] Then it hits you.
 
-Not metaphorically. Literally.
-Your brain still pictures you at thirty-five. Full of energy. Sharp jaw. Clear eyes. Then a mirror ambushes you in a store window and you see someone your parents' age staring back. Except it's you.
+[firmly] Not metaphorically. Literally.
+[reflectively] Your brain still pictures you at thirty-five. Full of energy. Sharp jaw. Clear eyes. [with dread] Then a mirror ambushes you in a store window and you see someone your parents' age staring back. Except it's you.
 
-Sometimes you'll forget you're old. Then catch your reflection. And remember.
-Like being told terrible news for the first time, every time. You never get used to it. The shock resets overnight. You wake up feeling like yourself, and then the mirror tells you the truth again.
+[softly] Sometimes you'll forget you're old. Then catch your reflection. And remember.
+[sadly] Like being told terrible news for the first time, every time. You never get used to it. The shock resets overnight. You wake up feeling like yourself, and then the mirror tells you the truth again.
 
-Each time will feel like the first time.
-That's the cruelty — your brain refuses to update the file.`
+[whisper] Each time will feel like the first time.
+[bitterly] That's the cruelty — your brain refuses to update the file.`
         },
         {
           id: 5,
@@ -234,22 +234,22 @@ That's the cruelty — your brain refuses to update the file.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this body.
+[darkly] To this body.
 
-Pain will become your weather.
-Not a storm that passes. The sky itself. Always there. The background to everything you do.
+[gravely] Pain will become your weather.
+[resigned] Not a storm that passes. The sky itself. Always there. The background to everything you do.
 
-You will wake up in pain.
-Before your eyes open, before any thought forms, pain is there first. Waiting. It slept with you. It will have breakfast with you. It will sit beside you for every hour of every day, and it will never leave.
+[softly] You will wake up in pain.
+[heavily] Before your eyes open, before any thought forms, pain is there first. Waiting. It slept with you. It will have breakfast with you. It will sit beside you for every hour of every day, and it will never leave.
 
-You will become an expert in types of ache.
-Sharp — that's the hip. Dull — that's the lower back. Throbbing — the knees. Constant — everywhere. You'll describe it to doctors so many times the words lose all meaning.
+[flatly] You will become an expert in types of ache.
+[tired] Sharp — that's the hip. Dull — that's the lower back. Throbbing — the knees. Constant — everywhere. You'll describe it to doctors so many times the words lose all meaning.
 
-It will bore you before it kills you.
-That's the thing no one tells you. Pain gets tedious. The same suffering, the same complaints, the same helplessness, day after day. Even agony becomes monotonous.`
+[bitterly] It will bore you before it kills you.
+[whisper] That's the thing no one tells you. Pain gets tedious. The same suffering, the same complaints, the same helplessness, day after day. Even agony becomes monotonous.`
         },
         {
           id: 6,
@@ -287,22 +287,22 @@ That's the thing no one tells you. Pain gets tedious. The same suffering, the sa
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this mind.
+[darkly] To this mind.
 
-Your mind will betray you quietly.
-Not with a dramatic collapse. With small, creeping thefts you barely notice until the damage is done.
+[haunted] Your mind will betray you quietly.
+[softly] Not with a dramatic collapse. With small, creeping thefts you barely notice until the damage is done.
 
-You will forget the word for common things.
-You'll point at the toaster and say "the thing." You'll call your son by your brother's name. You'll do it and not even realize.
+[gently] You will forget the word for common things.
+[sadly] You'll point at the toaster and say "the thing." You'll call your son by your brother's name. You'll do it and not even realize.
 
 You will tell the same story three times in one hour.
-And people will smile patiently, the way you smile at a child. Each time will feel like the first. They'll exchange glances. You won't notice. That's the mercy and the horror — you don't know you're fading.
+[resigned] And people will smile patiently, the way you smile at a child. Each time will feel like the first. They'll exchange glances. [whisper] You won't notice. That's the mercy and the horror — you don't know you're fading.
 
-The you that remembers will fade before the you that exists.
-Your body will keep going. Your heart will keep beating. But the thread that connects who you were yesterday to who you are today will snap. And you won't even know it snapped.`
+[voice breaking] The you that remembers will fade before the you that exists.
+[hollowly] Your body will keep going. Your heart will keep beating. But the thread that connects who you were yesterday to who you are today will snap. [pause] And you won't even know it snapped.`
         },
         {
           id: 7,
@@ -341,22 +341,22 @@ Your body will keep going. Your heart will keep beating. But the thread that con
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this life.
+[darkly] To this life.
 
-You will become a burden.
-Not because they say so. Because you'll see it in their eyes before they can hide it.
+[gravely] You will become a burden.
+[softly] Not because they say so. Because you'll see it in their eyes before they can hide it.
 
-You will need help getting dressed.
-Buttons your fingers can't manage. Shoes you can't reach. The flicker of frustration on their face as they kneel down to help — they'll mask it with a smile, but you'll catch it. You'll always catch it.
+[gently] You will need help getting dressed.
+[sadly] Buttons your fingers can't manage. Shoes you can't reach. The flicker of frustration on their face as they kneel down to help — they'll mask it with a smile, but you'll catch it. [whisper] You'll always catch it.
 
-You will hear them sigh when they think you can't hear.
-They're exhausted. They have their own lives. Their own children needing them. And here you are — another obligation, another task, another thing they have to do before they can live their day.
+[voice breaking] You will hear them sigh when they think you can't hear.
+[resigned] They're exhausted. They have their own lives. Their own children needing them. And here you are — another obligation, another task, another thing they have to do before they can live their day.
 
-You will apologize for existing. For needing. For still being here.
-And you will mean it. Not as a gesture. You will genuinely wish you could disappear, that you could stop being a weight on the people you love most in this world.`
+[barely audible] You will apologize for existing. For needing. For still being here.
+[whisper] And you will mean it. Not as a gesture. You will genuinely wish you could disappear, that you could stop being a weight on the people you love most in this world.`
         }
       ]
     },
@@ -379,17 +379,17 @@ And you will mean it. Not as a gesture. You will genuinely wish you could disapp
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This decay will claim me.
-Not in fantasy. Not eventually.
+          notes: `[slowly] This decay will claim me.
+[darkly] Not in fantasy. Not eventually.
 To these bones and flesh.
 
-The previous horror was about experience — what it feels like to lose agency, to lose your mind, to become a burden.
+[gravely] The previous horror was about experience — what it feels like to lose agency, to lose your mind, to become a burden.
 
-Now we enter the body itself.
+[building intensity] Now we enter the body itself.
 The actual physical machinery failing. Skin tearing. Bones cracking. Heart stuttering. Eyes dimming. Teeth falling.
 
-This is what decomposition looks like while you're still alive.
-The body doesn't wait until you die to begin falling apart. It starts early and picks up speed.`
+[haunted] This is what decomposition looks like while you're still alive.
+[whisper] The body doesn't wait until you die to begin falling apart. It starts early and picks up speed.`
         },
         {
           id: 9,
@@ -428,19 +428,19 @@ The body doesn't wait until you die to begin falling apart. It starts early and 
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this skin.
+[darkly] To this skin.
 
-Your skin will become thin as tissue paper.
-Run your finger across the back of your hand right now. Feel that? That elasticity? That bounce? It won't be there. Pull the skin up — someday it will stay where you left it. Tent up. Take minutes to settle back down. Like a science experiment you're performing on yourself.
+[with disgust] Your skin will become thin as tissue paper.
+[reflectively] Run your finger across the back of your hand right now. Feel that? That elasticity? That bounce? It won't be there. [disturbed] Pull the skin up — someday it will stay where you left it. Tent up. Take minutes to settle back down. Like a science experiment you're performing on yourself.
 
-A simple bump will tear it open.
-Hit your arm on a doorframe — it splits. Blood pools under skin so thin you can see it spreading. Purple and blue like spilled ink. Wounds will refuse to heal. The bandage comes off and the tear is still there, angry and raw, week after week.
+[grimly] A simple bump will tear it open.
+[flatly] Hit your arm on a doorframe — it splits. Blood pools under skin so thin you can see it spreading. Purple and blue like spilled ink. Wounds will refuse to heal. The bandage comes off and the tear is still there, angry and raw, week after week.
 
-Your hands will show every vein.
-A roadmap drawn in purple and blue, running under translucent skin. These are your hands. The ones that held children, that built things, that touched the people you loved. Now they look like they belong to a corpse.`
+[sadly] Your hands will show every vein.
+[whisper] A roadmap drawn in purple and blue, running under translucent skin. These are your hands. The ones that held children, that built things, that touched the people you loved. [voice breaking] Now they look like they belong to a corpse.`
         },
         {
           id: 10,
@@ -479,22 +479,22 @@ A roadmap drawn in purple and blue, running under translucent skin. These are yo
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these bones.
+[darkly] To these bones.
 
-Your bones will hollow and crack.
-They'll become porous, light, fragile — like honeycomb. The frame that held you upright for decades will turn against you.
+[gravely] Your bones will hollow and crack.
+[clinically] They'll become porous, light, fragile — like honeycomb. The frame that held you upright for decades will turn against you.
 
-You will break a rib from coughing. A hip from standing. A vertebra from sitting wrong.
-That's not exaggeration. That's osteoporosis. A cough. A chair. Standing up from bed. These aren't accidents — these are just existing. Your skeleton can't handle the weight of ordinary life anymore.
+[with dread] You will break a rib from coughing. A hip from standing. A vertebra from sitting wrong.
+[firmly] That's not exaggeration. That's osteoporosis. A cough. A chair. Standing up from bed. These aren't accidents — these are just existing. Your skeleton can't handle the weight of ordinary life anymore.
 
-Each fracture will heal slower than the last. If it heals at all.
-And while you lie in bed waiting, the muscles waste away, the pneumonia sets in, the blood clots form. One broken bone starts a chain reaction that doesn't stop.
+[resigned] Each fracture will heal slower than the last. If it heals at all.
+[grimly] And while you lie in bed waiting, the muscles waste away, the pneumonia sets in, the blood clots form. One broken bone starts a chain reaction that doesn't stop.
 
-The body you stand in will collapse inward.
-You will shrink. Your spine will curve. You will become physically smaller, folding in on yourself like a building being demolished in slow motion.`
+[haunted] The body you stand in will collapse inward.
+[whisper] You will shrink. Your spine will curve. You will become physically smaller, folding in on yourself like a building being demolished in slow motion.`
         },
         {
           id: 11,
@@ -533,22 +533,22 @@ You will shrink. Your spine will curve. You will become physically smaller, fold
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this heart.
+[darkly] To this heart.
 
-Your heart will strain and stutter.
-The engine that never stopped, not once, since before you were born — it's wearing out. And you'll feel it.
+[gravely] Your heart will strain and stutter.
+[reflectively] The engine that never stopped, not once, since before you were born — it's wearing out. And you'll feel it.
 
-You will feel it skip beats. Race for no reason. Pause for too long.
-Lying in bed at night, you'll feel it — that flutter, that missed beat, that extra-hard thump that makes you hold your breath. Is this it? Is this the one? Then it settles. Until next time.
+[anxiously] You will feel it skip beats. Race for no reason. Pause for too long.
+[fearfully] Lying in bed at night, you'll feel it — that flutter, that missed beat, that extra-hard thump that makes you hold your breath. [whisper] Is this it? Is this the one? [pause] Then it settles. Until next time.
 
-Walking to the bathroom will exhaust you.
-Fifteen feet. That's all. And halfway there you'll need to sit down, chest heaving, arms shaking, wondering how something so small became so impossible.
+[exhausted] Walking to the bathroom will exhaust you.
+[breathlessly] Fifteen feet. That's all. And halfway there you'll need to sit down, chest heaving, arms shaking, wondering how something so small became so impossible.
 
-Then be disappointed it wasn't.
-At some point, the skipped beat won't scare you anymore. It'll feel like a promise that keeps getting broken. You'll welcome it. And that's when you know something inside you has already died.`
+[darkly] Then be disappointed it wasn't.
+[hollowly] At some point, the skipped beat won't scare you anymore. It'll feel like a promise that keeps getting broken. [whisper] You'll welcome it. And that's when you know something inside you has already died.`
         },
         {
           id: 12,
@@ -584,22 +584,22 @@ At some point, the skipped beat won't scare you anymore. It'll feel like a promi
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these organs.
+[darkly] To these organs.
 
-Your organs will fail in sequence.
-Not all at once. Like dominoes. One fails, stresses the next, which stresses the next. A cascade.
+[gravely] Your organs will fail in sequence.
+[clinically] Not all at once. Like dominoes. One fails, stresses the next, which stresses the next. A cascade.
 
-Your kidneys will filter less. Your liver will process slower. Your lungs will capture less oxygen.
-Toxins build up in your blood. You taste metal at the back of your throat. Your breath smells like something rotting — because something is. You are. From the inside.
+[flatly] Your kidneys will filter less. Your liver will process slower. Your lungs will capture less oxygen.
+[with disgust] Toxins build up in your blood. You taste metal at the back of your throat. Your breath smells like something rotting — because something is. [whisper] You are. From the inside.
 
-Your body will retain fluid. Your ankles will swell. Your belly will distend.
-The body filling up with what it can no longer process. Carrying its own poison, expanding with it.
+[heavily] Your body will retain fluid. Your ankles will swell. Your belly will distend.
+[grimly] The body filling up with what it can no longer process. Carrying its own poison, expanding with it.
 
-You will look pregnant with your own death.
-That's not metaphor. That's what end-stage organ failure looks like. Swollen, distended, bloated with the waste your body can no longer expel. Growing something that will kill you.`
+[haunted] You will look pregnant with your own death.
+[darkly] That's not metaphor. That's what end-stage organ failure looks like. Swollen, distended, bloated with the waste your body can no longer expel. [whisper] Growing something that will kill you.`
         },
         {
           id: 13,
@@ -638,22 +638,22 @@ That's not metaphor. That's what end-stage organ failure looks like. Swollen, di
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these muscles.
+[darkly] To these muscles.
 
-Your muscles will consume themselves for fuel.
-Your body, starving for energy, will eat its own meat. Your arms will thin until the bones show through. Your legs will barely hold you upright. Your hands will tremble from the effort of holding a cup of tea.
+[gravely] Your muscles will consume themselves for fuel.
+[with horror] Your body, starving for energy, will eat its own meat. Your arms will thin until the bones show through. Your legs will barely hold you upright. Your hands will tremble from the effort of holding a cup of tea.
 
-You will drop things. Spill things. Break things.
-The glass slips. The plate crashes. The book falls from fingers that can no longer grip. Every object in the world becomes a test you're failing.
+[resigned] You will drop things. Spill things. Break things.
+[sadly] The glass slips. The plate crashes. The book falls from fingers that can no longer grip. Every object in the world becomes a test you're failing.
 
-People will start cutting your food for you.
-Someone at the table will lean over and cut your steak into small pieces. The way you once did for your children. The reversal is so complete it's almost poetic. Almost.
+[softly] People will start cutting your food for you.
+[voice breaking] Someone at the table will lean over and cut your steak into small pieces. The way you once did for your children. The reversal is so complete it's almost poetic. [bitterly] Almost.
 
-Then feeding you.
-Spoon to your lips. Wiping the spill from your chin. You end the way you began — dependent, helpless, and unable to do the most basic thing a human being can do for themselves.`
+[whisper] Then feeding you.
+[hollowly] Spoon to your lips. Wiping the spill from your chin. You end the way you began — dependent, helpless, and unable to do the most basic thing a human being can do for themselves.`
         },
         {
           id: 14,
@@ -692,22 +692,22 @@ Spoon to your lips. Wiping the spill from your chin. You end the way you began �
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these eyes.
+[darkly] To these eyes.
 
-Your world will become blurry, then dark.
-The world you've spent your entire life looking at — it's going to leave you. Not all at once. The edges go first.
+[sadly] Your world will become blurry, then dark.
+[softly] The world you've spent your entire life looking at — it's going to leave you. Not all at once. The edges go first.
 
-Colors will fade to gray. Faces will become shadows.
-Imagine your daughter walks into the room. You hear her voice. You know it's her. But you can't see her face. Just a shape in the doorway. A blur where features used to be.
+[gently] Colors will fade to gray. Faces will become shadows.
+[voice breaking] Imagine your daughter walks into the room. You hear her voice. You know it's her. But you can't see her face. Just a shape in the doorway. A blur where features used to be.
 
-Reading will become impossible. Then recognizing faces.
-Books — gone. Newspapers — gone. The faces of people you love — gone. You will live among strangers you recognize only by their voices. Your world reduced to sound and touch.
+[resigned] Reading will become impossible. Then recognizing faces.
+[hollowly] Books — gone. Newspapers — gone. The faces of people you love — gone. You will live among strangers you recognize only by their voices. Your world reduced to sound and touch.
 
-Then light itself will go.
-The last thing to leave. Not sight, not detail, not color — light. The world will simply go dark. And it won't come back.`
+[whisper] Then light itself will go.
+[haunted] The last thing to leave. Not sight, not detail, not color — light. The world will simply go dark. [pause] And it won't come back.`
         },
         {
           id: 15,
@@ -746,22 +746,22 @@ The last thing to leave. Not sight, not detail, not color — light. The world w
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these teeth.
+[darkly] To these teeth.
 
-Your gums will recede and bleed.
-They pull back from your teeth like tide going out. The bone underneath dissolves. Your teeth, untethered, begin to move.
+[with disgust] Your gums will recede and bleed.
+[grimly] They pull back from your teeth like tide going out. The bone underneath dissolves. Your teeth, untethered, begin to move.
 
-Your teeth will wiggle when you touch them. Then fall out one by one.
-You'll find them in your food. Bite into an apple and leave a tooth behind. Find one on your pillow in the morning. Cough into your hand and see a tooth sitting there, root and all, like it was never attached to you.
+[disturbed] Your teeth will wiggle when you touch them. Then fall out one by one.
+[flatly] You'll find them in your food. Bite into an apple and leave a tooth behind. Find one on your pillow in the morning. Cough into your hand and see a tooth sitting there, root and all, like it was never attached to you.
 
-Your face will collapse inward.
-Without teeth, the jaw shrinks. The lips fold in. The chin meets the nose. The structural architecture of your face caves. You look in the mirror and see the skull underneath, barely disguised.
+[haunted] Your face will collapse inward.
+[clinically] Without teeth, the jaw shrinks. The lips fold in. The chin meets the nose. The structural architecture of your face caves. You look in the mirror and see the skull underneath, barely disguised.
 
-You will smile and look like a corpse.
-That's not cruelty — that's anatomy. Your face is already previewing what death will look like. Every smile is a rehearsal.`
+[whisper] You will smile and look like a corpse.
+[darkly] That's not cruelty — that's anatomy. Your face is already previewing what death will look like. [pause] Every smile is a rehearsal.`
         }
       ]
     },
@@ -784,15 +784,15 @@ That's not cruelty — that's anatomy. Your face is already previewing what deat
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This isolation will hollow me.
-Not as metaphor. Not as possibility.
+          notes: `[slowly] This isolation will hollow me.
+[darkly] Not as metaphor. Not as possibility.
 In lived experience.
 
-The body fails, yes — that's horrifying enough.
-But the world around you fails too. People leave. People die. The circles of connection that gave life meaning shrink until there's nothing left but silence.
+[gravely] The body fails, yes — that's horrifying enough.
+[softly] But the world around you fails too. People leave. People die. The circles of connection that gave life meaning shrink until there's nothing left but silence.
 
-There's a death before death.
-Social death. The death of connection. The death of being seen, known, needed by anyone. It comes first. The body just catches up later.`
+[haunted] There's a death before death.
+[whisper] Social death. The death of connection. The death of being seen, known, needed by anyone. [pause] It comes first. The body just catches up later.`
         },
         {
           id: 17,
@@ -832,19 +832,19 @@ Social death. The death of connection. The death of being seen, known, needed by
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this heart.
+[darkly] To this heart.
 
-You will attend funeral after funeral.
-Not one grief. Not two. A procession. The people who made your life — leaving, one by one. Friends. Siblings. Colleagues. Lovers. And if you're cursed with enough years — your own children.
+[gravely] You will attend funeral after funeral.
+[sadly] Not one grief. Not two. A procession. The people who made your life — leaving, one by one. Friends. Siblings. Colleagues. Lovers. [voice breaking] And if you're cursed with enough years — your own children.
 
-Each death will take a piece of your history.
-The inside jokes die with them. The shared memories — that trip, that night, that look you gave each other across the room — gone. No one else was there. No one else remembers. You become the sole witness to a life no one can verify.
+[softly] Each death will take a piece of your history.
+[reflectively] The inside jokes die with them. The shared memories — that trip, that night, that look you gave each other across the room — gone. No one else was there. No one else remembers. [hollowly] You become the sole witness to a life no one can verify.
 
-Then you will forget them too.
-The last keeper of the memories loses the memories. The faces blur. The voices fade. The stories scramble. And there's no one left to remind you what you've lost. No one left at all.`
+[haunted] Then you will forget them too.
+[whisper] The last keeper of the memories loses the memories. The faces blur. The voices fade. The stories scramble. [pause] And there's no one left to remind you what you've lost. No one left at all.`
         },
         {
           id: 18,
@@ -884,19 +884,19 @@ The last keeper of the memories loses the memories. The faces blur. The voices f
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In this lived life.
+[darkly] In this lived life.
 
-People will visit less and less.
-At first, they come often. They bring flowers. They stay for hours. Then once a week. Then once a month. Then on Christmas if you're lucky. Then not at all.
+[softly] People will visit less and less.
+[gently] At first, they come often. They bring flowers. They stay for hours. [resigned] Then once a week. Then once a month. Then on Christmas if you're lucky. [whisper] Then not at all.
 
-You will understand. They have lives.
-Responsibilities. Children. Jobs. You are no longer the center of anyone's world. You're an item on a checklist, squeezed between groceries and dentist appointments. They love you. But love doesn't mean presence.
+[understanding] You will understand. They have lives.
+[flatly] Responsibilities. Children. Jobs. You are no longer the center of anyone's world. You're an item on a checklist, squeezed between groceries and dentist appointments. [sadly] They love you. But love doesn't mean presence.
 
-You will wait by the phone for calls that don't come.
-Sitting in the chair, glancing at the phone, willing it to ring. It doesn't. And you won't blame them. But you will notice. God, you will notice every empty hour.`
+[lonely] You will wait by the phone for calls that don't come.
+[voice breaking] Sitting in the chair, glancing at the phone, willing it to ring. It doesn't. And you won't blame them. [whisper] But you will notice. God, you will notice every empty hour.`
         },
         {
           id: 19,
@@ -935,19 +935,19 @@ Sitting in the chair, glancing at the phone, willing it to ring. It doesn't. And
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In this silence.
+[darkly] In this silence.
 
-Days will pass without another voice.
-Not a day. Days. The last person you spoke to was the pharmacist, three days ago. Before that, nobody. After that, nobody.
+[hollowly] Days will pass without another voice.
+[flatly] Not a day. Days. The last person you spoke to was the pharmacist, three days ago. Before that, nobody. After that, nobody.
 
-You will narrate your actions to the empty room.
-"Now I'll make tea." "Time for lunch." "Where did I put that?" You'll answer yourself. Have full conversations alone. Not because you're losing your mind — because the silence is unbearable.
+[softly] You will narrate your actions to the empty room.
+[gently] "Now I'll make tea." "Time for lunch." "Where did I put that?" You'll answer yourself. Have full conversations alone. [sadly] Not because you're losing your mind — because the silence is unbearable.
 
-You will forget what your voice sounds like to others.
-Because there are no others. No one to respond. No one to say your name. No one to confirm you're still real. You become a ghost haunting your own house, talking to walls that don't answer back.`
+[haunted] You will forget what your voice sounds like to others.
+[whisper] Because there are no others. No one to respond. No one to say your name. No one to confirm you're still real. [barely audible] You become a ghost haunting your own house, talking to walls that don't answer back.`
         },
         {
           id: 20,
@@ -987,19 +987,19 @@ Because there are no others. No one to respond. No one to say your name. No one 
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this existence.
+[darkly] To this existence.
 
-The world will forget you exist.
-Your emails go unanswered. Your calls unreturned. Not out of cruelty — out of irrelevance. You simply don't register anymore.
+[gravely] The world will forget you exist.
+[flatly] Your emails go unanswered. Your calls unreturned. Not out of cruelty — out of irrelevance. You simply don't register anymore.
 
-Your opinions will be dismissed as outdated. Your stories as repetitive. Your presence as optional.
-You've been filed away. The world moved on while you were still in it.
+[bitterly] Your opinions will be dismissed as outdated. Your stories as repetitive. Your presence as optional.
+[hollowly] You've been filed away. The world moved on while you were still in it.
 
-You could die tomorrow and most people wouldn't know for weeks.
-Sit with that. Really sit with it. The mail would pile up. The milk would expire. The phone would ring into nothing. Weeks. Maybe months. And life would continue exactly as it does now, without a single ripple.`
+[slowly] You could die tomorrow and most people wouldn't know for weeks.
+[haunted] Sit with that. Really sit with it. The mail would pile up. The milk would expire. The phone would ring into nothing. [whisper] Weeks. Maybe months. [pause] And life would continue exactly as it does now, without a single ripple.`
         },
         {
           id: 21,
@@ -1037,19 +1037,19 @@ Sit with that. Really sit with it. The mail would pile up. The milk would expire
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this person.
+[darkly] To this person.
 
-People will look through you in public.
-Not at you. Through you. Like glass. Like you've already become part of the background.
+[sadly] People will look through you in public.
+[resigned] Not at you. Through you. Like glass. Like you've already become part of the background.
 
-Waiters will serve you last. Store clerks will ignore you. Young people will talk over you.
-You'll stand in line and be skipped. You'll raise your hand and not be called on. You'll speak and people will not hear you. Your words fall out of your mouth and dissolve before they reach anyone.
+[bitterly] Waiters will serve you last. Store clerks will ignore you. Young people will talk over you.
+[flatly] You'll stand in line and be skipped. You'll raise your hand and not be called on. You'll speak and people will not hear you. Your words fall out of your mouth and dissolve before they reach anyone.
 
-You will wonder if you've already died and no one told you.
-And it won't feel like a joke. It will feel like a genuine question. When no one sees you, when no one responds, what proof do you have that you still exist?`
+[haunted] You will wonder if you've already died and no one told you.
+[whisper] And it won't feel like a joke. It will feel like a genuine question. [pause] When no one sees you, when no one responds, what proof do you have that you still exist?`
         },
         {
           id: 22,
@@ -1090,22 +1090,22 @@ And it won't feel like a joke. It will feel like a genuine question. When no one
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In this bed.
+[softly] In this bed.
 
-The bed will be too big. Too cold. Too quiet.
-You'll lie on your side, the way you always did, and there's nothing behind you but empty space. Cold sheets. No warmth. No breathing. No weight beside you.
+[lonely] The bed will be too big. Too cold. Too quiet.
+[sadly] You'll lie on your side, the way you always did, and there's nothing behind you but empty space. Cold sheets. No warmth. No breathing. No weight beside you.
 
-You will reach out in the night for someone who isn't there.
-It's a reflex. Decades of reaching. Your arm moves before your brain remembers. Then your hand lands on nothing, and you remember. Again.
+[voice breaking] You will reach out in the night for someone who isn't there.
+[gently] It's a reflex. Decades of reaching. Your arm moves before your brain remembers. Then your hand lands on nothing, and you remember. [whisper] Again.
 
-You will wake up and forget they're gone. Then remember. Every single morning.
-Sleep resets the grief. For those few groggy seconds, everything is normal. Then reality floods in. They're gone. Every morning is the morning after they died.
+[haunted] You will wake up and forget they're gone. Then remember. Every single morning.
+[softly] Sleep resets the grief. For those few groggy seconds, everything is normal. [with dread] Then reality floods in. They're gone. Every morning is the morning after they died.
 
-You will talk to their photo. It will not answer.
-You'll say goodnight. You'll tell them about your day. You'll ask what they think. And the silence that follows will be the loneliest sound in the world.`
+[barely audible] You will talk to their photo. It will not answer.
+[whisper] You'll say goodnight. You'll tell them about your day. You'll ask what they think. [pause] And the silence that follows will be the loneliest sound in the world.`
         }
       ]
     },
@@ -1128,15 +1128,15 @@ You'll say goodnight. You'll tell them about your day. You'll ask what they thin
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This terror will find me.
-Not in nightmares. Not theoretically.
+          notes: `[slowly] This terror will find me.
+[darkly] Not in nightmares. Not theoretically.
 In the darkness at 3 AM.
 
-3 AM is when it comes.
-The house is silent. The darkness is thick. And your mind starts its work. Every fear you pushed down during the day climbs out and sits on your chest.
+[haunted] 3 AM is when it comes.
+[whisper] The house is silent. The darkness is thick. And your mind starts its work. Every fear you pushed down during the day climbs out and sits on your chest.
 
-Falling. Dying alone. Hospitals. Forgetting. Being a burden. Pain.
-These aren't abstract concerns. These are the things that wake people at night, that they never admit to their families, that they carry alone in the dark.`
+[fearfully] Falling. Dying alone. Hospitals. Forgetting. Being a burden. Pain.
+[gravely] These aren't abstract concerns. These are the things that wake people at night, that they never admit to their families, that they carry alone in the dark.`
         },
         {
           id: 24,
@@ -1177,19 +1177,19 @@ These aren't abstract concerns. These are the things that wake people at night, 
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these legs.
+[darkly] To these legs.
 
-Every step will be a calculation.
-Look down. Is the floor wet? Is the rug loose? Is the step even? Your entire world becomes a risk assessment. Every surface, every threshold, every stair is a potential ending.
+[anxiously] Every step will be a calculation.
+[fearfully] Look down. Is the floor wet? Is the rug loose? Is the step even? Your entire world becomes a risk assessment. Every surface, every threshold, every stair is a potential ending.
 
-You will grip railings with white knuckles. Shuffle instead of walk.
-You'll refuse dinner invitations because of stairs. Cancel plans because it rained and the sidewalk might be slick. Your life will shrink to the few safe paths you've memorized. Freedom traded for survival.
+[tense] You will grip railings with white knuckles. Shuffle instead of walk.
+[resigned] You'll refuse dinner invitations because of stairs. Cancel plans because it rained and the sidewalk might be slick. Your life will shrink to the few safe paths you've memorized. [bitterly] Freedom traded for survival.
 
-You will know that one fall could be the last.
-A broken hip means bedridden. Bedridden means pneumonia. Pneumonia means death. That's not paranoia — that's a 20-30% one-year mortality rate for elderly hip fractures. One stumble. One wet floor. One uneven step. That's all it takes.`
+[gravely] You will know that one fall could be the last.
+[clinically] A broken hip means bedridden. Bedridden means pneumonia. Pneumonia means death. [firmly] That's not paranoia — that's a 20-30% one-year mortality rate for elderly hip fractures. [whisper] One stumble. One wet floor. One uneven step. That's all it takes.`
         },
         {
           id: 25,
@@ -1229,19 +1229,19 @@ A broken hip means bedridden. Bedridden means pneumonia. Pneumonia means death. 
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In this apartment.
+[darkly] In this apartment.
 
-You will imagine the scenarios.
-Falling in the bathroom. Face down on cold tile. Hip shattered. Unable to reach the phone. Lying there for hours. Days. Choking on dinner with no one to grab you from behind. The heart attack at 2 AM — gasping in the dark, alone.
+[fearfully] You will imagine the scenarios.
+[anxiously] Falling in the bathroom. Face down on cold tile. Hip shattered. Unable to reach the phone. Lying there for hours. Days. Choking on dinner with no one to grab you from behind. The heart attack at 2 AM — gasping in the dark, alone.
 
-You will keep your phone charged at all times.
-Within reach. Always. But you'll wonder — when the moment comes, when the pain hits, when the world goes sideways — will your hands work? Will you be able to dial? Will you be able to speak?
+[tense] You will keep your phone charged at all times.
+[nervously] Within reach. Always. But you'll wonder — when the moment comes, when the pain hits, when the world goes sideways — will your hands work? Will you be able to dial? [whisper] Will you be able to speak?
 
-You will see the news stories. Elderly person found dead after three days.
-Found by a neighbor who noticed the mail. Found by a landlord who smelled something. Found by a daughter who finally thought to check. And you will know, with absolute certainty, that could be you.`
+[haunted] You will see the news stories. Elderly person found dead after three days.
+[grimly] Found by a neighbor who noticed the mail. Found by a landlord who smelled something. Found by a daughter who finally thought to check. [whisper] And you will know, with absolute certainty, that could be you.`
         },
         {
           id: 26,
@@ -1281,19 +1281,19 @@ Found by a neighbor who noticed the mail. Found by a landlord who smelled someth
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In that building.
+[darkly] In that building.
 
-You will know that going in doesn't mean coming out.
-Every ambulance ride could be the last trip you take. Every hospital bed could be the last bed you sleep in. You've seen too many people — friends, siblings, your own parents — go in for something simple and never come home.
+[with dread] You will know that going in doesn't mean coming out.
+[fearfully] Every ambulance ride could be the last trip you take. Every hospital bed could be the last bed you sleep in. You've seen too many people — friends, siblings, your own parents — go in for something simple and never come home.
 
-You will resist calling the ambulance. Downplay symptoms.
-"I'll be fine." You'll say this with chest pain. You'll say this barely breathing. Because the hospital is where they take your clothes, your dignity, your autonomy — and sometimes your life.
+[nervously] You will resist calling the ambulance. Downplay symptoms.
+[strained] "I'll be fine." You'll say this with chest pain. You'll say this barely breathing. [bitterly] Because the hospital is where they take your clothes, your dignity, your autonomy — and sometimes your life.
 
-You will pack a bag "just in case."
-Leave notes on the counter. Put your affairs in order. Treat every hospital visit like a potential farewell. And the sentence you try to write — "If I don't come back..." — you can't finish it. Your hand stops. Your mind won't let you.`
+[softly] You will pack a bag "just in case."
+[sadly] Leave notes on the counter. Put your affairs in order. Treat every hospital visit like a potential farewell. [voice breaking] And the sentence you try to write — "If I don't come back..." — you can't finish it. [whisper] Your hand stops. Your mind won't let you.`
         },
         {
           id: 27,
@@ -1335,19 +1335,19 @@ Leave notes on the counter. Put your affairs in order. Treat every hospital visi
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this brain.
+[darkly] To this brain.
 
-Every memory lapse will terrify you.
-You forgot where you put your keys. Normal? Or is it starting? You blanked on a word mid-sentence. Everyone does that. Right? Right?
+[anxiously] Every memory lapse will terrify you.
+[nervously] You forgot where you put your keys. Normal? Or is it starting? You blanked on a word mid-sentence. Everyone does that. [fearfully] Right? Right?
 
-You will test yourself constantly.
-What day is it? Wednesday. Good. What did I eat for breakfast? Eggs. Good. What's my daughter's name? ... The pause. That pause. Even if the answer comes a second later, the pause is the thing that haunts you.
+[tense] You will test yourself constantly.
+[strained] What day is it? Wednesday. Good. What did I eat for breakfast? Eggs. Good. What's my daughter's name? [pause] ... The pause. That pause. [whisper] Even if the answer comes a second later, the pause is the thing that haunts you.
 
-You will fear becoming a stranger to yourself.
-Losing your memories. Your personality. Your self. The person you spent a lifetime becoming — erased. And the worst part: still being alive when it's all gone. A breathing body with no one inside.`
+[with dread] You will fear becoming a stranger to yourself.
+[voice breaking] Losing your memories. Your personality. Your self. The person you spent a lifetime becoming — erased. [whisper] And the worst part: still being alive when it's all gone. A breathing body with no one inside.`
         },
         {
           id: 28,
@@ -1388,22 +1388,22 @@ Losing your memories. Your personality. Your self. The person you spent a lifeti
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this conscience.
+[darkly] To this conscience.
 
-This fear will consume you more than death itself.
-You can make peace with dying. What you can't make peace with is ruining your children's lives in the process.
+[gravely] This fear will consume you more than death itself.
+[firmly] You can make peace with dying. What you can't make peace with is ruining your children's lives in the process.
 
-You will hide how much you're struggling.
-Pretend you can manage. Refuse help until you absolutely can't. Because the moment you accept help is the moment you become a project. A responsibility. A weight.
+[resigned] You will hide how much you're struggling.
+[stubbornly] Pretend you can manage. Refuse help until you absolutely can't. [softly] Because the moment you accept help is the moment you become a project. A responsibility. A weight.
 
-You will calculate the cost of your care.
-Your children's inheritance disappearing. Their vacation cancelled because of you. Their careers stalled. Their marriages strained. The math is brutal and it runs in your head all day.
+[bitterly] You will calculate the cost of your care.
+[sadly] Your children's inheritance disappearing. Their vacation cancelled because of you. Their careers stalled. Their marriages strained. The math is brutal and it runs in your head all day.
 
-You will think about how much easier it would be for everyone if you just—
-You will think it often. Not as a dark impulse. As basic arithmetic.`
+[darkly] You will think about how much easier it would be for everyone if you just—
+[whisper] You will think it often. Not as a dark impulse. [pause] As basic arithmetic.`
         },
         {
           id: 29,
@@ -1445,21 +1445,21 @@ You will think it often. Not as a dark impulse. As basic arithmetic.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this body.
+[darkly] To this body.
 
-You will wonder which kind of death awaits you.
-Slow and painful? Fast but terrifying? Peaceful but lonely? There's no menu. No choice. It will come however it comes.
+[fearfully] You will wonder which kind of death awaits you.
+[anxiously] Slow and painful? Fast but terrifying? Peaceful but lonely? [flatly] There's no menu. No choice. It will come however it comes.
 
-You will pray for quick. Hope for painless. Fear neither will come.
-Because you've seen how it usually goes. You've seen the morphine drip, the glazed eyes, the labored breathing that goes on for days. You've stood at bedsides and watched people you love suffer through the exit.
+[desperately] You will pray for quick. Hope for painless. Fear neither will come.
+[haunted] Because you've seen how it usually goes. You've seen the morphine drip, the glazed eyes, the labored breathing that goes on for days. You've stood at bedsides and watched people you love suffer through the exit.
 
-You will have watched others die. Seen the fear in their eyes.
-Not movie fear. Real fear. Animal fear. The kind that strips away everything — dignity, composure, faith — and leaves only the raw, screaming desire to not stop existing.
+[softly] You will have watched others die. Seen the fear in their eyes.
+[with dread] Not movie fear. Real fear. Animal fear. The kind that strips away everything — dignity, composure, faith — and leaves only the raw, screaming desire to not stop existing.
 
-And you will know those eyes will be yours.`
+[whisper] And you will know those eyes will be yours.`
         }
       ]
     },
@@ -1482,15 +1482,15 @@ And you will know those eyes will be yours.`
             </GSAPAnimated>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This pain will consume me.
-Not hypothetically. Not far off.
+          notes: `[slowly] This pain will consume me.
+[darkly] Not hypothetically. Not far off.
 In this suffering vessel.
 
-The body is a container for pain.
-It stops being yours and becomes something you're trapped inside. A cage made of nerve endings, every one of them firing.
+[gravely] The body is a container for pain.
+[haunted] It stops being yours and becomes something you're trapped inside. A cage made of nerve endings, every one of them firing.
 
-The previous sections talked about fear.
-This section is what the fear was about. Not the anticipation of suffering — the living inside of it. The difference is everything.`
+[measured] The previous sections talked about fear.
+[firmly] This section is what the fear was about. Not the anticipation of suffering — the living inside of it. [darkly] The difference is everything.`
         },
         {
           id: 31,
@@ -1531,19 +1531,19 @@ This section is what the fear was about. Not the anticipation of suffering — t
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this body.
+[darkly] To this body.
 
-You will wake up in pain. You will go to sleep in pain. You will dream of pain.
-There is no escape. No position that brings relief. No pillow arrangement. No medication that truly works. You will shift in bed fifty times a night, trying to find a way to exist that doesn't hurt. There isn't one.
+[exhausted] You will wake up in pain. You will go to sleep in pain. You will dream of pain.
+[resigned] There is no escape. No position that brings relief. No pillow arrangement. No medication that truly works. You will shift in bed fifty times a night, trying to find a way to exist that doesn't hurt. [whisper] There isn't one.
 
-You will forget what it felt like to simply exist without hurting.
-Try to remember a time before pain. You can't. It's been so long the memory of comfort is gone. Pain has overwritten everything. It's not the exception anymore.
+[hollowly] You will forget what it felt like to simply exist without hurting.
+[flatly] Try to remember a time before pain. You can't. It's been so long the memory of comfort is gone. Pain has overwritten everything. It's not the exception anymore.
 
-It's the norm.
-Your best days aren't pain-free. They're just less. A four instead of a seven. And you're grateful for a four. That's what your life has become — gratitude for slightly less agony.`
+[barely audible] It's the norm.
+[bitterly] Your best days aren't pain-free. They're just less. A four instead of a seven. And you're grateful for a four. [whisper] That's what your life has become — gratitude for slightly less agony.`
         },
         {
           id: 32,
@@ -1584,19 +1584,19 @@ Your best days aren't pain-free. They're just less. A four instead of a seven. A
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this voice.
+[darkly] To this voice.
 
-There will be moments when the pain is so intense you will beg.
-To God — if you believe. To nurses — if they're there. To anyone who will listen. To no one. To the empty ceiling above your bed, because you've run out of people to ask.
+[anguished] There will be moments when the pain is so intense you will beg.
+[desperately] To God — if you believe. To nurses — if they're there. To anyone who will listen. To no one. [voice breaking] To the empty ceiling above your bed, because you've run out of people to ask.
 
-You will say "please" until it loses meaning.
-You will cry until there are no tears left. Your voice will break from screaming. And none of it — not one word, not one tear, not one scream — will make any difference at all.
+[pleading] You will say "please" until it loses meaning.
+[exhausted] You will cry until there are no tears left. Your voice will break from screaming. [hollowly] And none of it — not one word, not one tear, not one scream — will make any difference at all.
 
-And the pain will continue. Indifferent to your suffering.
-Pain doesn't have ears. It doesn't negotiate. It doesn't care how good a person you were, how much you've already endured, how little you deserve this. It just is. Relentless. Mechanical. Indifferent.`
+[flatly] And the pain will continue. Indifferent to your suffering.
+[gravely] Pain doesn't have ears. It doesn't negotiate. It doesn't care how good a person you were, how much you've already endured, how little you deserve this. [whisper] It just is. Relentless. Mechanical. Indifferent.`
         },
         {
           id: 33,
@@ -1635,19 +1635,19 @@ Pain doesn't have ears. It doesn't negotiate. It doesn't care how good a person 
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In this exhaustion.
+[darkly] In this exhaustion.
 
-There will come a point when death seems merciful.
-When another day feels like a sentence — not a gift, a sentence. When morning light brings dread instead of hope. When someone says "You'll get better" and it sounds like the cruelest thing anyone has ever said to you.
+[wearily] There will come a point when death seems merciful.
+[exhausted] When another day feels like a sentence — not a gift, a sentence. When morning light brings dread instead of hope. [bitterly] When someone says "You'll get better" and it sounds like the cruelest thing anyone has ever said to you.
 
-You will understand why people give up.
-Not from weakness. From exhaustion. There's a difference. Weakness breaks quickly. Exhaustion is what happens when strength runs out over months, over years, one impossible day at a time.
+[softly] You will understand why people give up.
+[gently] Not from weakness. From exhaustion. There's a difference. Weakness breaks quickly. [resigned] Exhaustion is what happens when strength runs out over months, over years, one impossible day at a time.
 
-The will to live is not infinite.
-We treat it like some sacred, bottomless well. It isn't. Pain is patient. Pain has all the time in the world. And your will to live has an expiration date. Pain will find it.`
+[gravely] The will to live is not infinite.
+[darkly] We treat it like some sacred, bottomless well. It isn't. Pain is patient. Pain has all the time in the world. [whisper] And your will to live has an expiration date. Pain will find it.`
         },
         {
           id: 34,
@@ -1691,19 +1691,19 @@ We treat it like some sacred, bottomless well. It isn't. Pain is patient. Pain h
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-In this isolation.
+[darkly] In this isolation.
 
-People will say they understand. They don't. They can't.
-They can see your face twist. They can hear you moan. They can hold your hand and cry with you. But they will never feel what you feel. Not even close.
+[softly] People will say they understand. [firmly] They don't. They can't.
+[sadly] They can see your face twist. They can hear you moan. They can hold your hand and cry with you. [gravely] But they will never feel what you feel. Not even close.
 
-You are alone in your pain.
-Trapped in a body that only you inhabit. Your nervous system is a locked room. Others can press their faces against the window. They can see you suffering. But they can't come inside. No one can.
+[haunted] You are alone in your pain.
+[darkly] Trapped in a body that only you inhabit. Your nervous system is a locked room. Others can press their faces against the window. They can see you suffering. [whisper] But they can't come inside. No one can.
 
-No one can take it from you. No one can share it.
-This is the loneliest truth there is. Your suffering is yours. Completely, utterly, irrevocably yours. And you will bear it alone because there is no other option.`
+[voice breaking] No one can take it from you. No one can share it.
+[hollowly] This is the loneliest truth there is. Your suffering is yours. Completely, utterly, irrevocably yours. [pause] And you will bear it alone because there is no other option.`
         },
         {
           id: 35,
@@ -1743,19 +1743,19 @@ This is the loneliest truth there is. Your suffering is yours. Completely, utter
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this agony.
+[darkly] To this agony.
 
-At first, people will be alarmed by your pain.
-They'll rush in. Adjust your pillows. Call the doctor. Stay late. Hold your hand through the night. They'll treat it like the emergency it is.
+[softly] At first, people will be alarmed by your pain.
+[gently] They'll rush in. Adjust your pillows. Call the doctor. Stay late. Hold your hand through the night. They'll treat it like the emergency it is.
 
-But pain that doesn't end becomes background noise.
-They'll grow tired. Not of you — of the situation. They have their own lives to live. Their own exhaustion. The initial crisis fades into routine. Your screams become the furniture of the room — always there, no longer noticed.
+[resigned] But pain that doesn't end becomes background noise.
+[sadly] They'll grow tired. Not of you — of the situation. They have their own lives to live. Their own exhaustion. The initial crisis fades into routine. [bitterly] Your screams become the furniture of the room — always there, no longer noticed.
 
-Your agony will become routine.
-The same pain that once made everyone drop everything now gets a "How's the pain today?" asked while scrolling a phone. Your catastrophe has been filed under "ongoing." And you're still inside it. You've never left.`
+[hollowly] Your agony will become routine.
+[flatly] The same pain that once made everyone drop everything now gets a "How's the pain today?" asked while scrolling a phone. [whisper] Your catastrophe has been filed under "ongoing." And you're still inside it. You've never left.`
         },
         {
           id: 36,
@@ -1795,19 +1795,19 @@ The same pain that once made everyone drop everything now gets a "How's the pain
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this personality.
+[darkly] To this personality.
 
-Pain will take your personality.
-The person you spent a lifetime becoming — patient, kind, funny, generous — pain will take all of it. Strip it out day by day.
+[gravely] Pain will take your personality.
+[sadly] The person you spent a lifetime becoming — patient, kind, funny, generous — pain will take all of it. Strip it out day by day.
 
-You will become irritable. Demanding. Bitter. Angry.
-You'll snap at the people who love you. Bark at your daughter for bringing the wrong cup. Snarl at your son for talking too loud. Push them away with both hands. Hate yourself for it. But you can't stop.
+[angrily] You will become irritable. Demanding. Bitter. Angry.
+[with guilt] You'll snap at the people who love you. Bark at your daughter for bringing the wrong cup. Snarl at your son for talking too loud. Push them away with both hands. [voice breaking] Hate yourself for it. But you can't stop.
 
-Pain leaves no room for grace.
-When every nerve in your body is screaming, there is nothing left for kindness. Nothing left for patience. Nothing left for the person you used to be. Pain is greedy. It takes everything and leaves you with someone you don't recognize.`
+[exhausted] Pain leaves no room for grace.
+[whisper] When every nerve in your body is screaming, there is nothing left for kindness. Nothing left for patience. Nothing left for the person you used to be. [darkly] Pain is greedy. It takes everything and leaves you with someone you don't recognize.`
         }
       ]
     },
@@ -1832,15 +1832,15 @@ When every nerve in your body is screaming, there is nothing left for kindness. 
             </div>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This regret will haunt me.
-Not as warning. Not as lesson.
+          notes: `[slowly] This regret will haunt me.
+[darkly] Not as warning. Not as lesson.
 As lived truth.
 
-Not fortune-cookie wisdom. Not motivational posters.
-Lived regret. The kind that comes at the end, when you can see everything clearly and can change nothing. When the view is perfect and the door is locked.
+[gravely] Not fortune-cookie wisdom. Not motivational posters.
+[haunted] Lived regret. The kind that comes at the end, when you can see everything clearly and can change nothing. When the view is perfect and the door is locked.
 
-Standing at the end with a clear view of everything you didn't do.
-And no way back.`
+[whisper] Standing at the end with a clear view of everything you didn't do.
+[pause] And no way back.`
         },
         {
           id: 38,
@@ -1880,19 +1880,19 @@ And no way back.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this life.
+[darkly] To this life.
 
-The trip you postponed. The book you never wrote. The words you never said.
-"There's always tomorrow." You said it a thousand times. And you believed it a thousand times. And a thousand tomorrows passed while you waited.
+[reflectively] The trip you postponed. The book you never wrote. The words you never said.
+[bitterly] "There's always tomorrow." You said it a thousand times. And you believed it a thousand times. And a thousand tomorrows passed while you waited.
 
-You will lie in bed cataloging missed opportunities.
-The business you didn't start. The country you didn't visit. The person you didn't call back. The conversation you avoided because it was too hard. Doors you walked past. Chances you were too afraid to take.
+[sadly] You will lie in bed cataloging missed opportunities.
+[resigned] The business you didn't start. The country you didn't visit. The person you didn't call back. The conversation you avoided because it was too hard. Doors you walked past. Chances you were too afraid to take.
 
-And you will know, with terrible clarity: it's too late now.
-Not "nearly too late." Not "it's getting late." Too late. Past tense. Finished. The window closed and you were standing outside it watching.`
+[gravely] And you will know, with terrible clarity: it's too late now.
+[firmly] Not "nearly too late." Not "it's getting late." [whisper] Too late. Past tense. Finished. The window closed and you were standing outside it watching.`
         },
         {
           id: 39,
@@ -1931,22 +1931,22 @@ Not "nearly too late." Not "it's getting late." Too late. Past tense. Finished. 
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this conscience.
+[darkly] To this conscience.
 
-The cruel words you said in anger. The trust you betrayed. The love you took for granted.
-You'll remember every one. At 3 AM, their faces will find you. The exact look in their eyes when you cut them. You'll see it perfectly, even when you can't remember what you had for lunch.
+[haunted] The cruel words you said in anger. The trust you betrayed. The love you took for granted.
+[softly] You'll remember every one. At 3 AM, their faces will find you. The exact look in their eyes when you cut them. You'll see it perfectly, even when you can't remember what you had for lunch.
 
-Some you can no longer apologize to. They're already gone.
-The words you should have said are stuck inside you permanently. There's no one to receive them. No grave hears confessions. No headstone offers forgiveness.
+[voice breaking] Some you can no longer apologize to. They're already gone.
+[sadly] The words you should have said are stuck inside you permanently. There's no one to receive them. No grave hears confessions. No headstone offers forgiveness.
 
-Others wouldn't accept your apology anyway.
-Because you didn't just hurt them — you broke something. Trust. Love. Faith. Some things don't repair.
+[resigned] Others wouldn't accept your apology anyway.
+[gravely] Because you didn't just hurt them — you broke something. Trust. Love. Faith. Some things don't repair.
 
-You will carry this to the grave.
-Every face. Every wound. Every word you can't take back. They ride with you all the way to the end.`
+[whisper] You will carry this to the grave.
+[darkly] Every face. Every wound. Every word you can't take back. [pause] They ride with you all the way to the end.`
         },
         {
           id: 40,
@@ -1985,19 +1985,19 @@ Every face. Every wound. Every word you can't take back. They ride with you all 
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this awareness.
+[darkly] To this awareness.
 
-There was another version of you.
-The one who took that risk. Who said yes instead of no. Who left the job. Who booked the ticket. Who made the call. Who didn't let fear decide.
+[reflectively] There was another version of you.
+[softly] The one who took that risk. Who said yes instead of no. Who left the job. Who booked the ticket. Who made the call. Who didn't let fear decide.
 
-That person had a different life. Different loves. Different endings.
-Maybe better. Maybe worse. You'll never know. That's the thing — you'll never know. The wondering is the wound.
+[sadly] That person had a different life. Different loves. Different endings.
+[resigned] Maybe better. Maybe worse. You'll never know. That's the thing — you'll never know. [whisper] The wondering is the wound.
 
-You will never know what could have been.
-Only that it wasn't. The ghost of the life you didn't live will sit at the foot of your bed and look at you, and you'll look at it, and neither of you will speak because there's nothing left to say.`
+[haunted] You will never know what could have been.
+[hollowly] Only that it wasn't. The ghost of the life you didn't live will sit at the foot of your bed and look at you, and you'll look at it, [pause] and neither of you will speak because there's nothing left to say.`
         },
         {
           id: 41,
@@ -2038,19 +2038,19 @@ Only that it wasn't. The ghost of the life you didn't live will sit at the foot 
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To these years.
+[darkly] To these years.
 
-The hours scrolling through nothing. The years in jobs you hated. The decades worrying about things that never happened.
-Add it up. Do the math. If you spent two hours a day on nothing — which is generous, it was probably more — that's thirty hours a week. Sixty thousand hours in a lifetime. Seven years of your life. Wasted on nothing.
+[bitterly] The hours scrolling through nothing. The years in jobs you hated. The decades worrying about things that never happened.
+[gravely] Add it up. Do the math. If you spent two hours a day on nothing — which is generous, it was probably more — that's thirty hours a week. Sixty thousand hours in a lifetime. [whisper] Seven years of your life. Wasted on nothing.
 
-You had time. So much time. And you spent it waiting.
-For the right moment. For enough money. For permission. For someone to tell you it was okay to begin. Nobody came. Nobody was supposed to.
+[sadly] You had time. So much time. And you spent it waiting.
+[resigned] For the right moment. For enough money. For permission. For someone to tell you it was okay to begin. [flatly] Nobody came. Nobody was supposed to.
 
-Now the time is gone. And you're still waiting.
-The pattern never broke. Even now, at the end, you're waiting for something. You're waiting for death, the way you waited for everything else — passively, patiently, and too late.`
+[haunted] Now the time is gone. And you're still waiting.
+[hollowly] The pattern never broke. Even now, at the end, you're waiting for something. [whisper] You're waiting for death, the way you waited for everything else — passively, patiently, and too late.`
         },
         {
           id: 42,
@@ -2093,16 +2093,16 @@ The pattern never broke. Even now, at the end, you're waiting for something. You
           notes: `This will happen to me.
 Not in theory.
 Not someday.
-To this throat.
+[darkly] To this throat.
 
-You assumed they knew.
-You showed it in other ways. You provided for them. You stayed. You sacrificed. You drove them to school and fixed their things and showed up every time they needed you. Actions speak louder than words, right?
+[softly] You assumed they knew.
+[gently] You showed it in other ways. You provided for them. You stayed. You sacrificed. You drove them to school and fixed their things and showed up every time they needed you. [resigned] Actions speak louder than words, right?
 
-But you didn't say it enough.
-How many times? Count them. How many times did you look your mother in the eyes and say "I love you"? Your father? Your child? Your partner? Not enough. Never enough.
+[voice breaking] But you didn't say it enough.
+[sadly] How many times? Count them. How many times did you look your mother in the eyes and say "I love you"? Your father? Your child? Your partner? [whisper] Not enough. Never enough.
 
-Now some of them are gone. And the words sit unsaid in your throat.
-Heavy. Useless. Too late. You say them now, to empty rooms, to photographs, to headstones. They cannot hear you anymore. And the silence after you speak their name is the loudest thing you've ever heard.`
+[haunted] Now some of them are gone. And the words sit unsaid in your throat.
+[barely audible] Heavy. Useless. Too late. You say them now, to empty rooms, to photographs, to headstones. [whisper] They cannot hear you anymore. [pause] And the silence after you speak their name is the loudest thing you've ever heard.`
         }
       ]
     },
@@ -2127,14 +2127,14 @@ Heavy. Useless. Too late. You say them now, to empty rooms, to photographs, to h
             </div>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This loss of self will erase me.
-Not gradually. Not gently.
+          notes: `[slowly] This loss of self will erase me.
+[darkly] Not gradually. Not gently.
 Piece by piece.
 
-Identity is built from pieces.
-Roles. Abilities. Memories. Relationships. Each one can be removed. Each one will be removed. And the question nobody can answer: what's left when enough pieces are gone? Is there a "you" underneath? Or were you only ever the pieces?
+[gravely] Identity is built from pieces.
+[reflectively] Roles. Abilities. Memories. Relationships. Each one can be removed. Each one will be removed. [haunted] And the question nobody can answer: what's left when enough pieces are gone? Is there a "you" underneath? Or were you only ever the pieces?
 
-You're about to find out.`
+[whisper] You're about to find out.`
         },
         {
           id: 44,
@@ -2171,21 +2171,21 @@ You're about to find out.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this identity.
+[darkly] To this identity.
 
-You were a worker. Then you retired.
+[reflectively] You were a worker. Then you retired.
 You were a provider. Then you needed providing for.
 You were strong. Then you became weak.
-One by one, the things that defined you will be taken. Not stolen — just gone. Like leaves in autumn, except the tree doesn't grow new ones.
+[resigned] One by one, the things that defined you will be taken. Not stolen — just gone. Like leaves in autumn, except the tree doesn't grow new ones.
 
-Your career. Your independence. Your usefulness.
-Gone. You will wonder who you are without them. This question will sit in front of you like a blank wall. You will stare at it for hours.
+[hollowly] Your career. Your independence. Your usefulness.
+[sadly] Gone. You will wonder who you are without them. This question will sit in front of you like a blank wall. You will stare at it for hours.
 
-And have no answer.
-Because maybe there isn't one. Maybe you were only ever what you did. And now you can't do anything.`
+[whisper] And have no answer.
+[darkly] Because maybe there isn't one. Maybe you were only ever what you did. [pause] And now you can't do anything.`
         },
         {
           id: 45,
@@ -2224,19 +2224,19 @@ Because maybe there isn't one. Maybe you were only ever what you did. And now yo
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this body.
+[darkly] To this body.
 
-Strangers will see you naked.
-Touch you in places only lovers were allowed. Discuss your body as if you're furniture. "He needs to be turned." "She had an accident again." Spoken over your head, about your body, while you're right there.
+[with disgust] Strangers will see you naked.
+[flatly] Touch you in places only lovers were allowed. Discuss your body as if you're furniture. [coldly] "He needs to be turned." "She had an accident again." Spoken over your head, about your body, while you're right there.
 
-You will be talked about in third person while you're in the room.
-As a patient. A case. A room number. They'll check your chart. They'll adjust your IV. They'll never ask how you're feeling. Not really.
+[bitterly] You will be talked about in third person while you're in the room.
+[resigned] As a patient. A case. A room number. They'll check your chart. They'll adjust your IV. [sadly] They'll never ask how you're feeling. Not really.
 
-You will be a patient, a case, a room number. Not a person anymore.
-You had a name. A life. Stories. Accomplishments. Now you're the hip replacement in room 412. The incontinence case on floor three. The one who doesn't have visitors.`
+[hollowly] You will be a patient, a case, a room number. Not a person anymore.
+[whisper] You had a name. A life. Stories. Accomplishments. Now you're the hip replacement in room 412. The incontinence case on floor three. [pause] The one who doesn't have visitors.`
         },
         {
           id: 46,
@@ -2275,19 +2275,19 @@ You had a name. A life. Stories. Accomplishments. Now you're the hip replacement
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this life.
+[darkly] To this life.
 
-Everything will be monitored.
-What you eat. When you sleep. When you use the bathroom. Whether you took your pills. Your life becomes a data set. A chart on the wall. A file in a system.
+[flatly] Everything will be monitored.
+[resigned] What you eat. When you sleep. When you use the bathroom. Whether you took your pills. Your life becomes a data set. A chart on the wall. A file in a system.
 
-Doors will be opened without knocking.
-Belongings moved without asking. Decisions made without consulting you. Someone else decides when you eat, when you sleep, when you bathe. Your preferences aren't preferences anymore — they're notes in a file that nobody reads.
+[bitterly] Doors will be opened without knocking.
+[angrily] Belongings moved without asking. Decisions made without consulting you. Someone else decides when you eat, when you sleep, when you bathe. [hollowly] Your preferences aren't preferences anymore — they're notes in a file that nobody reads.
 
-You will have no secrets. No space that is yours alone.
-Even your thoughts get assessed. "How are we feeling today?" they ask, using "we" as if your suffering is a group project. Using a smile that wants a simple answer. Fine. You're fine. That's what they want to hear.`
+[sadly] You will have no secrets. No space that is yours alone.
+[flatly] Even your thoughts get assessed. [mockingly] "How are we feeling today?" they ask, using "we" as if your suffering is a group project. [resigned] Using a smile that wants a simple answer. Fine. [whisper] You're fine. That's what they want to hear.`
         },
         {
           id: 47,
@@ -2326,19 +2326,19 @@ Even your thoughts get assessed. "How are we feeling today?" they ask, using "we
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this authority.
+[darkly] To this authority.
 
-Not just your physical voice. Your authority. Your agency. Your say.
-The power to decide what happens to your own life — that power is being transferred, form by form, conversation by conversation, to other people.
+[gravely] Not just your physical voice. Your authority. Your agency. Your say.
+[resigned] The power to decide what happens to your own life — that power is being transferred, form by form, conversation by conversation, to other people.
 
-Others will decide what's best for you.
-Where you live. What you eat. When you sleep. Your family, your doctor, well-meaning strangers who've known you for three weeks — all of them know better than you now. Or so they've decided.
+[bitterly] Others will decide what's best for you.
+[flatly] Where you live. What you eat. When you sleep. Your family, your doctor, well-meaning strangers who've known you for three weeks — all of them know better than you now. [angrily] Or so they've decided.
 
-Your preferences will become suggestions. Then ignored entirely.
-Watch it happen. Watch your words go from commands to requests to preferences to background noise. You're still speaking. But no one is listening. You've become advisory to your own existence.`
+[hollowly] Your preferences will become suggestions. Then ignored entirely.
+[sadly] Watch it happen. Watch your words go from commands to requests to preferences to background noise. [whisper] You're still speaking. But no one is listening. [pause] You've become advisory to your own existence.`
         },
         {
           id: 48,
@@ -2377,22 +2377,22 @@ Watch it happen. Watch your words go from commands to requests to preferences to
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this person.
+[darkly] To this person.
 
-You will look at old photos and wonder: Who was that person?
-So full of energy. So full of plans. So full of life. Smiling at the camera like the future was infinite. So sure of themselves. So alive.
+[reflectively] You will look at old photos and wonder: Who was that person?
+[softly] So full of energy. So full of plans. So full of life. Smiling at the camera like the future was infinite. So sure of themselves. [whisper] So alive.
 
-You will not feel connected to them.
-It will seem like someone else's story. Someone else's wedding. Someone else's children. The gap between who you were and who you are is so vast that the old photos feel like fiction.
+[sadly] You will not feel connected to them.
+[hollowly] It will seem like someone else's story. Someone else's wedding. Someone else's children. The gap between who you were and who you are is so vast that the old photos feel like fiction.
 
-The person you were is already dead.
-Dead in the sense that they no longer exist. The young you. The strong you. The ambitious you. All gone. They died quietly, one by one, over decades.
+[gravely] The person you were is already dead.
+[flatly] Dead in the sense that they no longer exist. The young you. The strong you. The ambitious you. All gone. They died quietly, one by one, over decades.
 
-Only the husk remains.
-And the husk looks at old photos and tries to feel something. Anything. A connection, a continuity, a thread that ties the old face to the new. There's nothing there.`
+[whisper] Only the husk remains.
+[haunted] And the husk looks at old photos and tries to feel something. Anything. A connection, a continuity, a thread that ties the old face to the new. [pause] There's nothing there.`
         }
       ]
     },
@@ -2417,15 +2417,15 @@ And the husk looks at old photos and tries to feel something. Anything. A connec
             </div>
           ),
           backgroundColor: '#1a1a1a',
-          notes: `This ending will claim me.
-Not as abstract. Not later.
-Now. Always now.
+          notes: `[slowly] This ending will claim me.
+[darkly] Not as abstract. Not later.
+[firmly] Now. Always now.
 
-Death is not a future event.
-It's a present process. Every moment is a moment closer. There is no "later" — only endless "now," and death inhabits every now. It was always here.
+[gravely] Death is not a future event.
+[haunted] It's a present process. Every moment is a moment closer. There is no "later" — only endless "now," and death inhabits every now. [whisper] It was always here.
 
-The loss of self is complete.
-Now we face the end itself. Not the process. The end.`
+[measured] The loss of self is complete.
+[darkly] Now we face the end itself. Not the process. [pause] The end.`
         },
         {
           id: 50,
@@ -2465,19 +2465,19 @@ Now we face the end itself. Not the process. The end.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This is happening to me.
+          notes: `[slowly] This is happening to me.
 Not in theory.
 Not someday.
-Right now.
+[urgently] Right now.
 
-Every breath is one less you'll take.
-The one you just took — gone. Added to the count. Subtracted from the total. Every heartbeat is a countdown. Every moment passes and will not return. Ever.
+[darkly] Every breath is one less you'll take.
+[haunted] The one you just took — gone. Added to the count. Subtracted from the total. Every heartbeat is a countdown. Every moment passes and will not return. [whisper] Ever.
 
-The cells in your body are dying right now.
-Your telomeres are shortening. Your DNA is degrading. Right now. As you sit here. The machinery of your own destruction is running at this very second, has been running since the moment you were born.
+[clinically] The cells in your body are dying right now.
+[gravely] Your telomeres are shortening. Your DNA is degrading. Right now. As you sit here. The machinery of your own destruction is running at this very second, has been running since the moment you were born.
 
-You are not moving toward death. You are death in progress.
-A slow-motion decay that started at birth. You didn't begin to die at some point. You were born dying. Every candle on every birthday cake was a marker on the countdown.`
+[firmly] You are not moving toward death. You are death in progress.
+[darkly] A slow-motion decay that started at birth. You didn't begin to die at some point. [whisper] You were born dying. Every candle on every birthday cake was a marker on the countdown.`
         },
         {
           id: 51,
@@ -2516,19 +2516,19 @@ A slow-motion decay that started at birth. You didn't begin to die at some point
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this illusion of readiness.
+[bitterly] To this illusion of readiness.
 
-You cannot practice dying.
-You can think about it. Plan for it. Meditate on it. Read books about it. Accept it philosophically over a glass of wine with candles lit. But that's not dying. That's talking about dying.
+[gravely] You cannot practice dying.
+[reflectively] You can think about it. Plan for it. Meditate on it. Read books about it. Accept it philosophically over a glass of wine with candles lit. [firmly] But that's not dying. That's talking about dying.
 
-When it comes — when you feel your body shutting down — when the darkness closes in —
-All your preparation will mean nothing. The books won't help. The meditation won't help. The philosophy won't help. You will be as terrified as a child in the dark.
+[fearfully] When it comes — when you feel your body shutting down — when the darkness closes in —
+[gravely] All your preparation will mean nothing. The books won't help. The meditation won't help. The philosophy won't help. [voice breaking] You will be as terrified as a child in the dark.
 
-You will be as afraid as anyone ever was.
-The philosopher dies as frightened as the fool. There are no experts in dying. Everyone is a beginner. And there is no second attempt.`
+[darkly] You will be as afraid as anyone ever was.
+[whisper] The philosopher dies as frightened as the fool. There are no experts in dying. Everyone is a beginner. [pause] And there is no second attempt.`
         },
         {
           id: 52,
@@ -2574,22 +2574,22 @@ The philosopher dies as frightened as the fool. There are no experts in dying. E
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this mind.
+[darkly] To this mind.
 
-You imagine you'll think profound things.
-Review your life. Find meaning in the suffering. Achieve closure. Make peace. Speak some final words that give your children strength.
+[reflectively] You imagine you'll think profound things.
+[softly] Review your life. Find meaning in the suffering. Achieve closure. Make peace. Speak some final words that give your children strength.
 
-But you won't.
-The body doesn't care about your existential closure. It wants warmth. It wants water. It wants to stop hurting. It will occupy every last shred of your consciousness with its animal demands.
+[firmly] But you won't.
+[flatly] The body doesn't care about your existential closure. It wants warmth. It wants water. It wants to stop hurting. It will occupy every last shred of your consciousness with its animal demands.
 
-Your last thought will probably be: "I'm cold."
-Or "I'm thirsty." Or "It hurts." Not "I understand now." Not "I forgive everyone." Not "It was all worth it." Just the body making its final, desperate, mundane request.
+[bitterly] Your last thought will probably be: "I'm cold."
+[resigned] Or "I'm thirsty." Or "It hurts." Not "I understand now." Not "I forgive everyone." Not "It was all worth it." [whisper] Just the body making its final, desperate, mundane request.
 
-Or nothing at all.
-Just a quiet dimming. Like a television turning off. No final thought. No grand revelation. Just gone.`
+[barely audible] Or nothing at all.
+[softly] Just a quiet dimming. Like a television turning off. No final thought. No grand revelation. [pause] Just gone.`
         },
         {
           id: 53,
@@ -2631,19 +2631,19 @@ Just a quiet dimming. Like a television turning off. No final thought. No grand 
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this consciousness.
+[darkly] To this consciousness.
 
-Your thoughts will cease. Your awareness will end. You will not exist.
-Not sleeping. Not dreaming. Not floating. Not watching from above. Not anything. The "you" that is processing these words — that awareness, that spark — will be gone. Completely. Permanently.
+[gravely] Your thoughts will cease. Your awareness will end. You will not exist.
+[firmly] Not sleeping. Not dreaming. Not floating. Not watching from above. Not anything. [haunted] The "you" that is processing these words — that awareness, that spark — will be gone. Completely. Permanently.
 
-The you reading this will be erased. As if it never was.
-Every memory. Every skill you learned. Every person you loved. Every sunrise you saw. Every laugh, every cry, every breath — all of it, gone. Not stored somewhere. Not preserved. Gone.
+[softly] The you reading this will be erased. As if it never was.
+[sadly] Every memory. Every skill you learned. Every person you loved. Every sunrise you saw. Every laugh, every cry, every breath — all of it, gone. [whisper] Not stored somewhere. Not preserved. Gone.
 
-There will be no you to know it.
-And that's the part your brain can't process. You try to imagine not existing and you picture yourself observing the nothing. But there's no observer. There's nobody. There's just... nothing. Forever.`
+[darkly] There will be no you to know it.
+[haunted] And that's the part your brain can't process. You try to imagine not existing and you picture yourself observing the nothing. [firmly] But there's no observer. There's nobody. [whisper] There's just... nothing. [pause] Forever.`
         },
         {
           id: 54,
@@ -2683,21 +2683,21 @@ And that's the part your brain can't process. You try to imagine not existing an
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this world without me.
+[darkly] To this world without me.
 
-The sun will rise the day you die. And every day after.
-It won't pause. It won't dim. It won't acknowledge in any way that you're gone. It will just rise, the way it rose four and a half billion years before you existed.
+[flatly] The sun will rise the day you die. And every day after.
+[resigned] It won't pause. It won't dim. It won't acknowledge in any way that you're gone. It will just rise, the way it rose four and a half billion years before you existed.
 
-People will eat breakfast. Go to work. Laugh at jokes. Fall in love.
-On the day they lower you into the ground, somewhere a couple will have their first kiss. Someone will learn to ride a bike. A baby will be born. The world doesn't stop for funerals.
+[softly] People will eat breakfast. Go to work. Laugh at jokes. Fall in love.
+[reflectively] On the day they lower you into the ground, somewhere a couple will have their first kiss. Someone will learn to ride a bike. A baby will be born. [sadly] The world doesn't stop for funerals.
 
-Because to the world, you don't matter.
-That's not cruelty. That's scale. Eight billion people. One gone. The math doesn't flinch.
+[gravely] Because to the world, you don't matter.
+[firmly] That's not cruelty. That's scale. Eight billion people. One gone. [whisper] The math doesn't flinch.
 
-And soon, no one will remember you did.`
+[pause] [barely audible] And soon, no one will remember you did.`
         },
         {
           id: 55,
@@ -2737,21 +2737,21 @@ And soon, no one will remember you did.`
             </div>
           ),
           backgroundColor: '#34495e',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this name.
+[darkly] To this name.
 
-Your children will remember you.
-Vividly. They'll hear your voice in their heads. See your face when they close their eyes. Miss you so hard it bends them double.
+[softly] Your children will remember you.
+[gently] Vividly. They'll hear your voice in their heads. See your face when they close their eyes. [voice breaking] Miss you so hard it bends them double.
 
-Then your grandchildren will remember stories about you.
-Second-hand memories. "Your grandfather used to say..." They'll know facts about you, not you. Your laugh, your smell, the way your hand felt — gone. Reduced to anecdotes at dinner tables.
+[resigned] Then your grandchildren will remember stories about you.
+[sadly] Second-hand memories. "Your grandfather used to say..." They'll know facts about you, not you. Your laugh, your smell, the way your hand felt — gone. Reduced to anecdotes at dinner tables.
 
-Then their children will not remember you at all.
-Three generations. Maybe four. Then your name will be spoken for the last time. By someone who never knew you. Who gets the details wrong. And after that — never again.
+[hollowly] Then their children will not remember you at all.
+[flatly] Three generations. Maybe four. Then your name will be spoken for the last time. By someone who never knew you. Who gets the details wrong. [whisper] And after that — never again.
 
-As if you never existed at all.`
+[barely audible] As if you never existed at all.`
         },
         {
           id: 56,
@@ -2792,19 +2792,19 @@ As if you never existed at all.`
             </div>
           ),
           backgroundColor: '#2c3e50',
-          notes: `This will happen to me.
+          notes: `[slowly] This will happen to me.
 Not in theory.
 Not someday.
-To this certainty.
+[darkly] To this certainty.
 
-No amount of money will save you.
-No achievement will exempt you. No belief will rescue you. The richest person who ever lived is dead. The most powerful person who ever lived is dead. The most beloved person who ever lived is dead.
+[gravely] No amount of money will save you.
+[firmly] No achievement will exempt you. No belief will rescue you. The richest person who ever lived is dead. The most powerful person who ever lived is dead. The most beloved person who ever lived is dead.
 
-You cannot negotiate with death. You cannot bargain. You cannot cheat.
-Every workaround, every loophole, every escape route you can think of — tried. By millions. By billions. None worked. Not one. Not ever.
+[darkly] You cannot negotiate with death. You cannot bargain. You cannot cheat.
+[flatly] Every workaround, every loophole, every escape route you can think of — tried. By millions. By billions. None worked. [whisper] Not one. Not ever.
 
-You will die. And you know it.
-You've known since childhood. The first time you understood the word "forever." The first time someone didn't come back. You've carried this knowledge your entire life. And it hasn't helped at all.`
+[firmly] You will die. [pause] And you know it.
+[haunted] You've known since childhood. The first time you understood the word "forever." The first time someone didn't come back. [whisper] You've carried this knowledge your entire life. And it hasn't helped at all.`
         },
         {
           id: 57,
@@ -2844,21 +2844,21 @@ You've known since childhood. The first time you understood the word "forever." 
             </div>
           ),
           backgroundColor: '#000000',
-          notes: `Don't distract yourself.
+          notes: `[firmly] Don't distract yourself.
 Don't rationalize.
 Don't look away.
 
-Don't reach for your phone. Don't start planning dinner. Don't think about work. Stay here. In this feeling. This is the only honest moment you've had in weeks.
+[darkly] Don't reach for your phone. Don't start planning dinner. Don't think about work. [slowly] Stay here. In this feeling. This is the only honest moment you've had in weeks.
 
-This will happen to you. To this body. This mind. This awareness reading these words.
-Not to someone else. Not later. To you.
+[gravely] This will happen to you. To this body. This mind. This awareness reading these words.
+[firmly] Not to someone else. Not later. [pause] To you.
 
-You will die.
+[slowly] You will die.
 
-Now what?
-What will you do with the time that's left? Not the time you think you have — the time you actually have. Which is less than you think. Always less than you think.
+[softly] Now what?
+[reflectively] What will you do with the time that's left? Not the time you think you have — the time you actually have. [whisper] Which is less than you think. Always less than you think.
 
-What will you do now?`        }
+[pause] [gently] What will you do now?`        }
       ]
     }
   ]

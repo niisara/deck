@@ -84,10 +84,12 @@ function removeMarkdown(text: string): string {
 }
 
 /**
- * Remove stage directions like [pause], [ask audience], [write on screen: ...].
+ * Remove stage directions and expression tags.
+ * ElevenLabs reads these literally, so we strip them.
  */
 function removeStageDirections(text: string): string {
-  return text.replace(/\[(?:pause|ask audience|write on screen[^\]]*|pause for response|transition[^\]]*|click[^\]]*|show[^\]]*|point[^\]]*|gesture[^\]]*|wait[^\]]*)\]/gi, '');
+  // Remove all content in square brackets including expression tags
+  return text.replace(/\[[^\]]*\]/g, '');
 }
 
 /**
