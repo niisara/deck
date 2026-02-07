@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useTextToSpeech, type TTSStatus, type TTSVoice, type TTSOptions } from '../hooks/useTextToSpeech';
+import { useTextToSpeech, type TTSStatus, type TTSVoice } from '../hooks/useTextToSpeech';
 import SvgIcon from '../lib/icons/SvgIcon';
 import './SlideAudioControls.css';
 

@@ -3,12 +3,18 @@ import { sanitizeTTSText } from '../utils/sanitizeTTSText';
 
 export type TTSStatus = 'idle' | 'loading' | 'playing' | 'error';
 
-export type TTSVoice = 'alloy' | 'echo' | 'fable' | 'onyx' | 'nova' | 'shimmer' | 'coral' | 'sage' | 'verse';
+/** Azure OpenAI voices */
+export type AzureVoice = 'alloy' | 'echo' | 'fable' | 'onyx' | 'nova' | 'shimmer' | 'coral' | 'sage' | 'verse';
+
+/** For ElevenLabs, the voice is selected via VITE_ELEVENLABS_VOICE_ID env var */
+export type TTSVoice = AzureVoice | string;
+
+export type TTSProvider = 'azure' | 'elevenlabs';
 
 export interface TTSOptions {
-  /** Voice to use for speech synthesis */
+  /** Voice to use for speech synthesis (Azure voice name or ElevenLabs voice ID) */
   voice?: TTSVoice;
-  /** Instructions to guide the speech style and delivery */
+  /** Instructions to guide the speech style and delivery (Azure OpenAI only) */
   instructions?: string;
 }
 
@@ -23,11 +29,105 @@ interface UseTextToSpeechReturn {
   error: string | null;
 }
 
+/** Determine which TTS provider to use from env */
+function getTTSProvider(): TTSProvider {
+  const provider = import.meta.env.VITE_TTS_PROVIDER;
+  if (provider === 'elevenlabs') return 'elevenlabs';
+  return 'azure'; // default
+}
+
+/** Call Azure OpenAI TTS and return audio blob */
+async function fetchAzureTTS(
+  text: string,
+  voice: string,
+  instructions: string | undefined,
+  signal: AbortSignal
+): Promise<Blob> {
+  const apiKey = import.meta.env.VITE_AZURE_API_KEY;
+  const endpoint = import.meta.env.VITE_AZURE_ENDPOINT;
+
+  if (!apiKey || !endpoint) {
+    throw new Error('Azure TTS API key or endpoint not configured.');
+  }
+
+  const requestBody: any = {
+    model: 'gpt-4o-mini-tts',
+    input: text,
+    voice,
+    response_format: 'mp3',
+  };
+
+  if (instructions) {
+    requestBody.instructions = instructions;
+  }
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'api-key': apiKey,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(requestBody),
+    signal,
+  });
+
+  if (!response.ok) {
+    const errorBody = await response.text().catch(() => '');
+    throw new Error(
+      `Azure TTS request failed (${response.status}): ${errorBody || response.statusText}`
+    );
+  }
+
+  return response.blob();
+}
+
+/** Call ElevenLabs TTS and return audio blob */
+async function fetchElevenLabsTTS(
+  text: string,
+  signal: AbortSignal
+): Promise<Blob> {
+  const apiKey = import.meta.env.VITE_ELEVENLABS_API_KEY;
+  const voiceId = import.meta.env.VITE_ELEVENLABS_VOICE_ID;
+
+  if (!apiKey) {
+    throw new Error('ElevenLabs API key not configured (VITE_ELEVENLABS_API_KEY).');
+  }
+  if (!voiceId) {
+    throw new Error('ElevenLabs voice ID not configured (VITE_ELEVENLABS_VOICE_ID). Clone your voice at elevenlabs.io and paste the voice ID.');
+  }
+
+  const response = await fetch(
+    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
+    {
+      method: 'POST',
+      headers: {
+        'xi-api-key': apiKey,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        text,
+        model_id: 'eleven_multilingual_v2',
+      }),
+      signal,
+    }
+  );
+
+  if (!response.ok) {
+    const errorBody = await response.text().catch(() => '');
+    throw new Error(
+      `ElevenLabs TTS request failed (${response.status}): ${errorBody || response.statusText}`
+    );
+  }
+
+  return response.blob();
+}
+
 /**
- * Reusable hook that calls Azure OpenAI TTS (gpt-4o-mini-tts)
- * and plays the resulting audio through the browser.
+ * Reusable hook that calls either Azure OpenAI TTS or ElevenLabs TTS
+ * based on the `VITE_TTS_PROVIDER` env var ('azure' | 'elevenlabs').
  *
- * Uses the `VITE_AZURE_API_KEY` and `VITE_AZURE_ENDPOINT` env vars.
+ * Azure uses: `VITE_AZURE_API_KEY` and `VITE_AZURE_ENDPOINT`
+ * ElevenLabs uses: `VITE_ELEVENLABS_API_KEY` and `VITE_ELEVENLABS_VOICE_ID`
  *
  * @param options - Optional configuration for voice and instructions
  */
@@ -70,15 +170,6 @@ export function useTextToSpeech(options: TTSOptions = {}): UseTextToSpeechReturn
       const cleanText = sanitizeTTSText(text);
       if (!cleanText.trim()) return;
 
-      const apiKey = import.meta.env.VITE_AZURE_API_KEY;
-      const endpoint = import.meta.env.VITE_AZURE_ENDPOINT;
-
-      if (!apiKey || !endpoint) {
-        setError('TTS API key or endpoint not configured.');
-        setStatus('error');
-        return;
-      }
-
       setStatus('loading');
       setError(null);
 
@@ -86,36 +177,15 @@ export function useTextToSpeech(options: TTSOptions = {}): UseTextToSpeechReturn
       abortRef.current = controller;
 
       try {
-        const requestBody: any = {
-          model: 'gpt-4o-mini-tts',
-          input: cleanText,
-          voice,
-          response_format: 'mp3',
-        };
+        const provider = getTTSProvider();
+        let blob: Blob;
 
-        // Only include instructions if provided
-        if (instructions) {
-          requestBody.instructions = instructions;
+        if (provider === 'elevenlabs') {
+          blob = await fetchElevenLabsTTS(cleanText, controller.signal);
+        } else {
+          blob = await fetchAzureTTS(cleanText, voice, instructions, controller.signal);
         }
 
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'api-key': apiKey,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(requestBody),
-          signal: controller.signal,
-        });
-
-        if (!response.ok) {
-          const errorBody = await response.text().catch(() => '');
-          throw new Error(
-            `TTS request failed (${response.status}): ${errorBody || response.statusText}`
-          );
-        }
-
-        const blob = await response.blob();
         const url = URL.createObjectURL(blob);
 
         const audio = new Audio(url);
