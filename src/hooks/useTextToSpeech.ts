@@ -82,7 +82,7 @@ async function fetchAzureTTS(
   return response.blob();
 }
 
-/** Call ElevenLabs TTS and return audio blob */
+/** Call ElevenLabs Text-to-Dialogue API and return audio blob */
 async function fetchElevenLabsTTS(
   text: string,
   signal: AbortSignal
@@ -98,7 +98,7 @@ async function fetchElevenLabsTTS(
   }
 
   const response = await fetch(
-    `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}?output_format=mp3_44100_128`,
+    `https://api.elevenlabs.io/v1/text-to-dialogue?output_format=mp3_44100_128`,
     {
       method: 'POST',
       headers: {
@@ -106,15 +106,17 @@ async function fetchElevenLabsTTS(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        text,
-        model_id: 'eleven_turbo_v2_5',
-        voice_settings: {
-          stability: 0.4,
-          similarity_boost: 0.8,
-          style: 1.0,
-          use_speaker_boost: true
-        },
-        enable_ssml_parsing: false
+        inputs: [
+          {
+            text,
+            voice_id: voiceId
+          }
+        ],
+        model_id: 'eleven_v3',
+        settings: {
+          stability: 0.0,
+          similarity_boost: 0.8
+        }
       }),
       signal,
     }

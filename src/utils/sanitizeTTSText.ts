@@ -84,12 +84,13 @@ function removeMarkdown(text: string): string {
 }
 
 /**
- * Remove stage directions and expression tags.
- * ElevenLabs reads these literally, so we strip them.
+ * Preserve expression tags for ElevenLabs Text-to-Dialogue API.
+ * The eleven_v3 model supports audio tags like [sad], [laughing], [whispering].
+ * Stage directions in parentheses are still removed.
  */
 function removeStageDirections(text: string): string {
-  // Remove all content in square brackets including expression tags
-  return text.replace(/\[[^\]]*\]/g, '');
+  // Remove stage directions in parentheses: (stage direction)
+  return text.replace(/\([^)]*\)/g, '');
 }
 
 /**
