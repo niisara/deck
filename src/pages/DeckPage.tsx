@@ -15,6 +15,7 @@ import SvgIcon from '../lib/icons/SvgIcon';
 import { marked } from 'marked';
 import mermaid from 'mermaid';
 import gsap from 'gsap';
+import { useSlideBroadcast } from '../hooks/useSlideBroadcast';
 import './DeckPage.css';
 
 // Initialize mermaid with dark theme for speaker notes
@@ -85,6 +86,10 @@ function DeckPage() {
   const revealInstanceRef = useRef<Reveal.Api | null>(null);
   const speakerWindowRef = useRef<Window | null>(null);
   const [showBackButton, setShowBackButton] = useState(true);
+  const [broadcastEnabled, setBroadcastEnabled] = useState(() => {
+    // Persist preference in sessionStorage
+    return sessionStorage.getItem('deck-broadcast') === 'true';
+  });
   const hideTimeoutRef = useRef<number | null>(null);
 
   const deck = decks.find((d) => d.id === deckId);
@@ -92,6 +97,17 @@ function DeckPage() {
   // Get category from URL params to navigate back to the correct filtered view
   const searchParams = new URLSearchParams(window.location.search);
   const categoryParam = searchParams.get('category');
+
+  // Slide broadcast sync across tabs
+  const { broadcastRef } = useSlideBroadcast(deckId, revealInstanceRef, broadcastEnabled);
+
+  const toggleBroadcast = () => {
+    setBroadcastEnabled((prev) => {
+      const next = !prev;
+      sessionStorage.setItem('deck-broadcast', String(next));
+      return next;
+    });
+  };
 
   // Check if we're in PDF export mode
   const isPrintPdf = searchParams.has('print-pdf');
@@ -236,6 +252,10 @@ function DeckPage() {
 
       // Scroll speaker notes to top when slide changes and render mermaid diagrams
       const handleSlideChange = async () => {
+        // Broadcast slide change to other tabs
+        const indices = revealInstance.getIndices();
+        broadcastRef.current(indices.h, indices.v);
+
         // Trigger GSAP animations for the current slide
         triggerSlideAnimations();
         
@@ -445,6 +465,14 @@ function DeckPage() {
             title="Export to PDF"
           >
             <SvgIcon iconName="duo-file-pdf" sizeName="lg" />
+          </button>
+
+          <button
+            onClick={toggleBroadcast}
+            className={`broadcast-button ${showBackButton ? 'visible' : ''} ${broadcastEnabled ? 'active' : ''}`}
+            title={broadcastEnabled ? 'Broadcast ON – slides sync across tabs' : 'Broadcast OFF – enable to sync slides across tabs'}
+          >
+            <SvgIcon iconName="duo-tower-broadcast" sizeName="lg" />
           </button>
         </>
       )}

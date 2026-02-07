@@ -17,46 +17,52 @@ export const contextPackingDeck: Deck = {
       slides: [
         {
           id: 1,
+          center: true,
           title: '13 Context Packing Techniques',
           content: (
-            <div style={{ textAlign: 'left' }}>
-          <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
+            <div>
+          <div style={{ fontSize: '2rem', color: '#e5c07b', marginBottom: '1rem' }}>
             RAG and LLM-ready strategies to maximize answer quality within token limits
           </div>
-          <div style={{ fontSize: '1rem', color: '#888', lineHeight: '1.8' }}>
-            <div style={{ marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-bullseye" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+          <div style={{ fontSize: '1.2rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div>
+              <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
               When and how to pack context for retrieval-augmented generation
             </div>
-            <div style={{ marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-gears" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div>
+              <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
               Practical workflows for 13 techniques with examples
             </div>
-            <div style={{ marginBottom: '0.5rem' }}>
-              <SvgIcon iconName="duo-scale-balanced" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div>
+              <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={iconStyle} darkModeInvert={true} />
               Trade-offs, risks, and implementation tips
             </div>
-            <div style={{ marginTop: '1rem', color: '#c678dd' }}>
-              <SvgIcon iconName="duo-users-group" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+            <div>
+              <SvgIcon iconName="duo-users-group" sizeName="2x" style={iconStyle} darkModeInvert={true} />
               <strong>Audience:</strong> ML engineers, data/knowledge engineers, LLM application builders
             </div>
           </div>
+          <p><strong>Prepared by:</strong> Nisar A</p>
+              <p><strong>Date:</strong> November 7, 2025</p>
+              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
         </div>
       ),
-      notes: 'Introduction to 13 context packing techniques for RAG and LLM systems'
+      backgroundColor: '#6b1d1d',
+      notes: ''
     },
     {
       id: 2,
       title: 'Overview / Table of Contents',
       content: (
-        <div style={{ fontSize: '0.85rem', lineHeight: '1.6', textAlign: 'left' }}>
+        <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem 2rem' }}>
             <div>
-              <div style={{ color: '#e06c75', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-scissors" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#e06c75', marginBottom: '0.8rem' }}>
+                <SvgIcon iconName="duo-scissors" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                 <strong>Chunking & Windowing</strong>
               </div>
-              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
+              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
                 <div><strong>1)</strong> Semantic Chunking</div>
                 <div><strong>2)</strong> Dynamic Sliding Window</div>
                 <div><strong>3)</strong> Parent–Child Context Packing</div>
@@ -64,11 +70,11 @@ export const contextPackingDeck: Deck = {
             </div>
             
             <div>
-              <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-compress" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#98c379', marginBottom: '0.8rem' }}>
+                <SvgIcon iconName="duo-compress" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                 <strong>Summarization & Compression</strong>
               </div>
-              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
+              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
                 <div><strong>4)</strong> Context Summarization Before Packing</div>
                 <div><strong>5)</strong> Hybrid Local + Global Summaries</div>
                 <div><strong>7)</strong> Passage Compression (LLM Shortening)</div>
@@ -76,11 +82,11 @@ export const contextPackingDeck: Deck = {
             </div>
 
             <div>
-              <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
-                <SvgIcon iconName="duo-ranking-star" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+              <div style={{ color: '#61dafb', marginBottom: '0.8rem' }}>
+                <SvgIcon iconName="duo-ranking-star" sizeName="2x" style={iconStyle} darkModeInvert={true} />
                 <strong>Relevance & Optimization</strong>
               </div>
-              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
+              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
                 <div><strong>6)</strong> Relevance Weighted Packing</div>
                 <div><strong>11)</strong> Token-Budget Aware Packing</div>
                 <div><strong>12)</strong> Adaptive k Retrieval (Variable Cutoff)</div>
@@ -88,11 +94,11 @@ export const contextPackingDeck: Deck = {
             </div>
             
             <div>
-              <div style={{ color: '#c678dd', marginBottom: '0.8rem', fontSize: '0.95rem' }}>
+              <div style={{ color: '#c678dd', marginBottom: '0.8rem' }}>
                 <SvgIcon iconName="duo-table" sizeName="lg" style={iconStyle} darkModeInvert={true} />
                 <strong>Structure & Deduplication</strong>
               </div>
-              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '0.9rem' }}>
+              <div style={{ marginLeft: '1.5rem', lineHeight: '1.8', fontSize: '1.2rem' }}>
                 <div><strong>8)</strong> Answer-conditioned Retrieval / Packing</div>
                 <div><strong>9)</strong> Table / Structured Context Packing</div>
                 <div><strong>10)</strong> Semantic Deduplication</div>
@@ -101,13 +107,14 @@ export const contextPackingDeck: Deck = {
             </div>
           </div>
 
-          <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-            <SvgIcon iconName="duo-lightbulb" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+          <div style={{ marginTop: '1.5rem', padding: '10px', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b', fontSize: '1.2rem' }}>
+            <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
             <strong>Key insight:</strong> Combine multiple techniques to balance answer quality, token efficiency, and inference speed.
           </div>
         </div>
       ),
-      notes: 'Overview of all 13 techniques organized by category'
+      backgroundColor: '#6b1d1d',
+      notes: ''
         }
       ]
     },
@@ -120,6 +127,7 @@ export const contextPackingDeck: Deck = {
           title: '1) Semantic Chunking',
           content: (
             <div style={{ fontSize: '0.85rem', lineHeight: '1.5' }}>
+              <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
             <div>
               <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
