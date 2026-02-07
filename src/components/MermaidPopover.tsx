@@ -12,6 +12,13 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [renderedSvg, setRenderedSvg] = useState<string>('');
   const mermaidRef = useRef<HTMLDivElement>(null);
+  const originalDisplaysRef = useRef<{
+    controls: string;
+    progressBar: string;
+    slideNumber: string;
+    slideMenu: string;
+    slideMenuPanel: string;
+  } | null>(null);
 
   useEffect(() => {
     if (isOpen && diagram) {
@@ -61,8 +68,8 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
       const slideMenu = document.querySelector('.slide-menu-button') as HTMLElement;
       const slideMenuPanel = document.querySelector('.slide-menu') as HTMLElement;
       
-      // Save original display values
-      const originalDisplays = {
+      // Save original display values in ref
+      originalDisplaysRef.current = {
         controls: controls?.style.display || '',
         progressBar: progressBar?.style.display || '',
         slideNumber: slideNumber?.style.display || '',
@@ -79,11 +86,13 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
       
       // Cleanup function to restore original display values
       return () => {
-        if (controls) controls.style.display = originalDisplays.controls;
-        if (progressBar) progressBar.style.display = originalDisplays.progressBar;
-        if (slideNumber) slideNumber.style.display = originalDisplays.slideNumber;
-        if (slideMenu) slideMenu.style.display = originalDisplays.slideMenu;
-        if (slideMenuPanel) slideMenuPanel.style.display = originalDisplays.slideMenuPanel;
+        if (originalDisplaysRef.current) {
+          if (controls) controls.style.display = originalDisplaysRef.current.controls;
+          if (progressBar) progressBar.style.display = originalDisplaysRef.current.progressBar;
+          if (slideNumber) slideNumber.style.display = originalDisplaysRef.current.slideNumber;
+          if (slideMenu) slideMenu.style.display = originalDisplaysRef.current.slideMenu;
+          if (slideMenuPanel) slideMenuPanel.style.display = originalDisplaysRef.current.slideMenuPanel;
+        }
       };
     }
   }, [isOpen]);
