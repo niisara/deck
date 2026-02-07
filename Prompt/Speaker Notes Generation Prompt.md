@@ -1,9 +1,3 @@
-# Comprehensive Deck Content Generation Prompt
-
-This unified prompt will help you create complete, presentation-ready decks with speaker notes, interactive diagrams, and engaging animations.
-
----
-
 ## Part 1: Speaker Notes Generation
 
 ### Deck Structure Requirements

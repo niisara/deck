@@ -9,6 +9,12 @@ export const nerApproachesDeck: Deck = {
   description: 'A comprehensive cheat sheet of 11 NER approaches with model type, training data needs, best use cases, pros, and cons',
   category: 'NLP',
   theme: 'night',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -470,7 +476,7 @@ Now let's venture into machine learning territory with TF-IDF classifiers...`
       title: 'TF-IDF + Classifier-Based NER',
       slides: [
         {
-          id: 5,
+          id: 31,
           title: '3) TF-IDF + Classifier-Based NER',
           icon: { name: 'duo-chart-line' },
           content: (
@@ -559,7 +565,7 @@ This approach works great as a **quick baseline** to see if ML can help your pro
 Let's look at the tradeoffs...`
         },
         {
-          id: 6,
+          id: 32,
           title: 'Pros and Cons',
           content: (
             <div>
@@ -714,7 +720,7 @@ flowchart LR
 
 **Transition probabilities** tell us: given the current tag, what's the probability of the next tag? And **emission probabilities** tell us: given a tag, what's the probability of seeing a particular word?
 
-The formula shows it: the probability of a tag depends on the previous tag (transition), and the probability of a word depends on its tag (emission). We use the **Viterbi algorithm** to find the most likely sequence of tags efficiently.
+The formula shows it: the probability of a tag depends on the previous tag (transition), and the probability of a word depends on its tag (emission). We use the **Viterbi** 👉 'vih-TER-bee' **algorithm** to find the most likely sequence of tags efficiently.
 
 #### 📚 Training Data Needed
 HMMs learn from labeled sequences. You count how often "B-PERSON" is followed by "I-PERSON" to get transition probabilities, and how often "John" appears with the PERSON tag to get emission probabilities. With clever tricks, you can also use unlabeled data to improve the word probabilities!
@@ -1020,7 +1026,7 @@ Now let's enter the neural network era with BiLSTM + CRF...`
 Welcome to the neural network era of NER! **BiLSTM + CRF** combines the best of both worlds: neural networks that learn features automatically, plus CRFs that ensure valid output sequences.
 
 #### 🔧 How It Works
-This architecture is elegant in its simplicity. First, each word is converted into a dense **embedding** vector, often using pretrained word vectors like GloVe or FastText. These embeddings capture semantic similarity, so "dog" and "cat" have similar representations.
+This architecture is elegant in its simplicity. First, each word is converted into a dense **embedding** vector, often using pretrained word vectors like **GloVe** 👉 'gluv' or **FastText**. These embeddings capture semantic similarity, so "dog" and "cat" have similar representations.
 
 \`\`\`mermaid
 flowchart TB
@@ -1284,7 +1290,7 @@ Now let's look at spaCy, which packages these ideas into a production-ready tool
       title: 'spaCy Statistical NER',
       slides: [
         {
-          id: 10,
+          id: 33,
           title: '8) spaCy Statistical NER',
           icon: { name: 'duo-rocket' },
           content: (
@@ -1345,7 +1351,7 @@ Now let's look at spaCy, which packages these ideas into a production-ready tool
           ),
           backgroundColor: '#1e6d5e',
           notes: `### 17) spaCy Statistical NER
-Now let's talk about a tool that changed how practitioners do NER: **spaCy**. It's a production-ready library that packages best practices into an easy-to-use framework.
+Now let's talk about a tool that changed how practitioners do NER: **spaCy** 👉 'spay-see'. It's a production-ready library that packages best practices into an easy-to-use framework.
 
 #### 🔧 How It Works
 spaCy provides **pretrained pipelines** that you can use out of the box. One line of code loads a model trained on millions of words, and you're ready to extract entities!
@@ -1375,7 +1381,7 @@ spaCy is perfect for **rapid deployment**. When you need NER working in producti
 Let's look at the tradeoffs...`
         },
         {
-          id: 14,
+          id: 34,
           title: 'Pros and Cons',
           content: (
             <div>
@@ -1500,7 +1506,7 @@ Now we enter the transformer era with BERT fine-tuning...`
           ),
           backgroundColor: '#6d1e52',
           notes: `### 19) BERT Fine-Tuned for NER
-Welcome to the transformer revolution! **BERT** (Bidirectional Encoder Representations from Transformers) changed everything in NLP, including NER.
+Welcome to the transformer revolution! **BERT** 👉 'burt' (Bidirectional Encoder Representations from Transformers) changed everything in NLP, including NER.
 
 #### 🔧 How It Works
 BERT is pretrained on massive text corpora to understand language deeply. It uses **self-attention** to relate every word to every other word in the sentence. Unlike LSTMs that process sequentially, BERT sees the entire context at once!
@@ -1664,7 +1670,7 @@ Let's look at BERT variants that optimize different tradeoffs...`
 BERT was a breakthrough, but researchers quickly found ways to improve it! Let's explore two popular variants that make different tradeoffs.
 
 #### 🔧 RoBERTa: Robustly Optimized BERT
-Facebook's RoBERTa asked: "What if we just trained BERT better?" They used more data (10x more!), trained longer, removed the Next Sentence Prediction task, and used dynamic masking.
+Facebook's **RoBERTa** 👉 'roh-BER-tuh' asked: "What if we just trained BERT better?" They used more data (10x more!), trained longer, removed the Next Sentence Prediction task, and used dynamic masking.
 
 \`\`\`mermaid
 flowchart TB
@@ -1687,7 +1693,7 @@ flowchart TB
 The result? Consistent improvements over BERT across NLP tasks, including NER. If you want maximum accuracy and have the compute budget, RoBERTa is often the better choice.
 
 #### ⚡ DistilBERT: Knowledge Distillation
-Hugging Face's DistilBERT asked the opposite question: "Can we get BERT-like performance with a smaller model?" They used **knowledge distillation** where a smaller "student" model learns to mimic the larger "teacher."
+Hugging Face's **DistilBERT** 👉 'DISS-till-burt' asked the opposite question: "Can we get BERT-like performance with a smaller model?" They used **knowledge distillation** where a smaller "student" model learns to mimic the larger "teacher."
 
 DistilBERT has only 6 layers instead of 12, making it **40% smaller** and **60% faster**. Yet it retains about 97% of BERT's performance! This makes it ideal for production deployments where latency matters.
 
@@ -1854,7 +1860,7 @@ A typical prompt might be: *"Extract all person names, organizations, and locati
 For **few-shot** learning, you add examples in the prompt: "Here's an example: 'John works at Google' → [{'type': 'PERSON', 'text': 'John'}, {'type': 'ORG', 'text': 'Google'}]". The LLM learns the pattern and applies it to new text!
 
 #### 📚 Training Data Needed
-**Zero for basic use!** That's the magic. For better results, you can add examples in the prompt (few-shot) or do lightweight fine-tuning with techniques like LoRA or prompt-tuning.
+**Zero for basic use!** That's the magic. For better results, you can add examples in the prompt (few-shot) or do lightweight fine-tuning with techniques like **LoRA** 👉 'LOR-uh' or prompt-tuning.
 
 #### 🎯 When to Use This?
 Perfect for **rapid prototyping**, when you're exploring a new domain and don't have labeled data yet. Also great for **complex schemas** that would be hard to define in traditional NER, or **multilingual** scenarios where you'd otherwise need multiple models.
