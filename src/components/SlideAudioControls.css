@@ -137,3 +137,31 @@
   opacity: 0.5;
   cursor: not-allowed;
 }
+
+/* ── Mobile Responsive Styles ── */
+
+/* Tablet and mobile devices */
+@media (max-width: 768px) {
+  .slide-audio-controls {
+    /* Move buttons higher to avoid being hidden by mobile browser UI */
+    bottom: 80px;
+  }
+
+  .slide-audio-controls-dev {
+    /* Adjust dev controls accordingly */
+    bottom: 136px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .slide-audio-controls {
+    /* Move even higher on very small screens */
+    bottom: 100px;
+  }
+
+  .slide-audio-controls-dev {
+    /* Adjust dev controls accordingly */
+    bottom: 156px;
+  }
+}
