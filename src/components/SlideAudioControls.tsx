@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { useTextToSpeech, type TTSStatus } from '../hooks/useTextToSpeech';
+import { useTextToSpeech, type TTSStatus, type TTSVoice, type TTSOptions } from '../hooks/useTextToSpeech';
 import SvgIcon from '../lib/icons/SvgIcon';
 import './SlideAudioControls.css';
 
@@ -10,6 +10,14 @@ interface SlideAudioControlsProps {
   notes?: string;
   /** Icon color (auto-contrasted against slide background) */
   iconColor?: string;
+  /** Voice configuration for slide content */
+  contentVoice?: TTSVoice;
+  /** Instructions for slide content speech style */
+  contentInstructions?: string;
+  /** Voice configuration for speaker notes */
+  notesVoice?: TTSVoice;
+  /** Instructions for speaker notes speech style */
+  notesInstructions?: string;
 }
 
 /** Small status indicator dot */
@@ -43,9 +51,19 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
   slideContent,
   notes,
   iconColor = '#ffffff',
+  contentVoice = 'verse',
+  contentInstructions = `Voice: Laid-back, mellow, and effortlessly cool, like a surfer who's never in a rush. Tone: Relaxed and reassuring, keeping things light and chill. Speech Mannerisms: Use casual, friendly phrasing with surfer slang like dude, gnarly, and boom to keep the conversation chill. Pronunciation: Soft and drawn-out, with slightly stretched vowels and a naturally wavy rhythm in speech. Tempo: Slow and easygoing, with a natural flow that never feels rushed, creating a calming effect.`,
+  notesVoice = 'verse',
+  notesInstructions = `Voice: Laid-back, mellow, and effortlessly cool, like a surfer who's never in a rush. Tone: Relaxed and reassuring, keeping things light even when discussing complex details. Speech Mannerisms: Use casual, friendly phrasing with surfer slang like dude, gnarly, and boom to keep things chill. Pronunciation: Soft and drawn-out, with slightly stretched vowels and a naturally wavy rhythm. Tempo: Slow and easygoing, with a natural flow that creates a calming, informative vibe.`,
 }) => {
-  const contentTTS = useTextToSpeech();
-  const notesTTS = useTextToSpeech();
+  const contentTTS = useTextToSpeech({
+    voice: contentVoice,
+    instructions: contentInstructions,
+  });
+  const notesTTS = useTextToSpeech({
+    voice: notesVoice,
+    instructions: notesInstructions,
+  });
 
   const handleContentClick = useCallback(
     (e: React.MouseEvent) => {

@@ -1,6 +1,16 @@
 import { useRef, useState, useCallback } from 'react';
+import { sanitizeTTSText } from '../utils/sanitizeTTSText';
 
 export type TTSStatus = 'idle' | 'loading' | 'playing' | 'error';
+
+export type TTSVoice = 'alloy' | 'echo' | 'fable' | 'onyx' | 'nova' | 'shimmer' | 'coral' | 'sage' | 'verse';
+
+export interface TTSOptions {
+  /** Voice to use for speech synthesis */
+  voice?: TTSVoice;
+  /** Instructions to guide the speech style and delivery */
+  instructions?: string;
+}
 
 interface UseTextToSpeechReturn {
   /** Current playback status */
@@ -18,8 +28,11 @@ interface UseTextToSpeechReturn {
  * and plays the resulting audio through the browser.
  *
  * Uses the `VITE_AZURE_API_KEY` and `VITE_AZURE_ENDPOINT` env vars.
+ *
+ * @param options - Optional configuration for voice and instructions
  */
-export function useTextToSpeech(): UseTextToSpeechReturn {
+export function useTextToSpeech(options: TTSOptions = {}): UseTextToSpeechReturn {
+  const { voice = 'coral', instructions } = options;
   const [status, setStatus] = useState<TTSStatus>('idle');
   const [error, setError] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -53,7 +66,9 @@ export function useTextToSpeech(): UseTextToSpeechReturn {
       // Stop any existing playback first
       stop();
 
-      if (!text.trim()) return;
+      // Sanitize text: remove code blocks, mermaid diagrams, HTML, LaTeX, etc.
+      const cleanText = sanitizeTTSText(text);
+      if (!cleanText.trim()) return;
 
       const apiKey = import.meta.env.VITE_AZURE_API_KEY;
       const endpoint = import.meta.env.VITE_AZURE_ENDPOINT;
@@ -71,18 +86,25 @@ export function useTextToSpeech(): UseTextToSpeechReturn {
       abortRef.current = controller;
 
       try {
+        const requestBody: any = {
+          model: 'gpt-4o-mini-tts',
+          input: cleanText,
+          voice,
+          response_format: 'mp3',
+        };
+
+        // Only include instructions if provided
+        if (instructions) {
+          requestBody.instructions = instructions;
+        }
+
         const response = await fetch(endpoint, {
           method: 'POST',
           headers: {
             'api-key': apiKey,
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            model: 'gpt-4o-mini-tts',
-            input: text,
-            voice: 'coral',
-            response_format: 'mp3',
-          }),
+          body: JSON.stringify(requestBody),
           signal: controller.signal,
         });
 
