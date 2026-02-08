@@ -270,17 +270,6 @@ Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility 
 
 Let's dive into our first pattern—Basic RAG. This is the foundation that every other pattern builds upon, so understanding it deeply is crucial. Think of Basic RAG as a simple question-answering system that looks up information before responding, just like you might search through a textbook before answering an exam question.
 
-\`\`\`mermaid
-flowchart LR
-    A[User Query] --> B[Embedding Model]
-    B --> C[Vector DB]
-    C --> D[Top-K Chunks]
-    D --> E[LLM]
-    E --> F[Generated Answer]
-    style A fill:#4fc3f7
-    style E fill:#81c784
-    style F fill:#ffd700
-\`\`\`
 
 #### The Six Core Components
 Every Basic RAG system needs six essential pieces. First, the LLM 👉 [el-el-em] or Large Language Model generates your final answers. Second, an embedding model converts text into mathematical vectors—think of these as coordinates in meaning-space. Third, a chunker splits documents into digestible pieces, typically two hundred to five hundred words each. Fourth, a vector database stores these embeddings and performs lightning-fast similarity searches. Fifth, a retriever orchestrates the search process. Sixth, prompt templates format everything nicely for the LLM.
@@ -428,16 +417,6 @@ Use Basic RAG for FAQs, internal wikis, straightforward technical documentation,
 
 Now we level up with Re-Ranking, which solves one of Basic RAG's biggest problems: precision. Think of it like a two-stage filter—first, cast a wide net to capture many potentially relevant documents, then use a more sophisticated model to identify which ones truly matter.
 
-\`\`\`mermaid
-flowchart TB
-    A[Query] --> B[Vector DB]
-    B --> C[Top 100-300<br/>Candidates]
-    C --> D[Reranker Model]
-    D --> E[Top 5-10<br/>Precise Results]
-    E --> F[LLM]
-    style D fill:#ffd700
-    style E fill:#81c784
-\`\`\`
 
 #### The Two-Stage Approach
 Here's how it works: instead of retrieving just five chunks like Basic RAG, we retrieve one hundred to three hundred candidates using fast vector similarity search. This ensures high recall—we probably have the right answer somewhere in that set. Then comes the magic: a reranker model, typically a cross-encoder 👉 [cross en-COH-der], scores each candidate against the query with much higher accuracy than embedding similarity alone. Cross-encoders are slower but more precise because they analyze the query and document together, not separately. Finally, we keep only the top five to ten highest-scoring chunks for the LLM.
@@ -583,15 +562,6 @@ Use Re-Ranking when accuracy justifies the added complexity and cost. Enterprise
 
 Now we shift focus from improving what we retrieve to improving how we search. Query Rewriting transforms messy, ambiguous user questions into precise search queries before retrieval even begins. Think of it as having a helpful librarian who clarifies what you're really looking for before searching.
 
-\`\`\`mermaid
-sequenceDiagram
-    User->>+Rewriter: "What's the return policy?"
-    Rewriter->>+Rewriter: Analyze & Transform
-    Rewriter-->>-User: "Product return procedures<br/>AND refund timelines"
-    User->>VectorDB: Rewritten Query
-    VectorDB-->>LLM: Better Results
-    style Rewriter fill:#ffd700
-\`\`\`
 
 #### Why Users Write Bad Queries
 Let's be honest: users rarely phrase queries optimally for search systems. They might ask "How do I get my money back?" when your documentation uses the term "refund process." They write vague questions like "tell me about pricing" instead of "Compare Enterprise versus Pro plan features and costs." Query Rewriting fixes this mismatch between how users think and how your documents are structured.
@@ -769,22 +739,6 @@ These query variations then execute **parallel retrieval** (👉 "pair-uh-lel re
 
 Now comes the sophisticated part: combining results. The system uses **Reciprocal Rank Fusion** (👉 "rih-SIP-ruh-kul rank FYOO-zhun"), or RRF, an algorithm that doesn't just merge results but intelligently weights them based on where documents appear across different query results. A document appearing in the top results of multiple queries gets boosted significantly.
 
-\`\`\`mermaid
-graph TD
-    A[User Query] --> B[LLM Query Generator]
-    B --> C1[Variant 1]
-    B --> C2[Variant 2]
-    B --> C3[Variant 3]
-    C1 --> D1[Vector Search]
-    C2 --> D2[Vector Search]
-    C3 --> D3[Vector Search]
-    D1 --> E[Reciprocal Rank Fusion]
-    D2 --> E
-    D3 --> E
-    E --> F[Deduplication]
-    F --> G[Final Context]
-    G --> H[LLM Answer]
-\`\`\`
 
 After fusion, a **deduplication pipeline** removes similar or identical chunks. This is important because the same document might surface through multiple query variants, and you don't want to waste context window space on duplicates.
 
@@ -990,15 +944,6 @@ HyDE bridges this gap brilliantly. It asks an LLM: "What would a good answer to 
 
 Let's walk through a concrete example. User asks: "How to secure JWT tokens?" 
 
-\`\`\`mermaid
-graph LR
-    A[User Query:<br/>'How to secure JWT tokens?'] --> B[LLM: Generate<br/>Hypothetical Answer]
-    B --> C[Hypothetical Doc:<br/>'JWT tokens should use...<br/>HMAC-SHA256, rotate keys...']
-    C --> D[Embed Hypothetical<br/>Answer]
-    D --> E[Vector Search on<br/>Real Documents]
-    E --> F[Retrieve Similar<br/>Real Documents]
-    F --> G[LLM: Final Answer<br/>from Real Docs]
-\`\`\`
 
 The LLM generates a hypothetical answer: "JWT tokens should use HMAC-SHA256 or RS256 algorithms, implement key rotation, validate all claims including expiration..." This hypothetical text is then **embedded**—converted to a vector representation.
 
@@ -1465,19 +1410,6 @@ For example, instead of storing "Microsoft was founded by Bill Gates in 1975" as
 
 #### The GraphRAG Architecture
 
-\`\`\`mermaid
-graph TD
-    A[Query: Who funded<br/>Company X?] --> B[Entity<br/>Extraction]
-    B --> C[Entity: Company X]
-    C --> D[Graph Query:<br/>Cypher/SPARQL]
-    D --> E[(Knowledge Graph)]
-    E --> F[Investor A]
-    E --> G[Investor B]
-    F --> H[Vector Search:<br/>Related Docs]
-    G --> H
-    H --> I[Merged Context]
-    I --> J[LLM Answer]
-\`\`\`
 
 When a query arrives, GraphRAG first **extracts entities** mentioned—perhaps "Company X". It then queries the knowledge graph using languages like **Cypher** (👉 "SY-fer") for Neo4j or SPARQL for RDF graphs. These queries can traverse relationships: "Find all nodes connected to Company X by FUNDED_BY relationships."
 
@@ -1758,21 +1690,6 @@ An **AI agent** (👉 "A-I AY-jent") is an LLM-powered system that can autonomou
 
 **Plan-Execute** separates planning from execution: first, create a multi-step plan, then execute each step sequentially, adapting the plan if needed.
 
-\`\`\`mermaid
-graph TD
-    A[User Query] --> B[Agent Planner]
-    B --> C{Select Tool}
-    C -->|Need Data| D[SQL Query Tool]
-    C -->|Need Search| E[Web Search Tool]
-    C -->|Need Calculation| F[Python Code Tool]
-    D --> G[Execute & Store Result]
-    E --> G
-    F --> G
-    G --> H{More Tools<br/>Needed?}
-    H -->|Yes| B
-    H -->|No| I[RAG Retrieval]
-    I --> J[LLM Final Answer]
-\`\`\`
 
 #### The Tool Ecosystem
 
