@@ -1071,34 +1071,64 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '2rem' }}>
-                <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
+              <GSAPAnimated animation="slideInRight" delay={0.35}>
+                <div style={{ fontSize: '2rem' }}>
+                  <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
 
-                <div style={{ marginBottom: '12px', marginTop: '15px' }}>
-                  <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                  <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. ScaNN uses a multi-stage architecture:</p>
-                  <ul>
-                    <li>Partitioning</li>
-                    <li>Quantization</li>
-                    <li>Re-ranking</li>
-                  </ul>
-                </div>
+                  <div style={{ marginBottom: '12px', marginTop: '15px' }}>
+                    <MermaidPopover 
+                      trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
+                      diagram={`graph TD
+    A[Partitioning] --> B[K-means/Tree]
+    B --> C[Quantization]
+    C --> D[Asymmetric Hashing]
+    D --> E[Re-ranking]
+    E --> F[Top K Results]
+    style A fill:#4fc3f7
+    style D fill:#81c784
+    style F fill:#ffd700`}
+                      title="ScaNN Multi-Stage Pipeline"
+                    />
+                    <strong style={{ color: '#00d4ff' }}>:</strong>
+                    <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. ScaNN uses a multi-stage architecture:</p>
+                    <ul>
+                      <li>Partitioning</li>
+                      <li>Quantization</li>
+                      <li>Re-ranking</li>
+                    </ul>
+                  </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
-                  <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ba68c8', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Very fast on CPU/TPU; near-SOTA recall-latency trade-offs. Especially optimized for high-throughput vector search scenarios with excellent parallelization.</p>
-                  </div>
-                  <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ba68c8', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-brain" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Low→Moderate with quantization; extra structures for partitions and re-ranking. Memory usage can be tuned based on performance requirements.</p>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginBottom: '15px' }}>
+                    <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
+                      <strong style={{ color: '#ba68c8', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
+                      <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Very fast on CPU/TPU; near-SOTA recall-latency trade-offs. Especially optimized for high-throughput vector search scenarios with excellent parallelization.</p>
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
+                      <strong style={{ color: '#ba68c8', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-brain" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                      <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Low→Moderate with quantization; extra structures for partitions and re-ranking. Memory usage can be tuned based on performance requirements.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d534b',
-          notes: ''
+          notes: `### 18. ScaNN (Scalable Nearest Neighbors)
+Let's explore Google's state-of-the-art vector search system: ScaNN, which represents the cutting edge of approximate nearest neighbor search.
+
+#### What is ScaNN?
+ScaNN, developed by Google Research, is a sophisticated multi-stage vector search architecture that combines the best ideas from clustering, quantization, and reranking into a unified system. Think of it as the culmination of decades of research into approximate nearest neighbor search. ScaNN doesn't just use one technique—it orchestrates multiple techniques in a pipeline optimized for modern hardware, especially Google's TPUs but also standard CPUs.
+
+#### Three-Stage Architecture
+ScaNN uses a three-stage approach. First, partitioning: like IVF, it divides the vector space into regions using k-means or tree-based partitioning. Second, quantization: within each partition, vectors are compressed using advanced quantization techniques including anisotropic quantization which adapts to each partition's structure. Third, reranking: top candidates are rescored using more accurate distance computations. This multi-stage approach lets ScaNN be both fast and accurate.
+
+#### Pronunciation Guides
+- **ScaNN** (SCAN): Scalable Nearest Neighbors
+- **TPU** (T-P-U): Tensor Processing Unit
+- **Anisotropic** (an-eye-so-TROP-ick): Varying in different directions
+- **SOTA** (SO-tah): State Of The Art
+
+Ready to explore advanced techniques? Let's continue!`
         },
         {
           id: 19,
@@ -1108,22 +1138,25 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Large-scale semantic search with inner product/cosine distance metrics</li>
-                    <li>TensorFlow/TF-Serving pipelines</li>
-                    <li>Production deployments with high QPS requirements</li>
-                    <li>Semantic Search</li>
-                    <li>High QPS Systems</li>
-                    <li>Ecosystem</li>
-                  </ul>
+              <GSAPAnimated animation="fadeIn" delay={0.25}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.14} animation="slideInBottom">
+                      <li>Large-scale semantic search with inner product/cosine distance metrics</li>
+                      <li>TensorFlow/TF-Serving pipelines</li>
+                      <li>Production deployments with high QPS requirements</li>
+                      <li>Semantic Search</li>
+                      <li>High QPS Systems</li>
+                      <li>Ecosystem</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d534b',
-          notes: ''
+          notes: `### 19. ScaNN - Best Use Case
+When is ScaNN the right choice? It excels at massive scale with demanding performance, especially for inner product and cosine metrics. Perfect for TensorFlow ecosystems and high-QPS production systems. If you need state-of-the-art performance and have engineering resources for proper deployment, ScaNN delivers.`
         },
         {
           id: 20,
@@ -1133,21 +1166,24 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Requires training and careful configuration</li>
-                    <li>Updates less friendly</li>
-                    <li>Open-source by Google</li>
-                    <li>Complex but performant</li>
-                    <li>Excellent integration with TensorFlow serving and Google Cloud AI infrastructure</li>
-                  </ul>
+              <GSAPAnimated animation="rotateIn" delay={0.3}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.16} animation="slideInLeft">
+                      <li>Requires training and careful configuration</li>
+                      <li>Updates less friendly</li>
+                      <li>Open-source by Google</li>
+                      <li>Complex but performant</li>
+                      <li>Excellent integration with TensorFlow serving and Google Cloud AI infrastructure</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d534b',
-          notes: ''
+          notes: `### 20. ScaNN - Configuration Notes
+ScaNN requires careful setup and training. Updates are challenging—use batch strategies. It's open source by Google with excellent TensorFlow integration. The complexity delivers exceptional performance at massive scale, justifying the engineering investment for the right applications.`
         }
       ]
     },
@@ -1163,29 +1199,32 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '2rem' }}>
-                <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>Probabilistic algorithm for approximate nearest neighbor search using hash collisions</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <div style={{ fontSize: '2rem' }}>
+                  <h3 style={{ color: '#e74c3c', marginBottom: '15px' }}>Probabilistic algorithm for approximate nearest neighbor search using hash collisions</h3>
 
-                <div style={{ marginBottom: '12px', marginTop: '15px' }}>
-                  <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                  <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Multiple hash tables using LSH families (e.g., SimHash for cosine similarity, p-stable distributions for L2 distance). Query candidates are collected from matching buckets across tables. Each table uses a different hash function to increase collision probability for similar items.</p>
-                </div>
+                  <div style={{ marginBottom: '12px', marginTop: '15px' }}>
+                    <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
+                    <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Multiple hash tables using LSH families (e.g., SimHash for cosine similarity, p-stable distributions for L2 distance). Query candidates are collected from matching buckets across tables. Each table uses a different hash function to increase collision probability for similar items.</p>
+                  </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ff6b6b', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '3px' }}>Sub-linear for supported metrics. Performance depends on number of tables (L) and hash functions per table (k). Query only touches a small subset of buckets, providing significant speedup over brute force for large datasets. Collision quality directly impacts search accuracy.</p>
-                  </div>
-                  <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                    <strong style={{ color: '#ff6b6b', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-brain" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
-                    <p style={{ fontSize: '1.2rem', marginTop: '3px' }}>High due to many tables and duplicated vector entries. Each vector is stored multiple times (once per table it hashes to). Memory usage scales with O(nL) where n is dataset size and L is number of hash tables. Trades memory for query speed and recall.</p>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
+                    <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
+                      <strong style={{ color: '#ff6b6b', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gauge" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Search Speed:</strong>
+                      <p style={{ fontSize: '1.2rem', marginTop: '3px' }}>Sub-linear for supported metrics. Performance depends on number of tables (L) and hash functions per table (k). Query only touches a small subset of buckets, providing significant speedup over brute force for large datasets. Collision quality directly impacts search accuracy.</p>
+                    </div>
+                    <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
+                      <strong style={{ color: '#ff6b6b', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-brain" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Memory Use:</strong>
+                      <p style={{ fontSize: '1.2rem', marginTop: '3px' }}>High due to many tables and duplicated vector entries. Each vector is stored multiple times (once per table it hashes to). Memory usage scales with O(nL) where n is dataset size and L is number of hash tables. Trades memory for query speed and recall.</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a0a0a',
-          notes: ''
+          notes: `### 21. LSH (Locality Sensitive Hashing)
+LSH uses probabilistic hashing where similar items hash to the same buckets. Multiple hash tables with different functions enable finding nearest neighbors probabilistically. Works great for specific metrics like Hamming and cosine. Handles updates well and scales in distributed systems.`
         },
         {
           id: 22,
@@ -1195,20 +1234,23 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Sparse or high-dimensional data where traditional methods struggle</li>
-                    <li>Streaming scenarios requiring fast updates</li>
-                    <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
-                    <li>Particularly effective for specialized metrics with good LSH families</li>
-                  </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.2}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.15} animation="fadeIn">
+                      <li>Sparse or high-dimensional data where traditional methods struggle</li>
+                      <li>Streaming scenarios requiring fast updates</li>
+                      <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
+                      <li>Particularly effective for specialized metrics with good LSH families</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a0a0a',
-          notes: ''
+          notes: `### 22. LSH - Best Use Case
+Perfect for binary embeddings and Hamming distance. Excels with streaming data and online updates. Naturally distributed across machines. Ideal for large-scale applications with moderate recall requirements. Provides theoretical probabilistic guarantees.`
         },
         {
           id: 23,
@@ -1218,21 +1260,24 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
-                    <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
-                    <li>Insertions and deletions are straightforward</li>
-                    <li>Recall degrades without careful tuning</li>
-                    <li>Better theoretical understanding compared to graph-based methods</li>
-                  </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.25}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.13} animation="slideInRight">
+                      <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
+                      <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
+                      <li>Insertions and deletions are straightforward</li>
+                      <li>Recall degrades without careful tuning</li>
+                      <li>Better theoretical understanding compared to graph-based methods</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a0a0a',
-          notes: ''
+          notes: `### 23. LSH - Configuration Notes
+Tune number of hash tables and parameters carefully. Can be memory-intensive with multiple tables. Use distance-specific implementations. Great for updates but consider periodic rebuilds for optimization. Well-established in research and production.`
         }
       ]
     },
@@ -1276,7 +1321,8 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             </div>
           ),
           backgroundColor: '#0a1a0f',
-          notes: ''
+          notes: `### 24. Graph-Based ANN
+Graph methods build connectivity where vectors are nodes. Beyond HNSW, methods like Vamana, DiskANN, and NSG offer different trade-offs. DiskANN breaks the RAM barrier by keeping vectors on SSD, enabling billion-scale search on commodity hardware.`
         },
         {
           id: 25,
@@ -1286,20 +1332,23 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Web-scale search under RAM constraints</li>
-                    <li>Production environments with strict latency SLOs</li>
-                    <li>Read-heavy workloads with billions of vectors</li>
-                    <li>DiskANN specifically addresses the RAM bottleneck for very large indices</li>
-                  </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.25}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.16} animation="fadeIn">
+                      <li>Web-scale search under RAM constraints</li>
+                      <li>Production environments with strict latency SLOs</li>
+                      <li>Read-heavy workloads with billions of vectors</li>
+                      <li>DiskANN specifically addresses the RAM bottleneck for very large indices</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0a1a0f',
-          notes: ''
+          notes: `### 25. Graph-Based ANN - Best Use Case
+DiskANN perfect for billion-scale beyond RAM limits. Graph methods achieve high recall across complex data distributions. Best for write-once, read-many workloads where expensive construction is amortized over millions of queries.`
         },
         {
           id: 26,
@@ -1309,21 +1358,24 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Complex build processes with careful pruning strategies</li>
-                    <li>Difficult to update (mostly batch builds)</li>
-                    <li>Tune graph degree and beam search width for optimal performance</li>
-                    <li>Achieves strong recall with careful construction</li>
-                    <li>DiskANN provides excellent disk-based performance but requires SSD storage</li>
-                  </ul>
+              <GSAPAnimated animation="rotateIn" delay={0.3}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.14} animation="slideInBottom">
+                      <li>Complex build processes with careful pruning strategies</li>
+                      <li>Difficult to update (mostly batch builds)</li>
+                      <li>Tune graph degree and beam search width for optimal performance</li>
+                      <li>Achieves strong recall with careful construction</li>
+                      <li>DiskANN provides excellent disk-based performance but requires SSD storage</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0a1a0f',
-          notes: ''
+          notes: `### 26. Graph-Based ANN - Configuration Notes
+Expect significant construction time and compute. Updates are challenging—use batching. DiskANN trades some latency for massive scale. HNSW is mature; other methods less widely available. Plan for iterative tuning.`
         }
       ]
     },
@@ -1361,7 +1413,8 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             </div>
           ),
           backgroundColor: '#1c2b55',
-          notes: ''
+          notes: `### 27. Multi-Index Hashing
+Designed for binary vectors and Hamming distance. Splits binary vector into sub-codes with multiple hash tables. Binary vectors are extremely compact—enabling massive memory savings. Hamming distance uses fast XOR and popcount operations.`
         },
         {
           id: 28,
@@ -1371,20 +1424,23 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Binary embeddings or PQ code matching</li>
-                    <li>Refine stage for IVF-PQ</li>
-                    <li>When exact Hamming kNN is needed</li>
-                    <li>Ideal for applications requiring precise matching in binary space such as image fingerprinting, duplicate detection, and compact binary feature matching</li>
-                  </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.2}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.15} animation="fadeIn">
+                      <li>Binary embeddings or PQ code matching</li>
+                      <li>Refine stage for IVF-PQ</li>
+                      <li>When exact Hamming kNN is needed</li>
+                      <li>Ideal for applications requiring precise matching in binary space such as image fingerprinting, duplicate detection, and compact binary feature matching</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c2b55',
-          notes: ''
+          notes: `### 28. Multi-Index Hashing - Best Use Case
+Ideal for binary embeddings at massive scale. Perfect for Hamming distance applications like document similarity or genomic sequences. Works brilliantly in hybrid systems—binary for filtering, floats for refinement. Enables real-time, latency-sensitive applications.`
         },
         {
           id: 29,
@@ -1394,22 +1450,25 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Limited to Hamming/binary codes</li>
-                    <li>parameter m critical</li>
-                    <li>GPU-friendly; common in large-scale code search pipelines</li>
-                    <li>Optimal m typically depends on code length and query radius</li>
-                    <li>Well-suited for hardware acceleration with bitwise operations</li>
-                    <li>Efficient for binary hashes from techniques like LSH</li>
-                  </ul>
+              <GSAPAnimated animation="scaleIn" delay={0.25}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.13} animation="slideInRight">
+                      <li>Limited to Hamming/binary codes</li>
+                      <li>parameter m critical</li>
+                      <li>GPU-friendly; common in large-scale code search pipelines</li>
+                      <li>Optimal m typically depends on code length and query radius</li>
+                      <li>Well-suited for hardware acceleration with bitwise operations</li>
+                      <li>Efficient for binary hashes from techniques like LSH</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c2b55',
-          notes: ''
+          notes: `### 29. Multi-Index Hashing - Configuration Notes
+Binarization quality is crucial. Tune sub-indexes and Hamming radius. Use efficient implementations with SIMD. Monitor quality carefully—binary loses information. Hybrid architectures with refinement stages work best in production.`
         }
       ]
     },
@@ -1516,7 +1575,8 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             </div>
           ),
           backgroundColor: '#55551c',
-          notes: ''
+          notes: `### 30. Summary - Choosing the Right Index
+Every method trades speed, memory, accuracy, and updates differently. Scale drives choice: flat for small datasets, HNSW/IVF for medium, IVF+PQ/DiskANN for massive. Match index to workload: read-heavy favors graphs, streaming favors IVF/LSH. Start simple, measure, iterate.`
         },
         {
           id: 31,
@@ -1526,24 +1586,27 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div>
-                <div style={{ padding: '12px', backgroundColor: '#663', borderRadius: '8px' }}>
-                  <ul>
-                    <li>Always measure recall@k vs latency tradeoff for your specific data</li>
-                    <li>Batch queries together for better throughput</li>
-                    <li>Normalize vectors for cosine similarity before indexing</li>
-                    <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
-                    <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
-                    <li>Shard large indices by coarse partitions for parallelism</li>
-                    <li>Consider dimensionality reduction (PCA) before indexing</li>
-                    <li>For production, test with realistic data distributions and queries</li>
-                  </ul>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <div>
+                  <div style={{ padding: '12px', backgroundColor: '#663', borderRadius: '8px' }}>
+                    <GSAPStaggerList staggerDelay={0.12} animation="slideInBottom">
+                      <li>Always measure recall@k vs latency tradeoff for your specific data</li>
+                      <li>Batch queries together for better throughput</li>
+                      <li>Normalize vectors for cosine similarity before indexing</li>
+                      <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
+                      <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
+                      <li>Shard large indices by coarse partitions for parallelism</li>
+                      <li>Consider dimensionality reduction (PCA) before indexing</li>
+                      <li>For production, test with realistic data distributions and queries</li>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#55551c',
-          notes: ''
+          notes: `### 31. Final Thoughts
+The vector search ecosystem is rich and evolving. No one-size-fits-all solution exists—each method excels in specific scenarios. Hybrid approaches combining multiple methods work well in production. Keep learning, measure everything, and choose based on your actual requirements. Thank you!`
         }
       ]
     }
