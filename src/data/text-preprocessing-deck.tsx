@@ -3522,30 +3522,56 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Better semantics</li>
-                  <li>Reduces fragmentation</li>
-                  <li>Improves retrieval and topics</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Threshold tuning</li>
-                  <li>Domain dependence</li>
-                  <li>False positives/negatives</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph LR
+    A[Spell Correction] --> B[Better Semantics]
+    A --> C[Reduces Fragmentation]
+    A --> D[Improves Retrieval]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Better semantics</li>
+                      <li>Reduces fragmentation</li>
+                      <li>Improves retrieval and topics</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph LR
+    A[Challenges] --> B[Threshold Tuning]
+    A --> C[Domain Dependence]
+    A --> D[False Matches]
+    style A fill:#ffcdd2
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Threshold tuning</li>
+                      <li>Domain dependence</li>
+                      <li>False positives/negatives</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#63105a',
-          notes: ''
+          notes: `### 26. Fuzzy String Matching - Pros and Cons
+
+#### The Benefits of Fuzzy Matching
+Fuzzy string matching brings powerful advantages to text preprocessing. First, it dramatically improves semantics by recognizing that "color" and "colour" are essentially the same word, just written differently. This means your model doesn't waste brain power treating them as completely separate concepts. Second, it reduces fragmentation in your vocabulary. Instead of having 50 slightly different spellings of "organization" scattered across your dataset, you consolidate them into one canonical form. Third, it significantly improves retrieval and topic modeling. When users search for "iPhone," fuzzy matching ensures they also find documents mentioning "i-Phone" or "I Phone."
+
+Think of fuzzy matching like a smart librarian who understands that when you ask for "Stephen King," you probably also want results for "Steven King" or "Steve King." It bridges the gap between human imperfection and machine precision.
+
+#### The Challenges to Consider
+However, fuzzy matching isn't without its challenges. The biggest hurdle is threshold tuning. Set your similarity threshold too high, and you'll miss legitimate matches. Set it too low, and you'll incorrectly merge "apple" with "apply." Finding that sweet spot requires experimentation with your specific dataset. Second, fuzzy matching is highly domain-dependent. A threshold that works perfectly for product names might fail miserably for medical terminology. Finally, false positives and false negatives are inevitable. You might incorrectly match "desert" with "dessert" or fail to match "NY" with "New York."
+
+The key is understanding these trade-offs and choosing your battles. In some applications, like autocorrect, false positives are annoying but tolerable. In others, like medical records, they could be dangerous. Always validate your fuzzy matching results with real data samples before deploying to production.`
         }
       ]
     },
@@ -3560,71 +3586,120 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Fix misspellings to improve readability and model input quality.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>User-generated content, noisy forms, query logs.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Detect errors</li>
-                    <li>Generate candidates</li>
-                    <li>Rank</li>
-                    <li>Apply with confidence threshold</li>
-                    <li>Log corrections for QA</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Fix misspellings to improve readability and model input quality.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Misspelled Word] --> B[Generate Candidates]
+    B --> C[Edit Distance 1-2]
+    B --> D[Phonetic Similarity]
+    C --> E[Rank by Frequency]
+    D --> E
+    E --> F[Context Check]
+    F --> G[Best Correction]
+    style A fill:#4fc3f7
+    style G fill:#81c784`} />
+                    </h4>
+                    <p>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>User-generated content, noisy forms, query logs.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Detect errors</li>
+                        <li>Generate candidates</li>
+                        <li>Rank</li>
+                        <li>Apply with confidence threshold</li>
+                        <li>Log corrections for QA</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#633510',
-          notes: ''
+          notes: `### 27. Spell Correction
+
+#### What Is Spell Correction?
+Spell correction is the process of automatically fixing typos and misspellings in text. Think about how many times you've typed "teh" instead of "the" or "recieve" instead of "receive." Humans make these mistakes constantly, especially in informal settings like social media, text messages, or quick form submissions. While we can easily understand the intended meaning, machine learning models can't. To them, "teh" is a completely different word from "the," and this confusion degrades model performance. Spell correction bridges this gap.
+
+#### How Spell Correction Works
+The magic of spell correction happens in three stages. First, we detect that a word is likely misspelled by checking it against a dictionary. If "recieve" isn't in our dictionary, it's probably wrong. Second, we generate candidate corrections using edit distance, which measures how many single-character changes (insertions, deletions, substitutions) are needed to transform one word into another. For "recieve," candidates within 1-2 edits might include "receive," "relieve," and "reprieve." Third, we rank these candidates by frequency—how often does each word appear in normal text? "Receive" is far more common than "reprieve," so it wins.
+
+Modern spell correctors go even further by using language models that consider context. If the sentence is "I didn't recieve the package," the model knows we're probably talking about receiving something, not relieving stress. This context-aware approach dramatically reduces overcorrection errors.
+
+#### When to Use Spell Correction
+Spell correction shines in three scenarios. First, user-generated content like social media posts, product reviews, or forum discussions, where typos are rampant. Second, noisy form data where users rush through input fields. Third, search query logs where users expect the system to understand "iphone charegr" means "iPhone charger." In these contexts, spell correction can boost downstream accuracy by 10-30%.
+
+However, be cautious in domains with specialized vocabulary. In medical texts, "Ca" (calcium) shouldn't be corrected to "can." In code, variable names like "usr" are intentional, not typos.`
         },
         {
           id: 28,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Improves recall/precision</li>
-                  <li>Cleaner features</li>
-                  <li>Better downstream accuracy</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Overcorrection risk</li>
-                  <li>Language/locale-specific</li>
-                  <li>Computational overhead</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.9}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Improves recall/precision</li>
+                      <li>Cleaner features</li>
+                      <li>Better downstream accuracy</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph LR
+    A[Risks] --> B[Overcorrection]
+    A --> C[Language Specific]
+    A --> D[Computation Cost]
+    B --> E["desert → dessert"]
+    C --> F["café → cafe?"]
+    style A fill:#ffcdd2
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Overcorrection risk</li>
+                      <li>Language/locale-specific</li>
+                      <li>Computational overhead</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#633510',
-          notes: ''
+          notes: `### 28. Spell Correction - Pros and Cons
+
+#### The Power of Spell Correction
+Spell correction delivers three major benefits to your NLP pipeline. First, it improves both recall and precision in downstream tasks. For example, in sentiment analysis, correcting "I lovvve this productt!" to "I love this product!" ensures the sentiment model properly recognizes the positive emotion. Second, it produces cleaner features for machine learning. Instead of your model learning separate representations for "beautiful," "beautifull," and "beutiful," it learns one strong representation for the correctly spelled word. Third, studies show spell correction can boost downstream accuracy by 5-15% in tasks like classification, search, and question answering.
+
+Think of spell correction as noise reduction for your data. Just as cleaning static from an audio recording makes music clearer, fixing spelling errors makes text patterns more recognizable to models.
+
+#### The Pitfalls to Avoid
+However, spell correction comes with significant risks. The biggest danger is overcorrection, where the system incorrectly "fixes" words that were already correct. For example, correcting "desert" to "dessert" in "the Sahara desert" completely changes the meaning. This is especially problematic with proper nouns, domain-specific terminology, and creative spellings. A medical spell checker might incorrectly change "Ca" (calcium) to "can," or a social media analyzer might ruin intentional slang like "gr8" or "luv."
+
+Second, spell correction is heavily language and locale-specific. A dictionary tuned for American English will incorrectly flag British spellings like "colour" and "honour." Third, there's computational overhead. Running sophisticated language models for context-aware correction can be slow, especially on large datasets.
+
+The solution? Always use confidence thresholds—only correct words when you're 95%+ confident. Log all corrections for human review. And test thoroughly on your specific domain before deployment.`
         }
       ]
     },
@@ -3639,70 +3714,115 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Correct systematic errors from optical character recognition.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Scanned books, PDFs, historical documents.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Analyze error patterns</li>
-                    <li>Build rules/models</li>
-                    <li>Apply</li>
-                    <li>Evaluate on gold samples</li>
-                    <li>Iterate</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Correct systematic errors from optical character recognition.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Scanned Image] --> B[OCR Engine]
+    B --> C[Raw Text with Errors]
+    C --> D["rn → m"]
+    C --> E["l → I"]
+    C --> F["0 → O"]
+    D --> G[Confusion Matrix]
+    E --> G
+    F --> G
+    G --> H[Corrected Text]
+    style A fill:#4fc3f7
+    style C fill:#ffcdd2
+    style H fill:#81c784`} />
+                    </h4>
+                    <p>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Scanned books, PDFs, historical documents.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="bounceIn" delay={0.5} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Analyze error patterns</li>
+                        <li>Build rules/models</li>
+                        <li>Apply</li>
+                        <li>Evaluate on gold samples</li>
+                        <li>Iterate</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1a6310',
-          notes: ''
+          notes: `### 29. OCR Error Correction
+
+#### Understanding OCR Errors
+OCR (optical character recognition) is the technology that converts images of text—like scanned documents, photos of signs, or PDFs—into digital text. While modern OCR engines are impressive, they're far from perfect. They make systematic, predictable errors based on visual similarities. The letters "rn" often get read as "m" because they look identical when squished together. Lowercase "L" becomes uppercase "I." The number "0" becomes the letter "O." Old or degraded documents are especially problematic, where faded ink, creases, or coffee stains create additional confusion.
+
+These aren't random typos like human misspellings. They're systematic patterns based on visual ambiguity. That's both the curse and the blessing of OCR errors—they're consistent enough that we can predict and correct them.
+
+#### How OCR Error Correction Works
+OCR error correction leverages these systematic patterns. First, we analyze our OCR output to identify common mistakes. We might discover that "m" frequently appears in nonsensical positions (like "mning" instead of "mining") while "rn" would make sense ("mining"). We build a confusion matrix—a lookup table of likely character substitutions: "rn↔m," "l↔I," "0↔O," etc.
+
+Second, we apply rule-based replacements combined with dictionary validation. If "moming" isn't a real word but "morning" is, and we know "rn→m" is a common OCR error, we correct it. For more sophisticated correction, we use post-OCR language models that understand context. If the sentence is "The company's moming report," the model knows "morning report" is far more likely than "moming report" based on linguistic patterns.
+
+#### When This Technique Matters
+OCR error correction is essential for three domains. First, digitizing scanned books, especially older ones where print quality has degraded. Second, processing business documents like contracts, invoices, or forms that were scanned rather than born-digital. Third, working with historical archives where documents are decades or centuries old.
+
+The quality gains can be dramatic—reducing error rates from 10-20% down to 1-2% in well-tuned systems.`
         },
         {
           id: 30,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Large quality gains on OCR text</li>
-                  <li>Addresses domain-specific noise</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Corpus-specific tuning needed</li>
-                  <li>Residual errors remain</li>
-                  <li>Setup effort</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="rotateIn" delay={0.2} duration={1.0}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Large quality gains on OCR text</li>
+                      <li>Addresses domain-specific noise</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Corpus-specific tuning needed</li>
+                      <li>Residual errors remain</li>
+                      <li>Setup effort</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6310',
-          notes: ''
+          notes: `### 30. OCR Error Correction - Pros and Cons
+
+#### Massive Quality Improvements
+OCR error correction delivers two game-changing benefits. First, it can produce large quality gains specifically on OCR-generated text. We're talking about error rate reductions from 15% down to 2-3%, which transforms unusable text into highly reliable data. Imagine trying to search a database of scanned historical newspapers where 1 in 7 words is wrong—it would be nearly impossible to find relevant articles. After OCR correction, that same database becomes searchable and analyzable.
+
+Second, it addresses domain-specific noise patterns that general spell checkers miss. Medical documents might confuse "mg" with "rng," legal documents might mangle case numbers, and old typewritten text might consistently misread certain fonts. By building correction models tailored to your specific document types, you handle these specialized errors that off-the-shelf tools can't touch.
+
+#### The Investment Required
+However, OCR error correction has three significant drawbacks. First, it requires corpus-specific tuning. The confusion matrix that works perfectly for 19th-century newspapers will fail on modern receipts. You need to analyze your specific OCR output, identify your unique error patterns, and build custom rules. This isn't plug-and-play.
+
+Second, residual errors always remain. Even the best OCR correction can't fix everything. If the original scan was too degraded, or if the OCR engine completely hallucinated text, no amount of correction will recover the original meaning. You might go from 15% error to 2%, but that final 2% can be stubborn.
+
+Third, there's significant setup effort. You need gold-standard samples (manually corrected text), tools for pattern analysis, and an iterative refinement process. For small projects, this overhead might not be worth it. For large-scale document digitization projects, it's absolutely essential.`
         }
       ]
     },
@@ -3717,69 +3837,119 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Regex + mapping dictionary; optional context-aware models.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Sentiment, rule-based parsing, tasks expecting full forms.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Define mapping incl. locale variants</li>
-                    <li>Preserve casing</li>
-                    <li>Expand</li>
-                    <li>Handle slang and possessives carefully</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph LR
+    A["don't"] --> B[Regex Match]
+    B --> C[Dictionary Lookup]
+    C --> D["do not"]
+    E["can't"] --> F[Regex Match]
+    F --> G[Dictionary Lookup]
+    G --> H["can not / cannot"]
+    style A fill:#4fc3f7
+    style E fill:#4fc3f7
+    style D fill:#81c784
+    style H fill:#81c784`} />
+                    </h4>
+                    <p>Regex + mapping dictionary; optional context-aware models.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Sentiment, rule-based parsing, tasks expecting full forms.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInBottom" delay={0.4} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Define mapping incl. locale variants</li>
+                        <li>Preserve casing</li>
+                        <li>Expand</li>
+                        <li>Handle slang and possessives carefully</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#611063',
-          notes: ''
+          notes: `### 31. Contraction Expansion
+
+#### Why Expand Contractions?
+Contractions are shortened word combinations like "don't," "can't," "I'm," and "you're." While perfectly natural in spoken and informal written English, they create challenges for text processing. The biggest issue is negation handling. "Don't" contains the crucial word "not," but if your model treats "don't" as a single opaque token, it might miss the negation entirely. In sentiment analysis, "I don't like this movie" has the opposite meaning of "I like this movie," but that tiny "n't" makes all the difference.
+
+Expanding contractions makes negation explicit and consistent. It transforms "don't," "doesn't," "didn't," "won't," and "can't" into forms containing the word "not," which downstream models can more easily recognize and process. It also reduces vocabulary size by consolidating variants—you don't need separate entries for "don't" and "do not."
+
+#### How Contraction Expansion Works
+The implementation is straightforward but requires attention to detail. First, we build a mapping dictionary containing common contractions and their expansions: "don't" → "do not," "can't" → "cannot," "I'm" → "I am," etc. We need to include locale variants—British English has "shan't" (shall not) and "mayn't" (may not) that Americans rarely use.
+
+Second, we use regex patterns to match contractions while preserving casing. "Don't" should become "Do not," not "do not." We need to handle apostrophes carefully, distinguishing between contractions ("it's" = "it is") and possessives ("John's car"—no expansion needed).
+
+Third, we deal with ambiguity. "He'd" could mean "he had" or "he would." Context matters: "He'd gone home" vs. "He'd like pizza." Advanced systems use language models to disambiguate, but simple rule-based approaches work 90% of the time by analyzing the following word.
+
+#### When Contraction Expansion Helps
+This technique is most valuable in three scenarios. First, sentiment analysis where negation is critical. Second, rule-based parsing systems that expect standardized grammatical forms. Third, formal text processing where you want consistent, expanded forms for readability or regulatory compliance.`
         },
         {
           id: 32,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Clearer negation and syntax</li>
-                  <li>More consistent tokens</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Ambiguities (he'd = he had/would)</li>
-                  <li>May alter tone</li>
-                  <li>Locale-dependent</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph TD
+    A[Contraction Expansion] --> B[Clearer Negation]
+    A --> C[Consistent Tokens]
+    B --> D["don't → do not"]
+    C --> E[Smaller Vocabulary]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Clearer negation and syntax</li>
+                      <li>More consistent tokens</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Ambiguities (he'd = he had/would)</li>
+                      <li>May alter tone</li>
+                      <li>Locale-dependent</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#611063',
-          notes: ''
+          notes: `### 32. Contraction Expansion - Pros and Cons
+
+#### The Clear Benefits
+Contraction expansion offers two primary advantages. First, it provides clearer negation and syntax. When you transform "don't," "won't," and "can't" into "do not," "will not," and "cannot," you make the negation explicit and impossible to miss. This is crucial for sentiment analysis—imagine a review saying "This phone isn't worth it" versus "This phone is not worth it." The expanded form is unambiguous. Similarly, expanding "I'm going" to "I am going" makes the subject-verb relationship crystal clear for parsers.
+
+Second, expansion creates more consistent tokens across your corpus. Instead of having separate vocabulary entries for "isn't," "ain't," and "is not" (which all express the same relationship), you consolidate to "is not." This reduces vocabulary size and strengthens the signal for "not" as a negation marker. Your model learns one strong pattern instead of three weak ones.
+
+#### The Trade-offs to Consider
+However, contraction expansion comes with three notable challenges. First, ambiguity is unavoidable. "He'd" could mean "he had" or "he would," and simple dictionary lookup can't tell the difference. "He'd gone" (had) versus "He'd like" (would) require different expansions. You either need context-aware models or accept some errors.
+
+Second, expansion may alter tone and formality. Contractions signal informal, conversational writing. Expanding them makes text feel more formal and stiff. If you're analyzing social media where tone matters ("I'm SO not happy!" feels different from "I am SO not happy!"), expansion might lose important stylistic information.
+
+Third, this technique is locale-dependent. British English uses contractions like "shan't" and "mustn't" more than American English. You need region-specific dictionaries, or you'll miss common patterns. Despite these challenges, for most NLP tasks focused on meaning rather than style, the benefits outweigh the costs.`
         }
       ]
     },
@@ -3794,70 +3964,124 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Standardize numeric expressions for comparability and reduced sparsity.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>De-identification, aggregation, generalization in models.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Detect numbers</li>
-                    <li>choose strategy (keep, scale, mask)</li>
-                    <li>handle units/currencies</li>
-                    <li>format consistently</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="rotateIn" delay={0.2} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Standardize numeric expressions for comparability and reduced sparsity.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A["123,456"] --> B[Parse Format]
+    C["123.456"] --> B
+    D["one hundred"] --> B
+    B --> E[Normalize]
+    E --> F[NUM or 123456]
+    G["$50"] --> H[Unit Detection]
+    H --> I[50 USD]
+    style A fill:#4fc3f7
+    style C fill:#4fc3f7
+    style D fill:#4fc3f7
+    style F fill:#81c784
+    style I fill:#81c784`} />
+                    </h4>
+                    <p>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>De-identification, aggregation, generalization in models.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="scaleIn" delay={0.5} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Detect numbers</li>
+                        <li>choose strategy (keep, scale, mask)</li>
+                        <li>handle units/currencies</li>
+                        <li>format consistently</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#631010',
-          notes: ''
+          notes: `### 33. Number Normalization
+
+#### The Challenge of Numeric Diversity
+Numbers appear in text in countless formats, creating massive vocabulary bloat and comparison challenges. Consider these equivalent expressions: "5000," "5,000," "5K," "five thousand," and "5 grand." To a human, these all mean the same thing, but to a machine learning model, they're five completely different tokens. This fragmentation weakens the model's ability to learn patterns around quantities.
+
+Similarly, currencies and units create chaos: "$100," "100 dollars," "100 USD," "€85," "£75"—all different prices for approximately the same thing, but represented inconsistently. Number normalization solves this by standardizing how numbers appear in your text.
+
+#### Normalization Strategies
+There are three main approaches to number normalization, each serving different purposes. First, masking replaces all numbers with a placeholder token like "NUM." "I have 5 cats" becomes "I have NUM cats." This is perfect for privacy (removing identifying information like ages or phone numbers) and for tasks where the specific value doesn't matter—you care that there's a quantity, not what it is.
+
+Second, standardizing converts different representations into one consistent format. "5K" and "five thousand" both become "5000." You keep the numeric value but eliminate format variations. This helps with aggregation and comparison—you can now find all documents mentioning quantities around 5000.
+
+Third, unit conversion standardizes measurements to common units. "5 feet" becomes "1.52 meters," "$100" becomes "100 USD," "2 hours" becomes "120 minutes." This enables cross-unit comparison, though it requires maintaining conversion tables and handling ambiguities (does "oz" mean ounces or fluid ounces?).
+
+#### When Number Normalization Matters
+This technique is essential in three contexts. First, privacy and de-identification where you need to remove specific numbers (ages, SSNs, account numbers) while preserving text structure. Second, aggregation and analysis where you want to group documents by numeric ranges. Third, model generalization where you want the model to learn patterns about quantities without memorizing specific numbers.`
         },
         {
           id: 34,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Improves generalization</li>
-                  <li>Eases matching</li>
-                  <li>Reduces vocab size</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Potential loss of precision</li>
-                  <li>Unit handling is tricky</li>
-                  <li>Context-sensitive</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Improves generalization</li>
+                      <li>Eases matching</li>
+                      <li>Reduces vocab size</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph LR
+    A[Challenges] --> B[Loss of Precision]
+    A --> C[Unit Complexity]
+    A --> D[Context Sensitivity]
+    B --> E["$99.99 → $100?"]
+    C --> F["2.5L vs 2.5lb"]
+    style A fill:#ffcdd2
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Potential loss of precision</li>
+                      <li>Unit handling is tricky</li>
+                      <li>Context-sensitive</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#631010',
-          notes: ''
+          notes: `### 34. Number Normalization - Pros and Cons
+
+#### The Power of Standardization
+Number normalization delivers three significant benefits. First, it improves model generalization. Instead of learning separate patterns for "5 dollars," "$5," "five bucks," and "5 USD," the model learns one unified pattern. This means when it encounters a new context with "10 euros," it can leverage what it learned from dollar amounts. The model focuses on the semantic relationships rather than memorizing specific numeric formats.
+
+Second, it eases matching and retrieval. If a user searches for documents mentioning "around 5000 employees," you want to match documents saying "5K employees," "five thousand workers," and "5,000 staff." Number normalization makes this trivial—after normalization, they're all "5000." Third, vocabulary size drops dramatically. Instead of having separate tokens for every possible number from 0 to infinity, plus all their format variations, you might just have one "NUM" token or a manageable set of standardized numeric representations.
+
+#### The Complications to Navigate
+However, number normalization introduces three challenges. First, there's potential loss of precision that matters in some contexts. Rounding "$99.99" to "$100" might be fine for topic modeling but terrible for financial analysis. Converting "2.54 cm" to "1 inch" loses the precision of the original measurement. You need to decide how much precision to preserve based on your application.
+
+Second, unit handling is genuinely tricky. Is "oz" ounces (weight) or fluid ounces (volume)? Does "2.5L" mean 2.5 liters or 2.5 pounds? Context clues help ("2.5L of water" vs "2.5lb of beef"), but ambiguity is common. Building robust unit parsers requires extensive testing.
+
+Third, number normalization is highly context-sensitive. In finance, dates like "Q3 2023" shouldn't be normalized. In chemistry, formulas like "H2O" shouldn't have their numbers masked. Phone numbers, zip codes, and model numbers have special meaning. You need careful rules about when to normalize and when to preserve the original form.`
         }
       ]
     },
@@ -3872,69 +4096,115 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Formal documents, security sanitization, systems with limited character sets.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Define allowed sets</li>
-                    <li>Strip/map disallowed chars</li>
-                    <li>Log removals</li>
-                    <li>Review edge cases (accent marks, emoji)</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Raw Text] --> B{Unicode Category}
+    B --> C[Letters] 
+    B --> D[Emojis]
+    B --> E[Control Chars]
+    B --> F[Symbols]
+    C --> G[Keep]
+    D --> H[Whitelist/Blacklist]
+    E --> I[Remove]
+    F --> H
+    H --> G
+    style A fill:#4fc3f7
+    style G fill:#81c784
+    style I fill:#ffcdd2`} />
+                    </h4>
+                    <p>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Formal documents, security sanitization, systems with limited character sets.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.8}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Define allowed sets</li>
+                        <li>Strip/map disallowed chars</li>
+                        <li>Log removals</li>
+                        <li>Review edge cases (accent marks, emoji)</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#106063',
-          notes: ''
+          notes: `### 35. Special Character Filtering
+
+#### The Wild West of Text Data
+Modern text is full of special characters beyond standard letters and numbers. Social media posts contain emojis (😊, 🔥, 💯), symbols (★, ♥, →), and emoticons (:-), :P). Web-scraped content includes HTML artifacts (&amp;, &nbsp;), control characters (tabs, newlines, zero-width spaces), and Unicode oddities (combining diacritics, right-to-left markers). While some of these characters carry meaning, many are just noise that confuses models and breaks pipelines.
+
+Special character filtering gives you control over which characters to keep, remove, or replace. The key is making intentional decisions about what's signal versus noise for your specific application.
+
+#### Filtering Strategies
+There are three main approaches to character filtering. First, whitelist filtering keeps only explicitly allowed characters. For example, keeping only ASCII letters, digits, and basic punctuation: [a-zA-Z0-9.,!?]. This is aggressive but guarantees compatibility—perfect for systems that can't handle Unicode or need strict security controls. However, it destroys foreign language text, emojis, and special symbols that might be meaningful.
+
+Second, blacklist filtering removes explicitly banned characters while keeping everything else. You might remove control characters (\\x00-\\x1F), invisible Unicode (zero-width spaces), and specific problematic symbols. This is less destructive but requires knowing what to ban. Third, category-based filtering uses Unicode character categories. You can keep all letters (\\p{L}), numbers (\\p{N}), and punctuation (\\p{P}) while removing symbols (\\p{S}), emojis, and control characters (\\p{C}). This works across languages while removing non-textual elements.
+
+Modern NLP increasingly preserves emojis because they carry strong sentiment and meaning. Removing 😠 from "This makes me 😠" loses crucial information. Context matters.
+
+#### When to Filter Aggressively
+Character filtering is essential in three scenarios. First, formal document processing (legal, medical, financial) where you want clean, standardized text without decorative elements. Second, security sanitization where you need to prevent injection attacks or remove potentially malicious characters. Third, legacy systems with limited character encoding support (ASCII-only databases, old file formats).`
         },
         {
           id: 36,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Cleaner tokens</li>
-                  <li>Prevents parsing/rendering issues</li>
-                  <li>Mitigates injection</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>May remove meaningful signals (emoji/emoticons)</li>
-                  <li>Language-specific characters risk</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="flipCard" delay={0.3} duration={1.0}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Cleaner tokens</li>
+                      <li>Prevents parsing/rendering issues</li>
+                      <li>Mitigates injection</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>May remove meaningful signals (emoji/emoticons)</li>
+                      <li>Language-specific characters risk</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#106063',
-          notes: ''
+          notes: `### 36. Special Character Filtering - Pros and Cons
+
+#### The Benefits of Clean Text
+Special character filtering provides three key advantages. First, it produces cleaner, more consistent tokens. Instead of having variants like "hello★," "hello♥," and "hello—" treated as different words, you get just "hello." This reduces vocabulary size and strengthens the signal around core words. Your model spends its capacity learning meaningful language patterns rather than memorizing decorative character combinations.
+
+Second, it prevents parsing and rendering issues. Control characters and invisible Unicode can break tokenizers, crash regex engines, or cause display glitches. Removing these problematic characters makes your pipeline more robust and predictable. You won't encounter mysterious bugs where text looks empty but contains hidden zero-width characters.
+
+Third, character filtering mitigates security injection attacks. Malicious users sometimes embed special Unicode characters to bypass filters, confuse parsers, or exploit rendering bugs. By restricting to known-safe characters, you reduce your attack surface. This is especially important for user-generated content that will be displayed on websites or processed by security-sensitive systems.
+
+#### The Risk of Over-Filtering
+However, aggressive character filtering has two major downsides. First, you may remove meaningful signals, especially emojis and emoticons. In social media analysis, the difference between "Good morning" and "Good morning 😊" is substantial—the emoji completely changes the tone. Emoticons like :-) and :-( are sentiment gold. Modern sentiment analyzers actually train on emojis because they're such reliable sentiment indicators. Removing them throws away valuable data.
+
+Second, there's serious risk with language-specific characters. If you whitelist only ASCII characters, you'll destroy all foreign language text. French accents (é, è, à), German umlauts (ä, ö, ü), Spanish ñ, and Scandinavian characters (å, ø) are essential parts of those languages, not "special characters." Removing them turns "naïve" into "nave" and "façade" into "faade"—completely different words or nonsense. Always consider your international user base before aggressive filtering.`
         }
       ]
     },
@@ -3949,70 +4219,129 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Remove template-like non-content (headers, footers, nav, ads).</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Web/news scraping, emails, PDFs, templated reports.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }} >
-                    <li>Parse document</li>
-                    <li>identify content blocks</li>
-                    <li>drop low-density/repetitive regions</li>
-                    <li>keep main body</li>
-                    <li>validate</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Remove template-like non-content (headers, footers, nav, ads).</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Web Page] --> B[Parse HTML/DOM]
+    B --> C[Header]
+    B --> D[Navigation]
+    B --> E[Main Content]
+    B --> F[Sidebar Ads]
+    B --> G[Footer]
+    C --> H[Remove]
+    D --> H
+    F --> H
+    G --> H
+    E --> I[Keep]
+    style A fill:#4fc3f7
+    style E fill:#81c784
+    style I fill:#81c784
+    style H fill:#ffcdd2`} />
+                    </h4>
+                    <p>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Web/news scraping, emails, PDFs, templated reports.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }} >
+                        <li>Parse document</li>
+                        <li>identify content blocks</li>
+                        <li>drop low-density/repetitive regions</li>
+                        <li>keep main body</li>
+                        <li>validate</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#632e10',
-          notes: ''
+          notes: `### 37. Removing Boilerplate Text
+
+#### The Boilerplate Problem
+When you scrape web pages, extract text from PDFs, or process emails, you get a lot more than just the core content. You get navigation menus ("Home | About | Contact Us"), copyright footers ("© 2024 All Rights Reserved"), cookie disclaimers, advertisement blocks, social media sharing buttons ("Follow us on Twitter!"), and email signatures. This is boilerplate—repetitive, template-like text that appears on many pages but contains little unique information.
+
+For content analysis, this boilerplate is pure noise. Imagine trying to analyze news articles, but every article includes "Breaking News | Latest Headlines | Subscribe Now" at the top. Your topic models will think every article is about subscribing, and your word frequencies will be dominated by navigation terms rather than actual content. Boilerplate removal extracts the meat and discards the wrapper.
+
+#### Detection Techniques
+Boilerplate removal uses several clever techniques. First, HTML/DOM parsing identifies structural elements. HTML tags like &lt;nav&gt;, &lt;header&gt;, &lt;footer&gt;, &lt;aside&gt;, and class names like "advertisement," "sidebar," or "social-share" are strong signals of boilerplate. By analyzing the DOM tree, we can identify and remove these sections before extracting text.
+
+Second, text-density heuristics measure how much actual text versus links and formatting exists in each block. The main article has high text density—lots of words, few links. Navigation and footers have low text density—lots of short links, little prose. Tools like Boilerpipe and JusText use these metrics to score each block and keep only high-density regions.
+
+Third, pattern detection identifies repetitive text. If "Sign up for our newsletter" appears at the bottom of 1000 scraped pages, it's boilerplate. If a specific copyright notice repeats, it's boilerplate. By analyzing text repetition across your corpus, you can build custom boilerplate filters.
+
+#### Critical Applications
+This technique is indispensable for three use cases. First, web and news scraping where you're building text corpora from crawled content. Second, email processing where signatures, disclaimers, and threading artifacts pollute message bodies. Third, PDF and document extraction from templated reports with headers, footers, and repeated sections.`
         },
         {
           id: 38,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Cleaner corpora</li>
-                  <li>Better topic and summarization performance</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Risk of removing content</li>
-                  <li>Site-specific maintenance</li>
-                  <li>Complex layouts</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.9}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Cleaner corpora</li>
+                      <li>Better topic and summarization performance</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph LR
+    A[Risks] --> B[Remove Real Content]
+    A --> C[Site-Specific Rules]
+    A --> D[Complex Layouts]
+    B --> E[Caption in sidebar?]
+    C --> F[Maintenance burden]
+    style A fill:#ffcdd2
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Risk of removing content</li>
+                      <li>Site-specific maintenance</li>
+                      <li>Complex layouts</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#632e10',
-          notes: ''
+          notes: `### 38. Removing Boilerplate Text - Pros and Cons
+
+#### Dramatic Quality Improvements
+Boilerplate removal delivers two massive benefits. First, you get much cleaner corpora. Instead of collections contaminated with "Click here," "Terms of Service," and "Copyright 2024," you have pure content that reflects actual documents. This dramatically improves any corpus-level analysis. Word frequencies become meaningful—the most common words are actually about your domain, not navigation terms. Co-occurrence statistics reflect real semantic relationships, not template accidents.
+
+Second, boilerplate removal produces substantially better topic modeling and summarization performance. Topic models like LDA can actually discover genuine themes instead of creating a "boilerplate topic" that clusters all documents together. Summarization systems extract sentences from the actual article content rather than accidentally including "Subscribe to our newsletter" as a key point. The improvement can be transformative—going from unusable outputs to highly relevant results.
+
+Think of it like clearing away packaging to get to the product. You wouldn't analyze Amazon packaging patterns to understand what people buy. Similarly, you shouldn't analyze template text to understand document content.
+
+#### The Challenges of Accuracy
+However, boilerplate removal has three significant challenges. First, there's genuine risk of removing actual content. Some legitimate article text might appear in sidebars, be formatted like ads, or use the same CSS classes as navigation. Imagine a news article about social media that discusses "Follow us on Twitter"—is that boilerplate or content? Image captions often appear in sidebar divs that look like boilerplate. Over-aggressive removal loses information.
+
+Second, you need site-specific maintenance. Websites have wildly different HTML structures. Your rules for removing boilerplate from NYTimes.com might fail completely on a WordPress blog or a PDF converted to HTML. Building robust, general-purpose boilerplate detectors requires constant testing and refinement across diverse sources.
+
+Third, complex or non-standard layouts confuse heuristics. Single-page applications with dynamically loaded content, mobile-optimized pages, or creative web designs might not follow expected patterns. Always validate your boilerplate removal on sample documents before processing your entire corpus.`
         }
       ]
     },
@@ -4027,72 +4356,117 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Dataset building, deduplication before training/evaluation.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Normalize text</li>
-                    <li>Compute signatures/embeddings</li>
-                    <li>Set similarity threshold</li>
-                    <li>Remove</li>
-                    <li>Keep canonical</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="rotateIn" delay={0.2} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Sentence 1] --> B[Normalize]
+    C[Sentence 2] --> D[Normalize]
+    B --> E[Hash/Embed]
+    D --> F[Hash/Embed]
+    E --> G{Similarity > 0.95?}
+    F --> G
+    G -->|Yes| H[Remove Duplicate]
+    G -->|No| I[Keep Both]
+    style A fill:#4fc3f7
+    style C fill:#4fc3f7
+    style H fill:#ffcdd2
+    style I fill:#81c784`} />
+                    </h4>
+                    <p>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Dataset building, deduplication before training/evaluation.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInBottom" delay={0.5} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Normalize text</li>
+                        <li>Compute signatures/embeddings</li>
+                        <li>Set similarity threshold</li>
+                        <li>Remove</li>
+                        <li>Keep canonical</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#104163',
-          notes: ''
+          notes: `### 39. Removing Duplicate Sentences
+
+#### Why Duplicates Are Dangerous
+Duplicate sentences in your dataset create three serious problems. First, they introduce bias. If the sentence "The product was excellent" appears 100 times and "The product was terrible" appears only once, your sentiment model will be biased toward positive sentiment—not because that reflects reality, but because of arbitrary duplication. Second, duplicates cause data leakage. If identical sentences appear in both your training and test sets, you'll get artificially inflated performance metrics. Your model memorizes rather than generalizes. Third, duplicates waste computational resources. Why train on the same sentence 50 times when once is enough?
+
+Duplication happens naturally in web scraping (quoted text, retweets, copy-paste journalism), document collections (repeated disclaimers, template sections), and multi-source aggregation. Deduplication is essential hygiene for quality datasets.
+
+#### Detection Methods
+There are two levels of duplicate detection. For exact duplicates, we normalize the text (lowercase, strip punctuation, trim whitespace) and compute a hash. Any sentences with the same hash are identical. This is fast and perfect for catching copy-paste duplication.
+
+For near-duplicates, we need approximate matching. MinHash and LSH (locality-sensitive hashing) create signatures that similar sentences share, allowing efficient pairwise comparison even on millions of sentences. Alternatively, we can compute sentence embeddings using models like Sentence-BERT and measure cosine similarity. If two sentences have similarity above 0.95 (a common threshold), they're essentially duplicates even if they differ by a word or two: "The cat sat on the mat" vs. "The cat sits on the mat."
+
+The key decision is setting the similarity threshold. Too strict (0.99+) and you miss near-duplicates. Too loose (0.85) and you remove legitimately similar but different sentences. The sweet spot is usually 0.92-0.97, but you should validate on your specific data.
+
+#### Essential for Dataset Quality
+Deduplication is critical in three scenarios. First, dataset building from web scrapes or social media where repetition is rampant. Second, before training machine learning models to prevent memorization and ensure fair evaluation. Third, in production systems where you're aggregating content from multiple sources and want to show users unique information.`
         },
         {
           id: 40,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Smaller</li>
-                  <li>Cleaner datasets</li>
-                  <li>Faster training</li>
-                  <li>Reduces overfitting</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Computational cost</li>
-                  <li>Risk of dropping legitimate repetitions</li>
-                  <li>Threshold tuning</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Smaller</li>
+                      <li>Cleaner datasets</li>
+                      <li>Faster training</li>
+                      <li>Reduces overfitting</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Computational cost</li>
+                      <li>Risk of dropping legitimate repetitions</li>
+                      <li>Threshold tuning</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#104163',
-          notes: ''
+          notes: `### 40. Removing Duplicate Sentences - Pros and Cons
+
+#### Massive Dataset Benefits
+Deduplication provides four major advantages. First, you get smaller, more manageable datasets. Removing even 20-30% duplication can dramatically reduce storage costs and processing time. A 1TB corpus might shrink to 700GB after deduplication—that's real money saved on cloud storage and compute. Second, you get cleaner datasets that better represent the actual distribution of language patterns. Instead of having artificial repetition skew your statistics, you see what's genuinely common versus what's just copied around.
+
+Third, training becomes significantly faster. Less data means fewer epochs to achieve the same coverage of unique examples. You might cut training time by 25-40% while maintaining or even improving model quality. Fourth, deduplication reduces overfitting. When your model sees diverse, unique examples rather than the same sentence repeated endlessly, it learns generalizable patterns instead of memorizing specific instances. Your test set performance becomes more reliable because there's no leakage from training data duplication.
+
+#### The Trade-offs
+However, deduplication has three notable challenges. First, there's computational cost, especially for near-duplicate detection. Computing pairwise similarity for millions of sentences is expensive. Even with efficient algorithms like MinHash/LSH, processing large corpora can take hours or days. You need to build this into your data preparation pipeline and budget accordingly.
+
+Second, there's genuine risk of dropping legitimate repetitions. Sometimes sentences naturally repeat for good reasons. News articles about the same event legitimately quote the same official statement. Scientific papers in the same field use standard methodological descriptions. Legal documents have repeated boilerplate that's actually meaningful in context. Over-aggressive deduplication might remove these legitimate patterns.
+
+Third, threshold tuning is delicate. Set it too strict, and you only catch exact duplicates, missing near-duplicates that waste space. Set it too loose, and you accidentally merge sentences that are similar but semantically different: "The drug is safe" vs. "The drug is unsafe" might have high similarity if you're only looking at character overlap. Always validate your threshold choice on labeled sample data.`
         }
       ]
     },
@@ -4107,69 +4481,122 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Split text into sentences for sentence-level processing.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Summarization, translation, sentiment at sentence granularity.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Choose segmenter</li>
-                    <li>Configure abbreviation lists</li>
-                    <li>Apply</li>
-                    <li>Validate tricky cases (quotes, decimals, ellipses)</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.9}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Split text into sentences for sentence-level processing.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Dr. Smith arrived.] --> B{Period after Dr.?}
+    B -->|Abbreviation| C[Don't Split]
+    A --> D{Period after arrived?}
+    D -->|Sentence End| E[Split Here]
+    F["It costs $5.99."] --> G{Period after 99?}
+    G -->|Sentence End| H[Split Here]
+    style A fill:#4fc3f7
+    style F fill:#4fc3f7
+    style E fill:#81c784
+    style H fill:#81c784`} />
+                    </h4>
+                    <p>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Summarization, translation, sentiment at sentence granularity.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="flipCard" delay={0.5} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Choose segmenter</li>
+                        <li>Configure abbreviation lists</li>
+                        <li>Apply</li>
+                        <li>Validate tricky cases (quotes, decimals, ellipses)</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#511063',
-          notes: ''
+          notes: `### 41. Sentence Boundary Segmentation
+
+#### The Deceptively Difficult Task
+Sentence boundary detection sounds simple: split text whenever you see a period, question mark, or exclamation point. But English makes this surprisingly difficult. Consider "Dr. Smith arrived at 5:00 P.M. and said he'd paid $5.99." Where are the sentence boundaries? Not after "Dr." (that's an abbreviation). Not after "P.M." (also an abbreviation). Not after "$5.99" (that's a decimal). Only after the final period is this actually a sentence boundary.
+
+Add quotes, ellipses (...), multiple punctuation (!?), and inconsistent capitalization, and you have a genuinely hard problem. Many NLP tasks need accurate sentence splitting—you can't do summarization, translation, or sentiment analysis on incoherent text chunks. Getting boundaries right is foundational.
+
+#### Detection Approaches
+There are three main approaches to sentence segmentation. First, rule-based systems use regular expressions combined with abbreviation lists. They know "Dr.," "Mr.," "Inc.," "Ph.D.," and thousands of other abbreviations don't end sentences. They look ahead: if the next word is capitalized and the current sentence seems complete, split. If the next word is lowercase or the current context looks like an abbreviation, don't split. These rules work surprisingly well—achieving 95%+ accuracy on clean text.
+
+Second, machine learning models (traditional) train classifiers on features around each period: previous word, next word, capitalization patterns, POS tags. They learn subtle patterns that rules miss. Third, neural models like those in spaCy use deep learning to consider broader context and handle ambiguous cases: "The U.S. is large. It has 50 states." vs. "He joined the U.S. Army and served proudly."
+
+The tricky cases? Quoted speech ("He said, 'Hello.' She smiled."), decimal numbers, URLs (www.example.com), ellipses indicating hesitation or omission, and missing punctuation in informal text (tweets, messages).
+
+#### Essential for Document Processing
+Sentence segmentation is mandatory in three contexts. First, summarization systems that extract or generate summaries need sentence-level granularity to produce coherent outputs. Second, translation systems translate sentence by sentence to maintain context boundaries. Third, any sentiment or classification task operating at sentence level rather than document level.`
         },
         {
           id: 42,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Enables sentence-level features</li>
-                  <li>Manageable chunks</li>
-                  <li>Better downstream alignment</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Noisy text and missing punctuation hurt accuracy</li>
-                  <li>Multilingual challenges</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph LR
+    A[Benefits] --> B[Sentence-Level Features]
+    A --> C[Manageable Chunks]
+    A --> D[Better Alignment]
+    B --> E[Translation]
+    C --> F[Summarization]
+    D --> G[Analysis]
+    style A fill:#81c784
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Enables sentence-level features</li>
+                      <li>Manageable chunks</li>
+                      <li>Better downstream alignment</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Noisy text and missing punctuation hurt accuracy</li>
+                      <li>Multilingual challenges</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#511063',
-          notes: ''
+          notes: `### 42. Sentence Boundary Segmentation - Pros and Cons
+
+#### Unlocking Sentence-Level Processing
+Sentence segmentation provides three critical benefits. First, it enables sentence-level features and analysis. Many NLP tasks naturally operate on sentences: extracting the most important sentence for summarization, translating one sentence at a time to maintain coherence, analyzing sentiment per sentence to track tone changes throughout a document, or identifying which sentences contain specific entities or relationships. Without accurate sentence boundaries, these tasks become impossible or severely degraded.
+
+Second, it creates manageable chunks for processing. Documents can be thousands of words, but most NLP models work best on shorter inputs. Sentences provide natural, semantically coherent units that fit model constraints while preserving meaning. A 5,000-word article becomes 200 processable sentences. Third, sentence segmentation provides better downstream alignment. When you align translations, compare document versions, or track information flow, sentence-level alignment is far more accurate than arbitrary character-based chunking.
+
+Think of sentences as the natural atomic units of written communication. Just as chemistry breaks matter into molecules, NLP breaks text into sentences to understand structure and meaning.
+
+#### The Accuracy Challenges
+However, sentence segmentation faces two significant challenges. First, noisy text with missing or inconsistent punctuation devastates accuracy. Social media posts, text messages, and informal writing often lack proper punctuation: "hey how are you I'm doing great thanks for asking btw did you see that movie." Where are the sentence boundaries? There are none marked. The segmenter must guess based on capitalization, length, or grammar—all unreliable in informal text. Even with punctuation, typos and autocorrect errors create confusion.
+
+Second, multilingual challenges are substantial. Different languages have different sentence boundary conventions. Japanese and Chinese use different punctuation marks (。). Many languages don't capitalize the first word of sentences. Some languages write right-to-left or use non-Latin scripts. A segmenter trained on English will fail completely on Thai or Arabic. You need language-specific models or universal neural models trained on diverse multilingual data. Even then, code-switching (mixing languages in one text) creates edge cases that confuse systems.`
         }
       ]
     },
@@ -4184,71 +4611,126 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Identify language and route/filter text accordingly.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Multilingual corpora; language-specific pipelines or content moderation.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Pick DifficultySelector</li>
-                    <li>Set confidence threshold</li>
-                    <li>Detect per document/sentence</li>
-                    <li>Filter or route</li>
-                    <li>Monitor code-switching</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="scaleIn" delay={0.2} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal
+                    </h4>
+                    <p>Identify language and route/filter text accordingly.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Mixed Text] --> B[Character n-grams]
+    B --> C[Frequency Analysis]
+    C --> D{Language Classifier}
+    D --> E[English - 0.85]
+    D --> F[Spanish - 0.10]
+    D --> G[French - 0.05]
+    E --> H[Route to EN Pipeline]
+    style A fill:#4fc3f7
+    style E fill:#81c784
+    style H fill:#81c784`} />
+                    </h4>
+                    <p>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Multilingual corpora; language-specific pipelines or content moderation.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="rotateIn" delay={0.5} duration={1.0}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Pick DifficultySelector</li>
+                        <li>Set confidence threshold</li>
+                        <li>Detect per document/sentence</li>
+                        <li>Filter or route</li>
+                        <li>Monitor code-switching</li>
+                      </ul>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#635f10',
-          notes: ''
+          notes: `### 43. Language Detection and Filtering
+
+#### The Multilingual Reality
+The internet is multilingual, and so is your data. Web scrapes, social media streams, customer support tickets, and user-generated content contain dozens or hundreds of languages mixed together. If you're building an English-only NLP system, you need to filter out non-English text. If you're building multilingual systems, you need to route each document to the appropriate language-specific pipeline. Language detection makes this possible.
+
+The challenge is identifying language from potentially short, noisy text without relying on metadata. A tweet might be 15 words. An Instagram comment might be 5 words. You need fast, accurate language detection that works on minimal input.
+
+#### Detection Technology
+Language detection works by analyzing character patterns that are distinctive to each language. The key insight is that different languages use different character combinations (n-grams). English frequently uses "th," "ing," "ed," "tion." Spanish loves "ción," "ía," "ar," "que." German has "sch," "ung," "ich," "en." Japanese uses hiragana, katakana, and kanji. These patterns are highly discriminative.
+
+Modern detectors like fastText and CLD3 (Compact Language Detector 3) use character n-grams (2-5 characters) as features for probabilistic classifiers. They've been trained on millions of documents in 100+ languages. Given input text, they compute n-gram frequencies and predict the most likely language along with a confidence score: "English: 0.95," "Spanish: 0.03," "French: 0.02."
+
+The beauty of character-based detection is that it works even when you don't understand the language. You're not looking for specific words; you're looking for statistical patterns in character usage. This makes it robust, fast, and language-agnostic.
+
+#### Critical Applications
+Language detection is essential in three scenarios. First, building clean monolingual corpora from multilingual sources. If you're training an English sentiment analyzer, you need to filter out Spanish, French, and Chinese documents. Second, routing in production systems. When a customer support ticket arrives, detect its language and route it to agents who speak that language or to language-specific processing pipelines. Third, content moderation where you need to apply language-specific rules or models.`
         },
         {
           id: 44,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Cleaner mono-lingual datasets</li>
-                  <li>Correct model routing</li>
-                  <li>Better performance</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Short texts are hard</li>
-                  <li>Code-switching</li>
-                  <li>Similar scripts/languages may confuse models</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.9}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph TD
+    A[Language Detection] --> B[Clean Datasets]
+    A --> C[Correct Routing]
+    A --> D[Better Performance]
+    B --> E[Monolingual Corpora]
+    C --> F[Right Model/Agent]
+    D --> G[Optimized Processing]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Cleaner mono-lingual datasets</li>
+                      <li>Correct model routing</li>
+                      <li>Better performance</li>
+                    </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons
+                  </h4>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Short texts are hard</li>
+                      <li>Code-switching</li>
+                      <li>Similar scripts/languages may confuse models</li>
+                    </ul>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#635f10',
-          notes: ''
+          notes: `### 44. Language Detection and Filtering - Pros and Cons
+
+#### Building Better Systems
+Language detection provides three powerful benefits. First, it enables building cleaner monolingual datasets. When you scrape the web or aggregate content from multiple sources, you inevitably get linguistic contamination. An English corpus might contain 5-10% non-English documents that slipped through. Language detection filters these out, ensuring your English sentiment analyzer trains on actual English, not a mix of languages that will confuse the model and degrade performance.
+
+Second, it enables correct model routing in production. Modern NLP systems use language-specific models because one model can't perform equally well across all languages. When a user query or document arrives, language detection routes it to the appropriate model: English queries go to the English Q&A system, Spanish queries go to the Spanish system, etc. This ensures optimal performance for each language rather than compromising with a mediocre multilingual model.
+
+Third, overall system performance improves dramatically. Language-specific processing (stemming, stopword removal, named entity recognition) works far better when you know the language. Trying to apply English NLP tools to German text produces garbage. Language detection makes the entire pipeline more accurate and reliable.
+
+#### The Edge Cases and Limitations
+However, language detection faces three significant challenges. First, short texts are genuinely difficult. A 5-word Instagram comment or 10-word SMS message doesn't provide enough character n-gram evidence for confident detection. The detector might see "el" and guess Spanish, but "el" also appears in English words like "element." Short texts require higher confidence thresholds and often remain ambiguous.
+
+Second, code-switching—where people mix languages within a single text—breaks traditional detectors. "I'm going to la playa today with mis amigos" mixes English and Spanish. Most detectors will pick the dominant language, but you're losing important information about the bilingual nature of the text. Modern systems need segment-level detection, not just document-level.
+
+Third, similar scripts and closely related languages confuse models. Indonesian and Malay are nearly identical. Serbian and Croatian are mutually intelligible. Norwegian, Swedish, and Danish share huge vocabularies. Czech and Slovak are very similar. Detectors often struggle with these cases, requiring specialized models or accepting some classification errors. Always validate detection quality on your specific language pairs.`
         }
       ]
     }
