@@ -654,7 +654,7 @@ To use Query Rewriting effectively, start with conservative rewrites—just norm
     E --> F[Deduplication]
     F --> G[Final Context]
     G --> H[LLM Answer]`}
-                    triggerText="View Multi-Query Flow"
+                    
                   />
                 </div>
               </GSAPAnimated>
@@ -862,7 +862,7 @@ Next, we'll explore HyDE—a pattern that takes a completely different approach 
     D --> E[Vector Search on<br/>Real Documents]
     E --> F[Retrieve Similar<br/>Real Documents]
     F --> G[LLM: Final Answer<br/>from Real Docs]`}
-                    triggerText="View HyDE Flow"
+                    
                   />
                 </div>
               </GSAPAnimated>
@@ -1320,7 +1320,7 @@ Where parent-child retrieval preserves hierarchical document structure, graph-ba
     I --> J[LLM Answer]
     style E fill:#4fc3f7
     style C fill:#81c784`}
-                    triggerText="View GraphRAG Architecture"
+                    
                   />
                 </div>
               </GSAPAnimated>
@@ -1599,7 +1599,7 @@ While GraphRAG extends retrieval with structured knowledge, our next pattern—E
     I --> J[LLM Final Answer]
     style B fill:#4fc3f7
     style I fill:#81c784`}
-                    triggerText="View Agent Tool Flow"
+                    
                   />
                 </div>
               </GSAPAnimated>
