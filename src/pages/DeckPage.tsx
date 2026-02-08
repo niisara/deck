@@ -107,6 +107,7 @@ function DeckPage() {
   });
   const hideTimeoutRef = useRef<number | null>(null);
   const manuallyHiddenRef = useRef<boolean>(false);
+  const [showAudioControls, setShowAudioControls] = useState(true);
 
   const deck = decks.find((d) => d.id === deckId);
 
@@ -156,6 +157,7 @@ function DeckPage() {
       }
       
       setShowBackButton(true);
+      setShowAudioControls(true);
       
       // Clear existing timeout
       if (hideTimeoutRef.current !== null) {
@@ -165,6 +167,7 @@ function DeckPage() {
       // Set new timeout to hide after 3 seconds
       hideTimeoutRef.current = window.setTimeout(() => {
         setShowBackButton(false);
+        setShowAudioControls(false);
       }, 3000);
     };
 
@@ -173,6 +176,7 @@ function DeckPage() {
     // Initial timeout
     hideTimeoutRef.current = window.setTimeout(() => {
       setShowBackButton(false);
+      setShowAudioControls(false);
     }, 3000);
 
     return () => {
@@ -189,9 +193,12 @@ function DeckPage() {
       if (event.altKey && event.key.toLowerCase() === 'h') {
         event.preventDefault();
         
-        // Toggle overlay icons
+        // Toggle overlay icons and audio controls
         setShowBackButton(prev => {
           const newState = !prev;
+          
+          // Also toggle audio controls
+          setShowAudioControls(newState);
           
           // Clear any existing hide timeout when manually toggling
           if (hideTimeoutRef.current !== null) {
@@ -204,6 +211,7 @@ function DeckPage() {
             manuallyHiddenRef.current = false;
             hideTimeoutRef.current = window.setTimeout(() => {
               setShowBackButton(false);
+              setShowAudioControls(false);
             }, 3000);
           } else {
             // If hiding, set manual hide flag to prevent mouse from showing it
@@ -599,6 +607,7 @@ function DeckPage() {
                         iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
                         autoPlayContent={settings.autoPlayContent}
                         autoPlayNotes={settings.autoPlayNotes}
+                        showControls={showAudioControls}
                       />
                     )}
                   </section>
@@ -648,6 +657,7 @@ function DeckPage() {
                     iconColor={getIconColor(slide.backgroundColor || '#2c3e50')}
                     autoPlayContent={settings.autoPlayContent}
                     autoPlayNotes={settings.autoPlayNotes}
+                    showControls={showAudioControls}
                   />
                 )}
               </section>

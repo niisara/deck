@@ -22,6 +22,8 @@ interface SlideAudioControlsProps {
   autoPlayContent?: boolean;
   /** Auto-play speaker notes when slide changes */
   autoPlayNotes?: boolean;
+  /** Control visibility of audio buttons (speaker notes always visible) */
+  showControls?: boolean;
 }
 
 /** Small status indicator dot */
@@ -61,6 +63,7 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
   notesInstructions = `Voice: Laid-back, mellow, and effortlessly cool, like a surfer who's never in a rush. Tone: Relaxed and reassuring, keeping things light even when discussing complex details. Speech Mannerisms: Use casual, friendly phrasing with surfer slang like dude, gnarly, and boom to keep things chill. Pronunciation: Soft and drawn-out, with slightly stretched vowels and a naturally wavy rhythm. Tempo: Slow and easygoing, with a natural flow that creates a calming, informative vibe.`,
   autoPlayContent = false,
   autoPlayNotes = false,
+  showControls = true,
 }) => {
   const contentTTS = useTextToSpeech({
     voice: contentVoice,
@@ -150,22 +153,24 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
       {/* Development-only: TTS Regeneration Controls */}
       {isDev && (
         <div className="slide-audio-controls slide-audio-controls-dev">
-          <button
-            className={`slide-audio-btn ${contentTTS.status === 'loading' ? 'active' : ''}`}
-            onClick={handleRegenerateContent}
-            title="Regenerate slide content TTS and save to cache"
-            aria-label="Regenerate slide content TTS"
-            disabled={contentTTS.status === 'loading'}
-          >
-            <SvgIcon
-              iconName="duo-rotate-right"
-              sizeName="lg"
-              style={{ color: iconColor }}
-            />
-            <StatusDot status={contentTTS.status} />
-          </button>
+          {showControls && (
+            <button
+              className={`slide-audio-btn ${contentTTS.status === 'loading' ? 'active' : ''}`}
+              onClick={handleRegenerateContent}
+              title="Regenerate slide content TTS and save to cache"
+              aria-label="Regenerate slide content TTS"
+              disabled={contentTTS.status === 'loading'}
+            >
+              <SvgIcon
+                iconName="duo-rotate-right"
+                sizeName="lg"
+                style={{ color: iconColor }}
+              />
+              <StatusDot status={contentTTS.status} />
+            </button>
+          )}
 
-          {notes && (
+          {notes && showControls && (
             <button
               className={`slide-audio-btn ${notesTTS.status === 'loading' ? 'active' : ''}`}
               onClick={handleRegenerateNotes}
@@ -186,28 +191,30 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
 
       {/* Regular playback controls */}
       <div className="slide-audio-controls">
-        {/* Read slide content */}
-        <button
-          className={`slide-audio-btn ${contentTTS.status !== 'idle' ? 'active' : ''}`}
-          onClick={handleContentClick}
-          title={
-            contentTTS.status === 'playing'
-              ? 'Stop reading slide'
-              : contentTTS.status === 'loading'
-              ? 'Loading…'
-              : 'Read slide content'
-          }
-          aria-label="Read slide content"
-        >
-          <SvgIcon
-            iconName="duo-volume-high"
-            sizeName="lg"
-            style={{ color: iconColor }}
-          />
-          <StatusDot status={contentTTS.status} />
-        </button>
+        {/* Read slide content - only shown when showControls is true */}
+        {showControls && (
+          <button
+            className={`slide-audio-btn ${contentTTS.status !== 'idle' ? 'active' : ''}`}
+            onClick={handleContentClick}
+            title={
+              contentTTS.status === 'playing'
+                ? 'Stop reading slide'
+                : contentTTS.status === 'loading'
+                ? 'Loading…'
+                : 'Read slide content'
+            }
+            aria-label="Read slide content"
+          >
+            <SvgIcon
+              iconName="duo-volume-high"
+              sizeName="lg"
+              style={{ color: iconColor }}
+            />
+            <StatusDot status={contentTTS.status} />
+          </button>
+        )}
 
-        {/* Read speaker notes */}
+        {/* Read speaker notes - always shown */}
         {notes && (
           <button
             className={`slide-audio-btn ${notesTTS.status !== 'idle' ? 'active' : ''}`}
