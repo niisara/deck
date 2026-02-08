@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const embeddingModelsDeck: Deck = {
   id: 'embedding-models-deck',
@@ -7,6 +9,12 @@ export const embeddingModelsDeck: Deck = {
   description: 'Quick-reference for RAG, semantic search, clustering, and more',
   category: 'RAG',
   theme: 'night',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -86,8 +94,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'openai',
-      title: 'OpenAI Models',
+      id: 'openai-small',
+      title: 'OpenAI Small Model',
       slides: [
         {
           id: 3,
@@ -164,8 +172,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'openai',
-      title: 'OpenAI Models',
+      id: 'openai-large',
+      title: 'OpenAI Large Model',
       slides: [
         {
           id: 5,
@@ -241,8 +249,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'bge',
-      title: 'BGE Models',
+      id: 'bge-base',
+      title: 'BGE Base Model',
       slides: [
         {
           id: 7,
@@ -318,8 +326,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'bge',
-      title: 'BGE Models',
+      id: 'bge-large',
+      title: 'BGE Large Model',
       slides: [
         {
           id: 9,
@@ -393,8 +401,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'e5',
-      title: 'E5 Models',
+      id: 'e5-base',
+      title: 'E5 Base Model',
       slides: [
         {
           id: 11,
@@ -469,8 +477,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'e5',
-      title: 'E5 Models',
+      id: 'e5-large',
+      title: 'E5 Large Model',
       slides: [
         {
           id: 13,
@@ -623,8 +631,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'gte',
-      title: 'GTE Models',
+      id: 'gte-base',
+      title: 'GTE Base Model',
       slides: [
         {
           id: 17,
@@ -701,8 +709,8 @@ export const embeddingModelsDeck: Deck = {
       ]
     },
     {
-      id: 'gte',
-      title: 'GTE Models',
+      id: 'gte-large',
+      title: 'GTE Large Model',
       slides: [
         {
           id: 19,
