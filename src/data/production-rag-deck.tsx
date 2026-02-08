@@ -1176,7 +1176,7 @@ The **ingestion pipeline** becomes more sophisticated. You need to:
 1. Parse document structure (sections, subsections)
 2. Create parent chunks respecting natural boundaries
 3. Split parents into child chunks
-4. Maintain bidirectional references (child→parent, parent→children)
+4. Maintain bidirectional references (child to parent, parent to children)
 5. Embed only child chunks
 6. Store parent content separately
 
@@ -1196,7 +1196,7 @@ This pattern **excels for technical documentation** because these documents have
 
 **Parent size tuning** is critical. Too small and you don't get enough context benefit; too large and you waste tokens on irrelevant information. Typical parent sizes range from 500-1500 tokens depending on document characteristics.
 
-Some systems use **multi-level hierarchies**: grandparent→parent→child. This provides even more flexibility but increases complexity.
+Some systems use **multi-level hierarchies**: grandparent to parent to child. This provides even more flexibility but increases complexity.
 
 #### Storage Implications
 
@@ -1418,9 +1418,9 @@ The retrieved entities and relationships are then used to enhance or guide vecto
 #### Multi-Hop Reasoning
 
 One of GraphRAG's superpowers is **multi-hop traversal** (👉 "MUL-tee hop truh-VER-sul"). Questions like "Who are the investors in companies that employ former Google engineers?" require reasoning across multiple relationship steps:
-1. Find Person nodes with WORKED_AT → Google
-2. Find Company nodes with EMPLOYS → those persons  
-3. Find Person/Entity nodes with INVESTED_IN → those companies
+1. Find Person nodes with WORKED_AT at Google
+2. Find Company nodes with EMPLOYS those persons  
+3. Find Person/Entity nodes with INVESTED_IN those companies
 
 Traditional vector search struggles with this compositional reasoning; graphs handle it naturally.
 
@@ -1460,7 +1460,7 @@ Avoid GraphRAG for unstructured content without clear entities/relationships, or
 
 #### Transition to Strengths and Limitations
 
-Graph-based retrieval offers powerful capabilities but demands significant engineering investment. Let's examine when this complexity delivers sufficient value to justify the operational overhead.
+Graph-based retrieval offers powerful capabilities but demands significant engineering investment. Let's examine when this complexity delivers sufficient value to justify the operational overhead.`
         },
         {
           id: 17,
@@ -1514,7 +1514,7 @@ Graph-based retrieval offers powerful capabilities but demands significant engin
 
 GraphRAG's fundamental advantage is **explicit relationship modeling**. Where vector similarity says "these documents are semantically similar," graphs say "Company A ACQUIRED Company B on 2023-05-15 for $50M." This explicit structure enables reasoning that semantic search simply cannot provide.
 
-**Multi-hop reasoning** unlocks compositional questions. "What drugs treat diseases connected to genes affected by this mutation?" requires traversing: Mutation → Gene → Disease → Treatment. Each hop filters and focuses the search, building a logical chain of evidence.
+**Multi-hop reasoning** unlocks compositional questions. "What drugs treat diseases connected to genes affected by this mutation?" requires traversing: Mutation to Gene to Disease to Treatment. Each hop filters and focuses the search, building a logical chain of evidence.
 
 **Explainability** reaches new levels. You can show users the exact path through the knowledge graph that led to an answer: "We found this because Entity A is connected to Entity B via relationship C, which links to Entity D through relationship E." This transparency builds trust, especially in high-stakes domains like healthcare or finance.
 
@@ -2129,56 +2129,95 @@ While fine-tuning optimizes model capabilities, multi-step retrieval loops optim
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Iterative retriever (multi-hop)</li>
-                    <li>Hypothesis generator (CoT reasoning)</li>
-                    <li>Question decomposition module</li>
-                    <li>Verifier (fact-checking)</li>
-                    <li>Stopping criteria logic</li>
-                    <li>Working memory/workspace</li>
-                    <li>Evidence tracker</li>
-                  </ul>
-                </div>
-                <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Self-ask/multi-hop retrieval loops</li>
-                    <li>Plan-execute-refine sequences</li>
-                    <li>Breadth-then-depth exploration</li>
-                    <li>Chain-of-thought reasoning to formulate subqueries</li>
-                    <li>Dynamic stopping based on completeness</li>
-                    <li>Progressive evidence gathering</li>
-                  </ul>
-                </div>
-                <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Maintain working context set across turns</li>
-                    <li>Prune redundant/irrelevant information</li>
-                    <li>Merge complementary evidence</li>
-                    <li>Track evidence chains/provenance</li>
-                    <li>Keep intermediate reasoning steps</li>
-                    <li>Include subquestion/answer history</li>
-                  </ul>
-                </div>
-                <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Legal reasoning and case research</li>
-                    <li>Academic/scientific literature review</li>
-                    <li>Investigative analysis</li>
-                    <li>Multi-step troubleshooting</li>
-                    <li>Complex financial/strategic analysis</li>
-                    <li>Intelligence gathering/synthesis tasks</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover diagram={`flowchart TB
+    A[Question] --> B[Decompose]
+    B --> C[Subquery 1]
+    B --> D[Subquery 2]
+    C --> E[Retrieve]
+    D --> F[Retrieve]
+    E --> G[Synthesize]
+    F --> G
+    G --> H{Complete?}
+    H -->|No| B
+    H -->|Yes| I[Final Answer]
+    style B fill:#ffd700
+    style H fill:#ffcdd2`} /></span></strong></p>
+                    <GSAPStaggerList stagger={0.1} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Iterative retriever (multi-hop)</li>
+                        <li>Hypothesis generator (CoT reasoning)</li>
+                        <li>Question decomposition module</li>
+                        <li>Verifier (fact-checking)</li>
+                        <li>Stopping criteria logic</li>
+                        <li>Working memory/workspace</li>
+                        <li>Evidence tracker</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Self-ask/multi-hop retrieval loops</li>
+                        <li>Plan-execute-refine sequences</li>
+                        <li>Breadth-then-depth exploration</li>
+                        <li>Chain-of-thought reasoning to formulate subqueries</li>
+                        <li>Dynamic stopping based on completeness</li>
+                        <li>Progressive evidence gathering</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="bounceIn" delay={0.4}>
+                  <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Maintain working context set across turns</li>
+                        <li>Prune redundant/irrelevant information</li>
+                        <li>Merge complementary evidence</li>
+                        <li>Track evidence chains/provenance</li>
+                        <li>Keep intermediate reasoning steps</li>
+                        <li>Include subquestion/answer history</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="scaleIn" delay={0.5}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Legal reasoning and case research</li>
+                        <li>Academic/scientific literature review</li>
+                        <li>Investigative analysis</li>
+                        <li>Multi-step troubleshooting</li>
+                        <li>Complex financial/strategic analysis</li>
+                        <li>Intelligence gathering/synthesis tasks</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#3e600f',
-          notes: ''
+          notes: `### 22. Pattern 10 - RAG with Multi-Step Retrieval Loops
+
+Welcome to one of the most sophisticated RAG patterns—Multi-Step Retrieval Loops! This pattern handles complex questions that can't be answered with a single retrieval round. Think of it as teaching your RAG system to think through problems step by step, just like a human researcher would.
+
+#### The Problem with Single-Shot Retrieval
+Imagine asking "How does the pricing of Company A compare to Company B, and which offers better value for startups?" Basic RAG retrieves documents and tries to answer everything at once, often missing crucial details or failing to make the comparison. Multi-step retrieval breaks this down: first retrieve Company A pricing, then Company B pricing, then startup-specific considerations, then synthesize the comparison.
+
+#### How Multi-Step Loops Work
+The system uses Chain-of-Thought 👉 [chain-of-thawt] reasoning to decompose your question into sub-questions. Each sub-question triggers its own retrieval cycle. The system maintains a working memory of what it's learned so far, using that context to formulate better subsequent queries. After each retrieval, a verifier checks if we have sufficient evidence to answer the original question. If not, generate more sub-questions and continue. This creates an iterative loop of plan-retrieve-reason-verify until completion.
+
+#### Key Components
+Seven critical pieces make this work: an iterative retriever that handles multiple retrieval rounds; a hypothesis generator using Chain-of-Thought reasoning; a question decomposition module that breaks complex queries into simpler ones; a fact-checker verifier; stopping criteria logic to prevent infinite loops; working memory to track progress; and an evidence tracker to maintain provenance 👉 [PROV-en-ance] of every fact. The complexity is substantial, but so are the capabilities. This pattern can discover relationships between documents that humans might miss and construct comprehensive answers from distributed evidence across your knowledge base!`
         },
         {
           id: 23,
@@ -2188,33 +2227,52 @@ While fine-tuning optimizes model capabilities, multi-step retrieval loops optim
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
-                <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Solves compositional/multi-hop questions</li>
-                    <li>Handles complex reasoning chains</li>
-                    <li>Can discover unexpected relationships</li>
-                    <li>Combines evidence from multiple sources</li>
-                    <li>Higher accuracy on complex queries</li>
-                    <li>More comprehensive answers with evidence trails</li>
-                  </ul>
-                </div>
-                <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Higher latency/cost (multiple LLM calls)</li>
-                    <li>Risk of reasoning drift/hallucination chains</li>
-                    <li>More complex implementation and debugging</li>
-                    <li>Needs guardrails/stop conditions</li>
-                    <li>Harder to evaluate intermediate steps</li>
-                    <li>State management complexity</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="flipCard" delay={0.2}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.7}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Solves compositional/multi-hop questions</li>
+                        <li>Handles complex reasoning chains</li>
+                        <li>Can discover unexpected relationships</li>
+                        <li>Combines evidence from multiple sources</li>
+                        <li>Higher accuracy on complex queries</li>
+                        <li>More comprehensive answers with evidence trails</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="flipCard" delay={0.4}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.7}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Higher latency/cost (multiple LLM calls)</li>
+                        <li>Risk of reasoning drift/hallucination chains</li>
+                        <li>More complex implementation and debugging</li>
+                        <li>Needs guardrails/stop conditions</li>
+                        <li>Harder to evaluate intermediate steps</li>
+                        <li>State management complexity</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#3e600f',
-          notes: ''
+          notes: `### 23. Multi-Step Retrieval - Strengths and Limitations
+
+Multi-Step Retrieval Loops represent the cutting edge of RAG architecture, but they come with significant tradeoffs. Let's examine when this complexity delivers sufficient value to justify the implementation overhead.
+
+#### Strengths
+The ability to solve compositional questions is transformative. Questions like "What did Company A announce last quarter that competes with Company B's product launched two quarters ago?" require retrieving multiple pieces of information and connecting them logically—exactly what multi-step retrieval excels at. Complex reasoning chains that would confuse single-shot retrieval become manageable when broken into sub-problems. The system can discover unexpected relationships by following evidence trails: while researching topic A, it might find a connection to topic C through intermediate topic B, revealing insights humans might miss. Evidence from multiple disparate sources gets combined coherently, and the system maintains full provenance 👉 [PROV-en-ance] tracking so users can audit the reasoning path. For truly complex queries, accuracy improvements of thirty to fifty percent over basic patterns are common.
+
+#### Limitations
+The cost and latency are substantial. Each iteration means another LLM call and another retrieval round. Simple queries that took two seconds with Basic RAG might take ten to fifteen seconds with multi-step loops, and cost five to ten times more in API fees. Reasoning drift is a real risk—after three or four steps, the system might lose sight of the original question and hallucinate down tangential paths. Implementation complexity increases dramatically: you're managing state across iterations, implementing stopping conditions, tracking evidence chains, and debugging failures across multiple steps. Evaluation becomes challenging because you need to assess not just the final answer but also the quality of intermediate reasoning steps.
+
+#### When to Use Multi-Step Retrieval
+Deploy this pattern when question complexity justifies the cost. Legal research, academic literature reviews, investigative journalism, strategic business analysis—these domains have inherently complex, multi-hop questions where the value of accurate answers far exceeds the computational cost. For consumer FAQ bots, stick with simpler patterns!`
         }
       ]
     },
@@ -2231,52 +2289,79 @@ While fine-tuning optimizes model capabilities, multi-step retrieval loops optim
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Contextual retrieval (contextualized embeddings)</li>
-                    <li>Contextual BM25 (contextual lexical matching)</li>
-                    <li>Context compressors (extractive/abstractive)</li>
-                    <li>Reranker (prioritize relevance)</li>
-                    <li>Chunking system with context-awareness</li>
-                    <li>LLM for compression/summarization</li>
-                  </ul>
-                </div>
-                <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Add context to chunks before embedding</li>
-                    <li>Hybrid recall with contextual embeddings + BM25</li>
-                    <li>Compress retrieved content to salient spans</li>
-                    <li>Rerank passages by relevance to query</li>
-                    <li>Pack 10-20 high-relevance passages</li>
-                  </ul>
-                </div>
-                <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Include snippets with source lines/citations</li>
-                    <li>Provide concise summaries with context</li>
-                    <li>Use reference markers for traceability</li>
-                    <li>Prioritize high signal-to-noise ratio</li>
-                    <li>Optimize token density with compressed information</li>
-                  </ul>
-                </div>
-                <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                  <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Enterprise systems with huge document collections</li>
-                    <li>Long document analysis (academic papers, legal docs)</li>
-                    <li>Latency or cost-sensitive applications</li>
-                    <li>Cases requiring high-accuracy with evidence</li>
-                    <li>Systems needing efficient token management</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInTop" delay={0.2}>
+                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+                    <GSAPStaggerList stagger={0.1} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Contextual retrieval (contextualized embeddings)</li>
+                        <li>Contextual BM25 (contextual lexical matching)</li>
+                        <li>Context compressors (extractive/abstractive)</li>
+                        <li>Reranker (prioritize relevance)</li>
+                        <li>Chunking system with context-awareness</li>
+                        <li>LLM for compression/summarization</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="scaleIn" delay={0.3}>
+                  <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Add context to chunks before embedding</li>
+                        <li>Hybrid recall with contextual embeddings + BM25</li>
+                        <li>Compress retrieved content to salient spans</li>
+                        <li>Rerank passages by relevance to query</li>
+                        <li>Pack 10-20 high-relevance passages</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInBottom" delay={0.4}>
+                  <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Include snippets with source lines/citations</li>
+                        <li>Provide concise summaries with context</li>
+                        <li>Use reference markers for traceability</li>
+                        <li>Prioritize high signal-to-noise ratio</li>
+                        <li>Optimize token density with compressed information</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="rotateIn" delay={0.5}>
+                  <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Enterprise systems with huge document collections</li>
+                        <li>Long document analysis (academic papers, legal docs)</li>
+                        <li>Latency or cost-sensitive applications</li>
+                        <li>Cases requiring high-accuracy with evidence</li>
+                        <li>Systems needing efficient token management</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#2e1a2e',
-          notes: ''
+          notes: `### 24. Pattern 11 - RAG with Context Compression and Summarization
+
+Our final pattern addresses one of RAG's most persistent challenges: the context window bottleneck. Modern LLMs 👉 [el-el-ems] can handle one hundred thousand or even two hundred thousand tokens, but that doesn't mean you should fill them all! Context Compression intelligently distills retrieved documents down to their most relevant, information-dense content.
+
+#### The Token Economics Problem
+Every token you send to your LLM costs money and adds latency. If you retrieve ten documents of one thousand tokens each, that's ten thousand tokens before you even add the user's question and generate an answer. At scale, this gets expensive fast. Worse, research shows that LLMs perform worse when context is filled with irrelevant information—it's like trying to find a needle in a haystack. The solution? Smart compression that keeps signal while removing noise.
+
+#### How Context Compression Works
+The pattern operates in stages. First, contextual retrieval: instead of embedding bare chunks, add surrounding document context to each chunk before embedding it—this dramatically improves retrieval accuracy. Second, retrieve broadly: pull ten to twenty potentially relevant chunks using hybrid search combining semantic and lexical matching. Third, compress: use specialized models to extract only the most relevant sentences or phrases from each chunk. Fourth, rerank: order the compressed snippets by relevance. Finally, pack your context window with ten to twenty high-signal compressed passages rather than five to seven full, uncompressed chunks.
+
+#### Real-World Impact
+Companies like Anthropic 👉 [an-THROP-ik] report up to sixty-seven percent reduction in retrieval failures using contextual embeddings and compression. You fit more relevant information in the same token budget, reducing both cost and improving answer quality. The preprocessing overhead is real—compressing content takes additional compute—but at query time, you're sending fewer tokens to the LLM, which often nets positive on cost and always improves latency. For enterprise systems with massive document collections, Context Compression is transformative!`
         },
         {
           id: 25,
@@ -2286,31 +2371,50 @@ While fine-tuning optimizes model capabilities, multi-step retrieval loops optim
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
-                <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Improved retrieval accuracy (up to 67% reduction in failure)</li>
-                    <li>Higher signal density in context window</li>
-                    <li>Lower token usage (cost efficiency)</li>
-                    <li>Better handling of long documents</li>
-                    <li>More reliable answers with richer context</li>
-                  </ul>
-                </div>
-                <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
-                  <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Higher preprocessing complexity and cost</li>
-                    <li>Potential loss of nuance in compression</li>
-                    <li>Additional latency during retrieval step</li>
-                    <li>Contextual embedding generation overhead</li>
-                    <li>More complex deployment architecture</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="bounceIn" delay={0.2}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.7}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Improved retrieval accuracy (up to 67% reduction in failure)</li>
+                        <li>Higher signal density in context window</li>
+                        <li>Lower token usage (cost efficiency)</li>
+                        <li>Better handling of long documents</li>
+                        <li>More reliable answers with richer context</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="bounceIn" delay={0.4}>
+                  <div style={{ flex: 1, padding: '12px', background: 'rgba(255, 183, 77, 0.15)', borderRadius: '5px' }}>
+                    <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-exclamation" sizeName="2x" style={{ color: '#ffb74d' }} /> <strong>Limitations:</strong></p>
+                    <GSAPStaggerList stagger={0.12} duration={0.7}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Higher preprocessing complexity and cost</li>
+                        <li>Potential loss of nuance in compression</li>
+                        <li>Additional latency during retrieval step</li>
+                        <li>Contextual embedding generation overhead</li>
+                        <li>More complex deployment architecture</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#2e1a2e',
-          notes: ''
+          notes: `### 25. Context Compression - Strengths and Limitations
+
+Context Compression represents a paradigm shift in how we think about RAG systems. Rather than accepting the tradeoff between recall and context limits, we intelligently compress information to optimize both. Let's examine the impact and costs.
+
+#### Strengths
+The numbers are compelling. Research from Anthropic 👉 [an-THROP-ik] shows up to sixty-seven percent reduction in retrieval failures when using contextual embeddings compared to standard chunking. This is huge! Every chunk includes surrounding context, so embeddings capture meaning more accurately. Signal density increases dramatically—instead of five full documents with lots of filler, you get twenty compressed, highly-relevant snippets. Token efficiency translates directly to cost savings: at large scale, compression pays for itself many times over through reduced LLM API costs. Long documents become manageable—academic papers, legal contracts, technical specifications—the compression step extracts the nuggets of relevant information without overwhelming the LLM. Answer reliability improves because the LLM sees richer, more relevant context rather than loosely-related full documents.
+
+#### Limitations
+The preprocessing requirements increase substantially. Generating contextual embeddings means more computation during document ingestion. The compression step itself requires additional processing—typically using another LLM or specialized extraction model. This upfront investment pays off at query time, but it's not free. Compression is lossy by definition—you might remove nuanced details that turn out to be important later. This is especially risky for creative use cases where context matters more than pure fact extraction. The additional latency during retrieval—compressing and reranking—adds hundreds of milliseconds per query. Architecture complexity increases: you're managing contextual embedding pipelines, compression models, and more sophisticated retrieval logic.
+
+#### Cost-Benefit Analysis
+Context Compression shines in high-volume production systems where query-time cost and latency dominate total cost of ownership. The preprocessing investment amortizes 👉 [AM-or-tie-zez] quickly when you're serving thousands of queries daily. For prototype systems or low-volume applications, simpler patterns may be more appropriate!`
         }
       ]
     },
@@ -2326,76 +2430,100 @@ While fine-tuning optimizes model capabilities, multi-step retrieval loops optim
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-                <div>
-                  <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                    Quick Pattern Selection Guide
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem', lineHeight: '1.7', listStyle: 'none', paddingLeft: 0 }}>
-                    <li><strong>Start with:</strong> Basic RAG → add Re-Ranking as corpus grows</li>
-                    <li><strong>Ambiguous queries:</strong> Query Rewriting + Multi-Query</li>
-                    <li><strong>Zero-shot domains:</strong> HyDE (Hypothetical Document Embeddings)</li>
-                    <li><strong>Long documents:</strong> Parent-Child + Context Compression</li>
-                    <li><strong>Complex relations:</strong> Graph-Based (GraphRAG)</li>
-                    <li><strong>Live data needs:</strong> External Tools/Agents</li>
-                    <li><strong>High volume/format:</strong> RAG + Fine-Tuned Hybrid</li>
-                    <li><strong>Deep reasoning:</strong> Multi-Step Retrieval Loops</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
-                    RAG Pattern Comparison Matrix
-                  </h3>
-                  <table style={{ fontSize: '1.2rem', width: '100%', borderCollapse: 'collapse' }}>
-                    <thead>
-                      <tr style={{ borderBottom: '2px solid rgba(79, 195, 247, 0.5)' }}>
-                        <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Pattern</th>
-                        <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Accuracy</th>
-                        <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Latency</th>
-                        <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Dev</th>
-                        <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0' }}>Ops</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[
-                        { name: 'Basic RAG', acc: '★★☆', lat: '★★★', dev: '★☆☆', ops: '★☆☆' },
-                        { name: 'Re-Ranking', acc: '★★★', lat: '★★☆', dev: '★★☆', ops: '★★☆' },
-                        { name: 'Query Rewriting', acc: '★★★', lat: '★★☆', dev: '★★☆', ops: '★★☆' },
-                        { name: 'Multi-Query', acc: '★★★', lat: '★☆☆', dev: '★★☆', ops: '★★☆' },
-                        { name: 'Parent-Child', acc: '★★★', lat: '★★☆', dev: '★★☆', ops: '★★☆' },
-                        { name: 'Graph-Based', acc: '★★★', lat: '★☆☆', dev: '★★★', ops: '★★★' },
-                      ].map((row, i) => (
-                        <tr key={i}>
-                          <td style={{ padding: '3px 0', paddingRight: '10px' }}>{row.name}</td>
-                          <td style={{ textAlign: 'left', padding: '3px 0', paddingRight: '10px' }}>{row.acc}</td>
-                          <td style={{ textAlign: 'left', padding: '3px 0', paddingRight: '10px' }}>{row.lat}</td>
-                          <td style={{ textAlign: 'left', padding: '3px 0', paddingRight: '10px' }}>{row.dev}</td>
-                          <td style={{ textAlign: 'left', padding: '3px 0' }}>{row.ops}</td>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                  <div>
+                    <h3 style={{ color: '#4fc3f7', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                      Quick Pattern Selection Guide
+                    </h3>
+                    <GSAPStaggerList stagger={0.1} duration={0.6}>
+                      <ul style={{ fontSize: '1.2rem', lineHeight: '1.7', listStyle: 'none', paddingLeft: 0 }}>
+                        <li><strong>Start with:</strong> Basic RAG → add Re-Ranking as corpus grows</li>
+                        <li><strong>Ambiguous queries:</strong> Query Rewriting + Multi-Query</li>
+                        <li><strong>Zero-shot domains:</strong> HyDE (Hypothetical Document Embeddings)</li>
+                        <li><strong>Long documents:</strong> Parent-Child + Context Compression</li>
+                        <li><strong>Complex relations:</strong> Graph-Based (GraphRAG)</li>
+                        <li><strong>Live data needs:</strong> External Tools/Agents</li>
+                        <li><strong>High volume/format:</strong> RAG + Fine-Tuned Hybrid</li>
+                        <li><strong>Deep reasoning:</strong> Multi-Step Retrieval Loops</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div>
+                    <h3 style={{ color: '#81c784', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
+                      RAG Pattern Comparison Matrix
+                    </h3>
+                    <table style={{ fontSize: '1.2rem', width: '100%', borderCollapse: 'collapse' }}>
+                      <thead>
+                        <tr style={{ borderBottom: '2px solid rgba(79, 195, 247, 0.5)' }}>
+                          <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Pattern</th>
+                          <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Accuracy</th>
+                          <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Latency</th>
+                          <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0', paddingRight: '10px' }}>Dev</th>
+                          <th style={{ textAlign: 'left', fontWeight: 'bold', padding: '5px 0' }}>Ops</th>
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody>
+                        {[
+                          { name: 'Basic RAG', acc: '★★☆', lat: '★★★', dev: '★☆☆', ops: '★☆☆' },
+                          { name: 'Re-Ranking', acc: '★★★', lat: '★★☆', dev: '★★☆', ops: '★★☆' },
+                          { name: 'Query Rewriting', acc: '★★★', lat: '★★☆', dev: '★★☆', ops: '★★☆' },
+                          { name: 'Multi-Query', acc: '★★★', lat: '★☆☆', dev: '★★☆', ops: '★★☆' },
+                          { name: 'Parent-Child', acc: '★★★', lat: '★★☆', dev: '★★☆', ops: '★★☆' },
+                          { name: 'Graph-Based', acc: '★★★', lat: '★☆☆', dev: '★★★', ops: '★★★' },
+                        ].map((row, i) => (
+                          <tr key={i}>
+                            <td style={{ padding: '3px 0', paddingRight: '10px' }}>{row.name}</td>
+                            <td style={{ textAlign: 'left', padding: '3px 0', paddingRight: '10px' }}>{row.acc}</td>
+                            <td style={{ textAlign: 'left', padding: '3px 0', paddingRight: '10px' }}>{row.lat}</td>
+                            <td style={{ textAlign: 'left', padding: '3px 0', paddingRight: '10px' }}>{row.dev}</td>
+                            <td style={{ textAlign: 'left', padding: '3px 0' }}>{row.ops}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </GSAPAnimated>
+              </div>
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', color: '#ffb74d', fontSize: '2rem' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
+                    Next Steps for RAG Implementation
+                  </h3>
+                  <GSAPStaggerList stagger={0.1} duration={0.6}>
+                    <ul style={{ fontSize: '1.2rem', lineHeight: '1.6', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                      <li>Instrument evaluation metrics (relevance, hallucination rate, latency)</li>
+                      <li>A/B test retrieval parameters (K, fusion methods, reranker configs)</li>
+                      <li>Implement feedback loops for continuous improvement</li>
+                      <li>Consider pattern hybridization for complex use cases</li>
+                      <li>Monitor data and LLM model drift</li>
+                      <li>Scale gradually with observability best practices</li>
+                    </ul>
+                  </GSAPStaggerList>
                 </div>
-              </div>
-              <div style={{ marginTop: '20px', padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
-                <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px', color: '#ffb74d', fontSize: '2rem' }}>
-                  <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
-                  Next Steps for RAG Implementation
-                </h3>
-                <ul style={{ fontSize: '1.2rem', lineHeight: '1.6', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                  <li>Instrument evaluation metrics (relevance, hallucination rate, latency)</li>
-                  <li>A/B test retrieval parameters (K, fusion methods, reranker configs)</li>
-                  <li>Implement feedback loops for continuous improvement</li>
-                  <li>Consider pattern hybridization for complex use cases</li>
-                  <li>Monitor data and LLM model drift</li>
-                  <li>Scale gradually with observability best practices</li>
-                </ul>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#3e1616',
-          notes: ''
+          notes: `### 26. Pattern Selection Guide and Final Recommendations
+
+Congratulations! We've journeyed through eleven production-ready RAG architecture patterns. Now comes the most important question: which pattern should YOU use? Let's synthesize everything into actionable guidance.
+
+#### The Progressive Approach
+Start simple, then scale complexity as needs demand. Begin with Basic RAG to prove your concept works and establish baseline metrics. As your document corpus grows beyond a few hundred documents, add Re-Ranking for precision improvements. When user queries become more varied and ambiguous, layer in Query Rewriting or Multi-Query Retrieval. This progressive approach manages risk while building production expertise incrementally.
+
+#### Pattern Selection by Use Case
+The matrix on this slide provides quick guidance. For straightforward FAQs and small knowledge bases, Basic RAG delivers excellent results with minimal complexity. Enterprise knowledge management with thousands of documents benefits from Re-Ranking plus Context Compression. Legal and academic research applications need Multi-Step Retrieval Loops to handle complex reasoning. Systems requiring real-time information must integrate External Tools and Agents. High-volume applications with consistent formatting can justify the investment in Fine-Tuned Model Hybrids. Long technical documents work best with Parent-Child Retrieval. Relationship-heavy domains like fraud detection or recommendation systems shine with Graph-Based RAG.
+
+#### Critical Success Factors
+Regardless of pattern choice, three factors determine production success. First, instrumentation 👉 [in-stroo-men-TAY-shun]: measure relevance, hallucination rate, latency, and cost from day one. Second, evaluation: establish ground-truth test sets and continuously validate improvements. Third, iteration: RAG systems improve through data-driven refinement, not initial perfection. Start collecting user feedback immediately and use it to guide your evolution.
+
+#### Your Journey Starts Now
+You're now equipped with eleven powerful patterns, implementation guidance, and selection criteria. The RAG landscape evolves rapidly—stay curious, keep experimenting, and share your learnings with the community. Thank you for joining this deep dive into production RAG architectures. Now go build something amazing!`
         }
       ]
     }
