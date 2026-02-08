@@ -3527,7 +3527,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros <MermaidPopover diagram={`graph LR
-    A[Spell Correction] --> B[Better Semantics]
+    A[Phrase Detection] --> B[Better Semantics]
     A --> C[Reduces Fragmentation]
     A --> D[Improves Retrieval]
     style A fill:#4fc3f7
@@ -3561,17 +3561,19 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
             </div>
           ),
           backgroundColor: '#63105a',
-          notes: `### 26. Fuzzy String Matching - Pros and Cons
+          notes: `### 26. Phrase Detection - Pros and Cons
 
-#### The Benefits of Fuzzy Matching
-Fuzzy string matching brings powerful advantages to text preprocessing. First, it dramatically improves semantics by recognizing that "color" and "colour" are essentially the same word, just written differently. This means your model doesn't waste brain power treating them as completely separate concepts. Second, it reduces fragmentation in your vocabulary. Instead of having 50 slightly different spellings of "organization" scattered across your dataset, you consolidate them into one canonical form. Third, it significantly improves retrieval and topic modeling. When users search for "iPhone," fuzzy matching ensures they also find documents mentioning "i-Phone" or "I Phone."
+#### The Benefits of Phrase Detection
+Phrase detection brings powerful advantages to text preprocessing. First, it dramatically improves semantics by recognizing that "New York City" is a single semantic unit, not three separate words. This means your model doesn't waste capacity treating "New," "York," and "City" as independent features that happen to co-occur. Second, it reduces vocabulary fragmentation. Instead of having "machine," "learning," and "machine learning" as three separate features, you consolidate the bigram into one meaningful unit. Third, it significantly improves retrieval and topic modeling. When users search for "ice cream," phrase detection ensures they match documents about the frozen dessert, not random documents containing both "ice" and "cream" separately.
 
-Think of fuzzy matching like a smart librarian who understands that when you ask for "Stephen King," you probably also want results for "Steven King" or "Steve King." It bridges the gap between human imperfection and machine precision.
+Think of phrase detection like recognizing compound words in German. "Schadenfreude" is one concept, not "Schaden" (damage) plus "Freude" (joy) independently. Phrase detection does this for English multi-word expressions.
 
 #### The Challenges to Consider
-However, fuzzy matching isn't without its challenges. The biggest hurdle is threshold tuning. Set your similarity threshold too high, and you'll miss legitimate matches. Set it too low, and you'll incorrectly merge "apple" with "apply." Finding that sweet spot requires experimentation with your specific dataset. Second, fuzzy matching is highly domain-dependent. A threshold that works perfectly for product names might fail miserably for medical terminology. Finally, false positives and false negatives are inevitable. You might incorrectly match "desert" with "dessert" or fail to match "NY" with "New York."
+However, phrase detection has three notable challenges. The biggest is threshold tuning. Set your PMI or frequency threshold too high, and you miss legitimate phrases like "ice cream" or "global warming." Set it too low, and you incorrectly merge random co-occurrences like "the of" or "is a" that just happen to appear together. Finding that sweet spot requires experimentation with your specific corpus.
 
-The key is understanding these trade-offs and choosing your battles. In some applications, like autocorrect, false positives are annoying but tolerable. In others, like medical records, they could be dangerous. Always validate your fuzzy matching results with real data samples before deploying to production.`
+Second, phrase detection is highly domain-dependent. A threshold that works perfectly for news articles might fail miserably for social media where writing is informal and fragmented. Medical texts have different phrase patterns than legal documents. Finally, false positives and false negatives are inevitable. You might incorrectly merge "New York" when the text means "new York newspaper" (two separate concepts), or you might fail to merge "Los Angeles" because it appears less frequently in your corpus.
+
+The key is understanding these trade-offs and validating your phrase detection with sample inspection. Always review the top phrases it detects to ensure they make semantic sense. In most applications, the semantic improvements outweigh the occasional errors, making phrase detection a valuable preprocessing step.`
         }
       ]
     },
