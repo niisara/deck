@@ -223,15 +223,13 @@ Now let's dive into our first technique: tokenization.`
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList stagger={0.1}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.2rem' }}>
                         <li>Choose granularity (word/subword/sentence)</li>
                         <li>Select tokenizer appropriate for language</li>
                         <li>Configure language-specific rules</li>
                         <li>Apply tokenization</li>
                         <li>Validate token counts</li>
                       </ul>
-                    </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -303,13 +301,11 @@ This foundational technique enables everything else we'll learn today. Let's loo
     style D fill:#81c784
     style E fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.15}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Enables downstream NLP tasks</li>
                       <li>Handles OOV with subwords</li>
                       <li>Standardizes input format</li>
                     </ul>
-                  </GSAPStaggerList>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph TD
@@ -321,13 +317,11 @@ This foundational technique enables everything else we'll learn today. Let's loo
     style C fill:#ffcdd2
     style D fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.15}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Can lose spacing/punctuation nuance</li>
                       <li>Language/script-specific challenges</li>
                       <li>Subwords may lengthen sequences</li>
                     </ul>
-                  </GSAPStaggerList>
                 </div>
               </GSAPAnimated>
             </div>
@@ -422,14 +416,12 @@ Despite its challenges, tokenization is non-negotiable. The pros far outweigh th
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList stagger={0.12}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.2rem' }}>
                         <li>Decide lower vs casefold</li>
                         <li>Define exceptions (acronyms, proper nouns)</li>
                         <li>Apply</li>
                         <li>Spot-check impact</li>
                       </ul>
-                    </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -505,13 +497,11 @@ Remember, lowercasing is powerful but not universal. It's about finding the righ
     style E fill:#e1bee7
     style F fill:#e1bee7`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.1}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Smaller vocab</li>
                       <li>Improved generalization</li>
                       <li>Simpler matching</li>
                     </ul>
-                  </GSAPStaggerList>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -523,12 +513,10 @@ Remember, lowercasing is powerful but not universal. It's about finding the righ
     style C fill:#ffcdd2
     style D fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.1}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Loses case signals (named entities, sentence starts)</li>
                       <li>Can harm tasks relying on casing</li>
                     </ul>
-                  </GSAPStaggerList>
                 </div>
               </GSAPAnimated>
             </div>
@@ -637,14 +625,12 @@ A common strategy is to lowercase for some tasks and preserve case for others, o
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList stagger={0.13}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.2rem' }}>
                         <li>Pick form (NFC common, NFKC for compatibility)</li>
                         <li>Normalize strings</li>
                         <li>Test tricky cases (combining marks)</li>
                         <li>Log conversions</li>
                       </ul>
-                    </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -728,13 +714,11 @@ The beauty of Unicode normalization is that once you apply it, all those invisib
     style C fill:#81c784
     style D fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.12}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Stable comparisons</li>
                       <li>Fewer hidden duplicates</li>
                       <li>Safer tokenization</li>
                     </ul>
-                  </GSAPStaggerList>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -744,12 +728,10 @@ The beauty of Unicode normalization is that once you apply it, all those invisib
     style B fill:#ffcdd2
     style C fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.12}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>NFKC may alter appearance/semantics</li>
                       <li>Grapheme cluster edge cases</li>
                     </ul>
-                  </GSAPStaggerList>
                 </div>
               </GSAPAnimated>
             </div>
@@ -854,14 +836,12 @@ The key is understanding your data and your use case. Now let's move on to white
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList stagger={0.11}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.2rem' }}>
                         <li>Replace runs of whitespace with single space</li>
                         <li>Standardize newline to \n</li>
                         <li>Trim</li>
                         <li>Preserve intentional separators if needed</li>
                       </ul>
-                    </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -960,13 +940,11 @@ This simple technique eliminates a huge class of bugs and inconsistencies. Your 
     style C fill:#81c784
     style D fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.1}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Cleaner tokens</li>
                       <li>Consistent parsing</li>
                       <li>Fewer edge cases</li>
                     </ul>
-                  </GSAPStaggerList>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph TD
@@ -978,12 +956,10 @@ This simple technique eliminates a huge class of bugs and inconsistencies. Your 
     style C fill:#ffcdd2
     style D fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.1}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>May lose layout cues (tables, code)</li>
                       <li>Affects alignment-sensitive text</li>
                     </ul>
-                  </GSAPStaggerList>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1107,14 +1083,12 @@ The key is knowing your data and your task. For general text cleanup, whitespace
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList stagger={0.12}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.2rem' }}>
                         <li>Define mapping table</li>
                         <li>Substitute</li>
                         <li>Remove extraneous marks</li>
                         <li>Preserve meaningful punctuation as needed</li>
                       </ul>
-                    </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -1194,13 +1168,11 @@ Let's look at the tradeoffs next.`
     style C fill:#81c784
     style D fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.11}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Fewer token variants</li>
                       <li>Better matching</li>
                       <li>Improved sentence splitting</li>
                     </ul>
-                  </GSAPStaggerList>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph TD
@@ -1210,12 +1182,10 @@ Let's look at the tradeoffs next.`
     style B fill:#ffcdd2
     style C fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList stagger={0.11}>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                  <ul style={{ fontSize: '1.2rem' }}>
                       <li>Language/script-specific</li>
                       <li>May remove emotive or semantic cues</li>
                     </ul>
-                  </GSAPStaggerList>
                 </div>
               </GSAPAnimated>
             </div>
