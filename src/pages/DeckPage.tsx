@@ -507,16 +507,18 @@ function DeckPage() {
                     data-background-position="center"
                     className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''}`}
                   >
-                    <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                      {slide.icon && (
-                        <SvgIcon 
-                          iconName={slide.icon.name as any} 
-                          sizeName={(slide.icon.size || "5x") as any} 
-                          style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
-                        />
-                      )}
-                      <span>{slide.title}</span>
-                    </h2>
+                    {slide.title && (
+                      <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                        {slide.icon && (
+                          <SvgIcon 
+                            iconName={slide.icon.name as any} 
+                            sizeName={(slide.icon.size || "5x") as any} 
+                            style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
+                          />
+                        )}
+                        <span>{slide.title}</span>
+                      </h2>
+                    )}
                     {typeof slide.content === 'string' ? (
                       <div dangerouslySetInnerHTML={{ __html: slide.content }} />
                     ) : (
@@ -554,16 +556,18 @@ function DeckPage() {
                 data-background-position="center"
                 className={`${slide.center ? 'center' : ''} ${slide.backgroundImage ? 'has-background-image' : ''}`}
               >
-                <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-                  {slide.icon && (
-                    <SvgIcon 
-                      iconName={slide.icon.name as any} 
-                      sizeName={(slide.icon.size || "5x") as any} 
-                      style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
-                    />
-                  )}
-                  <span>{slide.title}</span>
-                </h2>
+                {slide.title && (
+                  <h2 style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                    {slide.icon && (
+                      <SvgIcon 
+                        iconName={slide.icon.name as any} 
+                        sizeName={(slide.icon.size || "5x") as any} 
+                        style={{ color: getIconColor(slide.backgroundColor || '#2c3e50') }} 
+                      />
+                    )}
+                    <span>{slide.title}</span>
+                  </h2>
+                )}
                 {typeof slide.content === 'string' ? (
                   <div dangerouslySetInnerHTML={{ __html: slide.content }} />
                 ) : (
