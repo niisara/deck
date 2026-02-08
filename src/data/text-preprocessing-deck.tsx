@@ -2906,7 +2906,7 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.18} duration={0.6}>
-                    <div><li>Choose n values</li></div>
+                    <div><li>Choose n values (e.g., 2 for bigrams, 3 for trigrams)</li></div>
                     <div><li>Generate</li></div>
                     <div><li>Prune rare n-grams</li></div>
                     <div><li>Compute TF-IDF/PMI</li></div>
@@ -4647,7 +4647,7 @@ Second, multilingual challenges are substantial. Different languages have differ
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Pick DifficultySelector</li>
+                        <li>Pick detector (fastText, CLD3)</li>
                         <li>Set confidence threshold</li>
                         <li>Detect per document/sentence</li>
                         <li>Filter or route</li>
