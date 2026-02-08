@@ -2876,7 +2876,6 @@ Use this hybrid when you need both keyword precision and semantic understanding 
     style M fill:#ba68c8
     style N fill:#f06292`}
                       title="Model Selection Decision Tree"
-                      buttonText="🔍 Which Model Should I Choose?"
                     />
                   </div>
                 </GSAPAnimated>
