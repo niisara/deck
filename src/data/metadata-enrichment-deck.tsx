@@ -1248,14 +1248,12 @@ Despite the maintenance overhead, keyword extraction is one of the most cost-eff
 
                       <div style={{ marginTop: '12px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                         <strong>Trust Score Examples:</strong>
-                        <GSAPStaggerList>
-                          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginTop: '8px', fontSize: '1.2rem' }}>
-                            <div style={{ textAlign: 'left' }}>Policy: <strong>0.95</strong></div>
-                            <div style={{ textAlign: 'left' }}>KB: <strong>0.80</strong></div>
-                            <div style={{ textAlign: 'left' }}>Email: <strong>0.60</strong></div>
-                            <div style={{ textAlign: 'left' }}>Chat: <strong>0.20</strong></div>
-                          </div>
-                        </GSAPStaggerList>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginTop: '8px', fontSize: '1.2rem' }}>
+                          <div style={{ textAlign: 'left' }}>Policy: <strong>0.95</strong></div>
+                          <div style={{ textAlign: 'left' }}>KB: <strong>0.80</strong></div>
+                          <div style={{ textAlign: 'left' }}>Email: <strong>0.60</strong></div>
+                          <div style={{ textAlign: 'left' }}>Chat: <strong>0.20</strong></div>
+                        </div>
                       </div>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
