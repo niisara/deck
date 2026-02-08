@@ -223,7 +223,7 @@ Now let's dive into our first technique: tokenization.`
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList staggerDelay={0.1} initialDelay={0.6}>
+                    <GSAPStaggerList stagger={0.1}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Choose granularity (word/subword/sentence)</li>
                         <li>Select tokenizer appropriate for language</li>
@@ -303,7 +303,7 @@ This foundational technique enables everything else we'll learn today. Let's loo
     style D fill:#81c784
     style E fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.15} initialDelay={0.4}>
+                  <GSAPStaggerList stagger={0.15}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Enables downstream NLP tasks</li>
                       <li>Handles OOV with subwords</li>
@@ -321,7 +321,7 @@ This foundational technique enables everything else we'll learn today. Let's loo
     style C fill:#ffcdd2
     style D fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.15} initialDelay={0.7}>
+                  <GSAPStaggerList stagger={0.15}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Can lose spacing/punctuation nuance</li>
                       <li>Language/script-specific challenges</li>
@@ -401,7 +401,7 @@ Despite its challenges, tokenization is non-negotiable. The pros far outweigh th
     A[Mixed Case Text] --> B{Method}
     B -->|.lower| C[lowercase]
     B -->|.casefold| D[case-folded]
-    D --> E[Handles ß → ss]
+    D --> E[Handles ß  to  ss]
     style A fill:#4fc3f7
     style B fill:#ffd700
     style C fill:#81c784
@@ -422,7 +422,7 @@ Despite its challenges, tokenization is non-negotiable. The pros far outweigh th
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList staggerDelay={0.12} initialDelay={0.7}>
+                    <GSAPStaggerList stagger={0.12}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Decide lower vs casefold</li>
                         <li>Define exceptions (acronyms, proper nouns)</li>
@@ -458,7 +458,7 @@ Think of it like organizing a library. Without lowercasing, you'd file "Cat", "c
 graph TD
     A["Input: HELLO, Hello, hello"] --> B[Lowercasing]
     B --> C["Output: hello, hello, hello"]
-    C --> D[Vocabulary Size: 3 → 1]
+    C --> D[Vocabulary Size: 3  to  1]
     style A fill:#4fc3f7,stroke:#333,stroke-width:2px
     style B fill:#ffd700,stroke:#333,stroke-width:2px
     style C fill:#81c784,stroke:#333,stroke-width:2px
@@ -505,7 +505,7 @@ Remember, lowercasing is powerful but not universal. It's about finding the righ
     style E fill:#e1bee7
     style F fill:#e1bee7`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.1} initialDelay={0.4}>
+                  <GSAPStaggerList stagger={0.1}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Smaller vocab</li>
                       <li>Improved generalization</li>
@@ -523,7 +523,7 @@ Remember, lowercasing is powerful but not universal. It's about finding the righ
     style C fill:#ffcdd2
     style D fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.1} initialDelay={0.7}>
+                  <GSAPStaggerList stagger={0.1}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Loses case signals (named entities, sentence starts)</li>
                       <li>Can harm tasks relying on casing</li>
@@ -546,9 +546,9 @@ Let's examine the tradeoffs of lowercasing. Like all preprocessing decisions, th
 
 \`\`\`mermaid
 graph LR
-    A["Training: happy → positive"] --> B[Model Learns]
-    B --> C["Predicts: Happy → positive"]
-    B --> D["Predicts: HAPPY → positive"]
+    A["Training: happy  to  positive"] --> B[Model Learns]
+    B --> C["Predicts: Happy  to  positive"]
+    B --> D["Predicts: HAPPY  to  positive"]
     style A fill:#4fc3f7
     style B fill:#ffd700
     style C fill:#81c784
@@ -637,7 +637,7 @@ A common strategy is to lowercase for some tasks and preserve case for others, o
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList staggerDelay={0.13} initialDelay={0.8}>
+                    <GSAPStaggerList stagger={0.13}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Pick form (NFC common, NFKC for compatibility)</li>
                         <li>Normalize strings</li>
@@ -702,7 +702,7 @@ Unicode provides four standard normalization forms. Don't worry, you'll mostly u
 
 1. **Choose your form:** NFC is the safe default for 90% of use cases. Use NFKC if you need aggressive normalization for search/matching and don't care about preserving exact appearance.
 
-2. **Apply normalization:** In Python, use `unicodedata.normalize('NFC', text)`. Most languages have similar functions.
+2. **Apply normalization:** In Python, use \`unicodedata.normalize('NFC', text)\`. Most languages have similar functions.
 
 3. **Test edge cases:** Try problematic characters like "é", "ñ", "ü", emoji with modifiers (skin tones), and combining marks.
 
@@ -728,7 +728,7 @@ The beauty of Unicode normalization is that once you apply it, all those invisib
     style C fill:#81c784
     style D fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.12} initialDelay={0.4}>
+                  <GSAPStaggerList stagger={0.12}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Stable comparisons</li>
                       <li>Fewer hidden duplicates</li>
@@ -744,7 +744,7 @@ The beauty of Unicode normalization is that once you apply it, all those invisib
     style B fill:#ffcdd2
     style C fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.12} initialDelay={0.7}>
+                  <GSAPStaggerList stagger={0.12}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>NFKC may alter appearance/semantics</li>
                       <li>Grapheme cluster edge cases</li>
@@ -854,7 +854,7 @@ The key is understanding your data and your use case. Now let's move on to white
                       <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Steps
                     </h4>
-                    <GSAPStaggerList staggerDelay={0.11} initialDelay={0.7}>
+                    <GSAPStaggerList stagger={0.11}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Replace runs of whitespace with single space</li>
                         <li>Standardize newline to \n</li>
@@ -932,11 +932,11 @@ The process has several steps:
 
 #### The Process Step-by-Step
 
-1. **Collapse whitespace runs:** Use regex like `\\s+` → ` ` to replace any run of whitespace with a single space.
+1. **Collapse whitespace runs:** Use regex like \`\\s+\`  to  \` \` to replace any run of whitespace with a single space.
 
-2. **Standardize newlines:** Replace `\\r\\n` and `\\r` with `\\n` for consistency.
+2. **Standardize newlines:** Replace \`\\r\\n\` and \`\\r\` with \`\\n\` for consistency.
 
-3. **Trim:** Apply `.strip()` or similar to remove leading/trailing whitespace.
+3. **Trim:** Apply \`.strip()\` or similar to remove leading/trailing whitespace.
 
 4. **Preserve intentional separators:** If paragraph breaks matter, preserve double newlines or convert them to a special token before collapsing.
 
@@ -960,7 +960,7 @@ This simple technique eliminates a huge class of bugs and inconsistencies. Your 
     style C fill:#81c784
     style D fill:#81c784`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.1} initialDelay={0.5}>
+                  <GSAPStaggerList stagger={0.1}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Cleaner tokens</li>
                       <li>Consistent parsing</li>
@@ -978,7 +978,7 @@ This simple technique eliminates a huge class of bugs and inconsistencies. Your 
     style C fill:#ffcdd2
     style D fill:#ffcdd2`} />
                   </h4>
-                  <GSAPStaggerList staggerDelay={0.1} initialDelay={0.8}>
+                  <GSAPStaggerList stagger={0.1}>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>May lose layout cues (tables, code)</li>
                       <li>Affects alignment-sensitive text</li>
@@ -1021,27 +1021,27 @@ graph TD
 #### The Drawbacks: What Do We Lose?
 
 **May Lose Layout Cues for Tables and Code:** Here's where normalization can backfire. Consider ASCII art, formatted tables, or code:
-```
+\`\`\`
 Name        Age    City
 Alice       25     NYC
 Bob         30     LA
-```
+\`\`\`
 
 If you collapse all whitespace, this becomes "Name Age City Alice 25 NYC Bob 30 LA" – the alignment and structure are destroyed. The table becomes gibberish.
 
 Similarly, Python code relies on indentation for structure:
-```python
+\`\`\`python
 def hello():
     print("Hello")
-```
+\`\`\`
 
 Collapse the indentation and you've broken the code. It's no longer valid Python.
 
 **Affects Alignment-Sensitive Text:** Poetry and song lyrics often use intentional spacing and line breaks for rhythm and emphasis:
-```
+\`\`\`
 This    is    spaced    for    effect
 Not              an              accident
-```
+\`\`\`
 
 Normalizing this loses the artistic intent. Similarly, screenplays, scripts, and formatted documents use precise spacing to convey meaning beyond the words themselves.
 
@@ -1068,69 +1068,204 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Reduce punctuation variants and noise.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
-                </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Define mapping table</li>
-                    <li>Substitute</li>
-                    <li>Remove extraneous marks</li>
-                    <li>Preserve meaningful punctuation as needed</li>
-                  </ul>
-                </div>
+                <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A[""'--..."] --> B[Normalize]
+    B --> C["Standard Punctuation"]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784`} />
+                    </h4>
+                    <p>Reduce punctuation variants and noise.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Smart Quotes] --> B[Map to Straight]
+    C[Multiple Dashes] --> D[Unify Hyphens]
+    E[Repeated!!!] --> F[Collapse]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#4fc3f7
+    style D fill:#81c784
+    style E fill:#4fc3f7
+    style F fill:#81c784`} />
+                    </h4>
+                    <p>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
+                  </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.8}>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                    <GSAPStaggerList stagger={0.12}>
+                      <ul style={{ fontSize: '1.2rem' }}>
+                        <li>Define mapping table</li>
+                        <li>Substitute</li>
+                        <li>Remove extraneous marks</li>
+                        <li>Preserve meaningful punctuation as needed</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#226310',
-          notes: ''
+          notes: `### 11. Punctuation Normalization - Taming the Chaos
+
+Punctuation normalization standardizes the wild variety of punctuation marks that appear in real-world text. It's about making "curly" quotes, em-dashes, ellipses, and other variants behave consistently.
+
+#### The Punctuation Problem
+
+Real text has countless punctuation variants:
+- Quotes: "curly", 'curly', "straight", 'straight', „German", «French»
+- Dashes/hyphens: - (hyphen), – (en-dash), — (em-dash), ― (horizontal bar)
+- Ellipses: ... (three periods), … (single ellipsis character)
+- Repeated: "Really???", "No way!!!", "Wait........"
+
+These variants look similar to humans but are completely different characters to computers. "hello" with curly quotes doesn't match "hello" with straight quotes. Your vocabulary explodes with unnecessary duplicates.
+
+\`\`\`mermaid
+graph TD
+    A["I said 'hello'"] --> N[Normalize]
+    B["I said "hello""] --> N
+    C["I said ''hello''"] --> N
+    N --> D["I said 'hello'"]
+    style A fill:#4fc3f7
+    style B fill:#4fc3f7
+    style C fill:#4fc3f7
+    style N fill:#ffd700
+    style D fill:#81c784
+\`\`\`
+
+#### How Punctuation Normalization Works
+
+**Map Quote Variants to Standard:** Convert all quote types (curly, angular, double/single) to a standard form. Usually straight single (') and double (") quotes. This ensures "quoted" text matches regardless of the source.
+
+**Unify Hyphens and Dashes:** Convert all dash variants (en-dash, em-dash, minus sign) to a standard hyphen (-). "Self-esteem", "self–esteem", and "self—esteem" all become "self-esteem".
+
+**Collapse Repeated Punctuation:** "Amazing!!!" becomes "Amazing!" or "Amazing". Repeated exclamation marks and question marks usually don't add meaning for most NLP tasks (though they might for emotion detection).
+
+**Optionally Remove Entirely:** Some pipelines strip all punctuation except sentence-ending periods. "Hello, world!" becomes "Hello world". This reduces noise but loses some information.
+
+#### When to Use Punctuation Normalization
+
+**Perfect for:** User-generated content (social media, reviews, forums), cross-platform text (Mac uses different quotes than Windows), multilingual corpora (different languages have different quotation conventions), any noisy text source.
+
+**Be careful with:** Code (where quotes and punctuation have syntax meaning), sentiment analysis if you want to preserve emphasis ("good" vs "good!!!"), named entities with punctuation ("Yahoo!" the company, "Jeopardy!" the show).
+
+#### The Process
+
+1. **Define mapping table:** Create a dictionary mapping variants to standard forms. Example: {'"': '"', '"': '"', ''': "'", ''': "'"}
+
+2. **Apply substitutions:** Run through your text, replacing each variant with its standard form.
+
+3. **Optionally collapse repeated:** Use regex to replace sequences like "!+" with single "!".
+
+4. **Preserve meaningful punctuation:** Keep punctuation that's part of names, abbreviations (Ph.D., U.S.A.), or critical to meaning.
+
+Let's look at the tradeoffs next.`
         },
         {
           id: 12,
           title: 'Pros and Cons',
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Fewer token variants</li>
-                  <li>Better matching</li>
-                  <li>Improved sentence splitting</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Language/script-specific</li>
-                  <li>May remove emotive or semantic cues</li>
-                </ul>
-              </div>
+              <GSAPAnimated animation="rotateIn" delay={0.2} duration={1.0}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph LR
+    A[Normalized] --> B[Consistent Tokens]
+    A --> C[Better Matching]
+    A --> D[Clean Splits]
+    style A fill:#81c784
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                  <GSAPStaggerList stagger={0.11}>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Fewer token variants</li>
+                      <li>Better matching</li>
+                      <li>Improved sentence splitting</li>
+                    </ul>
+                  </GSAPStaggerList>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[Risks] --> B[Language Issues]
+    A --> C[Lost Emotion]
+    style A fill:#ffcdd2
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2`} />
+                  </h4>
+                  <GSAPStaggerList stagger={0.11}>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Language/script-specific</li>
+                      <li>May remove emotive or semantic cues</li>
+                    </ul>
+                  </GSAPStaggerList>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#226310',
-          notes: ''
+          notes: `### 12. Punctuation Normalization - Pros and Cons
+
+Punctuation normalization is powerful for standardization, but it comes with tradeoffs depending on your use case.
+
+#### The Advantages
+
+**Fewer Token Variants:** This is the primary benefit. Instead of having "hello", "hello!", "hello!!", "hello!!!" as separate tokens, you have just one or two variants. Your vocabulary shrinks dramatically. Consider social media text where users love emphasis: "OMG!!!", "WOW!!!!!", "Amazing!!". After normalization, these patterns become consistent, and your model doesn't waste capacity learning that different numbers of exclamation marks mean roughly the same thing.
+
+**Better Matching:** When you normalize punctuation, search and comparison work better. A user searching for "don't" will find "don't", "don't", and "don't" (all different quote types). Without normalization, these would be treated as completely different strings. This is crucial for information retrieval, duplicate detection, and any matching task.
+
+**Improved Sentence Splitting:** Sentence boundary detection algorithms often rely on periods, exclamation marks, and question marks. When you have weird Unicode variants of these (like "¿" upside-down question mark at sentence start in Spanish, or "。" Japanese period), normalization helps standardize them so your sentence splitter works consistently.
+
+\`\`\`mermaid
+graph LR
+    A["Amazing!!! vs Amazing!!"] --> B[Normalize]
+    B --> C["Amazing!"]
+    C --> D[Single Token ✓]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#81c784
+    style D fill:#81c784
+\`\`\`
+
+#### The Drawbacks
+
+**Language and Script-Specific:** Different languages use different punctuation conventions. Spanish uses inverted question/exclamation marks (¿¡). Arabic uses mirrored question marks (؟). Chinese uses different parentheses (（）) and periods (。). If you normalize too aggressively, you might break language-specific conventions. For example, converting Arabic question marks to Western ones could confuse right-to-left text rendering.
+
+Additionally, some scripts don't use spaces at all and rely on punctuation as the only word boundaries. Aggressive punctuation stripping would destroy the text structure entirely.
+
+**May Remove Emotive or Semantic Cues:** Here's where it gets interesting. Punctuation often carries emotional intensity or emphasis:
+- "okay" (neutral) vs "okay..." (hesitant/disappointed)
+- "Really" (question) vs "Really?" (surprised question) vs "Really?!" (shocked)
+- "STOP" vs "STOP!" vs "STOP!!!" (escalating urgency)
+
+For sentiment analysis or emotion detection, collapsing or removing these cues loses valuable signal. The difference between "I love this movie" and "I love this movie!!!" is subtle but real – the second expresses more enthusiasm.
+
+Similarly, some brands and products use punctuation as part of their identity: "Yahoo!", "Jeopardy!", "Eat Mor Chikin" (Chick-fil-A). Stripping punctuation would make these harder to recognize as entities.
+
+#### Making the Decision
+
+For traditional NLP tasks (topic modeling, document classification, machine translation), punctuation normalization is generally beneficial. The reduction in vocabulary size and improvement in matching outweigh the loss of subtle signals.
+
+For fine-grained tasks (emotion detection, sarcasm detection, author profiling), consider preserving punctuation patterns or at least flagging them before normalization. You might normalize quotes and dashes but preserve repeated exclamation marks as features.
+
+A hybrid approach works well: normalize quotes and dashes (which rarely carry meaning) but preserve question marks, exclamation marks, and ellipses (which often do carry meaning). Test on your specific data to find the right balance. Now let's move to stopword removal.`
         }
       ]
     },
@@ -1146,39 +1281,112 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Remove very frequent function words that add little topical value.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Filter tokens against a language-specific stopword list.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
+                  <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A[Raw Tokens] --> B{Filter}
+    B --> C[Content Words]
+    B --> D[Stopwords]
+    style A fill:#4fc3f7
+    style C fill:#81c784
+    style D fill:#ffcdd2`} />
+                    </h4>
+                    <p>Remove very frequent function words that add little topical value.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Token Stream] --> B[Load Stopword List]
+    B --> C{Token in list?}
+    C -->|Yes| D[Remove]
+    C -->|No| E[Keep]
+    style A fill:#4fc3f7
+    style E fill:#81c784
+    style D fill:#ffcdd2`} />
+                    </h4>
+                    <p>Filter tokens against a language-specific stopword list.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Select stoplist per language/domain</li>
-                    <li>Keep negations/intensifiers if needed</li>
-                    <li>Filter</li>
-                    <li>Review impact on metrics</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} duration={0.6}>
+                    <div><li>Select stoplist per language/domain</li></div>
+                    <div><li>Keep negations/intensifiers if needed</li></div>
+                    <div><li>Filter</li></div>
+                    <div><li>Review impact on metrics</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#105163',
-          notes: ''
+          notes: `### 13. Stopword Removal
+
+Welcome to our discussion on stopword removal, one of the most fundamental and widely-used text preprocessing techniques in natural language processing. Think of stopwords as the "filler words" of language—words like "the," "is," "at," "which," and "on" that appear constantly but often don't contribute much to the core meaning of a sentence.
+
+#### What Are Stopwords?
+
+Stopwords are extremely common function words that appear with high frequency across documents but typically carry little semantic weight for tasks like information retrieval or topic modeling. For example, if you're trying to determine whether a document is about "machine learning," the words "machine" and "learning" are crucial, but words like "the," "is," "a," "to" add minimal value to that determination.
+
+\`\`\`mermaid
+graph LR
+    A["the quick brown fox"] --> B[Stopword Filter]
+    B --> C["quick brown fox"]
+    style A fill:#4fc3f7
+    style C fill:#81c784
+    style B fill:#ffd700
+\`\`\`
+
+#### Why Remove Stopwords?
+
+There are several compelling reasons to remove stopwords. First, they dramatically reduce dimensionality—in a typical English text corpus, stopwords can constitute 40-50% of all tokens! By removing them, you shrink your vocabulary size, which means faster training times and lower memory requirements for your models. Second, removing stopwords can actually improve the signal-to-noise ratio for certain tasks. In topic modeling, for instance, having fewer high-frequency but low-information words allows the meaningful content words to shine through more clearly.
+
+#### How Stopword Removal Works
+
+The process is conceptually simple: maintain a list of stopwords for your target language (English, Spanish, French, etc.), then filter out any tokens that match entries in that list. Libraries like NLTK, spaCy, and scikit-learn provide pre-built stopword lists for many languages. The typical workflow looks like this:
+
+1. **Select a stopword list**: Choose a pre-built list or curate your own based on your domain
+2. **Consider domain-specific needs**: In sentiment analysis, words like "not," "but," and "very" are critical and should NOT be removed
+3. **Apply the filter**: Iterate through your tokens and exclude matches
+4. **Validate the impact**: Always spot-check to ensure you haven't accidentally removed important terms
+
+#### When to Use Stopword Removal
+
+Stopword removal shines in bag-of-words scenarios where word order doesn't matter and you're focused on content words. It's excellent for:
+- TF-IDF vectorization
+- Information retrieval systems
+- Topic modeling (LDA, NMF)
+- Keyword extraction
+- Document clustering based on content
+
+#### When NOT to Use It
+
+However, be cautious! Don't remove stopwords when working with:
+- Modern transformer models (BERT, GPT) that learn from full context
+- Sentiment analysis where negations matter ("not good" vs "good")
+- Question answering systems
+- Machine translation
+- Any sequence-to-sequence task
+
+#### Technical Considerations
+
+Different stopword lists can vary significantly in size. NLTK's English stopword list contains about 180 words, while some minimal lists might have only 30-50 core function words. Your choice depends on your use case—aggressive removal for dimensionality reduction, conservative removal when meaning preservation is critical.
+
+Remember: stopword removal is a lossy operation. Once you remove these words, you can't get them back. Always keep your original text and make stopword removal a configurable step in your pipeline so you can experiment with different approaches.`
         },
         {
           id: 14,
@@ -1186,29 +1394,105 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Reduces dimensionality</li>
-                  <li>Speeds training</li>
-                  <li>Can improve topic signal</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Risk of meaning loss</li>
-                  <li>Harms sequence/transformer setups</li>
-                  <li>Domain sensitivity</li>
-                </ul>
+                <GSAPAnimated animation="bounceIn" delay={0.2} duration={0.9}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph TD
+    A[Stopword Removal] --> B[Reduced Dimensions]
+    A --> C[Faster Training]
+    A --> D[Better Topic Signal]
+    style A fill:#ffd700
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div><li>Reduces dimensionality</li></div>
+                  <div><li>Speeds training</li></div>
+                  <div><li>Can improve topic signal</li></div>
+                </GSAPStaggerList>
+                <GSAPAnimated animation="bounceIn" delay={0.9} duration={0.9}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[Stopword Removal] --> B[Meaning Loss]
+    A --> C[Breaks Sequences]
+    A --> D[Domain Issues]
+    style A fill:#ffd700
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div><li>Risk of meaning loss</li></div>
+                  <div><li>Harms sequence/transformer setups</li></div>
+                  <div><li>Domain sensitivity</li></div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#105163',
-          notes: ''
+          notes: `### 14. Stopword Removal: Pros and Cons
+
+Now let's dive deeper into the tradeoffs of stopword removal. Like most preprocessing techniques, it's not universally beneficial—you need to understand when it helps and when it hurts.
+
+#### The Pros: Why Stopword Removal Works
+
+**1. Dramatic Dimensionality Reduction**
+
+This is perhaps the biggest advantage. In English text, common stopwords like "the," "is," "at," "which," "a," "an," "to," "in" can make up 40-50% of all tokens in a document. When you're building a vocabulary for bag-of-words or TF-IDF features, removing these words cuts your feature space nearly in half. For a corpus with 50,000 unique words, removing 500 stopwords might seem trivial, but those 500 words appear in nearly every document, dominating your feature counts.
+
+**2. Significant Speed Improvements**
+
+Smaller vocabularies mean faster model training. If you're using a sparse matrix representation for TF-IDF, fewer columns means less memory and faster matrix operations. For algorithms like Naive Bayes, Logistic Regression, or SVM on text data, training time can be reduced by 30-40% just by removing stopwords. In production systems processing millions of documents, this translates to real cost savings.
+
+**3. Enhanced Topic Signal**
+
+Here's where it gets interesting: for unsupervised tasks like topic modeling with Latent Dirichlet Allocation (LDA), removing stopwords can dramatically improve interpretability. Imagine a topic where the top words are "the," "is," "of," "to," "and"—that's useless! By removing stopwords, you surface the actual content-bearing words: "neural," "network," "training," "gradient," "optimization." The topics become much more coherent and meaningful.
+
+\`\`\`mermaid
+graph LR
+    A[With Stopwords] --> B["Topic: the, of, is, neural, to"]
+    C[Without Stopwords] --> D["Topic: neural, network, training, gradient"]
+    style A fill:#ffcdd2
+    style C fill:#81c784
+    style B fill:#ffcdd2
+    style D fill:#81c784
+\`\`\`
+
+#### The Cons: When Stopword Removal Backfires
+
+**1. Risk of Meaning Loss**
+
+This is critical: stopwords aren't always meaningless! Consider these examples:
+- "not good" vs "good" (negation matters!)
+- "very important" vs "important" (intensification matters!)
+- "to be or not to be" becomes "be not be" (grammatical structure lost)
+
+In sentiment analysis, removing "not" is catastrophic. The phrase "not satisfied" has the opposite meaning of "satisfied," but with stopword removal, they become identical. Modern sentiment analyzers often use custom stopword lists that explicitly preserve negations like "not," "no," "never," "neither."
+
+**2. Breaks Modern Deep Learning Approaches**
+
+Here's a crucial point for contemporary NLP: transformer models like BERT, GPT, and RoBERTa do NOT benefit from stopword removal—in fact, it hurts them! These models learn rich contextual representations where every word contributes to understanding. They've learned that "the" before a noun signals definiteness, that "is" indicates present tense, that "not" negates. Removing these words strips away crucial context.
+
+**3. Domain Sensitivity Problems**
+
+Stopword lists are typically derived from general text corpora. But what's a stopword in general English might be meaningful in your domain. For example:
+- In medical text, "or" might refer to "operating room"
+- In legal text, "will" is a crucial document type
+- In recipe text, "to" appears in measurements ("add 2 to 3 cups")
+
+If you blindly apply a standard stopword list, you might accidentally remove domain-important terms.
+
+#### Making the Right Choice
+
+The decision to use stopword removal should be task-driven:
+- **Use it for**: Classical ML on text (SVM, Naive Bayes), TF-IDF, topic modeling, keyword extraction, document clustering
+- **Skip it for**: Neural sequence models, sentiment analysis (unless using custom lists), named entity recognition, machine translation, question answering
+
+A good rule of thumb: if your model treats text as an ordered sequence and learns from context, don't remove stopwords. If your model treats text as a bag of words, stopword removal will likely help.`
         }
       ]
     },
@@ -1224,39 +1508,135 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Conservatively remove only the most generic function words while keeping nuance.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Sentiment, short texts, tasks sensitive to negation/modality.</p>
+                  <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A[All Tokens] --> B[Light Filter]
+    B --> C[Keep Most Words]
+    B --> D[Remove Only Generic]
+    style A fill:#4fc3f7
+    style C fill:#81c784
+    style D fill:#ffcdd2
+    style B fill:#ffd700`} />
+                    </h4>
+                    <p>Conservatively remove only the most generic function words while keeping nuance.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="rotateIn" delay={0.4} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Tokens] --> B{Check Minimal List}
+    B -->|Generic| C[Remove]
+    B -->|Important| D[Keep]
+    D --> E[Preserve negations]
+    D --> F[Preserve intensifiers]
+    style A fill:#4fc3f7
+    style D fill:#81c784
+    style E fill:#e1bee7
+    style F fill:#e1bee7`} />
+                    </h4>
+                    <p>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Sentiment, short texts, tasks sensitive to negation/modality.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Define light list</li>
-                    <li>Whitelist negations/domain terms</li>
-                    <li>Filter</li>
-                    <li>Iterate with validation</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.18} duration={0.7}>
+                    <div><li>Define light list</li></div>
+                    <div><li>Whitelist negations/domain terms</li></div>
+                    <div><li>Filter</li></div>
+                    <div><li>Iterate with validation</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#631061',
-          notes: ''
+          notes: `### 15. Light Stopword Trimming
+
+Light stopword trimming represents a more nuanced, careful approach to stopword removal. Think of it as "stopword removal lite"—you get some of the benefits of dimensionality reduction without the harsh downsides of aggressive removal.
+
+#### The Middle Ground Philosophy
+
+Traditional stopword removal takes a sledgehammer approach: remove all words in a predefined list, which might contain 150-200 words. Light stopword trimming is more like using a scalpel: you carefully remove only the most obviously meaningless words—perhaps just 20-50 ultra-generic function words like "the," "a," "an," "this," "that."
+
+The key insight is that not all stopwords are created equal. There's a spectrum from "definitely useless" to "sometimes important":
+- **Always useless**: "the," "a," "an" (articles rarely carry meaning)
+- **Usually useless**: "is," "was," "been" (auxiliaries are often redundant)
+- **Sometimes critical**: "not," "never," "no" (negations are semantic goldmines)
+- **Context-dependent**: "very," "much," "more" (intensifiers matter in sentiment)
+
+\`\`\`mermaid
+graph LR
+    A[Full Stopword List] --> B[Aggressive: 150+ words]
+    A --> C[Light: 20-50 words]
+    B --> D[High Risk]
+    C --> E[Balanced Approach]
+    style B fill:#ffcdd2
+    style C fill:#81c784
+    style D fill:#ffcdd2
+    style E fill:#81c784
+\`\`\`
+
+#### How Light Stopword Trimming Works
+
+There are two main approaches to implementing light stopword trimming:
+
+**Approach 1: Curated Minimal List**
+Manually create a short list of truly generic words. A typical minimal English list might include:
+- Articles: "a," "an," "the"
+- Common pronouns: "it," "this," "that"
+- Basic prepositions: "of," "in," "for"
+- Ultra-common verbs: "is," "was," "be"
+
+Notice what's NOT in this list: no negations ("not," "no"), no intensifiers ("very," "extremely"), no modals ("could," "should"), no conjunctions ("but," "although").
+
+**Approach 2: Statistical Filtering**
+Use TF-IDF or document frequency to identify words that appear in almost every document but with very low TF-IDF scores. These are the true "noise" words. You might set a rule like: "Remove words that appear in >95% of documents but have average TF-IDF < 0.01."
+
+#### When to Use Light Stopword Trimming
+
+This technique shines in scenarios where aggressive stopword removal is too risky:
+
+**Sentiment Analysis**: Phrases like "not good," "very bad," "not very happy" all contain potential stopwords, but removing them destroys the sentiment. Light trimming removes "the" and "a" while preserving "not" and "very."
+
+**Short Texts**: In tweets, reviews, or messages, you might only have 10-20 tokens. Aggressive stopword removal could cut that in half, leaving very little signal. Light trimming removes minimal redundancy while keeping most content.
+
+**Nuanced Tasks**: Question classification, intent detection, and sarcasm detection all rely on subtle linguistic cues. Words like "but," "although," "really," and "just" carry important pragmatic meaning that shouldn't be discarded.
+
+**Domain-Specific Analysis**: If you're working with specialized text (medical, legal, scientific), you want to be conservative about what you remove since domain terminology might overlap with common stopwords.
+
+#### Implementation Strategy
+
+Here's a practical workflow:
+
+1. **Start with a minimal list**: Begin with just articles and maybe 10-15 obvious function words
+2. **Create a whitelist**: Explicitly protect negations, intensifiers, and domain terms
+3. **Apply and evaluate**: Run your pipeline with light trimming and compare metrics
+4. **Iterate**: Gradually add words to your removal list if validation performance improves
+
+The key is validation-driven tuning. Don't guess—let your development set metrics guide your stopword list.
+
+#### Technical Considerations
+
+Light stopword trimming requires more manual curation than full stopword removal, but the effort pays off. You can also create task-specific light stopword lists:
+- Sentiment-safe list: removes only articles and ultra-generic prepositions
+- Topic-modeling-focused list: slightly larger, removes more function words
+- NER-safe list: preserves everything that might be part of entity names
+
+Pro tip: Version control your stopword lists! As you refine them based on validation results, you want to track what worked and what didn't.`
         },
         {
           id: 16,
@@ -1264,28 +1644,129 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Preserves meaning better than full removal</li>
-                  <li>Balanced noise reduction</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Requires tuning</li>
-                  <li>Residual noise may remain</li>
-                  <li>Still risky for very short texts</li>
-                </ul>
+                <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph TD
+    A[Light Trimming] --> B[Preserves Meaning]
+    A --> C[Reduces Noise]
+    A --> D[Safe for Sentiment]
+    style A fill:#ffd700
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.2} duration={0.7}>
+                  <div><li>Preserves meaning better than full removal</li></div>
+                  <div><li>Balanced noise reduction</li></div>
+                </GSAPStaggerList>
+                <GSAPAnimated animation="flipCard" delay={0.9} duration={1.0}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[Light Trimming] --> B[Needs Tuning]
+    A --> C[Some Noise Remains]
+    A --> D[Short Text Risk]
+    style A fill:#ffd700
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.2} duration={0.7}>
+                  <div><li>Requires tuning</li></div>
+                  <div><li>Residual noise may remain</li></div>
+                  <div><li>Still risky for very short texts</li></div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#631061',
-          notes: ''
+          notes: `### 16. Light Stopword Trimming: Pros and Cons
+
+Let's examine the tradeoffs of light stopword trimming and understand when this middle-ground approach is the right choice for your NLP pipeline.
+
+#### The Pros: Why Light Trimming Works Well
+
+**1. Preserves Meaning Better Than Full Removal**
+
+This is the headline benefit. By keeping negations, intensifiers, and modals, you maintain crucial semantic information. Consider these examples:
+
+- "The movie was not very good"  to  Light trim  to  "movie not very good" (meaning preserved)
+- "The movie was not very good"  to  Aggressive trim  to  "movie good" (meaning reversed!)
+
+Light trimming keeps the sentiment-critical words "not" and "very" while removing the semantically empty "the" and "was." For sentiment analysis, this can be the difference between 60% accuracy and 85% accuracy.
+
+**2. Balanced Noise Reduction**
+
+You still get dimensionality benefits, just more modest ones. Instead of cutting vocabulary by 40-50%, you might cut it by 10-15%. But here's the key: that 10-15% is the MOST noisy, least informative portion. You're removing the words that appear in literally every document ("the," "a," "an") while keeping words that provide more signal.
+
+Think of it like filtering water: aggressive stopword removal is like filtering out everything except large rocks, while light trimming is like filtering out only large debris while keeping minerals and nutrients. You still get cleaner water, but without stripping out all the good stuff.
+
+\`\`\`mermaid
+graph LR
+    A[Vocabulary: 10000 words] --> B[Aggressive: -4000 words]
+    A --> C[Light: -1000 words]
+    B --> D[Risk: Lost meaning]
+    C --> E[Safe: Meaning preserved]
+    style B fill:#ffcdd2
+    style C fill:#81c784
+    style D fill:#ffcdd2
+    style E fill:#81c784
+\`\`\`
+
+**3. Safer for Nuanced Tasks**
+
+Light trimming gives you a safety margin for tasks where linguistic nuance matters. In sarcasm detection, for example, words like "really," "just," and "oh" are critical discourse markers. In question classification, words like "can," "would," "should" distinguish different question types. Light trimming is unlikely to remove these mid-frequency function words, preserving the subtle signals your model needs.
+
+#### The Cons: Tradeoffs and Limitations
+
+**1. Requires Careful Tuning**
+
+Unlike aggressive stopword removal where you just load a pre-built list, light trimming demands thoughtful curation. You need to:
+- Define what counts as "minimal" for your use case
+- Create and maintain domain-specific whitelists
+- Validate each addition to your stopword list
+- Potentially maintain multiple light lists for different tasks
+
+This is extra work. For quick prototyping or when working with well-understood, standard tasks, this overhead might not be worth it—you might prefer the simplicity of either full removal or no removal at all.
+
+**2. Residual Noise May Remain**
+
+Since you're only removing 10-15% of vocabulary, you still have plenty of high-frequency, low-information words cluttering your feature space. Words like "be," "have," "do," "which," "these" appear constantly but often add little semantic value. If dimensionality reduction is your primary goal, light trimming might not cut deep enough to give you the speed and memory benefits you need.
+
+For very large corpora (millions of documents), the difference between 50,000 features and 45,000 features is negligible. You might need to be more aggressive to see real performance gains.
+
+**3. Still Risky for Very Short Texts**
+
+Even light trimming can be problematic when you're working with extremely short texts. Consider a 5-word tweet: "The product is not good." Light trimming might reduce this to 4 words: "product is not good." You've removed 20% of the text! For texts with fewer than 15-20 words, even removing articles can noticeably impact the information density.
+
+In extreme cases (hashtags, search queries, chat messages), you might want to skip stopword removal entirely, regardless of how light your list is.
+
+#### Decision Framework
+
+Here's how to decide between full removal, light trimming, and no removal:
+
+**Choose Light Trimming When:**
+- Working with sentiment, emotion, or opinion analysis
+- Processing short-to-medium texts (reviews, tweets, comments)
+- Your model is sensitive to negation and intensification
+- You want some dimensionality reduction without high risk
+
+**Choose Aggressive Removal When:**
+- Using bag-of-words or TF-IDF with classical ML
+- Dimensionality and speed are critical concerns
+- Working with topic modeling (LDA, NMF)
+- Your corpus is large and performance is a bottleneck
+
+**Choose No Removal When:**
+- Using transformer models (BERT, GPT, RoBERTa)
+- Working with sequence-to-sequence tasks
+- Texts are already very short (< 10 words)
+- Order and context are paramount
+
+The bottom line: light stopword trimming is the "Goldilocks" approach—not too aggressive, not too conservative, but just right for tasks that need both efficiency and meaning preservation.`
         }
       ]
     },
@@ -1301,39 +1782,146 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Reduce inflected words to stems to merge variants.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>IR, topic modeling, when lexical precision is not critical.</p>
+                  <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A[running] --> B[run]
+    C[runs] --> B
+    D[runner] --> B
+    E[ran] --> B
+    style A fill:#4fc3f7
+    style C fill:#4fc3f7
+    style D fill:#4fc3f7
+    style E fill:#4fc3f7
+    style B fill:#81c784`} />
+                    </h4>
+                    <p>Reduce inflected words to stems to merge variants.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="scaleIn" delay={0.4} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Word] --> B{Apply Rules}
+    B --> C[Strip -ing]
+    B --> D[Strip -ed]
+    B --> E[Strip -s]
+    C --> F[Stem]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7
+    style F fill:#81c784
+    style B fill:#ffd700`} />
+                    </h4>
+                    <p>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="scaleIn" delay={0.6} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>IR, topic modeling, when lexical precision is not critical.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Choose language stemmer</li>
-                    <li>Apply</li>
-                    <li>Sample-check for over/under-stemming</li>
-                    <li>Adjust algorithm if available</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.2} duration={0.6}>
+                    <div><li>Choose language stemmer</li></div>
+                    <div><li>Apply</li></div>
+                    <div><li>Sample-check for over/under-stemming</li></div>
+                    <div><li>Adjust algorithm if available</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#101063',
-          notes: ''
+          notes: `### 17. Stemming
+
+Stemming is one of the oldest and most widely-used text normalization techniques in NLP. It's all about reducing words to their root form—or at least an approximation of it—so that different inflections of the same word are treated as equivalent.
+
+#### What Is Stemming?
+
+Stemming is the process of removing affixes (prefixes and suffixes) from words to produce a base form called a "stem." The goal is to merge grammatical variants that share the same core meaning. For example:
+- "running," "runs," "ran"  to  "run"
+- "happier," "happiest," "happiness"  to  "happi"
+- "organization," "organizational," "organize"  to  "organ"
+
+Notice something in those examples? The stems aren't always real words! "Happi" and "organ" aren't valid English words, but that's okay—stemming is about creating consistent representations, not linguistically correct ones.
+
+\`\`\`mermaid
+graph TD
+    A[connecting] --> E[connect]
+    B[connected] --> E
+    C[connection] --> E
+    D[connects] --> E
+    style A fill:#4fc3f7
+    style B fill:#4fc3f7
+    style C fill:#4fc3f7
+    style D fill:#4fc3f7
+    style E fill:#81c784
+\`\`\`
+
+#### How Stemming Works
+
+Stemming algorithms are rule-based and heuristic. They don't understand language; they just apply a series of suffix-stripping rules. The most popular stemming algorithms are:
+
+**Porter Stemmer (1980)**: The classic algorithm with about 60 rules applied in phases. It's conservative and produces readable stems. Example: "ponies"  to  "poni", "universities"  to  "univers"
+
+**Snowball Stemmer**: An improved version of Porter, with better handling of English and support for many other languages (French, German, Spanish, etc.). It's the default choice for most modern applications.
+
+**Lancaster Stemmer**: A more aggressive algorithm that strips more aggressively. It produces shorter stems but risks over-stemming (conflating unrelated words). Example: "maximum"  to  "maxim", "presumably"  to  "presum"
+
+The algorithm works in stages:
+1. **Remove plurals**: "cats"  to  "cat", "ponies"  to  "poni"
+2. **Handle past tense**: "walked"  to  "walk", "running"  to  "run"
+3. **Deal with derivational suffixes**: "happiness"  to  "happi", "organization"  to  "organ"
+
+#### When to Use Stemming
+
+Stemming is most effective in information retrieval and document clustering scenarios:
+
+**Information Retrieval**: If a user searches for "running shoes," you want to also match documents containing "run," "runs," "ran," or "runner shoes." Stemming ensures that morphological variants don't fragment your search results.
+
+**Topic Modeling**: In LDA or other topic models, you want "organize," "organization," and "organized" to be counted as the same concept rather than splitting them into separate features.
+
+**Text Classification**: For bag-of-words models with large vocabularies, stemming reduces dimensionality by merging related forms, which can improve generalization.
+
+**Keyword Extraction**: When identifying important terms in a document, stemming prevents keyword lists from being cluttered with multiple forms of the same concept.
+
+#### Pronunciation Guide
+
+- **Stemming**: STEM-ing (like the stem of a plant)
+- **Porter**: POR-ter (named after Martin Porter)
+- **Lemmatization**: lem-uh-tuh-ZAY-shun (we'll cover this next—it's different!)
+
+#### Technical Considerations
+
+Stemming is fast and simple—that's its biggest advantage. It requires no linguistic resources, no dictionaries, no part-of-speech tagging. It's deterministic and reproducible. However, it has limitations:
+
+**Over-stemming**: Conflating words with different meanings. Example: "university" and "universal" both stem to "univers" but have different meanings.
+
+**Under-stemming**: Failing to merge related words. Example: "alumnus," "alumni," "alumna" might not all stem to the same form.
+
+**Language-specific**: Each language needs its own stemmer. Applying an English stemmer to Spanish text will fail spectacularly.
+
+**Non-word stems**: The output is often not a real word, which makes debugging and interpretation harder.
+
+Despite these limitations, stemming has been used successfully in countless NLP applications for decades. It's simple, fast, and surprisingly effective for many tasks where perfect linguistic correctness isn't required.
+
+#### Practical Tips
+
+Always inspect a sample of your stemmed output! Look for cases where stemming is doing something unexpected. Some common issues:
+- Proper nouns getting stemmed (you might want to protect these)
+- Domain-specific terms being over-stemmed
+- Morphologically rich languages suffering more than English
+
+For modern deep learning, stemming is less commonly used—transformers can learn morphological relationships on their own. But for classical ML and information retrieval, stemming remains a valuable preprocessing step.`
         },
         {
           id: 18,
@@ -1341,28 +1929,147 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Cuts dimensionality</li>
-                  <li>Robust to inflectional variation</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Produces non-words</li>
-                  <li>May conflate unrelated terms</li>
-                  <li>Language-dependent rules</li>
-                </ul>
+                <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.8}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph LR
+    A[Stemming] --> B[Smaller Vocabulary]
+    A --> C[Handles Inflections]
+    style A fill:#ffd700
+    style B fill:#81c784
+    style C fill:#81c784`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.18} duration={0.6}>
+                  <div><li>Cuts dimensionality</li></div>
+                  <div><li>Robust to inflectional variation</li></div>
+                </GSAPStaggerList>
+                <GSAPAnimated animation="slideInBottom" delay={0.8} duration={0.8}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[Stemming] --> B[Non-words: happi]
+    A --> C[Over-stemming: univers]
+    A --> D[Under-stemming: alumni]
+    style A fill:#ffd700
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.18} duration={0.6}>
+                  <div><li>Produces non-words</li></div>
+                  <div><li>May conflate unrelated terms</li></div>
+                  <div><li>Language-dependent rules</li></div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#101063',
-          notes: ''
+          notes: `### 18. Stemming: Pros and Cons
+
+Let's dig into the tradeoffs of stemming. Like many preprocessing techniques, stemming is neither universally good nor universally bad—it depends entirely on your task and priorities.
+
+#### The Pros: Why Stemming Is Still Widely Used
+
+**1. Dramatic Dimensionality Reduction**
+
+Stemming can cut vocabulary size by 20-40% in inflection-rich languages like English, and even more in morphologically complex languages like Finnish or Turkish. Consider a corpus where you have:
+- "organize" (50 occurrences)
+- "organizes" (30 occurrences)
+- "organized" (80 occurrences)
+- "organizing" (40 occurrences)
+- "organization" (100 occurrences)
+
+Without stemming, these are 5 separate features. With stemming, they all become "organ" with 300 total occurrences. This consolidation reduces sparsity and creates stronger statistical signals.
+
+For a realistic corpus with 50,000 unique words, stemming might reduce it to 35,000 unique stems. That's 15,000 fewer features to store, process, and model. In a TF-IDF matrix for 100,000 documents, that's 1.5 billion fewer cells in your sparse matrix!
+
+**2. Robust to Inflectional Variation**
+
+Stemming makes your system more forgiving of grammatical variation. This is especially valuable in:
+
+**Search engines**: Users don't want to worry about singular vs. plural. Searching "books" should match "book," searching "running" should match "run."
+
+**Document matching**: If one document says "companies organized" and another says "company organization," stemming helps recognize these as discussing the same concept.
+
+**Cross-document consistency**: Different authors use different word forms. Stemming normalizes these variations, making patterns more apparent.
+
+\`\`\`mermaid
+graph TD
+    A[Query: running shoes] --> B[Stem: run shoe]
+    C[Doc 1: runs smoothly] --> D[Stem: run smooth]
+    E[Doc 2: shoe runner] --> F[Stem: shoe run]
+    B --> G[Match!]
+    D --> G
+    F --> G
+    style G fill:#81c784
+\`\`\`
+
+**3. Speed and Simplicity**
+
+Stemming is blazingly fast. It's pure algorithmic rule application with no lookups, no models, no external resources. You can stem millions of words per second on a laptop. This makes it ideal for real-time systems, large-scale batch processing, and resource-constrained environments.
+
+#### The Cons: Where Stemming Falls Short
+
+**1. Produces Non-Words That Hurt Interpretability**
+
+When you inspect your processed data, you see stems like "happi," "univers," "organ" (from "organization"), "beauti" (from "beautiful"). This makes debugging harder and can confuse stakeholders looking at your results.
+
+Imagine showing a topic model where the top words are: "comput," "algorith," "oper," "programm." A domain expert might struggle to interpret these mangled stems compared to proper words like "computer," "algorithm," "operation," "programming."
+
+**2. Over-Stemming: Conflating Unrelated Words**
+
+This is the most serious problem. Over-stemming occurs when the algorithm strips too aggressively, merging words with different meanings:
+
+- "university" and "universal"  to  both become "univers"
+- "stock" and "stocks" and "stockings"  to  all become "stock"
+- "police" and "policy"  to  both become "polic" (in Lancaster stemmer)
+
+These false conflations introduce noise and can degrade model performance. In a sentiment classifier, conflating "organization" (neutral) with "organ" (which might appear in medical contexts) could create confusing signals.
+
+**3. Under-Stemming: Missing Related Words**
+
+Sometimes stemming isn't aggressive enough, failing to merge words that should be equivalent:
+
+- "best" and "good" stay separate (irregular comparative)
+- "alumni," "alumnus," "alumna" remain distinct
+- "feet" and "foot" aren't merged (irregular plural)
+
+These morphological irregularities are common in English and other languages. Rule-based stemming can't handle them without extensive exception lists.
+
+**4. Language-Dependent Rules Create Maintenance Burden**
+
+Each language needs its own stemmer. If you're building a multilingual system, you need:
+- English: Porter/Snowball
+- Spanish: Spanish Snowball
+- French: French Snowball
+- Arabic: Arabic-specific stemmer
+- And so on...
+
+Each stemmer has its own quirks and failure modes. You can't just "apply stemming"—you need language detection first, then the appropriate stemmer for each language.
+
+#### Real-World Decision Making
+
+**Use Stemming When:**
+- Building information retrieval systems (search engines, document matching)
+- Vocabulary size is a serious concern (memory, speed constraints)
+- Using classical ML with sparse features (Naive Bayes, SVM, logistic regression)
+- Perfect linguistic correctness isn't required
+- Working with morphologically rich languages
+
+**Avoid Stemming When:**
+- Using neural networks or transformers (they learn morphology automatically)
+- Interpretability is critical (stakeholders need to understand output)
+- Working with short texts where over-stemming can cause significant information loss
+- Your task is sensitive to semantic precision (named entity recognition, question answering)
+
+**Consider Lemmatization Instead When:**
+- You need real words in your output
+- Accuracy matters more than speed
+- You have access to language models and computational resources
+
+The bottom line: stemming is a fast, simple, effective technique for reducing vocabulary and normalizing inflectional variants, but it trades linguistic correctness for speed and simplicity. For many applications, that's an excellent tradeoff. For others, lemmatization or no normalization might be better choices.`
         }
       ]
     },
@@ -1378,40 +2085,187 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Map tokens to dictionary base forms (lemmas).</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Morphological analysis using lexicons and POS/context.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Need precise base forms; linguistic analysis; better semantic grouping.</p>
+                  <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A[better] --> B[good]
+    C[running] --> D[run]
+    E[was] --> F[be]
+    G[feet] --> H[foot]
+    style A fill:#4fc3f7
+    style C fill:#4fc3f7
+    style E fill:#4fc3f7
+    style G fill:#4fc3f7
+    style B fill:#81c784
+    style D fill:#81c784
+    style F fill:#81c784
+    style H fill:#81c784`} />
+                    </h4>
+                    <p>Map tokens to dictionary base forms (lemmas).</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="fadeIn" delay={0.4} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Word + POS] --> B[Morphological Analysis]
+    B --> C[Dictionary Lookup]
+    C --> D[Lemma]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#e1bee7
+    style D fill:#81c784`} />
+                    </h4>
+                    <p>Morphological analysis using lexicons and POS/context.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="fadeIn" delay={0.6} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Need precise base forms; linguistic analysis; better semantic grouping.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Tokenize</li>
-                    <li>POS tag</li>
-                    <li>Lemmatize with language model</li>
-                    <li>Handle OOV/proper nouns separately</li>
-                    <li>Validate</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.16} duration={0.6}>
+                    <div><li>Tokenize</li></div>
+                    <div><li>POS tag</li></div>
+                    <div><li>Lemmatize with language model</li></div>
+                    <div><li>Handle OOV/proper nouns separately</li></div>
+                    <div><li>Validate</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#10632c',
-          notes: ''
+          notes: `### 19. Lemmatization
+
+Lemmatization is the sophisticated cousin of stemming—it reduces words to their base forms, but unlike stemming, it produces actual dictionary words and respects linguistic structure. Let's explore why lemmatization is often worth the extra computational cost.
+
+#### What Is Lemmatization?
+
+Lemmatization (pronounced "lem-uh-tuh-ZAY-shun") transforms words to their canonical dictionary form, called a "lemma" (pronounced "LEM-uh"). Unlike stemming which uses crude suffix-stripping rules, lemmatization performs proper morphological analysis using dictionaries and grammatical context.
+
+Examples of lemmatization:
+- "running," "runs," "ran"  to  "run" (infinitive form)
+- "better," "best"  to  "good" (base adjective)
+- "am," "is," "are," "was," "were," "been"  to  "be" (base verb)
+- "feet"  to  "foot" (singular noun)
+- "cacti"  to  "cactus" (singular form)
+
+Notice that these are all real, valid English words—no "happi" or "univers" nonsense!
+
+\`\`\`mermaid
+graph TD
+    A["Word: better"] --> B[POS: Adjective]
+    B --> C[Morphological Analysis]
+    C --> D["Dictionary: good"]
+    D --> E["Lemma: good"]
+    style A fill:#4fc3f7
+    style E fill:#81c784
+    style C fill:#ffd700
+\`\`\`
+
+#### How Lemmatization Works
+
+Lemmatization is a two-stage process that requires linguistic knowledge:
+
+**Stage 1: Part-of-Speech (POS) Tagging**
+The same word can have different lemmas depending on its grammatical role:
+- "meeting" as a noun  to  "meeting" (the lemma is the same)
+- "meeting" as a verb  to  "meet" (reduce to infinitive)
+
+So first, you need to determine: Is this word a noun, verb, adjective, or adverb? This requires POS tagging, which we'll discuss in detail in a later slide.
+
+**Stage 2: Morphological Analysis and Dictionary Lookup**
+Using the word and its POS tag, lemmatization:
+1. Consults a morphological lexicon (dictionary of word forms)
+2. Applies language-specific transformation rules
+3. Returns the canonical dictionary entry
+
+Modern lemmatizers like spaCy's use trained models that combine rule-based morphology with statistical learning. They've been trained on large annotated corpora to handle irregular forms, exceptions, and ambiguous cases.
+
+#### Popular Lemmatization Tools
+
+**WordNet Lemmatizer (NLTK)**: Uses the WordNet lexical database. Fast but requires explicit POS tags and sometimes produces unexpected results for words not in WordNet.
+
+**spaCy Lemmatizer**: State-of-the-art lemmatization integrated with POS tagging. Handles context well and supports many languages. This is the gold standard for modern NLP pipelines.
+
+**Stanford CoreNLP**: Excellent accuracy, especially for English. Includes lemmatization as part of a full linguistic annotation pipeline.
+
+#### When to Use Lemmatization
+
+Lemmatization shines when linguistic accuracy matters:
+
+**Linguistic Analysis**: If you're studying language patterns, grammatical structures, or conducting corpus linguistics research, you need real words, not stems.
+
+**Semantic Tasks**: When building semantic similarity systems, knowledge graphs, or ontologies, accurate lemmas help create better concept mappings. "Good" and "better" are semantically related, and lemmatization captures that relationship correctly.
+
+**Feature Engineering for ML**: For tasks like text classification where interpretability matters, having features named "run," "good," "organize" is much clearer than "run," "good," "organ."
+
+**Preprocessing for Word Embeddings**: If you're training Word2Vec or GloVe, lemmatization can improve the quality of embeddings by consolidating inflectional variants without introducing non-words.
+
+**Search and Information Retrieval**: Like stemming, lemmatization helps match queries to documents, but with better precision because it doesn't over-conflate unrelated words.
+
+#### Technical Workflow
+
+Here's a typical lemmatization pipeline:
+
+\`\`\`python
+import spacy
+
+# Load language model with lemmatizer
+nlp = spacy.load("en_core_web_sm")
+
+# Process text
+doc = nlp("The cats were running quickly")
+
+# Extract lemmas
+lemmas = [token.lemma_ for token in doc]
+# Result: ["the", "cat", "be", "run", "quickly"]
+\`\`\`
+
+Notice how:
+- "cats"  to  "cat" (plural to singular)
+- "were"  to  "be" (past tense to infinitive)
+- "running"  to  "run" (progressive to base form)
+
+#### Lemmatization vs. Stemming: The Key Differences
+
+| Aspect | Stemming | Lemmatization |
+|--------|----------|---------------|
+| Output | Stems (may be non-words) | Lemmas (dictionary words) |
+| Method | Rule-based suffix stripping | Morphological analysis + dictionary |
+| Speed | Very fast | Slower (needs POS tagging) |
+| Accuracy | Can over/under-stem | More accurate |
+| Resources | None needed | Needs lexicon and models |
+| Handles irregulars | No | Yes |
+
+#### Handling Special Cases
+
+**Out-of-Vocabulary (OOV) Words**: New words, slang, typos, and domain-specific jargon might not be in the lemmatizer's dictionary. Most lemmatizers will return the original word unchanged.
+
+**Proper Nouns**: Names, places, brands should typically NOT be lemmatized. Most modern lemmatizers recognize proper nouns via POS tagging and leave them alone.
+
+**Domain-Specific Terms**: Medical, legal, and scientific texts contain specialized morphology. You might need domain-adapted lemmatizers or custom rules.
+
+#### Performance Considerations
+
+Lemmatization is significantly slower than stemming because it requires:
+1. POS tagging (neural network inference)
+2. Dictionary lookups
+3. Morphological rule application
+
+For 1 million words, stemming might take 1-2 seconds, while lemmatization might take 30-60 seconds with spaCy. If you're processing billions of documents, this difference matters!
+
+However, the accuracy improvement is often worth it. And with modern hardware and efficient implementations, lemmatization is fast enough for most real-world applications.`
         },
         {
           id: 20,
@@ -1419,29 +2273,166 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>More accurate than stemming</li>
-                  <li>Preserves meaning</li>
-                  <li>Aids downstream tasks</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Slower</li>
-                  <li>Requires models/resources</li>
-                  <li>Errors under domain shift</li>
-                </ul>
+                <GSAPAnimated animation="bounceIn" delay={0.2} duration={1.0}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph TD
+    A[Lemmatization] --> B[Real Words]
+    A --> C[High Accuracy]
+    A --> D[Handles Irregulars]
+    style A fill:#ffd700
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.18} duration={0.7}>
+                  <div><li>More accurate than stemming</li></div>
+                  <div><li>Preserves meaning</li></div>
+                  <div><li>Aids downstream tasks</li></div>
+                </GSAPStaggerList>
+                <GSAPAnimated animation="bounceIn" delay={0.9} duration={1.0}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[Lemmatization] --> B[Slower Processing]
+    A --> C[Needs Resources]
+    A --> D[Domain Shift Errors]
+    style A fill:#ffd700
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.18} duration={0.7}>
+                  <div><li>Slower</li></div>
+                  <div><li>Requires models/resources</li></div>
+                  <div><li>Errors under domain shift</li></div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#10632c',
-          notes: ''
+          notes: `### 20. Lemmatization: Pros and Cons
+
+Now let's examine the tradeoffs of lemmatization compared to stemming and other normalization approaches. Understanding when to pay the computational cost for higher accuracy is crucial for effective NLP pipeline design.
+
+#### The Pros: Why Lemmatization Is Worth the Extra Cost
+
+**1. Significantly More Accurate Than Stemming**
+
+Lemmatization produces linguistically correct base forms, avoiding the conflation errors that plague stemming. Let's look at concrete comparisons:
+
+**Stemming errors that lemmatization fixes:**
+- "university" and "universal"  to  Stemmer: both become "univers" (WRONG) | Lemmatizer: "university" and "universal" remain distinct (CORRECT)
+- "organization"  to  Stemmer: "organ" (misleading) | Lemmatizer: "organization" or "organize" (correct and meaningful)
+- "news"  to  Stemmer: "new" (changes meaning!) | Lemmatizer: "news" (correctly preserved as distinct from "new")
+
+**Irregular forms handled correctly:**
+- "better"  to  Stemmer: "better" (unchanged) | Lemmatizer: "good" (correct base form)
+- "feet"  to  Stemmer: "feet" (unchanged) | Lemmatizer: "foot" (singular form)
+- "was," "were," "been"  to  Stemmer: varies | Lemmatizer: all become "be"
+
+This accuracy difference can translate to 5-15% improvement in downstream task performance for tasks that depend on precise semantic grouping.
+
+\`\`\`mermaid
+graph LR
+    A[university, universal] --> B[Stemmer: univers]
+    A --> C[Lemmatizer: kept separate]
+    B --> D[Confusion]
+    C --> E[Clarity]
+    style B fill:#ffcdd2
+    style C fill:#81c784
+    style D fill:#ffcdd2
+    style E fill:#81c784
+\`\`\`
+
+**2. Preserves Semantic Meaning**
+
+Because lemmatization produces real dictionary words, your processed text remains interpretable. This has several benefits:
+
+**Debugging**: When you inspect your processed tokens, you see "organize," "run," "good" instead of "organ," "run," "good." You can immediately understand what the original words were.
+
+**Feature Interpretation**: In a machine learning model, if the most important feature is "good," you know it represents "good," "better," "best," etc. If the feature is "organ," does it mean "organ" (body part) or "organization" (entity)? Ambiguity creates problems.
+
+**Stakeholder Communication**: When presenting results to non-technical stakeholders, showing them feature importance scores with real words ("compete," "innovative," "growth") is much more effective than showing stems ("compet," "innov," "grow").
+
+**3. Aids Downstream Tasks**
+
+Many NLP tasks benefit from accurate lemmatization:
+
+**Named Entity Recognition (NER)**: Lemmatization helps identify entity patterns without over-normalizing. "United States" stays intact, but "running companies" becomes "run company," making it easier to recognize "company" as an entity type.
+
+**Semantic Search**: When building search systems with semantic understanding, accurate lemmas improve embedding quality and retrieval precision. Word embeddings trained on lemmatized text often have better semantic properties.
+
+**Knowledge Graph Construction**: Extracting relationships like "X organizes Y" works better with "organize" as the base form rather than "organ" from stemming.
+
+**Question Answering**: Matching questions to answers requires precise semantic alignment. "Who organized the event?" should match "Event was organized by..." Lemmatization handles this better than stemming.
+
+#### The Cons: Where Lemmatization Falls Short
+
+**1. Significantly Slower Processing**
+
+This is the biggest downside. Lemmatization requires:
+- **POS tagging**: Running a sequence labeling model (typically a BiLSTM or transformer) over the text
+- **Dictionary lookups**: Searching morphological databases
+- **Rule application**: Applying language-specific transformation rules
+
+Benchmark on 1 million English words:
+- **Stemming**: ~1-2 seconds
+- **Lemmatization (spaCy)**: ~30-60 seconds
+- **Lemmatization (Stanford CoreNLP)**: ~90-120 seconds
+
+That's 30-60x slower than stemming! For batch processing of large corpora, this can be the difference between hours and days.
+
+**2. Requires External Models and Resources**
+
+Lemmatization isn't self-contained. You need:
+- Trained language models (50-500 MB per language)
+- Morphological lexicons
+- POS tagging models
+- GPU acceleration for reasonable speed on large corpora
+
+This creates dependencies and deployment challenges. You can't just "pip install" a simple library—you need to download models, manage versions, and ensure compatibility.
+
+For stemming, you just need a few hundred lines of pure Python code. For lemmatization, you need spaCy, Stanford CoreNLP, or similar heavyweight libraries.
+
+**3. Errors Under Domain Shift**
+
+Lemmatizers are trained on general corpora (news, web text, literature). When applied to specialized domains, they make mistakes:
+
+**Medical text**: "presents" in "patient presents with fever" might be lemmatized to "present" (correct) or "presentation" (incorrect depending on the tagger's confidence).
+
+**Legal text**: "parties" could mean "party" (social event) or "party" (legal entity). Context determines the correct lemma, but the model might choose incorrectly.
+
+**Social media**: Slang, misspellings, and creative language break lemmatizers. "gonna" might not lemmatize to "go," "wanna" might not become "want."
+
+**Scientific text**: Domain-specific terminology might not be in the training data, leading to incorrect lemmatization or no lemmatization at all.
+
+#### When to Choose Lemmatization Over Stemming
+
+Use lemmatization when:
+- **Accuracy > Speed**: You need precise normalization and can afford the computational cost
+- **Interpretability matters**: Stakeholders need to understand your features
+- **Downstream tasks are sensitive**: NER, semantic search, knowledge graphs benefit from accuracy
+- **You're working with irregular morphology**: Languages with lots of irregular forms (English, French) benefit more from lemmatization
+
+Use stemming when:
+- **Speed is critical**: Real-time systems, large-scale batch processing
+- **Good enough is good enough**: Information retrieval where approximate matching is acceptable
+- **Resources are limited**: Edge devices, mobile apps, resource-constrained environments
+- **Simple preprocessing is preferred**: Minimal dependencies, easy deployment
+
+Use neither when:
+- **Using transformers**: BERT, GPT, RoBERTa learn morphology automatically
+- **Vocabulary is already small**: Short, controlled vocabularies don't need normalization
+- **Inflectional variation is minimal**: Some languages (Chinese, Vietnamese) have little inflection
+
+#### Practical Recommendation
+
+For most modern NLP projects with adequate computational resources, lemmatization is the better choice. The accuracy gains outweigh the speed penalty, especially as hardware improves and libraries become more efficient. However, always profile your pipeline—if lemmatization is your bottleneck and you're not seeing accuracy improvements, switch to stemming or skip normalization entirely.
+
+A hybrid approach is also viable: use stemming for initial experiments and exploration, then switch to lemmatization for production or final models where accuracy matters most.`
         }
       ]
     },
@@ -1457,40 +2448,220 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Before lemmatization, parsing, NER, feature engineering.</p>
+                  <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A[I] --> B[PRON]
+    C[love] --> D[VERB]
+    E[fast] --> F[ADJ]
+    G[cars] --> H[NOUN]
+    style A fill:#4fc3f7
+    style C fill:#4fc3f7
+    style E fill:#4fc3f7
+    style G fill:#4fc3f7
+    style B fill:#81c784
+    style D fill:#e1bee7
+    style F fill:#ffd700
+    style H fill:#81c784`} />
+                    </h4>
+                    <p>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Sentence] --> B[Context Analysis]
+    B --> C[HMM/CRF/Neural Model]
+    C --> D[POS Tags]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#e1bee7
+    style D fill:#81c784`} />
+                    </h4>
+                    <p>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Before lemmatization, parsing, NER, feature engineering.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Select tagset (e.g., Universal POS)</li>
-                    <li>Load model</li>
-                    <li>Tokenize</li>
-                    <li>Tag</li>
-                    <li>Evaluate on a sample</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.16} duration={0.6}>
+                    <div><li>Select tagset (e.g., Universal POS)</li></div>
+                    <div><li>Load model</li></div>
+                    <div><li>Tokenize</li></div>
+                    <div><li>Tag</li></div>
+                    <div><li>Evaluate on a sample</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#631037',
-          notes: ''
+          notes: `### 21. Part-of-Speech Tagging
+
+Part-of-speech tagging, commonly abbreviated as POS tagging (pronounced "P-O-S tagging" or sometimes "pause tagging"), is a fundamental NLP task that assigns grammatical categories to words. It's like giving each word a label describing its grammatical role in a sentence.
+
+#### What Is Part-of-Speech Tagging?
+
+POS tagging identifies whether a word is a noun, verb, adjective, adverb, pronoun, preposition, and so on. For example, in the sentence "They refuse to permit us to obtain the refuse permit," POS tagging would label:
+
+- "They"  to  PRONOUN
+- "refuse" (first occurrence)  to  VERB
+- "to"  to  PARTICLE (or TO in some tagsets)
+- "permit" (first occurrence)  to  VERB
+- "us"  to  PRONOUN
+- "to"  to  PARTICLE
+- "obtain"  to  VERB
+- "the"  to  DETERMINER
+- "refuse" (second occurrence)  to  NOUN (different meaning!)
+- "permit" (second occurrence)  to  NOUN (different meaning!)
+
+Notice how "refuse" and "permit" are verbs in one context but nouns in another. POS tagging resolves this ambiguity using context.
+
+\`\`\`mermaid
+graph TD
+    A["Time flies like an arrow"] --> B[Time: NOUN]
+    A --> C[flies: VERB]
+    A --> D[like: ADP]
+    A --> E[an: DET]
+    A --> F[arrow: NOUN]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#e1bee7
+    style D fill:#ffd700
+    style F fill:#81c784
+\`\`\`
+
+#### Why POS Tagging Matters
+
+POS tagging is rarely an end goal—it's usually a preprocessing step that enables other NLP tasks:
+
+**1. Lemmatization**: As we discussed earlier, accurate lemmatization requires knowing a word's POS. The lemma of "meeting" depends on whether it's a noun (lemma: "meeting") or verb (lemma: "meet").
+
+**2. Named Entity Recognition (NER)**: NER systems use POS tags as features. Proper nouns (tagged as PROPN) are likely to be entities. Patterns like "PROPN PROPN" might indicate person names ("Barack Obama") or organizations ("Google Inc").
+
+**3. Syntactic Parsing**: Building parse trees requires knowing which words are nouns, verbs, etc. POS tags are the foundation of syntactic analysis.
+
+**4. Information Extraction**: Extracting relationships often relies on POS patterns. For example, finding "NOUN VERB NOUN" patterns can identify subject-verb-object relationships.
+
+**5. Feature Engineering**: For text classification, you might create features like "ratio of adjectives to nouns" or "number of modal verbs." POS tags enable these syntactic features.
+
+#### How POS Tagging Works
+
+Modern POS tagging is treated as a sequence labeling problem. The algorithm considers the entire sentence context, not just individual words:
+
+**Traditional Approaches:**
+- **Hidden Markov Models (HMMs)**: Model the probability of tag sequences and word emissions
+- **Conditional Random Fields (CRFs)**: Discriminative models that consider rich features
+
+**Modern Approaches:**
+- **BiLSTM + CRF**: Bidirectional LSTMs capture context from both directions
+- **Transformers**: BERT-based taggers achieve 97-98% accuracy on English
+
+The key insight is that context matters. Consider "bank":
+- "I need to deposit money at the bank"  to  NOUN
+- "Don't bank on it happening"  to  VERB
+
+The surrounding words ("deposit," "money," "at") vs. ("on," "it") signal the correct POS tag.
+
+#### Common POS Tagsets
+
+Different tagsets exist with varying granularity:
+
+**Universal POS Tags (17 tags)**: A simplified, cross-lingual standard
+- NOUN, VERB, ADJ, ADV, PRON, DET, ADP (preposition), NUM, CONJ, PART, etc.
+- Easy to understand, works across languages
+
+**Penn Treebank Tags (45 tags)**: Fine-grained English tagset
+- NN (singular noun), NNS (plural noun), NNP (proper singular noun), NNPS (proper plural noun)
+- VB (base verb), VBD (past tense), VBG (gerund), VBN (past participle), VBP (present), VBZ (3rd person present)
+- More detailed but English-specific
+
+**Brown Corpus Tags (87 tags)**: Very detailed, including morphological information
+- Useful for linguistic research but overkill for most NLP applications
+
+#### When to Use POS Tagging
+
+POS tagging is essential when:
+- **Performing lemmatization**: Most lemmatizers require or benefit from POS information
+- **Building linguistic features**: Syntax-aware features for classification
+- **Doing syntactic analysis**: Parsing, chunking, dependency analysis
+- **Filtering by word class**: E.g., extracting only nouns and adjectives for topic modeling
+- **Disambiguating word senses**: Context-dependent meaning resolution
+
+#### Technical Workflow
+
+Here's a typical POS tagging pipeline using spaCy:
+
+\`\`\`python
+import spacy
+
+# Load model with POS tagger
+nlp = spacy.load("en_core_web_sm")
+
+# Process sentence
+doc = nlp("Apple is looking at buying U.K. startup for $1 billion")
+
+# Extract POS tags
+for token in doc:
+    print(f"{token.text}: {token.pos_}")
+
+# Output:
+# Apple: PROPN (proper noun)
+# is: AUX (auxiliary verb)
+# looking: VERB
+# at: ADP (preposition)
+# buying: VERB
+# U.K.: PROPN
+# startup: NOUN
+# for: ADP
+# $: SYM (symbol)
+# 1: NUM (number)
+# billion: NUM
+\`\`\`
+
+#### Pronunciation Guide
+
+- **POS**: P-O-S (say each letter) or "pause"
+- **Corpus**: KOR-puss (plural: corpora, KOR-por-uh)
+- **Tagset**: TAG-set
+- **Ambiguity**: am-big-YOO-ih-tee
+
+#### Accuracy and Limitations
+
+State-of-the-art POS taggers achieve 97-98% accuracy on standard English benchmarks. However, accuracy drops on:
+- **Out-of-domain text**: Social media, technical jargon, creative writing
+- **Ambiguous cases**: "He will run" (will: AUX or NOUN?)
+- **Unknown words**: New slang, misspellings, rare terms
+- **Code-switching**: Multilingual text mixing languages
+
+Even 2-3% error might seem small, but in a 1000-word document, that's 20-30 incorrect tags. These errors can propagate to downstream tasks.
+
+#### Evaluation and Validation
+
+Always spot-check your POS tags! Look at a sample of tagged text and verify:
+- Are proper nouns correctly identified?
+- Are ambiguous words tagged correctly in context?
+- Are domain-specific terms handled well?
+- Do you see patterns of errors?
+
+If you notice systematic errors, you might need:
+- A domain-adapted POS tagger
+- A more sophisticated model
+- Custom rules for your specific vocabulary
+
+POS tagging is a foundational tool in the NLP toolkit. While it's largely been commoditized by tools like spaCy and Stanford CoreNLP, understanding how it works and when to use it remains essential for building robust NLP pipelines.`
         },
         {
           id: 22,
@@ -1498,28 +2669,184 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Enables syntax-aware features</li>
-                  <li>Improves lemmatization and parsing</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Errors propagate</li>
-                  <li>Domain/language coverage varies</li>
-                  <li>Ambiguous tokens</li>
-                </ul>
+                <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.9}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph TD
+    A[POS Tagging] --> B[Syntax Awareness]
+    A --> C[Better Lemmatization]
+    A --> D[Rich Features]
+    style A fill:#ffd700
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.2} duration={0.7}>
+                  <div><li>Enables syntax-aware features</li></div>
+                  <div><li>Improves lemmatization and parsing</li></div>
+                </GSAPStaggerList>
+                <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.9}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[POS Tagging] --> B[Error Propagation]
+    A --> C[Domain Variance]
+    A --> D[Ambiguity Issues]
+    style A fill:#ffd700
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.2} duration={0.7}>
+                  <div><li>Errors propagate</li></div>
+                  <div><li>Domain/language coverage varies</li></div>
+                  <div><li>Ambiguous tokens</li></div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#631037',
-          notes: ''
+          notes: `### 22. Part-of-Speech Tagging: Pros and Cons
+
+POS tagging is a double-edged sword—it enables sophisticated linguistic analysis but also introduces potential failure points. Let's examine both sides carefully.
+
+#### The Pros: Why POS Tagging Is Essential
+
+**1. Enables Syntax-Aware Features**
+
+POS tags unlock a wealth of linguistic features that go beyond simple word counts. You can create features like:
+
+**Syntactic patterns**: Count sequences like "ADJ NOUN" (descriptive phrases), "VERB ADV" (modified actions), "MODAL VERB" (possibility/obligation expressions). These patterns can be powerful features for text classification.
+
+**Grammatical complexity metrics**: 
+- Ratio of adjectives to nouns (descriptive density)
+- Ratio of verbs to nouns (action vs. entity focus)
+- Presence of modal verbs ("could," "should," "might") indicating uncertainty
+- Frequency of passive voice constructions
+
+**Style indicators**: Different writing styles have different POS distributions. Academic writing has more nouns and prepositions, narrative writing has more verbs and adverbs, persuasive writing has more adjectives and modal verbs.
+
+\`\`\`mermaid
+graph TD
+    A[POS Tags] --> B[Syntactic Features]
+    A --> C[Style Metrics]
+    A --> D[Pattern Detection]
+    B --> E[Better Classification]
+    C --> E
+    D --> E
+    style A fill:#ffd700
+    style E fill:#81c784
+\`\`\`
+
+For example, in sentiment analysis, you might discover that the ratio of adjectives in a review correlates with sentiment intensity—highly positive or negative reviews use more descriptive language.
+
+**2. Dramatically Improves Lemmatization and Parsing**
+
+We've mentioned this before, but it bears repeating: accurate POS tags are crucial for accurate lemmatization. Without POS information:
+- "meeting"  to  lemmatizer might guess wrong (is it a noun or verb?)
+- "saw"  to  could be "see" (verb) or "saw" (noun, the tool)
+- "lead"  to  could be "lead" (verb, to guide) or "lead" (noun, the metal)
+
+With POS tags, these ambiguities disappear. The lemmatizer knows exactly how to handle each word based on its grammatical role.
+
+Similarly, syntactic parsing (building parse trees that show sentence structure) is nearly impossible without POS tags. Parsers need to know which words are verbs (the structural anchors) and which are nouns (the arguments) to build accurate trees.
+
+**3. Enables Advanced NLP Pipelines**
+
+POS tagging is often a gateway to more sophisticated analysis:
+
+**Dependency parsing**: Identifies grammatical relationships between words (e.g., "dog" is the subject of "ran"). Requires POS tags as input.
+
+**Semantic role labeling**: Identifies "who did what to whom" in sentences. Built on top of POS tagging and parsing.
+
+**Coreference resolution**: Determining that "he," "John," and "the CEO" refer to the same person. Uses POS patterns to identify candidate mentions.
+
+**Information extraction**: Extracting structured data from text (e.g., "Company X acquired Company Y for $Z") relies on POS patterns to identify key entities and relationships.
+
+#### The Cons: Limitations and Failure Modes
+
+**1. Errors Propagate to Downstream Tasks**
+
+This is the most critical issue. POS tagging errors compound in multi-stage pipelines:
+
+**Cascade failure example:**
+1. POS tagger incorrectly tags "lead" as NOUN instead of VERB
+2. Lemmatizer uses the wrong POS, producing "lead" (metal) instead of "lead" (guide)
+3. NER system looking for VERB + NOUN patterns misses "lead company" as a potential organization
+4. Information extraction fails to capture the relationship
+
+Even with 97% accuracy, in a 1000-word document you have ~30 incorrect tags. If 10 of those are on critical words (main verbs, key entities), downstream tasks suffer significantly.
+
+\`\`\`mermaid
+graph LR
+    A[POS Error] --> B[Lemmatization Error]
+    B --> C[NER Error]
+    C --> D[Extraction Failure]
+    style A fill:#ffcdd2
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+\`\`\`
+
+**2. Domain and Language Coverage Varies Dramatically**
+
+POS taggers are typically trained on news text, literature, or web text. Performance degrades on specialized domains:
+
+**Social Media**: "That's so extra" or "He's flexing" use non-standard vocabulary. "Extra" as an adjective meaning "excessive" and "flexing" as slang for "showing off" might be mistagged.
+
+**Technical Jargon**: "We need to Docker this service" uses "Docker" as a verb (to containerize), but it might be tagged as a proper noun because the tagger has never seen it used this way.
+
+**Medical Text**: "Patient presents with acute symptoms" uses domain-specific verb sense (presents = exhibits). A general tagger might struggle with this.
+
+**Legal Text**: "Plaintiff alleges" uses formal legal language that might differ from the tagger's training data.
+
+Cross-linguistic challenges are even more severe. Taggers trained on one language don't transfer to another. Even within a language family (Romance languages), you need separate taggers for Spanish, French, Italian, etc.
+
+**3. Fundamental Ambiguity Is Irreducible**
+
+Some cases are genuinely ambiguous even with full context:
+
+**Noun-Adjective ambiguity**: "The rich are getting richer"  to  Is "rich" a noun (the wealthy people) or an adjective used as a noun?
+
+**Verb-Noun ambiguity**: "Let's book the flight" vs. "I'm reading a book"  to  Context helps, but edge cases remain challenging.
+
+**Proper noun vs. common noun**: "Apple announced new products"  to  Is "Apple" a fruit or a company? Context usually clarifies, but domain shift can confuse taggers.
+
+**Particle vs. preposition**: "Turn on the light"  to  Is "on" a particle (part of phrasal verb "turn on") or a preposition? Linguists disagree!
+
+Even human annotators disagree on POS tags 2-3% of the time, establishing a ceiling on automated accuracy.
+
+#### When POS Tagging Adds Value vs. When It Doesn't
+
+**High Value Scenarios:**
+- Lemmatization for ambiguous words
+- Feature engineering for classical ML models
+- Linguistic analysis and corpus studies
+- Building syntactic/semantic parsers
+- Rule-based information extraction
+
+**Low Value Scenarios:**
+- Modern transformer models (BERT, GPT already learn syntax implicitly)
+- Simple bag-of-words applications where syntax doesn't matter
+- Very short texts where POS tags add little information
+- Real-time systems where tagging latency is prohibitive
+- Domains with poor tagger accuracy where errors outweigh benefits
+
+#### Practical Recommendations
+
+**Always validate POS tagging on your domain**: Don't assume 97% accuracy on news text transfers to your medical/legal/social media corpus. Sample-check 100-200 tagged sentences from your data.
+
+**Consider the full pipeline cost**: POS tagging isn't free. It adds latency and complexity. If downstream tasks don't meaningfully benefit, skip it.
+
+**Use POS-aware lemmatization**: If you're lemmatizing anyway, the POS tagging cost is already paid. Might as well extract POS features too.
+
+**Retrain or fine-tune for critical applications**: If POS accuracy is essential and you have annotated data, fine-tune a tagger on your domain. Even 1000-2000 tagged sentences can meaningfully improve performance.
+
+**Ensemble or combine approaches**: For ambiguous cases, consider using multiple taggers and taking a majority vote, or using confidence scores to identify uncertain tags.
+
+The bottom line: POS tagging is a powerful tool that enables advanced NLP, but it's not a silver bullet. Use it judiciously where linguistic structure matters, validate its accuracy on your data, and be aware of error propagation in multi-stage pipelines.`
         }
       ]
     },
@@ -1535,40 +2862,208 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Capture local context by creating contiguous token sequences.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>Linear models, IR, text classification, feature engineering.</p>
+                  <GSAPAnimated animation="bounceIn" delay={0.2} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph TD
+    A["I love NLP"] --> B["Unigrams: I, love, NLP"]
+    A --> C["Bigrams: I love, love NLP"]
+    A --> D["Trigrams: I love NLP"]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#e1bee7
+    style D fill:#ffd700`} />
+                    </h4>
+                    <p>Capture local context by creating contiguous token sequences.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="bounceIn" delay={0.4} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph LR
+    A[Tokens] --> B[Sliding Window]
+    B --> C[Generate n-grams]
+    C --> D[Prune/Weight]
+    style A fill:#4fc3f7
+    style B fill:#ffd700
+    style C fill:#e1bee7
+    style D fill:#81c784`} />
+                    </h4>
+                    <p>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>Linear models, IR, text classification, feature engineering.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Choose n values</li>
-                    <li>Generate</li>
-                    <li>Prune rare n-grams</li>
-                    <li>Compute TF-IDF/PMI</li>
-                    <li>Cap feature size</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.18} duration={0.6}>
+                    <div><li>Choose n values</li></div>
+                    <div><li>Generate</li></div>
+                    <div><li>Prune rare n-grams</li></div>
+                    <div><li>Compute TF-IDF/PMI</li></div>
+                    <div><li>Cap feature size</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#636310',
-          notes: ''
+          notes: `### 23. N-gram Generation
+
+N-gram generation is a classic technique for capturing local word order and context in text. While it might seem simple, n-grams have powered countless successful NLP applications and remain relevant even in the deep learning era.
+
+#### What Are N-grams?
+
+An n-gram (pronounced "N-gram") is a contiguous sequence of n items from text—typically words, but sometimes characters. The "n" specifies how many items:
+
+- **Unigrams (n=1)**: Individual words: "I," "love," "natural," "language," "processing"
+- **Bigrams (n=2)**: Word pairs: "I love," "love natural," "natural language," "language processing"
+- **Trigrams (n=3)**: Three-word sequences: "I love natural," "love natural language," "natural language processing"
+- **4-grams, 5-grams, etc.**: Longer sequences (less common due to sparsity)
+
+Consider the sentence: "The quick brown fox jumps"
+
+\`\`\`mermaid
+graph TD
+    A["The quick brown fox jumps"] --> B[Unigrams: The, quick, brown, fox, jumps]
+    A --> C["Bigrams: The quick, quick brown, brown fox, fox jumps"]
+    A --> D["Trigrams: The quick brown, quick brown fox, brown fox jumps"]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#e1bee7
+    style D fill:#ffd700
+\`\`\`
+
+#### Why N-grams Matter
+
+**Capturing Word Order**: Bag-of-words models lose all word order information. "Dog bites man" and "Man bites dog" are identical in bag-of-words, but bigrams distinguish them: "dog bites" vs. "man bites."
+
+**Capturing Context**: In sentiment analysis, "not good" has opposite meaning from "good." Unigrams see "not" and "good" separately, but the bigram "not good" captures the negative sentiment.
+
+**Capturing Phrases**: Multi-word expressions like "New York," "machine learning," "ice cream" should be treated as single units. Bigrams preserve these meaningful phrases.
+
+**Improving Predictive Power**: N-grams add contextual features that improve model performance. For text classification, adding bigrams to unigrams often improves accuracy by 5-10%.
+
+#### How N-gram Generation Works
+
+The process is straightforward but creates combinatorial explosion:
+
+**Step 1: Tokenize**
+Split text into tokens: ["I", "love", "machine", "learning"]
+
+**Step 2: Slide Window**
+For bigrams (n=2), slide a 2-word window:
+- Position 0-1: "I love"
+- Position 1-2: "love machine"
+- Position 2-3: "machine learning"
+
+For trigrams (n=3), slide a 3-word window, and so on.
+
+**Step 3: Count and Weight**
+Count frequency of each n-gram across your corpus. Optionally compute TF-IDF weights to identify distinctive n-grams.
+
+**Step 4: Prune**
+Remove rare n-grams (appear in < 2-3 documents) to reduce sparsity and noise.
+
+#### The Feature Explosion Problem
+
+Here's where it gets tricky. If your vocabulary has 10,000 words:
+- Unigrams: 10,000 features
+- Bigrams: potentially 100,000,000 combinations (10k × 10k)
+- Trigrams: potentially 1,000,000,000,000 combinations
+
+In practice, most combinations never occur (language is structured, not random). A real corpus might have:
+- 50,000 unique unigrams
+- 500,000 unique bigrams (not 2.5 billion!)
+- 1,000,000 unique trigrams
+
+But that's still a massive feature space! This is why pruning is essential.
+
+\`\`\`mermaid
+graph TD
+    A[10K Vocabulary] --> B[10K Unigrams]
+    A --> C[500K Bigrams]
+    A --> D[1M Trigrams]
+    D --> E[Extreme Sparsity]
+    style D fill:#ffcdd2
+    style E fill:#ffcdd2
+\`\`\`
+
+#### Common N-gram Strategies
+
+**1. Unigrams + Bigrams**
+Most common approach. Captures individual words and immediate context without exploding feature space too much.
+
+**2. Character N-grams**
+Instead of word n-grams, use character sequences: "hello"  to  char trigrams: "hel," "ell," "llo." Useful for capturing morphology and handling typos.
+
+**3. Skip-grams**
+Allow gaps: "not * good" matches "not very good," "not really good," etc. More flexible but even sparser.
+
+**4. TF-IDF Weighted N-grams**
+Don't just count n-grams; weight them by TF-IDF to emphasize distinctive ones. "machine learning" in ML papers has high TF-IDF; "the and" has low TF-IDF.
+
+**5. Pointwise Mutual Information (PMI)**
+Identify n-grams where words co-occur more than expected by chance. "ice cream" has high PMI because "ice" and "cream" appear together far more often than random.
+
+#### When to Use N-grams
+
+N-grams shine in specific scenarios:
+
+**Classical ML Text Classification**: Naive Bayes, SVM, Logistic Regression benefit greatly from bigram and trigram features.
+
+**Information Retrieval**: Search engines use n-grams to match multi-word queries and handle phrase searches.
+
+**Spam Detection**: Spam has distinctive phrase patterns. "Click here," "limited offer," "act now" are telltale bigrams.
+
+**Language Modeling**: Traditional n-gram language models (before neural networks) predict next word based on previous n-1 words.
+
+**Text Generation**: Markov chain text generators use n-grams to produce coherent-sounding text.
+
+**Feature Engineering**: For any task where word order matters but you're using linear models, n-grams bridge the gap.
+
+#### When NOT to Use N-grams
+
+**Transformer Models**: BERT, GPT, etc. learn contextual representations automatically. Adding n-grams provides no benefit and increases computational cost.
+
+**Very Sparse Data**: If you only have a few hundred documents, most bigrams and trigrams appear once. Pruning removes too much, leaving little signal.
+
+**Long-Range Dependencies**: N-grams only capture local context (2-5 words). For dependencies spanning 10+ words, n-grams fail.
+
+**Memory-Constrained Environments**: Storing millions of n-grams requires significant memory. Mobile or edge devices might struggle.
+
+#### Practical Implementation Tips
+
+**Choose n wisely**: Bigrams almost always help. Trigrams sometimes help. 4-grams rarely help unless you have massive data.
+
+**Prune aggressively**: Remove n-grams appearing in < 2-3 documents. This cuts 80-90% of n-grams with minimal information loss.
+
+**Set a max features limit**: Cap total features at 50k-100k by keeping only the most frequent or highest TF-IDF n-grams.
+
+**Consider character n-grams for noisy text**: Social media, OCR text, multilingual text with inconsistent tokenization benefit from character-level n-grams.
+
+**Combine with other features**: N-grams work best alongside unigrams, not as a replacement. Use unigrams + bigrams together.
+
+#### Example: Sentiment Analysis
+
+Without bigrams: "not" (neutral), "good" (positive)  to  Model is confused
+With bigrams: "not good" (negative)  to  Model correctly identifies negative sentiment
+
+Without bigrams: "not" (neutral), "bad" (negative)  to  Model says negative
+With bigrams: "not bad" (positive/neutral)  to  Model correctly identifies the negation
+
+This is why bigrams consistently improve sentiment classification by 5-10% accuracy over unigrams alone.
+
+N-grams are a simple, interpretable, and effective way to capture local context in text. While they've been partially superseded by neural methods for some tasks, they remain a staple of classical NLP and continue to be useful in many practical applications.`
         },
         {
           id: 24,
@@ -1576,28 +3071,194 @@ The key is knowing your data and your task. For general text cleanup, whitespace
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                  <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Pros
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Encodes order</li>
-                  <li>Improves predictive power over unigrams</li>
-                </ul>
-                <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
-                  <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                  Cons
-                </h4>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Feature explosion</li>
-                  <li>Sparsity</li>
-                  <li>Brittle to noise and rephrasing</li>
-                </ul>
+                <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Pros <MermaidPopover diagram={`graph LR
+    A[N-grams] --> B[Word Order]
+    A --> C[Context Capture]
+    style A fill:#ffd700
+    style B fill:#81c784
+    style C fill:#81c784`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.2} duration={0.7}>
+                  <div><li>Encodes order</li></div>
+                  <div><li>Improves predictive power over unigrams</li></div>
+                </GSAPStaggerList>
+                <GSAPAnimated animation="slideInRight" delay={0.8} duration={0.8}>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
+                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                    Cons <MermaidPopover diagram={`graph TD
+    A[N-grams] --> B["10K words  to  500K bigrams"]
+    A --> C[Sparse Features]
+    A --> D[Brittle Matching]
+    style A fill:#ffd700
+    style B fill:#ffcdd2
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2`} />
+                  </h4>
+                </GSAPAnimated>
+                <GSAPStaggerList stagger={0.2} duration={0.7}>
+                  <div><li>Feature explosion</li></div>
+                  <div><li>Sparsity</li></div>
+                  <div><li>Brittle to noise and rephrasing</li></div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#636310',
-          notes: ''
+          notes: `### 24. N-gram Generation: Pros and Cons
+
+N-grams have been a cornerstone of NLP for decades, but like all techniques, they come with significant tradeoffs. Let's examine both the strengths that made them so successful and the limitations that have led to their decline in some areas.
+
+#### The Pros: Why N-grams Remain Valuable
+
+**1. Encodes Local Word Order**
+
+This is the killer feature of n-grams. Bag-of-words models treat "dog bites man" and "man bites dog" identically, but these sentences have opposite meanings! N-grams preserve the crucial distinction:
+
+- **Unigrams only**: {dog: 1, bites: 1, man: 1}  to  identical for both sentences
+- **With bigrams**: "dog bites man" includes "dog bites" and "bites man"; "man bites dog" includes "man bites" and "bites dog"  to  distinguishable!
+
+This encoding of local order is essential for many NLP tasks. In sentiment analysis, "not bad" and "bad not" are distinguished. In question classification, "how do" (question) vs. "do how" (incorrect) are distinguished.
+
+\`\`\`mermaid
+graph TD
+    A["dog bites man"] --> B["Bigrams: dog bites, bites man"]
+    C["man bites dog"] --> D["Bigrams: man bites, bites dog"]
+    B -.Different!.-> D
+    style B fill:#81c784
+    style D fill:#e1bee7
+\`\`\`
+
+**2. Dramatically Improves Predictive Power**
+
+Empirical results consistently show that adding bigrams to unigrams improves performance:
+
+**Sentiment classification**: Unigrams alone might achieve 80% accuracy. Adding bigrams often pushes this to 85-87%. Adding trigrams might squeeze out another 1-2%.
+
+**Topic classification**: For classifying news articles into categories (sports, politics, technology), bigrams capture domain-specific phrases like "machine learning," "foreign policy," "home run" that are much more informative than isolated words.
+
+**Spam detection**: Spam patterns are often phrasal: "limited offer," "act now," "click here," "million dollars." Bigrams detect these patterns far more effectively than unigrams.
+
+**Named entity recognition (with classical ML)**: Person names often follow patterns like "PROPN PROPN" (e.g., "Barack Obama"). Location names might be "PROPN PROPN City" (e.g., "New York City"). Bigrams and trigrams capture these patterns.
+
+The improvement from adding bigrams is one of the most consistent findings in classical NLP—it's rare to see a case where they don't help at least a little.
+
+**3. Interpretability and Debuggability**
+
+When your model makes a decision, you can inspect which n-grams were most influential. If a spam classifier flags an email, you might see that "click here," "free money," and "act now" were the decisive features. This explainability is valuable for:
+- **Model debugging**: Understanding failures
+- **Regulatory compliance**: Explaining automated decisions
+- **User trust**: Showing why content was classified a certain way
+
+Unlike neural embeddings which are opaque high-dimensional vectors, n-grams are human-readable features you can directly examine.
+
+#### The Cons: Significant Limitations
+
+**1. Catastrophic Feature Explosion**
+
+This is the most serious problem. Feature spaces grow exponentially with n:
+
+**Example corpus with 10,000 unique words:**
+- Unigrams: 10,000 features
+- Bigrams: Theoretically 100 million (10k × 10k), practically ~500,000 unique bigrams
+- Trigrams: Theoretically 1 trillion, practically ~2-3 million unique trigrams
+
+Even with pruning, you end up with hundreds of thousands to millions of features. This causes:
+- **Memory explosion**: Storing sparse matrices becomes challenging
+- **Computational cost**: Training time increases dramatically
+- **Overfitting risk**: More features than training examples leads to overfitting
+
+In practice, you must aggressively prune (keeping only n-grams appearing 2+ times, or top 50k by frequency), but this pruning discards potentially useful rare n-grams.
+
+\`\`\`mermaid
+graph TD
+    A[10K words] --> B[10K unigrams]
+    A --> C[500K bigrams]
+    A --> D[2M trigrams]
+    C --> E[Memory Issues]
+    D --> F[Computational Bottleneck]
+    style C fill:#ffcdd2
+    style D fill:#ffcdd2
+    style E fill:#ffcdd2
+    style F fill:#ffcdd2
+\`\`\`
+
+**2. Extreme Sparsity**
+
+Most n-grams appear very rarely. In a corpus of 10,000 documents:
+- Common bigrams like "of the," "in the," "to be" appear in thousands of documents
+- Most bigrams appear in < 5 documents
+- Many bigrams (perhaps 50-60%) appear exactly once
+
+This sparsity creates statistical estimation problems. When a bigram appears only once or twice, you can't reliably estimate its importance or discriminative power. The signal-to-noise ratio is terrible.
+
+Sparse features also mean sparse training data per feature. If you have 500,000 bigram features but only 10,000 training examples, each feature has on average 0.02 training examples! This makes learning difficult and prone to overfitting.
+
+**3. Brittleness to Noise and Rephrasing**
+
+N-grams require exact matching. Small variations break the match:
+
+**Synonyms**: "machine learning" vs. "ML" vs. "automated learning"  to  three different bigrams despite identical meaning
+
+**Word order variation**: "very good" vs. "really good" vs. "quite good"  to  different bigrams with similar sentiment
+
+**Typos/errors**: "machien learning" vs. "machine learning"  to  no match
+
+**Morphological variants**: "machine learns" vs. "machine learned" vs. "machine learning"  to  all different
+
+This brittleness means n-grams fragment the signal across multiple similar but distinct features, reducing the statistical power for each variant.
+
+**Paraphrasing completely breaks n-grams:**
+- "The company acquired the startup"  to  bigrams: "company acquired," "acquired the," "the startup"
+- "The startup was acquired by the company"  to  bigrams: "startup was," "was acquired," "acquired by," "by the," "the company"
+- Zero n-gram overlap despite identical core meaning!
+
+**4. No Long-Range Dependencies**
+
+N-grams capture only local context (2-5 words). For understanding:
+- Coreference: "John loves Mary. He bought her flowers."  to  "he" refers to John 3+ words back
+- Document theme: Overall topic spans the entire document
+- Negation scope: "I don't think it's a good idea"  to  negation affects "good" 5 words away
+
+N-grams simply cannot model these longer-range dependencies. This limits their effectiveness for tasks requiring deeper understanding.
+
+#### Why Neural Methods Have Superseded N-grams in Many Areas
+
+Modern neural approaches (word embeddings, transformers) address many of n-gram limitations:
+
+**Embeddings**: Dense vectors of 100-300 dimensions instead of sparse vectors of 500k dimensions
+**Semantic similarity**: "good" and "great" have similar embeddings; "machine learning" and "ML" are close in embedding space
+**Context awareness**: Transformers capture long-range dependencies beyond local n-word windows
+**Generalization**: Similar words produce similar representations, reducing brittleness
+
+However, n-grams aren't dead! They still excel in:
+- **Classical ML pipelines**: Fast, simple, interpretable
+- **Low-data regimes**: When you have < 1000 training examples, n-grams might outperform neural methods that need more data
+- **Hybrid approaches**: Some systems use n-grams alongside neural features
+
+#### Practical Decision Framework
+
+**Use N-grams When:**
+- Using classical ML (Naive Bayes, SVM, Logistic Regression)
+- Need fast training and inference
+- Require interpretability and explainability
+- Have limited training data (hundreds to low thousands of examples)
+- Working with well-defined, narrow domains
+
+**Avoid N-grams When:**
+- Using neural networks or transformers (they learn better representations)
+- Facing severe memory/computational constraints
+- Need robustness to paraphrasing and variation
+- Working with very small documents (< 50 words) where n-gram sparsity is extreme
+
+**Consider Hybrid When:**
+- You want best of both worlds: use n-grams as features alongside embeddings
+- Building ensemble systems where diversity of feature types helps
+
+The bottom line: N-grams are a powerful, interpretable way to capture local context and word order, but they suffer from feature explosion, sparsity, and brittleness. For many modern applications, neural methods provide better performance, but n-grams remain relevant for classical ML, interpretability-critical applications, and low-data scenarios.`
         }
       ]
     },
@@ -1613,39 +3274,248 @@ The key is knowing your data and your task. For general text cleanup, whitespace
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Goal
-                  </h4>
-                  <p>Treat multiword expressions as single units (e.g., "New York").</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    How It Works
-                  </h4>
-                  <p>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    When to Use
-                  </h4>
-                  <p>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
+                  <GSAPAnimated animation="flipCard" delay={0.2} duration={1.0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Goal <MermaidPopover diagram={`graph LR
+    A["New York City"] --> B["New_York_City"]
+    C["machine learning"] --> D["machine_learning"]
+    E["ice cream"] --> F["ice_cream"]
+    style A fill:#4fc3f7
+    style C fill:#4fc3f7
+    style E fill:#4fc3f7
+    style B fill:#81c784
+    style D fill:#81c784
+    style F fill:#81c784`} />
+                    </h4>
+                    <p>Treat multiword expressions as single units (e.g., "New York").</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="flipCard" delay={0.4} duration={1.0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      How It Works <MermaidPopover diagram={`graph TD
+    A[Compute PMI/T-score] --> B[Set Threshold]
+    B --> C[Join High-Score Pairs]
+    C --> D[Iterate for Longer]
+    style A fill:#ffd700
+    style B fill:#e1bee7
+    style C fill:#81c784
+    style D fill:#81c784`} />
+                    </h4>
+                    <p>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
+                  </GSAPAnimated>
+                  <GSAPAnimated animation="flipCard" delay={0.6} duration={1.0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      When to Use
+                    </h4>
+                    <p>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
+                  </GSAPAnimated>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
-                    Steps
-                  </h4>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Compute n-gram stats</li>
-                    <li>Set thresholds</li>
-                    <li>Join phrases with delimiter</li>
-                    <li>Iterate for higher-order phrases</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <SvgIcon iconName="duo-list-ol" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
+                      Steps
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.18} duration={0.6}>
+                    <div><li>Compute n-gram stats</li></div>
+                    <div><li>Set thresholds</li></div>
+                    <div><li>Join phrases with delimiter</li></div>
+                    <div><li>Iterate for higher-order phrases</li></div>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#63105a',
-          notes: ''
+          notes: `### 25. Phrase Detection
+
+Phrase detection, also called collocation detection or multiword expression (MWE) identification, is the process of identifying word sequences that function as single semantic units. Instead of treating "New York" as two separate words, we recognize it as a single conceptual unit referring to a specific place.
+
+#### What Is Phrase Detection?
+
+Some word combinations are more than the sum of their parts. These are called collocations or multiword expressions:
+
+**Named Entities**: "New York City," "Barack Obama," "United Nations," "Eiffel Tower"
+**Compound Nouns**: "machine learning," "data science," "customer service," "coffee shop"
+**Idiomatic Expressions**: "kick the bucket," "break a leg," "piece of cake"
+**Technical Terms**: "random forest," "neural network," "TCP/IP protocol"
+**Common Phrases**: "ice cream," "hot dog," "living room," "parking lot"
+
+These phrases should be treated as single tokens because:
+1. **Semantic coherence**: "White House" doesn't mean a house that is white; it's the President's residence
+2. **Distributional distinctiveness**: "New York" appears together far more often than random chance would predict
+3. **Syntactic fixedness**: You can't say "York New" or insert words between them
+4. **Domain importance**: "Machine learning" is a field, not just any machine that learns
+
+\`\`\`mermaid
+graph TD
+    A["I live in New York City"] --> B["Before: I, live, in, New, York, City"]
+    A --> C["After: I, live, in, New_York_City"]
+    style B fill:#ffcdd2
+    style C fill:#81c784
+\`\`\`
+
+#### Why Phrase Detection Matters
+
+**1. Improved Semantic Representation**
+When "New" and "York" are separate tokens, your model might associate "New" with "new car," "new product," etc., and "York" with... almost nothing (it's rarely used without "New"). By joining them into "New_York," you create a coherent semantic unit that can be properly represented in your model.
+
+**2. Better Topic Modeling**
+Topic models like LDA discover word co-occurrence patterns. If you want topics about cities, you want "New_York," "Los_Angeles," "San_Francisco" to emerge as top words, not "New," "Los," "San" separately (which are meaningless).
+
+**3. Enhanced Information Retrieval**
+When someone searches for "machine learning," they're looking for content about the field of ML, not any machine that learns. Phrase detection ensures queries match documents precisely.
+
+**4. Reduced Feature Fragmentation**
+Without phrase detection, "machine learning" creates features for "machine" and "learning" separately. These words also appear in unrelated contexts ("washing machine," "learning Spanish"), diluting their signal. Joining them into "machine_learning" creates a focused, domain-specific feature.
+
+#### How Phrase Detection Works
+
+There are two main approaches: statistical and model-based.
+
+**Statistical Approach: Pointwise Mutual Information (PMI)**
+
+PMI measures how much more likely two words appear together versus independently:
+
+PMI(word1, word2) = log [ P(word1, word2) / (P(word1) × P(word2)) ]
+
+- **High PMI**: Words appear together much more than chance (e.g., "machine learning," PMI ≈ 8-10)
+- **Low PMI**: Words appear together at random rates (e.g., "the learning," PMI ≈ 0-2)
+
+You set a threshold (e.g., PMI > 5) and join word pairs exceeding it.
+
+\`\`\`mermaid
+graph LR
+    A["Candidate: machine learning"] --> B[Count frequency]
+    B --> C["P(machine, learning) = 0.002"]
+    B --> D["P(machine) = 0.01"]
+    B --> E["P(learning) = 0.015"]
+    C --> F["PMI = log(0.002 / 0.00015) = 2.73"]
+    D --> F
+    E --> F
+    F --> G[High PMI  to  Join!]
+    style G fill:#81c784
+\`\`\`
+
+**Statistical Approach: T-Score**
+
+T-score considers both association strength and frequency. It's more robust than PMI for common phrases:
+
+t-score = [P(word1, word2) - P(word1) × P(word2)] / sqrt(P(word1, word2))
+
+T-score prevents rare coincidental co-occurrences from getting high scores (a problem with PMI).
+
+**Model-Based Approach**
+
+Train a classifier to predict whether a bigram is a phrase:
+- **Features**: PMI, frequency, POS tags, syntactic patterns
+- **Labels**: Human-annotated phrase/non-phrase
+- **Prediction**: Apply trained model to new bigrams
+
+Libraries like spaCy use hybrid approaches combining statistics and learned patterns.
+
+#### Iterative Phrase Detection
+
+Once you've detected 2-word phrases, you can iterate to find longer phrases:
+
+**Iteration 1**: Detect 2-word phrases
+- "machine learning"  to  "machine_learning"
+- "natural language"  to  "natural_language"
+
+**Iteration 2**: Detect 3-word phrases from modified corpus
+- "natural_language processing"  to  "natural_language_processing"
+
+**Iteration 3**: Continue for even longer phrases
+- "artificial_neural_network_architecture"
+
+Each iteration compounds phrases found in previous iterations.
+
+#### When to Use Phrase Detection
+
+**Information Retrieval Systems**: Essential for accurate search. Users search for phrases, not just individual words.
+
+**Topic Modeling**: Dramatically improves interpretability. Topics about "machine_learning," "deep_learning," "neural_networks" are much clearer than topics with "machine," "deep," "neural" scattered across multiple topics.
+
+**Entity-Heavy Domains**: Medical texts ("coronary artery disease"), legal texts ("breach of contract"), scientific texts ("polymerase chain reaction") are full of technical phrases.
+
+**Feature Engineering**: Before building TF-IDF or bag-of-words features, detect phrases to create semantically coherent features.
+
+**Document Clustering**: Phrases provide more discriminative features than individual words. Documents about "New_York" cluster more accurately than documents with separate "New" and "York" tokens.
+
+#### Common Pitfalls and Solutions
+
+**Problem: Over-detection**
+Statistical methods might identify non-phrases that happen to co-occur frequently in your specific corpus. "The following" might have high PMI in technical writing but isn't a meaningful phrase.
+
+**Solution**: Use POS tag filters (e.g., require NOUN+NOUN or ADJ+NOUN patterns), set minimum frequency thresholds, manually review top detected phrases.
+
+**Problem: Domain-specific phrases missed**
+General-purpose detectors might miss domain-specific terminology that's rare in general corpora but important in your domain.
+
+**Solution**: Curate domain-specific phrase lists, combine statistical detection with domain dictionaries, use domain-adapted models.
+
+**Problem: Ambiguous phrases**
+"Big Apple" could mean New York City or just a large apple, depending on context. Phrase detection typically doesn't handle such ambiguity.
+
+**Solution**: Use context-aware models (neural approaches), accept some ambiguity as inevitable, manually curate critical ambiguous cases.
+
+#### Practical Implementation
+
+Using gensim's Phrases model (a popular Python implementation):
+
+\`\`\`python
+from gensim.models import Phrases
+from gensim.models.phrases import Phraser
+
+# Train phrase detector on sentences
+sentences = [["machine", "learning", "is", "awesome"],
+             ["deep", "learning", "uses", "neural", "networks"],
+             ["machine", "learning", "and", "deep", "learning"]]
+
+# Detect bigrams
+bigram = Phrases(sentences, min_count=1, threshold=1)
+bigram_phraser = Phraser(bigram)
+
+# Apply to new sentences
+result = bigram_phraser[["machine", "learning", "is", "great"]]
+# Output: ['machine_learning', 'is', 'great']
+\`\`\`
+
+#### Performance Considerations
+
+Phrase detection is relatively fast—it requires:
+1. **N-gram counting**: Linear in corpus size
+2. **PMI/t-score computation**: O(vocab_size²) but well-optimized
+3. **Threshold application**: Linear in n-gram count
+
+For 1 million documents, phrase detection typically takes minutes to hours depending on vocabulary size and corpus complexity. It's a one-time preprocessing cost that pays dividends in downstream task performance.
+
+#### Evaluation
+
+How do you know if phrase detection is working well?
+
+**Intrinsic Evaluation**: Sample detected phrases and manually assess whether they're meaningful units. A good detector should:
+- Catch most named entities and compound nouns
+- Avoid nonsensical combinations
+- Balance precision (detected phrases are real) and recall (real phrases are detected)
+
+**Extrinsic Evaluation**: Measure downstream task performance with and without phrase detection. Does topic modeling produce more coherent topics? Does classification accuracy improve? Does search relevance increase?
+
+#### Alternative: Using Pre-trained Models
+
+Instead of statistical phrase detection, you can use:
+- **Named Entity Recognition**: Detects entities like people, places, organizations
+- **Noun Phrase Chunking**: Identifies syntactic noun phrases
+- **Pre-segmented text**: Some domains (biomedical, legal) have standardized terminology lists
+
+These approaches are more accurate but require more resources (trained models, domain knowledge).
+
+#### The Bottom Line
+
+Phrase detection is a powerful preprocessing step that transforms word sequences into semantic units. It improves representation quality, enhances interpretability, and boosts downstream task performance. While modern embeddings and transformers can partially compensate by learning phrase-like representations, explicit phrase detection remains valuable for classical NLP approaches, topic modeling, and information retrieval systems. The computational cost is modest, and the semantic improvements are often substantial—making it a high-value preprocessing technique for many NLP applications.`
         },
         {
           id: 26,
@@ -1852,7 +3722,7 @@ The key is knowing your data and your task. For general text cleanup, whitespace
                     <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Goal
                   </h4>
-                  <p>Expand contractions (e.g., "don't" → "do not") for clarity and handling negation.</p>
+                  <p>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     How It Works
