@@ -196,9 +196,10 @@ Let's start with the simplest method: Flat indexing, also known as brute force s
                 <div style={{ fontSize: '2rem' }}>
                   <h3 style={{ color: '#ff6b35', marginBottom: '15px' }}>The simplest vector index with exact search guarantees</h3>
 
-                  <MermaidPopover 
-                    trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
-                    diagram={`graph LR
+                  <div style={{ marginBottom: '15px' }}>
+                    <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
+                    <MermaidPopover 
+                      diagram={`graph LR
     A[Query Vector] --> B[Compare to Vector 1]
     A --> C[Compare to Vector 2]
     A --> D[Compare to Vector 3]
@@ -211,10 +212,8 @@ Let's start with the simplest method: Flat indexing, also known as brute force s
     style A fill:#4fc3f7
     style F fill:#81c784
     style G fill:#ffd700`}
-                    title="Flat Index Search Process"
-                  />
-                  <div style={{ marginBottom: '15px' }}>
-                    <strong style={{ color: '#00d4ff' }}>:</strong>
+                      title="Flat Index Search Process"
+                    />
                     <p style={{ marginTop: '5px' }}>No index; raw vectors stored contiguously in memory. Each query computes distance against all vectors in the collection. Often accelerated with SIMD instructions or GPU computation for performance.</p>
                   </div>
 
@@ -266,7 +265,7 @@ Now let's look at the best use cases in more detail!`
               <GSAPAnimated animation="bounceIn" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.15} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.15}>
                       <li>Exact search</li>
                       <li>Small-to-mid datasets</li>
                       <li>High update rates</li>
@@ -316,7 +315,7 @@ Let's see what other advantages flat indexing offers!`
               <GSAPAnimated animation="scaleIn" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.12} animation="slideInRight">
+                    <GSAPStaggerList stagger={0.12}>
                       <li>Easiest to implement and maintain</li>
                       <li>Supports any distance metric (L2, cosine, IP, custom functions)</li>
                       <li>Trivially sharded/partitioned across multiple machines</li>
@@ -375,7 +374,6 @@ Ready to move to our first approximate method? Let's explore HNSW!`
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                     <MermaidPopover 
-                      trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
                       diagram={`graph TD
     A[Entry Point] --> B[Layer 2: Coarse]
     B --> C[Layer 1: Medium]
@@ -387,7 +385,6 @@ Ready to move to our first approximate method? Let's explore HNSW!`
     style F fill:#ffd700`}
                       title="HNSW Multi-Layer Navigation"
                     />
-                    <strong style={{ color: '#00d4ff' }}>:</strong>
                     <p style={{ marginTop: '5px' }}>Hierarchical navigable small-world graph with multi-layer proximity graph structure. Key parameters include M (max connections per node), efConstruction (search width during build), and efSearch (search width during query).</p>
                   </div>
 
@@ -441,7 +438,7 @@ Let's look at when HNSW is the right choice for your application!`
               <GSAPAnimated animation="slideInRight" delay={0.2}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.18} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.18}>
                       <li>Ideal for applications requiring low-latency</li>
                       <li>high-recall approximate nearest neighbor search with datasets up to ~100M vectors</li>
                       <li>Best suited for read-heavy or semi-static datasets where query performance is critical</li>
@@ -489,7 +486,7 @@ What are the key implementation details you should know? Let's explore that next
               <GSAPAnimated animation="rotateIn" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.14} animation="slideInLeft">
+                    <GSAPStaggerList stagger={0.14}>
                       <li>Costly builds: Index construction is computationally expensive</li>
                       <li>Updates/deletes: Expensive operations that may require partial rebuilds</li>
                       <li>Distance metrics: Supports L2, cosine similarity, and inner product</li>
@@ -549,7 +546,6 @@ Ready to explore clustering-based approaches? Let's move to IVF!`
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                     <MermaidPopover 
-                      trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
                       diagram={`graph TD
     A[K-means Clustering] --> B[Create nlist Centroids]
     B --> C[Assign Vectors to Clusters]
@@ -562,7 +558,6 @@ Ready to explore clustering-based approaches? Let's move to IVF!`
     style H fill:#ffd700`}
                       title="IVF Clustering and Search"
                     />
-                    <strong style={{ color: '#00d4ff' }}>:</strong>
                     <p style={{ marginTop: '5px' }}>Coarse quantizer (k-means) with nlist clusters; vectors assigned to inverted lists; probe nprobe lists during search; typically performs exhaustive search within retrieved lists (often using Flat search).</p>
                   </div>
 
@@ -616,7 +611,7 @@ Let's explore when IVF is the right choice for your needs!`
               <GSAPAnimated animation="scaleIn" delay={0.35}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.2} animation="slideInBottom">
+                    <GSAPStaggerList stagger={0.2}>
                       <li>Large datasets needing high throughput and tunable recall</li>
                       <li>Environments where online insertions are required</li>
                       <li>Systems with moderate memory constraints but high recall requirements</li>
@@ -664,7 +659,7 @@ What configuration details do you need to know? Let's explore that next!`
               <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.16} animation="slideInRight">
+                    <GSAPStaggerList stagger={0.16}>
                       <li>Requires training phase to generate cluster centroids</li>
                       <li>Performance heavily depends on tuning nlist (number of clusters) and nprobe (clusters examined)</li>
                       <li>Sensitive to data distribution - unbalanced clusters may impact performance</li>
@@ -723,7 +718,6 @@ Ready to see how we can make IVF even more memory efficient? Let's explore IVF p
 
                   <div style={{ marginBottom: '12px', marginTop: '15px' }}>
                     <MermaidPopover 
-                      trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
                       diagram={`graph TD
     A[IVF Clustering] --> B[Compute Residuals]
     B --> C[Split into M Subspaces]
@@ -737,7 +731,6 @@ Ready to see how we can make IVF even more memory efficient? Let's explore IVF p
     style I fill:#ffd700`}
                       title="IVF+PQ Compression Pipeline"
                     />
-                    <strong style={{ color: '#00d4ff' }}>:</strong>
                     <p style={{ marginTop: '3px' }}>IVF coarse quantizer (k-means clustering) plus PQ codes for residuals. Stores compact codes instead of raw vectors. Uses lookup tables (LUT) and Asymmetric Distance Computation (ADC) for efficient scoring. Optional refine step can leverage raw vectors for higher precision.</p>
                   </div>
 
@@ -791,7 +784,7 @@ Let's see when this powerful combination is the right choice!`
               <GSAPAnimated animation="slideInTop" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.17} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.17}>
                       <li>Ideal for memory-constrained large-scale approximate nearest neighbor search (100M-B+ vectors)</li>
                       <li>Well-suited for read-heavy workloads where some approximation in recall is acceptable</li>
                       <li>Particularly effective when paired with a refinement step for critical results</li>
@@ -839,7 +832,7 @@ What configuration details do you need to know? Let's explore!`
               <GSAPAnimated animation="rotateIn" delay={0.35}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.19} animation="slideInBottom">
+                    <GSAPStaggerList stagger={0.19}>
                       <li>Requires training on representative data sample</li>
                       <li>Consider OPQ (Optimized Product Quantization) rotation for better accuracy</li>
                       <li>Critical parameters include m (number of subquantizers), code size, and nprobe (clusters to search)</li>
@@ -897,7 +890,6 @@ Now let's explore Annoy, a different tree-based approach!`
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                     <MermaidPopover 
-                      trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
                       diagram={`graph TD
     A[Build Forest of Trees] --> B[Random Hyperplane Splits]
     B --> C[Tree 1]
@@ -911,7 +903,6 @@ Now let's explore Annoy, a different tree-based approach!`
     style I fill:#ffd700`}
                       title="Annoy Random Projection Trees"
                     />
-                    <strong style={{ color: '#00d4ff' }}>:</strong>
                     <p style={{ marginTop: '5px' }}>Forest of random projection trees where each tree partitions vectors based on random hyperplanes. Index can be saved to disk and memory-mapped for efficient loading. Primarily supports angular (cosine) and Euclidean distance metrics.</p>
                   </div>
 
@@ -967,7 +958,7 @@ When should you use Annoy? Let's explore its sweet spots!`
               <GSAPAnimated animation="slideInLeft" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.15} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.15}>
                       <li>Simple deployment</li>
                       <li>Read-only applications</li>
                       <li>Quick startup/cold start</li>
@@ -1018,7 +1009,7 @@ What practical details should you know? Let's cover that next!`
               <GSAPAnimated animation="scaleIn" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.17} animation="slideInRight">
+                    <GSAPStaggerList stagger={0.17}>
                       <li>No dynamic deletes and limited update capabilities (effectively read-only after build)</li>
                       <li>Index build process is deterministic with a fixed random seed</li>
                       <li>Key tuning parameters: n_trees (more trees = higher recall but more memory) and search_k (more candidates = higher recall but slower)</li>
@@ -1077,7 +1068,6 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
 
                   <div style={{ marginBottom: '12px', marginTop: '15px' }}>
                     <MermaidPopover 
-                      trigger={<span style={{ color: '#00d4ff', cursor: 'pointer', textDecoration: 'underline' }}>Index Structure</span>}
                       diagram={`graph TD
     A[Partitioning] --> B[K-means/Tree]
     B --> C[Quantization]
@@ -1089,7 +1079,6 @@ Ready for Google's cutting-edge approach? Let's explore ScaNN!`
     style F fill:#ffd700`}
                       title="ScaNN Multi-Stage Pipeline"
                     />
-                    <strong style={{ color: '#00d4ff' }}>:</strong>
                     <p style={{ marginTop: '3px', lineHeight: '1.4' }}>Hybrid partitioning (k-means/tree) + asymmetric hashing/quantization + reordering; optimized for dot/cosine distance metrics. ScaNN uses a multi-stage architecture:</p>
                     <ul>
                       <li>Partitioning</li>
@@ -1141,7 +1130,7 @@ Ready to explore advanced techniques? Let's continue!`
               <GSAPAnimated animation="fadeIn" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.14} animation="slideInBottom">
+                    <GSAPStaggerList stagger={0.14}>
                       <li>Large-scale semantic search with inner product/cosine distance metrics</li>
                       <li>TensorFlow/TF-Serving pipelines</li>
                       <li>Production deployments with high QPS requirements</li>
@@ -1169,7 +1158,7 @@ When is ScaNN the right choice? It excels at massive scale with demanding perfor
               <GSAPAnimated animation="rotateIn" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#34655d', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.16} animation="slideInLeft">
+                    <GSAPStaggerList stagger={0.16}>
                       <li>Requires training and careful configuration</li>
                       <li>Updates less friendly</li>
                       <li>Open-source by Google</li>
@@ -1237,7 +1226,7 @@ LSH uses probabilistic hashing where similar items hash to the same buckets. Mul
               <GSAPAnimated animation="slideInTop" delay={0.2}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.15} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.15}>
                       <li>Sparse or high-dimensional data where traditional methods struggle</li>
                       <li>Streaming scenarios requiring fast updates</li>
                       <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
@@ -1263,7 +1252,7 @@ Perfect for binary embeddings and Hamming distance. Excels with streaming data a
               <GSAPAnimated animation="bounceIn" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.13} animation="slideInRight">
+                    <GSAPStaggerList stagger={0.13}>
                       <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
                       <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
                       <li>Insertions and deletions are straightforward</li>
@@ -1335,7 +1324,7 @@ Graph methods build connectivity where vectors are nodes. Beyond HNSW, methods l
               <GSAPAnimated animation="slideInLeft" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.16} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.16}>
                       <li>Web-scale search under RAM constraints</li>
                       <li>Production environments with strict latency SLOs</li>
                       <li>Read-heavy workloads with billions of vectors</li>
@@ -1361,7 +1350,7 @@ DiskANN perfect for billion-scale beyond RAM limits. Graph methods achieve high 
               <GSAPAnimated animation="rotateIn" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#233127', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.14} animation="slideInBottom">
+                    <GSAPStaggerList stagger={0.14}>
                       <li>Complex build processes with careful pruning strategies</li>
                       <li>Difficult to update (mostly batch builds)</li>
                       <li>Tune graph degree and beam search width for optimal performance</li>
@@ -1427,7 +1416,7 @@ Designed for binary vectors and Hamming distance. Splits binary vector into sub-
               <GSAPAnimated animation="slideInBottom" delay={0.2}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.15} animation="fadeIn">
+                    <GSAPStaggerList stagger={0.15}>
                       <li>Binary embeddings or PQ code matching</li>
                       <li>Refine stage for IVF-PQ</li>
                       <li>When exact Hamming kNN is needed</li>
@@ -1453,7 +1442,7 @@ Ideal for binary embeddings at massive scale. Perfect for Hamming distance appli
               <GSAPAnimated animation="scaleIn" delay={0.25}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#334166', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.13} animation="slideInRight">
+                    <GSAPStaggerList stagger={0.13}>
                       <li>Limited to Hamming/binary codes</li>
                       <li>parameter m critical</li>
                       <li>GPU-friendly; common in large-scale code search pipelines</li>
@@ -1589,7 +1578,7 @@ Every method trades speed, memory, accuracy, and updates differently. Scale driv
               <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <div>
                   <div style={{ padding: '12px', backgroundColor: '#663', borderRadius: '8px' }}>
-                    <GSAPStaggerList staggerDelay={0.12} animation="slideInBottom">
+                    <GSAPStaggerList stagger={0.12}>
                       <li>Always measure recall@k vs latency tradeoff for your specific data</li>
                       <li>Batch queries together for better throughput</li>
                       <li>Normalize vectors for cosine similarity before indexing</li>
