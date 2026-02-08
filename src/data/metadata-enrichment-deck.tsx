@@ -1011,7 +1011,7 @@ graph TB
 #### Implementation Strategy
 Use an LLM to generate query-agnostic summaries—one to three sentences that capture what the chunk explains, describes, or instructs without assuming what the user might ask. Aim for fifty to seventy tokens. Include key claims, scope, and any important constraints or conditions. Store the summary alongside the original content. Then leverage it in three ways: embed the summary instead of or in addition to the full text for better semantic matching, index it as a BM25 field for keyword search, and display it in search result previews so users can scan relevance quickly.
 #### Cost-Benefit Analysis
-The main con is LLM cost—you're running inference on every chunk. For large corpora, this adds up. You also need to refresh summaries when content changes. But the benefits are substantial: stronger relevance signals, better user scanability, and reduced hallucinations because the LLM has cleaner context to work with. This technique is particularly valuable for dense, technical content where the signal-to-noise ratio in raw chunks is low.`
+The main con is LLM cost—you're running inference on every chunk. For large corpora, this adds up. You also need to refresh summaries when content changes. But the benefits are substantial: stronger relevance signals, better user scannability, and reduced hallucinations because the LLM has cleaner context to work with. This technique is particularly valuable for dense, technical content where the signal-to-noise ratio in raw chunks is low.`
         },
         {
           id: 14,
@@ -1026,7 +1026,7 @@ The main con is LLM cost—you're running inference on every chunk. For large co
                   </h4>
                   <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Strong relevance signals</li>
-                    <li style={{ fontSize: '1.2rem' }}>Improves user scanability</li>
+                    <li style={{ fontSize: '1.2rem' }}>Improves user scannability</li>
                   </GSAPStaggerList>
                 </div>
               </GSAPAnimated>
@@ -1054,7 +1054,7 @@ The main con is LLM cost—you're running inference on every chunk. For large co
           notes: `### 14. Semantic Summaries: Pros and Cons
 Let's evaluate semantic summaries as an enrichment technique.
 #### The Benefits
-The pros are compelling for both systems and users. First, summaries provide strong relevance signals. By distilling content to its core claims, you improve the signal-to-noise ratio for both vector embeddings and keyword search. Queries match more precisely against summary text than against verbose raw chunks. Second, summaries dramatically improve user scanability. When users see search results, they can quickly judge relevance from a well-written summary without reading full chunks. This speeds up information finding and increases user satisfaction.
+The pros are compelling for both systems and users. First, summaries provide strong relevance signals. By distilling content to its core claims, you improve the signal-to-noise ratio for both vector embeddings and keyword search. Queries match more precisely against summary text than against verbose raw chunks. Second, summaries dramatically improve user scannability. When users see search results, they can quickly judge relevance from a well-written summary without reading full chunks. This speeds up information finding and increases user satisfaction.
 #### The Costs
 The cons center on operational overhead. LLM cost is the primary concern. If you're processing millions of chunks, the inference costs add up quickly. You'll need to budget accordingly and potentially batch process during off-peak hours. Periodic refresh becomes necessary as content changes. When a document updates, you need to regenerate summaries for affected chunks. This requires change detection and reprocessing infrastructure that adds complexity to your pipeline.
 #### Strategic Decision
