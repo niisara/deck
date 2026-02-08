@@ -1203,7 +1203,7 @@ The expanded query then feeds into your hybrid search. The BM25 component sees t
 
 **Short queries** benefit most from expansion. When someone types just "diabetes medication," expansion can add "insulin," "metformin," "antidiabetic drugs," "blood sugar control" – giving the search system much more to work with.
 
-**Vocabulary mismatch** is a classic problem that expansion solves. Patients search using layma's terms ("heart attack"), while medical documents use technical terms ("myocardial infarction"). Good expansion dictionaries bridge this gap automatically.
+**Vocabulary mismatch** is a classic problem that expansion solves. Patients search using layman's terms ("heart attack"), while medical documents use technical terms ("myocardial infarction"). Good expansion dictionaries bridge this gap automatically.
 
 **Domain jargon** and **specialized terminology** require curated expansion lists. In legal search, "M&A" should expand to "mergers and acquisitions." In automotive, "EV" maps to "electric vehicle," "battery electric," etc.
 
