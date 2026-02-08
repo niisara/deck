@@ -197,7 +197,7 @@ Let's talk about why re-ranking is absolutely critical for building high-quality
 
 Modern RAG 👉 'rag' systems work in two distinct stages, and understanding this architecture is key. **Stage one is all about recall** - we use fast methods like **BM25** 👉 'bee-em-twenty-five' or bi-encoders to quickly grab twenty to fifty documents. Speed is the priority here, so we deliberately cast a wide net. The trade-off? We might pull in some documents that are semantically similar but not actually relevant to what the user asked.
 
-The flow diagram shows how documents move through the pipeline: User Query goes to Fast Retrieval using BM25 or Bi-encoder, which produces twenty to fifty candidates. These candidates go through the Re-Ranker for deep analysis, resulting in the top five to ten documents, which then become LLM Context.
+This Two-Stage RAG Architecture shows how documents flow through the pipeline: User Query goes to Fast Retrieval using BM25 or Bi-encoder, which produces twenty to fifty candidates. These candidates go through the Re-Ranker for deep analysis, resulting in the top five to ten documents, which then become LLM Context.
 
 #### Stage Two: The Intelligence Layer
 
