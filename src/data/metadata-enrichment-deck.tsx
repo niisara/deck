@@ -33,7 +33,7 @@ export const metadataEnrichmentDeck: Deck = {
               <GSAPAnimated animation="scaleIn" delay={0.5}>
                 <div style={{ marginTop: '20px', fontSize: '0.9em', lineHeight: '1.8' }}>
                   <div>What you'll get:</div>
-                  <GSAPStaggerList animation="bounceIn" delay={0.8}>
+                  <GSAPStaggerList>
                     <p>9 field-proven enrichment techniques</p>
                     <p>Implementation steps and metadata examples</p>
                     <p>Best practices to scale enrichment and retrieval</p>
@@ -79,10 +79,9 @@ Teams implementing these techniques typically see fifteen to seventy percent imp
     B --> C[Map Chunks]
     C --> D[Enriched Context]`}
                         title="Structure & Context Flow"
-                        iconColor="#4fc3f7"
                       />
                     </h3>
-                    <GSAPStaggerList animation="slideInLeft" delay={0.5}>
+                    <GSAPStaggerList>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#42a5f5' }}>1</span>
                         <SvgIcon iconName="duo-heading" sizeName="1x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
@@ -114,10 +113,9 @@ Teams implementing these techniques typically see fifteen to seventy percent imp
     A --> D[Tag Topics]
     A --> E[Highlight Keywords]`}
                         title="Classification & Taxonomy"
-                        iconColor="#81c784"
                       />
                     </h3>
-                    <GSAPStaggerList animation="bounceIn" delay={0.7}>
+                    <GSAPStaggerList>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#7e57c2' }}>2</span>
                         <SvgIcon iconName="duo-file-lines" sizeName="1x" style={{ color: '#9575cd' }} darkModeInvert={true} />
@@ -153,10 +151,9 @@ Teams implementing these techniques typically see fifteen to seventy percent imp
     B --> C[Verify Trust]
     C --> D[Score & Rank]`}
                         title="Freshness & Trust"
-                        iconColor="#ffd700"
                       />
                     </h3>
-                    <GSAPStaggerList animation="slideInRight" delay={0.9}>
+                    <GSAPStaggerList>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#26c6da' }}>5</span>
                         <SvgIcon iconName="duo-clock" sizeName="1x" style={{ color: '#4dd0e1' }} darkModeInvert={true} />
@@ -223,7 +220,6 @@ Now let's dive into each technique one by one, starting with section-level title
     style A fill:#4fc3f7
     style D fill:#81c784`}
                           title="Section Title Enrichment"
-                          iconColor="#4fc3f7"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Boosts retrieval precision and reduces hallucinations by preserving section intent</p>
@@ -232,7 +228,7 @@ Now let's dive into each technique one by one, starting with section-level title
                       <p style={{ marginTop: '5px' }}>Parse headers (H1–H3) and nearest title per chunk; store section_title, heading_level, section_path</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInLeft" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Extract headings with HTML/PDF parser; map each chunk to nearest header</li>
                         <li>Store fields: section_title, heading_level, section_path</li>
                         <li>During retrieval, filter/boost on section_title or path</li>
@@ -243,7 +239,7 @@ Now let's dive into each technique one by one, starting with section-level title
                   <GSAPAnimated animation="scaleIn" delay={0.5}>
                     <div style={{ padding: '12px', backgroundColor: '#315f43', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <GSAPStaggerList animation="bounceIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Technical docs</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Policies</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Knowledge bases</li>
@@ -300,7 +296,7 @@ This technique works best on structured documents with clear headings like techn
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="slideInLeft" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Strong intent signal</li>
                     <li style={{ fontSize: '1.2rem' }}>Better reranking</li>
                     <li style={{ fontSize: '1.2rem' }}>Improved explainability</li>
@@ -313,7 +309,7 @@ This technique works best on structured documents with clear headings like techn
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="slideInRight" delay={0.7}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Weak on poorly structured docs</li>
                     <li style={{ fontSize: '1.2rem' }}>Requires robust parsing</li>
                   </GSAPStaggerList>
@@ -369,7 +365,6 @@ Despite the challenges, section-level titles are one of the highest-impact, lowe
     B --> F[Email]
     style B fill:#81c784`}
                           title="Document Classification"
-                          iconColor="#81c784"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Improves precision by matching user intent to doc role (FAQ, Policy, Email, SOP)</p>
@@ -378,7 +373,7 @@ Despite the challenges, section-level titles are one of the highest-impact, lowe
                       <p style={{ marginTop: '5px' }}>Classify each document/chunk into doc_type via rules + ML (file path, layout, keywords)</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInRight" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Define controlled vocabulary (faq, policy, sop, email, memo, meeting_notes)</li>
                         <li>Build heuristic features and train lightweight classifier; backfill historical docs</li>
                         <li>Store doc_type and optionally department/audience; filter or boost at retrieval</li>
@@ -389,7 +384,7 @@ Despite the challenges, section-level titles are one of the highest-impact, lowe
                   <GSAPAnimated animation="rotateIn" delay={0.5}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Mixed corpora (FAQs, tickets, emails, specs)</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Knowledge bases with varied document types</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Content where document role matters for answers</li>
@@ -448,7 +443,7 @@ At retrieval time, you can hard-filter by document type or use it as a boosting 
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="slideInLeft" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Fast filter for retrieval</li>
                     <li style={{ fontSize: '1.2rem' }}>Reduces irrelevant context</li>
                     <li style={{ fontSize: '1.2rem' }}>Good for governance</li>
@@ -462,7 +457,7 @@ At retrieval time, you can hard-filter by document type or use it as a boosting 
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="slideInRight" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Initial labeling effort</li>
                     <li style={{ fontSize: '1.2rem' }}>Classifier drift needs audits</li>
                     <li style={{ fontSize: '1.2rem' }}>Requires governance of labels</li>
@@ -517,7 +512,6 @@ Despite these challenges, document type labels are a high-leverage technique. Th
     C --> D[Canonical IDs]
     style B fill:#81c784`}
                           title="Entity Extraction Flow"
-                          iconColor="#ffcdd2"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Precision via entity filters; disambiguation; cross-linking across sources</p>
@@ -526,7 +520,7 @@ Despite these challenges, document type labels are a high-leverage technique. Th
                       <p style={{ marginTop: '5px' }}>Run NER; normalize entities to canonical IDs; store arrays by type</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInBottom" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Choose NER (spaCy, HF, AWS Comprehend, Azure, etc.) and target labels</li>
                         <li>Normalize (e.g., map "MSFT"→"Microsoft", attach IDs)</li>
                         <li>Store entities by type; enable faceted filtering and boosting</li>
@@ -537,7 +531,7 @@ Despite these challenges, document type labels are a high-leverage technique. Th
                   <GSAPAnimated animation="bounceIn" delay={0.5}>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Product, customer, project, or regulation-heavy content</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Support teams</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Legal documentation</li>
@@ -595,7 +589,7 @@ Entity tagging shines in domains with heavy entity references: product support, 
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="bounceIn" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Powerful filters</li>
                     <li style={{ fontSize: '1.2rem' }}>Better grounding</li>
                     <li style={{ fontSize: '1.2rem' }}>Enables per-entity analytics</li>
@@ -608,7 +602,7 @@ Entity tagging shines in domains with heavy entity references: product support, 
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="bounceIn" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Compute cost</li>
                     <li style={{ fontSize: '1.2rem' }}>PII handling</li>
                     <li style={{ fontSize: '1.2rem' }}>Normalization complexity</li>
@@ -664,7 +658,6 @@ Despite these costs, entity tagging is transformative for entity-centric domains
     B --> E[Support>Billing]
     style B fill:#ffd700`}
                           title="Topic Classification"
-                          iconColor="#ffd700"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Improves both recall and precision with consistent domain labels</p>
@@ -673,7 +666,7 @@ Despite these costs, entity tagging is transformative for entity-centric domains
                       <p style={{ marginTop: '5px' }}>Map chunks to a controlled taxonomy using multi-label classifiers or LLM tagging</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInTop" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Define taxonomy (e.g., Payments&gt;Refunds, Risk&gt;KYC)</li>
                         <li>Train/evaluate multi-label classifier or LLM prompt; set confidence thresholds</li>
                         <li>Store topics and topic_ids; use for filters and UI facets</li>
@@ -684,7 +677,7 @@ Despite these costs, entity tagging is transformative for entity-centric domains
                   <GSAPAnimated animation="flipCard" delay={0.5}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <GSAPStaggerList animation="slideInRight" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Large heterogeneous corpora</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Compliance domains</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Customer-facing help centers</li>
@@ -744,7 +737,7 @@ Topics enable powerful user interface features. Users can filter search results 
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="fadeIn" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Stable navigation and filters</li>
                     <li style={{ fontSize: '1.2rem' }}>Good for reporting and analytics</li>
                     <li style={{ fontSize: '1.2rem' }}>Enhances user interface organization</li>
@@ -757,7 +750,7 @@ Topics enable powerful user interface features. Users can filter search results 
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="fadeIn" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Taxonomy governance needed</li>
                     <li style={{ fontSize: '1.2rem' }}>Re-tag on taxonomy changes</li>
                     <li style={{ fontSize: '1.2rem' }}>Initial setup complexity</li>
@@ -812,7 +805,6 @@ Despite these challenges, taxonomies are foundational for mature knowledge manag
     C --> D[Latest ✓]
     style D fill:#81c784`}
                           title="Version Timeline"
-                          iconColor="#4fc3f7"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Freshness control; retrieves latest/final data; reduces outdated answers</p>
@@ -821,7 +813,7 @@ Despite these challenges, taxonomies are foundational for mature knowledge manag
                       <p style={{ marginTop: '5px' }}>Extract timestamps (created, updated, effective) and version fields; maintain validity windows</p>
 
                       <strong style={{ marginTop: '12px', display: 'block' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInRight" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Parse timestamp/version from content and file system</li>
                         <li>Store effective_date, valid_from/valid_to, version, is_latest</li>
                         <li>Retrieval: filter by date range; sort/boost is_latest and newest version</li>
@@ -832,7 +824,7 @@ Despite these challenges, taxonomies are foundational for mature knowledge manag
                   <GSAPAnimated animation="scaleIn" delay={0.5}>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <GSAPStaggerList animation="bounceIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Policies</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Release notes</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Price lists</li>
@@ -891,7 +883,7 @@ This technique is essential for compliance-heavy industries. Financial services,
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="slideInTop" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Time-aware answers</li>
                     <li style={{ fontSize: '1.2rem' }}>Easy recency enforcement</li>
                     <li style={{ fontSize: '1.2rem' }}>Clear versioning support</li>
@@ -904,7 +896,7 @@ This technique is essential for compliance-heavy industries. Financial services,
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="slideInBottom" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Requires consistent source dates</li>
                     <li style={{ fontSize: '1.2rem' }}>Backfill can be tedious</li>
                     <li style={{ fontSize: '1.2rem' }}>Date format standardization needed</li>
@@ -959,7 +951,6 @@ Start with high-value content types where freshness matters most: policies, proc
     C --> D[Store Summary]
     style B fill:#4fc3f7`}
                           title="Summary Generation"
-                          iconColor="#81c784"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Speeds candidate pruning; improves reranking; reduces hallucinations with intent-aligned blurbs</p>
@@ -968,7 +959,7 @@ Start with high-value content types where freshness matters most: policies, proc
                       <p style={{ marginTop: '5px' }}>Generate 1–3 sentence, query-agnostic summaries per chunk via LLM; store alongside content</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInBottom" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Prompt LLM: extract key claims, scope, constraints; limit 50–70 tokens</li>
                         <li>Store summary and optional bullets/QA-focused tags</li>
                         <li>Use summary field in hybrid BM25 + vector search and in UI previews</li>
@@ -979,7 +970,7 @@ Start with high-value content types where freshness matters most: policies, proc
                   <GSAPAnimated animation="rotateIn" delay={0.5}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Long sections</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Dense PDFs</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>When using self-query or hybrid search</li>
@@ -1033,7 +1024,7 @@ The main con is LLM cost—you're running inference on every chunk. For large co
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="bounceIn" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Strong relevance signals</li>
                     <li style={{ fontSize: '1.2rem' }}>Improves user scanability</li>
                   </GSAPStaggerList>
@@ -1045,7 +1036,7 @@ The main con is LLM cost—you're running inference on every chunk. For large co
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="bounceIn" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>LLM cost</li>
                     <li style={{ fontSize: '1.2rem' }}>Periodic refresh as content changes</li>
                   </GSAPStaggerList>
@@ -1099,7 +1090,6 @@ Despite the costs, semantic summaries are one of the highest-ROI enrichment tech
     C --> D[Keywords Array]
     style C fill:#ffd700`}
                           title="Keyphrase Extraction"
-                          iconColor="#ffd700"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Strong lexical signals for hybrid search and explainable matches</p>
@@ -1108,7 +1098,7 @@ Despite the costs, semantic summaries are one of the highest-ROI enrichment tech
                       <p style={{ marginTop: '5px' }}>Extract salient keyphrases (RAKE, KeyBERT, YAKE) + domain dictionaries; dedupe/stem</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInTop" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Run extractor; cap to top-N phrases; normalize (lowercase, stem)</li>
                         <li>Merge with domain synonyms; store as keywords array</li>
                         <li>Index as separate BM25 field; boost matches</li>
@@ -1119,7 +1109,7 @@ Despite the costs, semantic summaries are one of the highest-ROI enrichment tech
                   <GSAPAnimated animation="bounceIn" delay={0.5}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Exact-match needs (IDs, codes)</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Jargon-heavy domains</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Search log-driven synonyms</li>
@@ -1181,7 +1171,7 @@ This technique excels in exact-match scenarios: product IDs, regulation codes, t
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="slideInLeft" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Cheap to compute</li>
                     <li style={{ fontSize: '1.2rem' }}>Great for hybrid retrieval</li>
                   </GSAPStaggerList>
@@ -1193,7 +1183,7 @@ This technique excels in exact-match scenarios: product IDs, regulation codes, t
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="slideInRight" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Can be noisy</li>
                     <li style={{ fontSize: '1.2rem' }}>Requires periodic curation</li>
                   </GSAPStaggerList>
@@ -1249,7 +1239,6 @@ Despite the maintenance overhead, keyword extraction is one of the most cost-eff
     B --> F[Chat: 0.20]
     style C fill:#81c784`}
                           title="Trust Scoring"
-                          iconColor="#4fc3f7"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Reliability and governance; prioritizes authoritative sources</p>
@@ -1259,7 +1248,7 @@ Despite the maintenance overhead, keyword extraction is one of the most cost-eff
 
                       <div style={{ marginTop: '12px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                         <strong>Trust Score Examples:</strong>
-                        <GSAPStaggerList animation="bounceIn" delay={0.5}>
+                        <GSAPStaggerList>
                           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginTop: '8px', fontSize: '1.2rem' }}>
                             <div style={{ textAlign: 'left' }}>Policy: <strong>0.95</strong></div>
                             <div style={{ textAlign: 'left' }}>KB: <strong>0.80</strong></div>
@@ -1270,7 +1259,7 @@ Despite the maintenance overhead, keyword extraction is one of the most cost-eff
                       </div>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInLeft" delay={0.6}>
+                      <GSAPStaggerList>
                         <li>Define rubric (policy&gt;kb&gt;chat&gt;email; +verified; +recent)</li>
                         <li>Calculate trust_score; store source_type, verified, reviewer</li>
                         <li>Retrieval: threshold or boost by trust_score; expose in UI</li>
@@ -1281,7 +1270,7 @@ Despite the maintenance overhead, keyword extraction is one of the most cost-eff
                   <GSAPAnimated animation="scaleIn" delay={0.5}>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Mixed sources (official docs, chats, emails)</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Regulated environments</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Knowledge bases with varied quality</li>
@@ -1342,7 +1331,7 @@ Trust scoring is critical for regulated industries and customer-facing applicati
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="bounceIn" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Reduces low-quality context</li>
                     <li style={{ fontSize: '1.2rem' }}>Auditable</li>
                     <li style={{ fontSize: '1.2rem' }}>Prioritizes reliable sources</li>
@@ -1356,7 +1345,7 @@ Trust scoring is critical for regulated industries and customer-facing applicati
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="bounceIn" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Potential bias</li>
                     <li style={{ fontSize: '1.2rem' }}>Needs upkeep and reviewer workflows</li>
                     <li style={{ fontSize: '1.2rem' }}>Subjective scoring criteria</li>
@@ -1412,7 +1401,6 @@ Despite these challenges, trust scoring is essential for any production system h
     D --> E[Fetch siblings/parent]
     style D fill:#81c784`}
                           title="Hierarchical Structure"
-                          iconColor="#4fc3f7"
                         />
                       </strong>
                       <p style={{ marginTop: '5px' }}>Preserves document hierarchy; enables fetching sibling/ancestor context</p>
@@ -1421,7 +1409,7 @@ Despite these challenges, trust scoring is essential for any production system h
                       <p style={{ marginTop: '5px' }}>Assign stable IDs at doc/section/paragraph; store parent_id and ancestors path per chunk</p>
 
                       <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />Implementation Steps:</strong>
-                      <GSAPStaggerList animation="slideInRight" delay={0.5}>
+                      <GSAPStaggerList>
                         <li>Build tree during parsing; generate unique ids; store id, parent_id, ancestors</li>
                         <li>Retrieval: fetch hit + k siblings/parent for full context window</li>
                         <li>Keep referential integrity on re-ingest via content hashing</li>
@@ -1432,7 +1420,7 @@ Despite these challenges, trust scoring is essential for any production system h
                   <GSAPAnimated animation="bounceIn" delay={0.5}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>Manuals</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Textbooks</li>
                         <li style={{ lineHeight: '1.6', fontSize: '1.2rem' }}>Web docs with TOCs</li>
@@ -1497,7 +1485,7 @@ This technique shines for manuals, textbooks, technical documentation with clear
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Pros
                   </h4>
-                  <GSAPStaggerList animation="slideInLeft" delay={0.4}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>Better coherence</li>
                     <li style={{ fontSize: '1.2rem' }}>Fewer orphan chunks</li>
                     <li style={{ fontSize: '1.2rem' }}>Improves contextual understanding</li>
@@ -1510,7 +1498,7 @@ This technique shines for manuals, textbooks, technical documentation with clear
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
-                  <GSAPStaggerList animation="slideInRight" delay={0.8}>
+                  <GSAPStaggerList>
                     <li style={{ fontSize: '1.2rem' }}>More complex pipeline</li>
                     <li style={{ fontSize: '1.2rem' }}>Migration/versioning concerns</li>
                     <li style={{ fontSize: '1.2rem' }}>Requires document structure</li>
@@ -1559,7 +1547,7 @@ Despite the complexity, parent-child metadata is transformative for structured, 
                         <SvgIcon iconName="duo-pen-ruler" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Design & Governance
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.5}>
+                      <GSAPStaggerList>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Define a typed schema; use <code>lower_snake_case</code> keys</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Separate content fields vs. metadata fields; avoid overloading</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Establish clear tagging guidelines for consistency</li>
@@ -1574,7 +1562,7 @@ Despite the complexity, parent-child metadata is transformative for structured, 
                         <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Automation & Quality
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Automate enrichment (parsers, NER, classifiers, LLM summaries) with confidence scores</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Implement human-in-the-loop for low-confidence tags</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Establish QA processes with regular validation cycles</li>
@@ -1589,7 +1577,7 @@ Despite the complexity, parent-child metadata is transformative for structured, 
                         <SvgIcon iconName="duo-magnifying-glass-chart" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Retrieval Strategy
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.9}>
+                      <GSAPStaggerList>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Use hybrid search (BM25 + vectors) with metadata filters</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Implement self-query retrievers for dynamic filtering</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Rerank with <code>section_title</code>, <code>trust_score</code>, and recency</li>
@@ -1629,7 +1617,7 @@ Use hybrid search combining BM25 for keyword matching and vector embeddings for 
                         <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Ops & Safety
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.5}>
+                      <GSAPStaggerList>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Handle PII in entities with appropriate anonymization</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Implement access control on sensitive metadata</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Use versioning and change-data-capture to refresh metadata reliably</li>
@@ -1645,7 +1633,7 @@ Use hybrid search combining BM25 for keyword matching and vector embeddings for 
                         <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Measurement
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Track precision@k, MRR, and coverage of tags</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Measure filter hit rate and time-to-answer improvements</li>
                         <li style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>Analyze user feedback on response quality</li>
@@ -1663,7 +1651,7 @@ Use hybrid search combining BM25 for keyword matching and vector embeddings for 
                       Key Success Factors
                     </h4>
                     <div style={{ display: 'flex', fontSize: '1.2rem', lineHeight: '1.6' }}>
-                      <GSAPStaggerList animation="fadeIn" delay={1.1}>
+                      <GSAPStaggerList>
                         <li><strong>Consistency</strong> in metadata application across all documents</li>
                         <li><strong>Integration</strong> of metadata at all pipeline stages</li>
                         <li><strong>Automation</strong> to reduce manual tagging burden</li>
@@ -1704,7 +1692,7 @@ Five factors determine metadata enrichment success. Consistency in applying meta
                         <SvgIcon iconName="duo-sitemap" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Structure & Context
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.5}>
+                      <GSAPStaggerList>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Section titles</li>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Semantic summaries</li>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Parent-child relationships</li>
@@ -1718,7 +1706,7 @@ Five factors determine metadata enrichment success. Consistency in applying meta
                         <SvgIcon iconName="duo-folder-tree" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Classification & Taxonomy
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.7}>
+                      <GSAPStaggerList>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Document types</li>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Entity tagging (NER)</li>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Topic/category tags</li>
@@ -1733,7 +1721,7 @@ Five factors determine metadata enrichment success. Consistency in applying meta
                         <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                         Freshness & Trust
                       </h4>
-                      <GSAPStaggerList animation="fadeIn" delay={0.9}>
+                      <GSAPStaggerList>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Time/version metadata</li>
                         <li style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>Source confidence scoring</li>
                       </GSAPStaggerList>
@@ -1824,7 +1812,7 @@ Start small, measure impact, iterate, and scale. That's how you build a world-cl
                       <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
                       Call to Action
                     </h4>
-                    <GSAPStaggerList animation="slideInLeft" delay={0.9}>
+                    <GSAPStaggerList>
                       <li style={{ fontSize: '1.2rem', lineHeight: '1.7' }}>Define your metadata schema and baselines this week</li>
                       <li style={{ fontSize: '1.2rem', lineHeight: '1.7' }}>Enable metadata filters and reranking in your retriever</li>
                       <li style={{ fontSize: '1.2rem', lineHeight: '1.7' }}>Measure impact; iterate on low-signal fields</li>
