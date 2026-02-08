@@ -9,6 +9,12 @@ export const parentChildRetrievalDeck: Deck = {
   description: 'A concise, comparable cheat-sheet of 11 retrieval patterns that attach parent context to child chunks to reduce hallucination and improve answer correctness',
   category: 'RAG',
   theme: 'night',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -682,7 +688,24 @@ With tree-based retrieval covered, let's explore pattern four, which expands mul
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '1em' }}>
-                  <h4>Goal / What It Solves</h4>
+                  <h4>
+                    <MermaidPopover
+                      title="Top-k Parent Expansion"
+                      diagram={`flowchart TB
+    A["👶 Child Chunk"] --> B["⬆️ Level 1 Parent"]
+    A --> C["⬆️⬆️ Level 2 Grandparent"]
+    A --> D["⬆️⬆️⬆️ Level 3 Great-Grandparent"]
+    B --> E["📦 Combined Context"]
+    C --> E
+    D --> E
+    style A fill:#81c784,color:#000
+    style E fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#ffb74d,color:#000
+    style D fill:#ffb74d,color:#000`}
+                    />
+                    Goal / What It Solves
+                  </h4>
                   <ul style={{ fontSize: '0.75em' }}>
                     <li>Mitigates ambiguity by attaching multiple plausible parents (immediate + higher levels)</li>
                   </ul>
@@ -714,6 +737,27 @@ When one parent level isn't enough to capture all the governing context, pattern
 #### 🎯 The Goal
 
 Sometimes constraints and context exist at multiple levels of your document hierarchy. A specific clause might be modified by its immediate section, but also by the chapter that section sits in, and even by the document preamble or scope statement at the very top. This pattern captures all that relevant governing context by including multiple parent levels, ensuring you don't miss any cascading constraints.
+
+#### 📊 Visual Flow
+
+Here's how this multi-level parent expansion works:
+
+\`\`\`mermaid
+flowchart TB
+    A["👶 Child Chunk"] --> B["⬆️ Level 1 Parent"]
+    A --> C["⬆️⬆️ Level 2 Grandparent"]
+    A --> D["⬆️⬆️⬆️ Level 3 Great-Grandparent"]
+    B --> E["📦 Combined Context"]
+    C --> E
+    D --> E
+    style A fill:#81c784,color:#000
+    style E fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#ffb74d,color:#000
+    style D fill:#ffb74d,color:#000
+\`\`\`
+
+This diagram shows how a single child chunk connects to multiple parent levels, with all levels combining into the final context package.
 
 #### ⚙️ How It Works
 
@@ -972,7 +1016,22 @@ Having explored sibling relationships, let's look at pattern six, which takes a 
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '1em' }}>
-                  <h4>Goal / What It Solves</h4>
+                  <h4>
+                    <MermaidPopover
+                      title="Windowed Retrieval Flow"
+                      diagram={`flowchart LR
+    A["📍 Matched Chunk"] --> B["⬅️ Window Before"]
+    A --> C["➡️ Window After"]
+    B --> D["📦 Expanded Context"]
+    A --> D
+    C --> D
+    style A fill:#81c784,color:#000
+    style D fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#ffb74d,color:#000`}
+                    />
+                    Goal / What It Solves
+                  </h4>
                   <ul style={{ fontSize: '0.75em' }}>
                     <li>Captures local context beyond chunk edges without full parent overhead</li>
                   </ul>
@@ -1004,6 +1063,25 @@ Pattern six is the simplest form of context expansion. You just grab more text a
 #### 🎯 The Goal
 
 The goal is to capture local context beyond chunk edges without the complexity or overhead of building tree structures or tracking parent-child relationships. Sometimes you just need a bit more text on either side of your matched chunk to provide adequate context, and a simple window expansion gives you that without any fancy data structures.
+
+#### 📊 Visual Flow
+
+Here's how windowed retrieval expands your context:
+
+\`\`\`mermaid
+flowchart LR
+    A["📍 Matched Chunk"] --> B["⬅️ Window Before"]
+    A --> C["➡️ Window After"]
+    B --> D["📦 Expanded Context"]
+    A --> D
+    C --> D
+    style A fill:#81c784,color:#000
+    style D fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#ffb74d,color:#000
+\`\`\`
+
+This diagram shows how a matched chunk expands symmetrically to include windows before and after, combining all three pieces into the final expanded context.
 
 #### ⚙️ How It Works
 
@@ -1261,7 +1339,25 @@ With semantic structures covered, let's look at pattern eight, which compresses 
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '1em' }}>
-                  <h4>Goal / What It Solves</h4>
+                  <h4>
+                    <MermaidPopover
+                      title="Dynamic Context Folding"
+                      diagram={`flowchart TD
+    A["📄 Full Parent Section"] --> B["🗜️ Compression Engine"]
+    B --> C["📦 30% Summary"]
+    B --> D["📦 50% Summary"]
+    B --> E["📦 70% Summary"]
+    F["👶 Child Chunk"] --> G["⚖️ Budget Check"]
+    C --> G
+    D --> G
+    E --> G
+    G --> H["✅ Optimized Context"]
+    style A fill:#ffb74d,color:#000
+    style F fill:#81c784,color:#000
+    style H fill:#4fc3f7,color:#000`}
+                    />
+                    Goal / What It Solves
+                  </h4>
                   <ul style={{ fontSize: '0.75em' }}>
                     <li>Fits long parents into tight budgets while keeping detailed child evidence</li>
                   </ul>
@@ -1293,6 +1389,28 @@ Pattern eight introduces smart compression to help you fit more context into lim
 #### 🎯 The Goal
 
 When parent sections are too long for your available token budget, the goal is to compress them intelligently rather than just truncating or omitting them entirely. You want to keep the child chunk at full detail since that's your primary evidence, while summarizing the parent to provide governing context without consuming too many tokens.
+
+#### 📊 Visual Flow
+
+Here's how dynamic context folding works:
+
+\`\`\`mermaid
+flowchart TD
+    A["📄 Full Parent Section"] --> B["🗜️ Compression Engine"]
+    B --> C["📦 30% Summary"]
+    B --> D["📦 50% Summary"]
+    B --> E["📦 70% Summary"]
+    F["👶 Child Chunk"] --> G["⚖️ Budget Check"]
+    C --> G
+    D --> G
+    E --> G
+    G --> H["✅ Optimized Context"]
+    style A fill:#ffb74d,color:#000
+    style F fill:#81c784,color:#000
+    style H fill:#4fc3f7,color:#000
+\`\`\`
+
+This diagram shows how a full parent section gets compressed at multiple levels, then the appropriate summary is selected based on token budget and combined with the full child chunk.
 
 #### ⚙️ How It Works
 
@@ -1554,7 +1672,22 @@ Now let's look at pattern ten, which uses cross-encoders for even more precise p
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '1em' }}>
-                  <h4>Goal / What It Solves</h4>
+                  <h4>
+                    <MermaidPopover
+                      title="Cross-Encoder Re-ranking Flow"
+                      diagram={`flowchart LR
+    A["🔍 Dense Retrieval"] --> B["👶 Children"]
+    B --> C["📋 Collect Parents"]
+    C --> D["🤝 Cross-Encoder"]
+    E["❓ Query"] --> D
+    D --> F["📊 Relevance Scores"]
+    F --> G["🏆 Top-m Parents"]
+    style B fill:#81c784,color:#000
+    style G fill:#4fc3f7,color:#000
+    style D fill:#ffb74d,color:#000`}
+                    />
+                    Goal / What It Solves
+                  </h4>
                   <ul style={{ fontSize: '0.75em' }}>
                     <li>Selects the most relevant section root to ground the answer using deep relevance scoring</li>
                   </ul>
@@ -1586,6 +1719,25 @@ When bi-encoder retrieval isn't giving you the precision you need, pattern ten b
 #### 🎯 The Goal
 
 The goal is to select the most relevant parent among multiple candidates using deep relevance scoring. Bi-encoders encode queries and documents independently, which is fast but sometimes imprecise. Cross-encoders jointly encode the query and document together, allowing much richer interaction between them, resulting in higher quality relevance scores.
+
+#### 📊 Visual Flow
+
+Here's how cross-encoder re-ranking enhances parent selection:
+
+\`\`\`mermaid
+flowchart LR
+    A["🔍 Dense Retrieval"] --> B["👶 Children"]
+    B --> C["📋 Collect Parents"]
+    C --> D["🤝 Cross-Encoder"]
+    E["❓ Query"] --> D
+    D --> F["📊 Relevance Scores"]
+    F --> G["🏆 Top-m Parents"]
+    style B fill:#81c784,color:#000
+    style G fill:#4fc3f7,color:#000
+    style D fill:#ffb74d,color:#000
+\`\`\`
+
+This diagram shows how retrieved children lead to candidate parents, which are then precisely scored by the cross-encoder against the query to select only the most relevant ones.
 
 #### ⚙️ How It Works
 
