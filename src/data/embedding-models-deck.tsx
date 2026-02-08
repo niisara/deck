@@ -213,7 +213,7 @@ Ready to dive deep into each family? Let's start with OpenAI's cost-effective sm
                       <strong>Notes:</strong>
                     </div>
                     <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Successor to ada-002 👉 'ay-duh oh-oh-two' with improved quality</li>
+                      <li>Successor to ada-002 👉 'ay-duh zero-zero-two' with improved quality</li>
                       <li>Use cosine similarity with normalized vectors</li>
                       <li>Great for high-volume indexing where budget matters</li>
                     </ul>
@@ -234,7 +234,7 @@ This is a **proprietary bi-encoder model** that converts your text into 1536-dim
 The sweet spot for this model is **large-scale applications where cost matters**. At just two cents per million tokens, you can embed entire Wikipedia and still have change left over. It excels at retrieval tasks like finding relevant documents, clustering similar items together, classifying content into categories, and even detecting anomalies in data. If you're building a customer support chatbot that searches through thousands of help articles, or a recommendation engine that needs to process millions of products, this model delivers solid quality without breaking the bank.
 
 #### Technical Details Matter
-For chunking, aim for **400 to 800 tokens per chunk**. That's roughly 300 to 600 words. You can go larger if needed, but smaller chunks often give better retrieval precision. Always use **cosine similarity** to compare vectors, and normalize them first for consistent results. This model replaces the older ada-002 👉 'ay-duh oh-oh-two' and delivers noticeably better quality at the same price point.
+For chunking, aim for **400 to 800 tokens per chunk**. That's roughly 300 to 600 words. You can go larger if needed, but smaller chunks often give better retrieval precision. Always use **cosine similarity** to compare vectors, and normalize them first for consistent results. This model replaces the older ada-002 👉 'ay-duh zero-zero-two' and delivers noticeably better quality at the same price point.
 
 #### The API Advantage
 Because it's cloud-based, you get automatic updates, professional maintenance, and excellent uptime. No servers to manage, no model files to download. Just simple API calls with libraries available in every major programming language.
