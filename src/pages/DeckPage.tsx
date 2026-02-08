@@ -106,6 +106,7 @@ function DeckPage() {
     return sessionStorage.getItem('deck-broadcast') === 'true';
   });
   const hideTimeoutRef = useRef<number | null>(null);
+  const manuallyHiddenRef = useRef<boolean>(false);
 
   const deck = decks.find((d) => d.id === deckId);
 
@@ -149,6 +150,11 @@ function DeckPage() {
   // Handle mouse movement to show/hide back button
   useEffect(() => {
     const handleMouseMove = () => {
+      // Don't show overlay if it was manually hidden via Alt+H
+      if (manuallyHiddenRef.current) {
+        return;
+      }
+      
       setShowBackButton(true);
       
       // Clear existing timeout
@@ -174,6 +180,60 @@ function DeckPage() {
       if (hideTimeoutRef.current !== null) {
         clearTimeout(hideTimeoutRef.current);
       }
+    };
+  }, []);
+
+  // Handle Alt + H shortcut to toggle overlay icons and speaker notes
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.altKey && event.key.toLowerCase() === 'h') {
+        event.preventDefault();
+        
+        // Toggle overlay icons
+        setShowBackButton(prev => {
+          const newState = !prev;
+          
+          // Clear any existing hide timeout when manually toggling
+          if (hideTimeoutRef.current !== null) {
+            clearTimeout(hideTimeoutRef.current);
+            hideTimeoutRef.current = null;
+          }
+          
+          // If showing, clear manual hide flag and set auto-hide timeout
+          if (newState) {
+            manuallyHiddenRef.current = false;
+            hideTimeoutRef.current = window.setTimeout(() => {
+              setShowBackButton(false);
+            }, 3000);
+          } else {
+            // If hiding, set manual hide flag to prevent mouse from showing it
+            manuallyHiddenRef.current = true;
+          }
+          
+          // Toggle speaker notes window visibility
+          if (speakerWindowRef.current && !speakerWindowRef.current.closed) {
+            try {
+              if (newState) {
+                // Show and focus speaker notes
+                speakerWindowRef.current.focus();
+              } else {
+                // Minimize or blur speaker notes (focus back to main window)
+                window.focus();
+              }
+            } catch (err) {
+              console.error('[Shortcut] Error toggling speaker notes:', err);
+            }
+          }
+          
+          return newState;
+        });
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, []);
 
@@ -469,7 +529,7 @@ function DeckPage() {
           <button 
             onClick={handleBackNavigation}
             className={`back-button-overlay ${showBackButton ? 'visible' : ''}`}
-            title="Go Back"
+            title="Go Back (Alt+H to toggle overlay)"
           >
             <SvgIcon iconName="duo-arrow-left" sizeName="lg" />
           </button>
@@ -477,7 +537,7 @@ function DeckPage() {
           <button 
             onClick={handlePdfExport}
             className={`pdf-export-button ${showBackButton ? 'visible' : ''}`}
-            title="Export to PDF"
+            title="Export to PDF (Alt+H to toggle overlay)"
           >
             <SvgIcon iconName="duo-file-pdf" sizeName="lg" />
           </button>
@@ -485,7 +545,7 @@ function DeckPage() {
           <button
             onClick={toggleBroadcast}
             className={`broadcast-button ${showBackButton ? 'visible' : ''} ${broadcastEnabled ? 'active' : ''}`}
-            title={broadcastEnabled ? 'Broadcast ON – slides sync across tabs' : 'Broadcast OFF – enable to sync slides across tabs'}
+            title={broadcastEnabled ? 'Broadcast ON – slides sync across tabs (Alt+H to toggle overlay)' : 'Broadcast OFF – enable to sync slides across tabs (Alt+H to toggle overlay)'}
           >
             <SvgIcon iconName="duo-tower-broadcast" sizeName="lg" />
           </button>
