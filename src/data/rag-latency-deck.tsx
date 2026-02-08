@@ -1639,45 +1639,59 @@ export const ragLatencyDeck: Deck = {
       slides: [
         {
           id: 58,
-          title: 'Summary and Comparison',
+          title: 'Key Takeaways',
+          content: (
+            <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                <SvgIcon iconName="duo-lightbulb" sizeName="3x" darkModeInvert={true} />
+                <strong style={{ fontSize: '2.8rem' }}>Key Takeaways</strong>
+              </div>
+              <ul style={{ marginLeft: '2rem', fontSize: '2rem' }}>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#61dafb' }}>Fix perceived latency first</strong> (Streaming), then critical-path bottlenecks (Retrieval, LLM)
+                </li>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#98c379' }}>Cache aggressively</strong> where correctness isn't impacted; invalidate reliably
+                </li>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#d19a66' }}>Two-stage retrieval</strong> with light reranking often yields best quality-speed tradeoff
+                </li>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#e06c75' }}>Measure and optimize</strong> across all RAG stages: indexing, retrieval, orchestration, and generation
+                </li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#1d6b1f',
+          notes: ''
+        },
+        {
+          id: 59,
+          title: 'Quick Chooser - Which Techniques to Start With?',
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                  <strong>Key Takeaways</strong>
-                </div>
-                <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
-                  <li><strong>Fix perceived latency first</strong> (Streaming), then critical-path bottlenecks (Retrieval, LLM)</li>
-                  <li><strong>Cache aggressively</strong> where correctness isn't impacted; invalidate reliably</li>
-                  <li><strong>Two-stage retrieval</strong> with light reranking often yields best quality-speed tradeoff</li>
-                  <li><strong>Measure and optimize</strong> across all RAG stages: indexing, retrieval, orchestration, and generation</li>
-                </ul>
+              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                <SvgIcon iconName="duo-compass" sizeName="3x" darkModeInvert={true} />
+                <strong style={{ fontSize: '2.8rem' }}>Quick Chooser</strong>
               </div>
-
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <SvgIcon iconName="duo-compass" sizeName="2x" darkModeInvert={true} />
-                  <strong>Quick Chooser</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #61dafb' }}>
+                  <strong style={{ color: '#61dafb', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Immediate UX improvement:</strong>
+                  <div style={{ fontSize: '1.5rem' }}>→ <strong>10</strong> Streaming / Partial Generation</div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                    <strong style={{ color: '#61dafb', fontSize: '1.2rem' }}>Immediate UX improvement:</strong>
-                    <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>10</strong> Streaming / Partial Generation</div>
-                  </div>
-                  <div style={{ background: 'rgba(209, 154, 102, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                    <strong style={{ color: '#d19a66', fontSize: '1.2rem' }}>Retrieval-bound system:</strong>
-                    <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>3</strong> Limit Top-K, <strong>4</strong> HNSW/IVF, <strong>2</strong> Smaller chunks</div>
-                  </div>
-                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                    <strong style={{ color: '#e06c75', fontSize: '1.2rem' }}>Compute-bound system:</strong>
-                    <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>1</strong> Smaller embeddings, <strong>11</strong> Smaller LLM</div>
-                  </div>
-                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.7rem', borderRadius: '6px' }}>
-                    <strong style={{ color: '#98c379', fontSize: '1.2rem' }}>Cost optimization:</strong>
-                    <div style={{ marginTop: '0.3rem', fontSize: '1rem' }}>→ <strong>5, 6</strong> Caching, <strong>8</strong> Compression</div>
-                  </div>
+                <div style={{ background: 'rgba(209, 154, 102, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #d19a66' }}>
+                  <strong style={{ color: '#d19a66', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Retrieval-bound system:</strong>
+                  <div style={{ fontSize: '1.5rem' }}>→ <strong>3</strong> Limit Top-K, <strong>4</strong> HNSW/IVF, <strong>2</strong> Smaller chunks</div>
+                </div>
+                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #e06c75' }}>
+                  <strong style={{ color: '#e06c75', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Compute-bound system:</strong>
+                  <div style={{ fontSize: '1.5rem' }}>→ <strong>1</strong> Smaller embeddings, <strong>11</strong> Smaller LLM</div>
+                </div>
+                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #98c379' }}>
+                  <strong style={{ color: '#98c379', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Cost optimization:</strong>
+                  <div style={{ fontSize: '1.5rem' }}>→ <strong>5, 6</strong> Caching, <strong>8</strong> Compression</div>
                 </div>
               </div>
             </div>
@@ -1686,52 +1700,101 @@ export const ragLatencyDeck: Deck = {
           notes: ''
         },
         {
-          id: 59,
-          title: 'Summary and Comparison',
+          id: 60,
+          title: 'Speed vs Recall Tradeoffs',
           content: (
-            <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
-              <div style={{ marginBottom: '30px' }}></div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-scale-balanced" sizeName="2x" darkModeInvert={true} />
-                    <strong>Speed vs Recall</strong>
-                  </div>
-                  <p>These techniques involve balance between speed and retrieval accuracy:</p>
-                  <ul>
-                    <li>1. Smaller Embedding Models</li>
-                    <li>2. Reduce Chunk Size</li>
-                    <li>3. Limit Top-K Retrieval</li>
-                    <li>4. ANN Indexes</li>
-                    <li>8. Context Compression</li>
+            <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ color: '#c678dd', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                <SvgIcon iconName="duo-scale-balanced" sizeName="3x" darkModeInvert={true} />
+                <strong style={{ fontSize: '2.8rem' }}>Speed vs Recall</strong>
+              </div>
+              <p style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>These techniques involve balance between speed and retrieval accuracy:</p>
+              <ul style={{ marginLeft: '2rem', fontSize: '2rem' }}>
+                <li style={{ marginBottom: '1rem' }}><strong>1.</strong> Smaller Embedding Models - Faster encoding, slight recall drop</li>
+                <li style={{ marginBottom: '1rem' }}><strong>2.</strong> Reduce Chunk Size - More precise matches, more chunks to search</li>
+                <li style={{ marginBottom: '1rem' }}><strong>3.</strong> Limit Top-K Retrieval - Fewer candidates, faster processing</li>
+                <li style={{ marginBottom: '1rem' }}><strong>4.</strong> ANN Indexes - 10-100x speedup, ~95-99% recall</li>
+                <li style={{ marginBottom: '1rem' }}><strong>8.</strong> Context Compression - Reduced tokens, possible info loss</li>
+              </ul>
+              <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '8px', fontSize: '1.5rem' }}>
+                <strong>💡 Tip:</strong> Start with ANN indexes for immediate gains with minimal quality impact
+              </div>
+            </div>
+          ),
+          backgroundColor: '#1d6b1f',
+          notes: ''
+        },
+        {
+          id: 61,
+          title: 'Quality vs Cost Tradeoffs',
+          content: (
+            <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ color: '#e5c07b', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                <SvgIcon iconName="duo-coins" sizeName="3x" darkModeInvert={true} />
+                <strong style={{ fontSize: '2.8rem' }}>Quality vs Cost</strong>
+              </div>
+              <p style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>These techniques balance answer quality against operational costs:</p>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1.2rem', borderRadius: '8px' }}>
+                  <strong style={{ color: '#98c379', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Quality Enhancers</strong>
+                  <ul style={{ fontSize: '1.5rem', marginLeft: '1.2rem' }}>
+                    <li style={{ marginBottom: '0.5rem' }}><strong>7.</strong> Re-Ranking (↑quality, ↑compute)</li>
+                    <li style={{ marginBottom: '0.5rem' }}><strong>9.</strong> Parallelization (↑speed, ↑complexity)</li>
                   </ul>
                 </div>
-                <div>
-                  <div style={{ color: '#e5c07b', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-stream" sizeName="2x" darkModeInvert={true} />
-                    <strong>Quality vs Cost</strong>
-                  </div>
-                  <p>These techniques balance answer quality against operational costs:</p>
-                  <ul>
-                    <li>7. Re-Ranking (↑quality, ↑compute)</li>
-                    <li>8. Context Compression (↓tokens, risk of lost context)</li>
-                    <li>11. Smaller LLM (↓latency, potential ↓reasoning)</li>
+                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1.2rem', borderRadius: '8px' }}>
+                  <strong style={{ color: '#e06c75', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Cost Reducers</strong>
+                  <ul style={{ fontSize: '1.5rem', marginLeft: '1.2rem' }}>
+                    <li style={{ marginBottom: '0.5rem' }}><strong>5, 6.</strong> Caching (↓cost, cache complexity)</li>
+                    <li style={{ marginBottom: '0.5rem' }}><strong>8.</strong> Compression (↓tokens, info loss risk)</li>
+                    <li style={{ marginBottom: '0.5rem' }}><strong>11.</strong> Smaller LLM (↓latency, ↓reasoning)</li>
                   </ul>
                 </div>
               </div>
 
-              <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
-                <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <SvgIcon iconName="duo-clipboard-check" sizeName="2x" darkModeInvert={true} />
-                  <strong>Next Steps</strong>
-                </div>
-                <ol style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                  <li>Establish baseline metrics (TTFT, p95 latency, recall@k, cost/query)</li>
-                  <li>Introduce 2-3 techniques that address your bottlenecks first</li>
-                  <li>A/B test changes to measure impact on both speed and answer quality</li>
-                  <li>Monitor and iterate: RAG optimization is continuous improvement</li>
-                </ol>
+              <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', fontSize: '1.5rem' }}>
+                <strong>💡 Tip:</strong> Combine caching (#5, #6) with streaming (#10) for best cost-performance balance
+              </div>
+            </div>
+          ),
+          backgroundColor: '#1d6b1f',
+          notes: ''
+        },
+        {
+          id: 62,
+          title: 'Next Steps - Your RAG Optimization Roadmap',
+          content: (
+            <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
+              <div style={{ marginBottom: '40px' }}></div>
+              <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+                <SvgIcon iconName="duo-clipboard-check" sizeName="3x" darkModeInvert={true} />
+                <strong style={{ fontSize: '2.8rem' }}>Next Steps</strong>
+              </div>
+              <ol style={{ marginLeft: '2rem', fontSize: '1.8rem' }}>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#61dafb' }}>Establish baseline metrics</strong>
+                  <div style={{ fontSize: '1.5rem', marginTop: '0.5rem', marginLeft: '1rem' }}>
+                    • TTFT (Time To First Token)<br/>
+                    • p95 latency<br/>
+                    • recall@k<br/>
+                    • cost/query
+                  </div>
+                </li>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#98c379' }}>Introduce 2-3 techniques</strong> that address your bottlenecks first
+                </li>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#d19a66' }}>A/B test changes</strong> to measure impact on both speed and answer quality
+                </li>
+                <li style={{ marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#e06c75' }}>Monitor and iterate:</strong> RAG optimization is continuous improvement
+                </li>
+              </ol>
+              <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(97, 218, 251, 0.15)', borderRadius: '10px', borderLeft: '6px solid #61dafb', fontSize: '1.6rem', textAlign: 'center' }}>
+                <strong>Remember:</strong> Start with quick wins (Streaming, Caching) before complex optimizations
               </div>
             </div>
           ),
