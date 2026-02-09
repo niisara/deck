@@ -43,6 +43,7 @@ interface GSAPStaggerListProps {
   children: ReactNode | ReactNode[]; // Accepts single ReactNode or array - single nodes are wrapped in array internally
   duration?: number;
   stagger?: number;
+  delay?: number;
   className?: string;
   itemClassName?: string;
 }
@@ -57,6 +58,7 @@ export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
   children,
   duration = 0.5,
   stagger = 0.1,
+  delay = 0,
   className,
   itemClassName
 }) => {
@@ -71,6 +73,7 @@ export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
       className={className}
       data-gsap-stagger={stagger}
       data-gsap-duration={duration}
+      data-gsap-delay={delay}
     >
       {childArray.map((child, index) => (
         <div key={index} className={`gsap-stagger-item ${itemClassName || ''}`}>
