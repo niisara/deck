@@ -20,102 +20,102 @@ export const graphRetrievalDeck: Deck = {
           center: true,
           title: '13 Graph-Based Retrieval Techniques',
           content: (
-            <div style={{ }}>
-          <div style={{ fontSize: '1.5rem', color: '#0ea5e9' }}>
-            <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-            A practical cheat-sheet for precision, reasoning, and reliable context
-          </div>
-          <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
-            <div style={{ }}>
-              <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-              <strong>Audience:</strong> RAG engineers, search engineers, data scientists
-            </div>
-            <div style={{  }}>
-              <SvgIcon iconName="duo-list-check" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-              <strong>What you'll get:</strong> 13 techniques, when to use them, simple steps, pros/cons
-            </div>
             <div>
-              <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-              <strong>Note:</strong> Simple visuals only (no complex diagrams)
-            </div>
-          </div>
-          <p><strong>Prepared by:</strong> Nisar A</p>
+              <div style={{ fontSize: '1.5rem', color: '#0ea5e9' }}>
+                <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                A practical cheat-sheet for precision, reasoning, and reliable context
+              </div>
+              <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
+                <div>
+                  <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                  <strong>Audience:</strong> RAG engineers, search engineers, data scientists
+                </div>
+                <div>
+                  <SvgIcon iconName="duo-list-check" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                  <strong>What you'll get:</strong> 13 techniques, when to use them, simple steps, pros/cons
+                </div>
+                <div>
+                  <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                  <strong>Note:</strong> Simple visuals only (no complex diagrams)
+                </div>
+              </div>
+              <p><strong>Prepared by:</strong> Nisar A</p>
               <p><strong>Date:</strong> November 7, 2025</p>
               <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
-        </div>
-      ),
-      backgroundColor: '#291e5b',
-      notes: ''
-    },
-    {
-      id: 2,
-      title: 'Overview: 13 Techniques at a Glance',
-      icon: { name: 'duo-list-check' },
-      content: (
-        <div style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'left' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>1</span>
-                <strong>Node-Level Retrieval</strong> — Retrieve individual concept/entity nodes
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>2</span>
-                <strong>Edge-Weighted Retrieval</strong> — Rank nodes by relationship strength
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>3</span>
-                <strong>Neighborhood Expansion</strong> — Node plus directly connected neighbors
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>4</span>
-                <strong>Path-Based Retrieval</strong> — Sequences of connected nodes (multi-hop)
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>5</span>
-                <strong>Community/Cluster Retrieval</strong> — Densely related node groups (topics)
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>6</span>
-                <strong>Hierarchical Graph Retrieval</strong> — Parent → subtopic → leaf chunks
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>7</span>
-                <strong>Graph + Dense Vector Hybrid</strong> — Combine embeddings with connectivity
+            </div>
+          ),
+          backgroundColor: '#291e5b',
+          notes: ''
+        },
+        {
+          id: 2,
+          title: 'Overview: 13 Techniques at a Glance',
+          icon: { name: 'duo-list-check' },
+          content: (
+            <div style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>1</span>
+                    <strong>Node-Level Retrieval</strong> — Retrieve individual concept/entity nodes
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>2</span>
+                    <strong>Edge-Weighted Retrieval</strong> — Rank nodes by relationship strength
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>3</span>
+                    <strong>Neighborhood Expansion</strong> — Node plus directly connected neighbors
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>4</span>
+                    <strong>Path-Based Retrieval</strong> — Sequences of connected nodes (multi-hop)
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>5</span>
+                    <strong>Community/Cluster Retrieval</strong> — Densely related node groups (topics)
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>6</span>
+                    <strong>Hierarchical Graph Retrieval</strong> — Parent → subtopic → leaf chunks
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>7</span>
+                    <strong>Graph + Dense Vector Hybrid</strong> — Combine embeddings with connectivity
+                  </div>
+                </div>
+                <div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>8</span>
+                    <strong>Graph + BM25 Hybrid</strong> — Validate with keyword BM25
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>9</span>
+                    <strong>Semantic Graph Traversal</strong> — Follow edges via similarity thresholds
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>10</span>
+                    <strong>Graph Walk-Based Ranking</strong> — PageRank/Personalized PageRank ranking
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>11</span>
+                    <strong>Query Graph Construction</strong> — Build a mini-graph from the query
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>12</span>
+                    <strong>Context Path Stitching</strong> — Stitch paths into coherent context
+                  </div>
+                  <div style={{ marginBottom: '0.7rem' }}>
+                    <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>13</span>
+                    <strong>LLM-Guided Graph Expansion</strong> — Adaptive traversal via LLM
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>8</span>
-                <strong>Graph + BM25 Hybrid</strong> — Validate with keyword BM25
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>9</span>
-                <strong>Semantic Graph Traversal</strong> — Follow edges via similarity thresholds
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>10</span>
-                <strong>Graph Walk-Based Ranking</strong> — PageRank/Personalized PageRank ranking
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>11</span>
-                <strong>Query Graph Construction</strong> — Build a mini-graph from the query
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>12</span>
-                <strong>Context Path Stitching</strong> — Stitch paths into coherent context
-              </div>
-              <div style={{ marginBottom: '0.7rem' }}>
-                <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>13</span>
-                <strong>LLM-Guided Graph Expansion</strong> — Adaptive traversal via LLM
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#291e5b',
-      notes: ''
+          ),
+          backgroundColor: '#291e5b',
+          notes: ''
         }
       ]
     },
@@ -131,14 +131,14 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Precise entity/topic lookup; reduces noise and hallucination.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ fontSize: '1.2rem' }}>
                 <li>High precision</li>
                 <li>Simple</li>
                 <li>Fast</li>
               </ul>
-              
+
               <p>FAQs, glossaries, entity-centric KBs, short queries.</p>
             </div>
           ),
@@ -153,13 +153,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Node metadata (title, aliases), text chunks, node embeddings, optional entity linker.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A → (Node A)`}
+                {`A → (Node A)`}
               </pre>
             </div>
           ),
@@ -178,7 +178,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Rank by combined exact match + embedding</li>
                 <li>Return top-k nodes and their attached chunks</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Looking up specific entity definitions in a glossary or knowledge base where precise matches are needed, such as retrieving the definition of "GraphRAG" from a technical documentation system.</p>
             </div>
@@ -198,7 +198,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Simple</li>
                 <li>Fast</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>May miss context or relationships</li>
@@ -223,13 +223,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Prioritize stronger, more meaningful relationships.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Trust-aware ranking</li>
                 <li>Interpretable via weights</li>
               </ul>
-              
+
               <p>Heterogeneous graphs with rich edge metadata; trust/scoring matters.</p>
             </div>
           ),
@@ -244,13 +244,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Use edge weights (e.g., citations, co-occurrence, confidence) to rank candidate nodes.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Edge weights/types, node embeddings (optional), normalization scheme.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A -(weight 0.9)→ B; A -(0.3)→ C ⇒ pick B.`}
+                {`A -(weight 0.9)→ B; A -(0.3)→ C ⇒ pick B.`}
               </pre>
             </div>
           ),
@@ -269,7 +269,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Score neighbors by edge weight (and decay by hop)</li>
                 <li>Rank and select top-k nodes</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Citation networks where papers with higher citation counts or co-citations are more relevant, or knowledge graphs where relationship confidence scores help prioritize the most reliable connections.</p>
             </div>
@@ -288,7 +288,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Trust-aware ranking</li>
                 <li>Interpretable via weights</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Requires good edge weighting</li>
@@ -313,14 +313,14 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Adds immediate context (definitions, examples, references).</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Simple</li>
                 <li>Contextual</li>
                 <li>Low-latency</li>
               </ul>
-              
+
               <p>Need local context around a concept (API, ontology, doc sections).</p>
             </div>
           ),
@@ -335,13 +335,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Retrieve seed node plus its 1-hop neighbors with filters.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Adjacency lists, node/edge types, optional neighbor caps per type.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A → {B, C, D}`}
+                {`A → {B, C, D}`}
               </pre>
             </div>
           ),
@@ -360,7 +360,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Expand 1-hop with type filters (e.g., definition, example, reference)</li>
                 <li>Deduplicate and cap per type</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>API documentation where retrieving a function node also returns related parameters, return types, and usage examples, providing complete context in one retrieval step.</p>
             </div>
@@ -380,7 +380,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Contextual</li>
                 <li>Low-latency</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Can introduce noise</li>
@@ -405,13 +405,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Multi-hop reasoning and evidence chains.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Supports reasoning</li>
                 <li>Traceable evidence</li>
               </ul>
-              
+
               <p>Why/how questions, causal chains, compliance dependencies.</p>
             </div>
           ),
@@ -426,13 +426,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Search for high-relevance paths connecting seed(s) to target concepts.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Edge types, path constraints, path scoring (length, weights, semantics).</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A → B → C`}
+                {`A → B → C`}
               </pre>
             </div>
           ),
@@ -451,7 +451,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Enumerate constrained paths up to L hops</li>
                 <li>Score paths; return best path(s) and attached chunks</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Regulatory compliance questions requiring evidence chains: A regulation requires B, which references C, which defines D. The complete path provides the reasoning trail.</p>
             </div>
@@ -470,7 +470,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Supports reasoning</li>
                 <li>Traceable evidence</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>More expensive</li>
@@ -495,13 +495,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Thematic coverage and diversity within a topic.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Broad coverage</li>
                 <li>Reduces narrow bias</li>
               </ul>
-              
+
               <p>Broad queries, topic exploration, overviews.</p>
             </div>
           ),
@@ -516,13 +516,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Detect communities (Louvain/Leiden/semantic clusters) and retrieve top nodes from a cluster.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Cluster labels, membership scores, intra-cluster rankings.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`Cluster X contains {A, B, C} ⇒ return all three.`}
+                {`Cluster X contains {A, B, C} ⇒ return all three.`}
               </pre>
             </div>
           ),
@@ -541,7 +541,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Select top-k nodes within cluster by centrality/similarity</li>
                 <li>Aggregate chunks for summary</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Topic exploration where a user asks about "machine learning" and the system returns diverse nodes from the ML cluster: supervised learning, neural networks, and model evaluation, providing comprehensive topic coverage.</p>
             </div>
@@ -560,7 +560,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Broad coverage</li>
                 <li>Reduces narrow bias</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Lower precision</li>
@@ -585,13 +585,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Navigates taxonomies; right granularity (parent→child).</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Granularity control</li>
                 <li>Structured summaries</li>
               </ul>
-              
+
               <p>Docs with sections, product catalogs, ontologies.</p>
             </div>
           ),
@@ -606,13 +606,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Traverse up/down hierarchy to match query specificity.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Parent-child edges, level metadata, leaf chunks.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`Parent A → Subtopic B → Leaf C.`}
+                {`Parent A → Subtopic B → Leaf C.`}
               </pre>
             </div>
           ),
@@ -631,7 +631,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Select nodes at target level</li>
                 <li>Expand to children or roll-up to parent as needed</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Product catalog navigation where a general query retrieves category-level information, while specific queries drill down to individual product specifications, automatically adjusting retrieval depth.</p>
             </div>
@@ -650,7 +650,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Granularity control</li>
                 <li>Structured summaries</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Requires clean hierarchy</li>
@@ -675,12 +675,12 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Combine semantic match with structural relevance.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Better precision/recall balance</li>
               </ul>
-              
+
               <p>Ambiguous queries; noisy graphs; heterogeneous data.</p>
             </div>
           ),
@@ -695,13 +695,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Blend embedding similarity with graph features (degree, proximity, edge weights).</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Node embeddings, edge features, fusion/scoring formula.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A (query) ~ B (0.83 sim); B near C ⇒ {B, C}`}
+                {`A (query) ~ B (0.83 sim); B near C ⇒ {B, C}`}
               </pre>
             </div>
           ),
@@ -720,7 +720,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Re-rank using graph scores (e.g., proximity to seeds)</li>
                 <li>Return top results after fusion</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Customer support where semantically similar questions are boosted if they're connected to the same product category or frequently co-occur in resolved tickets, combining semantic and structural signals.</p>
             </div>
@@ -738,7 +738,7 @@ export const graphRetrievalDeck: Deck = {
               <ul style={{ marginTop: '14px' }}>
                 <li>Better precision/recall balance</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Tuning fusion weights is non-trivial</li>
@@ -762,12 +762,12 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Keyword grounding and lexical precision.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Reduces semantically-close-but-wrong picks</li>
               </ul>
-              
+
               <p>Technical terms, exact codes, sparse text.</p>
             </div>
           ),
@@ -782,13 +782,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Cross-validate dense/graph candidates using BM25; or intersect/union strategies.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Inverted index, BM25 scores, graph/embedding candidates.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A (dense) → {B, C}; BM25 keeps B.`}
+                {`A (dense) → {B, C}; BM25 keeps B.`}
               </pre>
             </div>
           ),
@@ -807,7 +807,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Score with BM25 on node/chunk text</li>
                 <li>Re-rank or filter by BM25 thresholds</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Legal or medical search where exact terminology matters: graph retrieval suggests related concepts, but BM25 ensures only documents containing the exact legal statute or medical code are returned.</p>
             </div>
@@ -825,7 +825,7 @@ export const graphRetrievalDeck: Deck = {
               <ul style={{ marginTop: '14px' }}>
                 <li>Reduces semantically-close-but-wrong picks</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Misses paraphrases</li>
@@ -850,12 +850,12 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Adaptive follow of semantically strong links.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Precision during traversal</li>
               </ul>
-              
+
               <p>Noisy graphs; need to avoid drift while exploring.</p>
             </div>
           ),
@@ -870,13 +870,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Move along edges only if node/edge similarity crosses a threshold.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Node/edge embeddings, similarity thresholds, stop criteria.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A → B (0.82) → C (0.79) ; skip D (0.45).`}
+                {`A → B (0.82) → C (0.79) ; skip D (0.45).`}
               </pre>
             </div>
           ),
@@ -895,7 +895,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>For each neighbor, compute semantic score</li>
                 <li>Expand only if score ≥ τ; stop at budget</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Knowledge graph exploration where the system only follows highly relevant connections, avoiding topic drift when researching interconnected but distinct subjects like "quantum computing" and "classical algorithms".</p>
             </div>
@@ -913,7 +913,7 @@ export const graphRetrievalDeck: Deck = {
               <ul style={{ marginTop: '14px' }}>
                 <li>Precision during traversal</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Threshold tuning</li>
@@ -938,13 +938,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Identify authoritative/central nodes for a query.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Global signal</li>
                 <li>Robust to noise</li>
               </ul>
-              
+
               <p>Citation graphs, knowledge graphs, when centrality implies usefulness.</p>
             </div>
           ),
@@ -959,13 +959,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Random walk with restart from seed set; rank by stationary probabilities.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Transition matrix, restart set, damping, edge weights.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`Restart at A; steady-state ranks B > C > D.`}
+                {`Restart at A; steady-state ranks B > C > D.`}
               </pre>
             </div>
           ),
@@ -984,7 +984,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Run PPR with damping α</li>
                 <li>Return top nodes by score</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Academic paper recommendations where PageRank identifies influential papers in a citation network, or finding authoritative knowledge base articles by analyzing which nodes are most frequently referenced.</p>
             </div>
@@ -1003,7 +1003,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Global signal</li>
                 <li>Robust to noise</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Compute cost</li>
@@ -1028,13 +1028,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Structured intent capture; precise matching.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Highly precise</li>
                 <li>Explainable matches</li>
               </ul>
-              
+
               <p>Complex relational queries, compliance, troubleshooting.</p>
             </div>
           ),
@@ -1049,13 +1049,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Parse query into entities/relations; build mini-graph; match against KB.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>NER/RE models, schema, subgraph matching algo.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`A relates_to B via r1, B connects_to C via r2.`}
+                {`A relates_to B via r1, B connects_to C via r2.`}
               </pre>
             </div>
           ),
@@ -1074,7 +1074,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Build query graph; define constraints</li>
                 <li>Run subgraph or pattern match; retrieve matched nodes/edges</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>IT troubleshooting where a query like "database connection errors in production" is parsed into entities (database, production) and relations (connection_to, deployed_in), then matched against infrastructure graphs.</p>
             </div>
@@ -1093,7 +1093,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Highly precise</li>
                 <li>Explainable matches</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Extraction errors</li>
@@ -1118,13 +1118,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Converts disjoint paths into readable context.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Coherent context</li>
                 <li>Reduces hallucinations</li>
               </ul>
-              
+
               <p>Long-form answers; evidence synthesis.</p>
             </div>
           ),
@@ -1139,13 +1139,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>Order and merge path snippets; deduplicate; add bridging sentences.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Path lists, node texts, summarizer/ordering heuristic.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`Path A→B→C ⇒ stitched narrative: A then B therefore C.`}
+                {`Path A→B→C ⇒ stitched narrative: A then B therefore C.`}
               </pre>
             </div>
           ),
@@ -1164,7 +1164,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Merge node snippets by path order</li>
                 <li>Summarize and add transitions</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Research synthesis where multiple evidence paths need to be woven into a coherent narrative, such as connecting findings from different studies into a comprehensive literature review.</p>
             </div>
@@ -1183,7 +1183,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Coherent context</li>
                 <li>Reduces hallucinations</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Extra latency</li>
@@ -1208,13 +1208,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>Definition</h3>
               <p>Adaptive exploration under a token/latency budget.</p>
-              
+
               <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Flexible</li>
                 <li>Focuses on promising areas</li>
               </ul>
-              
+
               <p>Open-ended queries; large graphs; interactive Q&A.</p>
             </div>
           ),
@@ -1229,13 +1229,13 @@ export const graphRetrievalDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <h3>How It Works</h3>
               <p>LLM chooses next nodes/edges to expand based on current context and uncertainty.</p>
-              
+
               <h3>Data Requirements</h3>
               <p>Node summaries, expansion API, budget policy, feedback signals.</p>
-              
+
               <h3>Pattern</h3>
               <pre style={{ lineHeight: '1.5' }}>
-{`Start at A; LLM selects B and C; next expands C→D.`}
+                {`Start at A; LLM selects B and C; next expands C→D.`}
               </pre>
             </div>
           ),
@@ -1254,7 +1254,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Ask LLM to propose expansions with rationale</li>
                 <li>Expand top suggestions; iterate until budget met</li>
               </ul>
-              
+
               <h3>Example Use Case</h3>
               <p>Interactive research assistant where the LLM dynamically explores promising branches of a knowledge graph based on the evolving conversation, adapting to user interests and question complexity.</p>
             </div>
@@ -1273,7 +1273,7 @@ export const graphRetrievalDeck: Deck = {
                 <li>Flexible</li>
                 <li>Focuses on promising areas</li>
               </ul>
-              
+
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ marginTop: '14px' }}>
                 <li>Costly</li>
@@ -1362,9 +1362,9 @@ export const graphRetrievalDeck: Deck = {
                 <strong>Remember:</strong> Start simple, measure impact, and iterate based on your specific use case and constraints.
               </div>
             </div>
-      ),
-      backgroundColor: '#5b1e1e',
-      notes: ''
+          ),
+          backgroundColor: '#5b1e1e',
+          notes: ''
         }
       ]
     }
