@@ -1257,10 +1257,9 @@ export const vectorDatabasesDeck: Deck = {
         },
         {
           id: 70,
-          title: 'Selection Guide',
+          title: 'How to Choose the Right Vector Database',
       content: (
         <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.75em' }}>
-          <h3 style={{ marginBottom: '25px', textAlign: 'center' }}>How to Choose the Right Vector Database</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
             <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
               <h4 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
