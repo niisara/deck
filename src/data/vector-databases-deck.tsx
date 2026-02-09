@@ -19,111 +19,111 @@ export const vectorDatabasesDeck: Deck = {
           title: 'Vector Databases Cheat Sheet',
           content: (
             <div style={{ color: '#fff' }}>
-          <h2 style={{ marginBottom: '40px' }}>A comprehensive guide to 11 leading vector databases</h2>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '20px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#3498db' }} darkModeInvert={true} />
-              <p style={{ marginTop: '15px', fontSize: '2rem' }}>Vector Storage</p>
-            </div>
-            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#f39c12' }} darkModeInvert={true} />
-              <p style={{ marginTop: '15px', fontSize: '2rem' }}>Similarity Search</p>
-            </div>
-            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
-              <p style={{ marginTop: '15px', fontSize: '2rem' }}>AI Applications</p>
-            </div>
-          </div>
-          <p style={{ marginTop: '0px', fontSize: '1.4rem' }}>
-            For similarity search, retrieval augmented generation, and AI applications • 2025
-          </p>
-          <p><strong>Prepared by:</strong> Nisar A</p>
+              <h2 style={{ marginBottom: '40px' }}>A comprehensive guide to 11 leading vector databases</h2>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#3498db' }} darkModeInvert={true} />
+                  <p style={{ marginTop: '15px', fontSize: '2rem' }}>Vector Storage</p>
+                </div>
+                <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#f39c12' }} darkModeInvert={true} />
+                  <p style={{ marginTop: '15px', fontSize: '2rem' }}>Similarity Search</p>
+                </div>
+                <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
+                  <p style={{ marginTop: '15px', fontSize: '2rem' }}>AI Applications</p>
+                </div>
+              </div>
+              <p style={{ marginTop: '0px', fontSize: '1.4rem' }}>
+                For similarity search, retrieval augmented generation, and AI applications • 2025
+              </p>
+              <p><strong>Prepared by:</strong> Nisar A</p>
               <p><strong>Date:</strong> November 7, 2025</p>
               <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
-        </div>
-      ),
-      backgroundColor: '#2a217b',
-      notes: ''
-    },
-    {
-      id: 2,
-      title: 'Table of Contents',
-      icon: { name: 'duo-list-check' },
-      content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <h3 style={{ paddingBottom: '30px', textAlign: 'center' }}>11 Vector Databases Covered</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>1</span>
-                <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Pinecone</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>2</span>
-                <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Weaviate</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-                <span style={{ fontWeight: 'bold' }}>3</span>
-                <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Qdrant</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>4</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Milvus</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>5</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Chroma</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>6</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Redis Vector Store</strong>
+            </div>
+          ),
+          backgroundColor: '#2a217b',
+          notes: ''
+        },
+        {
+          id: 2,
+          title: 'Table of Contents',
+          icon: { name: 'duo-list-check' },
+          content: (
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <h3 style={{ paddingBottom: '30px', textAlign: 'center' }}>11 Vector Databases Covered</h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>1</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Pinecone</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>2</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Weaviate</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>3</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Qdrant</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>4</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Milvus</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>5</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Chroma</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(26, 188, 156, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>6</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Redis Vector Store</strong>
+                  </div>
+                </div>
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>7</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Elasticsearch Vector</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>8</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>Vespa</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(136, 255, 0, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>9</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>PostgreSQL + pgvector</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(39, 174, 96, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>10</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>MongoDB Vector Search</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(189, 195, 199, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
+                    <span style={{ fontWeight: 'bold' }}>11</span>
+                    <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
+                    <strong>LanceDB</strong>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(41, 128, 185, 0.1)', borderRadius: '8px', marginBottom: '10px', border: '2px solid #2980b9' }}>
+                    <SvgIcon iconName="duo-table" sizeName="2x" style={{ color: '#2980b9' }} />
+                    <strong>Quick Comparison Summary</strong>
+                  </div>
+                </div>
               </div>
             </div>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>7</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Elasticsearch Vector</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(230, 126, 34, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>8</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>Vespa</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(136, 255, 0, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>9</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>PostgreSQL + pgvector</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(39, 174, 96, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>10</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>MongoDB Vector Search</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(189, 195, 199, 0.1)', borderRadius: '8px', marginBottom: '10px' }}>
-              <span style={{ fontWeight: 'bold' }}>11</span>
-              <SvgIcon iconName="duo-minus" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
-                <strong>LanceDB</strong>
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '12px', backgroundColor: 'rgba(41, 128, 185, 0.1)', borderRadius: '8px', marginBottom: '10px', border: '2px solid #2980b9' }}>
-                <SvgIcon iconName="duo-table" sizeName="2x" style={{ color: '#2980b9' }} />
-                <strong>Quick Comparison Summary</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#2a217b',
-      notes: ''
+          ),
+          backgroundColor: '#2a217b',
+          notes: ''
         }
       ]
     },
@@ -152,7 +152,7 @@ export const vectorDatabasesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', color: '#69addb', padding: '20px' }}>
               <p style={{ lineHeight: '1.8', fontSize: '2rem' }}>
-                <strong>Vertical scaling:</strong> Increase pod size (x1→x2→x4→x8) with zero downtime.<br/><br/>
+                <strong>Vertical scaling:</strong> Increase pod size (x1→x2→x4→x8) with zero downtime.<br /><br />
                 <strong>Horizontal scaling:</strong> Add replicas to increase throughput (QPS) or create new indexes from collections to expand capacity or change pod types.
               </p>
             </div>
@@ -697,7 +697,7 @@ export const vectorDatabasesDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', color: '#1888d1', padding: '20px' }}>
               <p style={{ lineHeight: '1.8', fontSize: '2rem' }}>
-               Built on Lucene HNSW implementation with additional compression and quantization options. Features DiskBBQ for memory-efficient vector storage and ACORN-1 algorithm specifically optimized for filtered vector search performance.
+                Built on Lucene HNSW implementation with additional compression and quantization options. Features DiskBBQ for memory-efficient vector storage and ACORN-1 algorithm specifically optimized for filtered vector search performance.
               </p>
             </div>
           ),
@@ -951,7 +951,7 @@ export const vectorDatabasesDeck: Deck = {
           title: 'PostgreSQL + pgvector - Notes',
           icon: { name: 'duo-note-sticky' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', padding: '20px' }}>
               <ul style={{ lineHeight: '1.8', fontSize: '2rem' }}>
                 <li>Tune HNSW/IVF parameters for workload optimization</li>
                 <li>Consider pgvectorscale for enhanced performance</li>
@@ -1081,7 +1081,7 @@ export const vectorDatabasesDeck: Deck = {
           title: 'LanceDB - Scaling Model',
           icon: { name: 'duo-arrows-maximize' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto',color: '#8a9395', padding: '20px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
               <p style={{ lineHeight: '1.8', fontSize: '2rem' }}>
                 Flexible deployment as <strong>embedded database or serverless/cloud service</strong>. Specifically optimized for object storage solutions like S3 and high-performance local NVMe drives. Designed to scale with data volume rather than query complexity.
               </p>
@@ -1095,7 +1095,7 @@ export const vectorDatabasesDeck: Deck = {
           title: 'LanceDB - Performance Profile',
           icon: { name: 'duo-gauge-high' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto',color: '#8a9395', padding: '20px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
               <p style={{ lineHeight: '1.8', fontSize: '2rem' }}>
                 Achieves <strong>&lt;25ms latency</strong> for typical query workloads. Exceptional disk-based performance compared to memory-dependent alternatives. Particularly strong with large datasets stored on cost-effective storage solutions, maintaining performance at scale.
               </p>
@@ -1109,7 +1109,7 @@ export const vectorDatabasesDeck: Deck = {
           title: 'LanceDB - Cost Consideration',
           icon: { name: 'duo-dollar-sign' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto',color: '#8a9395', padding: '20px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
               <p style={{ lineHeight: '1.8', fontSize: '2rem' }}>
                 <strong>Storage-centric economics</strong> leveraging inexpensive S3/local disk to reduce RAM requirements and infrastructure costs. Serverless pricing options available, allowing pay-for-use models that scale efficiently with actual workloads. Optimized for low TCO at scale.
               </p>
@@ -1123,7 +1123,7 @@ export const vectorDatabasesDeck: Deck = {
           title: 'LanceDB - Best Use Case',
           icon: { name: 'duo-bullseye' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto',color: '#8a9395', padding: '20px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
               <p style={{ lineHeight: '1.8', fontSize: '2rem' }}>
                 Ideal for <strong>cost-efficient large-scale RAG over data lakes</strong>, where vectors are stored alongside source data. Well-suited for multimodal datasets combining text, images, and other data types. Effective for edge/embedded scenarios with storage constraints.
               </p>
@@ -1137,7 +1137,7 @@ export const vectorDatabasesDeck: Deck = {
           title: 'LanceDB - Notes',
           icon: { name: 'duo-note-sticky' },
           content: (
-            <div style={{ textAlign: 'left', margin: '0 auto',color: '#8a9395', padding: '20px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', color: '#8a9395', padding: '20px' }}>
               <ul style={{ lineHeight: '1.8', fontSize: '2rem' }}>
                 <li>Built on the columnar Lance format for efficient storage and retrieval</li>
                 <li>Provides excellent I/O locality for disk-based operations</li>
@@ -1159,195 +1159,195 @@ export const vectorDatabasesDeck: Deck = {
           id: 69,
           title: 'Quick Comparison Summary',
           content: (
-        <div style={{ margin: '0 auto', color: '#fff' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <h3 style={{ paddingBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
-            At-a-glance comparison of all 11 vector databases
-          </h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead>
-              <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Database</th>
-                <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Index Type</th>
-                <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Scaling Model</th>
-                <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Performance</th>
-                <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Cost</th>
-                <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Best Use Case</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Pinecone</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Proprietary ANN (p1, p2, s1)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Vertical pods + replicas/collections</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Sub-50ms, consistent at scale</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Managed/serverless ($70/mo+)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Production-grade, easy ops</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Weaviate</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW, Flat + inverted</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Horizontal sharding/replication</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Fast hybrid queries</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + managed ($25/mo+)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Complex vector+filters</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Qdrant</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW + quantization</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Cluster with replication/sharding</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>High RPS, low latency</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + cloud options</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>High-throughput + filters</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Milvus</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>IVF/HNSW/DiskANN/GPU</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Distributed cluster architecture</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Billion-scale, tunable</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + managed (Zilliz)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Large-scale, flexible index</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Chroma</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW (single-node focus)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Single-node/Cloud options</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Good for small-mid datasets</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS (free) + cloud</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Rapid RAG prototyping</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Redis Vector</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW/Flat (RediSearch)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Redis Cluster architecture</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Real-time, in-memory speed</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Redis infrastructure cost</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Low-latency applications</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Elasticsearch</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW, DiskBBQ (Lucene)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Horizontal sharding/replication</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Hybrid text+vector search</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Elastic Cloud cost model</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Enterprise search + vector</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Vespa</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW + tensor operations</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Distributed auto-scaling</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Real-time indexing at scale</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + cloud options</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Real-time ranking/inference</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>pgvector</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW, IVFFlat extension</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>PostgreSQL replication</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Good for moderate scale</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>PG infrastructure only</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>ACID + vector operations</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>MongoDB</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW-based (Atlas)</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Atlas managed auto-scaling</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Operational + vector data</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Atlas cluster-based</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Unified JSON + vectors</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>LanceDB</strong></td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>IVF-PQ, disk-optimized</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Embedded/Serverless model</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Efficient disk-based search</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Storage-focused pricing</td>
-                <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Cost-efficient RAG/lakes</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      ),
-      backgroundColor: '#1e4d7d',
-      notes: ''
+            <div style={{ margin: '0 auto', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <h3 style={{ paddingBottom: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
+                At-a-glance comparison of all 11 vector databases
+              </h3>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <thead>
+                  <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
+                    <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Database</th>
+                    <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Index Type</th>
+                    <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Scaling Model</th>
+                    <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Performance</th>
+                    <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Cost</th>
+                    <th style={{ padding: '8px', border: '1px solid #555', fontSize: '2rem' }}>Best Use Case</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Pinecone</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Proprietary ANN (p1, p2, s1)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Vertical pods + replicas/collections</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Sub-50ms, consistent at scale</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Managed/serverless ($70/mo+)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Production-grade, easy ops</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Weaviate</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW, Flat + inverted</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Horizontal sharding/replication</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Fast hybrid queries</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + managed ($25/mo+)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Complex vector+filters</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Qdrant</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW + quantization</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Cluster with replication/sharding</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>High RPS, low latency</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + cloud options</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>High-throughput + filters</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Milvus</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>IVF/HNSW/DiskANN/GPU</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Distributed cluster architecture</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Billion-scale, tunable</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + managed (Zilliz)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Large-scale, flexible index</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Chroma</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW (single-node focus)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Single-node/Cloud options</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Good for small-mid datasets</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS (free) + cloud</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Rapid RAG prototyping</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Redis Vector</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW/Flat (RediSearch)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Redis Cluster architecture</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Real-time, in-memory speed</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Redis infrastructure cost</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Low-latency applications</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Elasticsearch</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW, DiskBBQ (Lucene)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Horizontal sharding/replication</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Hybrid text+vector search</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Elastic Cloud cost model</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Enterprise search + vector</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>Vespa</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW + tensor operations</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Distributed auto-scaling</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Real-time indexing at scale</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>OSS + cloud options</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Real-time ranking/inference</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>pgvector</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW, IVFFlat extension</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>PostgreSQL replication</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Good for moderate scale</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>PG infrastructure only</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>ACID + vector operations</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>MongoDB</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>HNSW-based (Atlas)</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Atlas managed auto-scaling</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Operational + vector data</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Atlas cluster-based</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Unified JSON + vectors</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}><strong>LanceDB</strong></td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>IVF-PQ, disk-optimized</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Embedded/Serverless model</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Efficient disk-based search</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Storage-focused pricing</td>
+                    <td style={{ padding: '6px', border: '1px solid #555', fontSize: '1.2rem' }}>Cost-efficient RAG/lakes</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          ),
+          backgroundColor: '#1e4d7d',
+          notes: ''
         },
         {
           id: 70,
           title: 'How to Choose the Right Vector Database',
-      content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Production-Grade & Managed
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#3498db' }}>
-                <li><strong>Pinecone:</strong> Easy ops, SLA guarantees, predictable latency</li>
-                <li><strong>Weaviate:</strong> Hybrid search, multi-modal, GraphQL API</li>
-                <li><strong>Qdrant:</strong> High RPS (4x faster), advanced filtering</li>
-              </ul>
+          content: (
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db' }}>
+                  <h4 style={{ color: '#3498db', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Production-Grade & Managed
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', color: '#3498db' }}>
+                    <li><strong>Pinecone:</strong> Easy ops, SLA guarantees, predictable latency</li>
+                    <li><strong>Weaviate:</strong> Hybrid search, multi-modal, GraphQL API</li>
+                    <li><strong>Qdrant:</strong> High RPS (4x faster), advanced filtering</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
+                  <h4 style={{ color: '#f39c12', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Large-Scale & Enterprise
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', color: '#f39c12' }}>
+                    <li><strong>Milvus:</strong> Billion-scale, flexible index strategies</li>
+                    <li><strong>Elasticsearch:</strong> Unified keyword + semantic search</li>
+                    <li><strong>Vespa:</strong> Real-time ranking with ML inference</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
+                  <h4 style={{ color: '#2ecc71', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-code" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Prototyping & Development
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', color: '#2ecc71' }}>
+                    <li><strong>Chroma:</strong> Simple, local-first, LangChain/LlamaIndex integration</li>
+                    <li><strong>LanceDB:</strong> Embedded, cost-efficient for data lakes</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
+                  <h4 style={{ color: '#9b59b6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Real-Time & Low-Latency
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', color: '#9b59b6' }}>
+                    <li><strong>Redis Vector:</strong> Sub-millisecond, in-memory speed</li>
+                    <li><strong>Qdrant:</strong> High throughput with minimal latency</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(255, 235, 25, 0.1)', borderRadius: '10px', border: '2px solid #afc336' }}>
+                  <h4 style={{ color: '#afc336', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Existing Database Integration
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', color: '#afc336' }}>
+                    <li><strong>pgvector:</strong> ACID compliance, SQL interface, 150x improvement</li>
+                    <li><strong>MongoDB:</strong> Unified JSON + vectors in single platform</li>
+                    <li><strong>Redis/Elasticsearch:</strong> Add vectors to existing infrastructure</li>
+                  </ul>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c' }}>
+                  <h4 style={{ color: '#e74c3c', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-dollar-sign" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Cost-Efficiency Focus
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', color: '#e74c3c' }}>
+                    <li><strong>LanceDB:</strong> Storage-centric, low TCO at scale</li>
+                    <li><strong>Chroma:</strong> Free open source for development</li>
+                    <li><strong>Weaviate:</strong> Starting at $25/mo managed</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12' }}>
-              <h4 style={{ color: '#f39c12', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Large-Scale & Enterprise
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#f39c12' }}>
-                <li><strong>Milvus:</strong> Billion-scale, flexible index strategies</li>
-                <li><strong>Elasticsearch:</strong> Unified keyword + semantic search</li>
-                <li><strong>Vespa:</strong> Real-time ranking with ML inference</li>
-              </ul>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71' }}>
-              <h4 style={{ color: '#2ecc71', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-code" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Prototyping & Development
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#2ecc71' }}>
-                <li><strong>Chroma:</strong> Simple, local-first, LangChain/LlamaIndex integration</li>
-                <li><strong>LanceDB:</strong> Embedded, cost-efficient for data lakes</li>
-              </ul>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Real-Time & Low-Latency
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#9b59b6' }}>
-                <li><strong>Redis Vector:</strong> Sub-millisecond, in-memory speed</li>
-                <li><strong>Qdrant:</strong> High throughput with minimal latency</li>
-              </ul>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(255, 235, 25, 0.1)', borderRadius: '10px', border: '2px solid #afc336' }}>
-              <h4 style={{ color: '#afc336', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Existing Database Integration
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#afc336' }}>
-                <li><strong>pgvector:</strong> ACID compliance, SQL interface, 150x improvement</li>
-                <li><strong>MongoDB:</strong> Unified JSON + vectors in single platform</li>
-                <li><strong>Redis/Elasticsearch:</strong> Add vectors to existing infrastructure</li>
-              </ul>
-            </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '10px', border: '2px solid #e74c3c' }}>
-              <h4 style={{ color: '#e74c3c', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-dollar-sign" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Cost-Efficiency Focus
-              </h4>
-              <ul style={{ lineHeight: '1.8', color: '#e74c3c' }}>
-                <li><strong>LanceDB:</strong> Storage-centric, low TCO at scale</li>
-                <li><strong>Chroma:</strong> Free open source for development</li>
-                <li><strong>Weaviate:</strong> Starting at $25/mo managed</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1e4d7d',
-      notes: ''
+          ),
+          backgroundColor: '#1e4d7d',
+          notes: ''
         }
       ]
     }
