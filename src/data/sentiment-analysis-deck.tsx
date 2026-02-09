@@ -37,25 +37,25 @@ export const sentimentAnalysisDeck: Deck = {
             </div>
           ),
           backgroundColor: '#2b0e77',
-          notes: `### 15 Sentiment Analysis Techniques
+          notes: `### Sentiment Analysis Techniques
 
-Welcome everyone! Today we're going to explore the fascinating world of sentiment analysis, which is all about teaching computers to understand human emotions and opinions in text.
+[cheerfully] Welcome everyone! [excited] Today we're going to explore the fascinating world of sentiment analysis, which is all about teaching computers to understand human emotions and opinions in text.
 
 ####  What is Sentiment Analysis?
 
-Imagine you run an online store and receive thousands of customer reviews every day. How do you quickly understand whether customers are happy or unhappy? That's exactly where sentiment analysis comes in. It's like giving computers the ability to read and understand whether a piece of text expresses positive feelings, negative feelings, or something neutral.
+[conversational] Imagine you run an online store and receive thousands of customer reviews every day. How do you quickly understand whether customers are happy or unhappy? [enthusiastically] That's exactly where sentiment analysis comes in. It's like giving computers the ability to read and understand whether a piece of text expresses positive feelings, negative feelings, or something neutral.
 
 ####  Why This Matters
 
-Sentiment analysis has become incredibly important in today's digital world. Companies use it to monitor brand reputation on social media, analyze customer feedback, understand market trends, and even predict stock movements based on news sentiment. If you've ever wondered how companies instantly know what people think about their products across millions of social media posts, the answer is sentiment analysis.
+[confidently] Sentiment analysis has become incredibly important in today's digital world. Companies use it to monitor brand reputation on social media, analyze customer feedback, understand market trends, and even predict stock movements based on news sentiment. [storytelling] If you've ever wondered how companies instantly know what people think about their products across millions of social media posts, the answer is sentiment analysis.
 
 ####  Our Journey Today
 
-We'll explore **fifteen different techniques**, starting from the simplest approaches that use dictionaries of positive and negative words, all the way to cutting-edge methods that combine text, audio, and video to understand human emotions. Think of this as a progression from simple to sophisticated, from rule-based systems to advanced artificial intelligence.
+[energetic] We'll explore **fifteen different techniques**, starting from the simplest approaches that use dictionaries of positive and negative words, all the way to cutting-edge methods that combine text, audio, and video to understand human emotions. [conversational] Think of this as a progression from simple to sophisticated, from rule-based systems to advanced artificial intelligence.
 
-Each technique has its own strengths and trade-offs. Some are fast and simple but less accurate, while others are highly accurate but require more computational power and data. By the end of this presentation, you'll understand when to use each approach and how to choose the right tool for your specific needs.
+[reassuringly] Each technique has its own strengths and trade-offs. Some are fast and simple but less accurate, while others are highly accurate but require more computational power and data. [confidently] By the end of this presentation, you'll understand when to use each approach and how to choose the right tool for your specific needs.
 
-Let's dive in and discover how machines learn to understand human sentiment!`
+[inspiringly] Let's dive in and discover how machines learn to understand human sentiment!`
         },
         {
           id: 2,
@@ -139,29 +139,29 @@ Let's dive in and discover how machines learn to understand human sentiment!`
           backgroundColor: '#2b0e77',
           notes: `### Table of Contents
 
-Let's get oriented with what we'll be covering today. I've organized these fifteen techniques into six logical categories, taking you on a journey from the simplest approaches to the most sophisticated ones.
+[conversational] Let's get oriented with what we'll be covering today. [confidently] I've organized these fifteen techniques into six logical categories, taking you on a journey from the simplest approaches to the most sophisticated ones.
 
 ####  The Six Categories
 
-We start with **Traditional and Rule-Based** methods, techniques one and two. These are the oldest approaches, using dictionaries of words and handcrafted rules. Think of these as the foundation, simple but surprisingly effective for certain tasks.
+[lecture] We start with **Traditional and Rule-Based** methods, techniques one and two. These are the oldest approaches, using dictionaries of words and handcrafted rules. [reassuringly] Think of these as the foundation, simple but surprisingly effective for certain tasks.
 
-Next, we move to **Classical Machine Learning**, covering techniques three through five. These include methods like logistic regression and support vector machines, which were the workhorses of sentiment analysis before deep learning took over. They're fast, interpretable, and still widely used in production systems today.
+[conversational] Next, we move to **Classical Machine Learning**, covering techniques three through five. These include methods like logistic regression and support vector machines, which were the workhorses of sentiment analysis before deep learning took over. [confidently] They're fast, interpretable, and still widely used in production systems today.
 
-Then we have **Modern NLP Tools**, techniques six and seven. These are specialized libraries like VADER 👉 'vay-der' and TextBlob that combine lexicons with smart rules, optimized specifically for sentiment analysis. They're incredibly practical and require zero training data.
+[enthusiastically] Then we have **Modern NLP Tools**, techniques six and seven. These are specialized libraries like VADER 👉 'vay-der' and TextBlob that combine lexicons with smart rules, optimized specifically for sentiment analysis. They're incredibly practical and require zero training data.
 
 ####  Getting More Advanced
 
-The **Deep Learning** category, techniques eight through ten, introduces neural networks. These models can learn complex patterns from data and capture word order and context much better than traditional methods. We'll explore LSTMs 👉 'ell-ess-tee-ems' and CNNs 👉 'cee-enn-ens' for text.
+[excited] The **Deep Learning** category, techniques eight through ten, introduces neural networks. [conversational] These models can learn complex patterns from data and capture word order and context much better than traditional methods. We'll explore LSTMs 👉 'ell-ess-tee-ems' and CNNs 👉 'cee-enn-ens' for text.
 
-Moving further, we reach **Transformer-Based** models, techniques eleven through thirteen. This is where we enter the era of BERT 👉 'burt' and GPT 👉 'gee-pee-tee', models that have revolutionized natural language processing. These achieve state-of-the-art accuracy by understanding context in ways previous methods couldn't.
+[energetic] Moving further, we reach **Transformer-Based** models, techniques eleven through thirteen. [enthusiastically] This is where we enter the era of BERT 👉 'burt' and GPT 👉 'gee-pee-tee', models that have revolutionized natural language processing. These achieve state-of-the-art accuracy by understanding context in ways previous methods couldn't.
 
-Finally, we have **Advanced** techniques, fourteen and fifteen, covering aspect-based sentiment analysis and multimodal approaches that combine text with audio and video. These are cutting-edge methods for specialized applications.
+[impressed] Finally, we have **Advanced** techniques, fourteen and fifteen, covering aspect-based sentiment analysis and multimodal approaches that combine text with audio and video. These are cutting-edge methods for specialized applications.
 
 ####  Plus a Bonus
 
-At the end, we'll wrap up with a comparison matrix showing how all fifteen techniques stack up against each other, plus recommendations and best practices for choosing the right approach for your specific use case.
+[pleased] At the end, we'll wrap up with a comparison matrix showing how all fifteen techniques stack up against each other, plus recommendations and best practices for choosing the right approach for your specific use case.
 
-Ready to begin our journey? Let's start with the simplest technique, lexicon-based sentiment scoring.`
+[cheerfully] Ready to begin our journey? Let's start with the simplest technique, lexicon-based sentiment scoring.`
         }
       ]
     },
@@ -229,15 +229,15 @@ Ready to begin our journey? Let's start with the simplest technique, lexicon-bas
             </div>
           ),
           backgroundColor: '#0e7762',
-          notes: `### 1. Lexicon-Based Sentiment Scoring
+          notes: `### Lexicon-Based Sentiment Scoring
 
-Let's start our journey with the simplest and most intuitive approach: lexicon-based sentiment scoring. This is the foundation of sentiment analysis, and understanding it will help you appreciate why more complex methods exist.
+[cheerfully] Let's start our journey with the simplest and most intuitive approach: lexicon-based sentiment scoring. [confidently] This is the foundation of sentiment analysis, and understanding it will help you appreciate why more complex methods exist.
 
 ####  What's the Core Idea?
 
-The fundamental concept is beautifully simple. We create a dictionary, kind of like a sentiment vocabulary book, where each word has a numerical score representing how positive or negative it is. For example, the word "excellent" might get a score of plus three, "good" gets plus two, "bad" gets minus two, and "terrible" gets minus three.
+[conversational] The fundamental concept is beautifully simple. [storytelling] We create a dictionary, kind of like a sentiment vocabulary book, where each word has a numerical score representing how positive or negative it is. For example, the word "excellent" might get a score of plus three, "good" gets plus two, "bad" gets minus two, and "terrible" gets minus three.
 
-When you want to analyze a sentence like "This movie was excellent but the ending was terrible," the system looks up each word in the dictionary, finds the scores (excellent = +3, terrible = -3), adds them up, and you get zero, suggesting mixed or neutral sentiment. Simple, right?
+[playfully] When you want to analyze a sentence like "This movie was excellent but the ending was terrible," the system looks up each word in the dictionary, finds the scores (excellent = +3, terrible = -3), adds them up, and you get zero, suggesting mixed or neutral sentiment. [amused] Simple, right?
 
 ####  How It Works
 
@@ -304,29 +304,29 @@ It requires zero training, runs extremely fast, and you can understand every dec
           backgroundColor: '#0e7762',
           notes: `### Pros and Cons
 
-Now let's be honest about the strengths and limitations of lexicon-based approaches. Understanding these trade-offs will help you decide when this simple method is enough and when you need something more sophisticated.
+[seriously] Now let's be honest about the strengths and limitations of lexicon-based approaches. [reassuringly] Understanding these trade-offs will help you decide when this simple method is enough and when you need something more sophisticated.
 
 ####  The Strengths
 
-The first major advantage is **interpretability**. You can trace exactly why the system made a particular decision. If it classifies a review as negative, you can point to the specific negative words that drove that conclusion. This transparency is invaluable in many business contexts where you need to justify your analysis.
+[confidently] The first major advantage is **interpretability**. You can trace exactly why the system made a particular decision. [conversational] If it classifies a review as negative, you can point to the specific negative words that drove that conclusion. [pleased] This transparency is invaluable in many business contexts where you need to justify your analysis.
 
-It's also **incredibly fast**. We're talking microseconds to analyze a sentence. There's no complex computation, just simple dictionary lookups and addition. You could process millions of tweets on a laptop without breaking a sweat.
+[enthusiastically] It's also **incredibly fast**. We're talking microseconds to analyze a sentence. There's no complex computation, just simple dictionary lookups and addition. [playfully] You could process millions of tweets on a laptop without breaking a sweat.
 
-You need **zero training data**. In machine learning, gathering labeled data is often the most expensive and time-consuming part. With lexicon-based methods, you skip that entirely. Just download a pre-built lexicon and you're ready to go.
+[impressed] You need **zero training data**. [lecture] In machine learning, gathering labeled data is often the most expensive and time-consuming part. [pleased] With lexicon-based methods, you skip that entirely. Just download a pre-built lexicon and you're ready to go.
 
-Plus, **multilingual lexicons** exist for many languages, making it easier to work across different languages without building separate models.
+[confidently] Plus, **multilingual lexicons** exist for many languages, making it easier to work across different languages without building separate models.
 
 ####  The Limitations
 
-But here's where reality sets in. The biggest problem is handling **context and negation**. Consider the sentence "This is not good." The word "good" is positive, but "not good" is clearly negative. A simple lexicon-based system might miss this nuance and incorrectly score it as positive.
+[cautiously] But here's where reality sets in. [concerned] The biggest problem is handling **context and negation**. [storytelling] Consider the sentence "This is not good." The word "good" is positive, but "not good" is clearly negative. [disappointed] A simple lexicon-based system might miss this nuance and incorrectly score it as positive.
 
-It **struggles with sarcasm**. When someone writes "Oh great, another software update that breaks everything," the word "great" is positive in the lexicon, but the speaker is clearly expressing frustration. Humans understand sarcasm from context, but dictionaries don't capture that.
+[frustrated] It **struggles with sarcasm**. [conversational] When someone writes "Oh great, another software update that breaks everything," the word "great" is positive in the lexicon, but the speaker is clearly expressing frustration. [seriously] Humans understand sarcasm from context, but dictionaries don't capture that.
 
-Modern language is full of **slang, abbreviations, and domain-specific jargon** that aren't in traditional lexicons. Terms like "lit," "salty," or industry-specific terminology won't have sentiment scores, leading to missed signals.
+[cautiously] Modern language is full of **slang, abbreviations, and domain-specific jargon** that aren't in traditional lexicons. Terms like "lit," "salty," or industry-specific terminology won't have sentiment scores, leading to missed signals.
 
-Finally, the **accuracy ceiling is lower** compared to machine learning approaches. For many real-world applications, you'll need the extra accuracy that more advanced methods provide.
+[firmly] Finally, the **accuracy ceiling is lower** compared to machine learning approaches. For many real-world applications, you'll need the extra accuracy that more advanced methods provide.
 
-So while lexicon-based scoring is a great starting point and works well for certain constrained scenarios, most production systems eventually need something more sophisticated. Let's move on to see how adding rules can help address some of these limitations.`
+[reassuringly] So while lexicon-based scoring is a great starting point and works well for certain constrained scenarios, most production systems eventually need something more sophisticated. [confidently] Let's move on to see how adding rules can help address some of these limitations.`
         }
       ]
     },
@@ -395,15 +395,15 @@ So while lexicon-based scoring is a great starting point and works well for cert
             </div>
           ),
           backgroundColor: '#5e2b73',
-          notes: `### 2. Rule-Based Sentiment Classification
+          notes: `### Rule-Based Sentiment Classification
 
-Now let's level up from simple lexicon lookups to rule-based sentiment classification. This technique adds intelligence to our basic dictionary approach by incorporating rules that understand language patterns.
+[energetic] Now let's level up from simple lexicon lookups to rule-based sentiment classification. [conversational] This technique adds intelligence to our basic dictionary approach by incorporating rules that understand language patterns.
 
 ####  What Makes It Different?
 
-While lexicon-based scoring just looks up words and adds their scores, rule-based classification goes several steps further. It uses handcrafted rules to handle linguistic patterns that simple dictionaries miss. Think of it as teaching the computer grammar rules for sentiment.
+[conversational] While lexicon-based scoring just looks up words and adds their scores, rule-based classification goes several steps further. [confidently] It uses handcrafted rules to handle linguistic patterns that simple dictionaries miss. Think of it as teaching the computer grammar rules for sentiment.
 
-For example, a rule might say: "If you see the word 'not' followed by a positive word within three positions, flip the sentiment to negative." Another rule might detect that "not bad" actually means something positive. These rules capture the nuances of human language that raw dictionaries can't.
+[storytelling] For example, a rule might say: "If you see the word 'not' followed by a positive word within three positions, flip the sentiment to negative." Another rule might detect that "not bad" actually means something positive. [impressed] These rules capture the nuances of human language that raw dictionaries can't.
 
 ####  How It Works
 
@@ -483,11 +483,11 @@ This approach requires significant upfront engineering effort, but the payoff is
           backgroundColor: '#5e2b73',
           notes: `### Pros and Cons
 
-Let's evaluate the trade-offs of rule-based sentiment classification so you can decide if it's the right tool for your needs.
+[seriously] Let's evaluate the trade-offs of rule-based sentiment classification so you can decide if it's the right tool for your needs.
 
 ####  The Strengths
 
-The first major advantage is that it's **deterministic and fully auditable**. Give it the same input twice, and you'll get exactly the same output. You can trace every decision back to a specific rule. In regulated industries like finance or healthcare, this auditability is not just nice-to-have, it's mandatory. When a regulator asks "Why did you classify this complaint as negative?" you can point to the exact rule that fired.
+[confidently] The first major advantage is that it's **deterministic and fully auditable**. Give it the same input twice, and you'll get exactly the same output. You can trace every decision back to a specific rule. In regulated industries like finance or healthcare, this auditability is not just nice-to-have, it's mandatory. When a regulator asks "Why did you classify this complaint as negative?" you can point to the exact rule that fired.
 
 You get **predictable latency** for production systems. Rules execute in consistent time, making capacity planning straightforward. There are no neural networks with variable computation time, just simple if-then logic that runs in microseconds.
 
@@ -578,15 +578,15 @@ Let's move on to machine learning approaches that can learn patterns from data r
             </div>
           ),
           backgroundColor: '#732b61',
-          notes: `### 3. Bag-of-Words + Logistic Regression
+          notes: `### Bag-of-Words + Logistic Regression
 
-Welcome to the world of machine learning for sentiment analysis! This is where we move from handcrafted rules to algorithms that learn patterns from data. Bag-of-Words combined with Logistic Regression is the classic entry point into ML-based sentiment analysis.
+[excited] Welcome to the world of machine learning for sentiment analysis! [enthusiastically] This is where we move from handcrafted rules to algorithms that learn patterns from data. [confidently] Bag-of-Words combined with Logistic Regression is the classic entry point into ML-based sentiment analysis.
 
 ####  What is Bag-of-Words?
 
-The Bag-of-Words approach, often abbreviated as BoW 👉 'bow', treats text like a bag of individual words, completely ignoring grammar and word order. Imagine taking a sentence, cutting out each word, throwing them all into a bag, and just counting how many times each word appears.
+[lecture] The Bag-of-Words approach, often abbreviated as BoW 👉 'bow', treats text like a bag of individual words, completely ignoring grammar and word order. [storytelling] Imagine taking a sentence, cutting out each word, throwing them all into a bag, and just counting how many times each word appears.
 
-For example, "This movie is great and great acting" becomes a vector of word counts: {"this": 1, "movie": 1, "is": 1, "great": 2, "and": 1, "acting": 1}. We lose information about word order—we can't tell if someone said "not great" or "great, not"—but we gain simplicity and the ability to apply mathematical techniques.
+[conversational] For example, "This movie is great and great acting" becomes a vector of word counts: {"this": 1, "movie": 1, "is": 1, "great": 2, "and": 1, "acting": 1}. [cautiously] We lose information about word order—we can't tell if someone said "not great" or "great, not"—[reassuringly] but we gain simplicity and the ability to apply mathematical techniques.
 
 ####  Adding Logistic Regression
 
@@ -675,11 +675,11 @@ This technique represents your first step into data-driven sentiment analysis, o
           backgroundColor: '#732b61',
           notes: `### Pros and Cons
 
-Let's evaluate the strengths and limitations of Bag-of-Words with Logistic Regression to help you understand when this classic approach makes sense.
+[conversational] Let's evaluate the strengths and limitations of Bag-of-Words with Logistic Regression to help you understand when this classic approach makes sense.
 
 ####  The Strengths
 
-First and foremost, it's **fast to train and deploy**. We're talking minutes to train on tens of thousands of examples, even on a laptop CPU. No GPUs needed. Inference is lightning fast—you can classify thousands of texts per second. This makes it perfect for real-time applications where latency matters.
+[impressed] First and foremost, it's **fast to train and deploy**. We're talking minutes to train on tens of thousands of examples, even on a laptop CPU. No GPUs needed. Inference is lightning fast—you can classify thousands of texts per second. This makes it perfect for real-time applications where latency matters.
 
 It provides a **strong baseline performance**. Before investing in complex neural networks, you should always establish a Bag-of-Words baseline. You'd be surprised how often this simple approach gets you eighty to eighty-five percent accuracy, and sometimes that's good enough for your use case.
 
@@ -772,9 +772,9 @@ But when you need to understand context, handle complex language patterns, or sq
             </div>
           ),
           backgroundColor: '#2b7340',
-          notes: `### 4. TF-IDF + SVM Sentiment Classifier
+          notes: `### TF-IDF + SVM Sentiment Classifier
 
-Now we're stepping up our feature engineering game with TF-IDF 👉 'tee-eff eye-dee-eff', combined with Support Vector Machines. This combination has been a workhorse of text classification for years and remains competitive even in the deep learning era.
+[enthusiastically] Now we're stepping up our feature engineering game with TF-IDF 👉 'tee-eff eye-dee-eff', combined with Support Vector Machines. [impressed] This combination has been a workhorse of text classification for years and remains competitive even in the deep learning era.
 
 ####  What is TF-IDF?
 
@@ -870,11 +870,11 @@ This combination of TF-IDF and SVM represents the pinnacle of classical machine 
           backgroundColor: '#2b7340',
           notes: `### Pros and Cons
 
-Let's assess the strengths and weaknesses of TF-IDF with SVM to understand when this powerful combination is the right choice.
+[conversational] Let's assess the strengths and weaknesses of TF-IDF with SVM to understand when this powerful combination is the right choice.
 
 ####  The Strengths
 
-First, it delivers **strong accuracy for classical ML approaches**. TF-IDF plus SVM often achieves accuracy within a few percentage points of deep learning methods while being much simpler. In many benchmark studies, it was the state-of-the-art before neural networks took over, and it remains competitive for many real-world applications.
+[impressed] First, it delivers **strong accuracy for classical ML approaches**. TF-IDF plus SVM often achieves accuracy within a few percentage points of deep learning methods while being much simpler. In many benchmark studies, it was the state-of-the-art before neural networks took over, and it remains competitive for many real-world applications.
 
 It **handles high-dimensional feature spaces efficiently**. Text data naturally creates tens of thousands of features, one per unique word. Many algorithms struggle with this dimensionality, but Linear SVMs are specifically designed to work well in high-dimensional spaces. The curse of dimensionality doesn't apply in the same way.
 
@@ -965,9 +965,9 @@ Next, we'll look at Naive Bayes, an even simpler probabilistic approach that can
             </div>
           ),
           backgroundColor: '#3f2b73',
-          notes: `### 5. Naive Bayes Sentiment Model
+          notes: `### Naive Bayes Sentiment Model
 
-Now let's explore Naive Bayes 👉 'naive base', one of the oldest and simplest machine learning algorithms, yet surprisingly effective for text classification. Despite its simplicity and its somewhat unflattering name, it remains a go-to choice for many applications.
+[cheerfully] Now let's explore Naive Bayes 👉 'naive base', one of the oldest and simplest machine learning algorithms, yet surprisingly effective for text classification. [playfully] Despite its simplicity and its somewhat unflattering name, it remains a go-to choice for many applications.
 
 ####  What Makes It "Naive"?
 
@@ -1063,11 +1063,11 @@ It embodies the principle that sometimes the simplest solution is the best solut
           backgroundColor: '#3f2b73',
           notes: `### Pros and Cons
 
-Let's evaluate the strengths and limitations of Naive Bayes to understand when this classic probabilistic approach is the right tool for your sentiment analysis needs.
+[seriously] Let's evaluate the strengths and limitations of Naive Bayes to understand when this classic probabilistic approach is the right tool for your sentiment analysis needs.
 
 ####  The Strengths
 
-The first and perhaps most impressive strength is **extremely fast training and inference**. We're talking about training in seconds even on large datasets, and classifying thousands of documents per second at inference time. The computational complexity is linear in the number of features and documents, making it one of the fastest machine learning algorithms available.
+[impressed] The first and perhaps most impressive strength is **extremely fast training and inference**. We're talking about training in seconds even on large datasets, and classifying thousands of documents per second at inference time. The computational complexity is linear in the number of features and documents, making it one of the fastest machine learning algorithms available.
 
 This speed isn't just convenient—it's transformative for certain applications. If you need to process a million tweets in real-time, Naive Bayes can do it without requiring expensive GPU infrastructure.
 
@@ -1165,9 +1165,9 @@ Now let's move from classical machine learning to modern NLP tools specifically 
             </div>
           ),
           backgroundColor: '#732b2b',
-          notes: `### 6. VADER Sentiment Scoring
+          notes: `### VADER Sentiment Scoring
 
-Welcome to VADER 👉 'vay-der', which stands for Valence Aware Dictionary and sEntiment Reasoner. Don't let the intimidating acronym fool you—VADER is actually one of the most practical and easy-to-use sentiment analysis tools available, specifically designed for social media text.
+[excited] Welcome to VADER 👉 'vay-der', which stands for Valence Aware Dictionary and sEntiment Reasoner. [playfully] Don't let the intimidating acronym fool you—VADER is actually one of the most practical and easy-to-use sentiment analysis tools available, specifically designed for social media text.
 
 ####  What Makes VADER Special?
 
@@ -1270,11 +1270,11 @@ It's the tool I recommend to anyone starting with social media sentiment analysi
           backgroundColor: '#732b2b',
           notes: `### Pros and Cons
 
-Let's examine the strengths and limitations of VADER to help you decide when this powerful tool is the right choice for your sentiment analysis needs.
+[conversational] Let's examine the strengths and limitations of VADER to help you decide when this powerful tool is the right choice for your sentiment analysis needs.
 
 ####  The Strengths
 
-VADER's ability to **handle negation, boosters, emojis, and ALL CAPS** is its superpower. This isn't just a nice-to-have feature—it's fundamental to understanding modern communication. When someone tweets "NOT HAPPY!!!" with three exclamation marks, VADER correctly interprets the negation, recognizes the capitalization as emphasis, and processes the punctuation as intensification. Basic lexicons would fail miserably here.
+[impressed] VADER's ability to **handle negation, boosters, emojis, and ALL CAPS** is its superpower. This isn't just a nice-to-have feature—it's fundamental to understanding modern communication. When someone tweets "NOT HAPPY!!!" with three exclamation marks, VADER correctly interprets the negation, recognizes the capitalization as emphasis, and processes the punctuation as intensification. Basic lexicons would fail miserably here.
 
 The emoji handling is particularly impressive. In 2026, emojis are a primary mode of emotional expression online. VADER treats them as sentiment-carrying tokens, understanding that 😍 😍 😍 indicates stronger positive emotion than a single 😊.
 
@@ -1369,9 +1369,9 @@ Next, let's look at TextBlob, another popular Python library for sentiment analy
             </div>
           ),
           backgroundColor: '#792d70',
-          notes: `### 7. TextBlob Polarity Scoring
+          notes: `### TextBlob Polarity Scoring
 
-TextBlob is another popular Python library for text processing that includes sentiment analysis capabilities. It's designed to be the simplest possible interface for common text processing tasks, and that philosophy extends to its sentiment analysis features.
+[conversational] TextBlob is another popular Python library for text processing that includes sentiment analysis capabilities. [confidently] It's designed to be the simplest possible interface for common text processing tasks, and that philosophy extends to its sentiment analysis features.
 
 ####  What is TextBlob?
 
@@ -1473,11 +1473,11 @@ Its value lies in democratizing NLP—making sentiment analysis accessible to pe
           backgroundColor: '#792d70',
           notes: `### Pros and Cons
 
-Let's evaluate TextBlob's strengths and limitations to understand when this accessible library is the right choice.
+[seriously] Let's evaluate TextBlob's strengths and limitations to understand when this accessible library is the right choice.
 
 ####  The Strengths
 
-TextBlob's greatest strength is its **simple, intuitive API with minimal setup**. The learning curve is essentially flat. You can teach someone with basic Python knowledge to use TextBlob for sentiment analysis in literally five minutes. The code is self-documenting and reads like plain English. This accessibility is a huge advantage for rapid development and teaching.
+[confidently] TextBlob's greatest strength is its **simple, intuitive API with minimal setup**. The learning curve is essentially flat. You can teach someone with basic Python knowledge to use TextBlob for sentiment analysis in literally five minutes. The code is self-documenting and reads like plain English. This accessibility is a huge advantage for rapid development and teaching.
 
 It **provides both polarity and subjectivity scores**, giving you two dimensions of analysis. The subjectivity score is unique among the tools we've discussed. Being able to say "This text is seventy percent subjective with positive polarity" provides richer insight than a single sentiment score. You can filter out objective statements and focus analysis on subjective opinions.
 
@@ -1572,9 +1572,9 @@ Now let's shift gears dramatically and enter the world of deep learning with LST
             </div>
           ),
           backgroundColor: '#4d2d79',
-          notes: `### 8. LSTM-Based Sentiment Classification
+          notes: `### LSTM-Based Sentiment Classification
 
-Now we're entering the era of deep learning! Let's explore LSTM 👉 'ell-ess-tee-em', which stands for Long Short-Term Memory, a type of neural network specifically designed to understand sequences like text.
+[excited] Now we're entering the era of deep learning! [enthusiastically] Let's explore LSTM 👉 'ell-ess-tee-em', which stands for Long Short-Term Memory, a type of neural network specifically designed to understand sequences like text.
 
 ####  The Revolution of Sequence Modeling
 
@@ -1668,11 +1668,11 @@ However, they've largely been superseded by transformers (which we'll discuss so
           backgroundColor: '#4d2d79',
           notes: `### Pros and Cons
 
-Let's assess the strengths and limitations of LSTM-based sentiment classification to understand its place in the modern NLP landscape.
+[seriously] Let's assess the strengths and limitations of LSTM-based sentiment classification to understand its place in the modern NLP landscape.
 
 ####  The Strengths
 
-The fundamental advantage is that LSTMs **capture sequential patterns and word order**. This is transformative compared to bag-of-words approaches. An LSTM understands that "good" appearing after "not" has different meaning than "good" appearing after "very." It processes text left-to-right, building understanding incrementally just like humans read.
+[confidently] The fundamental advantage is that LSTMs **capture sequential patterns and word order**. This is transformative compared to bag-of-words approaches. An LSTM understands that "good" appearing after "not" has different meaning than "good" appearing after "very." It processes text left-to-right, building understanding incrementally just like humans read.
 
 They provide **better context modeling than traditional ML**. While TF-IDF with SVM can capture some patterns through n-grams, LSTMs learn rich contextual representations. They can understand phenomena like sentiment shift ("I expected to hate it, but I actually loved it"), contrast ("good but not great"), and narrative progression.
 
@@ -1778,9 +1778,9 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
             </div>
           ),
           backgroundColor: '#79762d',
-          notes: `### 9. BiLSTM with Attention
+          notes: `### BiLSTM with Attention
 
-Let's enhance the LSTM architecture with two powerful concepts: bidirectionality and attention. BiLSTM with Attention 👉 'buy-ell-ess-tee-em with attention' represents a sophistication over standard LSTMs that was state-of-the-art before transformers emerged.
+[energetic] Let's enhance the LSTM architecture with two powerful concepts: bidirectionality and attention. [impressed] BiLSTM with Attention 👉 'buy-ell-ess-tee-em with attention' represents a sophistication over standard LSTMs that was state-of-the-art before transformers emerged.
 
 ####  Bidirectional Processing
 
@@ -1885,11 +1885,11 @@ For modern applications, transformers usually outperform BiLSTM with Attention. 
           backgroundColor: '#79762d',
           notes: `### Pros and Cons
 
-Let's evaluate the trade-offs of BiLSTM with Attention to understand when this architecture makes sense in your sentiment analysis pipeline.
+[conversational] Let's evaluate the trade-offs of BiLSTM with Attention to understand when this architecture makes sense in your sentiment analysis pipeline.
 
 ####  The Strengths
 
-The bidirectional processing means it **captures context from both directions**. This is transformative for understanding sentiment. Consider "not just good but exceptional"—the backward pass from "exceptional" informs the interpretation of "good," while the forward pass from "not just" sets up the contrast. Unidirectional models miss half this context.
+[impressed] The bidirectional processing means it **captures context from both directions**. This is transformative for understanding sentiment. Consider "not just good but exceptional"—the backward pass from "exceptional" informs the interpretation of "good," while the forward pass from "not just" sets up the contrast. Unidirectional models miss half this context.
 
 **Attention helps focus on relevant parts**. In a long product review discussing multiple features, attention learns to weight sentiment-carrying phrases more heavily than factual descriptions. When someone writes two paragraphs about shipping details and one sentence saying "but the product itself was disappointing," attention helps the model focus on that crucial sentiment statement.
 
@@ -1990,9 +1990,9 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
             </div>
           ),
           backgroundColor: '#2d796e',
-          notes: `### 10. CNN for Sentiment Classification
+          notes: `### CNN for Sentiment Classification
 
-Now let's explore a completely different approach to text understanding: Convolutional Neural Networks, or CNNs 👉 'cee-enn-ens'. If you've heard of CNNs, you probably think of image recognition. Surprisingly, they work remarkably well for text too!
+[excited] Now let's explore a completely different approach to text understanding: Convolutional Neural Networks, or CNNs 👉 'cee-enn-ens'. [amused] If you've heard of CNNs, you probably think of image recognition. [enthusiastically] Surprisingly, they work remarkably well for text too!
 
 ####  CNNs: From Images to Text
 
@@ -2107,11 +2107,11 @@ While transformers now dominate for maximum accuracy, CNNs remain relevant for s
           backgroundColor: '#2d796e',
           notes: `### Pros and Cons
 
-Let's assess the trade-offs of CNN-based sentiment analysis to understand when this fast, efficient architecture is the right choice.
+[conversational] Let's assess the trade-offs of CNN-based sentiment analysis to understand when this fast, efficient architecture is the right choice.
 
 ####  The Strengths
 
-The most compelling advantage is **efficient, highly parallelizable training**. Unlike LSTMs that must process tokens sequentially, all CNN operations can run in parallel. Every filter can scan the entire text simultaneously. This parallelization translates to much faster training and inference. On modern GPUs optimized for parallel operations, CNNs fly.
+[impressed] The most compelling advantage is **efficient, highly parallelizable training**. Unlike LSTMs that must process tokens sequentially, all CNN operations can run in parallel. Every filter can scan the entire text simultaneously. This parallelization translates to much faster training and inference. On modern GPUs optimized for parallel operations, CNNs fly.
 
 For production systems prioritizing throughput, this speed advantage is transformative. A simple CNN can process ten thousand tweets per second, while an LSTM might handle a few hundred.
 
@@ -2225,9 +2225,9 @@ Sentiment"]
             </div>
           ),
           backgroundColor: '#732d79',
-          notes: `### 11. BERT Fine-Tuned for Sentiment
+          notes: `### BERT Fine-Tuned for Sentiment
 
-Welcome to the transformer revolution! Let's explore BERT 👉 'burt', which stands for Bidirectional Encoder Representations from Transformers. BERT fundamentally changed natural language processing and represents a massive leap forward in sentiment analysis capabilities.
+[excited] Welcome to the transformer revolution! [enthusiastically] Let's explore BERT 👉 'burt', which stands for Bidirectional Encoder Representations from Transformers. [impressed] BERT fundamentally changed natural language processing and represents a massive leap forward in sentiment analysis capabilities.
 
 ####  The Transformer Revolution
 
@@ -2341,11 +2341,11 @@ BERT's impact extends beyond sentiment—it revolutionized question answering, n
           backgroundColor: '#732d79',
           notes: `### Pros and Cons
 
-Let's evaluate BERT's strengths and limitations to understand when this powerful architecture justifies its computational costs.
+[seriously] Let's evaluate BERT's strengths and limitations to understand when this powerful architecture justifies its computational costs.
 
 ####  The Strengths
 
-The most compelling advantage is **high accuracy across diverse domains**. BERT consistently achieves state-of-the-art or near-state-of-the-art results on sentiment benchmarks. Whether analyzing movie reviews, product feedback, financial reports, or medical patient comments, BERT's pretrained language understanding transfers remarkably well. You're starting from a model that deeply understands language structure, which gives you a massive head start.
+[impressed] The most compelling advantage is **high accuracy across diverse domains**. BERT consistently achieves state-of-the-art or near-state-of-the-art results on sentiment benchmarks. Whether analyzing movie reviews, product feedback, financial reports, or medical patient comments, BERT's pretrained language understanding transfers remarkably well. You're starting from a model that deeply understands language structure, which gives you a massive head start.
 
 The **strong transfer learning from pretrained knowledge** is transformative. BERT was pretrained on billions of words—Wikipedia and BookCorpus. It learned grammar, semantics, world knowledge, and subtle linguistic patterns. When you fine-tune for sentiment, you're not teaching language from scratch; you're adapting existing expertise. This means excellent results with far less labeled data than training from scratch would require.
 
@@ -2459,9 +2459,9 @@ Next, let's explore BERT's successors and variants that address some of these li
             </div>
           ),
           backgroundColor: '#2d7935',
-          notes: `### 12. RoBERTa / DistilBERT Sentiment Models
+          notes: `### RoBERTa / DistilBERT Sentiment Models
 
-BERT was revolutionary, but researchers immediately started asking: can we make it better? Enter RoBERTa 👉 'roh-BER-tuh' and DistilBERT 👉 'distil-burt', two important evolutions that address BERT's limitations in different ways.
+[conversational] BERT was revolutionary, but researchers immediately started asking: can we make it better? [enthusiastically] Enter RoBERTa 👉 'roh-BER-tuh' and DistilBERT 👉 'distil-burt', two important evolutions that address BERT's limitations in different ways.
 
 ####  RoBERTa: Robustly Optimized BERT
 
@@ -2583,11 +2583,11 @@ Together, these models represent the maturation of transformer-based sentiment a
           backgroundColor: '#2d7935',
           notes: `### Pros and Cons
 
-Let's evaluate the trade-offs of RoBERTa and DistilBERT to understand which variant best fits your specific requirements.
+[conversational] Let's evaluate the trade-offs of RoBERTa and DistilBERT to understand which variant best fits your specific requirements.
 
 ####  The Strengths
 
-**RoBERTa often outperforms BERT due to improved pretraining**. By training longer on more data with optimized hyperparameters, RoBERTa squeezes better performance from the same architecture. On sentiment analysis benchmarks, RoBERTa typically achieves one to three percentage points higher accuracy than BERT. This might seem small, but at the top of the accuracy curve, every point is hard-won and valuable.
+[impressed] **RoBERTa often outperforms BERT due to improved pretraining**. By training longer on more data with optimized hyperparameters, RoBERTa squeezes better performance from the same architecture. On sentiment analysis benchmarks, RoBERTa typically achieves one to three percentage points higher accuracy than BERT. This might seem small, but at the top of the accuracy curve, every point is hard-won and valuable.
 
 For competitive applications or research pushing state-of-the-art boundaries, RoBERTa's consistent edge makes it the preferred choice. The investment is purely in pretraining compute—you pay nothing extra at fine-tuning or inference time compared to BERT.
 
@@ -2708,9 +2708,9 @@ Sentiment"]
             </div>
           ),
           backgroundColor: '#792d46',
-          notes: `### 13. GPT / LLM Zero-Shot Sentiment Classification
+          notes: `### GPT / LLM Zero-Shot Sentiment Classification
 
-Now we enter the frontier of sentiment analysis: using large language models like GPT 👉 'gee-pee-tee', Claude, or other LLMs 👉 'ell-ell-ems' for zero-shot classification. This represents a paradigm shift from training or fine-tuning models to simply asking powerful pretrained models to perform sentiment analysis through natural language instructions.
+[excited] Now we enter the frontier of sentiment analysis: using large language models like GPT 👉 'gee-pee-tee', Claude, or other LLMs 👉 'ell-ell-ems' for zero-shot classification. [enthusiastically] This represents a paradigm shift from training or fine-tuning models to simply asking powerful pretrained models to perform sentiment analysis through natural language instructions.
 
 ####  The Zero-Shot Revolution
 
@@ -2836,11 +2836,11 @@ LLM-based sentiment analysis represents a shift from "train a model" to "enginee
           backgroundColor: '#792d46',
           notes: `### Pros and Cons
 
-Let's assess the strengths and limitations of LLM-based sentiment analysis to understand when this powerful but costly approach makes sense.
+[seriously] Let's assess the strengths and limitations of LLM-based sentiment analysis to understand when this powerful but costly approach makes sense.
 
 ####  The Strengths
 
-The most impressive advantage is **strong contextual understanding of nuanced language**. LLMs trained on trillions of tokens understand subtle implications, cultural references, idioms, and complex linguistic patterns. They grasp that "This is the best worst movie ever" is actually positive (affectionately bad), or that "I'm not unhappy with it" expresses mild satisfaction. This sophisticated understanding rivals or exceeds specialized sentiment models.
+[impressed] The most impressive advantage is **strong contextual understanding of nuanced language**. LLMs trained on trillions of tokens understand subtle implications, cultural references, idioms, and complex linguistic patterns. They grasp that "This is the best worst movie ever" is actually positive (affectionately bad), or that "I'm not unhappy with it" expresses mild satisfaction. This sophisticated understanding rivals or exceeds specialized sentiment models.
 
 They **work across multiple domains without retraining**. The same GPT-4 model analyzes medical reviews, financial reports, social media, academic feedback, and customer support tickets with no modification. This versatility is unmatched. If your organization deals with diverse text sources, one LLM can handle them all, simplifying your ML infrastructure dramatically.
 
@@ -2991,9 +2991,9 @@ Insights"]
             </div>
           ),
           backgroundColor: '#79722d',
-          notes: `### 14. Aspect-Based Sentiment Analysis (ABSA)
+          notes: `### Aspect-Based Sentiment Analysis (ABSA)
 
-Let's explore a sophisticated technique that moves beyond document-level sentiment to understand opinions about specific features or aspects within text. ABSA 👉 'ab-suh' (Aspect-Based Sentiment Analysis) is essential for actionable business insights.
+[enthusiastically] Let's explore a sophisticated technique that moves beyond document-level sentiment to understand opinions about specific features or aspects within text. [confidently] ABSA 👉 'ab-suh' (Aspect-Based Sentiment Analysis) is essential for actionable business insights.
 
 ####  Why Aspect-Level Matters
 
@@ -3146,11 +3146,11 @@ ABSA is where sentiment analysis delivers maximum business value, though at the 
           backgroundColor: '#79722d',
           notes: `### Pros and Cons
 
-Let's evaluate the advantages and challenges of ABSA to understand when this detailed approach justifies its substantial complexity and cost.
+[seriously] Let's evaluate the advantages and challenges of ABSA to understand when this detailed approach justifies its substantial complexity and cost.
 
 ####  The Strengths
 
-The primary advantage is delivering **fine-grained, actionable signals per aspect or entity**. Instead of knowing "customers are thirty percent negative," you know "battery life is eighty-five percent positive, camera quality is ninety percent positive, but screen brightness is forty percent negative and price perception is thirty-five percent negative." This specificity directly informs product development priorities.
+[impressed] The primary advantage is delivering **fine-grained, actionable signals per aspect or entity**. Instead of knowing "customers are thirty percent negative," you know "battery life is eighty-five percent positive, camera quality is ninety percent positive, but screen brightness is forty percent negative and price perception is thirty-five percent negative." This specificity directly informs product development priorities.
 
 Product managers can create roadmaps based on aspect-level metrics: "Address screen brightness in Q2 release, revise pricing strategy, continue emphasizing camera and battery in marketing." Document-level sentiment can't provide this actionable clarity.
 
@@ -3306,9 +3306,9 @@ Emotion"]
             </div>
           ),
           backgroundColor: '#2d7379',
-          notes: `### 15. Multimodal Sentiment Analysis (Text + Audio/Video)
+          notes: `### Multimodal Sentiment Analysis (Text + Audio/Video)
 
-We've reached the frontier: multimodal sentiment analysis that combines text, audio, and video to understand emotions as humans naturally do—through words, tone of voice, facial expressions, and body language simultaneously.
+[excited] We've reached the frontier: multimodal sentiment analysis that combines text, audio, and video to understand emotions as humans naturally do—through words, tone of voice, facial expressions, and body language simultaneously.
 
 ####  Why Multimodal Matters
 
@@ -3462,11 +3462,11 @@ This concludes our journey through fifteen sentiment analysis techniques, from s
           backgroundColor: '#2d7379',
           notes: `### Pros and Cons
 
-Let's evaluate the advantages and challenges of multimodal sentiment analysis to understand when this sophisticated approach justifies its substantial complexity.
+[seriously] Let's evaluate the advantages and challenges of multimodal sentiment analysis to understand when this sophisticated approach justifies its substantial complexity.
 
 ####  The Strengths
 
-The primary advantage is **higher accuracy by combining multiple information channels**. Research consistently shows multimodal models outperform text-only models by five to fifteen percentage points on sentiment benchmarks. The reason is information complementarity—each modality provides unique signals.
+[impressed] The primary advantage is **higher accuracy by combining multiple information channels**. Research consistently shows multimodal models outperform text-only models by five to fifteen percentage points on sentiment benchmarks. The reason is information complementarity—each modality provides unique signals.
 
 When modalities agree (positive words, happy tone, smiling face), confidence is high. When they conflict (positive words, sarcastic tone, eye roll), the model detects deception or sarcasm that text-only analysis misses entirely. This is the fundamental value: capturing what humans naturally perceive through multiple senses.
 
@@ -3621,7 +3621,7 @@ The key is honest assessment: does your use case truly benefit from multimodal s
           backgroundColor: '#122c47',
           notes: `### Comparison Matrix: Choosing the Right Technique
 
-We've journeyed through fifteen sentiment analysis techniques. Now let's synthesize our understanding with a systematic comparison across key dimensions. This matrix helps you quickly identify which approaches fit your specific constraints and requirements.
+[conversational] We've journeyed through fifteen sentiment analysis techniques. [confidently] Now let's synthesize our understanding with a systematic comparison across key dimensions. [reassuringly] This matrix helps you quickly identify which approaches fit your specific constraints and requirements.
 
 ####  Understanding the Dimensions
 
@@ -3780,7 +3780,7 @@ This comparison matrix is your quick-reference guide for matching your requireme
           backgroundColor: '#122c47',
           notes: `### Recommendations & Best Practices
 
-Having explored all fifteen techniques, let's distill practical recommendations for successfully implementing sentiment analysis in real-world applications. These best practices come from hard-won experience across thousands of production deployments.
+[confidently] Having explored all fifteen techniques, let's distill practical recommendations for successfully implementing sentiment analysis in real-world applications. [seriously] These best practices come from hard-won experience across thousands of production deployments.
 
 ####  Start with Baselines
 
@@ -3997,7 +3997,7 @@ This disciplined approach ensures sentiment analysis capabilities evolve with yo
           backgroundColor: '#122c47',
           notes: `### Implementation Roadmap: Your Path Forward
 
-You've now explored fifteen sentiment analysis techniques spanning simple lexicons to sophisticated multimodal deep learning. The natural question is: where do I start? Let's map a practical roadmap for successfully implementing sentiment analysis in your organization.
+[enthusiastically] You've now explored fifteen sentiment analysis techniques spanning simple lexicons to sophisticated multimodal deep learning. [conversational] The natural question is: where do I start? [confidently] Let's map a practical roadmap for successfully implementing sentiment analysis in your organization.
 
 ####  Step 1: Select Two to Three Candidate Techniques
 
@@ -4127,19 +4127,19 @@ With pilot results, you're ready for production deployment:
 
 ####  Deployment Anti-Patterns to Avoid
 
-**Premature optimization**: Don't spend weeks optimizing inference speed before validating that users need that speed. Deploy a "good enough" solution, measure, then optimize based on real bottlenecks.
+[cautiously] **Premature optimization**: Don't spend weeks optimizing inference speed before validating that users need that speed. [reassuringly] Deploy a "good enough" solution, measure, then optimize based on real bottlenecks.
 
-**Analysis paralysis**: Don't endlessly compare techniques across ever-expanding test sets. After a focused pilot, make a decision and deploy. You can iterate based on production data.
+[firmly] **Analysis paralysis**: Don't endlessly compare techniques across ever-expanding test sets. [confidently] After a focused pilot, make a decision and deploy. You can iterate based on production data.
 
-**Ignoring operational complexity**: A model with ninety-five percent accuracy that takes months to deploy and maintain might deliver less business value than an eighty-five percent accurate model deployed in weeks.
+[seriously] **Ignoring operational complexity**: A model with ninety-five percent accuracy that takes months to deploy and maintain might deliver less business value than an eighty-five percent accurate model deployed in weeks.
 
-**One-and-done mentality**: Sentiment analysis isn't a project you finish; it's a capability you maintain. Plan for ongoing monitoring, retraining, and improvement.
+[cautiously] **One-and-done mentality**: Sentiment analysis isn't a project you finish; it's a capability you maintain. [firmly] Plan for ongoing monitoring, retraining, and improvement.
 
 ####  The Balance
 
-The conclusion emphasizes: **Balance accuracy, explainability, cost, and maintenance based on your specific use case.** There's no universal ranking of techniques. The right choice depends entirely on your context.
+[firmly] The conclusion emphasizes: **Balance accuracy, explainability, cost, and maintenance based on your specific use case.** [seriously] There's no universal ranking of techniques. The right choice depends entirely on your context.
 
-For a startup prototype: VADER or zero-shot LLM gets you running today.
+[conversational] For a startup prototype: VADER or zero-shot LLM gets you running today.
 For a high-volume production system: TF-IDF + SVM or DistilBERT balances accuracy and efficiency.
 For mission-critical accuracy: Fine-tuned BERT/RoBERTa with rigorous validation.
 For actionable product insights: ABSA despite the complexity.
@@ -4147,17 +4147,17 @@ For understanding customer emotions in calls: Multimodal analysis with appropria
 
 ####  The Journey Continues
 
-Sentiment analysis is a rapidly evolving field. New techniques, architectures, and tools emerge continuously. The fifteen techniques we've covered provide a comprehensive foundation, but staying current with research and industry practice ensures you leverage state-of-the-art capabilities as they mature.
+[conversational] Sentiment analysis is a rapidly evolving field. [excited] New techniques, architectures, and tools emerge continuously. [reassuringly] The fifteen techniques we've covered provide a comprehensive foundation, but staying current with research and industry practice ensures you leverage state-of-the-art capabilities as they mature.
 
-Join NLP communities (Hugging Face forums, papers-with-code, academic conferences), follow sentiment analysis research, and experiment with new approaches. The techniques that are cutting-edge research today become practical production tools tomorrow.
+[enthusiastically] Join NLP communities (Hugging Face forums, papers-with-code, academic conferences), follow sentiment analysis research, and experiment with new approaches. [confidently] The techniques that are cutting-edge research today become practical production tools tomorrow.
 
 ####  Final Thoughts
 
-You now have a comprehensive roadmap from simple lexicons to sophisticated multimodal analysis. You understand the trade-offs, best practices, and implementation pathways. The key to success isn't choosing the "best" technique—it's choosing the right technique for your specific needs and executing a disciplined implementation.
+[confidently] You now have a comprehensive roadmap from simple lexicons to sophisticated multimodal analysis. [reassuringly] You understand the trade-offs, best practices, and implementation pathways. [seriously] The key to success isn't choosing the "best" technique—it's choosing the right technique for your specific needs and executing a disciplined implementation.
 
-Start simple, measure rigorously, scale purposefully. This pragmatic approach delivers business value quickly while building toward increasingly sophisticated capabilities as your needs and resources grow.
+[inspiringly] Start simple, measure rigorously, scale purposefully. [warmly] This pragmatic approach delivers business value quickly while building toward increasingly sophisticated capabilities as your needs and resources grow.
 
-Thank you for investing time in understanding sentiment analysis deeply. The knowledge you've gained positions you to make informed decisions and implement effective solutions that transform text into actionable insights. Good luck with your sentiment analysis journey!`
+[warmly] Thank you for investing time in understanding sentiment analysis deeply. [confidently] The knowledge you've gained positions you to make informed decisions and implement effective solutions that transform text into actionable insights. [inspiringly] Good luck with your sentiment analysis journey!`
         }
       ]
     }
