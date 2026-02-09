@@ -175,17 +175,7 @@ Let's get started and transform your RAG 👉 'rag' pipeline from good to except
                   </div>
                 </GSAPAnimated>
               </div>
-              <GSAPAnimated animation="slideInBottom" delay={1.2}>
-                <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.15)', borderRadius: '8px', textAlign: 'left' }}>
-                  <p style={{ display: 'flex', alignItems: 'center' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '8px', color: '#ba68c8' }} darkModeInvert={true} />
-                    <p style={{ fontSize: '1rem', margin: '0px' }}>
-                      <strong>Without re-ranking,</strong> RAG systems often fail not because of poor embeddings or weak LLMs,
-                      but because they feed <strong>irrelevant information</strong> to the generation stage.
-                    </p>
-                  </p>
-                </div>
-              </GSAPAnimated>
+              
             </div>
           ),
           backgroundColor: '#1f3263',
