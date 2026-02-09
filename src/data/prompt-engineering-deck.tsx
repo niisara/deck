@@ -116,71 +116,78 @@ export const promptEngineeringDeck: Deck = {
       slides: [
         {
           id: 3,
-          title: '1. Zero-shot Prompting',
-          icon: { name: 'duo-bolt' },
+          title: '1. Zero-shot Prompting - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#3b9ad9' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Ask the model to perform a task with clear instructions and no examples.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Direct answer or formatted summary</li>
+                <li>Fastest way to get baseline results</li>
+                <li>Minimal token usage</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for quick baselines, well-known tasks, and situations with low token budgets. Ideal when you need fast results without additional context.</p>
+            </div>
+          ),
+          backgroundColor: '#103e5d',
+          notes: 'Zero-shot overview: Direct instructions without examples, provides quick baseline results'
+        },
+        {
+          id: 4,
+          title: '1. Zero-shot Prompting - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Zero-shot prompting relies on the model's pre-trained knowledge and capabilities. You provide clear, direct instructions without any demonstrations or examples. The model interprets your intent from the instruction alone and generates a response based on what it learned during training.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Simple</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+            </div>
+          ),
+          backgroundColor: '#103e5d',
+          notes: 'Zero-shot mechanics: Relies on pre-trained knowledge with direct instructions only'
+        },
+        {
+          id: 5,
+          title: '1. Zero-shot Prompting - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"Summarize the following article 
 in 3 bullets for executives:
 [paste text here]"`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Quick baselines</li>
-                <li>Well-known tasks</li>
-                <li>Low token budget</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Direct answer or formatted summary.</li>
-              </ul>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support zero-shot prompting out of the box. Even smaller models can handle simple zero-shot tasks effectively.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity & Models
-              </h4>
-              <p><strong>Level:</strong> Simple</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>May misinterpret intent</li>
+          ),
+          backgroundColor: '#103e5d',
+          notes: 'Zero-shot implementation: Simple, direct prompt structure'
+        },
+        {
+          id: 6,
+          title: '1. Zero-shot Prompting - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>May misinterpret intent without examples</li>
                 <li>Brittle on novel or nuanced tasks</li>
+                <li>Less control over output format</li>
+                <li>Performance varies significantly by model capability</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#103e5d',
-      notes: 'Zero-shot: Direct instructions without examples, good for baselines and well-known tasks'
+          ),
+          backgroundColor: '#103e5d',
+          notes: 'Zero-shot limitations: Can misinterpret intent, brittle on complex tasks'
         }
       ]
     },
@@ -189,74 +196,80 @@ in 3 bullets for executives:
       title: '2. Few-shot Prompting',
       slides: [
         {
-          id: 4,
-          title: '2. Few-shot Prompting',
-          icon: { name: 'duo-list-ol' },
+          id: 7,
+          title: '2. Few-shot Prompting - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#6da3c9' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Guide the model with a few labeled examples to shape outputs.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Classification and structured outputs matching examples</li>
+                <li>Consistent formatting and tone</li>
+                <li>Better handling of domain-specific terminology</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for tasks requiring custom formats, specific domain tone, or when you need to demonstrate edge cases. Examples guide the model to match your desired output style.</p>
+            </div>
+          ),
+          backgroundColor: '#284d67',
+          notes: 'Few-shot overview: Labeled examples guide output format and style'
+        },
+        {
+          id: 8,
+          title: '2. Few-shot Prompting - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Few-shot prompting provides 2-5 input-output examples before presenting the actual task. The model learns the pattern from these demonstrations and applies it to new inputs. This approach helps the model understand not just what to do, but how to format and style the response.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Simple–Intermediate</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Mid-size models benefit noticeably from examples</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+            </div>
+          ),
+          backgroundColor: '#284d67',
+          notes: 'Few-shot mechanics: Examples demonstrate patterns for the model to follow'
+        },
+        {
+          id: 9,
+          title: '2. Few-shot Prompting - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"You are a sentiment classifier.
 Example: 'Loved it' -> positive
 'Too slow' -> negative
 Classify: 'It was okay, but pricey.'"`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Custom formats</li>
-                <li>Domain tone</li>
-                <li>Edge cases</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Classification/structured outputs matching examples.</li>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support few-shot learning. Mid-size models especially benefit from the additional context provided by examples.</p>
+            </div>
+          ),
+          backgroundColor: '#284d67',
+          notes: 'Few-shot implementation: Provide 2-5 labeled examples before the task'
+        },
+        {
+          id: 10,
+          title: '2. Few-shot Prompting - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Example bias - model may overfit to example patterns</li>
+                <li>Token overhead increases with number of examples</li>
+                <li>Data leakage risk if examples contain sensitive information</li>
+                <li>Example selection significantly impacts results</li>
               </ul>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Simple–Intermediate</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5 - Mid-size models benefit noticeably</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Example bias</li>
-                <li>Token overhead</li>
-                <li>Data leakage if examples are sensitive</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#284d67',
-      notes: 'Few-shot: Provide labeled examples to guide format, tone, and edge case handling'
+          ),
+          backgroundColor: '#284d67',
+          notes: 'Few-shot limitations: Example bias, token overhead, potential data leakage'
         }
       ]
     },
@@ -265,70 +278,78 @@ Classify: 'It was okay, but pricey.'"`}
       title: '3. Chain-of-Thought (CoT) Prompting',
       slides: [
         {
-          id: 5,
-          title: '3. Chain-of-Thought (CoT) Prompting',
-          icon: { name: 'duo-brain' },
+          id: 11,
+          title: '3. Chain-of-Thought - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#fdb17f' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Ask the model to reason step-by-step before the final answer.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Math/logic problems</li>
-                <li>Multi-hop QA</li>
-                <li>Planning tasks</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Intermediate reasoning steps plus final answer</li>
+                <li>Improved accuracy on complex reasoning tasks</li>
+                <li>Transparent decision-making process</li>
+                <li>Better handling of multi-step problems</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Intermediate reasoning + final answer.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for math and logic problems, multi-hop question answering, and planning tasks. The step-by-step approach significantly improves reasoning accuracy.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#91420e',
+          notes: 'CoT overview: Step-by-step reasoning for math, logic, and multi-hop problems'
+        },
+        {
+          id: 12,
+          title: '3. Chain-of-Thought - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Chain-of-Thought prompting instructs the model to break down complex problems into intermediate steps. By explicitly reasoning through each step, the model can catch errors and maintain logical consistency. This mimics human problem-solving and dramatically improves performance on tasks requiring multi-step reasoning.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5 - Smaller models may overfit</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Longer outputs</li>
-                <li>Potential for verbose hallucinations</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Smaller models may overfit or produce inconsistent reasoning</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#91420e',
-      notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+          ),
+          backgroundColor: '#91420e',
+          notes: 'CoT mechanics: Breaks complex problems into intermediate reasoning steps'
+        },
+        {
+          id: 13,
+          title: '3. Chain-of-Thought - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, and Gemini 1.5 excel at chain-of-thought reasoning. Works best with larger, more capable models that can maintain coherent multi-step reasoning.</p>
+            </div>
+          ),
+          backgroundColor: '#91420e',
+          notes: 'CoT implementation: Add "think step by step" or similar instruction'
+        },
+        {
+          id: 14,
+          title: '3. Chain-of-Thought - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Longer outputs increase token costs and latency</li>
+                <li>Potential for verbose hallucinations in reasoning steps</li>
+                <li>May generate plausible but incorrect reasoning paths</li>
+                <li>Requires careful prompt engineering to avoid shortcuts</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#91420e',
+          notes: 'CoT limitations: Longer outputs, potential for verbose hallucinations'
         }
       ]
     },
@@ -337,72 +358,80 @@ Classify: 'It was okay, but pricey.'"`}
       title: '4. Meta Prompting',
       slides: [
         {
-          id: 6,
-          title: '4. Meta Prompting',
-          icon: { name: 'duo-lightbulb' },
+          id: 15,
+          title: '4. Meta Prompting - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#6dff98' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Specify abstract structure, syntax, and format rather than content-specific examples.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Consistent, schema-compliant outputs</li>
+                <li>Improved standardization across tasks</li>
+                <li>Better tool integration</li>
+                <li>Comparable evaluation results</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for standardized pipelines, tool integration, and when evaluation comparability is important. Focuses on structure over specific content examples.</p>
+            </div>
+          ),
+          backgroundColor: '#0e9135',
+          notes: 'Meta prompting overview: Abstract structure and schema specifications'
+        },
+        {
+          id: 16,
+          title: '4. Meta Prompting - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Meta prompting defines the abstract structure and format requirements without providing content-specific examples. By specifying schemas, field types, and structural constraints, you guide the model to produce outputs that conform to your requirements while allowing flexibility in content generation.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Intermediate</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong instruction-following capabilities</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+            </div>
+          ),
+          backgroundColor: '#0e9135',
+          notes: 'Meta prompting mechanics: Define abstract structure and format requirements'
+        },
+        {
+          id: 17,
+          title: '4. Meta Prompting - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"Problem: <text>. Goal: <target>. Constraints: <list>.
 Output schema: JSON with fields [steps, rationale, answer].
 Populate schema only."`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Standardized pipelines</li>
-                <li>Tool integration</li>
-                <li>Evaluation comparability</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Consistent, schema-compliant outputs.</li>
-              </ul>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well with meta prompting. These models excel at understanding and following structural specifications.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Assumes task knowledge</li>
+          ),
+          backgroundColor: '#0e9135',
+          notes: 'Meta prompting implementation: Specify output schema and structural constraints'
+        },
+        {
+          id: 18,
+          title: '4. Meta Prompting - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Assumes task knowledge from the model</li>
                 <li>May underperform on novel domains without examples</li>
+                <li>Requires clear schema definitions</li>
+                <li>Less guidance on nuanced content decisions</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#0e9135',
-      notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+          ),
+          backgroundColor: '#0e9135',
+          notes: 'Meta prompting limitations: Assumes task knowledge, may need examples for novel domains'
         }
       ]
     },
@@ -411,70 +440,78 @@ Populate schema only."`}
       title: '5. Self-Consistency',
       slides: [
         {
-          id: 7,
-          title: '5. Self-Consistency',
-          icon: { name: 'duo-brain-circuit' },
+          id: 19,
+          title: '5. Self-Consistency - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#e97aff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Sample multiple CoT paths and select the majority/most consistent answer.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Arithmetic</li>
-                <li>Commonsense reasoning</li>
-                <li>Logic where single-pass is unstable</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Aggregated answer with higher reliability</li>
+                <li>Reduced variance in outputs</li>
+                <li>Better handling of edge cases</li>
+                <li>Improved accuracy through voting</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Aggregated answer with higher reliability.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for arithmetic, commonsense reasoning, and logic tasks where single-pass inference is unstable. Multiple reasoning paths provide more reliable answers.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#7b0e91',
+          notes: 'Self-consistency overview: Multiple reasoning paths with voting for reliability'
+        },
+        {
+          id: 20,
+          title: '5. Self-Consistency - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Self-consistency generates multiple independent reasoning paths for the same problem using temperature sampling. Each path produces a candidate answer. The system then aggregates these answers, typically by majority voting, to select the most consistent solution. This approach compensates for individual reasoning errors.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Intermediate–Advanced</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs temperature sampling</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Higher latency/cost</li>
-                <li>Correlated errors if prompt is flawed</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs temperature sampling capability</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#7b0e91',
-      notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+          ),
+          backgroundColor: '#7b0e91',
+          notes: 'Self-consistency mechanics: Multiple reasoning paths with majority voting'
+        },
+        {
+          id: 21,
+          title: '5. Self-Consistency - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires models that support temperature sampling to generate diverse reasoning paths. Typically requires 3-10 samples.</p>
+            </div>
+          ),
+          backgroundColor: '#7b0e91',
+          notes: 'Self-consistency implementation: Generate multiple solutions and vote'
+        },
+        {
+          id: 22,
+          title: '5. Self-Consistency - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Higher latency due to multiple inference calls</li>
+                <li>Increased cost (3-10x token usage)</li>
+                <li>Correlated errors if prompt is fundamentally flawed</li>
+                <li>Requires aggregation logic implementation</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#7b0e91',
+          notes: 'Self-consistency limitations: Higher latency and cost, correlated errors possible'
         }
       ]
     },
@@ -483,70 +520,78 @@ Populate schema only."`}
       title: '6. Generate Knowledge Prompting',
       slides: [
         {
-          id: 8,
-          title: '6. Generate Knowledge Prompting',
-          icon: { name: 'duo-book-open' },
+          id: 23,
+          title: '6. Generate Knowledge - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ffe676' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>First ask the model to generate background facts, then answer using those facts.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Commonsense QA</li>
-                <li>Domain recall</li>
-                <li>Exam-style questions</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Knowledge-grounded reasoning and answer</li>
+                <li>Contextual understanding before answering</li>
+                <li>Better recall of relevant information</li>
+                <li>Improved accuracy on knowledge-intensive tasks</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Knowledge-grounded reasoning and answer.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for commonsense question answering, domain recall tasks, and exam-style questions. Generating relevant facts first improves answer quality.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#7d6b1c',
+          notes: 'Generate Knowledge overview: Generate facts first, then use them to answer'
+        },
+        {
+          id: 24,
+          title: '6. Generate Knowledge - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Generate Knowledge prompting uses a two-stage approach. First, the model generates relevant background facts or knowledge about the topic. Then, in the second stage, the model uses these self-generated facts as context to answer the actual question. This helps activate relevant knowledge and provides grounding for the answer.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Generated facts may be wrong</li>
-                <li>Consider verification or retrieval</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong knowledge recall capabilities</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#7d6b1c',
-      notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+          ),
+          backgroundColor: '#7d6b1c',
+          notes: 'Generate Knowledge mechanics: Two-stage process - generate facts then answer'
+        },
+        {
+          id: 25,
+          title: '6. Generate Knowledge - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well for knowledge generation. Best results with models that have strong factual knowledge bases.</p>
+            </div>
+          ),
+          backgroundColor: '#7d6b1c',
+          notes: 'Generate Knowledge implementation: Explicitly request facts before the answer'
+        },
+        {
+          id: 26,
+          title: '6. Generate Knowledge - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Generated facts may be incorrect or hallucinated</li>
+                <li>Consider verification or retrieval for critical facts</li>
+                <li>Adds latency and token costs</li>
+                <li>May reinforce incorrect knowledge from training</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#7d6b1c',
+          notes: 'Generate Knowledge limitations: Generated facts may be wrong, consider verification'
         }
       ]
     },
@@ -555,71 +600,79 @@ Populate schema only."`}
       title: '7. Prompt Chaining',
       slides: [
         {
-          id: 9,
-          title: '7. Prompt Chaining',
-          icon: { name: 'duo-diagram-project' },
+          id: 27,
+          title: '7. Prompt Chaining - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff8eb3' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Break a task into subtasks across multiple prompts where outputs feed subsequent prompts.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Multi-stage pipeline outputs (extractions → synthesis)</li>
+                <li>Better decomposition of complex workflows</li>
+                <li>Improved accuracy per subtask</li>
+                <li>Easier debugging and optimization</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for complex workflows, transformation pipelines, and data cleanup tasks. Breaking tasks into stages improves reliability and maintainability.</p>
+            </div>
+          ),
+          backgroundColor: '#7d1c3c',
+          notes: 'Prompt Chaining overview: Sequential subtasks with output feeding into next stage'
+        },
+        {
+          id: 28,
+          title: '7. Prompt Chaining - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Prompt chaining decomposes complex tasks into a series of simpler subtasks. Each subtask is handled by a separate prompt, with the output from one stage becoming input for the next. This sequential approach allows each stage to focus on a specific transformation or analysis step, improving overall quality and making the pipeline easier to debug and optimize.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Intermediate</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Any LLM; long-context models help with larger intermediate outputs</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+            </div>
+          ),
+          backgroundColor: '#7d1c3c',
+          notes: 'Prompt Chaining mechanics: Sequential stages with intermediate outputs'
+        },
+        {
+          id: 29,
+          title: '7. Prompt Chaining - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"Step 1: Extract key quotes from document about <question>.
 Step 2: Using quotes, answer <question> with citations."`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Complex workflows</li>
-                <li>Transformation pipelines</li>
-                <li>Data cleanup</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Multi-stage pipeline outputs (extractions → synthesis).</li>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and any LLM that can maintain context. Long-context models (100k+ tokens) are particularly effective for handling large intermediate outputs.</p>
+            </div>
+          ),
+          backgroundColor: '#7d1c3c',
+          notes: 'Prompt Chaining implementation: Define clear stages with explicit handoffs'
+        },
+        {
+          id: 30,
+          title: '7. Prompt Chaining - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Orchestration complexity increases with chain length</li>
+                <li>Error propagation without validation checks</li>
+                <li>Cumulative latency from multiple calls</li>
+                <li>Requires careful stage design and testing</li>
               </ul>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5 - Any LLM; long-context models help</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Orchestration complexity</li>
-                <li>Error propagation without checks</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#7d1c3c',
-      notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+          ),
+          backgroundColor: '#7d1c3c',
+          notes: 'Prompt Chaining limitations: Orchestration complexity, error propagation'
         }
       ]
     },
@@ -628,70 +681,78 @@ Step 2: Using quotes, answer <question> with citations."`}
       title: '8. Tree of Thoughts (ToT)',
       slides: [
         {
-          id: 10,
-          title: '8. Tree of Thoughts (ToT)',
-          icon: { name: 'duo-shield-check' },
+          id: 31,
+          title: '8. Tree of Thoughts - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#909aff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam).</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Search-heavy reasoning</li>
-                <li>Puzzles and planning</li>
-                <li>Complex decompositions</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Selected best reasoning path and final solution</li>
+                <li>Systematic exploration of solution space</li>
+                <li>Better handling of complex planning problems</li>
+                <li>Ability to backtrack from dead ends</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Selected best reasoning path and final solution.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for search-heavy reasoning, puzzles and planning tasks, and complex decompositions. Explores multiple paths before committing to a solution.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#1c257d',
+          notes: 'Tree of Thoughts overview: Explores multiple reasoning branches with search'
+        },
+        {
+          id: 32,
+          title: '8. Tree of Thoughts - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Tree of Thoughts maintains a tree of reasoning paths, generating multiple candidate next steps at each node. The model evaluates each candidate (e.g., sure/maybe/impossible) and uses search algorithms (BFS, DFS, or beam search) to explore promising branches. This allows systematic exploration with the ability to backtrack from unproductive paths.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires controller logic</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Higher cost/latency</li>
-                <li>Requires search control and pruning</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires external controller logic for search management</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1c257d',
-      notes: 'Chain-of-Thought: Step-by-step reasoning improves accuracy on math, logic, and multi-hop problems'
+          ),
+          backgroundColor: '#1c257d',
+          notes: 'Tree of Thoughts mechanics: Search algorithms explore reasoning tree'
+        },
+        {
+          id: 33,
+          title: '8. Tree of Thoughts - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires sophisticated orchestration layer to manage the search process, evaluate candidates, and control exploration depth.</p>
+            </div>
+          ),
+          backgroundColor: '#1c257d',
+          notes: 'Tree of Thoughts implementation: Generate and evaluate candidate branches'
+        },
+        {
+          id: 34,
+          title: '8. Tree of Thoughts - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Significantly higher cost and latency</li>
+                <li>Requires search control and pruning strategies</li>
+                <li>Complex orchestration infrastructure needed</li>
+                <li>Evaluation quality critical for good search decisions</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#1c257d',
+          notes: 'Tree of Thoughts limitations: High cost, requires search control infrastructure'
         }
       ]
     },
@@ -700,25 +761,52 @@ Step 2: Using quotes, answer <question> with citations."`}
       title: '9. Retrieval-Augmented Generation (RAG)',
       slides: [
         {
-          id: 11,
-          title: '9. Retrieval-Augmented Generation (RAG)',
-          icon: { name: 'duo-database' },
+          id: 35,
+          title: '9. RAG - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#4ed184' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Retrieve external documents and condition the model on them to ground responses.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Grounded, cited answers from knowledge base</li>
+                <li>Fresh information beyond training cutoff</li>
+                <li>Reduced hallucinations with source grounding</li>
+                <li>Verifiable responses with citations</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for tasks requiring fresh or long-tail knowledge, compliance requirements, and when citations are needed. Grounds responses in retrieved documents.</p>
+            </div>
+          ),
+          backgroundColor: '#1a673a',
+          notes: 'RAG overview: Retrieve documents and condition responses on them'
+        },
+        {
+          id: 36,
+          title: '9. RAG - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>RAG uses a two-stage process: retrieval then generation. First, relevant documents are retrieved from a knowledge base (typically using vector similarity search). Then, these retrieved documents are provided as context to the LLM, which generates an answer grounded in the retrieved information. This approach combines the LLM's language understanding with external knowledge.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Intermediate</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires retriever/vector database infrastructure</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+            </div>
+          ),
+          backgroundColor: '#1a673a',
+          notes: 'RAG mechanics: Retrieve relevant documents, then generate grounded response'
+        },
+        {
+          id: 37,
+          title: '9. RAG - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"Given these retrieved passages, answer the user question. Cite sources by ID.
 Passages:
 [1] The first COVID-19 vaccine was approved for emergency use in December 2020.
@@ -726,51 +814,30 @@ Passages:
 [3] Traditional vaccines use weakened or inactivated viruses.
 Question: How do mRNA COVID vaccines work?"`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Fresh/long-tail knowledge</li>
-                <li>Compliance requirements</li>
-                <li>Citation needs</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Grounded, cited answers.</li>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires vector database (Pinecone, Weaviate, Chroma) and embedding model for retrieval.</p>
+            </div>
+          ),
+          backgroundColor: '#1a673a',
+          notes: 'RAG implementation: Provide retrieved passages with the question'
+        },
+        {
+          id: 38,
+          title: '9. RAG - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Garbage-in garbage-out - retrieval quality critical</li>
+                <li>Retrieval quality issues impact answer accuracy</li>
+                <li>Citation drift - model may not cite accurately</li>
+                <li>Chunking challenges affect information retrieval</li>
               </ul>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs retriever/vector DB</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Garbage-in garbage-out</li>
-                <li>Retrieval quality issues</li>
-                <li>Citation drift</li>
-                <li>Chunking challenges</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1a673a',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#1a673a',
+          notes: 'RAG limitations: Retrieval quality critical, chunking and citation challenges'
         }
       ]
     },
@@ -779,72 +846,78 @@ Question: How do mRNA COVID vaccines work?"`}
       title: '10. Automatic Reasoning and Tool-use (ART)',
       slides: [
         {
-          id: 12,
-          title: '10. Automatic Reasoning and Tool-use (ART)',
-          icon: { name: 'duo-brain' },
+          id: 39,
+          title: '10. ART - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#73f4ff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Use a frozen LLM to auto-generate multi-step reasoning and interleave tool calls with observations.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Tasks needing external tools</li>
-                <li>Search integration</li>
-                <li>Code execution</li>
-                <li>Database queries</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Tool-interleaved reasoning traces and answer</li>
+                <li>Automatic tool selection and integration</li>
+                <li>Extended capabilities beyond pre-training</li>
+                <li>Zero-shot planning for complex tasks</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Tool-interleaved reasoning traces and answer.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for tasks needing external tools, search integration, code execution, and database queries. Automatically plans tool usage.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'ART overview: Auto-generate reasoning with interleaved tool calls'
+        },
+        {
+          id: 40,
+          title: '10. ART - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>ART enables models to automatically decompose tasks, select appropriate tools, and interleave reasoning with tool execution. The model generates a plan, executes tool calls, integrates observations, and continues reasoning. This creates a flexible cycle of thinking, acting, and observing without requiring explicit orchestration for each task type.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs; orchestration runtime</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Tool errors derail plans</li>
-                <li>Requires sandboxing and guardrails</li>
-                <li>Complex orchestration</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool APIs and orchestration runtime</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1a6167',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'ART mechanics: Automatic task decomposition with tool integration'
+        },
+        {
+          id: 41,
+          title: '10. ART - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and an orchestration framework to manage tool execution and observation integration.</p>
+            </div>
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'ART implementation: Enable tool calling with automatic planning'
+        },
+        {
+          id: 42,
+          title: '10. ART - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Tool errors can derail entire plans</li>
+                <li>Requires sandboxing and guardrails for safety</li>
+                <li>Complex orchestration infrastructure needed</li>
+                <li>Debugging tool interaction failures is challenging</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'ART limitations: Tool errors derail plans, complex orchestration required'
         }
       ]
     },
@@ -853,25 +926,52 @@ Question: How do mRNA COVID vaccines work?"`}
       title: '11. Automatic Prompt Engineer (APE)',
       slides: [
         {
-          id: 13,
-          title: '11. Automatic Prompt Engineer (APE)',
-          icon: { name: 'duo-clipboard-check' },
+          id: 43,
+          title: '11. APE - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#73f4ff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Automatically generate and rank candidate instructions based on I/O demonstrations.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Optimized instruction prompt with consistent behavior</li>
+                <li>Automated prompt discovery and optimization</li>
+                <li>Better performance than hand-crafted prompts</li>
+                <li>Systematic exploration of prompt space</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for scaling prompt design, tackling new tasks, and rapid optimization. Automatically discovers effective prompts from examples.</p>
+            </div>
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'APE overview: Auto-generate and rank candidate prompts from examples'
+        },
+        {
+          id: 44,
+          title: '11. APE - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>APE uses the LLM itself to generate multiple candidate prompts from input-output demonstrations. Each candidate is then tested on a validation set to measure performance. The system ranks candidates by accuracy and selects the best-performing prompt. This meta-learning approach can discover prompts that outperform human-designed alternatives.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Advanced</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires evaluation loop and validation dataset</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+            </div>
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'APE mechanics: Generate, evaluate, and rank candidate prompts'
+        },
+        {
+          id: 45,
+          title: '11. APE - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"Given these I/O pairs:
 Input: 'What is the capital of France?'
 Output: 'The capital of France is Paris.'
@@ -882,50 +982,30 @@ Output: 'There are 8 planets in our solar system: Mercury, Venus, Earth, Mars, J
 Propose 5 instruction prompts that would elicit these types of responses. Then execute each on the validation set and rank them by accuracy."
 `}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Scaling prompt design</li>
-                <li>New tasks</li>
-                <li>Rapid optimization</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Optimized instruction prompt that consistently produces desired behavior across examples.</li>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires orchestration to manage generate-evaluate-select loop and compute resources for multiple evaluations.</p>
+            </div>
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'APE implementation: Provide I/O demonstrations and evaluation framework'
+        },
+        {
+          id: 46,
+          title: '11. APE - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Overfitting to validation set possible</li>
+                <li>Computationally heavy evaluation process</li>
+                <li>Prompt hacking risks with automated discovery</li>
+                <li>Requires representative validation data</li>
               </ul>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires evaluation loop</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Overfitting to validation</li>
-                <li>Compute heavy</li>
-                <li>Prompt hacking risks</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1a6167',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#1a6167',
+          notes: 'APE limitations: Overfitting, compute heavy, potential prompt hacking'
         }
       ]
     },
@@ -934,69 +1014,78 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
       title: '12. Active-Prompt',
       slides: [
         {
-          id: 14,
-          title: '12. Active-Prompt',
-          icon: { name: 'duo-rocket' },
+          id: 47,
+          title: '12. Active-Prompt - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ff7798' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Diverse datasets where fixed exemplars underperform</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Improved task-specific exemplars and accuracy</li>
+                <li>Efficient use of human annotation resources</li>
+                <li>Adaptive learning from uncertainty</li>
+                <li>Better coverage of difficult cases</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Improved task-specific exemplars and accuracy.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for diverse datasets where fixed exemplars underperform. Focuses human effort on the most informative examples.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#671a2d',
+          notes: 'Active-Prompt overview: Select uncertain examples for human annotation'
+        },
+        {
+          id: 48,
+          title: '12. Active-Prompt - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Active-Prompt generates multiple CoT solutions for candidate examples and measures disagreement between them. High disagreement indicates uncertainty. The system selects the most uncertain examples for human annotation, then updates the few-shot exemplar set with these human-annotated chains of thought. This active learning approach efficiently improves prompt quality.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Annotation cost</li>
-                <li>Feedback-loop bias</li>
-                <li>Orchestration complexity</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop and human annotators</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Math word-problem tutor adapting to student cohorts.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#671a2d',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#671a2d',
+          notes: 'Active-Prompt mechanics: Uncertainty sampling for exemplar improvement'
+        },
+        {
+          id: 49,
+          title: '12. Active-Prompt - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires infrastructure for uncertainty estimation, human annotation workflow, and exemplar management.</p>
+            </div>
+          ),
+          backgroundColor: '#671a2d',
+          notes: 'Active-Prompt implementation: Generate multiple solutions, measure disagreement'
+        },
+        {
+          id: 50,
+          title: '12. Active-Prompt - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Annotation cost for human CoT examples</li>
+                <li>Feedback-loop bias in exemplar selection</li>
+                <li>Orchestration complexity for active learning</li>
+                <li>Requires quality control on annotations</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#671a2d',
+          notes: 'Active-Prompt limitations: Annotation cost, feedback-loop bias, complexity'
         }
       ]
     },
@@ -1005,73 +1094,79 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
       title: '13. Directional Stimulus Prompting (DSP)',
       slides: [
         {
-          id: 15,
-          title: '13. Directional Stimulus Prompting (DSP)',
-          icon: { name: 'duo-compass' },
+          id: 51,
+          title: '13. Directional Stimulus - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#d77aff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Use a small policy model to generate instance-specific hints to steer a larger LLM.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Guided outputs aligned to a desired perspective</li>
+                <li>Instance-specific steering for better relevance</li>
+                <li>Improved compliance with requirements</li>
+                <li>Fine-grained control over output focus</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for precision framing, compliance content, pedagogical guidance, and specialized summaries. Steers outputs with targeted hints.</p>
+            </div>
+          ),
+          backgroundColor: '#501a67',
+          notes: 'Directional Stimulus overview: Policy model generates hints to steer LLM'
+        },
+        {
+          id: 52,
+          title: '13. Directional Stimulus - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>DSP uses a tunable policy model to generate instance-specific stimulus hints based on the input. These hints guide a larger frozen LLM to focus on particular aspects or perspectives when generating outputs. This two-model architecture allows fine-grained steering without retraining the large model, combining the flexibility of a small tunable model with the capabilities of a large pre-trained one.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Advanced</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 + Policy LM (small, tunable)</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+            </div>
+          ),
+          backgroundColor: '#501a67',
+          notes: 'Directional Stimulus mechanics: Small policy model generates steering hints'
+        },
+        {
+          id: 53,
+          title: '13. Directional Stimulus - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`"Stimulus: Focus on safety trade-offs and cite at least two risks.
 Task: Summarize <report> for a safety board in 150 words."`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Precision framing</li>
-                <li>Compliance content</li>
-                <li>Pedagogical guidance</li>
-                <li>Specialized summaries</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Guided outputs aligned to a desired perspective.</li>
-              </ul>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 as the main LLM, plus a smaller tunable policy model (e.g., T5, small GPT) to generate stimuli. Requires training infrastructure for the policy model.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - + Policy LM (small, tunable)</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Stimulus drift</li>
-                <li>Extra infrastructure to train/host policy model</li>
+          ),
+          backgroundColor: '#501a67',
+          notes: 'Directional Stimulus implementation: Policy model generates instance-specific hints'
+        },
+        {
+          id: 54,
+          title: '13. Directional Stimulus - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Stimulus drift as policy model learns</li>
+                <li>Extra infrastructure to train and host policy model</li>
                 <li>Potential for bias amplification</li>
+                <li>Coordination complexity between two models</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#501a67',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#501a67',
+          notes: 'Directional Stimulus limitations: Stimulus drift, extra infrastructure needed'
         }
       ]
     },
@@ -1080,71 +1175,78 @@ Task: Summarize <report> for a safety board in 150 words."`}
       title: '14. Program-Aided Language Models (PAL)',
       slides: [
         {
-          id: 16,
-          title: '14. Program-Aided Language Models (PAL)',
-          icon: { name: 'duo-code' },
+          id: 55,
+          title: '14. PAL - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#f2ff71' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Model writes code as intermediate steps and delegates execution to an interpreter.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Arithmetic tasks</li>
-                <li>Symbolic reasoning</li>
-                <li>Algorithmic problems</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Correct result from executed program</li>
+                <li>Exact computation for arithmetic and logic</li>
+                <li>Deterministic execution reduces hallucination</li>
+                <li>Reusable and testable code generation</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Correct result from executed program.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for arithmetic tasks, symbolic reasoning, and algorithmic problems. Delegates computation to code execution for accuracy.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#60671a',
+          notes: 'PAL overview: Model generates code, interpreter executes for accuracy'
+        },
+        {
+          id: 56,
+          title: '14. PAL - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>PAL asks the LLM to generate code (typically Python) as an intermediate representation of the solution. This code is then executed in a sandboxed interpreter. The execution results become the final answer. This approach leverages the preciseness of code execution while using the LLM's natural language understanding to translate problems into executable programs.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro - + Python runtime</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Exec sandboxing required</li>
-                <li>Runtime errors</li>
-                <li>Code injection risk if inputs untrusted</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro + Python runtime with sandboxing</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#60671a',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#60671a',
+          notes: 'PAL mechanics: Generate code, execute in sandbox, return results'
+        },
+        {
+          id: 57,
+          title: '14. PAL - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4o, Claude 3.5, Gemini 1.5 Pro - Models with strong code generation capabilities. Requires secure Python runtime environment with proper sandboxing to prevent malicious code execution.</p>
+            </div>
+          ),
+          backgroundColor: '#60671a',
+          notes: 'PAL implementation: Request code generation and execute safely'
+        },
+        {
+          id: 58,
+          title: '14. PAL - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Execution sandboxing required for security</li>
+                <li>Runtime errors can fail the entire process</li>
+                <li>Code injection risk if inputs are untrusted</li>
+                <li>Limited to problems expressible as code</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#60671a',
+          notes: 'PAL limitations: Requires sandboxing, runtime errors, injection risks'
         }
       ]
     },
@@ -1153,25 +1255,52 @@ Task: Summarize <report> for a safety board in 150 words."`}
       title: '15. ReAct',
       slides: [
         {
-          id: 17,
-          title: '15. ReAct',
-          icon: { name: 'duo-brain' },
+          id: 59,
+          title: '15. ReAct - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#75e0ff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Interleave reasoning traces with actions and observations (think→act→observe loops).</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Transparent action-reasoning trajectory plus answer</li>
+                <li>Dynamic adaptation based on observations</li>
+                <li>Grounded reasoning with external information</li>
+                <li>Interpretable decision-making process</li>
+              </ul>
+              <p style={{ marginTop: '20px' }}>Best for knowledge-intensive QA, web tasks, and interactive environments. Combines reasoning with actions in a continuous loop.</p>
+            </div>
+          ),
+          backgroundColor: '#1a5667',
+          notes: 'ReAct overview: Interleaved reasoning, actions, and observations'
+        },
+        {
+          id: 60,
+          title: '15. ReAct - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>ReAct creates a loop of Reasoning, Acting, and Observing. The model first reasons about what to do next, then takes an action (like searching or using a tool), observes the result, and incorporates that observation into its next reasoning step. This cycle continues until the task is complete. The approach provides both transparency and grounding through real observations.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              <p><strong>Level:</strong> Advanced</p>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs or environments required</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+            </div>
+          ),
+          backgroundColor: '#1a5667',
+          notes: 'ReAct mechanics: Think-act-observe loops with tool integration'
+        },
+        {
+          id: 61,
+          title: '15. ReAct - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
 {`Question: <q>
 Thought: <plan step>
 Action: Search[<query>]
@@ -1179,49 +1308,30 @@ Observation: <result>
 ...
 Repeat until enough info, then give Final Answer: <answer>`}
               </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Knowledge-intensive QA</li>
-                <li>Web tasks</li>
-                <li>Interactive environments</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Transparent action-reasoning trajectory + answer.</li>
-              </ul>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and orchestration to manage the think-act-observe cycle. Tools can include search, calculation, database access, etc.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs or environments required</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Tool dependency</li>
+          ),
+          backgroundColor: '#1a5667',
+          notes: 'ReAct implementation: Define thought-action-observation format'
+        },
+        {
+          id: 62,
+          title: '15. ReAct - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Tool dependency - quality depends on tool reliability</li>
                 <li>Cascading errors from bad observations</li>
+                <li>Can get stuck in reasoning loops</li>
+                <li>Requires careful action space design</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
-              <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1a5667',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#1a5667',
+          notes: 'ReAct limitations: Tool dependency, cascading errors, potential loops'
         }
       ]
     },
@@ -1230,72 +1340,78 @@ Repeat until enough info, then give Final Answer: <answer>`}
       title: '16. Reflexion',
       slides: [
         {
-          id: 18,
-          title: '16. Reflexion',
-          icon: { name: 'duo-lightbulb' },
+          id: 63,
+          title: '16. Reflexion - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#d17bff' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Agents self-evaluate outcomes and write linguistic feedback to improve future attempts.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Trial-and-error tasks</li>
-                <li>Code development</li>
-                <li>Planning scenarios</li>
-                <li>Multi-episode agents</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Iteratively improved outputs guided by self-feedback</li>
+                <li>Learn from failures without model retraining</li>
+                <li>Accumulate experience across episodes</li>
+                <li>Self-improvement through reflection</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Iteratively improved outputs guided by self-feedback.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for trial-and-error tasks, code development, planning scenarios, and multi-episode agents. Self-critique drives iterative improvement.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#4c1a67',
+          notes: 'Reflexion overview: Self-evaluation and linguistic feedback for improvement'
+        },
+        {
+          id: 64,
+          title: '16. Reflexion - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Reflexion has the agent attempt a task, then evaluate its own performance. The agent writes a self-critique identifying what went wrong and how to improve. This critique is stored in memory and used to guide the next attempt. Over multiple iterations, the agent learns from its mistakes through linguistic reflection rather than parameter updates, enabling rapid adaptation to task requirements.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Optional memory store</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Feedback quality varies</li>
-                <li>May entrench mistakes without checks</li>
-                <li>Can increase token usage significantly</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Optional memory store for critique history</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#4c1a67',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#4c1a67',
+          notes: 'Reflexion mechanics: Attempt, evaluate, critique, retry with feedback'
+        },
+        {
+          id: 65,
+          title: '16. Reflexion - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Benefits from memory systems to store critique history across multiple episodes, enabling long-term learning from experience.</p>
+            </div>
+          ),
+          backgroundColor: '#4c1a67',
+          notes: 'Reflexion implementation: Attempt, critique, and iterate'
+        },
+        {
+          id: 66,
+          title: '16. Reflexion - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Feedback quality varies with model capability</li>
+                <li>May entrench mistakes without external validation</li>
+                <li>Can increase token usage significantly</li>
+                <li>Risk of self-reinforcing incorrect assumptions</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#4c1a67',
+          notes: 'Reflexion limitations: Feedback quality varies, may entrench mistakes'
         }
       ]
     },
@@ -1304,70 +1420,78 @@ Repeat until enough info, then give Final Answer: <answer>`}
       title: '17. Multimodal Chain-of-Thought (MCoT)',
       slides: [
         {
-          id: 19,
-          title: '17. Multimodal Chain-of-Thought (MCoT)',
-          icon: { name: 'duo-brain' },
+          id: 67,
+          title: '17. Multimodal CoT - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#ffc662' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Combine vision (and/or audio) with text in step-by-step reasoning.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Charts/diagrams QA</li>
-                <li>Science problems</li>
-                <li>UI understanding</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Rationale grounded in image/text plus final answer</li>
+                <li>Cross-modal reasoning integration</li>
+                <li>Better understanding of visual information</li>
+                <li>Unified reasoning across modalities</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Rationale grounded in image/text + final answer.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for charts/diagrams QA, science problems, and UI understanding. Combines visual and textual information in reasoning chains.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#674b1a',
+          notes: 'Multimodal CoT overview: Cross-modal step-by-step reasoning'
+        },
+        {
+          id: 68,
+          title: '17. Multimodal CoT - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Multimodal CoT extends chain-of-thought reasoning to incorporate visual and other non-text inputs. The model analyzes images, diagrams, or other media alongside text, explicitly reasoning through observations from each modality. This cross-modal reasoning allows the model to reference specific visual elements while developing its step-by-step explanation, leading to better grounded answers for multimodal problems.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>Hallucinated visual claims</li>
-                <li>Requires robust vision models</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#674b1a',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#674b1a',
+          notes: 'Multimodal CoT mechanics: Integrate visual and textual reasoning steps'
+        },
+        {
+          id: 69,
+          title: '17. Multimodal CoT - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Requires multimodal models with strong vision capabilities. Models must be able to reason about visual content systematically.</p>
+            </div>
+          ),
+          backgroundColor: '#674b1a',
+          notes: 'Multimodal CoT implementation: Provide image/media with reasoning instruction'
+        },
+        {
+          id: 70,
+          title: '17. Multimodal CoT - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Hallucinated visual claims without grounding</li>
+                <li>Requires robust vision models with spatial reasoning</li>
+                <li>Quality varies significantly by image type</li>
+                <li>May struggle with fine-grained visual details</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#674b1a',
+          notes: 'Multimodal CoT limitations: Visual hallucinations, requires strong vision capability'
         }
       ]
     },
@@ -1376,70 +1500,78 @@ Repeat until enough info, then give Final Answer: <answer>`}
       title: '18. Graph Prompting',
       slides: [
         {
-          id: 20,
-          title: '18. Graph Prompting',
-          icon: { name: 'duo-circle-nodes' },
+          id: 71,
+          title: '18. Graph Prompting - Overview',
+          icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.8em', color: '#86ffaa' }}>
-          <div style={{ display: 'flex', flexDirection: 'column', marginBottom: '20px' }}>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-star-bright" sizeName="1x" darkModeInvert={true} />
-                Definition / Concept
-              </h4>
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Definition</h3>
               <p>Use graphs/knowledge graphs to structure context and reasoning for LLMs.</p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-code" sizeName="1x" darkModeInvert={true} />
-                Example Prompt
-              </h4>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.5em', whiteSpace: 'pre-wrap' }}>
-{`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
-              </pre>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-calendar-check" sizeName="1x" darkModeInvert={true} />
-                When to Use
-              </h4>
-              <ul>
-                <li>Multi-document QA</li>
-                <li>Multi-hop reasoning</li>
-                <li>Temporal/entity linking tasks</li>
+              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Graph-grounded explanation and answer</li>
+                <li>Structured representation of relationships</li>
+                <li>Multi-hop reasoning along graph paths</li>
+                <li>Explicit entity and relationship tracking</li>
               </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="1x" darkModeInvert={true} />
-                Output Type / Goal
-              </h4>
-              <ul>
-                <li>Graph-grounded explanation and answer.</li>
-              </ul>
+              <p style={{ marginTop: '20px' }}>Best for multi-document QA, multi-hop reasoning, and temporal/entity linking tasks. Structures knowledge as explicit graphs for reasoning.</p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-rocket" sizeName="1x" darkModeInvert={true} />
-                Complexity
-              </h4>
+          ),
+          backgroundColor: '#1a6731',
+          notes: 'Graph Prompting overview: Use knowledge graphs for structured reasoning'
+        },
+        {
+          id: 72,
+          title: '18. Graph Prompting - How It Works',
+          icon: { name: 'duo-gears' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>How It Works</h3>
+              <p>Graph Prompting extracts entities and relationships from documents to build a knowledge graph representation. The LLM then reasons over this structured graph to answer questions, following entity relationships and making multi-hop inferences. This explicit structure helps track complex relationships and provides interpretable reasoning paths through the graph, making it easier to verify and explain answers.</p>
+              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
               <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - LLM + graph tools/DB</p>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-circle-exclamation" sizeName="1x" darkModeInvert={true} />
-                Limitations
-              </h4>
-              <ul>
-                <li>KG construction errors</li>
-                <li>Synchronization with evolving data</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                <SvgIcon iconName="duo-building" sizeName="1x" darkModeInvert={true} />
-                Real-World Example
-              </h4>
+              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - LLM plus graph tools/database (Neo4j, etc.)</p>
+              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
               <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#1a6731',
-      notes: 'RAG: Ground responses in retrieved documents for fresh knowledge with citations'
+          ),
+          backgroundColor: '#1a6731',
+          notes: 'Graph Prompting mechanics: Extract entities/relations, build graph, reason over structure'
+        },
+        {
+          id: 73,
+          title: '18. Graph Prompting - Implementation',
+          icon: { name: 'duo-code' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3>Example Prompt</h3>
+              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '0.9em', whiteSpace: 'pre-wrap' }}>
+{`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
+              </pre>
+              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 for language understanding, plus graph database infrastructure (Neo4j, NetworkX) and entity extraction capabilities. May require NER and relation extraction models.</p>
+            </div>
+          ),
+          backgroundColor: '#1a6731',
+          notes: 'Graph Prompting implementation: Extract graph, query structure for answer'
+        },
+        {
+          id: 74,
+          title: '18. Graph Prompting - Considerations',
+          icon: { name: 'duo-clipboard-check' },
+          content: (
+            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              <ul style={{ fontSize: '1.2em' }}>
+                <li>Knowledge graph construction errors propagate</li>
+                <li>Synchronization challenges with evolving data</li>
+                <li>Entity resolution and disambiguation required</li>
+                <li>Graph quality critical for reasoning accuracy</li>
+              </ul>
+            </div>
+          ),
+          backgroundColor: '#1a6731',
+          notes: 'Graph Prompting limitations: KG construction errors, synchronization challenges'
         }
       ]
     },
@@ -1448,7 +1580,7 @@ Repeat until enough info, then give Final Answer: <answer>`}
       title: 'Summary',
       slides: [
         {
-          id: 21,
+          id: 75,
           title: 'Technique Complexity Overview',
           icon: { name: 'duo-table' },
           content: (
@@ -1507,7 +1639,7 @@ Repeat until enough info, then give Final Answer: <answer>`}
       notes: 'Complexity matrix: Simple (zero/few-shot), Intermediate (CoT/RAG), Advanced (agentic/hybrid with tools)'
         },
         {
-          id: 22,
+          id: 76,
           title: 'Best Practices & Recommendations',
           icon: { name: 'duo-clipboard-check' },
           content: (
@@ -1565,7 +1697,7 @@ Repeat until enough info, then give Final Answer: <answer>`}
       notes: 'Best practices: Start simple, scale up judiciously, monitor production, avoid over-engineering'
         },
         {
-          id: 23,
+          id: 77,
           title: 'Decision Framework',
           icon: { name: 'duo-compass' },
           content: (
@@ -1610,7 +1742,7 @@ Repeat until enough info, then give Final Answer: <answer>`}
       notes: 'Decision framework: Quick guide for selecting the right technique based on your task requirements'
         },
         {
-          id: 24,
+          id: 78,
           title: 'Summary: The Prompt Engineering Ladder',
           icon: { name: 'duo-book-open' },
           content: (
