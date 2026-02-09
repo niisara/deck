@@ -40,7 +40,7 @@ export const GSAPAnimated: React.FC<GSAPAnimatedProps> = ({
 };
 
 interface GSAPStaggerListProps {
-  children: ReactNode[];
+  children: ReactNode | ReactNode[]; // Accepts single ReactNode or array - single nodes are wrapped in array internally
   duration?: number;
   stagger?: number;
   className?: string;
@@ -49,7 +49,9 @@ interface GSAPStaggerListProps {
 
 /**
  * Component for stagger animations on lists that triggers on slide change
- * Usage: <GSAPStaggerList stagger={0.15}>{items}</GSAPStaggerList>
+ * Accepts single ReactNode (e.g., <ul>) or array of ReactNodes for stagger effect
+ * Single children are automatically wrapped in array for consistent behavior
+ * Usage: <GSAPStaggerList stagger={0.15}><ul><li>items</li></ul></GSAPStaggerList>
  */
 export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
   children,
@@ -59,6 +61,9 @@ export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
   itemClassName
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  // Handle both single ReactNode and ReactNode[]
+  const childArray = Array.isArray(children) ? children : [children];
 
   return (
     <div 
@@ -67,7 +72,7 @@ export const GSAPStaggerList: React.FC<GSAPStaggerListProps> = ({
       data-gsap-stagger={stagger}
       data-gsap-duration={duration}
     >
-      {children.map((child, index) => (
+      {childArray.map((child, index) => (
         <div key={index} className={`gsap-stagger-item ${itemClassName || ''}`}>
           {child}
         </div>
