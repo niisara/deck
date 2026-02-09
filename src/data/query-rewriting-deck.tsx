@@ -15,38 +15,41 @@ export const queryRewritingDeck: Deck = {
       slides: [
         {
           id: 1,
+          center: true,
           title: '21 Query Rewriting Strategies for RAG',
           content: (
-            <div style={{ textAlign: 'left' }}>
+            <div style={{ color: '#fff' }}>
           <h2 style={{ marginBottom: '40px' }}>Practical patterns, prompts, and examples for better retrieval</h2>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '50px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-pen-to-square" sizeName="4x" style={{ color: '#3498db' }} />
-              <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Rewrite</p>
+              <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Rewrite</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#2ecc71' }} />
-              <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Retrieve</p>
+              <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrieve</p>
             </div>
             <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <SvgIcon iconName="duo-bullseye" sizeName="4x" style={{ color: '#f39c12' }} />
-              <p style={{ marginTop: '15px', fontSize: '0.9em' }}>Precision</p>
+              <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Precision</p>
             </div>
           </div>
-          <p style={{ marginTop: '60px', fontSize: '0.9em', opacity: 0.8 }}>November 7, 2025</p>
+          <p><strong>Prepared by:</strong> Nisar A</p>
+              <p><strong>Date:</strong> November 7, 2025</p>
+              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
         </div>
       ),
       backgroundColor: '#2C3E50',
-      notes: 'Introduction: 21 strategies to improve RAG retrieval through query rewriting'
+      notes: ''
     },
         {
           id: 2,
           title: 'Why Query Rewriting?',
           icon: { name: 'duo-lightbulb' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.85em' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
             <div>
               <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '20px' }}>
@@ -55,15 +58,15 @@ export const queryRewritingDeck: Deck = {
               </h3>
               <ul style={{ lineHeight: '2' }}>
                 <li><strong>Vague or underspecified queries</strong><br/>
-                <span style={{ fontSize: '0.9em', opacity: 0.9 }}>Users often submit queries that lack sufficient detail for accurate retrieval</span></li>
+                <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Users often submit queries that lack sufficient detail for accurate retrieval</span></li>
                 <li><strong>Vocabulary/ontology mismatch</strong><br/>
-                <span style={{ fontSize: '0.9em', opacity: 0.9 }}>User phrasing differs from corpus terminology, creating semantic gaps</span></li>
+                <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>User phrasing differs from corpus terminology, creating semantic gaps</span></li>
                 <li><strong>Long/complex questions harming recall</strong><br/>
-                <span style={{ fontSize: '0.9em', opacity: 0.9 }}>Multi-part questions dilute key search terms, reducing retrieval effectiveness</span></li>
+                <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Multi-part questions dilute key search terms, reducing retrieval effectiveness</span></li>
                 <li><strong>Conversational context loss in follow-ups</strong><br/>
-                <span style={{ fontSize: '0.9em', opacity: 0.9 }}>Follow-up queries lack critical context from previous conversation turns</span></li>
+                <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Follow-up queries lack critical context from previous conversation turns</span></li>
                 <li><strong>Hallucinations from poor context</strong><br/>
-                <span style={{ fontSize: '0.9em', opacity: 0.9 }}>Insufficient retrieval leads to LLM hallucinations and incorrect answers</span></li>
+                <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Insufficient retrieval leads to LLM hallucinations and incorrect answers</span></li>
               </ul>
             </div>
             <div>
@@ -93,14 +96,15 @@ export const queryRewritingDeck: Deck = {
         </div>
       ),
       backgroundColor: '#34495E',
-      notes: 'Query rewriting solves vocabulary mismatch, vague queries, and context loss, improving recall and reducing hallucinations'
+      notes: ''
         },
         {
           id: 3,
           title: 'Impact on RAG Performance',
           icon: { name: 'duo-chart-line' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '0.85em', color: '#509dd1' }}>
+        <div style={{ margin: '0 auto', fontSize: '2rem', color: '#509dd1' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
             <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -141,15 +145,16 @@ export const queryRewritingDeck: Deck = {
         </div>
       ),
       backgroundColor: '#16496b',
-      notes: 'Query rewriting significantly improves recall (15-40%), ranking (10-25%), grounding (20-45%), and success rates (15-30%)'
+      notes: ''
         },
         {
           id: 4,
           title: 'Implementation Workflow',
           icon: { name: 'duo-diagram-project' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '0.75em' }}>
-          <h3 style={{ marginBottom: '30px' }}>Step-by-Step Process</h3>
+        <div style={{ margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+          <div style={{ marginBottom: '30px' }}></div>
+          <h3 style={{ paddingBottom: '30px' }}>Step-by-Step Process</h3>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
             <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#3498db' }}>
               <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#3498db', marginBottom: '10px' }}>1</div>
@@ -200,24 +205,25 @@ export const queryRewritingDeck: Deck = {
               <p style={{ marginTop: '8px' }}>Capture feedback and performance metrics to continuously improve rewriting policy</p>
             </div>
           </div>
-          <div style={{ padding: '15px', backgroundColor: 'rgba(149, 165, 166, 0.15)', borderRadius: '8px' }}>
+          <div style={{ padding: '15px', backgroundColor: 'rgba(149, 165, 166, 0.15)', borderRadius: '8px', fontSize: '1.2rem' }}>
             <strong>🛡️ Guardrails:</strong> Token/cost caps for LLM rewriting operations • Evaluation gates for rewritten query quality • Traceability of transformations for debugging • Timeout handling for complex rewrites • Fallback mechanisms to original query
           </div>
         </div>
       ),
       backgroundColor: '#34495E',
-      notes: 'Six-step workflow: Parse intent, pick policy, transform, retrieve, check coverage, log and adapt'
+      notes: ''
         },
         {
           id: 5,
           title: '21 Strategies Overview',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '0.65em', color: '#5bbf84' }}>
+        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#5bbf84' }}>
+          <div style={{ marginBottom: '30px' }}></div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
             <div>
               <h4 style={{ color: '#3498db', marginBottom: '10px' }}>📈 Expansion & Enhancement</h4>
-              <ul style={{ lineHeight: '1.6', color: '#3498db' }}>
+              <ul style={{ lineHeight: '1.6', color: '#3498db', marginTop: '10px' }}>
                 <li>1. Query Expansion</li>
                 <li>2. Query Reformulation</li>
                 <li>5. HyDE (Hypothetical Document)</li>
@@ -225,7 +231,7 @@ export const queryRewritingDeck: Deck = {
                 <li>15. Query2Doc</li>
               </ul>
               <h4 style={{ color: '#9b59b6', marginTop: '15px', marginBottom: '10px' }}>🔍 Context & Conversation</h4>
-              <ul style={{ lineHeight: '1.6', color: '#9b59b6' }}>
+              <ul style={{ lineHeight: '1.6', color: '#9b59b6', marginTop: '10px' }}>
                 <li>7. Context-Aware Rewriting</li>
                 <li>8. Query Clarification</li>
                 <li>20. Intent Classification</li>
@@ -233,14 +239,14 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ color: '#2ecc71', marginBottom: '10px' }}>🧩 Decomposition & Structure</h4>
-              <ul style={{ lineHeight: '1.6', color: '#2ecc71' }}>
+              <ul style={{ lineHeight: '1.6', color: '#2ecc71', marginTop: '10px' }}>
                 <li>3. Query Decomposition</li>
                 <li>4. Step-Back Prompting</li>
                 <li>16. ITER-RETGEN</li>
                 <li>17. Template-Based</li>
               </ul>
               <h4 style={{ color: '#f39c12', marginTop: '15px', marginBottom: '10px' }}>🎯 Specification & Filtering</h4>
-              <ul style={{ lineHeight: '1.6', color: '#f39c12' }}>
+              <ul style={{ lineHeight: '1.6', color: '#f39c12', marginTop: '10px' }}>
                 <li>9. Query Specification</li>
                 <li>18. Entity-Centric</li>
                 <li>19. Temporal Rewriting</li>
@@ -248,12 +254,12 @@ export const queryRewritingDeck: Deck = {
             </div>
             <div>
               <h4 style={{ color: '#e67e22', marginBottom: '10px' }}>🔬 Domain & Semantic</h4>
-              <ul style={{ lineHeight: '1.6', color: '#e67e22' }}>
+              <ul style={{ lineHeight: '1.6', color: '#e67e22', marginTop: '10px' }}>
                 <li>10. Semantic Bridging</li>
                 <li>20. Domain-Specific</li>
               </ul>
               <h4 style={{ color: '#e74c3c', marginTop: '15px', marginBottom: '10px' }}>🔄 Adaptive & Learning</h4>
-              <ul style={{ lineHeight: '1.6', color: '#e74c3c' }}>
+              <ul style={{ lineHeight: '1.6', color: '#e74c3c', marginTop: '10px' }}>
                 <li>21. Diverse Multi-Query</li>
                 <li>22. Feedback-Based</li>
                 <li>23. Prompt-Based</li>
@@ -261,13 +267,13 @@ export const queryRewritingDeck: Deck = {
               </ul>
             </div>
           </div>
-          <p style={{ marginTop: '25px', textAlign: 'center', fontSize: '1.2em', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
+          <p style={{ marginTop: '25px', textAlign: 'center', fontSize: '1.2rem', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
             <strong>21 strategies</strong> organized by approach: Expansion, Context, Decomposition, Specification, Domain, and Adaptive methods
           </p>
         </div>
       ),
       backgroundColor: '#194f2f',
-      notes: '21 strategies grouped into 6 categories: Expansion, Context, Decomposition, Specification, Domain, and Adaptive'
+      notes: ''
         }
       ]
     },
@@ -280,10 +286,10 @@ export const queryRewritingDeck: Deck = {
           title: '1. Query Expansion - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Bridge vocabulary gaps, increase recall with synonyms/related terms, and improve retrieval for sparse queries</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Simple implementation</li>
             <li>Cost-effective approach</li>
             <li>Significant recall improvement</li>
@@ -291,7 +297,7 @@ export const queryRewritingDeck: Deck = {
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Ideal for scenarios with:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Low recall performance</li>
             <li>Sparse or short queries</li>
             <li>Domain-specific terminology</li>
@@ -300,17 +306,17 @@ export const queryRewritingDeck: Deck = {
         </div>
       ),
       backgroundColor: '#1e557b',
-      notes: 'Overview: Query expansion bridges vocabulary gaps using synonyms and related terms'
+      notes: ''
         },
         {
           id: 7,
           title: '1. Query Expansion - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Query Expansion Works</h3>
           <p>Add semantically related keywords and entities through multiple approaches:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Thesaurus/dictionary lookups</strong> - Traditional synonym expansion using linguistic databases</li>
             <li><strong>Embedding-based similarity</strong> - Use vector embeddings to find semantically similar terms</li>
             <li><strong>Pseudo-relevance feedback</strong> - Extract terms from top initial retrieval results</li>
@@ -319,17 +325,17 @@ export const queryRewritingDeck: Deck = {
         </div>
       ),
       backgroundColor: '#1e557b',
-      notes: 'How it works: Adds related keywords via thesaurus, embeddings, feedback, or LLM generation'
+      notes: ''
         },
         {
           id: 8,
           title: '1. Query Expansion - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Heuristic+LLM approach: extract keyphrases and synonyms; append as OR/boost terms</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Extract 5 synonyms and 5 related terms for the following query.
@@ -337,7 +343,7 @@ Return them as a comma-separated list without explanations.
 Query: {query}
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def expand_query(query):
     related_terms = llm.generate(prompt, query=query)
@@ -347,21 +353,21 @@ def expand_query(query):
         </div>
       ),
       backgroundColor: '#1e557b',
-      notes: 'Implementation: Use LLM to generate synonyms and related terms, then append as OR clauses'
+      notes: ''
         },
         {
           id: 9,
           title: '1. Query Expansion - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "flu treatment"<br/>
             <strong>After:</strong> "flu treatment" OR "influenza therapy" OR "antiviral medication" OR "oseltamivir" OR "flu remedies" OR "fever reduction"
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Can dilute precision without reranking</li>
             <li>Risk of query drift</li>
             <li>Less effective for ambiguous queries</li>
@@ -370,7 +376,7 @@ def expand_query(query):
         </div>
       ),
       backgroundColor: '#1e557b',
-      notes: 'Example & considerations: Expands short queries but may dilute precision'
+      notes: ''
         }
       ]
     },
@@ -383,10 +389,10 @@ def expand_query(query):
           title: '2. Query Reformulation - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Make queries clearer, self-contained, and unambiguous to enhance retrieval precision</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Improved precision in results</li>
             <li>Reduces irrelevant document hits</li>
             <li>Better response in multi-turn chats</li>
@@ -394,7 +400,7 @@ def expand_query(query):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best applied to:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Conversational follow-up queries</li>
             <li>Terse or vague user questions</li>
             <li>Multi-turn interactions</li>
@@ -403,17 +409,17 @@ def expand_query(query):
         </div>
       ),
       backgroundColor: '#6c1e7b',
-      notes: 'Overview: Query reformulation makes queries self-contained and unambiguous'
+      notes: ''
         },
         {
           id: 11,
           title: '2. Query Reformulation - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Query Reformulation Works</h3>
           <p>Rephrase queries with complete information by adding:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Full entity names and identifiers</strong> - Replace pronouns and abbreviations with complete names</li>
             <li><strong>Explicit constraints and qualifiers</strong> - Add missing conditions and requirements</li>
             <li><strong>Contextual information from history</strong> - Integrate relevant context from conversation</li>
@@ -422,17 +428,17 @@ def expand_query(query):
         </div>
       ),
       backgroundColor: '#6c1e7b',
-      notes: 'How it works: Rephrases queries by adding full names, constraints, and context'
+      notes: ''
         },
         {
           id: 12,
           title: '2. Query Reformulation - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Clean, self-contained rewrite that preserves original intent</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Rewrite the user query to be explicit and standalone,
@@ -443,7 +449,7 @@ Conversation Context: {history}
 Rewritten Query:
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def reformulate_query(query, history):
     context = summarize_conversation_history(history)
@@ -454,21 +460,21 @@ def reformulate_query(query, history):
         </div>
       ),
       backgroundColor: '#6c1e7b',
-      notes: 'Implementation: Use LLM to rewrite query with full context from conversation history'
+      notes: ''
         },
         {
           id: 13,
           title: '2. Query Reformulation - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "What about pricing?"<br/>
             <strong>After:</strong> "What is the pricing for the Pro plan of Acme API in 2024?"
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Requires access to conversation context</li>
             <li>Risk of over-specification</li>
             <li>May introduce assumptions</li>
@@ -477,7 +483,7 @@ def reformulate_query(query, history):
         </div>
       ),
       backgroundColor: '#6c1e7b',
-      notes: 'Example & considerations: Makes vague queries explicit but needs conversation context'
+      notes: ''
         }
       ]
     },
@@ -490,10 +496,10 @@ def reformulate_query(query, history):
           title: '3. Query Decomposition - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Handle multi-hop/complex questions that require multiple pieces of information to answer completely</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Better coverage of complex topics</li>
             <li>Improved reasoning capabilities</li>
             <li>Each sub-question can be precisely answered</li>
@@ -501,7 +507,7 @@ def reformulate_query(query, history):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best for questions that involve:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Multi-entity relationships</li>
             <li>Multi-step reasoning</li>
             <li>Compare/contrast scenarios</li>
@@ -510,17 +516,17 @@ def reformulate_query(query, history):
         </div>
       ),
       backgroundColor: '#1e6b7b',
-      notes: 'Overview: Query decomposition handles complex multi-hop questions'
+      notes: ''
         },
         {
           id: 15,
           title: '3. Query Decomposition - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Query Decomposition Works</h3>
           <p>Breaks complex queries into simpler sub-questions through an orchestrated workflow:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Split original query into atomic sub-questions</strong> - Identify independent components of the complex question</li>
             <li><strong>Retrieve relevant passages for each sub-query</strong> - Execute separate retrieval for focused information needs</li>
             <li><strong>Answer each sub-question independently</strong> - Generate targeted responses using retrieved context</li>
@@ -529,17 +535,17 @@ def reformulate_query(query, history):
         </div>
       ),
       backgroundColor: '#1e6b7b',
-      notes: 'How it works: Splits complex queries into sub-questions, retrieves for each, then synthesizes'
+      notes: ''
         },
         {
           id: 16,
           title: '3. Query Decomposition - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Plan → retrieve → answer → combine workflow</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template for decomposition
 """
 Decompose the following question into 2-5 simpler sub-questions that, when
@@ -548,7 +554,7 @@ Return a numbered list of sub-questions without additional explanation.
 Main question: {query}
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def answer_with_decomposition(query):
     sub_questions = llm.generate(decompose_prompt, query=query)
@@ -561,21 +567,21 @@ def answer_with_decomposition(query):
         </div>
       ),
       backgroundColor: '#1e6b7b',
-      notes: 'Implementation: LLM decomposes into sub-questions, retrieve and answer each, then synthesize'
+      notes: ''
         },
         {
           id: 17,
           title: '3. Query Decomposition - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+          <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "Compare Snowflake vs BigQuery costs for 10 TB/month"<br/>
             <strong>After:</strong> 1. What is Snowflake's pricing model and costs for 10 TB/month? 2. What is BigQuery's pricing model and costs for 10 TB/month? 3. What compute resources would be needed for this data volume? 4. How do the pricing structures compare for this workload?
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Multiple retrieval calls increase latency</li>
             <li>Requires orchestration complexity</li>
             <li>Higher token usage and costs</li>
@@ -584,7 +590,7 @@ def answer_with_decomposition(query):
         </div>
       ),
       backgroundColor: '#1e6b7b',
-      notes: 'Example & considerations: Decomposes comparison questions but increases latency and cost'
+      notes: ''
         }
       ]
     },
@@ -597,10 +603,10 @@ def answer_with_decomposition(query):
           title: '4. Step-Back Prompting - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Improve retrieval via abstraction and first principles thinking, allowing better information access for complex or specific queries</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Robust to query wording variations</li>
             <li>Better generalization across concepts</li>
             <li>Improves coverage of relevant information</li>
@@ -608,7 +614,7 @@ def answer_with_decomposition(query):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best applied when:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Specific but under-retrieving queries</li>
             <li>Reasoning-heavy or conceptual topics</li>
             <li>Technical questions needing broader context</li>
@@ -617,17 +623,17 @@ def answer_with_decomposition(query):
         </div>
       ),
       backgroundColor: '#7b5d1e',
-      notes: 'Overview: Step-back prompting abstracts queries to high-level concepts'
+      notes: ''
         },
         {
           id: 19,
           title: '4. Step-Back Prompting - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Step-Back Prompting Works</h3>
           <p>Generate high-level concepts, then retrieve with that summary:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Extract underlying principles from specific query</strong> - Identify fundamental concepts behind the question</li>
             <li><strong>Identify broader concepts and frameworks</strong> - Connect to relevant theoretical foundations</li>
             <li><strong>Create a more general retrieval query</strong> - Formulate abstract query terms</li>
@@ -636,17 +642,17 @@ def answer_with_decomposition(query):
         </div>
       ),
       backgroundColor: '#7b5d1e',
-      notes: 'How it works: Abstracts specific queries to high-level concepts for better retrieval'
+      notes: ''
         },
         {
           id: 20,
           title: '4. Step-Back Prompting - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+          <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Step-back summary → retrieval query pattern</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Step back: derive 3–5 high-level concepts underlying:
@@ -655,7 +661,7 @@ Then produce a concise retrieval query based on these
 concepts that would help answer the original question.
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def step_back_query(original_query):
     abstract_concepts = llm.generate(
@@ -667,21 +673,21 @@ def step_back_query(original_query):
         </div>
       ),
       backgroundColor: '#7b5d1e',
-      notes: 'Implementation: LLM derives high-level concepts from specific query'
+      notes: ''
         },
         {
           id: 21,
           title: '4. Step-Back Prompting - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "How to fix CUDA OOM with Llama 3.1 70B?"<br/>
             <strong>After:</strong> "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints"
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Risk of over-abstraction</li>
             <li>Needs good reranker to filter results</li>
             <li>May lose specificity for narrow queries</li>
@@ -690,7 +696,7 @@ def step_back_query(original_query):
         </div>
       ),
       backgroundColor: '#7b5d1e',
-      notes: 'Example & considerations: Abstracts specific tech questions but may over-generalize'
+      notes: ''
         }
       ]
     },
@@ -703,10 +709,10 @@ def step_back_query(original_query):
           title: '5. HyDE - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Improve retrieval quality by embedding a synthetic document that provides a hypothetical answer to the query, bridging the semantic gap</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Strong recall gains in dense retrieval</li>
             <li>Works with existing embedding models</li>
             <li>No fine-tuning required</li>
@@ -715,7 +721,7 @@ def step_back_query(original_query):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Particularly effective for:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Low recall in dense retrieval systems</li>
             <li>Zero-shot domain applications</li>
             <li>Queries with vocabulary mismatch</li>
@@ -725,17 +731,17 @@ def step_back_query(original_query):
         </div>
       ),
       backgroundColor: '#1e7b28',
-      notes: 'Overview: HyDE generates hypothetical answers to bridge semantic gaps'
+      notes: ''
         },
         {
           id: 23,
           title: '5. HyDE - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How HyDE Works</h3>
           <p>Instead of embedding the query directly:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>LLM generates a hypothetical answer document</strong> - Create synthetic document as if answering the query</li>
             <li><strong>This synthetic document is embedded</strong> - Use embedding model to vectorize the hypothetical answer</li>
             <li><strong>Retrieval uses this embedding to find similar real documents</strong> - Search for documents semantically similar to the answer</li>
@@ -744,17 +750,17 @@ def step_back_query(original_query):
         </div>
       ),
       backgroundColor: '#1e7b28',
-      notes: 'How it works: Embeds hypothetical answer instead of query for better semantic matching'
+      notes: ''
         },
         {
           id: 24,
           title: '5. HyDE - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Generate hypothetical document → embed → retrieve</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Write a 120-200 word passage that would likely answer the following query.
@@ -763,7 +769,7 @@ Do not include phrases like "according to" or "based on research".
 Query: {query}
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def hyde_retrieval(query, top_k=5):
     # Generate hypothetical document
@@ -778,26 +784,26 @@ def hyde_retrieval(query, top_k=5):
         </div>
       ),
       backgroundColor: '#1e7b28',
-      notes: 'Implementation: LLM generates hypothetical answer, embed it, then retrieve similar documents'
+      notes: ''
         },
         {
           id: 25,
           title: '5. HyDE - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "causal ml uplift modeling tutorial"<br/>
             <strong>After (Hypothetical Document):</strong>
-            <ul style={{ fontSize: '0.9em', marginTop: '10px' }}>
+            <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
               <li>Uplift modeling is a machine learning technique that predicts the causal impact of a treatment on individual behavior. Unlike traditional ML models that predict outcomes, uplift models focus on incremental impact. The process involves collecting data with treatment and control groups, feature engineering, and model training.</li>
               <li>Key steps include: 1) Split data into treatment/control groups, 2) Feature transformation with interaction terms, 3) Model training with algorithms like random forests or neural networks, 4) Evaluation using metrics like AUUC or Qini coefficient.</li>
               <li>Common applications include marketing campaign optimization, personalized medicine, and customer retention strategies...</li>
             </ul>
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
             <li>Extra token usage and latency</li>
             <li>Pseudo-doc bias if poorly guided</li>
             <li>Quality depends on LLM's knowledge</li>
@@ -807,7 +813,7 @@ def hyde_retrieval(query, top_k=5):
         </div>
       ),
       backgroundColor: '#1e7b28',
-      notes: 'Example & considerations: Generates hypothetical answer but adds latency and cost'
+      notes: ''
         }
       ]
     },
@@ -820,10 +826,10 @@ def hyde_retrieval(query, top_k=5):
           title: '6. Multi-Query Generation - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Cover diverse intents/phrases to improve recall and handle query ambiguity by exploring different interpretations of user intent</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Robust to query ambiguity</li>
             <li>Higher hit-rate for relevant documents</li>
             <li>Better coverage of different aspects</li>
@@ -831,7 +837,7 @@ def hyde_retrieval(query, top_k=5):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best suited for:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Ambiguous or underspecified queries</li>
             <li>Heterogeneous document corpora</li>
             <li>Tasks requiring breadth of coverage</li>
@@ -840,17 +846,17 @@ def hyde_retrieval(query, top_k=5):
         </div>
       ),
       backgroundColor: '#465e7b',
-      notes: 'Overview: Multi-query generation explores diverse query interpretations'
+      notes: ''
         },
         {
           id: 27,
           title: '6. Multi-Query Generation - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Multi-Query Generation Works</h3>
           <p>Generate multiple alternative query formulations:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Generate k diverse query variants</strong> - Create multiple formulations exploring different angles</li>
             <li><strong>Retrieve documents for each variant</strong> - Execute separate retrieval for each query version</li>
             <li><strong>Union results from all queries</strong> - Combine documents from all retrievals</li>
@@ -859,17 +865,17 @@ def hyde_retrieval(query, top_k=5):
         </div>
       ),
       backgroundColor: '#465e7b',
-      notes: 'How it works: Generates multiple query variants, retrieves for each, then combines and reranks'
+      notes: ''
         },
         {
           id: 28,
           title: '6. Multi-Query Generation - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Generate diverse query variants, retrieve separately, then combine results</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Generate 5 diverse phrasings covering different
@@ -880,7 +886,7 @@ of queries, numbered 1-5, without explanations.
 Avoid duplicates or minor variations.
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def multi_query_retrieve(query):
     variants = llm.generate(prompt, query=query)
@@ -893,19 +899,19 @@ def multi_query_retrieve(query):
         </div>
       ),
       backgroundColor: '#465e7b',
-      notes: 'Implementation: LLM generates diverse query variants, retrieve for each, then combine'
+      notes: ''
         },
         {
           id: 29,
           title: '6. Multi-Query Generation - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "LLM eval methods"<br/>
             <strong>After:</strong>
-            <ul style={{ marginTop: '10px', fontSize: '0.95em' }}>
+            <ul style={{ marginTop: '10px', fontSize: '1.2rem' }}>
               <li>"evaluation frameworks for large language models"</li>
               <li>"LLM benchmarks and testing methodologies"</li>
               <li>"automatic evaluation prompts for language models"</li>
@@ -914,7 +920,7 @@ def multi_query_retrieve(query):
             </ul>
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Increased cost and latency</li>
             <li>Requires deduplication and fusion</li>
             <li>More complex implementation</li>
@@ -923,7 +929,7 @@ def multi_query_retrieve(query):
         </div>
       ),
       backgroundColor: '#465e7b',
-      notes: 'Example & considerations: Explores multiple angles but increases cost and complexity'
+      notes: ''
         }
       ]
     },
@@ -936,10 +942,10 @@ def multi_query_retrieve(query):
           title: '7. Context-Aware Rewriting - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Make follow-up queries standalone and self-contained by incorporating conversation context and session history</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Significant quality improvement in chat</li>
             <li>Reduces context window waste</li>
             <li>Enables effective RAG on follow-ups</li>
@@ -947,7 +953,7 @@ def multi_query_retrieve(query):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Ideal for:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Conversational chatbots</li>
             <li>Multi-turn question answering</li>
             <li>Session-based search interfaces</li>
@@ -956,17 +962,17 @@ def multi_query_retrieve(query):
         </div>
       ),
       backgroundColor: '#7b2e1e',
-      notes: 'Overview: Context-aware rewriting makes follow-up queries self-contained'
+      notes: ''
         },
         {
           id: 31,
           title: '7. Context-Aware Rewriting - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Context-Aware Rewriting Works</h3>
           <p>Inject relevant contextual elements into the query:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Entities mentioned in previous turns</strong> - Replace pronouns with specific entity references</li>
             <li><strong>Constraints established earlier</strong> - Include previously defined parameters and filters</li>
             <li><strong>References to prior answers</strong> - Connect to relevant information from conversation</li>
@@ -975,17 +981,17 @@ def multi_query_retrieve(query):
         </div>
       ),
       backgroundColor: '#7b2e1e',
-      notes: 'How it works: Injects entities, constraints, and references from conversation history'
+      notes: ''
         },
         {
           id: 32,
           title: '7. Context-Aware Rewriting - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Rewrite follow-up queries using conversation history to make them self-contained</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Given the conversation history below, rewrite the follow-up
@@ -997,7 +1003,7 @@ Follow-up query: {query}
 Standalone query:
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def context_aware_rewrite(query, history):
     conversation = format_history(history)
@@ -1009,21 +1015,21 @@ def context_aware_rewrite(query, history):
         </div>
       ),
       backgroundColor: '#7b2e1e',
-      notes: 'Implementation: LLM rewrites query using conversation history for completeness'
+      notes: ''
         },
         {
           id: 33,
           title: '7. Context-Aware Rewriting - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "And its limits?"<br/>
             <strong>After:</strong> "What are the 2024 rate limits for the Acme Pro API we discussed above?"
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Needs careful context selection</li>
             <li>Potential privacy concerns</li>
             <li>Can overspecify in some cases</li>
@@ -1032,7 +1038,7 @@ def context_aware_rewrite(query, history):
         </div>
       ),
       backgroundColor: '#7b2e1e',
-      notes: 'Example & considerations: Makes follow-ups explicit but requires history tracking'
+      notes: ''
         }
       ]
     },
@@ -1045,10 +1051,10 @@ def context_aware_rewrite(query, history):
           title: '8. Query Clarification - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Resolve ambiguity in user queries before retrieval to improve precision and relevance of results</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Significantly improves precision</li>
             <li>Better user alignment and satisfaction</li>
             <li>Reduces irrelevant results</li>
@@ -1056,7 +1062,7 @@ def context_aware_rewrite(query, history):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Ideal for scenarios with:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Short or vague queries</li>
             <li>Ambiguous terms with multiple meanings</li>
             <li>Missing contextual constraints</li>
@@ -1065,17 +1071,17 @@ def context_aware_rewrite(query, history):
         </div>
       ),
       backgroundColor: '#1e7b20',
-      notes: 'Overview: Query clarification resolves ambiguity through interactive questioning'
+      notes: ''
         },
         {
           id: 35,
           title: '8. Query Clarification - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Query Clarification Works</h3>
           <p>The system:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Detects missing constraints or ambiguities</strong> - Analyze query for undefined terms or parameters</li>
             <li><strong>Asks 1-2 targeted clarifying questions</strong> - Present specific options to disambiguate</li>
             <li><strong>Proposes default interpretations when appropriate</strong> - Suggest common interpretations</li>
@@ -1084,17 +1090,17 @@ def context_aware_rewrite(query, history):
         </div>
       ),
       backgroundColor: '#1e7b20',
-      notes: 'How it works: Detects ambiguities, asks clarifying questions, then reformulates query'
+      notes: ''
         },
         {
           id: 36,
           title: '8. Query Clarification - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Clarify→rewrite→retrieve workflow</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template for clarification
 """
 Analyze the query: "{query}"
@@ -1103,7 +1109,7 @@ If there are multiple possible interpretations, propose
 2 options for the user to choose from.
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation flow
 def clarify_query(query):
     ambiguity = detect_ambiguity(query)
@@ -1115,23 +1121,23 @@ def clarify_query(query):
         </div>
       ),
       backgroundColor: '#1e7b20',
-      notes: 'Implementation: Detect ambiguity, ask user for clarification, then rewrite'
+      notes: ''
         },
         {
           id: 37,
           title: '8. Query Clarification - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+          <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example - Interactive Clarification Flow</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.05em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>User Query:</strong> "Apple pay policy"<br/>
             <strong>System Clarification:</strong> "Do you mean Apple Inc.'s payment policies or the fruit industry's payment policies? For Apple Inc., which region are you interested in?"<br/><br/>
             <strong>User Response:</strong> "Apple Inc., United States"<br/>
             <strong>Rewritten Query:</strong> "Apple Inc. digital payment policies and terms for Apple Pay service in the United States"
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Adds interaction step (latency)</li>
             <li>Requires timeout handling</li>
             <li>May frustrate users seeking quick answers</li>
@@ -1140,7 +1146,7 @@ def clarify_query(query):
         </div>
       ),
       backgroundColor: '#1e7b20',
-      notes: 'Example & considerations: Resolves ambiguity but adds latency'
+      notes: ''
         }
       ]
     },
@@ -1153,10 +1159,10 @@ def clarify_query(query):
           title: '9. Query Specification - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Add explicit constraints (time, source, locale, format) to focus retrieval on relevant document subsets</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>High precision retrieval</li>
             <li>Faster reranking (smaller candidate pool)</li>
             <li>Better for enterprise/compliance use cases</li>
@@ -1165,7 +1171,7 @@ def clarify_query(query):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best for scenarios requiring high precision:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Enterprise search systems</li>
             <li>Data analytics applications</li>
             <li>Compliance and audit searches</li>
@@ -1175,17 +1181,17 @@ def clarify_query(query):
         </div>
       ),
       backgroundColor: '#7b1e75',
-      notes: 'Overview: Query specification adds explicit constraints for focused retrieval'
+      notes: ''
         },
         {
           id: 39,
           title: '9. Query Specification - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Query Specification Works</h3>
           <p>Expand queries with structured filters and fielded search terms:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Time range specifications</strong> - Constrain results to specific date ranges</li>
             <li><strong>Source/domain constraints</strong> - Limit to specific sites or domains</li>
             <li><strong>File type filters</strong> - Target specific document formats</li>
@@ -1195,17 +1201,17 @@ def clarify_query(query):
         </div>
       ),
       backgroundColor: '#7b1e75',
-      notes: 'How it works: Adds structured filters for time, source, format, and metadata'
+      notes: ''
         },
         {
           id: 40,
           title: '9. Query Specification - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Detect constraints → annotate query with explicit field filters</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Add explicit constraints for time range, document type, source,
@@ -1218,7 +1224,7 @@ Use search operators like:
 - entity:"Exact Name" for entity disambiguation
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+            <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def specify_query(query):
     # Extract entities and intent
@@ -1232,21 +1238,21 @@ def specify_query(query):
         </div>
       ),
       backgroundColor: '#7b1e75',
-      notes: 'Implementation: Extract entities and intent, then add structured constraints'
+      notes: ''
         },
         {
           id: 41,
           title: '9. Query Specification - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "GDPR fines"<br/>
             <strong>After:</strong> "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf entity:\"data protection authority\""
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Risk of over-filtering (false negatives)</li>
             <li>Requires field support in search system</li>
             <li>More complex to implement and maintain</li>
@@ -1256,7 +1262,7 @@ def specify_query(query):
         </div>
       ),
       backgroundColor: '#7b1e75',
-      notes: 'Example & considerations: Adds precise filters but risks over-filtering'
+      notes: ''
         }
       ]
     },
@@ -1269,10 +1275,10 @@ def specify_query(query):
           title: '10. Semantic Bridging - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Map user language to domain ontology/taxonomy, bridging the vocabulary gap between natural language queries and specialized terminology</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Closes vocabulary gap between users and experts</li>
             <li>Significantly improves recall in domain searches</li>
             <li>Reduces "zero results" scenarios</li>
@@ -1280,7 +1286,7 @@ def specify_query(query):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best applied for domains with:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Specialized jargon (medical, legal, technical)</li>
             <li>Product/SKU catalogs and e-commerce</li>
             <li>Academic/scientific search</li>
@@ -1289,17 +1295,17 @@ def specify_query(query):
         </div>
       ),
       backgroundColor: '#7b6a1e',
-      notes: 'Overview: Semantic bridging maps user language to domain ontology'
+      notes: ''
         },
         {
           id: 43,
           title: '10. Semantic Bridging - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Semantic Bridging Works</h3>
           <p>Expand/translate queries to canonical terms through:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Domain-specific ontology lookups</strong> - Match terms to formal taxonomies and classifications</li>
             <li><strong>Terminology mapping (layman → expert)</strong> - Translate colloquial terms to technical vocabulary</li>
             <li><strong>Synonym expansion with field expertise</strong> - Add domain-appropriate synonyms and related terms</li>
@@ -1308,17 +1314,17 @@ def specify_query(query):
         </div>
       ),
       backgroundColor: '#7b6a1e',
-      notes: 'How it works: Maps terms using ontology, translates terminology, expands synonyms'
+      notes: ''
         },
         {
           id: 44,
           title: '10. Semantic Bridging - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>Ontology lookup + LLM normalization approach</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Map terms in the following query to canonical ontology labels.
@@ -1327,7 +1333,7 @@ Query: {query}
 Domain knowledge: {ontology_context}
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def semantic_bridge(query, domain):
     ontology = fetch_domain_ontology(domain)
@@ -1341,21 +1347,21 @@ def semantic_bridge(query, domain):
         </div>
       ),
       backgroundColor: '#7b6a1e',
-      notes: 'Implementation: Fetch ontology, use LLM to map terms, enrich query'
+      notes: ''
         },
         {
           id: 45,
           title: '10. Semantic Bridging - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.1em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "heart attack treatment"<br/>
             <strong>After:</strong> "myocardial infarction (MI) management" OR "acute coronary syndrome therapy" OR "thrombolysis" OR "PCI" OR "cardiac revascularization"
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Requires curated domain ontology</li>
             <li>Risk of ontology drift over time</li>
             <li>May over-expand in ambiguous cases</li>
@@ -1364,7 +1370,7 @@ def semantic_bridge(query, domain):
         </div>
       ),
       backgroundColor: '#7b6a1e',
-      notes: 'Example & considerations: Maps layman terms to medical terminology'
+      notes: ''
         }
       ]
     },
@@ -1377,10 +1383,10 @@ def semantic_bridge(query, domain):
           title: '11. Query2Doc - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Improve retrieval by turning a query into a pseudo-document that reflects likely relevant content</h3>
           <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Strong recall improvement</li>
             <li>Richer semantic matching</li>
             <li>Works well with dense retrieval</li>
@@ -1388,7 +1394,7 @@ def semantic_bridge(query, domain):
           </ul>
           <h3 style={{ marginTop: '40px' }}>When to Use</h3>
           <p>Best applied when:</p>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Sparse or short queries lack context</li>
             <li>Using dense or hybrid retrieval systems</li>
             <li>Technical domains with specific terminology</li>
@@ -1397,17 +1403,17 @@ def semantic_bridge(query, domain):
         </div>
       ),
       backgroundColor: '#4e1e7b',
-      notes: 'Overview: Query2Doc converts queries into pseudo-documents for better matching'
+      notes: ''
         },
         {
           id: 47,
           title: '11. Query2Doc - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>How Query2Doc Works</h3>
           <p>Generate a document-style expansion of the query that:</p>
-          <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
             <li><strong>Mimics the style and content of relevant passages</strong> - Generated text resembles actual documents</li>
             <li><strong>Contains key terms and relationships</strong> - Includes domain-specific vocabulary and connections</li>
             <li><strong>Creates a richer representation for matching</strong> - Provides more semantic signal than query alone</li>
@@ -1416,17 +1422,17 @@ def semantic_bridge(query, domain):
         </div>
       ),
       backgroundColor: '#4e1e7b',
-      notes: 'How it works: LLM generates document-style content that mimics relevant passages'
+      notes: ''
         },
         {
           id: 48,
           title: '11. Query2Doc - Implementation',
           icon: { name: 'duo-code' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+          <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Implementation Pattern</h3>
           <p>LLM document expansion → embed → retrieve</p>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Prompt template
 """
 Write a 150-word pseudo-document that would appear in
@@ -1435,7 +1441,7 @@ terminology and technical concepts but stay factual.
 Query: {query}
 """`}
           </pre>
-          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '0.85rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
+          <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
 {`# Implementation example
 def query2doc(query):
     pseudo_doc = llm.generate(prompt, query=query)
@@ -1446,21 +1452,21 @@ def query2doc(query):
         </div>
       ),
       backgroundColor: '#4e1e7b',
-      notes: 'Implementation: Generate pseudo-document with LLM, embed it, then search'
+      notes: ''
         },
         {
           id: 49,
           title: '11. Query2Doc - Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
+        <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
           <h3>Example</h3>
-          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.05em', marginTop: '20px' }}>
+          <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
             <strong>Before:</strong> "vector DB HNSW tuning"<br/>
             <strong>After (Pseudo-doc):</strong> "HNSW (Hierarchical Navigable Small World) is a graph-based indexing algorithm used in vector databases for approximate nearest neighbor search. Key tuning parameters include M (maximum connections per node), which controls graph connectivity; efConstruction (search width during build) affecting index quality; and efSearch (search width during query) balancing speed vs recall. Proper tuning requires understanding the tradeoff between index build time, search latency, and recall performance..."
           </div>
           <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Considerations</h3>
-          <ul style={{ fontSize: '1.2em' }}>
+          <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
             <li>Token-heavy approach</li>
             <li>Risk of introducing hallucinations</li>
             <li>Latency impact from generation step</li>
@@ -1469,7 +1475,7 @@ def query2doc(query):
         </div>
       ),
       backgroundColor: '#4e1e7b',
-      notes: 'Example & considerations: Expands short queries to rich documents but adds latency'
+      notes: ''
         }
       ]
     },
@@ -1482,11 +1488,11 @@ def query2doc(query):
           title: '12. ITER-RETGEN: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ccff61' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Self-refine queries via iterative retrieve→generate cycles to improve coverage and accuracy for complex questions</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Better coverage without over-fetching</li>
                 <li>Progressive refinement of answers</li>
                 <li>Handles complex multi-part questions</li>
@@ -1495,7 +1501,7 @@ def query2doc(query):
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Hard questions requiring comprehensive info</li>
                 <li>Incomplete initial context</li>
                 <li>Multi-step reasoning requirements</li>
@@ -1504,17 +1510,17 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: 'ITER-RETGEN: Self-refine queries via iterative retrieve-generate cycles'
+          notes: ''
         },
         {
           id: 51,
           title: '12. ITER-RETGEN: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ccff61' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Alternates between answer drafts and targeted follow-up queries</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Initial response identifies knowledge gaps</li>
                 <li>System generates targeted follow-up queries</li>
                 <li>Retrieves additional context on specific points</li>
@@ -1524,16 +1530,16 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: 'How ITER-RETGEN works through iterative refinement cycles'
+          notes: ''
         },
         {
           id: 52,
           title: '12. ITER-RETGEN: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ccff61' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Given the current answer draft and identified gaps below,
 propose up to 3 follow-up retrieval queries that would
@@ -1544,7 +1550,7 @@ Return only the follow-up queries without explanations.
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def iter_retgen(query, max_iterations=3):
   draft = generate_initial_answer(query)
   for i in range(max_iterations):
@@ -1556,16 +1562,16 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: 'Implementation of ITER-RETGEN iterative loop'
+          notes: ''
         },
         {
           id: 53,
           title: '12. ITER-RETGEN: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ccff61' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Start:</strong> Initial query: "What are effective LLM guardrails?"<br/>
                 <strong>Iter 1:</strong> Draft mentions input filtering. Follow-up: "prompt injection prevention techniques"<br/>
                 <strong>Iter 2:</strong> Draft adds RLHF. Follow-up: "sandboxing approaches for LLMs"<br/>
@@ -1573,7 +1579,7 @@ Return only the follow-up queries without explanations.
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Orchestration complexity</li>
                 <li>Increased latency</li>
                 <li>Higher token/API costs</li>
@@ -1583,7 +1589,7 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: 'Example showing iterative refinement and considerations for ITER-RETGEN'
+          notes: ''
         }
       ]
     },
@@ -1596,11 +1602,11 @@ Return only the follow-up queries without explanations.
           title: '13. Template-Based Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#fb82b0' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Standardize rewrites for recurring intents and query patterns to ensure consistency and quality</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Consistent query quality</li>
                 <li>Fast execution (low latency)</li>
                 <li>Predictable behavior</li>
@@ -1608,7 +1614,7 @@ Return only the follow-up queries without explanations.
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                 <li>Customer support & documentation QA</li>
                 <li>E-commerce product search</li>
                 <li>Specialized domain knowledge</li>
@@ -1617,17 +1623,17 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: 'Template-Based Rewriting: Standardize rewrites for recurring intents'
+          notes: ''
         },
         {
           id: 55,
           title: '13. Template-Based Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#fb82b0' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Fill predefined domain templates based on intent types</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Lookup templates (product, document, person)</li>
                 <li>Comparison templates (A vs B by attribute)</li>
                 <li>Troubleshooting templates (error + system)</li>
@@ -1636,16 +1642,16 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: 'How Template-Based Rewriting uses intent classification and slot filling'
+          notes: ''
         },
         {
           id: 56,
           title: '13. Template-Based Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#fb82b0' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Intent={intent}. Fill template with slots from: {query}.
 Return final query without explanations.
@@ -1657,7 +1663,7 @@ Available templates:
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def template_rewrite(query):
   intent = classify_intent(query)
   template = select_template(intent)
@@ -1667,22 +1673,22 @@ Available templates:
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: 'Implementation of Template-Based Rewriting with intent classification'
+          notes: ''
         },
         {
           id: 57,
           title: '13. Template-Based Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#fb82b0' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "compare s3 vs gcs pricing"<br/>
                 <strong>After:</strong> "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1–10 TB, standard tier, 2024"
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Rigid structure limits flexibility</li>
                 <li>Requires template maintenance</li>
                 <li>Struggles with novel queries</li>
@@ -1691,7 +1697,7 @@ Available templates:
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: 'Example and considerations for Template-Based Rewriting'
+              notes: ''
         }
       ]
     },
@@ -1704,11 +1710,11 @@ Available templates:
           title: '14. Entity-Centric Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#7bfff1' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Disambiguate and ground queries to specific entities, resolving ambiguity and improving retrieval precision for entity-focused questions</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Significantly improves precision</li>
                 <li>Enables knowledge graph integration</li>
                 <li>Solves homonym/polysemy issues</li>
@@ -1717,7 +1723,7 @@ Available templates:
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Knowledge graph integration</li>
                 <li>Product catalogs and search</li>
                 <li>People/places/organization queries</li>
@@ -1727,17 +1733,17 @@ Available templates:
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: 'Entity-Centric Rewriting: Disambiguate and ground queries to specific entities'
+          notes: ''
         },
         {
           id: 59,
           title: '14. Entity-Centric Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#7bfff1' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Extract entities → link to knowledge base → enrich with attributes → reformulate query</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Named Entity Recognition (NER) extraction</li>
                 <li>Entity linking to knowledge base IDs</li>
                 <li>Entity enrichment with attributes</li>
@@ -1746,16 +1752,16 @@ Available templates:
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: 'How Entity-Centric Rewriting uses NER and knowledge base linking'
+          notes: ''
         },
         {
           id: 60,
           title: '14. Entity-Centric Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#7bfff1' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Identify all entities in the following query.
 For each entity:
@@ -1768,7 +1774,7 @@ Query: {query}
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def entity_rewrite(query):
   # Extract entities
   entities = ner_model.extract(query)
@@ -1782,22 +1788,22 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: 'Implementation of Entity-Centric Rewriting with NER and linking'
+          notes: ''
         },
         {
           id: 61,
           title: '14. Entity-Centric Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#7bfff1' }}>
+                <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "jaguar speed"<br/>
                 <strong>After:</strong> "Jaguar (animal:Panthera onca) top speed; exclude Jaguar (brand:automobile manufacturer)"
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Requires knowledge graph/entity database</li>
                 <li>Complex entity linking system needed</li>
                 <li>May struggle with novel/unknown entities</li>
@@ -1807,7 +1813,7 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: 'Example and considerations for Entity-Centric Rewriting'
+          notes: ''
         }
       ]
     },
@@ -1820,11 +1826,11 @@ Query: {query}
           title: '15. Temporal Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#a88dff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Make time references explicit and current, ensuring retrieval of temporally relevant information and reducing outdated results</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Reduces stale/outdated search results</li>
                 <li>Significant relevance gains for time-sensitive topics</li>
                 <li>Improves specificity of versioned documentation</li>
@@ -1832,7 +1838,7 @@ Query: {query}
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>News and current events</li>
                 <li>Product pricing and availability queries</li>
                 <li>API documentation and changelog searches</li>
@@ -1842,17 +1848,17 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: 'Temporal Rewriting: Make time references explicit and current'
+          notes: ''
         },
         {
           id: 63,
           title: '15. Temporal Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#a88dff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Resolves and enhances temporal aspects through time normalization + recency boost</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Relative time normalization (e.g., "yesterday" → specific date)</li>
                 <li>Adding explicit date ranges</li>
                 <li>Boosting recency for time-sensitive topics</li>
@@ -1861,16 +1867,16 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: 'How Temporal Rewriting normalizes time expressions'
+          notes: ''
         },
         {
           id: 64,
           title: '15. Temporal Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#a88dff' }}>
+                <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Normalize any relative time expressions in the query below to absolute dates.
 Then add an explicit date range that is most relevant to the query.
@@ -1881,7 +1887,7 @@ Query: {query}
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def temporal_rewrite(query):
   current_date = datetime.now().strftime("%Y-%m-%d")
   rewritten = llm.generate(
@@ -1894,22 +1900,22 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: 'Implementation of Temporal Rewriting with date normalization'
+          notes: ''
         },
         {
           id: 65,
           title: '15. Temporal Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#a88dff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "latest OpenAI API quotas"<br/>
                 <strong>After:</strong> "OpenAI API rate limits as of 2025-11; changes in 2024–2025"
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Requires fresh/updated index</li>
                 <li>May miss historically relevant information</li>
                 <li>Needs fine-tuning for specific domains</li>
@@ -1918,7 +1924,7 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: 'Example and considerations for Temporal Rewriting'
+          notes: ''
         }
       ]
     },
@@ -1931,11 +1937,11 @@ Query: {query}
           title: '16. Domain-Specific Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ffad87' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Translate lay terms to domain jargon and fields, improving retrieval precision for specialized knowledge domains</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>High precision in specialized corpora</li>
                 <li>Better matching to expert terminology</li>
                 <li>Improved semantic relevance</li>
@@ -1943,7 +1949,7 @@ Query: {query}
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Legal research and case law</li>
                 <li>Medical/healthcare information retrieval</li>
                 <li>Financial/investment analysis</li>
@@ -1953,17 +1959,17 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: 'Domain-Specific Rewriting: Translate lay terms to domain jargon'
+          notes: ''
         },
         {
           id: 67,
           title: '16. Domain-Specific Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ffad87' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Maps query terms to domain-specific terminology and applies field-specific filters</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Specialized domain lexicons/ontologies</li>
                 <li>Field-specific constraints and filters</li>
                 <li>Terminology standardization</li>
@@ -1972,16 +1978,16 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: 'How Domain-Specific Rewriting uses domain lexicons and field constraints'
+          notes: ''
         },
         {
           id: 68,
           title: '16. Domain-Specific Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ffad87' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Rewrite the following query using domain-appropriate
 terminology for {domain}. Preserve the original intent
@@ -1993,7 +1999,7 @@ Domain: {domain}
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def domain_specific_rewrite(query, domain):
   # Load domain ontology
   ontology = load_domain_ontology(domain)
@@ -2010,22 +2016,22 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: 'Implementation of Domain-Specific Rewriting with ontology mapping'
+          notes: ''
         },
         {
           id: 69,
           title: '16. Domain-Specific Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ffad87' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "blood thinner side effects"<br/>
                 <strong>After:</strong> "anticoagulant adverse effects: warfarin, DOACs (apixaban, rivaroxaban), hemorrhagic complications field:pharmacology"
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Requires domain-specific knowledge/lexicons</li>
                 <li>Harder to maintain across evolving domains</li>
                 <li>May over-specialize simple queries</li>
@@ -2034,7 +2040,7 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: 'Example and considerations for Domain-Specific Rewriting'
+          notes: ''
         }
       ]
     },
@@ -2047,11 +2053,11 @@ Domain: {domain}
           title: '17. Intent Classification: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ff8eaa' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Match rewriting strategy to specific task types, improving retrieval performance by applying the most appropriate transformation for each intent</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Centralized policy control</li>
                 <li>Highly scalable across domains</li>
                 <li>Adapts to varied query patterns</li>
@@ -2059,7 +2065,7 @@ Domain: {domain}
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                 <li>Mixed query workloads</li>
                 <li>Systems with agent-based routing</li>
                 <li>Enterprise search with diverse needs</li>
@@ -2068,17 +2074,17 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: 'Intent Classification: Match rewriting strategy to specific task types'
+          notes: ''
         },
         {
           id: 71,
           title: '17. Intent Classification: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ff8eaa' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Classify query into intent categories, then apply specific strategies</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Lookup → entity-centric rewriting</li>
                 <li>Compare → multi-query & structured expansion</li>
                 <li>Troubleshoot → step-back & domain-specific</li>
@@ -2087,16 +2093,16 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: 'How Intent Classification routes to different rewriting strategies'
+          notes: ''
         },
         {
           id: 72,
           title: '17. Intent Classification: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ff8eaa' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Classify the intent of the following query into one category:
 - lookup (factual information)
@@ -2110,7 +2116,7 @@ Query: {query}
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def intent_based_rewrite(query):
   # Classify intent
   intent = intent_classifier.predict(query)
@@ -2123,22 +2129,22 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: 'Implementation of Intent Classification with strategy routing'
+          notes: ''
         },
         {
           id: 73,
           title: '17. Intent Classification: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#ff8eaa' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "fix 500 error nginx"<br/>
                 <strong>After:</strong> Intent: troubleshoot → "Nginx 500 error troubleshooting steps for Ubuntu 22.04 - common causes, log file analysis, and configuration fixes"
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Requires high-accuracy intent model</li>
                 <li>Complex intent taxonomy needs maintenance</li>
                 <li>Multi-intent queries challenging</li>
@@ -2147,7 +2153,7 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: 'Example and considerations for Intent Classification'
+            notes: ''
         }
       ]
     },
@@ -2160,11 +2166,11 @@ Query: {query}
           title: '18. Diverse Multi-Query Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#84ffae' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Maximize diversity among rewrites to cover multiple facets of a query, ensuring comprehensive coverage for ambiguous topics</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Comprehensive coverage across facets</li>
                 <li>Improves recall for complex topics</li>
                 <li>Better handles ambiguous queries</li>
@@ -2172,7 +2178,7 @@ Query: {query}
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Broad, ambiguous topics</li>
                 <li>Exploratory search needs</li>
                 <li>Multiple potential interpretations</li>
@@ -2181,17 +2187,17 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: 'Diverse Multi-Query Rewriting: Maximize diversity among rewrites'
+          notes: ''
         },
         {
           id: 75,
           title: '18. Diverse Multi-Query Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#84ffae' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Generate queries with explicit diversity constraints</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Produce multiple rewrites covering different angles</li>
                 <li>Apply diversity penalties to minimize overlap</li>
                 <li>Use controlled sampling techniques</li>
@@ -2200,16 +2206,16 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: 'How Diverse Multi-Query Rewriting uses controlled sampling'
+          notes: ''
         },
         {
           id: 76,
           title: '18. Diverse Multi-Query Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#84ffae' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Produce 6 diverse rewrites of the following query.
 Each rewrite should cover a different aspect:
@@ -2223,7 +2229,7 @@ Query: {query}
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def generate_diverse_queries(query):
   rewrites = llm.generate(prompt, query=query)
   embeddings = get_embeddings(rewrites)
@@ -2234,19 +2240,19 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: 'Implementation of Diverse Multi-Query Rewriting with explicit diversity constraints'
+          notes: ''
         },
         {
           id: 77,
           title: '18. Diverse Multi-Query Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#84ffae' }}>
+              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "data governance framework"<br/>
                 <strong>After:</strong>
-                <ul style={{ fontSize: '1em', marginTop: '10px' }}>
+                <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                   <li>1. "enterprise data governance policies and standards documentation"</li>
                   <li>2. "software tools implementing data governance controls"</li>
                   <li>3. "regulatory compliance aspects of information management"</li>
@@ -2257,7 +2263,7 @@ Query: {query}
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Fusion/dedup cost</li>
                 <li>Requires careful reranking</li>
                 <li>Higher token usage</li>
@@ -2266,7 +2272,7 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: 'Example and considerations for Diverse Multi-Query Rewriting'
+          notes: ''
         }
       ]
     },
@@ -2279,11 +2285,11 @@ Query: {query}
           title: '19. Feedback-Based Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#99a7ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Learn from user interactions (clicks, ratings, session data) to intelligently refine queries based on what worked for similar users</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Improves over time with usage</li>
                 <li>User-aligned and personalized</li>
                 <li>Adapts to changing content/trends</li>
@@ -2291,7 +2297,7 @@ Query: {query}
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Production systems with telemetry</li>
                 <li>High-volume search applications</li>
                 <li>Domain-specific search engines</li>
@@ -2300,17 +2306,17 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: 'Feedback-Based Rewriting: Learn from user interactions to refine queries'
+          notes: ''
         },
         {
           id: 79,
           title: '19. Feedback-Based Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#99a7ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Uses feedback signals to improve queries</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Promote terms/entities from clicked documents</li>
                 <li>Suppress noise terms with low engagement</li>
                 <li>Apply collaborative filtering techniques</li>
@@ -2319,16 +2325,16 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: 'How Feedback-Based Rewriting uses online learning from user signals'
+          notes: ''
         },
         {
           id: 80,
           title: '19. Feedback-Based Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#99a7ff' }}>
+              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Given these clicked documents and user ratings:
 {clicked_docs}
@@ -2340,7 +2346,7 @@ Return only the refined query without explanation.
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`def feedback_rewrite(query, click_history):
   positive_docs = get_clicked_docs(click_history)
   shared_terms = extract_common_terms(positive_docs)
@@ -2354,23 +2360,23 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: 'Implementation of Feedback-Based Rewriting with online learning'
+          notes: ''
         },
         {
           id: 81,
           title: '19. Feedback-Based Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#99a7ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "vector database comparison"<br/>
                 <strong>After:</strong> "vector database comparison HNSW vs IVF FAISS Qdrant Milvus efSearch time-accuracy tradeoff"<br/>
                 <p style={{ marginTop: '10px' }}>User clicked on docs about HNSW/FAISS index types and specific DB implementations</p>
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Requires data pipeline/telemetry</li>
                 <li>Cold-start issues for new queries</li>
                 <li>Privacy considerations for feedback</li>
@@ -2379,7 +2385,7 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: 'Example and considerations for Feedback-Based Rewriting'
+          notes: ''
         }
       ]
     },
@@ -2392,11 +2398,11 @@ Return only the refined query without explanation.
           title: '20. Prompt-Based Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#6fffc1' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Use compact, reusable prompts to standardize query rewrites across different types of questions with minimal engineering effort</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Fast to deploy with minimal setup</li>
                 <li>Highly flexible across query types</li>
                 <li>Easy to update and refine</li>
@@ -2404,7 +2410,7 @@ Return only the refined query without explanation.
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Quick wins without complex pipelines</li>
                 <li>Rapid prototyping and testing</li>
                 <li>Low engineering implementation lift</li>
@@ -2413,17 +2419,17 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: 'Prompt-Based Rewriting: Use reusable prompts for query standardization'
+          notes: ''
         },
         {
           id: 83,
           title: '20. Prompt-Based Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#6fffc1' }}>
+              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Utilizes well-crafted system prompts and few-shot examples</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Enforce consistent style and structure</li>
                 <li>Include critical information fields</li>
                 <li>Guide LLM to maintain specific patterns</li>
@@ -2432,16 +2438,16 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: 'How Prompt-Based Rewriting uses well-crafted prompts and examples'
+          notes: ''
         },
         {
           id: 84,
           title: '20. Prompt-Based Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#6fffc1' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
 {`"""
 Rewrite the following query to be explicit, self-contained,
 and retrieval-optimized.
@@ -2460,7 +2466,7 @@ QUERY: {query}
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
 {`def prompt_based_rewrite(query, context=None):
   system_prompt = "You are a query optimization expert."
   result = llm.generate(
@@ -2473,22 +2479,22 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: 'Implementation of Prompt-Based Rewriting with reusable prompts'
+          notes: ''
         },
         {
           id: 85,
           title: '20. Prompt-Based Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#6fffc1' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "api auth"<br/>
                 <strong>After:</strong> "OAuth 2.0 authentication for Acme API docs 2024, guide/tutorial with implementation examples"
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Prompt drift over time</li>
                 <li>Quality varies by LLM capability</li>
                 <li>Less structured than rule-based systems</li>
@@ -2497,7 +2503,7 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: 'Example and considerations for Prompt-Based Rewriting'
+          notes: ''
         }
       ]
     },
@@ -2510,11 +2516,11 @@ QUERY: {query}
           title: '21. Adaptive Query Rewriting: Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#c985ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Choose the best rewrite strategy per query context, optimizing performance across diverse query types</h3>
               
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px     ' }}>
                 <li>Balanced quality/cost optimization</li>
                 <li>Robust across diverse query types</li>
                 <li>Self-improving with feedback</li>
@@ -2522,7 +2528,7 @@ QUERY: {query}
               </ul>
 
               <h3 style={{ marginTop: '40px' }}>When to Use</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Heterogeneous query workloads</li>
                 <li>Variable cost/latency constraints</li>
                 <li>Production systems with metrics</li>
@@ -2531,17 +2537,17 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: 'Adaptive Query Rewriting: Choose best strategy per query context'
+          notes: ''
         },
         {
           id: 87,
           title: '21. Adaptive Query Rewriting: How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#c985ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Uses a policy model or agent to select among strategies</h3>
               
-              <ul style={{ fontSize: '1.2em', marginTop: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Query characteristics (length, ambiguity)</li>
                 <li>Conversation context/history</li>
                 <li>Past performance signals</li>
@@ -2550,16 +2556,16 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: 'How Adaptive Query Rewriting uses policy models for strategy selection'
+          notes: ''
         },
         {
           id: 88,
           title: '21. Adaptive Query Rewriting: Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#c985ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Prompt Template</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`"""
 Given the following query and signals:
 Query: {query}
@@ -2575,7 +2581,7 @@ Signals:
               </pre>
 
               <h3 style={{ marginTop: '30px' }}>Implementation</h3>
-              <pre style={{ fontSize: '0.9em', lineHeight: '1.6' }}>
+              <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
 {`class AdaptiveQueryRewriter:
   def rewrite(self, query, state):
     signals = self.extract_signals(query, state)
@@ -2587,16 +2593,16 @@ Signals:
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: 'Implementation of Adaptive Query Rewriting with policy-based selection'
+          notes: ''
         },
         {
           id: 89,
           title: '21. Adaptive Query Rewriting: Example & Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2', color: '#c985ff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example</h3>
-              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.1em' }}>
+              <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Query:</strong> "apple"<br/>
                 <strong>Policy:</strong> Ambiguous short query → Clarification Strategy<br/>
                 <strong>Result:</strong> "Did you mean: 1) Apple Inc. products/services, 2) apple fruit nutrition/recipes, or 3) Apple software/iOS?"<br/><br/>
@@ -2605,7 +2611,7 @@ Signals:
               </div>
 
               <h3 style={{ color: '#e74c3c', marginTop: '40px' }}>Weaknesses / Considerations</h3>
-              <ul style={{ fontSize: '1.2em' }}>
+              <ul style={{ fontSize: '1.2rem', marginTop: '10px   ' }}>
                 <li>Requires policy training</li>
                 <li>Needs evaluation feedback loop</li>
                 <li>More complex orchestration</li>
@@ -2614,7 +2620,7 @@ Signals:
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: 'Example and considerations for Adaptive Query Rewriting'
+          notes: ''
         }
       ]
     }
