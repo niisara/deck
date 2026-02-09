@@ -19,97 +19,97 @@ export const promptEngineeringDeck: Deck = {
           title: '18 Prompt Engineering Techniques',
           content: (
             <div style={{ color: '#fff' }}>
-          <h2 style={{ marginBottom: '30px' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
-              <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
+              <h2 style={{ marginBottom: '30px' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
+                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
+                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Retrieval</p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
+                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Agentic</p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
+                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Hybrid</p>
+                </div>
+              </div>
+              <p style={{ marginTop: '20px', fontSize: '2rem' }}>
+                For Practitioners, Data Scientists & Product Engineers
+              </p>
+              <p><strong>Prepared by:</strong> Nisar A</p>
+              <p><strong>Date:</strong> November 7, 2025</p>
+              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
-              <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Retrieval</p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
-              <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Agentic</p>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
-              <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Hybrid</p>
-            </div>
-          </div>
-          <p style={{ marginTop: '20px', fontSize: '2rem' }}>
-            For Practitioners, Data Scientists & Product Engineers
-          </p>
-          <p><strong>Prepared by:</strong> Nisar A</p>
-                <p><strong>Date:</strong> November 7, 2025</p>
-                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
-        </div>
-      ),
-      backgroundColor: '#1a3957',
-      notes: ''
-    },
-    {
+          ),
+          backgroundColor: '#1a3957',
+          notes: ''
+        },
+        {
           id: 2,
           title: 'Table of Contents',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Reasoning Techniques (1-8, 17)
-              </h4>
-              <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                <li>1. Zero-shot Prompting</li>
-                <li>2. Few-shot Prompting</li>
-                <li>3. Chain-of-Thought (CoT)</li>
-                <li>4. Meta Prompting</li>
-                <li>5. Self-Consistency</li>
-                <li>6. Generate Knowledge Prompting</li>
-                <li>8. Tree of Thoughts (ToT)</li>
-                <li>17. Multimodal Chain-of-Thought</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Retrieval (9)
-              </h4>
-              <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                <li>9. Retrieval-Augmented Generation (RAG)</li>
-              </ul>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Reasoning Techniques (1-8, 17)
+                  </h4>
+                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                    <li>1. Zero-shot Prompting</li>
+                    <li>2. Few-shot Prompting</li>
+                    <li>3. Chain-of-Thought (CoT)</li>
+                    <li>4. Meta Prompting</li>
+                    <li>5. Self-Consistency</li>
+                    <li>6. Generate Knowledge Prompting</li>
+                    <li>8. Tree of Thoughts (ToT)</li>
+                    <li>17. Multimodal Chain-of-Thought</li>
+                  </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Retrieval (9)
+                  </h4>
+                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                    <li>9. Retrieval-Augmented Generation (RAG)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Agentic Techniques (10, 14-16)
+                  </h4>
+                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                    <li>10. Automatic Reasoning & Tool-use (ART)</li>
+                    <li>14. Program-Aided LMs (PAL)</li>
+                    <li>15. ReAct</li>
+                    <li>16. Reflexion</li>
+                  </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                    Hybrid Techniques (7, 11-13, 18)
+                  </h4>
+                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                    <li>7. Prompt Chaining</li>
+                    <li>11. Automatic Prompt Engineer (APE)</li>
+                    <li>12. Active-Prompt</li>
+                    <li>13. Directional Stimulus Prompting</li>
+                    <li>18. Graph Prompting</li>
+                  </ul>
+                </div>
+              </div>
+              <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '2rem', fontWeight: 'bold' }}>
+                18 advanced prompting patterns for reliable LLM systems
+              </p>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Agentic Techniques (10, 14-16)
-              </h4>
-              <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                <li>10. Automatic Reasoning & Tool-use (ART)</li>
-                <li>14. Program-Aided LMs (PAL)</li>
-                <li>15. ReAct</li>
-                <li>16. Reflexion</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                Hybrid Techniques (7, 11-13, 18)
-              </h4>
-              <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                <li>7. Prompt Chaining</li>
-                <li>11. Automatic Prompt Engineer (APE)</li>
-                <li>12. Active-Prompt</li>
-                <li>13. Directional Stimulus Prompting</li>
-                <li>18. Graph Prompting</li>
-              </ul>
-            </div>
-          </div>
-          <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '2rem', fontWeight: 'bold' }}>
-            18 advanced prompting patterns for reliable LLM systems
-          </p>
-        </div>
-      ),
-      backgroundColor: '#1a3957',
-      notes: ''
+          ),
+          backgroundColor: '#1a3957',
+          notes: ''
         }
       ]
     },
@@ -163,7 +163,7 @@ export const promptEngineeringDeck: Deck = {
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Summarize the following article 
+                {`"Summarize the following article 
 in 3 bullets for executives:
 [paste text here]"`}
               </pre>
@@ -244,7 +244,7 @@ in 3 bullets for executives:
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"You are a sentiment classifier.
+                {`"You are a sentiment classifier.
 Example: 'Loved it' -> positive
 'Too slow' -> negative
 Classify: 'It was okay, but pricey.'"`}
@@ -327,7 +327,7 @@ Classify: 'It was okay, but pricey.'"`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
+                {`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, and Gemini 1.5 excel at chain-of-thought reasoning. Works best with larger, more capable models that can maintain coherent multi-step reasoning.</p>
@@ -407,7 +407,7 @@ Classify: 'It was okay, but pricey.'"`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Problem: <text>. Goal: <target>. Constraints: <list>.
+                {`"Problem: <text>. Goal: <target>. Constraints: <list>.
 Output schema: JSON with fields [steps, rationale, answer].
 Populate schema only."`}
               </pre>
@@ -468,7 +468,7 @@ Populate schema only."`}
           title: '5. Self-Consistency - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>How It Works</h3>
               <p>Self-consistency generates multiple independent reasoning paths for the same problem using temperature sampling. Each path produces a candidate answer. The system then aggregates these answers, typically by majority voting, to select the most consistent solution. This approach compensates for individual reasoning errors.</p>
               <h3 style={{ marginTop: '30px' }}>Complexity</h3>
@@ -489,7 +489,7 @@ Populate schema only."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
+                {`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires models that support temperature sampling to generate diverse reasoning paths. Typically requires 3-10 samples.</p>
@@ -527,7 +527,7 @@ Populate schema only."`}
           title: '6. Generate Knowledge - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Definition</h3>
               <p>First ask the model to generate background facts, then answer using those facts.</p>
               <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
@@ -569,7 +569,7 @@ Populate schema only."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
+                {`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well for knowledge generation. Best results with models that have strong factual knowledge bases.</p>
@@ -649,7 +649,7 @@ Populate schema only."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Step 1: Extract key quotes from document about <question>.
+                {`"Step 1: Extract key quotes from document about <question>.
 Step 2: Using quotes, answer <question> with citations."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
@@ -657,7 +657,7 @@ Step 2: Using quotes, answer <question> with citations."`}
             </div>
           ),
           backgroundColor: '#7d1c3c',
-            notes: ''
+          notes: ''
         },
         {
           id: 30,
@@ -730,7 +730,7 @@ Step 2: Using quotes, answer <question> with citations."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
+                {`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires sophisticated orchestration layer to manage the search process, evaluate candidates, and control exploration depth.</p>
@@ -744,7 +744,7 @@ Step 2: Using quotes, answer <question> with citations."`}
           title: '8. Tree of Thoughts - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               <ul style={{ fontSize: '1.2rem' }}>
                 <li>Significantly higher cost and latency</li>
@@ -810,7 +810,7 @@ Step 2: Using quotes, answer <question> with citations."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Given these retrieved passages, answer the user question. Cite sources by ID.
+                {`"Given these retrieved passages, answer the user question. Cite sources by ID.
 Passages:
 [1] The first COVID-19 vaccine was approved for emergency use in December 2020.
 [2] mRNA vaccines use genetic material to teach cells to make a protein that triggers an immune response.
@@ -895,7 +895,7 @@ Question: How do mRNA COVID vaccines work?"`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
+                {`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and an orchestration framework to manage tool execution and observation integration.</p>
@@ -975,7 +975,7 @@ Question: How do mRNA COVID vaccines work?"`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Given these I/O pairs:
+                {`"Given these I/O pairs:
 Input: 'What is the capital of France?'
 Output: 'The capital of France is Paris.'
 
@@ -1021,7 +1021,7 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           title: '12. Active-Prompt - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Definition</h3>
               <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
               <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
@@ -1063,7 +1063,7 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
+                {`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires infrastructure for uncertainty estimation, human annotation workflow, and exemplar management.</p>
@@ -1143,7 +1143,7 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Stimulus: Focus on safety trade-offs and cite at least two risks.
+                {`"Stimulus: Focus on safety trade-offs and cite at least two risks.
 Task: Summarize <report> for a safety board in 150 words."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
@@ -1196,7 +1196,7 @@ Task: Summarize <report> for a safety board in 150 words."`}
             </div>
           ),
           backgroundColor: '#60671a',
-            notes: ''
+          notes: ''
         },
         {
           id: 56,
@@ -1224,7 +1224,7 @@ Task: Summarize <report> for a safety board in 150 words."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
+                {`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4o, Claude 3.5, Gemini 1.5 Pro - Models with strong code generation capabilities. Requires secure Python runtime environment with proper sandboxing to prevent malicious code execution.</p>
@@ -1283,7 +1283,7 @@ Task: Summarize <report> for a safety board in 150 words."`}
           title: '15. ReAct - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>How It Works</h3>
               <p>ReAct creates a loop of Reasoning, Acting, and Observing. The model first reasons about what to do next, then takes an action (like searching or using a tool), observes the result, and incorporates that observation into its next reasoning step. This cycle continues until the task is complete. The approach provides both transparency and grounding through real observations.</p>
               <h3 style={{ marginTop: '30px' }}>Complexity</h3>
@@ -1304,7 +1304,7 @@ Task: Summarize <report> for a safety board in 150 words."`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`Question: <q>
+                {`Question: <q>
 Thought: <plan step>
 Action: Search[<query>]
 Observation: <result>
@@ -1389,7 +1389,7 @@ Repeat until enough info, then give Final Answer: <answer>`}
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
+                {`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Benefits from memory systems to store critique history across multiple episodes, enabling long-term learning from experience.</p>
@@ -1466,10 +1466,10 @@ Repeat until enough info, then give Final Answer: <answer>`}
           title: '17. Multimodal CoT - Implementation',
           icon: { name: 'duo-code' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
+                {`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Requires multimodal models with strong vision capabilities. Models must be able to reason about visual content systematically.</p>
@@ -1546,10 +1546,10 @@ Repeat until enough info, then give Final Answer: <answer>`}
           title: '18. Graph Prompting - Implementation',
           icon: { name: 'duo-code' },
           content: (
-              <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
               <h3>Example Prompt</h3>
               <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-{`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
+                {`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
               </pre>
               <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
               <p>GPT-4/4o, Claude 3.5, Gemini 1.5 for language understanding, plus graph database infrastructure (Neo4j, NetworkX) and entity extraction capabilities. May require NER and relation extraction models.</p>
@@ -1587,119 +1587,119 @@ Repeat until enough info, then give Final Answer: <answer>`}
           title: 'Technique Complexity Overview',
           icon: { name: 'duo-table' },
           content: (
-        <div style={{ fontSize: '2rem', margin: '0 auto', color: '#fff' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
-            Complexity & Use Case Matrix
-          </h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
-            <thead>
-              <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
-                <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
-                <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
-                <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '10px', border: '1px solid #555', color: '#2ecc71', fontWeight: 'bold' }}>Simple</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>1. Zero-shot<br/>2. Few-shot (simple)</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>Quick baselines, well-known tasks, email triage</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>LLM API only</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '10px', border: '1px solid #555', color: '#f39c12', fontWeight: 'bold' }}>Intermediate</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>3. CoT<br/>4. Meta<br/>5. Self-Consistency<br/>6. Generate Knowledge<br/>7. Prompt Chaining<br/>9. RAG</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>Math/logic, standardized outputs, grounded answers, workflows</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + orchestration<br/>RAG needs vector DB</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '10px', border: '1px solid #555', color: '#e74c3c', fontWeight: 'bold' }}>Advanced</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>8. Tree of Thoughts<br/>10. ART<br/>11-13. APE/Active/DSP<br/>14-16. PAL/ReAct/Reflexion<br/>17. Multimodal CoT<br/>18. Graph Prompting</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>Complex planning, tool use, code execution, optimization, multi-hop reasoning</td>
-                <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + tools + search control<br/>Code sandbox<br/>Active learning loops<br/>Graph databases</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-              <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
-              <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+            <div style={{ fontSize: '2rem', margin: '0 auto', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
+                Complexity & Use Case Matrix
+              </h3>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
+                <thead>
+                  <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
+                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
+                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
+                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
+                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: '10px', border: '1px solid #555', color: '#2ecc71', fontWeight: 'bold' }}>Simple</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>1. Zero-shot<br />2. Few-shot (simple)</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>Quick baselines, well-known tasks, email triage</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM API only</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '10px', border: '1px solid #555', color: '#f39c12', fontWeight: 'bold' }}>Intermediate</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>3. CoT<br />4. Meta<br />5. Self-Consistency<br />6. Generate Knowledge<br />7. Prompt Chaining<br />9. RAG</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>Math/logic, standardized outputs, grounded answers, workflows</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + orchestration<br />RAG needs vector DB</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '10px', border: '1px solid #555', color: '#e74c3c', fontWeight: 'bold' }}>Advanced</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>8. Tree of Thoughts<br />10. ART<br />11-13. APE/Active/DSP<br />14-16. PAL/ReAct/Reflexion<br />17. Multimodal CoT<br />18. Graph Prompting</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>Complex planning, tool use, code execution, optimization, multi-hop reasoning</td>
+                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + tools + search control<br />Code sandbox<br />Active learning loops<br />Graph databases</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+                <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                  <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
+                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+                </div>
+                <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                  <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
+                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
+                </div>
+                <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                  <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
+                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
+                </div>
+              </div>
             </div>
-            <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-              <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
-              <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
-            </div>
-            <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-              <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
-              <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#34495E',
-      notes: ''
+          ),
+          backgroundColor: '#34495E',
+          notes: ''
         },
         {
           id: 76,
           title: 'Best Practices & Recommendations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#48cb80' }}>
-           <div style={{ marginBottom: '30px' }}></div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                Getting Started
-              </h4>
-              <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                <li><strong>Start Simple:</strong> Begin with zero-shot, move to few-shot if needed</li>
-                <li><strong>Add CoT:</strong> For reasoning tasks, add "think step-by-step"</li>
-                <li><strong>Use RAG:</strong> When you need fresh knowledge or citations</li>
-                <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
-                Production Considerations
-              </h4>
-              <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                <li><strong>Monitor Outputs:</strong> Log prompts and responses</li>
-                <li><strong>Version Control:</strong> Track prompt templates like code</li>
-                <li><strong>Cost Management:</strong> Use simpler techniques when possible</li>
-                <li><strong>Latency Budgets:</strong> Consider multi-call overhead</li>
-              </ul>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#48cb80' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                    Getting Started
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <li><strong>Start Simple:</strong> Begin with zero-shot, move to few-shot if needed</li>
+                    <li><strong>Add CoT:</strong> For reasoning tasks, add "think step-by-step"</li>
+                    <li><strong>Use RAG:</strong> When you need fresh knowledge or citations</li>
+                    <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
+                  </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
+                    Production Considerations
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <li><strong>Monitor Outputs:</strong> Log prompts and responses</li>
+                    <li><strong>Version Control:</strong> Track prompt templates like code</li>
+                    <li><strong>Cost Management:</strong> Use simpler techniques when possible</li>
+                    <li><strong>Latency Budgets:</strong> Consider multi-call overhead</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" darkModeInvert={true} />
+                    When to Scale Up
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <li><strong>Inconsistent Outputs:</strong> Try self-consistency or meta-prompting</li>
+                    <li><strong>Tool Needs:</strong> Move to ReAct or ART for API/search</li>
+                    <li><strong>Code Tasks:</strong> Use PAL for algorithmic problems</li>
+                    <li><strong>Multi-hop:</strong> Consider Graph Prompting or ToT</li>
+                    <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
+                  </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                    Common Pitfalls
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <li><strong>Over-engineering:</strong> Don't use advanced techniques prematurely</li>
+                    <li><strong>Prompt Drift:</strong> Test on diverse examples regularly</li>
+                    <li><strong>Tool Failures:</strong> Add error handling and fallbacks</li>
+                    <li><strong>Token Bloat:</strong> Watch cumulative costs in multi-call patterns</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-arrow-right" sizeName="2x" darkModeInvert={true} />
-                When to Scale Up
-              </h4>
-              <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                <li><strong>Inconsistent Outputs:</strong> Try self-consistency or meta-prompting</li>
-                <li><strong>Tool Needs:</strong> Move to ReAct or ART for API/search</li>
-                <li><strong>Code Tasks:</strong> Use PAL for algorithmic problems</li>
-                <li><strong>Multi-hop:</strong> Consider Graph Prompting or ToT</li>
-                <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                Common Pitfalls
-              </h4>
-              <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                <li><strong>Over-engineering:</strong> Don't use advanced techniques prematurely</li>
-                <li><strong>Prompt Drift:</strong> Test on diverse examples regularly</li>
-                <li><strong>Tool Failures:</strong> Add error handling and fallbacks</li>
-                <li><strong>Token Bloat:</strong> Watch cumulative costs in multi-call patterns</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#145d33',
-      notes: ''
+          ),
+          backgroundColor: '#145d33',
+          notes: ''
         },
         {
           id: 77,
@@ -1708,53 +1708,53 @@ Repeat until enough info, then give Final Answer: <answer>`}
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-          <h2 style={{ marginBottom: '30px' }}>From Simple to Advanced</h2>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', margin: '0 auto', fontSize: '1.2rem', marginTop: '30px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
-              <div style={{ textAlign: 'left' }}>
-                <strong>Level 1: Foundations</strong>
-                <p style={{ margin: '0px'}}>Zero-shot, Few-shot → Start here for 80% of tasks</p>
+              <h2 style={{ marginBottom: '30px' }}>From Simple to Advanced</h2>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', margin: '0 auto', fontSize: '1.2rem', marginTop: '30px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
+                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
+                  <div style={{ textAlign: 'left' }}>
+                    <strong>Level 1: Foundations</strong>
+                    <p style={{ margin: '0px' }}>Zero-shot, Few-shot → Start here for 80% of tasks</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
+                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔵</div>
+                  <div style={{ textAlign: 'left' }}>
+                    <strong>Level 2: Reasoning</strong>
+                    <p style={{ margin: '0px' }}>CoT, Meta, Self-Consistency → Add when logic matters</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
+                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟡</div>
+                  <div style={{ textAlign: 'left' }}>
+                    <strong>Level 3: Retrieval & Orchestration</strong>
+                    <p style={{ margin: '0px' }}>RAG, Prompt Chaining → Production workflows</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
+                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟣</div>
+                  <div style={{ textAlign: 'left' }}>
+                    <strong>Level 4: Agentic</strong>
+                    <p style={{ margin: '0px' }}>ReAct, PAL, Reflexion → Tools and self-improvement</p>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px' }}>
+                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔴</div>
+                  <div style={{ textAlign: 'left' }}>
+                    <strong>Level 5: Advanced</strong>
+                    <p style={{ margin: '0px' }}>ToT, APE, Graph Prompting → Research & optimization</p>
+                  </div>
+                </div>
+              </div>
+              <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px' }}>
+                <p style={{ fontSize: '1.2rem', margin: 0 }}>
+                  <strong>⚡ Key Insight:</strong> Start at Level 1, climb only as high as your task requires
+                </p>
               </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔵</div>
-              <div style={{ textAlign: 'left' }}>
-                <strong>Level 2: Reasoning</strong>
-                <p style={{ margin: '0px'}}>CoT, Meta, Self-Consistency → Add when logic matters</p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟡</div>
-              <div style={{ textAlign: 'left' }}>
-                <strong>Level 3: Retrieval & Orchestration</strong>
-                <p style={{ margin: '0px'}}>RAG, Prompt Chaining → Production workflows</p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟣</div>
-              <div style={{ textAlign: 'left' }}>
-                <strong>Level 4: Agentic</strong>
-                <p style={{ margin: '0px'}}>ReAct, PAL, Reflexion → Tools and self-improvement</p>
-              </div>
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px' }}>
-              <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔴</div>
-              <div style={{ textAlign: 'left' }}>
-                <strong>Level 5: Advanced</strong>
-                <p style={{ margin: '0px'}}>ToT, APE, Graph Prompting → Research & optimization</p>
-              </div>
-            </div>
-          </div>
-          <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px' }}>
-            <p style={{ fontSize: '1.2rem', margin: 0 }}>
-              <strong>⚡ Key Insight:</strong> Start at Level 1, climb only as high as your task requires
-            </p>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#2C3E50',
-      notes: ''
+          ),
+          backgroundColor: '#2C3E50',
+          notes: ''
         }
       ]
     }
