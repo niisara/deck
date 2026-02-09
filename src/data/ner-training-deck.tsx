@@ -42,7 +42,7 @@ export const nerTrainingDeck: Deck = {
           ),
           backgroundImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80',
           notes: `### 9 Custom NER Training Tips for Domain-Specific Use Cases
-[conversational] [excited] Welcome everyone! Today we're going to explore something really exciting in the world of Natural Language Processing, or NLP. We'll be talking about **Named Entity Recognition**, commonly called NER.
+[cheerfully] [excited] Welcome everyone! Today we're going to explore something really exciting in the world of Natural Language Processing, or NLP. We'll be talking about **Named Entity Recognition**, commonly called NER.
 #### 🎯 What is NER?
 [conversational] Before we dive in, let me explain what NER actually means. [storytelling] Imagine you're reading a news article and you want a computer to automatically highlight all the names of people, companies, locations, and dates mentioned in that text. [excited] That's exactly what NER does! It's like giving a computer a highlighter and teaching it which words are "special" or "important" in a particular way.
 [conversational] For example, in the sentence "Apple announced a new iPhone in India", a NER system would identify "Apple" as a company, "iPhone" as a product, and "India" as a location. [playful] Pretty cool, right?
@@ -144,7 +144,7 @@ export const nerTrainingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a3a52',
-          notes: `### Tip 1 - Build a Domain-Specific Entity Dictionary
+          notes: `### Tip 1: Build a Domain-Specific Entity Dictionary
 [conversational] Our first tip is all about building a **domain-specific entity dictionary**. [lighthearted] This might sound technical, but it's actually a very intuitive concept.
 #### 📖 What's an Entity Dictionary?
 [storytelling] Think of an entity dictionary like a master list or a phone book for your domain. If you're working in healthcare, this might be a list of all drug names, disease names, and medical procedures. If you're in finance, it could be company names, stock tickers, and financial terms.
@@ -202,21 +202,21 @@ Let's look at the specific steps next.`
             </div>
           ),
           backgroundColor: '#1a3a52',
-          notes: `### Tip 1 - Steps
+          notes: `### Tip 1: Steps
 [lecture] Now let's walk through the practical steps to build your entity dictionary.
 #### Step 1: Aggregate Your Sources
-[conversational] Start by gathering entity names from everywhere you can find them. This might include internal documents, product catalogs, medical coding systems like ICD-10 or SNOMED, or industry-standard ontologies. [enthusiastically] Cast a wide net here!
+[conversational] Start by gathering entity names from everywhere you can find them. [storytelling] This might include internal documents, product catalogs, medical coding systems like ICD-10 or SNOMED, or industry-standard ontologies. [enthusiastically] Cast a wide net here!
 #### Step 2: Normalize Everything
-[serious] This is crucial. [conversational] The word "COVID-19" might appear as "Covid-19", "covid19", "SARS-CoV-2", or even "coronavirus" in your text. [confidently] You need to **normalize** these variations so your matcher can find them all. This includes making everything lowercase (called casefolding), handling different word forms (stemming), and tracking all the aliases or synonyms for each entity.
+[seriously] This is crucial. [conversational] The word "COVID-19" might appear as "Covid-19", "covid19", "SARS-CoV-2", or even "coronavirus" in your text. [confidently] You need to **normalize** these variations so your matcher can find them all. [lecture] This includes making everything lowercase (called casefolding), handling different word forms (stemming), and tracking all the aliases or synonyms for each entity.
 #### Step 3: Deduplicate and Organize
-[conversational] Clean up your list by removing duplicates, assign each entry to an entity type (like DRUG, DISEASE, PERSON), and importantly, **track versions**. [serious] Your dictionary will evolve over time, and you want to know which version was used for which dataset.
+[conversational] Clean up your list by removing duplicates, assign each entry to an entity type (like DRUG, DISEASE, PERSON), and importantly, [seriously] **track versions**. [cautiously] Your dictionary will evolve over time, and you want to know which version was used for which dataset.
 #### Step 4: Integrate Into Your Pipeline
-[energetic] Now put it to work! You can use your dictionary to automatically pre-annotate text before human review, as features fed into your ML model, or for **distant supervision** where matches automatically become training labels [cautiously] (though be careful with this one; it can be noisy).
+[energetic] Now put it to work! [conversational] You can use your dictionary to automatically pre-annotate text before human review, as features fed into your ML model, or for **distant supervision** where matches automatically become training labels [cautiously] (though be careful with this one; it can be noisy).
 #### Step 5: Evaluate and Refine
-[lecture] Finally, measure how well it's working. Are you getting too many false matches (low precision)? Add a **stoplist** of terms to ignore. Are some entities too ambiguous? Add disambiguation rules.
+[lecture] Finally, measure how well it's working. [concerned] Are you getting too many false matches (low precision)? Add a **stoplist** of terms to ignore. [puzzled] Are some entities too ambiguous? Add disambiguation rules.
 
 ---------------------
-[conversational] Now let's look at the trade-offs of this approach.`
+[energetic] Now let's look at the trade-offs of this approach.`
         },
         {
           id: 5,
@@ -251,15 +251,15 @@ Let's look at the specific steps next.`
             </div>
           ),
           backgroundColor: '#1a3a52',
-          notes: `### Tip 1 - Pros & Cons
+          notes: `### Tip 1: Pros & Cons
 [conversational] Let's be honest about the trade-offs with entity dictionaries.
 #### ✅ Pros
 [excited] The good stuff: First, you get **rapid recall gains**. If a drug name is in your dictionary, you'll catch it every time it appears. [confidently] Second, it **accelerates your annotation process** dramatically. Instead of annotators searching through text for entities, they're just reviewing and correcting pre-highlighted suggestions. Third, you maintain **domain control**; you decide exactly what should and shouldn't be recognized.
 #### ⚠️ Cons
-[serious] The problems: **Maintenance overhead** is real. New drugs get approved, companies get renamed, and your dictionary needs constant updates. [conversational] **Ambiguity causes false positives**. The word "Apple" could be a fruit or a company; the word "Mercury" could be a planet, a car brand, or a chemical element. Your dictionary can't tell the difference without context. [cautiously] Finally, dictionaries **miss contextual variants**. If someone misspells a drug name or uses an abbreviation you haven't seen, the dictionary won't catch it.
+[seriously] The problems: **Maintenance overhead** is real. [weary] New drugs get approved, companies get renamed, and your dictionary needs constant updates. [conversational] **Ambiguity causes false positives**. [storytelling] The word "Apple" could be a fruit or a company; the word "Mercury" could be a planet, a car brand, or a chemical element. [frustrated] Your dictionary can't tell the difference without context. [cautiously] Finally, dictionaries **miss contextual variants**. If someone misspells a drug name or uses an abbreviation you haven't seen, the dictionary won't catch it.
 #### 💡 Real-World Example
-[storytelling] Imagine you're building a NER system for financial news. Your dictionary has "Apple" as a company. But the sentence "She bought an apple from the store" will get incorrectly tagged. [serious] That's why dictionaries are often a *starting point*, not the complete solution.
-[thoughtfully] > 💭 Think about it: What entities in your domain might have this ambiguity problem?
+[storytelling] Imagine you're building a NER system for financial news. Your dictionary has "Apple" as a company. [conversational] But the sentence "She bought an apple from the store" will get incorrectly tagged. [seriously] That's why dictionaries are often a *starting point*, not the complete solution.
+[conversational] [thoughtfully] > 💭 Think about it: What entities in your domain might have this ambiguity problem?
 [enthusiastically] Ready for Tip 2? [excited] Let's talk about creating high-quality training data, which is where the real magic happens.`
         }
       ]
@@ -315,11 +315,11 @@ Let's look at the specific steps next.`
             </div>
           ),
           backgroundColor: '#2d5016',
-          notes: `### Tip 2 - Create High-Quality Annotated Training Data
+          notes: `### Tip 2: Create High-Quality Annotated Training Data
 [conversational] Now we're getting to something fundamental. [storytelling] If Tip 1 was about building a helpful shortcut, Tip 2 is about creating the **gold standard** that your model will learn from.
 #### 🎯 The Goal
-[lecture] We want to provide **reliable supervision** for our model. This means teaching it exactly what each entity type looks like, where entities start and end (the boundaries), and how to distinguish between similar-looking things.
-[storytelling] Think of it like teaching a child to read. You can't just hand them a book; you need to sit with them, point to words, and patiently explain "this is an 'A', this is a 'B'." That's what annotation is for machine learning.
+[lecture] We want to provide **reliable supervision** for our model. [conversational] This means teaching it exactly what each entity type looks like, where entities start and end (the boundaries), and how to distinguish between similar-looking things.
+[storytelling] Think of it like teaching a child to read. [lighthearted] You can't just hand them a book; you need to sit with them, point to words, and patiently explain "this is an 'A', this is a 'B'." [confidently] That's what annotation is for machine learning.
 #### ⚙️ How It Works
 [lecture] High-quality annotated data comes from **human experts** who carefully label text. [cautiously] But here's the key: it's not just one person labeling. We use quality assurance processes like **double-labeling** (two people label the same text) and **adjudication** (a third person resolves disagreements). [confidently] This creates what we call a **gold standard** dataset.
 \`\`\`mermaid
@@ -372,10 +372,10 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#2d5016',
-          notes: `### Tip 2 - Steps
+          notes: `### Tip 2: Steps
 [conversational] Let me walk you through how to create a solid annotation pipeline.
 #### Step 1: Define Your Entity Schema
-[serious] Before anyone starts labeling, you need a crystal-clear **schema**. This is your rulebook that defines what each entity type means, with examples and **counter-examples** (things that look like entities but aren't). [conversational] For instance: "'Aspirin' is a DRUG, but 'aspirin therapy' as a concept is NOT a DRUG."
+[seriously] Before anyone starts labeling, you need a crystal-clear **schema**. [lecture] This is your rulebook that defines what each entity type means, with examples and **counter-examples** (things that look like entities but aren't). [conversational] For instance: "'Aspirin' is a DRUG, but 'aspirin therapy' as a concept is NOT a DRUG."
 #### Step 2: Sample a Representative Corpus
 [cautiously] Don't just grab random documents. [confidently] Make sure your sample includes variety: different sources, different time periods, different writing styles, different levels of difficulty. [serious] If your model only sees easy examples during training, it will struggle with hard ones later.
 #### Step 3: Train Your Annotators
@@ -419,7 +419,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#2d5016',
-          notes: `### Tip 2 - Pros & Cons
+          notes: `### Tip 2: Pros & Cons
 [conversational] Let's weigh the benefits against the costs of high-quality annotation.
 #### ✅ Pros
 [excited] The good stuff: With quality data, you get a **higher model ceiling**. Your model can only be as good as its training data, so better data means a better possible model. [confidently] You also get **trustworthy evaluation**. If your test set is noisy, you can't trust your metrics; are you improving the model or just fitting to annotation errors? [energetic] Finally, annotated data is a **reusable asset**. You can use it to train new model architectures, benchmark different approaches, or fine-tune other models.
@@ -471,7 +471,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### Tip 3 - Use Consistent Annotation Guidelines
+          notes: `### Tip 3: Use Consistent Annotation Guidelines
 [conversational] Now, Tip 2 was about *having* good data. Tip 3 is about *keeping* it good, especially when multiple people are involved.
 #### 🎯 The Goal
 [lecture] We want to **reduce label noise** and ensure **reproducibility**. [serious] Label noise is when the same text gets labeled differently by different people, or even by the same person on different days! This noise directly hurts your model because it's learning from inconsistent examples.
@@ -525,7 +525,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### Tip 3 - Steps
+          notes: `### Tip 3: Steps
 [conversational] Here's how to create and maintain effective annotation guidelines.
 #### Step 1: Write Boundary Rules
 [lecture] This is often where disagreements happen. [serious] Explicitly state: Do you include titles like "Dr." or "Mr."? Do you include trailing punctuation? How do you handle units like "500 mg"? Is it "500" (DOSAGE) + "mg" (UNIT) or one combined entity? What about hyphenated terms like "COVID-19-related"?
@@ -573,7 +573,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### Tip 3 - Pros & Cons
+          notes: `### Tip 3: Pros & Cons
 [conversational] Let's look at both sides of maintaining strict guidelines.
 #### ✅ Pros
 [excited] The good stuff: You'll see **higher agreement** between annotators, which directly translates to cleaner training data. [confidently] **Faster labeling** follows because annotators spend less time wondering "what should I do here?" and more time actually labeling. And you'll have **fewer reworks** since clear rules prevent mistakes that would need to be fixed later.
@@ -625,7 +625,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#3e2c57',
-          notes: `### Tip 4 - Label Data with Real Domain Context
+          notes: `### Tip 4: Label Data with Real Domain Context
 [serious] This tip addresses a common mistake that even experienced teams make.
 #### 🎯 The Goal
 [lecture] We want our models to **generalize to production text** and handle **edge cases**. [cautiously] A model trained on clean, synthetic examples often fails spectacularly when it encounters messy real-world data.
@@ -671,7 +671,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#3e2c57',
-          notes: `### Tip 4 - Steps
+          notes: `### Tip 4: Steps
 [conversational] Let me walk you through how to work with real-world data responsibly.
 #### Step 1: Source Data Ethically
 [serious] This is critical. Real data often contains sensitive information. If you're in healthcare, there are HIPAA regulations. In finance, there are PII concerns. [cautiously] Always **de-identify** data as needed: replace real patient names with fake ones, mask credit card numbers, etc. And make sure you have proper approvals to use the data for ML training.
@@ -738,7 +738,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#3e2c57',
-          notes: `### Tip 4 - Pros & Cons
+          notes: `### Tip 4: Pros & Cons
 [conversational] Using real data comes with significant benefits and some challenges.
 #### ✅ Pros
 [excited] The good stuff: You get **robust performance** because your model learns from the same messy patterns it will see in production. [confidently] It **captures rare patterns** that synthetic generators would never think to create. And it **better reflects production environments**, reducing the gap between training and deployment.
@@ -809,7 +809,7 @@ flowchart LR
             </div>
           ),
           backgroundColor: '#770022',
-          notes: `### Tip 5 - Fine-Tune Pretrained Transformer Models
+          notes: `### Tip 5: Fine-Tune Pretrained Transformer Models
 [enthusiastically] Alright, this tip is where modern NLP really shines. [conversational] If you've heard of BERT 👉 'burt', GPT, or transformers in general, this is where that technology comes into play.
 #### 🎯 The Goal
 [lecture] We want to achieve **strong accuracy with less labeled data** by leveraging **transfer learning**. [conversational] Instead of training a model from scratch (which requires millions of examples), we start with a model that already understands language and just teach it our specific task.
@@ -865,7 +865,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#770022',
-          notes: `### Tip 5 - Steps
+          notes: `### Tip 5: Steps
 [conversational] Let's walk through the technical process of fine-tuning.
 #### Step 1: Choose Your Base Model
 [lecture] Start by selecting a pretrained model. For general English, BERT or RoBERTa work well. [excited] For specialized domains, look for domain-adapted models: BioBERT or PubMedBERT 👉 'pub-med-burt' for biomedical, FinBERT for financial, LegalBERT for legal text. These models were pretrained on domain-specific text and will give you a head start.
@@ -912,7 +912,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#770022',
-          notes: `### Tip 5 - Pros & Cons
+          notes: `### Tip 5: Pros & Cons
 [conversational] Let's honestly assess transformer fine-tuning.
 #### ✅ Pros
 [excited] The good stuff: You get **strong baselines** out of the box. Even with a few hundred labeled examples, fine-tuned BERT often outperforms traditional CRF models trained on thousands. [confidently] **Faster convergence** means you need fewer epochs and less data to reach good performance. And these models are **reusable**; once trained, you can apply them anywhere or continue improving them.
@@ -975,7 +975,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#10508f',
-          notes: `### Tip 6 - Use Data Augmentation for Rare Entities
+          notes: `### Tip 6: Use Data Augmentation for Rare Entities
 [conversational] Now we tackle one of the trickiest problems in NER: the **long tail** of rare entity types.
 #### 🎯 The Goal
 [lecture] We want to **improve recall for low-frequency classes** and handle **long-tail entities**. [serious] In most datasets, some entity types appear thousands of times, while others might appear only a few dozen times. Models tend to get good at the common ones and terrible at the rare ones.
@@ -1030,7 +1030,7 @@ flowchart LR
             </div>
           ),
           backgroundColor: '#10508f',
-          notes: `### Tip 6 - Steps
+          notes: `### Tip 6: Steps
 [conversational] Here's how to implement data augmentation safely.
 #### Step 1: Identify Rare Classes
 [lecture] Start by analyzing your **label distribution**. Plot a histogram of entity counts by type. [conversational] Which entities have fewer than 100 examples? 50? 20? These are your candidates for augmentation.
@@ -1096,7 +1096,7 @@ flowchart LR
             </div>
           ),
           backgroundColor: '#10508f',
-          notes: `### Tip 6 - Pros & Cons
+          notes: `### Tip 6: Pros & Cons
 [conversational] Let's weigh the benefits and risks of augmentation.
 #### ✅ Pros
 [excited] The good stuff: You get **better coverage** of rare entity types without waiting months to collect more real examples. [confidently] It's **cheaper than labeling new data** since you're generating examples programmatically. And when done right, it can significantly boost recall for underrepresented classes.
@@ -1167,7 +1167,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#304f1a',
-          notes: `### Tip 7 - Add Negative Examples to Reduce False Positives
+          notes: `### Tip 7: Add Negative Examples to Reduce False Positives
 [conversational] Time to address precision. [serious] We've been focused on finding more entities (recall), but sometimes the bigger problem is finding *too many* fake entities (false positives).
 #### 🎯 The Goal
 [lecture] We want to **increase precision** by teaching the model what is *not* an entity. [conversational] This is about saying "no" correctly.
@@ -1219,7 +1219,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#304f1a',
-          notes: `### Tip 7 - Steps
+          notes: `### Tip 7: Steps
 [conversational] Here's how to systematically add negative examples.
 #### Step 1: Log False Positives
 [lecture] Set up logging in your dev and production environments to capture what the model is incorrectly tagging as entities. [cautiously] Don't just look at aggregate metrics; actually look at the specific mistakes. [surprised] You might be surprised at the patterns you find.
@@ -1279,22 +1279,16 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#304f1a',
-          notes: `### Tip 7 - Pros & Cons
+          notes: `### Tip 7: Pros & Cons
 [conversational] Let's assess the negative examples approach.
 #### ✅ Pros
 [excited] The good stuff: You get clear **precision gains** by teaching the model to be more selective. [confidently] **Better disambiguation** comes naturally; the model learns the contextual cues that distinguish "Apple the company" from "apple the fruit." And you're directly addressing your model's actual weaknesses by learning from its mistakes.
 #### ⚠️ Cons
 [serious] The problems: Adding too many negatives **may reduce recall**. [cautiously] If the model becomes too cautious, it might start missing real entities that have any ambiguity. It's a precision-recall trade-off, and you need to find the right balance. [weary] Also, negative mining **needs ongoing curation**; as your model improves and the world changes, the confusing cases will shift, and you'll need to update your negative examples.
-#### ⚖️ The Precision-Recall Trade-off
-\`\`\`mermaid
-flowchart LR
-    A["⬆️ More Negatives"] --> B["⬆️ Precision"]
-    A --> C["⬇️ Recall Risk"]
-    style B fill:#81c784,color:#000
-    style C fill:#ffcdd2,color:#000
-\`\`\`
-[lecture] The key is to monitor both metrics together. [cautiously] Don't optimize precision at the expense of recall unless your business case specifically calls for it (e.g., legal contracts where false positives are very costly).
-[serious] > 🎯 Remember: The goal isn't to maximize either precision or recall, but to find the right balance for your use case.
+#### 💯 The Precision-Recall Trade-off
+
+[lecture] The key is to monitor both metrics together. [cautiously] Don't optimize precision at the expense of recall unless your business case specifically calls for it [storytelling] (e.g., legal contracts where false positives are very costly).
+[firmly] > 🎯 Remember: The goal isn't to maximize either precision or recall, but to find the right balance for your use case.
 [energetic] Now let's talk about a quick win that doesn't require retraining at all: boundary correction rules!`
         }
       ]
@@ -1348,12 +1342,12 @@ flowchart LR
             </div>
           ),
           backgroundColor: '#7b2b00',
-          notes: `### Tip 8 - Use Entity Boundary Correction Rules
+          notes: `### Tip 8: Use Entity Boundary Correction Rules
 [conversational] Sometimes your model gets the entity *almost* right, but the boundaries are slightly off. [energetic] This tip is about fixing those systematic errors without retraining.
 #### 🎯 The Goal
 [lecture] We want to **fix systematic boundary errors** quickly and cheaply, without going through the whole retraining cycle.
 #### 📖 The Boundary Problem
-[conversational] Here's a common issue: your model predicts "500" as a DOSAGE, but the actual entity should be "500 mg". Or it predicts "Dr. Smith" as PERSON, but you want just "Smith" (without the title). [frustrated] Or it predicts "COVID" when it should predict "COVID-19". [serious] These are boundary errors, and they often follow predictable patterns.
+[conversational] Here's a common issue: your model predicts "500" as a DOSAGE, but the actual entity should be "500 mg". [frustrated] Or it predicts "Dr. Smith" as PERSON, but you want just "Smith" (without the title). Or it predicts "COVID" when it should predict "COVID-19". [seriously] These are boundary errors, and they often follow predictable patterns.
 #### ⚙️ How It Works
 [lecture] Instead of retraining (which is slow and might cause other regressions), we add a **post-processing step** after model prediction. [conversational] This step applies deterministic rules: regex patterns, heuristics, or decoding constraints that trim or expand entity spans based on what we know about our domain.
 \`\`\`mermaid
@@ -1394,7 +1388,7 @@ flowchart LR
             </div>
           ),
           backgroundColor: '#7b2b00',
-          notes: `### Tip 8 - Steps
+          notes: `### Tip 8: Steps
 [conversational] Here's how to implement boundary correction rules.
 #### Step 1: Analyze Error Patterns
 [lecture] First, systematically study your model's boundary mistakes. [conversational] Look at false positives and false negatives, but specifically focus on cases where the entity is *partially* correct. Group these by:
@@ -1411,8 +1405,8 @@ flowchart LR
 [confidently] Be specific and test each rule thoroughly.
 #### Step 3: Insert Post-Processing and Test
 [lecture] Add your rules as a **post-processing step** in your inference pipeline, right after model prediction and before returning results. [conversational] This makes it easy to enable/disable rules independently.
-[serious] Crucially, add **unit tests** for your rules. Write test cases that verify each rule works as expected and doesn't break edge cases. [cautiously] Rules can interact in surprising ways!
-[conversational] What are the trade-offs?`
+[seriously] Crucially, add **unit tests** for your rules. [lecture] Write test cases that verify each rule works as expected and doesn't break edge cases. [cautiously] Rules can interact in surprising ways!
+[casually] What are the trade-offs?`
         },
         {
           id: 26,
@@ -1463,12 +1457,12 @@ flowchart LR
             </div>
           ),
           backgroundColor: '#7b2b00',
-          notes: `### Tip 8 - Pros & Cons
+          notes: `### Tip 8: Pros & Cons
 [conversational] Let's weigh the benefits and risks of rule-based post-processing.
 #### ✅ Pros
 [excited] The good stuff: **Quick wins** are the biggest advantage. You can fix a known pattern in hours instead of days of retraining. [confidently] Rules are **transparent**; you know exactly what they do, making debugging easy. And they're **easy to revert** if something goes wrong; just comment out the rule.
 #### ⚠️ Cons
-[serious] The problems: Rules are **brittle**. [cautiously] They only catch exactly what you specify, and edge cases can slip through. A rule that works perfectly in English might fail in other languages or even different English dialects. [weary] They're also **domain/language-specific**; rules for medical text won't work for financial text. And **maintenance is needed** because as your data evolves, rules that once helped might start causing problems.
+[seriously] The problems: Rules are **brittle**. [cautiously] They only catch exactly what you specify, and edge cases can slip through. [conversational] A rule that works perfectly in English might fail in other languages or even different English dialects. [weary] They're also **domain/language-specific**; rules for medical text won't work for financial text. And **maintenance is needed** because as your data evolves, rules that once helped might start causing problems.
 #### 🎯 Use Wisely
 [conversational] Think of boundary rules as **band-aids**, not cures. [confidently] They're great for quick fixes and for handling truly deterministic patterns. [cautiously] But if you find yourself writing dozens of rules, that's a sign you should invest in better training data or model improvements instead.
 \`\`\`mermaid
@@ -1536,7 +1530,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#7b1fa2',
-          notes: `### Tip 9 - Perform Iterative Error Analysis and Retraining
+          notes: `### Tip 9: Perform Iterative Error Analysis and Retraining
 [excited] Our final tip is perhaps the most important one, because it's the strategy that makes all the other tips work together over time.
 #### 🎯 The Goal
 [lecture] We want to drive **continuous improvement aligned with business impact**. [conversational] NER isn't a one-time project; it's an ongoing process of getting better and better.
@@ -1591,7 +1585,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#7b1fa2',
-          notes: `### Tip 9 - Steps
+          notes: `### Tip 9: Steps
 [conversational] Here's how to set up an effective error analysis and retraining cycle.
 #### Step 1: Build Slice Metrics and Confusion Matrices
 [serious] Don't just look at overall F1 score. [lecture] Break down performance by **slices**: by entity type, by document source, by text length, by time period. Build **confusion matrices** to see which entity types get confused with each other. [confidently] This reveals where your model is weak.
@@ -1659,7 +1653,7 @@ flowchart TB
             </div>
           ),
           backgroundColor: '#7b1fa2',
-          notes: `### Tip 9 - Pros & Cons
+          notes: `### Tip 9: Pros & Cons
 [conversational] Let's honestly assess the iterative improvement approach.
 #### ✅ Pros
 [excited] The good stuff: You get **compounding gains**. Each improvement cycle builds on the last, and over time, these small improvements add up to dramatic progress. [confidently] Your resources are **focused** on the highest-impact problems rather than scattered randomly. And your models become **robust** because you're specifically addressing weaknesses rather than hoping they go away.
@@ -1768,7 +1762,7 @@ flowchart LR
 - **Slice metrics** across document types and entity frequencies
 - **Inference latency** (speed matters in production)
 [conversational] Track these over time to see your progress.
-[enthusiastically] Ready for concrete next steps?`
+[cheerfully] Ready for concrete next steps?`
         },
         {
           id: 31,
@@ -1818,24 +1812,16 @@ flowchart LR
           notes: `### Next Steps
 [conversational] Here's a practical roadmap for getting started with your own domain-specific NER project.
 #### Step 1: Draft Schema and Guidelines
-[serious] Before you touch any data, clearly define your entity types. What are you trying to find? [lecture] Write a draft of your annotation guidelines with examples. Share it with stakeholders and domain experts for feedback. [cautiously] This upfront clarity prevents painful rework later.
+[seriously] Before you touch any data, clearly define your entity types. [rhetorically] What are you trying to find? [lecture] Write a draft of your annotation guidelines with examples. Share it with stakeholders and domain experts for feedback. [cautiously] This upfront clarity prevents painful rework later.
 #### Step 2: Build v1 Dictionary and Sample Real Data
-[energetic] Start building your entity dictionary from available sources. [conversational] At the same time, gather a sample of real data from production sources. Even a small sample of 100-200 documents can reveal important patterns and help you refine your schema.
+[energetically] Start building your entity dictionary from available sources. [conversational] At the same time, gather a sample of real data from production sources. [confidently] Even a small sample of 100-200 documents can reveal important patterns and help you refine your schema.
 #### Step 3: Fine-tune a Baseline Model
-[lecture] Pick a pretrained model appropriate for your domain and fine-tune it on your initial annotated data. [serious] Set up an **evaluation harness** with proper train/dev/test splits. [confidently] This baseline gives you something concrete to improve from.
+[lecture] Pick a pretrained model appropriate for your domain and fine-tune it on your initial annotated data. [seriously] Set up an **evaluation harness** with proper train/dev/test splits. [confidently] This baseline gives you something concrete to improve from.
 #### Step 4: Start Error Log and Plan Improvements
 [lecture] From day one, start logging errors you observe. [excited] As patterns emerge, plan targeted improvements: augmentation for rare classes, negative examples for false positive patterns, boundary rules for systematic issues.
-\`\`\`mermaid
-flowchart LR
-    A["📝 Schema"] --> B["📖 Dictionary"]
-    B --> C["🤖 Baseline"]
-    C --> D["📊 Error Log"]
-    D --> E["🔄 Iterate"]
-    style A fill:#e1bee7,color:#000
-    style E fill:#81c784,color:#000
-\`\`\`
-[lighthearted] > 🚀 You don't need to do everything at once. Start small, measure, and improve iteratively.
-[energetic] Finally, let's talk about risks to watch out for.`
+
+[playfully] > 🚀 You don't need to do everything at once. Start small, measure, and improve iteratively.
+[enthusiastically] Finally, let's talk about risks to watch out for.`
         },
         {
           id: 32,
@@ -1892,11 +1878,13 @@ flowchart LR
           notes: `### Risks & Mitigations
 [serious] Let's wrap up by talking about the real-world risks you'll face and how to handle them.
 #### 🔒 Data Access and Privacy
-[serious] This is often the biggest blocker. You need real data, but that data might contain sensitive information. [lecture] The mitigation is **de-identification**: systematically remove or replace names, addresses, medical records, financial details. [cautiously] Work with your legal and compliance teams early to get data access approvals. Don't leave this for the last minute!
+[seriously] This is often the biggest blocker. You need real data, but that data might contain sensitive information. [lecture] The mitigation is **de-identification**: systematically remove or replace names, addresses, medical records, financial details. [cautiously] Work with your legal and compliance teams early to get data access approvals. [firmly] Don't leave this for the last minute!
+
 #### 📉 Model Drift
-[conversational] Language changes, your domain evolves, and what was accurate last year might not work today. New products launch, new terminology emerges, and writing styles shift. [lecture] The mitigation is **scheduled refresh**: set up regular retraining cadences (monthly or quarterly), monitor performance over time, and maintain version control so you can roll back if needed.
+[conversational] Language changes, your domain evolves, and what was accurate last year might not work today. [storytelling] New products launch, new terminology emerges, and writing styles shift. [lecture] The mitigation is **scheduled refresh**: set up regular retraining cadences (monthly or quarterly), monitor performance over time, and maintain version control so you can roll back if needed.
+
 #### ⚡ Resource Constraints
-[conversational] You might not have unlimited compute, unlimited annotators, or unlimited time. [serious] The reality is that most teams have to make trade-offs. [confidently] The mitigation is **prioritization**: focus on the entity types that matter most to your business first. Phase your rollouts instead of trying to cover everything at once. [determined] Start with high-value, high-frequency entities and expand from there.
+[conversational] You might not have unlimited compute, unlimited annotators, or unlimited time. [seriously] The reality is that most teams have to make trade-offs. [confidently] The mitigation is **prioritization**: focus on the entity types that matter most to your business first. [determined] Phase your rollouts instead of trying to cover everything at once. Start with high-value, high-frequency entities and expand from there.
 \`\`\`mermaid
 flowchart TB
     A["⚠️ Risk"] --> B["🔍 Identify Early"]
@@ -1905,9 +1893,9 @@ flowchart TB
     style D fill:#81c784,color:#000
 \`\`\`
 #### 🎉 Final Thoughts
-[inspirational] Building domain-specific NER is a journey, not a destination. [confidently] You'll face challenges, but with these 9 tips and a commitment to iterative improvement, you'll build systems that deliver real value.
-[enthusiastically] > 🙏 Thank you for your attention! [excited] I hope these tips help you build amazing NER systems. Any questions?
-[warmly] Good luck with your NER projects!`
+[inspiringly] Building domain-specific NER is a journey, not a destination. [confidently] You'll face challenges, but with these 9 tips and a commitment to iterative improvement, you'll build systems that deliver real value.
+[warmly] > 🙏 Thank you for your attention! [enthusiastically] I hope these tips help you build amazing NER systems. Any questions?
+[cheerfully] Good luck with your NER projects!`
         }
       ]
     }
