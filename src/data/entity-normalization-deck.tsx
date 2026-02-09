@@ -59,20 +59,20 @@ export const entityNormalizationDeck: Deck = {
           ),
           backgroundColor: '#1a3a52',
           notes: `### 1) 13 Entity Normalization & Disambiguation Techniques
-Welcome everyone! Today we're diving into something that might sound a bit technical at first, but is actually one of the most important foundations for building reliable data systems.
+[cheerfully] Welcome everyone! [energetic] Today we're diving into something that might sound a bit technical at first, but is actually one of the most important foundations for building reliable data systems.
 
 #### 🎯 What We're Covering
-We're going to explore **13 different techniques** for solving a problem you've probably encountered without even realizing it: how do we make sure that when we talk about "Apple" in our data, we know whether we mean the tech company or the fruit? How do we handle the fact that "NYC", "New York City", and "Big Apple" all refer to the same place?
+[excited] We're going to explore **13 different techniques** for solving a problem you've probably encountered without even realizing it: [conversational] how do we make sure that when we talk about "Apple" in our data, we know whether we mean the tech company or the fruit? How do we handle the fact that "NYC", "New York City", and "Big Apple" all refer to the same place?
 
-This is what **entity normalization and disambiguation** is all about. It's the glue that holds modern data systems together, whether you're building search engines, knowledge graphs, or AI applications.
+[confidently] This is what **entity normalization and disambiguation** is all about. It's the glue that holds modern data systems together, whether you're building search engines, knowledge graphs, or AI applications.
 
 #### 👥 Who Is This For?
-This presentation is designed for **data scientists**, **NLP engineers**, and anyone working with **knowledge graphs** or data integration challenges. But don't worry if you're new to these concepts—we'll start from the basics and build up.
+[warmly] This presentation is designed for **data scientists**, **NLP engineers**, and anyone working with **knowledge graphs** or data integration challenges. But don't worry if you're new to these concepts—we'll start from the basics and build up.
 
 #### 🗺️ The Journey Ahead
-We'll go from simple techniques like string cleanup all the way to using **large language models** for complex disambiguation. Each technique has its place, and by the end, you'll know exactly when to use each one.
+[enthusiastically] We'll go from simple techniques like string cleanup all the way to using **large language models** for complex disambiguation. [pleased] Each technique has its place, and by the end, you'll know exactly when to use each one.
 
-Let's start by understanding the core difference between normalization and disambiguation...`
+[energetic] Let's start by understanding the core difference between normalization and disambiguation...`
         },
         {
           id: 2,
@@ -177,21 +177,21 @@ Let's start by understanding the core difference between normalization and disam
           ),
           backgroundColor: '#1a3a52',
           notes: `### 2) Table of Contents
-Here's our roadmap for today. We have **13 techniques** to cover, and they're organized from simple to complex.
+[conversational] Here's our roadmap for today. We have **13 techniques** to cover, and they're organized from simple to complex.
 
 #### 📚 The Structure
-We'll start with the **basics**—techniques 1 through 4 focus on text-level operations like cleaning up strings and comparing them for similarity. These are your bread-and-butter tools that you'll use in almost every project.
+[lecture] We'll start with the **basics**—techniques 1 through 4 focus on text-level operations like cleaning up strings and comparing them for similarity. [confidently] These are your bread-and-butter tools that you'll use in almost every project.
 
-Then we move to **lookup-based approaches** in techniques 5 through 7, where we use dictionaries, synonyms, and rules to match entities.
+[lecture] Then we move to **lookup-based approaches** in techniques 5 through 7, where we use dictionaries, synonyms, and rules to match entities.
 
-The **advanced section** covers techniques 8 through 13, where we bring in machine learning, embeddings, knowledge graphs, and even large language models.
+[impressed] The **advanced section** covers techniques 8 through 13, where we bring in machine learning, embeddings, knowledge graphs, and even large language models.
 
 #### 💡 Why This Order Matters
-Think of it as building a house. You don't start with the fancy chandelier—you start with the foundation. String normalization is your foundation. Each technique builds on the previous ones, and in real-world systems, you'll often combine multiple techniques in a **pipeline**.
+[storytelling] Think of it as building a house. You don't start with the fancy chandelier—you start with the foundation. [confidently] String normalization is your foundation. Each technique builds on the previous ones, and in real-world systems, you'll often combine multiple techniques in a **pipeline**.
 
-> Ask the audience: "How many of you have dealt with messy data where the same entity appears with different spellings?"
+> [conversational] Ask the audience: "How many of you have dealt with messy data where the same entity appears with different spellings?"
 
-That's exactly what we're solving today. Let's begin with understanding the difference between normalization and disambiguation...`
+[pleased] That's exactly what we're solving today. [energetic] Let's begin with understanding the difference between normalization and disambiguation...`
         },
         {
           id: 3,
@@ -281,17 +281,17 @@ That's exactly what we're solving today. Let's begin with understanding the diff
           ),
           backgroundColor: '#1a3a52',
           notes: `### 3) Introduction: Normalization vs. Disambiguation
-Before we dive into the techniques, let's make sure we understand the two core concepts we're working with. They're related but fundamentally different.
+[lecture] Before we dive into the techniques, let's make sure we understand the two core concepts we're working with. [conversational] They're related but fundamentally different.
 
 #### 🧹 Entity Normalization
-Think of **normalization** as *cleaning and standardizing*. Imagine you have phone numbers written as "(555) 123-4567", "555-123-4567", and "5551234567"—they're all the same number, just formatted differently. Normalization brings them to one standard form.
+[storytelling] Think of **normalization** as *cleaning and standardizing*. Imagine you have phone numbers written as "(555) 123-4567", "555-123-4567", and "5551234567"—they're all the same number, just formatted differently. [confidently] Normalization brings them to one standard form.
 
-It's about handling the **surface-level variations**: extra spaces, different punctuation, uppercase vs lowercase, date formats. It's purely textual transformation, no understanding of meaning required.
+[lecture] It's about handling the **surface-level variations**: extra spaces, different punctuation, uppercase vs lowercase, date formats. It's purely textual transformation, no understanding of meaning required.
 
 #### 🔗 Entity Disambiguation
-**Disambiguation** is the smart part—it's about *understanding what something actually refers to*. When you see "Apple" in a news article, is it talking about the tech company or the fruit? When someone mentions "Paris," do they mean the city in France or the one in Texas?
+[impressed] **Disambiguation** is the smart part—it's about *understanding what something actually refers to*. [conversational] When you see "Apple" in a news article, is it talking about the tech company or the fruit? When someone mentions "Paris," do they mean the city in France or the one in Texas?
 
-This requires **context and semantic understanding**. You need to look at the surrounding text to figure out which entity is being discussed.
+[seriously] This requires **context and semantic understanding**. You need to look at the surrounding text to figure out which entity is being discussed.
 
 #### 🎯 The Pipeline
 \`\`\`mermaid
@@ -307,12 +307,12 @@ flowchart LR
     style G fill:#ffd700,color:#000
 \`\`\`
 
-In practice, you typically run normalization first, then use its output to generate candidates for disambiguation. The pipeline flows from preprocessing through candidate generation, scoring, and finally selection.
+[lecture] In practice, you typically run normalization first, then use its output to generate candidates for disambiguation. The pipeline flows from preprocessing through candidate generation, scoring, and finally selection.
 
 #### 💡 The Golden Rule
-Here's a key principle to remember: **start simple, add complexity as needed**. Often, basic normalization solves 80% of your problems. Only add the fancy ML techniques when simpler approaches fall short.
+[firmly] Here's a key principle to remember: **start simple, add complexity as needed**. [reassuringly] Often, basic normalization solves 80% of your problems. Only add the fancy ML techniques when simpler approaches fall short.
 
-Now let's look at our first technique: String Normalization...`
+[energetic] Now let's look at our first technique: String Normalization...`
         }
       ]
     },
@@ -397,10 +397,10 @@ Now let's look at our first technique: String Normalization...`
           ),
           backgroundColor: '#1a523d',
           notes: `### 4) String Normalization
-This is where every entity resolution journey begins. String normalization is your **first line of defense** against messy data, and honestly, it's often more powerful than people give it credit for.
+[enthusiastically] This is where every entity resolution journey begins. [impressed] String normalization is your **first line of defense** against messy data, and honestly, it's often more powerful than people give it credit for.
 
 #### 🎯 The Goal
-We want to **standardize surface forms**—that's just a fancy way of saying "make things look the same when they mean the same thing." Think about how "New  York" (with extra space) and "New York" should obviously match, but a computer sees them as completely different strings.
+[lecture] We want to **standardize surface forms**—that's just a fancy way of saying "make things look the same when they mean the same thing." [storytelling] Think about how "New  York" (with extra space) and "New York" should obviously match, but a computer sees them as completely different strings.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -414,15 +414,15 @@ flowchart LR
     style F fill:#81c784,color:#000
 \`\`\`
 
-The process is straightforward. First, you **trim** leading and trailing spaces. Then you **collapse** multiple spaces into one. Next, you normalize punctuation—those curly "smart quotes" from Word documents become regular ASCII quotes. Finally, you standardize formats for things like dates and phone numbers.
+[conversational] The process is straightforward. First, you **trim** leading and trailing spaces. Then you **collapse** multiple spaces into one. Next, you normalize punctuation—those curly "smart quotes" from Word documents become regular ASCII quotes. Finally, you standardize formats for things like dates and phone numbers.
 
 #### 📅 When to Use This?
-Use string normalization as the **first step in any pipeline**. Before you do fuzzy matching, before you look things up in a dictionary, before you generate embeddings—normalize first! It's fast, it's deterministic, and it catches a huge amount of variation with zero complexity.
+[confidently] Use string normalization as the **first step in any pipeline**. [firmly] Before you do fuzzy matching, before you look things up in a dictionary, before you generate embeddings—normalize first! [pleased] It's fast, it's deterministic, and it catches a huge amount of variation with zero complexity.
 
 #### 📋 The Steps
-Here's a practical implementation order. Start with whitespace handling, move to punctuation, then tackle format-specific normalization. And here's a pro tip: **always keep the original**. Store it in a separate field so you can audit your changes later.
+[lecture] Here's a practical implementation order. Start with whitespace handling, move to punctuation, then tackle format-specific normalization. [seriously] And here's a pro tip: **always keep the original**. Store it in a separate field so you can audit your changes later.
 
-Let's look at the pros and cons...`
+[energetic] Let's look at the pros and cons...`
         },
         {
           id: 5,
@@ -461,22 +461,22 @@ Let's look at the pros and cons...`
           ),
           backgroundColor: '#1a523d',
           notes: `### 5) String Normalization - Pros & Cons
-Let's be honest about what string normalization can and can't do for you.
+[conversational] Let's be honest about what string normalization can and can't do for you.
 
 #### ✅ Pros
-The good stuff is really good. String normalization is **simple to implement**—you can write the basic version in a few lines of code. It's **blazingly fast** because it's just string operations, no ML models or external calls needed. And it's **deterministic**, meaning the same input always gives the same output. That's huge for debugging and reproducibility.
+[enthusiastically] The good stuff is really good. String normalization is **simple to implement**—you can write the basic version in a few lines of code. [pleased] It's **blazingly fast** because it's just string operations, no ML models or external calls needed. And it's **deterministic**, meaning the same input always gives the same output. [impressed] That's huge for debugging and reproducibility.
 
-The impact on downstream matching is significant. I've seen projects where proper normalization improved match rates by 20-30% before any fancy algorithms were applied.
+[delighted] The impact on downstream matching is significant. I've seen projects where proper normalization improved match rates by 20-30% before any fancy algorithms were applied.
 
 #### ⚠️ Cons
-The problems come from being too aggressive. **Over-normalization can lose important nuance**. For example, if you're dealing with brand names, "BlackBerry" and "Blackberry" might actually be meaningfully different in some contexts.
+[cautiously] The problems come from being too aggressive. **Over-normalization can lose important nuance**. [storytelling] For example, if you're dealing with brand names, "BlackBerry" and "Blackberry" might actually be meaningfully different in some contexts.
 
-**Locale-specific rules are tricky**. Date formats vary wildly—is "01/02/2025" January 2nd or February 1st? It depends on whether you're in the US or Europe. These rules can be brittle and require careful handling.
+[concerned] **Locale-specific rules are tricky**. [conversational] Date formats vary wildly—is "01/02/2025" January 2nd or February 1st? It depends on whether you're in the US or Europe. [disappointed] These rules can be brittle and require careful handling.
 
 #### 💡 The Takeaway
-String normalization is your foundation, but don't expect it to solve everything. Use it as a first pass, and combine it with more sophisticated techniques when needed.
+[firmly] String normalization is your foundation, but don't expect it to solve everything. [confidently] Use it as a first pass, and combine it with more sophisticated techniques when needed.
 
-Now let's move to technique 2: Lowercasing and Unicode Normalization...`
+[energetic] Now let's move to technique 2: Lowercasing and Unicode Normalization...`
         }
       ]
     },
@@ -561,10 +561,10 @@ Now let's move to technique 2: Lowercasing and Unicode Normalization...`
           ),
           backgroundColor: '#52401a',
           notes: `### 6) Lowercasing + Unicode Normalization
-Now we're getting into something that trips up a lot of developers—**Unicode handling**. This might seem technical, but understanding it will save you from some really frustrating bugs.
+[seriously] Now we're getting into something that trips up a lot of developers—**Unicode handling**. [conversational] This might seem technical, but understanding it will save you from some really frustrating bugs.
 
 #### 🎯 The Goal
-We want our string comparisons to be **robust to case differences and Unicode quirks**. "APPLE" and "apple" should match. But here's the tricky part: the character "é" can be represented in Unicode in two completely different ways, and they won't match unless you normalize them!
+[lecture] We want our string comparisons to be **robust to case differences and Unicode quirks**. [conversational] "APPLE" and "apple" should match. But here's the tricky part: [amazed] the character "é" can be represented in Unicode in two completely different ways, and they won't match unless you normalize them!
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -579,17 +579,17 @@ flowchart TB
     style F fill:#81c784,color:#000
 \`\`\`
 
-There are two main Unicode normalization forms you need to know. **NFC** (Canonical Composition) keeps characters composed—"é" stays as one character. **NFKC** (Compatibility Composition) goes further and converts things like "ﬁ" (the fi ligature) into separate "f" and "i" characters.
+[lecture] There are two main Unicode normalization forms you need to know. **NFC** (Canonical Composition) keeps characters composed—"é" stays as one character. [impressed] **NFKC** (Compatibility Composition) goes further and converts things like "ﬁ" (the fi ligature) into separate "f" and "i" characters.
 
-After Unicode normalization, you apply **case folding**. This is like lowercasing, but it handles special cases like the German "ß" properly.
+[confidently] After Unicode normalization, you apply **case folding**. This is like lowercasing, but it handles special cases like the German "ß" properly.
 
 #### 🌍 When to Use This?
-Whenever you're working with **multilingual data** or data that might have diacritics, accents, or compatibility characters. This includes names from European languages, data from PDFs or Word documents (which love to use fancy characters), and anything dealing with international content.
+[seriously] Whenever you're working with **multilingual data** or data that might have diacritics, accents, or compatibility characters. [storytelling] This includes names from European languages, data from PDFs or Word documents (which love to use fancy characters), and anything dealing with international content.
 
 #### 💡 Pro Tip
-For matching purposes, you might want to **strip diacritics entirely**—turning "café" into "cafe". But always keep the original form stored separately, because for display purposes, you want the proper spelling!
+[conversational] For matching purposes, you might want to **strip diacritics entirely**—turning "café" into "cafe". [cautiously] But always keep the original form stored separately, because for display purposes, you want the proper spelling!
 
-Let's see the trade-offs...`
+[energetic] Let's see the trade-offs...`
         },
         {
           id: 7,
@@ -628,23 +628,23 @@ Let's see the trade-offs...`
           ),
           backgroundColor: '#52401a',
           notes: `### 7) Lowercasing + Unicode Normalization - Pros & Cons
-Let's weigh the benefits against the potential issues.
+[conversational] Let's weigh the benefits against the potential issues.
 
 #### ✅ Pros
-The upside is substantial. You get **large recall gains for minimal computational cost**. Those weird encoding mismatches that cause false negatives? They go away. Data that was copied from different sources, websites, or documents suddenly starts matching correctly.
+[enthusiastically] The upside is substantial. You get **large recall gains for minimal computational cost**. [pleased] Those weird encoding mismatches that cause false negatives? They go away. Data that was copied from different sources, websites, or documents suddenly starts matching correctly.
 
-This is especially impactful when you're dealing with **international data**. Names like "José" and "Jose" will match. "Müller" and "Muller" will match. The gains can be dramatic.
+[delighted] This is especially impactful when you're dealing with **international data**. [storytelling] Names like "José" and "Jose" will match. "Müller" and "Muller" will match. The gains can be dramatic.
 
 #### ⚠️ Cons
-NFKC can be too aggressive in some cases. For example, the trademark symbol "™" might get converted in unexpected ways. If you're in a domain where these compatibility characters have specific meanings, **NFC is the safer choice**.
+[cautiously] NFKC can be too aggressive in some cases. [conversational] For example, the trademark symbol "™" might get converted in unexpected ways. [concerned] If you're in a domain where these compatibility characters have specific meanings, **NFC is the safer choice**.
 
-Case folding can also cause problems in **brand-sensitive contexts**. "iPhone" becoming "iphone" might matter to someone. "BlackBerry" vs "blackberry"—again, context matters. For display, keep originals.
+[disappointed] Case folding can also cause problems in **brand-sensitive contexts**. [storytelling] "iPhone" becoming "iphone" might matter to someone. "BlackBerry" vs "blackberry"—again, context matters. [reassuringly] For display, keep originals.
 
-> Ask the audience: "Has anyone had a bug where two identical-looking strings didn't match?"
+> [conversational] Ask the audience: "Has anyone had a bug where two identical-looking strings didn't match?"
 
-That's almost always a Unicode issue. Normalize first, compare after.
+[confidently] That's almost always a Unicode issue. Normalize first, compare after.
 
-Now let's move on to something more flexible—Fuzzy Matching...`
+[energetic] Now let's move on to something more flexible—Fuzzy Matching...`
         }
       ]
     },
@@ -729,10 +729,10 @@ Now let's move on to something more flexible—Fuzzy Matching...`
           ),
           backgroundColor: '#521a1a',
           notes: `### 8) Fuzzy Matching (Edit Distance)
-Now we're entering the world of **approximate matching**. This is where things get exciting because we can finally handle typos and small mistakes!
+[excited] Now we're entering the world of **approximate matching**. [enthusiastically] This is where things get exciting because we can finally handle typos and small mistakes!
 
 #### 🎯 The Goal
-We want to match strings that are **close but not identical**. "Jon" and "John", "recieve" and "receive", "Microsoft Corp." and "Microsoft Corporation"—these should all be recognized as potential matches.
+[lecture] We want to match strings that are **close but not identical**. [storytelling] "Jon" and "John", "recieve" and "receive", "Microsoft Corp." and "Microsoft Corporation"—these should all be recognized as potential matches.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -746,17 +746,17 @@ flowchart LR
     style E fill:#ffd700,color:#000
 \`\`\`
 
-The core concept is **edit distance**—how many operations (insert, delete, substitute) does it take to transform one string into another? "kitten" to "sitting" requires 3 changes, so the Levenshtein distance is 3.
+[lecture] The core concept is **edit distance**—how many operations (insert, delete, substitute) does it take to transform one string into another? [conversational] "kitten" to "sitting" requires 3 changes, so the Levenshtein distance is 3.
 
-There are variations too. **Damerau-Levenshtein** also counts transpositions (swapping adjacent characters) as a single operation, which is useful because "hte" → "the" is a super common typo. **Jaro-Winkler** gives extra weight to matching prefixes, which works well for names.
+[impressed] There are variations too. **Damerau-Levenshtein** also counts transpositions (swapping adjacent characters) as a single operation, which is useful because "hte" → "the" is a super common typo. [pleased] **Jaro-Winkler** gives extra weight to matching prefixes, which works well for names.
 
 #### 📅 When to Use This?
-Fuzzy matching shines with **short strings** like names, product codes, and addresses. It's perfect for **OCR text** where scanning errors introduce random character mistakes. And it's essential for **deduplication** where you're looking for near-duplicates in a dataset.
+[confidently] Fuzzy matching shines with **short strings** like names, product codes, and addresses. [enthusiastically] It's perfect for **OCR text** where scanning errors introduce random character mistakes. And it's essential for **deduplication** where you're looking for near-duplicates in a dataset.
 
 #### ⚡ Scaling Up
-Raw edit distance is O(n×m), which gets slow for large datasets. Use **BK-trees** or **trigram indexes** to find candidates quickly, then compute exact distances only for promising pairs.
+[seriously] Raw edit distance is O(n×m), which gets slow for large datasets. [impressed] Use **BK-trees** or **trigram indexes** to find candidates quickly, then compute exact distances only for promising pairs.
 
-Let's look at the trade-offs...`
+[energetic] Let's look at the trade-offs...`
         },
         {
           id: 9,
@@ -795,24 +795,24 @@ Let's look at the trade-offs...`
           ),
           backgroundColor: '#521a1a',
           notes: `### 9) Fuzzy Matching - Pros & Cons
-Fuzzy matching is powerful, but it has clear limitations you need to understand.
+[conversational] Fuzzy matching is powerful, but it has clear limitations you need to understand.
 
 #### ✅ Pros
-The big wins are in **handling typos and OCR errors**. A threshold of 1-2 edits catches most common mistakes. And the thresholds are **interpretable**—you can explain to stakeholders that "we allow up to 2 character differences."
+[enthusiastically] The big wins are in **handling typos and OCR errors**. [pleased] A threshold of 1-2 edits catches most common mistakes. And the thresholds are **interpretable**—you can explain to stakeholders that "we allow up to 2 character differences."
 
-For short strings like person names or product codes, edit distance works remarkably well. It's been used in production systems for decades.
+[impressed] For short strings like person names or product codes, edit distance works remarkably well. It's been used in production systems for decades.
 
 #### ⚠️ Cons
-Here's where it falls apart: **word order matters way too much**. "New York" and "York New" have an edit distance of 8, even though they're clearly related. For multi-word strings, you often need to tokenize first and compare token sets.
+[frustrated] Here's where it falls apart: **word order matters way too much**. [disappointed] "New York" and "York New" have an edit distance of 8, even though they're clearly related. [cautiously] For multi-word strings, you often need to tokenize first and compare token sets.
 
-**Performance is another issue**. Computing edit distance for every pair in a million-record dataset is prohibitively expensive. You need indexing structures, which adds complexity.
+[weary] **Performance is another issue**. Computing edit distance for every pair in a million-record dataset is prohibitively expensive. [concerned] You need indexing structures, which adds complexity.
 
-And fundamentally, **edit distance knows nothing about meaning**. "Big" and "Large" have no special relationship according to edit distance, even though they're synonyms. For semantic similarity, we'll need different techniques.
+[seriously] And fundamentally, **edit distance knows nothing about meaning**. [conversational] "Big" and "Large" have no special relationship according to edit distance, even though they're synonyms. For semantic similarity, we'll need different techniques.
 
 #### 💡 The Takeaway
-Use fuzzy matching for short strings with potential typos. Combine it with tokenization for multi-word entities. And don't expect it to understand semantics—that's what our later techniques are for!
+[confidently] Use fuzzy matching for short strings with potential typos. [reassuringly] Combine it with tokenization for multi-word entities. And don't expect it to understand semantics—that's what our later techniques are for!
 
-Next up: Token-Based Similarity for handling those multi-word cases...`
+[energetic] Next up: Token-Based Similarity for handling those multi-word cases...`
         }
       ]
     },
@@ -899,10 +899,10 @@ Next up: Token-Based Similarity for handling those multi-word cases...`
           ),
           backgroundColor: '#3b521a',
           notes: `### 10) Token-Based Similarity (Jaccard / Cosine)
-This technique solves the word-order problem we just discussed. Instead of comparing strings character by character, we **break them into tokens and compare the sets**.
+[impressed] This technique solves the word-order problem we just discussed. [confidently] Instead of comparing strings character by character, we **break them into tokens and compare the sets**.
 
 #### 🎯 The Goal
-We want to handle **multi-word entities** where the order might vary or some words might be missing. "New York City" and "City of New York" should score high, even though they're quite different at the character level.
+[lecture] We want to handle **multi-word entities** where the order might vary or some words might be missing. [storytelling] "New York City" and "City of New York" should score high, even though they're quite different at the character level.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -918,17 +918,17 @@ flowchart TB
     style F fill:#81c784,color:#000
 \`\`\`
 
-First, you **tokenize** the strings into words or n-grams. Then you compare using set operations. **Jaccard similarity** is simply the intersection divided by the union—what fraction of tokens do they share? 
+[lecture] First, you **tokenize** the strings into words or n-grams. Then you compare using set operations. [conversational] **Jaccard similarity** is simply the intersection divided by the union—what fraction of tokens do they share?
 
-For weighted comparisons, use **TF-IDF cosine similarity**. This gives more weight to rare, distinctive tokens and less weight to common words like "the" or "of".
+[impressed] For weighted comparisons, use **TF-IDF cosine similarity**. This gives more weight to rare, distinctive tokens and less weight to common words like "the" or "of".
 
 #### 📅 When to Use This?
-This is perfect for **product titles**, **company names**, **addresses**, and any multi-word entity. "Apple Inc." and "Apple Incorporated" share the important token "Apple", so they'll score well.
+[enthusiastically] This is perfect for **product titles**, **company names**, **addresses**, and any multi-word entity. [storytelling] "Apple Inc." and "Apple Incorporated" share the important token "Apple", so they'll score well.
 
 #### ⚡ Scaling Up
-For large datasets, **MinHash and LSH** (Locality-Sensitive Hashing) let you find similar items without comparing every pair. This is how services like Google detect near-duplicate web pages.
+[impressed] For large datasets, **MinHash and LSH** (Locality-Sensitive Hashing) let you find similar items without comparing every pair. [amazed] This is how services like Google detect near-duplicate web pages.
 
-Let's examine the trade-offs...`
+[energetic] Let's examine the trade-offs...`
         },
         {
           id: 11,
@@ -967,22 +967,22 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#3b521a',
           notes: `### 11) Token-Based Similarity - Pros & Cons
-Let's be realistic about what token-based methods can and can't do.
+[conversational] Let's be realistic about what token-based methods can and can't do.
 
 #### ✅ Pros
-Token-based similarity is **order-insensitive**, which is often exactly what you want. It captures **partial overlaps** gracefully—if two out of three tokens match, you still get a decent score.
+[pleased] Token-based similarity is **order-insensitive**, which is often exactly what you want. [impressed] It captures **partial overlaps** gracefully—if two out of three tokens match, you still get a decent score.
 
-The math works with **sparse vectors**, which means it scales well. You don't need to compare every token to every other token; efficient data structures handle it.
+[enthusiastically] The math works with **sparse vectors**, which means it scales well. You don't need to compare every token to every other token; efficient data structures handle it.
 
 #### ⚠️ Cons
-The big limitation is that it **ignores token semantics**. "Big" and "Large" are completely different tokens with no relationship, even though they mean the same thing. "NYC" and "New York City" share zero tokens, so they'd score 0 despite being the same place.
+[disappointed] The big limitation is that it **ignores token semantics**. [frustrated] "Big" and "Large" are completely different tokens with no relationship, even though they mean the same thing. [concerned] "NYC" and "New York City" share zero tokens, so they'd score 0 despite being the same place.
 
-**Tokenization decisions matter a lot**. How do you handle hyphens? What about abbreviations? Stopword removal can help or hurt depending on your domain. "The Ohio State University" vs "Ohio State"—removing "The" helps, but what about "The Hague"?
+[cautiously] **Tokenization decisions matter a lot**. [puzzled] How do you handle hyphens? What about abbreviations? [conversational] Stopword removal can help or hurt depending on your domain. [storytelling] "The Ohio State University" vs "Ohio State"—removing "The" helps, but what about "The Hague"?
 
 #### 💡 The Takeaway
-Use token-based similarity when word order varies and you want robust partial matching. Combine it with synonym expansion (technique 6) or embeddings (technique 8) to handle semantic similarity.
+[confidently] Use token-based similarity when word order varies and you want robust partial matching. [reassuringly] Combine it with synonym expansion (technique 6) or embeddings (technique 8) to handle semantic similarity.
 
-Next, let's look at dictionary-based lookup...`
+[energetic] Next, let's look at dictionary-based lookup...`
         }
       ]
     },
@@ -1068,10 +1068,10 @@ Next, let's look at dictionary-based lookup...`
           ),
           backgroundColor: '#1a3152',
           notes: `### 12) Dictionary / Gazetteer Lookup
-Now we're entering the world of **curated knowledge**. A gazetteer is essentially a fancy dictionary that maps mentions to canonical entities. Think of it as a lookup table with superpowers.
+[enthusiastically] Now we're entering the world of **curated knowledge**. [lecture] A gazetteer is essentially a fancy dictionary that maps mentions to canonical entities. [conversational] Think of it as a lookup table with superpowers.
 
 #### 🎯 The Goal
-We want to use **pre-existing knowledge** to map mentions to their correct identifiers. If you have a list of all valid medication names, all city names, or all product SKUs, why not just look them up directly?
+[confidently] We want to use **pre-existing knowledge** to map mentions to their correct identifiers. [conversational] If you have a list of all valid medication names, all city names, or all product SKUs, why not just look them up directly?
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -1086,17 +1086,17 @@ flowchart LR
     style E fill:#ffcdd2,color:#000
 \`\`\`
 
-The process is straightforward. You have a curated dictionary with entity names and their canonical IDs. When you see a mention, you normalize it and look it up. For **multi-word entities**, algorithms like Aho-Corasick or trie structures let you efficiently find the longest matching entry.
+[lecture] The process is straightforward. You have a curated dictionary with entity names and their canonical IDs. When you see a mention, you normalize it and look it up. [impressed] For **multi-word entities**, algorithms like Aho-Corasick or trie structures let you efficiently find the longest matching entry.
 
 #### 📅 When to Use This?
-Gazetteers are perfect for **closed-world domains** where you have a finite, known set of valid entities. Medications, geographic locations, product catalogs, company names—if you can enumerate all valid values, a gazetteer works brilliantly.
+[enthusiastically] Gazetteers are perfect for **closed-world domains** where you have a finite, known set of valid entities. [storytelling] Medications, geographic locations, product catalogs, company names—if you can enumerate all valid values, a gazetteer works brilliantly.
 
-They're also great as a **high-precision first pass**. Even if your gazetteer doesn't cover everything, what it does match is usually correct.
+[pleased] They're also great as a **high-precision first pass**. Even if your gazetteer doesn't cover everything, what it does match is usually correct.
 
 #### 📋 Practical Tips
-Keep your gazetteers **versioned**. Entities change over time—companies merge, drugs get renamed, locations change boundaries. You need to know which version of the gazetteer was used for each match.
+[seriously] Keep your gazetteers **versioned**. [cautiously] Entities change over time—companies merge, drugs get renamed, locations change boundaries. You need to know which version of the gazetteer was used for each match.
 
-Let's look at the trade-offs...`
+[energetic] Let's look at the trade-offs...`
         },
         {
           id: 13,
@@ -1135,22 +1135,22 @@ Let's look at the trade-offs...`
           ),
           backgroundColor: '#1a3152',
           notes: `### 13) Dictionary / Gazetteer Lookup - Pros & Cons
-Gazetteers are wonderful tools, but they come with their own challenges.
+[conversational] Gazetteers are wonderful tools, but they come with their own challenges.
 
 #### ✅ Pros
-When a gazetteer match succeeds, it's usually **high precision**. You looked up an exact entry in a curated list—that's hard to argue with. The results are **deterministic and explainable**: "We matched because this entry exists in our medication database."
+[pleased] When a gazetteer match succeeds, it's usually **high precision**. [confidently] You looked up an exact entry in a curated list—that's hard to argue with. [impressed] The results are **deterministic and explainable**: "We matched because this entry exists in our medication database."
 
-With proper data structures like hash maps or tries, lookup is **extremely fast**—O(1) or O(length of string). You can process millions of records quickly.
+[enthusiastically] With proper data structures like hash maps or tries, lookup is **extremely fast**—O(1) or O(length of string). You can process millions of records quickly.
 
 #### ⚠️ Cons
-The fundamental problem is **coverage**. Your gazetteer only knows what you've put in it. New entities, misspellings, and variations you didn't anticipate will be missed. This requires **ongoing maintenance** as your domain evolves.
+[disappointed] The fundamental problem is **coverage**. [frustrated] Your gazetteer only knows what you've put in it. [weary] New entities, misspellings, and variations you didn't anticipate will be missed. This requires **ongoing maintenance** as your domain evolves.
 
-**Ambiguity is another issue**. What if "Apple" is in your gazetteer as both a fruit and a company? You need additional disambiguation logic. What if both "NYC" and "New York City" are entries? You need overlap resolution rules.
+[cautiously] **Ambiguity is another issue**. [puzzled] What if "Apple" is in your gazetteer as both a fruit and a company? You need additional disambiguation logic. [concerned] What if both "NYC" and "New York City" are entries? You need overlap resolution rules.
 
 #### 💡 Best Practice
-Use gazetteers as your **first pass** for high-confidence matches. Then apply fuzzy matching or ML techniques to handle what the gazetteer missed. This layered approach gives you the best of both worlds.
+[confidently] Use gazetteers as your **first pass** for high-confidence matches. [reassuringly] Then apply fuzzy matching or ML techniques to handle what the gazetteer missed. This layered approach gives you the best of both worlds.
 
-Next, let's extend this idea with Synonym and Alias Mapping...`
+[energetic] Next, let's extend this idea with Synonym and Alias Mapping...`
         }
       ]
     },
@@ -1235,10 +1235,10 @@ Next, let's extend this idea with Synonym and Alias Mapping...`
           ),
           backgroundColor: '#521a3c',
           notes: `### 14) Synonym / Alias Mapping
-This is the natural extension of gazetteers—instead of just having one name per entity, we map **multiple aliases** to the same canonical form.
+[impressed] This is the natural extension of gazetteers—instead of just having one name per entity, we map **multiple aliases** to the same canonical form.
 
 #### 🎯 The Goal
-We want to handle all the different ways people refer to the same thing. "NYC", "New York City", "Big Apple", "New York, NY"—they should all resolve to the same entity ID.
+[enthusiastically] We want to handle all the different ways people refer to the same thing. [storytelling] "NYC", "New York City", "Big Apple", "New York, NY"—they should all resolve to the same entity ID.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -1252,15 +1252,15 @@ flowchart TB
     style F fill:#81c784,color:#000
 \`\`\`
 
-You build a **synonym table** where each entity has a list of known aliases. When you encounter a mention, you check if it matches any alias and retrieve the canonical form. Wikipedia redirects are a classic source—"USA" redirects to "United States", teaching us that these are synonyms.
+[lecture] You build a **synonym table** where each entity has a list of known aliases. When you encounter a mention, you check if it matches any alias and retrieve the canonical form. [pleased] Wikipedia redirects are a classic source—"USA" redirects to "United States", teaching us that these are synonyms.
 
 #### 📅 When to Use This?
-Synonym mapping is essential for **domain-specific abbreviations**. In medicine, "MI" might mean "myocardial infarction" or "Michigan" depending on context. In finance, "JPM" maps to "JPMorgan Chase". For products, "iPhone 15" and "Apple iPhone 15" are the same thing.
+[confidently] Synonym mapping is essential for **domain-specific abbreviations**. [storytelling] In medicine, "MI" might mean "myocardial infarction" or "Michigan" depending on context. In finance, "JPM" maps to "JPMorgan Chase". [conversational] For products, "iPhone 15" and "Apple iPhone 15" are the same thing.
 
 #### 📋 Building Your Synonym Lists
-Great sources include **search logs** (what people search for when they click on an entity), **Wikipedia/Wikidata redirects**, and **industry standards** (drug names, stock tickers). But don't just harvest blindly—curate and validate!
+[enthusiastically] Great sources include **search logs** (what people search for when they click on an entity), **Wikipedia/Wikidata redirects**, and **industry standards** (drug names, stock tickers). [cautiously] But don't just harvest blindly—curate and validate!
 
-Let's examine the trade-offs...`
+[energetic] Let's examine the trade-offs...`
         },
         {
           id: 15,
@@ -1299,24 +1299,24 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#521a3c',
           notes: `### 15) Synonym / Alias Mapping - Pros & Cons
-Synonym tables are incredibly useful, but they require care.
+[conversational] Synonym tables are incredibly useful, but they require care.
 
 #### ✅ Pros
-The **recall boost is huge**. Suddenly you're catching all those abbreviations and alternate names that would otherwise be missed. And it's computationally cheap—just a lookup!
+[delighted] The **recall boost is huge**. [enthusiastically] Suddenly you're catching all those abbreviations and alternate names that would otherwise be missed. And it's computationally cheap—just a lookup!
 
-Everything is **transparent and auditable**. You can show stakeholders exactly why "IBM" was mapped to "International Business Machines"—because it's in your synonym table.
+[pleased] Everything is **transparent and auditable**. [confidently] You can show stakeholders exactly why "IBM" was mapped to "International Business Machines"—because it's in your synonym table.
 
 #### ⚠️ Cons
-**Maintenance is the killer**. Synonym lists drift over time. New products launch, companies rebrand, slang evolves. If you don't keep updating, your coverage degrades.
+[weary] **Maintenance is the killer**. [disappointed] Synonym lists drift over time. [frustrated] New products launch, companies rebrand, slang evolves. If you don't keep updating, your coverage degrades.
 
-**Ambiguous aliases are tricky**. "Apple" could be the company or the fruit. "Java" could be the programming language, the island, or coffee. You often need **context-aware rules** to disambiguate, which takes us to our next technique.
+[cautiously] **Ambiguous aliases are tricky**. [puzzled] "Apple" could be the company or the fruit. "Java" could be the programming language, the island, or coffee. [concerned] You often need **context-aware rules** to disambiguate, which takes us to our next technique.
 
-> Ask the audience: "What's the most frustrating alias collision you've encountered in your data?"
+> [conversational] Ask the audience: "What's the most frustrating alias collision you've encountered in your data?"
 
 #### 💡 Pro Tip
-Track which aliases are actually being used in your data. Many manually created synonyms never get matched. Focus your maintenance effort on high-impact entries.
+[seriously] Track which aliases are actually being used in your data. [disappointed] Many manually created synonyms never get matched. [confidently] Focus your maintenance effort on high-impact entries.
 
-Next, let's look at Rule-Based Context Matching for handling those ambiguous cases...`
+[energetic] Next, let's look at Rule-Based Context Matching for handling those ambiguous cases...`
         }
       ]
     },
@@ -1403,10 +1403,10 @@ Next, let's look at Rule-Based Context Matching for handling those ambiguous cas
           ),
           backgroundColor: '#1a1c52',
           notes: `### 16) Rule-Based Context Matching
-Now we're adding **intelligence** to our matching. Instead of just looking at the entity mention itself, we look at what's around it to figure out the correct interpretation.
+[impressed] Now we're adding **intelligence** to our matching. [confidently] Instead of just looking at the entity mention itself, we look at what's around it to figure out the correct interpretation.
 
 #### 🎯 The Goal
-We want to **disambiguate using context**. When we see "Apple" in text, we look at the surrounding words. If we see "iPhone", "CEO", or "stock price" nearby, it's probably the company. If we see "pie", "orchard", or "fruit", it's probably the food.
+[lecture] We want to **disambiguate using context**. [storytelling] When we see "Apple" in text, we look at the surrounding words. If we see "iPhone", "CEO", or "stock price" nearby, it's probably the company. If we see "pie", "orchard", or "fruit", it's probably the food.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -1422,15 +1422,15 @@ flowchart TB
     style G fill:#ffcdd2,color:#000
 \`\`\`
 
-You define **context windows**—maybe 50 characters before and after the mention. Then you write rules: "If the section header is 'Tech News', boost confidence for tech companies." "If the word 'mg' appears nearby, this is probably a medication."
+[lecture] You define **context windows**—maybe 50 characters before and after the mention. Then you write rules: [conversational] "If the section header is 'Tech News', boost confidence for tech companies." "If the word 'mg' appears nearby, this is probably a medication."
 
 #### 📅 When to Use This?
-Rule-based context matching shines in **structured documents** like forms, medical records, and financial reports. The structure gives you reliable context signals. It's also essential in **regulated industries** where you need to explain your disambiguation decisions.
+[confidently] Rule-based context matching shines in **structured documents** like forms, medical records, and financial reports. [pleased] The structure gives you reliable context signals. [seriously] It's also essential in **regulated industries** where you need to explain your disambiguation decisions.
 
 #### 💡 Practical Tips
-Start with high-precision rules that fire rarely but are almost always correct. Then add more rules for coverage. Test your rules with **coverage analysis**—what percentage of cases does each rule handle? Watch for **false positives** carefully.
+[lecture] Start with high-precision rules that fire rarely but are almost always correct. Then add more rules for coverage. [seriously] Test your rules with **coverage analysis**—what percentage of cases does each rule handle? [cautiously] Watch for **false positives** carefully.
 
-Let's see the trade-offs...`
+[energetic] Let's see the trade-offs...`
         },
         {
           id: 17,
@@ -1469,22 +1469,22 @@ Let's see the trade-offs...`
           ),
           backgroundColor: '#1a1c52',
           notes: `### 17) Rule-Based Context Matching - Pros & Cons
-Rules are powerful but come with significant maintenance challenges.
+[conversational] Rules are powerful but come with significant maintenance challenges.
 
 #### ✅ Pros
-Rules are **completely interpretable**. You can explain exactly why a decision was made. "We classified this as Apple Inc. because the word 'iPhone' appeared within 30 characters." That's hugely valuable for compliance and debugging.
+[enthusiastically] Rules are **completely interpretable**. [confidently] You can explain exactly why a decision was made. [storytelling] "We classified this as Apple Inc. because the word 'iPhone' appeared within 30 characters." [impressed] That's hugely valuable for compliance and debugging.
 
-They're also **fast**—pattern matching is cheap. And you don't need labeled training data to get started; you can write rules from domain knowledge.
+[pleased] They're also **fast**—pattern matching is cheap. And you don't need labeled training data to get started; you can write rules from domain knowledge.
 
 #### ⚠️ Cons
-Rules are **brittle**. If the document format changes, your rules break. If someone writes "the iPhone maker" instead of mentioning "iPhone" directly, your rule might miss it.
+[frustrated] Rules are **brittle**. [disappointed] If the document format changes, your rules break. [cautiously] If someone writes "the iPhone maker" instead of mentioning "iPhone" directly, your rule might miss it.
 
-**Scaling is hard**. As you add more rules, they start interacting in unexpected ways. Rule A might fire when Rule B shouldn't, or vice versa. Managing hundreds of rules becomes a maintenance nightmare.
+[weary] **Scaling is hard**. [concerned] As you add more rules, they start interacting in unexpected ways. [frustrated] Rule A might fire when Rule B shouldn't, or vice versa. [resigned] Managing hundreds of rules becomes a maintenance nightmare.
 
 #### 💡 The Takeaway
-Use rules for **high-value edge cases** and **regulatory requirements** where you need explainability. But don't try to build your entire system on rules—that doesn't scale. Combine with ML techniques for broader coverage.
+[confidently] Use rules for **high-value edge cases** and **regulatory requirements** where you need explainability. [reassuringly] But don't try to build your entire system on rules—that doesn't scale. Combine with ML techniques for broader coverage.
 
-Now let's enter the machine learning territory with Embedding-Based Similarity...`
+[energetic] Now let's enter the machine learning territory with Embedding-Based Similarity...`
         }
       ]
     },
@@ -1572,10 +1572,10 @@ Now let's enter the machine learning territory with Embedding-Based Similarity..
           ),
           backgroundColor: '#1a524a',
           notes: `### 18) Embedding-Based Similarity Matching
-Welcome to the **machine learning** side of entity normalization! This is where things get really powerful.
+[excited] Welcome to the **machine learning** side of entity normalization! [enthusiastically] This is where things get really powerful.
 
 #### 🎯 The Goal
-String matching only looks at characters. But "NYC" and "New York City" share zero character n-grams! Embeddings solve this by capturing **semantic meaning**. Words that mean the same thing end up close together in vector space, regardless of spelling.
+[lecture] String matching only looks at characters. [disappointed] But "NYC" and "New York City" share zero character n-grams! [impressed] Embeddings solve this by capturing **semantic meaning**. Words that mean the same thing end up close together in vector space, regardless of spelling.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -1592,18 +1592,18 @@ flowchart LR
     style H fill:#81c784,color:#000
 \`\`\`
 
-You use a **neural encoder** (like a sentence transformer) to convert text into dense vectors. "NYC" becomes [0.2, 0.8, ...] and "New York City" becomes [0.19, 0.81, ...]. Because they mean the same thing, their vectors are nearly identical.
+[lecture] You use a **neural encoder** (like a sentence transformer) to convert text into dense vectors. [storytelling] "NYC" becomes [0.2, 0.8, ...] and "New York City" becomes [0.19, 0.81, ...]. [pleased] Because they mean the same thing, their vectors are nearly identical.
 
 #### 📅 When to Use This?
-Embeddings excel at:
+[enthusiastically] Embeddings excel at:
 - **Cross-lingual matching**: "München" ↔ "Munich" 
 - **Abbreviations**: "MIT" ↔ "Massachusetts Institute of Technology"
 - **Semantic variations**: "heart attack" ↔ "myocardial infarction"
 
 #### 💡 Implementation Tips
-Pre-embed all your canonical entities into a vector database. At runtime, embed the mention and do ANN search to find candidates quickly. Use FAISS, Pinecone, or Milvus for scale.
+[confidently] Pre-embed all your canonical entities into a vector database. [lecture] At runtime, embed the mention and do ANN search to find candidates quickly. [impressed] Use FAISS, Pinecone, or Milvus for scale.
 
-Let's look at the trade-offs...`
+[energetic] Let's look at the trade-offs...`
         },
         {
           id: 19,
@@ -1642,24 +1642,24 @@ Let's look at the trade-offs...`
           ),
           backgroundColor: '#1a524a',
           notes: `### 19) Embedding-Based Similarity - Pros & Cons
-Embeddings are powerful but require careful calibration.
+[conversational] Embeddings are powerful but require careful calibration.
 
 #### ✅ Pros
-**Semantic understanding** is the killer feature. Embeddings capture meaning, not just characters. "Dr." and "Doctor" are recognized as equivalent. "IBM" and "International Business Machines" cluster together.
+[delighted] **Semantic understanding** is the killer feature. [impressed] Embeddings capture meaning, not just characters. [storytelling] "Dr." and "Doctor" are recognized as equivalent. "IBM" and "International Business Machines" cluster together.
 
-**Cross-lingual support** comes almost free with multilingual models. "企业" (Chinese for "enterprise") maps near "enterprise" in vector space.
+[amazed] **Cross-lingual support** comes almost free with multilingual models. [pleased] "企业" (Chinese for "enterprise") maps near "enterprise" in vector space.
 
 #### ⚠️ Cons
-**Interpretability is limited**. Why did the model think these two entities match? The embedding is a black box of 768 numbers.
+[cautiously] **Interpretability is limited**. [puzzled] Why did the model think these two entities match? The embedding is a black box of 768 numbers.
 
-**Model drift** is real. If you update your embedding model, all your vectors change. You need to re-embed everything and update your indexes.
+[concerned] **Model drift** is real. [disappointed] If you update your embedding model, all your vectors change. [weary] You need to re-embed everything and update your indexes.
 
-**Threshold tuning** is tricky. What similarity score means "match"? 0.85? 0.92? It varies by domain and entity type.
+[frustrated] **Threshold tuning** is tricky. [puzzled] What similarity score means "match"? 0.85? 0.92? It varies by domain and entity type.
 
 #### 💡 Best Practice
-Combine embeddings with **other signals**. Use context, entity types, and confidence scores together. Embeddings are great for candidate generation, but often need filtering afterward.
+[confidently] Combine embeddings with **other signals**. [reassuringly] Use context, entity types, and confidence scores together. [seriously] Embeddings are great for candidate generation, but often need filtering afterward.
 
-Next up: Entity Linking with Knowledge Bases...`
+[energetic] Next up: Entity Linking with Knowledge Bases...`
         }
       ]
     },
@@ -1747,10 +1747,10 @@ Next up: Entity Linking with Knowledge Bases...`
           ),
           backgroundColor: '#4d521a',
           notes: `### 20) Entity Linking with Knowledge Bases
-Now we're connecting our entities to the **world's knowledge**. This is where NLP meets the semantic web.
+[impressed] Now we're connecting our entities to the **world's knowledge**. [enthusiastically] This is where NLP meets the semantic web.
 
 #### 🎯 The Goal
-We want to link text mentions to entries in a **knowledge base** like Wikidata, Wikipedia, or a domain-specific KB. Instead of just normalizing "Apple" to "apple", we link it to \`Q312\` (Apple Inc.) in Wikidata, giving us access to all its properties.
+[lecture] We want to link text mentions to entries in a **knowledge base** like Wikidata, Wikipedia, or a domain-specific KB. [confidently] Instead of just normalizing "Apple" to "apple", we link it to \`Q312\` (Apple Inc.) in Wikidata, giving us access to all its properties.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -1767,18 +1767,18 @@ flowchart LR
     style G fill:#81c784,color:#000
 \`\`\`
 
-The process has three stages:
-1. **Candidate generation**: Find all KB entries that could match the mention (using alias tables)
+[lecture] The process has three stages:
+[conversational] 1. **Candidate generation**: Find all KB entries that could match the mention (using alias tables)
 2. **Ranking**: Score each candidate based on context similarity, prior probability, and type constraints
 3. **Output**: Return the best match or NIL if nothing fits
 
 #### 📅 When to Use This?
-Entity linking is essential for **open-domain text** where entities could be anything—people, places, organizations, products. It's also valuable when you need **enrichment**—linking to Wikidata gives you birth dates, headquarters locations, relationships, and more.
+[enthusiastically] Entity linking is essential for **open-domain text** where entities could be anything—people, places, organizations, products. [impressed] It's also valuable when you need **enrichment**—linking to Wikidata gives you birth dates, headquarters locations, relationships, and more.
 
 #### 💡 Key Concepts
-**Priors** matter a lot! "Paris" is mentioned 1000x more often referring to the city than Paris Hilton. Use frequency information from Wikipedia anchor texts.
+[seriously] **Priors** matter a lot! [storytelling] "Paris" is mentioned 1000x more often referring to the city than Paris Hilton. [confidently] Use frequency information from Wikipedia anchor texts.
 
-Let's examine the trade-offs...`
+[energetic] Let's examine the trade-offs...`
         },
         {
           id: 21,
@@ -1817,26 +1817,26 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#4d521a',
           notes: `### 21) Entity Linking - Pros & Cons
-Knowledge bases are incredibly powerful, but they come with infrastructure overhead.
+[conversational] Knowledge bases are incredibly powerful, but they come with infrastructure overhead.
 
 #### ✅ Pros
-**Rich disambiguation signals**: The KB knows that Apple Inc. is a company, has Tim Cook as CEO, and makes iPhones. All that context helps you disambiguate.
+[impressed] **Rich disambiguation signals**: [storytelling] The KB knows that Apple Inc. is a company, has Tim Cook as CEO, and makes iPhones. [pleased] All that context helps you disambiguate.
 
-**Enrichment is free**: Once you link to Wikidata, you can pull in revenue figures, founding dates, headquarters locations—without storing it yourself.
+[delighted] **Enrichment is free**: [enthusiastically] Once you link to Wikidata, you can pull in revenue figures, founding dates, headquarters locations—without storing it yourself.
 
-**Enables downstream reasoning**: You can ask "Show me all companies in California mentioned in this document" by following KB relationships.
+[amazed] **Enables downstream reasoning**: [conversational] You can ask "Show me all companies in California mentioned in this document" by following KB relationships.
 
 #### ⚠️ Cons
-**Incompleteness**: Not everything is in Wikipedia. New companies, niche products, and domain-specific entities may not exist in public KBs.
+[disappointed] **Incompleteness**: [frustrated] Not everything is in Wikipedia. [concerned] New companies, niche products, and domain-specific entities may not exist in public KBs.
 
-**KB lag**: Wikidata is updated by volunteers. A company might rebrand or merge, and the KB won't reflect it for months.
+[weary] **KB lag**: [disappointed] Wikidata is updated by volunteers. [cautiously] A company might rebrand or merge, and the KB won't reflect it for months.
 
-**NIL handling is tricky**: What do you do when your entity isn't in the KB? You need a separate process for "not in knowledge base" cases.
+[frustrated] **NIL handling is tricky**: [puzzled] What do you do when your entity isn't in the KB? You need a separate process for "not in knowledge base" cases.
 
 #### 💡 Pro Tips
-Combine public KBs (Wikidata) with **domain-specific KBs** for coverage. Always have a NIL detection strategy. Consider building a **private KB extension** for entities unique to your domain.
+[confidently] Combine public KBs (Wikidata) with **domain-specific KBs** for coverage. [seriously] Always have a NIL detection strategy. [reassuringly] Consider building a **private KB extension** for entities unique to your domain.
 
-Next: Graph-Based Entity Disambiguation...`
+[energetic] Next: Graph-Based Entity Disambiguation...`
         }
       ]
     },
@@ -1921,10 +1921,10 @@ Next: Graph-Based Entity Disambiguation...`
           ),
           backgroundColor: '#3c1a52',
           notes: `### 22) Graph-Based Entity Disambiguation
-Now we're thinking about entities **collectively**, not one at a time. This is a game-changer for accuracy.
+[impressed] Now we're thinking about entities **collectively**, not one at a time. [enthusiastically] This is a game-changer for accuracy.
 
 #### 🎯 The Goal
-Instead of disambiguating each mention independently, we look at **all mentions in the document together**. If a document mentions "Apple" and "Tim Cook", those two mentions constrain each other—it's almost certainly Apple Inc., not the fruit.
+[lecture] Instead of disambiguating each mention independently, we look at **all mentions in the document together**. [storytelling] If a document mentions "Apple" and "Tim Cook", those two mentions constrain each other—it's almost certainly Apple Inc., not the fruit.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -1938,17 +1938,17 @@ graph TD
     style A2 fill:#ffcdd2,color:#000
 \`\`\`
 
-You build a graph where mentions connect to their candidate entities, and entities connect to each other based on KB relationships. Then you run **collective inference** to find the assignment that maximizes global coherence.
+[lecture] You build a graph where mentions connect to their candidate entities, and entities connect to each other based on KB relationships. [impressed] Then you run **collective inference** to find the assignment that maximizes global coherence.
 
-If "Apple Inc." and "Tim Cook" are connected in the knowledge base (CEO relationship), choosing both gives a high coherence score. Choosing "Apple fruit" breaks that coherence.
+[conversational] If "Apple Inc." and "Tim Cook" are connected in the knowledge base (CEO relationship), choosing both gives a high coherence score. [disappointed] Choosing "Apple fruit" breaks that coherence.
 
 #### 📅 When to Use This?
-Graph-based methods shine in **news articles** and **scientific papers** where entities are related. "Einstein" and "relativity" mentioned together? That disambiguates both. In contrast, random product reviews with unrelated entities benefit less.
+[confidently] Graph-based methods shine in **news articles** and **scientific papers** where entities are related. [storytelling] "Einstein" and "relativity" mentioned together? That disambiguates both. [cautiously] In contrast, random product reviews with unrelated entities benefit less.
 
 #### 🔬 Inference Methods
-Options include **Maximum Spanning Tree** (simple), **Loopy Belief Propagation** (probabilistic), and **Integer Linear Programming** (optimal but slow). Start simple!
+[lecture] Options include **Maximum Spanning Tree** (simple), **Loopy Belief Propagation** (probabilistic), and **Integer Linear Programming** (optimal but slow). [reassuringly] Start simple!
 
-Let's look at the trade-offs...`
+[energetic] Let's look at the trade-offs...`
         },
         {
           id: 23,
@@ -1987,24 +1987,24 @@ Let's look at the trade-offs...`
           ),
           backgroundColor: '#3c1a52',
           notes: `### 23) Graph-Based Disambiguation - Pros & Cons
-Collective inference is powerful, but adds complexity.
+[conversational] Collective inference is powerful, but adds complexity.
 
 #### ✅ Pros
-**Mutual constraints** dramatically improve accuracy. Entities that co-occur frequently in your KB reinforce each other's disambiguation. Errors in one mention can be corrected by strong signals from related mentions.
+[delighted] **Mutual constraints** dramatically improve accuracy. [impressed] Entities that co-occur frequently in your KB reinforce each other's disambiguation. [pleased] Errors in one mention can be corrected by strong signals from related mentions.
 
-**Robust to local ambiguity**: Even if one mention is highly ambiguous by itself, other mentions in the document can disambiguate it.
+[enthusiastically] **Robust to local ambiguity**: [storytelling] Even if one mention is highly ambiguous by itself, other mentions in the document can disambiguate it.
 
 #### ⚠️ Cons
-**Computational complexity**: You're now optimizing over all mentions simultaneously. For long documents with many entities, this can be expensive.
+[concerned] **Computational complexity**: [weary] You're now optimizing over all mentions simultaneously. For long documents with many entities, this can be expensive.
 
-**Edge weighting is tricky**: How do you score entity-entity relatedness? Wikipedia link overlap? Embedding similarity? Path length in the KB? Each choice affects results differently.
+[cautiously] **Edge weighting is tricky**: [puzzled] How do you score entity-entity relatedness? Wikipedia link overlap? Embedding similarity? Path length in the KB? [frustrated] Each choice affects results differently.
 
-**Error propagation**: If you get one high-influence entity wrong, it can cascade and cause errors in related entities.
+[disappointed] **Error propagation**: [weary] If you get one high-influence entity wrong, it can cascade and cause errors in related entities.
 
 #### 💡 Practical Advice
-Start with **pairwise similarity** based on Wikipedia co-occurrence—it's simple and works well. Use graph-based methods as a **reranking layer** on top of simpler candidate generation.
+[confidently] Start with **pairwise similarity** based on Wikipedia co-occurrence—it's simple and works well. [reassuringly] Use graph-based methods as a **reranking layer** on top of simpler candidate generation.
 
-Next: PageRank-Based Disambiguation...`
+[energetic] Next: PageRank-Based Disambiguation...`
         }
       ]
     },
@@ -2088,10 +2088,10 @@ Next: PageRank-Based Disambiguation...`
           ),
           backgroundColor: '#521a3f',
           notes: `### 24) PageRank / Centrality-Based Disambiguation
-This technique borrows an idea from Google's original search algorithm to help with entity disambiguation.
+[impressed] This technique borrows an idea from Google's original search algorithm to help with entity disambiguation.
 
 #### 🎯 The Goal
-We want to prefer entities that are **"central" to the document's topic**. If a document is about technology, Apple Inc. should get more weight than the fruit because it's more connected to other tech entities in the knowledge graph.
+[lecture] We want to prefer entities that are **"central" to the document's topic**. [storytelling] If a document is about technology, Apple Inc. should get more weight than the fruit because it's more connected to other tech entities in the knowledge graph.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -2104,19 +2104,19 @@ graph LR
     style C fill:#4fc3f7,color:#000
 \`\`\`
 
-You build a subgraph containing all candidate entities and their KB relationships. Then you run **PageRank** (or another centrality measure) to score each entity. Entities that are well-connected to other candidates get higher scores.
+[lecture] You build a subgraph containing all candidate entities and their KB relationships. Then you run **PageRank** (or another centrality measure) to score each entity. [impressed] Entities that are well-connected to other candidates get higher scores.
 
-The intuition: If many other candidate entities "vote for" Apple Inc. by being connected to it, it's probably the right interpretation.
+[conversational] The intuition: [storytelling] If many other candidate entities "vote for" Apple Inc. by being connected to it, it's probably the right interpretation.
 
 #### 📅 When to Use This?
-PageRank works well when you have a **dense knowledge base** with rich relationships. It's especially useful for **topically coherent documents** like news articles or research papers.
+[confidently] PageRank works well when you have a **dense knowledge base** with rich relationships. [pleased] It's especially useful for **topically coherent documents** like news articles or research papers.
 
 #### 🔢 Centrality Options
-- **PageRank**: Considers both direct and indirect connections
+[lecture] - **PageRank**: Considers both direct and indirect connections
 - **Degree centrality**: Simple count of connections
 - **Betweenness**: Entities that bridge different clusters
 
-Let's examine the trade-offs...`
+[energetic] Let's examine the trade-offs...`
         },
         {
           id: 25,
@@ -2155,24 +2155,24 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#521a3f',
           notes: `### 25) PageRank/Centrality - Pros & Cons
-Centrality is elegant, but popularity bias is real.
+[conversational] Centrality is elegant, but popularity bias is real.
 
 #### ✅ Pros
-**Simplicity**: PageRank is a well-understood algorithm. Once you have the subgraph, computing centrality is straightforward.
+[pleased] **Simplicity**: [confidently] PageRank is a well-understood algorithm. Once you have the subgraph, computing centrality is straightforward.
 
-**Unsupervised**: No training data needed. Just the knowledge base structure.
+[impressed] **Unsupervised**: No training data needed. Just the knowledge base structure.
 
-**Effective signal**: In practice, central entities are often the correct ones. Documents tend to be about well-known, well-connected things.
+[enthusiastically] **Effective signal**: [storytelling] In practice, central entities are often the correct ones. Documents tend to be about well-known, well-connected things.
 
 #### ⚠️ Cons
-**Popularity bias** is the main concern. PageRank favors entities with many connections—which often means famous entities. "Paris" almost always resolves to the city, even when Paris Hilton might be correct.
+[disappointed] **Popularity bias** is the main concern. [frustrated] PageRank favors entities with many connections—which often means famous entities. [weary] "Paris" almost always resolves to the city, even when Paris Hilton might be correct.
 
-For **niche domains** or **long-tail entities**, centrality can mislead you. A document about a small startup won't have its entities well-connected in Wikipedia.
+[cautiously] For **niche domains** or **long-tail entities**, centrality can mislead you. [disappointed] A document about a small startup won't have its entities well-connected in Wikipedia.
 
 #### 💡 Mitigation Strategies
-**Combine centrality with local evidence**. Use mention similarity and context as the primary signal, and PageRank as a secondary tiebreaker. You can also use **personalized PageRank** seeded from high-confidence entities.
+[confidently] **Combine centrality with local evidence**. [reassuringly] Use mention similarity and context as the primary signal, and PageRank as a secondary tiebreaker. [impressed] You can also use **personalized PageRank** seeded from high-confidence entities.
 
-Next: Domain-Specific Ontology Mapping...`
+[energetic] Next: Domain-Specific Ontology Mapping...`
         }
       ]
     },
@@ -2258,10 +2258,10 @@ Next: Domain-Specific Ontology Mapping...`
           ),
           backgroundColor: '#1a4652',
           notes: `### 26) Domain-Specific Ontology Mapping
-Now we're talking about **specialized knowledge** for specific industries. This is where the real precision lives.
+[impressed] Now we're talking about **specialized knowledge** for specific industries. [enthusiastically] This is where the real precision lives.
 
 #### 🎯 The Goal
-In healthcare, finance, and other regulated domains, you don't just want to normalize entities—you want to map them to **official standard codes**. "Heart attack" should become ICD-10 code I21. "Aspirin" should become its NDC drug code.
+[lecture] In healthcare, finance, and other regulated domains, you don't just want to normalize entities—you want to map them to **official standard codes**. [seriously] "Heart attack" should become ICD-10 code I21. "Aspirin" should become its NDC drug code.
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -2276,20 +2276,20 @@ graph TD
     style F fill:#81c784,color:#000
 \`\`\`
 
-Domain ontologies like **UMLS** (medical), **SNOMED CT** (clinical terms), or **NAICS** (industry codes) provide:
-- Standardized identifiers
-- Hierarchical relationships (asthma IS-A respiratory disease)
-- Rich synonym lists curated by experts
+[lecture] Domain ontologies like **UMLS** (medical), **SNOMED CT** (clinical terms), or **NAICS** (industry codes) provide:
+- [confidently] Standardized identifiers
+- [impressed] Hierarchical relationships (asthma IS-A respiratory disease)
+- [pleased] Rich synonym lists curated by experts
 
-You match mentions against these ontologies using exact lookup, fuzzy matching, and type constraints.
+[conversational] You match mentions against these ontologies using exact lookup, fuzzy matching, and type constraints.
 
 #### 📅 When to Use This?
-**Regulatory compliance** demands standard codes. Healthcare billing requires ICD codes. Clinical trials need SNOMED mappings. Financial reporting uses industry classifications.
+[seriously] **Regulatory compliance** demands standard codes. [storytelling] Healthcare billing requires ICD codes. Clinical trials need SNOMED mappings. Financial reporting uses industry classifications.
 
 #### 💡 Practical Reality
-Ontology mapping is **hard but essential**. You'll combine multiple techniques: exact match first, then fuzzy matching, then embeddings for edge cases. The hierarchy helps disambiguate—"cold" in a respiratory context means illness, not temperature.
+[cautiously] Ontology mapping is **hard but essential**. [lecture] You'll combine multiple techniques: exact match first, then fuzzy matching, then embeddings for edge cases. [confidently] The hierarchy helps disambiguate—"cold" in a respiratory context means illness, not temperature.
 
-Let's examine the trade-offs...`
+[energetic] Let's examine the trade-offs...`
         },
         {
           id: 27,
@@ -2328,26 +2328,26 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#1a4652',
           notes: `### 27) Ontology Mapping - Pros & Cons
-Ontologies are the gold standard for precision, but they require investment.
+[conversational] Ontologies are the gold standard for precision, but they require investment.
 
 #### ✅ Pros
-**Precision and interoperability**: When you map to SNOMED or ICD codes, your data becomes interoperable with the entire healthcare industry. Research, billing, analytics—everyone speaks the same language.
+[delighted] **Precision and interoperability**: [impressed] When you map to SNOMED or ICD codes, your data becomes interoperable with the entire healthcare industry. [enthusiastically] Research, billing, analytics—everyone speaks the same language.
 
-**Hierarchies aid disambiguation**: If you know you're in a "medication" context, you can constrain matches to the pharmaceutical branch of your ontology. This eliminates many false positives.
+[pleased] **Hierarchies aid disambiguation**: [confidently] If you know you're in a "medication" context, you can constrain matches to the pharmaceutical branch of your ontology. [impressed] This eliminates many false positives.
 
-**Expert-curated synonyms**: Medical ontologies like UMLS have been refined over decades. Their synonym lists are comprehensive and accurate.
+[amazed] **Expert-curated synonyms**: [enthusiastically] Medical ontologies like UMLS have been refined over decades. Their synonym lists are comprehensive and accurate.
 
 #### ⚠️ Cons
-**Licensing and cost**: Some ontologies (like SNOMED) require expensive licenses. UMLS requires registration.
+[disappointed] **Licensing and cost**: [weary] Some ontologies (like SNOMED) require expensive licenses. UMLS requires registration.
 
-**Coverage gaps**: Ontologies may not include new drugs, emerging diseases, or industry-specific jargon. You'll need to extend them.
+[frustrated] **Coverage gaps**: [cautiously] Ontologies may not include new drugs, emerging diseases, or industry-specific jargon. [concerned] You'll need to extend them.
 
-**Domain expertise required**: You need clinicians, pharmacists, or domain experts to validate mappings and handle edge cases.
+[weary] **Domain expertise required**: [seriously] You need clinicians, pharmacists, or domain experts to validate mappings and handle edge cases.
 
 #### 💡 Pro Tip
-Build a **feedback loop** where ambiguous or NIL cases get reviewed by domain experts and added to your ontology extensions over time.
+[confidently] Build a **feedback loop** where ambiguous or NIL cases get reviewed by domain experts and added to your ontology extensions over time.
 
-Next: The cutting edge—LLM-Based Entity Disambiguation...`
+[energetic] Next: The cutting edge—LLM-Based Entity Disambiguation...`
         }
       ]
     },
@@ -2433,10 +2433,10 @@ Next: The cutting edge—LLM-Based Entity Disambiguation...`
           ),
           backgroundColor: '#523b1a',
           notes: `### 28) LLM-Based Entity Disambiguation
-Welcome to the **frontier** of entity disambiguation! Large Language Models are changing the game.
+[excited] Welcome to the **frontier** of entity disambiguation! [amazed] Large Language Models are changing the game.
 
 #### 🎯 The Goal
-LLMs can read context like humans do. Instead of encoding rules or training specialized models, we can simply **ask the LLM** to disambiguate. "Given this paragraph about tech stocks, does 'Apple' refer to the company or the fruit?"
+[impressed] LLMs can read context like humans do. [enthusiastically] Instead of encoding rules or training specialized models, we can simply **ask the LLM** to disambiguate. [conversational] "Given this paragraph about tech stocks, does 'Apple' refer to the company or the fruit?"
 
 #### ⚙️ How It Works
 \`\`\`mermaid
@@ -2451,22 +2451,22 @@ flowchart LR
     style F fill:#4fc3f7,color:#000
 \`\`\`
 
-You build a prompt containing:
+[lecture] You build a prompt containing:
 - The mention and its surrounding context
 - A list of candidate entities (optional but recommended)
 - KB snippets retrieved via RAG (for grounding)
 
-The LLM returns its choice with an explanation. For structured output, you can use function calling or JSON mode.
+[confidently] The LLM returns its choice with an explanation. For structured output, you can use function calling or JSON mode.
 
 #### 📅 When to Use This?
-LLMs excel in **complex, nuanced contexts** where rules fail. Long documents with subtle coreference. Sarcasm, irony, or implicit references. Cases where world knowledge matters.
+[enthusiastically] LLMs excel in **complex, nuanced contexts** where rules fail. [impressed] Long documents with subtle coreference. Sarcasm, irony, or implicit references. [amazed] Cases where world knowledge matters.
 
-They're also great for **rapid prototyping**—no training data needed, just iterate on prompts.
+[pleased] They're also great for **rapid prototyping**—no training data needed, just iterate on prompts.
 
 #### 💡 Critical: Grounding
-LLMs can hallucinate! Always provide **candidate lists** from your KB. Use RAG to ground responses. Verify outputs against known entities.
+[seriously] LLMs can hallucinate! [firmly] Always provide **candidate lists** from your KB. Use RAG to ground responses. [cautiously] Verify outputs against known entities.
 
-Let's examine the trade-offs...`
+[energetic] Let's examine the trade-offs...`
         },
         {
           id: 29,
@@ -2505,28 +2505,28 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#523b1a',
           notes: `### 29) LLM-Based Disambiguation - Pros & Cons
-LLMs are powerful but come with significant operational considerations.
+[conversational] LLMs are powerful but come with significant operational considerations.
 
 #### ✅ Pros
-**Long-context understanding**: LLMs can read entire documents and use distant context for disambiguation. A mention on page 5 can be resolved using information from page 1.
+[amazed] **Long-context understanding**: [impressed] LLMs can read entire documents and use distant context for disambiguation. [storytelling] A mention on page 5 can be resolved using information from page 1.
 
-**Rapid iteration**: No training required. Just update your prompts and test. You can adapt to new domains in hours, not weeks.
+[enthusiastically] **Rapid iteration**: No training required. [pleased] Just update your prompts and test. You can adapt to new domains in hours, not weeks.
 
-**World knowledge**: LLMs know a lot! They understand that Tim Cook is Apple's CEO, even without you providing that fact explicitly.
+[delighted] **World knowledge**: [amazed] LLMs know a lot! They understand that Tim Cook is Apple's CEO, even without you providing that fact explicitly.
 
 #### ⚠️ Cons
-**Cost and latency**: API calls are expensive at scale. For millions of entities, LLM-only approaches may be cost-prohibitive. Latency can also be an issue for real-time systems.
+[concerned] **Cost and latency**: [disappointed] API calls are expensive at scale. [weary] For millions of entities, LLM-only approaches may be cost-prohibitive. [frustrated] Latency can also be an issue for real-time systems.
 
-**Hallucination risk**: LLMs can confidently return entity IDs that don't exist. Always validate against your KB.
+[seriously] **Hallucination risk**: [cautiously] LLMs can confidently return entity IDs that don't exist. [firmly] Always validate against your KB.
 
-**Privacy concerns**: Sending data to external APIs may violate compliance requirements. Consider on-premise models for sensitive domains.
+[weary] **Privacy concerns**: [seriously] Sending data to external APIs may violate compliance requirements. [reassuringly] Consider on-premise models for sensitive domains.
 
 #### 💡 Practical Architecture
-Use LLMs as a **final disambiguation layer** for hard cases. Let cheaper methods handle the easy 80%. Route ambiguous mentions to the LLM. This balances cost and quality.
+[confidently] Use LLMs as a **final disambiguation layer** for hard cases. [reassuringly] Let cheaper methods handle the easy 80%. Route ambiguous mentions to the LLM. [pleased] This balances cost and quality.
 
-> Ask the audience: "What percentage of your entity mentions would need LLM-level disambiguation?"
+> [conversational] Ask the audience: "What percentage of your entity mentions would need LLM-level disambiguation?"
 
-Now let's wrap up with key takeaways...`
+[energetic] Now let's wrap up with key takeaways...`
         }
       ]
     },
@@ -2611,28 +2611,28 @@ Now let's wrap up with key takeaways...`
           ),
           backgroundColor: '#1d1a52',
           notes: `### 30) Conclusion & Key Takeaways
-We've covered a lot of ground! Let's bring it all together with practical guidance you can apply tomorrow.
+[conversational] We've covered a lot of ground! [enthusiastically] Let's bring it all together with practical guidance you can apply tomorrow.
 
 #### 🏗️ Build a Layered Pipeline
-The best entity normalization systems use **multiple techniques in sequence**:
-1. **Normalize** - Clean and standardize text (techniques 1-2)
+[confidently] The best entity normalization systems use **multiple techniques in sequence**:
+[lecture] 1. **Normalize** - Clean and standardize text (techniques 1-2)
 2. **Generate candidates** - Use gazetteers, fuzzy matching, embeddings (techniques 3-8)
 3. **Rank and disambiguate** - Apply context, KB linking, graphs (techniques 7-13)
 4. **Handle NILs** - Log unknown entities for curation
 
-Each layer filters and refines. Simple techniques handle easy cases cheaply. Complex techniques tackle the hard tail.
+[storytelling] Each layer filters and refines. [pleased] Simple techniques handle easy cases cheaply. Complex techniques tackle the hard tail.
 
 #### 🎯 Match Techniques to Your Domain
-- **Closed-world domains** (medications, products, locations): Start with gazetteers and ontologies. High precision is achievable!
-- **Open-domain content** (news, social media): You need embeddings, KB linking, and possibly LLMs.
-- **Regulated industries**: Invest in ontology mapping early. Compliance requirements are non-negotiable.
+[lecture] - **Closed-world domains** (medications, products, locations): [confidently] Start with gazetteers and ontologies. High precision is achievable!
+- **Open-domain content** (news, social media): [impressed] You need embeddings, KB linking, and possibly LLMs.
+- **Regulated industries**: [seriously] Invest in ontology mapping early. Compliance requirements are non-negotiable.
 
 #### 📊 The 80/20 Rule
-In my experience, **simple techniques handle 80% of cases**. String normalization, synonym tables, and exact matching go surprisingly far. Invest in complex techniques for the remaining 20% where they actually matter.
+[conversational] In my experience, **simple techniques handle 80% of cases**. [pleased] String normalization, synonym tables, and exact matching go surprisingly far. [confidently] Invest in complex techniques for the remaining 20% where they actually matter.
 
-> Ask the audience: "What's your current entity normalization pipeline? Which techniques are you using?"
+> [conversational] Ask the audience: "What's your current entity normalization pipeline? Which techniques are you using?"
 
-Let's finish with governance best practices...`
+[energetic] Let's finish with governance best practices...`
         },
         {
           id: 31,
@@ -2668,34 +2668,34 @@ Let's finish with governance best practices...`
           ),
           backgroundColor: '#1d1a52',
           notes: `### 31) Governance & Best Practices
-Before we wrap up, let's talk about **operational excellence**. Building a great system is only half the battle—you need to run it well.
+[seriously] Before we wrap up, let's talk about **operational excellence**. [conversational] Building a great system is only half the battle—you need to run it well.
 
 #### 📋 Version Everything
-- **Data**: Your gazetteers, synonym tables, and ontologies change over time. Version them like code.
-- **Models**: Embedding models get updated. Track which version was used for each prediction.
-- **Rules**: If you're using rule-based context matching, version those rules. A change can have unintended consequences.
+[lecture] - **Data**: [seriously] Your gazetteers, synonym tables, and ontologies change over time. Version them like code.
+- **Models**: [cautiously] Embedding models get updated. Track which version was used for each prediction.
+- **Rules**: [concerned] If you're using rule-based context matching, version those rules. [disappointed] A change can have unintended consequences.
 
 #### 📝 Audit and Explain
-For regulated industries, you may need to explain **why** an entity was resolved a particular way. Maintain audit logs. Store confidence scores. Track which technique made the decision.
+[seriously] For regulated industries, you may need to explain **why** an entity was resolved a particular way. [firmly] Maintain audit logs. Store confidence scores. Track which technique made the decision.
 
 #### 🔄 Continuous Improvement
-Entity normalization is never "done." New entities appear. Language evolves. Your domain changes.
+[conversational] Entity normalization is never "done." [storytelling] New entities appear. Language evolves. Your domain changes.
 
-Build a **feedback loop**:
-1. Log NIL cases and low-confidence predictions
+[confidently] Build a **feedback loop**:
+[lecture] 1. Log NIL cases and low-confidence predictions
 2. Have domain experts review samples regularly
 3. Update gazetteers and rules based on findings
 4. Re-evaluate metrics after changes
 
 #### 🚀 The Final Word
-Entity normalization and disambiguation may seem like boring data plumbing, but they're **foundational**. Every downstream application—search, analytics, knowledge graphs, RAG systems—depends on getting entities right.
+[inspiringly] Entity normalization and disambiguation may seem like boring data plumbing, but they're **foundational**. [firmly] Every downstream application—search, analytics, knowledge graphs, RAG systems—depends on getting entities right.
 
-Invest in this infrastructure. Build it well. Operate it professionally.
+[warmly] Invest in this infrastructure. Build it well. Operate it professionally.
 
-**Thank you!** Questions?
+[enthusiastically] **Thank you!** Questions?
 
 ---
-*Slides and speaker notes created for teaching entity normalization techniques to beginners.*`
+[conversational] *Slides and speaker notes created for teaching entity normalization techniques to beginners.*`
         }
       ]
     }
