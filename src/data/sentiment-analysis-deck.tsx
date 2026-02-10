@@ -20,7 +20,7 @@ export const sentimentAnalysisDeck: Deck = {
           center: true,
           title: '15 Sentiment Analysis Techniques',
           content: (
-            <div style={{ marginTop: '20px', color: '#fff' }}>
+            <div style={{ color: '#fff' }}>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0}>
                 <h2>From Rule-Based Scores to Transformers and Multimodal Analysis</h2>
               </GSAPAnimated>
@@ -67,71 +67,71 @@ export const sentimentAnalysisDeck: Deck = {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-book" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Traditional/Rule-based
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>1. Lexicon-Based Sentiment Scoring</li>
-                    <li>2. Rule-Based Sentiment Classification</li>
-                  </ul>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-brackets-square" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Classical ML
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>3. BoW + Logistic Regression</li>
-                    <li>4. TF-IDF + SVM</li>
-                    <li>5. Naive Bayes Sentiment Model</li>
-                  </ul>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-toolbox" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Modern NLP Tools
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>6. VADER Sentiment Scoring</li>
-                    <li>7. TextBlob Polarity Scoring</li>
-                  </ul>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Deep Learning
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>8. LSTM-Based Classification</li>
-                    <li>9. BiLSTM with Attention</li>
-                    <li>10. CNN for Sentiment Classification</li>
-                  </ul>
-                </div>
+                  <div>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-book" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
+                      Traditional/Rule-based
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>1. Lexicon-Based Sentiment Scoring</li>
+                      <li>2. Rule-Based Sentiment Classification</li>
+                    </ul>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-brackets-square" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
+                      Classical ML
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>3. BoW + Logistic Regression</li>
+                      <li>4. TF-IDF + SVM</li>
+                      <li>5. Naive Bayes Sentiment Model</li>
+                    </ul>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-toolbox" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
+                      Modern NLP Tools
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>6. VADER Sentiment Scoring</li>
+                      <li>7. TextBlob Polarity Scoring</li>
+                    </ul>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-brain" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
+                      Deep Learning
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>8. LSTM-Based Classification</li>
+                      <li>9. BiLSTM with Attention</li>
+                      <li>10. CNN for Sentiment Classification</li>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
-                <div>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-leaf" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Transformer-based
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>11. BERT Fine-Tuned for Sentiment</li>
-                    <li>12. RoBERTa/DistilBERT Models</li>
-                    <li>13. GPT/LLM Zero-Shot Classification</li>
-                  </ul>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Advanced
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>14. Aspect-Based Sentiment Analysis</li>
-                    <li>15. Multimodal Sentiment Analysis</li>
-                  </ul>
-                  <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-plus-large" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Additional
-                  </h3>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Comparison Matrix</li>
-                    <li>Recommendations & Best Practices</li>
-                  </ul>
-                </div>
+                  <div>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-leaf" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
+                      Transformer-based
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>11. BERT Fine-Tuned for Sentiment</li>
+                      <li>12. RoBERTa/DistilBERT Models</li>
+                      <li>13. GPT/LLM Zero-Shot Classification</li>
+                    </ul>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      Advanced
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>14. Aspect-Based Sentiment Analysis</li>
+                      <li>15. Multimodal Sentiment Analysis</li>
+                    </ul>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-plus-large" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      Additional
+                    </h3>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Comparison Matrix</li>
+                      <li>Recommendations & Best Practices</li>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
@@ -178,57 +178,57 @@ export const sentimentAnalysisDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#00ffcd' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-book-open" sizeName="2x" style={{ color: '#00ffcd' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#b4fff0' }}>Dictionary/lexicon lookup with additive scoring (e.g., AFINN, SentiWordNet)</p>
                 </div>
-                <p style={{ color: '#b4fff0' }}>Dictionary/lexicon lookup with additive scoring (e.g., AFINN, SentiWordNet)</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '0.85em' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="Lexicon-Based Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="Lexicon-Based Process"
+                          diagram={`flowchart LR
     A["📄 Text Input"] --> B["📖 Lookup Words\\nin Lexicon"]
     B --> C["➕ Sum\\nScores"]
     C --> D["😊/😐/😢\\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style D fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#b4fff0' }}>No labels; optional domain lexicon curation</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#b4fff0' }}>No labels; optional domain lexicon curation</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#b4fff0' }}>Low-resource, explainable baseline; predictable vocabulary domains</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#b4fff0' }}>Low-resource, explainable baseline; predictable vocabulary domains</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#b4fff0' }}>Consider enhancing with custom rules for negation and intensifiers. Domain-specific lexicons can significantly improve performance for specialized vocabularies.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#b4fff0' }}>Consider enhancing with custom rules for negation and intensifiers. Domain-specific lexicons can significantly improve performance for specialized vocabularies.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#0e7762',
+          backgroundColor: '#0c5143',
           notes: `### Lexicon-Based Sentiment Scoring
 
 [cheerfully] Let's start our journey with the simplest and most intuitive approach: lexicon-based sentiment scoring. [confidently] This is the foundation of sentiment analysis, and understanding it will help you appreciate why more complex methods exist.
@@ -269,39 +269,39 @@ It requires zero training, runs extremely fast, and you can understand every dec
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#b4fff0', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Interpret results with word-level contributions</li>
-                    <li>Fast implementation with minimal compute requirements</li>
-                    <li>No training data needed</li>
-                    <li>Multilingual lexicons available</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#b4fff0', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Poor handling of context and negation</li>
-                    <li>Struggles with sarcasm and idioms</li>
-                    <li>Brittle to slang and domain-specific terminology</li>
-                    <li>Lower accuracy compared to ML approaches</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#b4fff0', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Interpret results with word-level contributions</li>
+                        <li>Fast implementation with minimal compute requirements</li>
+                        <li>No training data needed</li>
+                        <li>Multilingual lexicons available</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#b4fff0', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Poor handling of context and negation</li>
+                        <li>Struggles with sarcasm and idioms</li>
+                        <li>Brittle to slang and domain-specific terminology</li>
+                        <li>Lower accuracy compared to ML approaches</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#0e7762',
+          backgroundColor: '#0c5143',
           notes: `### Pros and Cons
 
 [seriously] Now let's be honest about the strengths and limitations of lexicon-based approaches. [reassuringly] Understanding these trade-offs will help you decide when this simple method is enough and when you need something more sophisticated.
@@ -343,58 +343,58 @@ It requires zero training, runs extremely fast, and you can understand every dec
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#edc1ff' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#edc1ff' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#eab9ff' }}>Handcrafted rules + patterns over tokens/syntax; often layered on lexicons</p>
                 </div>
-                <p style={{ color: '#eab9ff' }}>Handcrafted rules + patterns over tokens/syntax; often layered on lexicons</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="Rule-Based Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="Rule-Based Process"
+                          diagram={`flowchart LR
     A["📄 Text Input"] --> B["🔍 Apply\nRules"]
     B --> C["⚖️ Negation\nHandling"]
     C --> D["📊 Score\nAdjustment"]
     D --> E["😊/😐/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#eab9ff' }}>No labels, but significant rule engineering</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#eab9ff' }}>No labels, but significant rule engineering</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#eab9ff' }}>Compliance/regulated settings; narrow domain heuristics</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#eab9ff' }}>Compliance/regulated settings; narrow domain heuristics</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#eab9ff' }}>Use regex patterns and dependency parses for complex rules. Implement comprehensive unit tests and maintain versioned rulebooks to track changes and ensure consistency.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#eab9ff' }}>Use regex patterns and dependency parses for complex rules. Implement comprehensive unit tests and maintain versioned rulebooks to track changes and ensure consistency.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#5e2b73',
+          backgroundColor: '#47135d',
           notes: `### Rule-Based Sentiment Classification
 
 [energetic] Now let's level up from simple lexicon lookups to rule-based sentiment classification. [conversational] This technique adds intelligence to our basic dictionary approach by incorporating rules that understand language patterns.
@@ -448,39 +448,39 @@ This approach requires significant upfront engineering effort, but the payoff is
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#eab9ff', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Deterministic and fully auditable</li>
-                    <li>Predictable latency for production</li>
-                    <li>No training data needed</li>
-                    <li>Can incorporate domain expertise directly</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#eab9ff', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Hard to scale and maintain as rules grow</li>
-                    <li>Limited adaptability to new expressions</li>
-                    <li>Weak on nuance and contextual meaning</li>
-                    <li>Labor-intensive to create and update</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#eab9ff', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Deterministic and fully auditable</li>
+                        <li>Predictable latency for production</li>
+                        <li>No training data needed</li>
+                        <li>Can incorporate domain expertise directly</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#eab9ff', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Hard to scale and maintain as rules grow</li>
+                        <li>Limited adaptability to new expressions</li>
+                        <li>Weak on nuance and contextual meaning</li>
+                        <li>Labor-intensive to create and update</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#5e2b73',
+          backgroundColor: '#47135d',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the trade-offs of rule-based sentiment classification so you can decide if it's the right tool for your needs.
@@ -526,58 +526,58 @@ Let's move on to machine learning approaches that can learn patterns from data r
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f76ed5' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f76ed5' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#f76ed5' }}>Linear classifier on unigram/bigram counts</p>
                 </div>
-                <p style={{ color: '#f76ed5' }}>Linear classifier on unigram/bigram counts</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="Bag-of-Words + Logistic Regression"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="Bag-of-Words + Logistic Regression"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📦 Create\nBoW Vector"]
     B --> C["🧠 Logistic\nRegression"]
     C --> D["📊 Probability\nScore"]
     D --> E["😊/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#f76ed5' }}>Small–moderate labeled set (~1k–50k)</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#f76ed5' }}>Small–moderate labeled set (~1k–50k)</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#f76ed5' }}>Short texts/reviews; need interpretable feature weights</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#f76ed5' }}>Short texts/reviews; need interpretable feature weights</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#f76ed5' }}>Use n-grams to capture some word order; apply class weights for imbalanced data; implement L2 regularization to prevent overfitting; validate with stratified cross-validation.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#f76ed5' }}>Use n-grams to capture some word order; apply class weights for imbalanced data; implement L2 regularization to prevent overfitting; validate with stratified cross-validation.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#732b61',
+          backgroundColor: '#5d194c',
           notes: `### Bag-of-Words + Logistic Regression
 
 [excited] Welcome to the world of machine learning for sentiment analysis! [enthusiastically] This is where we move from handcrafted rules to algorithms that learn patterns from data. [confidently] Bag-of-Words combined with Logistic Regression is the classic entry point into ML-based sentiment analysis.
@@ -639,40 +639,40 @@ This technique represents your first step into data-driven sentiment analysis, o
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#f76ed5', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Fast to train and deploy</li>
-                    <li>Strong baseline performance</li>
-                    <li>Easy regularization options</li>
-                    <li>Interpretable feature weights</li>
-                    <li>Works with smaller datasets</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#f76ed5', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Ignores word order and context</li>
-                    <li>Limited capability for nuanced sentiment</li>
-                    <li>Sparse feature representation</li>
-                    <li>Struggles with out-of-vocabulary words</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#f76ed5', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Fast to train and deploy</li>
+                        <li>Strong baseline performance</li>
+                        <li>Easy regularization options</li>
+                        <li>Interpretable feature weights</li>
+                        <li>Works with smaller datasets</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#f76ed5', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Ignores word order and context</li>
+                        <li>Limited capability for nuanced sentiment</li>
+                        <li>Sparse feature representation</li>
+                        <li>Struggles with out-of-vocabulary words</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#732b61',
+          backgroundColor: '#5d194c',
           notes: `### Pros and Cons
 
 [conversational] Let's evaluate the strengths and limitations of Bag-of-Words with Logistic Regression to help you understand when this classic approach makes sense.
@@ -720,58 +720,58 @@ But when you need to understand context, handle complex language patterns, or sq
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#63e188' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#63e188' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#63e188' }}>Linear SVM (e.g., LinearSVC) on TF-IDF features</p>
                 </div>
-                <p style={{ color: '#63e188' }}>Linear SVM (e.g., LinearSVC) on TF-IDF features</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="TF-IDF + SVM Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="TF-IDF + SVM Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📊 Compute\nTF-IDF"]
     B --> C["🛡️ SVM\nClassifier"]
     C --> D["🎯 Decision\nBoundary"]
     D --> E["😊/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#63e188' }}>5k–100k labeled examples</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#63e188' }}>5k–100k labeled examples</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#63e188' }}>High-dimensional sparse text; robust baseline in noisy domains</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#63e188' }}>High-dimensional sparse text; robust baseline in noisy domains</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#63e188' }}>Tune C parameter for regularization strength; use Platt scaling for proper probability estimates; prune features to reduce memory footprint; consider n-gram ranges beyond unigrams.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#63e188' }}>Tune C parameter for regularization strength; use Platt scaling for proper probability estimates; prune features to reduce memory footprint; consider n-gram ranges beyond unigrams.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#2b7340',
+          backgroundColor: '#134923',
           notes: `### TF-IDF + SVM Sentiment Classifier
 
 [enthusiastically] Now we're stepping up our feature engineering game with TF-IDF 👉 'tee-eff eye-dee-eff', combined with Support Vector Machines. [impressed] This combination has been a workhorse of text classification for years and remains competitive even in the deep learning era.
@@ -835,39 +835,39 @@ This combination of TF-IDF and SVM represents the pinnacle of classical machine 
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#63e188', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Strong accuracy for classical ML approaches</li>
-                    <li>Handles high-dimensional feature spaces efficiently</li>
-                    <li>Good with sparse text representation</li>
-                    <li>More robust to noise and outliers than many alternatives</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#63e188', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Probability calibration needed for confidence scores</li>
-                    <li>Less interpretable than logistic regression</li>
-                    <li>Feature engineering still required</li>
-                    <li>Higher memory usage with large vocabularies</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#63e188', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Strong accuracy for classical ML approaches</li>
+                        <li>Handles high-dimensional feature spaces efficiently</li>
+                        <li>Good with sparse text representation</li>
+                        <li>More robust to noise and outliers than many alternatives</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#63e188', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Probability calibration needed for confidence scores</li>
+                        <li>Less interpretable than logistic regression</li>
+                        <li>Feature engineering still required</li>
+                        <li>Higher memory usage with large vocabularies</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#2b7340',
+          backgroundColor: '#134923',
           notes: `### Pros and Cons
 
 [conversational] Let's assess the strengths and weaknesses of TF-IDF with SVM to understand when this powerful combination is the right choice.
@@ -913,58 +913,58 @@ Next, we'll look at Naive Bayes, an even simpler probabilistic approach that can
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#956efb' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#956efb' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#956efb' }}>Multinomial Naive Bayes on counts/TF-IDF</p>
                 </div>
-                <p style={{ color: '#956efb' }}>Multinomial Naive Bayes on counts/TF-IDF</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="Naive Bayes Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="Naive Bayes Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📊 Word\nCounts"]
     B --> C["🎲 Probability\nCalculation"]
     C --> D["🧠 Bayes\nTheorem"]
     D --> E["😊/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#956efb' }}>Works with very small labeled sets (hundreds+)</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#956efb' }}>Works with very small labeled sets (hundreds+)</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#956efb' }}>Tweets/short messages; quick baselines</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#956efb' }}>Tweets/short messages; quick baselines</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#956efb' }}>Try NB-SVM (log-count ratios) for stronger results; be careful with stopword removal as it can impact performance. Consider Laplace smoothing for handling zero probabilities.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#956efb' }}>Try NB-SVM (log-count ratios) for stronger results; be careful with stopword removal as it can impact performance. Consider Laplace smoothing for handling zero probabilities.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#3f2b73',
+          backgroundColor: '#281851',
           notes: `### Naive Bayes Sentiment Model
 
 [cheerfully] Now let's explore Naive Bayes 👉 'naive base', one of the oldest and simplest machine learning algorithms, yet surprisingly effective for text classification. [playfully] Despite its simplicity and its somewhat unflattering name, it remains a go-to choice for many applications.
@@ -1028,39 +1028,39 @@ It embodies the principle that sometimes the simplest solution is the best solut
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#956efb', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Extremely fast training and inference</li>
-                    <li>Good with sparse/noisy text</li>
-                    <li>Works well with limited training data</li>
-                    <li>Simple probabilistic approach</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#956efb', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Independence assumption between words (naive)</li>
-                    <li>Performance ceiling vs. SVM/NN approaches</li>
-                    <li>Limited contextual understanding</li>
-                    <li>Feature engineering often needed for best results</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#956efb', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Extremely fast training and inference</li>
+                        <li>Good with sparse/noisy text</li>
+                        <li>Works well with limited training data</li>
+                        <li>Simple probabilistic approach</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#956efb', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Independence assumption between words (naive)</li>
+                        <li>Performance ceiling vs. SVM/NN approaches</li>
+                        <li>Limited contextual understanding</li>
+                        <li>Feature engineering often needed for best results</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#3f2b73',
+          backgroundColor: '#281851',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the strengths and limitations of Naive Bayes to understand when this classic probabilistic approach is the right tool for your sentiment analysis needs.
@@ -1112,24 +1112,24 @@ Now let's move from classical machine learning to modern NLP tools specifically 
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5e5e' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5e5e' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#ed5e5e' }}>Lexicon + rules optimized for social media</p>
                 </div>
-                <p style={{ color: '#ed5e5e' }}>Lexicon + rules optimized for social media</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="VADER Sentiment Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="VADER Sentiment Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📜 Lexicon\nLookup"]
     B --> C["❗ Intensifier\nDetection"]
     C --> D["🚫 Negation\nHandling"]
@@ -1137,34 +1137,34 @@ Now let's move from classical machine learning to modern NLP tools specifically 
     E --> F["📊 Compound\nScore"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#ed5e5e' }}>None; optional domain tweaks</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#ed5e5e' }}>None; optional domain tweaks</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#ed5e5e' }}>Tweets, chats, emojis, punctuation emphasis</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#ed5e5e' }}>Tweets, chats, emojis, punctuation emphasis</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#ed5e5e' }}>Use compound thresholds (e.g., &gt;0.05 positive); can extend lexicon for niche terms. Optimized for social media with special handling for punctuation and capitalization.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#ed5e5e' }}>Use compound thresholds (e.g., &gt;0.05 positive); can extend lexicon for niche terms. Optimized for social media with special handling for punctuation and capitalization.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#732b2b',
+          backgroundColor: '#5b1a1a',
           notes: `### VADER Sentiment Scoring
 
 [excited] Welcome to VADER 👉 'vay-der', which stands for Valence Aware Dictionary and sEntiment Reasoner. [playfully] Don't let the intimidating acronym fool you—VADER is actually one of the most practical and easy-to-use sentiment analysis tools available, specifically designed for social media text.
@@ -1235,39 +1235,39 @@ It's the tool I recommend to anyone starting with social media sentiment analysi
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#ed5e5e', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Handles negation, boosters, emojis, ALL CAPS</li>
-                    <li>Outputs pos/neu/neg + compound scores</li>
-                    <li>Fast, lightweight implementation</li>
-                    <li>No training data required</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#ed5e5e', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Domain transfer limits</li>
-                    <li>Sarcasm still challenging</li>
-                    <li>Less accurate than ML models on formal text</li>
-                    <li>Fixed lexicon (unless modified)</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#ed5e5e', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Handles negation, boosters, emojis, ALL CAPS</li>
+                        <li>Outputs pos/neu/neg + compound scores</li>
+                        <li>Fast, lightweight implementation</li>
+                        <li>No training data required</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#ed5e5e', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Domain transfer limits</li>
+                        <li>Sarcasm still challenging</li>
+                        <li>Less accurate than ML models on formal text</li>
+                        <li>Fixed lexicon (unless modified)</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#732b2b',
+          backgroundColor: '#5b1a1a',
           notes: `### Pros and Cons
 
 [conversational] Let's examine the strengths and limitations of VADER to help you decide when this powerful tool is the right choice for your sentiment analysis needs.
@@ -1317,58 +1317,58 @@ Next, let's look at TextBlob, another popular Python library for sentiment analy
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ff4bea' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ff4bea' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#ff4bea' }}>Rule/lexicon-based (Pattern) with polarity and subjectivity scores</p>
                 </div>
-                <p style={{ color: '#ff4bea' }}>Rule/lexicon-based (Pattern) with polarity and subjectivity scores</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="TextBlob Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="TextBlob Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["🔤 Pattern\nLexicon"]
     B --> C["📊 Polarity\nScore"]
     B --> D["🎭 Subjectivity\nScore"]
     C --> E["😊/😐/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#ff4bea' }}>None</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#ff4bea' }}>None</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#ff4bea' }}>Quick prototypes; subjectivity filtering; educational purposes</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#ff4bea' }}>Quick prototypes; subjectivity filtering; educational purposes</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#ff4bea' }}>Great for teaching/demos and quick experiments. For production systems, prefer retrainable models or VADER. Can be combined with its spelling correction to handle minor text errors.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#ff4bea' }}>Great for teaching/demos and quick experiments. For production systems, prefer retrainable models or VADER. Can be combined with its spelling correction to handle minor text errors.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#792d70',
+          backgroundColor: '#55184e',
           notes: `### TextBlob Polarity Scoring
 
 [conversational] TextBlob is another popular Python library for text processing that includes sentiment analysis capabilities. [confidently] It's designed to be the simplest possible interface for common text processing tasks, and that philosophy extends to its sentiment analysis features.
@@ -1438,39 +1438,39 @@ Its value lies in democratizing NLP—making sentiment analysis accessible to pe
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#ff4bea', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Simple, intuitive API with minimal setup</li>
-                    <li>Provides both polarity (-1 to +1) and subjectivity (0 to 1) scores</li>
-                    <li>Includes additional NLP utilities (POS-tagging, noun phrase extraction)</li>
-                    <li>Easy integration with Python data analysis workflows</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#ff4bea', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Based on older lexicons (Pattern library)</li>
-                    <li>Primarily English-centric with limited multilingual support</li>
-                    <li>Slower performance than VADER in practice</li>
-                    <li>Limited context understanding and sarcasm detection</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#ff4bea', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Simple, intuitive API with minimal setup</li>
+                        <li>Provides both polarity (-1 to +1) and subjectivity (0 to 1) scores</li>
+                        <li>Includes additional NLP utilities (POS-tagging, noun phrase extraction)</li>
+                        <li>Easy integration with Python data analysis workflows</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#ff4bea', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Based on older lexicons (Pattern library)</li>
+                        <li>Primarily English-centric with limited multilingual support</li>
+                        <li>Slower performance than VADER in practice</li>
+                        <li>Limited context understanding and sarcasm detection</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#792d70',
+          backgroundColor: '#55184e',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate TextBlob's strengths and limitations to understand when this accessible library is the right choice.
@@ -1520,58 +1520,58 @@ Now let's shift gears dramatically and enter the world of deep learning with LST
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#a665ff' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#a665ff' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#a665ff' }}>RNN (LSTM) over token sequences + embeddings</p>
                 </div>
-                <p style={{ color: '#a665ff' }}>RNN (LSTM) over token sequences + embeddings</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="LSTM Sentiment Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="LSTM Sentiment Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📖 Word\nEmbeddings"]
     B --> C["🔄 LSTM\nLayers"]
     C --> D["🧠 Dense\nLayer"]
     D --> E["😊/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#a665ff' }}>10k–100k+ labeled texts</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#a665ff' }}>10k–100k+ labeled texts</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#a665ff' }}>Longer texts with dependencies; domains lacking pretrained transformers</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#a665ff' }}>Longer texts with dependencies; domains lacking pretrained transformers</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#a665ff' }}>Use pretrained embeddings (GloVe/fastText) to improve performance. Apply dropout and gradient clipping to prevent overfitting and training instability.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#a665ff' }}>Use pretrained embeddings (GloVe/fastText) to improve performance. Apply dropout and gradient clipping to prevent overfitting and training instability.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#4d2d79',
+          backgroundColor: '#371763',
           notes: `### LSTM-Based Sentiment Classification
 
 [excited] Now we're entering the era of deep learning! [enthusiastically] Let's explore LSTM 👉 'ell-ess-tee-em', which stands for Long Short-Term Memory, a type of neural network specifically designed to understand sequences like text.
@@ -1633,39 +1633,39 @@ However, they've largely been superseded by transformers (which we'll discuss so
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#a665ff', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Captures sequential patterns and word order</li>
-                    <li>Better context modeling than traditional ML</li>
-                    <li>Handles variable-length inputs naturally</li>
-                    <li>Memory cells retain long-range dependencies</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#a665ff', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Training requires substantial data</li>
-                    <li>Higher computational cost than traditional ML</li>
-                    <li>Slower inference time than CNN models</li>
-                    <li>Outperformed by transformer architectures</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#a665ff', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Captures sequential patterns and word order</li>
+                        <li>Better context modeling than traditional ML</li>
+                        <li>Handles variable-length inputs naturally</li>
+                        <li>Memory cells retain long-range dependencies</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#a665ff', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Training requires substantial data</li>
+                        <li>Higher computational cost than traditional ML</li>
+                        <li>Slower inference time than CNN models</li>
+                        <li>Outperformed by transformer architectures</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#4d2d79',
+          backgroundColor: '#371763',
           notes: `### Pros and Cons
 
 [seriously] Let's assess the strengths and limitations of LSTM-based sentiment classification to understand its place in the modern NLP landscape.
@@ -1725,24 +1725,24 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#d9d44b' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#d9d44b' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#d9d44b' }}>Bidirectional LSTM + attention mechanism</p>
                 </div>
-                <p style={{ color: '#d9d44b' }}>Bidirectional LSTM + attention mechanism</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="BiLSTM with Attention"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="BiLSTM with Attention"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📖 Embeddings"]
     B --> C["◀️ BiLSTM\n▶️"]
     C --> D["👁️ Attention\nWeights"]
@@ -1750,34 +1750,34 @@ Next, let's explore BiLSTM with Attention, which addresses some of LSTM's limita
     E --> F["😊/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#d9d44b' }}>10k–100k+ labeled examples</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#d9d44b' }}>10k–100k+ labeled examples</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#d9d44b' }}>Aspect tagging and longer reviews; interpretability via attention</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#d9d44b' }}>Aspect tagging and longer reviews; interpretability via attention</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#d9d44b' }}>Visualize attention for QA; consider self-attention or CRF for sequence labels. Use regularization (dropout) to prevent overfitting. Pre-trained embeddings can improve results.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#d9d44b' }}>Visualize attention for QA; consider self-attention or CRF for sequence labels. Use regularization (dropout) to prevent overfitting. Pre-trained embeddings can improve results.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#79762d',
+          backgroundColor: '#5d5a17',
           notes: `### BiLSTM with Attention
 
 [energetic] Let's enhance the LSTM architecture with two powerful concepts: bidirectionality and attention. [impressed] BiLSTM with Attention 👉 'buy-ell-ess-tee-em with attention' represents a sophistication over standard LSTMs that was state-of-the-art before transformers emerged.
@@ -1850,39 +1850,39 @@ For modern applications, transformers usually outperform BiLSTM with Attention. 
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#d9d44b', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Captures context from both directions</li>
-                    <li>Attention helps focus on most relevant parts of text</li>
-                    <li>Better handling of long-range dependencies</li>
-                    <li>Provides interpretable attention weights</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#d9d44b', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>More parameters than standard LSTM</li>
-                    <li>Careful tuning needed for optimal results</li>
-                    <li>Slower inference than CNN models</li>
-                    <li>Requires quality labeled data</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#d9d44b', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Captures context from both directions</li>
+                        <li>Attention helps focus on most relevant parts of text</li>
+                        <li>Better handling of long-range dependencies</li>
+                        <li>Provides interpretable attention weights</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#d9d44b', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>More parameters than standard LSTM</li>
+                        <li>Careful tuning needed for optimal results</li>
+                        <li>Slower inference than CNN models</li>
+                        <li>Requires quality labeled data</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#79762d',
+          backgroundColor: '#5d5a17',
           notes: `### Pros and Cons
 
 [conversational] Let's evaluate the trade-offs of BiLSTM with Attention to understand when this architecture makes sense in your sentiment analysis pipeline.
@@ -1937,24 +1937,24 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4edbc7' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4edbc7' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#4edbc7' }}>1D Text CNN (multi-filter widths + max pooling)</p>
                 </div>
-                <p style={{ color: '#4edbc7' }}>1D Text CNN (multi-filter widths + max pooling)</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="CNN Sentiment Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="CNN Sentiment Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["📖 Embeddings"]
     B --> C["🧧 Conv Filters\n(3/4/5-gram)"]
     C --> D["↓ Max\nPooling"]
@@ -1962,34 +1962,34 @@ Next, let's explore CNNs for sentiment, which take a very different approach to 
     E --> F["😊/😢\nSentiment"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#4edbc7' }}>5k–100k labeled examples</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#4edbc7' }}>5k–100k labeled examples</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#4edbc7' }}>Short texts; key phrase/n-gram detection</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#4edbc7' }}>Short texts; key phrase/n-gram detection</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#4edbc7' }}>Combine 3–5 filter sizes (e.g., 3/4/5) to capture different n-gram patterns. Consider CNN-BiLSTM hybrid architectures for improved performance on longer texts with complex sentiment expressions.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#4edbc7' }}>Combine 3–5 filter sizes (e.g., 3/4/5) to capture different n-gram patterns. Consider CNN-BiLSTM hybrid architectures for improved performance on longer texts with complex sentiment expressions.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#2d796e',
+          backgroundColor: '#144f46',
           notes: `### CNN for Sentiment Classification
 
 [excited] Now let's explore a completely different approach to text understanding: Convolutional Neural Networks, or CNNs 👉 'cee-enn-ens'. [amused] If you've heard of CNNs, you probably think of image recognition. [enthusiastically] Surprisingly, they work remarkably well for text too!
@@ -2072,39 +2072,39 @@ While transformers now dominate for maximum accuracy, CNNs remain relevant for s
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#4edbc7', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Efficient, highly parallelizable training</li>
-                    <li>Strong classic deep learning baseline</li>
-                    <li>Excellent at capturing local patterns and n-grams</li>
-                    <li>Faster inference compared to RNNs/LSTMs</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#4edbc7', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Limited long-range contextual understanding</li>
-                    <li>May miss sequential dependencies important for sentiment</li>
-                    <li>Often requires hybrid approaches for complex texts</li>
-                    <li>Static window sizes can miss important patterns</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#4edbc7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Efficient, highly parallelizable training</li>
+                        <li>Strong classic deep learning baseline</li>
+                        <li>Excellent at capturing local patterns and n-grams</li>
+                        <li>Faster inference compared to RNNs/LSTMs</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#4edbc7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Limited long-range contextual understanding</li>
+                        <li>May miss sequential dependencies important for sentiment</li>
+                        <li>Often requires hybrid approaches for complex texts</li>
+                        <li>Static window sizes can miss important patterns</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#2d796e',
+          backgroundColor: '#144f46',
           notes: `### Pros and Cons
 
 [conversational] Let's assess the trade-offs of CNN-based sentiment analysis to understand when this fast, efficient architecture is the right choice.
@@ -2167,24 +2167,24 @@ Now we're ready to enter the transformer era, starting with BERT, which fundamen
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5df9' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#ed5df9' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#ed5df9' }}>Transformer encoder fine-tuned for classification</p>
                 </div>
-                <p style={{ color: '#ed5df9' }}>Transformer encoder fine-tuned for classification</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="BERT Fine-Tuning Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="BERT Fine-Tuning Process"
+                          diagram={`flowchart LR
     A["📄 Text"] --> B["🧩 BERT
 Tokenizer"]
     B --> C["🧠 Pretrained
@@ -2197,34 +2197,34 @@ Labeled Data"]
 Sentiment"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#ed5df9' }}>2k–100k labeled examples; few-shot learning possible with smaller datasets</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#ed5df9' }}>2k–100k labeled examples; few-shot learning possible with smaller datasets</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#ed5df9' }}>Most domains with nuanced language; complex sentiment in ambiguous texts; multi-class sentiment classification</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#ed5df9' }}>Most domains with nuanced language; complex sentiment in ambiguous texts; multi-class sentiment classification</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#ed5df9' }}>Consider using DistilBERT or ALBERT for reduced latency. For small datasets, freeze lower layers during fine-tuning. Always calibrate probability outputs and monitor for domain drift.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#ed5df9' }}>Consider using DistilBERT or ALBERT for reduced latency. For small datasets, freeze lower layers during fine-tuning. Always calibrate probability outputs and monitor for domain drift.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#732d79',
+          backgroundColor: '#501455',
           notes: `### BERT Fine-Tuned for Sentiment
 
 [excited] Welcome to the transformer revolution! [enthusiastically] Let's explore BERT 👉 'burt', which stands for Bidirectional Encoder Representations from Transformers. [impressed] BERT fundamentally changed natural language processing and represents a massive leap forward in sentiment analysis capabilities.
@@ -2304,41 +2304,41 @@ BERT's impact extends beyond sentiment—it revolutionized question answering, n
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#ed5df9', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>High accuracy across diverse domains</li>
-                    <li>Strong transfer learning from pre-trained knowledge</li>
-                    <li>Multilingual variants available (mBERT, XLM-R)</li>
-                    <li>Robust to context, negation, and complex syntax</li>
-                    <li>Attention visualizations provide some interpretability</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#ed5df9', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Computationally expensive for training and inference</li>
-                    <li>Significant latency compared to classical models</li>
-                    <li>Requires careful deployment for production scale</li>
-                    <li>Limited context window (512 tokens for BERT-base)</li>
-                    <li>Less interpretable than simpler models</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#ed5df9', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>High accuracy across diverse domains</li>
+                        <li>Strong transfer learning from pre-trained knowledge</li>
+                        <li>Multilingual variants available (mBERT, XLM-R)</li>
+                        <li>Robust to context, negation, and complex syntax</li>
+                        <li>Attention visualizations provide some interpretability</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#ed5df9', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Computationally expensive for training and inference</li>
+                        <li>Significant latency compared to classical models</li>
+                        <li>Requires careful deployment for production scale</li>
+                        <li>Limited context window (512 tokens for BERT-base)</li>
+                        <li>Less interpretable than simpler models</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#732d79',
+          backgroundColor: '#501455',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate BERT's strengths and limitations to understand when this powerful architecture justifies its computational costs.
@@ -2401,24 +2401,24 @@ Next, let's explore BERT's successors and variants that address some of these li
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4fd75d' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#4fd75d' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#4fd75d' }}>RoBERTa-base/large (robust pretraining) or DistilBERT (lighter variant)</p>
                 </div>
-                <p style={{ color: '#4fd75d' }}>RoBERTa-base/large (robust pretraining) or DistilBERT (lighter variant)</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="RoBERTa vs DistilBERT Trade-offs"
-                      diagram={`flowchart TD
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="RoBERTa vs DistilBERT Trade-offs"
+                          diagram={`flowchart TD
     A["📄 Input Text"] --> B{"🤔 Choose Model"}
     B -->|"Accuracy Priority"| C["🧠 RoBERTa
 (Slower, Better)"]
@@ -2431,34 +2431,34 @@ Next, let's explore BERT's successors and variants that address some of these li
     style A fill:#4fc3f7,color:#000
     style E fill:#81c784,color:#000
     style F fill:#ffd54f,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#4fd75d' }}>Similar to BERT (2k-100k labeled examples; few-shot learning possible)</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#4fd75d' }}>Similar to BERT (2k-100k labeled examples; few-shot learning possible)</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#4fd75d' }}>Social media (e.g., cardiffnlp/twitter-roberta-base-sentiment), general reviews, production environments with latency constraints</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#4fd75d' }}>Social media (e.g., cardiffnlp/twitter-roberta-base-sentiment), general reviews, production environments with latency constraints</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#4fd75d' }}>Start with domain-adapted checkpoints when available. Monitor performance drift over time. Use mixed precision training for faster fine-tuning. For production, consider knowledge distillation to optimize further.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#4fd75d' }}>Start with domain-adapted checkpoints when available. Monitor performance drift over time. Use mixed precision training for faster fine-tuning. For production, consider knowledge distillation to optimize further.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#2d7935',
+          backgroundColor: '#14531b',
           notes: `### RoBERTa / DistilBERT Sentiment Models
 
 [conversational] BERT was revolutionary, but researchers immediately started asking: can we make it better? [enthusiastically] Enter RoBERTa 👉 'roh-BER-tuh' and DistilBERT 👉 'distil-burt', two important evolutions that address BERT's limitations in different ways.
@@ -2548,39 +2548,39 @@ Together, these models represent the maturation of transformer-based sentiment a
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#4fd75d', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>RoBERTa often outperforms BERT due to improved pretraining</li>
-                    <li>DistilBERT reduces latency/cost (40% smaller, 60% faster)</li>
-                    <li>Strong pretrained models available for specific domains</li>
-                    <li>Good multilingual support with mBERT variants</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#4fd75d', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>RoBERTa is computationally heavier than BERT</li>
-                    <li>DistilBERT trades some accuracy (~3%) for efficiency</li>
-                    <li>Still requires GPU for efficient fine-tuning</li>
-                    <li>Model drift over time requires retraining</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#4fd75d', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>RoBERTa often outperforms BERT due to improved pretraining</li>
+                        <li>DistilBERT reduces latency/cost (40% smaller, 60% faster)</li>
+                        <li>Strong pretrained models available for specific domains</li>
+                        <li>Good multilingual support with mBERT variants</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#4fd75d', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>RoBERTa is computationally heavier than BERT</li>
+                        <li>DistilBERT trades some accuracy (~3%) for efficiency</li>
+                        <li>Still requires GPU for efficient fine-tuning</li>
+                        <li>Model drift over time requires retraining</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#2d7935',
+          backgroundColor: '#14531b',
           notes: `### Pros and Cons
 
 [conversational] Let's evaluate the trade-offs of RoBERTa and DistilBERT to understand which variant best fits your specific requirements.
@@ -2651,24 +2651,24 @@ Next, we'll explore an entirely different paradigm: using large language models 
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f7417d' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#f7417d' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#f7417d' }}>Prompted LLM (zero/few-shot) via API or local models</p>
                 </div>
-                <p style={{ color: '#f7417d' }}>Prompted LLM (zero/few-shot) via API or local models</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="LLM Zero-Shot Sentiment Process"
-                      diagram={`flowchart LR
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="LLM Zero-Shot Sentiment Process"
+                          diagram={`flowchart LR
     A["📝 Prompt
 Template"] --> B["➕ Text
 to Analyze"]
@@ -2680,34 +2680,34 @@ Response"]
 Sentiment"]
     style A fill:#ffb74d,color:#000
     style E fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#f7417d' }}>None for zero-shot; few examples improve reliability</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#f7417d' }}>None for zero-shot; few examples improve reliability</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#f7417d' }}>Rapid prototyping, cross-domain/multilingual, long-form texts, complex emotion detection</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#f7417d' }}>Rapid prototyping, cross-domain/multilingual, long-form texts, complex emotion detection</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#f7417d' }}>Constrain outputs with structured prompts; use evaluation harness to test consistency; cache results to reduce costs; implement guardrails to monitor bias and prevent information leakage; consider few-shot examples for improved accuracy and reliability.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#f7417d' }}>Constrain outputs with structured prompts; use evaluation harness to test consistency; cache results to reduce costs; implement guardrails to monitor bias and prevent information leakage; consider few-shot examples for improved accuracy and reliability.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#792d46',
+          backgroundColor: '#57172c',
           notes: `### GPT / LLM Zero-Shot Sentiment Classification
 
 [excited] Now we enter the frontier of sentiment analysis: using large language models like GPT 👉 'gee-pee-tee', Claude, or other LLMs 👉 'ell-ell-ems' for zero-shot classification. [enthusiastically] This represents a paradigm shift from training or fine-tuning models to simply asking powerful pretrained models to perform sentiment analysis through natural language instructions.
@@ -2799,41 +2799,41 @@ LLM-based sentiment analysis represents a shift from "train a model" to "enginee
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#f7417d', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Strong contextual understanding of nuanced language</li>
-                    <li>Works across multiple domains without retraining</li>
-                    <li>Can provide explanations/rationales for classifications</li>
-                    <li>Handles complex emotion detection beyond binary sentiment</li>
-                    <li>Adaptable to custom sentiment categories via prompt engineering</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#f7417d', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>API costs can be high at scale</li>
-                    <li>Latency issues for real-time applications</li>
-                    <li>Results can be nondeterministic (inconsistent)</li>
-                    <li>Potential for bias in sentiment judgments</li>
-                    <li>Limited control over model internals</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#f7417d', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Strong contextual understanding of nuanced language</li>
+                        <li>Works across multiple domains without retraining</li>
+                        <li>Can provide explanations/rationales for classifications</li>
+                        <li>Handles complex emotion detection beyond binary sentiment</li>
+                        <li>Adaptable to custom sentiment categories via prompt engineering</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#f7417d', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>API costs can be high at scale</li>
+                        <li>Latency issues for real-time applications</li>
+                        <li>Results can be nondeterministic (inconsistent)</li>
+                        <li>Potential for bias in sentiment judgments</li>
+                        <li>Limited control over model internals</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#792d46',
+          backgroundColor: '#57172c',
           notes: `### Pros and Cons
 
 [seriously] Let's assess the strengths and limitations of LLM-based sentiment analysis to understand when this powerful but costly approach makes sense.
@@ -2933,24 +2933,24 @@ The paradigm shift from training models to engineering prompts continues to resh
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#e1d23d' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#e1d23d' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#e1d23d' }}>Pipeline (AE/OE/ASC) or end-to-end (AOPE/ASTE/ASQP) with transformers/GCNs</p>
                 </div>
-                <p style={{ color: '#e1d23d' }}>Pipeline (AE/OE/ASC) or end-to-end (AOPE/ASTE/ASQP) with transformers/GCNs</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="ABSA Pipeline Process"
-                      diagram={`flowchart TD
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="ABSA Pipeline Process"
+                          diagram={`flowchart TD
     A["📄 Review Text"] --> B["🎯 Extract
 Aspects"]
     B --> C["🔍 Extract
@@ -2963,34 +2963,34 @@ Sentiment"]
 Insights"]
     style A fill:#4fc3f7,color:#000
     style F fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#e1d23d' }}>Aspect-annotated corpora; costly to label</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#e1d23d' }}>Aspect-annotated corpora; costly to label</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#e1d23d' }}>Product/service analytics; Voice of Customer insights at feature level</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#e1d23d' }}>Product/service analytics; Voice of Customer insights at feature level</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#e1d23d' }}>Use domain-adapted BERT/GCN; leverage public datasets (SemEval, MAMS); consider weak supervision for reducing annotation costs; pipeline approaches are simpler but end-to-end models often perform better</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#e1d23d' }}>Use domain-adapted BERT/GCN; leverage public datasets (SemEval, MAMS); consider weak supervision for reducing annotation costs; pipeline approaches are simpler but end-to-end models often perform better</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#79722d',
+          backgroundColor: '#4f4912',
           notes: `### Aspect-Based Sentiment Analysis (ABSA)
 
 [enthusiastically] Let's explore a sophisticated technique that moves beyond document-level sentiment to understand opinions about specific features or aspects within text. [confidently] ABSA 👉 'ab-suh' (Aspect-Based Sentiment Analysis) is essential for actionable business insights.
@@ -3111,39 +3111,39 @@ ABSA is where sentiment analysis delivers maximum business value, though at the 
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#e1d23d', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Fine-grained, actionable signals per aspect/entity</li>
-                    <li>Can identify multiple sentiment polarities within one text</li>
-                    <li>Helps prioritize improvements by aspect importance</li>
-                    <li>More nuanced insights than document-level sentiment</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#e1d23d', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Annotation-heavy; domain transfer is hard</li>
-                    <li>Complex evaluation metrics across subtasks</li>
-                    <li>More challenging to implement than general sentiment</li>
-                    <li>Often requires multiple models or complex architectures</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#e1d23d', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Fine-grained, actionable signals per aspect/entity</li>
+                        <li>Can identify multiple sentiment polarities within one text</li>
+                        <li>Helps prioritize improvements by aspect importance</li>
+                        <li>More nuanced insights than document-level sentiment</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#e1d23d', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Annotation-heavy; domain transfer is hard</li>
+                        <li>Complex evaluation metrics across subtasks</li>
+                        <li>More challenging to implement than general sentiment</li>
+                        <li>Often requires multiple models or complex architectures</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#79722d',
+          backgroundColor: '#4f4912',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the advantages and challenges of ABSA to understand when this detailed approach justifies its substantial complexity and cost.
@@ -3244,24 +3244,24 @@ ABSA is where sentiment analysis graduates from interesting metrics to strategic
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-              <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#43cfdb' }} />
-                  <h4>Model Type</h4>
+                <div style={{ display: 'flex', gap: '15px', marginBottom: '20px', flexDirection: 'column' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={{ color: '#43cfdb' }} />
+                    <h4>Model Type</h4>
+                  </div>
+                  <p style={{ color: '#43cfdb' }}>Fusion models (early/late/hybrid; attention) over text, audio, visual streams</p>
                 </div>
-                <p style={{ color: '#43cfdb' }}>Fusion models (early/late/hybrid; attention) over text, audio, visual streams</p>
-              </div>
               </GSAPAnimated>
               <div style={{ gap: '30px', fontSize: '2rem' }}>
                 <div>
                   <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Data Requirement
-                    <MermaidPopover
-                      title="Multimodal Fusion Architecture"
-                      diagram={`flowchart TD
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Data Requirement
+                        <MermaidPopover
+                          title="Multimodal Fusion Architecture"
+                          diagram={`flowchart TD
     A["🎥 Video Input"] --> B["📝 Text
 Encoder"]
     A --> C["🎵 Audio
@@ -3278,34 +3278,34 @@ Attention"]
 Emotion"]
     style A fill:#4fc3f7,color:#000
     style G fill:#81c784,color:#000`}
-                    />
-                  </h4>
-                  <p style={{ color: '#43cfdb' }}>Synchronized multimodal data (e.g., MOSI/MOSEI); consent/privacy controls</p>
-                  </div>
+                        />
+                      </h4>
+                      <p style={{ color: '#43cfdb' }}>Synchronized multimodal data (e.g., MOSI/MOSEI); consent/privacy controls</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Best Use Case
-                  </h4>
-                  <p style={{ color: '#43cfdb' }}>Customer calls, meetings, video reviews; detecting sarcasm, frustration, genuine enthusiasm through tone and facial expressions</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '15px' }}>
+                        <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Best Use Case
+                      </h4>
+                      <p style={{ color: '#43cfdb' }}>Customer calls, meetings, video reviews; detecting sarcasm, frustration, genuine enthusiasm through tone and facial expressions</p>
+                    </div>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.7}>
-                  <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Notes
-                  </h4>
-                  <p style={{ color: '#43cfdb' }}>Encoders: text transformer, wav2vec for audio, Vision Transformer (ViT) for visual. Cross-attention mechanisms improve modality fusion. Ensure robust time alignment between modalities for accurate sentiment correlation.</p>
-                  </div>
+                    <div>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Notes
+                      </h4>
+                      <p style={{ color: '#43cfdb' }}>Encoders: text transformer, wav2vec for audio, Vision Transformer (ViT) for visual. Cross-attention mechanisms improve modality fusion. Ensure robust time alignment between modalities for accurate sentiment correlation.</p>
+                    </div>
                   </GSAPAnimated>
                 </div>
               </div>
             </div>
           ),
-          backgroundColor: '#2d7379',
+          backgroundColor: '#12484d',
           notes: `### Multimodal Sentiment Analysis (Text + Audio/Video)
 
 [excited] We've reached the frontier: multimodal sentiment analysis that combines text, audio, and video to understand emotions as humans naturally do—through words, tone of voice, facial expressions, and body language simultaneously.
@@ -3427,39 +3427,39 @@ This concludes our journey through fifteen sentiment analysis techniques, from s
             <div style={{ textAlign: 'left', margin: '0 auto' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px', fontSize: '2rem' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
-                    <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                    Pros
-                  </h4>
-                  <ul style={{ color: '#43cfdb', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Higher accuracy by combining multiple information channels</li>
-                    <li>Detects non-verbal emotional cues (tone, facial expressions)</li>
-                    <li>Better at identifying sarcasm and subtle emotions</li>
-                    <li>Robust to noise in individual modalities</li>
-                  </GSAPStaggerList>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
-                    <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
-                    Cons
-                  </h4>
-                  <ul style={{ color: '#43cfdb', fontSize: '1.2rem' }}>
-                  <GSAPStaggerList stagger={0.12}>
-                    <li>Complex data capture and synchronization requirements</li>
-                    <li>Privacy and ethics concerns with video/audio processing</li>
-                    <li>Computationally expensive and deployment challenges</li>
-                    <li>Limited available training datasets</li>
-                  </GSAPStaggerList>
-                  </ul>
-                </div>
+                  <div>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                      <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
+                      Pros
+                    </h4>
+                    <ul style={{ color: '#43cfdb', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Higher accuracy by combining multiple information channels</li>
+                        <li>Detects non-verbal emotional cues (tone, facial expressions)</li>
+                        <li>Better at identifying sarcasm and subtle emotions</li>
+                        <li>Robust to noise in individual modalities</li>
+                      </GSAPStaggerList>
+                    </ul>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px' }}>
+                      <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
+                      Cons
+                    </h4>
+                    <ul style={{ color: '#43cfdb', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12}>
+                        <li>Complex data capture and synchronization requirements</li>
+                        <li>Privacy and ethics concerns with video/audio processing</li>
+                        <li>Computationally expensive and deployment challenges</li>
+                        <li>Limited available training datasets</li>
+                      </GSAPStaggerList>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
           ),
-          backgroundColor: '#2d7379',
+          backgroundColor: '#12484d',
           notes: `### Pros and Cons
 
 [seriously] Let's evaluate the advantages and challenges of multimodal sentiment analysis to understand when this sophisticated approach justifies its substantial complexity.
@@ -3579,42 +3579,42 @@ The key is honest assessment: does your use case truly benefit from multimodal s
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-              <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-table-columns" sizeName="2x" darkModeInvert={true} />
-                Key Dimensions Across All 15 Techniques
-              </h3>
+                <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                  <SvgIcon iconName="duo-table-columns" sizeName="2x" darkModeInvert={true} />
+                  Key Dimensions Across All 15 Techniques
+                </h3>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', marginTop: '20px' }}>
-                <thead>
-                  <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Category</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Technique</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Data Needs</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Setup Cost</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Latency</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Accuracy</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Explainability</th>
-                    <th style={{ padding: '8px', border: '1px solid #555' }}>Multilingual</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Traditional</td><td style={{ padding: '6px', border: '1px solid #555' }}>1-2</td><td style={{ padding: '6px', border: '1px solid #555' }}>None</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td></tr>
-                  <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Classical ML</td><td style={{ padding: '6px', border: '1px solid #555' }}>3-5</td><td style={{ padding: '6px', border: '1px solid #555' }}>Small-Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td></tr>
-                  <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Modern Tools</td><td style={{ padding: '6px', border: '1px solid #555' }}>6-7</td><td style={{ padding: '6px', border: '1px solid #555' }}>None</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555' }}>English</td></tr>
-                  <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Deep Learning</td><td style={{ padding: '6px', border: '1px solid #555' }}>8-10</td><td style={{ padding: '6px', border: '1px solid #555' }}>Med-High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555', color: '#f39c12' }}>Med-High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>w/ Embeddings</td></tr>
-                  <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Transformers</td><td style={{ padding: '6px', border: '1px solid #555' }}>11-13</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>Med-High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td></tr>
-                  <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Advanced</td><td style={{ padding: '6px', border: '1px solid #555' }}>14-15</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555' }}>Variable</td></tr>
-                </tbody>
-              </table>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'center', marginTop: '20px' }}>
+                  <thead>
+                    <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Category</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Technique</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Data Needs</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Setup Cost</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Latency</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Accuracy</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Explainability</th>
+                      <th style={{ padding: '8px', border: '1px solid #555' }}>Multilingual</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Traditional</td><td style={{ padding: '6px', border: '1px solid #555' }}>1-2</td><td style={{ padding: '6px', border: '1px solid #555' }}>None</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td></tr>
+                    <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Classical ML</td><td style={{ padding: '6px', border: '1px solid #555' }}>3-5</td><td style={{ padding: '6px', border: '1px solid #555' }}>Small-Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td></tr>
+                    <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Modern Tools</td><td style={{ padding: '6px', border: '1px solid #555' }}>6-7</td><td style={{ padding: '6px', border: '1px solid #555' }}>None</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low</td><td style={{ padding: '6px', border: '1px solid #555' }}>Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555' }}>English</td></tr>
+                    <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Deep Learning</td><td style={{ padding: '6px', border: '1px solid #555' }}>8-10</td><td style={{ padding: '6px', border: '1px solid #555' }}>Med-High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555', color: '#f39c12' }}>Med-High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>w/ Embeddings</td></tr>
+                    <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Transformers</td><td style={{ padding: '6px', border: '1px solid #555' }}>11-13</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555' }}>Med-High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Low-Med</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td></tr>
+                    <tr><td style={{ padding: '6px', border: '1px solid #555' }}>Advanced</td><td style={{ padding: '6px', border: '1px solid #555' }}>14-15</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#e74c3c' }}>High</td><td style={{ padding: '6px', border: '1px solid #555', color: '#2ecc71' }}>High</td><td style={{ padding: '6px', border: '1px solid #555' }}>Medium</td><td style={{ padding: '6px', border: '1px solid #555' }}>Variable</td></tr>
+                  </tbody>
+                </table>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.5}>
-              <p style={{ marginTop: '20px', fontSize: '0.9em', textAlign: 'center' }}>
-                <span style={{ color: '#2ecc71' }}>■ Low</span> &nbsp;
-                <span style={{ color: '#f39c12' }}>■ Medium</span> &nbsp;
-                <span style={{ color: '#e74c3c' }}>■ High</span> &nbsp;
-                <span>■ Variable</span>
-              </p>
+                <p style={{ marginTop: '20px', fontSize: '0.9em', textAlign: 'center' }}>
+                  <span style={{ color: '#2ecc71' }}>■ Low</span> &nbsp;
+                  <span style={{ color: '#f39c12' }}>■ Medium</span> &nbsp;
+                  <span style={{ color: '#e74c3c' }}>■ High</span> &nbsp;
+                  <span>■ Variable</span>
+                </p>
               </GSAPAnimated>
             </div>
           ),
@@ -3717,62 +3717,62 @@ This comparison matrix is your quick-reference guide for matching your requireme
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                 <GSAPAnimated animation="scaleIn" delay={0.1}>
-                <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
-                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ color: '#3498db' }} />
-                    Start with Baselines
-                  </h4>
-                  <p>Begin with VADER/TextBlob and TF-IDF+LinearSVC to establish metrics and error buckets</p>
-                </div>
+                  <div style={{ border: '2px solid #3498db', borderRadius: '10px', padding: '15px', color: '#3498db' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ color: '#3498db' }} />
+                      Start with Baselines
+                    </h4>
+                    <p>Begin with VADER/TextBlob and TF-IDF+LinearSVC to establish metrics and error buckets</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ border: '2px solid #bd5ee3', borderRadius: '10px', padding: '15px', color: '#bd5ee3' }}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#bd5ee3' }}>
-                    <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={{ color: '#bd5ee3' }} />
-                    Scale Up Judiciously
-                  </h4>
-                  <p>Move to BERT/RoBERTa when nuance or accuracy demands it; consider DistilBERT for latency</p>
-                </div>
+                  <div style={{ border: '2px solid #bd5ee3', borderRadius: '10px', padding: '15px', color: '#bd5ee3' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#bd5ee3' }}>
+                      <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={{ color: '#bd5ee3' }} />
+                      Scale Up Judiciously
+                    </h4>
+                    <p>Move to BERT/RoBERTa when nuance or accuracy demands it; consider DistilBERT for latency</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.3}>
-                <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e67e22' }}>
-                    <SvgIcon iconName="duo-crosshairs" sizeName="2x" style={{ color: '#e67e22' }} />
-                    For Granularity
-                  </h4>
-                  <p>Use ABSA when you need actionable, aspect-level insights; plan for labeling or weak supervision</p>
-                </div>
+                  <div style={{ border: '2px solid #e67e22', borderRadius: '10px', padding: '15px', color: '#e67e22' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e67e22' }}>
+                      <SvgIcon iconName="duo-crosshairs" sizeName="2x" style={{ color: '#e67e22' }} />
+                      For Granularity
+                    </h4>
+                    <p>Use ABSA when you need actionable, aspect-level insights; plan for labeling or weak supervision</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c' }}>
-                    <SvgIcon iconName="duo-video" sizeName="2x" style={{ color: '#1abc9c' }} />
-                    For Conversational/Video
-                  </h4>
-                  <p>Consider multimodal only when audio/visual add clear value; address privacy/compliance</p>
-                </div>
+                  <div style={{ border: '2px solid #1abc9c', borderRadius: '10px', padding: '15px', color: '#1abc9c' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#1abc9c' }}>
+                      <SvgIcon iconName="duo-video" sizeName="2x" style={{ color: '#1abc9c' }} />
+                      For Conversational/Video
+                    </h4>
+                    <p>Consider multimodal only when audio/visual add clear value; address privacy/compliance</p>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.5}>
-                <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px', color: '#e74c3c' }}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c' }}>
-                    <SvgIcon iconName="duo-gear" sizeName="2x" style={{ color: '#e74c3c' }} />
-                    Operationalize
-                  </h4>
-                  <ul>
-                    <li>Add calibration, drift monitoring, bias/fairness checks</li>
-                    <li>Cache LLM outputs to reduce API costs</li>
-                    <li>Define re-training cadence based on domain volatility</li>
-                  </ul>
-                </div>
+                  <div style={{ border: '2px solid #e74c3c', borderRadius: '10px', padding: '15px', color: '#e74c3c' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c' }}>
+                      <SvgIcon iconName="duo-gear" sizeName="2x" style={{ color: '#e74c3c' }} />
+                      Operationalize
+                    </h4>
+                    <ul>
+                      <li>Add calibration, drift monitoring, bias/fairness checks</li>
+                      <li>Cache LLM outputs to reduce API costs</li>
+                      <li>Define re-training cadence based on domain volatility</li>
+                    </ul>
+                  </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.6}>
-                <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12' }}>
-                    <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ color: '#f39c12' }} />
-                    Guardrails for LLMs
-                  </h4>
-                  <p>Constrain outputs, add validation, log prompts/responses; establish cost/governance controls</p>
-                </div>
+                  <div style={{ border: '2px solid #f39c12', borderRadius: '10px', padding: '15px', color: '#f39c12' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12' }}>
+                      <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ color: '#f39c12' }} />
+                      Guardrails for LLMs
+                    </h4>
+                    <p>Constrain outputs, add validation, log prompts/responses; establish cost/governance controls</p>
+                  </div>
                 </GSAPAnimated>
               </div>
             </div>
@@ -3915,82 +3915,82 @@ This disciplined approach ensures sentiment analysis capabilities evolve with yo
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-              <h3 style={{ marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
-                <SvgIcon iconName="duo-map" sizeName="2x" style={{ color: '#3498db' }} />
-                Next Steps
-              </h3>
+                <h3 style={{ marginBottom: '40px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
+                  <SvgIcon iconName="duo-map" sizeName="2x" style={{ color: '#3498db' }} />
+                  Next Steps
+                </h3>
               </GSAPAnimated>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                  <div style={{
-                    backgroundColor: '#3498db',
-                    borderRadius: '50%',
-                    width: '60px',
-                    height: '60px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.5em',
-                    fontWeight: 'bold',
-                    flexShrink: 0
-                  }}>1</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Select 2-3 Candidates</h4>
-                    <p style={{ margin: 0, opacity: 0.9 }}>Choose methods based on your domain complexity, data availability, and explainability needs</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <div style={{
+                      backgroundColor: '#3498db',
+                      borderRadius: '50%',
+                      width: '60px',
+                      height: '60px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5em',
+                      fontWeight: 'bold',
+                      flexShrink: 0
+                    }}>1</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Select 2-3 Candidates</h4>
+                      <p style={{ margin: 0, opacity: 0.9 }}>Choose methods based on your domain complexity, data availability, and explainability needs</p>
+                    </div>
                   </div>
-                </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                  <div style={{
-                    backgroundColor: '#9b59b6',
-                    borderRadius: '50%',
-                    width: '60px',
-                    height: '60px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.5em',
-                    fontWeight: 'bold',
-                    flexShrink: 0
-                  }}>2</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Run Pilot Project</h4>
-                    <p style={{ margin: 0, opacity: 0.9 }}>Test performance on your domain-specific data with consistent evaluation metrics</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <div style={{
+                      backgroundColor: '#9b59b6',
+                      borderRadius: '50%',
+                      width: '60px',
+                      height: '60px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5em',
+                      fontWeight: 'bold',
+                      flexShrink: 0
+                    }}>2</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Run Pilot Project</h4>
+                      <p style={{ margin: 0, opacity: 0.9 }}>Test performance on your domain-specific data with consistent evaluation metrics</p>
+                    </div>
                   </div>
-                </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-                  <div style={{
-                    backgroundColor: '#b93838',
-                    borderRadius: '50%',
-                    width: '60px',
-                    height: '60px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: '1.5em',
-                    fontWeight: 'bold',
-                    flexShrink: 0
-                  }}>3</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Optimize & Deploy</h4>
-                    <p style={{ margin: 0, opacity: 0.9 }}>Fine-tune performance, establish monitoring, and implement serving infrastructure</p>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                    <div style={{
+                      backgroundColor: '#b93838',
+                      borderRadius: '50%',
+                      width: '60px',
+                      height: '60px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: '1.5em',
+                      fontWeight: 'bold',
+                      flexShrink: 0
+                    }}>3</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <h4 style={{ margin: '0 0 8px 0', color: '#2cc3a6' }}>Optimize & Deploy</h4>
+                      <p style={{ margin: 0, opacity: 0.9 }}>Fine-tune performance, establish monitoring, and implement serving infrastructure</p>
+                    </div>
                   </div>
-                </div>
                 </GSAPAnimated>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.8}>
-              <div style={{ marginTop: '50px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
-                <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                  <SvgIcon iconName="duo-scale-balanced" sizeName="4x" style={{ color: '#29bfa4' }} />
-                  <p style={{ fontSize: '1.5em' }}>
-                    <strong>Remember:</strong> Balance accuracy, explainability, cost, and maintenance based on your specific use case
+                <div style={{ marginTop: '50px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
+                  <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-scale-balanced" sizeName="4x" style={{ color: '#29bfa4' }} />
+                    <p style={{ fontSize: '1.5em' }}>
+                      <strong>Remember:</strong> Balance accuracy, explainability, cost, and maintenance based on your specific use case
+                    </p>
                   </p>
-                </p>
-              </div>
+                </div>
               </GSAPAnimated>
             </div>
           ),
