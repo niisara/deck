@@ -65,6 +65,8 @@ export const nerMetricsDeck: Deck = {
           title: 'How to Evaluate NER: Overview of 7 Metrics',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -144,6 +146,8 @@ flowchart LR
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
                 <h4>Our Roadmap</h4>
               </GSAPAnimated>
@@ -183,6 +187,8 @@ flowchart LR
           icon: { name: 'duo-bullseye' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -262,6 +268,8 @@ flowchart TB
           title: 'Precision: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -322,6 +330,8 @@ flowchart TB
           icon: { name: 'duo-magnifying-glass' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -403,6 +413,8 @@ flowchart TB
           title: 'Recall: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="flipCard" duration={0.9} delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -465,6 +477,8 @@ flowchart TB
           icon: { name: 'duo-scale-balanced' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -542,6 +556,8 @@ flowchart LR
           title: 'F1 Score: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -605,6 +621,8 @@ flowchart LR
           icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -688,6 +706,8 @@ flowchart TB
           title: 'Exact Match: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -752,6 +772,8 @@ flowchart TB
           icon: { name: 'duo-circle-half-stroke' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="bounceIn" duration={0.9} delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -839,6 +861,8 @@ flowchart TB
           title: 'Partial Match: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -900,6 +924,8 @@ flowchart TB
           icon: { name: 'duo-percent' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -983,6 +1009,8 @@ flowchart LR
           title: 'Entity-Level Accuracy: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1046,6 +1074,8 @@ flowchart LR
           icon: { name: 'duo-table-cells' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <h4>What It Measures</h4>
@@ -1133,6 +1163,8 @@ flowchart TB
           title: 'Confusion Matrix: Pros & Cons',
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="bounceIn" duration={0.9} delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1198,6 +1230,8 @@ flowchart TB
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h4>
                   Metric Selection Guide
@@ -1258,6 +1292,8 @@ flowchart TB
           title: "Do's and Don'ts",
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <div style={{ marginBottom: '0.7em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
@@ -1321,6 +1357,8 @@ flowchart TB
           icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
+              <div style={{ marginBottom: '30px' }}>
+              </div>
               <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
                 <h4>Action Items</h4>
               </GSAPAnimated>
