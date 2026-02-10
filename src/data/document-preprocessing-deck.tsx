@@ -27,7 +27,7 @@ export const documentPreprocessingDeck: Deck = {
           center: true,
           title: '17 Document Preprocessing Techniques',
           content: (
-            <div style={{ marginTop: '30px', color: '#fff' }}>
+            <div style={{ color: '#fff' }}>
               <GSAPAnimated animation="scaleIn" delay={0} duration={1}>
                 <h2 style={{}}>A practical cheat sheet for NLP and data processing pipelines</h2>
               </GSAPAnimated>
@@ -58,7 +58,7 @@ export const documentPreprocessingDeck: Deck = {
                 </GSAPAnimated>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.3}>
-                <p style={{ fontSize: '2rem' }}>
+                <p style={{ fontSize: '2rem', margin: '0px' }}>
                   <strong>Goal:</strong> Provide a clean, consistent pipeline for high-quality retrieval, modeling, and analytics
                 </p>
               </GSAPAnimated>
@@ -99,7 +99,7 @@ By the end of this presentation, you'll have a complete cheat sheet of preproces
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c' }}>
-                      <SvgIcon iconName="duo-broom" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-broom" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Content Cleaning (1-5)
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -110,7 +110,7 @@ By the end of this presentation, you'll have a complete cheat sheet of preproces
                       <li>5. OCR Cleanup</li>
                     </ul>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginTop: '15px' }}>
-                      <SvgIcon iconName="duo-scissors" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-scissors" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Text Segmentation (6-8)
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -123,7 +123,7 @@ By the end of this presentation, you'll have a complete cheat sheet of preproces
                 <GSAPAnimated animation="scaleIn" delay={0.5} duration={0.8}>
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6' }}>
-                      <SvgIcon iconName="duo-text" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-text" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Text Normalization (9-11)
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -132,7 +132,7 @@ By the end of this presentation, you'll have a complete cheat sheet of preproces
                       <li>11. Lemmatization / Stemming</li>
                     </ul>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1abc9c', marginTop: '15px' }}>
-                      <SvgIcon iconName="duo-tags" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Metadata Enrichment (12-13)
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -144,7 +144,7 @@ By the end of this presentation, you'll have a complete cheat sheet of preproces
                 <GSAPAnimated animation="slideInRight" delay={0.7}>
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12' }}>
-                      <SvgIcon iconName="duo-filter" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-filter" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Quality & Enhancement (14-17)
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
@@ -523,7 +523,7 @@ Despite these challenges, deduplication is a must-have for most production syste
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
-                     Goal / Problem It Solves
+                      Goal / Problem It Solves
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Create consistent spacing, line breaks, and punctuation</li>
@@ -1007,10 +1007,9 @@ Despite these limitations, OCR cleanup is essential when working with scanned co
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
                       How It Works
-                    </h4>
-                    <MermaidPopover
-                      title="Sentence Boundary Detection Flow"
-                      diagram={`graph TD
+                      <MermaidPopover
+                        title="Sentence Boundary Detection Flow"
+                        diagram={`graph TD
     A[Raw Text] --> B[Rule-Based Regex]
     B --> C{Abbreviation?}
     C -->|Yes| D[Check Dictionary]
@@ -1023,7 +1022,8 @@ Despite these limitations, OCR cleanup is essential when working with scanned co
     I --> J[Final Boundaries]
     style A fill:#e1f5ff
     style J fill:#d4edda`}
-                    />
+                      />
+                    </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Rule-based methods (Punkt algorithm)</li>
                       <li>ML models (spaCy/transformers)</li>
@@ -1153,7 +1153,7 @@ Despite these challenges, sentence boundary detection is a foundational techniqu
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                       Goal / Problem It Solves
                     </h4>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Create meaning-coherent chunks instead of arbitrary size splits</li>
                       <li>Prevent semantic breaks in the middle of concepts or topics</li>
                       <li>Improve retrieval quality by aligning chunk boundaries with topic shifts</li>
@@ -1162,10 +1162,9 @@ Despite these challenges, sentence boundary detection is a foundational techniqu
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
                       How It Works
-                    </h4>
-                    <MermaidPopover
-                      title="Semantic Chunking Process"
-                      diagram={`graph TD
+                      <MermaidPopover
+                        title="Semantic Chunking Process"
+                        diagram={`graph TD
     A[Document Sentences] --> B[Generate Embeddings]
     B --> C[Sliding Window]
     C --> D[Calculate Similarity]
@@ -1179,8 +1178,9 @@ Despite these challenges, sentence boundary detection is a foundational techniqu
     I -->|No| J[Final Chunks]
     style A fill:#e1f5ff
     style J fill:#d4edda`}
-                    />
-                    <ul style={{ fontSize: '1.2rem' }}>
+                      />
+                    </h4>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Embed sentences; merge contiguous sentences above similarity threshold</li>
                       <li>Cap by maximum tokens (e.g., 512-1024) for retrieval systems</li>
                       <li>Optional clustering (HDBSCAN) for more sophisticated similarity detection</li>
@@ -1194,7 +1194,7 @@ Despite these challenges, sentence boundary detection is a foundational techniqu
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>RAG systems where precise contextual retrieval matters</li>
                       <li>Topic retrieval applications needing coherent passages</li>
                       <li>Semantic search systems requiring well-bounded chunks</li>
@@ -1204,7 +1204,7 @@ Despite these challenges, sentence boundary detection is a foundational techniqu
                       <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                       Implementation Steps
                     </h4>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Apply Sentence Boundary Detection (SBD) to segment text</li>
                       <li>Compute embeddings for each sentence using an appropriate model</li>
                       <li>Calculate cosine similarity between adjacent sentences</li>
@@ -1319,10 +1319,9 @@ Despite these challenges, semantic chunking is often worth the investment for pr
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
                       How It Works
-                    </h4>
-                    <MermaidPopover
-                      title="Parent-Child Chunking Workflow"
-                       diagram={`graph TD
+                      <MermaidPopover
+                        title="Parent-Child Chunking Workflow"
+                        diagram={`graph TD
     A[Full Document] --> B[Identify Structure]
     B --> C[Create Parent Chunks]
     C --> D[Section Headers]
@@ -1340,7 +1339,8 @@ Despite these challenges, semantic chunking is often worth the investment for pr
     L --> M[Include Parent Context]
     style A fill:#e1f5ff
     style M fill:#d4edda`}
-                    />
+                      />
+                    </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Parse document headings and structural elements</li>
                       <li>Assign parent_id/child_ids to related chunks</li>
@@ -1472,7 +1472,7 @@ Despite these costs, parent-child chunking is increasingly common in production 
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                       Goal / Problem It Solves
                     </h4>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Standardize casing, numbers, dates, abbreviations to reduce sparsity</li>
                       <li>Create consistent text representation for improved matching</li>
                       <li>Reduce vocabulary size for efficient indexing/embedding</li>
@@ -1481,10 +1481,9 @@ Despite these costs, parent-child chunking is increasingly common in production 
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
                       How It Works
-                    </h4>
-                    <MermaidPopover
-                      title="Text Normalization Pipeline"
-                      diagram={`graph TD
+                      <MermaidPopover
+                        title="Text Normalization Pipeline"
+                        diagram={`graph TD
     A[Raw Text] --> B[Lowercase Conversion]
     B --> C[Unicode Normalization]
     C --> D{NFKC or NFKD?}
@@ -1499,8 +1498,9 @@ Despite these costs, parent-child chunking is increasingly common in production 
     K --> L
     style A fill:#e1f5ff
     style L fill:#d4edda`}
-                    />
-                    <ul style={{ fontSize: '1.2rem' }}>
+                      />
+                    </h4>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Lowercasing (task-dependent; preserve named entities if needed)</li>
                       <li>Expand contractions (can't → cannot, don't → do not)</li>
                       <li>Normalize numerals and dates to standard format</li>
@@ -1515,7 +1515,7 @@ Despite these costs, parent-child chunking is increasingly common in production 
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Indexing and classical machine learning pipelines</li>
                       <li>Sometimes before embedding generation (context-dependent)</li>
                       <li>When combining multiple document sources with varied formatting</li>
@@ -1526,7 +1526,7 @@ Despite these costs, parent-child chunking is increasingly common in production 
                       <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
                       Implementation Steps
                     </h4>
-                    <ul style={{ fontSize: '1.2rem' }}>
+                    <ul style={{ fontSize: '1.1rem' }}>
                       <li>Define normalization profile based on downstream tasks</li>
                       <li>Apply case normalization rules (lowercase/preserve specific entities)</li>
                       <li>Identify and standardize dates, numbers, measurements</li>
@@ -1644,10 +1644,9 @@ Text normalization is a legacy technique that's still useful for specific scenar
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
                       How It Works
-                    </h4>
-                    <MermaidPopover
-                      title="Stopword Trimming Process"
-                      diagram={`graph TD
+                      <MermaidPopover
+                        title="Stopword Trimming Process"
+                        diagram={`graph TD
     A[Input Text] --> B[Tokenize]
     B --> C[Load Stopword List]
     C --> D{Check Each Token}
@@ -1663,7 +1662,8 @@ Text normalization is a legacy technique that's still useful for specific scenar
     K --> L[Final Text]
     style A fill:#e1f5ff
     style L fill:#d4edda`}
-                    />
+                      />
+                    </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
                       <li>Curated stoplist of common words (a, the, is, of, etc.)</li>
                       <li>POS-aware removal that preserves important modifiers</li>
@@ -2096,7 +2096,7 @@ Entity tagging is powerful but requires investment in model selection and tuning
               <div>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
                   <div>
-                    <h4 style={{display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71' }}>
                       <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                       Pros
                     </h4>
