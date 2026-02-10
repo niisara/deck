@@ -50,8 +50,8 @@ export const entityNormalizationDeck: Deck = {
                     <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
                     <strong>Audience:</strong> Data scientists, NLP engineers, knowledge graph practitioners
                   </div>
-                  <p><strong>Prepared by:</strong> Nisar A</p>
-                  <p><strong>Date:</strong> November 7, 2025</p>
+                  <p style={{ color: '#fff' }}><strong>Prepared by:</strong> Nisar A</p>
+                  <p style={{ color: '#fff' }}><strong>Date:</strong> November 7, 2025</p>
                   <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
                 </GSAPAnimated>
               </div>
@@ -78,7 +78,7 @@ export const entityNormalizationDeck: Deck = {
           id: 2,
           title: 'Table of Contents',
           content: (
-            <div style={{ textAlign: 'left', fontSize: '1.8rem' }}>
+            <div style={{ textAlign: 'left', fontSize: '1.2rem' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
@@ -204,7 +204,7 @@ export const entityNormalizationDeck: Deck = {
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
                   <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
                     <div style={{ color: '#61dafb', marginBottom: '0.8rem', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <SvgIcon iconName="duo-broom" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-broom" sizeName="xl" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       <strong>What is Entity Normalization</strong>
                     </div>
                     <ul style={{ marginLeft: '1.2rem', fontSize: '1rem', marginBottom: 0 }}>
@@ -219,7 +219,7 @@ export const entityNormalizationDeck: Deck = {
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
                   <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
                     <div style={{ color: '#c678dd', marginBottom: '0.8rem', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
+                      <SvgIcon iconName="duo-circle-nodes" sizeName="xl" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       <strong>What is Entity Disambiguation</strong>
                     </div>
                     <ul style={{ marginLeft: '1.2rem', fontSize: '1rem', marginBottom: 0 }}>
@@ -235,7 +235,7 @@ export const entityNormalizationDeck: Deck = {
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #98c379', marginBottom: '1.5rem' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-bullseye" sizeName="xl" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                     <strong>Why it Matters</strong>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.8rem', fontSize: '1rem' }}>
@@ -250,7 +250,7 @@ export const entityNormalizationDeck: Deck = {
               <GSAPAnimated animation="fadeIn" delay={0.5}>
                 <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
                   <div style={{ color: '#e5c07b', marginBottom: '0.8rem', fontSize: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="xl" style={{ marginBottom: '1.5rem' }} darkModeInvert={true} />
+                    <SvgIcon iconName="duo-arrow-right" sizeName="xl" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                     <strong>
                       Typical Pipeline
                       <MermaidPopover
@@ -2564,20 +2564,6 @@ flowchart LR
                   </div>
                 </GSAPAnimated>
 
-                <GSAPAnimated animation="slideInRight" delay={0.3}>
-                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
-                    <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <SvgIcon iconName="duo-sliders" sizeName="lg" darkModeInvert={true} />
-                      <strong>Method Selection</strong>
-                    </div>
-                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                      <li>Combine deterministic and semantic methods</li>
-                      <li>Balance precision/recall for your use case</li>
-                      <li>Simple techniques often solve 80% of problems</li>
-                    </ul>
-                  </div>
-                </GSAPAnimated>
-
                 <GSAPAnimated animation="slideInLeft" delay={0.4}>
                   <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
                     <div style={{ color: '#e5c07b', marginBottom: '0.8rem', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -2589,6 +2575,20 @@ flowchart LR
                       <li>Embeddings/KB for diverse content</li>
                       <li>LLMs for complex, long-context scenarios</li>
                       <li>Hybrid approaches often perform best</li>
+                    </ul>
+                  </div>
+                </GSAPAnimated>
+
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.8rem', fontSize: '2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-sliders" sizeName="lg" darkModeInvert={true} />
+                      <strong>Method Selection</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Combine deterministic and semantic methods</li>
+                      <li>Balance precision/recall for your use case</li>
+                      <li>Simple techniques often solve 80% of problems</li>
                     </ul>
                   </div>
                 </GSAPAnimated>
