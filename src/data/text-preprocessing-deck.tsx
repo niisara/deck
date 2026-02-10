@@ -20,7 +20,7 @@ export const textPreprocessingDeck: Deck = {
           center: true,
           title: '21 Text Preprocessing Techniques',
           content: (
-            <div style={{ marginTop: '20px', color: '#fff' }}>
+            <div style={{ color: '#fff' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.8}>
                 <h2>From tokenization to language detection with practical cheat sheets</h2>
               </GSAPAnimated>
@@ -43,7 +43,7 @@ export const textPreprocessingDeck: Deck = {
                 </div>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInBottom" delay={0.8} duration={0.7}>
-                <p style={{ fontSize: '2rem' }}>
+                <p style={{ fontSize: '2rem', margin: '0px' }}>
                   A comprehensive guide covering 21 text preprocessing techniques in NLP/Data Science
                 </p>
               </GSAPAnimated>
@@ -81,7 +81,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                 <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-scissors" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-scissors" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Basic Normalization (1-5)
                     </h4>
                     <ul style={{ fontSize: '1.2rem', color: '#3498db' }}>
@@ -92,7 +92,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                       <li>5. Punctuation Normalization</li>
                     </ul>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginTop: '15px', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-filter" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-filter" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Filtering & Reduction (6-7)
                     </h4>
                     <ul style={{ fontSize: '1.2rem', color: '#9b59b6' }}>
@@ -104,7 +104,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                 <GSAPAnimated animation="slideInBottom" delay={0.4} duration={0.8}>
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-seedling" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-seedling" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Morphological Analysis (8-10)
                     </h4>
                     <ul style={{ fontSize: '1.2rem', color: '#2ecc71' }}>
@@ -113,7 +113,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                       <li>10. Part-of-Speech Tagging</li>
                     </ul>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-layer-group" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Feature Engineering (11-12)
                     </h4>
                     <ul style={{ fontSize: '1.2rem', color: '#f39c12' }}>
@@ -125,7 +125,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                 <GSAPAnimated animation="slideInRight" delay={0.6} duration={0.8}>
                   <div>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e67e22', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Error Correction (13-15)
                     </h4>
                     <ul style={{ fontSize: '1.2rem', color: '#e67e22' }}>
@@ -134,7 +134,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                       <li>15. Contraction Expansion</li>
                     </ul>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '15px', marginBottom: '12px' }}>
-                      <SvgIcon iconName="duo-broom" sizeName="2x" darkModeInvert={true} />
+                      <SvgIcon iconName="duo-broom" sizeName="2x" style={{ margin: '0px 0px 4px' }} darkModeInvert={true} />
                       Cleaning & Structuring (16-21)
                     </h4>
                     <ul style={{ fontSize: '1.2rem', color: '#e74c3c' }}>
@@ -149,7 +149,7 @@ Let's dive into our table of contents and see what we'll cover today.`
                 </GSAPAnimated>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.9} duration={0.6}>
-                <p style={{ textAlign: 'center', marginTop: '25px', fontSize: '1.1em', fontWeight: 'bold' }}>
+                <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '1.1em', fontWeight: 'bold' }}>
                   21 techniques organized into 6 categories
                 </p>
               </GSAPAnimated>
@@ -1293,12 +1293,12 @@ A hybrid approach works well: normalize quotes and dashes (which rarely carry me
                       Steps
                     </h4>
                   </GSAPAnimated>
-                  <GSAPStaggerList stagger={0.15} duration={0.6}>
-                    <div><li>Select stoplist per language/domain</li></div>
-                    <div><li>Keep negations/intensifiers if needed</li></div>
-                    <div><li>Filter</li></div>
-                    <div><li>Review impact on metrics</li></div>
-                  </GSAPStaggerList>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Select stoplist per language/domain</li>
+                  <li>Keep negations/intensifiers if needed</li>
+                  <li>Filter</li>
+                  <li>Review impact on metrics</li>
+                      </ul>
                 </div>
               </div>
             </div>
@@ -1378,9 +1378,11 @@ Remember: stopword removal is a lossy operation. Once you remove these words, yo
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div><li>Reduces dimensionality</li></div>
-                  <div><li>Speeds training</li></div>
-                  <div><li>Can improve topic signal</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Reduces dimensionality</li>
+                    <li>Speeds training</li>
+                    <li>Can improve topic signal</li>
+                  </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="bounceIn" delay={0.9} duration={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
@@ -1396,9 +1398,11 @@ Remember: stopword removal is a lossy operation. Once you remove these words, yo
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} duration={0.6}>
-                  <div><li>Risk of meaning loss</li></div>
-                  <div><li>Harms sequence/transformer setups</li></div>
-                  <div><li>Domain sensitivity</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Risk of meaning loss</li>
+                    <li>Harms sequence/transformer setups</li>
+                    <li>Domain sensitivity</li>
+                  </ul>
                 </GSAPStaggerList>
               </div>
             </div>
@@ -1524,10 +1528,12 @@ A good rule of thumb: if your model treats text as an ordered sequence and learn
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.18} duration={0.7}>
-                    <div><li>Define light list</li></div>
-                    <div><li>Whitelist negations/domain terms</li></div>
-                    <div><li>Filter</li></div>
-                    <div><li>Iterate with validation</li></div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Define light list</li>
+                      <li>Whitelist negations/domain terms</li>
+                      <li>Filter</li>
+                      <li>Iterate with validation</li>
+                    </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
@@ -1628,8 +1634,10 @@ Pro tip: Version control your stopword lists! As you refine them based on valida
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
-                  <div><li>Preserves meaning better than full removal</li></div>
-                  <div><li>Balanced noise reduction</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Preserves meaning better than full removal</li>
+                    <li>Balanced noise reduction</li>
+                  </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="flipCard" delay={0.9} duration={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
@@ -1645,9 +1653,11 @@ Pro tip: Version control your stopword lists! As you refine them based on valida
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
-                  <div><li>Requires tuning</li></div>
-                  <div><li>Residual noise may remain</li></div>
-                  <div><li>Still risky for very short texts</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Requires tuning</li>
+                    <li>Residual noise may remain</li>
+                    <li>Still risky for very short texts</li>
+                  </ul>
                 </GSAPStaggerList>
               </div>
             </div>
@@ -1801,10 +1811,12 @@ The bottom line: light stopword trimming is the "Goldilocks" approach—not too 
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.2} duration={0.6}>
-                    <div><li>Choose language stemmer</li></div>
-                    <div><li>Apply</li></div>
-                    <div><li>Sample-check for over/under-stemming</li></div>
-                    <div><li>Adjust algorithm if available</li></div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Choose language stemmer</li>
+                      <li>Apply</li>
+                      <li>Sample-check for over/under-stemming</li>
+                      <li>Adjust algorithm if available</li>
+                    </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
@@ -1911,8 +1923,10 @@ For modern deep learning, stemming is less commonly used—transformers can lear
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.6}>
-                  <div><li>Cuts dimensionality</li></div>
-                  <div><li>Robust to inflectional variation</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Cuts dimensionality</li>
+                    <li>Robust to inflectional variation</li>
+                  </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="slideInBottom" delay={0.8} duration={0.8}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
@@ -1928,9 +1942,11 @@ For modern deep learning, stemming is less commonly used—transformers can lear
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.6}>
-                  <div><li>Produces non-words</li></div>
-                  <div><li>May conflate unrelated terms</li></div>
-                  <div><li>Language-dependent rules</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Produces non-words</li>
+                    <li>May conflate unrelated terms</li>
+                    <li>Language-dependent rules</li>
+                  </ul>
                 </GSAPStaggerList>
               </div>
             </div>
@@ -2104,11 +2120,13 @@ The bottom line: stemming is a fast, simple, effective technique for reducing vo
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.16} duration={0.6}>
-                    <div><li>Tokenize</li></div>
-                    <div><li>POS tag</li></div>
-                    <div><li>Lemmatize with language model</li></div>
-                    <div><li>Handle OOV/proper nouns separately</li></div>
-                    <div><li>Validate</li></div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Tokenize</li>
+                      <li>POS tag</li>
+                      <li>Lemmatize with language model</li>
+                      <li>Handle OOV/proper nouns separately</li>
+                      <li>Validate</li>
+                    </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
@@ -2257,9 +2275,11 @@ However, the accuracy improvement is often worth it. And with modern hardware an
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.7}>
-                  <div><li>More accurate than stemming</li></div>
-                  <div><li>Preserves meaning</li></div>
-                  <div><li>Aids downstream tasks</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>More accurate than stemming</li>
+                    <li>Preserves meaning</li>
+                    <li>Aids downstream tasks</li>
+                  </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="bounceIn" delay={0.9} duration={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
@@ -2275,9 +2295,11 @@ However, the accuracy improvement is often worth it. And with modern hardware an
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.18} duration={0.7}>
-                  <div><li>Slower</li></div>
-                  <div><li>Requires models/resources</li></div>
-                  <div><li>Errors under domain shift</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Slower</li>
+                    <li>Requires models/resources</li>
+                    <li>Errors under domain shift</li>
+                  </ul>
                 </GSAPStaggerList>
               </div>
             </div>
@@ -2467,11 +2489,13 @@ A hybrid approach is also viable: use stemming for initial experiments and explo
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.16} duration={0.6}>
-                    <div><li>Select tagset (e.g., Universal POS)</li></div>
-                    <div><li>Load model</li></div>
-                    <div><li>Tokenize</li></div>
-                    <div><li>Tag</li></div>
-                    <div><li>Evaluate on a sample</li></div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Select tagset (e.g., Universal POS)</li>
+                    <li>Load model</li>
+                    <li>Tokenize</li>
+                    <li>Tag</li>
+                    <li>Evaluate on a sample</li>
+                  </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
@@ -2653,8 +2677,10 @@ POS tagging is a foundational tool in the NLP toolkit. While it's largely been c
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
-                  <div><li>Enables syntax-aware features</li></div>
-                  <div><li>Improves lemmatization and parsing</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Enables syntax-aware features</li>
+                    <li>Improves lemmatization and parsing</li>
+                  </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
@@ -2670,9 +2696,11 @@ POS tagging is a foundational tool in the NLP toolkit. While it's largely been c
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
-                  <div><li>Errors propagate</li></div>
-                  <div><li>Domain/language coverage varies</li></div>
-                  <div><li>Ambiguous tokens</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Errors propagate</li>
+                    <li>Domain/language coverage varies</li>
+                    <li>Ambiguous tokens</li>
+                  </ul>
                 </GSAPStaggerList>
               </div>
             </div>
@@ -2876,11 +2904,13 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.18} duration={0.6}>
-                    <div><li>Choose n values (e.g., 2 for bigrams, 3 for trigrams)</li></div>
-                    <div><li>Generate</li></div>
-                    <div><li>Prune rare n-grams</li></div>
-                    <div><li>Compute TF-IDF/PMI</li></div>
-                    <div><li>Cap feature size</li></div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Choose n values (e.g., 2 for bigrams, 3 for trigrams)</li>
+                      <li>Generate</li>
+                      <li>Prune rare n-grams</li>
+                      <li>Compute TF-IDF/PMI</li>
+                      <li>Cap feature size</li>
+                    </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
@@ -3053,8 +3083,10 @@ N-grams are a simple, interpretable, and effective way to capture local context 
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
-                  <div><li>Encodes order</li></div>
-                  <div><li>Improves predictive power over unigrams</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Encodes order</li>
+                    <li>Improves predictive power over unigrams</li>
+                  </ul>
                 </GSAPStaggerList>
                 <GSAPAnimated animation="slideInRight" delay={0.8} duration={0.8}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
@@ -3070,9 +3102,11 @@ N-grams are a simple, interpretable, and effective way to capture local context 
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} duration={0.7}>
-                  <div><li>Feature explosion</li></div>
-                  <div><li>Sparsity</li></div>
-                  <div><li>Brittle to noise and rephrasing</li></div>
+                  <ul style={{ fontSize: '1.2rem' }}>
+                    <li>Feature explosion</li>
+                    <li>Sparsity</li>
+                    <li>Brittle to noise and rephrasing</li>
+                  </ul>
                 </GSAPStaggerList>
               </div>
             </div>
@@ -3290,10 +3324,12 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
                     </h4>
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.18} duration={0.6}>
-                    <div><li>Compute n-gram stats</li></div>
-                    <div><li>Set thresholds</li></div>
-                    <div><li>Join phrases with delimiter</li></div>
-                    <div><li>Iterate for higher-order phrases</li></div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Compute n-gram stats</li>
+                      <li>Set thresholds</li>
+                      <li>Join phrases with delimiter</li>
+                      <li>Iterate for higher-order phrases</li>
+                    </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
