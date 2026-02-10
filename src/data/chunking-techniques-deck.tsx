@@ -19,175 +19,175 @@ export const chunkingTechniquesDeck: Deck = {
           title: '26 Chunking Techniques & Cheat Sheet',
           content: (
             <div style={{ color: '#fff' }}>
-          <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval in RAG and NLP applications</h2>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-file" sizeName="4x" style={{ color: '#3498db' }} />
-              <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Document</p>
+              <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval in RAG and NLP applications</h2>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-file" sizeName="4x" style={{ color: '#3498db' }} />
+                  <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Document</p>
+                </div>
+                <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-scissors" sizeName="4x" style={{ color: '#f39c12' }} />
+                  <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Chunking</p>
+                </div>
+                <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <SvgIcon iconName="duo-cubes" sizeName="4x" style={{ color: '#2ecc71' }} />
+                  <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrievable Units</p>
+                </div>
+              </div>
+              <p><strong>Prepared by:</strong> Nisar A</p>
+              <p><strong>Date:</strong> November 7, 2025</p>
+              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
             </div>
-            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-scissors" sizeName="4x" style={{ color: '#f39c12' }} />
-              <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Chunking</p>
-            </div>
-            <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <SvgIcon iconName="duo-cubes" sizeName="4x" style={{ color: '#2ecc71' }} />
-              <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrievable Units</p>
-            </div>
-          </div>
-          <p><strong>Prepared by:</strong> Nisar A</p>
-                <p><strong>Date:</strong> November 7, 2025</p>
-                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
-        </div>
-      ),
-      backgroundColor: '#2C3E50',
-      notes: ''
-    },
+          ),
+          backgroundColor: '#2C3E50',
+          notes: ''
+        },
         {
           id: 2,
           title: 'What is Chunking and Why It Matters',
           icon: { name: 'duo-scissors' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <div style={{ marginBottom: '30px' }}>
-            <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
-              <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
-              Definition
-            </h3>
-            <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
-              Chunking is the process of breaking large documents into <strong>smaller, retrievable, semantically coherent units</strong> that preserve context while fitting within model constraints.
-            </p>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-check-circle" sizeName="2x" darkModeInvert={true} />
-                Why It's Important
-              </h4>
-              <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                <li>Fits content within model context windows</li>
-                <li>Increases retrieval precision and relevance</li>
-                <li>Reduces computational cost and latency</li>
-                <li>Combats "lost-in-the-middle" effect in LLMs</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
-                Key Variables
-              </h4>
-              <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                <li>Chunk size (tokens, sentences, paragraphs)</li>
-                <li>Overlap between chunks</li>
-                <li>Boundary determination (semantic vs. structural)</li>
-                <li>Content modality (text, tables, code, audio)</li>
-                <li>Metadata enrichment</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginBottom: '12px' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
-                Desired Outcomes
-              </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1.2rem' }}>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
-                  <strong>Better recall/precision in retrieval</strong>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '30px' }}>
+                <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
+                  <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
+                  Definition
+                </h3>
+                <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+                  Chunking is the process of breaking large documents into <strong>smaller, retrievable, semantically coherent units</strong> that preserve context while fitting within model constraints.
+                </p>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-check-circle" sizeName="2x" darkModeInvert={true} />
+                    Why It's Important
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <li>Fits content within model context windows</li>
+                    <li>Increases retrieval precision and relevance</li>
+                    <li>Reduces computational cost and latency</li>
+                    <li>Combats "lost-in-the-middle" effect in LLMs</li>
+                  </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
+                    Key Variables
+                  </h4>
+                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                    <li>Chunk size (tokens, sentences, paragraphs)</li>
+                    <li>Overlap between chunks</li>
+                    <li>Boundary determination (semantic vs. structural)</li>
+                    <li>Content modality (text, tables, code, audio)</li>
+                    <li>Metadata enrichment</li>
+                  </ul>
                 </div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
-                  <strong>More faithful grounding of LLM outputs</strong>
-                </div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
-                  <strong>Faster agent information loops</strong>
-                </div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
-                  <strong>Optimized storage and embedding costs</strong>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginBottom: '12px' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
+                    Desired Outcomes
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '1.2rem' }}>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
+                      <strong>Better recall/precision in retrieval</strong>
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
+                      <strong>More faithful grounding of LLM outputs</strong>
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
+                      <strong>Faster agent information loops</strong>
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
+                      <strong>Optimized storage and embedding costs</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#2C3E50',
-      notes: ''
+          ),
+          backgroundColor: '#2C3E50',
+          notes: ''
         },
         {
           id: 3,
           title: 'Overview of 26 Techniques',
           icon: { name: 'duo-list-check' },
           content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#4ad786' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-            <div>
-              <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
-                Fixed/Token-based (1-3)
-              </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#3498db' }}>
-                <li>Fixed-Size Chunking</li>
-                <li>Sliding Window Chunking</li>
-                <li>Token-Aware Chunking</li>
-              </ul>
-              <h4 style={{ color: '#2ecc71', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-paragraph" sizeName="2x" darkModeInvert={true} />
-                Sentence/Paragraph-based (4-6)
-              </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#2ecc71' }}>
-                <li>Sentence-Level Chunking</li>
-                <li>Paragraph-Level Chunking</li>
-                <li>Windowed Sentence Grouping</li>
-              </ul>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#4ad786' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+                <div>
+                  <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
+                    Fixed/Token-based (1-3)
+                  </h4>
+                  <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#3498db' }}>
+                    <li>Fixed-Size Chunking</li>
+                    <li>Sliding Window Chunking</li>
+                    <li>Token-Aware Chunking</li>
+                  </ul>
+                  <h4 style={{ color: '#2ecc71', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <SvgIcon iconName="duo-paragraph" sizeName="2x" darkModeInvert={true} />
+                    Sentence/Paragraph-based (4-6)
+                  </h4>
+                  <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#2ecc71' }}>
+                    <li>Sentence-Level Chunking</li>
+                    <li>Paragraph-Level Chunking</li>
+                    <li>Windowed Sentence Grouping</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
+                    Structure-aware (7-13)
+                  </h4>
+                  <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#9b59b6' }}>
+                    <li>Structure-Aware Chunking</li>
+                    <li>Content-Aware Chunking</li>
+                    <li>Heading/Title Anchor Chunking</li>
+                    <li>Markdown/HTML Structure Chunking</li>
+                    <li>Table-Aware Chunking</li>
+                    <li>Code-Aware Chunking</li>
+                    <li>Page-Preservation Chunking</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
+                    Semantic/Adaptive (14-19)
+                  </h4>
+                  <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#f39c12' }}>
+                    <li>Semantic Chunking (Embedding-Based)</li>
+                    <li>TextTiling</li>
+                    <li>Discourse/RST Chunking</li>
+                    <li>Graph-Based Semantic Chunking</li>
+                    <li>Recursive Character Text Splitting</li>
+                    <li>Adaptive Length Chunking</li>
+                  </ul>
+                  <h4 style={{ color: '#e67e22', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <SvgIcon iconName="duo-wand-sparkles" sizeName="2x" darkModeInvert={true} />
+                    Special-Purpose (20-26)
+                  </h4>
+                  <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#e67e22' }}>
+                    <li>Summarization-Based Chunking</li>
+                    <li>Audio/ASR Time-Based Chunking</li>
+                    <li>Speaker-Turn Chunking</li>
+                    <li>QA-Focused Chunking</li>
+                    <li>Caption + Context Chunking</li>
+                    <li>Metadata-Aware Chunking</li>
+                    <li>Hybrid Chunking</li>
+                  </ul>
+                </div>
+              </div>
+              <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '1.2rem', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
+                <strong>Each technique includes:</strong> Pros, Cons, Best Chunk Size, Overlap Size, Computational Cost, Use Cases, Tooling Support, and Complexity Level
+              </p>
             </div>
-            <div>
-              <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
-                Structure-aware (7-13)
-              </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#9b59b6' }}>
-                <li>Structure-Aware Chunking</li>
-                <li>Content-Aware Chunking</li>
-                <li>Heading/Title Anchor Chunking</li>
-                <li>Markdown/HTML Structure Chunking</li>
-                <li>Table-Aware Chunking</li>
-                <li>Code-Aware Chunking</li>
-                <li>Page-Preservation Chunking</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
-                Semantic/Adaptive (14-19)
-              </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#f39c12' }}>
-                <li>Semantic Chunking (Embedding-Based)</li>
-                <li>TextTiling</li>
-                <li>Discourse/RST Chunking</li>
-                <li>Graph-Based Semantic Chunking</li>
-                <li>Recursive Character Text Splitting</li>
-                <li>Adaptive Length Chunking</li>
-              </ul>
-              <h4 style={{ color: '#e67e22', marginTop: '12px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <SvgIcon iconName="duo-wand-sparkles" sizeName="2x" darkModeInvert={true} />
-                Special-Purpose (20-26)
-              </h4>
-              <ul style={{ lineHeight: '1.5', fontSize: '1.2rem', color: '#e67e22' }}>
-                <li>Summarization-Based Chunking</li>
-                <li>Audio/ASR Time-Based Chunking</li>
-                <li>Speaker-Turn Chunking</li>
-                <li>QA-Focused Chunking</li>
-                <li>Caption + Context Chunking</li>
-                <li>Metadata-Aware Chunking</li>
-                <li>Hybrid Chunking</li>
-              </ul>
-            </div>
-          </div>
-          <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '1.2rem', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
-            <strong>Each technique includes:</strong> Pros, Cons, Best Chunk Size, Overlap Size, Computational Cost, Use Cases, Tooling Support, and Complexity Level
-          </p>
-        </div>
-      ),
-      backgroundColor: '#2C3E50',
-      notes: ''
+          ),
+          backgroundColor: '#2C3E50',
+          notes: ''
         }
       ]
     },
@@ -351,7 +351,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '2. Sentence-Level Chunking - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-                <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>QA over short facts</li>
@@ -535,7 +535,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '4. Recursive Character Text Splitting - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Mixed formatting documents</li>
@@ -627,7 +627,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '5. Structure-Aware Chunking - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Manuals, whitepapers, SOWs</li>
@@ -728,7 +728,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <li>Formatting-rich documents</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Custom heuristics (often bespoke)</li>
                 <li>Coveo chunking strategies</li>
                 <li>Unstructured.io content extractors</li>
@@ -811,7 +811,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '7. Semantic Chunking (Embedding-Based) - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Multi-topic documents and research papers</li>
@@ -936,7 +936,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '9. Discourse / RST Chunking - Pros',
           icon: { name: 'duo-circle-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                 <li>Uses discourse units (EDUs) and relations for high fidelity semantics</li>
                 <li>Captures rhetorical structure and text organization</li>
@@ -995,7 +995,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '9. Discourse / RST Chunking - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Long-form question answering</li>
@@ -1120,7 +1120,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '11. Heading / Title Anchor Chunking - Pros',
           icon: { name: 'duo-circle-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                 <li>Strong alignment to document navigation; great for docs sites</li>
                 <li>Preserves document hierarchy and structure</li>
@@ -1179,7 +1179,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '11. Heading / Title Anchor Chunking - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Markdown documentation and README files</li>
@@ -1229,7 +1229,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '12. Markdown / HTML Structure Chunking - Cons',
           icon: { name: 'duo-circle-xmark' },
           content: (
-                <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
               <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                 <li>Requires well-structured source documents</li>
                 <li>Boilerplate/noise unless filtered</li>
@@ -1291,7 +1291,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#5c1c65',
-            notes: ''
+          notes: ''
         }
       ]
     },
@@ -1550,7 +1550,7 @@ export const chunkingTechniquesDeck: Deck = {
           title: '15. Windowed Sentence Grouping - Use Cases & Tools',
           icon: { name: 'duo-list-check' },
           content: (
-              <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>News articles</li>
@@ -1917,7 +1917,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c2965',
-              notes: ''
+          notes: ''
         },
         {
           id: 79,
@@ -2026,7 +2026,7 @@ export const chunkingTechniquesDeck: Deck = {
                 <li>Multi-speaker audio processing</li>
               </ul>
               <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-                  <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                 <li>Pyannote audio diarization library</li>
                 <li>AWS Transcribe with speaker diarization</li>
                 <li>Whisper + diarization pipelines</li>
@@ -2051,7 +2051,7 @@ export const chunkingTechniquesDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffff6f', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>  
+              <ul style={{ fontSize: '1.2rem' }}>
                 <li>Tailored to answer spans; high precision for QA</li>
                 <li>Optimized for question-answer retrieval</li>
                 <li>Improves relevance in QA systems</li>
@@ -2289,7 +2289,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c6528',
-            notes: ''
+          notes: ''
         },
         {
           id: 95,
@@ -2527,7 +2527,7 @@ export const chunkingTechniquesDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c6265',
-            notes: ''
+          notes: ''
         },
         {
           id: 105,
@@ -2610,217 +2610,217 @@ export const chunkingTechniquesDeck: Deck = {
           title: 'Quick Reference: Default Sizing & Overlap',
           icon: { name: 'duo-table' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-          <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-            <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
-            Default Configurations
-          </h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-            <thead>
-              <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                <th style={{ padding: '10px', border: '1px solid #555' }}>Technique</th>
-                <th style={{ padding: '10px', border: '1px solid #555' }}>Default Size</th>
-                <th style={{ padding: '10px', border: '1px solid #555' }}>Overlap</th>
-                <th style={{ padding: '10px', border: '1px solid #555' }}>Best For</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Fixed/Token</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>512 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>15%</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Baselines, simple content</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Sliding Window</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>600 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>20%</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Technical docs, legal</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Sentence Grouping</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>3 sentences</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Stride 2</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Narrative text</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Paragraph</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Max 350 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>None</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Articles, blogs</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Recursive Character</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>700 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>100 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Mixed formats</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Semantic</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>400 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>0-5%</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Multi-topic documents</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>HTML/Markdown</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>500 tokens</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Preserve elements</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Documentation sites</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Code-Aware</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>400 tokens/function</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Include context</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Code repositories</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Audio Time-Based</td>
-                <td style={{ padding: '8px', border: '1px solid #555' , fontSize: '1.2rem' }}>30s windows</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>2s</td>
-                <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Podcasts, meetings</td>
-              </tr>
-            </tbody>
-          </table>
-          <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', textAlign: 'center', fontSize: '1.2rem' }}>
-            <strong>💡 Evaluation Tip:</strong> Always tune these defaults for your specific corpus. Measure retrieval precision/recall, faithfulness, latency, and cost.
-          </div>
-        </div>
-      ),
-      backgroundColor: '#104928',
-      notes: ''
+            <div style={{ margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+              <h3 style={{ marginBottom: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                <SvgIcon iconName="duo-table" sizeName="2x" darkModeInvert={true} />
+                Default Configurations
+              </h3>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <thead>
+                  <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
+                    <th style={{ padding: '10px', border: '1px solid #555' }}>Technique</th>
+                    <th style={{ padding: '10px', border: '1px solid #555' }}>Default Size</th>
+                    <th style={{ padding: '10px', border: '1px solid #555' }}>Overlap</th>
+                    <th style={{ padding: '10px', border: '1px solid #555' }}>Best For</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Fixed/Token</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>512 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>15%</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Baselines, simple content</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Sliding Window</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>600 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>20%</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Technical docs, legal</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Sentence Grouping</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>3 sentences</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Stride 2</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Narrative text</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Paragraph</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Max 350 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>None</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Articles, blogs</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Recursive Character</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>700 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>100 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Mixed formats</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Semantic</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>400 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>0-5%</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Multi-topic documents</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>HTML/Markdown</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>500 tokens</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Preserve elements</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Documentation sites</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Code-Aware</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>400 tokens/function</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Include context</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Code repositories</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Audio Time-Based</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>30s windows</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>2s</td>
+                    <td style={{ padding: '8px', border: '1px solid #555', fontSize: '1.2rem' }}>Podcasts, meetings</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style={{ marginTop: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', textAlign: 'center', fontSize: '1.2rem' }}>
+                <strong>💡 Evaluation Tip:</strong> Always tune these defaults for your specific corpus. Measure retrieval precision/recall, faithfulness, latency, and cost.
+              </div>
+            </div>
+          ),
+          backgroundColor: '#104928',
+          notes: ''
         },
         {
           id: 109,
           title: 'Selection Guide: Decision Flow',
           icon: { name: 'duo-compass' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '2rem', color: '#13c55e' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <h3 style={{ paddingBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', color: '#3498db' }}>
-              <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
-                1. Is document structure reliable?
-              </h4>
-              <p><strong>Yes →</strong> Use structure-aware chunking (Heading-Anchor, Markdown/HTML, Structure-Aware)</p>
-              <p><strong>No →</strong> Consider semantic approaches (Semantic, TextTiling)</p>
+            <div style={{ margin: '0 auto', fontSize: '2rem', color: '#13c55e' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <h3 style={{ paddingBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', color: '#3498db' }}>
+                  <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
+                    1. Is document structure reliable?
+                  </h4>
+                  <p><strong>Yes →</strong> Use structure-aware chunking (Heading-Anchor, Markdown/HTML, Structure-Aware)</p>
+                  <p><strong>No →</strong> Consider semantic approaches (Semantic, TextTiling)</p>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12', color: '#f39c12' }}>
+                  <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
+                    2. Is latency/cost strict?
+                  </h4>
+                  <p><strong>Yes →</strong> Use simpler approaches (Fixed-Size, Token-Aware, Recursive Character)</p>
+                  <p><strong>No →</strong> Use advanced techniques (LLM-Based, Graph-Semantic, Discourse/RST)</p>
+                </div>
+              </div>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '10px', border: '2px solid #f39c12', color: '#f39c12' }}>
-              <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
-                2. Is latency/cost strict?
-              </h4>
-              <p><strong>Yes →</strong> Use simpler approaches (Fixed-Size, Token-Aware, Recursive Character)</p>
-              <p><strong>No →</strong> Use advanced techniques (LLM-Based, Graph-Semantic, Discourse/RST)</p>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#104928',
-      notes: ''
+          ),
+          backgroundColor: '#104928',
+          notes: ''
         },
         {
           id: 110,
           title: 'Selection Guide: Decision Flow',
           icon: { name: 'duo-compass' },
           content: (
-        <div style={{ margin: '0 auto', fontSize: '2rem', color: '#13c55e' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <h3 style={{ paddingBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6', color: '#9b59b6' }}>
-              <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-layer-group" sizeName="2x" darkModeInvert={true} />
-                3. Special content types?
-              </h4>
-              <p><strong>Code →</strong> Code-Aware chunking</p>
-              <p><strong>Tables →</strong> Table-Aware chunking</p>
-              <p><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
-              <p><strong>QA Tasks →</strong> QA-Focused chunking</p>
+            <div style={{ margin: '0 auto', fontSize: '2rem', color: '#13c55e' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <h3 style={{ paddingBottom: '30px' }}>How to Choose the Right Chunking Strategy</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '10px', border: '2px solid #9b59b6', color: '#9b59b6' }}>
+                  <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="2x" darkModeInvert={true} />
+                    3. Special content types?
+                  </h4>
+                  <p><strong>Code →</strong> Code-Aware chunking</p>
+                  <p><strong>Tables →</strong> Table-Aware chunking</p>
+                  <p><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
+                  <p><strong>QA Tasks →</strong> QA-Focused chunking</p>
+                </div>
+                <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', color: '#2ecc71' }}>
+                  <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
+                    Common Recommendations by Document Type
+                  </h4>
+                  <ul style={{ lineHeight: '1.8' }}>
+                    <li><strong>Documentation Sites:</strong> Heading-Anchor + Markdown Structure + Sliding Window</li>
+                    <li><strong>Legal/Policy Documents:</strong> Paragraph + Sliding Window or RST</li>
+                    <li><strong>Code Repositories:</strong> Code-Aware + Token-Aware</li>
+                    <li><strong>Academic Papers:</strong> Structure-Aware + Semantic or Page-Preservation</li>
+                    <li><strong>General Text:</strong> Start with Fixed-Size or Recursive Character + Sliding Window</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', color: '#2ecc71' }}>
-              <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-list-check" sizeName="2x" darkModeInvert={true} />
-                Common Recommendations by Document Type
-              </h4>
-              <ul style={{ lineHeight: '1.8' }}>
-                <li><strong>Documentation Sites:</strong> Heading-Anchor + Markdown Structure + Sliding Window</li>
-                <li><strong>Legal/Policy Documents:</strong> Paragraph + Sliding Window or RST</li>
-                <li><strong>Code Repositories:</strong> Code-Aware + Token-Aware</li>
-                <li><strong>Academic Papers:</strong> Structure-Aware + Semantic or Page-Preservation</li>
-                <li><strong>General Text:</strong> Start with Fixed-Size or Recursive Character + Sliding Window</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      ),
-      backgroundColor: '#104928',
-      notes: ''
+          ),
+          backgroundColor: '#104928',
+          notes: ''
         },
         {
           id: 111,
           title: 'Best Practices & Key Takeaways',
           icon: { name: 'duo-clipboard-check' },
-      content: (
-        <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-          <div style={{ marginBottom: '30px' }}></div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                Key Takeaways
-              </h4>
-              <ul style={{ lineHeight: '1.8' }}>
-                <li><strong>No one-size-fits-all:</strong> Choose based on document type and goals</li>
-                <li><strong>Start simple:</strong> Fixed-size or Token-Aware as baseline</li>
-                <li><strong>Measure impact:</strong> Test with real queries and metrics</li>
-                <li><strong>Balance trade-offs:</strong> Semantic coherence vs. efficiency</li>
-                <li><strong>Consider costs:</strong> Embedding generation and storage</li>
-              </ul>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
-                Evaluation Methods
-              </h4>
-              <ul style={{ lineHeight: '1.8' }}>
-                <li>Test with held-out queries</li>
-                <li>Use rerankers to assess quality</li>
-                <li>LLM-as-judge for faithfulness</li>
-                <li>Monitor latency and costs</li>
-              </ul>
-            </div>
-            <div>
-              <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                <SvgIcon iconName="duo-route" sizeName="2x" darkModeInvert={true} />
-                Recommended Path
-              </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', fontSize: '1.2rem' }}>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', borderLeft: '4px solid #3498db' }}>
-                  <strong>1. Begin with baseline</strong><br/>
-                  Fixed-Size or Token-Aware + Sliding Window
+          content: (
+            <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
+              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                    Key Takeaways
+                  </h4>
+                  <ul style={{ lineHeight: '1.8' }}>
+                    <li><strong>No one-size-fits-all:</strong> Choose based on document type and goals</li>
+                    <li><strong>Start simple:</strong> Fixed-size or Token-Aware as baseline</li>
+                    <li><strong>Measure impact:</strong> Test with real queries and metrics</li>
+                    <li><strong>Balance trade-offs:</strong> Semantic coherence vs. efficiency</li>
+                    <li><strong>Consider costs:</strong> Embedding generation and storage</li>
+                  </ul>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-chart-line" sizeName="2x" darkModeInvert={true} />
+                    Evaluation Methods
+                  </h4>
+                  <ul style={{ lineHeight: '1.8' }}>
+                    <li>Test with held-out queries</li>
+                    <li>Use rerankers to assess quality</li>
+                    <li>LLM-as-judge for faithfulness</li>
+                    <li>Monitor latency and costs</li>
+                  </ul>
                 </div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
-                  <strong>2. Add sophistication</strong><br/>
-                  Structure-Aware or Semantic based on docs
-                </div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', borderLeft: '4px solid #2ecc71' }}>
-                  <strong>3. Consider hybrid</strong><br/>
-                  For complex or multi-modal collections
-                </div>
-                <div style={{ padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', borderLeft: '4px solid #f39c12' }}>
-                  <strong>4. Continuously refine</strong><br/>
-                  Learn from real-world usage patterns
+                <div>
+                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
+                    <SvgIcon iconName="duo-route" sizeName="2x" darkModeInvert={true} />
+                    Recommended Path
+                  </h4>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', fontSize: '1.2rem' }}>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px', borderLeft: '4px solid #3498db' }}>
+                      <strong>1. Begin with baseline</strong><br />
+                      Fixed-Size or Token-Aware + Sliding Window
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(155, 89, 182, 0.1)', borderRadius: '8px', borderLeft: '4px solid #9b59b6' }}>
+                      <strong>2. Add sophistication</strong><br />
+                      Structure-Aware or Semantic based on docs
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '8px', borderLeft: '4px solid #2ecc71' }}>
+                      <strong>3. Consider hybrid</strong><br />
+                      For complex or multi-modal collections
+                    </div>
+                    <div style={{ padding: '12px', backgroundColor: 'rgba(243, 156, 18, 0.1)', borderRadius: '8px', borderLeft: '4px solid #f39c12' }}>
+                      <strong>4. Continuously refine</strong><br />
+                      Learn from real-world usage patterns
+                    </div>
+                  </div>
                 </div>
               </div>
+              <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center', fontSize: '1.2rem' }}>
+                <strong>🎯 Implementation Next Steps:</strong> Implement 3 candidate strategies → Run A/B tests → Lock in optimal defaults → Continuously optimize
+              </div>
             </div>
-          </div>
-          <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center', fontSize: '1.2rem' }}>
-            <strong>🎯 Implementation Next Steps:</strong> Implement 3 candidate strategies → Run A/B tests → Lock in optimal defaults → Continuously optimize
-          </div>
-        </div>
-      ),
-      backgroundColor: '#104928',
-      notes: ''
+          ),
+          backgroundColor: '#104928',
+          notes: ''
         }
       ]
     }
