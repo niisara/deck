@@ -224,12 +224,12 @@ Now let's dive into our first technique: tokenization.`
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Choose granularity (word/subword/sentence)</li>
-                        <li>Select tokenizer appropriate for language</li>
-                        <li>Configure language-specific rules</li>
-                        <li>Apply tokenization</li>
-                        <li>Validate token counts</li>
-                      </ul>
+                      <li>Choose granularity (word/subword/sentence)</li>
+                      <li>Select tokenizer appropriate for language</li>
+                      <li>Configure language-specific rules</li>
+                      <li>Apply tokenization</li>
+                      <li>Validate token counts</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -302,10 +302,10 @@ This foundational technique enables everything else we'll learn today. Let's loo
     style E fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Enables downstream NLP tasks</li>
-                      <li>Handles OOV with subwords</li>
-                      <li>Standardizes input format</li>
-                    </ul>
+                    <li>Enables downstream NLP tasks</li>
+                    <li>Handles OOV with subwords</li>
+                    <li>Standardizes input format</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph TD
@@ -318,10 +318,10 @@ This foundational technique enables everything else we'll learn today. Let's loo
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Can lose spacing/punctuation nuance</li>
-                      <li>Language/script-specific challenges</li>
-                      <li>Subwords may lengthen sequences</li>
-                    </ul>
+                    <li>Can lose spacing/punctuation nuance</li>
+                    <li>Language/script-specific challenges</li>
+                    <li>Subwords may lengthen sequences</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -417,11 +417,11 @@ Despite its challenges, tokenization is non-negotiable. The pros far outweigh th
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Decide lower vs casefold</li>
-                        <li>Define exceptions (acronyms, proper nouns)</li>
-                        <li>Apply</li>
-                        <li>Spot-check impact</li>
-                      </ul>
+                      <li>Decide lower vs casefold</li>
+                      <li>Define exceptions (acronyms, proper nouns)</li>
+                      <li>Apply</li>
+                      <li>Spot-check impact</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -498,10 +498,10 @@ Remember, lowercasing is powerful but not universal. It's about finding the righ
     style F fill:#e1bee7`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Smaller vocab</li>
-                      <li>Improved generalization</li>
-                      <li>Simpler matching</li>
-                    </ul>
+                    <li>Smaller vocab</li>
+                    <li>Improved generalization</li>
+                    <li>Simpler matching</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -514,9 +514,9 @@ Remember, lowercasing is powerful but not universal. It's about finding the righ
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Loses case signals (named entities, sentence starts)</li>
-                      <li>Can harm tasks relying on casing</li>
-                    </ul>
+                    <li>Loses case signals (named entities, sentence starts)</li>
+                    <li>Can harm tasks relying on casing</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -626,11 +626,11 @@ A common strategy is to lowercase for some tasks and preserve case for others, o
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Pick form (NFC common, NFKC for compatibility)</li>
-                        <li>Normalize strings</li>
-                        <li>Test tricky cases (combining marks)</li>
-                        <li>Log conversions</li>
-                      </ul>
+                      <li>Pick form (NFC common, NFKC for compatibility)</li>
+                      <li>Normalize strings</li>
+                      <li>Test tricky cases (combining marks)</li>
+                      <li>Log conversions</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -715,10 +715,10 @@ The beauty of Unicode normalization is that once you apply it, all those invisib
     style D fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Stable comparisons</li>
-                      <li>Fewer hidden duplicates</li>
-                      <li>Safer tokenization</li>
-                    </ul>
+                    <li>Stable comparisons</li>
+                    <li>Fewer hidden duplicates</li>
+                    <li>Safer tokenization</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -729,9 +729,9 @@ The beauty of Unicode normalization is that once you apply it, all those invisib
     style C fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>NFKC may alter appearance/semantics</li>
-                      <li>Grapheme cluster edge cases</li>
-                    </ul>
+                    <li>NFKC may alter appearance/semantics</li>
+                    <li>Grapheme cluster edge cases</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -837,11 +837,11 @@ The key is understanding your data and your use case. Now let's move on to white
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Replace runs of whitespace with single space</li>
-                        <li>Standardize newline to \n</li>
-                        <li>Trim</li>
-                        <li>Preserve intentional separators if needed</li>
-                      </ul>
+                      <li>Replace runs of whitespace with single space</li>
+                      <li>Standardize newline to \n</li>
+                      <li>Trim</li>
+                      <li>Preserve intentional separators if needed</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -941,10 +941,10 @@ This simple technique eliminates a huge class of bugs and inconsistencies. Your 
     style D fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Cleaner tokens</li>
-                      <li>Consistent parsing</li>
-                      <li>Fewer edge cases</li>
-                    </ul>
+                    <li>Cleaner tokens</li>
+                    <li>Consistent parsing</li>
+                    <li>Fewer edge cases</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph TD
@@ -957,9 +957,9 @@ This simple technique eliminates a huge class of bugs and inconsistencies. Your 
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>May lose layout cues (tables, code)</li>
-                      <li>Affects alignment-sensitive text</li>
-                    </ul>
+                    <li>May lose layout cues (tables, code)</li>
+                    <li>Affects alignment-sensitive text</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1084,11 +1084,11 @@ The key is knowing your data and your task. For general text cleanup, whitespace
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Define mapping table</li>
-                        <li>Substitute</li>
-                        <li>Remove extraneous marks</li>
-                        <li>Preserve meaningful punctuation as needed</li>
-                      </ul>
+                      <li>Define mapping table</li>
+                      <li>Substitute</li>
+                      <li>Remove extraneous marks</li>
+                      <li>Preserve meaningful punctuation as needed</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -1169,10 +1169,10 @@ Let's look at the tradeoffs next.`
     style D fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Fewer token variants</li>
-                      <li>Better matching</li>
-                      <li>Improved sentence splitting</li>
-                    </ul>
+                    <li>Fewer token variants</li>
+                    <li>Better matching</li>
+                    <li>Improved sentence splitting</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph TD
@@ -1183,9 +1183,9 @@ Let's look at the tradeoffs next.`
     style C fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Language/script-specific</li>
-                      <li>May remove emotive or semantic cues</li>
-                    </ul>
+                    <li>Language/script-specific</li>
+                    <li>May remove emotive or semantic cues</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1294,11 +1294,11 @@ A hybrid approach works well: normalize quotes and dashes (which rarely carry me
                     </h4>
                   </GSAPAnimated>
                   <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Select stoplist per language/domain</li>
-                  <li>Keep negations/intensifiers if needed</li>
-                  <li>Filter</li>
-                  <li>Review impact on metrics</li>
-                      </ul>
+                    <li>Select stoplist per language/domain</li>
+                    <li>Keep negations/intensifiers if needed</li>
+                    <li>Filter</li>
+                    <li>Review impact on metrics</li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -2490,12 +2490,12 @@ A hybrid approach is also viable: use stemming for initial experiments and explo
                   </GSAPAnimated>
                   <GSAPStaggerList stagger={0.16} duration={0.6}>
                     <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Select tagset (e.g., Universal POS)</li>
-                    <li>Load model</li>
-                    <li>Tokenize</li>
-                    <li>Tag</li>
-                    <li>Evaluate on a sample</li>
-                  </ul>
+                      <li>Select tagset (e.g., Universal POS)</li>
+                      <li>Load model</li>
+                      <li>Tokenize</li>
+                      <li>Tag</li>
+                      <li>Evaluate on a sample</li>
+                    </ul>
                   </GSAPStaggerList>
                 </div>
               </div>
@@ -3542,10 +3542,10 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style D fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Better semantics</li>
-                      <li>Reduces fragmentation</li>
-                      <li>Improves retrieval and topics</li>
-                    </ul>
+                    <li>Better semantics</li>
+                    <li>Reduces fragmentation</li>
+                    <li>Improves retrieval and topics</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -3558,10 +3558,10 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Threshold tuning</li>
-                      <li>Domain dependence</li>
-                      <li>False positives/negatives</li>
-                    </ul>
+                    <li>Threshold tuning</li>
+                    <li>Domain dependence</li>
+                    <li>False positives/negatives</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -3629,12 +3629,12 @@ The key is understanding these trade-offs and validating your phrase detection w
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Detect errors</li>
-                        <li>Generate candidates</li>
-                        <li>Rank</li>
-                        <li>Apply with confidence threshold</li>
-                        <li>Log corrections for QA</li>
-                      </ul>
+                      <li>Detect errors</li>
+                      <li>Generate candidates</li>
+                      <li>Rank</li>
+                      <li>Apply with confidence threshold</li>
+                      <li>Log corrections for QA</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -3668,10 +3668,10 @@ However, be cautious in domains with specialized vocabulary. In medical texts, "
                     Pros
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Improves recall/precision</li>
-                      <li>Cleaner features</li>
-                      <li>Better downstream accuracy</li>
-                    </ul>
+                    <li>Improves recall/precision</li>
+                    <li>Cleaner features</li>
+                    <li>Better downstream accuracy</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -3686,10 +3686,10 @@ However, be cautious in domains with specialized vocabulary. In medical texts, "
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Overcorrection risk</li>
-                      <li>Language/locale-specific</li>
-                      <li>Computational overhead</li>
-                    </ul>
+                    <li>Overcorrection risk</li>
+                    <li>Language/locale-specific</li>
+                    <li>Computational overhead</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -3760,12 +3760,12 @@ The solution? Always use confidence thresholds—only correct words when you're 
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Analyze error patterns</li>
-                        <li>Build rules/models</li>
-                        <li>Apply</li>
-                        <li>Evaluate on gold samples</li>
-                        <li>Iterate</li>
-                      </ul>
+                      <li>Analyze error patterns</li>
+                      <li>Build rules/models</li>
+                      <li>Apply</li>
+                      <li>Evaluate on gold samples</li>
+                      <li>Iterate</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -3801,18 +3801,18 @@ The quality gains can be dramatic—reducing error rates from 10-20% down to 1-2
                     Pros
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Large quality gains on OCR text</li>
-                      <li>Addresses domain-specific noise</li>
-                    </ul>
+                    <li>Large quality gains on OCR text</li>
+                    <li>Addresses domain-specific noise</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Corpus-specific tuning needed</li>
-                      <li>Residual errors remain</li>
-                      <li>Setup effort</li>
-                    </ul>
+                    <li>Corpus-specific tuning needed</li>
+                    <li>Residual errors remain</li>
+                    <li>Setup effort</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -3881,11 +3881,11 @@ Third, there's significant setup effort. You need gold-standard samples (manuall
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Define mapping incl. locale variants</li>
-                        <li>Preserve casing</li>
-                        <li>Expand</li>
-                        <li>Handle slang and possessives carefully</li>
-                      </ul>
+                      <li>Define mapping incl. locale variants</li>
+                      <li>Preserve casing</li>
+                      <li>Expand</li>
+                      <li>Handle slang and possessives carefully</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -3928,18 +3928,18 @@ This technique is most valuable in three scenarios. First, sentiment analysis wh
     style C fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Clearer negation and syntax</li>
-                      <li>More consistent tokens</li>
-                    </ul>
+                    <li>Clearer negation and syntax</li>
+                    <li>More consistent tokens</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Ambiguities (he'd = he had/would)</li>
-                      <li>May alter tone</li>
-                      <li>Locale-dependent</li>
-                    </ul>
+                    <li>Ambiguities (he'd = he had/would)</li>
+                    <li>May alter tone</li>
+                    <li>Locale-dependent</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4010,11 +4010,11 @@ Third, this technique is locale-dependent. British English uses contractions lik
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Detect numbers</li>
-                        <li>choose strategy (keep, scale, mask)</li>
-                        <li>handle units/currencies</li>
-                        <li>format consistently</li>
-                      </ul>
+                      <li>Detect numbers</li>
+                      <li>choose strategy (keep, scale, mask)</li>
+                      <li>handle units/currencies</li>
+                      <li>format consistently</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -4050,10 +4050,10 @@ This technique is essential in three contexts. First, privacy and de-identificat
                     Pros
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Improves generalization</li>
-                      <li>Eases matching</li>
-                      <li>Reduces vocab size</li>
-                    </ul>
+                    <li>Improves generalization</li>
+                    <li>Eases matching</li>
+                    <li>Reduces vocab size</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -4068,10 +4068,10 @@ This technique is essential in three contexts. First, privacy and de-identificat
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Potential loss of precision</li>
-                      <li>Unit handling is tricky</li>
-                      <li>Context-sensitive</li>
-                    </ul>
+                    <li>Potential loss of precision</li>
+                    <li>Unit handling is tricky</li>
+                    <li>Context-sensitive</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4143,11 +4143,11 @@ Third, number normalization is highly context-sensitive. In finance, dates like 
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Define allowed sets</li>
-                        <li>Strip/map disallowed chars</li>
-                        <li>Log removals</li>
-                        <li>Review edge cases (accent marks, emoji)</li>
-                      </ul>
+                      <li>Define allowed sets</li>
+                      <li>Strip/map disallowed chars</li>
+                      <li>Log removals</li>
+                      <li>Review edge cases (accent marks, emoji)</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -4183,18 +4183,18 @@ Character filtering is essential in three scenarios. First, formal document proc
                     Pros
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Cleaner tokens</li>
-                      <li>Prevents parsing/rendering issues</li>
-                      <li>Mitigates injection</li>
-                    </ul>
+                    <li>Cleaner tokens</li>
+                    <li>Prevents parsing/rendering issues</li>
+                    <li>Mitigates injection</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>May remove meaningful signals (emoji/emoticons)</li>
-                      <li>Language-specific characters risk</li>
-                    </ul>
+                    <li>May remove meaningful signals (emoji/emoticons)</li>
+                    <li>Language-specific characters risk</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4268,12 +4268,12 @@ Second, there's serious risk with language-specific characters. If you whitelist
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }} >
-                        <li>Parse document</li>
-                        <li>identify content blocks</li>
-                        <li>drop low-density/repetitive regions</li>
-                        <li>keep main body</li>
-                        <li>validate</li>
-                      </ul>
+                      <li>Parse document</li>
+                      <li>identify content blocks</li>
+                      <li>drop low-density/repetitive regions</li>
+                      <li>keep main body</li>
+                      <li>validate</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -4309,9 +4309,9 @@ This technique is indispensable for three use cases. First, web and news scrapin
                     Pros
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Cleaner corpora</li>
-                      <li>Better topic and summarization performance</li>
-                    </ul>
+                    <li>Cleaner corpora</li>
+                    <li>Better topic and summarization performance</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons <MermaidPopover diagram={`graph LR
@@ -4326,10 +4326,10 @@ This technique is indispensable for three use cases. First, web and news scrapin
     style D fill:#ffcdd2`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Risk of removing content</li>
-                      <li>Site-specific maintenance</li>
-                      <li>Complex layouts</li>
-                    </ul>
+                    <li>Risk of removing content</li>
+                    <li>Site-specific maintenance</li>
+                    <li>Complex layouts</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4402,12 +4402,12 @@ Third, complex or non-standard layouts confuse heuristics. Single-page applicati
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Normalize text</li>
-                        <li>Compute signatures/embeddings</li>
-                        <li>Set similarity threshold</li>
-                        <li>Remove</li>
-                        <li>Keep canonical</li>
-                      </ul>
+                      <li>Normalize text</li>
+                      <li>Compute signatures/embeddings</li>
+                      <li>Set similarity threshold</li>
+                      <li>Remove</li>
+                      <li>Keep canonical</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -4443,20 +4443,20 @@ Deduplication is critical in three scenarios. First, dataset building from web s
                     Pros
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Smaller</li>
-                      <li>Cleaner datasets</li>
-                      <li>Faster training</li>
-                      <li>Reduces overfitting</li>
-                    </ul>
+                    <li>Smaller</li>
+                    <li>Cleaner datasets</li>
+                    <li>Faster training</li>
+                    <li>Reduces overfitting</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Computational cost</li>
-                      <li>Risk of dropping legitimate repetitions</li>
-                      <li>Threshold tuning</li>
-                    </ul>
+                    <li>Computational cost</li>
+                    <li>Risk of dropping legitimate repetitions</li>
+                    <li>Threshold tuning</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4525,11 +4525,11 @@ Third, threshold tuning is delicate. Set it too strict, and you only catch exact
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Choose segmenter</li>
-                        <li>Configure abbreviation lists</li>
-                        <li>Apply</li>
-                        <li>Validate tricky cases (quotes, decimals, ellipses)</li>
-                      </ul>
+                      <li>Choose segmenter</li>
+                      <li>Configure abbreviation lists</li>
+                      <li>Apply</li>
+                      <li>Validate tricky cases (quotes, decimals, ellipses)</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -4575,18 +4575,18 @@ Sentence segmentation is mandatory in three contexts. First, summarization syste
     style D fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Enables sentence-level features</li>
-                      <li>Manageable chunks</li>
-                      <li>Better downstream alignment</li>
-                    </ul>
+                    <li>Enables sentence-level features</li>
+                    <li>Manageable chunks</li>
+                    <li>Better downstream alignment</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Noisy text and missing punctuation hurt accuracy</li>
-                      <li>Multilingual challenges</li>
-                    </ul>
+                    <li>Noisy text and missing punctuation hurt accuracy</li>
+                    <li>Multilingual challenges</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -4655,12 +4655,12 @@ Second, multilingual challenges are substantial. Different languages have differ
                       Steps
                     </h4>
                     <ul style={{ fontSize: '1.2rem' }}>
-                        <li>Pick detector (fastText, CLD3)</li>
-                        <li>Set confidence threshold</li>
-                        <li>Detect per document/sentence</li>
-                        <li>Filter or route</li>
-                        <li>Monitor code-switching</li>
-                      </ul>
+                      <li>Pick detector (fastText, CLD3)</li>
+                      <li>Set confidence threshold</li>
+                      <li>Detect per document/sentence</li>
+                      <li>Filter or route</li>
+                      <li>Monitor code-switching</li>
+                    </ul>
                   </div>
                 </GSAPAnimated>
               </div>
@@ -4706,19 +4706,19 @@ Language detection is essential in three scenarios. First, building clean monoli
     style D fill:#81c784`} />
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Cleaner mono-lingual datasets</li>
-                      <li>Correct model routing</li>
-                      <li>Better performance</li>
-                    </ul>
+                    <li>Cleaner mono-lingual datasets</li>
+                    <li>Correct model routing</li>
+                    <li>Better performance</li>
+                  </ul>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                     Cons
                   </h4>
                   <ul style={{ fontSize: '1.2rem' }}>
-                      <li>Short texts are hard</li>
-                      <li>Code-switching</li>
-                      <li>Similar scripts/languages may confuse models</li>
-                    </ul>
+                    <li>Short texts are hard</li>
+                    <li>Code-switching</li>
+                    <li>Similar scripts/languages may confuse models</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
