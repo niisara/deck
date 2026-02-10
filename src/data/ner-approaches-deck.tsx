@@ -92,52 +92,52 @@ export const nerApproachesDeck: Deck = {
               <GSAPAnimated animation="fadeIn" delay={0.2} duration={0.6}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#4fc3f7' }}>1</span>
-                    <span>Rule-Based Pattern Matching</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#4fc3f7' }}>1</span>
+                    <span style={{ fontSize: '1.2rem' }}>Rule-Based Pattern Matching</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#81c784' }}>2</span>
-                    <span>Dictionary / Gazetteer Lookup</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#81c784' }}>2</span>
+                    <span style={{ fontSize: '1.2rem' }}>Dictionary / Gazetteer Lookup</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ffb74d' }}>3</span>
-                    <span>TF-IDF + Classifier-Based NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#ffb74d' }}>3</span>
+                    <span style={{ fontSize: '1.2rem' }}>TF-IDF + Classifier-Based NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ba68c8' }}>4</span>
-                    <span>Hidden Markov Model (HMM) NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#ba68c8' }}>4</span>
+                    <span style={{ fontSize: '1.2rem' }}>Hidden Markov Model (HMM) NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(240, 98, 146, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#f06292' }}>5</span>
-                    <span>Conditional Random Fields (CRF) NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#f06292' }}>5</span>
+                    <span style={{ fontSize: '1.2rem' }}>Conditional Random Fields (CRF) NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(100, 181, 246, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#64b5f6' }}>6</span>
-                    <span>BiLSTM + CRF</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#64b5f6' }}>6</span>
+                    <span style={{ fontSize: '1.2rem' }}>BiLSTM + CRF</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(174, 213, 129, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#aed581' }}>7</span>
-                    <span>CNN + BiLSTM NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#aed581' }}>7</span>
+                    <span style={{ fontSize: '1.2rem' }}>CNN + BiLSTM NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(255, 167, 38, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ffa726' }}>8</span>
-                    <span>spaCy Statistical NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#ffa726' }}>8</span>
+                    <span style={{ fontSize: '1.2rem' }}>spaCy Statistical NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(239, 83, 80, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#ef5350' }}>9</span>
-                    <span>BERT Fine-Tuned for NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#ef5350' }}>9</span>
+                    <span style={{ fontSize: '1.2rem' }}>BERT Fine-Tuned for NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(149, 117, 205, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#9575cd' }}>10</span>
-                    <span>RoBERTa / DistilBERT NER Models</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#9575cd' }}>10</span>
+                    <span style={{ fontSize: '1.2rem' }}>RoBERTa / DistilBERT NER Models</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(102, 187, 106, 0.1)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ fontSize: '1.2em', fontWeight: 'bold', color: '#66bb6a' }}>11</span>
-                    <span>LLM / Zero-Shot NER</span>
+                    <span style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#66bb6a' }}>11</span>
+                    <span style={{ fontSize: '1.2rem' }}>LLM / Zero-Shot NER</span>
                   </div>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.15)', borderRadius: '5px', display: 'flex', alignItems: 'center', gap: '10px', gridColumn: 'span 2' }}>
-                    <SvgIcon iconName="duo-trophy" sizeName="1x" style={{ color: '#ffd700' }} darkModeInvert={true} />
-                    <span style={{ fontWeight: 'bold' }}>Summary & Comparison</span>
+                    <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ color: '#ffd700' }} darkModeInvert={true} />
+                    <span style={{ fontWeight: 'bold', fontSize: '1.2rem' }}>Summary & Comparison</span>
                   </div>
                 </div>
               </GSAPAnimated>
@@ -2030,44 +2030,44 @@ flowchart LR
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', fontSize: '2rem' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ padding: '15px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', borderLeft: '4px solid #4fc3f7' }}>
-                    <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🚫 No training data, strict formats</div>
-                    <div style={{ color: '#4fc3f7' }}>→ Rule-Based, Gazetteer</div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1.2rem' }}>🚫 No training data, strict formats</div>
+                    <div style={{ color: '#4fc3f7', fontSize: '1.2rem' }}>→ Rule-Based, Gazetteer</div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.2}>
                   <div style={{ padding: '15px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', borderLeft: '4px solid #81c784' }}>
-                    <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📊 Small data, stable schemas</div>
-                    <div style={{ color: '#81c784' }}>→ CRF, spaCy</div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1.2rem' }}>📊 Small data, stable schemas</div>
+                    <div style={{ color: '#81c784', fontSize: '1.2rem' }}>→ CRF, spaCy</div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.35}>
                   <div style={{ padding: '15px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ffb74d' }}>
-                    <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>📈 Moderate data, need accuracy</div>
-                    <div style={{ color: '#ffb74d' }}>→ BiLSTM+CRF, CNN+BiLSTM</div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1.2rem' }}>📈 Moderate data, need accuracy</div>
+                    <div style={{ color: '#ffb74d', fontSize: '1.2rem' }}>→ BiLSTM+CRF, CNN+BiLSTM</div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.35}>
                   <div style={{ padding: '15px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', borderLeft: '4px solid #ba68c8' }}>
-                    <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🏆 Best possible accuracy</div>
-                    <div style={{ color: '#ba68c8' }}>→ BERT, RoBERTa</div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1.2rem' }}>🏆 Best possible accuracy</div>
+                    <div style={{ color: '#ba68c8', fontSize: '1.2rem' }}>→ BERT, RoBERTa</div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInLeft" delay={0.5}>
                   <div style={{ padding: '15px', background: 'rgba(240, 98, 146, 0.2)', borderRadius: '8px', borderLeft: '4px solid #f06292' }}>
-                    <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>⚡ Low latency / edge deployment</div>
-                    <div style={{ color: '#f06292' }}>→ DistilBERT, optimized spaCy</div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1.2rem' }}>⚡ Low latency / edge deployment</div>
+                    <div style={{ color: '#f06292', fontSize: '1.2rem' }}>→ DistilBERT, optimized spaCy</div>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5}>
                   <div style={{ padding: '15px', background: 'rgba(100, 181, 246, 0.2)', borderRadius: '8px', borderLeft: '4px solid #64b5f6' }}>
-                    <div style={{ fontWeight: 'bold', marginBottom: '8px' }}>🆕 New schema / zero data</div>
-                    <div style={{ color: '#64b5f6' }}>→ LLM Zero-/Few-Shot</div>
+                    <div style={{ fontWeight: 'bold', marginBottom: '8px', fontSize: '1.2rem' }}>🆕 New schema / zero data</div>
+                    <div style={{ color: '#64b5f6', fontSize: '1.2rem' }}>→ LLM Zero-/Few-Shot</div>
                   </div>
                 </GSAPAnimated>
               </div>
               <GSAPAnimated animation="bounceIn" delay={0.7}>
                 <div style={{ marginTop: '25px', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '8px', fontSize: '1.2rem' }}>
-                  <strong>💡 Pro Tip:</strong> Start simple! Try rules or dictionaries first, then move to ML if needed.
+                  <strong style={{ fontSize: '1.2rem' }}>💡 Pro Tip:</strong> Start simple! Try rules or dictionaries first, then move to ML if needed.
                 </div>
               </GSAPAnimated>
             </div>
