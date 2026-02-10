@@ -545,11 +545,11 @@ export const ragLatencyDeck: Deck = {
           title: '4. Use Approximate Nearest Neighbor Indexes - Goal',
           icon: { name: 'duo-network-wired' },
           content: (
-            <div style={{ fontSize: '2.5rem', lineHeight: '1.6' }}>
+            <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
-                <div style={{ color: '#61dafb', fontSize: '2.8rem' }}>
+                <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
@@ -825,7 +825,7 @@ export const ragLatencyDeck: Deck = {
                 </div>
               </div>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
-                  <p style={{ margin: 0 }}>
+                <p style={{ margin: 0 }}>
                   Skip vector DB operations for repeated queries, eliminating expensive similarity search operations.
                 </p>
               </div>
@@ -962,7 +962,7 @@ export const ragLatencyDeck: Deck = {
                 </div>
               </div>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
-                  <p style={{ margin: 0 }}>
+                <p style={{ margin: 0 }}>
                   Improve precision with minimal latency overhead by applying high-quality but slower ranking only to a small subset of retrieved results.
                 </p>
               </div>
@@ -1101,7 +1101,7 @@ export const ragLatencyDeck: Deck = {
                 </div>
               </div>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
-                  <p style={{ margin: 0 }}>
+                <p style={{ margin: 0 }}>
                   Reduce tokens sent to the LLM, lowering Time to First Token (TTFT) and cost while preserving essential information.
                 </p>
               </div>
@@ -1238,7 +1238,7 @@ export const ragLatencyDeck: Deck = {
                 </div>
               </div>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
-                  <p style={{ margin: 0 }}>
+                <p style={{ margin: 0 }}>
                   Shorten the critical path via concurrency and parallelization to reduce overall RAG latency.
                 </p>
               </div>
@@ -1255,7 +1255,7 @@ export const ragLatencyDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                  <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <ul>
@@ -1375,7 +1375,7 @@ export const ragLatencyDeck: Deck = {
                 </div>
               </div>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
-                  <p style={{ margin: 0 }}>
+                <p style={{ margin: 0 }}>
                   Reduce perceived latency (time-to-first-token) and enable early text-to-speech conversion for better user experience.
                 </p>
               </div>
@@ -1392,7 +1392,7 @@ export const ragLatencyDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                  <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <ul>
@@ -1513,7 +1513,7 @@ export const ragLatencyDeck: Deck = {
                 </div>
               </div>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
-                  <p style={{ margin: 0 }}>
+                <p style={{ margin: 0 }}>
                   Lower TTFT (Time To First Token) and total generation time with acceptable accuracy for RAG applications.
                 </p>
               </div>
@@ -1530,7 +1530,7 @@ export const ragLatencyDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
-                  <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
+                <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
               <ul>
@@ -1736,10 +1736,10 @@ export const ragLatencyDeck: Deck = {
                 <strong>Quality vs Cost</strong>
               </div>
               <p>These techniques balance answer quality against operational costs:</p>
-              
+
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1.2rem', borderRadius: '8px' }}>
-                  <strong style={{ color: '#98c379',  display: 'block', marginBottom: '0.8rem' }}>Quality Enhancers</strong>
+                  <strong style={{ color: '#98c379', display: 'block', marginBottom: '0.8rem' }}>Quality Enhancers</strong>
                   <ul style={{ marginLeft: '1.2rem' }}>
                     <li style={{ marginBottom: '0.5rem' }}><strong>7.</strong> Re-Ranking (↑quality, ↑compute)</li>
                     <li style={{ marginBottom: '0.5rem' }}><strong>9.</strong> Parallelization (↑speed, ↑complexity)</li>
@@ -1777,9 +1777,9 @@ export const ragLatencyDeck: Deck = {
                 <li style={{ marginBottom: '1.5rem' }}>
                   <strong style={{ color: '#61dafb' }}>Establish baseline metrics</strong>
                   <div style={{ fontSize: '1.2rem', marginTop: '0.5rem', marginLeft: '1rem' }}>
-                    • TTFT (Time To First Token)<br/>
-                    • p95 latency<br/>
-                    • recall@k<br/>
+                    • TTFT (Time To First Token)<br />
+                    • p95 latency<br />
+                    • recall@k<br />
                     • cost/query
                   </div>
                 </li>
