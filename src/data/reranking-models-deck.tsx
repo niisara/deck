@@ -72,23 +72,23 @@ export const rerankingModelsDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1f3263',
-          notes: `### 1. Introduction - 11 Re-Ranking Models to Improve RAG Accuracy
+          notes: `### Introduction - 11 Re-Ranking Models to Improve RAG Accuracy
 
-Welcome everyone! Today we're diving into something that can dramatically boost the accuracy of your **RAG** 👉 'rag' systems - that's **Retrieval-Augmented Generation**. Think of RAG 👉 'rag' as a smart assistant that first looks up information and then uses it to generate answers.
+[cheerfully] Welcome everyone! [excited] Today we're diving into something that can dramatically boost the accuracy of your **RAG** 👉 'rag' systems - that's **Retrieval-Augmented Generation**. [conversational] Think of RAG 👉 'rag' as a smart assistant that first looks up information and then uses it to generate answers.
 
 #### The Challenge
 
-Here's the thing - most RAG 👉 'rag' systems have a hidden weakness. They retrieve lots of documents, but not all of them are actually useful. It's like asking someone to write a report and giving them a stack of 50 articles when only 5 are truly relevant. What happens? The quality suffers, right?
+[storytelling] Here's the thing - most RAG 👉 'rag' systems have a hidden weakness. They retrieve lots of documents, but not all of them are actually useful. It's like asking someone to write a report and giving them a stack of 50 articles when only 5 are truly relevant. What happens? The quality suffers, right?
 
 #### What We'll Cover
 
-We're going to explore eleven powerful re-ranking models that act as intelligent filters. They sit between retrieval and generation, making sure only the *best* documents make it to your language model. The three-stage pipeline you see on screen - **Retrieve, Re-Rank, Generate** - is the secret sauce that top-performing RAG 👉 'rag' systems use today.
+[enthusiastically] We're going to explore eleven powerful re-ranking models that act as intelligent filters. They sit between retrieval and generation, making sure only the *best* documents make it to your language model. The three-stage pipeline you see on screen - **Retrieve, Re-Rank, Generate** - is the secret sauce that top-performing RAG 👉 'rag' systems use today.
 
 #### Why This Matters
 
-These techniques aren't just academic theory. Companies using re-ranking see precision improvements of twenty to thirty-five percent. That means fewer hallucinations, more accurate answers, and happier users. We'll look at practical examples, trade-offs, and help you pick the right model for your use case.
+[confidently] These techniques aren't just academic theory. Companies using re-ranking see precision improvements of twenty to thirty-five percent. That means fewer hallucinations, more accurate answers, and happier users. We'll look at practical examples, trade-offs, and help you pick the right model for your use case.
 
-Let's get started and transform your RAG 👉 'rag' pipeline from good to exceptional!`
+[energetic] Let's get started and transform your RAG 👉 'rag' pipeline from good to exceptional!`
         },
         {
           id: 2,
@@ -179,29 +179,29 @@ Let's get started and transform your RAG 👉 'rag' pipeline from good to except
             </div>
           ),
           backgroundColor: '#1f3263',
-          notes: `### 2. Why Re-Ranking in RAG?
+          notes: `### Why Re-Ranking in RAG?
 
-Let's talk about why re-ranking is absolutely critical for building high-quality **RAG** 👉 'rag' systems. Think of it like this - retrieval is casting a wide fishing net, while re-ranking is carefully selecting the best catch.
+[lecture] [confidently] Let's talk about why re-ranking is absolutely critical for building high-quality **RAG** 👉 'rag' systems. [storytelling] Think of it like this - retrieval is casting a wide fishing net, while re-ranking is carefully selecting the best catch.
 
 #### The Two-Stage Architecture
 
-Modern RAG 👉 'rag' systems work in two distinct stages, and understanding this architecture is key. **Stage one is all about recall** - we use fast methods like **BM25** 👉 'bee-em-twenty-five' or bi-encoders to quickly grab twenty to fifty documents. Speed is the priority here, so we deliberately cast a wide net. The trade-off? We might pull in some documents that are semantically similar but not actually relevant to what the user asked.
+[conversational] Modern RAG 👉 'rag' systems work in two distinct stages, and understanding this architecture is key. **Stage one is all about recall** - we use fast methods like **BM25** 👉 'bee-em-twenty-five' or bi-encoders to quickly grab twenty to fifty documents. Speed is the priority here, so we deliberately cast a wide net. The trade-off? [cautiously] We might pull in some documents that are semantically similar but not actually relevant to what the user asked.
 
 This Two-Stage RAG Architecture shows how documents flow through the pipeline: User Query goes to Fast Retrieval using BM25 or Bi-encoder, which produces twenty to fifty candidates. These candidates go through the Re-Ranker for deep analysis, resulting in the top five to ten documents, which then become LLM Context.
 
 #### Stage Two: The Intelligence Layer
 
-**Stage two is where the magic happens**. We use sophisticated models - cross-encoders, late interaction methods, or fusion techniques - to deeply analyze each query-document pair. These models understand context, relationships, and true relevance. They ensure your **LLM** 👉 'el-el-em' receives only the *most* relevant information.
+[excited] **Stage two is where the magic happens**. We use sophisticated models - cross-encoders, late interaction methods, or fusion techniques - to deeply analyze each query-document pair. These models understand context, relationships, and true relevance. They ensure your **LLM** 👉 'el-el-em' receives only the *most* relevant information.
 
 #### The Business Case
 
-Here's what makes this compelling - adding re-ranking typically adds two hundred to five hundred milliseconds of latency, but you see precision improvements of twenty to thirty-five percent. That's a fantastic return on investment! Your initial retrieval might give you sixty-five to eighty percent relevant documents, but after re-ranking, you're looking at eighty-five to ninety-five percent relevance.
+[enthusiastically] Here's what makes this compelling - adding re-ranking typically adds two hundred to five hundred milliseconds of latency, but you see precision improvements of twenty to thirty-five percent. That's a fantastic return on investment! Your initial retrieval might give you sixty-five to eighty percent relevant documents, but after re-ranking, you're looking at eighty-five to ninety-five percent relevance.
 
 #### The Hidden Problem
 
-Many developers don't realize their RAG 👉 'rag' system isn't failing because of bad embeddings or weak language models. The real culprit? **Irrelevant information** sneaking into the generation stage. Re-ranking solves this by acting as an intelligent filter, separating signal from noise.
+[seriously] Many developers don't realize their RAG 👉 'rag' system isn't failing because of bad embeddings or weak language models. The real culprit? **Irrelevant information** sneaking into the generation stage. Re-ranking solves this by acting as an intelligent filter, separating signal from noise.
 
-Now let's dive into the eleven models that make this possible!`
+[energetic] Now let's dive into the eleven models that make this possible!`
         }
       ]
     },
@@ -265,27 +265,27 @@ Now let's dive into the eleven models that make this possible!`
             </div>
           ),
           backgroundColor: '#371c6d',
-          notes: `### 3. Cross-Encoder Ranker (MS MARCO family)
+          notes: `### Cross-Encoder Ranker (MS MARCO family)
 
-Now we're diving into our first model - the **Cross-Encoder Ranker**. This is like the gold standard of re-ranking, and it comes from the **MS MARCO** 👉 'em-es-marco' family - that's Microsoft's Machine Reading Comprehension dataset.
+[confidently] Now we're diving into our first model - the **Cross-Encoder Ranker**. This is like the gold standard of re-ranking, and it comes from the **MS MARCO** 👉 'em-es-marco' family - that's Microsoft's Machine Reading Comprehension dataset.
 
 #### What Problem Does It Solve?
 
-Traditional bi-encoders look at queries and documents independently, then compare their embeddings. That's fast, but it misses something crucial - the *relationship* between the query and document. Cross-encoders solve this by analyzing them together, achieving twenty to thirty-five percent better accuracy than bi-encoders alone.
+[lecture] Traditional bi-encoders look at queries and documents independently, then compare their embeddings. That's fast, but [cautiously] it misses something crucial - the *relationship* between the query and document. [pleased] Cross-encoders solve this by analyzing them together, achieving twenty to thirty-five percent better accuracy than bi-encoders alone.
 
 #### How It Actually Works
 
-Picture this - the model takes your query and a document, concatenates them with special tokens - **CLS** 👉 'see-el-es' at the start, **SEP** 👉 'sep' in the middle - then runs everything through a transformer. The output? A single relevance score between zero and one. The magic is that tokens from the query can directly attend to tokens in the document, creating deep semantic understanding.
+[storytelling] Picture this - the model takes your query and a document, concatenates them with special tokens - **CLS** 👉 'see-el-es' at the start, **SEP** 👉 'sep' in the middle - then runs everything through a transformer. The output? A single relevance score between zero and one. [excited] The magic is that tokens from the query can directly attend to tokens in the document, creating deep semantic understanding.
 
 #### When Should You Use This?
 
-Cross-encoders shine in precision-critical scenarios. If you're building a medical Q-and-A system or a legal document assistant where accuracy matters more than speed, this is your go-to. They work best with short to medium passages and really excel with ambiguous queries that need contextual understanding. Just make sure you have **GPU** 👉 'gee-pee-you' resources available.
+[conversational] Cross-encoders shine in precision-critical scenarios. If you're building a medical Q-and-A system or a legal document assistant where accuracy matters more than speed, this is your go-to. They work best with short to medium passages and really excel with ambiguous queries that need contextual understanding. [reassuringly] Just make sure you have **GPU** 👉 'gee-pee-you' resources available.
 
 #### The Input-Output Pattern
 
 You feed in pairs - query with document one, query with document two, and so on. Each pair gets scored independently. A score of point-nine-two means highly relevant, point-four-five means somewhat related, point-two-one means not very relevant at all. Simple, right?
 
-The key insight? This is always your *second stage* - retrieve fifty candidates quickly, then use the cross-encoder to find the best five. That's the winning pattern!`
+[firmly] The key insight? This is always your *second stage* - retrieve fifty candidates quickly, then use the cross-encoder to find the best five. That's the winning pattern!`
         },
         {
           id: 4,
@@ -329,25 +329,25 @@ The key insight? This is always your *second stage* - retrieve fifty candidates 
             </div>
           ),
           backgroundColor: '#371c6d',
-          notes: `### 4. Cross-Encoder Example - Password Reset Query
+          notes: `### Cross-Encoder Example - Password Reset Query
 
-Let's see cross-encoders in action with a real-world example. Imagine you're building a customer support chatbot, and someone asks "Reset password steps?" This seems simple, but watch how the cross-encoder intelligently ranks the candidates.
+[storytelling] Let's see cross-encoders in action with a real-world example. Imagine you're building a customer support chatbot, and someone asks "Reset password steps?" This seems simple, but [excited] watch how the cross-encoder intelligently ranks the candidates.
 
 #### The Scenario
 
-We have three documents retrieved in stage one - a billing policy document, an account reset guide, and some login tips. A simple keyword-based system might get confused because all three mention "account" or "password" at some point. But the cross-encoder understands *context*.
+[conversational] We have three documents retrieved in stage one - a billing policy document, an account reset guide, and some login tips. A simple keyword-based system might get confused because all three mention "account" or "password" at some point. [confidently] But the cross-encoder understands *context*.
 
 #### How the Scores Work
 
-Document B, the account reset guide, gets a score of point-nine-five. That's nearly perfect! The model deeply understands that "reset password steps" directly matches the content and intent of this guide. Document C, the login tips, scores point-six-two - it's somewhat related because login and password reset are connected topics, but it's not what the user actually needs.
+Document B, the account reset guide, gets a score of point-nine-five. [pleased] That's nearly perfect! The model deeply understands that "reset password steps" directly matches the content and intent of this guide. Document C, the login tips, scores point-six-two - it's somewhat related because login and password reset are connected topics, but [cautiously] it's not what the user actually needs.
 
 Document A, the billing policy, gets just point-two-one. Why so low? The cross-encoder recognized that while this might mention accounts, it has nothing to do with password resets. The semantic relationship just isn't there.
 
 #### The Real Power
 
-This is where cross-encoders shine - they don't just match keywords, they understand *meaning* and *intent*. In a production system, you'd pass only document B to your **LLM** 👉 'el-el-em', ensuring the generated answer is accurate and helpful. Without re-ranking, you might have sent all three documents, diluting the context and potentially confusing the generation model.
+[enthusiastically] This is where cross-encoders shine - they don't just match keywords, they understand *meaning* and *intent*. In a production system, you'd pass only document B to your **LLM** 👉 'el-el-em', ensuring the generated answer is accurate and helpful. Without re-ranking, you might have sent all three documents, diluting the context and potentially confusing the generation model.
 
-Think about your own use case - where do users ask questions that seem simple but need this level of semantic understanding? That's where cross-encoders deliver massive value!`
+[warmly] Think about your own use case - where do users ask questions that seem simple but need this level of semantic understanding? That's where cross-encoders deliver massive value!`
         },
         {
           id: 5,
@@ -390,25 +390,25 @@ Think about your own use case - where do users ask questions that seem simple bu
             </div>
           ),
           backgroundColor: '#371c6d',
-          notes: `### 5. Cross-Encoder - Strengths and Limitations
+          notes: `### Cross-Encoder - Strengths and Limitations
 
-Now let's be honest about when cross-encoders are brilliant and when they struggle. Understanding these trade-offs helps you make smart architectural decisions.
+[conversational] Now let's be honest about when cross-encoders are brilliant and when they struggle. [reassuringly] Understanding these trade-offs helps you make smart architectural decisions.
 
 #### The Strengths - Why We Love Them
 
-Cross-encoders deliver the *best accuracy* among classical re-rankers - we're talking twenty to thirty-five percent improvement over bi-encoders. That's huge! They understand semantic relationships that go way beyond simple keyword matching. The scoring is fine-grained on a zero-to-one scale, giving you precise confidence levels. Plus, they're well-studied with tons of pre-trained models available on **Hugging Face** - you can start using them today without training from scratch.
+[enthusiastically] Cross-encoders deliver the *best accuracy* among classical re-rankers - we're talking twenty to thirty-five percent improvement over bi-encoders. That's huge! They understand semantic relationships that go way beyond simple keyword matching. The scoring is fine-grained on a zero-to-one scale, giving you precise confidence levels. [pleased] Plus, they're well-studied with tons of pre-trained models available on **Hugging Face** - you can start using them today without training from scratch.
 
 #### The Limitations - The Reality Check
 
-Here's where you need to be careful. Cross-encoders have **O(k·L)** 👉 'oh of kay times el' complexity - that's big-O notation meaning latency scales with both the number of documents (k) and sequence length (L). If you try to re-rank five hundred documents, you'll wait forever! That's why we *never* use them for first-stage retrieval.
+[cautiously] Here's where you need to be careful. Cross-encoders have **O(k·L)** 👉 'oh of kay times el' complexity - that's big-O notation meaning latency scales with both the number of documents (k) and sequence length (L). [sigh] If you try to re-rank five hundred documents, you'll wait forever! That's why we *never* use them for first-stage retrieval.
 
-The practical limit? Typically reranking the top fifty documents max. You'll also want **GPU** 👉 'gee-pee-you' resources in production - running on **CPU** 👉 'see-pee-you' is painfully slow. Another gotcha - many models have a five-twelve token limit, which can truncate longer documents and miss important information at the end.
+[firmly] The practical limit? Typically reranking the top fifty documents max. You'll also want **GPU** 👉 'gee-pee-you' resources in production - running on **CPU** 👉 'see-pee-you' is painfully slow. Another gotcha - many models have a five-twelve token limit, which can truncate longer documents and miss important information at the end.
 
 #### The Bottom Line
 
-Cross-encoders are like precision surgical tools - incredibly effective when used correctly, but you need to respect their limitations. Think of them as your *second stage* after fast retrieval, not a replacement for it. The pattern that works? Retrieve fifty to one hundred candidates quickly, then use a cross-encoder to find the best five to ten. That's the sweet spot where you get maximum accuracy without killing performance.
+[confidently] Cross-encoders are like precision surgical tools - incredibly effective when used correctly, but you need to respect their limitations. [storytelling] Think of them as your *second stage* after fast retrieval, not a replacement for it. The pattern that works? Retrieve fifty to one hundred candidates quickly, then use a cross-encoder to find the best five to ten. That's the sweet spot where you get maximum accuracy without killing performance.
 
-Next, let's look at some optimized variants that address some of these limitations!`
+[cheerfully] Next, let's look at some optimized variants that address some of these limitations!`
         }
       ]
     },
@@ -489,27 +489,27 @@ pairs = [
             </div>
           ),
           backgroundColor: '#50215d',
-          notes: `### 6. BERT-based Cross Encoder (ms-marco-MiniLM-L-6-v2)
+          notes: `### BERT-based Cross Encoder (ms-marco-MiniLM-L-6-v2)
 
-Now let's talk about a practical variant that solves a real problem - **MiniLM** 👉 'mini-el-em'. This is the model most teams actually use in production because it strikes the perfect balance between accuracy and speed.
+[conversational] Now let's talk about a practical variant that solves a real problem - **MiniLM** 👉 'mini-el-em'. [pleased] This is the model most teams actually use in production because it strikes the perfect balance between accuracy and speed.
 
 #### The Efficiency Challenge
 
-Regular **BERT** 👉 'bert' cross-encoders are accurate but heavy. In production, you need something that can handle hundreds of queries per second without burning through your cloud budget. That's where **MiniLM** 👉 'mini-el-em' comes in - it's like taking a heavyweight champion and training them to box just as well at lightweight.
+[lecture] Regular **BERT** 👉 'bert' cross-encoders are accurate but heavy. In production, you need something that can handle hundreds of queries per second without burning through your cloud budget. [storytelling] That's where **MiniLM** 👉 'mini-el-em' comes in - it's like taking a heavyweight champion and training them to box just as well at lightweight.
 
 #### Knowledge Distillation Magic
 
-Here's the clever part - **MiniLM** 👉 'mini-el-em' uses knowledge distillation. Think of it like learning from a master teacher. A large **BERT** 👉 'bert' model teaches a smaller model how to rank documents. The student model learns to mimic the teacher's decisions but runs much faster. It's trained on **MS MARCO** 👉 'em-es-marco' with eight-point-eight million query-passage pairs, so it really understands English search patterns.
+[excited] Here's the clever part - **MiniLM** 👉 'mini-el-em' uses knowledge distillation. [storytelling] Think of it like learning from a master teacher. A large **BERT** 👉 'bert' model teaches a smaller model how to rank documents. The student model learns to mimic the teacher's decisions but runs much faster. It's trained on **MS MARCO** 👉 'em-es-marco' with eight-point-eight million query-passage pairs, so it really understands English search patterns.
 
 #### When This Shines
 
-This is your default starting point for most **RAG** 👉 'rag' pipelines. Use it when you need decent accuracy without heavy **GPU** 👉 'gee-pee-you' requirements. It works great for English-centric applications and can efficiently rerank twenty to one hundred candidates. The latency is much better than full-size models, making it production-ready out of the box.
+[confidently] This is your default starting point for most **RAG** 👉 'rag' pipelines. Use it when you need decent accuracy without heavy **GPU** 👉 'gee-pee-you' requirements. It works great for English-centric applications and can efficiently rerank twenty to one hundred candidates. The latency is much better than full-size models, making it production-ready out of the box.
 
 #### The Code Pattern
 
-Implementation is straightforward - just import CrossEncoder from sentence-transformers, load the model, and predict scores for your query-document pairs. You get calibrated scores like point-eight-seven or point-six-five, where higher means more relevant. It's that simple!
+[reassuringly] Implementation is straightforward - just import CrossEncoder from sentence-transformers, load the model, and predict scores for your query-document pairs. You get calibrated scores like point-eight-seven or point-six-five, where higher means more relevant. It's that simple!
 
-This model proves you don't always need the biggest hammer - sometimes a well-designed smaller tool does the job perfectly!`
+[warmly] This model proves you don't always need the biggest hammer - sometimes a well-designed smaller tool does the job perfectly!`
         },
         {
           id: 7,
@@ -557,23 +557,23 @@ This model proves you don't always need the biggest hammer - sometimes a well-de
             </div>
           ),
           backgroundColor: '#50215d',
-          notes: `### 7. Example - Medical Query with MiniLM
+          notes: `### Example - Medical Query with MiniLM
 
-Let's see this model in action with a practical medical query example. Imagine a healthcare professional searching for specific information about medication side effects.
+[storytelling] Let's see this model in action with a practical medical query example. Imagine a healthcare professional searching for specific information about medication side effects.
 
 #### The Query
 
-The user asks: "Side effects of **ACE** 👉 'ace' inhibitors in diabetics?" This is a very precise question - not just about **ACE** 👉 'ace' inhibitors in general, but specifically their effects on diabetic patients.
+[conversational] The user asks: "Side effects of **ACE** 👉 'ace' inhibitors in diabetics?" This is a very precise question - not just about **ACE** 👉 'ace' inhibitors in general, but specifically their effects on diabetic patients.
 
 #### The Documents
 
-Our initial retrieval returns three documents. Document A gives a general diabetes treatment overview - useful context, but not specifically answering the question. Document B directly discusses **ACE** 👉 'ace' inhibitor adverse effects in diabetic patients - this is exactly what we need! Document C covers hypertension medication guidelines, which is related but tangential.
+[lecture] Our initial retrieval returns three documents. Document A gives a general diabetes treatment overview - useful context, but not specifically answering the question. Document B directly discusses **ACE** 👉 'ace' inhibitor adverse effects in diabetic patients - this is exactly what we need! Document C covers hypertension medication guidelines, which is related but tangential.
 
 #### The Ranking
 
-Watch how **MiniLM** 👉 'mini-el-em' intelligently scores these documents. Document B receives a score of zero point eight nine - that's "0.89" (zero point eight nine) - making it the clear winner because it directly answers the query. Document A gets zero point four one - "0.41" (zero point four one) - because it provides relevant background. Document C scores lowest at zero point three two - "0.32" (zero point three two) - since it's only marginally related.
+[excited] Watch how **MiniLM** 👉 'mini-el-em' intelligently scores these documents. Document B receives a score of zero point eight nine - that's "0.89" (zero point eight nine) - making it the clear winner because it directly answers the query. [pleased] Document A gets zero point four one - "0.41" (zero point four one) - because it provides relevant background. Document C scores lowest at zero point three two - "0.32" (zero point three two) - since it's only marginally related.
 
-This precision is why re-ranking matters. Without it, these documents might be presented in random order, wasting the physician's time. With **MiniLM** 👉 'mini-el-em', the most relevant information surfaces immediately!`
+[enthusiastically] This precision is why re-ranking matters. Without it, these documents might be presented in random order, wasting the physician's time. With **MiniLM** 👉 'mini-el-em', the most relevant information surfaces immediately!`
         },
         {
           id: 8,
@@ -645,23 +645,23 @@ This precision is why re-ranking matters. Without it, these documents might be p
             </div>
           ),
           backgroundColor: '#50215d',
-          notes: `### 8. Strength and Limitations - MiniLM
+          notes: `### Strength and Limitations - MiniLM
 
-Every model has trade-offs, and understanding them helps you make smart architectural decisions. Let's break down **MiniLM's** 👉 'mini-el-em' strengths and weaknesses so you know exactly when to use it.
+[conversational] Every model has trade-offs, and understanding them helps you make smart architectural decisions. [reassuringly] Let's break down **MiniLM's** 👉 'mini-el-em' strengths and weaknesses so you know exactly when to use it.
 
 #### The Strengths: Speed and Practicality
 
-The biggest advantage of **MiniLM** 👉 'mini-el-em' is *efficiency*. It runs two to four times faster than full **BERT** 👉 'bert' cross-encoders while maintaining eighty-seven percent of their accuracy. That's an excellent trade-off! The model is only ninety megabytes - compare that to over four hundred forty megabytes for base **BERT** 👉 'bert'. This small footprint means it works well even on **CPU** 👉 'see-pee-you', making it practical for teams without expensive **GPU** 👉 'gee-pee-you' infrastructure. Plus, it's widely available in popular libraries like sentence-transformers, so integration is straightforward.
+[enthusiastically] The biggest advantage of **MiniLM** 👉 'mini-el-em' is *efficiency*. It runs two to four times faster than full **BERT** 👉 'bert' cross-encoders while maintaining eighty-seven percent of their accuracy. That's an excellent trade-off! [pleased] The model is only ninety megabytes - compare that to over four hundred forty megabytes for base **BERT** 👉 'bert'. This small footprint means it works well even on **CPU** 👉 'see-pee-you', making it practical for teams without expensive **GPU** 👉 'gee-pee-you' infrastructure. Plus, it's widely available in popular libraries like sentence-transformers, so integration is straightforward.
 
 #### The Limitations: Know Your Boundaries
 
-However, **MiniLM** 👉 'mini-el-em' isn't perfect for every scenario. First, it's primarily trained on the English **MS MARCO** 👉 'em-es marco' dataset, which means it performs best on web search and general English queries. If you're working with specialized domains like legal documents or source code, you might see degraded performance. Second, there's a five hundred twelve token limit - that's "512" (five hundred twelve) - which means long documents get truncated. Third, while it's faster than full cross-encoders, it's still one to three orders of magnitude slower than pure bi-encoders, so you can't use it for first-stage retrieval on millions of documents.
+[cautiously] However, **MiniLM** 👉 'mini-el-em' isn't perfect for every scenario. First, it's primarily trained on the English **MS MARCO** 👉 'em-es marco' dataset, which means it performs best on web search and general English queries. If you're working with specialized domains like legal documents or source code, you might see degraded performance. Second, there's a five hundred twelve token limit - that's "512" (five hundred twelve) - which means long documents get truncated. Third, while it's faster than full cross-encoders, it's still one to three orders of magnitude slower than pure bi-encoders, so you can't use it for first-stage retrieval on millions of documents.
 
 #### Making the Right Choice
 
-The decision flow in the diagram helps you decide. Is latency critical? Are you working with web or general content? If yes to both, **MiniLM** 👉 'mini-el-em' is your go-to model. But for highly specialized domains, you'll want to consider alternatives we'll cover next.
+[confidently] The decision flow in the diagram helps you decide. Is latency critical? Are you working with web or general content? If yes to both, **MiniLM** 👉 'mini-el-em' is your go-to model. But for highly specialized domains, you'll want to consider alternatives we'll cover next.
 
-Let's move on to our third model, which takes a completely different approach!`
+[cheerfully] Let's move on to our third model, which takes a completely different approach!`
         }
       ]
     },
@@ -746,27 +746,27 @@ Let's move on to our third model, which takes a completely different approach!`
             </div>
           ),
           backgroundColor: '#257556',
-          notes: `### 9. MonoT5 Re-Ranker
+          notes: `### MonoT5 Re-Ranker
 
-Now we're moving into truly innovative territory with **MonoT5** 👉 'mono-tee-five'. This model takes a completely different approach to re-ranking by treating relevance as a *generation problem* rather than just classification.
+[excited] Now we're moving into truly innovative territory with **MonoT5** 👉 'mono-tee-five'. [enthusiastically] This model takes a completely different approach to re-ranking by treating relevance as a *generation problem* rather than just classification.
 
 #### The Core Innovation
 
-Here's what makes **MonoT5** 👉 'mono-tee-five' special - instead of just computing a similarity score, it uses the **T5** 👉 'tee-five' encoder-decoder architecture to actually *generate* a relevance judgment. The model reads your query and document, then predicts either the word "true" or "false" to indicate relevance. The probability it assigns to the "true" token becomes your relevance score. Brilliant, right?
+[storytelling] Here's what makes **MonoT5** 👉 'mono-tee-five' special - instead of just computing a similarity score, it uses the **T5** 👉 'tee-five' encoder-decoder architecture to actually *generate* a relevance judgment. The model reads your query and document, then predicts either the word "true" or "false" to indicate relevance. [pleased] The probability it assigns to the "true" token becomes your relevance score. Brilliant, right?
 
 #### Why This Approach Works
 
-This generative framing gives **MonoT5** 👉 'mono-tee-five' several advantages. First, it achieves superior accuracy because the model can use its full language understanding to reason about relevance. Second, it has *excellent* zero-shot and few-shot transfer capabilities - meaning it works well even on domains it hasn't been specifically trained on. Third, it handles complex semantic relationships better than pure classification models because generation requires deeper understanding.
+[confidently] This generative framing gives **MonoT5** 👉 'mono-tee-five' several advantages. First, it achieves superior accuracy because the model can use its full language understanding to reason about relevance. Second, it has *excellent* zero-shot and few-shot transfer capabilities - meaning it works well even on domains it hasn't been specifically trained on. Third, it handles complex semantic relationships better than pure classification models because generation requires deeper understanding.
 
 #### When Should You Use It?
 
-**MonoT5** 👉 'mono-tee-five' shines in scenarios where accuracy is your top priority. Think web search, question-answering systems, or complex research tasks. The trade-off is higher latency - this model is slower than **MiniLM** 👉 'mini-el-em'. So if you're okay with an extra hundred to two hundred milliseconds for noticeably better precision, this is your model. Just make sure you have **GPU** 👉 'gee-pee-you' resources available, as the encoder-decoder architecture is computationally intensive.
+[lecture] **MonoT5** 👉 'mono-tee-five' shines in scenarios where accuracy is your top priority. Think web search, question-answering systems, or complex research tasks. [cautiously] The trade-off is higher latency - this model is slower than **MiniLM** 👉 'mini-el-em'. So if you're okay with an extra hundred to two hundred milliseconds for noticeably better precision, this is your model. Just make sure you have **GPU** 👉 'gee-pee-you' resources available, as the encoder-decoder architecture is computationally intensive.
 
 #### The Mechanics
 
-Looking at the input format, you create a natural language prompt combining your query and document, ending with "Relevant?" The model then generates "true" or "false". It's elegantly simple yet surprisingly powerful!
+[conversational] Looking at the input format, you create a natural language prompt combining your query and document, ending with "Relevant?" The model then generates "true" or "false". It's elegantly simple yet surprisingly powerful!
 
-Let's see this in action with an example next.`
+[cheerfully] Let's see this in action with an example next.`
         },
         {
           id: 10,
@@ -814,27 +814,27 @@ Let's see this in action with an example next.`
             </div>
           ),
           backgroundColor: '#257556',
-          notes: `### 10. Example - RAG Query with MonoT5
+          notes: `### Example - RAG Query with MonoT5
 
-Let's watch **MonoT5** 👉 'mono-tee-five' tackle a technical query about **RAG** 👉 'rag' architecture. This example shows how the model's generative approach handles nuanced technical questions.
+[storytelling] Let's watch **MonoT5** 👉 'mono-tee-five' tackle a technical query about **RAG** 👉 'rag' architecture. This example shows how the model's generative approach handles nuanced technical questions.
 
 #### The Query
 
-A developer asks "What is **FiD** 👉 'fid' in **RAG** 👉 'rag'?" This is asking about a specific architecture pattern - **Fusion-in-Decoder** - in the context of **RAG** 👉 'rag' systems. It's a precise technical question that requires understanding both acronyms and their relationship.
+[conversational] A developer asks "What is **FiD** 👉 'fid' in **RAG** 👉 'rag'?" This is asking about a specific architecture pattern - **Fusion-in-Decoder** - in the context of **RAG** 👉 'rag' systems. It's a precise technical question that requires understanding both acronyms and their relationship.
 
 #### The Documents
 
-Our retrieval returns three candidates. Document A specifically defines **Fusion-in-Decoder** - exactly what the user wants. Document B provides a generic **RAG** 👉 'rag' overview - helpful background but doesn't answer the specific question. Document C discusses document retrieval methods - related to **RAG** 👉 'rag' but tangential to the **FiD** 👉 'fid' question.
+[lecture] Our retrieval returns three candidates. Document A specifically defines **Fusion-in-Decoder** - exactly what the user wants. Document B provides a generic **RAG** 👉 'rag' overview - helpful background but doesn't answer the specific question. Document C discusses document retrieval methods - related to **RAG** 👉 'rag' but tangential to the **FiD** 👉 'fid' question.
 
 #### MonoT5's Judgment
 
-Watch how **MonoT5** 👉 'mono-tee-five' uses its generative reasoning to score these. Document A receives zero point nine one - "0.91" (zero point nine one) - an *excellent* score because it directly answers the query. The model's encoder-decoder architecture understands that "**FiD** 👉 'fid'" explicitly means "**Fusion-in-Decoder**" and recognizes the perfect match. Document B gets zero point five seven - "0.57" (zero point five seven) - because it provides useful context about **RAG** 👉 'rag' but doesn't define **FiD** 👉 'fid'. Document C scores just zero point two three - "0.23" (zero point two three) - as it's only weakly related.
+[excited] Watch how **MonoT5** 👉 'mono-tee-five' uses its generative reasoning to score these. Document A receives zero point nine one - "0.91" (zero point nine one) - an *excellent* score because it directly answers the query. The model's encoder-decoder architecture understands that "**FiD** 👉 'fid'" explicitly means "**Fusion-in-Decoder**" and recognizes the perfect match. Document B gets zero point five seven - "0.57" (zero point five seven) - because it provides useful context about **RAG** 👉 'rag' but doesn't define **FiD** 👉 'fid'. Document C scores just zero point two three - "0.23" (zero point two three) - as it's only weakly related.
 
 #### Why This Matters
 
-This example highlights **MonoT5's** 👉 'mono-tee-five' strength - it *understands* technical relationships and context, not just keyword matching. A simpler model might rank Document B higher because it mentions **RAG** 👉 'rag' more frequently. But **MonoT5** 👉 'mono-tee-five' recognizes that specificity trumps general relevance!
+[enthusiastically] This example highlights **MonoT5's** 👉 'mono-tee-five' strength - it *understands* technical relationships and context, not just keyword matching. A simpler model might rank Document B higher because it mentions **RAG** 👉 'rag' more frequently. [pleased] But **MonoT5** 👉 'mono-tee-five' recognizes that specificity trumps general relevance!
 
-Now let's examine this model's strengths and limitations.`
+[conversational] Now let's examine this model's strengths and limitations.`
         },
         {
           id: 11,
@@ -888,23 +888,23 @@ Now let's examine this model's strengths and limitations.`
             </div>
           ),
           backgroundColor: '#257556',
-          notes: `### 11. Strength and Limitations - MonoT5
+          notes: `### Strength and Limitations - MonoT5
 
-Let's be honest about what **MonoT5** 👉 'mono-tee-five' can and cannot do. Understanding these trade-offs helps you architect the right solution for your needs.
+[conversational] Let's be honest about what **MonoT5** 👉 'mono-tee-five' can and cannot do. [reassuringly] Understanding these trade-offs helps you architect the right solution for your needs.
 
 #### The Impressive Strengths
 
-**MonoT5** 👉 'mono-tee-five' delivers some of the *best* accuracy you'll find in re-ranking models. It frequently outperforms **BERT** 👉 'bert'-based rankers on standard benchmarks, which is remarkable. The secret is that encoder-decoder architecture - it enables deeper semantic understanding than classification-only approaches. Another major advantage is transfer learning. Because **MonoT5** 👉 'mono-tee-five' frames relevance as a generation task, it handles new domains surprisingly well in zero-shot or few-shot scenarios. You can also adapt it to different tasks through flexible prompting. Plus, it integrates smoothly with the standard huggingface transformers library, making implementation straightforward.
+[enthusiastically] **MonoT5** 👉 'mono-tee-five' delivers some of the *best* accuracy you'll find in re-ranking models. It frequently outperforms **BERT** 👉 'bert'-based rankers on standard benchmarks, which is remarkable. [pleased] The secret is that encoder-decoder architecture - it enables deeper semantic understanding than classification-only approaches. Another major advantage is transfer learning. Because **MonoT5** 👉 'mono-tee-five' frames relevance as a generation task, it handles new domains surprisingly well in zero-shot or few-shot scenarios. You can also adapt it to different tasks through flexible prompting. Plus, it integrates smoothly with the standard huggingface transformers library, making implementation straightforward.
 
 #### The Practical Limitations
 
-However, that accuracy comes at a cost. First, latency is higher - the encoder-decoder architecture requires more computation than simpler models. We're talking an extra hundred to three hundred milliseconds per batch compared to **MiniLM** 👉 'mini-el-em'. Second, the models are *large* - ranging from hundreds of millions to billions of parameters. This means you need significant **GPU** 👉 'gee-pee-you' memory, especially for the larger versions. Third, the inference cost in production can be substantial. If you're re-ranking thousands of query-document pairs per second, those compute costs add up quickly.
+[cautiously] However, that accuracy comes at a cost. First, latency is higher - the encoder-decoder architecture requires more computation than simpler models. [sigh] We're talking an extra hundred to three hundred milliseconds per batch compared to **MiniLM** 👉 'mini-el-em'. Second, the models are *large* - ranging from hundreds of millions to billions of parameters. This means you need significant **GPU** 👉 'gee-pee-you' memory, especially for the larger versions. Third, the inference cost in production can be substantial. If you're re-ranking thousands of query-document pairs per second, those compute costs add up quickly.
 
 #### Making the Decision
 
-So when should you choose **MonoT5** 👉 'mono-tee-five'? Use it when accuracy is your primary concern and you have the infrastructure to support it. Think high-value searches, research applications, or cases where a wrong answer is costly. But if you need real-time performance with tight latency budgets, consider the faster models we've covered.
+[confidently] So when should you choose **MonoT5** 👉 'mono-tee-five'? Use it when accuracy is your primary concern and you have the infrastructure to support it. Think high-value searches, research applications, or cases where a wrong answer is costly. But if you need real-time performance with tight latency budgets, consider the faster models we've covered.
 
-Let's move on to model number four, which offers a completely different architecture!`
+[cheerfully] Let's move on to model number four, which offers a completely different architecture!`
         }
       ]
     },
@@ -996,27 +996,27 @@ Let's move on to model number four, which offers a completely different architec
             </div>
           ),
           backgroundColor: '#73262e',
-          notes: `### 12. MonoBERT Re-Ranker
+          notes: `### MonoBERT Re-Ranker
 
-Welcome to **MonoBERT** 👉 'mono-bert' - our fourth model and a classic approach that many consider the gold standard for transformer-based re-ranking. This model represents the sweet spot between accuracy and practical performance.
+[cheerfully] Welcome to **MonoBERT** 👉 'mono-bert' - our fourth model and a classic approach that many consider the gold standard for transformer-based re-ranking. [confidently] This model represents the sweet spot between accuracy and practical performance.
 
 #### The Core Approach
 
-**MonoBERT** 👉 'mono-bert' uses the well-known **BERT** 👉 'bert' architecture with a straightforward classification head for relevance scoring. Think of it as **BERT** 👉 'bert' specifically fine-tuned for the re-ranking task. The beauty is in its simplicity - no complex encoder-decoder setup like **MonoT5** 👉 'mono-tee-five', just a clean pointwise scorer that looks at each query-document pair independently.
+[conversational] **MonoBERT** 👉 'mono-bert' uses the well-known **BERT** 👉 'bert' architecture with a straightforward classification head for relevance scoring. [storytelling] Think of it as **BERT** 👉 'bert' specifically fine-tuned for the re-ranking task. The beauty is in its simplicity - no complex encoder-decoder setup like **MonoT5** 👉 'mono-tee-five', just a clean pointwise scorer that looks at each query-document pair independently.
 
 #### How It Actually Works
 
-The input format is elegant. You concatenate your query and document with special tokens - that's **CLS** 👉 'cls', **SEP** 👉 'sep', another **SEP** 👉 'sep' - creating a single sequence that **BERT** 👉 'bert' processes. The model's attention mechanism lets every token interact with every other token, enabling deep semantic understanding. The **CLS** 👉 'cls' token's final representation goes through a classification head that outputs a relevance score. Higher scores mean stronger relevance!
+[lecture] The input format is elegant. You concatenate your query and document with special tokens - that's **CLS** 👉 'cls', **SEP** 👉 'sep', another **SEP** 👉 'sep' - creating a single sequence that **BERT** 👉 'bert' processes. The model's attention mechanism lets every token interact with every other token, enabling deep semantic understanding. The **CLS** 👉 'cls' token's final representation goes through a classification head that outputs a relevance score. Higher scores mean stronger relevance!
 
 #### Perfect Use Cases
 
-**MonoBERT** 👉 'mono-bert' excels in classic information retrieval pipelines where you need semantic understanding beyond keyword matching like **BM25** 👉 'bee-em-twenty-five'. It's perfect when you have *medium* latency budgets - not as fast as **MiniLM** 👉 'mini-el-em', but more accurate. The model works particularly well with English-language corpora, and it's become the de facto choice for second-stage re-ranking in many production systems.
+[pleased] **MonoBERT** 👉 'mono-bert' excels in classic information retrieval pipelines where you need semantic understanding beyond keyword matching like **BM25** 👉 'bee-em-twenty-five'. It's perfect when you have *medium* latency budgets - not as fast as **MiniLM** 👉 'mini-el-em', but more accurate. The model works particularly well with English-language corpora, and it's become the de facto choice for second-stage re-ranking in many production systems.
 
 #### Implementation Details
 
-The code example shows how straightforward it is to use. You pass in your query and a list of documents, and you get back relevance scores. Zero point eight seven - "0.87" (zero point eight seven) - means highly relevant, while zero point four two - "0.42" (zero point four two) - suggests marginal relevance.
+[reassuringly] The code example shows how straightforward it is to use. You pass in your query and a list of documents, and you get back relevance scores. Zero point eight seven - "0.87" (zero point eight seven) - means highly relevant, while zero point four two - "0.42" (zero point four two) - suggests marginal relevance.
 
-Let's see a concrete example next!`
+[energetic] Let's see a concrete example next!`
         },
         {
           id: 13,
@@ -1064,27 +1064,27 @@ Let's see a concrete example next!`
             </div>
           ),
           backgroundColor: '#73262e',
-          notes: `### 13. Example - Security Query with MonoBERT
+          notes: `### Example - Security Query with MonoBERT
 
-Let's see **MonoBERT** 👉 'mono-bert' handle a common technical query about network security protocols. This example demonstrates how the model understands relationships between related concepts.
+[storytelling] Let's see **MonoBERT** 👉 'mono-bert' handle a common technical query about network security protocols. This example demonstrates how the model understands relationships between related concepts.
 
 #### The Query
 
-A developer searches for "**TLS** 👉 'tee-el-es' vs **mTLS** 👉 'em-tee-el-es'". They're specifically looking for information comparing these two security protocols. The "versus" in the query signals they want to understand the *difference* between them, not just information about each one separately.
+[conversational] A developer searches for "**TLS** 👉 'tee-el-es' vs **mTLS** 👉 'em-tee-el-es'". They're specifically looking for information comparing these two security protocols. The "versus" in the query signals they want to understand the *difference* between them, not just information about each one separately.
 
 #### The Documents
 
-Our retrieval brings back three candidates. Document A provides a basic **TLS** 👉 'tee-el-es' overview - fundamental knowledge but doesn't address the comparison. Document B discusses client authentication in **mTLS** 👉 'em-tee-el-es' - this gets at the *key* difference between **TLS** 👉 'tee-el-es' and **mTLS** 👉 'em-tee-el-es', which is mutual authentication. Document C covers general network security - too broad to be specifically helpful.
+[lecture] Our retrieval brings back three candidates. Document A provides a basic **TLS** 👉 'tee-el-es' overview - fundamental knowledge but doesn't address the comparison. Document B discusses client authentication in **mTLS** 👉 'em-tee-el-es' - this gets at the *key* difference between **TLS** 👉 'tee-el-es' and **mTLS** 👉 'em-tee-el-es', which is mutual authentication. Document C covers general network security - too broad to be specifically helpful.
 
 #### MonoBERT's Ranking
 
-Watch **MonoBERT** 👉 'mono-bert' apply its semantic understanding. Document B scores zero point eight nine - "0.89" (zero point eight nine) - because it directly addresses what makes **mTLS** 👉 'em-tee-el-es' different from **TLS** 👉 'tee-el-es', which is the *heart* of the query. Document A receives zero point five six - "0.56" (zero point five six) - it's relevant background but doesn't answer the "versus" question. Document C gets just zero point three two - "0.32" (zero point three two) - too generic to be useful.
+[excited] Watch **MonoBERT** 👉 'mono-bert' apply its semantic understanding. Document B scores zero point eight nine - "0.89" (zero point eight nine) - because it directly addresses what makes **mTLS** 👉 'em-tee-el-es' different from **TLS** 👉 'tee-el-es', which is the *heart* of the query. Document A receives zero point five six - "0.56" (zero point five six) - it's relevant background but doesn't answer the "versus" question. Document C gets just zero point three two - "0.32" (zero point three two) - too generic to be useful.
 
 #### Why This Works
 
-**MonoBERT** 👉 'mono-bert' doesn't just match keywords. It understands that a "versus" query needs documents that explain *differences*, not just documents that mention both terms. That's the power of transformer-based semantic understanding!
+[pleased] **MonoBERT** 👉 'mono-bert' doesn't just match keywords. It understands that a "versus" query needs documents that explain *differences*, not just documents that mention both terms. That's the power of transformer-based semantic understanding!
 
-Now let's look at this model's trade-offs.`
+[conversational] Now let's look at this model's trade-offs.`
         },
         {
           id: 14,
@@ -1138,23 +1138,23 @@ Now let's look at this model's trade-offs.`
             </div>
           ),
           backgroundColor: '#73262e',
-          notes: `### 14. Strength and Limitations - MonoBERT
+          notes: `### Strength and Limitations - MonoBERT
 
-Let's be pragmatic about **MonoBERT's** 👉 'mono-bert' position in the re-ranking landscape. It's a solid workhorse, but understanding its limitations helps you know when to reach for something else.
+[conversational] Let's be pragmatic about **MonoBERT's** 👉 'mono-bert' position in the re-ranking landscape. [reassuringly] It's a solid workhorse, but understanding its limitations helps you know when to reach for something else.
 
 #### The Reliable Strengths
 
-**MonoBERT** 👉 'mono-bert' is the *reliable* choice. It delivers solid accuracy - consistently better than traditional methods like **BM25** 👉 'bee-em-twenty-five' or pure embedding similarity. The ecosystem support is excellent - you'll find widely available pre-trained checkpoints for various domains. It's been battle-tested in production environments for years, which means fewer surprises when you deploy. Think of it as a good *baseline* model. If you're starting with re-ranking, **MonoBERT** 👉 'mono-bert' is a safe bet. Plus, it's simpler to deploy than encoder-decoder models like **MonoT5** 👉 'mono-tee-five', requiring less infrastructure complexity.
+[pleased] **MonoBERT** 👉 'mono-bert' is the *reliable* choice. It delivers solid accuracy - consistently better than traditional methods like **BM25** 👉 'bee-em-twenty-five' or pure embedding similarity. The ecosystem support is excellent - you'll find widely available pre-trained checkpoints for various domains. [confidently] It's been battle-tested in production environments for years, which means fewer surprises when you deploy. Think of it as a good *baseline* model. If you're starting with re-ranking, **MonoBERT** 👉 'mono-bert' is a safe bet. Plus, it's simpler to deploy than encoder-decoder models like **MonoT5** 👉 'mono-tee-five', requiring less infrastructure complexity.
 
 #### The Practical Limitations
 
-However, **MonoBERT** 👉 'mono-bert' is showing its age. It's slower than distilled variants like **MiniLM** 👉 'mini-el-em' - about two to three times slower for the same number of documents. The five hundred twelve token limit - that's "512" (five hundred twelve) - means long documents get truncated, potentially losing important context. Performance degrades noticeably with domain shift - if your data looks different from **MS MARCO** 👉 'em-es marco', expect accuracy to drop. More recent models like **MonoT5** 👉 'mono-tee-five' and **ColBERT** 👉 'col-bert' outperform it on standard benchmarks. And for complex reasoning or multi-hop questions, **MonoBERT** 👉 'mono-bert' struggles.
+[cautiously] However, **MonoBERT** 👉 'mono-bert' is showing its age. It's slower than distilled variants like **MiniLM** 👉 'mini-el-em' - about two to three times slower for the same number of documents. [disappointed] The five hundred twelve token limit - that's "512" (five hundred twelve) - means long documents get truncated, potentially losing important context. Performance degrades noticeably with domain shift - if your data looks different from **MS MARCO** 👉 'em-es marco', expect accuracy to drop. More recent models like **MonoT5** 👉 'mono-tee-five' and **ColBERT** 👉 'col-bert' outperform it on standard benchmarks. And for complex reasoning or multi-hop questions, **MonoBERT** 👉 'mono-bert' struggles.
 
 #### The Decision Point
 
-So when should you use **MonoBERT** 👉 'mono-bert'? Choose it when you need a *proven*, well-supported baseline with moderate accuracy requirements. But if you need cutting-edge performance or have specialized needs, consider the other models we're covering.
+[firmly] So when should you use **MonoBERT** 👉 'mono-bert'? Choose it when you need a *proven*, well-supported baseline with moderate accuracy requirements. But if you need cutting-edge performance or have specialized needs, consider the other models we're covering.
 
-Speaking of which, let's explore model number five - a truly innovative approach called **ColBERT** 👉 'col-bert'!`
+[excited] Speaking of which, let's explore model number five - a truly innovative approach called **ColBERT** 👉 'col-bert'!`
         }
       ]
     },
@@ -1224,21 +1224,21 @@ doc_embeddings = model.encode_doc(document)    # [D tokens × dim]`}
             </div>
           ),
           backgroundColor: '#486d24',
-          notes: `### 15. ColBERT / ColBERTv2 (Late Interaction)
+          notes: `### ColBERT / ColBERTv2 (Late Interaction)
 
-Let's talk about **ColBERT** 👉 'col-bert' - that's short for Contextualized Late Interaction over **BERT** 👉 'bert'. This model represents a fascinating middle ground in the re-ranking world. It's neither a pure bi-encoder nor a full cross-encoder, but something beautifully in between.
+[excited] Let's talk about **ColBERT** 👉 'col-bert' - that's short for Contextualized Late Interaction over **BERT** 👉 'bert'. [enthusiastically] This model represents a fascinating middle ground in the re-ranking world. It's neither a pure bi-encoder nor a full cross-encoder, but something beautifully in between.
 
 #### The Core Innovation
 
-Here's what makes ColBERT special. Most embeddings compress an entire document into a single vector - imagine trying to summarize a fifty-page technical manual into one number! ColBERT says "why compress at all?" Instead, it keeps separate embeddings for *every token* in both your query and document. Then, during ranking, it performs what's called **MaxSim** 👉 'max-sim' - each query token finds its best matching document token, and those scores get aggregated.
+[storytelling] Here's what makes ColBERT special. Most embeddings compress an entire document into a single vector - imagine trying to summarize a fifty-page technical manual into one number! [pleased] ColBERT says "why compress at all?" Instead, it keeps separate embeddings for *every token* in both your query and document. Then, during ranking, it performs what's called **MaxSim** 👉 'max-sim' - each query token finds its best matching document token, and those scores get aggregated.
 
 #### When ColBERT Shines
 
-This architecture is perfect for technical documentation, medical content, or legal texts where specific terminology matters. Let's say you're searching for "rotate **S3** 👉 'es-three' access keys safely" - ColBERT can match "rotate" to "rotation," "**S3** 👉 'es-three'" to "**S3** 👉 'es-three'," and "keys" to "credentials," all independently. That token-by-token alignment catches nuances that single-vector models miss.
+[confidently] This architecture is perfect for technical documentation, medical content, or legal texts where specific terminology matters. [storytelling] Let's say you're searching for "rotate **S3** 👉 'es-three' access keys safely" - ColBERT can match "rotate" to "rotation," "**S3** 👉 'es-three'" to "**S3** 👉 'es-three'," and "keys" to "credentials," all independently. That token-by-token alignment catches nuances that single-vector models miss.
 
 #### The Performance Sweet Spot
 
-**ColBERTv2** 👉 'col-bert-vee-two' adds significant optimizations - better compression, faster indexing, and improved query efficiency. You get cross-encoder-like accuracy but with much better scalability. The trade-off? Higher storage requirements than bi-encoders and more complex infrastructure. But if precision on technical content is your goal, ColBERT delivers!`
+[pleased] **ColBERTv2** 👉 'col-bert-vee-two' adds significant optimizations - better compression, faster indexing, and improved query efficiency. You get cross-encoder-like accuracy but with much better scalability. [cautiously] The trade-off? Higher storage requirements than bi-encoders and more complex infrastructure. But if precision on technical content is your goal, ColBERT delivers!`
         },
         {
           id: 16,
@@ -1284,21 +1284,21 @@ This architecture is perfect for technical documentation, medical content, or le
             </div>
           ),
           backgroundColor: '#486d24',
-          notes: `### 16. ColBERT Example
+          notes: `### ColBERT Example
 
-Let me show you ColBERT in action with a real-world scenario. Imagine you're building a cloud infrastructure assistant, and a user asks: "Rotate **S3** 👉 'es-three' access keys safely."
+[storytelling] Let me show you ColBERT in action with a real-world scenario. Imagine you're building a cloud infrastructure assistant, and a user asks: "Rotate **S3** 👉 'es-three' access keys safely."
 
 #### The Token-Level Magic
 
-ColBERT breaks this query into tokens - "rotate," "**S3** 👉 'es-three'," "access," "keys," "safely." Now, we have three candidate documents. Document A is just a general **AWS** 👉 'ay-double-you-es' overview - too broad. Document B covers **S3** 👉 'es-three' policy documentation - related but not quite right. Document C is specifically about **S3** 👉 'es-three' key rotation procedures - bingo!
+[lecture] ColBERT breaks this query into tokens - "rotate," "**S3** 👉 'es-three'," "access," "keys," "safely." Now, we have three candidate documents. Document A is just a general **AWS** 👉 'ay-double-you-es' overview - too broad. Document B covers **S3** 👉 'es-three' policy documentation - related but not quite right. Document C is specifically about **S3** 👉 'es-three' key rotation procedures - bingo!
 
 #### Why ColBERT Gets It Right
 
-Here's where the token-level matching shines. The query token "rotate" strongly matches "rotation" in document C. The token "**S3** 👉 'es-three'" exactly matches "**S3** 👉 'es-three'" in documents B and C. The token "keys" aligns with "access keys" in C. And "safely" matches security-related terms in the procedure document. ColBERT's **MaxSim** 👉 'max-sim' operation finds these best matches for each query token and aggregates them.
+[excited] Here's where the token-level matching shines. The query token "rotate" strongly matches "rotation" in document C. The token "**S3** 👉 'es-three'" exactly matches "**S3** 👉 'es-three'" in documents B and C. The token "keys" aligns with "access keys" in C. And "safely" matches security-related terms in the procedure document. ColBERT's **MaxSim** 👉 'max-sim' operation finds these best matches for each query token and aggregates them.
 
 #### The Scoring Breakdown
 
-Document C scores point-eight-nine - clearly the winner because *every* query token finds strong matches. Document B gets point-five-six - it has "**S3** 👉 'es-three'" and "policy" but misses the "rotation" context. Document A scores only point-three-two - too generic, with weak matches across the board. This granular, token-by-token analysis is ColBERT's superpower!`
+[pleased] Document C scores point-eight-nine - clearly the winner because *every* query token finds strong matches. Document B gets point-five-six - it has "**S3** 👉 'es-three'" and "policy" but misses the "rotation" context. Document A scores only point-three-two - too generic, with weak matches across the board. [enthusiastically] This granular, token-by-token analysis is ColBERT's superpower!`
         },
         {
           id: 17,
@@ -1346,21 +1346,21 @@ Document C scores point-eight-nine - clearly the winner because *every* query to
             </div>
           ),
           backgroundColor: '#486d24',
-          notes: `### 17. ColBERT Strengths and Limitations
+          notes: `### ColBERT Strengths and Limitations
 
-Let's break down when ColBERT is your best friend and when it might be overkill. Understanding these trade-offs is crucial for making the right architectural decisions.
+[conversational] Let's break down when ColBERT is your best friend and when it might be overkill. [reassuringly] Understanding these trade-offs is crucial for making the right architectural decisions.
 
 #### The Strengths - Where ColBERT Excels
 
-First, the good news. ColBERT achieves remarkable precision through its token-level matching - you're capturing nuanced relevance signals that compressed embeddings simply lose. Think about technical documentation where the term "**TLS** 👉 'tee-el-es' handshake timeout" matters - ColBERT catches every word. It maintains the speed benefits of separate encoding while achieving accuracy close to full cross-encoders. That's the best of both worlds!
+[enthusiastically] First, the good news. ColBERT achieves remarkable precision through its token-level matching - you're capturing nuanced relevance signals that compressed embeddings simply lose. [storytelling] Think about technical documentation where the term "**TLS** 👉 'tee-el-es' handshake timeout" matters - ColBERT catches every word. [pleased] It maintains the speed benefits of separate encoding while achieving accuracy close to full cross-encoders. That's the best of both worlds!
 
 Plus, **ColBERTv2** 👉 'col-bert-vee-two' brings serious optimizations. We're talking about compressed indexes using approximate nearest neighbor techniques, making it production-ready at scale. The flexible scoring mechanism also lets you analyze *why* a document ranked where it did - incredibly valuable for debugging and improving your system.
 
 #### The Limitations - The Reality Check
 
-Now the challenges. ColBERT is more complex to implement than throwing a cross-encoder into your pipeline. You need specialized indexing infrastructure - not just **Elasticsearch** 👉 'elastic-search' with default settings. Storage requirements are higher because you're keeping embeddings for every token, not just one vector per document. We're talking maybe five-to-ten-times more storage.
+[cautiously] Now the challenges. ColBERT is more complex to implement than throwing a cross-encoder into your pipeline. You need specialized indexing infrastructure - not just **Elasticsearch** 👉 'elastic-search' with default settings. [disappointed] Storage requirements are higher because you're keeping embeddings for every token, not just one vector per document. We're talking maybe five-to-ten-times more storage.
 
-The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than simple dot products. And here's the practical issue - off-the-shelf **RAG** 👉 'rag' frameworks like **LangChain** 👉 'lang-chain' or **LlamaIndex** 👉 'llama-index' don't always support ColBERT out of the box. You might be building custom integration. So weigh these factors against your precision requirements!`
+The **MaxSim** 👉 'max-sim' operation, while clever, costs more compute than simple dot products. [sigh] And here's the practical issue - off-the-shelf **RAG** 👉 'rag' frameworks like **LangChain** 👉 'lang-chain' or **LlamaIndex** 👉 'llama-index' don't always support ColBERT out of the box. You might be building custom integration. So weigh these factors against your precision requirements!`
         },
       ]
     },
@@ -1435,21 +1435,21 @@ scores = [cosine_similarity(query_emb, doc_emb)
             </div>
           ),
           backgroundColor: '#541d5f',
-          notes: `### 18. E5-Ranker as Bi-Encoder Re-Rank
+          notes: `### E5-Ranker as Bi-Encoder Re-Rank
 
-Moving on to **E5-Ranker** 👉 'ee-five-ranker' - this is the speed demon of our lineup! The "E5" stands for **E**mbeddings from bidirectional **E**ncoder representations, and it's particularly interesting when you need to rerank at scale without breaking the bank or your latency budget.
+[excited] Moving on to **E5-Ranker** 👉 'ee-five-ranker' - this is the speed demon of our lineup! [conversational] The "E5" stands for **E**mbeddings from bidirectional **E**ncoder representations, and it's particularly interesting when you need to rerank at scale without breaking the bank or your latency budget.
 
 #### The Bi-Encoder Advantage
 
-Here's the fundamental difference from cross-encoders. **E5** 👉 'ee-five' processes your query and documents *separately* using the same encoder. Think of it like having two parallel assembly lines instead of one sequential process. You encode the query once, encode each document once, then just compute cosine similarity between the vectors. This separate encoding is what makes it blazingly fast - we're talking five-to-twenty-times faster than cross-encoders!
+[lecture] Here's the fundamental difference from cross-encoders. **E5** 👉 'ee-five' processes your query and documents *separately* using the same encoder. [storytelling] Think of it like having two parallel assembly lines instead of one sequential process. You encode the query once, encode each document once, then just compute cosine similarity between the vectors. [enthusiastically] This separate encoding is what makes it blazingly fast - we're talking five-to-twenty-times faster than cross-encoders!
 
 #### When E5 Makes Sense
 
-**E5** 👉 'ee-five' really shines in production scenarios where you're serving hundreds or thousands of queries per second. If you're running on **CPU** 👉 'see-pee-you'-only environments - maybe serverless functions or edge deployments - this is your friend. The **e5-mistral** 👉 'ee-five mistral' variants add fantastic multilingual support, handling everything from English to Mandarin to Arabic with grace.
+[pleased] **E5** 👉 'ee-five' really shines in production scenarios where you're serving hundreds or thousands of queries per second. If you're running on **CPU** 👉 'see-pee-you'-only environments - maybe serverless functions or edge deployments - this is your friend. The **e5-mistral** 👉 'ee-five mistral' variants add fantastic multilingual support, handling everything from English to Mandarin to Arabic with grace.
 
 #### The Speed-Accuracy Trade-off
 
-Here's the honest truth - you'll see maybe a ten-to-fifteen-percent accuracy drop compared to cross-encoders. But you gain massive speed and scalability! Document embeddings can be pre-computed and cached, so at query time you're only encoding the query and doing simple vector math. For many applications, that trade-off is absolutely worth it. Use **E5** 👉 'ee-five' as your first reranking pass, then optionally apply a heavier cross-encoder to the top-ten results!`
+[conversational] Here's the honest truth - you'll see maybe a ten-to-fifteen-percent accuracy drop compared to cross-encoders. [confidently] But you gain massive speed and scalability! Document embeddings can be pre-computed and cached, so at query time you're only encoding the query and doing simple vector math. For many applications, that trade-off is absolutely worth it. Use **E5** 👉 'ee-five' as your first reranking pass, then optionally apply a heavier cross-encoder to the top-ten results!`
         },
         {
           id: 19,
@@ -1495,21 +1495,21 @@ Here's the honest truth - you'll see maybe a ten-to-fifteen-percent accuracy dro
             </div>
           ),
           backgroundColor: '#541d5f',
-          notes: `### 19. E5-Ranker Example
+          notes: `### E5-Ranker Example
 
-Let me show you **E5** 👉 'ee-five' in a real-world compliance scenario. A user asks: "**GDPR** 👉 'gee-dee-pee-ar' data deletion timeline." This is exactly the kind of query where semantic understanding beats keyword matching.
+[storytelling] Let me show you **E5** 👉 'ee-five' in a real-world compliance scenario. A user asks: "**GDPR** 👉 'gee-dee-pee-ar' data deletion timeline." This is exactly the kind of query where semantic understanding beats keyword matching.
 
 #### The Document Landscape
 
-We have three candidate documents. Document A is a generic **GDPR** 👉 'gee-dee-pee-ar' compliance overview - it mentions deletion but lacks specifics. Document B is a data retention policy - related but focuses more on how long to *keep* data, not the deletion process itself. Document C explicitly discusses the thirty-day deletion window mandated by **GDPR** 👉 'gee-dee-pee-ar' - this is the gold standard answer.
+[lecture] We have three candidate documents. Document A is a generic **GDPR** 👉 'gee-dee-pee-ar' compliance overview - it mentions deletion but lacks specifics. Document B is a data retention policy - related but focuses more on how long to *keep* data, not the deletion process itself. Document C explicitly discusses the thirty-day deletion window mandated by **GDPR** 👉 'gee-dee-pee-ar' - this is the gold standard answer.
 
 #### How E5 Processes This
 
-**E5** 👉 'ee-five' encodes the query "**GDPR** 👉 'gee-dee-pee-ar' data deletion timeline" into a dense vector that captures the semantic intent - the user wants specific timing information about deletion under **GDPR** 👉 'gee-dee-pee-ar' regulations. Each document gets encoded separately. Then it's simple vector math - cosine similarity between the query vector and each document vector.
+[conversational] **E5** 👉 'ee-five' encodes the query "**GDPR** 👉 'gee-dee-pee-ar' data deletion timeline" into a dense vector that captures the semantic intent - the user wants specific timing information about deletion under **GDPR** 👉 'gee-dee-pee-ar' regulations. Each document gets encoded separately. Then it's simple vector math - cosine similarity between the query vector and each document vector.
 
 #### The Results Tell the Story
 
-Document C scores point-eight-nine because its semantic meaning strongly aligns with the query - "deletion," "timeline," "thirty days," and "**GDPR** 👉 'gee-dee-pee-ar'" all create strong vector similarity. Document B gets point-seven-two - it's about data policies and **GDPR** 👉 'gee-dee-pee-ar' but less focused on deletion timelines. Document A scores point-six-four - too generic, even though it mentions **GDPR** 👉 'gee-dee-pee-ar'. The bi-encoder approach is fast enough to do this across thousands of documents in milliseconds!`
+[pleased] Document C scores point-eight-nine because its semantic meaning strongly aligns with the query - "deletion," "timeline," "thirty days," and "**GDPR** 👉 'gee-dee-pee-ar'" all create strong vector similarity. Document B gets point-seven-two - it's about data policies and **GDPR** 👉 'gee-dee-pee-ar' but less focused on deletion timelines. Document A scores point-six-four - too generic, even though it mentions **GDPR** 👉 'gee-dee-pee-ar'. [enthusiastically] The bi-encoder approach is fast enough to do this across thousands of documents in milliseconds!`
         },
         {
           id: 20,
@@ -1557,23 +1557,23 @@ Document C scores point-eight-nine because its semantic meaning strongly aligns 
             </div>
           ),
           backgroundColor: '#541d5f',
-          notes: `### 20. E5-Ranker Strengths and Limitations
+          notes: `### E5-Ranker Strengths and Limitations
 
-Let's get real about when **E5** 👉 'ee-five' is your hero and when you need something stronger. This is all about matching the tool to your requirements.
+[conversational] Let's get real about when **E5** 👉 'ee-five' is your hero and when you need something stronger. [reassuringly] This is all about matching the tool to your requirements.
 
 #### The Speed Advantage is Real
 
-**E5** 👉 'ee-five' delivers five-to-twenty-times speedup over cross-encoders - that's not a typo! If you're building a customer-facing search where every hundred milliseconds matters, this is huge. It runs beautifully on **CPUs** 👉 'see-pee-yous' - no expensive **GPU** 👉 'gee-pee-you' infrastructure needed. This makes it perfect for serverless deployments or edge computing scenarios.
+[enthusiastically] **E5** 👉 'ee-five' delivers five-to-twenty-times speedup over cross-encoders - that's not a typo! If you're building a customer-facing search where every hundred milliseconds matters, this is huge. [pleased] It runs beautifully on **CPUs** 👉 'see-pee-yous' - no expensive **GPU** 👉 'gee-pee-you' infrastructure needed. This makes it perfect for serverless deployments or edge computing scenarios.
 
 The caching story is compelling too. Encode your entire document corpus once, store those embeddings, and you're done. At query time, you only encode the query - maybe ten milliseconds - then it's just vector math across your corpus. Scale to millions of documents? No problem. The **mistral** 👉 'mistral' variants handle fifty-plus languages with strong performance, making this ideal for global applications.
 
 #### The Accuracy Trade-offs
 
-Here's where you need to be honest with yourself. You will see a ten-to-fifteen-percent accuracy gap compared to cross-encoders. For some applications, that's totally acceptable. For others - medical diagnosis, legal research - it's not. **E5** 👉 'ee-five' compresses entire documents into single vectors, so you lose fine-grained detail. Complex relationships between query and document? The model can't reason about those - it's just comparing vector distances.
+[cautiously] Here's where you need to be honest with yourself. You will see a ten-to-fifteen-percent accuracy gap compared to cross-encoders. For some applications, that's totally acceptable. [seriously] For others - medical diagnosis, legal research - it's not. **E5** 👉 'ee-five' compresses entire documents into single vectors, so you lose fine-grained detail. Complex relationships between query and document? The model can't reason about those - it's just comparing vector distances.
 
 #### The Smart Deployment Pattern
 
-Think of **E5** 👉 'ee-five' as your first-stage filter. Retrieve fifty documents with **BM25** 👉 'bee-em-twenty-five', rerank to twenty with **E5** 👉 'ee-five' in milliseconds, then optionally apply a cross-encoder to the final ten if precision is critical. That's the production-grade pattern that balances speed and accuracy beautifully!`
+[confidently] Think of **E5** 👉 'ee-five' as your first-stage filter. Retrieve fifty documents with **BM25** 👉 'bee-em-twenty-five', rerank to twenty with **E5** 👉 'ee-five' in milliseconds, then optionally apply a cross-encoder to the final ten if precision is critical. That's the production-grade pattern that balances speed and accuracy beautifully!`
         },
       ]
     },
@@ -1649,21 +1649,21 @@ Return ranking as: [3, 1, 2, ...]
             </div>
           ),
           backgroundColor: '#54611f',
-          notes: `### 21. LLM-as-a-Ranker (RankGPT-style)
+          notes: `### LLM-as-a-Ranker (RankGPT-style)
 
-Now we're entering exciting territory - using large language models themselves as rankers! This approach, popularized by **RankGPT** 👉 'rank-gee-pee-tee', is like having a smart human annotator evaluate your documents, except it's automated and runs at machine speed.
+[excited] Now we're entering exciting territory - using large language models themselves as rankers! [enthusiastically] This approach, popularized by **RankGPT** 👉 'rank-gee-pee-tee', is like having a smart human annotator evaluate your documents, except it's automated and runs at machine speed.
 
 #### The Power of Language Model Reasoning
 
-Think about what makes **LLMs** 👉 'el-el-ems' special - they understand context, they can reason about relationships, they have world knowledge. Traditional rerankers are trained on specific datasets with fixed notions of relevance. But an **LLM** 👉 'el-el-em' can understand nuanced criteria like "Is this document recent?" or "Does this source have authority?" or "Is this answer complete?" You can literally ask it to consider multiple factors and explain its reasoning!
+[storytelling] Think about what makes **LLMs** 👉 'el-el-ems' special - they understand context, they can reason about relationships, they have world knowledge. [conversational] Traditional rerankers are trained on specific datasets with fixed notions of relevance. But an **LLM** 👉 'el-el-em' can understand nuanced criteria like "Is this document recent?" or "Does this source have authority?" or "Is this answer complete?" You can literally ask it to consider multiple factors and explain its reasoning!
 
 #### Listwise vs Pairwise Ranking
 
-Here's a key advantage - **LLM-as-a-Ranker** 👉 'el-el-em as a ranker' performs *listwise* ranking. It sees all documents together and can reason about relative relevance. Traditional cross-encoders score pairs independently - they might rank document A over B, B over C, but C over A - creating logical inconsistencies. **LLMs** 👉 'el-el-ems' can maintain global consistency across the entire ranking.
+[confidently] Here's a key advantage - **LLM-as-a-Ranker** 👉 'el-el-em as a ranker' performs *listwise* ranking. It sees all documents together and can reason about relative relevance. Traditional cross-encoders score pairs independently - they might rank document A over B, B over C, but C over A - creating logical inconsistencies. **LLMs** 👉 'el-el-ems' can maintain global consistency across the entire ranking.
 
 #### Zero-Shot Magic and Trade-offs
 
-The zero-shot capability is remarkable. New domain? No problem - just adjust your prompt. No retraining, no fine-tuning. But let's be realistic about costs - we're talking ten-to-fifty-times more expensive than cross-encoders, and latency of one-to-five seconds per query. This makes sense for high-value queries where you absolutely need the best answer, but it's not sustainable for high-throughput systems. Think legal research, medical diagnosis, or strategic business intelligence - not general web search!`
+[pleased] The zero-shot capability is remarkable. New domain? No problem - just adjust your prompt. No retraining, no fine-tuning. [cautiously] But let's be realistic about costs - we're talking ten-to-fifty-times more expensive than cross-encoders, and latency of one-to-five seconds per query. This makes sense for high-value queries where you absolutely need the best answer, but it's not sustainable for high-throughput systems. Think legal research, medical diagnosis, or strategic business intelligence - not general web search!`
         },
         {
           id: 22,
@@ -1713,21 +1713,21 @@ The zero-shot capability is remarkable. New domain? No problem - just adjust you
             </div>
           ),
           backgroundColor: '#54611f',
-          notes: `### 22. LLM-as-a-Ranker Example
+          notes: `### LLM-as-a-Ranker Example
 
-Let me show you the **LLM-as-a-Ranker** 👉 'el-el-em as a ranker' approach with a complex, multi-faceted query: "Pros and cons of eventual consistency for checkout systems?" This is exactly where traditional rankers struggle but **LLMs** 👉 'el-el-ems' shine.
+[storytelling] Let me show you the **LLM-as-a-Ranker** 👉 'el-el-em as a ranker' approach with a complex, multi-faceted query: "Pros and cons of eventual consistency for checkout systems?" This is exactly where traditional rankers struggle but **LLMs** 👉 'el-el-ems' shine.
 
 #### Why This Query is Challenging
 
-Notice the complexity here. The user isn't just asking about eventual consistency or checkout systems - they want trade-off analysis, they want both positives and negatives, and the answer needs to be specifically about e-commerce checkout. Traditional semantic matching might rank any document about consistency or e-commerce highly, missing the nuanced requirement.
+[lecture] Notice the complexity here. The user isn't just asking about eventual consistency or checkout systems - they want trade-off analysis, they want both positives and negatives, and the answer needs to be specifically about e-commerce checkout. Traditional semantic matching might rank any document about consistency or e-commerce highly, missing the nuanced requirement.
 
 #### The LLM's Reasoning Process
 
-When we feed this to an **LLM** 👉 'el-el-em', it reasons explicitly. It sees document C discusses system design with consistency trade-offs - that's directly relevant. Document B covers e-commerce design patterns, which *may* include checkout scenarios - that's somewhat relevant. Document A talks about general database concepts - too broad, not specific enough. The **LLM** 👉 'el-el-em' can actually articulate *why* it ranks this way!
+[conversational] When we feed this to an **LLM** 👉 'el-el-em', it reasons explicitly. It sees document C discusses system design with consistency trade-offs - that's directly relevant. Document B covers e-commerce design patterns, which *may* include checkout scenarios - that's somewhat relevant. Document A talks about general database concepts - too broad, not specific enough. The **LLM** 👉 'el-el-em' can actually articulate *why* it ranks this way!
 
 #### The Explainability Factor
 
-Here's what makes this powerful - you're not just getting a ranking, you're getting reasoning. The **LLM** 👉 'el-el-em' might say "Document C is most relevant because it specifically addresses the trade-offs you're asking about in system design contexts." This explainability is invaluable for debugging your **RAG** 👉 'rag' system, understanding user intent, and building trust with stakeholders. In high-stakes applications - legal, medical, financial - this transparency is often a requirement, not just a nice-to-have!`
+[pleased] Here's what makes this powerful - you're not just getting a ranking, you're getting reasoning. The **LLM** 👉 'el-el-em' might say "Document C is most relevant because it specifically addresses the trade-offs you're asking about in system design contexts." [enthusiastically] This explainability is invaluable for debugging your **RAG** 👉 'rag' system, understanding user intent, and building trust with stakeholders. In high-stakes applications - legal, medical, financial - this transparency is often a requirement, not just a nice-to-have!`
         },
         {
           id: 23,
@@ -1775,21 +1775,21 @@ Here's what makes this powerful - you're not just getting a ranking, you're gett
             </div>
           ),
           backgroundColor: '#54611f',
-          notes: `### 23. LLM-as-a-Ranker Strengths and Limitations
+          notes: `### LLM-as-a-Ranker Strengths and Limitations
 
-Now let's get real about using **LLMs** 👉 'el-el-ems' as rankers - both the amazing capabilities and the harsh realities you'll face in production.
+[conversational] Now let's get real about using **LLMs** 👉 'el-el-ems' as rankers - both the amazing capabilities and the harsh realities you'll face in production.
 
 #### The Undeniable Strengths
 
-Large language models bring something truly special to reranking - genuine reasoning ability. Unlike trained models that pattern-match, **LLMs** 👉 'el-el-ems' can actually *think* about relevance. They understand complex nuance, can handle brand new ranking criteria through prompts alone, and work brilliantly across dozens of languages without retraining. The zero-shot performance is remarkable - just describe what "relevant" means in plain English, and they get it! Plus, they can explain their decisions, making your system transparent and debuggable.
+[enthusiastically] Large language models bring something truly special to reranking - genuine reasoning ability. Unlike trained models that pattern-match, **LLMs** 👉 'el-el-ems' can actually *think* about relevance. [pleased] They understand complex nuance, can handle brand new ranking criteria through prompts alone, and work brilliantly across dozens of languages without retraining. The zero-shot performance is remarkable - just describe what "relevant" means in plain English, and they get it! Plus, they can explain their decisions, making your system transparent and debuggable.
 
 #### The Brutal Trade-offs
 
-Here's where reality hits hard. **LLM** 👉 'el-el-em' reranking is *expensive* - we're talking ten-to-fifty-times more costly than cross-encoders. Latency is painful, often one-to-five seconds per query batch. For high-throughput systems serving thousands of queries per second, this simply doesn't scale. And there's the prompt engineering challenge - slight wording changes can swing results dramatically.
+[seriously] Here's where reality hits hard. **LLM** 👉 'el-el-em' reranking is *expensive* - we're talking ten-to-fifty-times more costly than cross-encoders. [sigh] Latency is painful, often one-to-five seconds per query batch. For high-throughput systems serving thousands of queries per second, this simply doesn't scale. And there's the prompt engineering challenge - slight wording changes can swing results dramatically.
 
 #### When to Use LLMs Despite the Costs
 
-So when does it make sense? When you need complex reasoning that trained models can't handle. When your ranking criteria change frequently and retraining is impractical. When you're prototyping and need quick results. Or when you're in specialized domains where no good reranking model exists. But for production at scale? Consider this your expensive specialty tool, not your everyday workhorse. Many teams use **LLMs** 👉 'el-el-ems' to generate training data, then distill that knowledge into faster, cheaper models!`
+[confidently] So when does it make sense? When you need complex reasoning that trained models can't handle. When your ranking criteria change frequently and retraining is impractical. When you're prototyping and need quick results. Or when you're in specialized domains where no good reranking model exists. [reassuringly] But for production at scale? Consider this your expensive specialty tool, not your everyday workhorse. Many teams use **LLMs** 👉 'el-el-ems' to generate training data, then distill that knowledge into faster, cheaper models!`
         }
       ]
     },
@@ -1870,25 +1870,25 @@ ranker_3 = ["doc_A", "doc_E", "doc_B", ...]`}
             </div>
           ),
           backgroundColor: '#71461b',
-          notes: `### 24. RRF (Reciprocal Rank Fusion)
+          notes: `### RRF (Reciprocal Rank Fusion)
 
-Let's talk about **RRF** 👉 'ar-ar-ef' - Reciprocal Rank Fusion - which is honestly one of the most underrated techniques in the reranking toolkit. This is the Swiss Army knife of result combination!
+[cheerfully] Let's talk about **RRF** 👉 'ar-ar-ef' - Reciprocal Rank Fusion - which is honestly one of the most underrated techniques in the reranking toolkit. [playfully] This is the Swiss Army knife of result combination!
 
 #### The Beautiful Simplicity
 
-Here's what makes **RRF** 👉 'ar-ar-ef' special - it's *simple*. Brilliantly simple. You don't need training data. You don't need relevance scores. You don't even need the systems you're combining to produce scores! Just give it ranked lists, and it does the magic. The formula is elegant: for each document, sum up one-divided-by-k-plus-rank across all your ranking systems. That k-value, typically sixty, prevents documents ranked number-one from completely dominating.
+[excited] Here's what makes **RRF** 👉 'ar-ar-ef' special - it's *simple*. Brilliantly simple. You don't need training data. You don't need relevance scores. You don't even need the systems you're combining to produce scores! [conversational] Just give it ranked lists, and it does the magic. The formula is elegant: for each document, sum up one-divided-by-k-plus-rank across all your ranking systems. That k-value, typically sixty, prevents documents ranked number-one from completely dominating.
 
 #### Why This Works So Well
 
-Think about it this way - **BM25** 👉 'bee-em-twenty-five' catches exact keyword matches. Dense retrievers catch semantic similarity. Maybe you have a specialized ranker for technical terms. Each excels at different things, and each fails at different things. **RRF** 👉 'ar-ar-ef' lets them vote! A document that appears in multiple top-ten lists - even if not number-one anywhere - will bubble up to the top of the fused results.
+[storytelling] Think about it this way - **BM25** 👉 'bee-em-twenty-five' catches exact keyword matches. Dense retrievers catch semantic similarity. Maybe you have a specialized ranker for technical terms. Each excels at different things, and each fails at different things. [pleased] **RRF** 👉 'ar-ar-ef' lets them vote! A document that appears in multiple top-ten lists - even if not number-one anywhere - will bubble up to the top of the fused results.
 
 #### The Practical Reality
 
-Research shows **RRF** 👉 'ar-ar-ef' often outperforms individual rankers and sometimes beats sophisticated learned fusion methods. It's robust - one bad ranker won't ruin your results. And the implementation? Twenty lines of code, no dependencies, runs in microseconds. Start here before reaching for complex neural fusion models!
+[enthusiastically] Research shows **RRF** 👉 'ar-ar-ef' often outperforms individual rankers and sometimes beats sophisticated learned fusion methods. It's robust - one bad ranker won't ruin your results. And the implementation? Twenty lines of code, no dependencies, runs in microseconds. Start here before reaching for complex neural fusion models!
 
 #### When RRF Is Perfect
 
-Use **RRF** 👉 'ar-ar-ef' when combining different retrieval paradigms - keyword plus semantic, multiple embedding models, or cross-lingual retrievers. It's perfect for heterogeneous document collections where different rankers excel on different content types. And it's your go-to baseline - if you can't beat **RRF** 👉 'ar-ar-ef', your fancy fusion model isn't worth the complexity!`
+[confidently] Use **RRF** 👉 'ar-ar-ef' when combining different retrieval paradigms - keyword plus semantic, multiple embedding models, or cross-lingual retrievers. It's perfect for heterogeneous document collections where different rankers excel on different content types. And it's your go-to baseline - if you can't beat **RRF** 👉 'ar-ar-ef', your fancy fusion model isn't worth the complexity!`
         },
         {
           id: 25,
@@ -1974,25 +1974,25 @@ Use **RRF** 👉 'ar-ar-ef' when combining different retrieval paradigms - keywo
             </div>
           ),
           backgroundColor: '#71461b',
-          notes: `### 25. RRF Example
+          notes: `### RRF Example
 
-Let me show you **RRF** 👉 'ar-ar-ef' in action with a real-world scenario that demonstrates why this simple algorithm is so powerful.
+[storytelling] Let me show you **RRF** 👉 'ar-ar-ef' in action with a real-world scenario that demonstrates why this simple algorithm is so powerful.
 
 #### The Query and Candidates
 
-A user searches for "Cloud storage security best practices" - a query that has both keyword elements and semantic meaning. We have three candidates: Document A is a comprehensive security guide, Document B is general cloud information, and Document C contains implementation steps.
+[conversational] A user searches for "Cloud storage security best practices" - a query that has both keyword elements and semantic meaning. We have three candidates: Document A is a comprehensive security guide, Document B is general cloud information, and Document C contains implementation steps.
 
 #### How Different Rankers See It
 
-Here's where it gets interesting. **BM25** 👉 'bee-em-twenty-five' ranks Document B first because it matches "cloud storage" exactly, then Document A at position two. The dense retriever ranks Document C first because it semantically matches "best practices" with "implementation steps," then Document A at position three. A hybrid ranker puts Document A first, recognizing its balanced relevance.
+[lecture] Here's where it gets interesting. **BM25** 👉 'bee-em-twenty-five' ranks Document B first because it matches "cloud storage" exactly, then Document A at position two. The dense retriever ranks Document C first because it semantically matches "best practices" with "implementation steps," then Document A at position three. A hybrid ranker puts Document A first, recognizing its balanced relevance.
 
 #### The RRF Magic
 
-Now **RRF** 👉 'ar-ar-ef' does its magic. For Document A: one-divided-by-sixty-two plus one-divided-by-sixty-three plus one-divided-by-sixty-one equals point-zero-four-four. For Document B: one-divided-by-sixty-one plus one-divided-by-sixty-four plus one-divided-by-sixty-three equals point-zero-three-eight. Document C gets point-zero-three-seven.
+[excited] Now **RRF** 👉 'ar-ar-ef' does its magic. For Document A: one-divided-by-sixty-two plus one-divided-by-sixty-three plus one-divided-by-sixty-one equals point-zero-four-four. For Document B: one-divided-by-sixty-one plus one-divided-by-sixty-four plus one-divided-by-sixty-three equals point-zero-three-eight. Document C gets point-zero-three-seven.
 
 #### Why Document A Wins
 
-Notice something fascinating? Document A never ranked first in most individual systems, but it appeared in the top three of *all* systems! That consistent presence across different ranking paradigms is exactly what **RRF** 👉 'ar-ar-ef' rewards. It's finding the consensus winner - the document that multiple independent algorithms agree is relevant. This robustness is why **RRF** 👉 'ar-ar-ef' often beats more complex fusion methods!`
+[pleased] Notice something fascinating? Document A never ranked first in most individual systems, but it appeared in the top three of *all* systems! [enthusiastically] That consistent presence across different ranking paradigms is exactly what **RRF** 👉 'ar-ar-ef' rewards. It's finding the consensus winner - the document that multiple independent algorithms agree is relevant. This robustness is why **RRF** 👉 'ar-ar-ef' often beats more complex fusion methods!`
         },
         {
           id: 26,
@@ -2040,23 +2040,23 @@ Notice something fascinating? Document A never ranked first in most individual s
             </div>
           ),
           backgroundColor: '#71461b',
-          notes: `### 26. RRF Strengths and Limitations
+          notes: `### RRF Strengths and Limitations
 
-Let's be completely honest about what **RRF** 👉 'ar-ar-ef' brings to the table and where it falls short.
+[conversational] Let's be completely honest about what **RRF** 👉 'ar-ar-ef' brings to the table and where it falls short.
 
 #### The Incredible Strengths
 
-The beauty of **RRF** 👉 'ar-ar-ef' is its zero-friction deployment. No training data collection, no model fine-tuning, no **GPU** 👉 'gee-pee-you' clusters spinning up. It's literally addition and division - computation measured in microseconds, not milliseconds. And here's the kicker - it often beats sophisticated learned fusion methods! The algorithm is remarkably robust. If one of your rankers goes haywire and produces garbage rankings, **RRF** 👉 'ar-ar-ef' won't let that single bad actor destroy your results. The other rankers compensate.
+[enthusiastically] The beauty of **RRF** 👉 'ar-ar-ef' is its zero-friction deployment. No training data collection, no model fine-tuning, no **GPU** 👉 'gee-pee-you' clusters spinning up. It's literally addition and division - computation measured in microseconds, not milliseconds. [pleased] And here's the kicker - it often beats sophisticated learned fusion methods! The algorithm is remarkably robust. If one of your rankers goes haywire and produces garbage rankings, **RRF** 👉 'ar-ar-ef' won't let that single bad actor destroy your results. The other rankers compensate.
 
 Plus, it's completely model-agnostic. Combine **BM25** 👉 'bee-em-twenty-five' with **BERT** 👉 'bert' embeddings and a domain-specific classifier? No problem. Mix lexical, semantic, and learned rankers? Go ahead! There's no integration complexity - just feed it ranked lists.
 
 #### The Honest Limitations
 
-Now the trade-offs. **RRF** 👉 'ar-ar-ef' has no semantic understanding of its own - it's a pure aggregation technique. If all your input rankers miss the right answer, **RRF** 👉 'ar-ar-ef' will miss it too. The quality ceiling is determined by your weakest link. That k-parameter, usually sixty, might need tuning for your specific data distribution. And **RRF** 👉 'ar-ar-ef' doesn't use relevance scores - only ranks - so you're throwing away score magnitude information that could be useful.
+[cautiously] Now the trade-offs. **RRF** 👉 'ar-ar-ef' has no semantic understanding of its own - it's a pure aggregation technique. If all your input rankers miss the right answer, **RRF** 👉 'ar-ar-ef' will miss it too. The quality ceiling is determined by your weakest link. That k-parameter, usually sixty, might need tuning for your specific data distribution. And **RRF** 👉 'ar-ar-ef' doesn't use relevance scores - only ranks - so you're throwing away score magnitude information that could be useful.
 
 #### The Bottom Line
 
-Here's my take - **RRF** 👉 'ar-ar-ef' should be in every retrieval engineer's toolkit. Use it as your baseline. It's so easy to implement that if you can't beat it with your fancy neural fusion model, you haven't justified the complexity. For many production systems, **RRF** 👉 'ar-ar-ef' plus good input rankers is all you need!`
+[confidently] Here's my take - **RRF** 👉 'ar-ar-ef' should be in every retrieval engineer's toolkit. Use it as your baseline. [reassuringly] It's so easy to implement that if you can't beat it with your fancy neural fusion model, you haven't justified the complexity. For many production systems, **RRF** 👉 'ar-ar-ef' plus good input rankers is all you need!`
         }
       ]
     },
@@ -2133,25 +2133,25 @@ Here's my take - **RRF** 👉 'ar-ar-ef' should be in every retrieval engineer's
             </div>
           ),
           backgroundColor: '#5f1944',
-          notes: `### 27. Fusion-in-Decoder (FiD) as Re-Rank/Fusion
+          notes: `### Fusion-in-Decoder (FiD) as Re-Rank/Fusion
 
-Let's dive into **FiD** 👉 'fid' - Fusion-in-Decoder - which represents a fundamentally different approach to ranking. This isn't just a reranker; it's a complete rethinking of how we handle multiple documents!
+[excited] Let's dive into **FiD** 👉 'fid' - Fusion-in-Decoder - which represents a fundamentally different approach to ranking. [enthusiastically] This isn't just a reranker; it's a complete rethinking of how we handle multiple documents!
 
 #### The Core Architecture Innovation
 
-**FiD** 👉 'fid' takes an encoder-decoder model like **T5** 👉 'tee-five' and modifies it for multi-document scenarios. Here's the clever part - it encodes each passage independently with the query, creating separate representations. Then, in the decoder stage, it *fuses* information across all passages to generate an answer. The attention mechanism naturally learns which passages are most important, giving you implicit document ranking as a side effect!
+[lecture] **FiD** 👉 'fid' takes an encoder-decoder model like **T5** 👉 'tee-five' and modifies it for multi-document scenarios. [storytelling] Here's the clever part - it encodes each passage independently with the query, creating separate representations. Then, in the decoder stage, it *fuses* information across all passages to generate an answer. The attention mechanism naturally learns which passages are most important, giving you implicit document ranking as a side effect!
 
 #### When FiD Shines Brightest
 
-This architecture excels at multi-hop question answering. Imagine asking "Who founded company X and what year?" - one document says "John Smith founded company X" while another says "Company X was established in nineteen-ninety-five." **FiD** 👉 'fid' synthesizes both passages to answer "John Smith founded company X in nineteen-ninety-five." Traditional rerankers just pick one document; **FiD** 👉 'fid' combines evidence from multiple sources!
+[pleased] This architecture excels at multi-hop question answering. [storytelling] Imagine asking "Who founded company X and what year?" - one document says "John Smith founded company X" while another says "Company X was established in nineteen-ninety-five." **FiD** 👉 'fid' synthesizes both passages to answer "John Smith founded company X in nineteen-ninety-five." Traditional rerankers just pick one document; **FiD** 👉 'fid' combines evidence from multiple sources!
 
 #### The RAG Connection
 
-In modern **RAG** 👉 'rag' systems - that's Retrieval-Augmented Generation - **FiD** 👉 'fid' offers an elegant solution. You retrieve twenty or fifty candidate passages, and **FiD** 👉 'fid' processes them all simultaneously. The model learns which passages contain relevant information and how to combine that information. You get both a high-quality generated answer *and* document importance scores you can use for ranking!
+[confidently] In modern **RAG** 👉 'rag' systems - that's Retrieval-Augmented Generation - **FiD** 👉 'fid' offers an elegant solution. You retrieve twenty or fifty candidate passages, and **FiD** 👉 'fid' processes them all simultaneously. The model learns which passages contain relevant information and how to combine that information. You get both a high-quality generated answer *and* document importance scores you can use for ranking!
 
 #### The Reality Check
 
-Now, the trade-offs. **FiD** 👉 'fid' is computationally expensive - you're encoding every passage separately. Context length limitations apply - typically two-thousand-to-eight-thousand tokens total. And it's more complex to train and deploy than simple rerankers. But when you need genuine multi-document reasoning, **FiD** 👉 'fid' delivers results that simpler approaches can't match!`
+[cautiously] Now, the trade-offs. **FiD** 👉 'fid' is computationally expensive - you're encoding every passage separately. Context length limitations apply - typically two-thousand-to-eight-thousand tokens total. And it's more complex to train and deploy than simple rerankers. But when you need genuine multi-document reasoning, **FiD** 👉 'fid' delivers results that simpler approaches can't match!`
         },
         {
           id: 28,
@@ -2197,25 +2197,25 @@ Now, the trade-offs. **FiD** 👉 'fid' is computationally expensive - you're en
             </div>
           ),
           backgroundColor: '#5f1944',
-          notes: `### 28. FiD Example
+          notes: `### FiD Example
 
-Let me show you **FiD** 👉 'fid' solving a problem that stumps simpler rerankers - multi-hop reasoning across documents.
+[storytelling] Let me show you **FiD** 👉 'fid' solving a problem that stumps simpler rerankers - multi-hop reasoning across documents.
 
 #### The Multi-Hop Challenge
 
-The query is "Who founded X and in what year?" Notice this requires *two* pieces of information. Document A tells us "John Smith is credited as the founder of company X." Document B tells us "Company X was formally established in nineteen-ninety-five in California." Neither document alone answers the complete question!
+[lecture] The query is "Who founded X and in what year?" Notice this requires *two* pieces of information. Document A tells us "John Smith is credited as the founder of company X." Document B tells us "Company X was formally established in nineteen-ninety-five in California." Neither document alone answers the complete question!
 
 #### How FiD Solves This
 
-A traditional reranker would pick either Document A or Document B as "most relevant" and call it done. But **FiD** 👉 'fid' does something smarter. It encodes both passages independently with the query, then in the decoder stage, it *fuses* information from both sources. The attention mechanism learns that the "founder" information comes from Document A and the "year" information comes from Document B.
+[conversational] A traditional reranker would pick either Document A or Document B as "most relevant" and call it done. [excited] But **FiD** 👉 'fid' does something smarter. It encodes both passages independently with the query, then in the decoder stage, it *fuses* information from both sources. The attention mechanism learns that the "founder" information comes from Document A and the "year" information comes from Document B.
 
 #### The Generated Answer
 
-The result? **FiD** 👉 'fid' generates: "John Smith founded company X in nineteen-ninety-five." This answer synthesizes facts from both passages into a coherent response. And as a bonus, you get document salience scores - point-eight-five for Document A and point-eight-two for Document B - showing both were highly relevant to the answer generation.
+[pleased] The result? **FiD** 👉 'fid' generates: "John Smith founded company X in nineteen-ninety-five." This answer synthesizes facts from both passages into a coherent response. And as a bonus, you get document salience scores - point-eight-five for Document A and point-eight-two for Document B - showing both were highly relevant to the answer generation.
 
 #### Why This Matters
 
-This capability is crucial for complex question-answering systems. Real-world queries often require synthesizing information from multiple sources. Financial analysis needs data from multiple reports. Medical diagnosis requires combining symptoms, history, and test results. **FiD** 👉 'fid' handles this naturally, where traditional rerankers would force you to pick just one document and lose crucial information!`
+[confidently] This capability is crucial for complex question-answering systems. Real-world queries often require synthesizing information from multiple sources. Financial analysis needs data from multiple reports. Medical diagnosis requires combining symptoms, history, and test results. **FiD** 👉 'fid' handles this naturally, where traditional rerankers would force you to pick just one document and lose crucial information!`
         },
         {
           id: 29,
@@ -2263,25 +2263,25 @@ This capability is crucial for complex question-answering systems. Real-world qu
             </div>
           ),
           backgroundColor: '#5f1944',
-          notes: `### 29. FiD Strengths and Limitations
+          notes: `### FiD Strengths and Limitations
 
-Let's honestly evaluate **FiD** 👉 'fid' - where it excels and where you might want alternatives.
+[conversational] Let's honestly evaluate **FiD** 👉 'fid' - where it excels and where you might want alternatives.
 
 #### The Powerful Strengths
 
-**FiD** 👉 'fid' absolutely dominates on complex multi-document question answering tasks. Benchmark results consistently show it outperforming pipeline approaches that retrieve-then-rank-then-generate. The architecture efficiently processes twenty, fifty, even a hundred passages simultaneously - something that would be prohibitively expensive with cross-encoders processing each pair individually. And you get two capabilities in one model: answer generation *and* implicit document ranking through attention weights!
+[enthusiastically] **FiD** 👉 'fid' absolutely dominates on complex multi-document question answering tasks. Benchmark results consistently show it outperforming pipeline approaches that retrieve-then-rank-then-generate. [pleased] The architecture efficiently processes twenty, fifty, even a hundred passages simultaneously - something that would be prohibitively expensive with cross-encoders processing each pair individually. And you get two capabilities in one model: answer generation *and* implicit document ranking through attention weights!
 
 The cross-document reasoning is genuinely impressive. **FiD** 👉 'fid' can resolve contradictions, synthesize complementary information, and understand relationships between documents. When Document A says "The capital is X" but Document B says "Recent legislation moved the capital to Y," **FiD** 👉 'fid' can reason about which is current based on context clues.
 
 #### The Significant Limitations
 
-Now the hard truths. **FiD** 👉 'fid' requires substantial computational resources - you're encoding every passage through the full encoder stack. Training is complex, requiring careful tuning and significant **GPU** 👉 'gee-pee-you' time. Context length limits are real - most **FiD** 👉 'fid' implementations top out at two-thousand-to-eight-thousand tokens total across all passages. That constrains how many documents you can process or how long each can be.
+[cautiously] Now the hard truths. **FiD** 👉 'fid' requires substantial computational resources - you're encoding every passage through the full encoder stack. [sigh] Training is complex, requiring careful tuning and significant **GPU** 👉 'gee-pee-you' time. Context length limits are real - most **FiD** 👉 'fid' implementations top out at two-thousand-to-eight-thousand tokens total across all passages. That constrains how many documents you can process or how long each can be.
 
 The reranking capability, while useful, is indirect - you're extracting attention weights rather than explicit relevance scores. These scores aren't as well-calibrated as dedicated rerankers trained specifically for ranking. And implementation complexity is significant - this isn't a drop-in replacement for a simple cross-encoder.
 
 #### The Strategic Decision
 
-Use **FiD** 👉 'fid' when you genuinely need multi-document reasoning and answer generation together. If you just need ranking, simpler models are better. If you need the capability, the complexity is justified. If you don't, it's overkill!`
+[confidently] Use **FiD** 👉 'fid' when you genuinely need multi-document reasoning and answer generation together. If you just need ranking, simpler models are better. If you need the capability, the complexity is justified. If you don't, it's overkill!`
         }
       ]
     },
@@ -2357,25 +2357,25 @@ for emb in passage_embeddings:
             </div>
           ),
           backgroundColor: '#611919',
-          notes: `### 30. DPR Re-Ranker (Dense Passage Retrieval)
+          notes: `### DPR Re-Ranker (Dense Passage Retrieval)
 
-Let's talk about **DPR** 👉 'dee-pee-ar' - Dense Passage Retrieval - which pioneered the bi-encoder approach for question answering and remains highly relevant today!
+[cheerfully] Let's talk about **DPR** 👉 'dee-pee-ar' - Dense Passage Retrieval - which pioneered the bi-encoder approach for question answering and remains highly relevant today!
 
 #### The DPR Revolution
 
-Back in twenty-twenty, Facebook Research - now Meta - released **DPR** 👉 'dee-pee-ar' and it was genuinely revolutionary. Before **DPR** 👉 'dee-pee-ar', most question-answering systems relied on **BM25** 👉 'bee-em-twenty-five' for retrieval, missing semantic matches. **DPR** 👉 'dee-pee-ar' showed you could train dual **BERT** 👉 'bert' encoders - one for questions, one for passages - using contrastive learning on question-answer pairs. The result? Semantic matching that crushes keyword-only approaches!
+[excited] Back in twenty-twenty, Facebook Research - now Meta - released **DPR** 👉 'dee-pee-ar' and it was genuinely revolutionary. [lecture] Before **DPR** 👉 'dee-pee-ar', most question-answering systems relied on **BM25** 👉 'bee-em-twenty-five' for retrieval, missing semantic matches. **DPR** 👉 'dee-pee-ar' showed you could train dual **BERT** 👉 'bert' encoders - one for questions, one for passages - using contrastive learning on question-answer pairs. The result? Semantic matching that crushes keyword-only approaches!
 
 #### The Architecture Advantage
 
-Here's why **DPR** 👉 'dee-pee-ar' works so well as a reranker. You encode passages offline and cache the embeddings. At query time, you only encode the question - that's one forward pass through **BERT** 👉 'bert'. Then it's just dot products or cosine similarity to score candidates. This separate encoding is what makes it *fast* - we're talking milliseconds for scoring hundreds of passages!
+[conversational] Here's why **DPR** 👉 'dee-pee-ar' works so well as a reranker. You encode passages offline and cache the embeddings. At query time, you only encode the question - that's one forward pass through **BERT** 👉 'bert'. Then it's just dot products or cosine similarity to score candidates. [pleased] This separate encoding is what makes it *fast* - we're talking milliseconds for scoring hundreds of passages!
 
 #### When DPR Makes Perfect Sense
 
-**DPR** 👉 'dee-pee-ar' shines in open-domain question answering - think Wikipedia-scale knowledge bases. It's perfect when you're cost-sensitive or latency-constrained. If you can fine-tune on your domain-specific question-answer pairs, accuracy improves dramatically. And if you already have document embeddings for retrieval, using those same embeddings for reranking is essentially free!
+[confidently] **DPR** 👉 'dee-pee-ar' shines in open-domain question answering - think Wikipedia-scale knowledge bases. It's perfect when you're cost-sensitive or latency-constrained. If you can fine-tune on your domain-specific question-answer pairs, accuracy improves dramatically. And if you already have document embeddings for retrieval, using those same embeddings for reranking is essentially free!
 
 #### The Modern Context
 
-Today, **DPR** 👉 'dee-pee-ar' competes with newer models like **E5** 👉 'ee-five' and **BGE** 👉 'bee-gee-ee', but it's still a solid choice. The training approach - hard negatives, in-batch negatives, contrastive learning - established patterns that all modern bi-encoders follow. If you're building a question-answering system and need speed over maximum precision, **DPR** 👉 'dee-pee-ar' or its descendants should be in your toolkit!`
+[reassuringly] Today, **DPR** 👉 'dee-pee-ar' competes with newer models like **E5** 👉 'ee-five' and **BGE** 👉 'bee-gee-ee', but it's still a solid choice. The training approach - hard negatives, in-batch negatives, contrastive learning - established patterns that all modern bi-encoders follow. If you're building a question-answering system and need speed over maximum precision, **DPR** 👉 'dee-pee-ar' or its descendants should be in your toolkit!`
         },
         {
           id: 31,
@@ -2420,29 +2420,29 @@ Today, **DPR** 👉 'dee-pee-ar' competes with newer models like **E5** 👉 'ee
             </div>
           ),
           backgroundColor: '#611919',
-          notes: `### 31. DPR Example
+          notes: `### DPR Example
 
-Let me show you **DPR** 👉 'dee-pee-ar' handling a specific factual question - exactly the type of query it was designed for!
+[storytelling] Let me show you **DPR** 👉 'dee-pee-ar' handling a specific factual question - exactly the type of query it was designed for!
 
 #### The Specific Factual Query
 
-The query is "Capital gains tax allowance UK twenty-twenty-four" - a precise factual question with clear information needs: tax type, jurisdiction, year, and threshold amount. This is classic question-answering territory where **DPR** 👉 'dee-pee-ar' excels!
+[conversational] The query is "Capital gains tax allowance UK twenty-twenty-four" - a precise factual question with clear information needs: tax type, jurisdiction, year, and threshold amount. This is classic question-answering territory where **DPR** 👉 'dee-pee-ar' excels!
 
 #### The Document Candidates
 
-We have three options. Document A is a generic **UK** 👉 'you-kay' tax guide - useful background but not specific to capital gains or twenty-twenty-four. Document B covers twenty-twenty-four tax thresholds and rates - this is highly specific to both the year and the tax details we need. Document C discusses investment strategies - tangentially related but not answering the specific question.
+[lecture] We have three options. Document A is a generic **UK** 👉 'you-kay' tax guide - useful background but not specific to capital gains or twenty-twenty-four. Document B covers twenty-twenty-four tax thresholds and rates - this is highly specific to both the year and the tax details we need. Document C discusses investment strategies - tangentially related but not answering the specific question.
 
 #### How DPR Processes This
 
-**DPR** 👉 'dee-pee-ar' encodes the question: "What is the capital gains tax allowance in the **UK** 👉 'you-kay' for twenty-twenty-four?" into a dense vector that captures the semantic intent - we need a specific numeric threshold for a specific tax in a specific country for a specific year. Each document gets encoded into its own vector. Then it's simple cosine similarity between question vector and document vectors.
+[conversational] **DPR** 👉 'dee-pee-ar' encodes the question: "What is the capital gains tax allowance in the **UK** 👉 'you-kay' for twenty-twenty-four?" into a dense vector that captures the semantic intent - we need a specific numeric threshold for a specific tax in a specific country for a specific year. Each document gets encoded into its own vector. Then it's simple cosine similarity between question vector and document vectors.
 
 #### The Results
 
-Document B scores point-eight-nine - the embedding strongly aligns because it contains the exact information needed: "twenty-twenty-four," "tax," "thresholds," and "rates." Document A gets point-six-seven - it's about **UK** 👉 'you-kay' tax, so moderately relevant, but too general. Document C scores point-four-five - weakly related through "investment" and "capital" but missing the core question elements.
+[pleased] Document B scores point-eight-nine - the embedding strongly aligns because it contains the exact information needed: "twenty-twenty-four," "tax," "thresholds," and "rates." Document A gets point-six-seven - it's about **UK** 👉 'you-kay' tax, so moderately relevant, but too general. Document C scores point-four-five - weakly related through "investment" and "capital" but missing the core question elements.
 
 #### Why This Works
 
-**DPR** 👉 'dee-pee-ar' was specifically trained on question-answer pairs from datasets like Natural Questions and SQuAD. It learned to recognize question patterns like "what is [entity] in [location] for [time]" and match them to passages that answer those patterns. This targeted training makes it incredibly effective for factual **QA** 👉 'que-ay'!`
+[confidently] **DPR** 👉 'dee-pee-ar' was specifically trained on question-answer pairs from datasets like Natural Questions and SQuAD. It learned to recognize question patterns like "what is [entity] in [location] for [time]" and match them to passages that answer those patterns. This targeted training makes it incredibly effective for factual **QA** 👉 'que-ay'!`
         },
         {
           id: 32,
@@ -2489,27 +2489,27 @@ Document B scores point-eight-nine - the embedding strongly aligns because it co
             </div>
           ),
           backgroundColor: '#611919',
-          notes: `### 32. DPR Strengths and Limitations
+          notes: `### DPR Strengths and Limitations
 
-Let's be brutally honest about **DPR** 👉 'dee-pee-ar' - where it excels and where you'll hit walls.
+[conversational] Let's be brutally honest about **DPR** 👉 'dee-pee-ar' - where it excels and where you'll hit walls.
 
 #### The Battle-Tested Strengths
 
-**DPR** 👉 'dee-pee-ar' has been deployed at massive scale in production **QA** 👉 'que-ay' systems for years now. It's *fast* - we're talking five-to-ten-times faster than cross-encoders, sometimes more. You can score hundreds of candidates in milliseconds. The separate encoding architecture means document embeddings get computed once, cached, and reused for every query. That's huge for cost and latency!
+[pleased] **DPR** 👉 'dee-pee-ar' has been deployed at massive scale in production **QA** 👉 'que-ay' systems for years now. [enthusiastically] It's *fast* - we're talking five-to-ten-times faster than cross-encoders, sometimes more. You can score hundreds of candidates in milliseconds. The separate encoding architecture means document embeddings get computed once, cached, and reused for every query. That's huge for cost and latency!
 
 Integration is straightforward - every major vector database supports **DPR** 👉 'dee-pee-ar' embeddings out of the box. **Faiss** 👉 'face', **Pinecone** 👉 'pine-cone', **Weaviate** 👉 'weave-ee-ate', **Qdrant** 👉 'quad-rant' - they all work beautifully. And if you have domain-specific question-answer pairs, fine-tuning **DPR** 👉 'dee-pee-ar' can dramatically improve accuracy. Medical **QA** 👉 'que-ay'? Legal **QA** 👉 'que-ay'? Fine-tune on your data!
 
 #### The Precision Gap
 
-Now the hard truth - **DPR** 👉 'dee-pee-ar' will underperform cross-encoders on precision, typically by ten-to-twenty percent on ranking metrics. Why? No direct query-document interaction during encoding. The question vector and passage vector are created independently, so you're missing the fine-grained attention patterns that cross-encoders capture. For complex reasoning about relevance, separate encoders have a ceiling.
+[cautiously] Now the hard truth - **DPR** 👉 'dee-pee-ar' will underperform cross-encoders on precision, typically by ten-to-twenty percent on ranking metrics. Why? No direct query-document interaction during encoding. The question vector and passage vector are created independently, so you're missing the fine-grained attention patterns that cross-encoders capture. For complex reasoning about relevance, separate encoders have a ceiling.
 
 #### The Domain Drift Problem
 
-Here's a critical limitation - **DPR** 👉 'dee-pee-ar' trained on Wikipedia questions struggles with specialized domains. Ask it about obscure technical jargon, rare medical conditions, or very recent events, and accuracy drops noticeably. The fix is fine-tuning, but that requires labeled question-passage pairs from your domain. Collecting that training data isn't always feasible.
+[seriously] Here's a critical limitation - **DPR** 👉 'dee-pee-ar' trained on Wikipedia questions struggles with specialized domains. Ask it about obscure technical jargon, rare medical conditions, or very recent events, and accuracy drops noticeably. The fix is fine-tuning, but that requires labeled question-passage pairs from your domain. Collecting that training data isn't always feasible.
 
 #### The Strategic Choice
 
-Use **DPR** 👉 'dee-pee-ar' when speed and scalability matter more than absolute precision. Use it for first-stage reranking, then apply a cross-encoder to the top-ten. Or fine-tune it on your domain and enjoy both speed and accuracy. Just don't expect out-of-the-box **DPR** 👉 'dee-pee-ar' to match cross-encoder precision on specialized content!`
+[confidently] Use **DPR** 👉 'dee-pee-ar' when speed and scalability matter more than absolute precision. Use it for first-stage reranking, then apply a cross-encoder to the top-ten. Or fine-tune it on your domain and enjoy both speed and accuracy. Just don't expect out-of-the-box **DPR** 👉 'dee-pee-ar' to match cross-encoder precision on specialized content!`
         }
       ]
     },
@@ -2585,25 +2585,25 @@ Use **DPR** 👉 'dee-pee-ar' when speed and scalability matter more than absolu
             </div>
           ),
           backgroundColor: '#236521',
-          notes: `### 33. BM25 + LLM Reranking Hybrid
+          notes: `### BM25 + LLM Reranking Hybrid
 
-Now let's talk about **BM25** 👉 'bee-em-twenty-five' plus **LLM** 👉 'el-el-em' hybrid reranking - a powerful combination that's becoming increasingly popular in production systems!
+[cheerfully] Now let's talk about **BM25** 👉 'bee-em-twenty-five' plus **LLM** 👉 'el-el-em' hybrid reranking - a powerful combination that's becoming increasingly popular in production systems!
 
 #### The Best of Both Worlds Philosophy
 
-Here's the core insight - **BM25** 👉 'bee-em-twenty-five' and **LLMs** 👉 'el-el-ems' have complementary strengths. **BM25** 👉 'bee-em-twenty-five' excels at exact keyword matching - error codes, product numbers, technical acronyms. **LLMs** 👉 'el-el-ems' excel at semantic understanding - paraphrases, synonyms, contextual relevance. Why choose when you can combine both?
+[excited] Here's the core insight - **BM25** 👉 'bee-em-twenty-five' and **LLMs** 👉 'el-el-ems' have complementary strengths. [lecture] **BM25** 👉 'bee-em-twenty-five' excels at exact keyword matching - error codes, product numbers, technical acronyms. **LLMs** 👉 'el-el-ems' excel at semantic understanding - paraphrases, synonyms, contextual relevance. [playfully] Why choose when you can combine both?
 
 #### How the Pipeline Works
 
-The architecture is straightforward. First, **BM25** 👉 'bee-em-twenty-five' does initial retrieval - fast, lexical, keyword-based. This filters your million-document corpus down to maybe fifty to a hundred candidates. Then the **LLM** 👉 'el-el-em' reranks these candidates, considering both the **BM25** 👉 'bee-em-twenty-five' scores as a signal and its own semantic understanding. You can even prompt the **LLM** 👉 'el-el-em' with custom ranking criteria!
+[conversational] The architecture is straightforward. First, **BM25** 👉 'bee-em-twenty-five' does initial retrieval - fast, lexical, keyword-based. This filters your million-document corpus down to maybe fifty to a hundred candidates. Then the **LLM** 👉 'el-el-em' reranks these candidates, considering both the **BM25** 👉 'bee-em-twenty-five' scores as a signal and its own semantic understanding. You can even prompt the **LLM** 👉 'el-el-em' with custom ranking criteria!
 
 #### The Technical Domain Sweet Spot
 
-This hybrid approach absolutely shines in technical domains. Think documentation with error codes, **API** 👉 'ay-pee-eye' references, version numbers, specific function names. The query "error E-one-zero-one on firmware vee-two-point-three" needs *both* exact matching on "E-one-zero-one" and "vee-two-point-three" *and* semantic understanding of troubleshooting intent. **BM25** 👉 'bee-em-twenty-five' ensures you find documents with those exact codes. The **LLM** 👉 'el-el-em' ensures you rank the troubleshooting guide above generic error documentation.
+[enthusiastically] This hybrid approach absolutely shines in technical domains. [storytelling] Think documentation with error codes, **API** 👉 'ay-pee-eye' references, version numbers, specific function names. The query "error E-one-zero-one on firmware vee-two-point-three" needs *both* exact matching on "E-one-zero-one" and "vee-two-point-three" *and* semantic understanding of troubleshooting intent. **BM25** 👉 'bee-em-twenty-five' ensures you find documents with those exact codes. The **LLM** 👉 'el-el-em' ensures you rank the troubleshooting guide above generic error documentation.
 
 #### The Explainability Advantage
 
-Here's a bonus - this hybrid is naturally explainable! You can show users "This result scored high on keyword match *and* the **AI** 👉 'ay-eye' determined it answered your question." That transparency builds trust. The **BM25** 👉 'bee-em-twenty-five' component provides a stable, predictable baseline, while the **LLM** 👉 'el-el-em' adds nuanced understanding. It's robust to weird queries because even if the **LLM** 👉 'el-el-em' gets confused, **BM25** 👉 'bee-em-twenty-five' keeps you grounded in keyword relevance!`
+[pleased] Here's a bonus - this hybrid is naturally explainable! You can show users "This result scored high on keyword match *and* the **AI** 👉 'ay-eye' determined it answered your question." [confidently] That transparency builds trust. The **BM25** 👉 'bee-em-twenty-five' component provides a stable, predictable baseline, while the **LLM** 👉 'el-el-em' adds nuanced understanding. It's robust to weird queries because even if the **LLM** 👉 'el-el-em' gets confused, **BM25** 👉 'bee-em-twenty-five' keeps you grounded in keyword relevance!`
         },
         {
           id: 34,
@@ -2648,29 +2648,29 @@ Here's a bonus - this hybrid is naturally explainable! You can show users "This 
             </div>
           ),
           backgroundColor: '#236521',
-          notes: `### 34. BM25 + LLM Hybrid Example
+          notes: `### BM25 + LLM Hybrid Example
 
-Let me show you the hybrid approach solving a technical support query - this is exactly where it shines!
+[storytelling] Let me show you the hybrid approach solving a technical support query - this is exactly where it shines!
 
 #### The Technical Query
 
-The query is "error E-one-zero-one on firmware vee-two-point-three" - notice this has both exact identifiers and implicit intent. The user needs troubleshooting help for a specific error on a specific firmware version. This requires precision on the exact codes *and* understanding what kind of information would be helpful!
+[conversational] The query is "error E-one-zero-one on firmware vee-two-point-three" - notice this has both exact identifiers and implicit intent. The user needs troubleshooting help for a specific error on a specific firmware version. This requires precision on the exact codes *and* understanding what kind of information would be helpful!
 
 #### BM25 Initial Retrieval
 
-**BM25** 👉 'bee-em-twenty-five' does initial retrieval based on keyword matching. Document A - "E-one-zero-one error documentation" - gets retrieved because "E-one-zero-one" matches. Document B - "Firmware update vee-two-point-three release notes" - matches "vee-two-point-three" and "firmware." Document C - "E-one-zero-one troubleshooting steps" - matches "E-one-zero-one" strongly. All three get through the initial filter!
+[lecture] **BM25** 👉 'bee-em-twenty-five' does initial retrieval based on keyword matching. Document A - "E-one-zero-one error documentation" - gets retrieved because "E-one-zero-one" matches. Document B - "Firmware update vee-two-point-three release notes" - matches "vee-two-point-three" and "firmware." Document C - "E-one-zero-one troubleshooting steps" - matches "E-one-zero-one" strongly. All three get through the initial filter!
 
 #### The LLM Reranking Intelligence
 
-Now the **LLM** 👉 'el-el-em' reranks with semantic understanding. It recognizes that "error...on firmware" signals a problem-solving intent, not just information gathering. Document C - troubleshooting steps - gets boosted to point-nine-four because the **LLM** 👉 'el-el-em' understands this is *actionable* guidance for fixing the error. Document A - error documentation - scores point-seven-nine, useful but more reference than solution. Document B - release notes - drops to point-six-five because while it mentions the firmware version, it's not about fixing errors!
+[excited] Now the **LLM** 👉 'el-el-em' reranks with semantic understanding. It recognizes that "error...on firmware" signals a problem-solving intent, not just information gathering. [pleased] Document C - troubleshooting steps - gets boosted to point-nine-four because the **LLM** 👉 'el-el-em' understands this is *actionable* guidance for fixing the error. Document A - error documentation - scores point-seven-nine, useful but more reference than solution. Document B - release notes - drops to point-six-five because while it mentions the firmware version, it's not about fixing errors!
 
 #### Why the Hybrid Wins
 
-Here's the magic - **BM25** 👉 'bee-em-twenty-five' ensured we found documents with the exact codes "E-one-zero-one" and "vee-two-point-three." Pure semantic search might have missed the exact version match! But the **LLM** 👉 'el-el-em' understood that among these keyword-matched documents, the troubleshooting guide is most helpful. Pure **BM25** 👉 'bee-em-twenty-five' might have ranked generic documentation higher just because it repeated the error code more times!
+[enthusiastically] Here's the magic - **BM25** 👉 'bee-em-twenty-five' ensured we found documents with the exact codes "E-one-zero-one" and "vee-two-point-three." Pure semantic search might have missed the exact version match! But the **LLM** 👉 'el-el-em' understood that among these keyword-matched documents, the troubleshooting guide is most helpful. Pure **BM25** 👉 'bee-em-twenty-five' might have ranked generic documentation higher just because it repeated the error code more times!
 
 #### The Production Value
 
-This combination is incredibly robust. If the **LLM** 👉 'el-el-em' makes a weird judgment call, you still have solid keyword-based candidates. If **BM25** 👉 'bee-em-twenty-five' returns some noisy matches, the **LLM** 👉 'el-el-em' filters out the irrelevant ones. It's defensive programming for search!`
+[confidently] This combination is incredibly robust. If the **LLM** 👉 'el-el-em' makes a weird judgment call, you still have solid keyword-based candidates. If **BM25** 👉 'bee-em-twenty-five' returns some noisy matches, the **LLM** 👉 'el-el-em' filters out the irrelevant ones. [reassuringly] It's defensive programming for search!`
         },
         {
           id: 35,
@@ -2717,27 +2717,27 @@ This combination is incredibly robust. If the **LLM** 👉 'el-el-em' makes a we
             </div>
           ),
           backgroundColor: '#236521',
-          notes: `### 35. BM25 + LLM Hybrid Strengths and Limitations
+          notes: `### BM25 + LLM Hybrid Strengths and Limitations
 
-Let's evaluate the **BM25** 👉 'bee-em-twenty-five' plus **LLM** 👉 'el-el-em' hybrid honestly - both its impressive capabilities and real operational challenges.
+[conversational] Let's evaluate the **BM25** 👉 'bee-em-twenty-five' plus **LLM** 👉 'el-el-em' hybrid honestly - both its impressive capabilities and real operational challenges.
 
 #### The Proven Strengths
 
-This hybrid approach shows remarkable robustness in production. You get the best of both worlds - keyword precision *and* semantic understanding. Real-world queries are messy - sometimes keyword-heavy, sometimes semantic, often both - and this architecture handles them all gracefully. The resilience to weird queries is fantastic. If someone searches with obscure jargon or a completely novel phrase, **BM25** 👉 'bee-em-twenty-five' keeps you grounded in term overlap while the **LLM** 👉 'el-el-em' attempts semantic understanding.
+[enthusiastically] This hybrid approach shows remarkable robustness in production. You get the best of both worlds - keyword precision *and* semantic understanding. [pleased] Real-world queries are messy - sometimes keyword-heavy, sometimes semantic, often both - and this architecture handles them all gracefully. The resilience to weird queries is fantastic. If someone searches with obscure jargon or a completely novel phrase, **BM25** 👉 'bee-em-twenty-five' keeps you grounded in term overlap while the **LLM** 👉 'el-el-em' attempts semantic understanding.
 
 The explainability is genuinely valuable. You can tell users "This document matched your keywords *and* our **AI** 👉 'ay-eye' determined it answers your question" - that transparency builds trust. And the system is naturally adaptable - tune the **BM25** 👉 'bee-em-twenty-five' parameters for your corpus, adjust the **LLM** 👉 'el-el-em' prompts for your domain, modify the fusion weights based on query type!
 
 #### The Operational Challenges
 
-Now the hard truths. You're running a multi-component pipeline, which means complexity. Development overhead, testing overhead, monitoring overhead - you need to track both **BM25** 👉 'bee-em-twenty-five' performance *and* **LLM** 👉 'el-el-em' performance. The fusion weights - how much to trust **BM25** 👉 'bee-em-twenty-five' versus the **LLM** 👉 'el-el-em' - require careful tuning. Get it wrong and you're either over-relying on keywords or over-trusting the **LLM** 👉 'el-el-em'.
+[cautiously] Now the hard truths. You're running a multi-component pipeline, which means complexity. [sigh] Development overhead, testing overhead, monitoring overhead - you need to track both **BM25** 👉 'bee-em-twenty-five' performance *and* **LLM** 👉 'el-el-em' performance. The fusion weights - how much to trust **BM25** 👉 'bee-em-twenty-five' versus the **LLM** 👉 'el-el-em' - require careful tuning. Get it wrong and you're either over-relying on keywords or over-trusting the **LLM** 👉 'el-el-em'.
 
 #### The Cost Reality
 
-The **LLM** 👉 'el-el-em' reranking pass adds real latency - typically two-hundred-to-five-hundred milliseconds - and **API** 👉 'ay-pee-eye' costs per query. For high-volume systems, those costs add up quickly. And you have multiple failure modes - the **BM25** 👉 'bee-em-twenty-five' index could be stale, the **LLM** 👉 'el-el-em' **API** 👉 'ay-pee-eye' could timeout, the fusion logic could have bugs. More components mean more things to monitor and fix!
+[seriously] The **LLM** 👉 'el-el-em' reranking pass adds real latency - typically two-hundred-to-five-hundred milliseconds - and **API** 👉 'ay-pee-eye' costs per query. For high-volume systems, those costs add up quickly. And you have multiple failure modes - the **BM25** 👉 'bee-em-twenty-five' index could be stale, the **LLM** 👉 'el-el-em' **API** 👉 'ay-pee-eye' could timeout, the fusion logic could have bugs. More components mean more things to monitor and fix!
 
 #### The Strategic Assessment
 
-Use this hybrid when you need both keyword precision and semantic understanding - technical docs, legal content, specialized domains. The complexity is justified when simpler approaches fail. But if pure semantic search or pure keyword search works well enough, don't overcomplicate! Monitor your metrics, A-B test aggressively, and make sure the gains justify the operational overhead!`
+[confidently] Use this hybrid when you need both keyword precision and semantic understanding - technical docs, legal content, specialized domains. [reassuringly] The complexity is justified when simpler approaches fail. But if pure semantic search or pure keyword search works well enough, don't overcomplicate! Monitor your metrics, A-B test aggressively, and make sure the gains justify the operational overhead!`
         }
       ]
     },
@@ -2873,29 +2873,29 @@ Use this hybrid when you need both keyword precision and semantic understanding 
             </div>
           ),
           backgroundColor: '#481967',
-          notes: `### 36. Model Comparison at a Glance
+          notes: `### Model Comparison at a Glance
 
-Alright, let's pull everything together and give you the practical comparison you can actually use when making architecture decisions!
+[cheerfully] Alright, let's pull everything together and give you the practical comparison you can actually use when making architecture decisions!
 
 #### Reading the Comparison Table
 
-This table distills eleven models into their essential characteristics. Notice the pattern - high accuracy models tend to be slower, while fast models sacrifice some precision. There's no free lunch! But the "Best For" column is crucial - it tells you which model matches which use case. Cross-encoders for precision-critical work, bi-encoders for high-throughput, **RRF** 👉 'ar-ar-ef' for simple fusion, **LLMs** 👉 'el-el-ems' for complex reasoning.
+[conversational] This table distills eleven models into their essential characteristics. Notice the pattern - high accuracy models tend to be slower, while fast models sacrifice some precision. [playfully] There's no free lunch! [confidently] But the "Best For" column is crucial - it tells you which model matches which use case. Cross-encoders for precision-critical work, bi-encoders for high-throughput, **RRF** 👉 'ar-ar-ef' for simple fusion, **LLMs** 👉 'el-el-ems' for complex reasoning.
 
 #### The Performance Metrics Reality
 
-Let's talk real numbers. Adding a reranking pass costs you two-hundred-to-five-hundred milliseconds of latency - that's significant! But you gain twenty-to-thirty-five percent precision improvement, which can be transformative for user experience. The optimal pattern? Retrieve twenty-to-fifty candidates with fast methods, then rerank down to five-to-ten with your best model. This balances cost, latency, and accuracy beautifully!
+[lecture] Let's talk real numbers. Adding a reranking pass costs you two-hundred-to-five-hundred milliseconds of latency - that's significant! [pleased] But you gain twenty-to-thirty-five percent precision improvement, which can be transformative for user experience. The optimal pattern? Retrieve twenty-to-fifty candidates with fast methods, then rerank down to five-to-ten with your best model. That's the balance between cost, latency, and accuracy!
 
 #### The Decision Tree
 
-I've included a decision flowchart to help you navigate model selection. Start with your requirements - do you need maximum accuracy? Are you throughput-constrained? Do you have **GPU** 👉 'gee-pee-you' resources? Can you pre-compute embeddings? The flowchart guides you through these decisions to land on the right model for your specific constraints!
+[reassuringly] I've included a decision flowchart to help you navigate model selection. Start with your requirements - do you need maximum accuracy? Are you throughput-constrained? Do you have **GPU** 👉 'gee-pee-you' resources? Can you pre-compute embeddings? The flowchart guides you through these decisions to land on the right model for your specific constraints!
 
 #### The Practical Approach
 
-Here's my advice - start with a simple baseline like **RRF** 👉 'ar-ar-ef' or **E5** 👉 'ee-five'. Measure your metrics. Then upgrade incrementally. Maybe add a lightweight cross-encoder for the top-ten results. Or combine **BM25** 👉 'bee-em-twenty-five' with dense retrieval. Don't jump straight to the most complex solution - build up only as needed!
+[warmly] Here's my advice - start with a simple baseline like **RRF** 👉 'ar-ar-ef' or **E5** 👉 'ee-five'. Measure your metrics. Then upgrade incrementally. Maybe add a lightweight cross-encoder for the top-ten results. Or combine **BM25** 👉 'bee-em-twenty-five' with dense retrieval. Don't jump straight to the most complex solution - build up only as needed!
 
 #### Context Matters
 
-Remember, these comparisons are guidelines, not absolute rules. Your specific corpus, query distribution, latency requirements, and budget will shift the optimal choice. A medical **QA** 👉 'que-ay' system has different needs than an e-commerce search. A research prototype has different constraints than a production system serving millions. Always A-B test in your actual environment!`
+[firmly] Remember, these comparisons are guidelines, not absolute rules. Your specific corpus, query distribution, latency requirements, and budget will shift the optimal choice. [storytelling] A medical **QA** 👉 'que-ay' system has different needs than an e-commerce search. A research prototype has different constraints than a production system serving millions. Always A-B test in your actual environment!`
         },
         {
           id: 37,
@@ -3006,33 +3006,33 @@ Remember, these comparisons are guidelines, not absolute rules. Your specific co
             </div>
           ),
           backgroundColor: '#481967',
-          notes: `### 37. Quick Recommendations by Use Case
+          notes: `### Quick Recommendations by Use Case
 
-Let me give you the practical cheat sheet - which models to reach for in specific scenarios you'll actually encounter!
+[cheerfully] Let me give you the practical cheat sheet - which models to reach for in specific scenarios you'll actually encounter!
 
 #### Default General Purpose
 
-For most people starting out, **ms-marco-MiniLM-L-six-vee-two** 👉 'mini-el-em-el-six-vee-two' is your best friend. This cross-encoder hits the sweet spot of accuracy and speed. The pattern? Retrieve twenty-to-fifty candidates with your first-stage retrieval, then rerank down to top-five with this model. It's battle-tested, well-supported, and just works!
+[confidently] For most people starting out, **ms-marco-MiniLM-L-six-vee-two** 👉 'mini-el-em-el-six-vee-two' is your best friend. This cross-encoder hits the sweet spot of accuracy and speed. [reassuringly] The pattern? Retrieve twenty-to-fifty candidates with your first-stage retrieval, then rerank down to top-five with this model. It's battle-tested, well-supported, and just works!
 
 #### Multilingual Scenarios
 
-Going global? **BGE** 👉 'bee-gee-ee' rerankers handle dozens of languages efficiently. For rare languages or when you need complex reasoning across language barriers, **LLM** 👉 'el-el-em'-as-ranker with **GPT-four** 👉 'gee-pee-tee-four' or **Claude** 👉 'claude' becomes worth the cost. The multilingual capabilities of modern **LLMs** 👉 'el-el-ems' are genuinely impressive!
+[excited] Going global? **BGE** 👉 'bee-gee-ee' rerankers handle dozens of languages efficiently. For rare languages or when you need complex reasoning across language barriers, **LLM** 👉 'el-el-em'-as-ranker with **GPT-four** 👉 'gee-pee-tee-four' or **Claude** 👉 'claude' becomes worth the cost. [pleased] The multilingual capabilities of modern **LLMs** 👉 'el-el-ems' are genuinely impressive!
 
 #### High Throughput and Cost Optimization
 
-Serving thousands of queries per second? Cost is your constraint? Go with bi-encoders like **E5** 👉 'ee-five' or **DPR** 👉 'dee-pee-ar' for fast semantic reranking. Add **RRF** 👉 'ar-ar-ef' fusion with **BM25** 👉 'bee-em-twenty-five' for robustness. This combination scales beautifully and keeps costs reasonable even at massive scale!
+[conversational] Serving thousands of queries per second? Cost is your constraint? Go with bi-encoders like **E5** 👉 'ee-five' or **DPR** 👉 'dee-pee-ar' for fast semantic reranking. Add **RRF** 👉 'ar-ar-ef' fusion with **BM25** 👉 'bee-em-twenty-five' for robustness. This combination scales beautifully and keeps costs reasonable even at massive scale!
 
 #### Technical Documentation and Long Content
 
-For technical docs, **ColBERT** 👉 'col-bert' or **ColBERTv2** 👉 'col-bert-vee-two' excels with its token-level matching. When specific terminology matters - **API** 👉 'ay-pee-eye' function names, error codes, technical acronyms - that fine-grained matching captures nuances other models miss!
+[enthusiastically] For technical docs, **ColBERT** 👉 'col-bert' or **ColBERTv2** 👉 'col-bert-vee-two' excels with its token-level matching. When specific terminology matters - **API** 👉 'ay-pee-eye' function names, error codes, technical acronyms - that fine-grained matching captures nuances other models miss!
 
 #### Complex Reasoning Needs
 
-When you need genuine multi-hop reasoning - combining information from multiple sources - **FiD** 👉 'fid' or **LLM** 👉 'el-el-em'-as-ranker are your tools. Yes, they're expensive. Yes, they're slow. But for complex question answering where relationships between documents matter, nothing else delivers. Consider distilling the **LLM** 👉 'el-el-em' behavior into a smaller model for production!
+[seriously] When you need genuine multi-hop reasoning - combining information from multiple sources - **FiD** 👉 'fid' or **LLM** 👉 'el-el-em'-as-ranker are your tools. Yes, they're expensive. Yes, they're slow. [firmly] But for complex question answering where relationships between documents matter, nothing else delivers. Consider distilling the **LLM** 👉 'el-el-em' behavior into a smaller model for production!
 
 #### The Hybrid Baseline
 
-Can't decide? Start with the hybrid robust baseline - **BM25** 👉 'bee-em-twenty-five' plus dense retrieval with **RRF** 👉 'ar-ar-ef' fusion, then add a lightweight cross-encoder for top-ten refinement. This architecture handles diverse query types gracefully!`
+[warmly] Can't decide? Start with the hybrid robust baseline - **BM25** 👉 'bee-em-twenty-five' plus dense retrieval with **RRF** 👉 'ar-ar-ef' fusion, then add a lightweight cross-encoder for top-ten refinement. This architecture handles diverse query types gracefully!`
         },
         {
           id: 38,
@@ -3097,35 +3097,35 @@ Can't decide? Start with the hybrid robust baseline - **BM25** 👉 'bee-em-twen
             </div>
           ),
           backgroundColor: '#481967',
-          notes: `### 38. Operational Tips & Trade-offs
+          notes: `### Operational Tips & Trade-offs
 
-Let's wrap up with the practical wisdom that separates successful deployments from science projects - the operational reality of running rerankers in production!
+[warmly] Let's wrap up with the practical wisdom that separates successful deployments from science projects - the operational reality of running rerankers in production!
 
 #### Operational Excellence Matters
 
-First, batch processing is your friend. Don't score query-document pairs one at a time - batch them! Most reranking models handle batches efficiently, amortizing the overhead of model loading and **GPU** 👉 'gee-pee-you' setup. Use async processing for parallel scoring when you have multiple independent queries. This alone can cut your latency in half!
+[enthusiastically] First, batch processing is your friend. Don't score query-document pairs one at a time - batch them! Most reranking models handle batches efficiently, amortizing the overhead of model loading and **GPU** 👉 'gee-pee-you' setup. Use async processing for parallel scoring when you have multiple independent queries. [pleased] This alone can cut your latency in half!
 
 Caching is criminally underutilized. If you're seeing the same queries repeatedly - and you are, trust me - cache those reranking results! Popular queries like "how to reset password" don't need reranking every single time. Just remember to invalidate your cache when the underlying corpus changes, or you'll serve stale results.
 
 #### The Truncation Strategy
 
-Here's a subtlety most people miss - *how* you truncate matters. For technical documentation or code, truncating from the middle preserves both context at the start and the answer at the end. For narrative content, truncating from the end works fine. Test both strategies on your content!
+[conversational] Here's a subtlety most people miss - *how* you truncate matters. For technical documentation or code, truncating from the middle preserves both context at the start and the answer at the end. For narrative content, truncating from the end works fine. Test both strategies on your content!
 
 #### A/B Testing Is Non-Negotiable
 
-You *must* A-B test your rerankers. What works on benchmarks might underperform on your specific domain. Run experiments comparing models, monitor both latency and relevance metrics, and let the data guide your decisions. And test per domain - your technical docs might need different reranking than your marketing content!
+[firmly] You *must* A-B test your rerankers. What works on benchmarks might underperform on your specific domain. Run experiments comparing models, monitor both latency and relevance metrics, and let the data guide your decisions. And test per domain - your technical docs might need different reranking than your marketing content!
 
 #### The Incremental Complexity Philosophy
 
-Start simple! Begin with **RRF** 👉 'ar-ar-ef' or a lightweight cross-encoder. Get that working, measure your baseline, then incrementally add complexity only where justified. Many teams over-engineer from day one and regret it. Build up, don't build down!
+[reassuringly] Start simple! Begin with **RRF** 👉 'ar-ar-ef' or a lightweight cross-encoder. Get that working, measure your baseline, then incrementally add complexity only where justified. Many teams over-engineer from day one and regret it. Build up, don't build down!
 
 #### Trade-offs Are Real
 
-Every architecture decision is a trade-off. Latency versus accuracy - there's no escaping it. Reranking more documents gives higher recall but with diminishing returns after about fifty candidates. And here's the secret - investing in better first-stage retrieval often beats adding heavier reranking! The better your initial candidates, the easier the reranker's job.
+[lecture] Every architecture decision is a trade-off. Latency versus accuracy - there's no escaping it. Reranking more documents gives higher recall but with diminishing returns after about fifty candidates. [confidently] And here's the secret - investing in better first-stage retrieval often beats adding heavier reranking! The better your initial candidates, the easier the reranker's job.
 
 #### The Final Word
 
-Start with **ms-marco-MiniLM-L-six-vee-two** 👉 'mini-el-em-el-six-vee-two', measure everything, iterate based on your specific requirements. That's how you build production systems that actually work!`
+[inspiringly] Start with **ms-marco-MiniLM-L-six-vee-two** 👉 'mini-el-em-el-six-vee-two', measure everything, iterate based on your specific requirements. That's how you build production systems that actually work!`
         }
       ]
     }
