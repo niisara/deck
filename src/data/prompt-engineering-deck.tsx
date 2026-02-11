@@ -2546,7 +2546,7 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
               <GSAPAnimated animation="slideInLeft" delay={0.6}>
                 <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
-              <GSAPStaggerList stagger={0.15} duration={0.6}>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Correct result from executed program</li>
                   <li>Exact computation for arithmetic and logic</li>
@@ -2628,7 +2628,7 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
               <GSAPAnimated animation="bounceIn" delay={0}>
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
-              <GSAPStaggerList stagger={0.2} duration={0.7}>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Execution sandboxing required for security</li>
                   <li>Runtime errors can fail the entire process</li>
