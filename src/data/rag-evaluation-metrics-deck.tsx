@@ -1253,10 +1253,10 @@ That wraps up Context Overlap Score. Next, we'll move to Context Relevance Score
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
-                <div><li>Improves precision by identifying and removing irrelevant context</li></div>
-                <div><li>Reduces hallucinations caused by misleading information</li></div>
-                <div><li>Enables continuous monitoring without reference answers</li></div>
-                <div><li>Helps identify specific queries with poor retrieval performance</li></div>
+                <li>Improves precision by identifying and removing irrelevant context</li>
+                <li>Reduces hallucinations caused by misleading information</li>
+                <li>Enables continuous monitoring without reference answers</li>
+                <li>Helps identify specific queries with poor retrieval performance</li>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
@@ -1339,10 +1339,10 @@ where score_i ∈ [0,1] for each chunk`}
                 <h3>Target Values</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.5}>
-                <div><li>≥0.70 considered good performance</li></div>
-                <div><li>≥0.80 indicates strong retrieval alignment</li></div>
-                <div><li>Scores &lt;0.50 often signal problematic retrieval</li></div>
-                <div><li>Thresholds may vary by domain complexity</li></div>
+                <li>≥0.70 considered good performance</li>
+                <li>≥0.80 indicates strong retrieval alignment</li>
+                <li>Scores &lt;0.50 often signal problematic retrieval</li>
+                <li>Thresholds may vary by domain complexity</li>
               </GSAPStaggerList>
             </div>
           ),
@@ -1386,9 +1386,9 @@ That's the mechanics of Context Relevance Scoring. Up next, we'll see it in acti
                 <p>LLM relevance scores for 3 retrieved chunks:</p>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.7}>
-                <div><li>Chunk 1 (password reset): 0.9</li></div>
-                <div><li>Chunk 2 (account security): 0.8</li></div>
-                <div><li>Chunk 3 (billing info): 0.3</li></div>
+                <li>Chunk 1 (password reset): 0.9</li>
+                <li>Chunk 2 (account security): 0.8</li>
+                <li>Chunk 3 (billing info): 0.3</li>
               </GSAPStaggerList>
               <GSAPAnimated animation="scaleIn" delay={0.6}>
                 <p><strong>Context Relevance = (0.9 + 0.8 + 0.3) / 3 = 0.67</strong></p>
@@ -1439,10 +1439,10 @@ That's Context Relevance Score in action. Next, we'll explore the considerations
                 <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.6}>
-                <div><li>Improves precision by identifying and removing irrelevant context</li></div>
-                <div><li>Reduces hallucinations caused by misleading information</li></div>
-                <div><li>Enables continuous monitoring without reference answers</li></div>
-                <div><li>Helps identify specific queries with poor retrieval performance</li></div>
+                <li>Improves precision by identifying and removing irrelevant context</li>
+                <li>Reduces hallucinations caused by misleading information</li>
+                <li>Enables continuous monitoring without reference answers</li>
+                <li>Helps identify specific queries with poor retrieval performance</li>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInTop" delay={0.55}>
@@ -1474,10 +1474,10 @@ That's Context Relevance Score in action. Next, we'll explore the considerations
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} duration={0.5}>
-                <div><li>LLM judge quality and consistency can vary across models</li></div>
-                <div><li>Adds latency and cost for evaluation (requires additional LLM calls)</li></div>
-                <div><li>May not align perfectly with human judgment</li></div>
-                <div><li>Requires careful prompt engineering to get reliable scores</li></div>
+                <li>LLM judge quality and consistency can vary across models</li>
+                <li>Adds latency and cost for evaluation (requires additional LLM calls)</li>
+                <li>May not align perfectly with human judgment</li>
+                <li>Requires careful prompt engineering to get reliable scores</li>
               </GSAPStaggerList>
             </div>
           ),
@@ -1525,10 +1525,10 @@ That's Context Relevance Score—your automated relevance quality inspector. Up 
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} duration={0.6}>
-                <div><li>Lower hallucination rates directly increase trust in the system</li></div>
-                <div><li>Reduces misinformation risk and potential legal/reputation damage</li></div>
-                <div><li>Critical for safety-sensitive domains where incorrect information can cause harm</li></div>
-                <div><li>Enables reliable citation of source materials</li></div>
+                <li>Lower hallucination rates directly increase trust in the system</li>
+                <li>Reduces misinformation risk and potential legal/reputation damage</li>
+                <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
+                <li>Enables reliable citation of source materials</li>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="bounceIn" delay={0.7}>
@@ -1620,9 +1620,9 @@ That's Hallucination Rate—your trustworthiness barometer. Next up, we'll dive 
                 <h3>Target Values</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} duration={0.5}>
-                <div><li>&lt;5% for high-stakes applications (medical, legal, financial)</li></div>
-                <div><li>&lt;10-15% for general-purpose applications</li></div>
-                <div><li>Zero tolerance for critical facts in regulated domains</li></div>
+                <li>&lt;5% for high-stakes applications (medical, legal, financial)</li>
+                <li>&lt;10-15% for general-purpose applications</li>
+                <li>Zero tolerance for critical facts in regulated domains</li>
               </GSAPStaggerList>
             </div>
           ),
@@ -1720,10 +1720,10 @@ That's Hallucination Rate in action. Next, we'll discuss the broader considerati
                 <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} duration={0.6}>
-                <div><li>Lower hallucination rates directly increase trust in the system</li></div>
-                <div><li>Reduces misinformation risk and potential legal/reputation damage</li></div>
-                <div><li>Critical for safety-sensitive domains where incorrect information can cause harm</li></div>
-                <div><li>Enables reliable citation of source materials</li></div>
+                <li>Lower hallucination rates directly increase trust in the system</li>
+                <li>Reduces misinformation risk and potential legal/reputation damage</li>
+                <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
+                <li>Enables reliable citation of source materials</li>
               </GSAPStaggerList>
 
               <GSAPAnimated animation="slideInTop" delay={0.6}>
@@ -1760,10 +1760,10 @@ That's Hallucination Rate in action. Next, we'll discuss the broader considerati
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} duration={0.5}>
-                <div><li>Claim extraction can be challenging and inconsistent</li></div>
-                <div><li>Not all unsupported claims are harmful — some may be reasonable inferences</li></div>
-                <div><li>Detection quality depends on the evaluation method used</li></div>
-                <div><li>May penalize valid general knowledge not in the specific context</li></div>
+                <li>Claim extraction can be challenging and inconsistent</li>
+                <li>Not all unsupported claims are harmful — some may be reasonable inferences</li>
+                <li>Detection quality depends on the evaluation method used</li>
+                <li>May penalize valid general knowledge not in the specific context</li>
               </GSAPStaggerList>
             </div>
           ),
