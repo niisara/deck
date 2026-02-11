@@ -2637,7 +2637,7 @@ With Answer Completeness, we've completed our tour of the key generation quality
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.2}>
                 <h3>Definition</h3>
-                <p>Evaluates whether responses avoid vague or generic phrasing, instead providing concrete, actionable details that are specific to the query context.</p>
+                <p>Measures whether responses provide concrete, actionable details specific to the query context rather than vague or generic phrasing.</p>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.4}>
@@ -2869,7 +2869,7 @@ The key is balance and context awareness. Monitor specificity alongside answer l
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
               <GSAPAnimated animation="bounceIn" duration={1} delay={0.1}>
                 <h3>Definition</h3>
-                <p>Measures the percentage of irrelevant tokens in retrieved context (context pollution) that contribute to prompt inefficiency.</p>
+                <p>Measures the percentage of irrelevant tokens in retrieved context (context pollution).</p>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.4}>
