@@ -67,17 +67,17 @@ export const parentChildRetrievalDeck: Deck = {
           backgroundImage: 'https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80',
           notes: `### Parent–Child Retrieval Designs for RAG
 
-Welcome to this comprehensive guide on parent-child retrieval patterns for RAG 👉 'rag' systems! Today we're diving into eleven powerful design patterns that can dramatically improve your retrieval-augmented generation pipelines by solving one of the most common problems in production RAG 👉 'rag' systems: providing the right amount of context at the right time.
+[energetic] Welcome to this comprehensive guide on parent-child retrieval patterns for RAG 👉 'rag' systems! [excited] Today we're diving into eleven powerful design patterns that can dramatically improve your retrieval-augmented generation pipelines by solving one of the most common problems in production RAG 👉 'rag' systems: providing the right amount of context at the right time.
 
 #### 🎯 What This Deck Covers
 
-We'll explore eleven different design patterns that help you attach parent context to child chunks, and this is absolutely crucial for building reliable systems. When you search through documents, you often find a small relevant chunk, but that chunk by itself lacks the surrounding context needed for accurate generation. These patterns solve that problem by systematically connecting fine-grained search results with their broader governing context. This approach reduces hallucination because the LLM 👉 'ell-ell-em' has better grounding in the actual source material. It improves correctness because answers are drawn from complete context rather than isolated snippets. And it gives you better overall context because you're combining fine-grained evidence with the broader narrative that makes it meaningful.
+[conversational] We'll explore eleven different design patterns that help you attach parent context to child chunks, and this is absolutely crucial for building reliable systems. When you search through documents, you often find a small relevant chunk, but that chunk by itself lacks the surrounding context needed for accurate generation. [confidently] These patterns solve that problem by systematically connecting fine-grained search results with their broader governing context. This approach reduces hallucination because the LLM 👉 'ell-ell-em' has better grounding in the actual source material. It improves correctness because answers are drawn from complete context rather than isolated snippets. And it gives you better overall context because you're combining fine-grained evidence with the broader narrative that makes it meaningful.
 
 #### 👥 Target Audience
 
-This deck is specifically designed for machine learning engineers who are building RAG 👉 'rag' systems in production, data engineers who are working on document processing and chunking pipelines, and applied researchers who are exploring novel retrieval architectures. If you're working on any system that retrieves information to ground language model generation, these patterns will give you concrete approaches you can implement immediately.
+[warmly] This deck is specifically designed for machine learning engineers who are building RAG 👉 'rag' systems in production, data engineers who are working on document processing and chunking pipelines, and applied researchers who are exploring novel retrieval architectures. If you're working on any system that retrieves information to ground language model generation, these patterns will give you concrete approaches you can implement immediately.
 
-Let's dive into the patterns and discover which ones will work best for your use case!`
+[enthusiastically] Let's dive into the patterns and discover which ones will work best for your use case!`
         },
         {
           id: 2,
@@ -114,15 +114,15 @@ Let's dive into the patterns and discover which ones will work best for your use
           backgroundColor: '#1a1a2e',
           notes: `### What You'll Learn
 
-Let me give you a quick roadmap of what we'll cover today so you know exactly what to expect from this presentation.
+[conversational] Let me give you a quick roadmap of what we'll cover today so you know exactly what to expect from this presentation.
 
 #### 📚 The Structure
 
-We're going to walk through eleven actionable patterns for implementing parent-child retrieval in your RAG 👉 'rag' systems. Each pattern is presented in a consistent cheat-sheet format that makes it easy to compare and contrast different approaches. For every pattern, you'll see the goal and what problem it solves, giving you immediate clarity on when you might need this pattern. We'll explain exactly how it works under the hood, so you understand the mechanism. You'll learn when to use it with specific scenarios where this pattern shines. We'll show you what data structure you need to support the pattern in your storage layer. You'll get a step-by-step implementation workflow that you can follow to build it yourself. And critically, we'll discuss the pros and cons so you understand the trade-offs you're making.
+[lecture] We're going to walk through eleven actionable patterns for implementing parent-child retrieval in your RAG 👉 'rag' systems. [confidently] Each pattern is presented in a consistent cheat-sheet format that makes it easy to compare and contrast different approaches. For every pattern, you'll see the goal and what problem it solves, giving you immediate clarity on when you might need this pattern. We'll explain exactly how it works under the hood, so you understand the mechanism. You'll learn when to use it with specific scenarios where this pattern shines. We'll show you what data structure you need to support the pattern in your storage layer. You'll get a step-by-step implementation workflow that you can follow to build it yourself. And critically, we'll discuss the pros and cons so you understand the trade-offs you're making.
 
 #### 🎯 What You'll Walk Away With
 
-By the end of this deck, you'll have eleven patterns in your toolkit, a clear selection guide to help you choose the right pattern for your specific use case, and practical implementation tips that will help you deploy these patterns in production systems. This isn't just theory, it's a practical playbook you can use immediately.`
+[pleased] By the end of this deck, you'll have eleven patterns in your toolkit, a clear selection guide to help you choose the right pattern for your specific use case, and practical implementation tips that will help you deploy these patterns in production systems. [inspiringly] This isn't just theory, it's a practical playbook you can use immediately.`
         },
         {
           id: 3,
@@ -191,15 +191,15 @@ By the end of this deck, you'll have eleven patterns in your toolkit, a clear se
           backgroundColor: '#16213e',
           notes: `### Table of Contents
 
-Here's your roadmap through all eleven patterns we'll explore today. You can see we've organized them in a logical progression, starting with simpler foundational patterns and building up to more sophisticated approaches.
+[cheerfully] Here's your roadmap through all eleven patterns we'll explore today. [conversational] You can see we've organized them in a logical progression, starting with simpler foundational patterns and building up to more sophisticated approaches.
 
 #### 🗺️ The Journey Ahead
 
-We'll start with pattern one, parent-child chunking, which is the foundational pattern that many others build upon. Then we'll move to section-header anchored retrieval, which uses document structure to provide context. Pattern three introduces outline-based tree retrieval for hierarchically structured documents. Pattern four covers top-k parent expansion, where you retrieve multiple parent contexts. Pattern five brings in sibling-aware retrieval to include neighboring chunks. We'll explore windowed retrieval in pattern six for sliding context windows. Pattern seven introduces semantic hierarchy retrieval using topic clustering. Pattern eight shows dynamic context folding for adaptive context sizing. Pattern nine combines dense retrieval with BM25 👉 'bee-em-twenty-five' for hybrid approaches. Pattern ten covers parent re-ranking using cross-encoders for quality scoring. And finally, pattern eleven explores graph and knowledge graph parent retrieval for richly connected documents.
+[lecture] We'll start with pattern one, parent-child chunking, which is the foundational pattern that many others build upon. Then we'll move to section-header anchored retrieval, which uses document structure to provide context. Pattern three introduces outline-based tree retrieval for hierarchically structured documents. Pattern four covers top-k parent expansion, where you retrieve multiple parent contexts. Pattern five brings in sibling-aware retrieval to include neighboring chunks. We'll explore windowed retrieval in pattern six for sliding context windows. Pattern seven introduces semantic hierarchy retrieval using topic clustering. Pattern eight shows dynamic context folding for adaptive context sizing. Pattern nine combines dense retrieval with BM25 👉 'bee-em-twenty-five' for hybrid approaches. Pattern ten covers parent re-ranking using cross-encoders for quality scoring. And finally, pattern eleven explores graph and knowledge graph parent retrieval for richly connected documents.
 
 #### 🎯 Plus a Summary
 
-After walking through all eleven patterns, we'll wrap up with a comprehensive summary and selection guide to help you choose the right pattern or combination of patterns for your specific use case. Each pattern has its strengths, and understanding when to use which approach is just as important as understanding how they work.`
+[warmly] After walking through all eleven patterns, we'll wrap up with a comprehensive summary and selection guide to help you choose the right pattern or combination of patterns for your specific use case. Each pattern has its strengths, and understanding when to use which approach is just as important as understanding how they work.`
         }
       ]
     },
@@ -258,13 +258,13 @@ After walking through all eleven patterns, we'll wrap up with a comprehensive su
           ),
           backgroundColor: '#0f3460',
           notes: `### Pattern 1 - Parent–Child Chunking (Hierarchical Retrieval)
-Welcome to our first retrieval pattern! This is the foundational approach to parent-child retrieval, and it's where most teams start when building RAG 👉 'rag' systems with hierarchical context.
+[excited] Welcome to our first retrieval pattern! [conversational] This is the foundational approach to parent-child retrieval, and it's where most teams start when building RAG 👉 'rag' systems with hierarchical context.
 
 ####  The Goal
-The main goal here is to **reduce hallucination** by ensuring that whenever we retrieve a fine-grained piece of evidence, which we call the child chunk, we also include its governing section, the parent. Think of it like this: when you quote a sentence from a legal document, you need to know which section it came from to understand the constraints and rules that apply. This pairing of child and parent provides the necessary context for accurate, grounded answers that don't make things up.
+[confidently] The main goal here is to **reduce hallucination** by ensuring that whenever we retrieve a fine-grained piece of evidence, which we call the child chunk, we also include its governing section, the parent. [storytelling] Think of it like this: when you quote a sentence from a legal document, you need to know which section it came from to understand the constraints and rules that apply. This pairing of child and parent provides the necessary context for accurate, grounded answers that don't make things up.
 
 ####  How It Works
-Let's walk through the process. First, you parse your documents into a hierarchy, breaking them down into their natural structure. Then you create small child chunks, typically between two hundred and four hundred tokens, which are perfect for precise retrieval. At the same time, you store the parent sections, which are larger at eight hundred to fifteen hundred tokens, along with metadata that links children to their parents. When a query comes in, you retrieve the matching child chunks, and then you automatically attach their parent sections to provide that critical governing context.
+[lecture] Let's walk through the process. First, you parse your documents into a hierarchy, breaking them down into their natural structure. Then you create small child chunks, typically between two hundred and four hundred tokens, which are perfect for precise retrieval. At the same time, you store the parent sections, which are larger at eight hundred to fifteen hundred tokens, along with metadata that links children to their parents. When a query comes in, you retrieve the matching child chunks, and then you automatically attach their parent sections to provide that critical governing context.
 
 \`\`\`mermaid
 flowchart LR
@@ -279,10 +279,10 @@ flowchart LR
     style G fill:#ffb74d,color:#000
 \`\`\`
 
-This flowchart shows how documents flow through the parser, splitting into parent sections and child chunks, with children going into the vector index for retrieval.
+[conversational] This flowchart shows how documents flow through the parser, splitting into parent sections and child chunks, with children going into the vector index for retrieval.
 
 ####  When to Use This
-This pattern works best for structured documents where section context defines constraints and rules. We're talking about policies, legal documents, SOPs 👉 'ess-oh-pees', standard operating procedures, technical manuals, and compliance documentation. Anywhere that a piece of text needs its governing section to be properly understood, this pattern shines.
+[confidently] This pattern works best for structured documents where section context defines constraints and rules. We're talking about policies, legal documents, SOPs 👉 'ess-oh-pees', standard operating procedures, technical manuals, and compliance documentation. Anywhere that a piece of text needs its governing section to be properly understood, this pattern shines.
 
 Now let's look at the implementation details and trade-offs for this pattern.`
         },
@@ -338,21 +338,21 @@ Now let's look at the implementation details and trade-offs for this pattern.`
           ),
           backgroundColor: '#0f3460',
           notes: `### Pattern 1 - Implementation & Trade-offs
-Now let's dive into the practical implementation details and the trade-offs you'll encounter when deploying this pattern in production.
+[lecture] Now let's dive into the practical implementation details and the trade-offs you'll encounter when deploying this pattern in production.
 
 ####  Data Structure Needed
-You'll need to design your data structure to support this hierarchical relationship. Each child chunk needs a unique identifier, called the child underscore ID, which you'll use for retrieval. Then you need a parent underscore ID field that references which parent section this child belongs to. It's also helpful to store the parent underscore title for display and debugging purposes. Don't forget the level field, which tracks how deep in the hierarchy this chunk sits, and an order field to maintain the sequence of chunks within their parent section. These fields work together to reconstruct the full context when needed.
+[conversational] You'll need to design your data structure to support this hierarchical relationship. Each child chunk needs a unique identifier, called the child underscore ID, which you'll use for retrieval. Then you need a parent underscore ID field that references which parent section this child belongs to. It's also helpful to store the parent underscore title for display and debugging purposes. Don't forget the level field, which tracks how deep in the hierarchy this chunk sits, and an order field to maintain the sequence of chunks within their parent section. These fields work together to reconstruct the full context when needed.
 
 ####  Implementation Workflow
-Let's walk through the implementation steps. First, you parse the document to build a tree structure that captures the natural hierarchy. Then you chunk it into children at two hundred to four hundred tokens, which is small enough for precise matching, and parents at eight hundred to fifteen hundred tokens, which provides sufficient context. Here's the key efficiency trick: you only embed the children, not the parents, because you're searching against children and then just attaching parents afterward. When a query comes in, you retrieve your top-k children from the vector index, then you attach their parents using the metadata, and finally you deduplicate any parents that appear multiple times. Simple and effective.
+[confidently] Let's walk through the implementation steps. First, you parse the document to build a tree structure that captures the natural hierarchy. Then you chunk it into children at two hundred to four hundred tokens, which is small enough for precise matching, and parents at eight hundred to fifteen hundred tokens, which provides sufficient context. Here's the key efficiency trick: you only embed the children, not the parents, because you're searching against children and then just attaching parents afterward. When a query comes in, you retrieve your top-k children from the vector index, then you attach their parents using the metadata, and finally you deduplicate any parents that appear multiple times. Simple and effective.
 
 ####  Pros
-The good stuff: This pattern is **simple to implement** without requiring complex infrastructure. You get **strong grounding** without adding architectural complexity, and it provides a **good baseline correctness** that's hard to beat for structured documents. Most teams can get this running in a few days.
+[pleased] The good stuff: This pattern is **simple to implement** without requiring complex infrastructure. You get **strong grounding** without adding architectural complexity, and it provides a **good baseline correctness** that's hard to beat for structured documents. Most teams can get this running in a few days.
 
 ####  Cons
-The problems: You'll need **larger context windows** because you're sending both child and parent text to the language model, which can hit token limits quickly. If your document parsing is noisy or makes mistakes, you risk **attaching the wrong parent** to a child, which can actually make things worse by providing misleading context. Also, this pattern doesn't naturally capture **cross-section relationships** where information spans multiple parents or siblings.
+[cautiously] The problems: You'll need **larger context windows** because you're sending both child and parent text to the language model, which can hit token limits quickly. If your document parsing is noisy or makes mistakes, you risk **attaching the wrong parent** to a child, which can actually make things worse by providing misleading context. Also, this pattern doesn't naturally capture **cross-section relationships** where information spans multiple parents or siblings.
 
-With those trade-offs in mind, let's move on to our second pattern, which takes a different approach to anchoring context.`
+[conversational] With those trade-offs in mind, let's move on to our second pattern, which takes a different approach to anchoring context.`
         }
       ]
     },
@@ -408,15 +408,15 @@ With those trade-offs in mind, let's move on to our second pattern, which takes 
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 2 - Section-Header Anchored Retrieval
 
-Now let's look at our second pattern, which is lightweight but remarkably effective for well-structured documents. This is one of those patterns that gives you a lot of value for relatively little implementation complexity.
+[conversational] Now let's look at our second pattern, which is lightweight but remarkably effective for well-structured documents. [pleased] This is one of those patterns that gives you a lot of value for relatively little implementation complexity.
 
 #### 🎯 The Goal
 
-The goal here is to reduce misinterpretation by always providing header context alongside your retrieved chunks. Think about a chunk that says "the maximum limit is five hundred." That statement means completely different things depending on whether it appears under the header "API 👉 'ay-pee-eye' Rate Limits" versus "User Account Limits" versus "Database Connection Pool Size." Without that header context, the language model might make completely incorrect assumptions about what limit we're talking about.
+[lecture] The goal here is to reduce misinterpretation by always providing header context alongside your retrieved chunks. [storytelling] Think about a chunk that says "the maximum limit is five hundred." That statement means completely different things depending on whether it appears under the header "API 👉 'ay-pee-eye' Rate Limits" versus "User Account Limits" versus "Database Connection Pool Size." [cautiously] Without that header context, the language model might make completely incorrect assumptions about what limit we're talking about.
 
 #### 📊 Visual Flow
 
-Let me show you how this pattern works visually:
+[conversational] Let me show you how this pattern works visually:
 
 \`\`\`mermaid
 flowchart LR
@@ -431,11 +431,11 @@ This diagram shows the flow from a raw chunk to finding its nearest header, buil
 
 #### ⚙️ How It Works
 
-During your parsing phase, you need to capture three key pieces of information for each chunk. First, identify the nearest header for that chunk, which is usually the last heading that appeared before the chunk in the document. Second, capture the full breadcrumb path showing the hierarchical structure, like "Installation" followed by "Windows" followed by "Prerequisites." Third, optionally capture a one to two sentence abstract or summary of that section. Then on retrieval, you simply prepend this header context to the chunk before sending it to the language model.
+[lecture] During your parsing phase, you need to capture three key pieces of information for each chunk. First, identify the nearest header for that chunk, which is usually the last heading that appeared before the chunk in the document. Second, capture the full breadcrumb path showing the hierarchical structure, like "Installation" followed by "Windows" followed by "Prerequisites." Third, optionally capture a one to two sentence abstract or summary of that section. Then on retrieval, you simply prepend this header context to the chunk before sending it to the language model.
 
 #### 🕐 When to Use This?
 
-This pattern is perfect for documents with clear heading structures. Think wikis where every section has a title, product documentation that's well organized with headings and subheadings, technical knowledge bases with structured articles, and any content where the headings actually provide meaningful context about what follows.`
+[confidently] This pattern is perfect for documents with clear heading structures. Think wikis where every section has a title, product documentation that's well organized with headings and subheadings, technical knowledge bases with structured articles, and any content where the headings actually provide meaningful context about what follows.`
         },
         {
           id: 7,
@@ -489,25 +489,25 @@ This pattern is perfect for documents with clear heading structures. Think wikis
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 2 - Implementation & Trade-offs
 
-Let's talk about how to actually implement this pattern and what trade-offs you're making when you choose it.
+[conversational] Let's talk about how to actually implement this pattern and what trade-offs you're making when you choose it.
 
 #### 📊 Data Structure Needed
 
-For your storage layer, you need to store several pieces of metadata with each chunk. You'll need the header text itself, which is the actual text of the heading. You'll need the header path, which is the full breadcrumb showing the hierarchy, something like "Installation" followed by "Windows" followed by "Prerequisites." Store the header offset, which is the position in the original document, so you can maintain proper ordering. And optionally, you might want to store a header summary, which is a one to two sentence abstract of that section that can provide even more context.
+[lecture] For your storage layer, you need to store several pieces of metadata with each chunk. You'll need the header text itself, which is the actual text of the heading. You'll need the header path, which is the full breadcrumb showing the hierarchy, something like "Installation" followed by "Windows" followed by "Prerequisites." Store the header offset, which is the position in the original document, so you can maintain proper ordering. And optionally, you might want to store a header summary, which is a one to two sentence abstract of that section that can provide even more context.
 
 #### 🔧 Implementation Workflow
 
-The implementation is refreshingly straightforward. During your parsing phase, as you process each chunk, you identify and capture the nearest header and its full path through the document structure. Then at retrieval time, when a chunk is selected as relevant, you simply attach the header, the path, and optionally that one to two sentence abstract before passing everything to the language model. It's a simple augmentation step that happens right before generation.
+[confidently] The implementation is refreshingly straightforward. During your parsing phase, as you process each chunk, you identify and capture the nearest header and its full path through the document structure. Then at retrieval time, when a chunk is selected as relevant, you simply attach the header, the path, and optionally that one to two sentence abstract before passing everything to the language model. It's a simple augmentation step that happens right before generation.
 
 #### ✅ Pros
 
-This pattern has some really compelling advantages. The implementation overhead is very low because you're just capturing metadata during parsing and prepending it during retrieval. It's fantastic for interpretability because users can actually see the path, which helps them understand where information came from. And it's very efficient in terms of tokens because headers are typically short, so you're not adding massive amounts of text to your context.
+[pleased] This pattern has some really compelling advantages. The implementation overhead is very low because you're just capturing metadata during parsing and prepending it during retrieval. It's fantastic for interpretability because users can actually see the path, which helps them understand where information came from. And it's very efficient in terms of tokens because headers are typically short, so you're not adding massive amounts of text to your context.
 
 #### ⚠️ Cons
 
-However, there are limitations you need to be aware of. This pattern doesn't work well when headings are sparse or poorly written. If your document has huge sections with only occasional headings, you're not getting much value. If the headings are misleading or vague, like just "Overview" or "Details," they might actually hurt quality rather than help. And critically, this pattern is not suitable for highly unstructured text like conversation transcripts, chat logs, or free-form notes where there simply aren't meaningful headings to anchor to.
+[cautiously] However, there are limitations you need to be aware of. This pattern doesn't work well when headings are sparse or poorly written. If your document has huge sections with only occasional headings, you're not getting much value. If the headings are misleading or vague, like just "Overview" or "Details," they might actually hurt quality rather than help. [disappointed] And critically, this pattern is not suitable for highly unstructured text like conversation transcripts, chat logs, or free-form notes where there simply aren't meaningful headings to anchor to.
 
-Now that we understand header-based anchoring, let's move to a more sophisticated tree-based approach in pattern three.`
+[conversational] Now that we understand header-based anchoring, let's move to a more sophisticated tree-based approach in pattern three.`
         }
       ]
     },
@@ -567,11 +567,11 @@ Now that we understand header-based anchoring, let's move to a more sophisticate
           backgroundColor: '#16213e',
           notes: `### Pattern 3 - Outline-Based Tree Retrieval
 
-Pattern three takes us into tree-based structures, and this is ideal for deeply nested documents where preserving the full path context really matters.
+[conversational] Pattern three takes us into tree-based structures, and this is ideal for deeply nested documents where preserving the full path context really matters.
 
 #### 🎯 The Goal
 
-The goal here is to preserve the complete narrative hierarchy by including the entire path from the document root all the way down to the matched leaf chunk. This ensures that no contextual constraints are missed. Imagine you're retrieving a specific requirement from a technical standard. That requirement might be constrained by its section, which is constrained by its chapter, which is constrained by the document scope. By including all ancestors, you get the complete context chain.
+[lecture] The goal here is to preserve the complete narrative hierarchy by including the entire path from the document root all the way down to the matched leaf chunk. This ensures that no contextual constraints are missed. [storytelling] Imagine you're retrieving a specific requirement from a technical standard. That requirement might be constrained by its section, which is constrained by its chapter, which is constrained by the document scope. [confidently] By including all ancestors, you get the complete context chain.
 
 #### 📊 Visual Flow
 
@@ -590,15 +590,15 @@ flowchart TD
     style H fill:#4fc3f7,color:#000
 \`\`\`
 
-This diagram shows how when a leaf chunk matches your query, you don't just return that chunk. Instead, you traverse upward through the tree, including all ancestor nodes from the root down to provide complete hierarchical context.
+[conversational] This diagram shows how when a leaf chunk matches your query, you don't just return that chunk. Instead, you traverse upward through the tree, including all ancestor nodes from the root down to provide complete hierarchical context.
 
 #### ⚙️ How It Works
 
-You build an explicit tree structure from your document outline during the preprocessing phase. Each node in the tree represents a section or subsection of your document, and leaf nodes contain the actual content chunks. When a child chunk matches your query, you traverse upward through the tree and include all ancestor nodes in the context you send to the language model. This gives you the full narrative path that governs that chunk.
+[lecture] You build an explicit tree structure from your document outline during the preprocessing phase. Each node in the tree represents a section or subsection of your document, and leaf nodes contain the actual content chunks. When a child chunk matches your query, you traverse upward through the tree and include all ancestor nodes in the context you send to the language model. This gives you the full narrative path that governs that chunk.
 
 #### 🕐 When to Use This?
 
-This pattern is perfect for several types of documents. Long PDFs with multiple nesting levels really benefit from this approach. Textbooks with chapters that contain sections that contain subsections are ideal candidates. Technical standards documents where requirements inherit constraints from higher levels work beautifully with this pattern. And any design documentation with deep hierarchical structure will see improvements with outline-based tree retrieval.`
+[confidently] This pattern is perfect for several types of documents. Long PDFs with multiple nesting levels really benefit from this approach. Textbooks with chapters that contain sections that contain subsections are ideal candidates. Technical standards documents where requirements inherit constraints from higher levels work beautifully with this pattern. And any design documentation with deep hierarchical structure will see improvements with outline-based tree retrieval.`
         },
         {
           id: 9,
@@ -652,25 +652,25 @@ This pattern is perfect for several types of documents. Long PDFs with multiple 
           backgroundColor: '#16213e',
           notes: `### Pattern 3 - Implementation & Trade-offs
 
-Now let's talk about actually building this tree-based system and the trade-offs you'll encounter.
+[conversational] Now let's talk about actually building this tree-based system and the trade-offs you'll encounter.
 
 #### 📊 Data Structure Needed
 
-You need to build a proper tree structure in your storage layer. Each node needs a unique node ID that you can reference. Store the parent ID to link each node to its parent, creating the tree structure. Include the level or depth in the tree, so you know how far from the root each node sits. And maintain an order field that captures the sequence among siblings, so you can preserve the original document ordering. You'll embed the leaf nodes and optionally embed internal nodes as well if you want to support queries that match section summaries directly.
+[lecture] You need to build a proper tree structure in your storage layer. Each node needs a unique node ID that you can reference. Store the parent ID to link each node to its parent, creating the tree structure. Include the level or depth in the tree, so you know how far from the root each node sits. And maintain an order field that captures the sequence among siblings, so you can preserve the original document ordering. You'll embed the leaf nodes and optionally embed internal nodes as well if you want to support queries that match section summaries directly.
 
 #### 🔧 Implementation Workflow
 
-First, during preprocessing, you build the outline tree by parsing your document structure. You embed the leaf chunks and optionally embed the internal nodes. Then at query time, you retrieve matching leaves using vector similarity search. For each matching leaf, you traverse upward and include all ancestors from that leaf to the root. You need to budget your tokens carefully because deep trees can create long paths. And finally, you deduplicate any parent nodes that appear in multiple paths to avoid repetition.
+[confidently] First, during preprocessing, you build the outline tree by parsing your document structure. You embed the leaf chunks and optionally embed the internal nodes. Then at query time, you retrieve matching leaves using vector similarity search. For each matching leaf, you traverse upward and include all ancestors from that leaf to the root. [cautiously] You need to budget your tokens carefully because deep trees can create long paths. And finally, you deduplicate any parent nodes that appear in multiple paths to avoid repetition.
 
 #### ✅ Pros
 
-This pattern provides excellent structural grounding. The language model gets complete context about where information sits in the document hierarchy. You get very coherent answers for complex queries because the full narrative path is preserved. And this pattern is fantastic for multi-hop reasoning where the answer requires understanding relationships across different levels of the hierarchy.
+[pleased] This pattern provides excellent structural grounding. The language model gets complete context about where information sits in the document hierarchy. You get very coherent answers for complex queries because the full narrative path is preserved. And this pattern is fantastic for multi-hop reasoning where the answer requires understanding relationships across different levels of the hierarchy.
 
 #### ⚠️ Cons
 
-The main challenge is token consumption. Deep trees can include many ancestor nodes, and each ancestor adds tokens to your context. You need careful preprocessing to build and maintain the tree structure, which adds implementation complexity. And there's ongoing tree maintenance overhead if your documents change frequently, because you need to rebuild or update the tree structure to reflect those changes.
+[concerned] The main challenge is token consumption. Deep trees can include many ancestor nodes, and each ancestor adds tokens to your context. You need careful preprocessing to build and maintain the tree structure, which adds implementation complexity. And there's ongoing tree maintenance overhead if your documents change frequently, because you need to rebuild or update the tree structure to reflect those changes.
 
-With tree-based retrieval covered, let's explore pattern four, which expands multiple parent levels for even richer context.`
+[conversational] With tree-based retrieval covered, let's explore pattern four, which expands multiple parent levels for even richer context.`
         }
       ]
     },
@@ -732,11 +732,11 @@ With tree-based retrieval covered, let's explore pattern four, which expands mul
           backgroundColor: '#0f3460',
           notes: `### Pattern 4 - Top-k Parent Expansion
 
-When one parent level isn't enough to capture all the governing context, pattern four shows you how to expand to multiple levels in the hierarchy.
+[conversational] When one parent level isn't enough to capture all the governing context, pattern four shows you how to expand to multiple levels in the hierarchy.
 
 #### 🎯 The Goal
 
-Sometimes constraints and context exist at multiple levels of your document hierarchy. A specific clause might be modified by its immediate section, but also by the chapter that section sits in, and even by the document preamble or scope statement at the very top. This pattern captures all that relevant governing context by including multiple parent levels, ensuring you don't miss any cascading constraints.
+[lecture] Sometimes constraints and context exist at multiple levels of your document hierarchy. [storytelling] A specific clause might be modified by its immediate section, but also by the chapter that section sits in, and even by the document preamble or scope statement at the very top. [confidently] This pattern captures all that relevant governing context by including multiple parent levels, ensuring you don't miss any cascading constraints.
 
 #### 📊 Visual Flow
 
@@ -757,15 +757,15 @@ flowchart TB
     style D fill:#ffb74d,color:#000
 \`\`\`
 
-This diagram shows how a single child chunk connects to multiple parent levels, with all levels combining into the final context package.
+[conversational] This diagram shows how a single child chunk connects to multiple parent levels, with all levels combining into the final context package.
 
 #### ⚙️ How It Works
 
-For each retrieved child chunk, you climb up the hierarchy and add up to k parent levels to your context. So you might include the immediate parent section, the grandparent chapter, and the great-grandparent document scope. You can score-weight these parents by their level importance, giving more weight to closer parents. And critically, you need to respect your token budget to avoid overwhelming the language model with too much context.
+[lecture] For each retrieved child chunk, you climb up the hierarchy and add up to k parent levels to your context. So you might include the immediate parent section, the grandparent chapter, and the great-grandparent document scope. You can score-weight these parents by their level importance, giving more weight to closer parents. [cautiously] And critically, you need to respect your token budget to avoid overwhelming the language model with too much context.
 
 #### 🕐 When to Use This?
 
-This pattern is ideal for deeply nested documents where constraints cascade from multiple levels. Think legal documents where a clause is qualified by section notes, chapter exceptions, and document-wide definitions. Or technical specifications where requirements inherit conditions from multiple hierarchical levels. Anywhere you have rich nesting with meaningful context at each level, top-k parent expansion can help.`
+[confidently] This pattern is ideal for deeply nested documents where constraints cascade from multiple levels. Think legal documents where a clause is qualified by section notes, chapter exceptions, and document-wide definitions. Or technical specifications where requirements inherit conditions from multiple hierarchical levels. Anywhere you have rich nesting with meaningful context at each level, top-k parent expansion can help.`
         },
         {
           id: 11,
@@ -819,25 +819,25 @@ This pattern is ideal for deeply nested documents where constraints cascade from
           backgroundColor: '#0f3460',
           notes: `### Pattern 4 - Implementation & Trade-offs
 
-Let's discuss how to implement multi-level parent expansion and what trade-offs you're accepting with this approach.
+[conversational] Let's discuss how to implement multi-level parent expansion and what trade-offs you're accepting with this approach.
 
 #### 📊 Data Structure Needed
 
-Your storage needs to track the full ancestry chain. Store the parent ID chain showing the complete path from each node up to the root. Include the level depth for each node so you can allocate your token budget intelligently, perhaps limiting how many levels you include based on available tokens. And maintain level weights, which are scoring priors that let you weight closer parents more heavily than distant ones when combining context.
+[lecture] Your storage needs to track the full ancestry chain. Store the parent ID chain showing the complete path from each node up to the root. Include the level depth for each node so you can allocate your token budget intelligently, perhaps limiting how many levels you include based on available tokens. And maintain level weights, which are scoring priors that let you weight closer parents more heavily than distant ones when combining context.
 
 #### 🔧 Implementation Workflow
 
-At retrieval time, you first retrieve your child chunks using standard vector search. Then for each child, you add parents up to k levels, using a token budget heuristic to decide how many levels you can afford. You score-combine the child's relevance score with your parent-level priors, so you can rank results considering both how well the child matched and how important its parents are. Finally, deduplicate any parents that appear in multiple expansion paths to avoid sending the same parent text multiple times.
+[confidently] At retrieval time, you first retrieve your child chunks using standard vector search. Then for each child, you add parents up to k levels, using a token budget heuristic to decide how many levels you can afford. You score-combine the child's relevance score with your parent-level priors, so you can rank results considering both how well the child matched and how important its parents are. Finally, deduplicate any parents that appear in multiple expansion paths to avoid sending the same parent text multiple times.
 
 #### ✅ Pros
 
-This pattern gives you high recall of governing context because you're including multiple levels of hierarchy. It's robust to mis-leveling in your document structure, because even if you got the immediate parent wrong, you're also including grandparents and great-grandparents. And you get high context recall, meaning you're unlikely to miss important qualifying information that constrains how to interpret the child chunk.
+[pleased] This pattern gives you high recall of governing context because you're including multiple levels of hierarchy. It's robust to mis-leveling in your document structure, because even if you got the immediate parent wrong, you're also including grandparents and great-grandparents. And you get high context recall, meaning you're unlikely to miss important qualifying information that constrains how to interpret the child chunk.
 
 #### ⚠️ Cons
 
-The primary downside is this pattern is token-heavy. Multiple parent levels mean you're sending a lot of text to your language model. There's a risk of including irrelevant parents, especially at higher levels that might be too general to be helpful. And you need careful budget management to avoid either hitting token limits or wasting tokens on low-value parent text. Balancing completeness with efficiency is the key challenge here.
+[cautiously] The primary downside is this pattern is token-heavy. Multiple parent levels mean you're sending a lot of text to your language model. [concerned] There's a risk of including irrelevant parents, especially at higher levels that might be too general to be helpful. And you need careful budget management to avoid either hitting token limits or wasting tokens on low-value parent text. Balancing completeness with efficiency is the key challenge here.
 
-Now let's shift from vertical hierarchy to horizontal relationships with pattern five.`
+[conversational] Now let's shift from vertical hierarchy to horizontal relationships with pattern five.`
         }
       ]
     },
@@ -896,11 +896,11 @@ Now let's shift from vertical hierarchy to horizontal relationships with pattern
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 5 - Sibling-Aware Retrieval
 
-For sequential content, neighboring chunks matter just as much as parent context. Pattern five addresses this by including sibling chunks around your matched result.
+[conversational] For sequential content, neighboring chunks matter just as much as parent context. [excited] Pattern five addresses this by including sibling chunks around your matched result.
 
 #### 🎯 The Goal
 
-The goal is to maintain coherence across adjacent content in your documents. Think about step three in a procedure. It makes very little sense without understanding step two that came before and step four that comes after. A checklist item depends on understanding its neighbors. This pattern includes neighboring siblings to provide complete sequential context around your matched chunk.
+[confidently] The goal is to maintain coherence across adjacent content in your documents. [storytelling] Think about step three in a procedure. It makes very little sense without understanding step two that came before and step four that comes after. A checklist item depends on understanding its neighbors. [lecture] This pattern includes neighboring siblings to provide complete sequential context around your matched chunk.
 
 #### 📊 Visual Flow
 
@@ -918,15 +918,15 @@ flowchart LR
     style C fill:#4fc3f7,color:#000
 \`\`\`
 
-This diagram shows that when you match a chunk, you don't just include its parent. You also include the previous sibling and next sibling chunks that share the same parent, giving you the full sequential flow.
+[conversational] This diagram shows that when you match a chunk, you don't just include its parent. You also include the previous sibling and next sibling chunks that share the same parent, giving you the full sequential flow.
 
 #### ⚙️ How It Works
 
-When a chunk matches your query, you look up its siblings, which are other chunks that share the same parent. You include N chunks before and after the matched chunk. You need to respect section boundaries so you don't accidentally pull in siblings from a completely different section. And you merge any overlapping spans if multiple matched chunks have overlapping sibling sets.
+[lecture] When a chunk matches your query, you look up its siblings, which are other chunks that share the same parent. You include N chunks before and after the matched chunk. [cautiously] You need to respect section boundaries so you don't accidentally pull in siblings from a completely different section. And you merge any overlapping spans if multiple matched chunks have overlapping sibling sets.
 
 #### 🕐 When to Use This?
 
-This pattern is perfect for step-by-step procedures where each step builds on previous ones. It works great for checklists where items are related sequentially. Code documentation that walks through a process benefits from this approach. And numbered lists where the sequence matters are ideal candidates for sibling-aware retrieval.`
+[confidently] This pattern is perfect for step-by-step procedures where each step builds on previous ones. It works great for checklists where items are related sequentially. Code documentation that walks through a process benefits from this approach. And numbered lists where the sequence matters are ideal candidates for sibling-aware retrieval.`
         },
         {
           id: 13,
@@ -980,23 +980,23 @@ This pattern is perfect for step-by-step procedures where each step builds on pr
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 5 - Implementation & Trade-offs
 
-Let's look at how to implement sibling-aware retrieval and what trade-offs come with this horizontal context expansion.
+[lecture] Let's look at how to implement sibling-aware retrieval and what trade-offs come with this horizontal context expansion.
 
 #### 📊 Data Structure Needed
 
-You need to store sibling relationships explicitly in your data structure. Maintain previous ID and next ID fields that create direct links between adjacent chunks. Include a sibling order field that captures the position in the sequence, so you know which chunks come before and after. And store section boundary markers so you know when to stop traversing siblings, preventing you from accidentally including chunks from completely different sections.
+[conversational] You need to store sibling relationships explicitly in your data structure. Maintain previous ID and next ID fields that create direct links between adjacent chunks. Include a sibling order field that captures the position in the sequence, so you know which chunks come before and after. And store section boundary markers so you know when to stop traversing siblings, preventing you from accidentally including chunks from completely different sections.
 
 #### 🔧 Implementation Workflow
 
-When you get a child chunk hit from your retrieval, you add N siblings before and after that chunk, going up to either a section boundary or your token limit, whichever comes first. Then you merge and deduplicate any overlapping spans. This can happen when multiple retrieved chunks are close to each other and have overlapping sibling sets. You want to avoid sending duplicate text to your language model.
+[confidently] When you get a child chunk hit from your retrieval, you add N siblings before and after that chunk, going up to either a section boundary or your token limit, whichever comes first. Then you merge and deduplicate any overlapping spans. [conversational] This can happen when multiple retrieved chunks are close to each other and have overlapping sibling sets. You want to avoid sending duplicate text to your language model.
 
 #### ✅ Pros
 
-This pattern provides much better continuity in your retrieved context. You're not just getting isolated chunks, you're getting the natural flow of content. It dramatically improves answers that require sequence context, like understanding multi-step processes or following an argument that builds across paragraphs. And it catches prerequisite context that might appear in the chunk right before your match.
+[pleased] This pattern provides much better continuity in your retrieved context. You're not just getting isolated chunks, you're getting the natural flow of content. It dramatically improves answers that require sequence context, like understanding multi-step processes or following an argument that builds across paragraphs. And it catches prerequisite context that might appear in the chunk right before your match.
 
 #### ⚠️ Cons
 
-The main risk is that you may pull irrelevant neighbors. Not all adjacent chunks are actually related to the query. This pattern assumes sequential relevance, which isn't always true. It increases latency because you need extra lookups to fetch sibling chunks. And it increases context size, using more tokens than just returning the matched chunk alone. You're making a bet that the extra tokens spent on siblings will improve answer quality enough to justify the cost.
+[cautiously] The main risk is that you may pull irrelevant neighbors. Not all adjacent chunks are actually related to the query. [disappointed] This pattern assumes sequential relevance, which isn't always true. It increases latency because you need extra lookups to fetch sibling chunks. And it increases context size, using more tokens than just returning the matched chunk alone. [conversational] You're making a bet that the extra tokens spent on siblings will improve answer quality enough to justify the cost.
 
 Having explored sibling relationships, let's look at pattern six, which takes a simpler approach to expanding context with sliding windows.`
         }
@@ -1058,11 +1058,11 @@ Having explored sibling relationships, let's look at pattern six, which takes a 
           backgroundColor: '#16213e',
           notes: `### Pattern 6 - Windowed Retrieval
 
-Pattern six is the simplest form of context expansion. You just grab more text around your match using a sliding window approach.
+[playful] Pattern six is the simplest form of context expansion. You just grab more text around your match using a sliding window approach.
 
 #### 🎯 The Goal
 
-The goal is to capture local context beyond chunk edges without the complexity or overhead of building tree structures or tracking parent-child relationships. Sometimes you just need a bit more text on either side of your matched chunk to provide adequate context, and a simple window expansion gives you that without any fancy data structures.
+[conversational] The goal is to capture local context beyond chunk edges without the complexity or overhead of building tree structures or tracking parent-child relationships. [lighthearted] Sometimes you just need a bit more text on either side of your matched chunk to provide adequate context, and a simple window expansion gives you that without any fancy data structures.
 
 #### 📊 Visual Flow
 
@@ -1081,15 +1081,15 @@ flowchart LR
     style C fill:#ffb74d,color:#000
 \`\`\`
 
-This diagram shows how a matched chunk expands symmetrically to include windows before and after, combining all three pieces into the final expanded context.
+[conversational] This diagram shows how a matched chunk expands symmetrically to include windows before and after, combining all three pieces into the final expanded context.
 
 #### ⚙️ How It Works
 
-You store character or token offsets for each chunk in your index. Then on retrieval, you get the matched chunk's start and end offsets. You expand by W tokens or characters in each direction, so if your chunk is at positions one thousand to fifteen hundred, and W is two hundred, you expand to positions eight hundred to seventeen hundred. Then you fetch that expanded window from your document store and handle any overlaps if multiple chunks have overlapping windows.
+[lecture] You store character or token offsets for each chunk in your index. Then on retrieval, you get the matched chunk's start and end offsets. You expand by W tokens or characters in each direction, so if your chunk is at positions one thousand to fifteen hundred, and W is two hundred, you expand to positions eight hundred to seventeen hundred. Then you fetch that expanded window from your document store and handle any overlaps if multiple chunks have overlapping windows.
 
 #### 🕐 When to Use This?
 
-This pattern is ideal for linear prose without clear hierarchical structure. Meeting transcripts where there aren't meaningful section breaks work well with windowed retrieval. Articles with weak or nonexistent headings benefit from this approach. And whenever you need simplicity and don't want to invest in building elaborate parent-child structures, windowed retrieval gives you a quick win with minimal implementation complexity.`
+[confidently] This pattern is ideal for linear prose without clear hierarchical structure. Meeting transcripts where there aren't meaningful section breaks work well with windowed retrieval. Articles with weak or nonexistent headings benefit from this approach. [pleased] And whenever you need simplicity and don't want to invest in building elaborate parent-child structures, windowed retrieval gives you a quick win with minimal implementation complexity.`
         },
         {
           id: 15,
@@ -1142,23 +1142,23 @@ This pattern is ideal for linear prose without clear hierarchical structure. Mee
           backgroundColor: '#16213e',
           notes: `### Pattern 6 - Implementation & Trade-offs
 
-Let's discuss the implementation details and trade-offs for windowed retrieval, which is refreshingly simple compared to our previous patterns.
+[conversational] Let's discuss the implementation details and trade-offs for windowed retrieval, which is refreshingly simple compared to our previous patterns.
 
 #### 📊 Data Structure Needed
 
-Your data structure requirements are minimal. You just need start offset and end offset for each chunk, tracking where it sits in the original document. Store a document ID if you're supporting multiple documents, so you know which document to fetch the expanded window from. That's really all you need, no parent IDs, no sibling links, no tree structures.
+[pleased] Your data structure requirements are minimal. You just need start offset and end offset for each chunk, tracking where it sits in the original document. Store a document ID if you're supporting multiple documents, so you know which document to fetch the expanded window from. [lighthearted] That's really all you need, no parent IDs, no sibling links, no tree structures.
 
 #### 🔧 Implementation Workflow
 
-During chunking, you record the character or token offsets for each chunk as you create it. Then on retrieval, when you match a chunk, you compute an expanded window by subtracting W from the start position and adding W to the end position. You fetch that expanded text range from your document store and merge any overlapping windows if you have multiple nearby matches. It's a straightforward offset-based expansion.
+[lecture] During chunking, you record the character or token offsets for each chunk as you create it. Then on retrieval, when you match a chunk, you compute an expanded window by subtracting W from the start position and adding W to the end position. You fetch that expanded text range from your document store and merge any overlapping windows if you have multiple nearby matches. [conversational] It's a straightforward offset-based expansion.
 
 #### ✅ Pros
 
-The beauty of this pattern is its extreme simplicity. Implementation is easy and you can add it to an existing system quickly. It works without any document structure at all, so you don't need headings or sections or hierarchy. And token usage is predictable because you're always expanding by exactly W tokens on each side, making it easy to budget your context window.
+[enthusiastically] The beauty of this pattern is its extreme simplicity. Implementation is easy and you can add it to an existing system quickly. It works without any document structure at all, so you don't need headings or sections or hierarchy. And token usage is predictable because you're always expanding by exactly W tokens on each side, making it easy to budget your context window.
 
 #### ⚠️ Cons
 
-However, the simplicity comes with limitations. There's no semantic awareness, so you might be including irrelevant text that just happens to be nearby. You may cross section boundaries inappropriately, pulling in text from a completely different topic that happens to be adjacent in the document. And overlap handling can get tricky when multiple matches are close together, requiring careful deduplication logic.
+[cautiously] However, the simplicity comes with limitations. There's no semantic awareness, so you might be including irrelevant text that just happens to be nearby. [disappointed] You may cross section boundaries inappropriately, pulling in text from a completely different topic that happens to be adjacent in the document. And overlap handling can get tricky when multiple matches are close together, requiring careful deduplication logic.
 
 Now let's move to pattern seven, which builds semantic rather than structural hierarchies.`
         }
@@ -1219,11 +1219,11 @@ Now let's move to pattern seven, which builds semantic rather than structural hi
           backgroundColor: '#0f3460',
           notes: `### Pattern 7 - Semantic Hierarchy Retrieval
 
-When your document structure doesn't reflect the actual semantic structure of your content, pattern seven lets you build your own hierarchy based on meaning rather than formatting.
+[excited] When your document structure doesn't reflect the actual semantic structure of your content, pattern seven lets you build your own hierarchy based on meaning rather than formatting.
 
 #### 🎯 The Goal
 
-The goal is to group chunks by semantic topic rather than by document structure. This helps tremendously when related content is scattered across different documents or different sections. Instead of being constrained by how the author organized the document, you create a semantic organization that reflects actual topical relationships.
+[confidently] The goal is to group chunks by semantic topic rather than by document structure. [storytelling] This helps tremendously when related content is scattered across different documents or different sections. Instead of being constrained by how the author organized the document, you create a semantic organization that reflects actual topical relationships.
 
 #### 📊 Visual Flow
 
@@ -1241,15 +1241,15 @@ flowchart TD
     style G fill:#4fc3f7,color:#000
 \`\`\`
 
-This diagram shows chunks grouped under a topic cluster regardless of their original document structure. When you match a chunk, you include its topic cluster summary to provide semantic context.
+[conversational] This diagram shows chunks grouped under a topic cluster regardless of their original document structure. When you match a chunk, you include its topic cluster summary to provide semantic context.
 
 #### ⚙️ How It Works
 
-First, you build a taxonomy or run clustering on your chunks to identify semantic groups. This could be manual taxonomy creation, k-means clustering, or hierarchical clustering of your embeddings. Then you generate topic summaries for each cluster, creating a concise description of what that topic is about. Finally, on retrieval, when you match a chunk, you include its topic context along with the matched content, giving the language model both the specific evidence and the broader topic framing.
+[lecture] First, you build a taxonomy or run clustering on your chunks to identify semantic groups. This could be manual taxonomy creation, k-means clustering, or hierarchical clustering of your embeddings. Then you generate topic summaries for each cluster, creating a concise description of what that topic is about. [confidently] Finally, on retrieval, when you match a chunk, you include its topic context along with the matched content, giving the language model both the specific evidence and the broader topic framing.
 
 #### 🕐 When to Use This?
 
-This pattern is great for knowledge bases where related information is distributed across many documents. FAQ 👉 'eff-ay-queue' collections benefit because questions about the same topic might be scattered throughout your database. Multi-product documentation works well because you can group by feature or concept rather than by product manual. And any content with many synonyms or variants benefits because semantic clustering can group content that uses different words to describe the same concept.`
+[pleased] This pattern is great for knowledge bases where related information is distributed across many documents. FAQ 👉 'eff-ay-queue' collections benefit because questions about the same topic might be scattered throughout your database. Multi-product documentation works well because you can group by feature or concept rather than by product manual. And any content with many synonyms or variants benefits because semantic clustering can group content that uses different words to describe the same concept.`
         },
         {
           id: 17,
@@ -1303,23 +1303,23 @@ This pattern is great for knowledge bases where related information is distribut
           backgroundColor: '#0f3460',
           notes: `### Pattern 7 - Implementation & Trade-offs
 
-Let's explore how to implement semantic hierarchy retrieval and what challenges you'll face maintaining semantic structures.
+[lecture] Let's explore how to implement semantic hierarchy retrieval and what challenges you'll face maintaining semantic structures.
 
 #### 📊 Data Structure Needed
 
-You need to build a semantic structure alongside your documents. Store a topic ID for each topic cluster and a parent topic ID if you're building hierarchical taxonomies. Maintain cluster centroids in your embedding space so you can measure similarity to topics. Generate and store topic summaries that describe what each cluster is about. And compute group embeddings that represent the average or centroid of all chunks in that topic.
+[conversational] You need to build a semantic structure alongside your documents. Store a topic ID for each topic cluster and a parent topic ID if you're building hierarchical taxonomies. Maintain cluster centroids in your embedding space so you can measure similarity to topics. Generate and store topic summaries that describe what each cluster is about. And compute group embeddings that represent the average or centroid of all chunks in that topic.
 
 #### 🔧 Implementation Workflow
 
-First, you build or align a taxonomy for your content, or perform clustering like k-means or HDBSCAN 👉 'h-d-b-scan' on your embeddings. You compute group embeddings and generate summaries for each cluster, perhaps using an LLM 👉 'ell-ell-em' to create concise topic descriptions. Then at query time, you retrieve children chunks that match, and their topic parents, providing both the specific evidence and the topic-level context. You can also include top exemplars from the cluster to show representative examples.
+[confidently] First, you build or align a taxonomy for your content, or perform clustering like k-means or HDBSCAN 👉 'h-d-b-scan' on your embeddings. You compute group embeddings and generate summaries for each cluster, perhaps using an LLM 👉 'ell-ell-em' to create concise topic descriptions. Then at query time, you retrieve children chunks that match, and their topic parents, providing both the specific evidence and the topic-level context. [conversational] You can also include top exemplars from the cluster to show representative examples.
 
 #### ✅ Pros
 
-This pattern provides strong semantic grounding because context comes from topical meaning rather than arbitrary document structure. It's resilient to phrasing variance, so queries using different words than your documents can still match the right semantic cluster. And you get topic-coherent answers because related information is grouped together even if it came from different sources.
+[pleased] This pattern provides strong semantic grounding because context comes from topical meaning rather than arbitrary document structure. It's resilient to phrasing variance, so queries using different words than your documents can still match the right semantic cluster. And you get topic-coherent answers because related information is grouped together even if it came from different sources.
 
 #### ⚠️ Cons
 
-The major challenge is taxonomy drift and maintenance. As your content evolves, your topic structure needs to evolve with it. Clustering errors propagate to retrieval, so if your clustering algorithm puts a chunk in the wrong topic, that mistake affects every retrieval involving that chunk. And you need an additional preprocessing pipeline to build and maintain the semantic structure, adding complexity to your system.
+[cautiously] The major challenge is taxonomy drift and maintenance. As your content evolves, your topic structure needs to evolve with it. [disappointed] Clustering errors propagate to retrieval, so if your clustering algorithm puts a chunk in the wrong topic, that mistake affects every retrieval involving that chunk. And you need an additional preprocessing pipeline to build and maintain the semantic structure, adding complexity to your system.
 
 With semantic structures covered, let's look at pattern eight, which compresses context to fit tight budgets.`
         }
@@ -1384,11 +1384,11 @@ With semantic structures covered, let's look at pattern eight, which compresses 
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 8 - Dynamic Context Folding
 
-Pattern eight introduces smart compression to help you fit more context into limited token budgets without losing critical information.
+[excited] Pattern eight introduces smart compression to help you fit more context into limited token budgets without losing critical information.
 
 #### 🎯 The Goal
 
-When parent sections are too long for your available token budget, the goal is to compress them intelligently rather than just truncating or omitting them entirely. You want to keep the child chunk at full detail since that's your primary evidence, while summarizing the parent to provide governing context without consuming too many tokens.
+[conversational] When parent sections are too long for your available token budget, the goal is to compress them intelligently rather than just truncating or omitting them entirely. [confidently] You want to keep the child chunk at full detail since that's your primary evidence, while summarizing the parent to provide governing context without consuming too many tokens.
 
 #### 📊 Visual Flow
 
@@ -1410,15 +1410,15 @@ flowchart TD
     style H fill:#4fc3f7,color:#000
 \`\`\`
 
-This diagram shows how a full parent section gets compressed at multiple levels, then the appropriate summary is selected based on token budget and combined with the full child chunk.
+[conversational] This diagram shows how a full parent section gets compressed at multiple levels, then the appropriate summary is selected based on token budget and combined with the full child chunk.
 
 #### ⚙️ How It Works
 
-You precompute multiple compression levels for your parent sections during preprocessing. You might create a thirty percent summary, a fifty percent summary, and a seventy percent summary for each parent. Then at retrieval time, you select the appropriate compression level based on your available token budget. If you have lots of budget, use the seventy percent version. If budget is tight, use the thirty percent version. Finally, you combine the full detailed child chunk with your compressed parent to create a context that's both specific and grounded.
+[lecture] You precompute multiple compression levels for your parent sections during preprocessing. You might create a thirty percent summary, a fifty percent summary, and a seventy percent summary for each parent. [confidently] Then at retrieval time, you select the appropriate compression level based on your available token budget. If you have lots of budget, use the seventy percent version. If budget is tight, use the thirty percent version. Finally, you combine the full detailed child chunk with your compressed parent to create a context that's both specific and grounded.
 
 #### 🕐 When to Use This?
 
-This pattern is essential when you have long parent sections that would consume too many tokens in their full form. It's critical for limited context window models where every token counts. Cost-sensitive deployments benefit because you're reducing the number of tokens sent to expensive language models. And high-throughput systems use this pattern to process more queries in the same amount of time by using fewer tokens per query.`
+[seriously] This pattern is essential when you have long parent sections that would consume too many tokens in their full form. It's critical for limited context window models where every token counts. Cost-sensitive deployments benefit because you're reducing the number of tokens sent to expensive language models. And high-throughput systems use this pattern to process more queries in the same amount of time by using fewer tokens per query.`
         },
         {
           id: 19,
@@ -1472,23 +1472,23 @@ This pattern is essential when you have long parent sections that would consume 
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 8 - Implementation & Trade-offs
 
-Let's discuss how to implement dynamic compression and the quality trade-offs involved in summarization.
+[lecture] Let's discuss how to implement dynamic compression and the quality trade-offs involved in summarization.
 
 #### 📊 Data Structure Needed
 
-You need to store multiple compression variants for each parent section. Create and store summaries at different compression ratios, like summary at thirty percent, summary at fifty percent, and summary at seventy percent of the original length. Extract and store keyphrases that are particularly important to preserve across all compression levels. And maintain salience scores for different parts of the parent so you can prioritize what to keep when compressing.
+[conversational] You need to store multiple compression variants for each parent section. Create and store summaries at different compression ratios, like summary at thirty percent, summary at fifty percent, and summary at seventy percent of the original length. Extract and store keyphrases that are particularly important to preserve across all compression levels. And maintain salience scores for different parts of the parent so you can prioritize what to keep when compressing.
 
 #### 🔧 Implementation Workflow
 
-During preprocessing, you precompute summaries at different compression levels for each parent, maybe thirty percent, fifty percent, and seventy percent of the original length. Store pointers to each compression variant. Then at retrieval time, you pick the compression level based on your available token budget. If you have two hundred tokens available and the full parent is five hundred tokens, maybe you use the forty percent compression. Finally, you attach the full child chunk plus the compressed parent in your context window.
+[confidently] During preprocessing, you precompute summaries at different compression levels for each parent, maybe thirty percent, fifty percent, and seventy percent of the original length. Store pointers to each compression variant. [conversational] Then at retrieval time, you pick the compression level based on your available token budget. If you have two hundred tokens available and the full parent is five hundred tokens, maybe you use the forty percent compression. Finally, you attach the full child chunk plus the compressed parent in your context window.
 
 #### ✅ Pros
 
-This pattern provides excellent balanced precision and recall. You're keeping detailed evidence in the child while still providing governing context from the parent. It's very efficient in your use of tokens because you're adapting the amount of parent text to your available budget. And it offers a good cost to quality trade-off, letting you control how much you spend on each query while maintaining answer quality.
+[pleased] This pattern provides excellent balanced precision and recall. You're keeping detailed evidence in the child while still providing governing context from the parent. It's very efficient in your use of tokens because you're adapting the amount of parent text to your available budget. And it offers a good cost to quality trade-off, letting you control how much you spend on each query while maintaining answer quality.
 
 #### ⚠️ Cons
 
-The primary risk is that summarization can lose critical details. A nuance in the parent that's essential for correctly interpreting the child might get compressed away. You need significant preprocessing overhead to generate and store multiple compression variants for every parent. And quality assurance is essential because you need to validate that your summaries actually preserve the important information and don't introduce errors or change meaning.
+[cautiously] The primary risk is that summarization can lose critical details. [concerned] A nuance in the parent that's essential for correctly interpreting the child might get compressed away. You need significant preprocessing overhead to generate and store multiple compression variants for every parent. And quality assurance is essential because you need to validate that your summaries actually preserve the important information and don't introduce errors or change meaning.
 
 Now let's explore pattern nine, which combines semantic and lexical matching for maximum precision.`
         }
@@ -1549,11 +1549,11 @@ Now let's explore pattern nine, which combines semantic and lexical matching for
           backgroundColor: '#16213e',
           notes: `### Pattern 9 - Hybrid Parent-Child + BM25 Verification
 
-Pattern nine combines the power of semantic and lexical matching to achieve maximum precision in your retrievals.
+[excited] Pattern nine combines the power of semantic and lexical matching to achieve maximum precision in your retrievals.
 
 #### 🎯 The Goal
 
-The goal is to increase precision by verifying that your semantic matches actually contain the relevant keywords and exact terms. This is absolutely critical when exact terminology matters, like in compliance documents where specific regulatory language is required, or technical specifications where precise version numbers or part identifiers are essential.
+[seriously] The goal is to increase precision by verifying that your semantic matches actually contain the relevant keywords and exact terms. [confidently] This is absolutely critical when exact terminology matters, like in compliance documents where specific regulatory language is required, or technical specifications where precise version numbers or part identifiers are essential.
 
 #### 📊 Visual Flow
 
@@ -1571,15 +1571,15 @@ flowchart LR
     style F fill:#ffd700,color:#000
 \`\`\`
 
-This diagram shows the two-stage process: first use dense semantic retrieval to find relevant children, attach their parents, then use BM25 👉 'bee-em-twenty-five' to verify that the parents actually contain the key terms you're looking for.
+[conversational] This diagram shows the two-stage process: first use dense semantic retrieval to find relevant children, attach their parents, then use BM25 👉 'bee-em-twenty-five' to verify that the parents actually contain the key terms you're looking for.
 
 #### ⚙️ How It Works
 
-First, you use dense retrieval on your children to get semantic matches using embeddings. Then you attach the parent sections to those matched children. Next, you apply BM25 👉 'bee-em-twenty-five' scoring on the parent text to check for lexical matches of important terms. Finally, you filter or rank your results based on the lexical match score, keeping only results where the parent actually contains the key terms or meets your BM25 👉 'bee-em-twenty-five' threshold.
+[lecture] First, you use dense retrieval on your children to get semantic matches using embeddings. Then you attach the parent sections to those matched children. Next, you apply BM25 👉 'bee-em-twenty-five' scoring on the parent text to check for lexical matches of important terms. [confidently] Finally, you filter or rank your results based on the lexical match score, keeping only results where the parent actually contains the key terms or meets your BM25 👉 'bee-em-twenty-five' threshold.
 
 #### 🕐 When to Use This?
 
-This pattern is essential for compliance documents where specific regulatory language must be present. Legal text analysis requires exact terms and phrases to be matched. Technical specifications need precise part numbers, version identifiers, and technical terminology. Any domain where exact terms, numbers, or specific phrasing matters is a great candidate for hybrid verification.`
+[seriously] This pattern is essential for compliance documents where specific regulatory language must be present. Legal text analysis requires exact terms and phrases to be matched. Technical specifications need precise part numbers, version identifiers, and technical terminology. Any domain where exact terms, numbers, or specific phrasing matters is a great candidate for hybrid verification.`
         },
         {
           id: 21,
@@ -1636,23 +1636,23 @@ This pattern is essential for compliance documents where specific regulatory lan
           backgroundColor: '#16213e',
           notes: `### Pattern 9 - Implementation & Trade-offs
 
-Let's explore the implementation of dual-index hybrid retrieval and the infrastructure complexity it introduces.
+[lecture] Let's explore the implementation of dual-index hybrid retrieval and the infrastructure complexity it introduces.
 
 #### 📊 Data Structure Needed
 
-You need dual indexing to support this pattern. Maintain a dense index with embeddings for semantic child retrieval. Also maintain a BM25 👉 'bee-em-twenty-five' or sparse index specifically for parent verification using lexical matching. And keep term dictionaries for important keywords that must be matched, like regulatory terms, technical identifiers, or entity names.
+[conversational] You need dual indexing to support this pattern. Maintain a dense index with embeddings for semantic child retrieval. Also maintain a BM25 👉 'bee-em-twenty-five' or sparse index specifically for parent verification using lexical matching. And keep term dictionaries for important keywords that must be matched, like regulatory terms, technical identifiers, or entity names.
 
 #### 🔧 Implementation Workflow
 
-Your retrieval happens in stages. First, perform dense child retrieval using vector similarity to find semantically relevant chunks. Second, attach the parent sections to those matched children. Third, apply BM25 👉 'bee-em-twenty-five' scoring against the parent text to check for lexical matches. Set a threshold to gate results, keeping only those where the parent scores above your BM25 👉 'bee-em-twenty-five' threshold. Optionally, you can use hybrid union or intersection strategies, combining results from both semantic and lexical retrieval for even better coverage.
+[confidently] Your retrieval happens in stages. First, perform dense child retrieval using vector similarity to find semantically relevant chunks. Second, attach the parent sections to those matched children. Third, apply BM25 👉 'bee-em-twenty-five' scoring against the parent text to check for lexical matches. [lecture] Set a threshold to gate results, keeping only those where the parent scores above your BM25 👉 'bee-em-twenty-five' threshold. [conversational] Optionally, you can use hybrid union or intersection strategies, combining results from both semantic and lexical retrieval for even better coverage.
 
 #### ✅ Pros
 
-This pattern provides strong precision on entities, dates, and numbers because BM25 👉 'bee-em-twenty-five' catches exact matches that embeddings might miss. It's robust to embedding misses, so when your semantic model fails to recognize an important term, the lexical index saves you. And it compensates for embedding weaknesses like poor handling of rare terms, acronyms, or newly introduced vocabulary.
+[pleased] This pattern provides strong precision on entities, dates, and numbers because BM25 👉 'bee-em-twenty-five' catches exact matches that embeddings might miss. It's robust to embedding misses, so when your semantic model fails to recognize an important term, the lexical index saves you. And it compensates for embedding weaknesses like poor handling of rare terms, acronyms, or newly introduced vocabulary.
 
 #### ⚠️ Cons
 
-The infrastructure becomes more complex because you need two indices to maintain, both the dense vector index and the BM25 👉 'bee-em-twenty-five' sparse index. There's added latency from running two retrieval stages and scoring twice. Threshold tuning is required to balance precision and recall, and finding the right threshold takes experimentation. And maintaining dual indices means double the storage and double the indexing pipeline complexity.
+[cautiously] The infrastructure becomes more complex because you need two indices to maintain, both the dense vector index and the BM25 👉 'bee-em-twenty-five' sparse index. [disappointed] There's added latency from running two retrieval stages and scoring twice. Threshold tuning is required to balance precision and recall, and finding the right threshold takes experimentation. And maintaining dual indices means double the storage and double the indexing pipeline complexity.
 
 Now let's look at pattern ten, which uses cross-encoders for even more precise parent selection.`
         }
@@ -1714,11 +1714,11 @@ Now let's look at pattern ten, which uses cross-encoders for even more precise p
           backgroundColor: '#0f3460',
           notes: `### Pattern 10 - Parent Re-Ranking using Cross-Encoder
 
-When bi-encoder retrieval isn't giving you the precision you need, pattern ten brings in cross-encoders for much more accurate parent selection.
+[excited] When bi-encoder retrieval isn't giving you the precision you need, pattern ten brings in cross-encoders for much more accurate parent selection.
 
 #### 🎯 The Goal
 
-The goal is to select the most relevant parent among multiple candidates using deep relevance scoring. Bi-encoders encode queries and documents independently, which is fast but sometimes imprecise. Cross-encoders jointly encode the query and document together, allowing much richer interaction between them, resulting in higher quality relevance scores.
+[confidently] The goal is to select the most relevant parent among multiple candidates using deep relevance scoring. [lecture] Bi-encoders encode queries and documents independently, which is fast but sometimes imprecise. Cross-encoders jointly encode the query and document together, allowing much richer interaction between them, resulting in higher quality relevance scores.
 
 #### 📊 Visual Flow
 
@@ -1737,15 +1737,15 @@ flowchart LR
     style D fill:#ffb74d,color:#000
 \`\`\`
 
-This diagram shows how retrieved children lead to candidate parents, which are then precisely scored by the cross-encoder against the query to select only the most relevant ones.
+[conversational] This diagram shows how retrieved children lead to candidate parents, which are then precisely scored by the cross-encoder against the query to select only the most relevant ones.
 
 #### ⚙️ How It Works
 
-First, you use dense retrieval to get your children chunks as usual. Then you collect all the unique parent sections from those children, since multiple children might share the same parent. Next, you cross-encode each query and parent pair, running your cross-encoder model on every combination to get precise relevance scores. Finally, you keep only the top-m parents by cross-encoder score, ensuring you're attaching only the most relevant governing context.
+[lecture] First, you use dense retrieval to get your children chunks as usual. Then you collect all the unique parent sections from those children, since multiple children might share the same parent. [confidently] Next, you cross-encode each query and parent pair, running your cross-encoder model on every combination to get precise relevance scores. Finally, you keep only the top-m parents by cross-encoder score, ensuring you're attaching only the most relevant governing context.
 
 #### 🕐 When to Use This?
 
-This pattern is best for very long documents where there are many potential parent sections and you need to carefully select which ones to include. It's ideal when you have multiple plausible parent sections and simple bi-encoder scoring isn't discriminating enough. And it's essential for high-stakes applications requiring maximum precision, like medical question answering or legal research, where the cost of including an irrelevant parent section is very high.`
+[seriously] This pattern is best for very long documents where there are many potential parent sections and you need to carefully select which ones to include. It's ideal when you have multiple plausible parent sections and simple bi-encoder scoring isn't discriminating enough. And it's essential for high-stakes applications requiring maximum precision, like medical question answering or legal research, where the cost of including an irrelevant parent section is very high.`
         },
         {
           id: 23,
@@ -1799,23 +1799,23 @@ This pattern is best for very long documents where there are many potential pare
           backgroundColor: '#0f3460',
           notes: `### Pattern 10 - Implementation & Trade-offs
 
-Let's explore how to implement cross-encoder re-ranking and why the computational cost is significant.
+[lecture] Let's explore how to implement cross-encoder re-ranking and why the computational cost is significant.
 
 #### 📊 Data Structure Needed
 
-You need to store parent passages in their full text form because cross-encoders need complete context to score accurately. Maintain your child to parent mapping so you can collect candidate parents from retrieved children. And you need a cross-encoder model and its artifacts, like models from the MS 👉 'em-ess' MARCO 👉 'mar-co' family such as MS 👉 'em-ess' MARCO 👉 'mar-co' MiniLM 👉 'mini-ell-em', which are specifically trained for relevance scoring.
+[conversational] You need to store parent passages in their full text form because cross-encoders need complete context to score accurately. Maintain your child to parent mapping so you can collect candidate parents from retrieved children. And you need a cross-encoder model and its artifacts, like models from the MS 👉 'em-ess' MARCO 👉 'mar-co' family such as MS 👉 'em-ess' MARCO 👉 'mar-co' MiniLM 👉 'mini-ell-em', which are specifically trained for relevance scoring.
 
 #### 🔧 Implementation Workflow
 
-Your workflow has two stages. First, perform dense retrieval on children using your bi-encoder, then collect all unique parents from those children since you might have multiple children from the same parent. Second, run your cross-encoder to re-rank the parents. For each query and parent pair, run the cross-encoder to get a precise relevance score. Select the top-m parents by score, maybe keeping just the top three or top five. Finally, attach those top parents along with their best matching children to your context.
+[confidently] Your workflow has two stages. First, perform dense retrieval on children using your bi-encoder, then collect all unique parents from those children since you might have multiple children from the same parent. [lecture] Second, run your cross-encoder to re-rank the parents. For each query and parent pair, run the cross-encoder to get a precise relevance score. Select the top-m parents by score, maybe keeping just the top three or top five. Finally, attach those top parents along with their best matching children to your context.
 
 #### ✅ Pros
 
-This pattern gives you best-in-class relevance scoring because cross-encoders can model the interaction between query and document much more precisely than bi-encoders. It eliminates poor parent matches that might have made it through bi-encoder retrieval. And you get high confidence grounding because you know the parents you're including are truly relevant to the query based on deep semantic understanding.
+[pleased] This pattern gives you best-in-class relevance scoring because cross-encoders can model the interaction between query and document much more precisely than bi-encoders. It eliminates poor parent matches that might have made it through bi-encoder retrieval. And you get high confidence grounding because you know the parents you're including are truly relevant to the query based on deep semantic understanding.
 
 #### ⚠️ Cons
 
-The major downside is computational expense. Cross-encoders have O 👉 'oh' of n complexity in terms of model inference, meaning you run the model once for every candidate parent. This creates significant latency impact, especially if you have many candidate parents. And there's model serving complexity because you need infrastructure to serve cross-encoder models in production, managing model updates, versioning, and ensuring low latency at scale.
+[cautiously] The major downside is computational expense. [concerned] Cross-encoders have O 👉 'oh' of n complexity in terms of model inference, meaning you run the model once for every candidate parent. This creates significant latency impact, especially if you have many candidate parents. And there's model serving complexity because you need infrastructure to serve cross-encoder models in production, managing model updates, versioning, and ensuring low latency at scale.
 
 Now let's explore our final pattern, which uses graph structures for rich relational context.`
         }
@@ -1877,11 +1877,11 @@ Now let's explore our final pattern, which uses graph structures for rich relati
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 11 - Graph / Knowledge-Node Parent Retrieval
 
-Our final pattern is also the most powerful one for modeling complex document relationships. Pattern eleven uses graph structures to represent and navigate rich interconnections.
+[enthusiastically] Our final pattern is also the most powerful one for modeling complex document relationships. [excited] Pattern eleven uses graph structures to represent and navigate rich interconnections.
 
 #### 🎯 The Goal
 
-The goal is to use explicit relationships and multi-hop traversal to provide rich, interconnected context that goes beyond simple parent-child hierarchies. Instead of just going up a tree, you can traverse any type of relationship: citations, prerequisites, related concepts, cross-references, and more.
+[confidently] The goal is to use explicit relationships and multi-hop traversal to provide rich, interconnected context that goes beyond simple parent-child hierarchies. [storytelling] Instead of just going up a tree, you can traverse any type of relationship: citations, prerequisites, related concepts, cross-references, and more.
 
 #### 📊 Visual Flow
 
@@ -1900,15 +1900,15 @@ flowchart TD
     style H fill:#4fc3f7,color:#000
 \`\`\`
 
-This diagram shows how when you match a node in your graph, you can traverse different types of edges to gather related context. You might follow parent edges, citation edges, prerequisite edges, or any other relationship type you've encoded.
+[conversational] This diagram shows how when you match a node in your graph, you can traverse different types of edges to gather related context. You might follow parent edges, citation edges, prerequisite edges, or any other relationship type you've encoded.
 
 #### ⚙️ How It Works
 
-First, you model your documents as a graph where nodes represent sections, entities, or concepts. You define different edge types like parent of, cites, prerequisite of, related to, and any other relationships that exist in your domain. Then on retrieval, when you match a node, you traverse edges to gather all related context. This supports multi-hop reasoning where you might go two or three hops away from the matched node to find relevant governing or supporting context.
+[lecture] First, you model your documents as a graph where nodes represent sections, entities, or concepts. You define different edge types like parent of, cites, prerequisite of, related to, and any other relationships that exist in your domain. [confidently] Then on retrieval, when you match a node, you traverse edges to gather all related context. This supports multi-hop reasoning where you might go two or three hops away from the matched node to find relevant governing or supporting context.
 
 #### 🕐 When to Use This?
 
-This pattern is essential for SOPs 👉 'ess-oh-pees' or standard operating procedures with dependencies where one procedure requires completing others first. API 👉 'ay-pee-eye' documentation with interlinks benefits enormously because methods depend on each other and reference shared concepts. Scientific papers with citations are a classic use case where understanding one paper requires understanding what it cites and what cites it. And any cross-document reference system where information spans multiple documents with explicit links between them is perfect for graph-based retrieval.`
+[seriously] This pattern is essential for SOPs 👉 'ess-oh-pees' or standard operating procedures with dependencies where one procedure requires completing others first. [pleased] API 👉 'ay-pee-eye' documentation with interlinks benefits enormously because methods depend on each other and reference shared concepts. Scientific papers with citations are a classic use case where understanding one paper requires understanding what it cites and what cites it. And any cross-document reference system where information spans multiple documents with explicit links between them is perfect for graph-based retrieval.`
         },
         {
           id: 25,
@@ -1962,25 +1962,25 @@ This pattern is essential for SOPs 👉 'ess-oh-pees' or standard operating proc
           backgroundColor: '#1a1a2e',
           notes: `### Pattern 11 - Implementation & Trade-offs
 
-Let's explore the implementation of graph-based retrieval and why it's the most complex but also most expressive pattern we've covered.
+[lecture] Let's explore the implementation of graph-based retrieval and why it's the most complex but also most expressive pattern we've covered.
 
 #### 📊 Data Structure Needed
 
-You need full graph infrastructure to support this pattern. Use a graph database like Neo4j 👉 'nee-oh-four-jay', Neptune 👉 'nep-tune', or a similar system. Define your node types, which might include sections, entities, and concepts. Create edge types that capture different relationships: parent of for hierarchy, cites for references, prerequisite of for dependencies, and related to for semantic connections. And store embeddings on your nodes and optionally on edges as well if you want to search by relationship semantics.
+[conversational] You need full graph infrastructure to support this pattern. Use a graph database like Neo4j 👉 'nee-oh-four-jay', Neptune 👉 'nep-tune', or a similar system. [lecture] Define your node types, which might include sections, entities, and concepts. Create edge types that capture different relationships: parent of for hierarchy, cites for references, prerequisite of for dependencies, and related to for semantic connections. And store embeddings on your nodes and optionally on edges as well if you want to search by relationship semantics.
 
 #### 🔧 Implementation Workflow
 
-During preprocessing, you build your graph from document structure and explicit links. You parse documents to create nodes and extract relationships to create edges. Index both nodes and edges so you can search them efficiently. Then at query time, you retrieve matching nodes using either dense semantic search on node embeddings or sparse keyword search on node text. From those matched nodes, you perform k-hop expansion to parents and other anchor nodes, traversing edges according to your retrieval strategy. Finally, you compile the context from all the gathered nodes, presenting both the matched content and its relational context.
+[confidently] During preprocessing, you build your graph from document structure and explicit links. You parse documents to create nodes and extract relationships to create edges. Index both nodes and edges so you can search them efficiently. [lecture] Then at query time, you retrieve matching nodes using either dense semantic search on node embeddings or sparse keyword search on node text. From those matched nodes, you perform k-hop expansion to parents and other anchor nodes, traversing edges according to your retrieval strategy. Finally, you compile the context from all the gathered nodes, presenting both the matched content and its relational context.
 
 #### ✅ Pros
 
-This pattern provides the most expressive relationship modeling of all our patterns. You can represent any type of connection your domain requires. It enables genuine multi-hop reasoning where answers require combining information from multiple related nodes. It works seamlessly across documents because edges can connect nodes from different sources. And it's highly interpretable because you can show users exactly which relationships were followed to gather context.
+[enthusiastically] This pattern provides the most expressive relationship modeling of all our patterns. You can represent any type of connection your domain requires. [pleased] It enables genuine multi-hop reasoning where answers require combining information from multiple related nodes. It works seamlessly across documents because edges can connect nodes from different sources. And it's highly interpretable because you can show users exactly which relationships were followed to gather context.
 
 #### ⚠️ Cons
 
-The downside is this pattern has the highest implementation complexity. Building and maintaining a graph database is non-trivial infrastructure. There's significant graph maintenance overhead as documents change and relationships evolve. Query planning can become complex when you're deciding which edges to traverse and how many hops to go. And traversal latency can be a concern, especially for deep multi-hop queries that touch many nodes.
+[cautiously] The downside is this pattern has the highest implementation complexity. [concerned] Building and maintaining a graph database is non-trivial infrastructure. There's significant graph maintenance overhead as documents change and relationships evolve. Query planning can become complex when you're deciding which edges to traverse and how many hops to go. And traversal latency can be a concern, especially for deep multi-hop queries that touch many nodes.
 
-That completes our tour of all eleven patterns! Now let's wrap up with key takeaways and selection guidance.`
+[warmly] That completes our tour of all eleven patterns! Now let's wrap up with key takeaways and selection guidance.`
         }
       ]
     },
@@ -2023,23 +2023,23 @@ That completes our tour of all eleven patterns! Now let's wrap up with key takea
           backgroundColor: '#16213e',
           notes: `### Key Takeaways
 
-Let's take a step back and summarize what we've learned about parent-child retrieval patterns across this entire presentation.
+[conversational] Let's take a step back and summarize what we've learned about parent-child retrieval patterns across this entire presentation.
 
 #### 🎯 Core Insight
 
-All eleven patterns we've explored share a common fundamental goal, which is to reduce hallucination by providing governing context around fine-grained evidence. When you retrieve a small chunk that matches a query, that chunk by itself often lacks the context needed for the language model to generate an accurate, grounded response. These patterns solve that problem by systematically attaching relevant parent or related context. The key difference between the patterns is how they do it, whether through structural hierarchy, semantic clustering, lexical verification, or graph traversal.
+[confidently] All eleven patterns we've explored share a common fundamental goal, which is to reduce hallucination by providing governing context around fine-grained evidence. [lecture] When you retrieve a small chunk that matches a query, that chunk by itself often lacks the context needed for the language model to generate an accurate, grounded response. These patterns solve that problem by systematically attaching relevant parent or related context. [conversational] The key difference between the patterns is how they do it, whether through structural hierarchy, semantic clustering, lexical verification, or graph traversal.
 
 #### 📊 Selection Criteria
 
-When you're choosing which pattern to use, you need to consider three main factors. First, how structured is your content? If you have well-defined sections and subsections, patterns like parent-child chunking and outline-based trees work beautifully. If your content is more fluid, you might need windowed retrieval or semantic hierarchies. Second, what's your token budget? If you're working with limited context windows or trying to control costs, dynamic context folding becomes essential. If you have more budget available, you can afford richer context from tree traversal or graph expansion. Third, how critical is precision? For high-stakes domains like compliance or legal, you'll want hybrid approaches with BM25 👉 'bee-em-twenty-five' verification or cross-encoder re-ranking.
+[lecture] When you're choosing which pattern to use, you need to consider three main factors. [confidently] First, how structured is your content? If you have well-defined sections and subsections, patterns like parent-child chunking and outline-based trees work beautifully. If your content is more fluid, you might need windowed retrieval or semantic hierarchies. [conversational] Second, what's your token budget? If you're working with limited context windows or trying to control costs, dynamic context folding becomes essential. If you have more budget available, you can afford richer context from tree traversal or graph expansion. [seriously] Third, how critical is precision? For high-stakes domains like compliance or legal, you'll want hybrid approaches with BM25 👉 'bee-em-twenty-five' verification or cross-encoder re-ranking.
 
 #### ⚖️ The Universal Trade-off
 
-Every single pattern we've discussed balances the same fundamental trade-off: context completeness versus token efficiency. More context gives you better grounding and more accurate answers, but it comes at higher cost in terms of tokens consumed, latency introduced, and computational resources required. The art of building production RAG 👉 'rag' systems is finding the right point on this spectrum for your specific use case.
+[thoughtfully] Every single pattern we've discussed balances the same fundamental trade-off: context completeness versus token efficiency. [lecture] More context gives you better grounding and more accurate answers, but it comes at higher cost in terms of tokens consumed, latency introduced, and computational resources required. [inspiringly] The art of building production RAG 👉 'rag' systems is finding the right point on this spectrum for your specific use case.
 
 #### 🔀 Combination Strategy
 
-In real-world production systems, you'll often combine multiple patterns rather than using just one. For example, you might use parent-child chunking as your base structure, add BM25 👉 'bee-em-twenty-five' verification to ensure precision on key terms, and apply dynamic folding to keep within your token budget. The patterns are composable building blocks, not mutually exclusive choices.`
+[pleased] In real-world production systems, you'll often combine multiple patterns rather than using just one. [storytelling] For example, you might use parent-child chunking as your base structure, add BM25 👉 'bee-em-twenty-five' verification to ensure precision on key terms, and apply dynamic folding to keep within your token budget. [warmly] The patterns are composable building blocks, not mutually exclusive choices.`
         },
         {
           id: 27,
@@ -2074,17 +2074,17 @@ In real-world production systems, you'll often combine multiple patterns rather 
           backgroundColor: '#0f3460',
           notes: `### Selection Guide
 
-Here's a practical quick reference guide to help you choose the right pattern or patterns for your specific situation.
+[conversational] Here's a practical quick reference guide to help you choose the right pattern or patterns for your specific situation.
 
 #### 📋 By Use Case and Document Characteristics
 
-If you have strong document structure with long sections that need governing context, start with parent-child chunking or outline-based tree retrieval. These patterns leverage your existing structure to provide hierarchical context. If you're working with a tight token budget and need to maximize information density, dynamic context folding is your friend. It lets you include parent context while staying within strict token limits. When you need high precision on exact terms, numbers, or specific entities, add BM25 👉 'bee-em-twenty-five' verification or cross-encoder re-ranking to your pipeline. These patterns ensure that semantic matches are backed by lexical evidence.
+[lecture] If you have strong document structure with long sections that need governing context, start with parent-child chunking or outline-based tree retrieval. These patterns leverage your existing structure to provide hierarchical context. [conversational] If you're working with a tight token budget and need to maximize information density, dynamic context folding is your friend. It lets you include parent context while staying within strict token limits. [seriously] When you need high precision on exact terms, numbers, or specific entities, add BM25 👉 'bee-em-twenty-five' verification or cross-encoder re-ranking to your pipeline. These patterns ensure that semantic matches are backed by lexical evidence.
 
-For sequential content like procedures, checklists, or step-by-step guides, sibling-aware retrieval or windowed retrieval will give you the continuity you need. They capture the flow of adjacent content. If you have topic-heavy knowledge bases where related content is scattered across documents, semantic hierarchy retrieval groups content by meaning rather than structure. And when you're dealing with complex interlinks, dependencies, or cross-document references, the graph or knowledge-node approach gives you the most expressive relationship modeling.
+[confidently] For sequential content like procedures, checklists, or step-by-step guides, sibling-aware retrieval or windowed retrieval will give you the continuity you need. They capture the flow of adjacent content. [pleased] If you have topic-heavy knowledge bases where related content is scattered across documents, semantic hierarchy retrieval groups content by meaning rather than structure. And when you're dealing with complex interlinks, dependencies, or cross-document references, the graph or knowledge-node approach gives you the most expressive relationship modeling.
 
 #### 🎯 Start Simple, Add Complexity Strategically
 
-The best advice is to start with a simpler pattern that matches your document structure, measure its impact on your answer quality and hallucination rate, and only add complexity when you've identified specific failure modes that a more sophisticated pattern would address. Don't over-engineer from day one.`
+[warmly] The best advice is to start with a simpler pattern that matches your document structure, measure its impact on your answer quality and hallucination rate, and only add complexity when you've identified specific failure modes that a more sophisticated pattern would address. [inspiringly] Don't over-engineer from day one.`
         },
         {
           id: 28,
@@ -2145,23 +2145,23 @@ The best advice is to start with a simpler pattern that matches your document st
           backgroundColor: '#1a1a2e',
           notes: `### Implementation Tips
 
-Let's wrap up with practical advice for actually deploying these patterns in production systems.
+[conversational] Let's wrap up with practical advice for actually deploying these patterns in production systems.
 
 #### 🔧 Infrastructure Foundations
 
-At the infrastructure level, make sure you're storing metadata explicitly from the start. Every chunk needs its parent ID, its path through the document hierarchy, and character or token offsets. Build deduplication into your retrieval pipeline because when you expand to parents or siblings, you'll often encounter the same parent text multiple times, and you want to avoid sending duplicate context to your language model. Implement token budget enforcement that respects your LLM 👉 'ell-ell-em' limits, ensuring you never exceed the context window and that you're allocating tokens strategically between children and parents.
+[lecture] At the infrastructure level, make sure you're storing metadata explicitly from the start. Every chunk needs its parent ID, its path through the document hierarchy, and character or token offsets. [confidently] Build deduplication into your retrieval pipeline because when you expand to parents or siblings, you'll often encounter the same parent text multiple times, and you want to avoid sending duplicate context to your language model. [seriously] Implement token budget enforcement that respects your LLM 👉 'ell-ell-em' limits, ensuring you never exceed the context window and that you're allocating tokens strategically between children and parents.
 
 #### 📊 Observability and Monitoring
 
-For observability, log which patterns fired for each query so you can debug issues and understand usage patterns. Track retrieval quality metrics like answer correctness, hallucination rate, and user satisfaction. Monitor your context sizes to understand token consumption and identify opportunities for optimization.
+[conversational] For observability, log which patterns fired for each query so you can debug issues and understand usage patterns. Track retrieval quality metrics like answer correctness, hallucination rate, and user satisfaction. Monitor your context sizes to understand token consumption and identify opportunities for optimization.
 
 #### 🚀 Optimization Strategies
 
-Consider progressive loading where you load essential context first and expand only if needed, which can significantly reduce average costs. Test your retrieval with diverse query types, not just happy path examples, to ensure robustness. And seriously consider hybrid approaches that combine the strengths of multiple patterns rather than relying on a single technique.
+[pleased] Consider progressive loading where you load essential context first and expand only if needed, which can significantly reduce average costs. [confidently] Test your retrieval with diverse query types, not just happy path examples, to ensure robustness. And seriously consider hybrid approaches that combine the strengths of multiple patterns rather than relying on a single technique.
 
 #### 🎯 Final Thought
 
-These eleven patterns are your comprehensive toolkit for building reliable RAG 👉 'rag' systems that ground generation in real evidence. Start simple with basic parent-child chunking, measure your results carefully, and add complexity only when you've identified specific problems that more sophisticated patterns would solve. The goal isn't to use the most complex pattern, it's to use the right pattern for your data and your use case. With these patterns in your toolkit, you're well equipped to build production RAG 👉 'rag' systems that deliver accurate, grounded, and trustworthy answers.`
+[inspiringly] These eleven patterns are your comprehensive toolkit for building reliable RAG 👉 'rag' systems that ground generation in real evidence. [warmly] Start simple with basic parent-child chunking, measure your results carefully, and add complexity only when you've identified specific problems that more sophisticated patterns would solve. [confidently] The goal isn't to use the most complex pattern, it's to use the right pattern for your data and your use case. [enthusiastically] With these patterns in your toolkit, you're well equipped to build production RAG 👉 'rag' systems that deliver accurate, grounded, and trustworthy answers.`
         }
       ]
     }
