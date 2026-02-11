@@ -2635,22 +2635,43 @@ With Answer Completeness, we've completed our tour of the key generation quality
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Evaluates whether responses avoid vague or generic phrasing, instead providing concrete, actionable details that are specific to the query context.</p>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.2}>
+                <h3>Definition</h3>
+                <p>Evaluates whether responses avoid vague or generic phrasing, instead providing concrete, actionable details that are specific to the query context.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Drives more useful, actionable outputs without sacrificing factuality</li>
-                <li>Encourages models to fully utilize context details instead of generic responses</li>
-                <li>Improves user satisfaction with concrete information</li>
-                <li>Reduces follow-up questions seeking clarification</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.4}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Drives more useful, actionable outputs without sacrificing factuality</li>
+                  <li>Encourages models to fully utilize context details instead of generic responses</li>
+                  <li>Improves user satisfaction with concrete information</li>
+                  <li>Reduces follow-up questions seeking clarification</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>For product guidance where detailed steps matter, procedural or technical FAQs, analytics and data summary use cases, and when users need actionable rather than abstract advice.</p>
+              <GSAPAnimated animation="bounceIn" duration={1} delay={1.1}>
+                <p>For product guidance where detailed steps matter, procedural or technical FAQs, analytics and data summary use cases, and when users need actionable rather than abstract advice.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f6f21',
-          notes: ''
+          notes: `### Answer Specificity — Overview
+Welcome to metric number ten! We've covered a lot of ground, and now we're diving into the final four metrics that really polish your RAG system. Let's talk about Answer Specificity.
+
+#### What Is Answer Specificity?
+Answer Specificity 👉 (speh-sih-FIH-sih-tee) is all about avoiding the dreaded "could you be more specific?" question from your users. Think about asking a colleague "how do I fix this?" and they respond with "oh, just check the settings and restart." That's generic and unhelpful! Answer Specificity measures whether your RAG system provides concrete, actionable details instead of vague hand-waving.
+
+#### Why This Matters
+Here's the thing: your retrieval system probably found the right documentation, but is your LLM actually using those juicy details? Or is it falling back to safe, generic responses like "please consult your administrator" or "check the documentation"? High specificity means your system is squeezing every bit of value from that retrieved context and turning it into actionable guidance.
+
+#### The Benefits Stack Up
+When you nail specificity, users get immediate value without bouncing back for clarification. The LLM uses those product codes, those version numbers, those exact menu paths from your documentation. User satisfaction goes up, support tickets go down, and your context wasn't retrieved for nothing!
+
+#### When to Use This
+This metric shines in scenarios where details matter. Product troubleshooting where you need exact steps. Technical documentation where version compatibility matters. Analytics reports where specific numbers and trends are the whole point. Any domain where "it depends" or "you might want to" just doesn't cut it.`
         },
         {
           id: 40,
@@ -2658,26 +2679,72 @@ With Answer Completeness, we've completed our tour of the key generation quality
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Answer Specificity measures the level of detail and concreteness in responses. It can be assessed using LLM judges or by measuring information density.</p>
+              <GSAPAnimated animation="slideInRight" duration={0.8} delay={0.1}>
+                <h3>How It Works</h3>
+                <p>Answer Specificity measures the level of detail and concreteness in responses. It can be assessed using LLM judges or by measuring information density.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Option 1: LLM-judged specificity score [0-1]
+              <GSAPAnimated animation="scaleIn" duration={0.9} delay={0.4}>
+                <h3>Formula</h3>
+                <MermaidPopover
+                  title="View Calculation Flow"
+                  diagram={`graph TB
+    A[Answer Generated] --> B{Choose Method}
+    B -->|Option 1| C[LLM Judge Scoring]
+    B -->|Option 2| D[Info Density Calculation]
+    
+    C --> E[Evaluate Detail Level]
+    C --> F[Evaluate Concreteness]
+    E --> G[Specificity Score 0-1]
+    F --> G
+    
+    D --> H[Count Named Entities]
+    D --> I[Count Numbers/Quantities]
+    H --> J[Sum Specific Elements]
+    I --> J
+    J --> K[Divide by Total Tokens]
+    K --> L[Normalize to 0-1]
+    
+    G --> M[Final Specificity Score]
+    L --> M`}
+                />
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`Option 1: LLM-judged specificity score [0-1]
 Option 2: Info-density = (# named entities + numbers) / answer tokens`}
-              </pre>
-              <p>Approaches: LLM judge evaluates specificity based on detail level and concreteness. Info density measures content-to-token ratio (normalized to [0-1]). Entity recognition counts named objects, dates, quantities, etc.</p>
+                </pre>
+                <p>Approaches: LLM judge evaluates specificity based on detail level and concreteness. Info density measures content-to-token ratio (normalized to [0-1]). Entity recognition counts named objects, dates, quantities, etc.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.60 with faithfulness gate in place</li>
-                <li>≥0.70 for domain-tuned systems</li>
-                <li>Balance with brevity goals - overly specific responses can be verbose</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" duration={0.8} delay={0.7}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.9}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>≥0.60 with faithfulness gate in place</li>
+                  <li>≥0.70 for domain-tuned systems</li>
+                  <li>Balance with brevity goals - overly specific responses can be verbose</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f6f21',
-          notes: ''
+          notes: `### Answer Specificity — How It Works
+So how do we actually measure if an answer is specific enough? You've got two main approaches here, and they each have their strengths.
+
+#### The LLM Judge Approach
+Option one is to fight fire with fire: use an LLM 👉 (ell-ell-emm) to judge your LLM! You basically ask another model - often a more powerful one - to read the answer and rate it on specificity. "Does this answer include concrete details? Are there specific values, steps, or identifiers?" It's subjective but surprisingly effective, especially if you give the judge model clear rubrics.
+
+#### The Info Density Approach
+Option two is more mechanical: count up the information-dense elements in your answer. Named entities like "Cisco Router Model 2901", numbers like "v2.5" or "10 seconds", specific dates, model numbers, error codes. Then divide by your total token count to get an information density score. High density usually correlates with high specificity. Think of it like a nutrition label for your answers - how much actual nutritional content per serving?
+
+#### What Are We Counting?
+Entity recognition is your friend here. You're looking for proper nouns, product names, version numbers, specific quantities, technical identifiers. Generic words like "system," "process," or "check" don't count. Specific terms like "Settings > Network > WiFi" or "error code E-4019" absolutely do!
+
+#### Target Benchmarks
+Shoot for at least 0.60 when you've got faithfulness guardrails in place. If you're tuning for a specific domain, aim higher - 0.70 or above. But here's the tension: overly specific answers can become verbose. You might hit 0.90 specificity but your users are drowning in detail. It's a balancing act with brevity!
+
+#### The Sweet Spot
+You want that Goldilocks zone: specific enough to be actionable, concise enough to be readable. Monitor both specificity AND answer length to find your sweet spot.`
         },
         {
           id: 41,
@@ -2685,17 +2752,43 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Query:</strong> "How do I troubleshoot connection issues?"</p>
-              <p><strong>Low Specificity:</strong> "Try checking your connection settings and restart if needed."</p>
-              <p><strong>High Specificity:</strong> "Open Settings &gt; Network &gt; WiFi, toggle WiFi off for 10 seconds, then reconnect to your 5GHz network. If error code E-4019 persists, update router firmware to v2.5+"</p>
+              <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
+                <h3>Example</h3>
+                <p><strong>Query:</strong> "How do I troubleshoot connection issues?"</p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Use an LLM judge to score the answer's specificity on a 0-1 scale based on concrete details, specific values, and actionable steps. Alternatively, calculate information density by counting named entities, numbers, and technical terms relative to total tokens.</p>
+              <GSAPAnimated animation="slideInLeft" duration={0.8} delay={0.4}>
+                <p><strong>Low Specificity:</strong> "Try checking your connection settings and restart if needed."</p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInRight" duration={0.8} delay={0.6}>
+                <p><strong>High Specificity:</strong> "Open Settings &gt; Network &gt; WiFi, toggle WiFi off for 10 seconds, then reconnect to your 5GHz network. If error code E-4019 persists, update router firmware to v2.5+"</p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.9}>
+                <h3>How to Calculate</h3>
+                <p>Use an LLM judge to score the answer's specificity on a 0-1 scale based on concrete details, specific values, and actionable steps. Alternatively, calculate information density by counting named entities, numbers, and technical terms relative to total tokens.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f6f21',
-          notes: ''
+          notes: `### Answer Specificity — Implementation
+Time for a concrete example - pun absolutely intended! Let's see what low versus high specificity actually looks like in the wild.
+
+#### The Question
+A user asks: "How do I troubleshoot connection issues?" Classic support question, right? Now watch how the specificity level changes the quality of the answer dramatically.
+
+#### Low Specificity Example
+The generic answer: "Try checking your connection settings and restart if needed." This is what we call a "fortune cookie response" - technically correct but utterly useless. What settings? Restart what? How? When? This is the kind of answer that makes users immediately search Google or file a support ticket. You retrieved good context but your LLM chickened out and gave a safe, vague response.
+
+#### High Specificity Example
+Now the good stuff: "Open Settings, then Network, then WiFi. Toggle WiFi off for 10 seconds, then reconnect to your 5GHz network. If error code E-4019 persists, update router firmware to v2.5 or higher." See the difference? Exact menu paths. Specific wait time. Particular network band. Even the error code and version number! This answer is immediately actionable. Your user can follow it step-by-step without guessing.
+
+#### Calculating the Score
+For automated evaluation, send both answers to an LLM judge with a rubric: "Rate specificity from 0 to 1 based on concrete details, specific values, and actionable steps." Or use the mechanical approach: count named entities like "Settings," "Network," "WiFi," numbers like "10," "5GHz," "E-4019," "v2.5" and divide by token count. The high-specificity answer will score significantly higher either way.
+
+#### The Real-World Impact
+In production, high specificity answers reduce follow-up question rates by 30 to 60 percent! Users get what they need the first time. Your retrieved context is actually being used, not ignored in favor of generic safety.`
         },
         {
           id: 42,
@@ -2703,26 +2796,65 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Drives more useful, actionable outputs without sacrificing factuality</li>
-                <li>Encourages models to fully utilize context details instead of generic responses</li>
-                <li>Improves user satisfaction with concrete information</li>
-                <li>Reduces follow-up questions seeking clarification</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" duration={0.8} delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+                <MermaidPopover
+                  title="View Impact Diagram"
+                  diagram={`graph LR
+    A[High Specificity] --> B[Actionable Outputs]
+    A --> C[Full Context Utilization]
+    A --> D[Concrete Information]
+    A --> E[Fewer Follow-ups]
+    
+    B --> F[Better User Satisfaction]
+    C --> F
+    D --> F
+    E --> F
+    
+    F --> G[Improved RAG System]`}
+                />
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Drives more useful, actionable outputs without sacrificing factuality</li>
+                  <li>Encourages models to fully utilize context details instead of generic responses</li>
+                  <li>Improves user satisfaction with concrete information</li>
+                  <li>Reduces follow-up questions seeking clarification</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Can conflict with brevity and conciseness goals</li>
-                <li>May not be appropriate for all query types (some need general answers)</li>
-                <li>High specificity can reduce answer generalizability</li>
-                <li>Risks over-fitting to context details that may not be relevant</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" duration={0.8} delay={0.9}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={1.1}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Can conflict with brevity and conciseness goals</li>
+                  <li>May not be appropriate for all query types (some need general answers)</li>
+                  <li>High specificity can reduce answer generalizability</li>
+                  <li>Risks over-fitting to context details that may not be relevant</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f6f21',
-          notes: ''
-        }
+          notes: `### Answer Specificity — Considerations
+Let's talk about the trade-offs. Answer Specificity is powerful, but like everything in ML, it's not a free lunch. There are important considerations and limitations to keep in mind.
+
+#### Pros: The Good Stuff
+The benefits are compelling! When your answers are specific, users can actually DO something with them. They're actionable, not abstract. Your LLM is squeezing value from that retrieved context instead of ignoring it for safe generic responses. User satisfaction goes up because people get concrete information they can act on immediately. And here's a bonus: fewer follow-up questions! When you give specific details the first time, users don't need to ask "but how exactly do I do that?"
+
+#### Cons: The Tensions
+But here's where it gets tricky. High specificity often conflicts with brevity. You might achieve 0.85 specificity but your answer is now three paragraphs long when one sentence would suffice for simpler queries. Not every question needs a detailed step-by-step! Sometimes "Yes, version 3.0 supports it" is better than a lengthy explanation of how version 3.0 implements the feature.
+
+#### Context Mismatch Risks
+There's also the over-fitting danger. If your context happens to include very specific details that aren't actually relevant to the query, a system optimized for high specificity might include them anyway. Like mentioning a specific error code when the user's problem is completely different. You're being specific, but you're being specifically wrong about which details matter!
+
+#### Generalizability Trade-off
+And some answers SHOULD be somewhat general! If someone asks "How does authentication work?" they might want a conceptual overview, not the exact API endpoints and token formats. High specificity can reduce how well an answer transfers to similar but slightly different scenarios.
+
+#### The Balancing Act
+The key is balance and context awareness. Monitor specificity alongside answer length, user satisfaction, and follow-up rates. Different query types need different specificity levels. Tune your prompts accordingly!`
+        },
       ]
     },
     {
@@ -2735,22 +2867,43 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures the percentage of irrelevant tokens in retrieved context (context pollution) that contribute to prompt inefficiency.</p>
+              <GSAPAnimated animation="bounceIn" duration={1} delay={0.1}>
+                <h3>Definition</h3>
+                <p>Measures the percentage of irrelevant tokens in retrieved context (context pollution) that contribute to prompt inefficiency.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Reduces distraction for the LLM by removing irrelevant context</li>
-                <li>Lowers token costs and latency by minimizing context size</li>
-                <li>Improves grounding probability by focusing LLM attention on relevant information</li>
-                <li>Enables more efficient use of limited context windows</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.4}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Reduces distraction for the LLM by removing irrelevant context</li>
+                  <li>Lowers token costs and latency by minimizing context size</li>
+                  <li>Improves grounding probability by focusing LLM attention on relevant information</li>
+                  <li>Enables more efficient use of limited context windows</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>When working with long-context models, during retrieval and reranking system tuning, for optimizing cost and latency control, and when refining chunk sizes and boundaries.</p>
+              <GSAPAnimated animation="scaleIn" duration={0.9} delay={1.1}>
+                <p>When working with long-context models, during retrieval and reranking system tuning, for optimizing cost and latency control, and when refining chunk sizes and boundaries.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6f4a1f',
-          notes: ''
+          notes: `### Noise Density — Overview
+Alright, metric eleven: Noise Density! This is where we talk about the garbage sneaking into your context window. Think of it as measuring how much junk food is in your LLM's diet.
+
+#### What Is Noise Density?
+Noise Density is the percentage of irrelevant tokens in your retrieved context - basically, context pollution. You retrieve a bunch of chunks, but how much of that content actually helps answer the query? If you're passing 3,000 tokens to your LLM but 800 of them are tangential, off-topic, or just plain useless, that's noise! And noise is expensive.
+
+#### Why This Matters
+Every irrelevant token you send to your LLM costs you money, adds latency, and worse - distracts the model! LLMs have attention mechanisms, and irrelevant context can pull that attention away from the good stuff. It's like trying to have an important conversation at a noisy party. Sure, you can technically hear the person, but all that background noise makes it harder to focus.
+
+#### The Benefits of Clean Context
+When you reduce noise density, multiple good things happen at once. Your LLM focuses better, so grounding probability goes up. Your costs go down because you're sending fewer tokens. Latency improves because smaller context means faster processing. And you free up context window space for more relevant content or more complex prompts!
+
+#### When to Use This Metric
+Noise Density is crucial when you're tuning retrieval and reranking systems. It helps you evaluate whether your semantic search is actually returning relevant content or just content that happens to share some keywords. It's also essential when working with long-context models where every token counts, and when you're optimizing chunk sizes and boundaries. Are your chunks too big, including irrelevant paragraphs?`
         },
         {
           id: 44,
@@ -2758,26 +2911,79 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Noise Density quantifies the proportion of tokens in the retrieved context that don't contribute to answering the query. Lower is better.</p>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.2}>
+                <h3>How It Works</h3>
+                <p>Noise Density quantifies the proportion of tokens in the retrieved context that don't contribute to answering the query. Lower is better.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`NoiseDensity = (Irrelevant tokens in context) / (Total context tokens)`}
-              </pre>
-              <p>Approaches: Per-chunk relevance × chunk length, token-level labeling via LLM or embedding relevance, or manual evaluation of token necessity.</p>
+              <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.5}>
+                <h3>Formula</h3>
+                <MermaidPopover
+                  title="View Noise Detection Process"
+                  diagram={`graph TB
+    A[Retrieved Context] --> B[Analyze Each Chunk]
+    B --> C{Chunk Relevance?}
+    
+    C -->|Relevant| D[Count Relevant Tokens]
+    C -->|Irrelevant| E[Count Irrelevant Tokens]
+    C -->|Partially| F[Estimate Relevant/Irrelevant Split]
+    
+    D --> G[Sum All Relevant Tokens]
+    E --> H[Sum All Irrelevant Tokens]
+    F --> G
+    F --> H
+    
+    G --> I[Total Context Tokens]
+    H --> I
+    
+    I --> J[Calculate: Irrelevant / Total]
+    J --> K[Noise Density Score]
+    
+    K --> L{Score Analysis}
+    L -->|<15%| M[Excellent - Minimal Noise]
+    L -->|15-30%| N[Acceptable - Some Cleanup Possible]
+    L -->|>30%| O[Poor - Significant Noise]`}
+                />
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`NoiseDensity = (Irrelevant tokens in context) / (Total context tokens)`}
+                </pre>
+                <p>Approaches: Per-chunk relevance × chunk length, token-level labeling via LLM or embedding relevance, or manual evaluation of token necessity.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>&lt;30% for short context windows</li>
-                <li>&lt;20% for long context systems</li>
-                <li>Lower is better - aim to minimize irrelevant content</li>
-                <li>High-performing systems may achieve &lt;15% for targeted domains</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" duration={0.8} delay={0.8}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={1.0}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>&lt;30% for short context windows</li>
+                  <li>&lt;20% for long context systems</li>
+                  <li>Lower is better - aim to minimize irrelevant content</li>
+                  <li>High-performing systems may achieve &lt;15% for targeted domains</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6f4a1f',
-          notes: ''
+          notes: `### Noise Density — How It Works
+Let's get into the mechanics of measuring noise. This is simpler than it sounds, though getting it perfectly right can be nuanced.
+
+#### The Core Concept
+Noise Density is just a ratio: irrelevant tokens divided by total tokens in your context. If you send 3,000 tokens to your LLM and 800 are off-topic, that's 26.7% noise density. Lower is always better - you want that number as close to zero as possible!
+
+#### How Do We Detect Noise?
+The tricky part is figuring out which tokens are irrelevant. You've got a few approaches here. The most common is chunk-level evaluation: for each retrieved chunk, estimate its relevance score - maybe using an LLM 👉 (ell-ell-emm) judge or embedding similarity to the query. A chunk that scores low on relevance contributes most of its tokens to your noise count.
+
+#### Token-Level Precision
+For more precision, you can do token-level labeling. Have an LLM read through the context and literally mark which sentences or tokens are relevant versus irrelevant. This is more accurate but also more computationally expensive. It's overkill for most use cases, but valuable when you're really optimizing retrieval quality.
+
+#### The Manual Baseline
+Don't underestimate the value of manual evaluation, at least for baselines! Take a sample of queries, look at the retrieved context with your human eyes, and honestly assess how much is helpful versus how much is tangential fluff. This gives you ground truth to validate your automated metrics.
+
+#### Target Benchmarks
+For short context windows where every token is precious, aim for under 30% noise. For long context systems where you've got more room to work with, shoot for under 20%. High-performing domain-specific systems often achieve under 15% noise density because they've really tuned their retrieval and chunking strategies.
+
+#### The Quality-Cost Link
+Remember: every percentage point of noise reduction is money saved and performance gained. If you're sending a million queries per day with 3,000 token contexts at 30% noise, that's 900 million wasted tokens! Cut noise to 15% and you've just saved 450 million tokens - real money, real latency improvements!`
         },
         {
           id: 45,
@@ -2785,18 +2991,44 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p>Retrieved context: 3,000 tokens total</p>
-              <p>Irrelevant tokens: 800 tokens (tangential information)</p>
-              <p><strong>Noise Density = 800/3,000 = 26.7%</strong></p>
-              <p><em>This indicates moderate noise that could be improved through better retrieval or reranking.</em></p>
+              <GSAPAnimated animation="slideInBottom" duration={0.9} delay={0.1}>
+                <h3>Example</h3>
+                <p>Retrieved context: 3,000 tokens total</p>
+                <p>Irrelevant tokens: 800 tokens (tangential information)</p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Evaluate each chunk or section in the retrieved context for relevance. Multiply relevance scores by chunk token counts. Sum irrelevant tokens and divide by total context tokens. Use LLM judges or embedding similarity for automated assessment.</p>
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0.5}>
+                <p><strong>Noise Density = 800/3,000 = 26.7%</strong></p>
+                <p><em>This indicates moderate noise that could be improved through better retrieval or reranking.</em></p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.9}>
+                <h3>How to Calculate</h3>
+                <p>Evaluate each chunk or section in the retrieved context for relevance. Multiply relevance scores by chunk token counts. Sum irrelevant tokens and divide by total context tokens. Use LLM judges or embedding similarity for automated assessment.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6f4a1f',
-          notes: ''
+          notes: `### Noise Density — Implementation
+Let's work through a real example to make this concrete. Numbers make everything clearer!
+
+#### The Scenario
+Imagine your retrieval system grabbed five chunks totaling 3,000 tokens for a user query. You send all that context to your LLM. Sounds reasonable, right? But here's the question: how much of that 3,000 tokens is actually helping?
+
+#### Breaking Down the Context
+Let's say you evaluate each chunk for relevance. Chunk one is highly relevant - 600 tokens, all good. Chunk two is mostly relevant, maybe 80% - so 400 tokens useful, 100 tokens noise. Chunk three is tangentially related at best - 700 tokens of mostly noise. Chunk four and five are solid. When you add it up, you've got roughly 800 tokens that don't really contribute to answering the query.
+
+#### The Calculation
+Simple division: 800 irrelevant tokens divided by 3,000 total tokens equals 26.7% noise density. That's in the moderate range - not terrible, but definitely room for improvement! You're basically wasting more than a quarter of your context window and token budget on content that's not pulling its weight.
+
+#### What This Tells You
+A 26.7% noise density is a signal that your retrieval or reranking could be better. Maybe your embedding model isn't capturing semantic relevance well. Maybe your chunks are too large and include too much tangential content. Maybe you need a reranker to filter out the weaker matches. This metric gives you a concrete target for optimization!
+
+#### Step-by-Step Calculation
+In practice, you'd evaluate each chunk - either with an LLM judge giving a relevance score from 0 to 1, or using embedding similarity between chunk and query. Multiply each chunk's relevance score by its token count to get relevant tokens. Sum up what's NOT relevant across all chunks. Divide by total tokens. Track this over time and across different queries to identify patterns!
+
+#### The Improvement Path
+Once you know you're at 26.7%, you can experiment. Try adjusting your retrieval parameters. Add a reranker. Optimize chunk boundaries. Then measure again. Did you drop to 20%? 15%? That's direct evidence your changes worked!`
         },
         {
           id: 46,
@@ -2804,26 +3036,68 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Reduces distraction for the LLM by removing irrelevant context</li>
-                <li>Lowers token costs and latency by minimizing context size</li>
-                <li>Improves grounding probability by focusing LLM attention on relevant information</li>
-                <li>Enables more efficient use of limited context windows</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+                <MermaidPopover
+                  title="View Impact Flow"
+                  diagram={`graph LR
+    A[Low Noise Density] --> B[Reduced LLM Distraction]
+    A --> C[Lower Token Costs]
+    A --> D[Improved Grounding]
+    A --> E[Efficient Context Windows]
+    
+    B --> F[Better Focus]
+    C --> G[Cost Savings]
+    D --> H[Higher Quality Answers]
+    E --> I[Faster Processing]
+    
+    F --> J[Optimized RAG System]
+    G --> J
+    H --> J
+    I --> J`}
+                />
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Reduces distraction for the LLM by removing irrelevant context</li>
+                  <li>Lowers token costs and latency by minimizing context size</li>
+                  <li>Improves grounding probability by focusing LLM attention on relevant information</li>
+                  <li>Enables more efficient use of limited context windows</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Determining "irrelevance" can be subjective or context-dependent</li>
-                <li>Some context may seem irrelevant but provide useful background</li>
-                <li>Fine-grained token-level evaluation is computationally expensive</li>
-                <li>Over-optimization can lead to losing important nuance</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" duration={1} delay={0.9}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={1.1}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Determining "irrelevance" can be subjective or context-dependent</li>
+                  <li>Some context may seem irrelevant but provide useful background</li>
+                  <li>Fine-grained token-level evaluation is computationally expensive</li>
+                  <li>Over-optimization can lead to losing important nuance</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6f4a1f',
-          notes: ''
-        }
+          notes: `### Noise Density — Considerations
+Let's wrap up Noise Density by talking about the trade-offs and gotchas. This metric is valuable but comes with important nuances.
+
+#### Pros: The Compelling Benefits
+The upside of low noise density is fantastic! Your LLM can focus its attention on relevant content without distraction. That means better grounding - the model uses the good context instead of getting confused by irrelevant tangents. Your token costs drop, sometimes dramatically! 15% noise reduction on high-volume systems can save thousands of dollars per month. And latency improves because smaller contexts process faster. Plus, you free up context window space for other valuable uses - maybe adding more examples or more retrieval results.
+
+#### Cons: The Subjectivity Problem
+Here's the first gotcha: "irrelevance" is surprisingly subjective! What looks irrelevant to you might actually provide useful background context to the LLM. Sometimes tangential information helps establish the broader picture. A paragraph about how a system works generally might help the LLM better interpret specific technical details later in the context. So be careful about being too aggressive in labeling things as noise.
+
+#### The Background Context Value
+Some "noise" isn't really noise - it's context that seems irrelevant in isolation but becomes valuable when combined with other chunks. This is especially true for complex technical queries where understanding the full picture requires connecting multiple pieces of information. Over-optimizing for low noise density can accidentally strip away this connective tissue!
+
+#### Computational Cost Considerations
+Token-level evaluation of relevance is computationally expensive! If you're evaluating every token with an LLM judge, you might spend more on evaluation than you save on reduced context. Chunk-level evaluation is usually the sweet spot - good enough accuracy without excessive compute costs. Save the fine-grained analysis for your most important queries or for offline analysis.
+
+#### The Over-Pruning Risk
+Finally, there's the over-optimization danger. If you get too aggressive about removing "noise," you might lose important nuance or edge cases that matter. A 5% noise density sounds amazing, but did you accidentally filter out examples or exceptions that would have prevented a hallucination? Balance is key!`
+        },
       ]
     },
     {
@@ -2836,22 +3110,46 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>How compactly key information is expressed in the prompt while preserving coverage of essential information for answer generation.</p>
+              <GSAPAnimated animation="rotateIn" duration={1} delay={0.1}>
+                <h3>Definition</h3>
+                <p>How compactly key information is expressed in the prompt while preserving coverage of essential information for answer generation.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Maintains answer accuracy while significantly lowering token usage</li>
-                <li>Reduces inference latency through smaller context windows</li>
-                <li>Lowers operational costs for token-priced LLM APIs</li>
-                <li>Enables more complex RAG architectures within the same context budget</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.4}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Maintains answer accuracy while significantly lowering token usage</li>
+                  <li>Reduces inference latency through smaller context windows</li>
+                  <li>Lowers operational costs for token-priced LLM APIs</li>
+                  <li>Enables more complex RAG architectures within the same context budget</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>When implementing context summarization/condensation, during reranker pruning optimization, for prompt engineering to reduce token usage, and when optimizing context-window usage in tight budget scenarios.</p>
+              <GSAPAnimated animation="slideInTop" duration={0.8} delay={1.2}>
+                <p>When implementing context summarization/condensation, during reranker pruning optimization, for prompt engineering to reduce token usage, and when optimizing context-window usage in tight budget scenarios.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#466f1f',
-          notes: ''
+          notes: `### Context Compression Efficiency — Overview
+Welcome to metric twelve: Context Compression Efficiency! This one is all about doing more with less - the holy grail of system optimization.
+
+#### What Is Context Compression Efficiency?
+Context Compression Efficiency, or CCE 👉 (see-see-eee), measures how compactly you can express key information while still maintaining the coverage you need for quality answers. Think of it like data compression for your prompts. You're trying to pack the same amount of useful information into fewer tokens. It's not about removing content - it's about expressing that content more efficiently!
+
+#### The Core Challenge
+Here's the tension: you need enough context to answer questions accurately, but every token costs money and adds latency. Can you get 85% coverage with 1,200 tokens instead of 2,000? If so, you've achieved a compression ratio of 1.67 to 1, which is huge! That's 40% fewer tokens while maintaining the same answer quality. In high-volume systems, that difference is the margin between profit and loss.
+
+#### Why This Matters
+Token-priced APIs make this extremely practical. If you're using GPT-4 or Claude and sending millions of requests, every token reduction directly impacts your bottom line. But it's not just about cost! Smaller contexts mean faster processing, lower latency for users, and more headroom in your context window for other features - maybe you can add few-shot examples or more sophisticated prompts with the tokens you've saved.
+
+#### The Quality Preservation Requirement
+The crucial part is "while preserving coverage." Anyone can compress context by just deleting half of it! The trick is maintaining the same answer quality - same completeness, same accuracy - with fewer tokens. That's what separates good compression from naive truncation.
+
+#### When to Focus on CCE
+This metric is essential when implementing context summarization or condensation systems, when optimizing reranker pruning strategies, during prompt engineering efforts to reduce token usage, and especially when you're in tight budget scenarios. If your CFO is asking why the LLM bill is so high, CCE is your best friend!`
         },
         {
           id: 48,
@@ -2859,27 +3157,84 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Context Compression Efficiency measures how well information density is optimized in the prompt. It evaluates information coverage per token used.</p>
+              <GSAPAnimated animation="slideInBottom" duration={0.9} delay={0.1}>
+                <h3>How It Works</h3>
+                <p>Context Compression Efficiency measures how well information density is optimized in the prompt. It evaluates information coverage per token used.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`CCE = Coverage_τ / Tokens
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.4}>
+                <h3>Formula</h3>
+                <MermaidPopover
+                  title="View Compression Process"
+                  diagram={`graph TB
+    A[Baseline Context] --> B[Measure Coverage]
+    A --> C[Count Tokens]
+    B --> D[Baseline: Coverage/Tokens]
+    C --> D
+    
+    E[Apply Compression] --> F{Technique}
+    F -->|Summarization| G[LLM Condenses Content]
+    F -->|Pruning| H[Remove Low-Value Chunks]
+    F -->|Reranking| I[Keep Only Best Matches]
+    
+    G --> J[Compressed Context]
+    H --> J
+    I --> J
+    
+    J --> K[Measure New Coverage]
+    J --> L[Count New Tokens]
+    K --> M[Compressed: Coverage/Tokens]
+    L --> M
+    
+    D --> N[Compare Ratios]
+    M --> N
+    N --> O[CCE Improvement Score]
+    
+    O --> P{Quality Check}
+    P -->|Coverage Maintained| Q[Success!]
+    P -->|Coverage Dropped| R[Adjust & Retry]`}
+                />
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`CCE = Coverage_τ / Tokens
 - OR -
 Compute MinimalTokens achieving Coverage ≥ τ`}
-              </pre>
-              <p>Where Coverage_τ is contextual recall at threshold τ, and Tokens is the token count used in context.</p>
+                </pre>
+                <p>Where Coverage_τ is contextual recall at threshold τ, and Tokens is the token count used in context.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Seek higher CCE vs. baseline</li>
-                <li>Typically aim for ≥20–40% token reduction at same coverage level</li>
-                <li>Compare different compression approaches against each other</li>
-              </ul>
+              <GSAPAnimated animation="scaleIn" duration={0.9} delay={0.7}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.9}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Seek higher CCE vs. baseline</li>
+                  <li>Typically aim for ≥20–40% token reduction at same coverage level</li>
+                  <li>Compare different compression approaches against each other</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#466f1f',
-          notes: ''
+          notes: `### Context Compression Efficiency — How It Works
+Let's dive into the mechanics of measuring compression efficiency. This is where art meets science!
+
+#### The Core Formula
+CCE is basically coverage divided by tokens. Or if you prefer to think about it differently: what's the minimum number of tokens needed to achieve your target coverage threshold? Both perspectives give you the same insight - you want high coverage with low token count. The higher your CCE ratio, the more efficiently you're packing information.
+
+#### What Is Coverage?
+Coverage here typically means contextual recall - what percentage of the necessary information is present in your context? If your baseline context includes 100% of what's needed to answer a query category and uses 2,000 tokens, and your compressed version includes 95% of what's needed but only uses 1,200 tokens, you've achieved better efficiency despite the slight coverage drop.
+
+#### Compression Techniques
+You've got several compression approaches to choose from. Summarization uses an LLM to condense the retrieved chunks into a shorter summary that preserves key points. Pruning removes lower-value chunks entirely based on relevance scores. Reranking keeps only your top-K highest-relevance chunks. Each approach has different trade-offs!
+
+#### The Measurement Process
+Start with your baseline - measure coverage and token count with your current system. Then apply compression - maybe you summarize, maybe you prune chunks, maybe you do both! Measure again. Did you maintain 85% coverage? Great! How many tokens? If you went from 2,000 to 1,200, that's a 67% improvement in efficiency. That's the CCE gain!
+
+#### Target Benchmarks
+Most systems aim for 20 to 40% token reduction while maintaining equivalent coverage. That's a realistic target that provides significant cost and latency benefits without risking answer quality. Some highly tuned systems achieve even better compression ratios, especially in domains where information is highly redundant or where aggressive summarization works well.
+
+#### The Validation Loop
+The critical step is validating that coverage is truly maintained! Don't just trust the math - actually test answer quality with compressed context. Do A/B testing. Compare user satisfaction. Make sure your 40% token reduction didn't silently degrade the quality of answers. The whole point is efficiency without sacrifice!`
         },
         {
           id: 49,
@@ -2887,18 +3242,44 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Baseline:</strong> 85% coverage achieved with 2,000 tokens</p>
-              <p><strong>Optimized:</strong> Same 85% coverage with only 1,200 tokens</p>
-              <p><strong>Result: CCE improves by ~67% (compression ratio 1.67:1)</strong></p>
-              <p><strong>Impact:</strong> 40% token reduction without sacrificing information</p>
+              <GSAPAnimated animation="bounceIn" duration={1} delay={0.1}>
+                <h3>Example</h3>
+                <p><strong>Baseline:</strong> 85% coverage achieved with 2,000 tokens</p>
+                <p><strong>Optimized:</strong> Same 85% coverage with only 1,200 tokens</p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Measure the coverage metric (e.g., answer quality) with baseline context. Apply compression techniques (summarization, pruning, reranking). Measure coverage again with compressed context. Compare tokens used at equivalent coverage levels.</p>
+              <GSAPAnimated animation="slideInRight" duration={0.9} delay={0.5}>
+                <p><strong>Result: CCE improves by ~67% (compression ratio 1.67:1)</strong></p>
+                <p><strong>Impact:</strong> 40% token reduction without sacrificing information</p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.9}>
+                <h3>How to Calculate</h3>
+                <p>Measure the coverage metric (e.g., answer quality) with baseline context. Apply compression techniques (summarization, pruning, reranking). Measure coverage again with compressed context. Compare tokens used at equivalent coverage levels.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#466f1f',
-          notes: ''
+          notes: `### Context Compression Efficiency — Implementation
+Let's make this concrete with real numbers that demonstrate the power of compression!
+
+#### The Baseline Scenario
+Your current system retrieves context that provides 85% coverage of necessary information - not perfect, but pretty good! This context uses 2,000 tokens. You're paying for those 2,000 tokens on every query, and they're adding noticeable latency to your responses. Can we do better?
+
+#### Applying Compression
+You implement a compression strategy - maybe you summarize the retrieved chunks, or you prune away the lowest-relevance portions, or you apply tighter reranking thresholds. Your goal is to maintain that 85% coverage while using fewer tokens. You run your optimization and measure again.
+
+#### The Results
+After compression, you're still hitting 85% coverage - same quality threshold! But now you're only using 1,200 tokens. The math is beautiful: you've achieved a compression ratio of 1.67 to 1, or a 40% token reduction. You're delivering the same information density with 40% fewer tokens!
+
+#### The Real-World Impact
+Let's put this in perspective. If you're running 100,000 queries per day at, say, $0.03 per thousand input tokens for GPT-4, you were spending $6,000 per day on input tokens. After compression, you're spending $3,600 per day - saving $2,400 daily, nearly $900,000 per year! And that's just input tokens for one component of your system. The savings compound across embeddings, reranking, and output tokens too.
+
+#### Beyond Cost Savings
+But it's not just about money! Your average query latency probably dropped by 20-30% because the LLM is processing smaller contexts. User experience improves. And you've freed up context window space - maybe you can now add few-shot examples, or retrieve one more chunk, or implement chain-of-thought reasoning with the tokens you've saved.
+
+#### Step-by-Step Calculation
+In practice: measure baseline coverage and tokens, apply your compression technique, measure compressed coverage and tokens, calculate the ratio. If coverage dropped below your threshold, adjust your compression parameters - maybe summarize less aggressively, or prune fewer chunks. Iterate until you find the optimal compression level for your quality requirements!`
         },
         {
           id: 50,
@@ -2906,26 +3287,79 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Maintains answer accuracy while significantly lowering token usage</li>
-                <li>Reduces inference latency through smaller context windows</li>
-                <li>Lowers operational costs for token-priced LLM APIs</li>
-                <li>Enables more complex RAG architectures within the same context budget</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+                <MermaidPopover
+                  title="View Efficiency Trade-offs"
+                  diagram={`graph TD
+    A[Context Compression] --> B{Benefits}
+    A --> C{Costs}
+    
+    B --> D[Lower Token Usage]
+    B --> E[Reduced Latency]
+    B --> F[Lower API Costs]
+    B --> G[More Context Budget]
+    
+    C --> H[Processing Overhead]
+    C --> I[Potential Detail Loss]
+    C --> J[Complexity Added]
+    
+    D --> K{Net Impact}
+    E --> K
+    F --> K
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+    
+    K -->|Positive| L[Deploy Compression]
+    K -->|Negative| M[Optimize or Skip]`}
+                />
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Maintains answer accuracy while significantly lowering token usage</li>
+                  <li>Reduces inference latency through smaller context windows</li>
+                  <li>Lowers operational costs for token-priced LLM APIs</li>
+                  <li>Enables more complex RAG architectures within the same context budget</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Compression can remove subtle but important details</li>
-                <li>Requires careful validation that coverage is truly maintained</li>
-                <li>Summarization/compression adds processing overhead and latency</li>
-                <li>May not be beneficial for already-concise contexts</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.9}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={1.1}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Compression can remove subtle but important details</li>
+                  <li>Requires careful validation that coverage is truly maintained</li>
+                  <li>Summarization/compression adds processing overhead and latency</li>
+                  <li>May not be beneficial for already-concise contexts</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#466f1f',
-          notes: ''
-        }
+          notes: `### Context Compression Efficiency — Considerations
+Let's talk about the full picture of compression - the benefits are huge, but there are real trade-offs to consider!
+
+#### Pros: The Efficiency Jackpot
+When compression works well, you hit the efficiency jackpot! You maintain answer accuracy while dramatically lowering token usage - we're talking 20 to 40% reductions that translate directly to cost savings. Latency drops because smaller contexts process faster. And here's the sneaky benefit: you've freed up context budget for other valuable features. Maybe you can now afford to include more examples, or add chain-of-thought prompting, or implement additional safety checks - all within the same context window and budget you were already using!
+
+#### The Cost Savings Compound
+In high-volume production systems, these savings are transformative. A 40% token reduction on a system handling millions of queries per month can save hundreds of thousands of dollars annually. That's not just optimization - that's business viability! It's the difference between "we can't afford this" and "let's scale this up."
+
+#### Cons: The Hidden Costs
+But compression isn't free! The biggest gotcha is processing overhead. If you're using an LLM to summarize your context, you're adding an extra API call and latency hit before you even get to the main query. For some queries, that summarization latency exceeds what you saved on the smaller context! You need to do the math on your specific use case.
+
+#### The Detail Loss Risk
+Compression inevitably risks losing subtle but important details. Summarization might drop edge cases, caveats, or specific examples that would have prevented hallucinations or improved specificity. You MUST validate that coverage is truly maintained - don't just trust the metrics, actually test answer quality with real queries! Run A/B tests, measure user satisfaction, check for regression in corner cases.
+
+#### When Compression Doesn't Help
+If your context is already concise and well-pruned, compression might not help much. You can't efficiently compress what's already efficient! If you're only using 500 tokens of highly relevant content, trying to compress further might just degrade quality without meaningful savings. Know when to stop optimizing!
+
+#### The Right Approach
+The key is measuring the full pipeline impact - compression overhead versus token savings, latency changes, quality validation. And remember: different queries might benefit from different compression strategies or no compression at all!`
+        },
       ]
     },
     {
@@ -2938,22 +3372,46 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Overall efficiency of the RAG pipeline under latency and budget constraints, balancing performance with resource utilization.</p>
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
+                <h3>Definition</h3>
+                <p>Overall efficiency of the RAG pipeline under latency and budget constraints, balancing performance with resource utilization.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Balances user experience responsiveness with operational costs</li>
-                <li>Enables sustainable scaling of RAG systems to more users</li>
-                <li>Provides framework for data-driven infrastructure decisions</li>
-                <li>Helps identify optimization opportunities in the pipeline</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" duration={0.9} delay={0.4}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Balances user experience responsiveness with operational costs</li>
+                  <li>Enables sustainable scaling of RAG systems to more users</li>
+                  <li>Provides framework for data-driven infrastructure decisions</li>
+                  <li>Helps identify optimization opportunities in the pipeline</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>When selecting LLM/embedding models or rerankers, for tuning top-K retrieval parameters, optimizing batching and caching strategies, during deployment sizing and scaling decisions, and for comparing system configurations under budget constraints.</p>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={1.2}>
+                <p>When selecting LLM/embedding models or rerankers, for tuning top-K retrieval parameters, optimizing batching and caching strategies, during deployment sizing and scaling decisions, and for comparing system configurations under budget constraints.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f696f',
-          notes: ''
+          notes: `### Latency-Cost Tradeoff Score — Overview
+And here we are - metric thirteen, our final metric! The Latency-Cost Tradeoff Score brings everything together into a single efficiency measure. This is the meta-metric that executives love and engineers need.
+
+#### What Is the Latency-Cost Tradeoff Score?
+The LCTS 👉 (ell-see-tee-ess) measures overall RAG pipeline efficiency under both latency and budget constraints. It's not just about being fast, or just about being cheap - it's about finding the optimal balance between user experience responsiveness and operational costs. Think of it as your system's efficiency rating, like miles-per-gallon for cars but for RAG systems!
+
+#### The Dual Constraint Reality
+Here's why this metric matters: you're always juggling two competing constraints. Users want fast responses - ideally under a second or two for most queries. But faster often means more expensive - maybe you're using a more powerful model, or more retrieval results, or less caching. Meanwhile, your CFO wants to keep costs down. How do you navigate this tension?
+
+#### The Balancing Act
+The LCTS gives you a framework for making data-driven trade-off decisions. Should you use GPT-4 Turbo or GPT-3.5? The answer depends on your latency budget and cost budget! Should you retrieve top-5 chunks or top-10? LCTS helps you compare configurations objectively. It's not about finding the absolute fastest or absolute cheapest - it's about finding the sweet spot that meets both constraints.
+
+#### The Business Impact
+This metric directly enables sustainable scaling. If your LCTS is good, you can scale to millions of users without blowing your budget or delivering a sluggish user experience. If it's poor, you're either hemorrhaging money or losing users to slow responses. It provides a quantitative framework for infrastructure decisions that used to be guesswork!
+
+#### When to Use This
+Use LCTS when selecting models - comparing different LLMs, embeddings, or rerankers. Use it when tuning retrieval parameters like top-K. Use it when optimizing batching, caching, or other infrastructure strategies. Use it during deployment sizing and scaling decisions. And critically, use it to compare different system configurations under realistic budget constraints!`
         },
         {
           id: 52,
@@ -2961,26 +3419,85 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Latency-Cost Tradeoff Score measures how efficiently the system operates within specified latency and cost budgets, with a configurable weight parameter.</p>
+              <GSAPAnimated animation="slideInTop" duration={0.9} delay={0.1}>
+                <h3>How It Works</h3>
+                <p>Latency-Cost Tradeoff Score measures how efficiently the system operates within specified latency and cost budgets, with a configurable weight parameter.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]`}
-              </pre>
-              <p>Where α is a weight parameter (0-1) for latency vs. cost importance, p50 latency is the median response time, and the result is clipped to range [0,1].</p>
+              <GSAPAnimated animation="rotateIn" duration={1} delay={0.4}>
+                <h3>Formula</h3>
+                <MermaidPopover
+                  title="View Tradeoff Calculation"
+                  diagram={`graph TB
+    A[Set Constraints] --> B[Latency Budget]
+    A --> C[Cost Budget]
+    A --> D[Weight α]
+    
+    E[Measure System] --> F[P50 Latency]
+    E --> G[Token Cost]
+    
+    F --> H[Latency Ratio = P50/Budget]
+    G --> I[Cost Ratio = Cost/Budget]
+    
+    B --> H
+    C --> I
+    
+    H --> J[Weighted Sum]
+    I --> J
+    D --> J
+    
+    J --> K[α × Latency Ratio + 1-α × Cost Ratio]
+    K --> L[Subtract from 1]
+    L --> M[LCTS = 1 - Weighted Sum]
+    
+    M --> N{Score Range}
+    N -->|≥0.85| O[Excellent Efficiency]
+    N -->|0.70-0.84| P[Good Efficiency]
+    N -->|<0.70| Q[Needs Optimization]`}
+                />
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`LCTS = 1 − [α·(p50 latency/latency budget) + (1−α)·(token cost/cost budget)]`}
+                </pre>
+                <p>Where α is a weight parameter (0-1) for latency vs. cost importance, p50 latency is the median response time, and the result is clipped to range [0,1].</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.70 is generally acceptable</li>
-                <li>≥0.85 indicates strong performance</li>
-                <li>Adjust thresholds based on specific application requirements</li>
-                <li>Higher-priority applications may require stricter thresholds</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" duration={1} delay={0.7}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.9}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>≥0.70 is generally acceptable</li>
+                  <li>≥0.85 indicates strong performance</li>
+                  <li>Adjust thresholds based on specific application requirements</li>
+                  <li>Higher-priority applications may require stricter thresholds</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f696f',
-          notes: ''
+          notes: `### Latency-Cost Tradeoff Score — How It Works
+Let's break down the mathematics behind LCTS. Don't worry - it's more intuitive than it looks!
+
+#### The Core Formula
+LCTS equals 1 minus a weighted sum of how much of your budgets you're using. The weighted sum includes alpha times your latency ratio, plus one-minus-alpha times your cost ratio. The result is clipped to stay between 0 and 1. Higher scores are better - they mean you're operating efficiently within your constraints!
+
+#### Understanding the Components
+Let's decode this. P50 latency is your median response time - the latency at which 50% of requests are faster and 50% are slower. This is more stable than average latency because it's not skewed by occasional outliers. Your latency budget is whatever threshold you've set - maybe 2 seconds for interactive queries. The ratio tells you what percentage of your budget you're consuming.
+
+#### The Cost Side
+Similarly, token cost divided by cost budget tells you what percentage of your cost budget you're using. If you budgeted for 5 cents per query but you're spending 3 cents, that's a 0.6 ratio - you're using 60% of your cost budget. Not bad!
+
+#### The Alpha Weight Parameter
+Here's where it gets interesting - alpha lets you prioritize! If alpha is 0.6, you're saying latency is slightly more important than cost. If alpha is 0.8, you really care about speed and cost is secondary. If alpha is 0.3, you're cost-focused and can tolerate higher latency. This flexibility is crucial because different applications have different priorities!
+
+#### Worked Through the Math
+Let's say alpha is 0.6, you're using 70% of your latency budget, and 50% of your cost budget. The calculation is: 1 minus bracket 0.6 times 0.7 plus 0.4 times 0.5 bracket. That's 1 minus bracket 0.42 plus 0.20 bracket equals 1 minus 0.62 equals 0.38. That's a low score - it means you're consuming a lot of your budgets!
+
+#### Target Benchmarks
+Aim for at least 0.70 for acceptable efficiency - that means you're staying comfortably within budgets. Above 0.85 indicates strong performance - you've got headroom! Below 0.70 means you're pushing your constraints and need optimization. Critical applications might set stricter thresholds, maybe requiring 0.90 or higher.
+
+#### The Interpretation
+A high LCTS means you're delivering quality answers while staying well within your latency and cost constraints - that's operational excellence! A low LCTS is a red flag that you need to optimize your pipeline or adjust your budgets or priorities.`
         },
         {
           id: 53,
@@ -2988,23 +3505,54 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Given:</strong></p>
-              <ul style={{ marginTop: '14px' }}>
-                <li>α = 0.6 (latency slightly more important than cost)</li>
-                <li>Latency use: 70% of budget (0.7)</li>
-                <li>Cost use: 50% of budget (0.5)</li>
-              </ul>
-              <p><strong>LCTS = 1 − [0.6·0.7 + 0.4·0.5]</strong></p>
-              <p><strong>LCTS = 1 − [0.42 + 0.20] = 0.38</strong></p>
-              <p><em>This indicates suboptimal performance that needs optimization.</em></p>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0.1}>
+                <h3>Example</h3>
+                <p><strong>Given:</strong></p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>α = 0.6 (latency slightly more important than cost)</li>
+                  <li>Latency use: 70% of budget (0.7)</li>
+                  <li>Cost use: 50% of budget (0.5)</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3>How to Calculate</h3>
-              <p>Measure p50 latency and token costs in production. Compare against your budget constraints. Apply the formula with your chosen α weight. Use the score to compare configurations or track optimization progress.</p>
+              <GSAPAnimated animation="slideInLeft" duration={0.9} delay={0.8}>
+                <p><strong>LCTS = 1 − [0.6·0.7 + 0.4·0.5]</strong></p>
+                <p><strong>LCTS = 1 − [0.42 + 0.20] = 0.38</strong></p>
+                <p><em>This indicates suboptimal performance that needs optimization.</em></p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInRight" duration={0.8} delay={1.1}>
+                <h3>How to Calculate</h3>
+                <p>Measure p50 latency and token costs in production. Compare against your budget constraints. Apply the formula with your chosen α weight. Use the score to compare configurations or track optimization progress.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f696f',
-          notes: ''
+          notes: `### Latency-Cost Tradeoff Score — Implementation
+Time for a concrete example that shows exactly how LCTS works in practice and what the numbers tell you!
+
+#### Setting Up the Scenario
+Let's say you've decided that latency is slightly more important than cost for your application, so you set alpha to 0.6. You've measured your production system: your P50 latency is using 70% of your latency budget, and your token costs are using 50% of your cost budget. Not terrible, but not great either. What's your LCTS?
+
+#### Walking Through the Math
+Let's calculate step by step. First, the latency component: 0.6 times 0.7 equals 0.42. That's the weighted latency penalty. Next, the cost component: 0.4 (which is 1 minus alpha) times 0.5 equals 0.20. That's the weighted cost penalty. Add them together: 0.42 plus 0.20 equals 0.62. That's your total penalty!
+
+#### The Final Score
+Now subtract from 1: LCTS equals 1 minus 0.62 equals 0.38. Oof! That's well below the 0.70 acceptable threshold. This score is telling you that your system is consuming too much of your budgets - you're pushing your constraints hard. You need optimization!
+
+#### What Does 0.38 Mean?
+A score of 0.38 means you have very little headroom. You're using 70% of your latency budget and 50% of your cost budget, weighted by your priorities. If traffic increases, or if queries get more complex, you'll blow past your budgets. This is your early warning system saying "optimize now before you have a production incident!"
+
+#### Where to Optimize
+With this breakdown, you can see where to focus. Your latency is consuming more of its budget (70%) than cost is (50%), and latency is weighted higher in your priorities. So your first optimization target should be reducing latency! Maybe you need caching, or a faster model, or better batching. Track LCTS as you make changes to see if you're improving.
+
+#### Practical Calculation Steps
+In production, continuously measure P50 latency and per-query token costs. Compare against your predetermined budgets - maybe 2 seconds for latency, 5 cents for cost. Calculate the ratios. Apply your formula with your chosen alpha. Log this score alongside your other metrics. Use it to compare different configurations - does switching to a different model improve your LCTS?
+
+#### Using LCTS for Decisions
+The beauty of LCTS is it gives you one number to compare apples-to-oranges trade-offs. Config A is faster but more expensive, Config B is slower but cheaper - which is better? LCTS tells you, based on your priorities!`
         },
         {
           id: 54,
@@ -3012,26 +3560,89 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Balances user experience responsiveness with operational costs</li>
-                <li>Enables sustainable scaling of RAG systems to more users</li>
-                <li>Provides framework for data-driven infrastructure decisions</li>
-                <li>Helps identify optimization opportunities in the pipeline</li>
-              </ul>
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+                <MermaidPopover
+                  title="View Complete Trade-off Matrix"
+                  diagram={`graph TB
+    A[LCTS Framework] --> B[Latency Budget]
+    A --> C[Cost Budget]
+    A --> D[Priority Weight α]
+    
+    B --> E{User Experience}
+    C --> F{Business Viability}
+    D --> G{Strategic Direction}
+    
+    E --> H[Fast Responses]
+    E --> I[Consistent Performance]
+    
+    F --> J[Sustainable Costs]
+    F --> K[Scalable Operations]
+    
+    G --> L[Balance Point]
+    
+    H --> L
+    I --> L
+    J --> L
+    K --> L
+    
+    L --> M[Optimized RAG System]
+    M --> N[Production Success]`}
+                />
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Balances user experience responsiveness with operational costs</li>
+                  <li>Enables sustainable scaling of RAG systems to more users</li>
+                  <li>Provides framework for data-driven infrastructure decisions</li>
+                  <li>Helps identify optimization opportunities in the pipeline</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Weight parameter (α) selection can be subjective</li>
-                <li>Budget constraints may change over time</li>
-                <li>Doesn't directly measure answer quality</li>
-                <li>May not capture all relevant cost factors (storage, compute, etc.)</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" duration={0.9} delay={0.9}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={1.1}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Weight parameter (α) selection can be subjective</li>
+                  <li>Budget constraints may change over time</li>
+                  <li>Doesn't directly measure answer quality</li>
+                  <li>May not capture all relevant cost factors (storage, compute, etc.)</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f696f',
-          notes: ''
-        }
+          notes: `### Latency-Cost Tradeoff Score — Considerations
+Let's wrap up our final metric - and really, the entire deck - by talking about the power and limitations of the Latency-Cost Tradeoff Score!
+
+#### Pros: The Strategic Framework
+The big win with LCTS is that it gives you a strategic framework for managing the eternal tension between user experience and operational costs. It's not just a metric - it's a decision-making tool! You can use it to objectively compare configurations that make different trade-offs. Should we use GPT-4 or Claude? Should we cache aggressively or compute fresh? LCTS helps you answer these questions with data instead of gut feelings.
+
+#### Sustainable Scaling
+Perhaps most importantly, LCTS enables sustainable scaling. Without this kind of framework, you either scale up and blow your budget, or you stay within budget and deliver a sluggish experience that drives users away. LCTS helps you find and maintain that sweet spot where you can grow your user base while keeping both latency and costs under control. That's the difference between a demo and a production system!
+
+#### Data-Driven Infrastructure Decisions
+LCTS provides quantitative justification for infrastructure investments. When you tell your VP that switching to a different model configuration will improve LCTS from 0.45 to 0.82, that's compelling! It translates technical optimization into business value. And it helps identify where optimization efforts will have the most impact.
+
+#### Cons: The Subjectivity of Alpha
+But let's talk limitations. The biggest one is that alpha selection - how you weight latency versus cost - can be subjective. Different stakeholders might want different values! Your product manager wants low latency (high alpha), your CFO wants low cost (low alpha). You need organizational alignment on priorities, or LCTS becomes a source of argument rather than clarity.
+
+#### The Moving Target Problem
+Budget constraints change over time! Maybe you set your cost budget at 5 cents per query based on last year's API pricing, but then prices increase or decrease. Or your latency requirements change as user expectations evolve. You need to periodically revisit and adjust your budgets to keep LCTS meaningful. It's not a "set it and forget it" metric.
+
+#### What LCTS Doesn't Measure
+Critically, LCTS doesn't directly measure answer quality! You could have a fantastic LCTS of 0.95 because you're fast and cheap, but if your answers are garbage, who cares? You MUST use LCTS alongside quality metrics like faithfulness, recall, and answer completeness. Never optimize for efficiency at the expense of quality - that's a fast track to user churn!
+
+#### Hidden Costs
+LCTS typically focuses on token costs and inference latency, but there are other costs in your system - vector database queries, reranker compute, storage costs, data processing pipelines. The metric might not capture the full cost picture. Make sure you're measuring the costs that actually matter for your deployment!
+
+#### The Right Way to Use LCTS
+Use LCTS as one tool in your evaluation toolkit, not the only tool. Combine it with quality metrics to ensure you're delivering value, not just efficiency. Use it to compare configurations and track optimization progress over time. And make sure your alpha and budgets reflect actual business priorities and constraints!
+
+#### Closing Thoughts on All 13 Metrics
+And with that, we've completed our journey through all thirteen RAG evaluation metrics! From the foundational retrieval metrics that diagnose whether you're even finding the right evidence, through the quality metrics that ensure your answers are faithful and complete, to these efficiency metrics that make your system sustainable in production. Each metric illuminates a different aspect of RAG performance. No single metric tells the full story - you need multiple perspectives to truly understand and optimize your system. Use these metrics together, track them continuously, and let them guide your optimization efforts. The journey from a prototype RAG system to a production-grade, scalable, cost-effective solution that users love - that journey is paved with good metrics and thoughtful optimization. Thank you for joining me through these thirteen metrics. Now go build amazing RAG systems!`
+        },
       ]
     },
     {
