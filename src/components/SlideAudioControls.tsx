@@ -238,8 +238,8 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
           </button>
         )}
 
-        {/* Read speaker notes - always shown */}
-        {notes && (
+        {/* Read speaker notes */}
+        {notes && showControls && (
           <button
             className={`slide-audio-btn ${notesTTS.status !== 'idle' ? 'active' : ''}`}
             onClick={handleNotesClick}

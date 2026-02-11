@@ -91,12 +91,34 @@ async function fetchElevenLabsTTS(
 ): Promise<Blob> {
   const apiKey = import.meta.env.VITE_ELEVENLABS_API_KEY;
   const voiceId = import.meta.env.VITE_ELEVENLABS_VOICE_ID;
+  const stability = parseFloat(import.meta.env.VITE_ELEVENLABS_STABILITY) || 0.7;
+  const similarityBoost = parseFloat(import.meta.env.VITE_ELEVENLABS_SIMILARITY_BOOST) || 0.95;
+  const languageCode = import.meta.env.VITE_ELEVENLABS_LANGUAGE_CODE; // ISO 639-1 code, e.g. 'en', 'fr', 'de' (controls language enforcement, NOT accent)
 
   if (!apiKey) {
     throw new Error('ElevenLabs API key not configured (VITE_ELEVENLABS_API_KEY).');
   }
   if (!voiceId) {
     throw new Error('ElevenLabs voice ID not configured (VITE_ELEVENLABS_VOICE_ID). Clone your voice at elevenlabs.io and paste the voice ID.');
+  }
+
+  const requestBody: any = {
+    inputs: [
+      {
+        text,
+        voice_id: voiceId
+      }
+    ],
+    model_id: 'eleven_v3',
+    settings: {
+      stability,
+      similarity_boost: similarityBoost
+    }
+  };
+
+  // Add language code to enforce language & text normalization (accent comes from the voice clone + similarity_boost)
+  if (languageCode) {
+    requestBody.language_code = languageCode;
   }
 
   const response = await fetch(
@@ -107,19 +129,7 @@ async function fetchElevenLabsTTS(
         'xi-api-key': apiKey,
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        inputs: [
-          {
-            text,
-            voice_id: voiceId
-          }
-        ],
-        model_id: 'eleven_v3',
-        settings: {
-          stability: 0.5,
-          similarity_boost: 0.8
-        }
-      }),
+      body: JSON.stringify(requestBody),
       signal,
     }
   );
