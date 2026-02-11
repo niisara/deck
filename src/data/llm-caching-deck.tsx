@@ -1,6 +1,6 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
-import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { GSAPAnimated } from '../components/GSAPAnimated';
 import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
@@ -208,65 +208,120 @@ Now that we understand why caching matters, let's explore the first of our thirt
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Query Embedding Cache Flow"
+                          diagram={`flowchart LR
+    A["📝 Query"] --> B["🔄 Normalize"]
+    B --> C{"🔍 Cache?"}
+    C -->|Hit| D["⚡ Return Embedding"]
+    C -->|Miss| E["🤖 Generate Embedding"]
+    E --> F["💾 Store in Cache"]
+    F --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Query embedding vectors (and normalization artifacts)</li>
+                        <li>Processed vector representations of user queries</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Query embedding vectors (and normalization artifacts)</li>
-                      <li>Processed vector representations of user queries</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(normalized_query + embedding_model + version + dim)</li>
+                        <li>Includes model version to ensure embedding consistency</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>hash(normalized_query + embedding_model + version + dim)</li>
-                      <li>Includes model version to ensure embedding consistency</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis/KeyDB for hot cache</li>
+                        <li>Optional S3/object store for cold cache</li>
+                        <li>Co-located per region for lower latency</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Redis/KeyDB for hot cache</li>
-                      <li>Optional S3/object store for cold cache</li>
-                      <li>Co-located per region for lower latency</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Long TTL (7–30 days)</li>
+                        <li>Version-bump invalidation</li>
+                        <li>LFU/LRU eviction policy for memory management</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Long TTL (7–30 days)</li>
-                      <li>Version-bump invalidation</li>
-                      <li>LFU/LRU eviction policy for memory management</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b561d',
-          notes: ''
+          notes: `### Pattern 1: Query Embedding Cache
+Here's our first caching pattern: **Query Embedding Cache**. This is one of the most straightforward yet impactful patterns you can implement in your LLM system.
+
+#### What Gets Cached
+In this pattern, we cache **query embedding vectors and their normalization artifacts**. Think about what happens every time a user asks a question. Your system takes that text, normalizes it, and then runs it through an embedding model to convert it into a high-dimensional vector. This embedding step isn't free. It requires a forward pass through a neural network, which takes time and costs money or compute resources.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📝 Query"] --> B["🔄 Normalize"]
+    B --> C{"🔍 Cache?"}
+    C -->|Hit| D["⚡ Return Embedding"]
+    C -->|Miss| E["🤖 Generate Embedding"]
+    E --> F["💾 Store in Cache"]
+    F --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+When a query comes in, we normalize it first, then check the cache. If we get a cache hit, we instantly return the embedding without touching the embedding model. On a miss, we generate the embedding, store it in the cache, and then return it. Simple flow, massive impact.
+
+#### The Cache Key Strategy
+The cache key is critical here. We use \\\`hash(normalized_query + embedding_model + version + dim)\\\`. Notice what we're including: the normalized query text itself, obviously, but also the embedding model name, its version, and the output dimensionality. Why all this extra information? Because embeddings from different models or different versions aren't interchangeable. If you upgrade your embedding model and don't include the version in the key, you'll get cache hits with stale embeddings from the old model. That leads to subtle quality degradation that's hard to debug.
+
+#### Storage Architecture
+We store these embeddings in **Redis 👉 'red-iss' or KeyDB 👉 'key-dee-bee'** for the hot cache. These are in-memory stores that give you microsecond-level latency. For rarely-accessed embeddings, you can optionally tier down to **S3 👉 'ess-three'** or another object store. The key is co-locating your cache per region, keeping it close to your application servers to minimize network latency.
+
+#### Time-to-Live Configuration
+We use a **long TTL 👉 'tee-tee-el', typically seven to thirty days**. Embeddings are deterministic. For the same input and model version, you'll always get the same output, so they're safe to cache for extended periods. When you need to invalidate, you do a **version-bump** in your cache key rather than expiring all entries. You also want **LFU 👉 'el-eff-you' or LRU 👉 'el-are-you'** eviction policies. LFU is least frequently used, and LRU is least recently used. These ensure your cache doesn't fill up with one-time queries.
+
+#### When This Pattern Shines
+The **strengths** are compelling. You completely avoid recomputing embeddings for identical queries. If you're running a customer support chatbot, you'll see the same questions repeatedly. Your **hit rate for frequently asked questions** will be excellent, often above eighty percent. And since embeddings are deterministic, you get **consistent quality** with zero variation.
+
+#### The Limitations
+But there are trade-offs. Embeddings are **memory intensive**. A single embedding from a model like **text-embedding-3-large 👉 'text embedding three large'** can be three thousand dimensions of float32 values. That's twelve kilobytes per embedding. At scale, this adds up. You also have **strict version coupling**. Every model update requires careful cache key management. And you must be extremely careful with **text normalization and PII 👉 'pee-eye-eye'**, which is personally identifiable information. If your normalization is inconsistent, you'll get cache misses on queries that should hit. And if you cache queries containing sensitive data, you create a security risk.
+
+Let's look at the strengths and limitations in more detail on the next slide.`
         },
         {
           id: 4,
@@ -274,34 +329,53 @@ Now that we understand why caching matters, let's explore the first of our thirt
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Avoids recomputing embeddings for identical queries</li>
+                      <li>High hit rate for frequent/FAQ queries</li>
+                      <li>Deterministic quality and consistency</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Avoids recomputing embeddings for identical queries</li>
-                    <li>High hit rate for frequent/FAQ queries</li>
-                    <li>Deterministic quality and consistency</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Memory intensive for large embedding dimensions</li>
+                      <li>Strict version coupling with embedding model</li>
+                      <li>Requires careful text normalization and PII handling</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Memory intensive for large embedding dimensions</li>
-                    <li>Strict version coupling with embedding model</li>
-                    <li>Requires careful text normalization and PII handling</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b561d',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's take a closer look at when Query Embedding Cache works brilliantly and when you need to be cautious.
+
+#### The Good Stuff
+On the **strengths** side, the value proposition is crystal clear. You're **avoiding expensive embedding computation** for queries you've already seen. Think about the math here. If generating an embedding takes fifty milliseconds and costs you point-zero-zero-one cents, and you're processing a million queries per month with a forty percent hit rate, that's four hundred thousand avoided computations. The savings in both latency and cost add up fast.
+
+The **hit rate for frequently asked questions** is where this really shines. In customer support, documentation search, or any domain with common queries, you'll see the same questions over and over. Your cache hit rate can easily exceed seventy to eighty percent for these workloads. And because embeddings are deterministic functions of the input, you get **perfect quality consistency**. There's zero risk of quality degradation from caching.
+
+#### The Trade-offs
+Now for the **limitations**. First, embeddings are **memory intensive**. Modern embedding models produce high-dimensional vectors. **Text-embedding-3-large 👉 'text embedding three large'**, for example, outputs three-thousand-dimensional vectors. Each dimension is a thirty-two-bit float, so that's twelve kilobytes per cached embedding. If you're caching a million embeddings, that's twelve gigabytes of memory just for the vectors themselves, not counting the cache metadata and keys.
+
+Second, there's **strict version coupling with your embedding model**. When you update your embedding model, all your cached embeddings become incompatible. You can't mix embeddings from different model versions in your similarity searches. This means you need to carefully manage cache keys with version tags and plan for cache warming when you upgrade models.
+
+Third, you need to handle **text normalization and PII 👉 'pee-eye-eye', or personally identifiable information, very carefully**. If your normalization is inconsistent, like sometimes lowercasing and sometimes not, or varying how you handle punctuation, you'll get cache misses on queries that should be hits. And if you're caching the actual query text as part of your cache key or value, and that text contains personal information like names, emails, or addresses, you've now stored sensitive data that might be subject to privacy regulations. You need proper data governance around your caching layer.
+
+> Ask the audience: "How many of you are currently caching embeddings in your systems?"
+
+With those trade-offs in mind, let's move on to Pattern 2, which caches at a different layer of the stack.`
         }
       ]
     },
