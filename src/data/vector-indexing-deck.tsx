@@ -795,7 +795,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#133939',
-          notes: `### 13. IVF+PQ - Best Use Case
+          notes: `### IVF+PQ - Best Use Case
 [conversational] When should you deploy IVF plus PQ? [confidently] This combination excels in specific scenarios where memory and scale are critical.
 
 #### Billion-Scale Vector Search
@@ -844,7 +844,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#133939',
-          notes: `### 14. IVF+PQ - Configuration Notes
+          notes: `### IVF+PQ - Configuration Notes
 [lecture] Let's dive into the practical details of configuring IVF plus PQ for optimal performance.
 
 #### Training Requirements
@@ -921,7 +921,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#150a1a',
-          notes: `### 15. Annoy (Approximate Nearest Neighbors Oh Yeah)
+          notes: `### Annoy (Approximate Nearest Neighbors Oh Yeah)
 [cheerfully] Let's explore Annoy, a delightfully simple yet effective approach to approximate nearest neighbor search created by Spotify.
 
 #### What is Annoy?
@@ -972,7 +972,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#150a1a',
-          notes: `### 16. Annoy - Best Use Case
+          notes: `### Annoy - Best Use Case
 [conversational] When is Annoy the right choice? Let's look at scenarios where its unique characteristics shine.
 
 #### Simple Deployment Needs
@@ -1022,7 +1022,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#150a1a',
-          notes: `### 17. Annoy - Configuration Notes
+          notes: `### Annoy - Configuration Notes
 [lecture] Let's dive into the practical aspects of using Annoy effectively.
 
 #### Read-Only Constraint
@@ -1102,7 +1102,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1d534b',
-          notes: `### 18. ScaNN (Scalable Nearest Neighbors)
+          notes: `### ScaNN (Scalable Nearest Neighbors)
 [impressed] Let's explore Google's state-of-the-art vector search system: ScaNN, which represents the cutting edge of approximate nearest neighbor search.
 
 #### What is ScaNN?
@@ -1144,7 +1144,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1d534b',
-          notes: `### 19. ScaNN - Best Use Case
+          notes: `### ScaNN - Best Use Case
 [confidently] When is ScaNN the right choice? [impressed] It excels at massive scale with demanding performance, especially for inner product and cosine metrics. [enthusiastically] Perfect for TensorFlow ecosystems and high-QPS production systems. [conversational] If you need state-of-the-art performance and have engineering resources for proper deployment, ScaNN delivers.`
         },
         {
@@ -1171,7 +1171,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1d534b',
-          notes: `### 20. ScaNN - Configuration Notes
+          notes: `### ScaNN - Configuration Notes
 [lecture] ScaNN requires careful setup and training. [cautiously] Updates are challenging—use batch strategies. [pleased] It's open source by Google with excellent TensorFlow integration. [impressed] The complexity delivers exceptional performance at massive scale, justifying the engineering investment for the right applications.`
         }
       ]
@@ -1212,7 +1212,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a0a0a',
-          notes: `### 21. LSH (Locality Sensitive Hashing)
+          notes: `### LSH (Locality Sensitive Hashing)
 [conversational] LSH uses probabilistic hashing where similar items hash to the same buckets. [lecture] Multiple hash tables with different functions enable finding nearest neighbors probabilistically. [pleased] Works great for specific metrics like Hamming and cosine. [enthusiastically] Handles updates well and scales in distributed systems.`
         },
         {
@@ -1238,7 +1238,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a0a0a',
-          notes: `### 22. LSH - Best Use Case
+          notes: `### LSH - Best Use Case
 [confidently] Perfect for binary embeddings and Hamming distance. [excited] Excels with streaming data and online updates. [pleased] Naturally distributed across machines. [conversational] Ideal for large-scale applications with moderate recall requirements. [reassuringly] Provides theoretical probabilistic guarantees.`
         },
         {
@@ -1265,7 +1265,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a0a0a',
-          notes: `### 23. LSH - Configuration Notes
+          notes: `### LSH - Configuration Notes
 [lecture] Tune number of hash tables and parameters carefully. [cautiously] Can be memory-intensive with multiple tables. [conversational] Use distance-specific implementations. [thoughtfully] Great for updates but consider periodic rebuilds for optimization. [confidently] Well-established in research and production.`
         }
       ]
@@ -1310,7 +1310,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0a1a0f',
-          notes: `### 24. Graph-Based ANN
+          notes: `### Graph-Based ANN
 [lecture] Graph methods build connectivity where vectors are nodes. [conversational] Beyond HNSW, methods like Vamana, DiskANN, and NSG offer different trade-offs. [impressed] DiskANN breaks the RAM barrier by keeping vectors on SSD, enabling billion-scale search on commodity hardware.`
         },
         {
@@ -1336,7 +1336,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0a1a0f',
-          notes: `### 25. Graph-Based ANN - Best Use Case
+          notes: `### Graph-Based ANN - Best Use Case
 [excited] DiskANN perfect for billion-scale beyond RAM limits. [impressed] Graph methods achieve high recall across complex data distributions. [conversational] Best for write-once, read-many workloads where expensive construction is amortized over millions of queries.`
         },
         {
@@ -1363,7 +1363,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#0a1a0f',
-          notes: `### 26. Graph-Based ANN - Configuration Notes
+          notes: `### Graph-Based ANN - Configuration Notes
 [cautiously] Expect significant construction time and compute. [conversational] Updates are challenging—use batching. [thoughtfully] DiskANN trades some latency for massive scale. [lecture] HNSW is mature; other methods less widely available. [reassuringly] Plan for iterative tuning.`
         }
       ]
@@ -1402,7 +1402,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c2b55',
-          notes: `### 27. Multi-Index Hashing
+          notes: `### Multi-Index Hashing
 [lecture] Designed for binary vectors and Hamming distance. [conversational] Splits binary vector into sub-codes with multiple hash tables. [impressed] Binary vectors are extremely compact—enabling massive memory savings. [pleased] Hamming distance uses fast XOR and popcount operations.`
         },
         {
@@ -1428,7 +1428,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c2b55',
-          notes: `### 28. Multi-Index Hashing - Best Use Case
+          notes: `### Multi-Index Hashing - Best Use Case
 [enthusiastically] Ideal for binary embeddings at massive scale. [excited] Perfect for Hamming distance applications like document similarity or genomic sequences. [pleased] Works brilliantly in hybrid systems—binary for filtering, floats for refinement. [confidently] Enables real-time, latency-sensitive applications.`
         },
         {
@@ -1456,7 +1456,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1c2b55',
-          notes: `### 29. Multi-Index Hashing - Configuration Notes
+          notes: `### Multi-Index Hashing - Configuration Notes
 [seriously] Binarization quality is crucial. [lecture] Tune sub-indexes and Hamming radius. [conversational] Use efficient implementations with SIMD. [cautiously] Monitor quality carefully—binary loses information. [confidently] Hybrid architectures with refinement stages work best in production.`
         }
       ]
@@ -1564,7 +1564,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#55551c',
-          notes: `### 30. Summary - Choosing the Right Index
+          notes: `### Summary - Choosing the Right Index
 [thoughtfully] Every method trades speed, memory, accuracy, and updates differently. [lecture] Scale drives choice: flat for small datasets, HNSW/IVF for medium, IVF+PQ/DiskANN for massive. [conversational] Match index to workload: read-heavy favors graphs, streaming favors IVF/LSH. [reassuringly] Start simple, measure, iterate.`
         },
         {
@@ -1594,7 +1594,7 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#55551c',
-          notes: `### 31. Final Thoughts
+          notes: `### Final Thoughts
 [warmly] The vector search ecosystem is rich and evolving. [conversational] No one-size-fits-all solution exists—each method excels in specific scenarios. [pleased] Hybrid approaches combining multiple methods work well in production. [inspiringly] Keep learning, measure everything, and choose based on your actual requirements. [confidently] Thank you!`
         }
       ]
