@@ -2177,82 +2177,152 @@ It's less valuable in **highly personalized, unique tool calls** where every req
 
 > Ask the audience: "How many of you are building agents that make repeated external API calls or database queries?"
 
-With that comprehensive understanding of Tool Call Cache, let's move to Pattern 10, which takes a very different approach to caching based on semantic similarity rather than exact matching.`
+With that comprehensive understanding of Tool Call Cache, let's move to Pattern 10, which shifts our focus to the personalization layer and conversation continuity.`
         }
       ]
     },
     {
       id: 'pattern-10',
-      title: 'Pattern 10: Semantic Similarity Cache',
+      title: 'Pattern 10: Session Memory',
       slides: [
         {
           id: 21,
-          title: 'Pattern 10: Semantic Similarity Cache',
+          title: 'Pattern 10: Session Memory',
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Session Memory Flow"
+                          diagram={`flowchart LR
+    A["📝 User Message"] --> B["🔑 Session ID"]
+    B --> C["📂 Load Context + History"]
+    C --> D["⚙️ Process"]
+    D --> E["🔄 Update Session"]
+    E --> F["💾 Store"]
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Conversation history and message sequences</li>
+                        <li>User preferences, personalization data, and context</li>
+                        <li>Session state including active workflows and partial completions</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Intent embeddings mapped to prior answers/contexts</li>
-                      <li>Thresholded ANN lookup for similar queries</li>
-                      <li>Similar question embeddings with confidence scores</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>session_id or user_id + conversation_id</li>
+                        <li>Namespaced per application domain or tenant</li>
+                        <li>Includes version tag for session schema changes</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Vector index entry (not traditional key-value)</li>
-                      <li>Metadata: model_id, prompt_version, locale</li>
-                      <li>Freshness score for recency weighting</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis/Memcached for active sessions</li>
+                        <li>PostgreSQL/DynamoDB for persistent storage</li>
+                        <li>Tiered storage with hot/warm/cold layers</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Vector DB (FAISS/Milvus/pgvector/RedisVL)</li>
-                      <li>Spill to disk for large datasets</li>
-                      <li>Distributed index for high-volume systems</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Active sessions: 30 minutes to 24 hours</li>
+                        <li>Archived conversations: 30-90 days</li>
+                        <li>Sliding window expiration on user activity</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>1–14 days with recency weighting</li>
-                      <li>Invalidate when sources change</li>
-                      <li>Progressive aging for less frequently accessed entries</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### Pattern 10: Session Memory
+Welcome to Pattern 10, the **Session Memory** pattern. This is where we shift from caching computational artifacts like embeddings or retrieval results to caching the conversational and personalization context that makes your LLM 👉 'el-el-em' application feel continuous and personalized across multiple interactions.
+
+#### What Gets Cached
+In this pattern, we cache **conversation history and message sequences**. Think about a typical chatbot interaction. When a user says "Tell me more about that," the system needs to know what "that" refers to. The entire conversation history, the back-and-forth exchanges between the user and the assistant, needs to be readily available. We're storing complete message sequences with timestamps, roles like user or assistant or system, and the full content of each message.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📝 User Message"] --> B["🔑 Session ID"]
+    B --> C["📂 Load Context + History"]
+    C --> D["⚙️ Process"]
+    D --> E["🔄 Update Session"]
+    E --> F["💾 Store"]
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+When a message comes in, we use the session ID to load the existing context and history. The system processes the new message with full awareness of what came before. After generating a response, we update the session state and store it back. This creates the illusion of memory and continuity.
+
+We're also caching **user preferences, personalization data, and context**. This includes things like the user's preferred language, their communication style, whether they want technical details or simplified explanations, their timezone, their role or job function. Any information that personalizes the interaction without being sensitive enough to require special handling.
+
+And we cache **session state including active workflows and partial completions**. If a user is in the middle of a multi-step process, like filling out a form or debugging an issue, that state needs to persist across messages. If they ask a side question, then say "okay, back to what we were doing," the system needs to know exactly where they left off.
+
+#### The Performance Impact
+Session memory is absolutely critical for user experience. Without it, every message feels like starting over. The user has to re-establish context every single time. It's frustrating and breaks the flow of conversation. With session memory, interactions feel natural. The system remembers who the user is, what they've been talking about, and where they're trying to go. The hit on performance is minimal because we're just loading structured data, not running models.
+
+#### The Cache Key Strategy
+The cache key is straightforward: \\\`session_id or user_id + conversation_id\\\`. The **session_id** uniquely identifies this particular conversation thread. Some systems use a combination of **user_id** and **conversation_id** to allow users to maintain multiple parallel conversations. You also want to **namespace per application domain or tenant** if you're running a multi-tenant system. User one-two-three's session in Tenant A should never collide with user one-two-three's session in Tenant B.
+
+And you **include a version tag for session schema changes**. As your application evolves, the structure of what you store in sessions will change. Maybe you add new fields for new features. The version tag ensures you can migrate or handle legacy sessions gracefully without breaking active conversations.
+
+#### Storage Architecture and Tiering
+For **active sessions**, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cached'**. These in-memory stores give you sub-millisecond access times. When a message comes in, you can load the full session state instantly. For **persistent storage**, especially for archived conversations, we drop down to **PostgreSQL 👉 'post-gres-cue-el' or DynamoDB 👉 'die-nam-oh-dee-bee'**. These provide durability and allow you to query historical conversations for analytics or auditing.
+
+The best practice is **tiered storage with hot, warm, and cold layers**. Hot is your active sessions in Redis. Warm is recently ended sessions that you keep in a database with fast SSD storage. Cold is archived conversations older than thirty or ninety days that you move to cheaper, slower storage like S3 👉 'ess-three' or Glacier.
+
+#### Time-to-Live Configuration
+For **active sessions**, you typically use **thirty minutes to twenty-four hours**. If a user stops responding, their session expires after that period. This keeps your hot storage from filling up with abandoned sessions. For **archived conversations**, you might keep them for **thirty to ninety days** depending on your retention policy and compliance requirements.
+
+And you use **sliding window expiration on user activity**. Every time the user sends a message, you reset the TTL 👉 'tee-tee-el'. This means an active conversation never expires mid-discussion, but once the user goes quiet, the timer starts counting down.
+
+#### When This Pattern Shines
+Session memory is essential for **multi-turn conversations** where context accumulates. Customer support bots, coding assistants, personal assistants, anything where the conversation builds over multiple exchanges. It's critical for **personalization** where you're tailoring responses based on user preferences or history. And it's valuable for **workflow continuity**, like debugging sessions, form filling, or guided troubleshooting.
+
+#### The Limitations
+The main limitation is **storage growth**. Conversations can get long. A debugging session might have fifty or a hundred messages. If each message is a few hundred tokens, and you're storing thousands of sessions, that adds up. You need a strategy for truncating or summarizing old conversation history to fit within context windows and storage constraints.
+
+You also have **privacy and compliance concerns**. Session data often contains personally identifiable information 👉 'pee-eye-eye'. You need to handle it carefully, ensure proper encryption at rest and in transit, and comply with regulations like GDPR 👉 'gee-dee-pee-are' or HIPAA 👉 'hip-ah'. And you need to provide mechanisms for users to delete their data if they request it.
+
+> Ask the audience: "How many of you are building conversational agents that need to remember context across multiple turns?"
+
+With that understanding of Session Memory, let's look at the strengths and limitations in more detail.`
         },
         {
           id: 22,
@@ -2260,36 +2330,64 @@ With that comprehensive understanding of Tool Call Cache, let's move to Pattern 
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Enables natural multi-turn conversations with context continuity</li>
+                      <li>Personalizes responses based on user history and preferences</li>
+                      <li>Maintains workflow state across interruptions</li>
+                      <li>Fast access for active sessions with tiered storage</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Catches paraphrases and varied question forms</li>
-                    <li>Higher savings compared to exact-match caches</li>
-                    <li>Robust to wording variations and typos</li>
-                    <li>Can work across languages with multilingual embeddings</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Storage grows linearly with conversation length</li>
+                      <li>Privacy and compliance concerns with PII storage</li>
+                      <li>Context window limitations require truncation strategies</li>
+                      <li>Data retention and deletion mechanisms needed</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Requires careful threshold tuning</li>
-                    <li>Potential for false hits/misses requiring quality monitoring</li>
-                    <li>Index maintenance and optimization overhead</li>
-                    <li>Explainability challenges for cache decisions</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's dive deeper into when Session Memory is your best friend and when you need to be cautious about its implementation.
+
+#### The Good Stuff
+On the **strengths** side, Session Memory is transformative for user experience. The first and most obvious benefit is that it **enables natural multi-turn conversations with context continuity**. Users can ask follow-up questions, refer back to earlier points in the conversation, and build complex discussions over time. They can say things like "what about the alternative you mentioned earlier?" and the system knows exactly what they're talking about. This is the difference between a chatbot that feels like a stateless form and one that feels like talking to a knowledgeable assistant.
+
+Second, it **personalizes responses based on user history and preferences**. If a user always prefers concise answers, you remember that. If they're a developer who wants code examples, you adapt. If they're in a particular timezone or speak a specific language, you tailor the experience. This personalization creates a much more satisfying and efficient interaction. Users don't have to repeatedly specify their preferences.
+
+Third, it **maintains workflow state across interruptions**. Real conversations are messy. Users jump around, ask side questions, get distracted. If you're helping a user debug their code and they suddenly ask "hey, what's the weather like?", you need to answer that but also remember you were in the middle of debugging. When they say "okay, back to the bug," you pick up exactly where you left off. This robustness to interruptions is critical for complex tasks.
+
+And fourth, you get **fast access for active sessions with tiered storage**. The sessions users are actively engaged with live in Redis 👉 'red-iss' or another in-memory store, giving you sub-millisecond retrieval times. Older sessions get tiered to cheaper, slower storage. This lets you balance performance and cost effectively.
+
+#### The Trade-offs
+Now for the **limitations**. First, **storage grows linearly with conversation length**. Every message adds to the session. A long debugging conversation, a complex customer support interaction, or a day-long coding session can result in hundreds of messages. At some point, you need to decide what to keep and what to truncate or summarize. This is especially important if you're passing the full history to the LLM 👉 'el-el-em' as part of the prompt. Models have context window limits. GPT-4 👉 'gee-pee-tee four' might support a hundred and twenty-eight thousand tokens, but you still can't store infinite history.
+
+Second, there are **privacy and compliance concerns with PII 👉 'pee-eye-eye' storage**. Conversations often contain personal information. User names, email addresses, account numbers, health information, financial details. You're storing all of this in your session cache. That means you need encryption at rest, encryption in transit, access controls, audit logging, and the ability to comply with regulations like GDPR 👉 'gee-dee-pee-are', which gives users the right to request deletion of their data, or HIPAA 👉 'hip-ah' in healthcare contexts.
+
+Third, **context window limitations require truncation strategies**. As conversations grow, you'll exceed the model's context window. You need a strategy for what to keep. Do you truncate the oldest messages? Do you summarize the conversation history periodically? Do you keep only the most recent N messages plus an initial summary? Each approach has trade-offs. Truncation loses information. Summarization adds latency and cost. You need to choose carefully based on your use case.
+
+And fourth, you need **data retention and deletion mechanisms**. You can't keep sessions forever. They'll fill up your storage, and many users won't want their conversations stored indefinitely. You need clear retention policies, TTLs 👉 'tee-tee-els' that match your use case, and mechanisms to purge old data. And you need to handle user-initiated deletions, which might happen asynchronously if the data has been tiered to cold storage.
+
+#### Best Practices
+Despite these limitations, the benefits are huge. The best practice is to implement Session Memory with a **clear data lifecycle**. Active sessions in hot storage, recent sessions in warm storage, archived sessions in cold storage, and automated purging based on TTL. Use **compression for long conversations** to save storage space. Implement **PII detection and redaction** where appropriate. And provide users with **transparency and control** over their data.
+
+> Ask the audience: "How do you currently handle conversation history in your applications? Are you storing it, or starting fresh each time?"
+
+With that comprehensive understanding of Session Memory, let's move on to Pattern 11, which shifts our focus back to retrieval optimization with a different angle.`
         }
       ]
     },
