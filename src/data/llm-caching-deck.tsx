@@ -398,6 +398,7 @@ With those trade-offs in mind, let's move on to Pattern 2, which caches at a dif
                       <strong>
                         What is Cached
                         <MermaidPopover
+                          title="Retrieval Results Cache Flow"
                           diagram={`flowchart LR
     A["📝 Query"] --> B["🔢 Embedding"]
     B --> C{"🔍 Cache?"}
