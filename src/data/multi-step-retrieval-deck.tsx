@@ -46,23 +46,23 @@ export const multiStepRetrievalDeck: Deck = {
 
 #### Welcome and Introduction
 
-Welcome everyone to this comprehensive guide on multi-step retrieval strategies for retrieval augmented generation, or RAG systems. Today we're going to explore nine powerful techniques that go beyond simple single-shot retrieval to dramatically improve the quality and accuracy of your RAG applications.
+[cheerfully] Welcome everyone to this comprehensive guide on multi-step retrieval strategies for retrieval augmented generation, or RAG systems. [energetic] Today we're going to explore nine powerful techniques that go beyond simple single-shot retrieval to dramatically improve the quality and accuracy of your RAG applications.
 
 #### What We Mean by Multi-Step Retrieval
 
-When we talk about multi-step retrieval, we're referring to an iterative approach where we don't just retrieve documents once and call it done. Instead, we retrieve information, generate insights or queries from what we found, and then retrieve again. This "retrieve, generate, retrieve" pattern allows our systems to refine their understanding and gather more relevant information with each iteration.
+[conversational] When we talk about multi-step retrieval, we're referring to an iterative approach where we don't just retrieve documents once and call it done. Instead, we retrieve information, generate insights or queries from what we found, and then retrieve again. This "retrieve, generate, retrieve" pattern allows our systems to refine their understanding and gather more relevant information with each iteration.
 
-Think of it like having a conversation with a research librarian. You don't just ask one question and walk away with the first book they hand you. Instead, you ask a question, they bring you some materials, you look through them and ask a more refined question based on what you learned, and they bring you even better materials. Multi-step retrieval works the same way.
+[storytelling] Think of it like having a conversation with a research librarian. You don't just ask one question and walk away with the first book they hand you. Instead, you ask a question, they bring you some materials, you look through them and ask a more refined question based on what you learned, and they bring you even better materials. Multi-step retrieval works the same way.
 
 #### Why This Matters
 
-These techniques are especially valuable when dealing with complex questions that require deep understanding, questions that span multiple topics, or situations where you need to cite your sources accurately. They help us build RAG systems that are more robust, more accurate, and better able to handle the real-world complexity of information retrieval.
+[confidently] These techniques are especially valuable when dealing with complex questions that require deep understanding, questions that span multiple topics, or situations where you need to cite your sources accurately. They help us build RAG systems that are more robust, more accurate, and better able to handle the real-world complexity of information retrieval.
 
 #### What You'll Learn Today
 
-We'll cover nine distinct strategies, each with its own strengths and ideal use cases. For each technique, you'll get a complete cheat sheet covering its goal, how it works, when to use it, implementation steps, and the pros and cons you need to consider.
+[excited] We'll cover nine distinct strategies, each with its own strengths and ideal use cases. For each technique, you'll get a complete cheat sheet covering its goal, how it works, when to use it, implementation steps, and the pros and cons you need to consider.
 
-Let's dive in and explore how these strategies can transform your RAG applications.`
+[enthusiastically] Let's dive in and explore how these strategies can transform your RAG applications.`
         },
         {
           id: 2,
@@ -129,7 +129,7 @@ Let's dive in and explore how these strategies can transform your RAG applicatio
 
 #### The Core Concept
 
-Let's start by understanding what multi-step retrieval really means. At its heart, it's about iteratively combining retrieval and generation to continuously refine our understanding. Instead of asking a question once and accepting whatever documents we get back, we use the initial results to generate better queries, gather more evidence, and produce more accurate answers.
+[lecture] Let's start by understanding what multi-step retrieval really means. [conversational] At its heart, it's about iteratively combining retrieval and generation to continuously refine our understanding. Instead of asking a question once and accepting whatever documents we get back, we use the initial results to generate better queries, gather more evidence, and produce more accurate answers.
 
 \`\`\`mermaid
 graph LR
@@ -143,19 +143,19 @@ graph LR
 
 #### Why Single-Shot RAG Falls Short
 
-Traditional single-shot RAG systems retrieve documents once and generate an answer. This works fine for simple, well-formed questions. But when questions are ambiguous, require reasoning across multiple pieces of information, or need deep understanding of context, single-shot approaches struggle. They can miss crucial information, retrieve irrelevant documents, or fail to connect the dots between related concepts.
+[cautiously] Traditional single-shot RAG systems retrieve documents once and generate an answer. This works fine for simple, well-formed questions. But when questions are ambiguous, require reasoning across multiple pieces of information, or need deep understanding of context, single-shot approaches struggle. [disappointed] They can miss crucial information, retrieve irrelevant documents, or fail to connect the dots between related concepts.
 
 #### The Power of Iteration
 
-Multi-step retrieval solves these problems through iteration. It improves recall by finding documents that weren't obvious from the initial query. It improves precision by using intermediate results to focus on what's truly relevant. And it improves robustness by allowing the system to adapt and refine its approach based on what it's learning.
+[pleased] Multi-step retrieval solves these problems through iteration. It improves recall by finding documents that weren't obvious from the initial query. It improves precision by using intermediate results to focus on what's truly relevant. And it improves robustness by allowing the system to adapt and refine its approach based on what it's learning.
 
 #### When You Need These Techniques
 
-You should reach for multi-step retrieval when dealing with ambiguous queries that could mean different things, multi-hop reasoning questions that require connecting information from multiple sources, long-form answers that need comprehensive coverage, or any situation where you need to provide accurate citations for your claims.
+[confidently] You should reach for multi-step retrieval when dealing with ambiguous queries that could mean different things, multi-hop reasoning questions that require connecting information from multiple sources, long-form answers that need comprehensive coverage, or any situation where you need to provide accurate citations for your claims.
 
 #### What's Coming Next
 
-In the following slides, you'll get detailed cheat sheets for nine different multi-step strategies. Each one offers a different approach to solving the retrieval problem, with its own strengths and ideal use cases. The key is understanding the trade-offs between precision, recall, latency, and implementation complexity so you can choose the right tool for your specific needs.
+[energetic] In the following slides, you'll get detailed cheat sheets for nine different multi-step strategies. Each one offers a different approach to solving the retrieval problem, with its own strengths and ideal use cases. The key is understanding the trade-offs between precision, recall, latency, and implementation complexity so you can choose the right tool for your specific needs.
 
 Let's look at all nine strategies in our next slide.`
         },
@@ -230,11 +230,11 @@ Let's look at all nine strategies in our next slide.`
 
 #### Overview of Our Journey
 
-Now let's take a look at the nine multi-step retrieval strategies we'll be exploring in depth today. Each of these techniques represents a different approach to solving the fundamental challenge of improving retrieval through iteration. They range from simple refinement loops to sophisticated graph traversal and feedback mechanisms.
+[enthusiastically] Now let's take a look at the nine multi-step retrieval strategies we'll be exploring in depth today. [conversational] Each of these techniques represents a different approach to solving the fundamental challenge of improving retrieval through iteration. They range from simple refinement loops to sophisticated graph traversal and feedback mechanisms.
 
 #### The Complete Toolkit
 
-First, we have Iterative Retrieve-and-Refine, which progressively improves results through cycles of retrieval and generation. Next is HyDE, which is pronounced just like the word "hide", and it creates hypothetical documents to improve semantic matching. Third is Query Decomposition, which breaks complex questions into simpler sub-queries that can be answered independently.
+[lecture] First, we have Iterative Retrieve-and-Refine, which progressively improves results through cycles of retrieval and generation. Next is HyDE, which is pronounced just like the word "hide", and it creates hypothetical documents to improve semantic matching. Third is Query Decomposition, which breaks complex questions into simpler sub-queries that can be answered independently.
 
 Fourth, we have Chain-of-Thought Guided Retrieval, which uses step-by-step reasoning to focus each retrieval step. Fifth is Step-Back Reasoning, which starts with broader context before diving into specifics. Sixth is Multi-Hop Graph Traversal, which follows relationships between entities across your knowledge base.
 
@@ -242,11 +242,11 @@ Seventh is Context-Summarize-and-Retrieve, which condenses information progressi
 
 #### Choosing Your Strategy
 
-Each of these strategies has its own sweet spot. Some are better for exploratory questions, others excel at precision tasks, and some are specifically designed for multi-hop reasoning or long-form content generation. As we go through each one, pay attention to the "when to use" guidance, because matching the right strategy to your use case is crucial for success.
+[reassuringly] Each of these strategies has its own sweet spot. Some are better for exploratory questions, others excel at precision tasks, and some are specifically designed for multi-hop reasoning or long-form content generation. As we go through each one, pay attention to the "when to use" guidance, because matching the right strategy to your use case is crucial for success.
 
 #### What's Next
 
-We'll now dive into each strategy one by one, starting with Iterative Retrieve-and-Refine. For each technique, you'll see a detailed breakdown of its goal, how it works, when to use it, the implementation steps, and the pros and cons you need to consider.
+[confidently] We'll now dive into each strategy one by one, starting with Iterative Retrieve-and-Refine. For each technique, you'll see a detailed breakdown of its goal, how it works, when to use it, the implementation steps, and the pros and cons you need to consider.
 
 Let's begin with our first strategy.`
         }
@@ -294,11 +294,11 @@ Let's begin with our first strategy.`
 
 #### The Foundation Strategy
 
-Our first multi-step strategy is Iterative Retrieve-and-Refine, and it's one of the most intuitive approaches to improving retrieval quality. The core idea is simple yet powerful: instead of trying to get everything right in one shot, we progressively improve our evidence and answer through multiple small cycles of retrieval and generation.
+[lecture] Our first multi-step strategy is Iterative Retrieve-and-Refine, and it's one of the most intuitive approaches to improving retrieval quality. [conversational] The core idea is simple yet powerful: instead of trying to get everything right in one shot, we progressively improve our evidence and answer through multiple small cycles of retrieval and generation.
 
 #### How It Works in Practice
 
-Here's how the process flows. First, we do an initial retrieval based on the user's original question. Then, we draft a partial answer using whatever evidence we found, but crucially, we also identify what's uncertain or missing from our answer. Next, we reformulate new queries that specifically target those gaps in our knowledge. We retrieve again with these refined queries and integrate the new evidence into our answer. Finally, we repeat this cycle until we hit our stop criteria, which might be reaching a confidence threshold, having enough citations, or hitting our token budget.
+[confidently] Here's how the process flows. First, we do an initial retrieval based on the user's original question. Then, we draft a partial answer using whatever evidence we found, but crucially, we also identify what's uncertain or missing from our answer. Next, we reformulate new queries that specifically target those gaps in our knowledge. We retrieve again with these refined queries and integrate the new evidence into our answer. Finally, we repeat this cycle until we hit our stop criteria, which might be reaching a confidence threshold, having enough citations, or hitting our token budget.
 
 \`\`\`mermaid
 graph TD
@@ -316,17 +316,17 @@ graph TD
 
 #### When This Strategy Shines
 
-This technique is especially valuable for ambiguous questions where the initial query might be interpreted multiple ways. It works well with sparse corpora where you need multiple attempts to gather enough evidence. It's excellent for long-form synthesis where you're building a comprehensive answer piece by piece. And it's perfect for exploratory question and answer sessions where the user themselves might not know exactly what they're looking for at first.
+[reassuringly] This technique is especially valuable for ambiguous questions where the initial query might be interpreted multiple ways. It works well with sparse corpora where you need multiple attempts to gather enough evidence. It's excellent for long-form synthesis where you're building a comprehensive answer piece by piece. And it's perfect for exploratory question and answer sessions where the user themselves might not know exactly what they're looking for at first.
 
 #### The Key Advantages
 
-The beauty of this approach is threefold. First, you get better coverage of complex topics because each iteration can explore a different angle. Second, the system has built-in self-correction capabilities because each iteration can fix mistakes or fill gaps from previous rounds. And third, it's naturally adaptable to uncertainty because the system explicitly tracks what it doesn't know and goes looking for it.
+[pleased] The beauty of this approach is threefold. First, you get better coverage of complex topics because each iteration can explore a different angle. Second, the system has built-in self-correction capabilities because each iteration can fix mistakes or fill gaps from previous rounds. And third, it's naturally adaptable to uncertainty because the system explicitly tracks what it doesn't know and goes looking for it.
 
 #### Important Considerations
 
-However, there are trade-offs to consider. This approach has higher latency and computational cost because you're doing multiple retrieval and generation cycles. There's also a risk of query drift or topic drift, where successive iterations stray from the original question. And without proper safeguards, errors from early iterations can compound in later ones, leading you further off track.
+[cautiously] However, there are trade-offs to consider. This approach has higher latency and computational cost because you're doing multiple retrieval and generation cycles. There's also a risk of query drift or topic drift, where successive iterations stray from the original question. And without proper safeguards, errors from early iterations can compound in later ones, leading you further off track.
 
-Despite these challenges, Iterative Retrieve-and-Refine is most often used for complex questions where a single retrieval pass just misses too many important details or doesn't capture the full context needed for a quality answer. Now let's look at the detailed pros and cons on the next slide.`
+[conversational] Despite these challenges, Iterative Retrieve-and-Refine is most often used for complex questions where a single retrieval pass just misses too many important details or doesn't capture the full context needed for a quality answer. Now let's look at the detailed pros and cons on the next slide.`
         },
         {
           id: 5,
@@ -371,25 +371,25 @@ Despite these challenges, Iterative Retrieve-and-Refine is most often used for c
 
 #### Weighing the Trade-offs
 
-Let's take a closer look at the strengths and weaknesses of Iterative Retrieve-and-Refine so you can make informed decisions about when to use this strategy.
+[lecture] Let's take a closer look at the strengths and weaknesses of Iterative Retrieve-and-Refine so you can make informed decisions about when to use this strategy.
 
 #### The Advantages
 
-On the positive side, this approach gives you better coverage of complex topics. Because you're making multiple passes, you can explore different facets of a question and build a more comprehensive understanding. The self-correction capabilities are particularly valuable. If your first retrieval misses the mark or brings back partially relevant documents, subsequent iterations can course-correct and fill in what was missing.
+[pleased] On the positive side, this approach gives you better coverage of complex topics. Because you're making multiple passes, you can explore different facets of a question and build a more comprehensive understanding. The self-correction capabilities are particularly valuable. If your first retrieval misses the mark or brings back partially relevant documents, subsequent iterations can course-correct and fill in what was missing.
 
-The adaptability to uncertainty is another major strength. Traditional single-shot systems have to guess what's relevant and hope they got it right. With iterative refinement, the system can explicitly acknowledge what it doesn't know and go looking specifically for that missing information. This makes it much more robust when dealing with ambiguous or underspecified queries.
+[confidently] The adaptability to uncertainty is another major strength. Traditional single-shot systems have to guess what's relevant and hope they got it right. With iterative refinement, the system can explicitly acknowledge what it doesn't know and go looking specifically for that missing information. This makes it much more robust when dealing with ambiguous or underspecified queries.
 
 #### The Challenges
 
-However, these benefits come with costs. The most obvious is higher latency and computational expense. Every iteration means another round of embedding generation, vector search, and language model inference. If you're running three or four iterations, that's three or four times the cost compared to single-shot retrieval.
+[cautiously] However, these benefits come with costs. [concerned] The most obvious is higher latency and computational expense. Every iteration means another round of embedding generation, vector search, and language model inference. If you're running three or four iterations, that's three or four times the cost compared to single-shot retrieval.
 
 There's also a risk of query drift or topic drift. As you reformulate queries based on intermediate results, you might gradually stray from what the user actually wanted to know. Each reformulation is an opportunity to misinterpret or over-focus on one aspect at the expense of others.
 
-Finally, without proper safeguards, errors can compound. If your first iteration retrieves somewhat irrelevant documents and you build your gap analysis on that shaky foundation, subsequent iterations might dig you deeper into the wrong rabbit hole rather than correcting course.
+[seriously] Finally, without proper safeguards, errors can compound. If your first iteration retrieves somewhat irrelevant documents and you build your gap analysis on that shaky foundation, subsequent iterations might dig you deeper into the wrong rabbit hole rather than correcting course.
 
 #### The Bottom Line
 
-Despite these challenges, Iterative Retrieve-and-Refine remains one of the most powerful techniques for complex questions where a single retrieval pass simply isn't enough. The key is implementing good stop criteria, monitoring for drift, and building in quality checks at each iteration.
+[reassuringly] Despite these challenges, Iterative Retrieve-and-Refine remains one of the most powerful techniques for complex questions where a single retrieval pass simply isn't enough. The key is implementing good stop criteria, monitoring for drift, and building in quality checks at each iteration.
 
 With that understanding of our first strategy, let's move on to our second technique: HyDE, which takes a completely different approach to improving retrieval quality.`
         }
@@ -436,13 +436,13 @@ With that understanding of our first strategy, let's move on to our second techn
 
 #### Pronunciation and Concept
 
-Our second strategy is HyDE, which stands for Hypothetical Document Embeddings, and is pronounced just like the word "hide". This technique takes a completely different approach from iterative refinement. Instead of refining queries, HyDE creates a synthetic ideal answer and uses that to find real documents.
+[conversational] Our second strategy is HyDE, which stands for Hypothetical Document Embeddings, and is pronounced just like the word "hide". [lecture] This technique takes a completely different approach from iterative refinement. Instead of refining queries, HyDE creates a synthetic ideal answer and uses that to find real documents.
 
 #### The Core Insight
 
-The genius of HyDE lies in recognizing a fundamental problem with query-based retrieval. When you embed a short query like "What causes inflation?", that embedding might not be very similar to the embeddings of comprehensive documents that actually answer the question. There's a semantic gap between how questions are phrased and how answers are written.
+[excited] The genius of HyDE lies in recognizing a fundamental problem with query-based retrieval. When you embed a short query like "What causes inflation?", that embedding might not be very similar to the embeddings of comprehensive documents that actually answer the question. [storytelling] There's a semantic gap between how questions are phrased and how answers are written.
 
-HyDE solves this by generating a hypothetical document that represents what an ideal answer might look like. Instead of searching with your query, you search with this synthetic answer. Since it's written in the same style as your corpus documents, it's much more likely to match relevant content in embedding space.
+[confidently] HyDE solves this by generating a hypothetical document that represents what an ideal answer might look like. Instead of searching with your query, you search with this synthetic answer. Since it's written in the same style as your corpus documents, it's much more likely to match relevant content in embedding space.
 
 \`\`\`mermaid
 graph LR
@@ -456,17 +456,17 @@ graph LR
 
 #### When to Reach for HyDE
 
-This technique shines in several specific scenarios. It's excellent for short queries where there isn't much semantic content to embed. It works wonderfully in niche domains where vocabulary matters and you need to bridge the gap between how users ask questions and how experts write documentation. It's valuable when your vector store has low recall, meaning relevant documents exist but aren't being surfaced. And it's perfect for situations with lexical mismatch, where users and documents use completely different words to describe the same concepts.
+[reassuringly] This technique shines in several specific scenarios. It's excellent for short queries where there isn't much semantic content to embed. It works wonderfully in niche domains where vocabulary matters and you need to bridge the gap between how users ask questions and how experts write documentation. It's valuable when your vector store has low recall, meaning relevant documents exist but aren't being surfaced. And it's perfect for situations with lexical mismatch, where users and documents use completely different words to describe the same concepts.
 
 #### Implementation Details
 
-The implementation is beautifully simple. You prompt your language model to write a plausible, concise hypothetical document that would answer the query. You then embed this hypothetical passage and run your standard k-nearest-neighbor retrieval against your vector store. You retrieve your top documents and immediately discard the hypothetical, it was just a bridge to better retrieval. Finally, you answer using the retrieved real evidence, and you can iterate if needed.
+[pleased] The implementation is beautifully simple. You prompt your language model to write a plausible, concise hypothetical document that would answer the query. You then embed this hypothetical passage and run your standard k-nearest-neighbor retrieval against your vector store. You retrieve your top documents and immediately discard the hypothetical, it was just a bridge to better retrieval. Finally, you answer using the retrieved real evidence, and you can iterate if needed.
 
 #### Looking at the Trade-offs
 
 The pros are compelling. HyDE provides a strong recall lift, meaning you find more relevant documents that you would have missed otherwise. It effectively bridges vocabulary gaps between how users phrase questions and how documents are written. And it's simple to add to existing pipelines, you're just inserting one generation step before retrieval.
 
-However, there are important cons. The hypothetical document can anchor your retrieval to hallucinations. If the model generates plausible-sounding but incorrect information, you might retrieve documents that support those errors rather than the truth. The technique may also pull in loosely related documents that match the hypothetical's style but miss the actual question's intent. And of course, there's the extra generation cost of creating that hypothetical document for every query.
+[cautiously] However, there are important cons. The hypothetical document can anchor your retrieval to hallucinations. If the model generates plausible-sounding but incorrect information, you might retrieve documents that support those errors rather than the truth. The technique may also pull in loosely related documents that match the hypothetical's style but miss the actual question's intent. And of course, there's the extra generation cost of creating that hypothetical document for every query.
 
 Let's look at these trade-offs in more detail on the next slide.`
         },
@@ -513,27 +513,27 @@ Let's look at these trade-offs in more detail on the next slide.`
 
 #### The Hallucination Paradox
 
-Let's dig deeper into the trade-offs of HyDE, because this technique has a fascinating paradox at its heart. It intentionally uses what we normally consider a bug, hallucination, as a feature to improve retrieval.
+[conversational] Let's dig deeper into the trade-offs of HyDE, because this technique has a fascinating paradox at its heart. [storytelling] It intentionally uses what we normally consider a bug, hallucination, as a feature to improve retrieval.
 
 #### The Compelling Advantages
 
-The strong recall lift is HyDE's primary selling point. By embedding a full hypothetical answer rather than a sparse query, you dramatically increase your chances of matching relevant documents in vector space. Documents that would have been ranked too low with query-based search suddenly surface because they're semantically similar to your hypothetical.
+[enthusiastically] The strong recall lift is HyDE's primary selling point. By embedding a full hypothetical answer rather than a sparse query, you dramatically increase your chances of matching relevant documents in vector space. Documents that would have been ranked too low with query-based search suddenly surface because they're semantically similar to your hypothetical.
 
-The vocabulary gap bridging is equally powerful. Imagine a user asking "Why is my code slow?" while your documentation talks about "performance optimization" and "computational complexity". A direct query embedding might miss these documents entirely, but a hypothetical answer that naturally uses technical terminology will find them.
+[pleased] The vocabulary gap bridging is equally powerful. [storytelling] Imagine a user asking "Why is my code slow?" while your documentation talks about "performance optimization" and "computational complexity". A direct query embedding might miss these documents entirely, but a hypothetical answer that naturally uses technical terminology will find them.
 
 The simplicity is refreshing. You don't need to restructure your retrieval pipeline or retrain models. You just add one language model call before your existing embedding and retrieval steps. This makes HyDE one of the easiest multi-step techniques to experiment with.
 
 #### The Meaningful Risks
 
-However, the hallucination anchoring risk is real and must be managed. If your language model generates a confident but incorrect hypothetical, you'll retrieve documents that align with that misinformation. This is especially dangerous in domains where accuracy is critical, like healthcare or legal applications.
+[seriously] However, the hallucination anchoring risk is real and must be managed. If your language model generates a confident but incorrect hypothetical, you'll retrieve documents that align with that misinformation. This is especially dangerous in domains where accuracy is critical, like healthcare or legal applications.
 
-The loosely related document problem occurs because the hypothetical might emphasize aspects of a question that aren't actually what the user cares about. You might get documents that match the style and topic of your hypothetical while missing the user's actual information need.
+[cautiously] The loosely related document problem occurs because the hypothetical might emphasize aspects of a question that aren't actually what the user cares about. You might get documents that match the style and topic of your hypothetical while missing the user's actual information need.
 
 The extra generation cost is straightforward but worth considering. You're adding a full language model inference before every retrieval, which increases both latency and computational expense.
 
 #### When HyDE Really Shines
 
-Despite these risks, HyDE is particularly effective when direct keyword matching fails due to vocabulary mismatch between queries and documents. If your users speak one language and your documentation speaks another, metaphorically speaking, HyDE can be a game changer for recall.
+[confidently] Despite these risks, HyDE is particularly effective when direct keyword matching fails due to vocabulary mismatch between queries and documents. If your users speak one language and your documentation speaks another, metaphorically speaking, HyDE can be a game changer for recall.
 
 Now let's move on to our third strategy, Query Decomposition, which takes yet another approach by breaking complex questions into simpler pieces.`
         }
@@ -581,11 +581,11 @@ Now let's move on to our third strategy, Query Decomposition, which takes yet an
 
 #### The Divide and Conquer Approach
 
-Our third strategy is Query Decomposition plus Sequential Retrieval, and it embodies the classic computer science principle of divide and conquer. Instead of trying to answer a complex question all at once, we break it down into simpler sub-questions that can be tackled independently.
+[conversational] Our third strategy is Query Decomposition plus Sequential Retrieval, and it embodies the classic computer science principle of divide and conquer. [confidently] Instead of trying to answer a complex question all at once, we break it down into simpler sub-questions that can be tackled independently.
 
 #### How It Works
 
-The process follows a clear structure. First, we parse the user's question and propose a set of sub-questions that together cover all aspects of the original query. Then, we retrieve evidence for each sub-question separately. Next, we answer each sub-question independently using its dedicated evidence. After that, we synthesize a final comprehensive answer that brings together all the sub-answers with proper citations. Finally, we validate consistency across the sub-answers and re-retrieve if we find conflicts or contradictions.
+[lecture] The process follows a clear structure. First, we parse the user's question and propose a set of sub-questions that together cover all aspects of the original query. Then, we retrieve evidence for each sub-question separately. Next, we answer each sub-question independently using its dedicated evidence. After that, we synthesize a final comprehensive answer that brings together all the sub-answers with proper citations. Finally, we validate consistency across the sub-answers and re-retrieve if we find conflicts or contradictions.
 
 \`\`\`mermaid
 graph TD
@@ -608,19 +608,19 @@ graph TD
 
 #### When This Strategy Excels
 
-Query Decomposition shines in several scenarios. It's perfect for multi-fact questions that require information from different sources or domains. It works excellently for procedural tasks where you need to gather information in a logical sequence. And it's ideal for generating comprehensive reports where you need to cover multiple aspects of a topic systematically.
+[enthusiastically] Query Decomposition shines in several scenarios. [pleased] It's perfect for multi-fact questions that require information from different sources or domains. It works excellently for procedural tasks where you need to gather information in a logical sequence. And it's ideal for generating comprehensive reports where you need to cover multiple aspects of a topic systematically.
 
-For example, if someone asks "How do I deploy a machine learning model to production and monitor its performance?", you might decompose this into sub-questions about deployment infrastructure, model serialization, API design, monitoring tools, and performance metrics. Each can be researched independently before synthesis.
+[storytelling] For example, if someone asks "How do I deploy a machine learning model to production and monitor its performance?", you might decompose this into sub-questions about deployment infrastructure, model serialization, API design, monitoring tools, and performance metrics. [confidently] Each can be researched independently before synthesis.
 
 #### The Key Advantages
 
-The modular approach to complex questions makes this technique powerful and flexible. Each sub-question can be handled by the most appropriate retrieval strategy or even routed to different knowledge bases. The interpretable reasoning steps are valuable for debugging and user trust. Users can see exactly which sub-questions were asked and how they were answered. The parallelizability is a major performance benefit. Since sub-questions are independent, you can retrieve and answer them in parallel, dramatically reducing latency compared to sequential multi-step approaches.
+[conversational] The modular approach to complex questions makes this technique powerful and flexible. Each sub-question can be handled by the most appropriate retrieval strategy or even routed to different knowledge bases. [warmly] The interpretable reasoning steps are valuable for debugging and user trust. Users can see exactly which sub-questions were asked and how they were answered. [excited] The parallelizability is a major performance benefit. Since sub-questions are independent, you can retrieve and answer them in parallel, dramatically reducing latency compared to sequential multi-step approaches.
 
 #### Important Considerations
 
-However, there's planning overhead involved. Decomposing questions effectively requires careful prompting and sometimes multiple attempts to get the right granularity. Error propagation is a real concern. If one sub-question is misunderstood or poorly answered, it can poison the final synthesis. And the longer pipelines mean more places where things can go wrong and more complexity to monitor and debug.
+[cautiously] However, there's planning overhead involved. Decomposing questions effectively requires careful prompting and sometimes multiple attempts to get the right granularity. [seriously] Error propagation is a real concern. If one sub-question is misunderstood or poorly answered, it can poison the final synthesis. And the longer pipelines mean more places where things can go wrong and more complexity to monitor and debug.
 
-Let's examine these trade-offs more closely on the next slide.`
+[conversational] Let's examine these trade-offs more closely on the next slide.`
         },
         {
           id: 9,
@@ -665,27 +665,27 @@ Let's examine these trade-offs more closely on the next slide.`
 
 #### Balancing Modularity and Complexity
 
-Query Decomposition offers a compelling balance between managing complexity and maintaining performance, but it requires careful implementation to realize its full potential.
+[conversational] Query Decomposition offers a compelling balance between managing complexity and maintaining performance, [cautiously] but it requires careful implementation to realize its full potential.
 
 #### The Powerful Advantages
 
-The modular approach is perhaps the biggest strength. By breaking questions into independent sub-questions, you gain tremendous flexibility. Each sub-question can be routed to the most appropriate knowledge source, use different retrieval strategies, or even leverage specialized models. This modularity makes the system much easier to understand, debug, and improve over time.
+[confidently] The modular approach is perhaps the biggest strength. By breaking questions into independent sub-questions, you gain tremendous flexibility. Each sub-question can be routed to the most appropriate knowledge source, use different retrieval strategies, or even leverage specialized models. [pleased] This modularity makes the system much easier to understand, debug, and improve over time.
 
-The interpretable reasoning steps are invaluable for building user trust and debugging issues. When users can see exactly which sub-questions were generated and how each was answered, they can better understand and validate the final synthesis. This transparency also makes it much easier for developers to identify where things went wrong when answers are incorrect.
+[warmly] The interpretable reasoning steps are invaluable for building user trust and debugging issues. When users can see exactly which sub-questions were generated and how each was answered, they can better understand and validate the final synthesis. This transparency also makes it much easier for developers to identify where things went wrong when answers are incorrect.
 
-The parallelizability is a major performance win. Since sub-questions are independent by design, you can process them in parallel. If you have three sub-questions and each retrieval takes two seconds, you're looking at two seconds total instead of six seconds if done sequentially. This can dramatically reduce user-perceived latency.
+[enthusiastically] The parallelizability is a major performance win. Since sub-questions are independent by design, you can process them in parallel. [storytelling] If you have three sub-questions and each retrieval takes two seconds, you're looking at two seconds total instead of six seconds if done sequentially. [excited] This can dramatically reduce user-perceived latency.
 
 #### The Real Challenges
 
-However, the planning overhead shouldn't be underestimated. Decomposing questions effectively is actually quite difficult. You need to find the right granularity, not too broad that sub-questions are still complex, and not too fine-grained that you end up with dozens of trivial queries. This often requires careful prompt engineering and sometimes multiple rounds of refinement.
+[seriously] However, the planning overhead shouldn't be underestimated. [concerned] Decomposing questions effectively is actually quite difficult. You need to find the right granularity, not too broad that sub-questions are still complex, and not too fine-grained that you end up with dozens of trivial queries. This often requires careful prompt engineering and sometimes multiple rounds of refinement.
 
-Error propagation is a serious concern. If your decomposition misunderstands the original question or creates sub-questions that don't actually cover all necessary aspects, everything downstream will be affected. Similarly, if one sub-answer is incorrect, it can contaminate the final synthesis in subtle ways that are hard to detect.
+[cautiously] Error propagation is a serious concern. If your decomposition misunderstands the original question or creates sub-questions that don't actually cover all necessary aspects, everything downstream will be affected. [disappointed] Similarly, if one sub-answer is incorrect, it can contaminate the final synthesis in subtle ways that are hard to detect.
 
-The longer pipelines mean more components, more potential failure points, and more complexity to monitor. You need good logging and observability to track how questions are being decomposed and how sub-answers are being synthesized.
+[firmly] The longer pipelines mean more components, more potential failure points, and more complexity to monitor. You need good logging and observability to track how questions are being decomposed and how sub-answers are being synthesized.
 
 #### The Sweet Spot
 
-Despite these challenges, Query Decomposition is best for multi-dimensional questions where separate aspects can be addressed individually before synthesis. When you have questions that naturally break into distinct components, this strategy can be incredibly effective.
+[conversational] Despite these challenges, Query Decomposition is best for multi-dimensional questions where separate aspects can be addressed individually before synthesis. [confidently] When you have questions that naturally break into distinct components, this strategy can be incredibly effective.
 
 Now let's move on to Chain-of-Thought Guided Retrieval, which takes a similar but subtly different approach to structured reasoning.`
         }
@@ -732,13 +732,13 @@ Now let's move on to Chain-of-Thought Guided Retrieval, which takes a similar bu
 
 #### Introduction to CoT 👉 'see-oh-tee'
 
-Our fourth strategy is Chain-of-Thought Guided Retrieval. Chain-of-Thought, often abbreviated as CoT and pronounced "see-oh-tee", is a technique where we break down reasoning into explicit steps. This strategy combines that structured reasoning with targeted retrieval at each step.
+[conversational] Our fourth strategy is Chain-of-Thought Guided Retrieval. [lecture] Chain-of-Thought, often abbreviated as CoT and pronounced "see-oh-tee", is a technique where we break down reasoning into explicit steps. [confidently] This strategy combines that structured reasoning with targeted retrieval at each step.
 
 #### The Core Approach
 
-The goal here is to use reasoning traces to focus retrieval on exactly the facts needed at each step of your thinking process. Instead of retrieving all evidence upfront or iterating blindly, you first sketch out how you would reason about the problem, then retrieve precisely what each reasoning step requires.
+[conversational] The goal here is to use reasoning traces to focus retrieval on exactly the facts needed at each step of your thinking process. [storytelling] Instead of retrieving all evidence upfront or iterating blindly, you first sketch out how you would reason about the problem, then retrieve precisely what each reasoning step requires.
 
-Here's how it flows. First, you generate a Chain-of-Thought skeleton, which is basically an outline of the reasoning steps without actually completing them or providing the final answer. Then, from each step in that outline, you extract cues like entities, relations, or formulas that indicate what facts you'll need. Next, you retrieve evidence targeted to each specific step and attach that evidence directly to the corresponding reasoning step. Finally, you produce your final answer using this step-aligned evidence.
+[lecture] Here's how it flows. First, you generate a Chain-of-Thought skeleton, which is basically an outline of the reasoning steps without actually completing them or providing the final answer. Then, from each step in that outline, you extract cues like entities, relations, or formulas that indicate what facts you'll need. Next, you retrieve evidence targeted to each specific step and attach that evidence directly to the corresponding reasoning step. Finally, you produce your final answer using this step-aligned evidence.
 
 \`\`\`mermaid
 graph TD
@@ -758,17 +758,17 @@ graph TD
 
 #### When to Use This Strategy
 
-Chain-of-Thought Guided Retrieval shines in reasoning-heavy tasks where targeted facts matter at specific points in your logic. Think analysis tasks where you need to evaluate evidence step by step, or calculations that require contextual facts at particular stages of the computation. It's particularly valuable when you know the general structure of reasoning required but need to pull in specific evidence along the way.
+[conversational] Chain-of-Thought Guided Retrieval shines in reasoning-heavy tasks where targeted facts matter at specific points in your logic. [storytelling] Think analysis tasks where you need to evaluate evidence step by step, or calculations that require contextual facts at particular stages of the computation. [confidently] It's particularly valuable when you know the general structure of reasoning required but need to pull in specific evidence along the way.
 
 #### The Key Advantages
 
-This approach delivers high precision because you're retrieving exactly what each reasoning step needs rather than casting a wide net. The transparent reasoning-evidence links are incredibly valuable. Users and developers can see exactly which evidence supported which reasoning step, making the system highly interpretable and debuggable. This tight coupling between reasoning and evidence also helps prevent the kind of drift that can occur in other multi-step approaches.
+[pleased] This approach delivers high precision because you're retrieving exactly what each reasoning step needs rather than casting a wide net. [enthusiastically] The transparent reasoning-evidence links are incredibly valuable. Users and developers can see exactly which evidence supported which reasoning step, making the system highly interpretable and debuggable. [confidently] This tight coupling between reasoning and evidence also helps prevent the kind of drift that can occur in other multi-step approaches.
 
 #### The Trade-offs
 
-However, the technique can be verbose. Generating a full Chain-of-Thought outline before even retrieving evidence adds overhead. It's also quite prompt-sensitive. The quality of your CoT skeleton depends heavily on how you prompt the model, and small changes in prompting can lead to very different reasoning structures. Finally, there's a risk of overfitting to early reasoning errors. If your initial CoT skeleton is flawed, all subsequent retrieval will be guided by that flawed reasoning, potentially leading you down the wrong path.
+[cautiously] However, the technique can be verbose. Generating a full Chain-of-Thought outline before even retrieving evidence adds overhead. [concerned] It's also quite prompt-sensitive. The quality of your CoT skeleton depends heavily on how you prompt the model, and small changes in prompting can lead to very different reasoning structures. [seriously] Finally, there's a risk of overfitting to early reasoning errors. If your initial CoT skeleton is flawed, all subsequent retrieval will be guided by that flawed reasoning, potentially leading you down the wrong path.
 
-Let's look at these pros and cons in more detail.`
+[conversational] Let's look at these pros and cons in more detail.`
         },
         {
           id: 11,
@@ -812,25 +812,25 @@ Let's look at these pros and cons in more detail.`
 
 #### Precision Versus Complexity
 
-Chain-of-Thought Guided Retrieval offers a fascinating trade-off between precision and system complexity. Let's explore when this trade-off makes sense.
+[conversational] Chain-of-Thought Guided Retrieval offers a fascinating trade-off between precision and system complexity. Let's explore when this trade-off makes sense.
 
 #### The Compelling Strengths
 
-High precision is the star feature here. By generating a reasoning skeleton first and then retrieving targeted evidence for each step, you avoid the problem of retrieving too much irrelevant information or missing crucial facts that only matter at specific reasoning stages. You're essentially creating a custom retrieval plan for each query based on how you need to think about it.
+[confidently] High precision is the star feature here. By generating a reasoning skeleton first and then retrieving targeted evidence for each step, you avoid the problem of retrieving too much irrelevant information or missing crucial facts that only matter at specific reasoning stages. [pleased] You're essentially creating a custom retrieval plan for each query based on how you need to think about it.
 
-The transparent reasoning-evidence links make this technique particularly valuable in domains where explainability matters. In healthcare, legal, or financial applications, stakeholders often need to understand not just the final answer but exactly how each piece of evidence contributed to each step of reasoning. With Chain-of-Thought guided retrieval, you get this transparency built in. Each reasoning step has its associated evidence clearly marked, making auditing and verification straightforward.
+[enthusiastically] The transparent reasoning-evidence links make this technique particularly valuable in domains where explainability matters. [seriously] In healthcare, legal, or financial applications, stakeholders often need to understand not just the final answer but exactly how each piece of evidence contributed to each step of reasoning. [warmly] With Chain-of-Thought guided retrieval, you get this transparency built in. Each reasoning step has its associated evidence clearly marked, making auditing and verification straightforward.
 
 #### The Real Challenges
 
-However, verbosity is a significant practical concern. You're generating a Chain-of-Thought outline, then extracting cues from it, then retrieving for each step, then generating the final answer. That's a lot of tokens and a lot of latency. In production systems where you're paying per token and users expect quick responses, this overhead adds up quickly.
+[cautiously] However, verbosity is a significant practical concern. [concerned] You're generating a Chain-of-Thought outline, then extracting cues from it, then retrieving for each step, then generating the final answer. That's a lot of tokens and a lot of latency. [disappointed] In production systems where you're paying per token and users expect quick responses, this overhead adds up quickly.
 
-The prompt-sensitivity issue is equally important. The entire technique hinges on generating a good Chain-of-Thought skeleton up front. If your prompt doesn't elicit the right reasoning structure, or if the model makes assumptions that lead it down the wrong path early on, everything downstream suffers. This makes the technique fragile to prompt variations and requires careful prompt engineering.
+[seriously] The prompt-sensitivity issue is equally important. The entire technique hinges on generating a good Chain-of-Thought skeleton up front. [cautiously] If your prompt doesn't elicit the right reasoning structure, or if the model makes assumptions that lead it down the wrong path early on, everything downstream suffers. [firmly] This makes the technique fragile to prompt variations and requires careful prompt engineering.
 
-The risk of overfitting to early reasoning errors is perhaps the most subtle but serious challenge. Once you've committed to a particular reasoning structure in your skeleton, all subsequent retrieval and reasoning follows that structure. If the initial skeleton misunderstands the question or chooses a flawed approach, you're locked into that approach. Unlike iterative refinement strategies that can course-correct, Chain-of-Thought guided retrieval is committed from the start.
+[seriously] The risk of overfitting to early reasoning errors is perhaps the most subtle but serious challenge. Once you've committed to a particular reasoning structure in your skeleton, all subsequent retrieval and reasoning follows that structure. [disappointed] If the initial skeleton misunderstands the question or chooses a flawed approach, you're locked into that approach. Unlike iterative refinement strategies that can course-correct, Chain-of-Thought guided retrieval is committed from the start.
 
 #### The Right Use Cases
 
-Despite these challenges, this technique is ideal for complex reasoning tasks that need precise evidence at each reasoning step. If you're building systems for technical analysis, multi-step problem solving, or any domain where reasoning structure is predictable but evidence needs are specific, Chain-of-Thought guided retrieval can be extremely effective.
+[conversational] Despite these challenges, this technique is ideal for complex reasoning tasks that need precise evidence at each reasoning step. [confidently] If you're building systems for technical analysis, multi-step problem solving, or any domain where reasoning structure is predictable but evidence needs are specific, Chain-of-Thought guided retrieval can be extremely effective.
 
 Now let's move to our fifth strategy, Step-Back Reasoning, which takes a different approach by starting broad before getting specific.`
         }
@@ -877,13 +877,13 @@ Now let's move to our fifth strategy, Step-Back Reasoning, which takes a differe
 
 #### The Zoom-Out-Then-Zoom-In Strategy
 
-Our fifth strategy is Step-Back Reasoning Retrieval, and it embodies a principle that's familiar from everyday problem-solving: sometimes you need to step back and understand the bigger picture before diving into details.
+[conversational] Our fifth strategy is Step-Back Reasoning Retrieval, and it embodies a principle that's familiar from everyday problem-solving: [storytelling] sometimes you need to step back and understand the bigger picture before diving into details.
 
 #### How It Works
 
-The goal is to generalize the user's question to a higher-level abstraction, retrieve broad contextual information first, and then specialize back down to the specific query. This two-stage approach helps avoid the tunnel vision that can occur when you dive straight into specific retrieval.
+[lecture] The goal is to generalize the user's question to a higher-level abstraction, retrieve broad contextual information first, and then specialize back down to the specific query. [confidently] This two-stage approach helps avoid the tunnel vision that can occur when you dive straight into specific retrieval.
 
-Here's the process. First, you generate a step-back question that captures the core concept or principle underlying the user's specific query. Then, you retrieve high-level overviews, definitions, or summaries related to that broader concept. Next, armed with this contextual understanding, you reformulate a more precise follow-up query. Finally, you re-retrieve specific evidence and generate your answer.
+[conversational] Here's the process. First, you generate a step-back question that captures the core concept or principle underlying the user's specific query. Then, you retrieve high-level overviews, definitions, or summaries related to that broader concept. Next, armed with this contextual understanding, you reformulate a more precise follow-up query. Finally, you re-retrieve specific evidence and generate your answer.
 
 \`\`\`mermaid
 graph TD
@@ -898,15 +898,15 @@ graph TD
 
 #### When This Strategy Shines
 
-Step-Back Reasoning is particularly valuable for overly specific or noisy queries where direct retrieval gets bogged down in details. It works excellently for concept-heavy topics where understanding principles is crucial before tackling specifics. And it's perfect for situations when direct retrieval fails, because stepping back can reveal alternative entry points into your knowledge base.
+[enthusiastically] Step-Back Reasoning is particularly valuable for overly specific or noisy queries where direct retrieval gets bogged down in details. [pleased] It works excellently for concept-heavy topics where understanding principles is crucial before tackling specifics. And it's perfect for situations when direct retrieval fails, because stepping back can reveal alternative entry points into your knowledge base.
 
-For example, if someone asks "Why does my React app re-render when I use useState in a callback?", a step-back question might be "How does React's rendering cycle work?" Retrieving general information about React rendering first provides context that makes the specific answer much clearer.
+[storytelling] For example, if someone asks "Why does my React app re-render when I use useState in a callback?", a step-back question might be "How does React's rendering cycle work?" [warmly] Retrieving general information about React rendering first provides context that makes the specific answer much clearer.
 
 #### The Key Benefits
 
-This approach is robust to noise because the step-back question naturally filters out irrelevant specifics. It reduces myopic retrieval where you get stuck in a narrow interpretation of the query. And it's particularly good for learning tasks where understanding foundational concepts is as important as answering the immediate question.
+[confidently] This approach is robust to noise because the step-back question naturally filters out irrelevant specifics. It reduces myopic retrieval where you get stuck in a narrow interpretation of the query. [pleased] And it's particularly good for learning tasks where understanding foundational concepts is as important as answering the immediate question.
 
-Let's look at the full trade-off picture on the next slide.`
+[conversational] Let's look at the full trade-off picture on the next slide.`
         },
         {
           id: 13,
@@ -951,27 +951,27 @@ Let's look at the full trade-off picture on the next slide.`
 
 #### The Abstraction Trade-off
 
-Step-Back Reasoning presents an interesting trade-off between breadth and precision. Let's examine when this trade-off is worth making.
+[conversational] Step-Back Reasoning presents an interesting trade-off between breadth and precision. Let's examine when this trade-off is worth making.
 
 #### The Strong Advantages
 
-Robustness to noise is a major strength. When users ask questions loaded with specific details that might confuse retrieval, stepping back to the core concept cuts through that noise. You're essentially using abstraction as a filter, focusing on what really matters conceptually rather than getting distracted by surface-level specifics.
+[confidently] Robustness to noise is a major strength. [pleased] When users ask questions loaded with specific details that might confuse retrieval, stepping back to the core concept cuts through that noise. [storytelling] You're essentially using abstraction as a filter, focusing on what really matters conceptually rather than getting distracted by surface-level specifics.
 
-Reducing myopic retrieval is equally valuable. Direct retrieval can sometimes lock onto one narrow interpretation of a question and miss relevant information that uses different terminology or approaches the topic from a different angle. By retrieving broad context first, you give yourself multiple entry points and perspectives before narrowing down.
+[enthusiastically] Reducing myopic retrieval is equally valuable. Direct retrieval can sometimes lock onto one narrow interpretation of a question and miss relevant information that uses different terminology or approaches the topic from a different angle. [warmly] By retrieving broad context first, you give yourself multiple entry points and perspectives before narrowing down.
 
-The approach is particularly good for learning tasks because it naturally provides educational context. When users are trying to understand something, they often benefit from seeing the bigger picture before diving into specifics. Step-back reasoning delivers this automatically.
+[pleased] The approach is particularly good for learning tasks because it naturally provides educational context. When users are trying to understand something, they often benefit from seeing the bigger picture before diving into specifics. Step-back reasoning delivers this automatically.
 
 #### The Important Limitations
 
-However, the technique may pull in generic information that doesn't directly answer the question. There's a risk of spending tokens and latency on high-level overviews that the user already understands or doesn't actually need. This makes the technique less suitable when users have deep domain knowledge and are asking very specific questions.
+[cautiously] However, the technique may pull in generic information that doesn't directly answer the question. [concerned] There's a risk of spending tokens and latency on high-level overviews that the user already understands or doesn't actually need. This makes the technique less suitable when users have deep domain knowledge and are asking very specific questions.
 
-Careful prompting is required to generate good step-back questions. If your step-back question is too broad, you'll retrieve information that's too general to be useful. If it's not broad enough, you haven't really stepped back at all. Finding the right level of abstraction requires prompt engineering and often domain-specific guidance.
+[seriously] Careful prompting is required to generate good step-back questions. If your step-back question is too broad, you'll retrieve information that's too general to be useful. If it's not broad enough, you haven't really stepped back at all. [cautiously] Finding the right level of abstraction requires prompt engineering and often domain-specific guidance.
 
-The extra hops definitely increase latency. You're adding a full retrieval cycle before your main retrieval, which doubles your retrieval latency at minimum. For applications where sub-second response times matter, this overhead can be prohibitive.
+[disappointed] The extra hops definitely increase latency. You're adding a full retrieval cycle before your main retrieval, which doubles your retrieval latency at minimum. [firmly] For applications where sub-second response times matter, this overhead can be prohibitive.
 
 #### The Sweet Spot
 
-This strategy is best for questions where zooming out to understand core concepts before diving into specifics genuinely improves answer quality. Educational applications, exploratory research, and complex technical topics where foundational understanding matters are all excellent use cases.
+[conversational] This strategy is best for questions where zooming out to understand core concepts before diving into specifics genuinely improves answer quality. [confidently] Educational applications, exploratory research, and complex technical topics where foundational understanding matters are all excellent use cases.
 
 Now let's move to our sixth strategy, Multi-Hop Graph Traversal, which takes a completely different approach by following relationships between entities.`
         }
@@ -1018,13 +1018,13 @@ Now let's move to our sixth strategy, Multi-Hop Graph Traversal, which takes a c
 
 #### Following the Connection Thread
 
-Our sixth strategy is Multi-Hop Graph Traversal Retrieval, and it's perfect for questions that require connecting multiple pieces of information across relationships. Instead of treating your knowledge base as a flat collection of documents, this approach views it as a network of connected entities and relationships.
+[conversational] Our sixth strategy is Multi-Hop Graph Traversal Retrieval, and it's perfect for questions that require connecting multiple pieces of information across relationships. [storytelling] Instead of treating your knowledge base as a flat collection of documents, this approach views it as a network of connected entities and relationships.
 
 #### The Core Mechanism
 
-The goal is to follow entity and relationship paths to gather multi-hop evidence. You start with seed entities from the query, then traverse the graph by following relationships, collecting relevant documents at each hop until you've gathered enough connected evidence to answer the question.
+[lecture] The goal is to follow entity and relationship paths to gather multi-hop evidence. [confidently] You start with seed entities from the query, then traverse the graph by following relationships, collecting relevant documents at each hop until you've gathered enough connected evidence to answer the question.
 
-The process works like this. First, you extract seed entities and relations from the user's query. Then, you expand to neighboring entities using either embedding similarity or an explicit knowledge graph, often employing beam search to manage the explosion of possible paths. Next, you score different paths based on relevance and gather documents associated with entities at each hop. Finally, you consolidate all this multi-hop evidence and generate your answer.
+[conversational] The process works like this. First, you extract seed entities and relations from the user's query. Then, you expand to neighboring entities using either embedding similarity or an explicit knowledge graph, often employing beam search to manage the explosion of possible paths. Next, you score different paths based on relevance and gather documents associated with entities at each hop. Finally, you consolidate all this multi-hop evidence and generate your answer.
 
 \`\`\`mermaid
 graph LR
@@ -1038,11 +1038,11 @@ graph LR
 
 #### When to Use This Strategy
 
-Multi-Hop Graph Traversal excels for relational questions like "How is Person A connected to Company B?" It's ideal for cause-effect chains where you need to trace how one event leads to another through intermediary steps. And it's perfect for linking distant facts that aren't obviously connected in a single document but can be linked through a chain of relationships.
+[enthusiastically] Multi-Hop Graph Traversal excels for relational questions like "How is Person A connected to Company B?" [pleased] It's ideal for cause-effect chains where you need to trace how one event leads to another through intermediary steps. And it's perfect for linking distant facts that aren't obviously connected in a single document but can be linked through a chain of relationships.
 
-The key insight is that many real-world questions can't be answered from a single document or even a set of independent documents. They require assembling information from multiple sources connected by relationships.
+[confidently] The key insight is that many real-world questions can't be answered from a single document or even a set of independent documents. [firmly] They require assembling information from multiple sources connected by relationships.
 
-Let's examine the trade-offs on the next slide.`
+[conversational] Let's examine the trade-offs on the next slide.`
         },
         {
           id: 15,
@@ -1087,27 +1087,27 @@ Let's examine the trade-offs on the next slide.`
 
 #### Graph-Based Reasoning Trade-offs
 
-Multi-Hop Graph Traversal offers unique capabilities but comes with infrastructure requirements that other strategies don't have. Let's examine when this investment pays off.
+[conversational] Multi-Hop Graph Traversal offers unique capabilities but comes with infrastructure requirements that other strategies don't have. [seriously] Let's examine when this investment pays off.
 
 #### The Powerful Strengths
 
-Structured multi-hop reasoning is the defining strength of this approach. Unlike free-form iteration or decomposition, graph traversal follows explicit relationships, which provides a clear logical path from your starting entities to your answer. This structure makes the reasoning process much more principled and reproducible.
+[confidently] Structured multi-hop reasoning is the defining strength of this approach. Unlike free-form iteration or decomposition, graph traversal follows explicit relationships, which provides a clear logical path from your starting entities to your answer. [pleased] This structure makes the reasoning process much more principled and reproducible.
 
-The strength for relational queries is unmatched by other strategies. Questions like "What companies did this person work for before joining their current role?" or "How is climate change affecting agricultural yields in coastal regions?" naturally map to graph traversal patterns. You're not fighting against your representation; you're working with it.
+[enthusiastically] The strength for relational queries is unmatched by other strategies. [storytelling] Questions like "What companies did this person work for before joining their current role?" or "How is climate change affecting agricultural yields in coastal regions?" naturally map to graph traversal patterns. [warmly] You're not fighting against your representation; you're working with it.
 
-Transparent path discovery is incredibly valuable for explanation and debugging. You can show users exactly which entities and relationships were traversed to reach the answer. This makes the system's reasoning visible and verifiable in a way that purely vector-based approaches can't match.
+[pleased] Transparent path discovery is incredibly valuable for explanation and debugging. You can show users exactly which entities and relationships were traversed to reach the answer. [confidently] This makes the system's reasoning visible and verifiable in a way that purely vector-based approaches can't match.
 
 #### The Significant Challenges
 
-However, requiring graph infrastructure or extraction is a major barrier to adoption. You need either an explicitly maintained knowledge graph, which is expensive to build and maintain, or reliable entity and relation extraction from unstructured text, which is technically challenging and error-prone. This infrastructure requirement makes Multi-Hop Graph Traversal one of the heavier-weight strategies to implement.
+[cautiously] However, requiring graph infrastructure or extraction is a major barrier to adoption. [seriously] You need either an explicitly maintained knowledge graph, which is expensive to build and maintain, or reliable entity and relation extraction from unstructured text, which is technically challenging and error-prone. [firmly] This infrastructure requirement makes Multi-Hop Graph Traversal one of the heavier-weight strategies to implement.
 
-Tuning complexity for path relevance is another real challenge. Not all paths through a graph are equally relevant to a question. You need good scoring functions to distinguish useful paths from noise, and these often require domain-specific tuning. Beam search helps manage this but introduces its own hyperparameters to tune.
+[concerned] Tuning complexity for path relevance is another real challenge. Not all paths through a graph are equally relevant to a question. [puzzled] You need good scoring functions to distinguish useful paths from noise, and these often require domain-specific tuning. Beam search helps manage this but introduces its own hyperparameters to tune.
 
-Potential path explosion with many hops is a serious scalability concern. In a dense graph, the number of possible paths grows exponentially with each hop. Even with beam search pruning, you can quickly end up exploring hundreds or thousands of paths, making the approach impractical for deep multi-hop queries without careful engineering.
+[disappointed] Potential path explosion with many hops is a serious scalability concern. [cautiously] In a dense graph, the number of possible paths grows exponentially with each hop. Even with beam search pruning, you can quickly end up exploring hundreds or thousands of paths, making the approach impractical for deep multi-hop queries without careful engineering.
 
 #### The Right Applications
 
-This strategy is ideal for questions requiring connection of information across multiple documents or knowledge graph nodes. If your domain is naturally relational, like social networks, organizational hierarchies, supply chains, or citation networks, Multi-Hop Graph Traversal can be transformative.
+[conversational] This strategy is ideal for questions requiring connection of information across multiple documents or knowledge graph nodes. [confidently] If your domain is naturally relational, like social networks, organizational hierarchies, supply chains, or citation networks, Multi-Hop Graph Traversal can be transformative.
 
 Now let's move to our seventh strategy, Context-Summarize-and-Retrieve, which tackles a different problem: managing context length in long retrieval sessions.`
         }
@@ -1154,11 +1154,11 @@ Now let's move to our seventh strategy, Context-Summarize-and-Retrieve, which ta
 
 #### Managing Context Windows Intelligently
 
-Our seventh strategy is Context-Summarize-and-Retrieve, and it addresses a practical problem that becomes critical in extended retrieval sessions: context window limits. As you accumulate evidence and reasoning across multiple retrieval steps, you can quickly hit token limits. This strategy manages that through intelligent summarization.
+[conversational] Our seventh strategy is Context-Summarize-and-Retrieve, and it addresses a practical problem that becomes critical in extended retrieval sessions: [seriously] context window limits. [concerned] As you accumulate evidence and reasoning across multiple retrieval steps, you can quickly hit token limits. [confidently] This strategy manages that through intelligent summarization.
 
 #### The Core Approach
 
-The goal is to compress your evolving context to stay within your window limits while still guiding your next retrieval effectively. You maintain a rolling summary of your conversation state and use that compressed representation to query for fresh, relevant evidence.
+[lecture] The goal is to compress your evolving context to stay within your window limits while still guiding your next retrieval effectively. [conversational] You maintain a rolling summary of your conversation state and use that compressed representation to query for fresh, relevant evidence.
 
 Here's the flow. First, you summarize your current context, capturing salient facts and open questions while discarding less relevant details. Then, you extract key terms and gaps from that summary to guide your next retrieval. Next, you retrieve targeted updates and new evidence based on the summary. Finally, you update your summary and working answer, then repeat as needed.
 
@@ -1177,13 +1177,13 @@ graph TD
 
 #### When This Strategy Shines
 
-This technique is essential for long sessions where you're building understanding over many turns. It's perfect for iterative research where you're exploring a topic progressively. And it's crucial when you're working with limited context windows and can't afford to keep all historical evidence in context.
+[enthusiastically] This technique is essential for long sessions where you're building understanding over many turns. [pleased] It's perfect for iterative research where you're exploring a topic progressively. [firmly] And it's crucial when you're working with limited context windows and can't afford to keep all historical evidence in context.
 
 #### The Key Advantages
 
-Controls token growth is the primary benefit. Without summarization, multi-step retrieval can quickly balloon to tens of thousands of tokens. Summarization keeps you within practical limits. It also maintains focus by discarding irrelevant details that accumulated during exploration. And it's particularly good for ongoing tasks like extended research sessions or multi-turn conversations.
+[confidently] Controls token growth is the primary benefit. [concerned] Without summarization, multi-step retrieval can quickly balloon to tens of thousands of tokens. [pleased] Summarization keeps you within practical limits. It also maintains focus by discarding irrelevant details that accumulated during exploration. [warmly] And it's particularly good for ongoing tasks like extended research sessions or multi-turn conversations.
 
-Let's examine the trade-offs on the next slide.`
+[conversational] Let's examine the trade-offs on the next slide.`
         },
         {
           id: 17,
@@ -1228,27 +1228,27 @@ Let's examine the trade-offs on the next slide.`
 
 #### The Compression Trade-off
 
-Context-Summarize-and-Retrieve presents a fundamental trade-off: you gain token efficiency but risk losing information through compression. Let's explore when this trade-off makes sense.
+[conversational] Context-Summarize-and-Retrieve presents a fundamental trade-off: [confidently] you gain token efficiency [cautiously] but risk losing information through compression. Let's explore when this trade-off makes sense.
 
 #### The Practical Advantages
 
-Controlling token growth is essential for production systems. Language models have hard context limits, and even with long-context models, processing very long contexts is slow and expensive. Summarization lets you maintain bounded context size regardless of how many retrieval iterations you perform.
+[firmly] Controlling token growth is essential for production systems. [lecture] Language models have hard context limits, and even with long-context models, processing very long contexts is slow and expensive. [pleased] Summarization lets you maintain bounded context size regardless of how many retrieval iterations you perform.
 
-Maintaining focus is an underappreciated benefit. In long retrieval sessions, you accumulate not just useful evidence but also tangential information explored along the way. Summarization acts as a filter, keeping your attention on what matters and discarding distractions. This actually improves answer quality in many cases, not despite the information loss but because of it.
+[warmly] Maintaining focus is an underappreciated benefit. [storytelling] In long retrieval sessions, you accumulate not just useful evidence but also tangential information explored along the way. [confidently] Summarization acts as a filter, keeping your attention on what matters and discarding distractions. [pleased] This actually improves answer quality in many cases, not despite the information loss but because of it.
 
-Being good for ongoing tasks makes this technique valuable for applications like research assistants, extended technical support sessions, or any scenario where user interaction spans multiple queries and retrievals over time.
+[conversational] Being good for ongoing tasks makes this technique valuable for applications like research assistants, extended technical support sessions, or any scenario where user interaction spans multiple queries and retrievals over time.
 
 #### The Real Risks
 
-However, summarization loss and bias are inevitable. When you compress information, you lose details. The question is whether you lose important details or just noise. Summarization models also have biases about what's important, and these biases might not align with what your retrieval task actually needs.
+[seriously] However, summarization loss and bias are inevitable. [cautiously] When you compress information, you lose details. [puzzled] The question is whether you lose important details or just noise. Summarization models also have biases about what's important, and these biases might not align with what your retrieval task actually needs.
 
-Summary drift is a more subtle problem. As you repeatedly summarize summaries across many iterations, errors and omissions compound. Like a game of telephone, what you end up with after many rounds can drift significantly from your original context. This makes the technique less suitable for tasks requiring perfect information retention.
+[concerned] Summary drift is a more subtle problem. As you repeatedly summarize summaries across many iterations, errors and omissions compound. [storytelling] Like a game of telephone, what you end up with after many rounds can drift significantly from your original context. [disappointed] This makes the technique less suitable for tasks requiring perfect information retention.
 
-Requiring careful evaluation is crucial. You need to actively monitor whether your summarization is preserving the right information. This means tracking metrics like answer quality, citation accuracy, and whether important evidence is being inadvertently discarded.
+[firmly] Requiring careful evaluation is crucial. You need to actively monitor whether your summarization is preserving the right information. This means tracking metrics like answer quality, citation accuracy, and whether important evidence is being inadvertently discarded.
 
 #### The Sweet Spot
 
-This strategy is especially useful for extended conversations and research sessions where context management is essential. If you're building applications for long-form research, iterative problem-solving, or conversational agents, Context-Summarize-and-Retrieve is often necessary.
+[conversational] This strategy is especially useful for extended conversations and research sessions where context management is essential. [confidently] If you're building applications for long-form research, iterative problem-solving, or conversational agents, Context-Summarize-and-Retrieve is often necessary.
 
 Now let's look at our eighth strategy, Answer-Conditioned Re-Retrieval, which uses an initial answer to guide fact-checking and verification.`
         }
@@ -1295,13 +1295,13 @@ Now let's look at our eighth strategy, Answer-Conditioned Re-Retrieval, which us
 
 #### Verification Through Reverse Engineering
 
-Our eighth strategy is Answer-Conditioned Re-Retrieval, and it flips the typical retrieval flow on its head. Instead of retrieving first and answering second, you generate a provisional answer first, then retrieve evidence to verify and support each claim in that answer.
+[conversational] Our eighth strategy is Answer-Conditioned Re-Retrieval, [excited] and it flips the typical retrieval flow on its head. [storytelling] Instead of retrieving first and answering second, you generate a provisional answer first, then retrieve evidence to verify and support each claim in that answer.
 
 #### The Core Philosophy
 
-The goal is to verify and complete a provisional answer by retrieving evidence conditioned on its specific claims. This is particularly powerful for fact-checking and citation-heavy applications where you need to ensure every claim is properly supported.
+[lecture] The goal is to verify and complete a provisional answer by retrieving evidence conditioned on its specific claims. [confidently] This is particularly powerful for fact-checking and citation-heavy applications where you need to ensure every claim is properly supported.
 
-The workflow is elegant. First, you generate a provisional answer using whatever context you have, which might be limited initial retrieval or even zero-shot generation. Then, you extract atomic claims from that answer, breaking it down into individual factual statements. Next, you retrieve evidence for each specific claim and label whether that evidence supports, contradicts, or is neutral to the claim. Finally, you revise the answer based on what you found, adding proper citations for supported claims, revising contradicted claims, or flagging uncertainty where evidence is lacking.
+[pleased] The workflow is elegant. First, you generate a provisional answer using whatever context you have, which might be limited initial retrieval or even zero-shot generation. Then, you extract atomic claims from that answer, breaking it down into individual factual statements. Next, you retrieve evidence for each specific claim and label whether that evidence supports, contradicts, or is neutral to the claim. Finally, you revise the answer based on what you found, adding proper citations for supported claims, revising contradicted claims, or flagging uncertainty where evidence is lacking.
 
 \`\`\`mermaid
 graph TD
@@ -1321,13 +1321,13 @@ graph TD
 
 #### When This Strategy Excels
 
-Answer-Conditioned Re-Retrieval is ideal for fact-checking applications where accuracy is paramount. It's perfect for citation-heavy outputs like academic or professional writing. It's essential for high-stakes domains like healthcare, legal, or financial advice where every claim needs substantiation. And it's valuable for auditing AI-generated content to verify its factual accuracy.
+[enthusiastically] Answer-Conditioned Re-Retrieval is ideal for fact-checking applications where accuracy is paramount. [pleased] It's perfect for citation-heavy outputs like academic or professional writing. [firmly] It's essential for high-stakes domains like healthcare, legal, or financial advice where every claim needs substantiation. [confidently] And it's valuable for auditing AI-generated content to verify its factual accuracy.
 
 #### The Key Benefits
 
-This approach provides systematic verification of every claim rather than hoping your initial retrieval was comprehensive. It enables precise citation, with each claim linked to specific supporting evidence. And it naturally flags uncertain claims where evidence is insufficient, which is valuable for building trustworthy systems.
+[confidently] This approach provides systematic verification of every claim rather than hoping your initial retrieval was comprehensive. [pleased] It enables precise citation, with each claim linked to specific supporting evidence. [warmly] And it naturally flags uncertain claims where evidence is insufficient, which is valuable for building trustworthy systems.
 
-Let's look at the full picture on the next slide.`
+[conversational] Let's look at the full picture on the next slide.`
         },
         {
           id: 19,
@@ -1370,23 +1370,23 @@ Let's look at the full picture on the next slide.`
 
 #### Verification Versus Efficiency
 
-Answer-Conditioned Re-Retrieval offers maximum verification but at a cost. Let's examine when this investment is worthwhile.
+[conversational] Answer-Conditioned Re-Retrieval offers maximum verification [cautiously] but at a cost. Let's examine when this investment is worthwhile.
 
 #### The Compelling Strengths
 
-High precision and auditability are the defining features. By explicitly retrieving evidence for each claim and marking support or conflict, you create a fully auditable trail from claims to evidence. This level of transparency is unmatched by other strategies. Every stakeholder can see exactly which evidence supports which claim and whether any claims lack proper support.
+[confidently] High precision and auditability are the defining features. By explicitly retrieving evidence for each claim and marking support or conflict, you create a fully auditable trail from claims to evidence. [enthusiastically] This level of transparency is unmatched by other strategies. [warmly] Every stakeholder can see exactly which evidence supports which claim and whether any claims lack proper support.
 
-Being good for compliance is crucial in regulated industries. Healthcare, legal, financial services, and other high-stakes domains often have strict requirements for substantiating claims with evidence. Answer-Conditioned Re-Retrieval provides a systematic framework for meeting these requirements. You're not just hoping you retrieved relevant evidence; you're explicitly validating each claim.
+[firmly] Being good for compliance is crucial in regulated industries. [seriously] Healthcare, legal, financial services, and other high-stakes domains often have strict requirements for substantiating claims with evidence. [confidently] Answer-Conditioned Re-Retrieval provides a systematic framework for meeting these requirements. [pleased] You're not just hoping you retrieved relevant evidence; you're explicitly validating each claim.
 
 #### The Significant Costs
 
-However, extra passes definitely increase cost and latency. You're generating a provisional answer, extracting claims, retrieving evidence for each claim, and then revising the answer. That's multiple language model calls and multiple retrieval operations. For applications where sub-second response times are expected, this overhead can be prohibitive.
+[cautiously] However, extra passes definitely increase cost and latency. [concerned] You're generating a provisional answer, extracting claims, retrieving evidence for each claim, and then revising the answer. That's multiple language model calls and multiple retrieval operations. [disappointed] For applications where sub-second response times are expected, this overhead can be prohibitive.
 
-The risk of circularity if the initial draft is weak is a subtle but important concern. If your provisional answer contains hallucinations or misconceptions, retrieving evidence conditioned on those flawed claims might reinforce errors rather than correct them. You might retrieve documents that superficially match the flawed claims without actually supporting them. This makes the quality of your provisional answer generation crucial.
+[seriously] The risk of circularity if the initial draft is weak is a subtle but important concern. [cautiously] If your provisional answer contains hallucinations or misconceptions, retrieving evidence conditioned on those flawed claims might reinforce errors rather than correct them. [puzzled] You might retrieve documents that superficially match the flawed claims without actually supporting them. [firmly] This makes the quality of your provisional answer generation crucial.
 
 #### The Right Applications
 
-This strategy is ideal for scenarios requiring factual accuracy, citations, and verification of information. Academic research, professional reports, medical information systems, legal research tools, and any application where stakeholders need to verify claims are all excellent use cases.
+[conversational] This strategy is ideal for scenarios requiring factual accuracy, citations, and verification of information. [confidently] Academic research, professional reports, medical information systems, legal research tools, and any application where stakeholders need to verify claims are all excellent use cases.
 
 Now let's move to our final strategy, Feedback-Based Retrieval Loop, which uses quality signals to continuously improve retrieval.`
         }
@@ -1433,13 +1433,13 @@ Now let's move to our final strategy, Feedback-Based Retrieval Loop, which uses 
 
 #### Learning from User Signals
 
-Our ninth and final strategy is Feedback-Based Retrieval Loop, and it's unique among our techniques because it explicitly learns from user behavior to improve retrieval over time. Instead of treating each query as independent, it uses feedback signals to adapt and personalize the retrieval process.
+[conversational] Our ninth and final strategy is Feedback-Based Retrieval Loop, [excited] and it's unique among our techniques because it explicitly learns from user behavior to improve retrieval over time. [storytelling] Instead of treating each query as independent, it uses feedback signals to adapt and personalize the retrieval process.
 
 #### The Core Mechanism
 
-The goal is to adapt retrieval using user or model feedback signals to improve relevance over time. You collect signals about what users found helpful, use those signals to update your retrieval strategy, and continuously improve based on accumulated feedback.
+[lecture] The goal is to adapt retrieval using user or model feedback signals to improve relevance over time. [confidently] You collect signals about what users found helpful, use those signals to update your retrieval strategy, and continuously improve based on accumulated feedback.
 
-The workflow is straightforward. First, you run initial retrieval and present answers or snippets to the user. Then, you gather feedback, which can be explicit like thumbs up or down, or implicit like click-through rates, dwell time, or which parts of the answer the user copies. Next, you update your query formulation, ranking weights, or reranking models based on that feedback. Finally, you re-retrieve with the updated strategy and iterate, storing user preferences for future queries.
+[conversational] The workflow is straightforward. First, you run initial retrieval and present answers or snippets to the user. Then, you gather feedback, which can be explicit like thumbs up or down, or implicit like click-through rates, dwell time, or which parts of the answer the user copies. Next, you update your query formulation, ranking weights, or reranking models based on that feedback. Finally, you re-retrieve with the updated strategy and iterate, storing user preferences for future queries.
 
 \`\`\`mermaid
 graph LR
@@ -1456,13 +1456,13 @@ graph LR
 
 #### When This Strategy Excels
 
-Feedback-Based Retrieval is ideal for interactive systems where users can provide signals. It's perfect for personalization, learning individual user preferences and tailoring results accordingly. It's valuable for cold-start situations where you don't have much information about user intent, and it's excellent for dynamic corpora where document relevance changes over time.
+[enthusiastically] Feedback-Based Retrieval is ideal for interactive systems where users can provide signals. [pleased] It's perfect for personalization, learning individual user preferences and tailoring results accordingly. [confidently] It's valuable for cold-start situations where you don't have much information about user intent, and it's excellent for dynamic corpora where document relevance changes over time.
 
 #### The Key Benefits
 
-Personalization is a major advantage. Different users care about different things, and feedback lets you adapt to individual preferences. Continuous improvement means your system gets better over time rather than remaining static. And data-driven tuning based on real user behavior is more reliable than guessing about what users want.
+[warmly] Personalization is a major advantage. Different users care about different things, and feedback lets you adapt to individual preferences. [excited] Continuous improvement means your system gets better over time rather than remaining static. [confidently] And data-driven tuning based on real user behavior is more reliable than guessing about what users want.
 
-Let's examine the complete picture on the next slide.`
+[conversational] Let's examine the complete picture on the next slide.`
         },
         {
           id: 21,
@@ -1507,27 +1507,27 @@ Let's examine the complete picture on the next slide.`
 
 #### Learning Systems Trade-offs
 
-Feedback-Based Retrieval Loop represents a shift from static to dynamic retrieval systems. Let's examine what this shift entails.
+[conversational] Feedback-Based Retrieval Loop represents a shift from static to dynamic retrieval systems. [confidently] Let's examine what this shift entails.
 
 #### The Valuable Benefits
 
-Personalization is transformative for user experience. Instead of giving everyone the same results, you can tailor retrieval to individual preferences, expertise levels, and usage patterns. A beginner and an expert asking the same question might get results at appropriate levels of detail based on their historical feedback.
+[enthusiastically] Personalization is transformative for user experience. [storytelling] Instead of giving everyone the same results, you can tailor retrieval to individual preferences, expertise levels, and usage patterns. A beginner and an expert asking the same question might get results at appropriate levels of detail based on their historical feedback.
 
-Continuous improvement means your system doesn't stagnate. Every user interaction is an opportunity to learn and get better. Over weeks and months, the system becomes increasingly attuned to what works and what doesn't, improving results for everyone.
+[pleased] Continuous improvement means your system doesn't stagnate. [warmly] Every user interaction is an opportunity to learn and get better. [excited] Over weeks and months, the system becomes increasingly attuned to what works and what doesn't, improving results for everyone.
 
-Data-driven tuning is more reliable than intuition. Instead of guessing about ranking weights or which retrieval strategies work best, you let real user behavior guide your decisions. This empirical approach often surfaces insights that manual tuning would miss.
+[confidently] Data-driven tuning is more reliable than intuition. Instead of guessing about ranking weights or which retrieval strategies work best, you let real user behavior guide your decisions. [pleased] This empirical approach often surfaces insights that manual tuning would miss.
 
 #### The Implementation Challenges
 
-However, needing logging and user experience infrastructure is non-trivial. You need to instrument your system to capture feedback signals, build interfaces for explicit feedback if you're using it, and create pipelines to process and apply that feedback. This is engineering overhead that other strategies don't require.
+[cautiously] However, needing logging and user experience infrastructure is non-trivial. [concerned] You need to instrument your system to capture feedback signals, build interfaces for explicit feedback if you're using it, and create pipelines to process and apply that feedback. [firmly] This is engineering overhead that other strategies don't require.
 
-Privacy concerns are serious and growing. Storing user behavior and preferences raises questions about data protection, user consent, and potential misuse. You need robust privacy safeguards and clear policies about how feedback data is used.
+[seriously] Privacy concerns are serious and growing. Storing user behavior and preferences raises questions about data protection, user consent, and potential misuse. [cautiously] You need robust privacy safeguards and clear policies about how feedback data is used.
 
-Benefits may be delayed is a practical challenge. Unlike other strategies that improve results immediately, feedback-based approaches need time to accumulate signal before they show significant improvement. This makes them harder to justify in the short term.
+[disappointed] Benefits may be delayed is a practical challenge. Unlike other strategies that improve results immediately, feedback-based approaches need time to accumulate signal before they show significant improvement. [puzzled] This makes them harder to justify in the short term.
 
 #### The Right Applications
 
-This strategy is best suited for systems with user interaction where feedback can be collected and used to refine future results. Search engines, recommendation systems, conversational agents, and any application with repeat users are prime candidates.
+[conversational] This strategy is best suited for systems with user interaction where feedback can be collected and used to refine future results. [confidently] Search engines, recommendation systems, conversational agents, and any application with repeat users are prime candidates.
 
 Now let's bring everything together with our summary and decision guide.`
         }
@@ -1607,55 +1607,55 @@ Now let's bring everything together with our summary and decision guide.`
 
 #### Bringing It All Together
 
-We've covered nine distinct multi-step retrieval strategies, each with its own strengths, weaknesses, and ideal use cases. Now let's bring everything together with practical guidance on choosing the right strategy for your needs.
+[warmly] We've covered nine distinct multi-step retrieval strategies, each with its own strengths, weaknesses, and ideal use cases. [confidently] Now let's bring everything together with practical guidance on choosing the right strategy for your needs.
 
 #### The Quick Chooser Guide
 
-When you need a recall boost with minimal changes to your existing system, reach for HyDE. It's simple to implement and effective for vocabulary mismatch problems.
+[conversational] When you need a recall boost with minimal changes to your existing system, reach for HyDE. [pleased] It's simple to implement and effective for vocabulary mismatch problems.
 
 For ambiguous or exploratory queries where you're not sure what direction the question will take, use Iterative Retrieve-and-Refine. Its adaptive nature handles uncertainty well.
 
-Multi-fact tasks that require gathering information from different domains or sources call for Query Decomposition, which lets you tackle each aspect independently.
+[lecture] Multi-fact tasks that require gathering information from different domains or sources call for Query Decomposition, which lets you tackle each aspect independently.
 
 When you need reasoning with targeted facts at specific steps, Chain-of-Thought Guided Retrieval provides the structured approach you need.
 
-Concept-heavy or noisy queries benefit from Step-Back Retrieval, which zooms out to understand principles before diving into specifics.
+[conversational] Concept-heavy or noisy queries benefit from Step-Back Retrieval, which zooms out to understand principles before diving into specifics.
 
 Relational or multi-hop facts that connect across documents naturally map to Graph Traversal approaches.
 
-Long sessions or context window limits require Context-Summarize-and-Retrieve to manage bounded memory effectively.
+[firmly] Long sessions or context window limits require Context-Summarize-and-Retrieve to manage bounded memory effectively.
 
-Citations and fact-checking needs are perfectly suited to Answer-Conditioned Re-Retrieval's systematic verification approach.
+[confidently] Citations and fact-checking needs are perfectly suited to Answer-Conditioned Re-Retrieval's systematic verification approach.
 
-And personalization requirements point you toward Feedback Loop strategies that learn from user behavior.
+[pleased] And personalization requirements point you toward Feedback Loop strategies that learn from user behavior.
 
 #### Common Pitfalls to Avoid
 
-Watch out for drift, where query reformulation gradually moves away from the user's original intent. This is especially common in iterative approaches without proper anchoring.
+[cautiously] Watch out for drift, where query reformulation gradually moves away from the user's original intent. [concerned] This is especially common in iterative approaches without proper anchoring.
 
-Beware of hallucination anchoring, where initial errors propagate through your pipeline and get reinforced rather than corrected.
+[seriously] Beware of hallucination anchoring, where initial errors propagate through your pipeline and get reinforced rather than corrected.
 
-Manage path explosion in multi-hop retrieval by using beam search and aggressive pruning of unlikely paths.
+[firmly] Manage path explosion in multi-hop retrieval by using beam search and aggressive pruning of unlikely paths.
 
-Respect latency budgets. Multiple retrieval rounds add up quickly, and users won't wait forever. Cache aggressively and consider asynchronous processing.
+[cautiously] Respect latency budgets. [disappointed] Multiple retrieval rounds add up quickly, and users won't wait forever. [confidently] Cache aggressively and consider asynchronous processing.
 
 #### Implementation Best Practices
 
-Always define clear stop criteria for iterative approaches. Don't let loops run indefinitely or until arbitrary iteration counts.
+[lecture] Always define clear stop criteria for iterative approaches. Don't let loops run indefinitely or until arbitrary iteration counts.
 
 Cache embeddings and results between iterations. Re-embedding the same text multiple times is wasteful.
 
-Log comprehensive traces for evaluation and debugging. Multi-step systems are complex, and you need visibility into what's happening at each stage.
+[firmly] Log comprehensive traces for evaluation and debugging. Multi-step systems are complex, and you need visibility into what's happening at each stage.
 
 Measure faithfulness, coverage, and latency metrics. Don't optimize for one at the expense of the others.
 
-Start simple and add complexity only when needed. Many problems can be solved with simpler strategies, and added complexity brings added failure modes.
+[confidently] Start simple and add complexity only when needed. Many problems can be solved with simpler strategies, and added complexity brings added failure modes.
 
 #### The Pro Tip
 
-Consider combining strategies. Use simple techniques like HyDE for initial query understanding to boost recall, then apply more complex approaches like Answer-Conditioned Re-Retrieval for evidence gathering and verification. The strategies in this guide aren't mutually exclusive; they're tools in your toolkit that can be composed for maximum effectiveness.
+[enthusiastically] Consider combining strategies. [storytelling] Use simple techniques like HyDE for initial query understanding to boost recall, then apply more complex approaches like Answer-Conditioned Re-Retrieval for evidence gathering and verification. [warmly] The strategies in this guide aren't mutually exclusive; they're tools in your toolkit that can be composed for maximum effectiveness.
 
-Thank you for joining me on this journey through multi-step retrieval strategies. Armed with these techniques and decision criteria, you're ready to build more sophisticated, accurate, and robust RAG applications. Happy building!`
+[inspiringly] Thank you for joining me on this journey through multi-step retrieval strategies. [confidently] Armed with these techniques and decision criteria, you're ready to build more sophisticated, accurate, and robust RAG applications. [warmly] Happy building!`
         }
       ]
     }
