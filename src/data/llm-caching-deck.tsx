@@ -1755,75 +1755,132 @@ With this deep understanding of logit cache complete, let's move on to the next 
     },
     {
       id: 'pattern-8',
-      title: 'Pattern 8: Token-Level KV Cache',
+      title: 'Pattern 8: Template Cache',
       slides: [
         {
           id: 17,
-          title: 'Pattern 8: Token-Level KV Cache',
-          icon: { name: 'duo-brain-circuit' },
+          title: 'Pattern 8: Template Cache',
+          icon: { name: 'duo-file-lines' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Template Cache Flow"
+                          diagram={`flowchart LR
+    A["📄 Template + Variables"] --> B{"🔍 Check Cache"}
+    B -->|Hit| C["⚡ Return Formatted Output"]
+    B -->|Miss| D["🤖 Format Template"]
+    D --> E["💾 Store"]
+    E --> C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Rendered templates with substituted variables</li>
+                        <li>Formatted output strings (emails, reports, notifications)</li>
+                        <li>Pre-processed template results for common scenarios</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Transformer attention K/V tensors per layer for prompt tokens</li>
-                      <li>Intermediate computation results of attention mechanisms</li>
-                      <li>Layer-specific key-value pairs for each processed token</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(template_id + variable_values + template_version)</li>
+                        <li>Includes normalization of variable order</li>
+                        <li>Optional locale/language identifier for i18n</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>request_id/session_id + prompt_token_range + model_id + shard/block_id</li>
-                      <li>Tied to specific model architecture and parameter versions</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-microchip" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="rotateIn" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis/Memcached for hot template results</li>
+                        <li>CDN edge cache for public-facing templates</li>
+                        <li>Application-level in-memory cache for frequently used templates</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>GPU VRAM (primary storage for fast access)</li>
-                      <li>Offload to CPU RAM or NVMe when needed</li>
-                      <li>Managed by PagedAttention, vLLM, or TensorRT-LLM</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Medium TTL (1-24 hours) based on data volatility</li>
+                        <li>Invalidate on template version updates</li>
+                        <li>LRU eviction for variable combinations</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Lives for the duration of request/session</li>
-                      <li>LRU/LFU eviction under memory pressure</li>
-                      <li>Freed upon completion or context window overflow</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5a1d6b',
-          notes: ''
+          notes: `### Pattern 8: Template Cache
+Here's our eighth caching pattern: **Template Cache**. This pattern operates at the output rendering layer, caching fully formatted templates after variable substitution. It's particularly valuable when you have templates with limited variable combinations that get rendered repeatedly.
+
+#### What Gets Cached
+In this pattern, we cache **rendered templates with substituted variables, formatted output strings, and pre-processed template results**. Think about applications that send emails, generate reports, or display notifications. You have a template, like "Hello {{name}}, your order {{order_id}} has been shipped", and you substitute variables to create the final output. Even though template rendering is relatively fast compared to LLM inference, it adds up when you're processing thousands or millions of requests.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📄 Template + Variables"] --> B{"🔍 Check Cache"}
+    B -->|Hit| C["⚡ Return Formatted Output"]
+    B -->|Miss| D["🤖 Format Template"]
+    D --> E["💾 Store"]
+    E --> C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+When a template rendering request comes in with specific variables, we check the cache first. If we've rendered this exact combination before, we return it immediately. On a cache miss, we format the template, store the result, and return it. This is especially powerful for templates with enumerated or limited variable spaces.
+
+#### The Cache Key Strategy
+The cache key is \\\`hash(template_id + variable_values + template_version)\\\`. We include the template identifier, the actual variable values, and the template version. Notice we're hashing the variable values, not just their presence. This means \\\`name=John, order_id=123\\\` creates a different cache key than \\\`name=Jane, order_id=123\\\`. We also normalize variable order, so \\\`name=John, order_id=123\\\` and \\\`order_id=123, name=John\\\` produce the same key. For internationalized applications, you might include a locale or language identifier in the key.
+
+#### Storage Architecture
+We store rendered templates in **Redis 👉 'red-iss' or Memcached 👉 'mem-cash-dee'** for hot cache. These provide fast access for frequently rendered templates. For public-facing content like marketing emails or notification templates, you can push results to a **CDN 👉 'see-dee-en', or content delivery network, edge cache**. This puts the rendered output geographically close to end users. You might also use an **application-level in-memory cache** for the most frequently used templates, avoiding even the network hop to Redis.
+
+#### Time-to-Live Configuration
+We use a **medium TTL 👉 'tee-tee-el', typically one to twenty-four hours**, depending on how volatile your data is. If your templates reference data that changes frequently, use shorter TTLs. You also want to **invalidate on template version updates**. When you modify a template, bump the version number in your cache keys to ensure old cached results aren't served. For eviction, use **LRU 👉 'el-are-you', or least recently used** policy. This naturally ages out template results for uncommon variable combinations.
+
+#### When This Pattern Shines
+The **strengths** are significant. You eliminate redundant template rendering work, which matters at scale. Templates with limited variable cardinality, like status notifications with five possible states or confirmation emails with standard fields, hit the cache frequently. You also reduce CPU load on your application servers, freeing resources for other processing. And cached templates provide **consistent formatting and faster response times**.
+
+#### The Limitations
+But there are considerations. If your variable space is **highly dimensional or unbounded**, your cache hit rate will be poor. For example, templates with user-generated content, timestamps, or unique identifiers in every request won't benefit much. You also have **memory overhead** for storing rendered strings. Large templates like HTML emails can be several kilobytes each. And you need careful **cache invalidation** when template logic changes, not just content. If you update conditional logic in your template engine, you must invalidate all cached results for that template.
+
+#### Practical Examples
+Think about real-world scenarios. **Email templates** for order confirmations, password resets, or welcome messages. These have fixed structures with a handful of variables. **Report templates** for dashboards, analytics summaries, or status reports. If you're generating the same report structure for different users or time ranges, caching the rendered output saves compute. **Notification templates** for push notifications, SMS messages, or in-app alerts. These often have limited message types and variable sets, making them perfect candidates for template caching.
+
+Let's look at the strengths and limitations in more detail on the next slide.`
         },
         {
           id: 18,
@@ -1831,34 +1888,64 @@ With this deep understanding of logit cache complete, let's move on to the next 
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Eliminates redundant template rendering work</li>
+                      <li>High hit rate for limited variable cardinality</li>
+                      <li>Reduces CPU load on application servers</li>
+                      <li>Provides consistent formatting and faster responses</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Massive speedups in decoding (3-10x faster generation)</li>
-                    <li>Reduces re-computation of attention for prompt tokens</li>
-                    <li>Improves throughput and reduces inference costs</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Poor hit rate with highly dimensional variable spaces</li>
+                      <li>Memory overhead for storing rendered strings</li>
+                      <li>Requires careful cache invalidation on template changes</li>
+                      <li>Not effective for user-generated or unique content</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>High VRAM footprint (can consume gigabytes)</li>
-                    <li>Memory fragmentation/compaction challenges</li>
-                    <li>Strong coupling with model version and architecture</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5a1d6b',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's take a closer look at when Template Cache delivers real value and when you need to be cautious.
+
+#### The Good Stuff
+On the **strengths** side, the value proposition is straightforward. You're **eliminating redundant template rendering work** that would otherwise consume CPU cycles on every request. Even though template rendering is much faster than LLM inference, at scale these microseconds and milliseconds add up. If you're processing a hundred thousand email notifications per hour, avoiding re-rendering for common scenarios saves significant compute resources.
+
+The **hit rate for templates with limited variable cardinality** is excellent. Think about status notifications. You might have five possible states: pending, processing, completed, failed, and cancelled. If you're using ten standard variables like user name, timestamp, and identifiers, your total combination space is manageable. Your cache hit rate can easily reach sixty to eighty percent for these workloads.
+
+You also **reduce CPU load on your application servers**, which is valuable. Template rendering isn't the most expensive operation, but it's not free either. Complex templates with conditional logic, loops, or nested structures can be compute-intensive. By caching the results, you free up CPU for other tasks like business logic processing or API calls.
+
+And you get **consistent formatting and faster response times**. Once a template is rendered and cached, every subsequent request gets exactly the same output in microseconds. There's no risk of formatting variations or template engine bugs creating inconsistent outputs. Your users experience lower latency, especially for frequently accessed templates.
+
+#### The Trade-offs
+Now for the **limitations**. First, if your variable space is **highly dimensional or unbounded**, this pattern doesn't work well. Imagine a template that includes a user-generated message, a timestamp with second precision, and a unique transaction ID in every request. Your cache will never hit because every combination is unique. In these scenarios, template caching provides no benefit and just wastes memory.
+
+Second, there's **memory overhead for storing rendered strings**. Rendered templates, especially HTML emails or formatted reports, can be several kilobytes to tens of kilobytes each. If you're caching millions of unique combinations, the memory footprint becomes substantial. At some point, the cost of cache storage exceeds the benefit of avoiding template rendering.
+
+Third, you need **careful cache invalidation when template logic changes**. It's not just about updating the template content. If you change conditional logic, add new template helpers, or modify how variables are processed, you must invalidate all cached results for that template. Failing to do this means users might see old formatting or incorrect logic, even though the template source has been updated.
+
+Fourth, this pattern is **not effective for templates with user-generated or highly unique content**. If your template includes long-form text, markdown rendering, or dynamic content that varies significantly between requests, your cache hit rate will be very low. You end up storing results that get used once and then evicted, providing no performance benefit.
+
+#### Real-World Application
+The sweet spot for Template Cache is **transactional emails, standard notifications, and fixed-format reports**. Order confirmations, shipping notifications, password reset emails, these are perfect candidates. You have a small set of templates with limited variables that get rendered thousands or millions of times. The cache hit rate is high, the memory footprint is manageable, and the performance improvement is measurable.
+
+> Ask the audience: "How many of you are rendering templates at high volume in your applications?"
+
+For scenarios with unbounded variable spaces or highly dynamic content, skip this pattern and focus on optimizing your template engine instead. Now let's move on to Pattern 9, which operates at a completely different layer of the stack.`
         }
       ]
     },
