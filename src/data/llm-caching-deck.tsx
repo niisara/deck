@@ -2402,67 +2402,136 @@ With that comprehensive understanding of Session Memory, let's move on to Patter
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Ranked Results Cache Flow"
+                          diagram={`flowchart LR
+    A["📝 Query"] --> B["🔍 Initial Retrieval"]
+    B --> C["📋 Candidate List"]
+    C --> D{"🔍 Cache?"}
+    D -->|Hit| E["⚡ Return Ranked Results"]
+    D -->|Miss| F["🤖 Re-Ranker Model"]
+    F --> G["💾 Store Rankings"]
+    G --> E
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Final reranked candidate list with scores</li>
+                        <li>Cross-encoder or LLM re-ranker results</li>
+                        <li>Ordered document list with relevance scores</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Final reranked candidate list with scores</li>
-                      <li>Cross-encoder or LLM re-ranker results</li>
-                      <li>Ordered document list with relevance scores</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(query_norm + candidate_ids + reranker_version + topN + filters)</li>
+                        <li>Includes reranker model version for consistency</li>
+                        <li>Incorporates filter parameters for context-specific ranking</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>hash(query_norm + candidate_ids + reranker_version + topN + filters)</li>
-                      <li>Includes reranker model version for consistency</li>
-                      <li>Incorporates filter parameters for context-specific ranking</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="rotateIn" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis with TTL support</li>
+                        <li>Region-scoped to align with retrieval services</li>
+                        <li>Optional compression for large candidate lists</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Redis with TTL support</li>
-                      <li>Region-scoped to align with retrieval services</li>
-                      <li>Optional compression for large candidate lists</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Short TTL (5–30 minutes)</li>
+                        <li>Purge when candidate document set changes</li>
+                        <li>Event-based invalidation on reranker model updates</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Short TTL (5–30 minutes)</li>
-                      <li>Purge when candidate document set changes</li>
-                      <li>Event-based invalidation on reranker model updates</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b5c',
-          notes: ''
+          notes: `### Pattern 11: Ranked Results Cache (Post Re-Ranker)
+Let's examine **Pattern 11: Ranked Results Cache**, which addresses one of the most expensive operations in modern RAG systems: re-ranking.
+
+#### The Re-Ranking Problem
+In a typical RAG pipeline, you first do a fast but approximate retrieval using vector similarity search. This gives you maybe a hundred or two hundred candidate documents. But vector search alone isn't always accurate enough for the final ranking. The semantic similarity scores from bi-encoder models like **text-embedding-ada-002 👉 'text embedding ada zero zero two'** or **all-MiniLM 👉 'all mini-el-em'** are directionally correct but not precise enough for selecting the top five or ten documents to include in your context.
+
+That's where re-ranking comes in. You take those candidates and run them through a more sophisticated model, usually a **cross-encoder** or even a small **LLM 👉 'el-el-em'** like **GPT-3.5 👉 'gee-pee-tee three point five'** or **Llama-3-8B 👉 'lah-mah three eight bee'**, that scores each candidate's relevance to the query with much higher accuracy. The problem? Re-ranking is expensive. A cross-encoder requires a forward pass for each query-document pair. If you have a hundred candidates, that's a hundred forward passes. This can take several hundred milliseconds and consumes significant compute resources.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📝 Query"] --> B["🔍 Initial Retrieval"]
+    B --> C["📋 Candidate List"]
+    C --> D{"🔍 Cache?"}
+    D -->|Hit| E["⚡ Return Ranked Results"]
+    D -->|Miss| F["🤖 Re-Ranker Model"]
+    F --> G["💾 Store Rankings"]
+    G --> E
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+When a query comes in, we perform the initial retrieval, which gives us a candidate list. Before re-ranking, we check the cache. If we have a hit, we return the pre-computed ranked results immediately, skipping the expensive re-ranker entirely. On a miss, we run the re-ranker, store those rankings in the cache, and then return them. The key insight is that for similar or identical queries, the ranked order of candidates is often very similar or identical.
+
+#### What Gets Cached
+We're caching the **final reranked candidate list with their relevance scores**. This is the output of your **cross-encoder or LLM re-ranker**. Each cache entry contains an ordered list of document IDs along with their computed relevance scores. Typically, you're storing the top ten to fifty results. You don't need to store all hundred candidates, just the ones that might actually be used in context.
+
+The cache value is relatively compact. If each document ID is a sixteen-byte UUID and each score is an eight-byte float, storing fifty results is about one point two kilobytes per cache entry. Very manageable. You might also store snippet metadata or a hash of the actual document content to detect staleness, but the core value is the ranked list of IDs and scores.
+
+#### The Cache Key Strategy
+The cache key is sophisticated: \\\`hash(query_norm + candidate_ids + reranker_version + topN + filters)\\\`. Let's break this down. The **query_norm** is your normalized query text. This handles query variations, so "what is python?" and "What is Python?" hit the same cache entry. The **candidate_ids** are critical and often overlooked. The same query might retrieve different candidates if your vector index has been updated. Including a representation of the candidate set ensures you're only getting cache hits when the underlying candidates match.
+
+The **reranker_version** is essential because re-ranker models, like any models, evolve. If you upgrade your cross-encoder from version one to version two, the scores and rankings might change. You need to invalidate old cache entries or version your keys to prevent serving stale rankings. The **topN** parameter specifies how many results you want returned. If one request asks for top five and another asks for top ten, they should hit different cache entries. Finally, **filters** capture any context-specific constraints, like filtering by document date, category, or user permissions. Different filters produce different rankings, so they must be part of the key.
+
+#### Storage Architecture
+We store these in **Redis 👉 'red-iss' with TTL 👉 'tee-tee-el' support**. Redis is ideal because it's fast, supports automatic expiration, and handles complex data structures well. You can store the ranked list as a sorted set or a simple JSON blob, depending on your needs. The cache is **region-scoped to align with your retrieval services**. If you have retrieval pipelines in multiple regions, each region has its own cache instance to minimize latency. You don't want a US request waiting for a cache lookup in Europe.
+
+For **large candidate lists**, you can apply **optional compression**. If you're storing fifty document IDs with metadata and scores, and the IDs are UUIDs, compression can reduce the payload by thirty to fifty percent. This is especially valuable if you're caching thousands or millions of queries and memory cost is a concern.
+
+#### Time-to-Live Configuration
+The TTL is **short, typically five to thirty minutes**. Why so short? Because re-ranking results are dependent on the underlying candidate set. If your document index changes, if documents are added, updated, or deleted, the rankings become stale. A short TTL ensures you don't serve outdated results for too long. For systems with high update frequencies, you might go as low as five minutes. For more static document sets, thirty minutes or even an hour might be acceptable.
+
+You also implement **purging when the candidate document set changes**. If you update or delete a document that was in the candidate list, you invalidate any cache entries that reference it. This is event-based invalidation. It's more complex to implement but ensures you never serve results with missing or stale documents. Similarly, you use **event-based invalidation on re-ranker model updates**. When you deploy a new version of your re-ranker, you flush all cached rankings to ensure consistency.
+
+#### The Critical Trade-Off
+The primary trade-off here is **freshness versus cost**. Re-ranking is expensive, so caching it saves significant compute and latency. But cached rankings can become stale quickly in dynamic systems. You're betting that the benefit of avoiding re-ranking outweighs the risk of serving slightly outdated results. For systems where accuracy is paramount, this trade-off might not be acceptable. For systems where speed and cost matter more than absolute precision, it's a huge win.
+
+Another consideration is **cache key explosion**. If your re-ranker uses many filters or if candidate sets vary widely, you might end up with very low hit rates. Each unique combination of query, candidates, and filters creates a separate cache entry. If you're not careful, you spend more on cache storage and lookup overhead than you save on re-ranking. This is where analyzing your query patterns and candidate distributions is essential.
+
+Let's examine the strengths and limitations on the next slide.`
         },
         {
           id: 24,
@@ -2470,36 +2539,79 @@ With that comprehensive understanding of Session Memory, let's move on to Patter
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Avoids expensive re-ranking computation</li>
+                      <li>Significantly lowers end-to-end latency</li>
+                      <li>Reduces load on expensive cross-encoder models</li>
+                      <li>Works well for high-frequency similar queries</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Avoids expensive re-ranking computation</li>
-                    <li>Significantly lowers end-to-end latency</li>
-                    <li>Reduces load on expensive cross-encoder models</li>
-                    <li>Works well for high-frequency similar queries</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Results become stale if retrieval patterns shift</li>
+                      <li>Filter explosion can lead to low cache hit rates</li>
+                      <li>High sensitivity to reranker model version changes</li>
+                      <li>Requires consistent candidate set between cache/live</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Results become stale if retrieval patterns shift</li>
-                    <li>Filter explosion can lead to low cache hit rates</li>
-                    <li>High sensitivity to reranker model version changes</li>
-                    <li>Requires consistent candidate set between cache/live</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b5c',
-          notes: ''
+          notes: `### Strengths and Limitations of Ranked Results Cache
+Now let's examine where the **Ranked Results Cache** delivers exceptional value and where you need to manage its challenges carefully.
+
+#### The Performance Revolution
+On the **strengths** side, the primary benefit is that you're **avoiding expensive re-ranking computation**. Re-ranking is one of the most costly operations in modern RAG systems. A cross-encoder like **ms-marco-MiniLM 👉 'em-ess marco mini-el-em'** or **bge-reranker 👉 'bee-gee-ee reranker'** requires a full forward pass for each query-document pair. If you have a hundred candidates, that's a hundred individual computations. Even on a GPU, this can take two hundred to five hundred milliseconds. LLM-based re-rankers, which are becoming popular, are even more expensive. Running **GPT-3.5 👉 'gee-pee-tee three point five'** or **Claude 👉 'clawed'** to score relevance can take a second or more and costs real money per API call.
+
+By caching the re-ranked results, you bypass this entire expense for repeat queries. The cache hit is effectively free, just a Redis lookup that takes a millisecond or two. For applications with high query repetition, like customer support FAQs, product search, or documentation lookup, you can achieve hit rates of fifty to seventy percent or more. The cost savings compound quickly. If re-ranking costs you point-zero-one cents per query and you're processing a million queries per month with a sixty percent hit rate, that's six thousand dollars saved monthly just from this one caching layer.
+
+#### Latency and Throughput Benefits
+The second strength is that this pattern **significantly lowers end-to-end latency**. Users don't wait for re-ranking. They get results immediately from the cache. This can shave three hundred to eight hundred milliseconds off your total response time. In user-facing applications, especially search and chat interfaces, every hundred milliseconds matters. Studies show that each hundred-millisecond increase in latency reduces user engagement. By caching re-ranked results, you're keeping your **P95 👉 'pee ninety-five'** and **P99 👉 'pee ninety-nine'** latencies low, which translates to better user experience and higher satisfaction scores.
+
+The third strength is that you're **reducing load on expensive cross-encoder models**. Cross-encoders are often run on GPUs, which are resource-constrained and expensive. By serving cached results, you reduce the number of re-ranking requests hitting your GPU infrastructure. This increases your effective throughput. A single GPU that might handle fifty re-ranking requests per second without caching could effectively serve several hundred requests per second with a good cache hit rate. This means you need fewer GPUs, lower operational costs, and better resource utilization.
+
+#### When This Pattern Shines
+This pattern **works exceptionally well for high-frequency similar queries**. If your users are repeatedly asking variations of the same questions, the cache hit rate will be excellent. Think about customer support: "How do I reset my password?" appears in dozens of forms. If your normalization is good, all those variations hit the same cache entry. E-commerce search is similar. Queries like "best laptops under a thousand dollars" and "top laptops under one thousand dollars" should ideally normalize to the same cache key and return identical rankings.
+
+#### The Staleness Challenge
+Now for the **limitations**, and the primary one is that **results become stale if retrieval patterns shift**. If your document collection is dynamic, if you're constantly adding, updating, or removing documents, the cached rankings can quickly become outdated. A document that was ranked number three yesterday might have been updated and should now be number one. Or a highly-ranked document might have been deleted entirely. Serving stale rankings is worse than serving slower but fresh results, because it degrades the user experience and trust in your system.
+
+This is why the **TTL 👉 'tee-tee-el'** is critical. You need to balance freshness with performance. A five-minute TTL means you're never more than five minutes stale, but it also means lower cache hit rates because entries expire quickly. A thirty-minute TTL improves hit rates but increases the risk of staleness. The right choice depends on your document update frequency and your tolerance for outdated results.
+
+#### Filter Explosion Problem
+The second limitation is **filter explosion leading to low cache hit rates**. If your re-ranker supports many filter combinations, like filtering by date, category, user permissions, language, region, and content type, you end up with a combinatorial explosion of cache keys. Each unique combination creates a separate cache entry. If you have ten boolean filters, that's potentially one thousand and twenty-four different cache keys for the same base query. Your effective hit rate plummets because each user's specific filter combination is unique.
+
+This is a fundamental challenge with parameterized caching. You can mitigate it by identifying the most common filter combinations and only caching those, or by caching at a coarser granularity, like caching re-ranked results without filters and then applying filters post-cache. But these approaches add complexity and might not always be feasible depending on how your re-ranker integrates filters.
+
+#### Version Sensitivity
+The third limitation is **high sensitivity to reranker model version changes**. When you update your re-ranker, whether you're fine-tuning it, upgrading to a new version, or switching to a different model entirely, all cached results become invalid. The new model produces different scores and potentially different rankings. You must flush the entire cache or carefully version your keys to ensure you don't serve results from the old model.
+
+This creates an operational burden. Every model deployment requires cache invalidation and a warm-up period where hit rates are low as the cache repopulates. For teams that iterate frequently on their re-rankers, this constant invalidation can significantly reduce the effectiveness of caching. You need robust versioning strategies and potentially shadow testing to validate that new models perform better before cutting over.
+
+#### Candidate Set Consistency
+The fourth limitation is that you **require a consistent candidate set between cache and live evaluation**. The cached rankings are tied to a specific set of candidate documents. If your retrieval step returns a different candidate set for the same query, because your vector index was updated or your retrieval logic changed, the cached rankings become meaningless or incorrect. You might be ranking documents that no longer exist or missing new, highly-relevant documents.
+
+This coupling between retrieval and re-ranking caches adds architectural complexity. You need mechanisms to detect when the candidate set has changed and invalidate affected cache entries. This often requires tracking document versions or index snapshots and including those in your cache keys, which further increases key complexity and reduces hit rates.
+
+#### The Engineering Investment
+Implementing this pattern effectively requires significant engineering. You need robust key generation that captures all relevant parameters, sophisticated invalidation logic for document updates and model changes, monitoring to track hit rates and staleness metrics, and potentially A/B testing infrastructure to measure the quality impact of caching versus live re-ranking. This isn't a trivial "add Redis and you're done" scenario.
+
+But for systems where re-ranking is a major cost and latency driver, and where query patterns have sufficient repetition, the investment pays off handsomely. You're trading engineering complexity for significant cost savings and performance improvements.
+
+With Pattern 11 complete, let's move on to Pattern 12, which focuses on caching at a different granularity.`
         }
       ]
     },
