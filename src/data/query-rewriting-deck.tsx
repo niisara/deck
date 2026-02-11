@@ -1373,7 +1373,15 @@ Next, Strategy 8: Query Clarification, where we ask the user for help.`
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: ''
+          notes: `### 34 · Query Clarification — Overview
+Strategy 8 is **Query Clarification**, and it's unique because it involves the user in the rewriting process.
+#### 🎯 What Is It?
+Instead of silently rewriting the query, the system **detects ambiguity** and asks the user to clarify before proceeding. When someone searches "Apple pay policy," do they mean Apple Inc.'s payment policies or the fruit industry's payment terms? Rather than guessing, the system asks.
+#### ✅ Pros
+The good stuff: it **significantly improves precision** because you know exactly what the user wants. It creates **better user alignment** since the user feels heard. It **reduces irrelevant results** from the start. And it **educates users** on how to write better queries over time.
+#### 🕐 When to Use This?
+Use query clarification for **short or vague queries**, **ambiguous terms with multiple meanings**, **missing contextual constraints**, and **domain-specific clarification needs** where getting it wrong would be costly.
+Let's see how it works.`
         },
         {
           id: 35,
@@ -1392,7 +1400,12 @@ Next, Strategy 8: Query Clarification, where we ask the user for help.`
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: ''
+          notes: `### 35 · Query Clarification — How It Works
+The system operates through a detect-ask-rewrite cycle.
+#### 🔄 The Process
+First, it **detects missing constraints or ambiguities** by analyzing the query for undefined terms, multiple possible interpretations, or insufficient specificity. Then it **asks one or two targeted clarifying questions** — not a list of twenty questions, just the most impactful ones. It can also **propose default interpretations** — "Did you mean X? If so, here's the answer." Finally, it **uses the responses to reformulate** the query with the clarified intent.
+The key design principle is minimizing friction. You don't want to ask five clarifying questions for every query — that would be incredibly annoying. The system should only ask when the ambiguity is significant enough to meaningfully affect results.
+Let's see the implementation.`
         },
         {
           id: 36,
@@ -1423,7 +1436,14 @@ def clarify_query(query):
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: ''
+          notes: `### 36 · Query Clarification — Implementation
+The implementation follows a clarify-then-rewrite pattern.
+#### 💻 The Prompt
+The clarification prompt asks the LLM to analyze the query, identify the top ambiguity, and ask one clarifying question. If there are multiple interpretations, it should propose two options for the user to choose from. This keeps the interaction focused and fast.
+#### ⚙️ The Code
+In the implementation, you first run an ambiguity detector. If the ambiguity score is above a threshold, you ask the user a clarifying question. Once you get the answer, you rewrite the query incorporating the clarification. If the ambiguity is below the threshold, you skip clarification entirely and proceed with the original query.
+The threshold is crucial — set it too low and you'll annoy users with unnecessary questions. Set it too high and you'll miss important ambiguities.
+Let's see an example.`
         },
         {
           id: 37,
@@ -1448,7 +1468,14 @@ def clarify_query(query):
             </div>
           ),
           backgroundColor: '#1e7b20',
-          notes: ''
+          notes: `### 37 · Query Clarification — Example & Considerations
+Here's query clarification in a real scenario.
+#### 📝 Before and After
+The user searches "Apple pay policy." The system detects ambiguity and asks: "Do you mean Apple Inc.'s payment policies or the fruit industry's payment policies? For Apple Inc., which region?" The user responds "Apple Inc., United States." Now the system rewrites to "Apple Inc. digital payment policies and terms for Apple Pay service in the United States." Crystal clear.
+#### ⚠️ Watch Out For
+The downsides: it **adds an interaction step** which increases latency and breaks the flow. You need **timeout handling** for when users don't respond. It **may frustrate users** who just want quick answers without being asked questions. And you need **careful default selection** for when users dismiss the clarification.
+The sweet spot is using clarification **selectively** — only for high-ambiguity queries where the cost of guessing wrong is high. For most queries, silent rewriting is fine.
+Next, Strategy 9: Query Specification.`
         }
       ]
     },
@@ -1483,7 +1510,15 @@ def clarify_query(query):
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: ''
+          notes: `### 38 · Query Specification — Overview
+Strategy 9 is **Query Specification**, which adds explicit filters and constraints to narrow down retrieval.
+#### 🎯 What Is It?
+Query specification is about adding **structured constraints** to your query — things like time ranges, source domains, file types, and metadata filters. Instead of searching broadly, you tell the retrieval system exactly where and when to look. It's like searching with advanced operators: "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf."
+#### ✅ Pros
+The good stuff: you get **high precision retrieval** because you're filtering out noise before it even enters the results. **Faster reranking** because the candidate pool is smaller. It's **excellent for enterprise and compliance** use cases where you need results from specific sources. And it **combines well with BM25 keyword search** since many search engines support field-based filtering natively.
+#### 🕐 When to Use This?
+Best for **enterprise search systems**, **data analytics**, **compliance and audit searches**, **large heterogeneous document collections**, and **time-sensitive information needs** where recency matters.
+Let's see the mechanics.`
         },
         {
           id: 39,
@@ -1503,7 +1538,13 @@ def clarify_query(query):
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: ''
+          notes: `### 39 · Query Specification — How It Works
+Query specification works by expanding queries with structured search operators.
+#### 🔄 The Process
+The system adds several types of constraints. **Time range specifications** constrain results to specific date ranges — crucial for fast-moving fields. **Source and domain constraints** limit results to specific websites or databases. **File type filters** target PDFs, docs, or specific formats. **Metadata qualifiers** filter by author, department, or category. And **language or locale parameters** ensure results are in the right language and region.
+Think of it like using the advanced search features of Google — most users never use them, but they're incredibly powerful for narrowing down results. Query specification automates that process.
+The key difference from other strategies is that these constraints are **structural**, not semantic. You're not changing the meaning of the query — you're adding filters that tell the retrieval system where to look.
+Let's see the implementation.`
         },
         {
           id: 40,
@@ -1540,7 +1581,14 @@ def specify_query(query):
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: ''
+          notes: `### 40 · Query Specification — Implementation
+The implementation detects constraints and annotates the query.
+#### 💻 The Prompt
+The prompt instructs the LLM to add explicit constraints for time range, document type, source, and entity. It provides a set of search operators like time colon YYYY-YYYY, site colon domain, filetype colon extension, and entity with quotes for disambiguation.
+#### ⚙️ The Code
+In the implementation, you first extract entities and classify the intent. Then you generate appropriate constraints based on the entities, intent, and whether time relevance is important. Finally, you append these constraints to the original query. The result is a highly targeted search query that leverages your search engine's filtering capabilities.
+One important note: this strategy works best with search engines that support fielded search. If your retrieval system is purely vector-based, you may need to convert these constraints into metadata filters.
+Let's see an example.`
         },
         {
           id: 41,
@@ -1564,7 +1612,14 @@ def specify_query(query):
             </div>
           ),
           backgroundColor: '#7b1e75',
-          notes: ''
+          notes: `### 41 · Query Specification — Example & Considerations
+Let's see specification in action.
+#### 📝 Before and After
+The user searches "GDPR fines" — broad and could return thousands of results. After specification, it becomes "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf entity:data protection authority." Now you're getting official EU documents about GDPR fines from the right source, time period, and document type.
+#### ⚠️ Watch Out For
+The risks include **over-filtering** — adding too many constraints can result in zero results, which is worse than too many results. It **requires field support** in your search system — not all retrieval engines support these operators. The implementation is **more complex to maintain** as you need to keep constraint mappings up to date. And it's **less effective for unstructured sources** that don't have clean metadata.
+The key insight: query specification is powerful for **enterprise and structured search** but needs to be used carefully. Always have a fallback to the original query if the specified version returns nothing.
+Next, Strategy 10: Semantic Bridging.`
         }
       ]
     },
@@ -1597,7 +1652,15 @@ def specify_query(query):
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: ''
+          notes: `### 42 · Semantic Bridging — Overview
+Strategy 10 is **Semantic Bridging**, and it's all about closing the vocabulary gap between users and domain experts.
+#### 🎯 What Is It?
+Users speak one language, domain experts speak another. A patient says "heart attack" but the medical literature says "myocardial infarction." A customer says "server keeps crashing" but the engineering docs reference "kernel panic" or "segmentation fault." Semantic bridging **maps user language to domain-specific terminology** using ontologies and taxonomies.
+#### ✅ Pros
+The good stuff: it **closes the vocabulary gap** between lay users and expert documentation. It **significantly improves recall** in domain-specific searches. It **reduces zero-result scenarios** where user terms simply don't match any documents. And it **works well with both sparse and dense retrieval** systems.
+#### 🕐 When to Use This?
+Best for domains with **specialized jargon** like medicine, law, or engineering. Also great for **product catalogs**, **academic or scientific search**, and any domain with **significant terminology gaps** between how users ask and how documents are written.
+Let's see how it works.`
         },
         {
           id: 43,
@@ -1616,7 +1679,12 @@ def specify_query(query):
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: ''
+          notes: `### 43 · Semantic Bridging — How It Works
+The bridging process uses several complementary techniques.
+#### 🔄 The Process
+First, **domain-specific ontology lookups** match user terms to formal taxonomies. Medical ontologies like SNOMED 👉 'snoh-med' or ICD 👉 'eye-see-dee' codes can map "heart attack" to "myocardial infarction" automatically. Second, **terminology mapping** translates from layman language to expert vocabulary. Third, **synonym expansion with field expertise** adds domain-appropriate synonyms. And fourth, **abbreviation and acronym resolution** expands shortened forms to full terms — "MI" becomes "myocardial infarction."
+The key advantage over simple synonym expansion is that semantic bridging is **domain-aware**. It doesn't just find any synonym — it finds the ones that match how experts actually write and speak in that specific field.
+Let's look at the implementation.`
         },
         {
           id: 44,
@@ -1649,7 +1717,14 @@ def semantic_bridge(query, domain):
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: ''
+          notes: `### 44 · Semantic Bridging — Implementation
+The implementation combines ontology lookups with LLM-powered normalization.
+#### 💻 The Prompt
+The prompt instructs the LLM to map terms to canonical ontology labels, providing synonyms and formal terminology from the specified domain. You feed in the domain knowledge as context so the LLM knows which terminology system to use.
+#### ⚙️ The Code
+The implementation fetches the domain ontology, passes it along with the query to the LLM, and constructs an enriched query using the mapped terms. The output query includes both the original user terms and the domain-specific equivalents.
+A practical tip: build and maintain a **curated mapping dictionary** for your most common user terms. This is faster and more reliable than LLM-based mapping for known terms, and you only fall back to the LLM for novel queries.
+Let's see a medical example.`
         },
         {
           id: 45,
@@ -1672,7 +1747,14 @@ def semantic_bridge(query, domain):
             </div>
           ),
           backgroundColor: '#7b6a1e',
-          notes: ''
+          notes: `### 45 · Semantic Bridging — Example & Considerations
+Here's a perfect medical example.
+#### 📝 Before and After
+The user searches "heart attack treatment." After semantic bridging, it becomes "myocardial infarction management OR acute coronary syndrome therapy OR thrombolysis OR PCI OR cardiac revascularization." Now the search covers all the medical terminology that doctors actually use in clinical literature.
+#### ⚠️ Watch Out For
+The challenges: it **requires a curated domain ontology** which takes significant effort to build and maintain. **Ontology drift** is real — medical terminology evolves, new drugs get approved, coding systems change. It **may over-expand** in ambiguous cases where a lay term maps to multiple expert concepts. And there's ongoing **domain knowledge maintenance overhead**.
+The key insight: semantic bridging is **essential for specialized domains** but requires investment in domain-specific resources. Once you build the ontology mapping, though, the quality improvement is dramatic and sustainable.
+Next up, Strategy 11: Query2Doc.`
         }
       ]
     },
@@ -1705,7 +1787,15 @@ def semantic_bridge(query, domain):
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: ''
+          notes: `### 46 · Query2Doc — Overview
+Strategy 11 is **Query2Doc**, which is similar to HyDE but with a different focus.
+#### 🎯 What Is It?
+Query2Doc turns a query into a **pseudo-document** that mimics the style and content of relevant passages in your corpus. While HyDE generates a hypothetical answer, Query2Doc generates something that looks like a document you'd find in your collection. This pseudo-document is then used for retrieval — either by embedding it or by using it to expand the query with key terms.
+#### ✅ Pros
+The good stuff: you get **strong recall improvement** because the pseudo-document contains rich semantic content. It enables **richer semantic matching** since a paragraph has more signal than a few query words. It **works well with dense retrieval** systems. And it **bridges vocabulary gaps** naturally because the generated document uses document-style language.
+#### 🕐 When to Use This?
+Best when **sparse or short queries lack context**, when using **dense or hybrid retrieval systems**, in **technical domains with specific terminology**, and for **knowledge-intensive queries** that need comprehensive matching.
+Let's see how it works.`
         },
         {
           id: 47,
@@ -1724,7 +1814,12 @@ def semantic_bridge(query, domain):
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: ''
+          notes: `### 47 · Query2Doc — How It Works
+The Query2Doc process generates document-style expansions.
+#### 🔄 The Process
+The system generates text that **mimics the style and content of relevant passages** — not an answer to the question, but a passage that would appear alongside relevant documents. This generated text **contains key terms and relationships** specific to the domain. It **creates a richer representation** for matching because a paragraph has far more semantic signal than a three-word query. And it **uses the LLM's knowledge** to fill in domain-specific vocabulary and concepts.
+The subtle difference from HyDE is that Query2Doc focuses on generating text that looks like a **source document**, not an answer. If you're searching a medical database, Query2Doc generates text that reads like a medical paper, not a doctor's explanation to a patient.
+Let's see the implementation.`
         },
         {
           id: 48,
@@ -1754,7 +1849,14 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: ''
+          notes: `### 48 · Query2Doc — Implementation
+The implementation follows a generate-embed-retrieve pattern.
+#### 💻 The Prompt
+The prompt asks the LLM to write a 150-word pseudo-document that would appear in relevant sources for the given query. You instruct it to include key terminology and technical concepts while staying factual. The goal is generating text that would naturally appear in the same corpus you're searching.
+#### ⚙️ The Code
+Three steps: generate the pseudo-document, embed it using your embedding model, then query the vector database with that embedding. The result is documents that are semantically similar to what a real answer document would look like.
+A practical optimization: you can concatenate the original query with the pseudo-document before embedding, giving the retrieval system both the exact user terms and the expanded semantic context.
+Let's see an example.`
         },
         {
           id: 49,
@@ -1777,7 +1879,14 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#4e1e7b',
-          notes: ''
+          notes: `### 49 · Query2Doc — Example & Considerations
+Here's Query2Doc in practice.
+#### 📝 Before and After
+The user searches "vector DB HNSW tuning." Query2Doc generates a pseudo-document explaining HNSW 👉 'H-N-S-W' as a graph-based indexing algorithm, describing key parameters like M for maximum connections, efConstruction 👉 'ee-eff-construction' for build-time search width, and efSearch 👉 'ee-eff-search' for query-time width. This rich technical passage, when embedded, finds documents about the exact same concepts.
+#### ⚠️ Watch Out For
+The concerns: it's a **token-heavy approach** since you're generating a full paragraph. There's a **risk of introducing hallucinations** if the LLM generates incorrect technical details. **Latency impact** from the generation step. And you **must avoid overly specific claims** in the pseudo-document that could bias retrieval toward incorrect information.
+The difference between Query2Doc and HyDE is subtle but important. HyDE generates an answer. Query2Doc generates a source document. In practice, both work well, and the choice often comes down to your specific use case.
+Next, Strategy 12: ITER-RETGEN, the iterative approach.`
         }
       ]
     },
@@ -1812,7 +1921,15 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: ''
+          notes: `### 50 · ITER-RETGEN — Overview
+Strategy 12 is **ITER-RETGEN**, which stands for Iterative Retrieval-Generation. ITER-RETGEN 👉 'iter-ret-jen'.
+#### 🎯 What Is It?
+This is the most sophisticated strategy we've seen so far. Instead of doing one retrieval pass and hoping for the best, ITER-RETGEN **alternates between retrieval and generation in multiple rounds**. It retrieves some documents, generates a draft answer, identifies what's missing, retrieves more targeted information, refines the answer, and repeats until the answer is comprehensive.
+#### ✅ Pros
+The good stuff: you get **better coverage without over-fetching** because each iteration targets specific gaps. The answer **progressively improves** with each round. It **handles complex multi-part questions** naturally. It **adapts to information gaps** by identifying what's missing and searching specifically for it. And the **final responses are more comprehensive** than single-pass approaches.
+#### 🕐 When to Use This?
+Best for **hard questions requiring comprehensive information**, **incomplete initial context**, **multi-step reasoning requirements**, and **when a single retrieval pass misses key information**.
+Let's see the workflow.`
         },
         {
           id: 51,
@@ -1832,7 +1949,13 @@ def query2doc(query):
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: ''
+          notes: `### 51 · ITER-RETGEN — How It Works
+The process alternates between drafting and targeted retrieval.
+#### 🔄 The Iterative Loop
+The **initial response identifies knowledge gaps** — the first draft answer naturally reveals what information is missing. Then the **system generates targeted follow-up queries** specifically for those gaps. It **retrieves additional context** on the missing points. The answer is **refined with the new information**. And this **repeats until the answer is complete** or a maximum iteration count is reached.
+Think of it like a researcher writing a paper. You write a first draft, realize you need more data on a specific point, go search for it, update the draft, realize another gap, search again, and so on until the paper is comprehensive. ITER-RETGEN automates this research loop.
+The key insight is that the **first retrieval attempt rarely gets everything right**. By iterating, you progressively fill in the gaps.
+Let's see the implementation.`
         },
         {
           id: 52,
@@ -1864,7 +1987,14 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: ''
+          notes: `### 52 · ITER-RETGEN — Implementation
+The implementation uses a loop with draft evaluation.
+#### 💻 The Prompt
+The prompt provides the current draft answer and asks the LLM to propose up to three follow-up retrieval queries that would help complete or improve the answer. It explicitly asks for just the queries, no explanations.
+#### ⚙️ The Code
+The code starts by generating an initial answer from the first retrieval pass. Then it enters a loop: generate follow-up queries from the draft, retrieve new documents using those queries, and refine the answer with the combined context. The loop runs for a configurable maximum number of iterations, typically two to three.
+The stopping criteria are important. You can stop when the LLM reports no more gaps, when the quality score stops improving, when the maximum iteration count is reached, or when the token budget is exhausted.
+Let's see an example.`
         },
         {
           id: 53,
@@ -1891,7 +2021,14 @@ Return only the follow-up queries without explanations.
             </div>
           ),
           backgroundColor: '#5d7b1e',
-          notes: ''
+          notes: `### 53 · ITER-RETGEN — Example & Considerations
+Here's ITER-RETGEN solving a complex question.
+#### 📝 Before and After
+The user asks "What are effective LLM guardrails?" The first retrieval and draft mention input filtering. The system generates a follow-up query: "prompt injection prevention techniques" and retrieves more context. The refined draft now covers filtering and RLHF 👉 'ar-ell-aitch-eff'. Another follow-up: "sandboxing approaches for LLMs." The final answer comprehensively covers filtering, RLHF, sandboxing, output checking, and monitoring — far more complete than any single-pass approach.
+#### ⚠️ Watch Out For
+The challenges are significant. **Orchestration complexity** — you need to manage the iteration loop, track state, and handle edge cases. **Increased latency** — each iteration adds retrieval and generation time. **Higher token and API costs** — multiple LLM calls per query add up quickly. **Potential for retrieval drift** — follow-up queries might go off-topic. And you **need good stopping criteria** to avoid infinite loops.
+The bottom line: ITER-RETGEN is your **heavy artillery** for complex questions. Don't use it for simple queries — the overhead isn't worth it. But for hard, multi-faceted questions, it delivers dramatically better answers.
+Next, Strategy 13: Template-Based Rewriting.`
         }
       ]
     },
