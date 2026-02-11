@@ -456,7 +456,7 @@ Now let's look at the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Heuristic+LLM approach: extract keyphrases and synonyms; append as OR/boost terms</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -586,7 +586,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Clean, self-contained rewrite that preserves original intent</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -720,7 +720,7 @@ Now for the implementation details.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Plan → retrieve → answer → combine workflow</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template for decomposition
@@ -855,7 +855,7 @@ Now let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Step-back summary → retrieval query pattern</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -990,7 +990,7 @@ Now for the code.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Generate hypothetical document → embed → retrieve</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -1133,7 +1133,7 @@ Now the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Generate diverse query variants, retrieve separately, then combine results</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -1277,7 +1277,7 @@ Let's look at the code.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Rewrite follow-up queries using conversation history to make them self-contained</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -1413,7 +1413,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Clarify→rewrite→retrieve workflow</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1.2rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template for clarification
@@ -1552,7 +1552,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Detect constraints → annotate query with explicit field filters</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -1692,7 +1692,7 @@ Let's look at the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>Ontology lookup + LLM normalization approach</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -1827,7 +1827,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Implementation Pattern</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Implementation Pattern</h3></GSAPAnimated>
               <p>LLM document expansion → embed → retrieve</p>
               <pre style={{ marginTop: '20px', lineHeight: '1.5', fontSize: '1rem', backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderRadius: '5px' }}>
                 {`# Prompt template
@@ -1963,7 +1963,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Given the current answer draft and identified gaps below,
@@ -2102,7 +2102,7 @@ Let's look at the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Intent={intent}. Fill template with slots from: {query}.
@@ -2239,7 +2239,7 @@ Let's look at the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Identify all entities in the following query.
@@ -2381,7 +2381,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Normalize any relative time expressions in the query below to absolute dates.
@@ -2519,7 +2519,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Rewrite the following query using domain-appropriate
@@ -2661,7 +2661,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Classify the intent of the following query into one category:
@@ -2802,7 +2802,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Produce 6 diverse rewrites of the following query.
@@ -2948,7 +2948,7 @@ Let's look at the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Given these clicked documents and user ratings:
@@ -3088,7 +3088,7 @@ Let's look at the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>
                 {`"""
 Rewrite the following query to be explicit, self-contained,
@@ -3233,7 +3233,7 @@ Let's see the implementation.`
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Prompt Template</h3>
+              <GSAPAnimated animation="scaleIn" delay={0.1}><h3>Prompt Template</h3></GSAPAnimated>
               <pre style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                 {`"""
 Given the following query and signals:
