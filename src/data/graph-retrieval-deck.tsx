@@ -1362,84 +1362,285 @@ Ready to continue? We've covered four foundational techniques. The remaining nin
           title: '5. Community / Cluster Retrieval - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Thematic coverage and diversity within a topic.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Identify densely connected node groups (communities/topics) to retrieve thematically coherent content clusters.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Broad coverage</li>
-                <li>Reduces narrow bias</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Broad, topic-coherent coverage</li>
+                  <li>Reduces narrow bias</li>
+                  <li>Handles exploratory queries</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>Broad queries, topic exploration, overviews.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <p><strong>Best For:</strong> Broad queries, topic exploration, thematic overviews where you need comprehensive coverage of a subject area rather than pinpoint precision.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#335b1e',
-          notes: ''
+          notes: `### 5. Community / Cluster Retrieval - Overview
+
+Welcome to **Community or Cluster Retrieval**, a technique that takes us beyond individual nodes and edges to understand the **natural groupings** within your knowledge graph. This is where graph structure reveals thematic organization.
+
+#### What Is Community/Cluster Retrieval?
+Think of your knowledge graph as a social network at a conference. People naturally form clusters—machine learning researchers gather in one corner, database experts in another, front-end developers in a third. Community retrieval identifies these **densely connected groups** of nodes that share strong internal connections. In a knowledge graph about technology, you might have a "machine learning" community with nodes like neural networks, training data, backpropagation, and gradient descent all tightly interconnected. You might have a separate "web development" community with HTML, CSS, JavaScript, and React.
+
+The key insight is that **nodes within a community tend to be thematically related**. They're connected because they appear together in documents, reference each other, or share common attributes. By retrieving entire communities rather than individual nodes, you get comprehensive, coherent coverage of a topic.
+
+#### The Goal: Comprehensive Topic Coverage
+Traditional retrieval methods might return the single most relevant node or document. But what if the user's question requires understanding a **whole topic area**? What if they ask "Explain machine learning" or "What should I know about cloud security?" These queries benefit from breadth, not just precision. Community retrieval aims to provide **thematic coverage** that gives users a complete picture of a subject domain.
+
+Another critical goal is **reducing narrow bias**. If you only return the top-ranked node, you might miss important perspectives or subtopics. By retrieving a community, you ensure diversity within the thematic boundary. You get supervised learning **and** unsupervised learning, not just one approach.
+
+#### Benefits That Stand Out
+**Broad coverage** is the primary benefit. You're returning multiple related nodes that together paint a complete picture. This is particularly valuable for **exploratory queries** where users don't know exactly what they're looking for but want to understand a topic area. It also **handles broad queries naturally**—questions that are intentionally open-ended rather than precisely targeted.
+
+Community retrieval also respects **semantic coherence**. Unlike returning random diverse results, you're returning nodes that naturally belong together based on graph structure. This coherence makes the results more useful and easier to understand.
+
+#### When to Use This Technique
+Use community retrieval for **topic exploration and learning**. When someone is researching a new area and needs overview coverage. For **broad, open-ended queries** like "tell me about quantum computing" or "what are the trends in renewable energy." When building **thematic summaries or reports** that need to cover multiple aspects of a subject. In **question-answering systems** where completeness matters more than brevity.
+
+It's particularly effective when your graph has **natural topic structure**—domains like academic papers, technical documentation, product catalogs, or news articles tend to form clear communities around subjects.
+
+Now let's see how this technique works under the hood!`
         },
         {
           id: 20,
           title: '5. Community / Cluster Retrieval - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Detect communities (Louvain/Leiden/semantic clusters) and retrieve top nodes from a cluster.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Community Detection & Retrieval"
+                      diagram={`graph TB
+    subgraph Community1["🔵 Community 1: ML 👉 'em-el'"]
+        A[Neural Networks]
+        B[Deep Learning]
+        C[Backprop]
+        A --- B
+        B --- C
+        A --- C
+    end
+    
+    subgraph Community2["🟢 Community 2: Web Dev"]
+        D[React]
+        E[JavaScript]
+        F[CSS]
+        D --- E
+        E --- F
+        D --- F
+    end
+    
+    Q["🔍 Query:<br/>Machine Learning"] -.-> Community1
+    Community1 --> R["📦 Return:<br/>All nodes in Community 1"]
+    
+    style Q fill:#4fc3f7,color:#000
+    style Community1 fill:#bbdefb,color:#000
+    style Community2 fill:#c8e6c9,color:#000
+    style R fill:#81c784,color:#000`}
+                    />
+                  </h3>
+                  <p>Detect communities via algorithms (Louvain 👉 'loo-VANE', Leiden 👉 'LIE-den') or semantic clustering, map query to best cluster, retrieve top-k nodes from that community by centrality or similarity.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Cluster labels, membership scores, intra-cluster rankings.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Cluster labels/IDs, membership scores, intra-cluster centrality rankings, community metadata (size, cohesion), optional: community embeddings.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`Cluster X contains {A, B, C} ⇒ return all three.`}
-              </pre>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Query: "ML 👉 'em-el'" → Cluster X contains {A, B, C} → Return all three`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#335b1e',
-          notes: ''
+          notes: `### 5. Community / Cluster Retrieval - How It Works
+
+Let's dive into the mechanics of community detection and retrieval. This technique involves two main phases: **identifying communities** and **retrieving relevant nodes** from those communities.
+
+#### Phase 1: Community Detection
+Before you can retrieve communities, you need to detect them. This is typically done during graph construction or as a preprocessing step. Several algorithms exist for community detection, each with different characteristics.
+
+**Louvain Algorithm** (pronounced 'loo-VANE') is one of the most popular. It's a greedy optimization method that maximizes modularity—a measure of how densely connected nodes within communities are compared to connections between communities. Louvain is fast and works well on large graphs, making it a practical choice for most applications. It assigns each node to the community that maximizes local modularity gain, then aggregates communities into super-nodes and repeats the process hierarchically.
+
+**Leiden Algorithm** (pronounced 'LIE-den') is an improvement on Louvain that guarantees well-connected communities. Louvain can sometimes produce communities with internal disconnections; Leiden fixes this by refining partitions and ensuring each community is connected. It's slightly slower but produces higher quality clusters.
+
+**Semantic Clustering** uses node embeddings rather than pure graph structure. You embed each node into a vector space, then apply clustering algorithms like K-means or DBSCAN 👉 'dee-bee-scan'. This approach captures semantic similarity and works well when graph connectivity alone doesn't reflect thematic relationships.
+
+```mermaid
+graph TB
+    subgraph Community1["🔵 Community 1: ML"]
+        A[Neural Networks]
+        B[Deep Learning]
+        C[Backprop]
+        A --- B
+        B --- C
+        A --- C
+    end
+    
+    subgraph Community2["🟢 Community 2: Web Dev"]
+        D[React]
+        E[JavaScript]
+        F[CSS]
+        D --- E
+        E --- F
+        D --- F
+    end
+    
+    Q["🔍 Query:<br/>Machine Learning"] -.-> Community1
+    Community1 --> R["📦 Return:<br/>All nodes in Community 1"]
+```
+
+#### Phase 2: Query-to-Community Mapping
+When a query arrives, you need to determine which community or communities are most relevant. One approach is **community-level embeddings**: compute an aggregate embedding for each community (perhaps by averaging node embeddings) and compare query embeddings to community embeddings. Another approach is **seed node mapping**: find the most relevant individual node first, then return its entire community. You can also use **keyword matching** on community metadata if you've labeled communities with topic names.
+
+#### Phase 3: Intra-Community Ranking
+Once you've identified the relevant community, you typically don't return all nodes—some communities contain hundreds of members. Instead, rank nodes within the community by **centrality measures** like degree centrality, betweenness, or PageRank 👉 'page-rank' within the community. Alternatively, rank by **semantic similarity** between the query and each node's content. Return the top-k most central or relevant nodes.
+
+#### Data Infrastructure Needed
+You'll need to store **cluster assignments** for each node (which community it belongs to), **membership scores** if using soft clustering where nodes can partially belong to multiple communities, **centrality rankings** within each community for fast retrieval, and **community metadata** like size, density, and representative keywords.
+
+Now let's look at practical implementation!`
         },
         {
           id: 21,
           title: '5. Community / Cluster Retrieval - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Map query to best cluster(s)</li>
-                <li>Select top-k nodes within cluster by centrality/similarity</li>
-                <li>Aggregate chunks for summary</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Pre-compute communities using Louvain 👉 'loo-VANE', Leiden 👉 'LIE-den', or clustering
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Map query to best cluster via community embeddings or seed node lookup
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Rank nodes within cluster by centrality/similarity, return top-k
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>4.</strong> Aggregate chunks/content for comprehensive summary
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>Topic exploration where a user asks about "machine learning" and the system returns diverse nodes from the ML cluster: supervised learning, neural networks, and model evaluation, providing comprehensive topic coverage.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.7}>
+                <h3>Example Use Case</h3>
+                <p>Topic exploration where a user asks "Tell me about machine learning" and the system identifies the ML 👉 'em-el' community, then returns diverse nodes covering supervised learning, neural networks, model evaluation, and training techniques for comprehensive coverage.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#335b1e',
-          notes: ''
+          notes: `### 5. Community / Cluster Retrieval - Implementation
+
+Let's walk through building a community-based retrieval system. This involves both offline preparation and online query-time processing.
+
+#### Step 1: Offline Community Detection
+Community detection is computationally intensive, so it's done as a **preprocessing step** rather than at query time. Start by running your chosen algorithm on the full graph. If you're using **Louvain**, libraries like NetworkX in Python or igraph make this straightforward. For a graph with millions of nodes, Louvain typically completes in minutes to hours depending on density.
+
+Here's the workflow: load your graph with all nodes and edges, run the community detection algorithm which assigns each node a community ID, compute **community metadata** like size (number of nodes), density (internal edge ratio), and representative keywords. Store these assignments in your database with indexes on community ID for fast lookup.
+
+For **semantic clustering**, embed all nodes using your embedding model, then run K-means or HDBSCAN 👉 'H-D-B-scan' on the embedding vectors. Choose k based on your domain knowledge or use elbow method analysis. The result is a partition where nodes with similar embeddings are grouped together.
+
+#### Step 2: Query-to-Community Mapping
+At query time, you need to quickly identify relevant communities. The most effective approach is **community-level embeddings**. For each community, compute an aggregate embedding by averaging the embeddings of its member nodes, or use the embedding of the most central node as a representative. When a query arrives, embed it and compute cosine similarity against all community embeddings. Rank communities by similarity and select the top match.
+
+An alternative is **seed node lookup**: use node-level retrieval to find the best-matching node, then return its entire community. This works well when queries mention specific entities that map cleanly to nodes.
+
+#### Step 3: Intra-Community Ranking
+You've identified the relevant community, but it might contain 50 or 200 nodes. You can't return them all. Instead, **rank within the community**. Compute **centrality scores**: degree centrality (how many connections), betweenness centrality (how often the node bridges other nodes), or PageRank within the community subgraph. These metrics identify the most important or representative nodes.
+
+Alternatively, rank by **semantic relevance**: compute similarity between the query embedding and each community member's embedding. Return the top-k by similarity. You can also **combine** structural centrality and semantic similarity with a weighted formula: `score = 0.4 * centrality + 0.6 * similarity`.
+
+#### Step 4: Content Aggregation
+Once you have your top-k nodes, retrieve their associated content chunks. If you're generating a summary, you might pass all chunks to an LLM 👉 'el-el-em' with instructions to synthesize a comprehensive overview. If you're displaying results to users, show each node with its content in a structured list or card layout.
+
+#### Real-World Example
+Imagine building a research assistant for a company's internal knowledge base. An employee asks "What do we know about cloud security?" Your system embeds the query, compares it to community embeddings, and identifies the "Cloud Security" community with high confidence. Within this community, you rank by centrality and find the top nodes: "Identity and Access Management," "Encryption at Rest," "Network Security," "Compliance Frameworks," and "Incident Response." You retrieve content for all five, aggregate them, and present a comprehensive overview covering multiple aspects of cloud security. The employee gets breadth and depth without having to issue multiple queries.
+
+#### Implementation Tips
+**Cache community assignments** and embeddings for fast lookup. **Monitor community quality** by tracking query satisfaction and coverage. If many queries map poorly to communities, your detection algorithm might need tuning. Consider **hierarchical communities** for very large graphs, where communities themselves form super-communities at higher levels. Use **soft clustering** if nodes naturally belong to multiple topics, storing membership probabilities rather than hard assignments.
+
+Now let's evaluate the benefits and limitations!`
         },
         {
           id: 22,
           title: '5. Community / Cluster Retrieval - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Broad coverage</li>
-                <li>Reduces narrow bias</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Broad, topic-coherent context coverage</li>
+                  <li>Natural handling of exploratory queries</li>
+                  <li>Reduces narrow bias in results</li>
+                  <li>Semantic coherence within clusters</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Lower precision</li>
-                <li>Depends on clustering quality</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>May return too much irrelevant content</li>
+                  <li>Lower precision than node-level retrieval</li>
+                  <li>Depends heavily on clustering quality</li>
+                  <li>Requires well-structured, dense graphs</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#335b1e',
-          notes: ''
+          notes: `### 5. Community / Cluster Retrieval - Considerations
+
+Let's be honest about what community retrieval does well and where it struggles. Understanding these trade-offs helps you decide when to use this technique.
+
+#### Benefits: Comprehensive Coverage
+The standout benefit is **broad, coherent coverage**. Instead of returning a single precise answer, you return a thematic collection of related information. This is invaluable for **exploratory learning**. When someone is researching a new topic and doesn't yet know what questions to ask, community retrieval provides a guided tour of the subject area. They discover subtopics and connections they might not have thought to search for.
+
+**Semantic coherence** is another major advantage. The nodes you return aren't randomly diverse; they're structurally and semantically related. They form a natural group that makes sense together. This coherence makes results easier to understand and more useful for synthesis or summarization tasks.
+
+Community retrieval **reduces narrow bias**. If you only return the top-ranked node, you might overemphasize one perspective or approach. By returning a community, you capture diversity within a thematic boundary. In a machine learning community, you might get supervised learning, unsupervised learning, reinforcement learning, and evaluation metrics—multiple facets of the topic rather than just one dominant perspective.
+
+It also **handles ambiguous or broad queries naturally**. Questions like "Tell me about X" or "What should I know about Y" don't have a single right answer—they need comprehensive responses. Community retrieval is designed for exactly these scenarios.
+
+#### Limitations: The Precision Trade-Off
+The flip side of broad coverage is **lower precision**. You're returning multiple nodes, and not all of them will be directly relevant to every query. Some nodes in a community might be tangentially related or address subtopics the user doesn't care about. This can lead to **information overload**, especially if communities are large and you return too many nodes.
+
+**Clustering quality is critical** and often problematic. Community detection algorithms aren't perfect. They can produce clusters that don't align with human intuition about topics. Nodes that should be separate might get grouped together, or related nodes might be split across communities. Poor clustering leads directly to poor retrieval quality. You need **domain expertise** to validate that your communities make sense, and you may need to tune algorithm parameters or manually adjust boundaries.
+
+Another challenge is **graph structure dependency**. Community detection relies on dense, well-connected regions. If your graph is sparse or has uniform connectivity, communities might be artificial or meaningless. Some domains naturally form clear clusters; others don't. Academic papers organized by field work well, but a general knowledge graph covering diverse topics might not have clear community structure.
+
+#### Practical Considerations
+**Size variability** is a real issue. Communities can range from 10 nodes to 1,000 nodes. Small communities might lack diversity; large ones might be too broad. You'll need **dynamic sizing strategies**, perhaps returning more nodes from small communities and fewer from large ones, or splitting very large communities into sub-communities.
+
+**Cross-community information** can be lost. Many real-world queries require information spanning multiple communities. If "machine learning" and "healthcare" are separate communities, a query about "ML 👉 'em-el' in medical diagnosis" might retrieve only one community and miss cross-cutting content. Consider **multi-community retrieval** for complex queries.
+
+**Computational cost** matters. Running community detection on large graphs is expensive. You'll do it offline, but re-detecting communities as your graph evolves adds maintenance overhead. Dynamic graphs where nodes and edges change frequently pose particular challenges.
+
+#### When to Choose This Technique
+Use community retrieval when **breadth matters more than precision**. When users ask exploratory questions, need topic overviews, or want to understand a domain holistically. When your graph has **natural topic structure** with clear communities. When you have the resources to **invest in high-quality clustering** and can validate that communities align with domain semantics.
+
+Avoid it when users need **precise, targeted answers** to specific questions. When your graph is **sparse or lacks clear structure**. When **query latency is critical** and you can't afford to retrieve and process large node sets.
+
+Ready for our next technique? Let's explore Hierarchical Graph Retrieval!`
         }
       ]
     },
@@ -1452,84 +1653,298 @@ Ready to continue? We've covered four foundational techniques. The remaining nin
           title: '6. Hierarchical Graph Retrieval - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Navigates taxonomies; right granularity (parent→child).</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Navigate parent→subtopic→leaf hierarchies to retrieve at the right granularity level; drill-down from overview to detail as needed.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Granularity control</li>
-                <li>Structured summaries</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Precise granularity control</li>
+                  <li>Structured, organized summaries</li>
+                  <li>Scalable for large hierarchies</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>Docs with sections, product catalogs, ontologies.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.5}>
+                <p><strong>Best For:</strong> Docs with sections/chapters, product catalogs, taxonomies, ontologies 👉 'on-TAH-luh-jeez', organizational structures where information naturally forms parent-child relationships.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e5b5a',
-          notes: ''
+          notes: `### 6. Hierarchical Graph Retrieval - Overview
+
+Welcome to **Hierarchical Graph Retrieval**, a technique designed for information organized in tree-like or multi-level structures. This approach leverages the natural organization many knowledge bases already have.
+
+#### What Is Hierarchical Retrieval?
+Think about how information is naturally organized. Books have chapters, sections, and subsections. Product catalogs have categories, subcategories, and individual products. Corporate wikis have departments, teams, and specific pages. These are all **hierarchies**—structures where information flows from general (parent) to specific (child). Hierarchical graph retrieval navigates these structures intelligently, retrieving at the appropriate level of detail for each query.
+
+In a traditional knowledge graph, all nodes might seem equal. But in a hierarchy, nodes have **levels**: high-level topic nodes at the top, mid-level subtopic nodes in the middle, and detailed leaf nodes at the bottom. Your software development knowledge graph might have "Programming Languages" at the top, "Python" as a child, and "List Comprehensions" as a grandchild. Hierarchical retrieval uses these parent-child relationships to match query specificity with content granularity.
+
+#### The Core Concept: Granularity Matching
+The key insight is that **different queries need different levels of detail**. If someone asks "What are programming languages?" they want a high-level overview. If they ask "How do Python list comprehensions work?" they need specific, detailed information. Hierarchical retrieval automatically determines whether to return parent nodes (broad overview), leaf nodes (specific details), or intermediate levels.
+
+This is more sophisticated than keyword matching or semantic similarity alone. You're using **structural information** about how concepts nest within each other to determine relevance. A query about "machine learning algorithms" should retrieve at the category level, returning nodes for supervised learning, unsupervised learning, and reinforcement learning. A query about "gradient descent optimization" should drill down to that specific leaf node.
+
+#### Goals: Organization and Scalability
+The primary goal is **granularity control**. Users get exactly the level of detail they need without being overwhelmed by too much information or frustrated by too little. This is particularly important for **educational content** where learners progress from basic to advanced understanding, or **product catalogs** where customers navigate from categories to specific items.
+
+Another key benefit is **structured summaries**. Because you're following hierarchical organization, results naturally have structure. You can present "Python → Functions → Lambda Functions" as a breadcrumb trail showing the user where they are in the hierarchy. This makes results more interpretable and helps users understand context.
+
+**Scalability** is also a major advantage. In very large knowledge bases with millions of nodes, you can't traverse the entire graph. Hierarchies let you **prune** entire branches that aren't relevant, dramatically reducing search space. If a query is about programming and you're at a root node with children for "Programming," "Biology," and "History," you can immediately ignore the Biology and History subtrees.
+
+#### When to Use This Technique
+Hierarchical retrieval is ideal for **structured documentation** with explicit section hierarchies. Technical documentation, educational materials, textbooks, legal documents, policy manuals—all naturally organized hierarchically. It works well for **product catalogs** where products roll up into categories and departments. **Organizational knowledge bases** where information is organized by team, project, or function. Any domain with **taxonomies or ontologies** (pronounced 'on-TAH-luh-jeez') that formalize hierarchical relationships.
+
+It's particularly powerful when combined with **query classification**: determine if the query is high-level ("tell me about X") or specific ("how do I configure Y in Z"), then retrieve at the appropriate level.
+
+Now let's see how this technique works in practice!`
         },
         {
           id: 24,
           title: '6. Hierarchical Graph Retrieval - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Traverse up/down hierarchy to match query specificity.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Hierarchical Retrieval Process"
+                      diagram={`graph TD
+    Root["📚 Root:<br/>Programming"] --> A["🐍 Python"]
+    Root --> B["☕ Java"]
+    Root --> C["📘 JavaScript"]
+    
+    A --> A1["📝 Lists"]
+    A --> A2["🔧 Functions"]
+    A --> A3["🎯 Classes"]
+    
+    A1 --> A1a["✨ List<br/>Comprehensions"]
+    A1 --> A1b["🔄 Iteration"]
+    
+    Q1["🔍 Query:<br/>Python basics"] -.-> A
+    Q2["🔍 Query:<br/>List comprehensions"] -.-> A1a
+    
+    A --> R1["📦 Return:<br/>Mid-level"]
+    A1a --> R2["📦 Return:<br/>Leaf detail"]
+    
+    style Root fill:#9c27b0,color:#fff
+    style A fill:#4fc3f7,color:#000
+    style A1 fill:#81c784,color:#000
+    style A1a fill:#ffd700,color:#000
+    style Q1 fill:#ffb74d,color:#000
+    style Q2 fill:#ffb74d,color:#000
+    style R1 fill:#81c784,color:#000
+    style R2 fill:#81c784,color:#000`}
+                    />
+                  </h3>
+                  <p>Classify query specificity (broad vs. detailed), start at matched level, traverse up for context or down for detail, apply pruning to skip irrelevant branches.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Parent-child edges, level metadata, leaf chunks.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Parent-child edge labels, level/depth metadata, leaf node content chunks, optional: level-specific embeddings, breadcrumb paths.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`Parent A → Subtopic B → Leaf C.`}
-              </pre>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Parent: Programming → Child: Python → Leaf: List Comprehensions`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e5b5a',
-          notes: ''
+          notes: `### 6. Hierarchical Graph Retrieval - How It Works
+
+Let's break down how hierarchical retrieval navigates multi-level structures to find information at the right granularity. This process involves query classification, level selection, and intelligent traversal.
+
+#### Step 1: Query Classification
+The first challenge is determining **what level of detail the query requests**. This typically involves analyzing query characteristics. **Broad queries** use general terms like "overview," "introduction," "basics," or ask about high-level categories ("tell me about machine learning"). **Specific queries** include technical terms, specific version numbers, detailed parameters, or ask "how do I" questions ("how do I configure SSL 👉 'ess-ess-el' certificates in Apache").
+
+You can use **heuristics** based on query length and specificity, or train a **classifier** that categorizes queries into levels (high-level, mid-level, detailed). Some systems use **embedding similarity** at each level: compute embeddings for high-level concepts, mid-level subtopics, and detailed leaves, then see which level matches the query best.
+
+#### Step 2: Finding the Entry Point
+Once you know the desired granularity, find the best-matching node at or near that level. If the query is high-level about "Python programming," you might match the "Python" node at level 2 of your hierarchy. If it's specific about "list comprehensions," you match a leaf node at level 4.
+
+You can use **node-level retrieval** techniques: embed nodes at each level and find the best semantic match, or use exact title matching with aliases. The key is that you're **searching within a level** rather than across the entire graph indiscriminately.
+
+```mermaid
+graph TD
+    Root["📚 Root:<br/>Programming"] --> A["🐍 Python"]
+    Root --> B["☕ Java"]
+    Root --> C["📘 JavaScript"]
+    
+    A --> A1["📝 Lists"]
+    A --> A2["🔧 Functions"]
+    A --> A3["🎯 Classes"]
+    
+    A1 --> A1a["✨ List<br/>Comprehensions"]
+    A1 --> A1b["🔄 Iteration"]
+    
+    Q1["🔍 Query:<br/>Python basics"] -.-> A
+    Q2["🔍 Query:<br/>List comprehensions"] -.-> A1a
+    
+    A --> R1["📦 Return:<br/>Mid-level"]
+    A1a --> R2["📦 Return:<br/>Leaf detail"]
+```
+
+#### Step 3: Hierarchical Expansion
+Once you have an entry node, you might need to **expand** to provide complete context. Several expansion strategies exist:
+
+**Downward expansion**: If you matched a high-level node but the query suggests needing details, traverse down to children. For "Python programming" you might return "Python" plus its main children (Lists, Functions, Classes, Modules) to give an overview of subtopics.
+
+**Upward expansion for context**: If you matched a very specific leaf, traverse up to include parent context. For "list comprehensions," you might include the parent "Lists" node to provide context about where this feature fits within Python's list capabilities.
+
+**Sibling inclusion**: Sometimes queries benefit from seeing siblings. If someone asks about "supervised learning," showing siblings like "unsupervised learning" and "reinforcement learning" provides helpful comparison context.
+
+#### Step 4: Pruning for Efficiency
+The major advantage of hierarchies is **pruning entire branches**. If your query is about Python and you're at the root "Programming Languages" node, you can immediately skip the Java, JavaScript, C++, and Rust subtrees. This **reduces search space exponentially** in large hierarchies. Pruning decisions are based on relevance scores at each level: if a child's score is below a threshold, don't traverse it.
+
+#### Data Infrastructure Needed
+You need **explicit parent-child edges** labeled as hierarchical relationships, **level or depth metadata** for each node (root=0, first children=1, etc.), **content chunks attached to appropriate levels** (summaries at high levels, details at leaves), and optionally **level-specific embeddings** that capture information appropriate to each granularity, plus **breadcrumb paths** showing the full path from root to each node for display purposes.
+
+Now let's look at practical implementation!`
         },
         {
           id: 25,
           title: '6. Hierarchical Graph Retrieval - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Classify query specificity (parent vs child)</li>
-                <li>Select nodes at target level</li>
-                <li>Expand to children or roll-up to parent as needed</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Build hierarchy with parent-child edges and level metadata
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Classify query specificity (high-level vs. detailed)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Match to appropriate level, expand children or roll-up to parent
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>4.</strong> Prune irrelevant branches, return structured results with breadcrumbs
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>Product catalog navigation where a general query retrieves category-level information, while specific queries drill down to individual product specifications, automatically adjusting retrieval depth.</p>
+              <GSAPAnimated animation="flipCard" delay={0.7}>
+                <h3>Example Use Case</h3>
+                <p>Product catalog navigation where a general query like "laptops" retrieves category-level information (brands, price ranges, features), while a specific query like "Dell XPS 15 battery life" drills down to individual product specifications.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e5b5a',
-          notes: ''
+          notes: `### 6. Hierarchical Graph Retrieval - Implementation
+
+Let's walk through building a hierarchical retrieval system from scratch. This involves graph construction, query processing, and intelligent traversal logic.
+
+#### Step 1: Building the Hierarchy
+Your first task is constructing the hierarchical graph with proper structure. This might come from existing document structure (chapters and sections), manual curation, or automated extraction. The key is establishing **parent-child relationships** explicitly.
+
+In your graph database, use a specific edge type like "HAS_CHILD" or "PARENT_OF" to distinguish hierarchical relationships from other connections. Assign each node a **depth or level** attribute: root nodes are level 0, their children are level 1, grandchildren are level 2, and so on. Store the **path from root** for each node, like "Programming → Python → Lists → List Comprehensions." This enables breadcrumb display and quick ancestor lookups.
+
+Attach **appropriate content** at each level. High-level nodes get **summary content** that overviews the entire subtopic. Mid-level nodes get **moderate detail** about specific aspects. Leaf nodes get **full detail** with examples, code snippets, specifications, or comprehensive explanations. This level-appropriate content is critical for providing the right granularity.
+
+#### Step 2: Query Classification at Runtime
+When a query arrives, determine its desired granularity. Use **linguistic analysis** to detect specificity markers. Words like "overview," "introduction," "basics," "general" suggest high-level queries. Technical jargon, specific version numbers, "how to," "configure," "troubleshoot" suggest detailed queries.
+
+You can build a **simple classifier** based on these heuristics, or train a **machine learning classifier** on labeled examples if you have training data. Another approach is **multi-level matching**: embed the query and compute similarity to nodes at each level separately. If level-2 nodes score highest, retrieve at that level. If leaf nodes score highest, retrieve detailed content.
+
+#### Step 3: Level-Aware Retrieval and Expansion
+Once you know the target level, perform retrieval within that level's nodes. Use embedding similarity or keyword matching scoped to nodes at the appropriate depth. Let's say you identify "Python → Lists" as the best match at level 2.
+
+Now decide whether to **expand**. For broad queries, expand downward: return the matched node plus a summary of its main children. "Lists" might return with children "List Operations," "List Comprehensions," and "List Methods." For very specific queries that matched high in the hierarchy, expand downward more aggressively to reach the specific information.
+
+For specific queries that matched a leaf node, consider expanding **upward** to include parent context. If someone asks about "list comprehensions" and you match the leaf node, include the parent "Lists" content to explain where this feature fits within Python's data structures.
+
+**Pruning** is crucial for efficiency. As you traverse, maintain relevance scores. If a child's score drops below a threshold (say, cosine similarity < 0.5), don't traverse that branch. In a large hierarchy, this can eliminate 90% of nodes from consideration.
+
+#### Step 4: Structured Result Presentation
+Return results with **hierarchical context**. For each retrieved node, include its breadcrumb path ("Programming → Python → Lists → List Comprehensions") so users understand where they are in the structure. Display **parent summaries** at the top, followed by the main content, with **child summaries** or links at the bottom for further exploration.
+
+For UI purposes, you might return a **tree structure** that can be rendered as an expandable outline or navigation menu. This allows interactive drill-down where users click to expand subtopics.
+
+#### Real-World Example
+Imagine building a technical documentation assistant for a large software platform. A user asks "How does authentication work?" Your system classifies this as a mid-level query (not asking for an overview of the entire platform, not asking about a specific API 👉 'ay-pee-eye' call). You match it to the "Authentication" node at level 2 under "Security." You expand to include its children: "OAuth 👉 'oh-auth'," "API Keys," "JWT 👉 'jot' Tokens," and "Session Management." You return the Authentication overview plus one-paragraph summaries of each child topic. The user gets comprehensive coverage without overwhelming detail. If they want more about JWT tokens, they can drill down in a follow-up query.
+
+#### Implementation Tips
+Use a **graph database** like Neo4j that supports hierarchical queries efficiently. Create **indexes on level** and parent-child edges for fast traversal. **Pre-compute level-specific embeddings** during graph construction rather than at query time. Implement **caching** for frequently accessed subtrees. Use **BFS 👉 'bee-eff-ess'** (breadth-first search) for expansion to ensure you get nodes at the same level before going deeper. **Monitor** which levels get queried most and optimize those paths.
+
+Now let's evaluate the benefits and limitations!`
         },
         {
           id: 26,
           title: '6. Hierarchical Graph Retrieval - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Granularity control</li>
-                <li>Structured summaries</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Precise granularity control</li>
+                  <li>Structured, interpretable results</li>
+                  <li>Highly scalable via pruning</li>
+                  <li>Natural fit for documentation</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Requires clean hierarchy</li>
-                <li>Cross-links complicate</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Requires clean, well-defined hierarchy</li>
+                  <li>Cross-hierarchy links complicate traversal</li>
+                  <li>May miss connections outside the tree</li>
+                  <li>Difficult for non-hierarchical domains</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e5b5a',
-          notes: ''
+          notes: `### 6. Hierarchical Graph Retrieval - Considerations
+
+Let's examine what makes hierarchical retrieval powerful and where it faces challenges. Understanding these factors will help you decide if this technique fits your use case.
+
+#### Benefits: Structure and Scalability
+**Granularity control** is the defining advantage. Users get information at exactly the right level of detail. Beginners can get high-level overviews without being overwhelmed by technical minutiae. Experts can drill directly to specific details without wading through introductory content. This **adaptive depth** makes systems feel intelligent and user-aware.
+
+**Structured, interpretable results** are another major benefit. Because you're following a well-defined hierarchy, results naturally come with context. You can display breadcrumb trails like "Software → Development → Python → Data Structures → Lists" that show users exactly where information sits within the knowledge structure. This **spatial understanding** helps users navigate and builds mental models of the domain.
+
+**Scalability** is impressive. In a graph with millions of nodes, hierarchical pruning lets you **ignore entire branches** that aren't relevant. If you're searching in the Python subtree, you never even consider the Java, C++, or Ruby subtrees. This can reduce search space from millions to hundreds of nodes, making queries fast even on massive graphs. The **algorithmic complexity** goes from potentially exponential to logarithmic with good pruning.
+
+Hierarchies also provide a **natural fit for many real-world structures**. Technical documentation, educational materials, organizational knowledge, legal codes, product catalogs—all inherently hierarchical. You're working with the grain of the data rather than against it.
+
+#### Limitations: Rigidity and Completeness
+The biggest limitation is the **requirement for clean hierarchical structure**. Not all information naturally organizes into clean parent-child trees. Many domains have **complex, networked relationships** that don't fit hierarchical constraints. Forcing such information into a hierarchy can be artificial and lose important cross-cutting connections.
+
+**Cross-hierarchy links** create complexity. In pure trees, every node has exactly one parent. But in real knowledge graphs, concepts often have multiple parents or relationships that cut across the hierarchy. "Machine Learning" might sit under both "Computer Science" and "Statistics." "Security" might be relevant across multiple product categories. These **polyhierarchies** or **lattices** require special handling and can break simple traversal logic.
+
+You may **miss important connections** that exist outside the parent-child structure. If "List Comprehensions" in Python has important relationships with "Generator Expressions" in a different part of the hierarchy, pure hierarchical retrieval won't surface that connection. You're constrained to vertical traversal (up/down) and miss horizontal connections (across branches).
+
+**Query classification difficulty** is a practical challenge. Determining whether a query wants high-level or detailed information isn't always straightforward. User intent can be ambiguous. "Tell me about Python" might want an overview or might want comprehensive advanced information depending on the user's background. Misclassifying granularity leads to frustrating mismatches between query intent and result detail.
+
+#### Practical Challenges
+**Maintenance overhead** can be significant. As your knowledge base evolves, you need to keep the hierarchy accurate. New content must be slotted into the right place. Reorganizations ripple through the structure. This **structural maintenance** is extra work compared to flatter graph structures.
+
+**Multiple valid hierarchies** exist for the same content. Should you organize programming languages by paradigm (functional, object-oriented, procedural) or by use case (web, systems, data science) or by popularity? Different organizations serve different needs, but you typically must choose one primary structure. This **single-hierarchy constraint** can frustrate users who think about the domain differently.
+
+**Uneven depth** is common in real hierarchies. Some branches go 6 levels deep while others stop at 2. This **depth inconsistency** complicates level-based retrieval. You can't just say "retrieve at level 3" when that might be detailed leaves in one branch and high-level categories in another.
+
+#### When to Choose This Technique
+Use hierarchical retrieval when your **content naturally has hierarchical structure** with clear parent-child relationships. When **granularity control** is critical and different users or queries need different levels of detail. When you have **large-scale graphs** where pruning provides essential performance gains. When **structural navigation** is a key part of your user experience.
+
+Avoid it when your **domain is highly networked** without clear hierarchy. When **cross-cutting concerns** are as important as hierarchical structure. When you need to surface **non-hierarchical relationships** like analogies, contrasts, or temporal sequences. When the **overhead of maintaining hierarchy** outweighs the retrieval benefits.
+
+Ready for our next technique? Let's explore Graph + Dense Vector Hybrid Retrieval!`
         }
       ]
     },
@@ -1542,81 +1957,341 @@ Ready to continue? We've covered four foundational techniques. The remaining nin
           title: '7. Graph + Dense Vector Hybrid - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Combine semantic match with structural relevance.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Combine graph connectivity (structural relevance) with dense vector embeddings (semantic similarity) for robust, balanced retrieval.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Better precision/recall balance</li>
-              </ul>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Best of both worlds: semantic + structural</li>
+                  <li>Better precision/recall balance</li>
+                  <li>Robust to query variations</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>Ambiguous queries; noisy graphs; heterogeneous data.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <p><strong>Best For:</strong> Ambiguous queries, noisy graphs with imperfect structure, heterogeneous data where semantic matching and graph relationships both provide valuable signals.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e3a5b',
-          notes: ''
+          notes: `### 7. Graph + Dense Vector Hybrid - Overview
+
+Welcome to **Graph + Dense Vector Hybrid Retrieval**, a powerful technique that combines two complementary approaches to information retrieval. This is where we stop choosing between methods and start leveraging the strengths of multiple techniques together.
+
+#### What Is Hybrid Retrieval?
+Imagine you're searching for information and you have two assistants. One assistant understands **what things mean**—they can tell that "canine" and "dog" are similar concepts even though the words are different. Another assistant understands **how things connect**—they know that "dog" is related to "leash," "veterinarian," and "pet food" because these concepts co-occur in your knowledge base. Hybrid retrieval asks both assistants and combines their recommendations.
+
+**Dense vector embeddings** capture **semantic similarity**. They place semantically related concepts close together in high-dimensional space, enabling fuzzy matching that handles synonyms, paraphrases, and conceptual relationships. This is the foundation of modern semantic search.
+
+**Graph structure** captures **relational and structural relevance**. It knows which nodes are connected, how strong those connections are, which nodes are central to a topic, and which form communities. This is the foundation of graph-based retrieval.
+
+By combining both, you get retrieval that is **semantically aware** (understanding what the query means) and **structurally aware** (understanding how concepts relate in your specific knowledge base).
+
+#### The Core Concept: Complementary Signals
+These two signals are **complementary, not redundant**. Vector search might find semantically similar nodes that aren't directly connected in your graph—valuable for discovering analogies or transferring knowledge across domains. Graph traversal finds structurally related nodes that might not be semantically similar in embedding space—valuable for following domain-specific relationships.
+
+Consider a query about "machine learning in healthcare." **Vector search** finds nodes with similar semantic content: medical diagnosis systems, patient data analysis, health informatics. **Graph expansion** from these seed nodes might find connected nodes about regulatory compliance, privacy laws like HIPAA 👉 'hip-uh', and integration challenges—important context that might not be semantically similar to the query but is structurally relevant.
+
+#### Goals: Robustness and Balance
+The primary goal is achieving a **better precision/recall balance** than either technique alone. Vector search alone might have high recall (finding lots of relevant content) but include false positives that are semantically similar but contextually wrong. Graph traversal alone might have high precision (only returning contextually appropriate nodes) but miss semantically relevant content that isn't well connected.
+
+Another key benefit is **robustness to query variations**. Some queries are well-suited to semantic search; others benefit from graph structure. Hybrid approaches work reasonably well across diverse query types without requiring you to predict which approach will work best.
+
+**Handling noisy graphs** is also important. If your graph structure has errors—missing edges, incorrect connections, weak signal—the semantic component compensates. If your embeddings are imperfect or trained on different domains, the graph structure provides grounding in your specific knowledge base.
+
+#### When to Use This Technique
+Hybrid retrieval shines in **complex domains** where both semantic understanding and structural relationships matter. In **enterprise knowledge bases** with heterogeneous content—technical docs, policy documents, internal wikis, product specs—where no single retrieval method handles all content types well. When dealing with **ambiguous queries** that could match multiple topics; the combination provides more robust disambiguation. In **real-world production systems** where query diversity is high and you need consistent quality across query types.
+
+It's particularly valuable when you have **both high-quality embeddings and well-constructed graphs**. If you're investing in both infrastructure components, hybrid retrieval lets you leverage both investments simultaneously.
+
+Now let's see how this technique works in practice!`
         },
         {
           id: 28,
           title: '7. Graph + Dense Vector Hybrid - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Blend embedding similarity with graph features (degree, proximity, edge weights).</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Hybrid Retrieval Process"
+                      diagram={`flowchart TB
+    Q["🔍 Query:<br/>ML 👉 'em-el' Applications"] --> V["🎯 Vector Search:<br/>Top-k by Similarity"]
+    Q --> G["🕸️ Graph Seeds:<br/>Find Anchor Nodes"]
+    
+    V --> V1["📄 Node A<br/>sim=0.92"]
+    V --> V2["📄 Node B<br/>sim=0.87"]
+    V --> V3["📄 Node C<br/>sim=0.81"]
+    
+    G --> G1["⚓ Seed X"]
+    G --> G2["⚓ Seed Y"]
+    
+    G1 --> GE1["🔗 Connected<br/>Node D"]
+    G1 --> GE2["🔗 Connected<br/>Node E"]
+    G2 --> GE3["🔗 Connected<br/>Node F"]
+    
+    V1 --> M["⚖️ Fusion:<br/>Combine Scores"]
+    V2 --> M
+    V3 --> M
+    GE1 --> M
+    GE2 --> M
+    GE3 --> M
+    
+    M --> R["🎯 Ranked Results:<br/>Best Combined Scores"]
+    
+    style Q fill:#4fc3f7,color:#000
+    style V fill:#81c784,color:#000
+    style G fill:#ffb74d,color:#000
+    style M fill:#e1bee7,color:#000
+    style R fill:#ffd700,color:#000`}
+                    />
+                  </h3>
+                  <p>Run parallel retrieval: (1) vector search for top-k semantic matches, (2) graph expansion from seed nodes. Fuse results with hybrid scoring: semantic similarity + structural features (proximity, centrality, edge weights).</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Node embeddings, edge features, fusion/scoring formula.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Node embeddings, vector index, graph with edges, fusion formula/weights, optional: learned fusion model, edge features, graph metrics.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`A (query) ~ B (0.83 sim); B near C ⇒ {B, C}`}
-              </pre>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Query → Vector: {A, B} + Graph: {A, C} → Fusion → Rank: {A, B, C}`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e3a5b',
-          notes: ''
+          notes: `### 7. Graph + Dense Vector Hybrid - How It Works
+
+Let's break down the mechanics of hybrid retrieval. This involves parallel retrieval paths, score fusion, and intelligent ranking that leverages both semantic and structural signals.
+
+#### Phase 1: Parallel Retrieval
+The process starts with **parallel execution** of two retrieval strategies. Think of these as independent processes that run simultaneously, then merge results.
+
+**Vector Search Path**: Embed the query using your embedding model (OpenAI, Cohere, open-source models like BGE 👉 'bee-jee-ee'). Search your vector index (Pinecone, Weaviate, Chroma, or similar) for the top-k nodes by cosine similarity. Typical k might be 50-100 to ensure you're not missing relevant nodes due to embedding imperfections. Each retrieved node gets a **semantic similarity score** between 0 and 1.
+
+**Graph Traversal Path**: Identify seed nodes from the query using node-level retrieval or entity linking. From these seeds, perform graph expansion—maybe 1-hop or 2-hop traversal to find connected nodes. For each node in the graph results, compute **structural relevance scores** based on metrics like proximity to seed nodes (fewer hops = higher score), centrality within the local subgraph, edge weights if available, or community membership with seeds.
+
+```mermaid
+flowchart TB
+    Q["🔍 Query:<br/>ML Applications"] --> V["🎯 Vector Search:<br/>Top-k by Similarity"]
+    Q --> G["🕸️ Graph Seeds:<br/>Find Anchor Nodes"]
+    
+    V --> V1["📄 Node A<br/>sim=0.92"]
+    V --> V2["📄 Node B<br/>sim=0.87"]
+    V --> V3["📄 Node C<br/>sim=0.81"]
+    
+    G --> G1["⚓ Seed X"]
+    G --> G2["⚓ Seed Y"]
+    
+    G1 --> GE1["🔗 Connected<br/>Node D"]
+    G1 --> GE2["🔗 Connected<br/>Node E"]
+    G2 --> GE3["🔗 Connected<br/>Node F"]
+    
+    V1 --> M["⚖️ Fusion:<br/>Combine Scores"]
+    V2 --> M
+    V3 --> M
+    GE1 --> M
+    GE2 --> M
+    GE3 --> M
+    
+    M --> R["🎯 Ranked Results:<br/>Best Combined Scores"]
+```
+
+#### Phase 2: Result Fusion
+Now you have two sets of candidate nodes with different scoring schemes. The challenge is **combining them meaningfully**. Several fusion strategies exist:
+
+**Linear Combination**: The simplest approach. Normalize both scores to [0,1], then compute `final_score = α * semantic_score + β * structural_score` where α and β are weights (often α=0.5, β=0.5 for balanced fusion, but tunable). Nodes that appear in both result sets get both scores; nodes in only one set get zero for the missing score.
+
+**Rank-Based Fusion**: Instead of raw scores, use ranks. If a node ranks 3rd in vector results and 7th in graph results, its fusion score might be `1/rank_vector + 1/rank_graph`. This is more robust when score scales differ dramatically between methods.
+
+**Learned Fusion**: Train a model (simple logistic regression or neural network) that takes semantic score, structural score, and additional features (node degree, content length, freshness) and predicts relevance. This requires labeled training data but can achieve better performance than fixed formulas.
+
+**Cascading**: Use one method to retrieve candidates, the other to re-rank. For example, vector search retrieves top-100, then graph features re-rank these 100. This is computationally cheaper than full parallel retrieval.
+
+#### Phase 3: Hybrid Scoring Features
+The richness of hybrid retrieval comes from leveraging **multiple features**:
+- **Semantic similarity**: Cosine similarity between query and node embeddings
+- **Graph proximity**: Hop distance from seed nodes (closer = better)
+- **Centrality**: PageRank 👉 'page-rank', degree centrality, betweenness
+- **Edge weights**: Sum of edge weights along the path from seeds
+- **Community membership**: Whether the node is in the same community as seeds
+- **Co-occurrence**: How often the node co-occurs with query terms in documents
+- **Content features**: Node content length, freshness, source authority
+
+Combining these features gives you a **multi-dimensional relevance signal** that's more robust than any single metric.
+
+#### Data Infrastructure Needed
+You need **both a vector index and a graph database**. The vector index (Pinecone, Weaviate, Qdrant) handles semantic search efficiently at scale. The graph database (Neo4j, Amazon Neptune, TigerGraph) handles traversal and structural queries. Some systems like Weaviate have built-in graph capabilities, simplifying infrastructure.
+
+Store **node embeddings** in the vector index with IDs that link back to graph nodes. Store **graph structure** with edges, weights, and metadata in the graph database. Have a **fusion service** that orchestrates both retrievals and combines results.
+
+Now let's look at practical implementation!`
         },
         {
           id: 29,
           title: '7. Graph + Dense Vector Hybrid - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Retrieve by embeddings (top-k)</li>
-                <li>Re-rank using graph scores (e.g., proximity to seeds)</li>
-                <li>Return top results after fusion</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Embed query, retrieve top-k from vector index
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Identify seed nodes, expand via graph traversal
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Compute hybrid scores (α × semantic + β × structural)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>4.</strong> Rank by fused score, return top results
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>Customer support where semantically similar questions are boosted if they're connected to the same product category or frequently co-occur in resolved tickets, combining semantic and structural signals.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.7}>
+                <h3>Example Use Case</h3>
+                <p>Customer support where semantically similar questions are retrieved via embeddings, then boosted if they're structurally connected to the same product category, issue type, or resolution pattern, combining semantic understanding with domain structure.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e3a5b',
-          notes: ''
+          notes: `### 7. Graph + Dense Vector Hybrid - Implementation
+
+Let's walk through building a production-grade hybrid retrieval system. This involves infrastructure setup, parallel query execution, and intelligent fusion logic.
+
+#### Step 1: Infrastructure Setup
+You need **dual indices**: a vector index for semantic search and a graph database for structural queries. Start by choosing your vector database. Options include **Pinecone** (fully managed, great for production), **Weaviate** (has built-in graph features, can simplify architecture), **Qdrant** (high performance, open-source), or **Chroma** (simple, good for prototyping).
+
+For the graph database, **Neo4j** is the most popular with excellent query language (Cypher) and tooling. **Amazon Neptune** if you're in AWS and want managed service. **TigerGraph** for very large-scale graphs. Or **ArangoDB** which combines document, graph, and search capabilities.
+
+**Embedding generation**: Use a consistent embedding model for all nodes. OpenAI's text-embedding-3-small or text-embedding-3-large provide high quality. Open-source alternatives include BGE 👉 'bee-jee-ee' models, E5 models, or all-MiniLM 👉 'mini-L-M'. Pre-compute embeddings for all nodes during graph construction. Store embeddings in your vector index with node IDs that map back to graph nodes.
+
+**Data synchronization**: Ensure node IDs are consistent across both systems. When you add or update a node, update both the vector index and graph database. Consider using a **message queue** like Kafka or RabbitMQ to ensure eventual consistency.
+
+#### Step 2: Parallel Query Execution
+When a query arrives, launch **parallel retrieval tasks**. In Python, use `asyncio` or `concurrent.futures` to run both retrievals simultaneously, minimizing latency.
+
+**Vector retrieval**: Embed the query with your embedding model. Query your vector index with `top_k=100` (or whatever number gives sufficient recall). Each result includes node ID and similarity score. This typically completes in 10-50 milliseconds for millions of vectors.
+
+**Graph retrieval**: Use node-level retrieval or entity linking to identify 1-3 seed nodes from the query. From these seeds, perform Cypher queries (Neo4j) or equivalent graph traversal to find nodes within 1-2 hops. For each connected node, compute structural relevance: hop distance (1-hop gets score 1.0, 2-hop gets 0.5), edge weights if available, or use Personalized PageRank 👉 'page-rank' from the seed nodes. Graph queries typically complete in 50-200 milliseconds depending on graph density.
+
+**Combine candidate sets**: Merge the two result sets. Some nodes will appear in both (high semantic similarity AND structurally connected—strong signal!). Others appear in only one set.
+
+#### Step 3: Hybrid Scoring and Fusion
+Now compute the final score for each candidate node. The **weighted linear combination** is most common:
+
+```
+final_score = α * semantic_score + β * structural_score + γ * bonus_score
+```
+
+Where:
+- `semantic_score`: Normalized similarity from vector search (0-1)
+- `structural_score`: Normalized structural relevance from graph (0-1)
+- `bonus_score`: Extra boost for nodes in both result sets (overlap bonus)
+- α, β, γ: Tunable weights (start with α=0.5, β=0.4, γ=0.1)
+
+**Normalization is critical**. Semantic scores from cosine similarity are naturally 0-1. Structural scores need normalization: divide by max score in the set, or use min-max scaling.
+
+For nodes appearing in both results, you might apply a **synergy boost**: if a node is both semantically similar AND structurally connected, it's particularly relevant. Multiply the combined score by 1.2 or add a fixed bonus.
+
+#### Step 4: Ranking and Return
+Sort all candidate nodes by `final_score` descending. Take the top-k (typically 5-20 for end-user display, more for LLM 👉 'el-el-em' context). Return these nodes with their content chunks, scores, and optionally **explanations**: "This result scored highly due to semantic similarity (0.89) and close proximity to related concepts in the graph."
+
+#### Real-World Example
+Imagine a customer support system for a SaaS 👉 'sass' platform. A user asks "Why isn't my dashboard loading?" Your **vector search** finds nodes with similar semantic content: "Dashboard performance issues," "Loading problems," "Display errors." Your **graph expansion** starts from the "Dashboard" product node and finds connected nodes: "Authentication requirements," "Browser compatibility," "API 👉 'ay-pee-eye' rate limits"—structurally relevant but not semantically similar to the query.
+
+Fusion combines both: the semantic matches get high scores, but "API rate limits" gets boosted because it's structurally connected to "Dashboard" (which the query mentions) even though the words don't match. The final results include both direct semantic matches and structurally relevant context, providing comprehensive coverage that neither approach would achieve alone.
+
+#### Implementation Tips
+**Start with simple fusion**: Linear combination with equal weights (α=0.5, β=0.5) works surprisingly well. Optimize later with A/B testing. **Cache frequent queries** since both vector and graph lookups can be cached. **Monitor latency** for each component; parallelize but set timeouts so one slow system doesn't block results. **Use async I/O** to maximize throughput. **Experiment with weights** specific to your domain; technical documentation might favor semantic (α=0.7), while highly structured domains favor graph (β=0.7).
+
+**Log fusion decisions** to understand which signals drive results. This helps with debugging and optimization. Consider **learning to rank** if you have relevance feedback data; train a model to predict optimal fusion weights per query type.
+
+Now let's evaluate the benefits and limitations!`
         },
         {
           id: 30,
           title: '7. Graph + Dense Vector Hybrid - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Better precision/recall balance</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Best of both worlds (semantic + structural)</li>
+                  <li>Superior precision/recall balance</li>
+                  <li>Robust across diverse query types</li>
+                  <li>Compensates for weaknesses in either approach</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Tuning fusion weights is non-trivial</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>More complex infrastructure (two indices)</li>
+                  <li>Tuning fusion weights is non-trivial</li>
+                  <li>Higher computational cost and latency</li>
+                  <li>Requires expertise in both approaches</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e3a5b',
-          notes: ''
+          notes: `### 7. Graph + Dense Vector Hybrid - Considerations
+
+Let's examine what makes hybrid retrieval powerful and where it adds complexity. Understanding these trade-offs is essential for deciding if the benefits justify the additional implementation effort.
+
+#### Benefits: Complementary Strengths
+The defining advantage is **leveraging complementary signals**. Semantic search via embeddings captures meaning, handles synonyms, and works across paraphrases. Graph structure captures domain-specific relationships, importance, and context that embeddings might miss. Together, they cover each other's blind spots. When one approach struggles (sparse query, ambiguous terms, domain-specific jargon), the other compensates.
+
+**Superior precision/recall balance** is the measurable benefit. Studies consistently show hybrid approaches outperforming either vector search or graph traversal alone on standard IR 👉 'eye-are' benchmarks. You get the **recall** of semantic search (finding relevant content even with vocabulary mismatch) combined with the **precision** of graph structure (filtering to contextually appropriate results). Typical improvements range from 10-30% in F1 👉 'eff-one' score depending on domain and implementation quality.
+
+**Robustness across query types** is invaluable in production. Some users write detailed questions, others type keywords. Some queries are common (well-represented in training data), others are rare or novel. Hybrid retrieval maintains **consistent quality** across this diversity because it doesn't rely on a single signal that might fail for certain query patterns.
+
+The approach **handles graph and embedding imperfections gracefully**. Real-world knowledge graphs have missing edges, incorrect connections, or sparse regions. Real-world embeddings struggle with rare entities, technical jargon, or out-of-domain concepts. Hybrid retrieval **degrades gradually** rather than failing catastrophically when one component has issues.
+
+#### Limitations: Complexity and Cost
+The biggest challenge is **infrastructure complexity**. You're running **two retrieval systems** instead of one. That means two databases to maintain, two indices to keep synchronized, two query interfaces to integrate. When you update content, you must update both the vector index and graph database consistently. This **operational overhead** is significant and requires DevOps expertise.
+
+**Tuning fusion weights** is non-trivial and domain-specific. The optimal balance between semantic and structural scoring depends on your data, use case, and query distribution. α=0.5, β=0.5 might work for general knowledge but α=0.7, β=0.3 might be better for technical docs. You need **evaluation datasets** with relevance judgments to tune these parameters properly. This requires time, expertise, and often multiple iterations.
+
+**Computational cost** is higher. You're running two retrieval operations instead of one. Even with parallelization, **latency** increases. Vector search might take 20ms, graph traversal 100ms, fusion 10ms—total 100ms+ versus 20ms for vector-only. At scale, this impacts user experience and infrastructure costs. You'll need more powerful servers or clever caching strategies.
+
+**Development and maintenance expertise** requirements increase. Your team needs people who understand both embedding-based semantic search AND graph algorithms. Debugging is harder when results come from two systems. **Monitoring** becomes more complex—you need observability into both components and their fusion logic.
+
+#### Practical Challenges
+**Score normalization** can be tricky. Semantic similarity scores from different embedding models have different distributions. Graph-based scores depend on graph density and structure. Getting these on comparable scales requires careful normalization and calibration.
+
+**Deciding on expansion depth** for graph traversal is a balancing act. 1-hop is fast but might miss relevant nodes. 2-hop finds more but increases noise and latency. The optimal depth is **domain and query-dependent**, making one-size-fits-all solutions difficult.
+
+**Handling conflicts** between signals requires strategy. What if a node has high semantic similarity but low structural relevance, or vice versa? Should you include it? The fusion function encodes these trade-offs, but there's no universally correct answer. Different use cases prioritize differently.
+
+**Cost considerations** matter at scale. Running both vector and graph databases isn't cheap. **Managed services** like Pinecone or Neo4j Aura charge per query or per node. For high-traffic applications, hybrid retrieval can mean **2x the infrastructure cost** of single-method approaches.
+
+#### When to Choose This Technique
+Use hybrid retrieval when **both semantic and structural signals are valuable** in your domain. When you need **robust, consistent quality** across diverse queries and can justify the complexity. When you have **high-quality embeddings AND well-constructed graphs** so both components contribute meaningfully. When **marginal accuracy improvements** justify additional cost and complexity—think high-value applications like medical diagnosis support, legal research, or critical enterprise decisions.
+
+It's particularly appropriate for **production systems** serving diverse users where you can't predict query patterns upfront. For **complex domains** where single-method retrieval demonstrably underperforms. When you have the **engineering resources** to build, tune, and maintain dual infrastructure.
+
+Avoid hybrid approaches when **one method clearly dominates** for your use case—if pure semantic search or pure graph traversal works well, keep it simple. When **latency requirements are strict** and you can't afford the overhead. When **development resources are limited** and the complexity outweighs benefits. When your **graph is sparse or poorly connected**, making structural signals weak.
+
+Ready to explore more advanced techniques? Let's continue with our next approach!`
         }
       ]
     },
