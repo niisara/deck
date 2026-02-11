@@ -1346,20 +1346,42 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam).</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Selected best reasoning path and final solution</li>
-                <li>Systematic exploration of solution space</li>
-                <li>Better handling of complex planning problems</li>
-                <li>Ability to backtrack from dead ends</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for search-heavy reasoning, puzzles and planning tasks, and complex decompositions. Explores multiple paths before committing to a solution.</p>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p>Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam).</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={0.5}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.6}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Selected best reasoning path and final solution</li>
+                  <li>Systematic exploration of solution space</li>
+                  <li>Better handling of complex planning problems</li>
+                  <li>Ability to backtrack from dead ends</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for search-heavy reasoning, puzzles and planning tasks, and complex decompositions. Explores multiple paths before committing to a solution.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - Overview
+Welcome to Tree of Thoughts, or ToT 👉 pronounced "tot" like the word for a small child. Think of it as the AI's way of being thorough before making a decision.
+
+#### What Makes ToT Different
+Unlike techniques that follow a single line of reasoning, Tree of Thoughts creates an actual *tree structure* of possible reasoning paths. Imagine you're planning a road trip and instead of just picking one route, you sketch out three different options, evaluate each one's pros and cons, and then systematically explore the most promising path while keeping the others as backup options. That's exactly what ToT does with problem-solving.
+
+#### The Power of Exploration
+The magic here is in the **exploration strategy**. ToT uses classic search algorithms like breadth-first search (BFS), depth-first search (DFS), or beam search to navigate this tree of possibilities. At each decision point, the model generates multiple candidate next steps, evaluates each one (labeling them as "sure", "maybe", or "impossible"), and then intelligently decides which branches to explore further. If a path turns out to be a dead end, no problem—it simply backtracks and tries a different branch.
+
+#### When to Use This Powerhouse
+This technique shines in **complex planning scenarios**, like designing a multi-phase product strategy, solving intricate puzzles, or decomposing a complicated technical problem into optimal sub-tasks. It's overkill for simple questions, but when you need systematic exploration of a solution space with the ability to course-correct, ToT is your go-to technique.
+
+> Pro tip: ToT is computationally expensive because it explores multiple paths. Use it when the quality of the solution justifies the extra cost and latency.`
         },
         {
           id: 32,
@@ -1367,17 +1389,49 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Tree of Thoughts maintains a tree of reasoning paths, generating multiple candidate next steps at each node. The model evaluates each candidate (e.g., sure/maybe/impossible) and uses search algorithms (BFS, DFS, or beam search) to explore promising branches. This allows systematic exploration with the ability to backtrack from unproductive paths.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires external controller logic for search management</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>Tree of Thoughts maintains a tree of reasoning paths, generating multiple candidate next steps at each node. The model evaluates each candidate (e.g., sure/maybe/impossible) and uses search algorithms (BFS, DFS, or beam search) to explore promising branches. This allows systematic exploration with the ability to backtrack from unproductive paths.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.6}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires external controller logic for search management</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.75}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - How It Works
+Now let's peek under the hood and see how Tree of Thoughts actually operates. This is where the technique gets really interesting.
+
+#### The Mechanics of Tree Building
+Picture a chess grandmaster considering their next move. They don't just think one move ahead—they explore multiple possible moves, then for each move they imagine several opponent responses, and so on, creating a branching tree of possibilities. Tree of Thoughts works similarly. At each node in the reasoning tree, the model generates *multiple candidate next steps* rather than just one. For example, if solving a complex planning problem, it might generate three different approaches: Option A, Option B, and Option C.
+
+#### The Evaluation Phase
+Here's where it gets clever. The model doesn't just generate options blindly—it **evaluates each candidate** before proceeding. Think of it as a quality checkpoint. The evaluation can be as simple as labeling each option as "sure" (very promising), "maybe" (worth exploring), or "impossible" (dead end). This evaluation step is crucial because it guides the search algorithm on where to focus its attention.
+
+#### Search Algorithms in Action
+ToT leverages classic computer science search algorithms. **Breadth-first search** explores all options at each level before going deeper. **Depth-first search** follows one path all the way down before trying alternatives. **Beam search** keeps only the top K most promising paths at each level. The beauty is that if a path hits a dead end, the algorithm simply backtracks to a previous node and explores a different branch—something traditional chain-of-thought can't do.
+
+#### Orchestration Complexity
+This is an *advanced* technique that requires sophisticated infrastructure. You need an external controller—essentially a program that manages the search process, calls the LLM multiple times to generate and evaluate candidates, maintains the tree structure, and decides when to explore versus when to backtrack. Models like GPT-4, Claude 3.5, and Gemini 1.5 have the reasoning capability, but you're building the orchestration layer yourself.
+
+#### Real-World Application
+The example shown—strategic product roadmap planning—is perfect for ToT. Imagine you're deciding whether to build Feature X first or Feature Y. With ToT, you can systematically explore both paths: "If we build X first, that leads to outcomes A, B, C... If we build Y first, that leads to D, E, F..." You're essentially simulating different futures and evaluating their downstream impacts before committing resources.
+
+> Pro tip: The quality of your evaluation function is critical. If your evaluation incorrectly labels promising paths as "impossible," the search will miss good solutions. Invest time in crafting good evaluation prompts.`
         },
         {
           id: 33,
@@ -1385,16 +1439,45 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires sophisticated orchestration layer to manage the search process, evaluate candidates, and control exploration depth.</p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires sophisticated orchestration layer to manage the search process, evaluate candidates, and control exploration depth.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - Implementation
+Let's talk about actually implementing Tree of Thoughts in your applications. This is where theory meets practice.
+
+#### Crafting the Core Prompt
+The example prompt shown is beautifully simple yet powerful: *"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."* Notice the three key elements here. First, you're asking for **multiple candidates** (not just one next step). Second, you're requesting an **evaluation** (sure/maybe/impossible labels). Third, you're instructing the model to **continue exploration** of promising branches. This single prompt encapsulates the entire ToT philosophy.
+
+#### Prompt Engineering Tips
+In practice, you'll often want to be more specific. For example: "Given the current state of our software architecture, propose 3 different refactoring approaches. For each approach, evaluate: (1) implementation complexity (low/medium/high), (2) risk of introducing bugs (low/medium/high), (3) expected performance improvement (low/medium/high). Then explore the most promising approach in detail." The more structure you provide in your evaluation criteria, the better the model can guide the search.
+
+#### The Orchestration Challenge
+Here's the reality check: ToT requires **significant engineering effort**. You're not just sending one prompt and getting one response. You're building a system that: (1) sends an initial prompt to generate candidates, (2) parses the response to extract the candidates and their evaluations, (3) implements a search algorithm to decide which candidate to explore next, (4) sends follow-up prompts to expand chosen branches, (5) maintains the tree structure in memory, (6) decides when to backtrack versus when to continue, and (7) determines when a solution is found.
+
+#### Model Selection
+You need the most capable models for ToT—specifically GPT-4/4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro. Why? Because you're asking the model to both generate creative next steps *and* evaluate their quality. This requires strong reasoning abilities. Smaller or less capable models will struggle with the evaluation phase, leading to poor search decisions.
+
+#### Cost and Latency Considerations
+Be prepared for **multiple LLM calls per problem**. If your tree has 3 branches per node and you explore 3 levels deep, that's potentially 3 + 9 + 27 = 39 nodes to evaluate. At $0.03 per 1K tokens for GPT-4, even modest trees can add up. Use beam search to limit the number of active branches and set maximum depth limits to control costs.
+
+#### When to Actually Use ToT
+Don't reach for Tree of Thoughts for simple problems where chain-of-thought would suffice. Use it when: (1) the solution space is large and complex, (2) there are multiple viable approaches to explore, (3) early decisions significantly impact downstream outcomes, (4) backtracking capability is valuable, and (5) solution quality justifies the extra cost and engineering complexity.
+
+> Pro tip: Start with a breadth limit (beam width) of 2-3 branches and a depth limit of 3-4 levels. This prevents exponential explosion while still getting the benefits of exploration. You can always expand the search space if initial results are promising.`
         },
         {
           id: 34,
@@ -1402,17 +1485,45 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Significantly higher cost and latency</li>
-                <li>Requires search control and pruning strategies</li>
-                <li>Complex orchestration infrastructure needed</li>
-                <li>Evaluation quality critical for good search decisions</li>
-              </ul>
+              <GSAPAnimated animation="flipCard" delay={0.15}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Significantly higher cost and latency</li>
+                  <li>Requires search control and pruning strategies</li>
+                  <li>Complex orchestration infrastructure needed</li>
+                  <li>Evaluation quality critical for good search decisions</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - Considerations
+Before you rush to implement Tree of Thoughts everywhere, let's have an honest conversation about its limitations and considerations. This technique is powerful but comes with significant tradeoffs.
+
+#### The Cost Factor
+Let's be blunt: ToT is **expensive**. While a single chain-of-thought prompt might cost you one API call, Tree of Thoughts can easily require 10, 20, or even 50+ calls for complex problems. At each node, you're generating multiple candidates (that's multiple calls) and then evaluating them (more calls). If you're exploring a tree with a branching factor of 3 and depth of 4, you could be looking at dozens of API requests for a single problem. With GPT-4 pricing, this adds up fast. Budget accordingly and reserve ToT for high-value problems where the improved solution quality justifies the expense.
+
+#### Latency Concerns
+Cost isn't the only multiplier—so is **latency**. Instead of waiting 2-3 seconds for a response, you might be waiting 30-60 seconds or more as the system explores multiple branches sequentially. Some of this can be parallelized (evaluating multiple candidates at the same level can happen simultaneously), but the depth-wise exploration is inherently sequential. For user-facing applications, this latency may be unacceptable unless you're clever about progress indicators and async processing.
+
+#### The Pruning Challenge
+Here's a critical engineering decision: *how do you decide which branches to explore and which to prune?* If you explore everything, you'll hit exponential explosion—a tree with branching factor 3 and depth 5 has 243 leaf nodes. That's not feasible. So you need **pruning strategies**: beam search (keep only top-K paths), confidence thresholds (abandon branches below certain evaluation scores), depth limits, or even dynamic pruning based on remaining compute budget. Getting these strategies right requires experimentation and domain knowledge.
+
+#### Orchestration Infrastructure
+Unlike simpler techniques that are just clever prompts, ToT requires you to build actual **infrastructure**. You need: state management (storing the tree), search algorithm implementation (BFS/DFS/beam search), prompt generation logic (turning tree nodes into queries), response parsing (extracting candidates and evaluations), decision logic (explore vs. backtrack), and termination conditions (when to stop searching). This is a non-trivial engineering project. Don't underestimate the complexity.
+
+#### The Evaluation Quality Problem
+This is perhaps the most subtle but important consideration: ToT's success depends entirely on the *quality of its evaluations*. If your evaluation prompt consistently mislabels good paths as "impossible" or rates poor paths as "sure," the search algorithm will make bad decisions and explore suboptimal branches. You need to invest significant effort in **evaluation prompt engineering** and potentially run experiments to validate that your evaluation criteria actually correlate with solution quality. Bad evaluations can make ToT perform worse than simpler approaches.
+
+#### When ToT Isn't Worth It
+Be honest about when simpler techniques would suffice. For straightforward question-answering, use zero-shot or few-shot prompting. For step-by-step reasoning, chain-of-thought is plenty. For problems that benefit from verification, self-consistency is simpler. Reserve Tree of Thoughts for genuinely complex problems with large solution spaces, multiple valid approaches, and scenarios where exploring alternatives before committing adds significant value.
+
+#### Making It Work in Production
+If you do implement ToT in production, here are success patterns: (1) start with small trees (branching factor 2-3, depth 3-4), (2) use aggressive pruning to control costs, (3) implement caching so similar subtrees don't get re-explored, (4) provide progress indicators since users will wait longer, (5) A/B test against simpler baselines to ensure the complexity is justified, and (6) monitor costs vigilantly—it's easy for them to spiral.
+
+> Pro tip: Consider a hybrid approach: use ToT for the initial exploration phase to identify the most promising approach, then switch to cheaper techniques like chain-of-thought for execution. This gives you ToT's exploration benefits at a fraction of the cost.`
         }
       ]
     },
