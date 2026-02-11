@@ -2136,20 +2136,41 @@ When to use APE anyway: Despite these limitations, APE is incredibly valuable wh
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Improved task-specific exemplars and accuracy</li>
-                <li>Efficient use of human annotation resources</li>
-                <li>Adaptive learning from uncertainty</li>
-                <li>Better coverage of difficult cases</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for diverse datasets where fixed exemplars underperform. Focuses human effort on the most informative examples.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>Definition</h3>
+                <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Improved task-specific exemplars and accuracy</li>
+                  <li>Efficient use of human annotation resources</li>
+                  <li>Adaptive learning from uncertainty</li>
+                  <li>Better coverage of difficult cases</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.1}>
+                <p style={{ marginTop: '20px' }}>Best for diverse datasets where fixed exemplars underperform. Focuses human effort on the most informative examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### Active-Prompt Overview
+
+Hey everyone, let's talk about **Active-Prompt** - this is where prompt engineering meets active learning in a really clever way!
+
+#### What's the Big Idea?
+Think about how you'd learn a new skill. You wouldn't just practice random things, right? You'd focus on the stuff that's hardest for you. That's exactly what Active-Prompt does for AI models. Instead of using the same few-shot examples for everyone, it figures out which examples the model is *most uncertain* about, gets humans to annotate those tricky cases, and then uses those as the new examples.
+
+#### Why This Matters
+Here's the beauty: not all examples are created equal. Some examples teach the model way more than others. Active-Prompt finds those high-value examples by looking for where the model disagrees with itself the most. It's like finding the edge cases that really challenge your understanding.
+
+#### Real-World Impact
+Imagine you're building a medical diagnosis assistant. Instead of randomly picking cases for your few-shot examples, Active-Prompt would identify the ambiguous cases where the model is genuinely uncertain - maybe symptoms that could indicate multiple conditions. A human expert annotates the reasoning for those cases, and boom - your model gets dramatically better at handling edge cases.
+
+The efficiency gain is huge: you're focusing your expensive human annotation time on exactly the examples that will teach the model the most. It's smart resource allocation meets machine learning!`
         },
         {
           id: 48,
@@ -2157,17 +2178,40 @@ When to use APE anyway: Despite these limitations, APE is incredibly valuable wh
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Active-Prompt generates multiple CoT solutions for candidate examples and measures disagreement between them. High disagreement indicates uncertainty. The system selects the most uncertain examples for human annotation, then updates the few-shot exemplar set with these human-annotated chains of thought. This active learning approach efficiently improves prompt quality.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop and human annotators</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Math word-problem tutor adapting to student cohorts.</p>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Active-Prompt generates multiple CoT solutions for candidate examples and measures disagreement between them. High disagreement indicates uncertainty. The system selects the most uncertain examples for human annotation, then updates the few-shot exemplar set with these human-annotated chains of thought. This active learning approach efficiently improves prompt quality.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.7}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop and human annotators</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.1}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+                <p>Math word-problem tutor adapting to student cohorts.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### How Active-Prompt Works
+
+Alright, let's break down the mechanics here - this is really fascinating!
+
+#### The Uncertainty Estimation Process
+Here's the secret sauce: the system generates multiple Chain-of-Thought solutions for each candidate example. Let's say you ask the model to solve a problem 10 different times. If all 10 answers are the same, the model is confident. But if you get 5 different answers? That's high disagreement, which signals uncertainty. That's your gold mine!
+
+Think of it like polling a group of experts - when they all agree, you're probably on solid ground. When they disagree wildly, that's where you need to dig deeper and get more information.
+
+#### The Active Learning Loop
+Step one: Generate multiple responses using Chain-of-Thought for your candidate examples. Step two: Calculate disagreement scores - you might use metrics like variance in answers or entropy in the distribution. Step three: Rank examples by uncertainty and select the top-m most uncertain ones. Step four: Send those to human annotators to provide high-quality Chain-of-Thought reasoning. Step five: Update your few-shot exemplar set with these newly annotated examples. Then repeat!
+
+#### Real-World Example Deep Dive
+Picture a math tutoring system for middle schoolers. The system encounters word problems like "If Sarah has 3 apples and gives away half, how many does she have?" Simple, right? But then you get: "A train leaves Station A at 60mph..." and the model starts generating wildly different solution paths. That high disagreement signals this is the type of problem your students are struggling with! You get a human expert to annotate the proper reasoning steps, and now your exemplar set includes exactly the kind of problem that was causing confusion.
+
+The beauty is that this adapts over time - as your model gets better at certain problem types, it'll identify new areas of uncertainty to improve on.`
         },
         {
           id: 49,
@@ -2175,16 +2219,37 @@ When to use APE anyway: Despite these limitations, APE is incredibly valuable wh
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires infrastructure for uncertainty estimation, human annotation workflow, and exemplar management.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires infrastructure for uncertainty estimation, human annotation workflow, and exemplar management.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### Active-Prompt Implementation
+
+Let's get practical - how do you actually build this?
+
+#### The Implementation Architecture
+You'll need three main components: First, a prompt execution engine that can generate multiple responses with Chain-of-Thought reasoning. Second, an uncertainty quantification module that calculates disagreement metrics across those responses. And third, a human-in-the-loop annotation interface where experts can provide high-quality reasoning chains for uncertain examples.
+
+Here's what that looks like in practice: You run your model with temperature set fairly high - maybe 0.7 to 0.9 - to get diverse responses. For each candidate example, generate k responses (often 5-10). Then compute disagreement using something like the percentage of unique answers or entropy across answer distributions. Sort by disagreement score and select the top m examples - maybe the top 10 or 20 most uncertain cases.
+
+#### The Prompt Strategy
+The example prompt here is actually a meta-instruction for the system. You're telling it: "Hey, I want you to generate k different solutions showing your reasoning for each question. I'll measure how much you disagree with yourself. Then I'll cherry-pick the cases where you're most uncertain and get expert humans to annotate the correct reasoning. Finally, I'll update your exemplar set with those expert-annotated chains."
+
+#### Infrastructure Requirements
+This isn't a quick weekend project - you need real infrastructure. You'll want a database to track examples, uncertainty scores, and annotation status. You'll need a workflow system for routing uncertain examples to human annotators. You'll need versioning for your exemplar sets so you can track improvements over time. And you'll want monitoring to ensure the active learning loop is actually improving performance.
+
+But here's the payoff: once you have this infrastructure, it becomes a continuously improving system. Every annotation cycle makes your model smarter at handling edge cases!`
         },
         {
           id: 50,
@@ -2192,17 +2257,48 @@ When to use APE anyway: Despite these limitations, APE is incredibly valuable wh
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Annotation cost for human CoT examples</li>
-                <li>Feedback-loop bias in exemplar selection</li>
-                <li>Orchestration complexity for active learning</li>
-                <li>Requires quality control on annotations</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Annotation cost for human CoT examples</li>
+                  <li>Feedback-loop bias in exemplar selection</li>
+                  <li>Orchestration complexity for active learning</li>
+                  <li>Requires quality control on annotations</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### Active-Prompt Considerations & Limitations
+
+Let's be real - Active-Prompt is powerful, but it's not a silver bullet. Here are the gotchas you need to know about.
+
+#### The Annotation Cost Reality
+Human annotation is expensive, period. Yes, Active-Prompt is more efficient than random sampling because you're focusing on high-value examples, but you're still paying humans to carefully reason through complex problems and document their thinking. For a medical application, you might need senior physicians spending 10-15 minutes per annotation. At $200/hour, that adds up fast!
+
+The key question is: does the improvement justify the cost? For high-stakes applications like medical diagnosis, legal analysis, or financial forecasting, the answer is often yes. For a chatbot that recommends movies? Probably not.
+
+#### The Feedback Loop Trap
+Here's a subtle but important problem: your model selects examples based on its current uncertainty, humans annotate them, and then those become your new exemplars. But what if your model has a systematic blind spot? The examples it's uncertain about might all share some characteristic that reinforces a bias. You could end up with an exemplar set that's great at certain types of problems but completely misses other important cases.
+
+This is called "feedback loop bias" or "active learning bias." The solution? Periodically include some random sampling in your selection, and have domain experts review the exemplar set holistically to ensure good coverage.
+
+#### Orchestration Complexity
+You're now running a full machine learning pipeline with human-in-the-loop processes. That means scheduling, task routing, quality checks, versioning, monitoring, and rollback capabilities. Your system needs to handle annotators who disagree, annotations that need revision, and graceful degradation when the annotation pipeline gets backed up.
+
+This is production ML infrastructure, not a simple API call. Budget for DevOps and ML engineering time!
+
+#### Quality Control is Critical
+Not all human annotations are created equal. Annotators get tired, make mistakes, or might not fully understand the task. You need inter-annotator agreement metrics, spot-checking by senior reviewers, and feedback mechanisms. Bad annotations in your exemplar set can actually make the model worse - garbage in, garbage out!
+
+#### When to Use Active-Prompt
+Use it when: you have complex, diverse tasks where examples matter a lot; you can afford expert human annotation; you're building production systems that need to improve over time; and you have the engineering resources for the active learning infrastructure.
+
+Don't use it when: you have simple tasks with clear patterns; annotation costs outweigh benefits; you need immediate results without iteration; or you're prototyping and need to move fast.
+
+The bottom line? Active-Prompt is like having a continuously improving expert on your team, but you need to invest in the infrastructure and process to make it work. Choose wisely!`
         }
       ]
     },
