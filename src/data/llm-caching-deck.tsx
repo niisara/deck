@@ -1050,67 +1050,134 @@ With that deep dive into RAG Answer Cache complete, let's move on to Pattern 5, 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInBottom" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Chunk-Level Cache Flow"
+                          diagram={`flowchart LR
+    A["📄 Document"] --> B["✂️ Chunk"]
+    B --> C{"🔍 Cache?"}
+    C -->|Hit| D["⚡ Return Cached"]
+    C -->|Miss| E["🤖 Process Chunk"]
+    E --> F["🔢 Embed"]
+    F --> G["💾 Store"]
+    G --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Per-chunk embeddings and tokenized text</li>
+                        <li>Reranker features and metadata</li>
+                        <li>Pre-processed document fragments</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Per-chunk embeddings and tokenized text</li>
-                      <li>Reranker features and metadata</li>
-                      <li>Pre-processed document fragments</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>doc_id + chunk_index + chunk_hash</li>
+                        <li>pipeline_version (for compatibility tracking)</li>
+                        <li>Optional embedding model identifier</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>doc_id + chunk_index + chunk_hash</li>
-                      <li>pipeline_version (for compatibility tracking)</li>
-                      <li>Optional embedding model identifier</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Object store (S3/GCS/Azure) for persistence</li>
+                        <li>Metadata DB for quick reference lookup</li>
+                        <li>Redis tier for hot/frequently accessed chunks</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Object store (S3/GCS/Azure) for persistence</li>
-                      <li>Metadata DB for quick reference lookup</li>
-                      <li>Redis tier for hot/frequently accessed chunks</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>No fixed TTL (content-driven expiration)</li>
+                        <li>Invalidate on document update/re-index</li>
+                        <li>Lazy refresh strategy for efficiency</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>No fixed TTL (content-driven expiration)</li>
-                      <li>Invalidate on document update/re-index</li>
-                      <li>Lazy refresh strategy for efficiency</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d616b',
-          notes: ''
+          notes: `### Pattern 5: Chunk-Level Cache
+Here's our fifth caching pattern: **Chunk-Level Cache**. This is a foundational pattern that operates at the document ingestion and processing layer, caching pre-processed document fragments before they even enter your retrieval pipeline.
+
+#### What Gets Cached
+In this pattern, we cache **per-chunk embeddings, tokenized text, reranker features, and metadata**. Think about what happens when you ingest documents into your RAG 👉 'rag' system. You take large documents, split them into chunks, generate embeddings for each chunk, tokenize the text, potentially compute reranker features, and extract metadata. All of this processing is expensive and time-consuming.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📄 Document"] --> B["✂️ Chunk"]
+    B --> C{"🔍 Cache?"}
+    C -->|Hit| D["⚡ Return Cached"]
+    C -->|Miss| E["🤖 Process Chunk"]
+    E --> F["🔢 Embed"]
+    F --> G["💾 Store"]
+    G --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+When a document comes in for processing, we chunk it first, then check the cache for each chunk. If we get a cache hit, we instantly return the pre-processed chunk data without re-running the embedding model or tokenizer. On a miss, we process the chunk, generate the embedding, store everything in the cache, and then return it. This is particularly valuable when you're re-indexing documents or when multiple documents contain overlapping content.
+
+#### The Cache Key Strategy
+The cache key is carefully constructed: \\\`doc_id + chunk_index + chunk_hash + pipeline_version\\\`. Notice what we're tracking here. The **doc_id** identifies the source document. The **chunk_index** tells us which chunk this is within that document. The **chunk_hash** is a content hash of the actual chunk text, so if the content changes, we invalidate automatically. And **pipeline_version** ensures compatibility across processing pipeline updates. When you change your chunking strategy, embedding model, or reranking features, the pipeline version in the key changes, naturally invalidating stale cache entries.
+
+This design is elegant because it handles both **document updates** and **pipeline evolution** automatically. If you update a document, its chunks get different hashes and miss the cache. If you upgrade your processing pipeline, the version bump causes misses. Either way, you reprocess only what's necessary.
+
+#### Storage Architecture
+We use a **multi-tier storage strategy**. The bulk of chunk data lives in **object stores** like **S3 👉 'ess-three', GCS 👉 'gee-see-ess', or Azure Blob Storage 👉 'Azh-ur'** for cost-effective persistence. These stores are cheap at scale but have higher latency, typically tens of milliseconds. Then we maintain a **metadata database** for quick lookups to check if chunks exist and retrieve their storage pointers. Finally, we keep a **Redis 👉 'red-iss' tier** for hot, frequently accessed chunks. This tiered approach balances cost and performance beautifully.
+
+#### Time-to-Live Configuration
+Interestingly, there's **no fixed TTL 👉 'tee-tee-el'** for chunk caches. Instead, we use **content-driven expiration**. Chunks are invalidated when the source document is updated or when you re-index. This is a **lazy refresh strategy**. We don't proactively expire chunks on a timer. Instead, we keep them until there's a semantic reason to invalidate. This maximizes cache efficiency because chunks from stable documents can remain cached indefinitely.
+
+#### When This Pattern Shines
+The **strengths** are substantial. You **dramatically speed up ingestion and retrieval workflows**. If you're ingesting millions of documents, and many of them contain overlapping content, like standard legal disclaimers, common API examples, or repeated documentation sections, you avoid redundant processing. Your ingestion pipeline becomes much faster.
+
+You also enable **reproducible pipeline processing**. Because you're caching intermediate outputs, you can replay your pipeline with consistent results. This is invaluable for debugging, testing, and compliance scenarios where you need to prove exactly what processing was applied to which data.
+
+Finally, you **significantly reduce recomputation costs**. Embedding generation is expensive. If you're using a model like **text-embedding-3-large 👉 'text embedding three large'**, and you're processing terabytes of documents, the compute costs add up fast. Caching at the chunk level cuts those costs dramatically for any documents that share content or get re-processed.
+
+#### The Limitations
+But there are real trade-offs. First, the **storage footprint at scale is substantial**. You're caching not just embeddings but also tokenized text, reranker features, and metadata for every chunk. If you have a hundred million chunks, and each cached chunk is twenty kilobytes on average, that's two terabytes of storage. This is manageable with object stores, which are cheap, but it's not trivial.
+
+Second, you need **complex invalidation logic**. When a document updates, you must identify and invalidate all its cached chunks. When your pipeline version changes, you must handle migration carefully to avoid serving results from mixed pipeline versions. This requires sophisticated cache management code and operational discipline.
+
+Third, you face **multi-version coexistence challenges**. During pipeline upgrades, you might have some chunks cached from the old pipeline and some from the new pipeline. Your system needs to handle this gracefully, either by versioning everything carefully or by forcing a full re-index when pipelines change. Both approaches have costs.
+
+Let's examine these trade-offs more closely on the next slide.`
         },
         {
           id: 12,
@@ -1118,34 +1185,89 @@ With that deep dive into RAG Answer Cache complete, let's move on to Pattern 5, 
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Speeds up ingestion and retrieval workflows</li>
+                      <li>Enables reproducible pipeline processing</li>
+                      <li>Significantly reduces recomputation costs</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Speeds up ingestion and retrieval workflows</li>
-                    <li>Enables reproducible pipeline processing</li>
-                    <li>Significantly reduces recomputation costs</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Substantial storage footprint at scale</li>
+                      <li>Complex invalidation logic required</li>
+                      <li>Multi-version coexistence challenges</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Substantial storage footprint at scale</li>
-                    <li>Complex invalidation logic required</li>
-                    <li>Multi-version coexistence challenges</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d616b',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's dive deeper into the Chunk-Level Cache to understand where it delivers exceptional value and where you need to be mindful of the complexities.
+
+#### The Performance Benefits
+On the **strengths** side, this pattern offers compelling efficiency gains at the ingestion layer. The first major benefit is **dramatically faster ingestion and retrieval workflows**. Let me give you concrete numbers. Imagine you're ingesting a large corpus of technical documentation where many documents share common sections, like API reference pages that all include the same authentication examples, or legal documents with standard disclaimers.
+
+Without chunk-level caching, every document gets processed independently. You chunk it, embed every chunk, tokenize, compute reranker features—all redundant work for shared content. With chunk-level caching, the first time you process a chunk, you pay the full cost. But every subsequent occurrence of that same content, whether in the same document or across different documents, is a cache hit. You've eliminated ninety-five percent of the processing time and cost for overlapping content.
+
+In practice, if you're ingesting a hundred thousand documents and twenty percent of the content is shared or repeated, chunk-level caching can reduce your total ingestion time from maybe ten hours down to three hours. The savings compound as your corpus grows.
+
+#### Pipeline Reproducibility
+The second strength is **enabling reproducible pipeline processing**. This is subtle but incredibly valuable, especially in regulated industries or research contexts. Because you're caching intermediate processing outputs with version tags, you can deterministically reproduce exactly what processing was applied to any piece of content. Need to debug why a particular query isn't retrieving the right documents? You can trace back to the exact cached chunk embeddings and metadata that were used. Need to prove compliance with data processing regulations? You have an audit trail of what was cached and when.
+
+This reproducibility also simplifies testing. When you're developing new features or fixing bugs in your retrieval pipeline, you can work with cached chunks and get consistent results. You're not fighting non-deterministic behavior from re-running embeddings or tokenization with slightly different parameters.
+
+#### The Economics of Recomputation
+The third strength is **significantly reducing recomputation costs**. Embedding generation is one of the most expensive operations in RAG 👉 'rag' systems. A model like **text-embedding-3-large 👉 'text embedding three large'** processes text at a certain cost per token. If you're ingesting terabytes of documents, the cumulative compute cost can be enormous. But with chunk-level caching, you only pay that cost once per unique chunk. Re-indexing your corpus for other reasons, like updating your vector database or changing search parameters, doesn't require re-embedding. You just pull from the cache.
+
+Let's do the math. Suppose embedding a million chunks costs you five hundred dollars in compute time. Without caching, if you re-index three times during development and testing, that's fifteen hundred dollars. With chunk-level caching, you pay five hundred dollars once, and subsequent re-indexes are nearly free from an embedding standpoint. The ROI is clear.
+
+#### The Storage Reality Check
+Now for the **limitations**, and these are significant at scale. First, the **storage footprint is substantial**. You're caching embeddings, tokenized text, reranker features, and metadata for every chunk. Let's break down the math. A typical chunk might have a three-thousand-dimensional embedding, which is twelve kilobytes. Tokenized text might add another two kilobytes. Reranker features and metadata add maybe three more kilobytes. That's roughly twenty kilobytes per cached chunk.
+
+If you're working with a hundred million chunks, that's two terabytes of cached data. Now, object stores like **S3 👉 'ess-three'** are cheap, roughly twenty-three dollars per terabyte per month. So two terabytes costs you about forty-six dollars per month for storage alone. That's very manageable. But if you want high-performance access, and you're keeping hot chunks in **Redis 👉 'red-iss'**, memory costs are much higher, maybe five hundred dollars per terabyte per month. You need to carefully tier your storage, keeping only truly hot data in memory and everything else in object stores.
+
+#### The Invalidation Complexity
+The second limitation is **complex invalidation logic**. This is where operational complexity creeps in. When a document is updated, you need to identify and invalidate all cached chunks from that document. This requires maintaining a **reverse index** mapping document IDs to chunk cache keys. It's doable, but it's not trivial. Your cache management layer needs to be sophisticated.
+
+You also need to handle partial updates carefully. If only one paragraph in a large document changes, ideally you'd invalidate only the affected chunks, not the entire document's cache. This requires content hashing at the chunk level, which we include in our cache key, but it also requires careful tracking of chunk boundaries. If your chunking strategy changes slightly, you might miss some invalidations.
+
+And then there's the question of **cascade invalidation**. If chunk A was used to generate a cached retrieval result B, and A gets invalidated, should B also be invalidated? The answer depends on your freshness requirements and system architecture. Some teams implement this cascade logic, but it adds significant complexity.
+
+#### Multi-Version Coexistence
+The third limitation is **multi-version coexistence challenges**. Here's the scenario: you decide to upgrade your embedding model from version one to version two. Or you change your chunking strategy from five-hundred-token chunks to three-hundred-token chunks. What happens to your existing cache?
+
+If you version-bump your pipeline_version in the cache key, all existing cached chunks become stale, and you effectively have an empty cache until you re-process your corpus. This means you lose all caching benefits during the transition period, which could be days or weeks for large corpora. Your ingestion slows down dramatically, and costs spike.
+
+Alternatively, you could try to maintain **multiple pipeline versions in parallel**, allowing the old cached chunks to coexist with new ones. But this is operationally complex. Your code needs to handle both versions, you need to track which version applies to which chunks, and you risk subtle bugs where mixed versions produce inconsistent results.
+
+#### Practical Implementation Patterns
+Successful deployments often use **smart tiering and pre-warming**. You identify your most frequently accessed documents, pre-compute their chunks, and warm the cache proactively during off-peak hours. This ensures high cache hit rates even after pipeline upgrades.
+
+You also implement **background cache refresh jobs** that gradually update cached chunks from old pipeline versions to new ones without blocking the main ingestion workflow. This amortizes the transition cost over time.
+
+Some teams also use **chunk fingerprinting** based on semantic content rather than exact text, so that minor formatting changes to documents don't invalidate chunks unnecessarily. This increases cache hit rates but requires more sophisticated hashing logic.
+
+#### When to Use This Pattern
+This pattern is most valuable in **large-scale knowledge bases with significant content overlap**, like technical documentation, legal repositories, or academic paper collections. It's also ideal when you **frequently re-index or update your corpus** and want to avoid paying the full reprocessing cost every time.
+
+It's less valuable in **small corpora or highly unique content** where there's minimal chunk repetition. In those cases, the caching overhead might exceed the benefits. And it's challenging in **rapidly evolving systems** where your processing pipeline changes frequently, because the invalidation and migration complexity can overwhelm your team.
+
+> Ask the audience: "How many of you are processing documents with overlapping content, like API documentation or legal boilerplate?"
+
+With that deep understanding of Chunk-Level Cache, let's move on to Pattern 6, which shifts our focus to the personalization layer and conversation continuity.`
         }
       ]
     },
