@@ -1,6 +1,6 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
-import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { GSAPAnimated } from '../components/GSAPAnimated';
 import { MermaidPopover } from '../components/MermaidPopover';
 
 export const queryRewritingDeck: Deck = {
