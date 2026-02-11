@@ -1800,22 +1800,50 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures whether answer cites retrieved facts correctly (especially in citation-enabled RAG systems that provide sources for their claims).</p>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <p>Measures whether answer cites retrieved facts correctly (especially in citation-enabled RAG systems that provide sources for their claims).</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Encourages precise evidence use with traceable citations</li>
-                <li>Improves user trust by making information verifiable</li>
-                <li>Enables better debugging of hallucination sources</li>
-                <li>Supports regulatory compliance with evidence requirements</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Encourages precise evidence use with traceable citations</li>
+                  <li>Improves user trust by making information verifiable</li>
+                  <li>Enables better debugging of hallucination sources</li>
+                  <li>Supports regulatory compliance with evidence requirements</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>For systems that expose citations or links to sources, legal, medical, or financial applications requiring auditability, compliance-focused applications that need traceable evidence, and when building user interfaces that highlight source evidence.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.7}>
+                <p>For systems that expose citations or links to sources, legal, medical, or financial applications requiring auditability, compliance-focused applications that need traceable evidence, and when building user interfaces that highlight source evidence.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6f1f32',
-          notes: ''
+          notes: `### 7. Grounded Answer Score — Overview
+Welcome to metric number seven! We're shifting our focus to something that's becoming increasingly important in modern RAG systems: the Grounded Answer Score.
+
+#### What Is Grounded Answer Score?
+This metric, which we pronounce as 👉 "G-A-S" or simply "grounded score," measures whether your RAG system's answers cite retrieved facts correctly. Think of it like checking if a research paper properly references its sources. The key difference from faithfulness? This specifically focuses on citation accuracy in systems that provide source attribution. If your system says "According to document X," this metric checks if document X actually says what the system claims it does.
+
+#### Why This Matters More Than Ever
+The benefits here are tremendous for building trustworthy systems. First, it encourages precise evidence use with traceable citations—your system learns to point to specific evidence rather than making vague references. Second, it dramatically improves user trust because people can verify the information themselves by checking the sources. Third, it enables better debugging of hallucination sources—when something goes wrong, you can trace exactly where the system got its information. Finally, it supports regulatory compliance with evidence requirements, which is crucial in industries like healthcare, legal, and finance where auditability isn't optional.
+
+#### When to Use This
+You'll want to implement Grounded Answer Score for systems that expose citations or links to sources—basically any RAG system with a footnote or reference feature. It's essential for legal, medical, or financial applications requiring auditability where someone might need to verify every claim. Compliance-focused applications that need traceable evidence should make this a priority metric. And definitely use it when building user interfaces that highlight source evidence—those little citation numbers or reference links that users can click.
+
+#### Pros
+The good stuff: this metric directly addresses the trust gap in AI systems by making claims verifiable, it helps you catch attribution errors before users do, and it provides clear debugging paths when hallucinations occur because you can see exactly which citation was wrong.
+
+#### Cons
+The problems: this metric only works for systems that actually generate citations, so it's not universal. It requires more complex evaluation infrastructure than simpler metrics like faithfulness. Citation formats and granularity can vary widely across systems, making standardized evaluation tricky. And it may penalize citations to partially supporting evidence even when the partial support is reasonable.
+
+Let's dive into how this metric actually works in practice.`
         },
         {
           id: 28,
@@ -1823,25 +1851,76 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Grounded Answer Score evaluates whether claims in the answer correctly cite the supporting evidence from retrieved context. It combines factual accuracy with citation accuracy.</p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Grounded Answer Score evaluates whether claims in the answer correctly cite the supporting evidence from retrieved context. It combines factual accuracy with citation accuracy.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`GAS = (# claims with correct citation-supported spans) / (# total claims)`}
-              </pre>
-              <p>Process: Identify each claim in the generated answer. For each claim with a citation, verify the cited span supports the claim. Count correctly supported claims and divide by total claims.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.3}>
+                <h3>Formula
+                  <MermaidPopover
+                    title="Citation Verification Process"
+                    diagram={`graph TD
+    A[Generated Answer] --> B[Extract Claims]
+    B --> C[Identify Citations]
+    C --> D{For Each Citation}
+    D --> E[Retrieve Cited Source]
+    E --> F[Verify Claim Support]
+    F --> G{Supported?}
+    G -->|Yes| H[Count as Correct]
+    G -->|No| I[Count as Incorrect]
+    H --> J[Calculate Score]
+    I --> J
+    J --> K[GAS = Correct / Total]
+    
+    style A fill:#e3f2fd
+    style K fill:#c8e6c9`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.4}>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`GAS = (# claims with correct citation-supported spans) / (# total claims)`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <p>Process: Identify each claim in the generated answer. For each claim with a citation, verify the cited span supports the claim. Count correctly supported claims and divide by total claims.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.90 for general applications</li>
-                <li>≥0.95 for strict domains (legal, medical, financial)</li>
-                <li>Lower scores indicate inaccurate citation or attribution issues</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.7}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>≥0.90 for general applications</li>
+                  <li>≥0.95 for strict domains (legal, medical, financial)</li>
+                  <li>Lower scores indicate inaccurate citation or attribution issues</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6f1f32',
-          notes: ''
+          notes: `### 7. Grounded Answer Score — How It Works
+Now let's break down the mechanics of how Grounded Answer Score actually evaluates your citations.
+
+#### The Core Concept
+Grounded Answer Score evaluates whether claims in the answer correctly cite the supporting evidence from retrieved context. It's a two-part check: first, is the claim factually accurate? Second, does the citation actually point to evidence that supports this claim? Think of it as having a fact-checker who not only verifies the claim but also checks if the footnote reference is correct.
+
+#### The Formula Explained
+The formula is beautifully simple: GAS equals the number of claims with correct citation-supported spans divided by the total number of claims. So if you have ten claims in your answer, and nine of them have citations that actually support what they're claiming, you get a score of 0.90. The key word here is "supported"—the cited source must genuinely back up the claim being made.
+
+#### The Step-by-Step Process
+Here's how it works in practice: First, identify each claim in the generated answer—break it down into individual factual statements. Second, for each claim with a citation, verify that the cited span actually supports the claim. This means going back to the original source and checking if it says what the answer claims it says. Third, count the correctly supported claims and divide by total claims. This gives you a ratio that reflects citation accuracy.
+
+#### What Score Should You Target?
+For general applications, aim for at least 0.90 or 90% accuracy. That means nine out of ten citations should be correct. For strict domains like legal, medical, or financial applications, bump that up to 0.95 or 95%. In these high-stakes fields, even a 5% citation error rate can have serious consequences. Lower scores are a red flag indicating inaccurate citation or attribution issues that need debugging.
+
+#### When to Use This
+This metric shines when you're dealing with citation-heavy systems, especially in domains where users need to verify claims or where regulatory compliance requires traceable evidence. It's your quality control checkpoint for ensuring that those little superscript numbers or reference links actually point to legitimate supporting evidence.
+
+Let's look at a concrete example to make this crystal clear.`
         },
         {
           id: 29,
@@ -1849,20 +1928,53 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Answer:</strong> "The medication has three primary side effects[1]. It may cause drowsiness[2], headaches[3], and in rare cases, dizziness[4]."</p>
-              <ul style={{ marginTop: '14px' }}>
-                <li>10 total claims in the answer</li>
-                <li>9 claims correctly cited (1 citation doesn't support its claim)</li>
-              </ul>
-              <p><strong>GAS = 9/10 = 0.90</strong></p>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3>Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <p><strong>Answer:</strong> "The medication has three primary side effects[1]. It may cause drowsiness[2], headaches[3], and in rare cases, dizziness[4]."</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>10 total claims in the answer</li>
+                  <li>9 claims correctly cited (1 citation doesn't support its claim)</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={0.6}>
+                <p><strong>GAS = 9/10 = 0.90</strong></p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Extract all claims from the answer along with their citations. For each cited claim, verify that the referenced source actually supports it. Count the correctly cited claims and divide by total claims. This requires both extraction and verification steps.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.7}>
+                <h3>How to Calculate</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p>Extract all claims from the answer along with their citations. For each cited claim, verify that the referenced source actually supports it. Count the correctly cited claims and divide by total claims. This requires both extraction and verification steps.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6f1f32',
-          notes: ''
+          notes: `### 7. Grounded Answer Score — Implementation
+Let's walk through a real-world example to see how Grounded Answer Score calculation works in practice.
+
+#### The Example Scenario
+Imagine a medical RAG system responding to a question about medication side effects. The answer says: "The medication has three primary side effects[1]. It may cause drowsiness[2], headaches[3], and in rare cases, dizziness[4]." Notice those bracketed numbers? Those are citations pointing to specific sources in the retrieved context.
+
+#### Breaking Down the Claims
+When we analyze this answer, we find 10 total claims. These include the statement about three primary side effects, the claim about drowsiness, the claim about headaches, the claim about dizziness, and several other implicit claims like the frequency indicated by "in rare cases." Each of these is a verifiable statement that should be backed by the cited source.
+
+#### The Verification Process
+Here's where it gets interesting: when we check each citation against the original sources, we discover that 9 out of 10 claims are correctly cited. One citation doesn't actually support its claim—maybe citation [4] points to a source that mentions dizziness but doesn't specify it's rare, or perhaps it doesn't mention dizziness at all. This kind of citation mismatch is exactly what Grounded Answer Score is designed to catch.
+
+#### The Math
+The calculation is straightforward: GAS equals 9 divided by 10, giving us 0.90 or 90%. This meets our threshold for general applications but would fall short for high-stakes medical applications where we'd want at least 0.95. In a real deployment, you'd need to debug that one incorrect citation to improve the score.
+
+#### How to Calculate This Yourself
+First, extract all claims from the answer along with their citations. Use an 👉 "LLM" or natural language processing tool to break the answer into atomic claims. Second, for each cited claim, verify that the referenced source actually supports it—this requires looking up each citation and checking if the content matches. Third, count the correctly cited claims and divide by total claims. This requires both extraction and verification steps, which is why automated tools like RAGAS or custom evaluation pipelines are often used.
+
+#### Real-World Considerations
+In practice, this calculation can be nuanced. What counts as "supported" versus "partially supported"? What if a source implies something without stating it directly? These judgment calls are why clear evaluation criteria and consistent scoring rubrics are essential.
+
+Now let's discuss the broader implications and limitations of this metric.`
         },
         {
           id: 30,
@@ -1870,26 +1982,71 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Encourages precise evidence use with traceable citations</li>
-                <li>Improves user trust by making information verifiable</li>
-                <li>Enables better debugging of hallucination sources</li>
-                <li>Supports regulatory compliance with evidence requirements</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.2}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Encourages precise evidence use with traceable citations</li>
+                  <li>Improves user trust by making information verifiable</li>
+                  <li>Enables better debugging of hallucination sources</li>
+                  <li>Supports regulatory compliance with evidence requirements</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Only applicable to systems that generate citations</li>
-                <li>Requires more complex evaluation infrastructure</li>
-                <li>Citation format and granularity can vary widely</li>
-                <li>May penalize citations to partially supporting evidence</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations
+                  <MermaidPopover
+                    title="Impact Flow"
+                    diagram={`graph LR
+    A[Grounded Answer Score] --> B[Better Citations]
+    B --> C[Increased Trust]
+    C --> D[User Verification]
+    
+    A --> E[Attribution Errors]
+    E --> F[Easier Debugging]
+    F --> G[Quality Improvement]
+    
+    A --> H[Compliance]
+    H --> I[Audit Trails]
+    
+    style A fill:#c8e6c9
+    style C fill:#e3f2fd
+    style I fill:#fff9c4`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Only applicable to systems that generate citations</li>
+                  <li>Requires more complex evaluation infrastructure</li>
+                  <li>Citation format and granularity can vary widely</li>
+                  <li>May penalize citations to partially supporting evidence</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6f1f32',
-          notes: ''
-        }
+          notes: `### 7. Grounded Answer Score — Considerations
+Let's wrap up Grounded Answer Score by examining its impact on RAG systems and the limitations you need to keep in mind.
+
+#### Positive Impact on RAG Systems
+The benefits of tracking Grounded Answer Score are substantial. First, it encourages precise evidence use with traceable citations—your system learns that every claim needs a specific, verifiable source rather than vague references. This creates a culture of precision in your RAG system's outputs. Second, it improves user trust by making information verifiable. When users can click a citation and see the original source, their confidence in your system skyrockets. Third, it enables better debugging of hallucination sources. When something goes wrong, you can trace exactly which citation was incorrect and why. Finally, it supports regulatory compliance with evidence requirements, which is non-negotiable in fields like healthcare, legal, and finance where auditability is mandated.
+
+#### Real-World Benefits
+Think about a medical diagnosis assistant that cites research papers for each recommendation, or a legal research tool that references specific case law and statutes. Grounded Answer Score ensures these citations are accurate, which protects both users and the organization deploying the system from misinformation and legal liability.
+
+#### Limitations to Consider
+However, this metric isn't perfect. First major limitation: it's only applicable to systems that generate citations. If your RAG system doesn't produce footnotes or source references, this metric doesn't apply at all—you'd use faithfulness score instead. Second, it requires more complex evaluation infrastructure. You need systems that can parse citations, retrieve the cited sources, and verify claim support, which is more sophisticated than simpler metrics. Third, citation format and granularity can vary widely. One system might cite entire documents while another cites specific paragraphs or sentences, making standardized evaluation challenging. Finally, it may penalize citations to partially supporting evidence. Sometimes a source provides partial support for a claim, and it's debatable whether that should count as correct or incorrect.
+
+#### The Balanced Perspective
+Despite these limitations, Grounded Answer Score is invaluable for citation-enabled RAG systems. The key is using it alongside other metrics like faithfulness and relevance to get a complete picture of system quality. A system with perfect grounded scores but terrible relevance is still useless to users.
+
+#### Moving Forward
+As you implement this metric, start with clear guidelines about what constitutes adequate support, establish consistent citation formats, and use automated tools to scale the evaluation. Remember that the goal isn't just high scores—it's building systems that users can trust and verify.
+
+Next up, we'll explore Faithfulness Score, which focuses on factual consistency without requiring explicit citations.`
+        },
       ]
     },
     {
@@ -1902,22 +2059,53 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Checks whether claims in the generated answer are fully supported by the retrieved context, ensuring factual consistency between response and evidence.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Checks whether claims in the generated answer are fully supported by the retrieved context, ensuring factual consistency between response and evidence.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Higher faithfulness directly reduces hallucinations</li>
-                <li>Improves factual accuracy and system trustworthiness</li>
-                <li>Essential for detecting prompt/context misalignments</li>
-                <li>Foundation for implementing safety guardrails</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Higher faithfulness directly reduces hallucinations</li>
+                  <li>Improves factual accuracy and system trustworthiness</li>
+                  <li>Essential for detecting prompt/context misalignments</li>
+                  <li>Foundation for implementing safety guardrails</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>Core hallucination control metric for all RAG systems, pre-deployment quality assurance checks, continuous monitoring in production, and when legal or compliance risks exist from incorrect information.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.7}>
+                <p>Core hallucination control metric for all RAG systems, pre-deployment quality assurance checks, continuous monitoring in production, and when legal or compliance risks exist from incorrect information.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1f6f',
-          notes: ''
+          notes: `### 8. Faithfulness Score — Overview
+Welcome to metric number eight: Faithfulness Score. This is arguably one of the most critical metrics in RAG evaluation because it directly addresses the hallucination problem.
+
+#### What Is Faithfulness Score?
+Faithfulness Score, sometimes called 👉 "groundedness" or "context faithfulness," checks whether claims in the generated answer are fully supported by the retrieved context. It ensures factual consistency between the response your system generates and the evidence it retrieved. Think of it as a fact-checker that asks: "Can every statement in this answer be verified against the documents we retrieved?"
+
+#### The Core Purpose
+The key difference from Grounded Answer Score? Faithfulness doesn't require explicit citations—it just checks if the content could have come from the retrieved documents. This makes it applicable to all RAG systems, not just those with citation features. It's your first line of defense against hallucinations.
+
+#### The Powerful Benefits
+The benefits here are game-changing. First, higher faithfulness directly reduces hallucinations. There's a direct inverse relationship: as faithfulness goes up, hallucinations go down. Second, it improves factual accuracy and system trustworthiness. Users get answers they can rely on because every claim is grounded in retrieved evidence. Third, it's essential for detecting prompt or context misalignments. If faithfulness suddenly drops, it might mean your retrieval system is pulling irrelevant documents or your prompt is encouraging the model to speculate. Finally, it's the foundation for implementing safety guardrails. You can reject or flag answers with low faithfulness scores before they reach users.
+
+#### When to Use This
+This is your core hallucination control metric for all RAG systems—no exceptions. Every RAG system should track faithfulness. Use it in pre-deployment quality assurance checks to ensure your system meets accuracy standards before launch. Implement continuous monitoring in production to catch drift or degradation. And definitely prioritize it when legal or compliance risks exist from incorrect information, such as in healthcare, legal, or financial applications where mistakes can have serious consequences.
+
+#### Pros
+The good stuff: this metric is universally applicable to all RAG systems, it directly measures the most critical quality factor—hallucination rate—and it provides clear actionable insights for improving context quality and prompt engineering.
+
+#### Cons
+The problems: claim extraction quality varies across evaluation methods, which can lead to inconsistent scores. It may penalize valid reasoning or inference from context, even when that inference is logical and helpful. The retrieved context may not contain all necessary background information, which isn't really the answer's fault. And evaluation can be computationally expensive at scale, especially when using LLM-as-judge approaches.
+
+Let's dive into the mechanics of how this crucial metric works.`
         },
         {
           id: 32,
@@ -1925,25 +2113,80 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Faithfulness Score measures what proportion of claims in the answer can be verified against the retrieved context. It's the complement of hallucination rate.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <p>Faithfulness Score measures what proportion of claims in the answer can be verified against the retrieved context. It's the complement of hallucination rate.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Faithfulness = (# supported claims) / (# total claims)`}
-              </pre>
-              <p>Implementation: Extract individual claims from the generated answer. Check each claim against retrieved context. Frameworks like RAGAS or HHEM-2.1-Open automate this.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <h3>Formula
+                  <MermaidPopover
+                    title="Faithfulness Evaluation Process"
+                    diagram={`graph TD
+    A[Generated Answer] --> B[Extract Claims]
+    B --> C{For Each Claim}
+    C --> D[Search Retrieved Context]
+    D --> E{Claim Supported?}
+    E -->|Yes| F[Mark as Faithful]
+    E -->|No| G[Mark as Hallucination]
+    F --> H[Count Supported]
+    G --> H
+    H --> I[Faithfulness = Supported / Total]
+    
+    J[Retrieved Context] --> D
+    
+    style A fill:#e3f2fd
+    style I fill:#c8e6c9
+    style G fill:#ffcdd2`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`Faithfulness = (# supported claims) / (# total claims)`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <p>Implementation: Extract individual claims from the generated answer. Check each claim against retrieved context. Frameworks like RAGAS or HHEM-2.1-Open automate this.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.80 for general-purpose RAG applications</li>
-                <li>≥0.90 for high-stakes domains (medical, legal, finance)</li>
-                <li>Consider sampling confidence intervals when evaluating</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.6}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.7}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>≥0.80 for general-purpose RAG applications</li>
+                  <li>≥0.90 for high-stakes domains (medical, legal, finance)</li>
+                  <li>Consider sampling confidence intervals when evaluating</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4c1f6f',
-          notes: ''
+          notes: `### 8. Faithfulness Score — How It Works
+Let's break down the mechanics of Faithfulness Score and understand how it measures factual consistency.
+
+#### The Core Mechanism
+Faithfulness Score measures what proportion of claims in the answer can be verified against the retrieved context. Here's the key insight: it's the complement of hallucination rate. If your faithfulness is 0.80 or 80%, that means your hallucination rate is 0.20 or 20%. Every claim that isn't supported by the context is considered a potential hallucination.
+
+#### The Simple Formula
+The formula is elegantly simple: Faithfulness equals the number of supported claims divided by the total number of claims. So if your answer contains 10 claims and 8 of them can be verified in the retrieved context, your faithfulness score is 0.80. It's a straightforward ratio that tells you exactly what percentage of your answer is grounded in evidence.
+
+#### The Implementation Process
+Here's how it works in practice: First, extract individual claims from the generated answer. This involves breaking down the answer into atomic statements that can be independently verified. For example, "The product costs $199 and ships in 2 days" becomes two claims: one about price, one about shipping time. Second, check each claim against the retrieved context. Look through your retrieved documents to see if the claim is stated or can be reasonably inferred. Third, count up the supported claims and calculate the ratio. Modern frameworks like 👉 "RAGAS" or 👉 "HHEM-2.1-Open" (that's H-H-E-M two-point-one Open) automate this entire process, using language models to perform the claim extraction and verification.
+
+#### Target Scores to Aim For
+For general-purpose RAG applications, aim for at least 0.80 or 80% faithfulness. This means that 4 out of 5 claims should be verifiable in your retrieved context. For high-stakes domains like medical, legal, or finance, bump that target up to 0.90 or 90%. In these fields, a 10% hallucination rate is already quite risky. Also, consider sampling confidence intervals when evaluating—don't just look at the average score across your test set. Check the distribution and identify outlier queries where faithfulness drops dramatically.
+
+#### The Relationship to Other Metrics
+Faithfulness is closely related to other metrics but distinct. Unlike Grounded Answer Score, it doesn't require explicit citations. Unlike Answer Relevance, it doesn't care if the answer addresses the query—only if it's factually grounded. Unlike Context Precision, it evaluates the answer, not the retrieved context. Think of faithfulness as your hallucination detector—it's the metric that keeps your RAG system honest.
+
+#### Automated Evaluation Tools
+The beauty of modern frameworks like RAGAS is that they can evaluate faithfulness at scale without human annotation. They use language models to extract claims and verify them against context, making it practical to monitor thousands of interactions. However, these tools aren't perfect, which is why validation with human evaluation is still recommended for critical applications.
+
+Let's see a concrete example to solidify this understanding.`
         },
         {
           id: 33,
@@ -1951,19 +2194,59 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Context:</strong> "Our return policy allows returns within 30 days with receipt. Damaged items cannot be returned."</p>
-              <p><strong>Answer:</strong> "You can return items within 30 days if you have the receipt. Damaged items aren't eligible. All returns receive store credit."</p>
-              <p>Claims: 3 total (30-day policy, receipt required, store credit)</p>
-              <p>Supported claims: 2 (last claim not supported)</p>
-              <p><strong>Faithfulness = 2/3 = 0.67</strong></p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p><strong>Context:</strong> "Our return policy allows returns within 30 days with receipt. Damaged items cannot be returned."</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p><strong>Answer:</strong> "You can return items within 30 days if you have the receipt. Damaged items aren't eligible. All returns receive store credit."</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.4}>
+                <p>Claims: 3 total (30-day policy, receipt required, store credit)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <p>Supported claims: 2 (last claim not supported)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={0.6}>
+                <p><strong>Faithfulness = 2/3 = 0.67</strong></p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Break the answer into atomic claims. For each claim, check if it can be verified from the retrieved context. Count supported claims and divide by total claims. Use tools like RAGAS or HHEM-2.1-Open for automation.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.7}>
+                <h3>How to Calculate</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p>Break the answer into atomic claims. For each claim, check if it can be verified from the retrieved context. Count supported claims and divide by total claims. Use tools like RAGAS or HHEM-2.1-Open for automation.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1f6f',
-          notes: ''
+          notes: `### 8. Faithfulness Score — Implementation
+Let's walk through a detailed example to see how faithfulness calculation works in real-world scenarios.
+
+#### The Setup
+Imagine a customer service RAG system answering a question about return policies. The retrieved context says: "Our return policy allows returns within 30 days with receipt. Damaged items cannot be returned." That's the evidence your RAG system has to work with. Now the system generates this answer: "You can return items within 30 days if you have the receipt. Damaged items aren't eligible. All returns receive store credit."
+
+#### Breaking Down the Claims
+Let's decompose this answer into atomic claims—individual statements that can be verified independently. We have three claims here: First, the 30-day return window. Second, the receipt requirement. Third, the statement about store credit. Each of these is a factual claim that should be verifiable against the retrieved context.
+
+#### Verifying Against Context
+Now we check each claim against our retrieved context. The first claim about 30 days with receipt? Directly supported by the context—it explicitly states "returns within 30 days with receipt." The second claim about damaged items not being eligible? Also directly supported—the context says "Damaged items cannot be returned." The third claim about store credit? Here's the problem: the retrieved context says nothing about store credit. This is a hallucination—the system made up information that isn't in the evidence.
+
+#### The Calculation
+So we have 3 total claims in the answer, but only 2 are supported by the retrieved context. The faithfulness score is 2 divided by 3, which equals 0.67 or 67%. This is below our target threshold of 0.80 for general applications, indicating a quality problem that needs addressing.
+
+#### What This Score Tells Us
+A score of 0.67 means that one-third of the answer is unsupported hallucination. In this case, telling customers they'll receive store credit when the policy might actually be different could create customer service issues and damage trust. This is exactly the kind of problem faithfulness scoring helps you catch before it reaches users.
+
+#### How to Calculate This in Practice
+First, break the answer into atomic claims. You can do this manually for small test sets or use an LLM to extract claims automatically. Second, for each claim, check if it can be verified from the retrieved context. This requires carefully reading the context and determining if the claim is stated, implied, or completely absent. Third, count the supported claims and divide by total claims. For automation at scale, use tools like RAGAS or HHEM-2.1-Open which handle both claim extraction and verification using language models.
+
+#### Debugging Low Scores
+When you see low faithfulness scores, investigate the root cause. Is your retrieval system pulling irrelevant documents? Is your prompt encouraging speculation? Is your generation model too creative? Each of these requires different fixes. In this example, the model might need better instructions to stick to the facts provided or better prompting to say "I don't have information about refund methods" instead of making something up.
+
+Now let's explore the broader implications and trade-offs of this metric.`
         },
         {
           id: 34,
@@ -1971,26 +2254,78 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Higher faithfulness directly reduces hallucinations</li>
-                <li>Improves factual accuracy and system trustworthiness</li>
-                <li>Essential for detecting prompt/context misalignments</li>
-                <li>Foundation for implementing safety guardrails</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.2}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Higher faithfulness directly reduces hallucinations</li>
+                  <li>Improves factual accuracy and system trustworthiness</li>
+                  <li>Essential for detecting prompt/context misalignments</li>
+                  <li>Foundation for implementing safety guardrails</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Claim extraction quality varies across evaluation methods</li>
-                <li>May penalize valid reasoning or inference from context</li>
-                <li>Context may not contain all necessary background information</li>
-                <li>Evaluation can be computationally expensive at scale</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations
+                  <MermaidPopover
+                    title="Trade-offs & Considerations"
+                    diagram={`graph TD
+    A[Faithfulness Score] --> B[Benefits]
+    A --> C[Limitations]
+    
+    B --> D[Reduces Hallucinations]
+    B --> E[Improves Trust]
+    B --> F[Enables Guardrails]
+    
+    C --> G[Claim Extraction Varies]
+    C --> H[May Penalize Inference]
+    C --> I[Computational Cost]
+    C --> J[Context Completeness]
+    
+    style A fill:#e1bee7
+    style B fill:#c8e6c9
+    style C fill:#ffcdd2`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Claim extraction quality varies across evaluation methods</li>
+                  <li>May penalize valid reasoning or inference from context</li>
+                  <li>Context may not contain all necessary background information</li>
+                  <li>Evaluation can be computationally expensive at scale</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4c1f6f',
-          notes: ''
-        }
+          notes: `### 8. Faithfulness Score — Considerations
+Let's conclude our discussion of Faithfulness Score by examining its impact on RAG systems and the important limitations to keep in mind.
+
+#### The Powerful Impact on RAG Quality
+The positive impacts of tracking faithfulness are profound. First and most importantly, higher faithfulness directly reduces hallucinations. This is a direct, measurable relationship. As you improve faithfulness from 0.70 to 0.90, you're cutting hallucinations by two-thirds. Second, it improves factual accuracy and system trustworthiness. Users quickly learn whether they can rely on your system, and high faithfulness builds that confidence. Third, it's essential for detecting prompt or context misalignments. If faithfulness suddenly drops, it's often a signal that something in your pipeline broke—maybe retrieval quality degraded, or a prompt change encouraged more speculation. Finally, faithfulness is the foundation for implementing safety guardrails. You can automatically reject or flag low-faithfulness answers before they reach users, creating a quality control checkpoint.
+
+#### Real-World Applications
+Think about a medical information system where a faithfulness score below 0.95 triggers human review, or a financial advisor bot that refuses to answer when faithfulness drops below 0.90. These guardrails prevent potentially harmful misinformation from reaching users.
+
+#### Critical Limitations to Understand
+However, faithfulness scoring has important limitations. First, claim extraction quality varies across evaluation methods. Different tools might break answers into claims differently, leading to inconsistent scores. A claim extraction system that's too granular might inflate scores, while one that's too coarse might deflate them. Second, faithfulness may penalize valid reasoning or inference from context. If your RAG system makes a logical inference that isn't explicitly stated but is clearly implied by the context, faithfulness scoring might incorrectly flag it as a hallucination. For example, if the context says "The store opens at 9 AM and closes at 5 PM," and your answer says "The store is open 8 hours daily," that inference might be marked unsupported even though it's perfectly valid.
+
+#### Context Completeness Issues
+Third, the retrieved context may not contain all necessary background information. Sometimes answers need common knowledge or general background that isn't in the retrieved documents. For instance, if the context mentions "CPU" and the answer explains it as "Central Processing Unit," that expansion might be marked unfaithful even though it's helpful and correct. This is where faithfulness needs to be balanced with other quality criteria.
+
+#### Computational Costs
+Fourth, evaluation can be computationally expensive at scale. Using LLM-as-judge approaches to extract claims and verify them requires multiple API calls per answer, which adds up quickly when evaluating thousands of interactions. This is why sampling strategies and efficient evaluation frameworks are important for production monitoring.
+
+#### The Balancing Act
+The key is understanding that faithfulness is one critical dimension of quality, but not the only one. A system with perfect faithfulness but poor relevance is useless. A system with perfect faithfulness but terrible completeness frustrates users. You need to track faithfulness alongside other metrics like answer relevance, context precision, and answer completeness to get a holistic view of system quality.
+
+#### Best Practices
+Use faithfulness as your primary hallucination prevention metric. Set appropriate thresholds based on your domain's risk level. Monitor trends over time to catch degradation. And always investigate the root causes of low scores rather than just trying to game the metric.
+
+Next, we'll explore Answer Completeness, which addresses whether responses fully answer multi-part questions.`
+        },
       ]
     },
     {
@@ -2003,22 +2338,53 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures whether the answer addresses all required parts of the query, especially for multi-part or complex questions.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.2}>
+                <p>Measures whether the answer addresses all required parts of the query, especially for multi-part or complex questions.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Improves user satisfaction by addressing all query aspects</li>
-                <li>Reduces follow-up queries and conversation turns</li>
-                <li>When combined with faithfulness, ensures comprehensive and accurate responses</li>
-                <li>Essential for establishing trust in expert domains</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} delay={0.4}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Improves user satisfaction by addressing all query aspects</li>
+                  <li>Reduces follow-up queries and conversation turns</li>
+                  <li>When combined with faithfulness, ensures comprehensive and accurate responses</li>
+                  <li>Essential for establishing trust in expert domains</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <p>For multi-part questions with explicit sub-questions, enterprise support where complete responses are critical, analytics answers that must address multiple aspects, and when assessing response quality beyond mere factuality.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.7}>
+                <p>For multi-part questions with explicit sub-questions, enterprise support where complete responses are critical, analytics answers that must address multiple aspects, and when assessing response quality beyond mere factuality.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f446f',
-          notes: ''
+          notes: `### 9. Answer Completeness — Overview
+Welcome to our final generation quality metric: Answer Completeness. While faithfulness checks if answers are factually grounded, completeness asks a different question: does the answer address everything the user asked?
+
+#### What Is Answer Completeness?
+Answer Completeness measures whether the answer addresses all required parts of the query, especially for multi-part or complex questions. Think of it as a coverage metric. If someone asks three questions in one query, does your answer address all three, or does it cherry-pick the easy ones and ignore the rest? This metric holds your RAG system accountable for comprehensive responses.
+
+#### The Critical Distinction
+Here's what makes this metric unique: it's not about being correct—that's faithfulness. It's not about being relevant—that's answer relevance. It's about being thorough. You can have a perfectly faithful answer that's still incomplete if it only addresses half of what the user asked. Answer Completeness fills this gap in your evaluation framework.
+
+#### The User Experience Benefits
+The benefits here directly impact user satisfaction. First, it improves user satisfaction by addressing all query aspects. Nothing frustrates users more than asking multiple questions and getting answers to only some of them. Second, it reduces follow-up queries and conversation turns. When users get complete answers on the first try, they don't need to ask "what about the other part of my question?" This saves time and improves efficiency. Third, when combined with faithfulness, it ensures comprehensive and accurate responses. The sweet spot is answers that are both complete and faithful. Finally, it's essential for establishing trust in expert domains where partial answers can be as problematic as wrong answers.
+
+#### When to Use This Metric
+Deploy Answer Completeness for multi-part questions with explicit sub-questions. If users frequently ask things like "What's the price, warranty, and return policy?" you need this metric. It's critical for enterprise support where complete responses are essential—customers expect thorough answers, not fragments. Use it for analytics answers that must address multiple aspects, like "Compare these products by price, features, and reviews." And definitely track it when assessing response quality beyond mere factuality, because being right isn't enough if you're only answering half the question.
+
+#### Pros
+The good stuff: this metric directly measures user satisfaction with answer thoroughness, it helps identify when your RAG system is avoiding difficult questions, and it encourages comprehensive responses that reduce conversation length.
+
+#### Cons
+The problems: there's subjective determination of what constitutes "complete"—different evaluators might disagree. It may encourage verbose answers that include unnecessary information to maximize coverage. It's difficult to apply to open-ended or exploratory queries where completeness is ambiguous. And it can conflict with brevity goals in some applications where users want concise answers.
+
+Let's dive into how this metric works mechanically.`
         },
         {
           id: 36,
@@ -2026,25 +2392,83 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Answer Completeness assesses whether all parts of a multi-faceted query are addressed in the response. It measures coverage of required sub-answers.</p>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.2}>
+                <p>Answer Completeness assesses whether all parts of a multi-faceted query are addressed in the response. It measures coverage of required sub-answers.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Completeness = (# required sub-answers present) / (# required)`}
-              </pre>
-              <p>Where required sub-answers are the parts of the query that need addressing. Can use reference decomposition or LLM judge checklist to identify parts.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <h3>Formula
+                  <MermaidPopover
+                    title="Completeness Evaluation Flow"
+                    diagram={`graph TD
+    A[User Query] --> B[Parse Query]
+    B --> C[Identify Sub-Questions]
+    C --> D[List Required Elements]
+    D --> E[Generated Answer]
+    E --> F{Check Each Element}
+    F --> G{Addressed?}
+    G -->|Yes| H[Count as Present]
+    G -->|No| I[Count as Missing]
+    H --> J[Calculate Score]
+    I --> J
+    J --> K[Completeness = Present / Required]
+    
+    style A fill:#e3f2fd
+    style K fill:#c8e6c9
+    style I fill:#ffcdd2`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.4}>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`Completeness = (# required sub-answers present) / (# required)`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <p>Where required sub-answers are the parts of the query that need addressing. Can use reference decomposition or LLM judge checklist to identify parts.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.85 typical for general applications</li>
-                <li>≥0.95 for high-stakes domains (medical, legal, finance)</li>
-                <li>Balance with other metrics like faithfulness and relevance</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.7}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>≥0.85 typical for general applications</li>
+                  <li>≥0.95 for high-stakes domains (medical, legal, finance)</li>
+                  <li>Balance with other metrics like faithfulness and relevance</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f446f',
-          notes: ''
+          notes: `### 9. Answer Completeness — How It Works
+Let's break down the mechanics of Answer Completeness and understand how it measures coverage.
+
+#### The Core Assessment
+Answer Completeness assesses whether all parts of a multi-faceted query are addressed in the response. It measures coverage of required sub-answers. The key word here is "required"—not every tangential detail, but the core elements that the user explicitly or implicitly asked about. Think of it as a checklist: did the answer check all the boxes?
+
+#### The Straightforward Formula
+The formula is elegantly simple: Completeness equals the number of required sub-answers present divided by the number required. If a question has three parts and your answer addresses two of them, your completeness score is 0.67 or 67%. It's a direct measure of coverage.
+
+#### Identifying Required Elements
+Where it gets nuanced is determining what counts as "required." Where do the required sub-answers come from? You can use reference decomposition—manually breaking down queries into component questions during test set creation. Or you can use an 👉 "LLM judge" with a checklist approach, where a language model identifies the distinct parts that need addressing. For example, given the query "Compare product A and B by price and features," the required elements are: product A price, product B price, product A features, and product B features. All four must be addressed for full completeness.
+
+#### The Step-by-Step Process
+Here's how evaluation works in practice: First, parse the query to identify all sub-questions or required information elements. This might be done manually for gold-standard test sets or automatically using an LLM for scale. Second, check the generated answer to see which elements are addressed. You're looking for content that directly responds to each sub-question. Third, count the addressed elements and divide by the total required elements to get your completeness score.
+
+#### Target Scores for Different Domains
+For general applications, target at least 0.85 or 85% completeness. This means answering most but not necessarily every single aspect, which allows some flexibility for edge cases. For high-stakes domains like medical, legal, or finance, aim for 0.95 or 95% completeness. In these fields, missing critical information can have serious consequences. A medical answer that addresses symptoms but ignores contraindications is dangerously incomplete.
+
+#### The Balancing Act
+Here's the critical point: balance completeness with other metrics like faithfulness and relevance. A verbose answer that addresses everything but includes hallucinations is worse than a focused answer that only addresses the most important parts faithfully. Similarly, an answer that dumps every possible related fact to maximize completeness might actually hurt user experience by being overwhelming. The goal is comprehensive yet focused responses.
+
+#### Automation Strategies
+For scaling evaluation, LLM-as-judge approaches work well. Provide the judge with the query and answer, and ask it to identify which query elements were addressed. This can be done with structured prompts that output scores or with more sophisticated multi-step reasoning. The key is maintaining consistency across evaluations.
+
+Let's see a concrete example to make this practical.`
         },
         {
           id: 37,
@@ -2052,18 +2476,62 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Query:</strong> "What's the price, warranty length, and return policy for this product?"</p>
-              <p><strong>Answer:</strong> "The product costs $199 and comes with a 2-year warranty."</p>
-              <p>Analysis: The answer addresses 2 of 3 required parts (missing return policy)</p>
-              <p><strong>Completeness = 2/3 = 0.67</strong></p>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
+                <h3>Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p><strong>Query:</strong> "What's the price, warranty length, and return policy for this product?"</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p><strong>Answer:</strong> "The product costs $199 and comes with a 2-year warranty."</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.4}>
+                <p>Analysis: The answer addresses 2 of 3 required parts (missing return policy)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <p><strong>Completeness = 2/3 = 0.67</strong></p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Parse the query to identify all sub-questions or required information elements. Check the answer to see which elements are addressed. Count the addressed elements and divide by the total required elements.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3>How to Calculate</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.7}>
+                <p>Parse the query to identify all sub-questions or required information elements. Check the answer to see which elements are addressed. Count the addressed elements and divide by the total required elements.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f446f',
-          notes: ''
+          notes: `### 9. Answer Completeness — Implementation
+Let's work through a practical example to see how Answer Completeness evaluation happens in the real world.
+
+#### The Setup
+Imagine an e-commerce RAG system receiving this query: "What's the price, warranty length, and return policy for this product?" This is a classic multi-part question with three explicit information requests: price, warranty, and return policy. Each of these is a required element that should be addressed in a complete answer.
+
+#### The Generated Answer
+The system responds with: "The product costs $199 and comes with a 2-year warranty." At first glance, this seems like a helpful answer—it provides concrete information about price and warranty. But let's evaluate it for completeness.
+
+#### Analyzing Coverage
+When we break down the query, we identify three required parts: price information, warranty length, and return policy details. Now let's check the answer: Does it address price? Yes—it states "$199." Does it address warranty? Yes—it mentions "2-year warranty." Does it address return policy? No—there's no mention of returns, refunds, or return windows. The answer addresses 2 out of 3 required parts.
+
+#### The Calculation
+The completeness score is 2 divided by 3, which equals 0.67 or 67%. This is below our target threshold of 0.85 for general applications, indicating an incomplete response that will likely frustrate the user and trigger a follow-up question.
+
+#### The User Experience Impact
+Think about the user's perspective here. They specifically asked about the return policy—maybe that's actually the most important factor in their purchasing decision. The answer, while accurate on the parts it addresses, leaves them hanging on a critical piece of information. They'll need to ask another question like "What about the return policy?" which doubles the conversation length and diminishes user satisfaction.
+
+#### How to Calculate This in Practice
+First, parse the query to identify all sub-questions or required information elements. For this example, that's straightforward—three explicit questions separated by commas. For more complex queries, you might need an LLM to extract the distinct information needs. Second, check the answer to see which elements are addressed. Go through each required element and determine if the answer contains responsive information. Third, count the addressed elements and divide by the total required elements. In this case, 2 divided by 3 gives us our 0.67 score.
+
+#### Edge Cases and Judgment Calls
+Sometimes it's not so clear-cut. What if the answer said "The product costs $199, comes with a 2-year warranty, and we have a flexible return policy"? The word "flexible" acknowledges returns but doesn't really answer the question. Would you count that as addressed? This is where clear evaluation guidelines are essential. Generally, vague acknowledgments shouldn't count as addressing the element—the answer should provide substantive information.
+
+#### Improving the Answer
+To improve this answer to full completeness, the system would need to add return policy information: "The product costs $199 and comes with a 2-year warranty. You can return it within 30 days with proof of purchase." Now all three required elements are addressed, giving a completeness score of 1.0.
+
+#### Debugging Low Scores
+When you see low completeness scores, investigate why parts of the query are being ignored. Is the retrieval system failing to find relevant context for certain questions? Is the generation prompt biased toward certain types of information? Is the context length limiting what can be addressed? Each root cause requires different fixes.
+
+Now let's explore the broader implications and trade-offs of this metric.`
         },
         {
           id: 38,
@@ -2071,26 +2539,90 @@ That's Hallucination Rate—your trustworthiness and safety metric. It's one of 
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Improves user satisfaction by addressing all query aspects</li>
-                <li>Reduces follow-up queries and conversation turns</li>
-                <li>When combined with faithfulness, ensures comprehensive and accurate responses</li>
-                <li>Essential for establishing trust in expert domains</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.2}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Improves user satisfaction by addressing all query aspects</li>
+                  <li>Reduces follow-up queries and conversation turns</li>
+                  <li>When combined with faithfulness, ensures comprehensive and accurate responses</li>
+                  <li>Essential for establishing trust in expert domains</li>
+                </ul>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Subjective determination of what constitutes "complete"</li>
-                <li>May encourage verbose answers that include unnecessary information</li>
-                <li>Difficult to apply to open-ended or exploratory queries</li>
-                <li>Can conflict with brevity goals in some applications</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations
+                  <MermaidPopover
+                    title="Completeness Trade-offs"
+                    diagram={`graph TD
+    A[Answer Completeness] --> B[Benefits]
+    A --> C[Challenges]
+    
+    B --> D[User Satisfaction]
+    B --> E[Fewer Follow-ups]
+    B --> F[Comprehensive Coverage]
+    
+    C --> G[Subjectivity]
+    C --> H[Verbosity Risk]
+    C --> I[Open-ended Queries]
+    C --> J[Brevity Conflicts]
+    
+    K[Balance With] --> L[Faithfulness]
+    K --> M[Relevance]
+    K --> N[Conciseness]
+    
+    style A fill:#bbdefb
+    style B fill:#c8e6c9
+    style C fill:#ffcdd2
+    style K fill:#fff9c4`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.6}>
+                <ul style={{ marginTop: '14px' }}>
+                  <li>Subjective determination of what constitutes "complete"</li>
+                  <li>May encourage verbose answers that include unnecessary information</li>
+                  <li>Difficult to apply to open-ended or exploratory queries</li>
+                  <li>Can conflict with brevity goals in some applications</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f446f',
-          notes: ''
-        }
+          notes: `### 9. Answer Completeness — Considerations
+Let's conclude our exploration of Answer Completeness by examining its impact on RAG systems and the important trade-offs to consider.
+
+#### The Positive Impact on User Experience
+The benefits of tracking Answer Completeness directly enhance user satisfaction. First, it improves user satisfaction by addressing all query aspects. When users ask complex questions, they expect comprehensive answers. Meeting this expectation builds confidence and satisfaction. Second, it reduces follow-up queries and conversation turns. A complete answer on the first try is more efficient than a back-and-forth exchange where users have to repeatedly ask about the missing pieces. This efficiency matters for both user experience and system costs—fewer conversation turns means fewer API calls. Third, when combined with faithfulness, it ensures comprehensive and accurate responses. This is the sweet spot: answers that are both complete and truthful. Finally, it's essential for establishing trust in expert domains. In fields like legal, medical, or financial advice, partial answers can be dangerous. Users need to know they're getting the full picture.
+
+#### Real-World Benefits
+Think about enterprise support scenarios where incomplete answers force customers to call back multiple times, or medical information systems where missing critical details could impact patient care. Answer Completeness helps ensure these high-stakes interactions are thorough.
+
+#### The Subjectivity Challenge
+However, Answer Completeness has significant limitations. The biggest is subjective determination of what constitutes "complete." Different evaluators might disagree on what parts of a query are truly required versus merely related. For example, if someone asks "What's the best laptop for programming?" should the answer include price? Battery life? Operating system options? There's no objectively correct answer to what makes a response "complete" for such queries.
+
+#### The Verbosity Trap
+Second, Answer Completeness may encourage verbose answers that include unnecessary information. If your system learns that longer, more comprehensive answers score higher, it might start dumping every tangentially related fact to maximize completeness. This can actually hurt user experience—users don't want essays when they need quick facts. The metric doesn't distinguish between helpful thoroughness and overwhelming verbosity.
+
+#### Challenges with Open-ended Queries
+Third, it's difficult to apply to open-ended or exploratory queries. Questions like "Tell me about climate change" or "How does machine learning work?" don't have a clear set of required elements. What counts as complete for such broad questions? This is where completeness metrics struggle and where other quality dimensions like relevance and helpfulness become more important.
+
+#### Brevity Conflicts
+Fourth, Answer Completeness can conflict with brevity goals in some applications. Many modern users prefer concise answers, especially on mobile devices or in voice interfaces. A mobile chatbot that aims for 95% completeness might produce answers that are too long for the format. You need to balance completeness with the constraints of your interface and user preferences.
+
+#### The Holistic View
+The key insight is that Answer Completeness is one dimension of quality that must be balanced with others. You need to track it alongside faithfulness to ensure answers are both complete and accurate. You need to balance it with relevance to avoid addressing tangential aspects. And you need to consider conciseness to avoid overwhelming users with information.
+
+#### Implementation Strategies
+In practice, set completeness thresholds appropriate to your domain. For factual, multi-part queries with clear sub-questions, aim high. For exploratory or open-ended queries, weight other metrics more heavily. Use query classification to apply different evaluation strategies for different question types. A product specification query needs high completeness, but a philosophical question might prioritize depth over breadth.
+
+#### Continuous Improvement
+Monitor completeness trends to identify systematic gaps. If you consistently see low scores on certain types of questions—like return policies or technical specifications—that indicates retrieval or generation issues that need debugging. Use completeness scores to drive targeted improvements in your RAG pipeline.
+
+#### Closing Thoughts on Generation Metrics
+With Answer Completeness, we've completed our tour of the key generation quality metrics. Together, Grounded Answer Score, Faithfulness, and Answer Completeness give you a comprehensive toolkit for evaluating the quality of your RAG system's outputs. Use them together to ensure your answers are properly cited, factually grounded, and thorough. Remember: the best RAG systems excel across all dimensions, not just one.`
+        },
       ]
     },
     {
