@@ -2652,21 +2652,35 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Lower TTFT (Time To First Token) and total generation time with acceptable accuracy for RAG applications.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 53. Smaller LLM — Goal
+Our final technique is perhaps the most impactful — using a **smaller or distilled LLM** for generation. The LLM step is typically the biggest source of latency in any RAG pipeline, so optimizing it can yield dramatic improvements.
+
+#### 🎯 What's the Goal?
+The goal is to replace your large, expensive LLM with a smaller, faster one that still produces high-quality answers for your specific use case. Not every query needs GPT-4 👉 'gee-pee-tee four' — many can be handled perfectly well by a model that's 10x faster and 50x cheaper.
+
+#### 💡 Think of It This Way
+Imagine you're running a restaurant. You wouldn't hire a Michelin-star chef to make sandwiches — a skilled line cook does the job perfectly at a fraction of the cost. Similarly, for straightforward RAG queries like "What is the return policy?", a small 7B 👉 'seven billion' parameter model produces the same quality answer as a 70B model, but in a fraction of the time.
+
+#### 📊 The Numbers
+Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation latency by 3-10x and costs by 10-50x. That's the single biggest latency and cost reduction you can achieve. Let's see when this makes sense...`
         },
         {
           id: 54,
@@ -2675,20 +2689,42 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Latency-critical tasks (real-time chat/voice)</li>
                 <li>Straightforward Q&A applications</li>
                 <li>High throughput requirements</li>
                 <li>Production apps with strict SLAs</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 54. Smaller LLM — When to Use
+When can you safely switch to a smaller LLM without hurting quality? Here are the key scenarios.
+
+#### 📝 Simple Question-Answering
+For straightforward factual queries where the answer is directly in the retrieved chunks, smaller models excel. Questions like "What are the business hours?" or "What's the price of product X?" don't need GPT-4's reasoning power.
+
+#### 🎯 Well-Defined Output Formats
+When your responses follow a predictable structure — short answers, specific formats, or template-based replies — smaller models are just as capable. They struggle more with creative or open-ended generation.
+
+#### ⚡ Latency-Critical Applications
+When your users expect sub-second responses, a smaller model generating at 100 tokens per second is far better than a large model at 20 tokens per second, even if the large model produces slightly more polished prose.
+
+#### 💰 High Query Volume with Budget Constraints
+At scale, the cost difference between GPT-4 and a self-hosted 7B model is enormous. If you're processing millions of queries per month, the savings can be hundreds of thousands of dollars.
+
+#### 🔧 After Fine-Tuning
+A smaller model fine-tuned on your domain data can outperform a generic large model. This is the best of both worlds — fast, cheap, AND high quality for your specific use case.
+
+Let's look at how to make this transition...`
         },
         {
           id: 55,
@@ -2697,11 +2733,29 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="LLM Size vs Performance"
+                    diagram={`flowchart LR
+    A["📝 RAG Context"] --> B["🤖 Large LLM\\n70B params"]
+    A --> C["⚡ Small LLM\\n7B params"]
+    B --> D["🐢 ~2s latency\\n💰 High cost"]
+    C --> E["🚀 ~200ms latency\\n💵 Low cost"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Replace large models with smaller but efficient alternatives while maintaining acceptable quality:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Use Small Language Models (SLMs) like Gemini Flash 8B, Claude Haiku, Mistral 7B, Llama 3.1 8B</li>
                 <li>Apply quantization techniques (INT8/INT4) for additional speedup</li>
@@ -2709,10 +2763,31 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                 <li>Balance smaller model limitations with stronger retrieval and reranking</li>
                 <li>Consider domain-specific fine-tuned small models for specialized tasks</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 55. Smaller LLM — How It Works
+Let's understand the options for using smaller LLMs and the techniques that make them work well in RAG systems.
+
+#### ⚙️ Size vs Performance
+\`\`\`mermaid
+flowchart LR
+    A["📝 RAG Context"] --> B["🤖 Large LLM\\n70B params"]
+    A --> C["⚡ Small LLM\\n7B params"]
+    B --> D["🐢 ~2s latency\\n💰 High cost"]
+    C --> E["🚀 ~200ms latency\\n💵 Low cost"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+\`\`\`
+The relationship between model size and quality isn't linear. A 7B model captures maybe 85% of a 70B model's capability, but at 10x the speed. For RAG specifically, this gap is even smaller because the retrieved context provides the knowledge — the LLM just needs to synthesize and present it.
+
+#### 🔬 Knowledge Distillation
+**Distillation** 👉 'dis-tih-LAY-shun' trains a small model to mimic a larger model's outputs. You generate training data by running queries through your large model, then train the small model on those outputs. The result is a small model that performs surprisingly close to the large one on your specific task.
+
+#### 🎛️ Model Options
+Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B** 👉 'LAH-mah three eight bee', **Phi-3 Mini** 👉 'fie three mini', and **Gemma 2B** 👉 'JEM-ah two bee'. These can be self-hosted on a single GPU and serve hundreds of requests per second. Here are the implementation steps...`
         },
         {
           id: 56,
@@ -2721,10 +2796,13 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Benchmark performance: Compare small vs large models on your task set; establish accuracy floor</li>
                 <li>Apply quantization: Test INT8/INT4 quantization if supported by your infrastructure</li>
@@ -2732,10 +2810,25 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                 <li>Enhance retrieval: Strengthen retrieval and reranking to compensate for smaller model</li>
                 <li>Implement guardrails: Add quality monitors and fallback to larger models for complex queries</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 56. Smaller LLM — Steps
+Here's how to safely transition from a large LLM to a smaller one in your RAG system.
+
+#### 📋 Implementation Steps
+**Step one: Evaluate baseline quality.** Run your evaluation suite with your current large model and record answer quality scores. This is your target to match.
+
+**Step two: Select candidate models.** Try 2-3 smaller models on your evaluation set. Good starting points are Mistral 7B, Llama 3 8B, or GPT-3.5-turbo 👉 'gee-pee-tee three point five turbo'. Measure both quality and latency.
+
+**Step three: Consider fine-tuning.** If off-the-shelf small models don't match your quality bar, fine-tune one on your domain data. Use the large model's outputs as training labels — this is distillation in practice. Even a few thousand examples can make a dramatic difference.
+
+**Step four: Implement model routing.** For the best results, use a **router** that sends simple queries to the small model and complex queries to the large model. This gives you speed for easy queries and quality for hard ones. A simple classifier can route based on query complexity.
+
+**Step five: Deploy and monitor.** Self-host your small model using **vLLM** 👉 'vee-ell-ell-em' or **TGI** 👉 'tee-gee-eye' for optimized inference. Monitor quality metrics continuously and adjust routing thresholds as needed.
+
+Let's look at the final trade-offs for this technique...`
         },
         {
           id: 57,
@@ -2745,6 +2838,7 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -2758,6 +2852,8 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                     <li>Better UX through reduced latency</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -2771,11 +2867,22 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                     <li>May require more validation and testing</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 57. Smaller LLM — Pros and Cons
+Let's evaluate the final technique in our toolkit — switching to a smaller LLM.
+
+#### ✅ Pros
+The good stuff: **3-10x faster generation** which is the single biggest latency reduction for most RAG systems. **10-50x cost reduction** on LLM inference, which is often the largest line item in your RAG budget. **Self-hosting capability** — 7B models run on a single GPU, giving you full control over infrastructure and data privacy. **Fine-tuning potential** — small models can be customized to your domain for better quality than generic large models. And **predictable performance** — self-hosted models have consistent latency without API rate limits or quotas.
+
+#### ❌ Cons
+The problems: **Quality gap for complex reasoning** — smaller models struggle with multi-step reasoning, nuanced analysis, and creative generation. **Fine-tuning investment** — creating training data and fine-tuning requires significant engineering effort. **Infrastructure management** — self-hosting means you're responsible for GPU provisioning, scaling, and reliability. **Model selection churn** — the small model landscape evolves rapidly, and today's best option may be obsolete in months. And **evaluation complexity** — measuring quality differences between models requires robust evaluation frameworks.
+
+#### 🎯 The Bottom Line
+For most production RAG use cases, a well-chosen small model delivers 80-95% of large model quality at a fraction of the cost and latency. The key is thorough evaluation on your specific data and use cases. And with that, we've covered all eleven techniques! Let's wrap up with key takeaways...`
         }
       ]
     },
@@ -2789,10 +2896,13 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
               <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                 <strong>Key Takeaways</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li style={{ marginBottom: '1.5rem' }}>
                   <strong style={{ color: '#61dafb' }}>Fix perceived latency first</strong> (Streaming), then critical-path bottlenecks (Retrieval, LLM)
@@ -2807,10 +2917,23 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                   <strong style={{ color: '#e06c75' }}>Measure and optimize</strong> across all RAG stages: indexing, retrieval, orchestration, and generation
                 </li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### 58. Key Takeaways
+Alright, let's bring it all together with the key takeaways from our eleven techniques. These are the principles you should remember even if you forget the specific details.
+
+#### 🎯 The Core Message
+The most important takeaway is this: **you don't need to implement all eleven techniques**. Start by profiling your pipeline to find your biggest bottleneck, then apply the technique that addresses it. One well-chosen optimization often gives you 50% or more of the total possible improvement.
+
+#### 📊 The Layered Approach
+Think of these techniques as layers. Start with the easy wins — limiting Top-K, adding caching, enabling streaming. These are quick to implement and give immediate results. Then move to the medium-effort techniques like smaller models, reranking, and compression. Finally, tackle the infrastructure-level optimizations like ANN indexes and parallelization when you need to squeeze out every last millisecond.
+
+#### 💡 Measure Everything
+Before and after every optimization, measure both latency and quality. It's tempting to skip evaluation, but without measurement, you can't tell if an optimization actually helped or if it degraded quality in ways you haven't noticed. Track TTFT 👉 'tee-tee-eff-tee' (time-to-first-token), p50, and p95 latency for a complete picture.
+
+Now let's look at a practical guide for choosing where to start...`
         },
         {
           id: 59,
@@ -2818,32 +2941,57 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-compass" sizeName="2x" darkModeInvert={true} />
                 <strong>Quick Chooser</strong>
               </div>
+              </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #61dafb' }}>
                   <strong style={{ color: '#61dafb', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Immediate UX improvement:</strong>
                   <div style={{ fontSize: '1.5rem' }}>→ <strong>10</strong> Streaming / Partial Generation</div>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
                 <div style={{ background: 'rgba(209, 154, 102, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #d19a66' }}>
                   <strong style={{ color: '#d19a66', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Retrieval-bound system:</strong>
                   <div style={{ fontSize: '1.5rem' }}>→ <strong>3</strong> Limit Top-K, <strong>4</strong> HNSW/IVF, <strong>2</strong> Smaller chunks</div>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="fadeIn" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #e06c75' }}>
                   <strong style={{ color: '#e06c75', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Compute-bound system:</strong>
                   <div style={{ fontSize: '1.5rem' }}>→ <strong>1</strong> Smaller embeddings, <strong>11</strong> Smaller LLM</div>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.5}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1.5rem', borderRadius: '10px', borderLeft: '5px solid #98c379' }}>
                   <strong style={{ color: '#98c379', fontSize: '1.8rem', display: 'block', marginBottom: '0.8rem' }}>Cost optimization:</strong>
                   <div style={{ fontSize: '1.5rem' }}>→ <strong>5, 6</strong> Caching, <strong>8</strong> Compression</div>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### 59. Quick Chooser — Which Techniques to Start With?
+Here's your practical decision guide for choosing which techniques to implement first. Not every team needs every technique, so let's help you prioritize.
+
+#### ⚡ If Latency Is Your Main Problem
+Start with techniques 3 (Limit Top-K), 10 (Streaming), and 11 (Smaller LLM). These three alone can reduce perceived latency by 70-80% with minimal implementation effort. Top-K is a one-parameter change, streaming is usually a simple API flag, and switching to a smaller model is a model swap.
+
+#### 💰 If Cost Is Your Main Concern
+Focus on techniques 2 (Reduce Chunk Size), 5-6 (Caching), and 11 (Smaller LLM). Reducing chunks and caching eliminate unnecessary computation. A smaller LLM slashes your per-query cost dramatically.
+
+#### 🎯 If Quality Is Your Priority
+Implement techniques 7 (Re-Ranking) and 8 (Context Compression) first. These actually improve answer quality while also reducing latency — a rare win-win. Then add technique 1 (Smaller Embeddings) cautiously with careful quality monitoring.
+
+#### 🏗️ If You're Building From Scratch
+Start with techniques 1 (Smaller Embeddings), 3 (Limit Top-K), and 4 (ANN Indexes) as your foundation. These set you up for success from the start. Add caching and streaming as you scale.
+
+Let's now visualize the speed versus recall trade-offs...`
         },
         {
           id: 60,
@@ -2851,6 +2999,7 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
               <div style={{ color: '#c678dd', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-scale-balanced" sizeName="2x" darkModeInvert={true} />
                 <strong>Speed vs Recall</strong>
@@ -2863,13 +3012,29 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                 <li><strong>4.</strong> ANN Indexes - 10-100x speedup, ~95-99% recall</li>
                 <li><strong>8.</strong> Context Compression - Reduced tokens, possible info loss</li>
               </ul>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
               <div style={{ marginTop: '2rem', padding: '1rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '8px', fontSize: '1.2rem' }}>
                 <strong>💡 Tip:</strong> Start with ANN indexes for immediate gains with minimal quality impact
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### 60. Speed vs Recall Tradeoffs
+This slide helps you understand the fundamental tension in RAG optimization — **speed versus recall**. Every optimization exists somewhere on this spectrum.
+
+#### ⚖️ The Trade-off Spectrum
+On one end, you have maximum recall — finding every relevant document no matter how long it takes. On the other end, you have maximum speed — returning results instantly with some information potentially missed. The art of RAG optimization is finding the sweet spot for your use case.
+
+#### 📊 Low Trade-off Techniques
+Some techniques have almost no quality cost. **Caching** (techniques 5-6) gives you speed with zero quality loss for cache hits. **Streaming** (technique 10) improves perceived speed with zero quality impact. **Parallelization** (technique 9) also gives free speed.
+
+#### ⚠️ Higher Trade-off Techniques
+Others require careful balancing. **Smaller embeddings** (technique 1) and **ANN indexes** (technique 4) trade a small amount of recall for significant speed gains. **Smaller LLMs** (technique 11) may reduce answer sophistication. **Reducing chunk size** (technique 2) can miss context if done too aggressively.
+
+#### 🎯 The Key Insight
+Always start with the **zero trade-off techniques** first, then carefully add the ones with trade-offs, measuring quality at each step. Now let's look at quality versus cost...`
         },
         {
           id: 61,
@@ -2877,13 +3042,18 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
               <div style={{ color: '#e5c07b', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-coins" sizeName="2x" darkModeInvert={true} />
                 <strong>Quality vs Cost</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p>These techniques balance answer quality against operational costs:</p>
+              </GSAPAnimated>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '1.2rem', borderRadius: '8px' }}>
                   <strong style={{ color: '#98c379', display: 'block', marginBottom: '0.8rem' }}>Quality Enhancers</strong>
                   <ul style={{ marginLeft: '1.2rem' }}>
@@ -2891,6 +3061,8 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                     <li style={{ marginBottom: '0.5rem' }}><strong>9.</strong> Parallelization (↑speed, ↑complexity)</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '1.2rem', borderRadius: '8px' }}>
                   <strong style={{ color: '#e06c75', display: 'block', marginBottom: '0.8rem' }}>Cost Reducers</strong>
                   <ul style={{ marginLeft: '1.2rem' }}>
@@ -2899,15 +3071,33 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                     <li style={{ marginBottom: '0.5rem' }}><strong>11.</strong> Smaller LLM (↓latency, ↓reasoning)</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
 
+              <GSAPAnimated animation="slideInBottom" delay={0.6}>
               <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', fontSize: '1.2rem' }}>
                 <strong>💡 Tip:</strong> Combine caching (#5, #6) with streaming (#10) for best cost-performance balance
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### 61. Quality vs Cost Tradeoffs
+Now let's look at the other critical dimension — **quality versus cost**. In production, every optimization has a dollar value.
+
+#### 💰 The Cost Spectrum
+LLM inference is typically your biggest cost center. At scale, the difference between GPT-4 and a self-hosted 7B model can be hundreds of thousands of dollars per year. But quality matters too — a system that gives wrong answers is worse than a slow system.
+
+#### 📊 Cost-Reducing Techniques
+**Caching** (techniques 5-6) reduces costs by eliminating redundant computation. **Context compression** (technique 8) reduces token counts sent to the LLM. **Smaller LLMs** (technique 11) have the biggest per-query cost impact. **Reducing chunk size** (technique 2) also reduces token costs.
+
+#### ⚖️ Quality-Cost Sweet Spots
+The best optimizations reduce cost while maintaining or improving quality. **Re-ranking** (technique 7) is one of these — it improves quality and can reduce LLM costs by providing more relevant context. **Context compression** (technique 8) is another — less noise means better answers and lower costs.
+
+#### 🎯 Practical Advice
+Start by measuring your current cost per query. Identify which component — embedding, search, or generation — accounts for the most cost. Then apply the techniques that target that component. Most teams find that 80% of their cost is in the LLM, making techniques 8 and 11 the highest-impact choices.
+
+Let's wrap up with your optimization roadmap...`
         },
         {
           id: 62,
@@ -2915,10 +3105,13 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
               <div style={{ color: '#61dafb', display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-clipboard-check" sizeName="2x" darkModeInvert={true} />
                 <strong>Next Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
               <ol style={{ marginLeft: '2rem', fontSize: '1.2rem' }}>
                 <li style={{ marginBottom: '1.5rem' }}>
                   <strong style={{ color: '#61dafb' }}>Establish baseline metrics</strong>
@@ -2939,13 +3132,31 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
                   <strong style={{ color: '#e06c75' }}>Monitor and iterate:</strong> RAG optimization is continuous improvement
                 </li>
               </ol>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.6}>
               <div style={{ marginTop: '2rem', padding: '1.5rem', background: 'rgba(97, 218, 251, 0.15)', borderRadius: '10px', borderLeft: '6px solid #61dafb', fontSize: '1.2rem', textAlign: 'center' }}>
                 <strong>Remember:</strong> Start with quick wins (Streaming, Caching) before complex optimizations
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### 62. Next Steps — Your RAG Optimization Roadmap
+And here we are at the finish line! Let's put together your personal RAG optimization roadmap so you can take action immediately.
+
+#### 🚀 Week 1: Quick Wins
+Start this week with three zero-effort optimizations. First, **limit your Top-K** to 3-5 — it's literally changing one number. Second, **enable streaming** on your LLM responses — usually a single parameter. Third, **profile your pipeline** to identify your biggest bottleneck. These three steps alone can cut your perceived latency in half.
+
+#### 📈 Week 2-3: Foundation
+Next, implement **caching** — both query embedding caching and retrieval result caching. Set up Redis, add the cache-aside pattern, and start measuring hit rates. Then evaluate **smaller embedding models** — benchmark 2-3 alternatives and switch if the quality holds up.
+
+#### 🏗️ Month 2: Deeper Optimizations
+Now tackle the bigger changes. Evaluate a **smaller LLM** or set up model routing. Implement **context compression** to reduce token costs. Add **lightweight reranking** for quality improvement. Each of these requires more engineering effort but delivers substantial returns.
+
+#### 🎯 Ongoing: Monitor and Iterate
+Set up dashboards for TTFT, p95 latency, answer quality, and cost per query. Review these weekly and adjust your optimizations. The RAG optimization journey is ongoing — as your data, queries, and scale change, different techniques become more or less valuable.
+
+Thank you for attending! Remember: **start with measurement, apply one technique at a time, and always verify quality.** Happy optimizing! 🎉`
         }
       ]
     }
