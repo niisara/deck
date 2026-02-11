@@ -815,7 +815,15 @@ Next, let's look at Step-Back Prompting, which takes the opposite approach — g
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: ''
+          notes: `### 18 · Step-Back Prompting — Overview
+Strategy 4 is **Step-Back Prompting**, and it takes the opposite approach from decomposition — instead of breaking a query down, it zooms out.
+#### 🎯 What Is It?
+When a user asks "How to fix CUDA OOM with Llama 3.1 70B?" 👉 'lah-mah three-point-one', that's very specific. Step-back prompting transforms it into broader concepts like "LLM memory optimization, quantization, gradient checkpointing." The idea is that documents about the general principles of GPU memory management are more likely to exist and be helpful than documents about that exact CUDA error with that exact model.
+#### ✅ Pros
+It's **robust to query wording variations** — different specific questions map to the same general concepts. It provides **better generalization** across related topics. It **improves coverage** by pulling in foundational information. And it helps users understand the **fundamental principles** behind their specific problem.
+#### 🕐 When to Use This?
+Use step-back prompting when specific queries **under-retrieve**, for **reasoning-heavy or conceptual topics**, for **technical questions needing broader context**, and when **direct retrieval with specific terms fails** to return useful results.
+Let's see how it works.`
         },
         {
           id: 19,
@@ -834,7 +842,12 @@ Next, let's look at Step-Back Prompting, which takes the opposite approach — g
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: ''
+          notes: `### 19 · Step-Back Prompting — How It Works
+The process is straightforward but powerful.
+#### 🔄 The Process
+You take the specific query and ask the LLM to **extract the underlying principles**. For the CUDA OOM example, the underlying principles are memory management, model parallelism, and quantization. Then you **identify broader concepts and frameworks** — what general areas of knowledge would help answer this? Next, you **create a more general retrieval query** using these abstract terms. Finally, the retrieval **focuses on conceptual understanding** rather than exact problem matching.
+Think of it like asking a professor for help. Instead of searching "how to fix error X in library Y version Z," you step back and search for "best practices for handling resource constraints in deep learning." The professor-level documents are more likely to exist and more likely to be comprehensive.
+Now let's see the implementation.`
         },
         {
           id: 20,
@@ -865,7 +878,14 @@ def step_back_query(original_query):
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: ''
+          notes: `### 20 · Step-Back Prompting — Implementation
+The implementation is surprisingly simple.
+#### 💻 The Prompt
+The prompt says: "Step back and derive three to five high-level concepts underlying this query, then produce a concise retrieval query based on those concepts." That's it. You're asking the LLM to think at a higher level of abstraction.
+#### ⚙️ The Code
+The code is minimal — you send the original query to the LLM with the step-back prompt, and the output is a new query focused on general concepts rather than specific details. This new query then goes to your retrieval system.
+The key insight is that you're not losing the original query — in practice, you often run **both** the original specific query and the step-back query, then combine their results. This gives you both the specific documents and the conceptual foundations.
+Let's look at an example.`
         },
         {
           id: 21,
@@ -888,7 +908,14 @@ def step_back_query(original_query):
             </div>
           ),
           backgroundColor: '#7b5d1e',
-          notes: ''
+          notes: `### 21 · Step-Back Prompting — Example & Considerations
+Let's see step-back in action.
+#### 📝 Before and After
+The user asks "How to fix CUDA OOM with Llama 3.1 70B?" — a very specific error with a specific model. After step-back prompting, the query becomes "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints." Now the retrieval system finds comprehensive guides on memory management techniques that absolutely apply to the original problem.
+#### ⚠️ Watch Out For
+There are real risks. **Over-abstraction** can happen — if you step back too far, you get results that are too generic to be useful. You'll **need a good reranker** to filter results because the broader query brings back more diverse documents. You may **lose specificity** for narrow, well-defined queries where the user knows exactly what they want. And the abstraction can **introduce unwanted generality** that dilutes the answer.
+The rule of thumb: use step-back prompting when specific queries fail, but always combine it with the original query's results.
+Next up is Strategy 5: HyDE, which takes a completely different and fascinating approach.`
         }
       ]
     },
@@ -923,7 +950,15 @@ def step_back_query(original_query):
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: ''
+          notes: `### 22 · HyDE — Overview
+Strategy 5 is **HyDE**, which stands for Hypothetical Document Embeddings, and it's one of my favorite techniques. HyDE 👉 'hide'.
+#### 🎯 What Is It?
+Here's the brilliant insight behind HyDE: instead of embedding the user's query and searching for similar documents, you first ask the LLM to **generate a fake answer** to the question, then embed that fake answer and search for documents similar to it. Why? Because a document that looks like an answer is semantically much closer to actual answer documents than the original short query.
+#### ✅ Pros
+The good stuff: you get **strong recall gains** in dense retrieval systems. It **works with existing embedding models** — no fine-tuning needed. It has **zero-shot capability** for new domains. And it **bridges vocabulary gaps** effectively because the hypothetical document uses the language of answers, not questions.
+#### 🕐 When to Use This?
+HyDE shines when you have **low recall in dense retrieval**, for **zero-shot domain applications**, when there's a **vocabulary mismatch** between queries and documents, and for **complex information needs** where a short query can't capture the semantic intent.
+Let's see the mechanics.`
         },
         {
           id: 23,
@@ -942,7 +977,12 @@ def step_back_query(original_query):
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: ''
+          notes: `### 23 · HyDE — How It Works
+Here's the four-step process that makes HyDE work.
+#### 🔄 The Four Steps
+First, the **LLM generates a hypothetical answer document** — a fake but plausible answer to the user's question. It doesn't need to be factually correct, just semantically similar to what a real answer would look like. Second, this **synthetic document is embedded** using your regular embedding model. Third, **retrieval uses this embedding** to find real documents that are semantically similar to the hypothetical answer. Finally, the **actual retrieved documents** are used to generate the real answer.
+The magic is in step one. A query like "causal ML uplift modeling tutorial" is short and keyword-heavy. But the hypothetical document the LLM generates is a paragraph-long explanation using the same language patterns as actual tutorial documents. When you embed that paragraph, it naturally lands close to real tutorial content in vector space.
+Now for the code.`
         },
         {
           id: 24,
@@ -976,7 +1016,14 @@ def hyde_retrieval(query, top_k=5):
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: ''
+          notes: `### 24 · HyDE — Implementation
+The implementation is clean and modular.
+#### 💻 The Prompt
+You ask the LLM to "Write a 120-200 word passage that would likely answer the following query. Keep a factual, informative tone. Include key terminology and concepts." The important detail is telling it NOT to use hedging phrases like "according to" — you want it to write as if it's a confident reference document.
+#### ⚙️ The Code
+Three steps in code: generate the pseudo-document, embed it, then use that embedding for similarity search. The function takes the query and a top-k parameter. The pseudo-document generation is the expensive step — one LLM call. After that, embedding and retrieval are fast.
+One practical tip: you can generate **multiple hypothetical documents** with different temperatures and average their embeddings. This creates a more robust search vector that covers different angles of the answer.
+Let's see a concrete example.`
         },
         {
           id: 25,
@@ -1005,7 +1052,14 @@ def hyde_retrieval(query, top_k=5):
             </div>
           ),
           backgroundColor: '#1e7b28',
-          notes: ''
+          notes: `### 25 · HyDE — Example & Considerations
+Here's HyDE in action with a real example.
+#### 📝 Before and After
+The user searches "causal ML uplift modeling tutorial." The LLM generates a hypothetical document about uplift modeling that describes treatment and control groups, feature engineering approaches, model training algorithms like random forests, and evaluation metrics like AUUC 👉 'ay-you-you-see' and Qini 👉 'kee-nee' coefficients. This hypothetical document, when embedded, lands right next to actual uplift modeling tutorials in vector space.
+#### ⚠️ Watch Out For
+The risks are real. **Extra token usage and latency** — you're generating a full paragraph before you even start retrieval. **Pseudo-document bias** if the LLM's generated answer is skewed or incomplete. **Quality depends on the LLM's knowledge** — if the model doesn't know about the topic, the hypothetical document will be poor. It **may introduce hallucinations** if the fake answer contains incorrect information that biases retrieval. And it's **less efficient for simple queries** where direct embedding works just fine.
+Use HyDE when dense retrieval underperforms. For simple keyword queries, it's overkill.
+Next up is Strategy 6: Multi-Query Generation.`
         }
       ]
     },
@@ -1038,7 +1092,15 @@ def hyde_retrieval(query, top_k=5):
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: ''
+          notes: `### 26 · Multi-Query Generation — Overview
+Strategy 6 is **Multi-Query Generation**, which attacks the problem from multiple angles simultaneously.
+#### 🎯 What Is It?
+Instead of sending one query to your retrieval system, you generate **multiple different versions** of the same query and send them all. Each version explores a different phrasing, perspective, or aspect of the user's intent. Then you combine all the results. It's like asking five different people to search for the same thing — each one will find slightly different documents.
+#### ✅ Pros
+The good stuff: it's **robust to query ambiguity** because different phrasings cover different interpretations. You get a **higher hit-rate** for relevant documents since you're casting multiple nets. It provides **better coverage** of different aspects of the topic. And it naturally **handles vocabulary mismatches** because each variant uses different words.
+#### 🕐 When to Use This?
+Best for **ambiguous or underspecified queries**, **heterogeneous document corpora** where different sections use different terminology, **tasks requiring breadth** of coverage, and **critical applications** where missing a relevant document is costly.
+Let's see the mechanism.`
         },
         {
           id: 27,
@@ -1057,7 +1119,13 @@ def hyde_retrieval(query, top_k=5):
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: ''
+          notes: `### 27 · Multi-Query Generation — How It Works
+The workflow is straightforward but effective.
+#### 🔄 The Steps
+First, you **generate k diverse query variants** — typically three to five alternative phrasings that explore different angles of the user's intent. Second, you **retrieve documents for each variant** — running separate retrieval calls for each query version. Third, you **union the results** from all queries into one combined set. Finally, you **apply reranking** to score, deduplicate, and consolidate the combined results.
+The critical difference from query expansion is that each variant is a **complete, standalone query**, not just the original query with extra terms appended. This means each variant can find documents that the others would miss entirely.
+Think of it like searching Google with five different phrasings of the same question — each search returns slightly different results, and the best answer is probably in the union of all of them.
+Now the implementation.`
         },
         {
           id: 28,
@@ -1091,7 +1159,14 @@ def multi_query_retrieve(query):
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: ''
+          notes: `### 28 · Multi-Query Generation — Implementation
+The implementation involves a focused generation prompt and a result fusion step.
+#### 💻 The Prompt
+The prompt asks the LLM to generate five diverse phrasings covering different angles of the query. You explicitly tell it to explore different perspectives, avoid duplicates, and skip explanations. This gives you clean, parseable output.
+#### ⚙️ The Code
+For each variant, you retrieve documents using your standard retrieval pipeline. Then a reranking step deduplicates and scores the combined results. The deduplication is important — you don't want the same document appearing multiple times just because two query variants found it.
+A practical optimization: run the retrieval calls **in parallel**. Since each variant is independent, there's no reason to wait for one to finish before starting the next. This keeps the latency close to a single retrieval call despite running multiple queries.
+Let's see an example.`
         },
         {
           id: 29,
@@ -1121,7 +1196,15 @@ def multi_query_retrieve(query):
             </div>
           ),
           backgroundColor: '#465e7b',
-          notes: ''
+          notes: `### 29 · Multi-Query Generation — Example & Considerations
+Here's a great example of multi-query in action.
+#### 📝 Before and After
+The user searches "LLM eval methods" — short and ambiguous. Multi-query generation produces five variants: "evaluation frameworks for large language models," "LLM benchmarks and testing methodologies," "automatic evaluation prompts for language models," "human evaluation rubrics for LLM outputs," and "RAG evaluation metrics and techniques." Each variant finds documents the others would miss.
+#### ⚠️ Watch Out For
+The costs are real. **Increased cost and latency** from running multiple retrievals. You need **deduplication and fusion logic** to combine results intelligently. The **implementation is more complex** with parallel retrieval and result merging. And some variants **may retrieve irrelevant results** that waste context window space.
+> 🎤 Ask the audience: "How many of you are currently using just a single query for retrieval?"
+The key insight: multi-query generation is especially powerful when combined with a **good reranker** that can sort through the combined results and pick the truly relevant ones.
+Next, Strategy 7: Context-Aware Rewriting for chat applications.`
         }
       ]
     },
@@ -1154,7 +1237,15 @@ def multi_query_retrieve(query):
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: ''
+          notes: `### 30 · Context-Aware Rewriting — Overview
+Strategy 7 is **Context-Aware Rewriting**, and if you're building any kind of chat-based RAG system, this is absolutely essential.
+#### 🎯 What Is It?
+In a conversation, users naturally use pronouns and references: "Tell me about it," "What are its limits?" "And the pricing?" These follow-up queries are meaningless without the context of what came before. Context-aware rewriting **incorporates conversation history** into the query to make it standalone and searchable.
+#### ✅ Pros
+The good stuff: it provides a **significant quality improvement** in chat applications. It **reduces context window waste** because you only retrieve relevant documents instead of trying to stuff the entire conversation into the prompt. It **enables effective RAG on follow-ups**, which is where most chat-based systems struggle. And it **preserves conversation flow** so the user experience feels natural.
+#### 🕐 When to Use This?
+This is ideal for **conversational chatbots**, **multi-turn question answering**, **session-based search interfaces**, and any scenario with **follow-up questions that use pronouns** or implicit references.
+Let's see the mechanism.`
         },
         {
           id: 31,
@@ -1173,7 +1264,12 @@ def multi_query_retrieve(query):
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: ''
+          notes: `### 31 · Context-Aware Rewriting — How It Works
+Here's how context-aware rewriting works in practice.
+#### 🔄 The Process
+The system injects several types of contextual elements into the query. It replaces **entities mentioned in previous turns** — changing "it" to "the Acme Pro API" based on what was discussed earlier. It adds **constraints established earlier** — if the user specified "enterprise tier" three turns ago, that constraint gets included. It incorporates **references to prior answers** — connecting the follow-up to what was already discussed. And it applies **user preferences from the session** — like language preference or region.
+The key insight is that you're not rewriting the user's query into something different — you're **completing it** with the information the user assumed was already understood. It's like having a human assistant who heard the whole conversation and can fill in the gaps.
+Let's look at the code.`
         },
         {
           id: 32,
@@ -1207,7 +1303,14 @@ def context_aware_rewrite(query, history):
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: ''
+          notes: `### 32 · Context-Aware Rewriting — Implementation
+The implementation pattern is clean and reusable.
+#### 💻 The Prompt
+The prompt provides the conversation history and the follow-up query, then asks: "Rewrite the follow-up query as a standalone query that preserves the original intent but includes all necessary context." The output should be a single, self-contained query.
+#### ⚙️ The Code
+In code, you format the conversation history into a digestible summary, then pass both the history and the current query to the LLM. The LLM produces a standalone query that can be sent directly to retrieval. This standalone query is also great for caching — if another user asks the same resolved question, you can reuse the retrieval results.
+One important consideration: **how much history to include**. Sending the entire conversation can be expensive and noisy. In practice, the last three to five turns is usually sufficient. You can also summarize older turns to save tokens.
+Let's see an example.`
         },
         {
           id: 33,
@@ -1230,7 +1333,14 @@ def context_aware_rewrite(query, history):
             </div>
           ),
           backgroundColor: '#7b2e1e',
-          notes: ''
+          notes: `### 33 · Context-Aware Rewriting — Example & Considerations
+Here's a classic example.
+#### 📝 Before and After
+The user's follow-up query is just three words: "And its limits?" After context-aware rewriting, it becomes "What are the 2024 rate limits for the Acme Pro API we discussed above?" The rewritten query is specific, searchable, and standalone. Without this rewriting, your retrieval system would search for "limits" and return completely irrelevant documents.
+#### ⚠️ Watch Out For
+Be careful with **context selection** — picking the wrong context can lead to incorrect rewrites. There are **privacy concerns** when storing and using conversation history. The system **can overspecify** in some cases, adding constraints the user didn't intend. And you need **history tracking infrastructure** to maintain and access conversation state.
+The bottom line: if you're building a chat-based RAG system, context-aware rewriting is **not optional** — it's a must-have. Without it, every follow-up question is essentially broken.
+Next, Strategy 8: Query Clarification, where we ask the user for help.`
         }
       ]
     },
