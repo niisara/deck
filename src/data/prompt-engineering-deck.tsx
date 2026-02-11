@@ -2844,20 +2844,42 @@ To succeed with ReAct: keep your tool set focused and well-documented, validate 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Agents self-evaluate outcomes and write linguistic feedback to improve future attempts.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Iteratively improved outputs guided by self-feedback</li>
-                <li>Learn from failures without model retraining</li>
-                <li>Accumulate experience across episodes</li>
-                <li>Self-improvement through reflection</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for trial-and-error tasks, code development, planning scenarios, and multi-episode agents. Self-critique drives iterative improvement.</p>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" duration={0.8} delay={0.3}>
+                <p>Agents self-evaluate outcomes and write linguistic feedback to improve future attempts.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" duration={0.6} delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Iteratively improved outputs guided by self-feedback</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Learn from failures without model retraining</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Accumulate experience across episodes</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Self-improvement through reflection</li>
+                </ul></div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for trial-and-error tasks, code development, planning scenarios, and multi-episode agents. Self-critique drives iterative improvement.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Welcome to Reflexion! This is one of my favorite techniques because it mirrors how we humans actually learn. Think about it - when you make a mistake, you don't immediately forget everything and start from scratch, right? You think about what went wrong, learn from it, and try again with that new knowledge. That's exactly what Reflexion does for AI agents.
+
+Here's the core idea: instead of just running a task and hoping for the best, the agent actually stops, looks at its own work, and writes out feedback to itself. It's like having an internal coach that says "hey, that didn't work because of X, Y, and Z - let's try this approach instead next time."
+
+The beauty of this technique is that the learning happens through language, not through retraining the model weights. That means it's fast, adaptable, and can happen in real-time. The agent builds up a memory of its own critiques and uses them to get better with each attempt.
+
+This is particularly powerful for tasks where you need to iterate - like writing code that passes tests, planning complex projects, or any scenario where the first attempt might not be perfect. Instead of treating each failure as a dead end, Reflexion turns every mistake into a learning opportunity. The agent literally writes down "I failed because..." and "next time I should..." which becomes part of its working memory for future attempts.`
         },
         {
           id: 64,
@@ -2865,17 +2887,43 @@ To succeed with ReAct: keep your tool set focused and well-documented, validate 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Reflexion has the agent attempt a task, then evaluate its own performance. The agent writes a self-critique identifying what went wrong and how to improve. This critique is stored in memory and used to guide the next attempt. Over multiple iterations, the agent learns from its mistakes through linguistic reflection rather than parameter updates, enabling rapid adaptation to task requirements.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Optional memory store for critique history</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
+              <GSAPAnimated animation="slideInTop" duration={0.8} delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" duration={1} delay={0.4}>
+                <p>Reflexion has the agent attempt a task, then evaluate its own performance. The agent writes a self-critique identifying what went wrong and how to improve. This critique is stored in memory and used to guide the next attempt. Over multiple iterations, the agent learns from its mistakes through linguistic reflection rather than parameter updates, enabling rapid adaptation to task requirements.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" duration={0.8} delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" duration={0.6} delay={1.3}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" duration={0.6} delay={1.5}>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Optional memory store for critique history</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" duration={0.8} delay={1.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={2.2}>
+                <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Let me walk you through how this actually works in practice, because it's a really elegant cycle once you see it in action.
+
+Step one: the agent attempts the task. Maybe it's writing a function, planning a route, or solving a puzzle - whatever the goal is, it gives it a shot.
+
+Step two: the agent evaluates what happened. Did it work? Did tests pass? Did it achieve the goal? Here's where it gets interesting - the agent doesn't just get a pass/fail grade. It actually analyzes its own work and writes out a detailed critique. Something like "My function failed because I didn't handle edge cases for empty arrays. I also used an inefficient algorithm that times out on large inputs."
+
+Step three: this critique gets stored in memory. This is crucial - it's not thrown away, it becomes part of the agent's context for the next attempt.
+
+Step four: the agent tries again, but this time with its own feedback front and center. It's literally reading its own notes from the last attempt and using them to make better decisions.
+
+Now, here's a real-world example that makes this concrete: imagine a coding assistant trying to fix a bug. First attempt - it writes some code but three tests fail. Instead of just trying random fixes, it writes: "Tests failed because I assumed input would always be a string, but test 2 passes an object. My logic also doesn't handle null values." Second attempt - armed with this self-critique, it adds type checking and null handling. The tests pass. That's Reflexion in action.
+
+The key insight is that this happens through language and memory, not model retraining. That makes it incredibly fast and flexible. You do need a capable model though - something like GPT-4 or Claude 3.5 that can genuinely analyze its own work critically.`
         },
         {
           id: 65,
@@ -2883,16 +2931,34 @@ To succeed with ReAct: keep your tool set focused and well-documented, validate 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Benefits from memory systems to store critique history across multiple episodes, enabling long-term learning from experience.</p>
+              <GSAPAnimated animation="rotateIn" duration={0.8} delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" duration={1} delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" duration={0.8} delay={1.4}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Benefits from memory systems to store critique history across multiple episodes, enabling long-term learning from experience.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Now let's talk about how to actually implement this in your own projects. The good news is that the basic prompt structure is surprisingly simple, though you can make it as sophisticated as you need.
+
+Here's a straightforward prompt that captures the essence of Reflexion: "Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt." That's it! That simple instruction is enough to trigger the self-reflection loop.
+
+But let's break down what makes this work: First, you're explicitly telling the agent to try the task. Then, you're asking it to step back and analyze - "write a self-critique with 3 improvements" is key because it forces specific, actionable feedback rather than vague observations. Finally, you connect the critique to the next attempt, creating that learning loop.
+
+In practice, you might want to make this more sophisticated. For example, you could ask the agent to identify which assumptions failed, what constraints it violated, or what it learned from error messages. If you're working with code, you might say "analyze the test failures and explain why your implementation caused each one." If it's a planning task, maybe "identify which steps failed and why, then propose an alternative approach."
+
+The models that really shine here are GPT-4, Claude 3.5, and Gemini 1.5 - you need that level of sophistication for genuine self-critique. Weaker models tend to either be too gentle on themselves or miss the root causes of failures.
+
+One pro tip: if you're building a production system with Reflexion, set up a memory store to keep critique history across multiple episodes. That way your agent isn't just learning within a single conversation - it's building up institutional knowledge over time. Imagine an agent that remembers "oh, last week I struggled with parsing date formats, so this time I should be extra careful there." That's when Reflexion becomes really powerful.`
         },
         {
           id: 66,
@@ -2900,17 +2966,37 @@ To succeed with ReAct: keep your tool set focused and well-documented, validate 
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Feedback quality varies with model capability</li>
-                <li>May entrench mistakes without external validation</li>
-                <li>Can increase token usage significantly</li>
-                <li>Risk of self-reinforcing incorrect assumptions</li>
-              </ul>
+              <GSAPAnimated animation="flipCard" duration={1} delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.7}>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Feedback quality varies with model capability</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>May entrench mistakes without external validation</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Can increase token usage significantly</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Risk of self-reinforcing incorrect assumptions</li>
+                </ul></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Now, let's be real about the limitations here, because Reflexion isn't a magic bullet and it's important to understand when it might not work as well as you'd hope.
+
+First up: feedback quality varies with model capability. This is huge. If your model isn't sophisticated enough to genuinely understand why something failed, its self-critique will be shallow or even wrong. It's like asking a novice programmer to review their own code - they might spot syntax errors but miss the architectural problems. So if you're using a weaker model, the reflection might be "it didn't work, I should try harder" instead of "my algorithm has O(n²) complexity and that's causing timeouts on large inputs."
+
+Second limitation: Reflexion can entrench mistakes without external validation. Here's a scenario - the agent makes an incorrect assumption, then critiques itself based on that same faulty assumption, then tries again still working from that wrong premise. It's like digging a hole in the wrong place and reflecting "I should dig faster" instead of "am I even in the right spot?" This is why you often want to combine Reflexion with external feedback like test results, user corrections, or ground truth data.
+
+Third: token usage. Every reflection cycle adds significant tokens - you're not just running the task, you're also generating critique, storing that critique in context, and then processing it for the next attempt. If you're doing multiple iterations, this can get expensive fast. Something to budget for in production systems.
+
+Finally, there's the risk of self-reinforcing incorrect assumptions. If the agent develops a mental model that's fundamentally flawed, its reflections might actually strengthen that wrong model rather than breaking out of it. It's the AI equivalent of confirmation bias.
+
+So when should you use Reflexion despite these limitations? When you have a capable model, when external validation is available to catch entrenched errors, when the task benefits from iteration, and when the improvement in success rate justifies the extra token cost. It's powerful, but it needs the right conditions to shine.`
         }
       ]
     },
