@@ -513,13 +513,13 @@ Let's look at these trade-offs in more detail on the next slide.`
 
 #### The Hallucination Paradox
 
-[intrigued] Let's dig deeper into the trade-offs of HyDE, because this technique has a fascinating paradox at its heart. [storytelling] It intentionally uses what we normally consider a bug, hallucination, as a feature to improve retrieval.
+[conversational] Let's dig deeper into the trade-offs of HyDE, because this technique has a fascinating paradox at its heart. [storytelling] It intentionally uses what we normally consider a bug, hallucination, as a feature to improve retrieval.
 
 #### The Compelling Advantages
 
 [enthusiastically] The strong recall lift is HyDE's primary selling point. By embedding a full hypothetical answer rather than a sparse query, you dramatically increase your chances of matching relevant documents in vector space. Documents that would have been ranked too low with query-based search suddenly surface because they're semantically similar to your hypothetical.
 
-[pleased] The vocabulary gap bridging is equally powerful. [playfully] Imagine a user asking "Why is my code slow?" while your documentation talks about "performance optimization" and "computational complexity". A direct query embedding might miss these documents entirely, but a hypothetical answer that naturally uses technical terminology will find them.
+[pleased] The vocabulary gap bridging is equally powerful. [storytelling] Imagine a user asking "Why is my code slow?" while your documentation talks about "performance optimization" and "computational complexity". A direct query embedding might miss these documents entirely, but a hypothetical answer that naturally uses technical terminology will find them.
 
 The simplicity is refreshing. You don't need to restructure your retrieval pipeline or retrain models. You just add one language model call before your existing embedding and retrieval steps. This makes HyDE one of the easiest multi-step techniques to experiment with.
 
@@ -826,7 +826,7 @@ graph TD
 
 [seriously] The prompt-sensitivity issue is equally important. The entire technique hinges on generating a good Chain-of-Thought skeleton up front. [cautiously] If your prompt doesn't elicit the right reasoning structure, or if the model makes assumptions that lead it down the wrong path early on, everything downstream suffers. [firmly] This makes the technique fragile to prompt variations and requires careful prompt engineering.
 
-[puzzled] The risk of overfitting to early reasoning errors is perhaps the most subtle but serious challenge. Once you've committed to a particular reasoning structure in your skeleton, all subsequent retrieval and reasoning follows that structure. [disappointed] If the initial skeleton misunderstands the question or chooses a flawed approach, you're locked into that approach. Unlike iterative refinement strategies that can course-correct, Chain-of-Thought guided retrieval is committed from the start.
+[seriously] The risk of overfitting to early reasoning errors is perhaps the most subtle but serious challenge. Once you've committed to a particular reasoning structure in your skeleton, all subsequent retrieval and reasoning follows that structure. [disappointed] If the initial skeleton misunderstands the question or chooses a flawed approach, you're locked into that approach. Unlike iterative refinement strategies that can course-correct, Chain-of-Thought guided retrieval is committed from the start.
 
 #### The Right Use Cases
 
@@ -965,7 +965,7 @@ graph TD
 
 [cautiously] However, the technique may pull in generic information that doesn't directly answer the question. [concerned] There's a risk of spending tokens and latency on high-level overviews that the user already understands or doesn't actually need. This makes the technique less suitable when users have deep domain knowledge and are asking very specific questions.
 
-[seriously] Careful prompting is required to generate good step-back questions. If your step-back question is too broad, you'll retrieve information that's too general to be useful. If it's not broad enough, you haven't really stepped back at all. [puzzled] Finding the right level of abstraction requires prompt engineering and often domain-specific guidance.
+[seriously] Careful prompting is required to generate good step-back questions. If your step-back question is too broad, you'll retrieve information that's too general to be useful. If it's not broad enough, you haven't really stepped back at all. [cautiously] Finding the right level of abstraction requires prompt engineering and often domain-specific guidance.
 
 [disappointed] The extra hops definitely increase latency. You're adding a full retrieval cycle before your main retrieval, which doubles your retrieval latency at minimum. [firmly] For applications where sub-second response times matter, this overhead can be prohibitive.
 
