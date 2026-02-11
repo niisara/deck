@@ -1,6 +1,6 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
-import { GSAPAnimated } from '../components/GSAPAnimated';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
 import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
@@ -209,21 +209,34 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Reduce embedding latency and memory footprint while maintaining acceptable retrieval quality.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 3. Use Smaller Embedding Models — Goal
+Let's start with our first technique — using **smaller embedding models**. The goal here is straightforward: reduce the time it takes to convert text into numerical vectors, while keeping your retrieval quality acceptable.
+
+#### 🎯 What's the Goal?
+When you embed a query or a document, you're running it through a neural network. Bigger models like OpenAI's text-embedding-ada-002 👉 'text embedding ada oh-oh-two' produce great embeddings, but they're slow. Smaller models can give you 2x to 10x (two x to ten x) speedups with only a minor drop in recall.
+
+#### 💡 Think of It This Way
+Imagine you have two translators. One is a world-class expert who takes five minutes per page. The other is a skilled professional who takes thirty seconds per page and gets ninety-five percent of the nuances right. For most practical purposes, the faster translator is the better choice.
+
+This technique is particularly powerful because embedding happens on **every single query** your system processes, so even small speedups multiply quickly. Let's see when you'd want to use this...`
         },
         {
           id: 4,
@@ -232,20 +245,39 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>High query volume applications</li>
                 <li>Large document corpora</li>
                 <li>Frequent (re)indexing requirements</li>
                 <li>Multilingual applications (if model supports it)</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 4. Use Smaller Embedding Models — When to Use
+So when should you reach for a smaller embedding model? There are four main scenarios where this technique really shines.
+
+#### 📊 High Query Volume
+If your application handles thousands or millions of queries per day, every millisecond saved on embedding adds up. A model that's 5x (five x) faster means you can handle 5x more queries with the same hardware.
+
+#### 📚 Large Document Corpora
+When you're indexing millions of documents, the embedding step can take hours or even days with a large model. Switching to a smaller model can cut that time dramatically — think going from a twelve-hour indexing job to just two hours.
+
+#### 🔄 Frequent Re-indexing
+If your data changes often and you need to re-embed documents regularly, faster models save both time and compute costs. This is especially important for applications like news aggregation or product catalogs that update constantly.
+
+#### 🌍 Multilingual Applications
+Some smaller models like multilingual E5-small 👉 'ee-five small' handle multiple languages efficiently without needing separate models for each language.
+
+Now let's look at how this actually works under the hood...`
         },
         {
           id: 5,
@@ -254,21 +286,61 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Embedding Model Comparison"
+                    diagram={`flowchart LR
+    A["📝 Text Input"] --> B["🤖 Large Model\\n1536 dims"]
+    A --> C["⚡ Small Model\\n384 dims"]
+    B --> D["🐢 Slow\\n~50ms"]
+    C --> E["🚀 Fast\\n~5ms"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Replace large embedding models with smaller, more efficient alternatives that offer comparable semantic understanding with reduced computation:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Use lower-parameter models (e.g., text-embedding-3-small, E5-small, bge-small)</li>
                 <li>Optionally reduce embedding dimensions (e.g., PCA from 1536→512)</li>
                 <li>Consider quantization techniques (FP16, INT8)</li>
                 <li>Trade minimal recall loss for significant latency improvements</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 5. Use Smaller Embedding Models — How It Works
+Here's the mechanics of how smaller embedding models speed things up. It's actually quite intuitive once you understand what's happening under the hood.
+
+#### ⚙️ How It Works
+The core idea is to replace large embedding models with smaller, more efficient alternatives. Think of models like text-embedding-3-small 👉 'text embedding three small', E5-small, or bge-small 👉 'bee-gee-ee small'. These models have fewer parameters, which means less computation per embedding.
+
+\`\`\`mermaid
+flowchart LR
+    A["📝 Text Input"] --> B["🤖 Large Model\\n1536 dims"]
+    A --> C["⚡ Small Model\\n384 dims"]
+    B --> D["🐢 Slow\\n~50ms"]
+    C --> E["🚀 Fast\\n~5ms"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+\`\`\`
+
+#### 🔢 Dimension Reduction
+You can also reduce embedding dimensions using techniques like PCA 👉 'pee-see-ay'. For example, going from 1536 dimensions down to 512 dimensions reduces storage by 3x (three x) and speeds up similarity search significantly. Quantization 👉 'KWON-tih-ZAY-shun' techniques like FP16 👉 'eff-pee sixteen' or INT8 👉 'int eight' further compress the vectors.
+
+#### ⚖️ The Trade-off
+You're trading a small amount of recall quality for big latency gains. In most real-world applications, the quality drop is barely noticeable — maybe two to three percent — but the speed improvement can be dramatic. Let's walk through the implementation steps...`
         },
         {
           id: 6,
@@ -277,10 +349,13 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Benchmark baseline: Measure retrieval quality and latency with current model</li>
                 <li>Trial alternatives: Evaluate smaller models on representative query set</li>
@@ -288,10 +363,23 @@ The key idea here is simple: **optimize the critical path and perceived latency 
                 <li>Measure performance: Track recall@k and p95 latency metrics</li>
                 <li>Tune parameters: Adjust retrieval settings to compensate for any quality drop</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 6. Use Smaller Embedding Models — Steps
+Let's walk through the practical steps to switch to a smaller embedding model. This is a systematic process that helps you make the transition safely.
+
+#### 📋 Step-by-Step Guide
+**Step one: Benchmark your baseline.** Before changing anything, measure your current retrieval quality using metrics like recall@k 👉 'recall at k' and your p95 latency 👉 'pee ninety-five latency'. This gives you a reference point to compare against.
+
+**Step two: Trial alternatives.** Pick two or three smaller models and evaluate them on a representative set of queries. Look at both quality metrics and speed. Models like E5-small or bge-small are great starting points.
+
+**Step three: Optimize dimensions.** If the quality is close but you want even more speed, try reducing vector dimensions. Going from 768 to 384 dimensions can give you another 2x (two x) speedup on similarity search with minimal quality loss.
+
+**Step four: Measure performance.** Run your full evaluation suite. Track both recall@k and latency percentiles. Make sure the quality drop is within your acceptable threshold — typically less than five percent.
+
+**Step five: Tune parameters.** If you notice quality drops, try adjusting retrieval settings like increasing top-k slightly or adding a reranking step to compensate. Now let's look at the trade-offs...`
         },
         {
           id: 7,
@@ -301,6 +389,7 @@ The key idea here is simple: **optimize the critical path and perceived latency 
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -314,6 +403,8 @@ The key idea here is simple: **optimize the critical path and perceived latency 
                     <li>Higher query throughput</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -326,11 +417,22 @@ The key idea here is simple: **optimize the critical path and perceived latency 
                     <li>Possible multilingual performance gaps</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 7. Use Smaller Embedding Models — Pros and Cons
+Let's weigh the advantages and disadvantages of using smaller embedding models. This will help you decide if this technique is right for your use case.
+
+#### ✅ Pros
+The good stuff: You get **2x to 10x (two x to ten x) faster inference**, which is huge when you're processing millions of queries. Your **compute costs drop significantly** because smaller models need less GPU power. Your **vector indexes shrink**, which means less storage and faster search. **RAM requirements go down**, letting you handle more concurrent requests. And your overall **query throughput increases**, meaning you can serve more users with the same infrastructure.
+
+#### ❌ Cons
+The problems: There's a **potential recall drop on nuanced queries** — very subtle semantic differences might be missed by smaller models. You **may underperform on long-tail cases** where rare vocabulary or domain-specific jargon is involved. There's a **reindexing cost** when switching models — you need to re-embed all your documents, which can be expensive for large corpora. And there might be **multilingual performance gaps** if the smaller model wasn't trained on enough data in your target languages.
+
+#### ⚖️ The Verdict
+For most production use cases, the speed gains far outweigh the minor quality trade-offs. Start with a smaller model and only move to a larger one if you can measure a meaningful quality difference on your specific data. Now let's move to our second technique — reducing chunk size...`
         }
       ]
     },
@@ -345,21 +447,34 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Cut retrieval time and LLM prompt tokens while maintaining or improving retrieval quality.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d4d',
-          notes: ''
+          notes: `### 8. Reduce Chunk Size — Goal
+On to our second technique — reducing chunk size. This one might seem simple, but it's surprisingly impactful. The goal is to make your chunks smaller so that embedding, retrieval, and LLM processing all get faster.
+
+#### 🎯 What's the Goal?
+When you split documents into chunks for your RAG pipeline, the size of those chunks affects everything downstream. Smaller chunks mean faster embedding, more precise retrieval, and less token usage when generating answers.
+
+#### 💡 The Analogy
+Think of it like organizing a library. If each "book" on the shelf is actually a fifty-page chapter, it's hard to find the exact paragraph you need. But if each "book" is just a single page or paragraph, you can quickly grab exactly the information you're looking for — no fluff, no wasted time.
+
+The key insight is that most of the content in a large chunk is irrelevant to any given query. By making chunks smaller, you reduce noise and speed up the entire pipeline. Let's see when this is most effective...`
         },
         {
           id: 9,
@@ -368,20 +483,39 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Long documents or technical content</li>
                 <li>Limited LLM context windows</li>
                 <li>High per-token LLM costs</li>
                 <li>Content with distinct sections or topics</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d4d',
-          notes: ''
+          notes: `### 9. Reduce Chunk Size — When to Use
+When should you consider reducing your chunk size? Here are the key scenarios where smaller chunks make the biggest difference.
+
+#### 📝 Dense, Factual Content
+If your documents contain lots of specific facts, definitions, or data points packed closely together, smaller chunks help isolate each fact. Think technical documentation, legal contracts, or medical records.
+
+#### 🎯 Precision-Critical Applications
+When your users need exact answers rather than general summaries, smaller chunks reduce the noise. For example, a customer support bot answering "what's the return policy for electronics?" doesn't need the entire policy document — just the relevant paragraph.
+
+#### 💰 Token Cost Optimization
+Since LLMs charge per token, sending smaller, more relevant chunks means lower costs per query. If you're processing thousands of queries daily, this adds up to significant savings.
+
+#### ⚡ Low-Latency Requirements
+Every token sent to the LLM adds to generation time. Smaller chunks mean fewer tokens, which means faster responses. For real-time applications, this can be the difference between an acceptable and an unacceptable user experience.
+
+Let's see how chunk size reduction actually works in practice...`
         },
         {
           id: 10,
@@ -390,21 +524,60 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Chunk Size Impact"
+                    diagram={`flowchart TB
+    A["📄 Document"] --> B["✂️ Large Chunks\\n512 tokens"]
+    A --> C["✂️ Small Chunks\\n128 tokens"]
+    B --> D["🐢 More tokens\\nto LLM"]
+    C --> E["🚀 Fewer tokens\\nto LLM"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Split documents into smaller, overlapping chunks so retrieval finds more specific, relevant context and the LLM processes fewer tokens:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Reduces the total context window size passed to the LLM</li>
                 <li>Ensures each chunk focuses on a coherent topic or concept</li>
                 <li>Creates overlap between chunks to maintain contextual continuity</li>
                 <li>Enables more precise matching between query and relevant content</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d4d',
-          notes: ''
+          notes: `### 10. Reduce Chunk Size — How It Works
+Let's understand the mechanics of chunk size reduction and why it speeds things up at every stage of the pipeline.
+
+#### ⚙️ The Mechanism
+\`\`\`mermaid
+flowchart TB
+    A["📄 Document"] --> B["✂️ Large Chunks\\n512 tokens"]
+    A --> C["✂️ Small Chunks\\n128 tokens"]
+    B --> D["🐢 More tokens\\nto LLM"]
+    C --> E["🚀 Fewer tokens\\nto LLM"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+\`\`\`
+When you split a document into smaller chunks — say 128 tokens instead of 512 — three things happen. First, each chunk embeds faster because there are fewer tokens to process. Second, retrieval becomes more precise because each chunk contains a more focused topic. Third, the LLM processes fewer irrelevant tokens, speeding up generation.
+
+#### 📏 Finding the Sweet Spot
+The trick is finding the right balance. Go too small — like 50 tokens — and you lose context. Go too large — like 1000 tokens — and you include too much noise. Most teams find the sweet spot between 100 and 256 tokens, depending on their content type.
+
+#### 🔗 Overlap Strategy
+Use chunk overlap — typically 10 to 20 percent — to ensure you don't cut important sentences in half. This small redundancy prevents information loss at chunk boundaries. Now let's look at the implementation steps...`
         },
         {
           id: 11,
@@ -413,10 +586,13 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Set initial chunk size: Start with 200–400 tokens per chunk</li>
                 <li>Configure overlap: Use 10–20% overlap between consecutive chunks</li>
@@ -424,10 +600,25 @@ The key idea here is simple: **optimize the critical path and perceived latency 
                 <li>Evaluate performance: Test recall and answer quality with sample queries</li>
                 <li>Iterate and tune: Adjust chunk size and overlap based on results</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b1d4d',
-          notes: ''
+          notes: `### 11. Reduce Chunk Size — Steps
+Here's a practical guide to reducing your chunk size effectively. Follow these steps to find your optimal configuration.
+
+#### 📋 Implementation Steps
+**Step one: Analyze your current chunks.** Look at your existing chunk sizes and measure how much of each chunk is actually relevant to typical queries. If most of the content is noise, smaller chunks will help.
+
+**Step two: Experiment with sizes.** Try chunking at 128, 200, and 256 tokens. For each size, run your evaluation queries and measure both retrieval quality and latency.
+
+**Step three: Add semantic boundaries.** Don't just split at token counts — use paragraph breaks, section headers, or sentence boundaries. This preserves meaning within each chunk. Libraries like LangChain 👉 'lang-chain' have built-in splitters for this.
+
+**Step four: Configure overlap.** Set chunk overlap to about 10-20% of your chunk size. For a 200-token chunk, that's 20-40 tokens of overlap. This ensures continuity between adjacent chunks.
+
+**Step five: Reindex and evaluate.** Re-embed all your documents with the new chunk size and run your full evaluation suite. Compare recall@k, latency, and token costs against your baseline.
+
+Time to see the trade-offs of this approach...`
         },
         {
           id: 12,
@@ -437,6 +628,7 @@ The key idea here is simple: **optimize the critical path and perceived latency 
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -450,6 +642,8 @@ The key idea here is simple: **optimize the critical path and perceived latency 
                     <li>Reduces hallucination risk</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -462,11 +656,22 @@ The key idea here is simple: **optimize the critical path and perceived latency 
                     <li>May split semantic units like paragraphs</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d4d',
-          notes: ''
+          notes: `### 12. Reduce Chunk Size — Pros and Cons
+Let's evaluate the trade-offs of reducing chunk size. Understanding these helps you make informed decisions for your specific use case.
+
+#### ✅ Pros
+The good stuff: You get **more precise retrieval** because each chunk focuses on a single topic, reducing noise. **Lower token costs** since you're sending fewer irrelevant tokens to the LLM. **Faster generation** because the LLM processes less input. **Better relevance scores** in your vector search because the embeddings represent more focused content. And **easier debugging** — when something goes wrong, it's easier to trace issues in smaller chunks.
+
+#### ❌ Cons
+The problems: You **may lose context** if chunks are too small, making it harder for the LLM to understand the full picture. You get **more chunks to index**, which increases storage requirements and indexing time. There's a risk of **splitting related information** across chunks, which can lead to incomplete answers. And you need to **reindex everything** when you change chunk sizes, which can be time-consuming for large document collections.
+
+#### 💡 Pro Tip
+Start with 200 tokens and adjust from there based on your content type. Technical documentation often works better with smaller chunks around 128 tokens, while narrative content may need larger chunks around 300 tokens. Up next, let's talk about limiting top-K retrieval...`
         }
       ]
     },
