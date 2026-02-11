@@ -2653,20 +2653,42 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Interleave reasoning traces with actions and observations (think→act→observe loops).</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Transparent action-reasoning trajectory plus answer</li>
-                <li>Dynamic adaptation based on observations</li>
-                <li>Grounded reasoning with external information</li>
-                <li>Interpretable decision-making process</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for knowledge-intensive QA, web tasks, and interactive environments. Combines reasoning with actions in a continuous loop.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Interleave reasoning traces with actions and observations (think→act→observe loops).</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <div><li>Transparent action-reasoning trajectory plus answer</li></div>
+                <div><li>Dynamic adaptation based on observations</li></div>
+                <div><li>Grounded reasoning with external information</li></div>
+                <div><li>Interpretable decision-making process</li></div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for knowledge-intensive QA, web tasks, and interactive environments. Combines reasoning with actions in a continuous loop.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - Overview
+
+Welcome to **ReAct** — which you can pronounce either as "react" like the JavaScript library, or spell it out "R-E-act" for Reasoning and Acting. Both are perfectly fine! This is one of the most powerful agentic patterns we have today.
+
+#### What is ReAct?
+
+ReAct is all about creating a continuous **think-act-observe loop**. Instead of just thinking through a problem or just executing actions blindly, ReAct interleaves both! The model reasons about what to do next, takes an action like searching the web or calling an API, observes what happened, and then reasons again based on that new information. It's like having a conversation with reality — think, act, learn, repeat.
+
+#### Why This Matters
+
+The magic of ReAct is that it's **grounded in reality**. Traditional reasoning happens entirely in the model's "head" — it can hallucinate or make assumptions. But with ReAct, every reasoning step can be informed by real-world observations from tools and APIs. This creates a transparent, interpretable decision-making process where you can see exactly *why* the agent took each action and *what* it learned from the results.
+
+#### When to Use ReAct
+
+ReAct shines in **knowledge-intensive tasks** where the model needs to look things up, **web navigation** where it needs to interact with websites, and **interactive environments** where it needs to respond to changing conditions. Think customer support agents that look up account details, research assistants that verify claims by searching multiple sources, or shopping agents that compare products across different stores. Anywhere you need reasoning *plus* real-world actions, ReAct is your go-to pattern.`
         },
         {
           id: 60,
@@ -2674,17 +2696,49 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>ReAct creates a loop of Reasoning, Acting, and Observing. The model first reasons about what to do next, then takes an action (like searching or using a tool), observes the result, and incorporates that observation into its next reasoning step. This cycle continues until the task is complete. The approach provides both transparency and grounding through real observations.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs or environments required</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>ReAct creates a loop of Reasoning, Acting, and Observing. The model first reasons about what to do next, then takes an action (like searching or using a tool), observes the result, and incorporates that observation into its next reasoning step. This cycle continues until the task is complete. The approach provides both transparency and grounding through real observations.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs or environments required</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={1.4}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.7}>
+                <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - How It Works
+
+Let me walk you through the **ReAct cycle** step by step, because once you understand this loop, you'll see how incredibly powerful it is.
+
+#### The Three-Step Cycle
+
+**Step 1: Reasoning** — The model thinks about the current state and decides what to do next. "I need to find out the current weather in Tokyo to answer this question."
+
+**Step 2: Acting** — The model executes an action using a tool. It might call a weather API, search the web, or query a database. The key is that it's actually *doing something* in the world, not just thinking.
+
+**Step 3: Observing** — The model receives the result of its action — the weather data, search results, or database response. This observation becomes part of the context for the next reasoning step.
+
+Then the cycle repeats! The model reasons about what the observation means, decides if it needs more information, takes another action if needed, observes the result, and so on. This continues until the model has enough information to provide a final answer.
+
+#### Why This Works So Well
+
+The brilliance of ReAct is that **each step informs the next**. If the first search doesn't give good results, the model can reason about why and try a different search. If a tool returns an error, the model can adapt its approach. It's dynamic, self-correcting, and grounded in reality at every step. You get both transparency — you can see the reasoning — and reliability — because it's based on real observations, not hallucinations.
+
+#### Real-World Power
+
+Think about a shopping agent using ReAct. It reads the user's request, reasons about what kind of product to search for, searches an online store, observes the results, reasons about which products might match the criteria, looks up detailed specs for promising options, compares them, and finally recommends the best choice with a full justification. Every step is traceable and grounded in real data from the store!`
         },
         {
           id: 61,
@@ -2692,21 +2746,49 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`Question: <q>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`Question: <q>
 Thought: <plan step>
 Action: Search[<query>]
 Observation: <result>
 ...
 Repeat until enough info, then give Final Answer: <answer>`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and orchestration to manage the think-act-observe cycle. Tools can include search, calculation, database access, etc.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.1}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and orchestration to manage the think-act-observe cycle. Tools can include search, calculation, database access, etc.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - Implementation
+
+Now let's talk about how to actually **implement ReAct** in your applications. The good news is that the pattern itself is pretty straightforward once you understand the cycle!
+
+#### The Prompt Structure
+
+The key to ReAct is structuring your prompts to encourage the model to alternate between reasoning and acting. You typically use a format like: **Question** — what the user is asking, **Thought** — the model's reasoning about what to do, **Action** — a specific tool call or command, and **Observation** — the result from that action. Then the cycle repeats!
+
+The model learns to follow this pattern, and your orchestration layer manages the back-and-forth between the model and your tools. When the model outputs an action, your code intercepts it, executes the tool call, captures the result as an observation, and feeds it back to the model. The model then reasons about that observation and either takes another action or provides a final answer.
+
+#### Tool Integration is Key
+
+ReAct **requires tool-calling capabilities**, which modern models like GPT-4, Claude 3.5, and Gemini 1.5 all support beautifully. You define your tools — search APIs, calculators, databases, web scrapers, whatever your agent needs — and the model learns to call them appropriately. The orchestration layer (your application code) manages executing these tools and feeding results back.
+
+#### Practical Example
+
+Let's say you're building a customer support agent. The user asks "What's the status of my order?" The model thinks "I need to look up the order ID first," searches the customer database, observes "Order 12345 found, status: shipped," thinks "Now I should get tracking details," calls the shipping API, observes tracking info, and finally responds "Your order was shipped yesterday and will arrive on Tuesday, tracking number XYZ." Each action is grounded in real data from your systems!
+
+#### Framework Support
+
+Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support for ReAct patterns. They handle the orchestration, tool management, and observation loop for you. But understanding the underlying pattern helps you customize and debug when needed.`
         },
         {
           id: 62,
@@ -2714,17 +2796,41 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tool dependency - quality depends on tool reliability</li>
-                <li>Cascading errors from bad observations</li>
-                <li>Can get stuck in reasoning loops</li>
-                <li>Requires careful action space design</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <div><li>Tool dependency - quality depends on tool reliability</li></div>
+                <div><li>Cascading errors from bad observations</li></div>
+                <div><li>Can get stuck in reasoning loops</li></div>
+                <div><li>Requires careful action space design</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - Considerations
+
+Let's be honest about the **challenges and limitations** of ReAct, because understanding these helps you build more robust systems.
+
+#### Tool Dependency is Real
+
+ReAct is only as good as the tools you give it. If your search API returns garbage, or your database query fails, or your web scraper breaks, the entire reasoning chain can go off track. The model is **completely dependent on the quality and reliability of observations**. Garbage in, garbage out! This means you need robust error handling, fallback mechanisms, and careful validation of tool outputs.
+
+#### Cascading Errors
+
+Here's a subtle but important problem: if the model makes a mistake early in the reasoning chain — maybe it misinterprets a search result or calls the wrong tool — that error can **cascade through subsequent steps**. The model reasons based on faulty observations, takes more wrong actions, gets more confusing results, and spirals further from the right answer. You need to build in validation checkpoints and ways for the agent to recognize when it's going down the wrong path.
+
+#### Reasoning Loops
+
+Sometimes ReAct agents get **stuck in loops** — they keep searching for the same thing, or repeating the same actions without making progress. This usually happens when the model doesn't recognize that it has enough information, or when tool outputs are ambiguous. You need to implement loop detection and limits on the number of reasoning steps to prevent infinite cycles.
+
+#### Action Space Design
+
+Finally, designing the **right set of tools** is an art! Too few tools and the agent can't accomplish its tasks. Too many tools and the model gets confused about which one to use. Tools need clear descriptions, consistent interfaces, and well-defined outputs. Spend time crafting your tool definitions and testing how the model uses them.
+
+#### Best Practices
+
+To succeed with ReAct: keep your tool set focused and well-documented, validate observations before using them in reasoning, set maximum step limits to prevent loops, log the entire reasoning chain for debugging, and test extensively with edge cases. When done right, ReAct is incredibly powerful — just be aware of these gotchas!`
         }
       ]
     },
