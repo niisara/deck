@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
@@ -21,35 +23,55 @@ export const ragEvaluationMetricsDeck: Deck = {
           title: '13 Underused RAG Evaluation Metrics',
           content: (
             <div>
-              <div style={{ fontSize: '1.5rem', marginBottom: '30px', color: '#0ea5e9' }}>
-                <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems
-              </div>
-              <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
-                <div>
-                  <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Retrieval Metrics</strong> — Metrics 1-4
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0}>
+                <div style={{ fontSize: '1.5rem', marginBottom: '30px', color: '#0ea5e9' }}>
+                  <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  A comprehensive cheat-sheet for measuring and improving retrieval quality, answer faithfulness, and system efficiency in Retrieval-Augmented Generation systems
                 </div>
-                <div>
-                  <SvgIcon iconName="duo-file-lines" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Context Quality</strong> — Metric 5
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
+                  <GSAPStaggerList stagger={0.15} duration={0.7} delay={0.6}>
+                    <div>
+                      <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Retrieval Metrics</strong> — Metrics 1-4
+                    </div>
+                    <div>
+                      <SvgIcon iconName="duo-file-lines" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Context Quality</strong> — Metric 5
+                    </div>
+                    <div>
+                      <SvgIcon iconName="duo-message" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Answer Quality</strong> — Metrics 6-10
+                    </div>
+                    <div>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Efficiency Metrics</strong> — Metrics 11-13
+                    </div>
+                  </GSAPStaggerList>
+                  <GSAPAnimated animation="slideInBottom" delay={1.2}>
+                    <p><strong>Prepared by:</strong> Nisar A</p>
+                    <p><strong>Date:</strong> November 7, 2025</p>
+                    <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+                  </GSAPAnimated>
                 </div>
-                <div>
-                  <SvgIcon iconName="duo-message" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Answer Quality</strong> — Metrics 6-10
-                </div>
-                <div>
-                  <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Efficiency Metrics</strong> — Metrics 11-13
-                </div>
-                <p><strong>Prepared by:</strong> Nisar A</p>
-                <p><strong>Date:</strong> November 7, 2025</p>
-                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#231f6f',
-          notes: ''
+          notes: `### 13 Underused RAG Evaluation Metrics
+Welcome everyone! Today we're diving into something crucial but often overlooked in the world of RAG systems—evaluation metrics. If you're building a Retrieval-Augmented Generation 👉 'RAG' system, you've probably wondered: "Is my system actually working well? How do I know if my retrieval is good enough? Is my AI making things up?"
+
+####  Why This Matters
+Think of RAG systems like this: they're basically AI assistants that look up information before answering your questions, kind of like how you might search through your notes before taking an exam. But here's the thing—if your retrieval system is bringing back the wrong notes, or if your AI is hallucinating facts that aren't in those notes, you're in trouble. That's where evaluation metrics come in.
+
+####  What We'll Cover
+We're going to explore **thirteen powerful metrics** that most teams don't use, but absolutely should. These metrics are organized into four logical categories that mirror how a RAG system actually works. First, we'll look at **Retrieval Metrics** (metrics one through four)—these tell us if we're finding the right documents. Then **Context Quality** (metric five)—is what we found actually useful? Next, **Answer Quality** (metrics six through ten)—is the AI generating good, truthful responses? And finally, **Efficiency Metrics** (metrics eleven through thirteen)—is our system fast and cost-effective?
+
+####  Who This Is For
+This presentation is perfect for beginners and freshers getting into RAG systems. Don't worry if you're new to this—I'll explain everything in simple terms with real examples. By the end, you'll have a comprehensive cheat-sheet for measuring and improving your RAG systems.
+
+Let's get started by understanding what a RAG system actually looks like!`
         },
         {
           id: 2,
@@ -57,68 +79,113 @@ export const ragEvaluationMetricsDeck: Deck = {
           icon: { name: 'duo-diagram-project' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.8', textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '30px' }}>
+                  <h4>
+                    RAG System Flow
+                    <MermaidPopover
+                      title="RAG Pipeline"
+                      diagram={`flowchart LR
+    A["❓ User Query"] --> B["🔍 Retrieval<br/>(Metrics 1-4)"]
+    B --> C["📋 Context Quality<br/>(Metric 5)"]
+    C --> D["🤖 LLM Generation<br/>(Metrics 6-10)"]
+    D --> E["✅ Answer"]
+    B -.-> F["⚡ Efficiency<br/>(Metrics 11-13)"]
+    C -.-> F
+    D -.-> F
+    style A fill:#4fc3f7,color:#000
+    style B fill:#3b82f6,color:#fff
+    style C fill:#0ea5e9,color:#fff
+    style D fill:#10b981,color:#fff
+    style E fill:#81c784,color:#000
+    style F fill:#8b5cf6,color:#fff`}
+                    />
+                  </h4>
+                </div>
+              </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginBottom: '2rem' }}>
-                <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                  <div style={{ color: '#3b82f6', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Retrieval Quality Metrics (1-4)</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                  <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <div style={{ color: '#3b82f6', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Retrieval Quality Metrics (1-4)</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                      <li>Retrieval Recall@K: Coverage of relevant information</li>
+                      <li>Retrieval Precision@K: Relevance of retrieved chunks</li>
+                      <li>Hit Rate: At least one relevant document in top-K</li>
+                      <li>Context Overlap Score: Answer content present in retrieval</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
-                    <li>Retrieval Recall@K: Coverage of relevant information</li>
-                    <li>Retrieval Precision@K: Relevance of retrieved chunks</li>
-                    <li>Hit Rate: At least one relevant document in top-K</li>
-                    <li>Context Overlap Score: Answer content present in retrieval</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
 
-                <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                  <div style={{ color: '#0ea5e9', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-file-lines" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Context Quality Metric (5)</strong>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(14, 165, 233, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <div style={{ color: '#0ea5e9', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-file-lines" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Context Quality Metric (5)</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                      <li>Context Relevance Score: LLM-judged relevance of context to query</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
-                    <li>Context Relevance Score: LLM-judged relevance of context to query</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                  <div style={{ color: '#10b981', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-message" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Answer Quality Metrics (6-10)</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                  <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <div style={{ color: '#10b981', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-message" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Answer Quality Metrics (6-10)</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                      <li>Hallucination Rate: Frequency of unsupported claims</li>
+                      <li>Grounded Answer Score: Correct citation of retrieved facts</li>
+                      <li>Faithfulness Score: Answer follows from context</li>
+                      <li>Answer Completeness: Addresses all parts of query</li>
+                      <li>Answer Specificity: Avoids vague responses</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
-                    <li>Hallucination Rate: Frequency of unsupported claims</li>
-                    <li>Grounded Answer Score: Correct citation of retrieved facts</li>
-                    <li>Faithfulness Score: Answer follows from context</li>
-                    <li>Answer Completeness: Addresses all parts of query</li>
-                    <li>Answer Specificity: Avoids vague responses</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
 
-                <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                  <div style={{ color: '#8b5cf6', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Efficiency Metrics (11-13)</strong>
+                <GSAPAnimated animation="slideInRight" delay={0.5}>
+                  <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <div style={{ color: '#8b5cf6', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Efficiency Metrics (11-13)</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
+                      <li>Noise Density: Irrelevant token percentage</li>
+                      <li>Context Compression Efficiency: Information density in prompt</li>
+                      <li>Latency-Cost Tradeoff Score: Efficiency under constraints</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem' }}>
-                    <li>Noise Density: Irrelevant token percentage</li>
-                    <li>Context Compression Efficiency: Information density in prompt</li>
-                    <li>Latency-Cost Tradeoff Score: Efficiency under constraints</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
 
-              <div style={{ marginTop: '2rem', textAlign: 'left', fontStyle: 'italic', fontSize: '1.6rem' }}>
-                <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                Goal: Diagnose failures precisely (missed retrieval vs. ungrounded reasoning vs. inefficient context)
-              </div>
+              <GSAPAnimated animation="bounceIn" delay={0.7}>
+                <div style={{ marginTop: '2rem', textAlign: 'left', fontStyle: 'italic', fontSize: '1.6rem' }}>
+                  <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  Goal: Diagnose failures precisely (missed retrieval vs. ungrounded reasoning vs. inefficient context)
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#231f6f',
-          notes: ''
+          notes: `### RAG System Overview
+Now that we understand why evaluation matters, let's see how a RAG system actually works and where each metric fits in.
+
+####  The RAG Pipeline
+Think of a RAG system like a research assistant working through a clear pipeline. When you ask a question, it first **searches** for relevant documents (that's the retrieval stage, measured by metrics one through four), then it **evaluates** whether those documents are actually useful (context quality, metric five), and finally it **writes** an answer based on what it found (generation, metrics six through ten). Throughout this whole process, we also care about **efficiency**—is it fast and cost-effective? That's what metrics eleven through thirteen address.
+
+####  The Four Categories
+Our thirteen metrics map perfectly to this pipeline. **Retrieval Quality Metrics** (one through four) tell us if we're finding the right documents in the first place. Are we getting good coverage? Are the documents actually relevant? **Context Quality** (metric five) is like a quality check—an LLM 👉 'ell-em-em' or Large Language Model evaluates whether the retrieved content is genuinely useful for answering the query. **Answer Quality Metrics** (six through ten) focus on the final output—is the AI being truthful, complete, and specific? And **Efficiency Metrics** (eleven through thirteen) ensure we're not wasting tokens or money on irrelevant content.
+
+####  Why This Structure?
+This organization helps you **diagnose problems precisely**. If your answers are bad, is it because you're retrieving the wrong documents? Or maybe you're retrieving the right documents but the LLM is ignoring them? Or perhaps the context is too noisy and inefficient? Each category answers a different diagnostic question, making it much easier to fix issues when they arise.
+
+Let's dive into the first category—**Retrieval Quality Metrics**—starting with Retrieval Recall at K.`
         }
       ]
     },
