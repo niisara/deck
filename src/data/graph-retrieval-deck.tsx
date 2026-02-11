@@ -430,85 +430,258 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
           title: '2. Edge-Weighted Retrieval - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Prioritize stronger, more meaningful relationships.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Prioritize stronger, more meaningful relationships using edge weights like citation counts, confidence scores, or co-occurrence frequencies.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Trust-aware ranking</li>
-                <li>Interpretable via weights</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Trust-aware ranking based on relationship strength</li>
+                  <li>Interpretable results via explicit weights</li>
+                  <li>Nuanced prioritization of connections</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>Heterogeneous graphs with rich edge metadata; trust/scoring matters.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <p><strong>Best For:</strong> Heterogeneous graphs with rich edge metadata; citation networks, knowledge graphs with confidence scores, social graphs where trust/scoring matters.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e1e',
-          notes: ''
+          notes: `### 2. Edge-Weighted Retrieval - Overview
+
+Welcome to our second technique: **Edge-Weighted Retrieval**. While node-level retrieval focuses on finding the right entities, edge-weighted retrieval adds a crucial dimension: understanding that **not all relationships are created equal**.
+
+#### What Is Edge-Weighted Retrieval?
+Imagine you're researching a scientific topic and you have a knowledge graph connecting papers, concepts, and authors. Some connections are strong—a paper cited 500 times versus one cited twice. Some relationships have high confidence—extracted with 95% certainty versus 60%. Edge-weighted retrieval uses these **relationship strengths** as signals for ranking and prioritization. It's like knowing not just who your friends are, but how close each friendship is.
+
+#### The Core Concept: Relationship Strength Matters
+In many real-world graphs, edges carry **metadata** that indicates importance, trust, frequency, or confidence. Citation counts, co-occurrence frequencies, manual annotations, confidence scores from extraction systems, temporal recency, user ratings—all of these can become edge weights. Edge-weighted retrieval leverages this metadata to make smarter decisions about which nodes to retrieve and in what order.
+
+#### Goals: Trust and Interpretability
+The primary goal is **trust-aware ranking**. Instead of treating all connected nodes equally, you prioritize based on evidence of relationship strength. This is particularly valuable when dealing with noisy or uncertain data. If your knowledge graph was automatically extracted, some edges might be confident while others are speculative guesses. Edge weights let you favor the confident connections.
+
+Another key benefit is **interpretability**. When your system returns results ranked by edge weight, you can explain **why** a particular node was prioritized. "This paper was ranked first because it has 847 citations from related work" is much more convincing than "the algorithm scored it highly." This transparency builds user trust and helps with debugging.
+
+#### When to Use This Technique
+Edge-weighted retrieval shines in several scenarios. **Citation networks** where paper importance can be measured by citation counts or impact factors. **Knowledge graphs** built from extraction pipelines that provide confidence scores for each extracted relationship. **Social networks** where connection strength varies (close friends versus distant acquaintances). **Temporal graphs** where relationship recency matters. **Heterogeneous graphs** with multiple edge types where different relationships have different importance levels.
+
+#### Use Cases That Benefit
+Think about a **literature review assistant**. You want papers that are not just relevant but **highly cited and influential**. Edge weights representing citation counts help surface the seminal works. Or consider a **product recommendation system** where edges represent "frequently bought together." Higher co-purchase frequencies should rank products higher. In a **compliance knowledge graph**, regulatory requirements connected with high-confidence edges should be prioritized over uncertain interpretations.
+
+Now let's see exactly how this technique works in practice!`
         },
         {
           id: 8,
           title: '2. Edge-Weighted Retrieval - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Use edge weights (e.g., citations, co-occurrence, confidence) to rank candidate nodes.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Edge-Weighted Retrieval Process"
+                      diagram={`flowchart TD
+    A["🔍 Query:<br/>Machine Learning"] --> B["📊 Find Seed Node:<br/>ML 👉 'em-el' Concept"]
+    B --> C["🔗 Get Connected Nodes<br/>with Edge Weights"]
+    C --> D["📈 Score Neighbors:<br/>weight × relevance"]
+    D --> E1["⭐ Node B<br/>weight=0.9"]
+    D --> E2["🌟 Node C<br/>weight=0.7"]
+    D --> E3["💫 Node D<br/>weight=0.3"]
+    E1 --> F["🎯 Rank by Score<br/>Return Top-k"]
+    E2 --> F
+    E3 --> F
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#e1bee7,color:#000
+    style E1 fill:#ffd700,color:#000
+    style E2 fill:#ffeb3b,color:#000
+    style E3 fill:#fff176,color:#000
+    style F fill:#81c784,color:#000`}
+                    />
+                  </h3>
+                  <p>Find seed nodes from query, then score and rank neighbors by edge weights (citations, confidence, co-occurrence). Apply decay for multi-hop traversal.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Edge weights/types, node embeddings (optional), normalization scheme.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Edge weights (numeric or categorical), edge types, normalization scheme (min-max, softmax), optional: hop decay factors, node embeddings.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`A -(weight 0.9)→ B; A -(0.3)→ C ⇒ pick B.`}
-              </pre>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Node A -(weight 0.9)→ Node B
+Node A -(weight 0.3)→ Node C
+⇒ Rank B higher than C`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e1e',
-          notes: ''
+          notes: `### 2. Edge-Weighted Retrieval - How It Works
+
+Let's break down the mechanics of edge-weighted retrieval. Understanding each step will help you implement this technique effectively and troubleshoot edge cases.
+
+#### The Weighted Ranking Process
+The workflow starts similarly to node-level retrieval but adds sophistication through edge metadata. First, you **identify seed nodes** from the query using embedding similarity or exact matching. Let's say the query is "Machine Learning applications in healthcare." You find the seed node "Machine Learning."
+
+Next comes the key difference: instead of treating all neighbors equally, you **retrieve connected nodes along with their edge weights**. Maybe "Neural Networks" has an edge weight of 0.9 (strong relationship), "Healthcare AI 👉 'ay-eye'" has 0.85, "Data Science" has 0.7, and "Statistics" has 0.3. These weights might represent co-occurrence frequency, confidence scores from an extraction system, or manually assigned importance.
+
+```mermaid
+flowchart TD
+    A["🔍 Query:<br/>Machine Learning"] --> B["📊 Find Seed Node:<br/>ML Concept"]
+    B --> C["🔗 Get Connected Nodes<br/>with Edge Weights"]
+    C --> D["📈 Score Neighbors:<br/>weight × relevance"]
+    D --> E1["⭐ Node B<br/>weight=0.9"]
+    D --> E2["🌟 Node C<br/>weight=0.7"]
+    D --> E3["💫 Node D<br/>weight=0.3"]
+    E1 --> F["🎯 Rank by Score<br/>Return Top-k"]
+    E2 --> F
+    E3 --> F
+```
+
+#### Scoring and Ranking
+Now you **compute a combined score** for each neighbor. This typically involves multiplying the edge weight by a relevance score. The relevance score might come from embedding similarity between the neighbor's content and the query. So if "Neural Networks" has edge weight 0.9 and query relevance 0.8, its combined score is 0.72. You **rank all neighbors** by this combined score and select the top k.
+
+#### Multi-Hop Considerations
+If you're traversing multiple hops, apply **decay factors**. A 2-hop neighbor shouldn't score as highly as a 1-hop neighbor with the same edge weight. Common approaches include multiplying weights along the path (0.9 × 0.8 = 0.72 for a two-edge path) or using exponential decay based on distance.
+
+#### Edge Weight Normalization
+Different edge types might use different scales. Citation counts range from 0 to thousands, confidence scores from 0 to 1. You need **normalization** to make them comparable. Common strategies include **min-max scaling** (map to 0-1 range), **softmax** (convert to probability distribution), or **z-score normalization** (standardize by mean and standard deviation). Choose based on your weight distribution and whether you want to preserve relative differences or create more uniform distributions.
+
+#### Data Requirements in Detail
+You need **edge weights** stored as numeric values or categorical labels that can be converted to scores. Store **edge types** if different relationship types should be weighted differently (e.g., "cites" vs. "mentions"). Define your **normalization scheme** consistently across all edge types. Optionally, maintain **hop decay factors** if you plan multi-hop traversal. **Node embeddings** remain useful for calculating the relevance component of your combined score.
+
+Let's look at practical implementation steps!`
         },
         {
           id: 9,
           title: '2. Edge-Weighted Retrieval - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Identify seed nodes from query</li>
-                <li>Score neighbors by edge weight (and decay by hop)</li>
-                <li>Rank and select top-k nodes</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Identify seed nodes from query (embedding match or entity linking)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Retrieve neighbors with edge weights; compute combined score = weight × relevance
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Apply normalization and optional hop decay
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>4.</strong> Rank by combined score and return top-k nodes with content
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>Citation networks where papers with higher citation counts or co-citations are more relevant, or knowledge graphs where relationship confidence scores help prioritize the most reliable connections.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.6}>
+                <h3>Example Use Case</h3>
+                <p>Citation networks where highly-cited papers (edge weight = citation count) are prioritized, or knowledge graphs where relationship confidence scores (0.95 vs 0.60) help surface the most reliable connections for medical diagnosis systems.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e1e',
-          notes: ''
+          notes: `### 2. Edge-Weighted Retrieval - Implementation
+
+Now let's get hands-on with implementing edge-weighted retrieval. We'll walk through each step with practical guidance and examples.
+
+#### Step 1: Seed Node Identification
+Start by finding your seed nodes just like in node-level retrieval. **Embed the query** using your chosen model. **Search your node index** using cosine similarity or exact matching on titles and aliases. For the query "machine learning techniques," you might identify the seed node "Machine Learning" with high confidence. Store these seed node IDs for the next step.
+
+#### Step 2: Neighbor Retrieval with Weights
+This is where edge-weighted retrieval diverges from simpler techniques. Query your graph database to **retrieve all neighbors** of the seed nodes along with their edge weights. Most graph databases support this natively—in Cypher for Neo4j 👉 'nee-oh-for-jay', you'd write something like `MATCH (seed)-[r]->(neighbor) RETURN neighbor, r.weight`. Store each neighbor with its edge weight and edge type.
+
+Now **compute combined scores**. For each neighbor, calculate: `combined_score = edge_weight × query_relevance`. The query relevance comes from embedding similarity between the query and the neighbor's content. So if a neighbor has edge_weight=0.9 and its content embedding has 0.75 cosine similarity to the query, the combined score is 0.675.
+
+#### Step 3: Normalization and Decay
+Before ranking, **normalize edge weights** if they're on different scales. If some edges use citation counts (0-1000) and others use confidence (0-1), apply min-max scaling to bring them to a common range. For **multi-hop scenarios**, apply decay. A simple approach: multiply by 0.7 for each additional hop. So a 1-hop edge with weight 0.9 stays 0.9, but a 2-hop path with weights 0.9 and 0.8 becomes 0.9 × 0.8 × 0.7 = 0.504.
+
+#### Step 4: Ranking and Return
+**Sort all neighbors** by their combined score in descending order. Select the **top k results**, typically k=3 to 10 depending on your application. For each selected node, **retrieve its attached content**—definitions, paragraphs, document chunks—and return this to your downstream system. Include the edge weights and scores in your response for transparency and debugging.
+
+#### Real-World Example: Academic Research Assistant
+Imagine building a literature review tool. A researcher asks "What are the key papers on transformer architectures?" Your system identifies "Transformer Models" as the seed node. It retrieves connected papers with edge weights representing citation counts: "Attention Is All You Need" (weight=15,000), "BERT 👉 'bert'" (weight=12,500), "GPT 👉 'jee-pee-tee' Architecture" (weight=8,000), and several others with lower counts.
+
+You normalize these citation counts to a 0-1 scale. You compute query relevance by comparing each paper's abstract embedding to the query. "Attention Is All You Need" scores 0.95 on relevance, giving it a combined score of 0.95 × 1.0 = 0.95. Papers are ranked by combined score, and the top 5 are returned. The researcher gets the most influential, relevant papers first—exactly what they need.
+
+#### Implementation Tips
+Use **database indexes** on edge weight fields for faster retrieval. **Cache** normalized weights if your graph structure is stable. Implement **A/B testing** to tune your combination formula and decay factors. **Log** edge weights and scores for each query to identify patterns where the ranking fails. Consider **different combination strategies**: multiplicative (weight × relevance), additive (α×weight + β×relevance), or learned weights if you have ground truth ranking data.
+
+Now let's examine the benefits and limitations of this approach!`
         },
         {
           id: 10,
           title: '2. Edge-Weighted Retrieval - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Trust-aware ranking</li>
-                <li>Interpretable via weights</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Nuanced ranking based on relationship strength</li>
+                  <li>Trust-aware retrieval with interpretable scores</li>
+                  <li>Better handling of noisy or uncertain edges</li>
+                  <li>Transparent explanations for ranking decisions</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Requires good edge weighting</li>
-                <li>Can bias to popular nodes</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Requires high-quality edge metadata</li>
+                  <li>Can bias toward popular nodes (rich-get-richer)</li>
+                  <li>Needs careful normalization across edge types</li>
+                  <li>Complex scoring logic increases implementation cost</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e1e',
-          notes: ''
-        }
+          notes: `### 2. Edge-Weighted Retrieval - Considerations
+
+Every retrieval technique involves trade-offs. Let's discuss what edge-weighted retrieval does exceptionally well and where you need to be cautious.
+
+#### Benefits: The Power of Weighted Relationships
+**Nuanced ranking** is the headline benefit. Unlike simple node retrieval or unweighted traversal, edge-weighted retrieval understands that relationships have different strengths. This leads to **more accurate results** in domains where relationship quality varies significantly. In citation networks, highly-cited papers are prioritized. In knowledge graphs, high-confidence extractions outrank uncertain ones. In social networks, strong ties matter more than weak ones.
+
+**Trust-aware retrieval** becomes possible. When your graph contains uncertain or noisy edges—common in automatically constructed knowledge graphs—edge weights let you favor reliable information. A medical knowledge graph might have edges extracted from peer-reviewed journals (high weight) and unverified online sources (low weight). Edge weighting ensures you surface trusted information first.
+
+**Interpretability** is another major win. When you return results, you can **explain the ranking**: "This node ranked first because its edge weight is 0.95, indicating high confidence" or "This paper has 5,000 citations, placing it in the top 1%." This transparency builds user trust and helps with debugging. You can identify when weights aren't aligned with user expectations and adjust your weighting scheme.
+
+The technique also **handles noise better** than unweighted approaches. In large, automatically constructed graphs, many edges might be spurious or low-quality. Edge weights let you focus on the signal and ignore the noise. This is critical for maintaining precision at scale.
+
+#### Limitations: What to Watch For
+The most significant challenge is **dependency on edge metadata quality**. Edge-weighted retrieval is only as good as your weights. If your weights are poorly calibrated, random, or systematically biased, your results will be too. This means you need **robust edge weight computation** or curation, which adds cost and complexity. For citation networks, citation counts are readily available. But for knowledge graphs, computing good confidence scores requires sophisticated extraction and validation systems.
+
+**Popularity bias** is a real concern, sometimes called the "rich-get-richer" problem. High-weight edges often correlate with popularity. In citation networks, famous papers get more citations, which gives them higher weights, which makes them more discoverable, which leads to more citations. This creates a **feedback loop** that can overshadow newer or niche but highly relevant work. You need strategies to counteract this: temporal decay (older papers weighted down), diversity boosting (ensure variety in results), or separate tracks for emerging work.
+
+**Normalization complexity** increases as your graph grows. With multiple edge types, varied weight scales, and heterogeneous relationships, keeping everything calibrated is challenging. You need to **monitor weight distributions** and adjust normalization schemes over time. Edge weights can drift as your graph evolves—what was a rare high-weight edge might become common, changing its relative importance.
+
+The **implementation is more complex** than simpler techniques. You need edge weight storage, retrieval logic that includes weights, normalization pipelines, scoring functions, and potentially multi-hop decay mechanisms. This increases development time and introduces more potential failure points. Testing becomes harder because you need to validate not just whether correct nodes are retrieved but whether the **ranking** is appropriate.
+
+#### When to Choose Edge-Weighted Retrieval
+Use this technique when **relationship strength is a meaningful signal** in your domain. Citation networks, confidence-scored knowledge graphs, social networks with connection strength, temporal graphs where recency matters—all are excellent candidates. **Avoid** it when edges are homogeneous and all relationships have equal importance, or when you lack reliable edge weights.
+
+#### When to Combine or Upgrade
+Edge-weighted retrieval works well **in combination with other techniques**. You might use edge weights during **neighborhood expansion** to prioritize which neighbors to include. Or combine it with **path-based retrieval**, weighting entire paths by the minimum or average edge weight. Later, we'll see **hybrid techniques** that merge edge weights with vector similarity or keyword scores, giving you even more powerful ranking capabilities.
+
+Ready to explore our next technique? Let's dive into Neighborhood Expansion!`
+        },
       ]
     },
     {
@@ -520,87 +693,312 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
           title: '3. Neighborhood Expansion - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Adds immediate context (definitions, examples, references).</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Expand from a central node to include its immediate neighbors, providing richer context including definitions, examples, and related references.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Simple</li>
-                <li>Contextual</li>
-                <li>Low-latency</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Simple implementation with immediate context</li>
+                  <li>Contextual richness beyond isolated nodes</li>
+                  <li>Low-latency 1-hop queries</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>Need local context around a concept (API, ontology, doc sections).</p>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <p><strong>Best For:</strong> API documentation, ontologies, structured documents where you need local context around a concept—parameters, return types, examples, and related entities in one retrieval.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b451e',
-          notes: ''
+          notes: `### 3. Neighborhood Expansion - Overview
+
+Welcome to **Neighborhood Expansion**, our third graph-based retrieval technique. If node-level retrieval is about precision and edge-weighted retrieval adds ranking sophistication, neighborhood expansion is about **context richness**.
+
+#### What Is Neighborhood Expansion?
+Think back to our node-level retrieval example. When someone asks "What is Python?" you return the Python node and its content. That's precise, but often **incomplete**. Users might need to know about Python's key libraries, its relationship to other programming languages, common use cases, or learning resources. Neighborhood expansion solves this by saying: "Don't just give me the node, give me **the node plus its immediate neighbors**." It's like asking for a book and getting the entire shelf section around it.
+
+#### The 1-Hop Context Window
+Neighborhood expansion typically focuses on **1-hop neighbors**—nodes directly connected to your seed node. If "Python" is connected to "NumPy 👉 'num-pie'," "Pandas," "Data Science," "Web Development," and "Django 👉 'jang-oh'," you retrieve all of them in a single query. This **1-hop context** provides a comprehensive picture without the complexity of multi-hop traversal.
+
+#### Goals: Context Without Complexity
+The primary goal is **contextual richness**. Users often need surrounding information to fully understand a concept. In API documentation, knowing about a function isn't enough—you need its parameters, return types, exceptions, and usage examples. In knowledge graphs, understanding an entity requires knowing its relationships, properties, and connected concepts. Neighborhood expansion delivers this context efficiently.
+
+Another goal is **simplicity**. Unlike path-based retrieval or community detection, neighborhood expansion is straightforward: find a node, get its neighbors, done. This simplicity translates to **low latency**. Most graph databases can execute 1-hop queries extremely fast, making this suitable for real-time applications.
+
+#### Benefits That Matter
+**Richer responses** improve user experience significantly. Instead of multiple back-and-forth queries, users get comprehensive information upfront. In a technical support chatbot, asking about an error code might return the error definition plus common causes, solutions, and related error codes—all in one response.
+
+**Low implementation complexity** means you can deploy this quickly. If you already have node-level retrieval working, adding neighborhood expansion is a small step. You're just extending your graph query to include adjacent nodes.
+
+**Fast query performance** is maintained because you're limiting expansion to 1 hop. Unlike deep traversal that might explore thousands of nodes, 1-hop queries are predictable and fast, typically under 100ms even for well-connected nodes.
+
+#### When to Use Neighborhood Expansion
+This technique shines in **structured documentation systems**. API documentation where functions have parameter nodes, return type nodes, and example nodes. Product catalogs where items have category nodes, specification nodes, and related product nodes. Ontologies and taxonomies where concepts have is-a relationships, part-of relationships, and attribute nodes.
+
+It's perfect for **exploratory queries** where users are learning about a topic and need context. Medical knowledge bases where a disease node connects to symptom nodes, treatment nodes, and related condition nodes. Educational systems where a concept connects to prerequisite concepts, example problems, and further reading.
+
+#### Scenario: API Documentation Assistant
+Imagine a developer asks "How do I use the authenticate function?" Node-level retrieval returns the function definition. Neighborhood expansion returns the definition **plus** parameter nodes (username, password, token), return type node (AuthResult), exception nodes (InvalidCredentials, NetworkError), and usage example nodes. The developer gets everything needed to use the function successfully in one query.
+
+Now let's see exactly how this technique works!`
         },
         {
           id: 12,
           title: '3. Neighborhood Expansion - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Retrieve seed node plus its 1-hop neighbors with filters.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Neighborhood Expansion Process"
+                      diagram={`flowchart TD
+    A["🔍 Query:<br/>Python Function"] --> B["🎯 Seed Node:<br/>authenticate()"]
+    B --> C["🔗 1-Hop Expansion"]
+    C --> D1["📋 Parameters"]
+    C --> D2["📤 Return Type"]
+    C --> D3["⚠️ Exceptions"]
+    C --> D4["📝 Examples"]
+    C --> D5["🔗 Related Functions"]
+    D1 --> E["📦 Aggregate Context"]
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    D5 --> E
+    E --> F["✅ Return Enriched Result"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#ffb74d,color:#000
+    style D1 fill:#81c784,color:#000
+    style D2 fill:#81c784,color:#000
+    style D3 fill:#81c784,color:#000
+    style D4 fill:#81c784,color:#000
+    style D5 fill:#81c784,color:#000
+    style E fill:#e1bee7,color:#000
+    style F fill:#4fc3f7,color:#000`}
+                    />
+                  </h3>
+                  <p>Find seed node, expand to immediate neighbors using BFS 👉 'bee-eff-ess' or DFS 👉 'dee-eff-ess' traversal (1-hop), apply type filters and relevance filters, then aggregate and return.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Adjacency lists, node/edge types, optional neighbor caps per type.</p>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Adjacency lists for fast neighbor lookup, node and edge types for filtering, optional neighbor caps per type (e.g., max 5 examples), relevance scoring for pruning low-value neighbors.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`A → {B, C, D}`}
-              </pre>
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Central Node A → Expand to {B, C, D, E}
+Return A + context from neighbors`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b451e',
-          notes: ''
+          notes: `### 3. Neighborhood Expansion - How It Works
+
+Let's explore the mechanics of neighborhood expansion. Understanding the process will help you implement it effectively and optimize for your specific use cases.
+
+#### The Expansion Process
+Neighborhood expansion follows a clear workflow. First, **identify the seed node** just like in node-level retrieval. Use embedding similarity or exact matching to find the central node that best represents the query. For "Python authentication," you might find the seed node "authenticate() function."
+
+Next comes the expansion step: **retrieve all 1-hop neighbors**. This is a standard graph traversal operation. In graph databases, it's typically a single query. In Neo4j, you might write: `MATCH (seed {id: 'authenticate'})-[r]-(neighbor) RETURN neighbor, r, labels(neighbor)`. This gives you all directly connected nodes along with their relationship types and node types.
+
+```mermaid
+flowchart TD
+    A["🔍 Query:<br/>Python Function"] --> B["🎯 Seed Node:<br/>authenticate()"]
+    B --> C["🔗 1-Hop Expansion"]
+    C --> D1["📋 Parameters"]
+    C --> D2["📤 Return Type"]
+    C --> D3["⚠️ Exceptions"]
+    C --> D4["📝 Examples"]
+    C --> D5["🔗 Related Functions"]
+    D1 --> E["📦 Aggregate Context"]
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    D5 --> E
+    E --> F["✅ Return Enriched Result"]
+```
+
+#### Filtering and Pruning
+Raw neighbor retrieval might return too many nodes. You need **filtering strategies** to keep results manageable and relevant. **Type-based filtering** is common: if you only want parameter and return type nodes, filter by node type. **Edge-type filtering** lets you include specific relationships: "has_parameter," "returns," "throws," but exclude "mentioned_in" or "similar_to."
+
+**Relevance filtering** prunes low-value neighbors. You might compute relevance scores based on query similarity and exclude neighbors below a threshold. If the query mentions "authentication errors," you prioritize exception nodes related to authentication over unrelated ones.
+
+**Capacity limits** prevent overwhelming users with information. Set **caps per neighbor type**: maximum 5 parameters, 3 examples, 2 related functions. This keeps context rich but focused.
+
+#### Traversal Strategy: BFS vs DFS
+For 1-hop expansion, **BFS 👉 'bee-eff-ess'** (Breadth-First Search) and **DFS 👉 'dee-eff-ess'** (Depth-First Search) are equivalent—you're not going deep anyway. But understanding traversal matters if you extend to 1.5-hop or selective 2-hop scenarios. BFS explores all immediate neighbors before going deeper, ensuring you get comprehensive 1-hop coverage. DFS goes deep on one branch before exploring others, useful if you want to follow specific relationship chains selectively.
+
+Most implementations use **BFS for neighborhood expansion** because it naturally aligns with the "get all immediate context" goal. You pop the seed node, expand to all neighbors, apply filters, and you're done.
+
+#### Aggregation and Return
+Once you have filtered neighbors, **aggregate their content** with the seed node. You might structure the response as: seed node content at the top, followed by grouped neighbor content (Parameters section, Return Types section, Examples section). This structured format helps downstream systems (LLMs or user interfaces) present information clearly.
+
+**Deduplication** is important if neighbors might be reached through multiple relationship types. If a "related function" node is also returned as an "example" node, you want to include it only once.
+
+#### Data Requirements in Detail
+**Adjacency lists** or efficient neighbor lookup structures are essential. Graph databases provide this natively. If using a different storage system, precompute and index adjacency for fast retrieval. **Node types and edge types** should be stored as metadata on every node and relationship, enabling type-based filtering. **Neighbor caps** can be configuration values or learned from user behavior. **Relevance scoring infrastructure** (embedding similarities, weights) helps prioritize which neighbors to include when you hit capacity limits.
+
+Let's look at implementation steps and real-world examples!`
         },
         {
           id: 13,
           title: '3. Neighborhood Expansion - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '1em', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Find top seed node(s)</li>
-                <li>Expand 1-hop with type filters (e.g., definition, example, reference)</li>
-                <li>Deduplicate and cap per type</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Find top seed node(s) via embedding or entity matching
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Execute 1-hop graph query with edge/node type filters
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Apply relevance filtering and per-type capacity caps (e.g., max 5 examples)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>4.</strong> Deduplicate neighbors and aggregate with seed content
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>5.</strong> Structure and return enriched context
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>API documentation where retrieving a function node also returns related parameters, return types, and usage examples, providing complete context in one retrieval step.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3>Example Use Case</h3>
+                <p>API documentation system where retrieving the "authenticate()" function node automatically expands to include parameter nodes (username, password, token), return type node (AuthResult), exception nodes (InvalidCredentials, NetworkError), and usage example nodes—providing complete context in a single retrieval operation.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b451e',
-          notes: ''
+          notes: `### 3. Neighborhood Expansion - Implementation
+
+Time to get practical. Let's walk through implementing neighborhood expansion with concrete steps, code patterns, and real-world examples.
+
+#### Step 1: Seed Node Discovery
+Start with your standard seed node identification. **Embed the query** and **search your node index** for the best matching node. For a query like "Python logging configuration," you might find the seed node "logging.config" with high similarity. Store the seed node ID and its content for later aggregation.
+
+#### Step 2: 1-Hop Neighbor Retrieval
+Execute your **graph traversal query**. The exact syntax depends on your graph database. In **Neo4j**, you'd write: `MATCH (seed {id: $seedId})-[r]-(neighbor) WHERE type(r) IN $allowedRelationships RETURN neighbor, type(r), labels(neighbor)`. This retrieves all neighbors connected via specified relationship types.
+
+In **property graph databases**, you can filter directly in the query. In **RDF 👉 'are-dee-eff' triple stores**, you'd query for all triples where the seed is subject or object. In **Python with NetworkX 👉 'network-ex'**, you'd use `G.neighbors(seed_node)`. Retrieve not just node IDs but also **node content, types, and relationship metadata**.
+
+#### Step 3: Filtering and Capacity Management
+Now apply your filters. **Type filtering** first: if you only want certain node types (Parameter, ReturnType, Example), filter the neighbor list. **Edge-type filtering**: include "has_parameter" and "returns" relationships but exclude "mentioned_in." Compute **relevance scores** for each neighbor by comparing its content embedding to the query. Sort neighbors by relevance within each type category.
+
+Apply **capacity caps** per type. If you have 20 example nodes but only want the top 5, select the 5 with highest relevance scores. This keeps your context window manageable. Typical caps: 5-10 for list-type neighbors (parameters, examples), 1-3 for singular relationships (return type, parent category).
+
+#### Step 4: Deduplication
+Check for **duplicate neighbors** that might appear through multiple relationship paths. Use node IDs to identify duplicates. When duplicates occur, either keep the one with the highest relevance score or merge their relationship information (e.g., "connected via has_parameter AND appears_in_example").
+
+#### Step 5: Aggregation and Structuring
+**Aggregate** the seed node content with neighbor content. A good structure: 
+```
+{
+  "seed": {seed_node_content},
+  "parameters": [param_node_1, param_node_2, ...],
+  "return_type": return_node,
+  "exceptions": [exception_node_1, exception_node_2],
+  "examples": [example_node_1, example_node_2, ...],
+  "related": [related_node_1, related_node_2]
+}
+```
+
+This structured format makes it easy for downstream systems to use the context appropriately. An LLM can prioritize the seed content and reference neighbor content as supporting detail. A UI can display sections clearly.
+
+#### Real-World Example: Medical Knowledge Base
+Imagine a medical assistant system. A doctor asks "What are the treatments for Type 2 Diabetes?" Your system identifies "Type 2 Diabetes" as the seed node. Neighborhood expansion retrieves:
+- **Treatment nodes**: Metformin, Insulin therapy, Lifestyle modification
+- **Symptom nodes**: Increased thirst, Frequent urination, Fatigue
+- **Related condition nodes**: Prediabetes, Type 1 Diabetes, Metabolic Syndrome
+- **Risk factor nodes**: Obesity, Sedentary lifestyle, Family history
+- **Diagnostic criteria nodes**: HbA1c 👉 'H-b-A-one-C' levels, Fasting glucose
+
+The doctor receives comprehensive context: the condition definition plus all immediately relevant clinical information. They can make informed decisions without multiple queries.
+
+#### Implementation Tips and Optimizations
+**Precompute adjacency lists** for frequently accessed nodes. If certain nodes (popular API functions, common medical conditions) are queried often, cache their 1-hop neighborhoods. **Use database indexes** on node types and edge types for fast filtering. Implement **query batching**: if you have multiple seed nodes, retrieve all their neighborhoods in a single database query. **Monitor expansion sizes**: if some nodes have hundreds of neighbors, consider tighter capacity caps or smarter filtering. **A/B test** different capacity limits to find the sweet spot between comprehensive context and information overload.
+
+Now let's consider the benefits and limitations!`
         },
         {
           id: 14,
           title: '3. Neighborhood Expansion - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Simple</li>
-                <li>Contextual</li>
-                <li>Low-latency</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Rich contextual information in single retrieval</li>
+                  <li>Simple implementation with low complexity</li>
+                  <li>Fast, low-latency 1-hop queries</li>
+                  <li>Better user experience with comprehensive answers</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Can introduce noise</li>
-                <li>Misses longer reasoning paths</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Can introduce noise from irrelevant neighbors</li>
+                  <li>Misses longer reasoning chains beyond 1-hop</li>
+                  <li>Requires careful filtering to manage context size</li>
+                  <li>May retrieve too much or too little context</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b451e',
-          notes: ''
-        }
+          notes: `### 3. Neighborhood Expansion - Considerations
+
+Let's discuss the strengths and weaknesses of neighborhood expansion. Understanding these trade-offs helps you decide when this technique is the right choice and when you need something more sophisticated.
+
+#### Benefits: Context-Rich Retrieval Made Simple
+**Rich contextual information** is the standout benefit. Users get comprehensive answers in a **single retrieval operation** instead of requiring multiple back-and-forth queries. This dramatically improves user experience. In technical documentation, developers get functions with their parameters, return types, exceptions, and examples all at once. In knowledge bases, users get entities with their properties, relationships, and related concepts immediately.
+
+**Implementation simplicity** makes this technique accessible. If you have node-level retrieval working, adding neighborhood expansion is straightforward—you're just extending the graph query by one hop. No complex algorithms, no sophisticated ranking models, no multi-hop path finding. Just: find seed, get neighbors, filter, return. This simplicity means **faster development** and **easier debugging**.
+
+**Query performance** remains excellent because you're limited to 1-hop traversal. Even nodes with dozens of neighbors can be retrieved in **milliseconds** with proper database indexing. Compare this to multi-hop traversal that might explore thousands of nodes—1-hop expansion is predictable and fast, making it suitable for **real-time applications** like chatbots and interactive search.
+
+**Better answers** result from the contextual richness. LLMs can generate more accurate, complete responses when given surrounding context. Instead of answering based solely on a node definition, they can reference examples, explain parameters, mention related concepts, and provide nuanced explanations. This reduces hallucination and improves answer quality.
+
+#### Limitations: When Context Becomes Clutter
+The biggest challenge is **noise from irrelevant neighbors**. Not all neighbors are equally valuable for every query. A function might be connected to dozens of related functions, but only a few are relevant to the user's specific question. Without careful filtering, you might overwhelm users (and LLM context windows) with marginally useful information. **Filtering strategies are critical** but can be tricky to get right. Too aggressive, and you miss important context. Too lenient, and you introduce noise.
+
+**Missing longer reasoning chains** is an inherent limitation of 1-hop expansion. If understanding requires connecting multiple concepts across 2-3 hops, neighborhood expansion won't capture it. For example, "How does vitamin D affect bone health?" might require: vitamin D → calcium absorption → bone mineralization → bone density. A 1-hop expansion from "vitamin D" won't reach "bone density." You'd need **path-based retrieval** or **multi-hop traversal** for that.
+
+**Context size management** becomes tricky for highly connected nodes. Popular entities might have hundreds of neighbors. Even with capacity caps, deciding which neighbors to include is challenging. Do you prioritize by relevance? By neighbor type? By edge weight? Each strategy has trade-offs. **Popular nodes** (hub nodes in your graph) require more aggressive filtering than sparse nodes.
+
+**Balancing comprehensiveness and focus** is an ongoing challenge. Users want enough context to understand fully but not so much that they're overwhelmed. This balance varies by domain, query type, and user expertise. A domain expert might want minimal context, while a novice needs extensive explanation. **Personalization** can help but adds complexity.
+
+#### When Neighborhood Expansion Shines
+Use this technique when **local context is sufficient** to answer queries. API documentation, product specifications, concept definitions with related terms, entity profiles with immediate properties and relationships—all are excellent use cases. It works best when your **graph structure is well-designed** with meaningful relationship types and appropriate granularity.
+
+#### When to Move Beyond This Technique
+If users ask questions requiring **multi-hop reasoning** ("What's the connection between X and Y?"), you need **path-based retrieval**. If queries are broad and exploratory ("Tell me everything about machine learning"), consider **community/cluster retrieval**. If you need to rank neighbors by importance beyond simple relevance, combine with **edge-weighted retrieval**. If you need to handle both graph structure and semantic similarity, look at the **hybrid techniques** coming later.
+
+#### Combining Techniques
+Neighborhood expansion works well **in combination with other techniques**. Use **edge-weighted retrieval** to rank neighbors by importance. Apply **semantic filtering** to ensure neighbors are query-relevant. Extend selectively to **1.5-hop** for specific relationship types (e.g., always include examples of examples). Combine with **path-based retrieval** for queries that need both local context and reasoning chains.
+
+Ready for our next technique? Let's explore Path-Based Retrieval and multi-hop reasoning!`
+        },
       ]
     },
     {
@@ -612,85 +1010,347 @@ Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
           title: '4. Path-Based Retrieval - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Multi-hop reasoning and evidence chains.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Multi-hop reasoning through sequences of connected nodes, enabling discovery of relationships and evidence chains across multiple steps in the graph.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Supports reasoning</li>
-                <li>Traceable evidence</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Supports complex reasoning and inference chains</li>
+                  <li>Provides traceable evidence paths</li>
+                  <li>Discovers indirect connections between concepts</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>Why/how questions, causal chains, compliance dependencies.</p>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <p><strong>Best For:</strong> Why/how questions, causal chains, compliance dependencies, research queries requiring multi-step reasoning like "How does X influence Y?" or "What's the regulatory path from A to D?"</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#555b1e',
-          notes: ''
+          notes: `### 4. Path-Based Retrieval - Overview
+
+Welcome to **Path-Based Retrieval**, our fourth technique and the first that truly embraces **multi-hop reasoning**. While previous techniques focused on individual nodes or immediate neighbors, path-based retrieval explores how concepts connect across multiple steps.
+
+#### What Is Path-Based Retrieval?
+Imagine someone asks "How does vitamin D affect bone health?" The answer isn't a direct connection—it's a **chain of relationships**: vitamin D → enhances calcium absorption → calcium → strengthens bone mineralization → bone mineralization → increases bone density → bone density → improves bone health. That's a **4-hop path** connecting the query concepts. Path-based retrieval finds and returns these meaningful sequences of connections, enabling your system to explain **how** and **why** things are related.
+
+#### The Power of Multi-Hop Reasoning
+Many real-world questions require understanding **indirect relationships**. In knowledge graphs, two concepts might not be directly connected, but there's a meaningful path between them. Path-based retrieval discovers these paths, turning implicit knowledge into explicit reasoning chains. It's like asking "How am I connected to this person?" on LinkedIn 👉 'linked-in' and finding "You → colleague → college friend → this person."
+
+#### Goals: Reasoning and Evidence
+The primary goal is **supporting complex reasoning**. Questions like "Why does this regulation require that practice?" or "What's the connection between these two research findings?" or "How does this component affect system performance?" all benefit from path-based retrieval. The paths themselves become **reasoning chains** that LLMs can verbalize into coherent explanations.
+
+Another critical goal is **traceable evidence**. When your system claims "A affects B," path-based retrieval provides the **evidence chain**: "A influences C, which regulates D, which determines B." This traceability is essential for high-stakes domains like healthcare, legal compliance, and scientific research. Users can verify the reasoning, understand the logic, and trust the conclusions.
+
+#### Benefits That Matter
+**Explainable reasoning** becomes possible. Instead of black-box predictions, you have **interpretable paths** showing exactly how conclusions were reached. In medical diagnosis, a path from symptoms through physiological mechanisms to conditions provides doctors with reasoning they can verify against their expertise.
+
+**Discovery of indirect connections** expands what your system can answer. Many interesting insights exist in indirect relationships. Path-based retrieval surfaces these connections automatically, enabling discovery that wouldn't be possible with single-node or neighborhood-only approaches.
+
+**Rich context for LLMs** improves answer quality. When you provide paths rather than isolated nodes, LLMs can generate responses that explain relationships, describe processes, and connect concepts coherently. "A leads to B because C happens, which triggers D" is much better than "A and B are related."
+
+#### When to Use Path-Based Retrieval
+This technique shines for **explanatory queries** that ask "why," "how," or "what's the connection." It's perfect for **causal reasoning**: understanding cause-and-effect chains in scientific domains, medical diagnosis, system troubleshooting. **Compliance and regulatory domains** where requirements reference other requirements in complex dependency chains. **Research and discovery** where finding connections between disparate concepts leads to insights.
+
+#### Use Cases That Benefit
+**Medical knowledge bases**: "Why does this medication help with that condition?" The path traces: medication → inhibits enzyme X → reduces inflammation → alleviates symptoms of condition.
+
+**Regulatory compliance**: "What regulations require this security control?" The path shows: Control → mandated by Standard A → referenced in Regulation B → required for Industry C.
+
+**Scientific literature**: "How are these two research areas connected?" The path reveals: Topic A → influenced by Paper X → cites Study Y → foundational to Topic B.
+
+**Troubleshooting systems**: "Why is this component failing?" The path explains: Component → depends on Service → requires Configuration → broken by recent Update.
+
+Now let's see exactly how path-based retrieval works!`
         },
         {
           id: 16,
           title: '4. Path-Based Retrieval - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Search for high-relevance paths connecting seed(s) to target concepts.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Path-Based Retrieval Process"
+                      diagram={`flowchart LR
+    A["🔍 Query:<br/>Vitamin D → Bone Health"] --> B["🎯 Find Endpoints:<br/>Start & Target Nodes"]
+    B --> C["🛤️ Pathfinding:<br/>BFS 👉 'bee-eff-ess'/Dijkstra"]
+    C --> D1["Path 1:<br/>A→B→C→D"]
+    C --> D2["Path 2:<br/>A→E→F→D"]
+    C --> D3["Path 3:<br/>A→G→D"]
+    D1 --> E["📊 Score Paths:<br/>length + weights + semantics"]
+    D2 --> E
+    D3 --> E
+    E --> F["🏆 Rank Paths"]
+    F --> G["✅ Return Best Paths<br/>with Evidence"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#81c784,color:#000
+    style D1 fill:#e1bee7,color:#000
+    style D2 fill:#e1bee7,color:#000
+    style D3 fill:#e1bee7,color:#000
+    style E fill:#fff176,color:#000
+    style F fill:#ffd700,color:#000
+    style G fill:#81c784,color:#000`}
+                    />
+                  </h3>
+                  <p>Identify start and target nodes from query, use pathfinding algorithms (BFS, Dijkstra, A-star) to enumerate candidate paths up to max hops, score paths by length, edge weights, and semantic relevance.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Edge types, path constraints, path scoring (length, weights, semantics).</p>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Edge types and weights, path constraints (max length, allowed edge types), path scoring function (balancing length vs. weight vs. semantics), efficient graph traversal indexes.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`A → B → C`}
-              </pre>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Node A → Node B → Node C → Node D
+Multi-hop reasoning chain`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#555b1e',
-          notes: ''
+          notes: `### 4. Path-Based Retrieval - How It Works
+
+Let's dive into the mechanics of path-based retrieval. This is more complex than previous techniques, but understanding the process will help you implement it effectively.
+
+#### The Path Discovery Process
+Path-based retrieval starts by **identifying endpoints**. Unlike node-level retrieval where you find a single node, here you need to identify **source and target concepts** from the query. For "How does vitamin D affect bone health?" you extract two endpoints: "vitamin D" (source) and "bone health" (target). You find the nodes in your graph that best represent these concepts using embedding similarity or entity linking.
+
+Next comes **pathfinding**—discovering sequences of edges that connect source to target. This is classic graph traversal. Common algorithms include **BFS 👉 'bee-eff-ess'** (Breadth-First Search) which explores all paths systematically, **Dijkstra's algorithm** which finds shortest weighted paths, or **A-star** which uses heuristics to guide search efficiently.
+
+```mermaid
+flowchart LR
+    A["🔍 Query:<br/>Vitamin D → Bone Health"] --> B["🎯 Find Endpoints:<br/>Start & Target Nodes"]
+    B --> C["🛤️ Pathfinding:<br/>BFS/Dijkstra"]
+    C --> D1["Path 1:<br/>A→B→C→D"]
+    C --> D2["Path 2:<br/>A→E→F→D"]
+    C --> D3["Path 3:<br/>A→G→D"]
+    D1 --> E["📊 Score Paths:<br/>length + weights + semantics"]
+    D2 --> E
+    D3 --> E
+    E --> F["🏆 Rank Paths"]
+    F --> G["✅ Return Best Paths<br/>with Evidence"]
+```
+
+#### Path Constraints and Pruning
+Without constraints, pathfinding can explode combinatorially. A node with 10 neighbors at each hop means 10^3 = 1,000 possible 3-hop paths. You need **constraints** to keep search tractable. **Maximum path length** (e.g., max 4 hops) limits how far you explore. **Edge type constraints** specify which relationship types are allowed; in a medical graph, you might allow "treats," "causes," "prevents" but exclude "mentioned_in." **Semantic constraints** use embedding similarity to prune paths where intermediate nodes are semantically unrelated to the query.
+
+**Early stopping** helps performance. If you've found 10 high-quality paths, stop searching. If current paths are much lower quality than the best path found, abandon that search branch.
+
+#### Path Scoring and Ranking
+Once you have candidate paths, **score them** to identify the best ones. Scoring typically combines multiple factors. **Path length**: shorter paths are often better (fewer inference steps), but not always—sometimes a longer path is more informative. **Edge weights**: if your edges have weights (confidence, strength), sum or multiply along the path. **Semantic relevance**: compute how well each intermediate node relates to the query. **Path coherence**: do the relationships form a logical chain?
+
+A common scoring formula: `score = α×(1/length) + β×(avg_edge_weight) + γ×(semantic_relevance)` where α, β, γ are weights you tune. Higher scores indicate better paths. **Rank all candidate paths** by score and select the top k, typically k=1-5.
+
+#### Data Requirements in Detail
+You need **edge types** stored on every relationship, enabling type-based path constraints. **Edge weights** (if available) inform path scoring. Define **path constraints** as configuration: maximum length (3-5 hops common), allowed/forbidden edge types, minimum edge weight thresholds. Implement an **efficient scoring function** that balances the factors mentioned above. Maintain **graph indexes** that accelerate traversal; most graph databases provide this, but for large-scale systems, consider specialized path-finding indexes or bidirectional search.
+
+#### Pathfinding Algorithms Deep Dive
+**BFS** explores all paths of length 1, then length 2, then length 3, etc. It's exhaustive and guarantees finding all paths up to your length limit, but can be slow for large graphs. **Dijkstra's algorithm** finds the shortest weighted path efficiently by exploring paths in order of increasing weight. It's faster than BFS but only returns one path. **A-star** adds a heuristic (e.g., embedding similarity to target) to guide search toward promising paths, dramatically reducing exploration for large graphs. **Bidirectional search** starts from both source and target, meeting in the middle, cutting search space significantly.
+
+Choose based on your needs: BFS for comprehensive path discovery, Dijkstra for single best path, A-star for large graphs, bidirectional for performance.
+
+Let's look at implementation steps!`
         },
         {
           id: 17,
           title: '4. Path-Based Retrieval - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Seed from query (embedding/BM25/entity)</li>
-                <li>Enumerate constrained paths up to L hops</li>
-                <li>Score paths; return best path(s) and attached chunks</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Extract source and target concepts from query (entity linking or embedding)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Find corresponding seed nodes in graph for each concept
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Run pathfinding algorithm (BFS 👉 'bee-eff-ess', Dijkstra, A-star) with constraints (max L hops, edge types)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>4.</strong> Score candidate paths: length + edge weights + semantic relevance
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>5.</strong> Rank paths and return best k paths with node content and relationship types
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>Regulatory compliance questions requiring evidence chains: A regulation requires B, which references C, which defines D. The complete path provides the reasoning trail.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.6}>
+                <h3>Example Use Case</h3>
+                <p>Regulatory compliance questions: "What regulations require SSL 👉 'es-es-el' encryption?" Path traces: SSL Encryption → mandated by PCI 👉 'pee-see-eye' DSS 👉 'dee-es-es' Standard → referenced in Federal Regulation → required for Healthcare. The complete path provides the evidence chain for compliance officers.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#555b1e',
-          notes: ''
+          notes: `### 4. Path-Based Retrieval - Implementation
+
+Time to implement path-based retrieval. We'll walk through practical steps, code patterns, and real-world examples to help you build this powerful technique.
+
+#### Step 1: Concept Extraction
+Start by **analyzing the query** to identify source and target concepts. For "How does vitamin D affect bone health?" you need to extract "vitamin D" and "bone health" as key concepts. Use **named entity recognition** or **embedding-based span extraction** to identify these phrases. Alternatively, for simpler queries, use keyword extraction or dependency parsing to find the main concepts.
+
+#### Step 2: Node Mapping
+Map extracted concepts to **nodes in your graph**. For each concept, query your node index to find the best matching node. Use embedding similarity: embed "vitamin D" and find the node with the highest cosine similarity, likely "Vitamin D" or "Cholecalciferol." Do the same for "bone health," mapping to a node like "Bone Health" or "Skeletal Health." If multiple nodes match well (e.g., "vitamin D2" and "vitamin D3"), consider each as a potential source and explore paths from all of them.
+
+#### Step 3: Pathfinding Execution
+Now run your **pathfinding algorithm**. Let's say you choose **BFS** for comprehensive path discovery up to 4 hops. Initialize a queue with the source node and a path object tracking visited nodes. For each node, expand to neighbors, checking your **constraints**: is the path length under the limit? Is the edge type allowed? Is the intermediate node semantically relevant enough? If a neighbor is the target node, you've found a complete path—add it to your results. Continue until you've explored all possibilities within constraints or hit a maximum number of paths.
+
+**Example BFS pseudocode**:
+```
+queue = [(source_node, [source_node])]
+found_paths = []
+while queue and len(found_paths) < max_paths:
+    current_node, path = queue.pop(0)
+    if len(path) >= max_length:
+        continue
+    for neighbor, edge in current_node.neighbors:
+        if edge.type not in allowed_edge_types:
+            continue
+        new_path = path + [neighbor]
+        if neighbor == target_node:
+            found_paths.append(new_path)
+        else:
+            queue.append((neighbor, new_path))
+return found_paths
+```
+
+For **weighted paths**, use **Dijkstra's algorithm** to find the highest-weighted (or lowest-cost) path. For **large graphs**, use **A-star** with a heuristic like embedding similarity to the target, dramatically reducing nodes explored.
+
+#### Step 4: Path Scoring
+For each discovered path, **compute a score**. Combine multiple factors with learned or tuned weights. Here's a common approach:
+
+**Length score**: `1 / path_length` (shorter is better, usually)
+**Weight score**: `average_edge_weight` or `min_edge_weight` along the path
+**Semantic score**: Average similarity between each intermediate node's embedding and the query embedding
+
+**Combined score**: `score = 0.3×length_score + 0.4×weight_score + 0.3×semantic_score`
+
+Tune these weights based on your domain. In some cases, longer paths are more informative (comprehensive explanations). In others, shorter paths are better (direct evidence).
+
+#### Step 5: Ranking and Return
+**Sort paths** by score in descending order. Select the **top k paths**, typically k=1-5. For each path, retrieve **node content** for every node along the path and **relationship types** for every edge. Structure the output to show the path clearly:
+
+```
+Path 1 (score: 0.87):
+  Vitamin D -[enhances]→ Calcium Absorption -[increases]→ Bone Mineralization -[improves]→ Bone Health
+  
+  Details:
+  - Vitamin D: [content]
+  - Calcium Absorption: [content]
+  - Bone Mineralization: [content]
+  - Bone Health: [content]
+```
+
+This structured format helps LLMs generate clear explanations: "Vitamin D enhances calcium absorption, which increases bone mineralization, ultimately improving bone health."
+
+#### Real-World Example: Compliance Knowledge Graph
+Imagine a compliance system. A legal team asks: "Why do we need multi-factor authentication?" Your system extracts "multi-factor authentication" (source) and "requirement" (target). Pathfinding discovers several paths:
+
+**Path 1** (score 0.91):
+Multi-Factor Authentication → mandated by → NIST 👉 'nist' SP 800-63B → referenced by → SOC 2 Type II → required for → Enterprise Customers
+
+**Path 2** (score 0.85):
+Multi-Factor Authentication → required by → PCI DSS 3.2.1 → applies to → Payment Processing → necessary for → E-commerce Platform
+
+**Path 3** (score 0.78):
+Multi-Factor Authentication → recommended by → OWASP 👉 'oh-wasp' Guidelines → adopted in → Security Policy → enforced for → All Systems
+
+The system returns these ranked paths. An LLM generates: "Multi-factor authentication is required for multiple reasons. Primarily, it's mandated by NIST SP 800-63B, which is referenced by SOC 2 Type II compliance necessary for enterprise customers. Additionally, PCI DSS 3.2.1 requires it for payment processing, critical for our e-commerce platform."
+
+The compliance team now has **traceable evidence** with specific standard references and clear reasoning chains.
+
+#### Implementation Tips
+**Cache frequent paths** between common concept pairs. **Precompute paths** for anticipated queries if your graph is relatively static. **Implement timeout mechanisms** to prevent pathfinding from running too long on complex queries. **Log path quality metrics** to tune your scoring function. Use **graph database native pathfinding** (Neo4j's shortestPath, Dijkstra implementations) when possible—they're highly optimized. For very large graphs, consider **approximate pathfinding** or **landmark-based methods** that trade some accuracy for significant speed improvements.
+
+Now let's examine the benefits and limitations!`
         },
         {
           id: 18,
           title: '4. Path-Based Retrieval - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Supports reasoning</li>
-                <li>Traceable evidence</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Enables multi-hop reasoning and inference</li>
+                  <li>Provides traceable evidence chains</li>
+                  <li>Discovers indirect connections and insights</li>
+                  <li>Supports explainable AI with clear reasoning paths</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>More expensive</li>
-                <li>Path explosion without constraints</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>Computationally expensive for large graphs</li>
+                  <li>Path explosion without proper constraints</li>
+                  <li>Requires careful scoring to rank paths meaningfully</li>
+                  <li>May surface spurious or irrelevant paths</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#555b1e',
-          notes: ''
-        }
+          notes: `### 4. Path-Based Retrieval - Considerations
+
+Path-based retrieval is powerful but comes with significant trade-offs. Let's honestly assess its strengths and weaknesses so you can make informed decisions about when to use this technique.
+
+#### Benefits: The Power of Multi-Hop Reasoning
+**Multi-hop reasoning** is the transformative benefit. Questions that previous techniques couldn't answer become possible. "How does X influence Y?" "What's the connection between A and B?" "Why does this regulation require that control?" Path-based retrieval finds the **chains of inference** needed to answer these questions. This unlocks entirely new use cases—causal reasoning, indirect relationship discovery, complex explanatory queries.
+
+**Traceable evidence chains** provide transparency and trust. In high-stakes domains, being able to show **exactly how** a conclusion was reached is critical. Medical professionals can verify reasoning paths against their knowledge. Compliance officers can cite specific regulatory chains. Researchers can validate connections with references at each step. This **explainability** is increasingly important as AI systems are deployed in sensitive areas.
+
+**Discovery of indirect connections** enables insights that wouldn't emerge from direct queries. Researchers might discover unexpected connections between fields. Analysts might find hidden dependencies in complex systems. Recommendation systems might suggest non-obvious but valuable products or content. Path-based retrieval **surfaces these hidden relationships** automatically.
+
+**Better LLM prompts** result from providing reasoning chains. Instead of isolated facts, you give the LLM a **narrative structure**: "A leads to B, which causes C, resulting in D." This structured context helps LLMs generate more coherent, accurate, and convincing explanations. Answer quality improves significantly for complex queries.
+
+#### Limitations: Computational Cost and Complexity
+**Computational expense** is the biggest challenge. Pathfinding in large graphs is **inherently expensive**. A node with 20 neighbors, explored to 3 hops, means potentially 20^3 = 8,000 paths to consider. Even with constraints and pruning, you might evaluate hundreds or thousands of paths per query. This translates to **higher latency** (seconds instead of milliseconds) and **greater computational cost** than simpler techniques.
+
+**Path explosion** happens quickly without careful constraints. In dense graphs, the number of possible paths grows exponentially with path length. You **must** implement aggressive constraints: maximum path length (typically 3-4 hops), edge type restrictions, semantic filtering, early stopping. Even then, some queries might trigger massive path exploration. You need **timeout mechanisms** and **fallback strategies** for when pathfinding takes too long.
+
+**Scoring complexity** increases dramatically. With multiple paths, how do you rank them? Length matters, but so do edge weights, semantic relevance, path coherence, and domain-specific factors. The **scoring function** often requires significant tuning and domain expertise. What works for citation networks doesn't work for medical knowledge graphs or compliance systems. Expect to **iterate and refine** your scoring approach based on user feedback and evaluation metrics.
+
+**Spurious paths** are a real problem. Not every path that exists in your graph is meaningful. Some paths might be technically valid but semantically nonsensical: A mentions B, B mentioned in C, C tangentially related to D. Without good **path quality filtering**, you'll surface noise alongside signal. This requires **semantic validation** at each hop and **coherence checking** across the entire path.
+
+#### Performance Considerations
+**Query latency** can be problematic for real-time applications. If users expect sub-second responses, path-based retrieval might not meet that expectation, especially for complex queries. Consider **asynchronous processing** where you return quick preliminary results and then enrich with paths. Or use **path caching** for common query patterns, precomputing paths between frequently queried concept pairs.
+
+**Scalability** becomes challenging with graph size. A graph with millions of nodes and edges can make pathfinding prohibitively slow. You need **optimizations**: bidirectional search (start from both ends), A-star with good heuristics, path indexes for common patterns, or graph partitioning to reduce search space. For very large graphs, consider **approximate pathfinding** that trades completeness for speed.
+
+#### When to Use Path-Based Retrieval
+Use this technique when **reasoning chains matter**. Explanatory queries (why, how), causal inference, regulatory/compliance traceability, research connection discovery, troubleshooting and root cause analysis—all benefit enormously. Use it when **query frequency is moderate** and you can accept higher latency. Use it when your **graph is well-structured** with meaningful edge types and not too dense.
+
+#### When to Avoid or Modify
+**Avoid** path-based retrieval for simple lookup queries where node-level retrieval suffices. Avoid it for **real-time, high-frequency** applications unless you have aggressive caching and optimization. Avoid it for **extremely large, dense graphs** without significant infrastructure investment in optimization. **Modify** the approach by limiting path length aggressively (2-3 hops max), using approximate pathfinding, or precomputing paths for common query patterns.
+
+#### Combining with Other Techniques
+Path-based retrieval **complements** other techniques beautifully. Use it alongside **node-level retrieval**: return the direct node plus reasoning paths to related concepts. Combine with **neighborhood expansion**: for each node in the path, include its immediate context. Apply **edge-weighted retrieval** within pathfinding to prioritize high-weight edges. Use it selectively: detect when a query needs reasoning (presence of "why," "how," causal keywords) and only then invoke path-based retrieval, falling back to faster techniques otherwise.
+
+#### The Bottom Line
+Path-based retrieval is a **powerful but expensive** technique. It enables capabilities impossible with simpler methods but requires careful implementation, optimization, and constraint management. Use it strategically for queries that truly benefit from multi-hop reasoning, and combine it with faster techniques for comprehensive coverage.
+
+Ready to continue? We've covered four foundational techniques. The remaining nine build on these foundations with increasing sophistication!`
+        },
       ]
     },
     {
