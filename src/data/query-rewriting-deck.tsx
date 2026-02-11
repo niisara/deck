@@ -389,7 +389,15 @@ Let's start with Strategy 1: Query Expansion.`
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: ''
+          notes: `### 6 · Query Expansion — Overview
+Let's start with the simplest and most widely used strategy: **Query Expansion**.
+#### 🎯 What Is It?
+The idea is dead simple. When a user searches for "flu treatment," your retrieval system only looks for documents containing those exact words. But what about documents that say "influenza therapy" or "antiviral medication"? Query expansion **adds synonyms and related terms** to the original query so you cast a wider net. Think of it like fishing with a bigger net — you catch more relevant fish.
+#### ✅ Pros
+The good stuff: it's incredibly **simple to implement**, extremely **cost-effective** since you can use lightweight approaches, and delivers **significant recall improvement** right out of the box. It works with any existing search engine, no special infrastructure needed.
+#### 🕐 When to Use This?
+Use query expansion when you see **low recall** in your metrics, when users submit **sparse or short queries** with just two or three words, when your corpus uses **domain-specific terminology** that users don't know, or when you're dealing with **rare concepts** that have many different names.
+Let's see how it actually works under the hood.`
         },
         {
           id: 7,
@@ -397,18 +405,50 @@ Let's start with Strategy 1: Query Expansion.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Query Expansion Works</h3>
-              <p>Add semantically related keywords and entities through multiple approaches:</p>
-              <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>
+                How Query Expansion Works
+                <MermaidPopover
+                  title="Query Expansion Flow"
+                  diagram={`flowchart LR
+    A["📝 Original Query"] --> B["🔍 Find Synonyms"]
+    B --> C["📚 Thesaurus"]
+    B --> D["🧠 Embeddings"]
+    B --> E["🤖 LLM"]
+    C --> F["📋 Expanded Query"]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000`}
+                />
+              </h3></GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}><p>Add semantically related keywords and entities through multiple approaches:</p></GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}><ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Thesaurus/dictionary lookups</strong> - Traditional synonym expansion using linguistic databases</li>
                 <li><strong>Embedding-based similarity</strong> - Use vector embeddings to find semantically similar terms</li>
                 <li><strong>Pseudo-relevance feedback</strong> - Extract terms from top initial retrieval results</li>
                 <li><strong>LLM-generated related terms</strong> - Use language models to generate contextually relevant expansions</li>
-              </ul>
+              </ul></GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: ''
+          notes: `### 7 · Query Expansion — How It Works
+So how does query expansion actually work? There are four main approaches, and you can mix and match them.
+#### 🔄 The Expansion Methods
+\`\`\`mermaid
+flowchart LR
+    A["📝 Original Query"] --> B["🔍 Find Synonyms"]
+    B --> C["📚 Thesaurus"]
+    B --> D["🧠 Embeddings"]
+    B --> E["🤖 LLM"]
+    C --> F["📋 Expanded Query"]
+    D --> F
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+\`\`\`
+**Thesaurus and dictionary lookups** are the old-school approach — you look up synonyms in WordNet or a domain-specific dictionary. Fast and predictable but limited. **Embedding-based similarity** uses your vector embedding model to find terms that are close in semantic space. **Pseudo-relevance feedback** is clever — you do an initial retrieval, grab the top results, extract key terms from them, and add those terms back to your query. And **LLM-generated related terms** is the most flexible — you just ask a language model "give me synonyms and related terms for this query."
+The key insight is that you're not replacing the original query — you're **appending** related terms to it, usually with OR operators so the search engine considers documents matching any of the expanded terms.
+Now let's look at the implementation.`
         },
         {
           id: 8,
@@ -436,7 +476,14 @@ def expand_query(query):
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: ''
+          notes: `### 8 · Query Expansion — Implementation
+Here's a practical implementation pattern you can use right away.
+#### 💻 The Prompt Template
+The prompt is straightforward: you ask the LLM to extract five synonyms and five related terms for the query. You tell it to return them as a comma-separated list without explanations — this keeps the output clean and parseable.
+#### ⚙️ The Code
+The implementation is just a few lines. You send the query to the LLM with the prompt, get back the related terms, then construct an expanded query using OR operators. So "flu treatment" becomes "flu treatment OR influenza therapy OR antiviral medication OR oseltamivir OR flu remedies OR fever reduction."
+The beauty of this approach is its simplicity. You can add it to any existing RAG pipeline with minimal changes — just insert it between the user input and the retrieval step. No model fine-tuning, no special infrastructure.
+Let's look at a concrete before-and-after example.`
         },
         {
           id: 9,
@@ -459,7 +506,14 @@ def expand_query(query):
             </div>
           ),
           backgroundColor: '#1e557b',
-          notes: ''
+          notes: `### 9 · Query Expansion — Example & Considerations
+Let's look at a real example.
+#### 📝 Before and After
+The user types "flu treatment" — just two words. After expansion, it becomes "flu treatment OR influenza therapy OR antiviral medication OR oseltamivir OR flu remedies OR fever reduction." Now your search covers medical terminology, brand names, and common phrases. The recall improvement can be dramatic — sometimes doubling the number of relevant documents retrieved.
+#### ⚠️ Watch Out For
+But there are gotchas. **Precision can drop** if you add too many terms without reranking — suddenly you're pulling in documents about fever reduction for sunburns. There's **query drift** risk where expanded terms take you away from the original intent. It's **less effective for ambiguous queries** — if "apple" could mean the fruit or the company, expanding with synonyms for both just makes things worse. And you may need **domain tuning** to get the expansion terms right for specialized corpora.
+The key takeaway? Query expansion is your **first line of defense** — it's simple, cheap, and effective. But pair it with a reranker to maintain precision.
+Now let's move on to Strategy 2: Query Reformulation.`
         }
       ]
     },
@@ -492,7 +546,15 @@ def expand_query(query):
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: ''
+          notes: `### 10 · Query Reformulation — Overview
+Strategy number two is **Query Reformulation**, and it's all about making queries clearer and self-contained.
+#### 🎯 What Is It?
+While query expansion adds more terms, reformulation **rewrites the entire query** to be explicit, unambiguous, and standalone. Imagine a user in a chat saying "What about pricing?" — that's completely useless without context. Reformulation transforms it into "What is the pricing for the Pro plan of Acme API in 2024?" — now it's a query that can actually retrieve relevant documents on its own.
+#### ✅ Pros
+The good stuff: you get **improved precision** because the rewritten query is specific and targeted. It **reduces irrelevant document hits** since the query now says exactly what it means. It's especially powerful for **multi-turn chat** applications where follow-up queries lose context. And reformulated queries are **self-contained**, which means they're cacheable — if another user asks the same thing, you can reuse the result.
+#### 🕐 When to Use This?
+Use reformulation for **conversational follow-ups**, **terse or vague questions**, **multi-turn interactions**, and whenever you see **ambiguous references** to entities like "it," "they," or "that one."
+Let's see the mechanics.`
         },
         {
           id: 11,
@@ -511,7 +573,12 @@ def expand_query(query):
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: ''
+          notes: `### 11 · Query Reformulation — How It Works
+Here's how reformulation works in practice.
+#### 🔄 The Process
+The system takes a vague or context-dependent query and adds back all the missing information. It does this by incorporating **full entity names and identifiers** — replacing "it" with "the Acme Pro API." It adds **explicit constraints and qualifiers** — turning "pricing" into "current pricing for the Enterprise tier." It pulls in **contextual information from conversation history** — so "What about limits?" becomes "What are the rate limits for the service we were discussing?" And it fills in **temporal or domain context** that the user assumed but didn't state.
+The key difference from query expansion is that reformulation doesn't just add terms — it **restructures the entire query** into a clear, complete question. It's like the difference between adding ingredients to a recipe versus rewriting the recipe from scratch.
+Let's see the implementation.`
         },
         {
           id: 12,
@@ -543,7 +610,14 @@ def reformulate_query(query, history):
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: ''
+          notes: `### 12 · Query Reformulation — Implementation
+The implementation uses a simple but effective prompt pattern.
+#### 💻 The Prompt
+You tell the LLM: "Rewrite the user query to be explicit and standalone, keeping the original intent unchanged. Make sure all entities and context are clearly stated." Then you provide both the query and the conversation context. The LLM's job is to produce a single, clean, self-contained query.
+#### ⚙️ The Code
+In the implementation, you first summarize the conversation history to extract the key context, then feed both the query and that context to the LLM. The output is a single rewritten query that contains everything needed for retrieval — no pronouns, no implicit references, no ambiguity.
+This pattern is absolutely essential for any chat-based RAG system. Without it, every follow-up question is essentially unsearchable.
+Let's see a before-and-after.`
         },
         {
           id: 13,
@@ -566,7 +640,14 @@ def reformulate_query(query, history):
             </div>
           ),
           backgroundColor: '#6c1e7b',
-          notes: ''
+          notes: `### 13 · Query Reformulation — Example & Considerations
+Here's a perfect example of what reformulation does.
+#### 📝 Before and After
+The user asks "What about pricing?" — three words, completely ambiguous. After reformulation using the conversation context, it becomes "What is the pricing for the Pro plan of Acme API in 2024?" Now the retrieval system knows exactly what to search for.
+#### ⚠️ Watch Out For
+But here are the risks. You need **access to conversation context** — if your system doesn't track history, reformulation can't work. There's a **risk of over-specification** where the LLM adds constraints the user didn't intend. The LLM may **introduce assumptions** that aren't warranted. And there's **additional latency** from the preprocessing step, since you're making an extra LLM call before retrieval.
+The sweet spot? Use reformulation for **every follow-up query in chat** scenarios, but keep it lightweight for first-turn queries where expansion might be enough.
+Next up is Strategy 3: Query Decomposition, which handles a completely different challenge.`
         }
       ]
     },
@@ -599,7 +680,15 @@ def reformulate_query(query, history):
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: ''
+          notes: `### 14 · Query Decomposition — Overview
+Strategy 3 is **Query Decomposition**, and it tackles one of the hardest problems in retrieval: complex, multi-part questions.
+#### 🎯 What Is It?
+When a user asks "Compare Snowflake vs BigQuery costs for 10 TB per month," that's actually several questions rolled into one. What does Snowflake charge? What does BigQuery charge? What compute resources are needed? How do the pricing structures compare? No single retrieval pass can answer all of that well. Decomposition **breaks the big question into smaller, answerable sub-questions**, retrieves documents for each one separately, then synthesizes a comprehensive answer.
+#### ✅ Pros
+The good stuff: you get **better coverage** of complex topics because each aspect gets its own focused retrieval. **Reasoning improves** because each sub-question is simpler. Each sub-question can be **precisely answered** with targeted evidence. And you **reduce hallucinations** on complex queries because the LLM has specific evidence for each part.
+#### 🕐 When to Use This?
+Use decomposition for **multi-entity relationships**, **multi-step reasoning**, **compare-and-contrast scenarios**, and questions requiring information from **different domains or sources**.
+Let's see the workflow.`
         },
         {
           id: 15,
@@ -618,7 +707,12 @@ def reformulate_query(query, history):
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: ''
+          notes: `### 15 · Query Decomposition — How It Works
+The decomposition workflow follows a plan-retrieve-answer-combine pattern.
+#### 🔄 The Four Steps
+First, you **split the original query into atomic sub-questions**. These should be independent, answerable on their own, and collectively cover the full scope of the original question. Second, you **retrieve relevant passages for each sub-query** — this means running separate retrieval calls for each sub-question. Third, you **answer each sub-question independently** using its own retrieved context. Finally, you **synthesize the final answer** by combining all the sub-answers into one comprehensive response.
+The critical insight here is that you're trading **one hard retrieval** for **several easy ones**. A single complex query might fail to find any good documents, but three simple sub-queries each find exactly what they need. It's like searching for a restaurant that has great sushi, is open late, and has outdoor seating — much easier to search for each criterion separately and then find the intersection.
+Now for the implementation details.`
         },
         {
           id: 16,
@@ -650,7 +744,14 @@ def answer_with_decomposition(query):
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: ''
+          notes: `### 16 · Query Decomposition — Implementation
+Here's how to implement decomposition in practice.
+#### 💻 The Prompt
+The decomposition prompt asks the LLM to break the question into two to five simpler sub-questions. You explicitly ask for a numbered list without explanations. The key constraint is that the sub-questions, when answered separately, should collectively answer the main question comprehensively.
+#### ⚙️ The Code
+The implementation loops through each sub-question, retrieves documents for it, and generates a sub-answer. Then a final synthesis step combines everything. Notice the three LLM calls: one for decomposition, one per sub-question for answering, and one for synthesis. This is more expensive than simple expansion, but the quality improvement on complex questions is substantial.
+The tradeoff is clear: **more LLM calls and higher latency** in exchange for **much better answers on complex questions**. For simple factual queries, decomposition is overkill. Save it for the hard stuff.
+Let's see an example.`
         },
         {
           id: 17,
@@ -673,7 +774,15 @@ def answer_with_decomposition(query):
             </div>
           ),
           backgroundColor: '#1e6b7b',
-          notes: ''
+          notes: `### 17 · Query Decomposition — Example & Considerations
+Here's a real-world example of decomposition in action.
+#### 📝 Before and After
+The user asks "Compare Snowflake vs BigQuery costs for 10 TB per month." Decomposition breaks this into four sub-questions: What is Snowflake's pricing? What is BigQuery's pricing? What compute resources are needed? And how do the structures compare? Each sub-question gets its own focused retrieval and answer, then they're combined into a comprehensive comparison.
+#### ⚠️ Watch Out For
+The main concerns are: **multiple retrieval calls increase latency** — you're doing four or five searches instead of one. **Orchestration complexity** goes up since you need to manage parallel retrievals and synthesis. **Token usage and costs** are higher because of multiple LLM calls. And the **synthesis step can introduce errors** if it misrepresents or incorrectly combines the sub-answers.
+> 🎤 Ask the audience: "What kinds of complex questions do your users ask that might benefit from decomposition?"
+The takeaway: decomposition is your **power tool for hard questions**. Don't use it on everything — reserve it for multi-part, compare-and-contrast, or multi-hop reasoning scenarios.
+Next, let's look at Step-Back Prompting, which takes the opposite approach — going broader instead of narrower.`
         }
       ]
     },
