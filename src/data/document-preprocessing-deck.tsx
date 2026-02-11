@@ -1702,26 +1702,26 @@ Finally, it works well for keyword search in traditional systems. [lecture] TF-I
           ),
           backgroundColor: '#736111',
           notes: `#### Introduction
-And finally, we've reached technique ten, light stopword trimming. This is our last document preprocessing technique, and it's another traditional approach that you need to use carefully in modern systems. The key word here is "light"—aggressive stopword removal is almost never the right choice anymore.
+[lecture] And finally, we've reached technique ten, light stopword trimming. [conversational] This is our last document preprocessing technique, and it's another traditional approach that you need to use carefully in modern systems. [confidently] The key word here is "light"—aggressive stopword removal is almost never the right choice anymore.
 #### The Core Concept
-Stopwords are extremely common words like "the," "is," "at," "which," and "on." These words appear so frequently that in traditional information retrieval, they were considered noise that diluted the signal from more meaningful content words. The idea was to remove them to focus on the terms that really matter.
+[lecture] Stopwords are extremely common words like "the," "is," "at," "which," and "on." These words appear so frequently that in traditional information retrieval, they were considered noise that diluted the signal from more meaningful content words. [conversational] The idea was to remove them to focus on the terms that really matter.
 #### Core Goals
-Our goals with light stopword trimming are to remove extremely common words that add noise in traditional systems, reduce dimensionality for traditional models, and focus on content-bearing terms. But—and this is crucial—we want to be careful not to remove semantic value. Hence "light" trimming, not aggressive removal.
+[confidently] Our goals with light stopword trimming are to remove extremely common words that add noise in traditional systems, reduce dimensionality for traditional models, and focus on content-bearing terms. [cautiously] But—and this is crucial—we want to be careful not to remove semantic value. Hence "light" trimming, not aggressive removal.
 #### How It Works
-Let me show you how modern stopword trimming works. The process starts with predefined stopword lists from libraries like NLTK or spaCy. These lists contain the most common function words in each language. You filter out only the highest-frequency function words—words that carry little semantic content on their own.
-Modern approaches use context-aware removal. Instead of blindly removing all stopwords, they preserve them in important phrases. The phrase "to be or not to be" would be destroyed by aggressive stopword removal, but light trimming recognizes this is a meaningful phrase and leaves it intact.
-You can also create domain-specific stopword lists. In medical documents, certain common medical terms might be so ubiquitous that they're not useful for distinguishing documents. But these wouldn't be on a general stopword list.
+[lecture] Let me show you how modern stopword trimming works. The process starts with predefined stopword lists from libraries like NLTK or spaCy. These lists contain the most common function words in each language. You filter out only the highest-frequency function words—words that carry little semantic content on their own.
+[conversational] Modern approaches use context-aware removal. Instead of blindly removing all stopwords, they preserve them in important phrases. [storytelling] The phrase "to be or not to be" would be destroyed by aggressive stopword removal, but light trimming recognizes this is a meaningful phrase and leaves it intact.
+[lecture] You can also create domain-specific stopword lists. In medical documents, certain common medical terms might be so ubiquitous that they're not useful for distinguishing documents. But these wouldn't be on a general stopword list.
 #### When To Use This
-Stopword trimming is appropriate for traditional keyword search systems using inverted indexes. It's useful with TF-IDF or BM25 retrieval where high-frequency function words can dominate the scores.
-Use it when token limits are tight and you need to compress text. Removing stopwords can reduce text length by twenty to thirty percent in some cases.
-But—and this is critical—this is NOT recommended for transformer embeddings. Modern embedding models are trained with stopwords included, and they use these words to understand syntax and context. Removing stopwords before embedding can actually hurt performance.
+[confidently] Stopword trimming is appropriate for traditional keyword search systems using inverted indexes. It's useful with TF-IDF or BM25 retrieval where high-frequency function words can dominate the scores.
+[conversational] Use it when token limits are tight and you need to compress text. Removing stopwords can reduce text length by twenty to thirty percent in some cases.
+[cautiously] But—and this is critical—this is NOT recommended for transformer embeddings. [lecture] Modern embedding models are trained with stopwords included, and they use these words to understand syntax and context. [disappointed] Removing stopwords before embedding can actually hurt performance.
 #### Implementation Approach
-Here's how to implement light stopword trimming safely. First, load a stopword list for your language from a library like NLTK or spaCy. Filter out stopwords from your text, but—and this is important—keep stopwords in important contexts.
-How do you know what's important? Check for known phrases, idioms, and expressions. "in the end," "on behalf of," "by the way"—these contain stopwords but carry specific meanings. Preserve them.
-Validate your approach on domain-specific phrases. Does your domain have technical phrases that contain stopwords? Make sure you're not breaking those.
-Most importantly, measure the impact on retrieval quality. A/B test with and without stopword trimming. In many modern systems, you'll find that stopword trimming doesn't help and might actually hurt.
+[lecture] Here's how to implement light stopword trimming safely. First, load a stopword list for your language from a library like NLTK or spaCy. Filter out stopwords from your text, but—and this is important—keep stopwords in important contexts.
+[conversational] How do you know what's important? Check for known phrases, idioms, and expressions. "in the end," "on behalf of," "by the way"—these contain stopwords but carry specific meanings. Preserve them.
+[confidently] Validate your approach on domain-specific phrases. Does your domain have technical phrases that contain stopwords? Make sure you're not breaking those.
+[cautiously] Most importantly, measure the impact on retrieval quality. A/B test with and without stopword trimming. [sigh] In many modern systems, you'll find that stopword trimming doesn't help and might actually hurt.
 #### Transition
-Stopword trimming is the most controversial technique in modern preprocessing. Let's look at when it helps and when it hurts.`
+[conversational] Stopword trimming is the most controversial technique in modern preprocessing. Let's look at when it helps and when it hurts.`
         },
         {
           id: 22,
@@ -1762,18 +1762,18 @@ Stopword trimming is the most controversial technique in modern preprocessing. L
           ),
           backgroundColor: '#736111',
           notes: `#### The Benefits
-Let's start with the scenarios where stopword trimming actually provides value. First, it reduces noise in keyword systems. If you're using a traditional inverted index, stopwords can inflate document scores without adding meaningful information. Removing them focuses the system on distinctive terms.
-Second, it lowers storage and processing requirements. Stopwords can be twenty to thirty percent of your text. Removing them means smaller indexes, faster search, and lower storage costs.
-Third, it focuses on meaningful terms. Your index contains only the words that actually distinguish one document from another, which can improve precision in some traditional systems.
-Finally, it speeds up traditional search. Fewer terms to index, fewer terms to query, faster retrieval. For high-throughput systems using traditional algorithms, this can matter.
+[pleased] Let's start with the scenarios where stopword trimming actually provides value. [confidently] First, it reduces noise in keyword systems. If you're using a traditional inverted index, stopwords can inflate document scores without adding meaningful information. Removing them focuses the system on distinctive terms.
+[conversational] Second, it lowers storage and processing requirements. Stopwords can be twenty to thirty percent of your text. Removing them means smaller indexes, faster search, and lower storage costs.
+[pleased] Third, it focuses on meaningful terms. Your index contains only the words that actually distinguish one document from another, which can improve precision in some traditional systems.
+[confidently] Finally, it speeds up traditional search. Fewer terms to index, fewer terms to query, faster retrieval. For high-throughput systems using traditional algorithms, this can matter.
 #### The Challenges
-But stopword trimming has significant downsides that limit its usefulness. First, it can remove semantic value. Stop words aren't just grammatical filler—they contribute to meaning. The difference between "not good" and "good" is just one stopword, but the meanings are opposite.
-Second, modern embeddings don't need this. Transformer-based models and modern embedding models understand the role of function words. They know how to weight them appropriately. Removing stopwords before embedding removes information that these models can use.
-Third, context-dependent removal is tricky to get right. What's a meaningless stopword in one context might be crucial in another. Building rules to handle all these cases is difficult and error-prone.
-Finally, language-specific lists are required. You need different stopword lists for every language you support. And those lists need to be maintained and updated. The multilingual overhead can be significant.
+[cautiously] But stopword trimming has significant downsides that limit its usefulness. [disappointed] First, it can remove semantic value. Stop words aren't just grammatical filler—they contribute to meaning. [storytelling] The difference between "not good" and "good" is just one stopword, but the meanings are opposite.
+[lecture] Second, modern embeddings don't need this. Transformer-based models and modern embedding models understand the role of function words. They know how to weight them appropriately. [sigh] Removing stopwords before embedding removes information that these models can use.
+[cautiously] Third, context-dependent removal is tricky to get right. What's a meaningless stopword in one context might be crucial in another. Building rules to handle all these cases is difficult and error-prone.
+[conversational] Finally, language-specific lists are required. You need different stopword lists for every language you support. And those lists need to be maintained and updated. The multilingual overhead can be significant.
 #### Closing Thoughts
-In modern systems, especially those using transformer-based embeddings, stopword trimming is rarely necessary and often counterproductive. Use it only in traditional keyword systems where you've measured a clear benefit. For everything else, let your embeddings handle the words as they are.
-And that brings us to the end of these ten preprocessing techniques. We've covered critical methods from sentence boundary detection through semantic chunking to these traditional but still occasionally useful methods like normalization and stopword trimming. The key is knowing which techniques to apply for your specific use case and architecture.`
+[confidently] In modern systems, especially those using transformer-based embeddings, stopword trimming is rarely necessary and often counterproductive. [cautiously] Use it only in traditional keyword systems where you've measured a clear benefit. [pleased] For everything else, let your embeddings handle the words as they are.
+[warmly] And that brings us to the end of these ten preprocessing techniques. [confidently] We've covered critical methods from sentence boundary detection through semantic chunking to these traditional but still occasionally useful methods like normalization and stopword trimming. [lecture] The key is knowing which techniques to apply for your specific use case and architecture.`
         }
       ]
     },
@@ -1842,15 +1842,15 @@ And that brings us to the end of these ten preprocessing techniques. We've cover
           ),
           backgroundColor: '#731111',
           notes: `#### Introduction
-Welcome to technique eleven, lemmatization and stemming. These are classic text normalization techniques that reduce words to their base or root forms. While less critical for modern transformer models, they still have specific use cases in traditional NLP pipelines.
+[energetic] Welcome to technique eleven, lemmatization and stemming. [lecture] These are classic text normalization techniques that reduce words to their base or root forms. [conversational] While less critical for modern transformer models, they still have specific use cases in traditional NLP pipelines.
 #### The Core Concept
-Words appear in many forms—"run," "running," "runs," "ran." For many tasks, you want to treat these as the same concept. Stemming and lemmatization solve this by reducing variants to a common form.
+[conversational] Words appear in many forms—"run," "running," "runs," "ran." For many tasks, you want to treat these as the same concept. [confidently] Stemming and lemmatization solve this by reducing variants to a common form.
 #### Stemming vs Lemmatization
-Stemming is aggressive and rule-based. The Porter Stemmer 👉 POR-ter might turn "running" into "run" but also "university" into "univers"—which isn't a real word. It's fast but crude. Lemmatization is smarter—it uses dictionaries and part-of-speech information to find the actual dictionary form. "Running" becomes "run," but "better" becomes "good" because that's the lemma. It's more accurate but computationally expensive.
+[lecture] Stemming is aggressive and rule-based. [conversational] The Porter Stemmer 👉 POR-ter might turn "running" into "run" but [amused] also "university" into "univers"—which isn't a real word. [playfully] It's fast but crude. [lecture] Lemmatization is smarter—it uses dictionaries and part-of-speech information to find the actual dictionary form. "Running" becomes "run," but "better" becomes "good" because that's the lemma. [conversational] It's more accurate but computationally expensive.
 #### When To Use This
-These techniques shine in traditional search systems where you want "searching" to match "search." They're useful for text classification and clustering with traditional ML models. But here's the key insight: modern transformer models and embeddings don't need this. They're trained to understand that "running" and "run" are related. Lemmatizing before embedding might actually hurt performance.
+[confidently] These techniques shine in traditional search systems where you want "searching" to match "search." They're useful for text classification and clustering with traditional ML models. [cautiously] But here's the key insight: modern transformer models and embeddings don't need this. They're trained to understand that "running" and "run" are related. [disappointed] Lemmatizing before embedding might actually hurt performance.
 #### Transition
-Lemmatization and stemming are foundational NLP techniques, but they come with tradeoffs. Let's explore the pros and cons next.`
+[conversational] Lemmatization and stemming are foundational NLP techniques, but they come with tradeoffs. Let's explore the pros and cons next.`
         },
         {
           id: 24,
@@ -1891,11 +1891,11 @@ Lemmatization and stemming are foundational NLP techniques, but they come with t
           ),
           backgroundColor: '#731111',
           notes: `#### The Benefits
-Lemmatization and stemming provide clear benefits for traditional systems. First, they reduce vocabulary sparsity—instead of "run," "running," "runs," and "ran" being four separate tokens, they become one. This helps traditional ML models learn better. Second, search recall improves dramatically. Users searching for "run" will find documents containing "running." Third, this is especially valuable for morphologically rich languages like German or Finnish where words have many inflected forms. Finally, it makes term counting and analysis more consistent.
+[pleased] Lemmatization and stemming provide clear benefits for traditional systems. [confidently] First, they reduce vocabulary sparsity—instead of "run," "running," "runs," and "ran" being four separate tokens, they become one. This helps traditional ML models learn better. [enthusiastically] Second, search recall improves dramatically. Users searching for "run" will find documents containing "running." [lecture] Third, this is especially valuable for morphologically rich languages like German or Finnish where words have many inflected forms. [pleased] Finally, it makes term counting and analysis more consistent.
 #### The Challenges
-But there are significant downsides. Over-stemming creates nonsense words and can conflate unrelated terms. "university" and "universal" both stem to "univers," but they're different concepts. Lemmatization avoids this but requires much more computation and language-specific resources. You lose grammatical nuance—past tense versus present tense might matter for understanding temporal relationships. Most critically, modern transformer models don't benefit from this preprocessing. BERT 👉 BURT and similar models understand morphological relationships natively. Preprocessing might actually degrade performance.
+[cautiously] But there are significant downsides. [disappointed] Over-stemming creates nonsense words and can conflate unrelated terms. [storytelling] "university" and "universal" both stem to "univers," but they're different concepts. [lecture] Lemmatization avoids this but requires much more computation and language-specific resources. [conversational] You lose grammatical nuance—past tense versus present tense might matter for understanding temporal relationships. [concerned] Most critically, modern transformer models don't benefit from this preprocessing. BERT 👉 BURT and similar models understand morphological relationships natively. [disappointed] Preprocessing might actually degrade performance.
 #### Transition to Next Technique
-Lemmatization and stemming are legacy techniques valuable for specific traditional systems. Now let's move to technique twelve, keyphrase extraction, which helps identify the most important terms and concepts in your documents.`
+[conversational] Lemmatization and stemming are legacy techniques valuable for specific traditional systems. [energetic] Now let's move to technique twelve, keyphrase extraction, which helps identify the most important terms and concepts in your documents.`
         }
       ]
     },
@@ -1960,15 +1960,15 @@ Lemmatization and stemming are legacy techniques valuable for specific tradition
           ),
           backgroundColor: '#560965',
           notes: `#### Introduction
-Keyphrase extraction identifies the most important terms and phrases in your documents. These keyphrases serve as tags, metadata, and navigation aids that improve discoverability and organization.
+[energetic] Keyphrase extraction identifies the most important terms and phrases in your documents. [confidently] These keyphrases serve as tags, metadata, and navigation aids that improve discoverability and organization.
 #### Core Approach
-Methods range from statistical like TF-IDF and RAKE 👉 RAYK to graph-based like TextRank, to modern embedding approaches. The goal is to identify phrases that best represent the document's content and distinguish it from others. These become searchable tags and enable faceted filtering.
+[lecture] Methods range from statistical like TF-IDF and RAKE 👉 RAYK to graph-based like TextRank, to modern embedding approaches. [conversational] The goal is to identify phrases that best represent the document's content and distinguish it from others. [pleased] These become searchable tags and enable faceted filtering.
 #### Use Cases and Benefits
-Keyphrase extraction creates rich metadata for search interfaces, enables topic-based navigation, and improves content recommendations. It's fully automatable and works across languages with appropriate tools.
+[enthusiastically] Keyphrase extraction creates rich metadata for search interfaces, enables topic-based navigation, and improves content recommendations. [confidently] It's fully automatable and works across languages with appropriate tools.
 #### Challenges
-Quality varies significantly by document type and domain. Technical papers have clear keyphrases; conversational text is harder. Tuning is required to balance precision and recall. The keyphrases extracted are only as good as the algorithm and the document structure.
+[cautiously] Quality varies significantly by document type and domain. [conversational] Technical papers have clear keyphrases; conversational text is harder. Tuning is required to balance precision and recall. [disappointed] The keyphrases extracted are only as good as the algorithm and the document structure.
 #### Transition
-Keyphrase extraction adds valuable metadata, but results require validation. Let's look at the tradeoffs.`
+[conversational] Keyphrase extraction adds valuable metadata, but results require validation. Let's look at the tradeoffs.`
         },
         {
           id: 26,
@@ -2009,11 +2009,11 @@ Keyphrase extraction adds valuable metadata, but results require validation. Let
           ),
           backgroundColor: '#560965',
           notes: `#### The Benefits
-Keyphrase extraction enables powerful navigation and filtering in large document collections. Users can quickly find relevant content by browsing or filtering by keyphrases. It improves retrieval precision by providing additional signals beyond full-text search. Document summarization becomes easier when you have the key concepts identified. Overall content discovery and organization significantly improve.
+[pleased] Keyphrase extraction enables powerful navigation and filtering in large document collections. [enthusiastically] Users can quickly find relevant content by browsing or filtering by keyphrases. [confidently] It improves retrieval precision by providing additional signals beyond full-text search. [conversational] Document summarization becomes easier when you have the key concepts identified. [pleased] Overall content discovery and organization significantly improve.
 #### The Challenges
-However, quality is inconsistent. Unstructured conversational text produces noisy candidates. Domain-specific terminology might require custom stopword lists and glossaries. Implicit concepts that aren't explicitly mentioned will be missed. Document structure and writing clarity directly impact extraction quality—clear technical writing works best.
+[cautiously] However, quality is inconsistent. [disappointed] Unstructured conversational text produces noisy candidates. [lecture] Domain-specific terminology might require custom stopword lists and glossaries. [concerned] Implicit concepts that aren't explicitly mentioned will be missed. [conversational] Document structure and writing clarity directly impact extraction quality—clear technical writing works best.
 #### Transition to Next Technique
-Keyphrase extraction adds valuable structure to unstructured text. Now let's move to technique thirteen, entity tagging, which goes deeper by identifying specific people, organizations, locations, and domain entities in your documents.`
+[confidently] Keyphrase extraction adds valuable structure to unstructured text. [energetic] Now let's move to technique thirteen, entity tagging, which goes deeper by identifying specific people, organizations, locations, and domain entities in your documents.`
         }
       ]
     },
@@ -2078,15 +2078,15 @@ Keyphrase extraction adds valuable structure to unstructured text. Now let's mov
           ),
           backgroundColor: '#0b6509',
           notes: `#### Introduction
-Named Entity Recognition, or NER 👉 N-E-R, identifies and tags specific entities in text—people, organizations, locations, dates, products, and domain-specific entities. This transforms unstructured text into structured, queryable data that enables powerful entity-based search and analytics.
+[confidently] Named Entity Recognition, or NER 👉 N-E-R, identifies and tags specific entities in text—people, organizations, locations, dates, products, and domain-specific entities. [enthusiastically] This transforms unstructured text into structured, queryable data that enables powerful entity-based search and analytics.
 #### The Power of Entity Tagging
-Entity tagging enables entity-based search where users can filter by specific people, organizations, or locations. It's essential for compliance and PII detection, identifying sensitive information that needs redactionor protection. It also enables knowledge graph construction, linking entities and their relationships across documents. The structured data created from entities can power analytics dashboards showing entity distributions and trends.
+[pleased] Entity tagging enables entity-based search where users can filter by specific people, organizations, or locations. [lecture] It's essential for compliance and PII detection, identifying sensitive information that needs redaction or protection. [conversational] It also enables knowledge graph construction, linking entities and their relationships across documents. [confidently] The structured data created from entities can power analytics dashboards showing entity distributions and trends.
 #### Implementation
-Modern NER uses transformer models like BERT fine-tuned for sequence labeling, or libraries like spaCy with pre-trained models. Rule-based patterns can supplement ML models for specific formats like phone numbers or product codes. Domain-specific entities often require fine-tuning the model on labeled examples from your domain.
+[lecture] Modern NER uses transformer models like BERT fine-tuned for sequence labeling, or libraries like spaCy with pre-trained models. [conversational] Rule-based patterns can supplement ML models for specific formats like phone numbers or product codes. [cautiously] Domain-specific entities often require fine-tuning the model on labeled examples from your domain.
 #### Challenges
-The main challenges are domain adaptation—out-of-the-box models work well for common entities but struggle with specialized domains. Entity disambiguation is tricky when the same name refers to different entities. Long, noisy documents degrade accuracy. Custom training requires labeled data, which is expensive to create.
+[concerned] The main challenges are domain adaptation—out-of-the-box models work well for common entities but struggle with specialized domains. [conversational] Entity disambiguation is tricky when the same name refers to different entities. [disappointed] Long, noisy documents degrade accuracy. [cautiously] Custom training requires labeled data, which is expensive to create.
 #### Transition
-Entity tagging is powerful but requires investment in model selection and tuning. Let's examine the tradeoffs.`
+[conversational] Entity tagging is powerful but requires investment in model selection and tuning. Let's examine the tradeoffs.`
         },
         {
           id: 28,
@@ -2127,11 +2127,11 @@ Entity tagging is powerful but requires investment in model selection and tuning
           ),
           backgroundColor: '#0b6509',
           notes: `#### The Benefits
-Entity tagging transforms unstructured text into structured, queryable data. You can run entity-based queries like "show me all documents mentioning Apple the company, not apple the fruit." Database-like joins become possible—find all documents where person X works at organization Y. Search precision improves dramatically with entity filtering. The metadata created enables sophisticated document organization and discovery.
+[pleased] Entity tagging transforms unstructured text into structured, queryable data. [enthusiastically] You can run entity-based queries like "show me all documents mentioning Apple the company, not apple the fruit." [conversational] Database-like joins become possible—find all documents where person X works at organization Y. [confidently] Search precision improves dramatically with entity filtering. [pleased] The metadata created enables sophisticated document organization and discovery.
 #### The Challenges
-Domain adaptation is the biggest challenge—models trained on news articles struggle with medical records or legal contracts. Custom entity types require labeled training data and fine-tuning effort. Long, noisy documents with poor formatting degrade performance. Entity disambiguation remains hard—is "Washington" the person, city, or state? False positives and negatives require threshold tuning and validation.
+[concerned] Domain adaptation is the biggest challenge—models trained on news articles struggle with medical records or legal contracts. [cautiously] Custom entity types require labeled training data and fine-tuning effort. [disappointed] Long, noisy documents with poor formatting degrade performance. [conversational] Entity disambiguation remains hard—is "Washington" the person, city, or state? [cautiously] False positives and negatives require threshold tuning and validation.
 #### Transition to Next Technique
-Entity tagging adds powerful structure but requires domain-specific effort. Now let's move to technique fourteen, removing dead chunks, which cleans up low-value content that survived earlier preprocessing stages.`
+[confidently] Entity tagging adds powerful structure but requires domain-specific effort. [energetic] Now let's move to technique fourteen, removing dead chunks, which cleans up low-value content that survived earlier preprocessing stages.`
         }
       ]
     },
@@ -2199,61 +2199,61 @@ Entity tagging adds powerful structure but requires domain-specific effort. Now 
           notes: `
 #### Introduction to Dead Chunks & Quality Filtering
 
-Welcome to Technique 14: Dead Chunks and Quality Filtering. This is about managing one of the most frustrating challenges in production RAG systems—garbage in, garbage out. No matter how sophisticated your embedding model or retrieval algorithm is, if you're indexing low-quality or useless chunks, they'll pollute your search results and waste compute resources. This technique focuses on proactively identifying and removing "dead chunks"—content that adds no value and may even degrade system performance.
+[energetic] Welcome to Technique 14: Dead Chunks and Quality Filtering. [concerned] This is about managing one of the most frustrating challenges in production RAG systems—garbage in, garbage out. [lecture] No matter how sophisticated your embedding model or retrieval algorithm is, if you're indexing low-quality or useless chunks, they'll pollute your search results and waste compute resources. [confidently] This technique focuses on proactively identifying and removing "dead chunks"—content that adds no value and may even degrade system performance.
 
-Think of this as Marie Kondo-ing your document index. Not every chunk sparks joy—or information. Some chunks are just headers with no content, navigation fragments from web scraping, boilerplate legal text repeated across documents, or the result of poor PDF parsing that left you with gibberish. Quality filtering is about systematically detecting and removing these issues before they make it into your index.
+[playfully] Think of this as Marie Kondo-ing your document index. [amused] Not every chunk sparks joy—or information. [conversational] Some chunks are just headers with no content, navigation fragments from web scraping, boilerplate legal text repeated across documents, or the result of poor PDF parsing that left you with gibberish. [confidently] Quality filtering is about systematically detecting and removing these issues before they make it into your index.
 
 #### What Are Dead Chunks?
 
-Dead chunks come in many varieties, and understanding them helps you design better filters. **Header-only chunks** might contain just "Chapter 5: Introduction" with no actual content. **Navigation artifacts** from web scraping might be "Home | Products | Contact Us" repeated across pages. **Parsing artifacts** could be random character sequences like "Œ\`Ñ¢" from OCR errors or encoding issues. **Boilerplate repetition** includes disclaimers, footers, or copyright notices repeated verbatim across documents.
+[lecture] Dead chunks come in many varieties, and understanding them helps you design better filters. [conversational] **Header-only chunks** might contain just "Chapter 5: Introduction" with no actual content. **Navigation artifacts** from web scraping might be "Home | Products | Contact Us" repeated across pages. [disappointed] **Parsing artifacts** could be random character sequences like "Œ\`Ñ¢" from OCR errors or encoding issues. **Boilerplate repetition** includes disclaimers, footers, or copyright notices repeated verbatim across documents.
 
 👉 Pronunciation: **boilerplate** = BOY-ler-plate (standard repeated text); **gibberish** = JIB-er-ish (nonsensical text)
 
-There are also **empty or near-empty chunks** that passed through chunking because they technically met minimum length requirements but contain only whitespace or stopwords. And finally, **retrieval-orphan chunks**—content that users never retrieve despite being indexed, suggesting it's not useful or not discoverable through search.
+[lecture] There are also **empty or near-empty chunks** that passed through chunking because they technically met minimum length requirements but contain only whitespace or stopwords. [conversational] And finally, **retrieval-orphan chunks**—content that users never retrieve despite being indexed, suggesting it's not useful or not discoverable through search.
 
 #### Quality Detection Methods
 
-Let's explore practical techniques for identifying low-quality chunks. **Length and alpha ratio thresholds** are the simplest—if a chunk is under 20 characters or has less than 50% alphabetic characters, it's probably not useful content. This catches fragments, navigation elements, and parsing errors.
+[lecture] Let's explore practical techniques for identifying low-quality chunks. [confidently] **Length and alpha ratio thresholds** are the simplest—if a chunk is under 20 characters or has less than 50% alphabetic characters, it's probably not useful content. This catches fragments, navigation elements, and parsing errors.
 
-**Entropy calculations** measure information density. Entropy is essentially how "random" or "informative" text is. Repeated boilerplate has very low entropy because it's predictable. You can calculate character-level or word-level entropy and flag chunks that fall below a threshold, indicating repetitive or formulaic text.
+[lecture] **Entropy calculations** measure information density. [conversational] Entropy is essentially how "random" or "informative" text is. Repeated boilerplate has very low entropy because it's predictable. You can calculate character-level or word-level entropy and flag chunks that fall below a threshold, indicating repetitive or formulaic text.
 
 👉 Pronunciation: **entropy** = EN-truh-pee (measure of randomness/information content)
 
-**Stopword density analysis** checks what percentage of a chunk consists of common words like "the," "and," "is." If 80% of your chunk is stopwords, it's probably not carrying much semantic weight. **Embedding norm and outlier checks** leverage your embedding model—chunks with anomalously low vector norms or those that cluster far from other content might be outliers worth reviewing.
+[lecture] **Stopword density analysis** checks what percentage of a chunk consists of common words like "the," "and," "is." [storytelling] If 80% of your chunk is stopwords, it's probably not carrying much semantic weight. [conversational] **Embedding norm and outlier checks** leverage your embedding model—chunks with anomalously low vector norms or those that cluster far from other content might be outliers worth reviewing.
 
-Finally, **retrieval frequency tracking** in production systems can identify chunks that are never retrieved. If a chunk has been indexed for months but never appears in any search results, it's a candidate for removal. This is post-deployment quality assessment.
+[lecture] Finally, **retrieval frequency tracking** in production systems can identify chunks that are never retrieved. [conversational] If a chunk has been indexed for months but never appears in any search results, it's a candidate for removal. This is post-deployment quality assessment.
 
 #### When to Use Quality Filtering
 
-Apply quality filtering **after chunking but before indexing**. This is your last line of defense before content enters your vector database. It's especially critical **before embedding or training**, because generating embeddings for millions of dead chunks wastes GPU time and storage. If you're working with **mixed-quality document sources**—scraped websites, user-uploaded PDFs, legacy documents—quality filtering becomes essential.
+[confidently] Apply quality filtering **after chunking but before indexing**. This is your last line of defense before content enters your vector database. [lecture] It's especially critical **before embedding or training**, because generating embeddings for millions of dead chunks wastes GPU time and storage. [cautiously] If you're working with **mixed-quality document sources**—scraped websites, user-uploaded PDFs, legacy documents—quality filtering becomes essential.
 
-This technique is also valuable when **optimizing storage and retrieval performance**. Smaller indexes mean faster search, lower costs, and better precision. Every dead chunk you remove is one less false positive in search results.
+[pleased] This technique is also valuable when **optimizing storage and retrieval performance**. Smaller indexes mean faster search, lower costs, and better precision. [confidently] Every dead chunk you remove is one less false positive in search results.
 
 #### Implementation Steps
 
-Start by **computing quality scores** for each chunk across multiple dimensions: minimum length (e.g., 50 characters), alpha ratio (e.g., >50% alphabetic), entropy (e.g., >2.5 bits per word), stopword density (e.g., <70%), and embedding properties if available. These scores help you identify problematic chunks programmatically.
+[lecture] Start by **computing quality scores** for each chunk across multiple dimensions: minimum length (e.g., 50 characters), alpha ratio (e.g., >50% alphabetic), entropy (e.g., >2.5 bits per word), stopword density (e.g., <70%), and embedding properties if available. [conversational] These scores help you identify problematic chunks programmatically.
 
-Next, **set appropriate thresholds** based on your data. Don't just pick arbitrary numbers—analyze a sample of your corpus to understand the distribution of these metrics. What's the typical length of a meaningful chunk in your domain? What's normal entropy for technical documentation vs. conversational text?
+[cautiously] Next, **set appropriate thresholds** based on your data. Don't just pick arbitrary numbers—analyze a sample of your corpus to understand the distribution of these metrics. [conversational] What's the typical length of a meaningful chunk in your domain? What's normal entropy for technical documentation vs. conversational text?
 
-👉 **Review samples** manually. Retrieve chunks flagged by your filters and inspect them. Are you catching actual garbage, or are you accidentally filtering useful content? This validation step prevents overly aggressive filtering that could remove rare but valuable information.
+👉 [confidently] **Review samples** manually. Retrieve chunks flagged by your filters and inspect them. Are you catching actual garbage, or are you accidentally filtering useful content? [cautiously] This validation step prevents overly aggressive filtering that could remove rare but valuable information.
 
-Once validated, **apply the filters** to remove low-quality chunks from your pipeline. Critically, **log all removals** for auditability. Store rejected chunks separately (at least temporarily) so you can review them later if you discover your filters were too strict. This logging also helps you understand what types of problems are most common in your data.
+[lecture] Once validated, **apply the filters** to remove low-quality chunks from your pipeline. [confidently] Critically, **log all removals** for auditability. Store rejected chunks separately (at least temporarily) so you can review them later if you discover your filters were too strict. [conversational] This logging also helps you understand what types of problems are most common in your data.
 
 #### Benefits: Cleaner, Leaner Indexes
 
-The benefits are significant. **Smaller index sizes** mean reduced storage costs—potentially cutting your vector database bill by 20-40% if you're dealing with noisy sources. **Higher precision in search results** occurs because you've removed noise that might have matched queries spuriously. **Cost savings** extend to embedding generation, indexing, and retrieval compute. And perhaps most importantly, **better user experience**—users get more relevant results and aren't frustrated by garbage showing up in their answers.
+[pleased] The benefits are significant. [enthusiastically] **Smaller index sizes** mean reduced storage costs—potentially cutting your vector database bill by 20-40% if you're dealing with noisy sources. [confidently] **Higher precision in search results** occurs because you've removed noise that might have matched queries spuriously. [pleased] **Cost savings** extend to embedding generation, indexing, and retrieval compute. And perhaps most importantly, **better user experience**—users get more relevant results and aren't frustrated by garbage showing up in their answers.
 
 #### Challenges: The Filtering Dilemma
 
-The main challenge is the **risk of removing rare but important information**. Medical case reports, edge cases, or unique technical scenarios might have characteristics (low frequency, unusual vocabulary) that trigger your quality filters. You don't want to throw out the baby with the bathwater.
+[cautiously] The main challenge is the **risk of removing rare but important information**. [conversational] Medical case reports, edge cases, or unique technical scenarios might have characteristics (low frequency, unusual vocabulary) that trigger your quality filters. [storytelling] You don't want to throw out the baby with the bathwater.
 
-**Threshold tuning** is non-trivial and **domain-specific**. Scientific papers have different length distributions than social media posts. Legal documents have different entropy profiles than user manuals. You need to calibrate filters for each corpus type or content category.
+[lecture] **Threshold tuning** is non-trivial and **domain-specific**. Scientific papers have different length distributions than social media posts. Legal documents have different entropy profiles than user manuals. [cautiously] You need to calibrate filters for each corpus type or content category.
 
-**Domain-specific quality metrics** may be required. A chunk that looks like garbage in general text might be perfectly valid code, mathematical notation, or chemical formulas. And there's always the danger of being **too aggressive**—overfitting your filters to known problems and inadvertently removing content that doesn't conform to your expectations but is actually valuable.
+[conversational] **Domain-specific quality metrics** may be required. A chunk that looks like garbage in general text might be perfectly valid code, mathematical notation, or chemical formulas. [concerned] And there's always the danger of being **too aggressive**—overfitting your filters to known problems and inadvertently removing content that doesn't conform to your expectations but is actually valuable.
 
 #### Transition to Technique 15
 
-Now that we've removed the dead weight from our index, let's enhance what remains. Our next technique, Chunk Summary Metadata, focuses on generating compact, informative previews of each chunk. These summaries help with ranking, result presentation, and providing quick context without loading full chunk content. Let's see how to create and leverage these metadata summaries effectively.
+[pleased] Now that we've removed the dead weight from our index, let's enhance what remains. [energetic] Our next technique, Chunk Summary Metadata, focuses on generating compact, informative previews of each chunk. [conversational] These summaries help with ranking, result presentation, and providing quick context without loading full chunk content. Let's see how to create and leverage these metadata summaries effectively.
           `
         },
         {
@@ -2289,31 +2289,31 @@ Now that we've removed the dead weight from our index, let's enhance what remain
           notes: `
 #### Balancing Precision and Recall in Quality Filtering
 
-Let's discuss the trade-offs when implementing dead chunk detection and quality filtering. On the **benefits side**, the advantages are compelling. You achieve **smaller index sizes** which directly translate to reduced storage costs. If you're paying for cloud storage or a managed vector database by the gigabyte, filtering out 30% of low-quality chunks can significantly lower your bills. This is especially impactful at scale—enterprise document collections with millions of chunks.
+[lecture] Let's discuss the trade-offs when implementing dead chunk detection and quality filtering. [pleased] On the **benefits side**, the advantages are compelling. You achieve **smaller index sizes** which directly translate to reduced storage costs. [conversational] If you're paying for cloud storage or a managed vector database by the gigabyte, filtering out 30% of low-quality chunks can significantly lower your bills. [confidently] This is especially impactful at scale—enterprise document collections with millions of chunks.
 
-**Higher precision** is perhaps the most important benefit. When users search for information, they don't want to wade through garbage results. Every dead chunk you remove is one less false positive cluttering their search results. This improves the signal-to-noise ratio and makes your RAG system more trustworthy. Users get answers faster and with greater confidence.
+[enthusiastically] **Higher precision** is perhaps the most important benefit. [conversational] When users search for information, they don't want to wade through garbage results. Every dead chunk you remove is one less false positive cluttering their search results. [pleased] This improves the signal-to-noise ratio and makes your RAG system more trustworthy. Users get answers faster and with greater confidence.
 
-There are also substantial **cost savings in computation**. Generating embeddings for millions of chunks isn't free—it requires GPU time or API calls to embedding services. Filtering chunks before embedding can reduce these costs by 20-40%. The same applies to indexing and retrieval—smaller indexes mean faster searches and lower latency.
+[lecture] There are also substantial **cost savings in computation**. Generating embeddings for millions of chunks isn't free—it requires GPU time or API calls to embedding services. [confidently] Filtering chunks before embedding can reduce these costs by 20-40%. [conversational] The same applies to indexing and retrieval—smaller indexes mean faster searches and lower latency.
 
-Finally, the **user experience improves dramatically**. Users notice when a system consistently returns relevant, high-quality results versus when it surfaces fragments, headers, or boilerplate. Quality filtering is one of those behind-the-scenes techniques that makes your system feel more polished and professional.
+[pleased] Finally, the **user experience improves dramatically**. Users notice when a system consistently returns relevant, high-quality results versus when it surfaces fragments, headers, or boilerplate. [confidently] Quality filtering is one of those behind-the-scenes techniques that makes your system feel more polished and professional.
 
 #### The Challenges and Risks
 
-Now for the **challenges**. The biggest risk is **removing rare but important information**. Edge cases, specialized terminology, or unique scenarios might have characteristics that look like low-quality content to your filters. A medical case report describing an extremely rare condition might have low retrieval frequency, but it could be critically important when that specific condition is mentioned in a query. You need sophisticated logic to avoid discarding these diamonds in the rough.
+[cautiously] Now for the **challenges**. The biggest risk is **removing rare but important information**. [conversational] Edge cases, specialized terminology, or unique scenarios might have characteristics that look like low-quality content to your filters. [storytelling] A medical case report describing an extremely rare condition might have low retrieval frequency, but it could be critically important when that specific condition is mentioned in a query. [concerned] You need sophisticated logic to avoid discarding these diamonds in the rough.
 
-**Threshold tuning is corpus-specific** and requires careful analysis. What works for web-scraped content won't work for structured legal documents. Scientific papers have different length distributions than customer support tickets. You can't just copy-paste filter parameters from one project to another—you need to calibrate based on your specific data characteristics.
+[lecture] **Threshold tuning is corpus-specific** and requires careful analysis. [conversational] What works for web-scraped content won't work for structured legal documents. Scientific papers have different length distributions than customer support tickets. [cautiously] You can't just copy-paste filter parameters from one project to another—you need to calibrate based on your specific data characteristics.
 
-Some domains require **domain-specific quality metrics**. A chunk of Python code might have very low alphabetic character ratio (lots of symbols like {}, [], =) but is perfectly valid and valuable. Mathematical formulas, chemical structures, or tabular data might also trigger generic quality filters despite being high-quality content in their context.
+[lecture] Some domains require **domain-specific quality metrics**. [storytelling] A chunk of Python code might have very low alphabetic character ratio (lots of symbols like {}, [], =) but is perfectly valid and valuable. [conversational] Mathematical formulas, chemical structures, or tabular data might also trigger generic quality filters despite being high-quality content in their context.
 
-The danger of **aggressive filtering** is real. If you remove too much, you might inadvertently introduce blind spots in your knowledge base. A user might ask about a scenario you actually have documentation for, but you filtered it out because it had an unusual profile. This creates frustrating "I know we have content on this" moments where the system can't find what exists.
+[concerned] The danger of **aggressive filtering** is real. [disappointed] If you remove too much, you might inadvertently introduce blind spots in your knowledge base. [storytelling] A user might ask about a scenario you actually have documentation for, but you filtered it out because it had an unusual profile. [cautiously] This creates frustrating "I know we have content on this" moments where the system can't find what exists.
 
 #### Best Practices for Safe Filtering
 
-The key is to be conservative initially, then iterate. Start with obvious filters (minimum length, encoding errors) and gradually add more sophisticated quality checks. Always maintain logs of removed chunks and periodically review them to catch filtering mistakes. Consider implementing a "soft delete" where chunks are marked as low-quality but not immediately purged, giving you time to validate before permanent removal.
+[confidently] The key is to be conservative initially, then iterate. [lecture] Start with obvious filters (minimum length, encoding errors) and gradually add more sophisticated quality checks. [conversational] Always maintain logs of removed chunks and periodically review them to catch filtering mistakes. [cautiously] Consider implementing a "soft delete" where chunks are marked as low-quality but not immediately purged, giving you time to validate before permanent removal.
 
 #### Transition
 
-We've now cleaned up our content by removing dead chunks and low-quality noise. Next, we'll flip the script and focus on enhancing our remaining high-quality chunks. Technique 15, Chunk Summary Metadata, is about generating compact, informative summaries that improve ranking, result presentation, and user navigation. Let's explore how to create these valuable metadata layers.
+[pleased] We've now cleaned up our content by removing dead chunks and low-quality noise. [energetic] Next, we'll flip the script and focus on enhancing our remaining high-quality chunks. [conversational] Technique 15, Chunk Summary Metadata, is about generating compact, informative summaries that improve ranking, result presentation, and user navigation. Let's explore how to create these valuable metadata layers.
           `
         }
       ]
@@ -2381,65 +2381,65 @@ We've now cleaned up our content by removing dead chunks and low-quality noise. 
           notes: `
 #### Introduction to Chunk Summary Metadata
 
-Welcome to Technique 15: Chunk Summary Metadata. After you've chunked your documents and filtered out dead chunks, you have a collection of high-quality pieces of content. But there's a problem—to determine which chunks are most relevant to a query, systems typically rely solely on embedding similarity or keyword overlap. That works reasonably well, but it's not always enough. What if you could provide compact, human-readable previews of each chunk that help both machines and humans quickly understand what the chunk contains? That's exactly what chunk summary metadata does.
+[energetic] Welcome to Technique 15: Chunk Summary Metadata. [lecture] After you've chunked your documents and filtered out dead chunks, you have a collection of high-quality pieces of content. [cautiously] But there's a problem—to determine which chunks are most relevant to a query, systems typically rely solely on embedding similarity or keyword overlap. [conversational] That works reasonably well, but it's not always enough. [enthusiastically] What if you could provide compact, human-readable previews of each chunk that help both machines and humans quickly understand what the chunk contains? [confidently] That's exactly what chunk summary metadata does.
 
-Think of summaries as the "nutrition labels" for your chunks. Just as you can quickly scan a nutrition label to understand a food product without eating it, summaries let you understand a chunk's content without reading the entire thing. This has profound implications for ranking, user interface design, and RAG system performance.
+[playfully] Think of summaries as the "nutrition labels" for your chunks. [storytelling] Just as you can quickly scan a nutrition label to understand a food product without eating it, summaries let you understand a chunk's content without reading the entire thing. [pleased] This has profound implications for ranking, user interface design, and RAG system performance.
 
 #### The Problem: Slow Triage and Opaque Relevance
 
-In production RAG systems, you often retrieve 10-50 candidate chunks for a given query, then need to re-rank them or select the top-k to send to your LLM. Without summaries, you're relying purely on embedding distance or sparse retrieval scores—numeric values that don't always capture semantic relevance accurately. Your re-ranker or LLM must read full chunks to assess relevance, which is slow and expensive.
+[lecture] In production RAG systems, you often retrieve 10-50 candidate chunks for a given query, then need to re-rank them or select the top-k to send to your LLM. [disappointed] Without summaries, you're relying purely on embedding distance or sparse retrieval scores—numeric values that don't always capture semantic relevance accurately. [cautiously] Your re-ranker or LLM must read full chunks to assess relevance, which is slow and expensive.
 
-From a user experience perspective, when you present search results, showing full chunk text is overwhelming. Users want to quickly scan results to find what they need. Without compact summaries, they're faced with walls of text. This is especially problematic in exploratory search or knowledge management dashboards where users are browsing large document collections.
+[conversational] From a user experience perspective, when you present search results, showing full chunk text is overwhelming. Users want to quickly scan results to find what they need. [disappointed] Without compact summaries, they're faced with walls of text. [lecture] This is especially problematic in exploratory search or knowledge management dashboards where users are browsing large document collections.
 
 👉 Pronunciation: **triage** = TREE-ahj (quickly sorting and prioritizing items)
 
 #### How Chunk Summary Metadata Works
 
-The concept is straightforward: for each chunk, generate a compact summary (typically 1-3 sentences or 50-150 tokens) that captures the key points, topics, entities, or themes. Store this summary as metadata alongside the chunk in your vector database. When retrieval happens, you can use these summaries for faster relevance assessment, better ranking, and cleaner UI presentation.
+[lecture] The concept is straightforward: for each chunk, generate a compact summary (typically 1-3 sentences or 50-150 tokens) that captures the key points, topics, entities, or themes. [confidently] Store this summary as metadata alongside the chunk in your vector database. When retrieval happens, you can use these summaries for faster relevance assessment, better ranking, and cleaner UI presentation.
 
-There are two main approaches: **abstractive summaries** and **extractive summaries**. Abstractive summaries use LLMs to generate concise paraphrases—the model reads the chunk and writes a new summary in its own words. This creates more coherent, human-readable summaries but costs API calls or compute. Extractive summaries select the most representative sentences directly from the chunk—this is cheaper but might not flow as naturally.
+[lecture] There are two main approaches: **abstractive summaries** and **extractive summaries**. Abstractive summaries use LLMs to generate concise paraphrases—the model reads the chunk and writes a new summary in its own words. [conversational] This creates more coherent, human-readable summaries but costs API calls or compute. Extractive summaries select the most representative sentences directly from the chunk—this is cheaper but might not flow as naturally.
 
-Beyond prose summaries, you can include **keyphrases, entities, and section titles** as structured metadata. For instance: a summary might be "This section describes the advantages of B-tree indexing in relational databases," with keyphrases: ["B-tree", "indexing", "relational databases"] and entities: ["SQL", "PostgreSQL"]. This structured data supports faceted search and filtering.
+[lecture] Beyond prose summaries, you can include **keyphrases, entities, and section titles** as structured metadata. [conversational] For instance: a summary might be "This section describes the advantages of B-tree indexing in relational databases," with keyphrases: ["B-tree", "indexing", "relational databases"] and entities: ["SQL", "PostgreSQL"]. [pleased] This structured data supports faceted search and filtering.
 
 #### When to Use Summary Metadata
 
-This technique shines in **RAG retrieval ranking**. After your initial vector search retrieves 50 candidates, you can use summaries to quickly re-rank them. Pass summaries (not full chunks) to a lightweight re-ranker or prompt an LLM with: "Do these summaries relate to the query?" This is much faster than processing full content.
+[pleased] This technique shines in **RAG retrieval ranking**. [lecture] After your initial vector search retrieves 50 candidates, you can use summaries to quickly re-rank them. Pass summaries (not full chunks) to a lightweight re-ranker or prompt an LLM with: "Do these summaries relate to the query?" [confidently] This is much faster than processing full content.
 
-In **search interfaces**, summaries serve as snippets—those short previews you see in Google search results. Users can scan them quickly to decide which results to click. This improves usability and reduces cognitive load.
+[conversational] In **search interfaces**, summaries serve as snippets—those short previews you see in Google search results. Users can scan them quickly to decide which results to click. [pleased] This improves usability and reduces cognitive load.
 
-For **knowledge management dashboards**, summaries help users navigate document collections. If you're building a system where users browse categories, documents, or topics, summary metadata gives them context at a glance without loading full content.
+[lecture] For **knowledge management dashboards**, summaries help users navigate document collections. [conversational] If you're building a system where users browse categories, documents, or topics, summary metadata gives them context at a glance without loading full content.
 
-Finally, use this technique **when users need to triage large result sets**. If a query returns 100 relevant chunks, users can't read all of them. Summaries let them quickly filter down to the most promising candidates.
+[confidently] Finally, use this technique **when users need to triage large result sets**. If a query returns 100 relevant chunks, users can't read all of them. [pleased] Summaries let them quickly filter down to the most promising candidates.
 
 #### Implementation Steps
 
-First, **after chunking**, process each chunk through a summary generation step. If using abstractive summarization, call an LLM with a prompt like: "Summarize the key point of this text in 1-2 sentences." If using extractive methods, apply techniques like TextRank or sentence scoring to select the most representative sentences.
+[lecture] First, **after chunking**, process each chunk through a summary generation step. [conversational] If using abstractive summarization, call an LLM with a prompt like: "Summarize the key point of this text in 1-2 sentences." If using extractive methods, apply techniques like TextRank or sentence scoring to select the most representative sentences.
 
-Set **token limits** to ensure compactness—aim for 50-100 tokens for summaries. This keeps them fast to process and display. You don't want summaries that are almost as long as the original chunk.
+[confidently] Set **token limits** to ensure compactness—aim for 50-100 tokens for summaries. This keeps them fast to process and display. [playfully] You don't want summaries that are almost as long as the original chunk.
 
-In addition to prose summaries, **extract keyphrases and entities**. You can use TF-IDF, RAKE, or NER models to identify important terms and concepts. Store these as structured fields in your metadata: summary (text), keyphrases (list), entities (list), section_title (if available).
+[lecture] In addition to prose summaries, **extract keyphrases and entities**. You can use TF-IDF, RAKE, or NER models to identify important terms and concepts. [conversational] Store these as structured fields in your metadata: summary (text), keyphrases (list), entities (list), section_title (if available).
 
-**Quality control** is important—sample a few hundred generated summaries and review them. Are they accurate? Do they capture the essence of the chunks? If your LLM is hallucinating or your extractive method is picking poor sentences, adjust your approach before processing the full corpus.
+[cautiously] **Quality control** is important—sample a few hundred generated summaries and review them. Are they accurate? Do they capture the essence of the chunks? [disappointed] If your LLM is hallucinating or your extractive method is picking poor sentences, adjust your approach before processing the full corpus.
 
-Finally, ensure your vector database schema supports these metadata fields and that your retrieval pipeline can access them efficiently. You'll want to query both embeddings and summaries without performance bottlenecks.
+[confidently] Finally, ensure your vector database schema supports these metadata fields and that your retrieval pipeline can access them efficiently. You'll want to query both embeddings and summaries without performance bottlenecks.
 
 #### Benefits: Faster, Better, Cleaner
 
-The benefits are multi-dimensional. **Better ranking** happens because re-rankers can assess relevance more quickly using summaries instead of full content. This speeds up the pipeline and improves top-k accuracy. **Improved user experience** comes from clear, scannable result previews—users spend less time reading and more time finding what they need.
+[pleased] The benefits are multi-dimensional. [confidently] **Better ranking** happens because re-rankers can assess relevance more quickly using summaries instead of full content. This speeds up the pipeline and improves top-k accuracy. [enthusiastically] **Improved user experience** comes from clear, scannable result previews—users spend less time reading and more time finding what they need.
 
-**Faster information triage** is a huge win in exploratory workflows. Analysts, researchers, or support staff can skim summaries to navigate large datasets efficiently. And summaries can serve as **context for further analysis**—you might use summary text as input to downstream NLP tasks like categorization or sentiment analysis.
+[pleased] **Faster information triage** is a huge win in exploratory workflows. Analysts, researchers, or support staff can skim summaries to navigate large datasets efficiently. [conversational] And summaries can serve as **context for further analysis**—you might use summary text as input to downstream NLP tasks like categorization or sentiment analysis.
 
 #### Challenges: Cost and Drift
 
-The main challenge is **generation cost**. Abstractive summaries require LLM calls for potentially millions of chunks—this adds up quickly in API costs or compute time. Extractive methods are cheaper but may miss nuance. You need to balance quality and cost.
+[cautiously] The main challenge is **generation cost**. Abstractive summaries require LLM calls for potentially millions of chunks—this adds up quickly in API costs or compute time. [conversational] Extractive methods are cheaper but may miss nuance. You need to balance quality and cost.
 
-There's also the risk of **summary drift**—the summary might omit critical information or introduce subtle inaccuracies. If a user clicks a result based on a summary and finds the chunk doesn't actually contain what they expected, trust erodes. Validation and quality checks are essential.
+[concerned] There's also the risk of **summary drift**—the summary might omit critical information or introduce subtle inaccuracies. [disappointed] If a user clicks a result based on a summary and finds the chunk doesn't actually contain what they expected, trust erodes. [cautiously] Validation and quality checks are essential.
 
-**Storage overhead** is another consideration—summaries add 50-150 tokens per chunk, multiplied by millions of chunks. While small relative to embedding vectors, it's not negligible. And as chunks are updated or edited, **summaries need regeneration**, adding maintenance overhead.
+[conversational] **Storage overhead** is another consideration—summaries add 50-150 tokens per chunk, multiplied by millions of chunks. While small relative to embedding vectors, it's not negligible. [lecture] And as chunks are updated or edited, **summaries need regeneration**, adding maintenance overhead.
 
 #### Transition to Technique 16
 
-We've now added rich metadata to our chunks, making them more discoverable and understandable. Next, we tackle another metadata challenge: terminology consistency. Our documents might refer to the same concept using different terms, acronyms, or synonyms. Technique 16, Domain Dictionary and Synonym Normalization, ensures that variant terminology maps to canonical concepts for consistent search and analytics. Let's explore how to build and apply these normalizations effectively.
+[pleased] We've now added rich metadata to our chunks, making them more discoverable and understandable. [energetic] Next, we tackle another metadata challenge: terminology consistency. [conversational] Our documents might refer to the same concept using different terms, acronyms, or synonyms. [confidently] Technique 16, Domain Dictionary and Synonym Normalization, ensures that variant terminology maps to canonical concepts for consistent search and analytics. Let's explore how to build and apply these normalizations effectively.
           `
         },
         {
@@ -2475,35 +2475,35 @@ We've now added rich metadata to our chunks, making them more discoverable and u
           notes: `
 #### Weighing the Costs and Benefits of Summary Metadata
 
-Let's dive into the trade-offs of implementing chunk summary metadata. Starting with the **benefits**, the impact on **retrieval ranking and re-ranking** is substantial. By providing compact summaries, you enable faster relevance assessment without loading full chunk content. This is especially valuable in hybrid retrieval pipelines where you might retrieve 100 candidates and need to quickly narrow down to the top 10 before passing them to an LLM. Summaries let you make those judgments efficiently.
+[lecture] Let's dive into the trade-offs of implementing chunk summary metadata. [pleased] Starting with the **benefits**, the impact on **retrieval ranking and re-ranking** is substantial. [conversational] By providing compact summaries, you enable faster relevance assessment without loading full chunk content. [lecture] This is especially valuable in hybrid retrieval pipelines where you might retrieve 100 candidates and need to quickly narrow down to the top 10 before passing them to an LLM. [confidently] Summaries let you make those judgments efficiently.
 
-**User experience** improvements are immediately visible. When users see search results with clear, concise summaries instead of truncated text fragments, they can navigate more confidently. This is the difference between showing "Introduction Machine learning is a subset of artificial intelligence that..." (truncated mid-sentence) versus "This section introduces machine learning fundamentals and applications in healthcare." The latter is purposefully crafted for clarity and information scent.
+[enthus iastically] **User experience** improvements are immediately visible. [conversational] When users see search results with clear, concise summaries instead of truncated text fragments, they can navigate more confidently. [storytelling] This is the difference between showing "Introduction Machine learning is a subset of artificial intelligence that..." (truncated mid-sentence) versus "This section introduces machine learning fundamentals and applications in healthcare." [pleased] The latter is purposefully crafted for clarity and information scent.
 
 👉 Pronunciation: **scent** = sent (information scent: clues that help users predict content relevance)
 
-**Faster information triage** becomes possible across all user types. Researchers scanning hundreds of papers, support engineers looking for troubleshooting guides, or analysts exploring datasets all benefit from quick content previews. Instead of opening and reading full documents, they can skim summaries to zero in on what they need.
+[pleased] **Faster information triage** becomes possible across all user types. [conversational] Researchers scanning hundreds of papers, support engineers looking for troubleshooting guides, or analysts exploring datasets all benefit from quick content previews. Instead of opening and reading full documents, they can skim summaries to zero in on what they need.
 
-Summaries can also **serve as context for downstream analysis**. You might use summary text for clustering similar documents, feeding into recommendation engines, or generating category labels. The compact, semantic-rich nature of summaries makes them valuable intermediate representations.
+[lecture] Summaries can also **serve as context for downstream analysis**. [conversational] You might use summary text for clustering similar documents, feeding into recommendation engines, or generating category labels. [confidently] The compact, semantic-rich nature of summaries makes them valuable intermediate representations.
 
 #### The Challenges of Summary Generation
 
-Now for the **challenges**. The most immediate concern is **generation cost** for abstractive summaries. If you're processing a million chunks and calling an LLM API for each one, costs add up fast. Even at $0.001 per request, that's $1,000—and larger summaries or more sophisticated models multiply the cost. This makes batch processing and cost optimization critical. You might need to use cheaper models, batch API calls, or fall back to extractive methods for less critical content.
+[cautiously] Now for the **challenges**. The most immediate concern is **generation cost** for abstractive summaries. [lecture] If you're processing a million chunks and calling an LLM API for each one, costs add up fast. [conversational] Even at $0.001 per request, that's $1,000—and larger summaries or more sophisticated models multiply the cost. [cautiously] This makes batch processing and cost optimization critical. You might need to use cheaper models, batch API calls, or fall back to extractive methods for less critical content.
 
-**Summary drift** is a subtle but real risk. Abstractive summaries are generated by models that might paraphrase slightly incorrectly, omit edge cases, or introduce terminology not present in the original. Users might click a result expecting specific information based on the summary, only to find it's not quite what was implied. This creates friction and reduces trust. Regular validation and spot-checking help mitigate this risk.
+[concerned] **Summary drift** is a subtle but real risk. [lecture] Abstractive summaries are generated by models that might paraphrase slightly incorrectly, omit edge cases, or introduce terminology not present in the original. [disappointed] Users might click a result expecting specific information based on the summary, only to find it's not quite what was implied. [cautiously] This creates friction and reduces trust. Regular validation and spot-checking help mitigate this risk.
 
-**Storage overhead** might seem small per-chunk, but at scale it adds up. If each chunk is 500 tokens and the summary is 100 tokens, you're adding 20% to your raw content storage. Multiply by millions of chunks and factor in indexing overhead, and this becomes a meaningful infrastructure consideration. However, compared to embedding vectors (which are often 768-2048 dimensions of floats), summary text is still relatively lightweight.
+[conversational] **Storage overhead** might seem small per-chunk, but at scale it adds up. [lecture] If each chunk is 500 tokens and the summary is 100 tokens, you're adding 20% to your raw content storage. Multiply by millions of chunks and factor in indexing overhead, and this becomes a meaningful infrastructure consideration. [conversational] However, compared to embedding vectors (which are often 768-2048 dimensions of floats), summary text is still relatively lightweight.
 
-Finally, **summaries need updates when content changes**. If you regenerate or edit chunks in your pipeline, summaries become stale. You need processes to detect changed content and regenerate summaries accordingly. This adds complexity to your content management and versioning workflows.
+[lecture] Finally, **summaries need updates when content changes**. If you regenerate or edit chunks in your pipeline, summaries become stale. [cautiously] You need processes to detect changed content and regenerate summaries accordingly. This adds complexity to your content management and versioning workflows.
 
 #### Best Practices for Summary Metadata
 
-To maximize benefits and minimize challenges, start with **hybrid approaches**: use extractive summarization (cheap, fast) for initial implementation, then selectively apply abstractive summarization to high-traffic or high-value content. Monitor which chunks are frequently retrieved and prioritize summary quality for those.
+[confidently] To maximize benefits and minimize challenges, start with **hybrid approaches**: use extractive summarization (cheap, fast) for initial implementation, then selectively apply abstractive summarization to high-traffic or high-value content. [conversational] Monitor which chunks are frequently retrieved and prioritize summary quality for those.
 
-Implement **quality gates**: after generating summaries, run automated checks for length, coherence, and keyword presence. Sample and review summaries regularly. Cache summaries alongside chunks to avoid regenerating them unnecessarily. And most importantly, instrument your system to track whether summaries actually improve ranking and user satisfaction—don't just assume they do.
+[lecture] Implement **quality gates**: after generating summaries, run automated checks for length, coherence, and keyword presence. Sample and review summaries regularly. [confidently] Cache summaries alongside chunks to avoid regenerating them unnecessarily. [cautiously] And most importantly, instrument your system to track whether summaries actually improve ranking and user satisfaction—don't just assume they do.
 
 #### Transition to Technique 16
 
-We've enhanced our chunks with metadata summaries, making them more discoverable and understandable. But there's another layer of consistency we need to address: terminology. Documents from different sources, authors, or time periods might refer to the same concept using different words. "Machine learning" vs. "ML", "database" vs. "DB", "natural language processing" vs. "NLP"—these synonyms and acronyms create fragmentation in search and analytics. Technique 16, Domain Dictionary and Synonym Normalization, tackles this challenge head-on by mapping variants to canonical forms. Let's explore how to build and maintain these critical mappings.
+[pleased] We've enhanced our chunks with metadata summaries, making them more discoverable and understandable. [conversational] But there's another layer of consistency we need to address: terminology. [lecture] Documents from different sources, authors, or time periods might refer to the same concept using different words. [storytelling] "Machine learning" vs. "ML", "database" vs. "DB", "natural language processing" vs. "NLP"—these synonyms and acronyms create fragmentation in search and analytics. [confidently] Technique 16, Domain Dictionary and Synonym Normalization, tackles this challenge head-on by mapping variants to canonical forms. Let's explore how to build and maintain these critical mappings.
           `
         }
       ]
@@ -2574,83 +2574,83 @@ We've enhanced our chunks with metadata summaries, making them more discoverable
           notes: `
 #### Introduction to Domain Dictionary & Synonym Normalization
 
-Welcome to Technique 16: Domain Dictionary and Synonym Normalization. Here's the problem: language is inherently variable. The same concept can be expressed in dozens of ways—full names, acronyms, abbreviations, synonyms, and jargon. In medical text, you might see "myocardial infarction," "MI," "heart attack," or "acute coronary event." In tech documentation, "database" and "DB," "machine learning" and "ML," "application programming interface" and "API."
+[cheerfully] Welcome to Technique 16: Domain Dictionary and Synonym Normalization. [conversational] Here's the problem: language is inherently variable. The same concept can be expressed in dozens of ways—full names, acronyms, abbreviations, synonyms, and jargon. [storytelling] In medical text, you might see "myocardial infarction," "MI," "heart attack," or "acute coronary event." In tech documentation, "database" and "DB," "machine learning" and "ML," "application programming interface" and "API."
 
-This variability fragments your search and analytics. If a user searches for "heart attack" but your documents say "myocardial infarction," you miss relevant results—unless your embeddings are sophisticated enough to bridge that gap. Even with good embeddings, inconsistent terminology makes it harder to aggregate statistics, detect trends, or build structured knowledge graphs.
+[concerned] This variability fragments your search and analytics. If a user searches for "heart attack" but your documents say "myocardial infarction," you miss relevant results—unless your embeddings are sophisticated enough to bridge that gap. Even with good embeddings, inconsistent terminology makes it harder to aggregate statistics, detect trends, or build structured knowledge graphs.
 
-Synonym normalization solves this by mapping all variants to a **canonical form**—a standardized term that represents the concept. Every time you see "MI," "heart attack," or "acute coronary event," you normalize it to "myocardial infarction" (or whichever term you choose as canonical). This creates consistency across your entire corpus, improving search recall, deduplication, and analytics.
+[pleased] Synonym normalization solves this by mapping all variants to a **canonical form**—a standardized term that represents the concept. Every time you see "MI," "heart attack," or "acute coronary event," you normalize it to "myocardial infarction" (or whichever term you choose as canonical). This creates consistency across your entire corpus, improving search recall, deduplication, and analytics.
 
 #### The Challenge of Terminology Fragmentation
 
-Terminology fragmentation happens for many reasons. **Acronyms** are a huge source—"NLP" for "natural language processing," "RAG" for "retrieval-augmented generation." Authors might use the acronym after the first mention or exclusively. **Synonyms** abound in specialized domains: "physician" vs. "doctor," "automobile" vs. "car." **Spelling variants** like "organise" vs. "organize" create splits. **Jargon evolution** means older documents might use outdated terms now replaced by modern equivalents.
+[lecture] Terminology fragmentation happens for many reasons. **Acronyms** are a huge source—"NLP" for "natural language processing," "RAG" for "retrieval-augmented generation." Authors might use the acronym after the first mention or exclusively. [conversational] **Synonyms** abound in specialized domains: "physician" vs. "doctor," "automobile" vs. "car." **Spelling variants** like "organise" vs. "organize" create splits. **Jargon evolution** means older documents might use outdated terms now replaced by modern equivalents.
 
-Cross-organizational data integration amplifies this problem. Company A calls it a "customer," Company B calls it a "client." One system logs "failed transactions," another logs "rejected payments." If you're building an enterprise search or RAG system across multiple data silos, terminology normalization becomes critical for consistent results.
+[cautiously] Cross-organizational data integration amplifies this problem. Company A calls it a "customer," Company B calls it a "client." One system logs "failed transactions," another logs "rejected payments." If you're building an enterprise search or RAG system across multiple data silos, terminology normalization becomes critical for consistent results.
 
 👉 Pronunciation: **canonical** = kuh-NON-ih-kuhl (standard, authoritative form)
 
 #### How Domain Dictionary Normalization Works
 
-The core mechanism is a **lookup dictionary or ontology** that maps variants to canonical terms. For specialized domains, you can leverage existing resources: medical texts use UMLS (Unified Medical Language System) or SNOMED CT, legal domains have controlled vocabularies, and finance has standardized taxonomies. These ontologies contain thousands or millions of term mappings curated by experts.
+[lecture] The core mechanism is a **lookup dictionary or ontology** that maps variants to canonical terms. For specialized domains, you can leverage existing resources: medical texts use UMLS (Unified Medical Language System) or SNOMED CT, legal domains have controlled vocabularies, and finance has standardized taxonomies. [confidently] These ontologies contain thousands or millions of term mappings curated by experts.
 
 For custom domains or enterprise-specific terminology, you build your own dictionary. This involves identifying common variants through corpus analysis, consulting domain experts, and continuously updating as new terms emerge.
 
-The normalization process uses **boundary-aware replacements** to preserve syntax. You don't want to replace "cat" in "category" when you meant to normalize "CAT scan." Use word boundaries and context-aware matching to ensure you're replacing the right instances.
+[lecture] The normalization process uses **boundary-aware replacements** to preserve syntax. You don't want to replace "cat" in "category" when you meant to normalize "CAT scan." Use word boundaries and context-aware matching to ensure you're replacing the right instances.
 
-**Fuzzy matching** helps detect spelling variants and typos. If your dictionary has "machine learning" but the document says "machien learning" (typo), Levenshtein distance or similar algorithms can catch it and normalize.
+**Fuzzy matching** helps detect spelling variants and typos. [storytelling] If your dictionary has "machine learning" but the document says "machien learning" (typo), Levenshtein distance or similar algorithms can catch it and normalize.
 
-For **ambiguous terms**, context-aware disambiguation is essential. "MS" could mean "multiple sclerosis" or "Microsoft." You need contextual clues (surrounding words, document type) to choose the correct canonical form. This often requires lightweight NLP models or rules.
+[cautiously] For **ambiguous terms**, context-aware disambiguation is essential. "MS" could mean "multiple sclerosis" or "Microsoft." You need contextual clues (surrounding words, document type) to choose the correct canonical form. This often requires lightweight NLP models or rules.
 
-Finally, maintain **bidirectional mappings**: variant → canonical and canonical → list of variants. This supports both normalization (variant → canonical) and query expansion (user searches canonical, find documents with any variant).
+[confidently] Finally, maintain **bidirectional mappings**: variant → canonical and canonical → list of variants. This supports both normalization (variant → canonical) and query expansion (user searches canonical, find documents with any variant).
 
 👉 Pronunciation: **Levenshtein** = LEV-en-shtine (edit distance algorithm)
 
 #### When to Use Synonym Normalization
 
-This technique is essential in **specialized domains** where terminology is precise and standardized: medical, legal, finance, technical documentation. These fields have established ontologies and a clear need for consistency.
+[lecture] This technique is essential in **specialized domains** where terminology is precise and standardized: medical, legal, finance, technical documentation. These fields have established ontologies and a clear need for consistency.
 
 Use it for **cross-source normalization** when integrating data from multiple systems, vendors, or organizations. Each source might have its own terminology, and normalization creates a unified view.
 
-**Enterprise search systems** benefit immensely. Employees search using their own vocabulary, but documents were written by different teams with different conventions. Normalization bridges these gaps, improving search recall.
+[confidently] **Enterprise search systems** benefit immensely. Employees search using their own vocabulary, but documents were written by different teams with different conventions. Normalization bridges these gaps, improving search recall.
 
-Apply normalization **before deduplication** to catch synonym duplicates. Two documents might be identical except one uses "NLP" and the other uses "natural language processing." Without normalization, they look different.
+Apply normalization **before deduplication** to catch synonym duplicates. [storytelling] Two documents might be identical except one uses "NLP" and the other uses "natural language processing." Without normalization, they look different.
 
 And in **data integration workflows**, normalization is foundational. ETL pipelines, data warehouses, and master data management systems all rely on consistent terminology to merge and analyze data correctly.
 
 #### Implementation Steps
 
-Start by **building or sourcing a domain-specific dictionary**. If possible, leverage existing ontologies (UMLS, SNOMED, industry-specific glossaries). For custom domains, conduct corpus analysis to identify high-frequency variants and consult domain experts to establish canonical forms.
+[lecture] Start by **building or sourcing a domain-specific dictionary**. If possible, leverage existing ontologies (UMLS, SNOMED, industry-specific glossaries). For custom domains, conduct corpus analysis to identify high-frequency variants and consult domain experts to establish canonical forms.
 
-For **acronym or abbreviation disambiguation**, use context. If the document mentions "heart disease" nearby, "MI" probably means "myocardial infarction." If it mentions "software" and "Windows," "MS" likely means "Microsoft." Implement rules or lightweight models to make these contextual decisions.
+For **acronym or abbreviation disambiguation**, use context. [storytelling] If the document mentions "heart disease" nearby, "MI" probably means "myocardial infarction." If it mentions "software" and "Windows," "MS" likely means "Microsoft." Implement rules or lightweight models to make these contextual decisions.
 
-Apply **term replacement** carefully using proper tokenization and word boundaries. Use regex patterns like \\bMI\\b to match "MI" as a standalone word, not inside "FAMILY" or "ADMIT."
+[lecture] Apply **term replacement** carefully using proper tokenization and word boundaries. Use regex patterns like \\bMI\\b to match "MI" as a standalone word, not inside "FAMILY" or "ADMIT."
 
 **Log all replacements** for auditability and debugging. Store logs that record: original term → normalized term, chunk ID, and timestamp. This transparency helps you identify incorrect normalizations and refine your dictionary over time.
 
-Critically, **keep original text alongside normalized versions** in your system. Store both the raw text and the normalized text as separate fields. This allows users to see the original phrasing and gives you a fallback if normalization causes issues.
+[confidently] Critically, **keep original text alongside normalized versions** in your system. Store both the raw text and the normalized text as separate fields. This allows users to see the original phrasing and gives you a fallback if normalization causes issues.
 
 Finally, **regularly update your dictionary**. Language evolves—new acronyms, new terms, deprecated jargon. Schedule periodic reviews, monitor which terms are frequently appearing without mappings, and maintain versioned dictionaries so you can roll back if needed.
 
 #### Benefits: Unified Search and Analytics
 
-The benefits are substantial. **Higher recall in search** because queries match more variants. A user searching "heart attack" retrieves documents about "myocardial infarction." **Unified analytics** across terminology variations—you can aggregate counts, trends, and insights without splitting by synonym.
+[pleased] The benefits are substantial. **Higher recall in search** because queries match more variants. A user searching "heart attack" retrieves documents about "myocardial infarction." **Unified analytics** across terminology variations—you can aggregate counts, trends, and insights without splitting by synonym.
 
-**Better deduplication** catches conceptually identical content that differs only in word choice. **More consistent embeddings** because the same concept is always represented with the same term, reducing noise in your embedding space. And **domain-specific precision** in NLP tasks like entity extraction, classification, and question answering.
+[delighted] **Better deduplication** catches conceptually identical content that differs only in word choice. **More consistent embeddings** because the same concept is always represented with the same term, reducing noise in your embedding space. And **domain-specific precision** in NLP tasks like entity extraction, classification, and question answering.
 
 #### Challenges: Maintenance and Ambiguity
 
-The main challenge is **dictionary maintenance**. Terminology isn't static—new acronyms, new products, new concepts emerge constantly. You need processes to identify gaps and update mappings. This requires ongoing effort and domain expertise.
+[cautiously] The main challenge is **dictionary maintenance**. Terminology isn't static—new acronyms, new products, new concepts emerge constantly. You need processes to identify gaps and update mappings. This requires ongoing effort and domain expertise.
 
-**Ambiguity creates risks**. Incorrect replacements due to ambiguous terms can introduce errors. "Apple" the fruit vs. "Apple" the company. "Java" the island vs. "Java" the programming language. Context-aware disambiguation mitigates this but adds complexity.
+[concerned] **Ambiguity creates risks**. Incorrect replacements due to ambiguous terms can introduce errors. "Apple" the fruit vs. "Apple" the company. "Java" the island vs. "Java" the programming language. Context-aware disambiguation mitigates this but adds complexity.
 
 **False positives with short terms** are common. A two-letter acronym like "AI" or "ML" might match unintended patterns. Careful boundary detection and context checking are essential.
 
-**Scaling to large vocabularies** is resource-intensive. If your dictionary has hundreds of thousands of terms, lookups and replacements can become slow. You need efficient data structures (tries, hash maps) and possibly caching.
+[sigh] **Scaling to large vocabularies** is resource-intensive. If your dictionary has hundreds of thousands of terms, lookups and replacements can become slow. You need efficient data structures (tries, hash maps) and possibly caching.
 
 Finally, **stylistic and authorial nuances** can be lost. Different authors might deliberately choose specific terms for tone or precision. Aggressive normalization flattens these distinctions, which might matter in literary analysis or preserving author voice.
 
 #### Transition to Technique 17
 
-We've now standardized our terminology, creating consistency across our corpus. There's one more critical dimension we need to address: time. Documents evolve, policies change, software gets updated, and content references specific versions or time periods. Our final technique, Temporal Labeling and Version Tagging, ensures we can track and query content across time and version dimensions. Let's explore how to implement effective temporal metadata.
+[conversational] We've now standardized our terminology, creating consistency across our corpus. [lecture] There's one more critical dimension we need to address: time. Documents evolve, policies change, software gets updated, and content references specific versions or time periods. [confidently] Our final technique, Temporal Labeling and Version Tagging, ensures we can track and query content across time and version dimensions. Let's explore how to implement effective temporal metadata.
           `
         },
         {
@@ -2688,39 +2688,39 @@ We've now standardized our terminology, creating consistency across our corpus. 
           notes: `
 #### Evaluating Domain Dictionary Trade-Offs
 
-Let's examine the benefits and challenges of domain dictionary and synonym normalization. Starting with the **benefits**, the most immediate impact is **higher recall in search and retrieval**. When a user searches for "heart attack," they automatically retrieve documents about "myocardial infarction," "MI," and "acute coronary event." This dramatically improves search effectiveness without requiring users to know all possible terminology variants. It's like having a universal translator for your domain's language.
+[lecture] Let's examine the benefits and challenges of domain dictionary and synonym normalization. [pleased] Starting with the **benefits**, the most immediate impact is **higher recall in search and retrieval**. When a user searches for "heart attack," they automatically retrieve documents about "myocardial infarction," "MI," and "acute coronary event." [delighted] This dramatically improves search effectiveness without requiring users to know all possible terminology variants. It's like having a universal translator for your domain's language.
 
-**Unified analytics** becomes possible across terminology variations. Imagine trying to analyze how often a concept appears in your corpus when it's referred to by a dozen different names. Without normalization, you'd undercount dramatically or need to manually aggregate across all variants. Normalization solves this by ensuring every instance maps to the same canonical term, enabling accurate trend analysis, frequency counts, and statistical modeling.
+[enthusiastically] **Unified analytics** becomes possible across terminology variations. [storytelling] Imagine trying to analyze how often a concept appears in your corpus when it's referred to by a dozen different names. Without normalization, you'd undercount dramatically or need to manually aggregate across all variants. [confidently] Normalization solves this by ensuring every instance maps to the same canonical term, enabling accurate trend analysis, frequency counts, and statistical modeling.
 
-**Better deduplication** emerges because you can detect conceptually identical content that differs only in word choice. Two documents might describe the exact same procedure using different terminology—normalization reveals they're duplicates. **More consistent document embeddings** result because the same concept is always represented with the same term, reducing noise and improving clustering.
+[pleased] **Better deduplication** emerges because you can detect conceptually identical content that differs only in word choice. Two documents might describe the exact same procedure using different terminology—normalization reveals they're duplicates. **More consistent document embeddings** result because the same concept is always represented with the same term, reducing noise and improving clustering.
 
 Finally, you achieve **domain-specific precision** in NLP tasks. Entity extraction, classification, and question answering all benefit from consistent terminology. Models trained on normalized text generalize better because they're not confused by synonym variations.
 
 #### The Challenges of Maintenance and Ambiguity
 
-Now for the **challenges**. The biggest ongoing burden is **dictionary maintenance and curation**. Terminology evolves constantly—new products, new acronyms, new research findings introduce new terms. "COVID-19" didn't exist before 2020. "Large language model" wasn't mainstream terminology five years ago. Your dictionary needs regular updates to stay current, requiring domain expertise and dedicated resources.
+[cautiously] Now for the **challenges**. The biggest ongoing burden is **dictionary maintenance and curation**. [concerned] Terminology evolves constantly—new products, new acronyms, new research findings introduce new terms. [storytelling] "COVID-19" didn't exist before 2020. "Large language model" wasn't mainstream terminology five years ago. Your dictionary needs regular updates to stay current, requiring domain expertise and dedicated resources.
 
-**Ambiguity is the nemesis of normalization**. Polysemous terms—words with multiple meanings—create risks. "Engagement" could mean user interaction metrics or a business agreement. "Trunk" could refer to a tree, a car, or an elephant. Context-aware disambiguation helps, but it's complex to implement correctly and can still make mistakes. One wrong normalization can introduce confusing errors in your results.
+[concerned] **Ambiguity is the nemesis of normalization**. Polysemous terms—words with multiple meanings—create risks. "Engagement" could mean user interaction metrics or a business agreement. "Trunk" could refer to a tree, a car, or an elephant. [sigh] Context-aware disambiguation helps, but it's complex to implement correctly and can still make mistakes. One wrong normalization can introduce confusing errors in your results.
 
 👉 Pronunciation: **polysemous** = puh-LIS-uh-mus (having multiple meanings)
 
-**False positives with short terms** are common and frustrating. Two-letter acronyms like "AI," "ML," "IT," or "HR" might match unintended substrings or patterns. Careful word boundary detection and context checking are essential, but they add processing overhead.
+[disappointed] **False positives with short terms** are common and frustrating. Two-letter acronyms like "AI," "ML," "IT," or "HR" might match unintended substrings or patterns. Careful word boundary detection and context checking are essential, but they add processing overhead.
 
-**Resource intensity** becomes apparent at scale. If your dictionary contains hundreds of thousands of mappings and you're processing millions of documents, lookups and replacements can become computationally expensive. You need efficient data structures (tries, hash maps, caching) to maintain performance.
+[cautiously] **Resource intensity** becomes apparent at scale. If your dictionary contains hundreds of thousands of mappings and you're processing millions of documents, lookups and replacements can become computationally expensive. You need efficient data structures (tries, hash maps, caching) to maintain performance.
 
 Finally, there's the subtle **loss of stylistic and authorial nuances**. Different authors might choose specific terms deliberately for tone, precision, or stylistic effect. Aggressive normalization can flatten these distinctions. In literary analysis, legal interpretation, or preserving author voice, this might be unacceptable. You need to balance consistency with preserving important variations.
 
 #### Best Practices for Sustainable Normalization
 
-To maximize benefits while managing challenges, adopt a **phased approach**. Start with high-confidence, high-frequency terms where mappings are unambiguous (common acronyms, established synonyms). Gradually expand to more complex cases as you build confidence and tooling.
+[confidently] To maximize benefits while managing challenges, adopt a **phased approach**. Start with high-confidence, high-frequency terms where mappings are unambiguous (common acronyms, established synonyms). Gradually expand to more complex cases as you build confidence and tooling.
 
-Implement **version control for your dictionary**. Track changes, maintain changelog, and support rollback if a dictionary update introduces errors. Use **automated monitoring** to detect when new unknown terms appear frequently—these are candidates for dictionary expansion.
+[lecture] Implement **version control for your dictionary**. Track changes, maintain changelog, and support rollback if a dictionary update introduces errors. Use **automated monitoring** to detect when new unknown terms appear frequently—these are candidates for dictionary expansion.
 
-Maintain **transparency** by logging all normalizations and providing user interfaces where analysts can see both original and normalized text. This builds trust and helps identify errors. And critically, involve **domain experts** in dictionary curation—they catch nuances and ambiguities that automated analysis misses.
+Maintain **transparency** by logging all normalizations and providing user interfaces where analysts can see both original and normalized text. This builds trust and helps identify errors. [confidently] And critically, involve **domain experts** in dictionary curation—they catch nuances and ambiguities that automated analysis misses.
 
 #### Transition to Technique 17
 
-We've now achieved terminology consistency across our corpus through systematic normalization. There's one final dimension we need to address: time. Documents reference specific dates, versions, and time periods. Policies change, software updates, and information becomes outdated. Our last technique, Temporal Labeling and Version Tagging, ensures we can track content across time and version dimensions, enabling time-aware queries and avoiding outdated information in our RAG responses. Let's explore how to capture and leverage temporal metadata.
+[conversational] We've now achieved terminology consistency across our corpus through systematic normalization. [lecture] There's one final dimension we need to address: time. Documents reference specific dates, versions, and time periods. Policies change, software updates, and information becomes outdated. [confidently] Our last technique, Temporal Labeling and Version Tagging, ensures we can track content across time and version dimensions, enabling time-aware queries and avoiding outdated information in our RAG responses. Let's explore how to capture and leverage temporal metadata.
           `
         }
       ]
@@ -2791,39 +2791,39 @@ We've now achieved terminology consistency across our corpus through systematic 
           notes: `
 #### Introduction to Temporal Labeling & Version Tagging
 
-Welcome to Technique 17: Temporal Labeling and Version Tagging, our final preprocessing technique. Here's the challenge: documents exist in time. They reference specific dates, refer to particular software versions, describe policies that expire, and contain information that becomes outdated. If your RAG system retrieves a document about "Python 2.7 best practices" when a user asks about current Python development, that's not just unhelpful—it's potentially harmful.
+[cheerfully] Welcome to Technique 17: Temporal Labeling and Version Tagging, our final preprocessing technique. [conversational] Here's the challenge: documents exist in time. They reference specific dates, refer to particular software versions, describe policies that expire, and contain information that becomes outdated. [concerned] If your RAG system retrieves a document about "Python 2.7 best practices" when a user asks about current Python development, that's not just unhelpful—it's potentially harmful.
 
-Temporal metadata answers critical questions: **When was this content created? What version does it refer to? Is this information still current?** Without temporal context, you can't filter for freshness, compare across versions, or understand content evolution. This technique is about systematically capturing and structuring time-related and version-related metadata so your system can provide time-aware answers.
+[lecture] Temporal metadata answers critical questions: **When was this content created? What version does it refer to? Is this information still current?** Without temporal context, you can't filter for freshness, compare across versions, or understand content evolution. [confidently] This technique is about systematically capturing and structuring time-related and version-related metadata so your system can provide time-aware answers.
 
 #### The Problem: Temporal Confusion and Outdated Content
 
-Temporal confusion manifests in several ways. **Outdated information** is the most obvious—a medical guideline from 2010 might contradict current best practices. A software tutorial written for an old version might include deprecated features. **Conflicting information across versions** arises when you have multiple versions of a policy or document indexed simultaneously, and users don't know which is current.
+[lecture] Temporal confusion manifests in several ways. [concerned] **Outdated information** is the most obvious—a medical guideline from 2010 might contradict current best practices. A software tutorial written for an old version might include deprecated features. [cautiously] **Conflicting information across versions** arises when you have multiple versions of a policy or document indexed simultaneously, and users don't know which is current.
 
-**Historical queries** can't be answered correctly without temporal metadata. A user might ask, "What was the company's vacation policy in 2019?" If you only have the current 2024 policy, you can't help. Or they might need to understand how a feature worked in version 3.0 of your product—without version tagging, you can't disambiguate.
+[conversational] **Historical queries** can't be answered correctly without temporal metadata. [storytelling] A user might ask, "What was the company's vacation policy in 2019?" If you only have the current 2024 policy, you can't help. Or they might need to understand how a feature worked in version 3.0 of your product—without version tagging, you can't disambiguate.
 
-**Content drift and staleness** happen over time. Documents that were accurate when written become less relevant or incorrect as circumstances change. Without tracking when content was created or last validated, you have no systematic way to identify and flag stale information.
+[cautiously] **Content drift and staleness** happen over time. Documents that were accurate when written become less relevant or incorrect as circumstances change. Without tracking when content was created or last validated, you have no systematic way to identify and flag stale information.
 
 #### How Temporal Labeling Works
 
-The implementation involves extracting and normalizing time-related metadata from both content and document properties. Start by identifying **date mentions in the text itself**—publication dates, effective dates, expiration dates, or dates mentioned in examples. Use date parsing libraries that handle various formats: "Jan 5, 2024," "2024-01-05," "5th January 2024."
+[lecture] The implementation involves extracting and normalizing time-related metadata from both content and document properties. Start by identifying **date mentions in the text itself**—publication dates, effective dates, expiration dates, or dates mentioned in examples. Use date parsing libraries that handle various formats: "Jan 5, 2024," "2024-01-05," "5th January 2024."
 
-Normalize all dates to **standard formats** like ISO 8601 (YYYY-MM-DD) for consistency. This prevents ambiguity—"01/02/2024" could be January 2 or February 1 depending on locale. ISO 8601 eliminates this confusion.
+[confidently] Normalize all dates to **standard formats** like ISO 8601 (YYYY-MM-DD) for consistency. This prevents ambiguity—"01/02/2024" could be January 2 or February 1 depending on locale. ISO 8601 eliminates this confusion.
 
 👉 Pronunciation: **ISO** = EYE-so (International Organization for Standardization)
 
-Distinguish between different temporal attributes: **source_date** (when the document was created/published), **content_date** (what time period the content describes), **last_modified_date**, and **expiration_date** (if applicable). These serve different purposes and should be tracked separately.
+[lecture] Distinguish between different temporal attributes: **source_date** (when the document was created/published), **content_date** (what time period the content describes), **last_modified_date**, and **expiration_date** (if applicable). These serve different purposes and should be tracked separately.
 
 For **version identifiers**, capture whatever versioning scheme your content uses: semantic versioning (v2.3.1), git commit SHAs, build numbers, or version labels ("2024 Edition"). Store these as structured metadata alongside temporal information.
 
-**Validity windows** define when content is active or relevant. A policy might be effective from 2022-01-01 to 2024-12-31. Storing these windows enables time-range queries: "Show me policies active in March 2023."
+**Validity windows** define when content is active or relevant. [storytelling] A policy might be effective from 2022-01-01 to 2024-12-31. Storing these windows enables time-range queries: "Show me policies active in March 2023."
 
-Finally, store all this as **structured metadata** in your vector database or search index: chunk_id, source_date, content_date_start, content_date_end, version, last_modified, validity_window. Index these fields to enable fast temporal filtering.
+[confidently] Finally, store all this as **structured metadata** in your vector database or search index: chunk_id, source_date, content_date_start, content_date_end, version, last_modified, validity_window. Index these fields to enable fast temporal filtering.
 
 #### When to Use Temporal Labeling
 
-This technique is essential for **policy documents and legal content** where effective dates, amendment dates, and expiration dates are legally significant. Presenting outdated policy is not just unhelpful—it could have compliance implications.
+[lecture] This technique is essential for **policy documents and legal content** where effective dates, amendment dates, and expiration dates are legally significant. [cautiously] Presenting outdated policy is not just unhelpful—it could have compliance implications.
 
-**Software manuals and documentation** benefit immensely. Users need to know which version of your product the documentation describes. Being able to filter docs by version ("show me v2.0 docs") or retrieve historical documentation ("how did authentication work in v1.5?") is invaluable.
+[confidently] **Software manuals and documentation** benefit immensely. Users need to know which version of your product the documentation describes. Being able to filter docs by version ("show me v2.0 docs") or retrieve historical documentation ("how did authentication work in v1.5?") is invaluable.
 
 **Data catalogs and schemas** require temporal tracking to understand schema evolution, deprecated fields, and database migrations. Knowing when a table was created, when columns were added, and which schemas are current is critical for data governance.
 
@@ -2833,39 +2833,39 @@ Any **historical dataset** requiring temporal context benefits. Archive systems,
 
 #### Implementation Steps
 
-Start by **detecting date and version patterns** in both text content and metadata. Use regex patterns for common date formats, NER models trained to recognize temporal expressions, and metadata parsing for fields like created_date, modified_date, or version numbers in file properties.
+[lecture] Start by **detecting date and version patterns** in both text content and metadata. Use regex patterns for common date formats, NER models trained to recognize temporal expressions, and metadata parsing for fields like created_date, modified_date, or version numbers in file properties.
 
 **Normalize to standard formats** systematically. Convert all dates to ISO 8601, standardize version numbers, and ensure consistency across your corpus. This makes temporal queries reliable.
 
-**Attach temporal metadata to each chunk** during preprocessing. Store source_date, content_dates, version, and validity windows as structured fields. If a chunk mentions "as of January 2023," capture that as content_date.
+**Attach temporal metadata to each chunk** during preprocessing. Store source_date, content_dates, version, and validity windows as structured fields. [storytelling] If a chunk mentions "as of January 2023," capture that as content_date.
 
-**Define validity windows** for time-bound content. Work with content owners to understand how long information remains accurate. Some content is evergreen, some has explicit expiration dates, and some gradually becomes stale.
+[lecture] **Define validity windows** for time-bound content. Work with content owners to understand how long information remains accurate. Some content is evergreen, some has explicit expiration dates, and some gradually becomes stale.
 
-**Index content for time-aware retrieval**. Your vector database or search engine should support filtering by date ranges and version tags. Users should be able to query: "Give me documents published after 2023-01-01" or "only show v2.0 documentation."
+[confidently] **Index content for time-aware retrieval**. Your vector database or search engine should support filtering by date ranges and version tags. Users should be able to query: "Give me documents published after 2023-01-01" or "only show v2.0 documentation."
 
 Finally, **build filtering capabilities** into your retrieval and RAG pipeline. When generating answers, prioritize recent content or explicitly note when information comes from an older version. This prevents users from acting on outdated information.
 
 #### Benefits: Time-Aware Intelligence
 
-The benefits are transformative. **Time-aware question answering** becomes possible—you can answer both current and historical questions accurately. **Version comparison** lets users understand how content has changed—"What changed between v1.0 and v2.0?" **Freshness filtering** in retrieval ensures users get current information by default while still having access to historical context when needed.
+[pleased] The benefits are transformative. **Time-aware question answering** becomes possible—you can answer both current and historical questions accurately. **Version comparison** lets users understand how content has changed—"What changed between v1.0 and v2.0?" **Freshness filtering** in retrieval ensures users get current information by default while still having access to historical context when needed.
 
-Most importantly, you **reduce incorrect answers from outdated content**. This is a trust issue—users lose confidence in systems that surface obsolete information. Temporal metadata solves this. And for regulated industries, **audit trails and compliance** benefit from timestamped, versioned content that proves what information was available at what time.
+[confidently] Most importantly, you **reduce incorrect answers from outdated content**. This is a trust issue—users lose confidence in systems that surface obsolete information. Temporal metadata solves this. [pleased] And for regulated industries, **audit trails and compliance** benefit from timestamped, versioned content that proves what information was available at what time.
 
 #### Challenges: Ambiguity and Complexity
 
-The challenges revolve around ambiguity and complexity. **Multiple conflicting timestamps** can appear in a single document—created date, published date, last modified date, content reference dates. Which is the "true" temporal indicator? You need clear logic to prioritize.
+[cautiously] The challenges revolve around ambiguity and complexity. **Multiple conflicting timestamps** can appear in a single document—created date, published date, last modified date, content reference dates. [concerned] Which is the "true" temporal indicator? You need clear logic to prioritize.
 
 **Date parsing errors** are inevitable when dealing with multiple locales, formats, and ambiguous patterns. "03/04/2023"—is that March 4 or April 3? Your parsing must handle these gracefully, possibly requiring locale hints or conservative fallbacks (reject ambiguous dates).
 
-**Imprecise or missing dates** frustrate automated extraction. Documents might say "recently" or "last year" without specific dates. Legacy content might lack metadata entirely. You need strategies for handling incomplete temporal information—perhaps inferring from surrounding context or marking as "unknown date."
+[disappointed] **Imprecise or missing dates** frustrate automated extraction. Documents might say "recently" or "last year" without specific dates. Legacy content might lack metadata entirely. [sigh] You need strategies for handling incomplete temporal information—perhaps inferring from surrounding context or marking as "unknown date."
 
-**Version history maintenance** requires infrastructure. You need to decide: do you index all versions of a document simultaneously, or only the current version with historical versions archived? Both approaches have trade-offs for storage, retrieval complexity, and user experience.
+[cautiously] **Version history maintenance** requires infrastructure. You need to decide: do you index all versions of a document simultaneously, or only the current version with historical versions archived? Both approaches have trade-offs for storage, retrieval complexity, and user experience.
 
-Finally, **complex query logic** for temporal relevance might be required. A user asking about "current best practices" needs an implicit freshness filter. A user asking "how we did things in 2020" needs historical retrieval. Your system must interpret temporal intent correctly, which adds complexity to query processing.
+Finally, **complex query logic** for temporal relevance might be required. [storytelling] A user asking about "current best practices" needs an implicit freshness filter. A user asking "how we did things in 2020" needs historical retrieval. Your system must interpret temporal intent correctly, which adds complexity to query processing.
 
 #### Transition to Summary
 
-With temporal labeling and version tagging, we've completed our tour of 17 document preprocessing techniques. We've covered everything from basic text cleaning to sophisticated metadata enrichment. Each technique addresses specific challenges in making content more searchable, structured, and semantically rich. Now let's step back and synthesize these techniques into a practical, minimal viable pipeline that you can implement and iterate on in production. Let's move to our summary and action plan.
+[conversational] With temporal labeling and version tagging, we've completed our tour of 17 document preprocessing techniques. [confidently] We've covered everything from basic text cleaning to sophisticated metadata enrichment. Each technique addresses specific challenges in making content more searchable, structured, and semantically rich. [enthusiastically] Now let's step back and synthesize these techniques into a practical, minimal viable pipeline that you can implement and iterate on in production. Let's move to our summary and action plan.
           `
         },
         {
@@ -2903,45 +2903,45 @@ With temporal labeling and version tagging, we've completed our tour of 17 docum
           notes: `
 #### Evaluating Temporal Metadata Benefits and Challenges
 
-Let's discuss the trade-offs of implementing temporal labeling and version tagging. Starting with the **benefits**, the most transformative is **enabling time-aware question answering**. Your RAG system can now answer questions like "What was our refund policy in 2020?" or "Show me documentation for version 1.5 of the API." This temporal intelligence dramatically expands your system's capabilities beyond just searching current content.
+[lecture] Let's discuss the trade-offs of implementing temporal labeling and version tagging. [pleased] Starting with the **benefits**, the most transformative is **enabling time-aware question answering**. Your RAG system can now answer questions like "What was our refund policy in 2020?" or "Show me documentation for version 1.5 of the API." [delighted] This temporal intelligence dramatically expands your system's capabilities beyond just searching current content.
 
-**Document comparison across versions** becomes straightforward. Users can ask, "What changed between our 2023 and 2024 employee handbook?" and your system can retrieve both versions, highlight differences, and explain changes. This is invaluable for understanding content evolution, tracking policy updates, or understanding software changes.
+[enthusiastically] **Document comparison across versions** becomes straightforward. [storytelling] Users can ask, "What changed between our 2023 and 2024 employee handbook?" and your system can retrieve both versions, highlight differences, and explain changes. This is invaluable for understanding content evolution, tracking policy updates, or understanding software changes.
 
-**Freshness filtering in retrieval** improves answer quality by prioritizing recent content. When a user asks a general question without temporal qualifiers, your system can apply default freshness biasing—newer content ranks higher. This reduces the risk of surfacing outdated information that might mislead users.
+[confidently] **Freshness filtering in retrieval** improves answer quality by prioritizing recent content. When a user asks a general question without temporal qualifiers, your system can apply default freshness biasing—newer content ranks higher. This reduces the risk of surfacing outdated information that might mislead users.
 
-Perhaps most critically, temporal metadata **reduces incorrect answers from outdated content**. Imagine a medical AI suggesting a treatment protocol that was valid in 2010 but contraindicated by 2024 research. Or a financial AI citing tax rules from five years ago. Temporal filtering prevents these dangerous errors.
+[concerned] Perhaps most critically, temporal metadata **reduces incorrect answers from outdated content**. [storytelling] Imagine a medical AI suggesting a treatment protocol that was valid in 2010 but contraindicated by 2024 research. Or a financial AI citing tax rules from five years ago. [confidently] Temporal filtering prevents these dangerous errors.
 
-For organizations operating under regulations, **audit trails and compliance** are enhanced. You can prove exactly what information was available at what time, satisfying regulatory requirements for record-keeping. Legal discovery, compliance audits, and governance reviews all benefit from timestamped, versioned content.
+[pleased] For organizations operating under regulations, **audit trails and compliance** are enhanced. You can prove exactly what information was available at what time, satisfying regulatory requirements for record-keeping. Legal discovery, compliance audits, and governance reviews all benefit from timestamped, versioned content.
 
 #### The Complexity of Temporal Implementation
 
-Now for the **challenges**. **Multiple conflicting timestamps** create ambiguity—a document might have a creation date (2020-01-01), last modified date (2023-06-15), publication date (2023-07-01), and reference dates within the content ("as of 2022..."). Which timestamp represents the document's temporal relevance? You need clear logic to prioritize, and different use cases might require different timestamp fields.
+[cautiously] Now for the **challenges**. [concerned] **Multiple conflicting timestamps** create ambiguity—a document might have a creation date (2020-01-01), last modified date (2023-06-15), publication date (2023-07-01), and reference dates within the content ("as of 2022..."). Which timestamp represents the document's temporal relevance? You need clear logic to prioritize, and different use cases might require different timestamp fields.
 
 👉 Your system must be smart enough to distinguish: when content was created (source_date), when it was about (content_date), and when it was last validated (last_modified_date).
 
-**Date parsing errors across locales and formats** are inevitable and frustrating. The American "12/01/2024" means December 1st, but in most of the world it means January 12th. Dates written as "March 5, 2024," "5 March 2024," "2024-03-05," or "05/03/24" all need parsing, and any ambiguous format risks misinterpretation. Robust parsing libraries and format normalization are essential, but they add complexity.
+[disappointed] **Date parsing errors across locales and formats** are inevitable and frustrating. [storytelling] The American "12/01/2024" means December 1st, but in most of the world it means January 12th. Dates written as "March 5, 2024," "5 March 2024," "2024-03-05," or "05/03/24" all need parsing, and any ambiguous format risks misinterpretation. [sigh] Robust parsing libraries and format normalization are essential, but they add complexity.
 
-**Imprecise or missing dates in source material** are common in legacy content, informal documents, or user-generated content. A document might say "recently" or "last quarter" without specific dates. Old scanned documents might lack digital metadata entirely. You need strategies for handling these gaps—perhaps inferring dates from surrounding context, file system timestamps, or marking as "date unknown" and treating carefully in retrieval.
+[concerned] **Imprecise or missing dates in source material** are common in legacy content, informal documents, or user-generated content. A document might say "recently" or "last quarter" without specific dates. Old scanned documents might lack digital metadata entirely. [cautiously] You need strategies for handling these gaps—perhaps inferring dates from surrounding context, file system timestamps, or marking as "date unknown" and treating carefully in retrieval.
 
 **Version history maintenance** introduces storage and indexing questions. Do you index all historical versions simultaneously, or only keep the current version in your primary index with historical versions archived separately? Simultaneous indexing makes historical queries easy but multiplies storage and can confuse users with multiple versions in results. Archiving historical versions saves space but makes historical queries complex.
 
-Finally, **complex query logic for temporal relevance** might be required. Users rarely ask explicitly temporal questions—most queries lack date qualifiers. Your system must infer temporal intent: "best practices" implies current content, "historical analysis" implies comprehensive temporal coverage, "how we used to do X" implies historical content. This inference adds complexity to your query processing pipeline.
+Finally, **complex query logic for temporal relevance** might be required. [storytelling] Users rarely ask explicitly temporal questions—most queries lack date qualifiers. Your system must infer temporal intent: "best practices" implies current content, "historical analysis" implies comprehensive temporal coverage, "how we used to do X" implies historical content. This inference adds complexity to your query processing pipeline.
 
 #### Best Practices for Temporal Metadata
 
-To succeed with temporal labeling, start by **standardizing on ISO 8601 date formats** everywhere—YYYY-MM-DD for dates, YYYY-MM-DDTHH:MM:SSZ for timestamps. This eliminates locale ambiguity. Maintain **separate fields** for different temporal attributes (source_date, content_date_start, content_date_end, version, last_validated). Don't try to squeeze everything into one "date" field.
+[confidently] To succeed with temporal labeling, start by **standardizing on ISO 8601 date formats** everywhere—YYYY-MM-DD for dates, YYYY-MM-DDTHH:MM:SSZ for timestamps. This eliminates locale ambiguity. [lecture] Maintain **separate fields** for different temporal attributes (source_date, content_date_start, content_date_end, version, last_validated). Don't try to squeeze everything into one "date" field.
 
-Implement **default freshness biasing** in retrieval but allow users to override it. For most queries, prioritize recent content. For historical or versioned queries, disable or reverse the bias. Provide **UI indicators** showing users when content is from an older version or potentially outdated—transparency builds trust.
+Implement **default freshness biasing** in retrieval but allow users to override it. For most queries, prioritize recent content. For historical or versioned queries, disable or reverse the bias. [confidently] Provide **UI indicators** showing users when content is from an older version or potentially outdated—transparency builds trust.
 
-Maintain **version control** infrastructure—whether that's git, content management systems, or custom versioning. Track changes, enable comparison, and preserve history. And critically, implement **periodic content review** processes where subject matter experts validate whether content is still accurate, triggering updates or archival as needed.
+Maintain **version control** infrastructure—whether that's git, content management systems, or custom versioning. Track changes, enable comparison, and preserve history. [pleased] And critically, implement **periodic content review** processes where subject matter experts validate whether content is still accurate, triggering updates or archival as needed.
 
 #### Final Thoughts: Time is a First-Class Dimension
 
-Treating time as a first-class dimension in your document pipeline—not an afterthought—transforms your system from a static knowledge base into a dynamic, time-aware intelligence platform. Users trust systems that account for temporal context and avoid outdated information. This final technique completes our preprocessing framework.
+[enthusiastically] Treating time as a first-class dimension in your document pipeline—not an afterthought—transforms your system from a static knowledge base into a dynamic, time-aware intelligence platform. [confidently] Users trust systems that account for temporal context and avoid outdated information. This final technique completes our preprocessing framework.
 
 #### Transition to Summary
 
-We've now covered all 17 document preprocessing techniques, from basic text cleaning to sophisticated temporal metadata. Each technique contributes to making your content more searchable, structured, and ready for embedding and indexing. Now it's time to synthesize this knowledge into an actionable plan. Our summary will present a minimal viable pipeline you can implement immediately, then iterate and expand. Let's distil these techniques into a practical roadmap.
+[conversational] We've now covered all 17 document preprocessing techniques, from basic text cleaning to sophisticated temporal metadata. [confidently] Each technique contributes to making your content more searchable, structured, and ready for embedding and indexing. [enthusiastically] Now it's time to synthesize this knowledge into an actionable plan. Our summary will present a minimal viable pipeline you can implement immediately, then iterate and expand. Let's distil these techniques into a practical roadmap.
           `
         }
       ]
@@ -3003,13 +3003,13 @@ We've now covered all 17 document preprocessing techniques, from basic text clea
           ),
           backgroundColor: '#11552e',
           notes: `#### Introduction
-Now that we've covered all seventeen preprocessing techniques, let's talk about building a minimal viable pipeline. You don't need to implement everything at once—start with core essentials and expand based on your specific needs.
+[cheerfully] Now that we've covered all seventeen preprocessing techniques, let's talk about building a minimal viable pipeline. [conversational] You don't need to implement everything at once—start with core essentials and expand based on your specific needs.
 #### The Starter Pipeline
-A good starting point includes: First, boilerplate removal to clean structural noise. Second, simple text normalization for consistency. Third, semantic chunking to create meaningful units. Fourth, dead chunk filtering to remove low-value content. Fifth, add basic metadata like keyphrases or entities. Finally, index everything for retrieval. This covers the essential steps while remaining manageable.
+[lecture] A good starting point includes: First, boilerplate removal to clean structural noise. Second, simple text normalization for consistency. Third, semantic chunking to create meaningful units. Fourth, dead chunk filtering to remove low-value content. Fifth, add basic metadata like keyphrases or entities. [confidently] Finally, index everything for retrieval. This covers the essential steps while remaining manageable.
 #### Iteration and Expansion
-Start simple, measure results, then add complexity where it provides clear value. Not every technique applies to every use case. Technical documentation might need table extraction; social media content might not. Scanned documents need OCR cleanup; born-digital content doesn't. Let your data and retrieval metrics guide which techniques to adopt.
+[conversational] Start simple, measure results, then add complexity where it provides clear value. [storytelling] Not every technique applies to every use case. Technical documentation might need table extraction; social media content might not. Scanned documents need OCR cleanup; born-digital content doesn't. [confidently] Let your data and retrieval metrics guide which techniques to adopt.
 #### Best Practices
-Always preserve the original text alongside processed versions. Log every transformation for debugging and auditability. Build modularly so you can swap components easily. Test on representative samples before processing your entire corpus. Measure retrieval quality before and after each technique to validate improvements.`
+[lecture] Always preserve the original text alongside processed versions. Log every transformation for debugging and auditability. Build modularly so you can swap components easily. [confidently] Test on representative samples before processing your entire corpus. Measure retrieval quality before and after each technique to validate improvements.`
         },
         {
           id: 38,
@@ -3049,13 +3049,13 @@ Always preserve the original text alongside processed versions. Log every transf
           ),
           backgroundColor: '#11552e',
           notes: `#### Key Principles
-The most important principles: Clean document structure, semantically coherent chunks, and rich metadata are the foundation of high-quality retrieval. Favor conservative preprocessing—aggressive normalization often hurts more than it helps. Always preserve original text alongside processed versions for debugging and display. Log every transformation so you can trace problems back to their source.
+[confidently] The most important principles: Clean document structure, semantically coherent chunks, and rich metadata are the foundation of high-quality retrieval. [cautiously] Favor conservative preprocessing—aggressive normalization often hurts more than it helps. [lecture] Always preserve original text alongside processed versions for debugging and display. Log every transformation so you can trace problems back to their source.
 #### Technique Selection
-Different techniques solve different problems. Don't apply all seventeen blindly—understand which apply to your documents and use case. Scanned PDFs need OCR cleanup; clean HTML doesn't. Technical documentation benefits from table extraction; prose doesn't. Let your data guide technique selection.
+[conversational] Different techniques solve different problems. Don't apply all seventeen blindly—understand which apply to your documents and use case. [storytelling] Scanned PDFs need OCR cleanup; clean HTML doesn't. Technical documentation benefits from table extraction; prose doesn't. [confidently] Let your data guide technique selection.
 #### Modularity and Testing
-Build preprocessing pipelines modularly so you can swap components and test variations. Create representative test sets spanning your document types. Measure retrieval metrics before and after each technique to validate improvements. Track quality metrics like deduplication ratios, chunk coherence scores, and entity extraction accuracy.
+[lecture] Build preprocessing pipelines modularly so you can swap components and test variations. Create representative test sets spanning your document types. Measure retrieval metrics before and after each technique to validate improvements. [confidently] Track quality metrics like deduplication ratios, chunk coherence scores, and entity extraction accuracy.
 #### Governance
-Implement proper governance from the start. Version control your preprocessing code. Document decisions and parameter choices. Create regression test suites that catch quality degradation. Track metrics over time to detect drift as your document collection evolves.`
+[lecture] Implement proper governance from the start. Version control your preprocessing code. Document decisions and parameter choices. Create regression test suites that catch quality degradation. Track metrics over time to detect drift as your document collection evolves.`
         },
         {
           id: 39,
@@ -3092,11 +3092,11 @@ Implement proper governance from the start. Version control your preprocessing c
           ),
           backgroundColor: '#11552e',
           notes: `#### Your Action Plan
-Here's what to do next. First, assess your current document collection—what types, formats, and quality issues do you have? Second, identify your biggest pain points—is it poor retrieval quality, noisy content, or missing metadata? Third, start with a minimal pipeline—just the essential techniques that address your top issues. Fourth, measure baseline metrics so you can track improvement. Fifth, iterate and refine based on results and user feedback.
+[enthusiastically] Here's what to do next. [lecture] First, assess your current document collection—what types, formats, and quality issues do you have? Second, identify your biggest pain points—is it poor retrieval quality, noisy content, or missing metadata? [confidently] Third, start with a minimal pipeline—just the essential techniques that address your top issues. Fourth, measure baseline metrics so you can track improvement. Fifth, iterate and refine based on results and user feedback.
 #### Continued Learning
-Dive deeper into specific techniques that matter most for your use case. Study the tools and libraries available—spaCy for NLP, LangChain for RAG pipelines, various embedding models. Join communities and read case studies from organizations solving similar problems. Experiment with different approaches on your test sets. Stay current as the field evolves rapidly.
+[conversational] Dive deeper into specific techniques that matter most for your use case. [lecture] Study the tools and libraries available—spaCy for NLP, LangChain for RAG pipelines, various embedding models. Join communities and read case studies from organizations solving similar problems. [enthusiastically] Experiment with different approaches on your test sets. Stay current as the field evolves rapidly.
 #### Final Thoughts
-Document preprocessing is foundational to successful RAG and NLP systems. The techniques we've covered provide a comprehensive toolkit, but remember—start simple, measure results, and add complexity only where it provides clear value. Quality preprocessing makes everything downstream work better. Thank you for your attention, and good luck building amazing NLP and RAG systems!`
+[warmly] Document preprocessing is foundational to successful RAG and NLP systems. [confidently] The techniques we've covered provide a comprehensive toolkit, but remember—start simple, measure results, and add complexity only where it provides clear value. [pleased] Quality preprocessing makes everything downstream work better. [cheerfully] Thank you for your attention, and good luck building amazing NLP and RAG systems!`
         }
       ]
     }
