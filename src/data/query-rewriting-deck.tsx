@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 export const queryRewritingDeck: Deck = {
   id: 'query-rewriting-deck',
@@ -7,6 +9,12 @@ export const queryRewritingDeck: Deck = {
   description: 'Practical patterns, prompts, and examples for better retrieval',
   category: 'RAG',
   theme: 'moon',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -19,30 +27,41 @@ export const queryRewritingDeck: Deck = {
           title: '21 Query Rewriting Strategies for RAG',
           content: (
             <div style={{ color: '#fff' }}>
-              <h2 style={{ marginBottom: '40px' }}>Practical patterns, prompts, and examples for better retrieval</h2>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '50px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-pen-to-square" sizeName="4x" style={{ color: '#3498db' }} />
-                  <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Rewrite</p>
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0.2}>
+                <h2 style={{ marginBottom: '40px' }}>Practical patterns, prompts, and examples for better retrieval</h2>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginTop: '50px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-pen-to-square" sizeName="4x" style={{ color: '#3498db' }} />
+                    <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Rewrite</p>
+                  </div>
+                  <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#2ecc71' }} />
+                    <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrieve</p>
+                  </div>
+                  <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-bullseye" sizeName="4x" style={{ color: '#f39c12' }} />
+                    <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Precision</p>
+                  </div>
                 </div>
-                <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#2ecc71' }} />
-                  <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrieve</p>
-                </div>
-                <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-bullseye" sizeName="4x" style={{ color: '#f39c12' }} />
-                  <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Precision</p>
-                </div>
-              </div>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.9}>
+                <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: ''
+          notes: `### 1 · 21 Query Rewriting Strategies for RAG
+Welcome everyone! Today we're going to explore twenty-one practical query rewriting strategies that can dramatically improve your RAG 👉 'rag' systems. RAG stands for Retrieval-Augmented Generation, and the idea is simple: before an LLM 👉 'ell-em' answers a question, it first retrieves relevant documents. But here's the thing — if the query going into your retrieval system is vague, ambiguous, or poorly worded, the documents you get back will be low quality, and your final answer will suffer.
+#### 🎯 What You'll Learn
+We'll walk through **21 battle-tested strategies** for rewriting user queries so your retrieval pipeline returns much better results. Each strategy comes with a clear explanation, a prompt template you can copy, an implementation pattern, and real-world examples showing the before-and-after.
+Think of query rewriting as a translator sitting between the user and your search engine. The user says something messy, and the rewriter cleans it up before it ever touches the retrieval system. Simple concept, massive impact.
+Let's dive in!`
         },
         {
           id: 2,
@@ -51,7 +70,7 @@ export const queryRewritingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
-                <div>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}><div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '20px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     Problems It Solves
@@ -68,8 +87,8 @@ export const queryRewritingDeck: Deck = {
                     <li><strong>Hallucinations from poor context</strong><br />
                       <span style={{ fontSize: '1.2rem', opacity: 0.9 }}>Insufficient retrieval leads to LLM hallucinations and incorrect answers</span></li>
                   </ul>
-                </div>
-                <div>
+                </div></GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}><div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '20px' }}>
                     <SvgIcon iconName="duo-check-double" sizeName="2x" darkModeInvert={true} />
                     Outcomes
@@ -91,12 +110,19 @@ export const queryRewritingDeck: Deck = {
                       <strong>Reduced hallucinations</strong>
                     </div>
                   </div>
-                </div>
+                </div></GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#34495E',
-          notes: ''
+          notes: `### 2 · Why Query Rewriting?
+So why do we even need query rewriting? Let's look at the real problems it solves.
+#### ❌ The Problems
+Users are notoriously bad at writing good search queries. They type things like "pricing" when they mean "What is the current pricing for the Enterprise plan of Product X?" They use **vague or underspecified queries** all the time. Then there's the **vocabulary mismatch** problem — a user might say "heart attack" but your medical corpus uses "myocardial infarction." Those are semantically identical but lexically completely different, so keyword search fails. **Long, complex questions** also hurt recall because the important terms get diluted. And in chat applications, **follow-up questions** like "What about its limits?" lose all context from previous turns.
+#### ✅ The Outcomes
+When you apply query rewriting, you get **higher recall** — more relevant documents come back. You get **better precision** — fewer irrelevant results cluttering the context window. Your answers become **more factually grounded** because the LLM has better source material. And users stop having to manually rephrase their questions over and over.
+> 🎤 Ask the audience: "Has anyone experienced a chatbot that just couldn't understand follow-up questions?"
+Let's see the actual numbers next.`
         },
         {
           id: 3,
@@ -105,7 +131,7 @@ export const queryRewritingDeck: Deck = {
           content: (
             <div style={{ margin: '0 auto', fontSize: '2rem', color: '#509dd1' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
+              <GSAPAnimated animation="fadeIn" delay={0.2}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', marginBottom: '40px' }}>
                 <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px', color: '#3498db', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                     <SvgIcon iconName="duo-chart-line" sizeName="3x" style={{ color: '#3498db' }} />
@@ -138,14 +164,20 @@ export const queryRewritingDeck: Deck = {
                   <p style={{ fontSize: '2em', fontWeight: 'bold', margin: '10px 0' }}>15-30%</p>
                   <p>Improvement in single-attempt success rate</p>
                 </div>
-              </div>
-              <div style={{ padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
+              </div></GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.6}><div style={{ padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', textAlign: 'center' }}>
                 <strong>💡 Key Benefits:</strong> Improves top-k recall, reduces off-topic retrieval, boosts QA accuracy, enables domain/temporal disambiguation
-              </div>
+              </div></GSAPAnimated>
             </div>
           ),
           backgroundColor: '#16496b',
-          notes: ''
+          notes: `### 3 · Impact on RAG Performance
+Now let's talk numbers, because this is where it gets exciting.
+#### 📊 The Metrics
+**Recall at k** — that's the fraction of relevant documents you actually retrieve in your top-k results — sees a **15-40% improvement** with proper query rewriting. That's huge. MRR 👉 'em-ar-ar' and NDCG 👉 'en-dee-see-jee' — those are ranking quality metrics — jump by **10-25%**. The **grounded-rate**, meaning how many answers are actually backed by retrieved evidence, improves by **20-45%**. And **Eval pass at one**, the chance of getting the right answer on the first try, goes up **15-30%**.
+#### 💡 Why These Numbers Matter
+Think about it this way: if your RAG system currently answers 60% of questions correctly, a 20% improvement in grounded-rate could push that to over 70%. That's the difference between a frustrating chatbot and a useful one. And these gains come without changing your embedding model, your vector database, or your LLM — just by rewriting the query before it hits the retrieval system.
+Let's now look at the implementation workflow to see how this fits together.`
         },
         {
           id: 4,
@@ -154,8 +186,26 @@ export const queryRewritingDeck: Deck = {
           content: (
             <div style={{ margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <h3 style={{ paddingBottom: '30px' }}>Step-by-Step Process</h3>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3 style={{ paddingBottom: '30px' }}>
+                  Step-by-Step Process
+                  <MermaidPopover
+                    title="Query Rewriting Workflow"
+                    diagram={`flowchart LR
+    A["📋 Parse Intent"] --> B["📝 Pick Policy"]
+    B --> C["✨ Transform"]
+    C --> D["🔍 Retrieve"]
+    D --> E["✅ Check Coverage"]
+    E --> F["📊 Log & Adapt"]
+    E -->|"gaps?"| C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', marginBottom: '30px' }}>
                 <div style={{ textAlign: 'center', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px', border: '2px solid #3498db', display: 'flex', flexDirection: 'column', alignItems: 'center', color: '#3498db' }}>
                   <div style={{ fontSize: '2em', fontWeight: 'bold', color: '#3498db', marginBottom: '10px' }}>1</div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -204,14 +254,33 @@ export const queryRewritingDeck: Deck = {
                   </div>
                   <p style={{ marginTop: '8px' }}>Capture feedback and performance metrics to continuously improve rewriting policy</p>
                 </div>
-              </div>
-              <div style={{ padding: '15px', backgroundColor: 'rgba(149, 165, 166, 0.15)', borderRadius: '8px', fontSize: '1.2rem' }}>
+              </div></GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.6}><div style={{ padding: '15px', backgroundColor: 'rgba(149, 165, 166, 0.15)', borderRadius: '8px', fontSize: '1.2rem' }}>
                 <strong>🛡️ Guardrails:</strong> Token/cost caps for LLM rewriting operations • Evaluation gates for rewritten query quality • Traceability of transformations for debugging • Timeout handling for complex rewrites • Fallback mechanisms to original query
-              </div>
+              </div></GSAPAnimated>
             </div>
           ),
           backgroundColor: '#34495E',
-          notes: ''
+          notes: `### 4 · Implementation Workflow
+Let me walk you through the six-step workflow for implementing query rewriting in a RAG pipeline.
+#### 🔄 The Six Steps
+\`\`\`mermaid
+flowchart LR
+    A["📋 Parse Intent"] --> B["📝 Pick Policy"]
+    B --> C["✨ Transform"]
+    C --> D["🔍 Retrieve"]
+    D --> E["✅ Check Coverage"]
+    E --> F["📊 Log & Adapt"]
+    E -->|"gaps?"| C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#e1bee7,color:#000
+    style F fill:#81c784,color:#000
+\`\`\`
+**Step 1: Parse Intent & Context** — Figure out what the user actually wants. Is it a lookup, a comparison, troubleshooting? Extract entities and context from history. **Step 2: Pick Rewriting Policy** — Based on the intent, choose which rewriting strategy to apply. You might use a rule-based router or an LLM-based classifier. **Step 3: Transform Query** — Apply the selected rewriting strategy. This is where the magic happens. **Step 4: Retrieve** — Send the rewritten query to your retrieval system using hybrid search. **Step 5: Check Coverage** — Evaluate whether the retrieved documents actually cover the user's question. If not, loop back and try a different rewrite. **Step 6: Log & Adapt** — Capture feedback and performance metrics so you can continuously improve your rewriting policies.
+#### 🛡️ Guardrails
+Don't forget the guardrails: token and cost caps so your LLM rewriting doesn't blow your budget, evaluation gates to check rewrite quality, and fallback mechanisms to the original query if all rewrites fail.
+Now let's see an overview of all 21 strategies we'll cover.`
         },
         {
           id: 5,
@@ -220,7 +289,7 @@ export const queryRewritingDeck: Deck = {
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#5bbf84' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+              <GSAPAnimated animation="fadeIn" delay={0.2}><div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
                 <div>
                   <h4 style={{ color: '#3498db', marginBottom: '10px' }}>📈 Expansion & Enhancement</h4>
                   <ul style={{ lineHeight: '1.6', color: '#3498db', marginTop: '10px' }}>
@@ -266,14 +335,28 @@ export const queryRewritingDeck: Deck = {
                     <li>24. Adaptive Rewriting</li>
                   </ul>
                 </div>
-              </div>
-              <p style={{ marginTop: '25px', textAlign: 'center', fontSize: '1.2rem', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
+              </div></GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.6}><p style={{ marginTop: '25px', textAlign: 'center', fontSize: '1.2rem', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
                 <strong>21 strategies</strong> organized by approach: Expansion, Context, Decomposition, Specification, Domain, and Adaptive methods
-              </p>
+              </p></GSAPAnimated>
             </div>
           ),
           backgroundColor: '#194f2f',
-          notes: ''
+          notes: `### 5 · 21 Strategies Overview
+Here's a bird's-eye view of all twenty-one strategies organized by their approach type.
+#### 📈 Expansion & Enhancement
+The first cluster includes strategies that make your queries bigger and richer. **Query Expansion** adds synonyms and related terms. **Query Reformulation** makes queries clearer and self-contained. **HyDE** 👉 'hide' generates a hypothetical answer document. **Multi-Query Generation** creates multiple search queries from one. And **Query2Doc** turns a query into a pseudo-document for better semantic matching.
+#### 🔍 Context & Conversation
+These deal with chat-style interactions. **Context-Aware Rewriting** makes follow-ups standalone. **Query Clarification** asks users to disambiguate. **Intent Classification** routes queries to the right strategy.
+#### 🧩 Decomposition & Structure
+For complex questions: **Query Decomposition** splits them into sub-questions. **Step-Back Prompting** abstracts to higher-level concepts. **ITER-RETGEN** 👉 'iter-ret-jen' iterates between retrieval and generation. **Template-Based** uses predefined patterns.
+#### 🎯 Specification & Filtering
+These narrow the search: **Query Specification** adds explicit constraints. **Entity-Centric** disambiguates entities. **Temporal Rewriting** handles time references.
+#### 🔬 Domain & Semantic
+**Semantic Bridging** maps lay terms to expert vocabulary. **Domain-Specific Rewriting** translates to field jargon.
+#### 🔄 Adaptive & Learning
+The advanced strategies: **Diverse Multi-Query**, **Feedback-Based**, **Prompt-Based**, and **Adaptive Rewriting** that picks the best strategy automatically.
+Let's start with Strategy 1: Query Expansion.`
         }
       ]
     },
