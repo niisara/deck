@@ -2331,16 +2331,28 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>May split syntax/meaning; tokenizer variance</li>
-                <li>Different models tokenize differently</li>
-                <li>Requires tokenizer access</li>
-                <li>Not aligned with semantic boundaries</li>
-              </ul>
+              <GSAPStaggerList stagger={0.12} delay={0.2}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>May split syntax/meaning; tokenizer variance</li>
+                  <li>Different models tokenize differently</li>
+                  <li>Requires tokenizer access</li>
+                  <li>Not aligned with semantic boundaries</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: ''
+          notes: `### 41. Token-Aware Chunking - Cons
+Now let's talk about the downsides of token-aware chunking, because like everything in engineering, there are trade-offs.
+#### The Splitting Problem
+The biggest issue is that **tokens don't care about meaning**. Think about it this way, tokenizers are like scissors that cut based on character patterns, not ideas. They might split right in the middle of a variable name or a sentence, breaking the semantic flow. It's like cutting a book based on word count instead of chapter endings. You might end up with half a sentence in one chunk and the other half in another.
+#### Model Variance
+Here's something that surprises many people: **different models tokenize differently**. OpenAI's GPT-4 uses a different tokenizer than Claude or LLaMA. What counts as 512 tokens in one model might be 600 in another! This means if you switch embedding models down the road, your carefully calibrated chunk sizes might suddenly become inefficient.
+#### Dependencies
+You also **need access to the tokenizer** itself, which adds a dependency to your pipeline. Some tokenizers require API calls, others need libraries installed. It's not a huge barrier, but it's one more thing to manage and one more potential failure point.
+#### Semantic Misalignment
+Finally, token boundaries **ignore semantic structure**. They don't understand that a paragraph is ending or that a new topic is starting. They just count tokens. So while you get predictable sizes, you lose that natural flow that comes from respecting the actual meaning and structure of the text.
+This is why token-aware chunking works best when combined with other strategies that can add back some semantic awareness.`
         },
         {
           id: 42,
@@ -2348,24 +2360,45 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>256–1024 tokens (match embedding model)</li>
-                <li>Should align with context window of target model</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>10–20% (50–100 tokens typical)</li>
-                <li>Helps preserve context across token boundaries</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Low (simple implementation complexity and minimal processing)</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.15} duration={0.7}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.3}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>256–1024 tokens (match embedding model)</li>
+                  <li>Should align with context window of target model</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInLeft" delay={0.5} duration={0.7}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.7}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>10–20% (50–100 tokens typical)</li>
+                  <li>Helps preserve context across token boundaries</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInLeft" delay={0.9} duration={0.7}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.6}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>Low (simple implementation complexity and minimal processing)</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: ''
+          notes: `### 42. Token-Aware Chunking - Configuration
+Let's get practical and talk about the recommended settings for token-aware chunking. These are battle-tested defaults from production systems.
+#### Best Chunk Size
+For chunk size, the sweet spot is **256 to 1024 tokens**. Now, this isn't arbitrary. The key principle here is to **match your embedding model's context window**. If you're using OpenAI's text-embedding-ada-002, that's 8192 tokens, but you typically want chunks smaller than the full window. Around 512 tokens is a common choice because it's large enough to capture meaningful context but small enough to stay focused.
+Think of it like Goldilocks: too small and you lose context, too big and you dilute the signal with noise. The exact number depends on your use case. Technical documentation might work better with larger chunks like 800-1024 tokens, while conversational content might prefer 256-512.
+#### Overlap Size  
+For overlap, aim for **10 to 20 percent**, which typically translates to **50 to 100 tokens**. This overlap acts as a safety net. When you cut text into chunks, important context might sit right at the boundary. The overlap ensures that boundary information appears in both neighboring chunks, so you don't lose critical connections.
+#### Computational Cost
+The beauty of token-aware chunking is its **low computational cost**. You're basically just counting tokens and slicing text. No heavy NLP processing, no machine learning models running. It's fast, predictable, and scales well even to massive document collections.
+These configurations give you a solid starting point that works for most RAG applications right out of the box.`
         },
         {
           id: 43,
@@ -2373,27 +2406,49 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Any embedding pipeline; strict window budgets</li>
-                <li>When using specific models with token limits</li>
-                <li>Cross-model compatibility</li>
-                <li>Production RAG systems</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Tiktoken (OpenAI)</li>
-                <li>Hugging Face tokenizers</li>
-                <li>LangChain Token splitter</li>
-                <li>spaCy tokenizers</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Simple implementation with minimal expertise required</p>
+              <GSAPAnimated animation="bounceIn" delay={0.1} duration={0.8}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.08} delay={0.35}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Any embedding pipeline; strict window budgets</li>
+                  <li>When using specific models with token limits</li>
+                  <li>Cross-model compatibility</li>
+                  <li>Production RAG systems</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.8}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.08} delay={0.85}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Tiktoken (OpenAI)</li>
+                  <li>Hugging Face tokenizers</li>
+                  <li>LangChain Token splitter</li>
+                  <li>spaCy tokenizers</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.1} duration={0.7}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Simple implementation with minimal expertise required</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: ''
-        }
+          notes: `### 43. Token-Aware Chunking - Use Cases & Tools
+Now let's explore where token-aware chunking really shines and the tools that make it easy to implement.
+#### Use Cases
+Token-aware chunking is incredibly versatile. It works for **any embedding pipeline** where you need predictable chunk sizes. This makes it perfect for production RAG systems where you have **strict token budgets** or context window limits. Think of scenarios like OpenAI's embeddings where you pay per token, or when you're constrained by model input limits.
+It's also your go-to choice for **cross-model compatibility**. If you might switch between different LLMs or embedding models, token-aware chunking gives you a consistent baseline. You're not tied to any particular model's quirks or behaviors.
+#### Tooling Support
+The ecosystem for token-aware chunking is mature and well-supported. Let's walk through your options. **Tiktoken** is OpenAI's official tokenizer library. It's fast, written in Rust under the hood, and gives you exact token counts for GPT models. If you're using OpenAI embeddings, this is your best friend.
+**Hugging Face tokenizers** cover pretty much every other model out there. They support BERT 👉 'burt', RoBERTa, and hundreds of other models. The library is battle-tested and highly optimized.
+**LangChain** provides a TokenTextSplitter that handles the splitting logic for you. It integrates seamlessly with their broader RAG framework, so you're not reinventing the wheel.
+Even **spaCy** 👉 'spay-see' includes tokenizers, though they're more focused on linguistic tokenization rather than model-specific tokens.
+#### Complexity Level
+This is rated as **Beginner** level, and for good reason. You don't need deep NLP expertise or complex algorithms. It's basically counting and slicing, which makes it a perfect starting point for anyone new to RAG systems.
+This is your foundational technique that you'll use again and again across different projects.`
+        },
       ]
     },
     {
@@ -2406,16 +2461,28 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Strong alignment to document navigation; great for docs sites</li>
-                <li>Preserves document hierarchy and structure</li>
-                <li>Makes retrieval context clearer with heading metadata</li>
-                <li>Natural semantic boundaries for content</li>
-              </ul>
+              <GSAPStaggerList stagger={0.15} delay={0.2}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>Strong alignment to document navigation; great for docs sites</li>
+                  <li>Preserves document hierarchy and structure</li>
+                  <li>Makes retrieval context clearer with heading metadata</li>
+                  <li>Natural semantic boundaries for content</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: ''
+          notes: `### 44. Heading / Title Anchor Chunking - Pros
+Moving on to technique number 11, heading-based chunking. This is one of my favorite approaches for structured documents because it respects the author's original intent.
+#### Document Navigation Alignment
+The biggest advantage here is **strong alignment to how documents are naturally organized**. When an author writes a technical document or README, they deliberately create sections with headings. These headings mark topic boundaries, create logical groupings, and guide the reader through the content. By chunking on headings, you're essentially saying "I trust the author knew what they were doing." This makes it **perfect for documentation sites**, API references, and any content where structure matters.
+#### Hierarchy Preservation
+Heading-based chunking **preserves the document hierarchy**. You maintain that tree structure from H1 down to H2 and H3 sections. This means when someone searches for information, you can return not just the relevant chunk but also its position in the document's logical structure. Think of it like breadcrumbs: "Installation Guide > Prerequisites > Python Setup." That context is gold for understanding.
+#### Enhanced Retrieval Context
+Every chunk comes with **built-in metadata** from the heading itself. You know exactly what topic each chunk covers because the heading tells you! This makes filtering and ranking much more precise during retrieval. You're not guessing about relevance; the structure makes it explicit.
+#### Semantic Boundaries
+Headings naturally mark **semantic boundaries**. When an author starts a new section, they're signaling a topic shift. By respecting these boundaries, your chunks are inherently more coherent and topically focused than arbitrary splits would be.
+This approach works beautifully when your documents have clear, consistent heading structures.`
         },
         {
           id: 45,
@@ -2423,16 +2490,28 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Requires clean headings; won't work for unstructured text</li>
-                <li>Uneven chunk sizes based on section length</li>
-                <li>Some sections may be too large for context windows</li>
-                <li>Different heading styles may cause inconsistencies</li>
-              </ul>
+              <GSAPStaggerList stagger={0.1} delay={0.25}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>Requires clean headings; won't work for unstructured text</li>
+                  <li>Uneven chunk sizes based on section length</li>
+                  <li>Some sections may be too large for context windows</li>
+                  <li>Different heading styles may cause inconsistencies</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: ''
+          notes: `### 45. Heading / Title Anchor Chunking - Cons
+Of course, heading-based chunking isn't perfect. Let's talk about when it breaks down and what challenges you'll face.
+#### Clean Structure Requirement
+The fundamental limitation is that you **need clean, consistent headings**. If your documents are free-flowing prose without clear structure, like novels or stream-of-consciousness writing, this approach simply won't work. You can't chunk on headings that don't exist! Even worse is inconsistent heading usage, where one author uses H2 for major sections and another uses H3. Your chunking strategy falls apart.
+#### Uneven Chunk Sizes
+Here's a practical problem: **sections vary wildly in length**. Your "Introduction" might be 50 words while your "Implementation Details" section runs 2000 words. This creates chunks that range from tiny to massive, which makes embedding and retrieval less predictable. Some chunks might not have enough context, while others have way too much.
+#### Context Window Overflow
+Related to the size issue, **some sections might exceed your model's context window**. If someone writes a comprehensive 3000-token section under a single heading, and your embedding model maxes out at 512 tokens, you've got a problem. You'd need to sub-chunk that section, which adds complexity.
+#### Heading Style Inconsistencies
+Different authors and different documents use **different heading conventions**. Markdown headings are clean, but HTML might mix heading levels with CSS classes. Some documents use ALL CAPS for headings, others use title case. These variations require preprocessing and normalization, which adds friction to your pipeline.
+Despite these challenges, for well-structured documentation, the benefits usually outweigh the drawbacks.`
         },
         {
           id: 46,
@@ -2440,24 +2519,83 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Section-bounded (200–1200 tokens)</li>
-                <li>Varies based on document structure and heading density</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>0–5% between sections</li>
-                <li>Sometimes includes parent heading for context</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Low–Medium (implementation complexity and processing requirements)</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.1} duration={0.8}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
+                  Best Chunk Size
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[H1: Introduction<br/>200 tokens]
+    A --> C[H1: Setup<br/>400 tokens]
+    A --> D[H1: Usage<br/>1200 tokens]
+    C --> E[H2: Prerequisites<br/>150 tokens]
+    C --> F[H2: Installation<br/>250 tokens]
+    D --> G[H2: Basic<br/>600 tokens]
+    D --> H[H2: Advanced<br/>600 tokens]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#ffd700
+    style E fill:#e1bee7
+    style F fill:#e1bee7
+    style G fill:#e1bee7
+    style H fill:#e1bee7`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.08} delay={0.35}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Section-bounded (200–1200 tokens)</li>
+                  <li>Varies based on document structure and heading density</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInRight" delay={0.55} duration={0.8}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.08} delay={0.7}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>0–5% between sections</li>
+                  <li>Sometimes includes parent heading for context</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInRight" delay={0.9} duration={0.8}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.6}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>Low–Medium (implementation complexity and processing requirements)</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: ''
+          notes: `### 46. Heading / Title Anchor Chunking - Configuration
+Let's dial in the practical settings for heading-based chunking so you can implement this effectively.
+#### Best Chunk Size
+Unlike fixed-size chunking, heading-based chunks are **section-bounded**, meaning the chunk size is determined by your document structure rather than an arbitrary number. In practice, sections typically range from **200 to 1200 tokens**. That's quite a range, right? A short "Overview" section might be 200 tokens, while a detailed "API Reference" section could hit 1200 tokens or more.
+The key insight is that **heading density** affects your chunk sizes. Documents with many subsections create smaller, more focused chunks. Documents with sparse headings create larger, more comprehensive chunks. Think of a GitHub README with tons of H2 and H3 sections versus a blog post with just a few main headings.
+```mermaid
+graph TD
+    A[Document] --> B[H1: Introduction<br/>200 tokens]
+    A --> C[H1: Setup<br/>400 tokens]
+    A --> D[H1: Usage<br/>1200 tokens]
+    C --> E[H2: Prerequisites<br/>150 tokens]
+    C --> F[H2: Installation<br/>250 tokens]
+    D --> G[H2: Basic<br/>600 tokens]
+    D --> H[H2: Advanced<br/>600 tokens]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#ffd700
+    style E fill:#e1bee7
+    style F fill:#e1bee7
+    style G fill:#e1bee7
+    style H fill:#e1bee7
+```
+#### Overlap Size
+For overlap, you typically want **0 to 5 percent**, which is minimal. Why so low? Because headings already provide natural boundaries. However, there's a clever trick: you can **include the parent heading** with each sub-section chunk. This gives context without bloating storage. For example, if you have "Installation > Linux Setup", you'd include the "Installation" heading with the "Linux Setup" content.
+#### Computational Cost
+The implementation sits at **Low to Medium** complexity. You need a heading parser, which adds a bit more logic than simple character splitting, but it's still straightforward. Markdown is particularly easy since headings follow a clear pattern with hash marks.
+This configuration gives you semantically meaningful chunks that align with how humans naturally structure information.`
         },
         {
           id: 47,
@@ -2465,27 +2603,51 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Markdown documentation and README files</li>
-                <li>API references and technical docs sites</li>
-                <li>Knowledge bases with clear structure</li>
-                <li>Wikis and developer documentation</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Markdown heading parsers</li>
-                <li>GitHub Flavored Markdown (GFM) anchors</li>
-                <li>Static site generators (Jekyll, MkDocs)</li>
-                <li>LangChain's MarkdownTextSplitter</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Requires basic expertise and implementation</p>
+              <GSAPAnimated animation="rotateIn" delay={0.1} duration={0.9}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.35}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Markdown documentation and README files</li>
+                  <li>API references and technical docs sites</li>
+                  <li>Knowledge bases with clear structure</li>
+                  <li>Wikis and developer documentation</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.9}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.85}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Markdown heading parsers</li>
+                  <li>GitHub Flavored Markdown (GFM) anchors</li>
+                  <li>Static site generators (Jekyll, MkDocs)</li>
+                  <li>LangChain's MarkdownTextSplitter</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.1} duration={0.7}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Requires basic expertise and implementation</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c5265',
-          notes: ''
-        }
+          notes: `### 47. Heading / Title Anchor Chunking - Use Cases & Tools
+Now let's explore the ideal scenarios for heading-based chunking and the tooling ecosystem that supports it.
+#### Use Cases
+This technique absolutely shines for **Markdown documentation and README files**. Think about every GitHub repo you've seen, they all have structured READMEs with clear headings. By chunking on those headings, you preserve the logical flow that the maintainers carefully crafted.
+**API references and technical docs sites** are another perfect fit. These documents are inherently hierarchical, with sections for endpoints, parameters, examples, and error codes. Each section is a natural chunk that contains everything you need to know about one specific aspect.
+**Knowledge bases** with clear structure benefit immensely. If you're building a corporate knowledge system or a help center, the articles likely already have headings that organize the content logically. Why fight that structure? Embrace it!
+**Wikis and developer documentation** follow similar patterns. Whether it's a company wiki or open-source docs, the heading structure provides built-in navigation and organization.
+#### Tooling Support
+The tools here are mature and widely available. **Markdown heading parsers** are plentiful in every programming language. Simple regex or dedicated libraries can extract heading hierarchies in milliseconds.
+**GitHub Flavored Markdown**, or GFM, includes automatic anchor generation for headings. This means you can even create deep links to specific chunks in your original documents, which is fantastic for user experience.
+**Static site generators** like Jekyll and MkDocs are built around heading-based navigation. They already parse and organize content by headings, so integrating chunking into these workflows is natural.
+**LangChain's MarkdownTextSplitter** provides ready-made functionality specifically for this use case. It handles the parsing, respects heading boundaries, and even lets you customize how it handles different heading levels.
+#### Complexity Level
+This sits at **Beginner to Intermediate**. If you're comfortable with basic text parsing, you can implement this. The challenge comes from handling edge cases and different markdown flavors, but nothing insurmountable.
+This is one of those techniques where the structure does most of the work for you.`
+        },
       ]
     },
     {
@@ -2498,16 +2660,28 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Preserves lists, code blocks, tables, and other HTML/Markdown elements</li>
-                <li>Maintains document structure and hierarchy</li>
-                <li>Rich metadata extraction from headings, tags, and attributes</li>
-                <li>Natural boundaries align with content meaning</li>
-              </ul>
+              <GSAPStaggerList stagger={0.18} delay={0.15}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>Preserves lists, code blocks, tables, and other HTML/Markdown elements</li>
+                  <li>Maintains document structure and hierarchy</li>
+                  <li>Rich metadata extraction from headings, tags, and attributes</li>
+                  <li>Natural boundaries align with content meaning</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: ''
+          notes: `### 48. Markdown / HTML Structure Chunking - Pros
+Let's dive into technique 12, which takes the heading-based approach and supercharges it by considering the full structural markup of documents.
+#### Element Preservation
+The magic here is that you **preserve special elements intact**. Think about code blocks, tables, bullet lists, numbered lists, and blockquotes. These aren't just text; they have semantic meaning tied to their formatting. A code block split in half becomes useless. A table with missing rows loses its data integrity. By chunking based on HTML or Markdown structure, you keep these elements whole and meaningful.
+#### Structure and Hierarchy
+Just like heading-based chunking, you **maintain the document's hierarchical organization**, but now you're also respecting inline structure. Paragraphs stay together, list items remain grouped, and nested elements maintain their relationships. It's like preserving the DOM tree or Markdown AST 👉 'abstract syntax tree' of your content.
+#### Rich Metadata
+Here's where it gets really powerful: **metadata extraction from the markup itself**. HTML elements have classes, IDs, and data attributes. Markdown has syntax that indicates emphasis, links, and image captions. All of this becomes metadata you can use during retrieval. Want to prioritize chunks with code examples? Easy, just check for code block elements. Need chunks with specific CSS classes? You've got that information.
+#### Meaningful Boundaries
+The structure provides **natural semantic boundaries**. A paragraph element is a complete thought. A list is a complete enumeration. A section with a heading is a complete topic. By chunking along these structural lines, you get semantically coherent units without having to guess where meaning starts and stops.
+This approach is perfect when your documents are already well-marked up and you want to leverage that investment in structure.`
         },
         {
           id: 49,
@@ -2515,16 +2689,28 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Requires well-structured source documents</li>
-                <li>Boilerplate/noise unless filtered</li>
-                <li>HTML parsing can be complex/brittle</li>
-                <li>Format-specific implementation needed</li>
-              </ul>
+              <GSAPStaggerList stagger={0.14} delay={0.2}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+                  <li>Requires well-structured source documents</li>
+                  <li>Boilerplate/noise unless filtered</li>
+                  <li>HTML parsing can be complex/brittle</li>
+                  <li>Format-specific implementation needed</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: ''
+          notes: `### 49. Markdown / HTML Structure Chunking - Cons
+Now let's be real about the challenges you'll face with structure-based chunking.
+#### Structure Dependency
+The fundamental requirement is **well-structured source documents**. If your HTML is malformed with unclosed tags, missing elements, or inconsistent nesting, parsers will struggle or produce garbage. Similarly, if your Markdown doesn't follow consistent conventions, you'll get unreliable results. You're at the mercy of the document quality, which in the real world can be quite variable.
+#### Boilerplate and Noise
+Web pages especially are full of **boilerplate content**: navigation bars, footers, sidebars, cookie banners, ads. All of this gets parsed along with your actual content unless you explicitly filter it out. This means you need preprocessing logic to identify and remove noise, which adds complexity. Without filtering, you'd be embedding and retrieving chunks about "Click here to accept cookies!" which wastes resources and pollutes your search results.
+#### Parsing Complexity
+**HTML parsing can be brittle**. Real-world HTML is messy, browser-specific, and often relies on JavaScript to render properly. You might use BeautifulSoup or similar tools, but they have to make assumptions about malformed markup. Edge cases abound, and each one requires handling. Markdown is simpler but still has variations like GitHub Flavored Markdown, CommonMark, and custom extensions.
+#### Format-Specific Implementation
+You need **separate implementations for different formats**. Your HTML parser won't work for Markdown, and vice versa. If you're dealing with multiple document types, you need a chunking pipeline that can route to the appropriate parser. This multiplies maintenance burden and testing surface area.
+Despite these challenges, the payoff in chunk quality often justifies the extra engineering effort.`
         },
         {
           id: 50,
@@ -2532,24 +2718,77 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Element-grouped 300–900 tokens</li>
-                <li>Varies by element type (paragraph vs. section)</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>0–10% between elements or sections</li>
-                <li>Often header/context overlap</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
-                <li>Medium (parser overhead and DOM/AST processing requirements)</li>
-              </ul>
+              <GSAPAnimated animation="flipCard" delay={0.1} duration={1.0}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
+                  Best Chunk Size
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[HTML Page] --> B[Section: 600 tokens]
+    A --> C[Div: 300 tokens]
+    A --> D[Article: 700 tokens]
+    B --> E[Paragraph: 150 tokens]
+    B --> F[Code Block: 200 tokens]
+    C --> G[List: 100 tokens]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#e1bee7
+    style F fill:#ffd700
+    style G fill:#e1bee7`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.09} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Element-grouped 300–900 tokens</li>
+                  <li>Varies by element type (paragraph vs. section)</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="flipCard" delay={0.65} duration={1.0}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.09} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>0–10% between elements or sections</li>
+                  <li>Often header/context overlap</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.1} duration={0.7}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Medium (parser overhead and DOM/AST processing requirements)</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: ''
+          notes: `### 50. Markdown / HTML Structure Chunking - Configuration
+Let's get into the practical configuration for structure-based chunking to help you implement this effectively.
+#### Best Chunk Size
+Chunks are **element-grouped**, typically ranging from **300 to 900 tokens**. What does element-grouped mean? Instead of counting characters or tokens arbitrarily, you're grouping based on structural elements. A single paragraph might be 150 tokens, perfect for one chunk. A section element containing multiple paragraphs might be 600 tokens, still a great chunk. A complex article with code examples could hit 900 tokens.
+The key is that **element type determines size**. Small elements like paragraphs and list items create small chunks. Larger container elements like sections and articles create bigger chunks. You might configure your chunker to combine small adjacent elements like multiple paragraphs until you reach a minimum size, or to split large elements that exceed a maximum threshold.
+```mermaid
+graph LR
+    A[HTML Page] --> B[Section: 600 tokens]
+    A --> C[Div: 300 tokens]
+    A --> D[Article: 700 tokens]
+    B --> E[Paragraph: 150 tokens]
+    B --> F[Code Block: 200 tokens]
+    C --> G[List: 100 tokens]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#81c784
+    style D fill:#81c784
+    style E fill:#e1bee7
+    style F fill:#ffd700
+    style G fill:#e1bee7
+```
+#### Overlap Size
+Overlap is typically **0 to 10 percent** between structural elements. Since elements already have natural boundaries, you don't need as much overlap as with arbitrary splitting. However, a common pattern is to include **header or context information** with each chunk. For example, include the parent section's heading with each sub-element's content. This gives context without literal text duplication.
+#### Computational Cost
+The cost is **Medium** due to **parser overhead**. You need to parse HTML into a DOM 👉 'document object model' or Markdown into an AST 👉 'abstract syntax tree'. This parsing takes time and memory, especially for large documents. However, parsers are well-optimized and this overhead is usually acceptable for the quality improvement you gain.
+This configuration leverages document structure to create semantically rich, meaningful chunks.`
         },
         {
           id: 51,
@@ -2557,27 +2796,51 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Web pages, docs portals, blogs</li>
-                <li>Markdown documentation repositories</li>
-                <li>Technical blogs and wikis</li>
-                <li>API documentation</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>BeautifulSoup, jsdom for HTML</li>
-                <li>LangChain HTMLTextSplitter</li>
-                <li>Markdown parsers (marked, remark)</li>
-                <li>Documentation frameworks</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires HTML/Markdown parsing knowledge and structure handling</p>
+              <GSAPAnimated animation="slideInBottom" delay={0.15} duration={0.8}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.35}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Web pages, docs portals, blogs</li>
+                  <li>Markdown documentation repositories</li>
+                  <li>Technical blogs and wikis</li>
+                  <li>API documentation</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.6} duration={0.8}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.8}>
+                <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>BeautifulSoup, jsdom for HTML</li>
+                  <li>LangChain HTMLTextSplitter</li>
+                  <li>Markdown parsers (marked, remark)</li>
+                  <li>Documentation frameworks</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.05} duration={0.7}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires HTML/Markdown parsing knowledge and structure handling</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5c1c65',
-          notes: ''
-        }
+          notes: `### 51. Markdown / HTML Structure Chunking - Use Cases & Tools
+Let's explore where structure-based chunking excels and the tools that make implementation practical.
+#### Use Cases
+This approach is perfect for **web pages, documentation portals, and blogs**. Any content published to the web typically has HTML structure, and leveraging that structure during chunking preserves the author's formatting intentions. Think of Medium articles, company blogs, or news sites where headings, lists, and code blocks carry important meaning.
+**Markdown documentation repositories** are another sweet spot. Open-source projects, technical writing platforms, and knowledge bases often use Markdown with consistent structural conventions. By parsing the Markdown AST, you maintain lists, code fences, and heading hierarchies.
+**Technical blogs and wikis** benefit immensely because they mix narrative content with code snippets, tables, and structured lists. Keeping these elements intact makes the retrieved chunks far more useful than splitting them arbitrarily would.
+**API documentation** sites often have consistent HTML templates with specific classes for endpoints, parameters, and response formats. Structure-based chunking lets you identify and extract these patterns reliably.
+#### Tooling Support
+The tooling ecosystem is mature. **BeautifulSoup** for Python and **jsdom** for JavaScript are the industry standards for HTML parsing. They handle malformed HTML gracefully and provide intuitive APIs for navigating the DOM tree.
+**LangChain's HTMLTextSplitter** wraps these parsers and provides chunking logic out of the box. It handles common patterns like splitting on heading tags while preserving element boundaries.
+For Markdown, parsers like **marked** and **remark** convert Markdown into structured ASTs that you can traverse programmatically. This makes it straightforward to identify sections, code blocks, and other elements.
+**Documentation frameworks** like MkDocs, Docusaurus, and Sphinx already parse structure for rendering, and you can tap into their parsing logic for chunking purposes.
+#### Complexity Level
+This sits at **Intermediate** complexity. You need to understand HTML/Markdown parsing, handle edge cases in real-world documents, and potentially filter out noise. It's more involved than simple text splitting but not as complex as semantic or graph-based approaches.
+The investment in parsing pays dividends in chunk quality and retrieval accuracy.`
+        },
       ]
     },
     {
@@ -2590,16 +2853,28 @@ This is engineering pragmatism at its finest, solving real production problems!`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Extracts tables intact; supports downstream parsing</li>
-                <li>Preserves tabular relationships and formats</li>
-                <li>Enables structured data retrieval</li>
-                <li>Maintains row/column associations</li>
-              </ul>
+              <GSAPStaggerList stagger={0.16} delay={0.2}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Extracts tables intact; supports downstream parsing</li>
+                  <li>Preserves tabular relationships and formats</li>
+                  <li>Enables structured data retrieval</li>
+                  <li>Maintains row/column associations</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: ''
+          notes: `### 52. Table-Aware Chunking - Pros
+Moving to technique 13, table-aware chunking. This is a specialized approach that's critical when your documents contain structured data in tables.
+#### Intact Table Extraction
+The primary benefit is **extracting tables as complete units**. Tables are fundamentally different from narrative text. They have rows, columns, headers, and cell relationships that define their meaning. Split a table across multiple chunks and you lose the ability to understand those relationships. Table-aware chunking recognizes tables as atomic units and keeps them together, which means downstream systems can actually parse and query the data meaningfully.
+#### Relationship Preservation
+Tables encode **relationships between data points**. Each row might represent an entity, each column an attribute. The intersection of row and column has specific meaning. Think of a pricing table: Product A costs X dollars and has Y features. Break that table apart and you might retrieve the price without the product name, which is useless. By preserving the full table structure, you maintain these critical associations.
+#### Structured Data Retrieval
+When users ask questions about data, they often need **structured answers**. "What's the performance benchmark for Model X?" If that data lives in a table, you want to retrieve the entire table or at least the relevant rows and columns together. Table-aware chunking enables this by giving you retrievable units that contain queryable structure.
+#### Row and Column Integrity
+The approach **maintains the integrity of rows and columns**. Headers stay with their data. Related cells remain grouped. This is essential for any kind of data analysis or comparison task. You can even convert tables to more queryable formats like JSON or SQL during chunking, making them even more useful for retrieval.
+This technique is non-negotiable when working with data-heavy documents like reports and specifications.`
         },
         {
           id: 53,
