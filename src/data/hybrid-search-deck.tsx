@@ -65,15 +65,15 @@ export const hybridSearchDeck: Deck = {
           backgroundColor: '#172e6b',
           notes: `### 11 Hybrid Search Patterns
 ####  Welcome
-Hello everyone! Today we're diving into something really exciting – **hybrid search patterns**. If you're new to search systems, don't worry. We'll break everything down into simple concepts.
+[cheerfully] [warmly] Hello everyone! [excited] Today we're diving into something really exciting – **hybrid search patterns**. [reassuringly] If you're new to search systems, don't worry. We'll break everything down into simple concepts.
 ####  What This Is About
-Think of search like finding a needle in a haystack. There are two main ways to search: **lexical search** (finding exact words) and **semantic search** (understanding meaning). Imagine you're looking for "car" – lexical search finds the word "car" exactly, while semantic search also finds "automobile" or "vehicle" because it understands they mean similar things.
+[conversational] Think of search like finding a needle in a haystack. There are two main ways to search: **lexical search** (finding exact words) and **semantic search** (understanding meaning). [storytelling] Imagine you're looking for "car" – lexical search finds the word "car" exactly, while semantic search also finds "automobile" or "vehicle" because it understands they mean similar things.
 ####  Why Hybrid?
-Here's the magic: **hybrid search** combines both approaches. It's like having two search assistants working together – one good at finding exact matches, the other good at understanding context. When they work together, you get the best of both worlds.
+[enthusiastically] Here's the magic: **hybrid search** combines both approaches. [playfully] It's like having two search assistants working together – one good at finding exact matches, the other good at understanding context. [confidently] When they work together, you get the best of both worlds.
 ####  What We'll Cover
-We're going to explore eleven different patterns – eleven different ways to mix these two search types. Some patterns are simple weighted combinations, others use clever two-stage approaches, and some use advanced techniques like cross-encoders. Each pattern solves different real-world problems.
+[energetic] We're going to explore eleven different patterns – eleven different ways to mix these two search types. [lecture] Some patterns are simple weighted combinations, others use clever two-stage approaches, and some use advanced techniques like cross-encoders. [seriously] Each pattern solves different real-world problems.
 ####  Your Toolkit
-By the end of this presentation, you'll have a complete toolkit of hybrid search patterns. Whether you're building a document search, a Q&A system, or a recommendation engine, you'll know exactly which pattern to reach for. Let's get started!`
+[inspiringly] By the end of this presentation, you'll have a complete toolkit of hybrid search patterns. [confidently] Whether you're building a document search, a Q&A system, or a recommendation engine, you'll know exactly which pattern to reach for. [excited] Let's get started!`
         },
         {
           id: 2,
@@ -157,7 +157,7 @@ By the end of this presentation, you'll have a complete toolkit of hybrid search
           backgroundColor: '#172e6b',
           notes: `### Hybrid Search: What and Why
 ####  The Foundation
-Let's start with the basics. **Hybrid search** is like having two different detectives working on the same case. One detective looks for exact clues – specific words and phrases. The other detective understands the meaning and context behind things. Together, they solve cases neither could solve alone.
+[conversational] Let's start with the basics. [storytelling] **Hybrid search** is like having two different detectives working on the same case. One detective looks for exact clues – specific words and phrases. The other detective understands the meaning and context behind things. [confidently] Together, they solve cases neither could solve alone.
 ####  How Hybrid Search Works
 \`\`\`mermaid
 flowchart LR
@@ -170,13 +170,13 @@ flowchart LR
     style D fill:#ffd700,color:#000
     style E fill:#81c784,color:#000
 \`\`\`
-When you search, your query goes to both **BM25** 👉 'bee-em-twenty-five' (lexical) and **vector** (semantic) systems. Think of BM25 as a word-matching robot – it finds documents with your exact search terms. The vector system is like a smart librarian who understands what you *mean*, not just what you *say*.
+[lecture] When you search, your query goes to both **BM25** 👉 'bee-em-twenty-five' (lexical) and **vector** (semantic) systems. [playfully] Think of BM25 as a word-matching robot – it finds documents with your exact search terms. The vector system is like a smart librarian who understands what you *mean*, not just what you *say*.
 ####  Why Two Methods Work Better Than One
-BM25 is fantastic when you search for "iPhone 15 Pro Max" – it finds exactly that phone model. But if you search "latest Apple flagship phone," BM25 might miss it because those exact words aren't there. That's where vectors shine – they understand "latest Apple flagship" means the iPhone 15 Pro Max.
+[enthusiastically] BM25 is fantastic when you search for "iPhone 15 Pro Max" – it finds exactly that phone model. [cautiously] But if you search "latest Apple flagship phone," BM25 might miss it because those exact words aren't there. [excited] That's where vectors shine – they understand "latest Apple flagship" means the iPhone 15 Pro Max.
 ####  Fusion Methods
-There are several clever ways to **combine** (we call it "fusion") these two search results. The simplest is a weighted sum – like mixing 70% BM25 with 30% vector scores. Another popular method is **RRF** 👉 'arr-arr-eff' or Reciprocal Rank Fusion, which combines rankings rather than scores.
+[conversational] There are several clever ways to **combine** (we call it "fusion") these two search results. The simplest is a weighted sum – like mixing 70% BM25 with 30% vector scores. Another popular method is **RRF** 👉 'arr-arr-eff' or Reciprocal Rank Fusion, which combines rankings rather than scores.
 ####  The Real-World Impact
-Here's why this matters: in production RAG systems (that's Retrieval Augmented Generation – think ChatGPT with your own documents), hybrid search dramatically improves accuracy. You catch both the "needle in the haystack" exact matches *and* the semantically similar content. This leads us to explore eleven specific patterns for implementing hybrid search effectively.`
+[seriously] Here's why this matters: in production RAG systems (that's Retrieval Augmented Generation – think ChatGPT with your own documents), hybrid search dramatically improves accuracy. [confidently] You catch both the "needle in the haystack" exact matches *and* the semantically similar content. [inspiringly] This leads us to explore eleven specific patterns for implementing hybrid search effectively.`
         }
       ]
     },
@@ -243,7 +243,7 @@ Here's why this matters: in production RAG systems (that's Retrieval Augmented G
           backgroundColor: '#5d176b',
           notes: `### Pattern 1 — Weighted Hybrid Scoring
 ####  The Simplest Hybrid Pattern
-Welcome to our first pattern! **Weighted Hybrid Scoring** is like mixing two ingredients in a recipe – you decide how much of each to add. Think of it as combining 70% chocolate and 30% vanilla to get your perfect ice cream flavor.
+[cheerfully] Welcome to our first pattern! [conversational] **Weighted Hybrid Scoring** is like mixing two ingredients in a recipe – you decide how much of each to add. [playfully] Think of it as combining 70% chocolate and 30% vanilla to get your perfect ice cream flavor.
 ####  How It Works
 \`\`\`mermaid
 flowchart TB
@@ -257,13 +257,13 @@ flowchart TB
     style E fill:#ffd700,color:#000
     style F fill:#81c784,color:#000
 \`\`\`
-Here's the magic: both BM25 and vector search run *at the same time* (in parallel). BM25 might give a document a score of 8.5, and vector search gives it 0.92. But wait – these scores are on different scales! That's why we **normalize** them first, bringing both to a 0-1 range.
+[excited] Here's the magic: both BM25 and vector search run *at the same time* (in parallel). [lecture] BM25 might give a document a score of 8.5, and vector search gives it 0.92. [cautiously] But wait – these scores are on different scales! That's why we **normalize** them first, bringing both to a 0-1 range.
 ####  The Alpha Parameter
-The **alpha** value (written as α, pronounced "alpha") is your control knob. If α equals 0.7, you're saying "give me 70% vector search and 30% BM25." For technical queries where exact terms matter, you might use α equals 0.3 (more BM25). For conceptual queries, α equals 0.8 (more vector).
+[conversational] The **alpha** value (written as α, pronounced "alpha") is your control knob. [confidently] If α equals 0.7, you're saying "give me 70% vector search and 30% BM25." For technical queries where exact terms matter, you might use α equals 0.3 (more BM25). For conceptual queries, α equals 0.8 (more vector).
 ####  Real-World Tools
-All major search engines support this: **Elasticsearch** has built-in RRF (Reciprocal Rank Fusion), **Weaviate** lets you set alpha directly, and **Pinecone** combines sparse and dense vectors. This is your go-to pattern for most applications.
+[enthusiastically] All major search engines support this: **Elasticsearch** has built-in RRF (Reciprocal Rank Fusion), **Weaviate** lets you set alpha directly, and **Pinecone** combines sparse and dense vectors. [pleased] This is your go-to pattern for most applications.
 ####  Transition
-This weighted approach is powerful, but every pattern has trade-offs. Let's look at when it shines and when it struggles.`
+[seriously] This weighted approach is powerful, but every pattern has trade-offs. Let's look at when it shines and when it struggles.`
         },
         {
           id: 4,
@@ -303,17 +303,17 @@ This weighted approach is powerful, but every pattern has trade-offs. Let's look
           backgroundColor: '#5d176b',
           notes: `### Strengths and Limitations
 ####  The Good Stuff
-Let's talk about what makes **Weighted Hybrid Scoring** awesome. First, it's **simple** – you literally just tune one number (alpha) to control the blend. There's no complex machine learning model to train, no mysterious black box. You can explain it to your team in two minutes.
+[pleased] Let's talk about what makes **Weighted Hybrid Scoring** awesome. [confidently] First, it's **simple** – you literally just tune one number (alpha) to control the blend. [reassuringly] There's no complex machine learning model to train, no mysterious black box. You can explain it to your team in two minutes.
 ####  Pros
-It works with **every major search engine** out there. Whether you're using Elasticsearch, Weaviate, Qdrant, or Pinecone, they all support this pattern. It also **scales beautifully** – both searches run in parallel, so you're not adding much latency. Finally, it's **deterministic**, meaning the same query always gives the same results, which makes debugging much easier.
+[enthusiastically] It works with **every major search engine** out there. Whether you're using Elasticsearch, Weaviate, Qdrant, or Pinecone, they all support this pattern. [pleased] It also **scales beautifully** – both searches run in parallel, so you're not adding much latency. Finally, it's **deterministic**, meaning the same query always gives the same results, which makes debugging much easier.
 ####  The Challenges
-Now for the tricky parts. **Score normalization** can be surprisingly hard to get right. BM25 scores might range from 0 to 50, while vector similarities are between -1 and 1. You need to normalize them properly, or one will completely dominate the other.
+[cautiously] Now for the tricky parts. **Score normalization** can be surprisingly hard to get right. [seriously] BM25 scores might range from 0 to 50, while vector similarities are between -1 and 1. You need to normalize them properly, or one will completely dominate the other.
 ####  Cons
-The biggest challenge? **One alpha value doesn't fit all queries**. A technical query like "Python 3.11 release date" needs more BM25 weight, while "how to be happy" needs more vector weight. You might end up tuning alpha for each query type, which adds complexity.
+[concerned] The biggest challenge? **One alpha value doesn't fit all queries**. [conversational] A technical query like "Python 3.11 release date" needs more BM25 weight, while "how to be happy" needs more vector weight. You might end up tuning alpha for each query type, which adds complexity.
 ####  The Duplicate Problem
-Also watch out for **duplicates**. Since both BM25 and vector search might return the same document, you need to de-duplicate intelligently. Some engines handle this automatically, others don't.
+[cautiously] Also watch out for **duplicates**. Since both BM25 and vector search might return the same document, you need to de-duplicate intelligently. [conversational] Some engines handle this automatically, others don't.
 ####  Moving Forward
-Despite these limitations, this pattern is your bread-and-butter hybrid approach. For about 70% of use cases, this is all you need. Now let's explore a different approach – two-stage retrieval – which solves some of these problems in a clever way.`
+[confidently] Despite these limitations, this pattern is your bread-and-butter hybrid approach. For about 70% of use cases, this is all you need. [inspiringly] Now let's explore a different approach – two-stage retrieval – which solves some of these problems in a clever way.`
         }
       ]
     },
@@ -377,29 +377,29 @@ Despite these limitations, this pattern is your bread-and-butter hybrid approach
 
 #### Introduction to Two-Stage Retrieval
 
-Welcome to **Pattern 2**, which introduces the concept of **two-stage retrieval**. Think of this like a talent show with two rounds: first, you quickly screen a large pool of contestants, then you carefully evaluate the finalists. That's exactly what this pattern does with search results.
+[cheerfully] Welcome to **Pattern 2**, which introduces the concept of **two-stage retrieval**. [storytelling] Think of this like a talent show with two rounds: first, you quickly screen a large pool of contestants, then you carefully evaluate the finalists. That's exactly what this pattern does with search results.
 
 #### How It Works: The Two-Stage Process
 
-In **Stage 1**, we use **BM25** – a fast, traditional keyword-based search algorithm. BM25 is like a lightning-fast scanner that reads through millions of documents and pulls out the top 200 candidates that contain your search terms. It's incredibly efficient because it uses an **inverted index**, which is like a book's index that tells you exactly which pages contain which words.
+[lecture] In **Stage 1**, we use **BM25** – a fast, traditional keyword-based search algorithm. [conversational] BM25 is like a lightning-fast scanner that reads through millions of documents and pulls out the top 200 candidates that contain your search terms. [confidently] It's incredibly efficient because it uses an **inverted index**, which is like a book's index that tells you exactly which pages contain which words.
 
-In **Stage 2**, we get more sophisticated. We take those 200 candidates and run them through a **bi-encoder** – a neural network that understands meaning. This creates **embeddings** (numerical representations) of both your query and the candidate documents. Then we compare them using mathematical similarity (like cosine or dot product), which is like measuring how "close" two concepts are in meaning space.
+[lecture] In **Stage 2**, we get more sophisticated. We take those 200 candidates and run them through a **bi-encoder** – a neural network that understands meaning. [conversational] This creates **embeddings** (numerical representations) of both your query and the candidate documents. Then we compare them using mathematical similarity (like cosine or dot product), which is like measuring how "close" two concepts are in meaning space.
 
 #### When to Choose This Pattern
 
-This pattern shines in **keyword-heavy domains** where exact matches matter. Imagine legal document search, medical records, or technical documentation. If someone searches for "myocardial infarction," you want documents with that exact term, but you also want to understand that "heart attack" is semantically similar. The BM25 stage ensures you don't miss exact matches, while the vector re-ranking adds semantic intelligence.
+[confidently] This pattern shines in **keyword-heavy domains** where exact matches matter. [storytelling] Imagine legal document search, medical records, or technical documentation. [conversational] If someone searches for "myocardial infarction," you want documents with that exact term, but you also want to understand that "heart attack" is semantically similar. [seriously] The BM25 stage ensures you don't miss exact matches, while the vector re-ranking adds semantic intelligence.
 
 #### Practical Benefits
 
-The beauty of this approach is **efficiency**. BM25 is computationally cheap, so it can quickly filter millions of documents down to a manageable set. Then you only need to compute expensive embeddings for those 200 candidates, not the entire corpus. It's like pre-screening resumes before conducting expensive in-person interviews.
+[enthusiastically] The beauty of this approach is **efficiency**. [lecture] BM25 is computationally cheap, so it can quickly filter millions of documents down to a manageable set. Then you only need to compute expensive embeddings for those 200 candidates, not the entire corpus. [playfully] It's like pre-screening resumes before conducting expensive in-person interviews.
 
 #### Implementation Considerations
 
-Most modern search platforms support this pattern out of the box. **Elasticsearch** has built-in support with its query and knn rank section. **Haystack** provides a clean pipeline with BM25Retriever followed by EmbeddingReranker. The pattern is easy to **retrofit** onto existing BM25-based search systems, making it a popular first step into hybrid search.
+[pleased] Most modern search platforms support this pattern out of the box. [conversational] **Elasticsearch** has built-in support with its query and knn rank section. **Haystack** provides a clean pipeline with BM25Retriever followed by EmbeddingReranker. [confidently] The pattern is easy to **retrofit** onto existing BM25-based search systems, making it a popular first step into hybrid search.
 
 #### Limitations to Keep in Mind
 
-The main risk is **early miss** – if BM25 doesn't retrieve a relevant document in Stage 1, the vector re-ranker never gets a chance to find it. This can happen with **vocabulary mismatch** (searching "car" when the document says "automobile") or with very short, ambiguous queries. You might need to combine this with **query expansion** techniques to ensure good initial recall.`
+[cautiously] The main risk is **early miss** – if BM25 doesn't retrieve a relevant document in Stage 1, the vector re-ranker never gets a chance to find it. [seriously] This can happen with **vocabulary mismatch** (searching "car" when the document says "automobile") or with very short, ambiguous queries. [thoughtfully] You might need to combine this with **query expansion** techniques to ensure good initial recall.`
         },
         {
           id: 6,
@@ -441,27 +441,27 @@ The main risk is **early miss** – if BM25 doesn't retrieve a relevant document
 
 #### Understanding the Trade-offs
 
-Every search pattern has its sweet spots and pain points. Let's break down when **two-stage retrieval** works brilliantly and when you might need to be careful.
+[conversational] Every search pattern has its sweet spots and pain points. Let's break down when **two-stage retrieval** works brilliantly and when you might need to be careful.
 
 #### Strengths: Why This Pattern Works So Well
 
-The first major strength is **efficiency**. BM25 uses an **inverted index** – think of it like the index at the back of a textbook. It can scan millions of documents in milliseconds because it already knows which documents contain which words. This makes the first stage incredibly fast and scalable.
+[enthusiastically] The first major strength is **efficiency**. [lecture] BM25 uses an **inverted index** – think of it like the index at the back of a textbook. [confidently] It can scan millions of documents in milliseconds because it already knows which documents contain which words. This makes the first stage incredibly fast and scalable.
 
-The second strength is **cost-effectiveness**. You're only computing expensive neural **embeddings** for 200 candidates, not your entire corpus. This is like only doing detailed background checks on job candidates who passed the initial resume screening. It gives you **good precision** (relevant results) at **low compute cost**.
+[pleased] The second strength is **cost-effectiveness**. [conversational] You're only computing expensive neural **embeddings** for 200 candidates, not your entire corpus. [playfully] This is like only doing detailed background checks on job candidates who passed the initial resume screening. [confidently] It gives you **good precision** (relevant results) at **low compute cost**.
 
-The third strength is **retrofitting ease**. If you already have a BM25-based search system (which most organizations do), you can add vector re-ranking as a second stage without rebuilding everything. It's a **low-risk upgrade** path.
+[enthusiastically] The third strength is **retrofitting ease**. [reassuringly] If you already have a BM25-based search system (which most organizations do), you can add vector re-ranking as a second stage without rebuilding everything. [pleased] It's a **low-risk upgrade** path.
 
 #### Limitations: What to Watch Out For
 
-The biggest limitation is the **early miss problem**. BM25 must include the relevant documents in its initial 200 candidates, or they're lost forever. This happens with **vocabulary mismatch** – imagine someone searches for "canine" but your document says "dog." BM25 might miss it entirely.
+[cautiously] The biggest limitation is the **early miss problem**. [seriously] BM25 must include the relevant documents in its initial 200 candidates, or they're lost forever. [conversational] This happens with **vocabulary mismatch** – imagine someone searches for "canine" but your document says "dog." BM25 might miss it entirely.
 
-Another consideration is **infrastructure requirements**. You need embedding infrastructure (models, GPUs, or embedding APIs) for the re-ranking stage. This adds complexity and operational overhead compared to pure BM25.
+[thoughtfully] Another consideration is **infrastructure requirements**. You need embedding infrastructure (models, GPUs, or embedding APIs) for the re-ranking stage. [cautiously] This adds complexity and operational overhead compared to pure BM25.
 
-Finally, you may need **query expansion** to improve recall. If users type short or ambiguous queries, BM25 might not catch all relevant documents. You might need to automatically expand "MI" to "myocardial infarction" in medical contexts, for example.
+[conversational] Finally, you may need **query expansion** to improve recall. [lecture] If users type short or ambiguous queries, BM25 might not catch all relevant documents. You might need to automatically expand "MI" to "myocardial infarction" in medical contexts, for example.
 
 #### Making It Work
 
-The key is understanding your domain. If you have **keyword-heavy content** with relatively predictable terminology, this pattern works beautifully. If you have lots of paraphrasing, synonyms, or multilingual content, you might need additional techniques like query expansion or consider Pattern 3 (reverse two-stage) instead.`
+[confidently] The key is understanding your domain. [pleased] If you have **keyword-heavy content** with relatively predictable terminology, this pattern works beautifully. [thoughtfully] If you have lots of paraphrasing, synonyms, or multilingual content, you might need additional techniques like query expansion or consider Pattern 3 (reverse two-stage) instead.`
         }
       ]
     },
