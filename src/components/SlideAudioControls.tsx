@@ -93,6 +93,16 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
     }
   }, [slideContent, notes, autoPlayContent, autoPlayNotes, contentTTS, notesTTS]);
 
+  // Core toggle logic for notes TTS (shared by click handler and keyboard shortcut)
+  const toggleNotes = useCallback(() => {
+    if (notesTTS.status === 'playing' || notesTTS.status === 'loading') {
+      notesTTS.stop();
+    } else {
+      contentTTS.stop();
+      notesTTS.speak(notes || '');
+    }
+  }, [contentTTS, notesTTS, notes]);
+
   const handleContentClick = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
@@ -110,15 +120,9 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
   const handleNotesClick = useCallback(
     (e: React.MouseEvent) => {
       e.stopPropagation();
-      if (notesTTS.status === 'playing' || notesTTS.status === 'loading') {
-        notesTTS.stop();
-      } else {
-        // Stop the other channel if playing
-        contentTTS.stop();
-        notesTTS.speak(notes || '');
-      }
+      toggleNotes();
     },
-    [contentTTS, notesTTS, notes]
+    [toggleNotes]
   );
 
   const handleRegenerateContent = useCallback(
@@ -144,6 +148,26 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
     },
     [contentTTS, notesTTS, notes]
   );
+
+  // Ref to detect if this instance is on the currently active slide
+  const controlRef = useRef<HTMLDivElement>(null);
+
+  // Global Alt+T shortcut to trigger notes playback (only for the active slide)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.altKey && e.key.toLowerCase() === 't') {
+        // Only respond if this control belongs to the currently visible slide
+        const section = controlRef.current?.closest('section');
+        if (!section || !section.classList.contains('present')) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+        toggleNotes();
+      }
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [toggleNotes]);
 
   // Check if we're in development mode
   const isDev = import.meta.env.VITE_IS_PROD === 'false' || !import.meta.env.VITE_IS_PROD;
@@ -190,7 +214,7 @@ const SlideAudioControls: React.FC<SlideAudioControlsProps> = ({
       )}
 
       {/* Regular playback controls */}
-      <div className="slide-audio-controls">
+      <div className="slide-audio-controls" ref={controlRef}>
         {/* Read slide content - only shown when showControls is true */}
         {showControls && (
           <button
