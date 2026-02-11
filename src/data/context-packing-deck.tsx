@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
@@ -9,6 +11,12 @@ export const contextPackingDeck: Deck = {
   description: 'RAG and LLM-ready strategies to maximize answer quality within token limits',
   category: 'RAG',
   theme: 'black',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -21,34 +29,45 @@ export const contextPackingDeck: Deck = {
           title: '13 Context Packing Techniques',
           content: (
             <div>
-              <div style={{ fontSize: '2rem', color: '#e5c07b', marginBottom: '1rem' }}>
-                RAG and LLM-ready strategies to maximize answer quality within token limits
-              </div>
-              <div style={{ fontSize: '1.2rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div>
-                  <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  When and how to pack context for retrieval-augmented generation
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <div style={{ fontSize: '2rem', color: '#e5c07b', marginBottom: '1rem' }}>
+                  RAG and LLM-ready strategies to maximize answer quality within token limits
                 </div>
-                <div>
-                  <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  Practical workflows for 13 techniques with examples
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.2}>
+                <div style={{ fontSize: '1.2rem', lineHeight: '1.8', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div>
+                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    When and how to pack context for retrieval-augmented generation
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    Practical workflows for 13 techniques with examples
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    Trade-offs, risks, and implementation tips
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-users-group" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Audience:</strong> ML engineers, data/knowledge engineers, LLM application builders
+                  </div>
                 </div>
-                <div>
-                  <SvgIcon iconName="duo-scale-balanced" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  Trade-offs, risks, and implementation tips
-                </div>
-                <div>
-                  <SvgIcon iconName="duo-users-group" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Audience:</strong> ML engineers, data/knowledge engineers, LLM application builders
-                </div>
-              </div>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.5}>
+                <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 13 Context Packing Techniques
+Welcome everyone! Today we're diving into **13 Context Packing Techniques** — practical strategies to help you get the *best possible answers* from your **RAG** 👉 'rag' (Retrieval-Augmented Generation) pipelines.
+#### Why does this matter?
+Think of it like packing a suitcase — you have *limited space* (token budget), and you want to fit the most *useful* items (context). Pack poorly, and your LLM gives bad answers. Pack smartly, and you get *precise*, *grounded* responses.
+> Quick poll: How many of you have hit a token limit and had your prompt truncated? That's exactly what we're solving today.
+We'll cover **when** to use each technique, **how** it works, and the **trade-offs** involved. Let's jump in!`
         },
         {
           id: 2,
@@ -56,7 +75,10 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem 2rem' }}>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '0.5rem' }}></div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <div>
                   <div style={{ color: '#e06c75', marginBottom: '0.8rem' }}>
                     <SvgIcon iconName="duo-scissors" sizeName="2x" style={iconStyle} darkModeInvert={true} />
@@ -105,16 +127,29 @@ export const contextPackingDeck: Deck = {
                     <div><strong>13)</strong> Chain-of-Context Packing (CoC)</div>
                   </div>
                 </div>
-              </div>
+              </GSAPStaggerList>
 
-              <div style={{ marginTop: '1.5rem', padding: '10px', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                <strong>Key insight:</strong> Combine multiple techniques to balance answer quality, token efficiency, and inference speed.
-              </div>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <div style={{ marginTop: '1.5rem', padding: '10px', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b', fontSize: '1.2rem' }}>
+                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <strong>Key insight:</strong> Combine multiple techniques to balance answer quality, token efficiency, and inference speed.
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### Overview / Table of Contents
+Here's our roadmap for the session. We've organized the 13 techniques into **four categories**:
+#### 🔴 Chunking & Windowing
+These are your *foundation* techniques — how you **break up** documents before anything else. Semantic Chunking, Dynamic Sliding Window, and Parent–Child Packing.
+#### 🟢 Summarization & Compression
+These techniques **shrink** content — Context Summarization, Hybrid Local+Global, and Passage Compression.
+#### 🔵 Relevance & Optimization
+These **prioritize** what goes into context — Relevance Weighted, Token-Budget Aware, and Adaptive k Retrieval.
+#### 🟣 Structure & Deduplication
+These **reshape and clean** context — Answer-conditioned, Table/Structured, Semantic Dedup, and Chain-of-Context.
+> Notice: The numbering isn't sequential within categories — that's intentional. We ordered by *learning progression*.
+**Key insight:** The best systems *combine* multiple techniques. Let's start with the first one!`
         }
       ]
     },
@@ -129,51 +164,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Preserve meaning boundaries and reduce mid-sentence cuts and retrieval noise
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Preserve meaning boundaries and reduce mid-sentence cuts and retrieval noise
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Semantic Chunking Flow" diagram={`flowchart LR
+    A["📄 Raw Document"] --> B["🔍 Detect Boundaries"]
+    B --> C["✂️ Semantic Chunks"]
+    C --> D["📦 Index & Store"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Segment by semantics: headings, paragraphs, discourse markers, code blocks, lists
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Segment by semantics: headings, paragraphs, discourse markers, code blocks, lists
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Manuals, policies, code docs, FAQs with clear structure
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Manuals, policies, code docs, FAQs with clear structure
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Fixed 512 tokens split mid-sentence</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Chunks aligned to sections and code blocks</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Fixed 512 tokens split mid-sentence</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Chunks aligned to sections and code blocks</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b351d',
-          notes: ''
+          notes: `### 1) Semantic Chunking
+Let's start with **Semantic Chunking** — the *foundation* of good context packing.
+#### 🎯 Goal
+The goal is to **preserve meaning boundaries**. Imagine reading a book where someone ripped pages in the middle of sentences — that's what fixed-size chunking does. *Semantic chunking* cuts at natural boundaries instead.
+#### ⚙️ How It Works
+We segment documents by **semantics** — headings, paragraphs, discourse markers, code blocks, and lists.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Raw Document"] --> B["�� Detect Boundaries"]
+    B --> C["✂️ Semantic Chunks"]
+    C --> D["📦 Index & Store"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+The document flows through boundary detection, gets split into meaningful chunks, then gets indexed.
+#### 📅 When to Use
+Perfect for **manuals**, **policies**, **code docs**, and **FAQs** — anything with *clear structural markers*.
+#### 📝 Example
+**Before:** A fixed 512-token window splits mid-sentence, losing meaning.
+**After:** Chunks align to sections and code blocks — each chunk is self-contained.
+> Think about your own documents — where do the natural "breaks" occur?
+Let's look at how to implement this...`
         },
         {
           id: 4,
@@ -181,20 +253,33 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Parse document structure</li>
-                    <li>Detect semantic units (headers, sections, code fences)</li>
-                    <li>Enforce soft min/max token limits per chunk</li>
-                    <li>Attach metadata and index</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Parse document structure</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Detect semantic units (headers, sections, code fences)</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Enforce soft min/max token limits per chunk</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>4. Attach metadata and index</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b351d',
-          notes: ''
+          notes: `### Implementation Steps — Semantic Chunking
+Here's how you'd actually *build* semantic chunking:
+#### Step 1: Parse document structure
+Use an HTML/Markdown parser to identify headings, lists, code fences, and paragraph breaks.
+#### Step 2: Detect semantic units
+Group content under each heading or structural marker as a single *semantic unit*.
+#### Step 3: Enforce soft min/max token limits
+Set a soft minimum (e.g., 100 tokens) and maximum (e.g., 800 tokens). If a unit is too small, merge with neighbors. If too large, split at sub-boundaries.
+#### Step 4: Attach metadata and index
+Tag each chunk with source, section title, and position. Index into your vector store.
+> Pro tip: Start with heading-based splitting — it's the easiest win and covers 80% of cases.
+Now let's weigh the trade-offs...`
         },
         {
           id: 5,
@@ -203,30 +288,41 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Higher precision</li>
+                      <li>Fewer cross-chunk dependencies</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Higher precision</li>
-                    <li>Fewer cross-chunk dependencies</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Variable chunk sizes complicate packing and caching</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Variable chunk sizes complicate packing and caching</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b351d',
-          notes: ''
+          notes: `### Pros & Cons — Semantic Chunking
+#### ✅ Pros
+- **Higher precision**: Each chunk contains a *complete* thought, so retrieval is more accurate
+- **Fewer cross-chunk dependencies**: Less need to fetch neighboring chunks for context
+#### ❌ Cons
+- **Variable chunk sizes**: Chunks vary in length, which complicates token budget planning and caching strategies
+> Ask yourself: Is your content well-structured enough for semantic chunking? If yes, start here.
+Next up: what if chunks *still* lose context at boundaries? That's where **Dynamic Sliding Window** comes in...`
         }
       ]
     },
@@ -241,51 +337,90 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Maintain continuity across chunk boundaries
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Maintain continuity across chunk boundaries
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Dynamic Sliding Window Flow" diagram={`flowchart LR
+    A["📄 Retrieved Chunk"] --> B["⬅️ Prev Window"]
+    A --> C["➡️ Next Window"]
+    B --> D["🔗 Merged Context"]
+    C --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Attach previous/next neighbor windows around retrieved chunks
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Attach previous/next neighbor windows around retrieved chunks
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Narratives, procedures, legal texts, research papers
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Narratives, procedures, legal texts, research papers
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Step 3 lacks Step 2 context</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Include Step 2 + Step 3 chunks for continuity</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Step 3 lacks Step 2 context</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Include Step 2 + Step 3 chunks for continuity</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b521d',
-          notes: ''
+          notes: `### 2) Dynamic Sliding Window
+Now let's tackle **Dynamic Sliding Window** — solving the problem of *lost context at boundaries*.
+#### 🎯 Goal
+**Maintain continuity** across chunk boundaries. Even with semantic chunking, sometimes the answer *spans* two chunks.
+#### ⚙️ How It Works
+When you retrieve a chunk, you also grab its **neighbors** — the previous and next chunks — creating a *sliding window* of context.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Retrieved Chunk"] --> B["⬅️ Prev Window"]
+    A --> C["➡️ Next Window"]
+    B --> D["🔗 Merged Context"]
+    C --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like reading a paragraph — you need the sentence before and after to fully understand it.
+#### 📅 When to Use
+Great for **narratives**, **procedures**, **legal texts**, and **research papers** where ideas flow across boundaries.
+#### 📝 Example
+**Before:** Step 3 of a procedure is retrieved, but Step 2 (which defines key terms) is missing.
+**After:** Include Step 2 + Step 3 together for complete understanding.
+> Have you ever retrieved a chunk that referenced "the above" or "as mentioned" with no context? That's this problem.
+Let's see how to implement it...`
         },
         {
           id: 7,
@@ -293,19 +428,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Choose window size and stride</li>
-                    <li>On retrieval, include ±N neighbors</li>
-                    <li>Deduplicate overlaps and respect token budget</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Choose window size and stride</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. On retrieval, include ±N neighbors</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Deduplicate overlaps and respect token budget</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b521d',
-          notes: ''
+          notes: `### Implementation Steps — Dynamic Sliding Window
+#### Step 1: Choose window size and stride
+Decide how many neighbor chunks to include (e.g., ±1 or ±2). The *stride* is how much chunks overlap during indexing.
+#### Step 2: On retrieval, include ±N neighbors
+When a chunk scores high, automatically fetch its adjacent chunks from the index.
+#### Step 3: Deduplicate overlaps and respect token budget
+If multiple retrieved chunks share neighbors, merge and deduplicate. Always check total tokens.
+> Pro tip: Start with ±1 neighbor — it adds context without blowing up your token budget.
+Let's look at the trade-offs...`
         },
         {
           id: 8,
@@ -314,29 +459,40 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Better coreference and flow</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Better coreference and flow</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Token overhead; higher redundancy</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Token overhead; higher redundancy</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b521d',
-          notes: ''
+          notes: `### Pros & Cons — Dynamic Sliding Window
+#### ✅ Pros
+- **Better coreference and flow**: Pronouns and references resolve correctly when surrounding context is included
+#### ❌ Cons
+- **Token overhead**: Including neighbors increases token usage — sometimes significantly with large windows
+- **Higher redundancy**: Overlapping windows may include the same text multiple times
+> Consider: How much does your content rely on cross-chunk references? The more it does, the more valuable this technique.
+Next: What if we add *hierarchical* context instead of just neighbors? Enter **Parent–Child Context Packing**...`
         }
       ]
     },
@@ -351,51 +507,90 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Disambiguate details with hierarchical context
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Disambiguate details with hierarchical context
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Parent–Child Packing Flow" diagram={`flowchart TD
+    A["📖 Document"] --> B["📑 Section"]
+    B --> C["📝 Paragraph"]
+    C --> D["🔗 Child + Parent Summary"]
+    B --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Pack child chunk plus parent (section/chapter) summary
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Pack child chunk plus parent (section/chapter) summary
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Structured docs, API references, code repos
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Structured docs, API references, code repos
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> API method chunk without auth context</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Method chunk + parent "Authentication" summary</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> API method chunk without auth context</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Method chunk + parent "Authentication" summary</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#556b1d',
-          notes: ''
+          notes: `### 3) Parent–Child Context Packing
+Let's explore **Parent–Child Context Packing** — adding *hierarchical context* to disambiguate details.
+#### 🎯 Goal
+**Disambiguate details** with hierarchical context. Sometimes a chunk makes no sense without knowing *which section* it belongs to.
+#### ⚙️ How It Works
+Pack the **child chunk** (the specific detail) plus its **parent summary** (section or chapter overview).
+\`\`\`mermaid
+flowchart TD
+    A["📖 Document"] --> B["📑 Section"]
+    B --> C["📝 Paragraph"]
+    C --> D["🔗 Child + Parent Summary"]
+    B --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like a table of contents — the child is a paragraph, the parent is the section heading plus a brief summary.
+#### 📅 When to Use
+Ideal for **structured docs**, **API references**, and **code repos** where hierarchy matters.
+#### 📝 Example
+**Before:** An API method chunk about \`POST /users\` has no auth context — the LLM hallucinates auth steps.
+**After:** Method chunk + parent "Authentication" section summary = grounded answer.
+> How many of your documents have a natural hierarchy? Most technical docs do!
+Let's see the implementation...`
         },
         {
           id: 10,
@@ -403,19 +598,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Build TOC tree (doc → section → paragraph)</li>
-                    <li>Precompute parent summaries</li>
-                    <li>On child retrieval, attach parent summary (+ optional sibling cues)</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Build TOC tree (doc → section → paragraph)</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Precompute parent summaries</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. On child retrieval, attach parent summary (+ optional sibling cues)</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#556b1d',
-          notes: ''
+          notes: `### Implementation Steps — Parent–Child Context Packing
+#### Step 1: Build TOC tree (doc → section → paragraph)
+Parse your documents into a hierarchy — document, sections, subsections, paragraphs.
+#### Step 2: Precompute parent summaries
+Generate or extract a short summary for each section/chapter. Cache these for reuse.
+#### Step 3: On child retrieval, attach parent summary
+When a paragraph chunk is retrieved, prepend its parent section summary. Optionally include sibling cues (e.g., "This section also covers X, Y").
+> Pro tip: Store the parent-child relationships in your metadata — it makes retrieval-time packing trivial.
+Let's discuss the trade-offs...`
         },
         {
           id: 11,
@@ -424,31 +629,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Reduces hallucinations</li>
+                      <li>Improves grounding</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Reduces hallucinations</li>
-                    <li>Improves grounding</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Requires preprocessing</li>
+                      <li>Summaries can drift stale</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Requires preprocessing</li>
-                    <li>Summaries can drift stale</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#556b1d',
-          notes: ''
+          notes: `### Pros & Cons — Parent–Child Context Packing
+#### ✅ Pros
+- **Reduces hallucinations**: The LLM has broader context, so it's less likely to make up information
+- **Improves grounding**: Answers are tied to specific sections, making citations easier
+#### ❌ Cons
+- **Requires preprocessing**: You need to build and maintain the document tree structure
+- **Summaries can drift stale**: If the document changes, parent summaries may become outdated
+> Think about it: Is the upfront preprocessing cost worth the reduction in hallucinations? For most production systems, *yes*.
+Next: What if your content is just *too long*? Let's look at **Context Summarization**...`
         }
       ]
     },
@@ -463,51 +680,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Fit long sections within tight budgets
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Fit long sections within tight budgets
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Context Summarization Flow" diagram={`flowchart LR
+    A["📄 Long Source"] --> B["🤖 Summarizer"]
+    B --> C["📝 Compact Summary"]
+    C --> D["📦 Pack into Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Pre-summarize verbose sources (extractive/abstractive) before packing
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Pre-summarize verbose sources (extractive/abstractive) before packing
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Policies, reports, multi-document answers
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Policies, reports, multi-document answers
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> 2k-token policy chunk</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 150-token summary capturing key rules/dates</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> 2k-token policy chunk</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 150-token summary capturing key rules/dates</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### 4) Context Summarization Before Packing
+Now we're entering **summarization territory**. **Context Summarization Before Packing** is about fitting *long content* into *tight budgets*.
+#### 🎯 Goal
+**Fit long sections within tight token budgets** by summarizing before packing.
+#### ⚙️ How It Works
+Pre-summarize verbose sources using **extractive** (pull key sentences) or **abstractive** (rewrite) summarization *before* packing into context.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Long Source"] --> B["🤖 Summarizer"]
+    B --> C["📝 Compact Summary"]
+    C --> D["📦 Pack into Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like reading a book review instead of the whole book — you get the key points faster.
+#### 📅 When to Use
+Essential for **policies**, **reports**, and **multi-document answers** where sources are verbose.
+#### 📝 Example
+**Before:** A 2,000-token policy chunk eats half your context budget.
+**After:** A 150-token summary captures the key rules and dates — leaving room for other evidence.
+> How much of your retrieved content is actually *relevant* to the answer? Summarization keeps only what matters.
+Let's implement it...`
         },
         {
           id: 13,
@@ -515,19 +769,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Select long candidates</li>
-                    <li>Summarize with rules/LLM; cap length</li>
-                    <li>Validate and cache summaries for reuse</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Select long candidates</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Summarize with rules/LLM; cap length</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Validate and cache summaries for reuse</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### Implementation Steps — Context Summarization
+#### Step 1: Select long candidates
+Identify chunks exceeding a length threshold (e.g., >500 tokens).
+#### Step 2: Summarize with rules/LLM; cap length
+Use rule-based extractive methods or an LLM to produce summaries. Set a target length cap (e.g., 150 tokens).
+#### Step 3: Validate and cache summaries for reuse
+Check that summaries preserve key facts (dates, numbers, entities). Cache them so you don't re-summarize on every query.
+> Pro tip: Use extractive summarization for factual content (numbers, dates) and abstractive for narrative content.
+Let's look at the trade-offs...`
         },
         {
           id: 14,
@@ -536,31 +800,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Higher density</li>
+                      <li>Faster inference</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Higher density</li>
-                    <li>Faster inference</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Summarization loss or bias</li>
+                      <li>Extra compute cost</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Summarization loss or bias</li>
-                    <li>Extra compute cost</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b1f',
-          notes: ''
+          notes: `### Pros & Cons — Context Summarization
+#### ✅ Pros
+- **Higher density**: More information per token — you fit more evidence into the same budget
+- **Faster inference**: Shorter prompts mean faster LLM responses and lower cost
+#### ❌ Cons
+- **Summarization loss or bias**: Key details may be dropped, or the summary may introduce bias
+- **Extra compute cost**: Running summarization models adds latency and cost to your pipeline
+> Key question: Can you afford to lose some detail for better coverage? If your answers need *exact quotes*, summarization may not be ideal.
+Next: What if you need *both* the big picture AND specific details? That's **Hybrid Local + Global Summaries**...`
         }
       ]
     },
@@ -575,51 +851,90 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Preserve big picture while keeping crucial details
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Preserve big picture while keeping crucial details
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Hybrid Local+Global Flow" diagram={`flowchart LR
+    A["📄 Document"] --> B["🌍 Global Summary"]
+    A --> C["🔍 Local Snippets"]
+    B --> D["📦 Combined Context"]
+    C --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Combine a short global summary with top local snippets
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Combine a short global summary with top local snippets
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Mixed queries (overall + specific details)
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Mixed queries (overall + specific details)
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Only local snippets → missing context</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 80-token global + 2–3 local quotes</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Only local snippets → missing context</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 80-token global + 2–3 local quotes</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b4d',
-          notes: ''
+          notes: `### 5) Hybrid Local + Global Summaries
+**Hybrid Local + Global Summaries** gives you the best of both worlds — *big picture* context AND *specific details*.
+#### 🎯 Goal
+**Preserve the big picture** while keeping crucial details accessible.
+#### ⚙️ How It Works
+Combine a short **global summary** (document-level overview) with the top **local snippets** (specific passages).
+\`\`\`mermaid
+flowchart LR
+    A["📄 Document"] --> B["🌍 Global Summary"]
+    A --> C["🔍 Local Snippets"]
+    B --> D["📦 Combined Context"]
+    C --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like a news article — the headline (global) tells you the story, and the quotes (local) give you the evidence.
+#### 📅 When to Use
+Perfect for **mixed queries** that need both an overall understanding AND specific details.
+#### 📝 Example
+**Before:** Only local snippets are packed — the LLM misses the broader context and gives a narrow answer.
+**After:** An 80-token global summary + 2–3 local quotes = comprehensive, grounded response.
+> Think about search queries like "Tell me about the refund policy and the specific deadline" — you need both levels.
+Let's implement this...`
         },
         {
           id: 16,
@@ -627,19 +942,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Compute document-level global summary</li>
-                    <li>Retrieve local passages</li>
-                    <li>Pack [Global] first, then [Local extracts] with citations</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Compute document-level global summary</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Retrieve local passages</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Pack [Global] first, then [Local extracts] with citations</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b4d',
-          notes: ''
+          notes: `### Implementation Steps — Hybrid Local + Global
+#### Step 1: Compute document-level global summary
+Generate a concise summary of the entire document (or corpus section). This captures themes, key topics, and scope.
+#### Step 2: Retrieve local passages
+Use standard vector retrieval to find the most relevant specific passages.
+#### Step 3: Pack [Global] first, then [Local extracts] with citations
+Structure the context as: [Global Summary] followed by [Local Extract 1], [Local Extract 2], etc. Add source citations to each local extract.
+> Pro tip: Label sections clearly — e.g., "[Overview]" and "[Detail 1]" — so the LLM knows which is which.
+Let's discuss the trade-offs...`
         },
         {
           id: 17,
@@ -648,30 +973,41 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Balanced coverage and precision</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Balanced coverage and precision</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Prep overhead</li>
+                      <li>Potential contradictions to reconcile</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Prep overhead</li>
-                    <li>Potential contradictions to reconcile</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b4d',
-          notes: ''
+          notes: `### Pros & Cons — Hybrid Local + Global
+#### ✅ Pros
+- **Balanced coverage and precision**: The global summary provides context, local snippets provide evidence
+#### ❌ Cons
+- **Prep overhead**: You need to generate and maintain global summaries for each document
+- **Potential contradictions**: The global summary and local details might sometimes conflict — you need reconciliation logic
+> Consider: For customer-facing RAG systems, this technique is often a *game-changer* because users ask both broad and specific questions.
+Next: Let's talk about **prioritizing** which chunks make the cut — **Relevance Weighted Packing**...`
         }
       ]
     },
@@ -686,51 +1022,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Maximize utility by prioritizing high-relevance chunks
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Maximize utility by prioritizing high-relevance chunks
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Relevance Weighted Packing Flow" diagram={`flowchart LR
+    A["📄 Candidates"] --> B["⚖️ Score & Rank"]
+    B --> C["🏆 Top Chunks"]
+    C --> D["📦 Budget-Fit Pack"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Rank by score; pack highest first within budget
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Rank by score; pack highest first within budget
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Tight budgets; noisy corpora
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Tight budgets; noisy corpora
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Arbitrary top-k</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Highest-scoring, diverse set fits budget</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Arbitrary top-k</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Highest-scoring, diverse set fits budget</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d5d6b',
-          notes: ''
+          notes: `### 6) Relevance Weighted Packing
+**Relevance Weighted Packing** is about *prioritization* — making sure the *best* chunks get packed first.
+#### 🎯 Goal
+**Maximize utility** by prioritizing high-relevance chunks within your token budget.
+#### ⚙️ How It Works
+Rank all candidate chunks by a **relevance score**, then **pack the highest-scoring** ones first until the budget is filled.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Candidates"] --> B["⚖️ Score & Rank"]
+    B --> C["🏆 Top Chunks"]
+    C --> D["📦 Budget-Fit Pack"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like a talent show — the best performers go on stage first, and when time runs out, the rest wait.
+#### 📅 When to Use
+Essential when you have **tight token budgets** or **noisy corpora** with lots of low-quality content.
+#### 📝 Example
+**Before:** Arbitrary top-k retrieval — some low-relevance chunks waste valuable tokens.
+**After:** Highest-scoring, diverse set of chunks fills the budget efficiently.
+> How do you currently decide which chunks make the cut? If it's just "top 5," you're leaving quality on the table.
+Let's implement this...`
         },
         {
           id: 19,
@@ -738,19 +1111,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Score by similarity + recency + source quality</li>
-                    <li>Optional MMR/diversity</li>
-                    <li>Greedy pack until budget filled</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Score by similarity + recency + source quality</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Optional MMR/diversity</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Greedy pack until budget filled</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d5d6b',
-          notes: ''
+          notes: `### Implementation Steps — Relevance Weighted Packing
+#### Step 1: Score by similarity + recency + source quality
+Combine multiple signals: vector similarity score, document freshness, and source authority/quality rating.
+#### Step 2: Optional MMR/diversity
+Apply **Maximal Marginal Relevance** 👉 'M-M-R' to ensure diversity — avoid packing 5 chunks that all say the same thing.
+#### Step 3: Greedy pack until budget filled
+Iterate through ranked chunks, adding each if it fits the remaining token budget. Stop when full.
+> Pro tip: Weight recency higher for rapidly changing domains (news, support tickets) and similarity higher for static knowledge bases.
+Let's look at the trade-offs...`
         },
         {
           id: 20,
@@ -759,31 +1142,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Better hit rate</li>
+                      <li>Fewer irrelevant tokens</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Better hit rate</li>
-                    <li>Fewer irrelevant tokens</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Can exclude necessary low-scoring context</li>
+                      <li>Bias risk</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Can exclude necessary low-scoring context</li>
-                    <li>Bias risk</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d5d6b',
-          notes: ''
+          notes: `### Pros & Cons — Relevance Weighted Packing
+#### ✅ Pros
+- **Better hit rate**: More of your context window contains *useful* information
+- **Fewer irrelevant tokens**: Noisy, off-topic chunks get filtered out
+#### ❌ Cons
+- **Can exclude necessary low-scoring context**: Sometimes a chunk with a low similarity score contains crucial background info
+- **Bias risk**: If your scoring favors certain sources, you may systematically miss others
+> Key insight: Relevance scoring is only as good as your embedding model and scoring function. Invest time in tuning these.
+Next up: What if chunks are just *too long*? Let's **compress** them with **Passage Compression**...`
         }
       ]
     },
@@ -798,51 +1193,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Shrink verbose passages while retaining facts
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Shrink verbose passages while retaining facts
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Passage Compression Flow" diagram={`flowchart LR
+    A["📄 Verbose Passage"] --> B["🤖 LLM Compressor"]
+    B --> C["📝 Concise Bullets"]
+    C --> D["📦 Pack More Evidence"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      LLM rewrites chunks into concise bullets with entities/numbers preserved
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    LLM rewrites chunks into concise bullets with entities/numbers preserved
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Support chats, logs, verbose prose
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Support chats, logs, verbose prose
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> 300-token paragraph</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 80-token bullet list with key facts</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> 300-token paragraph</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 80-token bullet list with key facts</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d366b',
-          notes: ''
+          notes: `### 7) Passage Compression (LLM Shortening)
+**Passage Compression** �� also called *LLM Shortening* — is about using an LLM to *shrink* verbose passages while keeping the facts.
+#### 🎯 Goal
+**Shrink verbose passages** while retaining essential facts, entities, and numbers.
+#### ⚙️ How It Works
+An LLM **rewrites** retrieved chunks into concise bullets, preserving entities, numbers, and key claims.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Verbose Passage"] --> B["🤖 LLM Compressor"]
+    B --> C["📝 Concise Bullets"]
+    C --> D["📦 Pack More Evidence"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like an editor condensing a long article into bullet points — same facts, fewer words.
+#### 📅 When to Use
+Great for **support chats**, **logs**, and **verbose prose** where most words are filler.
+#### 📝 Example
+**Before:** A 300-token paragraph with lots of preamble and repetition.
+**After:** An 80-token bullet list with just the key facts — 73% compression!
+> Imagine fitting 4x more evidence into the same context window. That's the power of compression.
+Let's see how to build this...`
         },
         {
           id: 22,
@@ -850,19 +1282,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Define compression prompt/constraints</li>
-                    <li>Compress retrieved chunks; keep citations/IDs</li>
-                    <li>Enforce length caps; cache results</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Define compression prompt/constraints</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Compress retrieved chunks; keep citations/IDs</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Enforce length caps; cache results</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d366b',
-          notes: ''
+          notes: `### Implementation Steps — Passage Compression
+#### Step 1: Define compression prompt/constraints
+Create a prompt template: "Compress the following passage into concise bullets. Preserve all dates, numbers, entity names, and causal relationships."
+#### Step 2: Compress retrieved chunks; keep citations/IDs
+Run the compressor on each retrieved chunk. Maintain a mapping from compressed text back to the original source for citation.
+#### Step 3: Enforce length caps; cache results
+Set a maximum length per compressed chunk. Cache compressed versions so you don't reprocess the same chunk repeatedly.
+> Pro tip: Test compression quality by comparing LLM answers using original vs. compressed context — if answers degrade, dial back compression.
+Let's look at the trade-offs...`
         },
         {
           id: 23,
@@ -871,31 +1313,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Fit more evidence</li>
+                      <li>Faster inference</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Fit more evidence</li>
-                    <li>Faster inference</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Information loss</li>
+                      <li>Extra LLM cost/latency</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Information loss</li>
-                    <li>Extra LLM cost/latency</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d366b',
-          notes: ''
+          notes: `### Pros & Cons — Passage Compression
+#### ✅ Pros
+- **Fit more evidence**: Dramatically increase the amount of evidence in your context window
+- **Faster inference**: Shorter prompts = faster and cheaper LLM responses
+#### ❌ Cons
+- **Information loss**: The compressor might drop subtle but important details
+- **Extra LLM cost/latency**: Running a compression step adds time and cost to each query
+> Balance check: If your RAG system is latency-sensitive, consider pre-compressing at index time rather than query time.
+Next: What if you could be *smarter* about what to retrieve based on the *type* of answer needed? That's **Answer-conditioned Retrieval**...`
         }
       ]
     },
@@ -910,51 +1364,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Include only fields relevant to the answer type
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Include only fields relevant to the answer type
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Answer-conditioned Retrieval Flow" diagram={`flowchart LR
+    A["❓ Query"] --> B["🏷️ Classify Type"]
+    B --> C["📋 Filter Fields"]
+    C --> D["📦 Targeted Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Predict answer schema (boolean/date/code/etc.) and filter context accordingly
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Predict answer schema (boolean/date/code/etc.) and filter context accordingly
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Forms, finance, SLAs, code Q&A
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Forms, finance, SLAs, code Q&A
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Full policy text for "refund deadline"</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Only date clauses and policy table fields</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Full policy text for "refund deadline"</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Only date clauses and policy table fields</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d206b',
-          notes: ''
+          notes: `### 8) Answer-conditioned Retrieval / Packing
+**Answer-conditioned Retrieval** flips the script — instead of just matching the *question*, we consider the *type of answer* we need.
+#### 🎯 Goal
+**Include only fields relevant to the answer type** — don't waste tokens on irrelevant content.
+#### ⚙️ How It Works
+First, **predict the answer schema** (is it a date? a boolean? a code snippet?), then **filter context** to include only relevant fields.
+\`\`\`mermaid
+flowchart LR
+    A["❓ Query"] --> B["🏷️ Classify Type"]
+    B --> C["📋 Filter Fields"]
+    C --> D["📦 Targeted Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like a doctor ordering specific tests based on symptoms — you don't run *every* test, just the relevant ones.
+#### 📅 When to Use
+Best for **forms**, **finance**, **SLAs**, and **code Q&A** where answers have predictable shapes.
+#### 📝 Example
+**Before:** The full policy text is packed for a "refund deadline" question — most of it is irrelevant.
+**After:** Only date clauses and policy table fields are packed — laser-focused context.
+> How often do your users ask questions with predictable answer formats? If often, this technique is gold.
+Let's implement this...`
         },
         {
           id: 25,
@@ -962,19 +1453,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Classify query → answer type</li>
-                    <li>Map to fields/templates</li>
-                    <li>Retrieve and pack only relevant fields</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Classify query → answer type</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Map to fields/templates</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Retrieve and pack only relevant fields</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d206b',
-          notes: ''
+          notes: `### Implementation Steps — Answer-conditioned Retrieval
+#### Step 1: Classify query → answer type
+Build a classifier (rule-based or ML) that predicts: boolean, date, number, code, list, explanation, etc.
+#### Step 2: Map to fields/templates
+Create templates for each answer type — e.g., for "date" queries, extract date fields, effective periods, and deadlines.
+#### Step 3: Retrieve and pack only relevant fields
+Use the template to filter which fields/columns/sections to include in the context window.
+> Pro tip: Start with a simple rule-based classifier (keyword matching) and upgrade to ML as your query volume grows.
+Let's see the trade-offs...`
         },
         {
           id: 26,
@@ -983,30 +1484,41 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Efficient and accurate</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Efficient and accurate</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Misclassification risk</li>
+                      <li>Needs schema mapping</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Misclassification risk</li>
-                    <li>Needs schema mapping</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d206b',
-          notes: ''
+          notes: `### Pros & Cons — Answer-conditioned Retrieval
+#### ✅ Pros
+- **Efficient and accurate**: Only relevant fields are packed — no wasted tokens, higher answer precision
+#### ❌ Cons
+- **Misclassification risk**: If the query type is classified wrong, you'll pack the wrong fields entirely
+- **Needs schema mapping**: You have to build and maintain answer-type templates for each domain
+> Consider: This technique works best in *structured domains* where answers follow predictable patterns. For open-ended Q&A, it's less useful.
+Next: Let's **structure** our context for maximum density — **Table / Structured Context Packing**...`
         }
       ]
     },
@@ -1021,51 +1533,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Increase information density via structure
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Increase information density via structure
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Structured Context Packing Flow" diagram={`flowchart LR
+    A["📄 Raw Text"] --> B["🔍 Extract Fields"]
+    B --> C["📊 Structured Rows"]
+    C --> D["📦 Dense Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Convert passages into compact bullets, key-value rows, or mini-tables
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Convert passages into compact bullets, key-value rows, or mini-tables
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Specs, product catalogs, schedules, APIs
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Specs, product catalogs, schedules, APIs
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Long feature paragraphs</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Field-value list for features and limits</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Long feature paragraphs</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Field-value list for features and limits</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#331d6b',
-          notes: ''
+          notes: `### 9) Table / Structured Context Packing
+**Table / Structured Context Packing** is about *reformatting* your context for maximum information density.
+#### 🎯 Goal
+**Increase information density** by converting prose into structured formats.
+#### ⚙️ How It Works
+Convert verbose passages into **compact bullets**, **key-value rows**, or **mini-tables** that pack more info per token.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Raw Text"] --> B["🔍 Extract Fields"]
+    B --> C["📊 Structured Rows"]
+    C --> D["📦 Dense Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like converting a long email into a spreadsheet — same data, much more scannable.
+#### 📅 When to Use
+Ideal for **specs**, **product catalogs**, **schedules**, and **APIs** — anywhere data has repeating fields.
+#### 📝 Example
+**Before:** Long paragraphs describing product features, specs, and limits.
+**After:** A clean field-value list: "Max Users: 100 | Storage: 50GB | API Rate: 1000/min"
+> How much of your content could be restructured as key-value pairs? You'd be surprised!
+Let's see how to implement this...`
         },
         {
           id: 28,
@@ -1073,19 +1622,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Extract entities/fields</li>
-                    <li>Normalize units and names</li>
-                    <li>Pack as structured rows with provenance</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Extract entities/fields</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Normalize units and names</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Pack as structured rows with provenance</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#331d6b',
-          notes: ''
+          notes: `### Implementation Steps — Structured Context Packing
+#### Step 1: Extract entities/fields
+Use NER (Named Entity Recognition) or regex to identify key fields like names, dates, quantities, and categories.
+#### Step 2: Normalize units and names
+Standardize formats — e.g., "10 GB" vs "10240 MB" → choose one consistent representation.
+#### Step 3: Pack as structured rows with provenance
+Format as key-value pairs or mini-tables. Always include source references so the LLM can cite.
+> Pro tip: LLMs are *very* good at reading structured formats like JSON, Markdown tables, or YAML — use them!
+Let's look at the trade-offs...`
         },
         {
           id: 29,
@@ -1094,31 +1653,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>High density</li>
+                      <li>Consistent formatting</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>High density</li>
-                    <li>Consistent formatting</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Conversion effort</li>
+                      <li>Nuance may be lost</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Conversion effort</li>
-                    <li>Nuance may be lost</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#331d6b',
-          notes: ''
+          notes: `### Pros & Cons — Structured Context Packing
+#### ✅ Pros
+- **High density**: Pack significantly more information per token than prose
+- **Consistent formatting**: LLMs parse structured data more reliably than unstructured text
+#### ❌ Cons
+- **Conversion effort**: Transforming prose to structured format requires NLP pipelines or manual rules
+- **Nuance may be lost**: Prose carries tone, caveats, and qualifications that structured formats may drop
+> Key question: Is your content *already* semi-structured (e.g., product specs, API docs)? If so, this is an easy win.
+Next: What about *duplicate* content wasting your token budget? Enter **Semantic Deduplication**...`
         }
       ]
     },
@@ -1133,51 +1704,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Remove overlapping/near-duplicate chunks before packing
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Remove overlapping/near-duplicate chunks before packing
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Semantic Deduplication Flow" diagram={`flowchart LR
+    A["📄 Duplicate Chunks"] --> B["🔍 Similarity Check"]
+    B --> C["🗑️ Remove Duplicates"]
+    C --> D["📦 Clean Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Cluster or similarity-threshold to drop duplicates
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Cluster or similarity-threshold to drop duplicates
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Scraped web, versioned docs, mirrored content
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Scraped web, versioned docs, mirrored content
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Same paragraph from 3 sources</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Single representative with citations to all</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Same paragraph from 3 sources</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Single representative with citations to all</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#691d6b',
-          notes: ''
+          notes: `### 10) Semantic Deduplication
+**Semantic Deduplication** 👉 'semantic dee-dup' — is about removing *redundant* chunks that say the same thing.
+#### 🎯 Goal
+**Remove overlapping or near-duplicate chunks** before packing to save tokens.
+#### ⚙️ How It Works
+Use **clustering** or **similarity thresholds** to detect and drop duplicate chunks, keeping only the best representative.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Duplicate Chunks"] --> B["🔍 Similarity Check"]
+    B --> C["🗑️ Remove Duplicates"]
+    C --> D["📦 Clean Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like cleaning your photo library — delete the duplicates, keep the best version.
+#### 📅 When to Use
+Essential for **scraped web content**, **versioned docs**, and **mirrored content** where duplicates are common.
+#### 📝 Example
+**Before:** The same paragraph appears from 3 different sources, wasting 2/3 of your token budget on repeats.
+**After:** A single representative chunk with citations to all three sources.
+> How much of your corpus is duplicated? In web-scraped data, it can be *over 30%*.
+Let's implement this...`
         },
         {
           id: 31,
@@ -1185,19 +1793,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Embed chunks; compute similarities</li>
-                    <li>Cluster or use MinHash/Jaccard</li>
-                    <li>Keep highest quality/most recent representative</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Embed chunks; compute similarities</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Cluster or use MinHash/Jaccard</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Keep highest quality/most recent representative</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#691d6b',
-          notes: ''
+          notes: `### Implementation Steps — Semantic Deduplication
+#### Step 1: Embed chunks; compute similarities
+Generate embeddings for all chunks and compute pairwise cosine similarity scores.
+#### Step 2: Cluster or use MinHash/Jaccard
+Group similar chunks using clustering algorithms, or use **MinHash** 👉 'min-hash' / **Jaccard similarity** for faster approximate dedup on large corpora.
+#### Step 3: Keep highest quality/most recent representative
+From each cluster, keep the chunk with the best quality signal (freshness, source authority, completeness).
+> Pro tip: Set your similarity threshold conservatively (e.g., 0.9+) to avoid accidentally merging chunks that look similar but have important differences.
+Let's see the trade-offs...`
         },
         {
           id: 32,
@@ -1206,31 +1824,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Saves tokens</li>
+                      <li>Reduces noise</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Saves tokens</li>
-                    <li>Reduces noise</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Might drop subtle differences</li>
+                      <li>Extra compute</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Might drop subtle differences</li>
-                    <li>Extra compute</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#691d6b',
-          notes: ''
+          notes: `### Pros & Cons — Semantic Deduplication
+#### ✅ Pros
+- **Saves tokens**: Eliminate redundant content and fit more *unique* information
+- **Reduces noise**: Less repetition means the LLM focuses on *distinct* evidence
+#### ❌ Cons
+- **Might drop subtle differences**: Two chunks that seem similar might have important nuances
+- **Extra compute**: Pairwise similarity computation can be expensive for large corpora
+> Consider: For production systems, run dedup at *index time* (not query time) to avoid latency overhead.
+Next: Let's talk about the *meta-technique* — **Token-Budget Aware Packing**...`
         }
       ]
     },
@@ -1245,51 +1875,90 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Guarantee fits within model context window
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Guarantee fits within model context window
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Token-Budget Aware Packing Flow" diagram={`flowchart LR
+    A["📄 Ranked Chunks"] --> B["📏 Token Counter"]
+    B --> C{"Fits Budget?"}
+    C -->|Yes| D["📦 Add to Context"]
+    C -->|No| E["🗜️ Compress/Skip"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Track tokens and greedily pack; compress or skip when over budget
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Track tokens and greedily pack; compress or skip when over budget
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Any limited context; multi-source retrieval
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Any limited context; multi-source retrieval
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Prompt truncation at runtime</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 4 chunks + 2 compressed fit within 4k tokens</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Prompt truncation at runtime</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> 4 chunks + 2 compressed fit within 4k tokens</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d3b',
-          notes: ''
+          notes: `### 11) Token-Budget Aware Packing
+**Token-Budget Aware Packing** is the *meta-technique* — it guarantees everything fits within your model's context window.
+#### 🎯 Goal
+**Guarantee** that packed context fits within the model's context window — no truncation, no surprises.
+#### ⚙️ How It Works
+**Track tokens** as you pack, and **greedily add** chunks. When over budget, **compress** or **skip**.
+\`\`\`mermaid
+flowchart LR
+    A["📄 Ranked Chunks"] --> B["📏 Token Counter"]
+    B --> C{"Fits Budget?"}
+    C -->|Yes| D["📦 Add to Context"]
+    C -->|No| E["🗜️ Compress/Skip"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like packing a suitcase with a weight limit — you check each item before adding it, and if it's too heavy, you either compress it or leave it out.
+#### 📅 When to Use
+**Every RAG system** should have this. It's especially critical for **multi-source retrieval** with variable chunk sizes.
+#### 📝 Example
+**Before:** Prompt gets truncated at runtime because nobody tracked total tokens.
+**After:** 4 chunks + 2 compressed chunks fit neatly within a 4k-token budget.
+> Raise your hand if you've been bitten by unexpected truncation. This technique prevents that.
+Let's implement this...`
         },
         {
           id: 34,
@@ -1297,19 +1966,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Set budget and headroom for system/prompt/answer</li>
-                    <li>Iterate ranked candidates; add if fits</li>
-                    <li>Fallback: compress or skip</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Set budget and headroom for system/prompt/answer</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Iterate ranked candidates; add if fits</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Fallback: compress or skip</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d3b',
-          notes: ''
+          notes: `### Implementation Steps — Token-Budget Aware Packing
+#### Step 1: Set budget and headroom
+Reserve space for the system prompt, user query, and expected answer length. Your *packing budget* is what's left.
+#### Step 2: Iterate ranked candidates; add if fits
+Walk through your ranked chunks. For each, count tokens and add it if there's room.
+#### Step 3: Fallback: compress or skip
+If a high-value chunk doesn't fit, try compressing it (Technique 7). If it *still* doesn't fit, skip it.
+> Pro tip: Always reserve at least 20% of your context for the answer — otherwise the LLM has no room to "think."
+Let's see the trade-offs...`
         },
         {
           id: 35,
@@ -1318,31 +1997,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Predictable behavior</li>
+                      <li>Avoids truncation</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Predictable behavior</li>
-                    <li>Avoids truncation</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Greedy may be suboptimal</li>
+                      <li>Added logic</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Greedy may be suboptimal</li>
-                    <li>Added logic</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d3b',
-          notes: ''
+          notes: `### Pros & Cons — Token-Budget Aware Packing
+#### ✅ Pros
+- **Predictable behavior**: You *know* the context will fit — no runtime surprises
+- **Avoids truncation**: Critical information is never silently cut off
+#### ❌ Cons
+- **Greedy may be suboptimal**: Packing the first chunk that fits might not be the globally optimal selection
+- **Added logic**: More code to maintain in your pipeline — token counting, budget tracking, fallback logic
+> Key insight: This isn't optional — it's *essential*. Every production RAG system needs token-budget awareness.
+Next: What if you could *adjust* how many chunks you retrieve based on query complexity? That's **Adaptive k**...`
         }
       ]
     },
@@ -1357,51 +2048,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Use fewer or more chunks depending on query complexity
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Use fewer or more chunks depending on query complexity
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Adaptive k Retrieval Flow" diagram={`flowchart LR
+    A["❓ Query"] --> B["📊 Estimate Complexity"]
+    B --> C["🔢 Adjust k"]
+    C --> D["📦 Retrieve k Chunks"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Estimate complexity and adjust k; stop when marginal gain is low
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Estimate complexity and adjust k; stop when marginal gain is low
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Ambiguous vs highly specific queries
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Ambiguous vs highly specific queries
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Fixed k=5 for all queries</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> k=2 for exact error; k=8 for policy overview</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Fixed k=5 for all queries</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> k=2 for exact error; k=8 for policy overview</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 12) Adaptive k Retrieval (Variable Cutoff)
+**Adaptive k Retrieval** 👉 'adaptive-K' — dynamically adjusts *how many* chunks you retrieve based on query complexity.
+#### 🎯 Goal
+**Use fewer or more chunks** depending on query complexity — don't use a one-size-fits-all approach.
+#### ⚙️ How It Works
+**Estimate query complexity** and adjust k (the number of retrieved chunks). Stop when adding more chunks gives diminishing returns.
+\`\`\`mermaid
+flowchart LR
+    A["❓ Query"] --> B["📊 Estimate Complexity"]
+    B --> C["🔢 Adjust k"]
+    C --> D["📦 Retrieve k Chunks"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like studying for an exam — easy questions need one page of notes, hard questions need the whole textbook.
+#### 📅 When to Use
+Best when you handle a **mix of query types** — from simple factoid lookups to complex multi-hop questions.
+#### 📝 Example
+**Before:** Fixed k=5 for every query — overkill for simple questions, insufficient for complex ones.
+**After:** k=2 for an exact error message match; k=8 for a broad policy overview.
+> What's your current k value? If it's hardcoded, you're leaving performance on the table.
+Let's see how to implement this...`
         },
         {
           id: 37,
@@ -1409,19 +2137,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Measure entropy/score distribution</li>
-                    <li>Map to k (e.g., small k for exact error strings, larger k for broad topics)</li>
-                    <li>Rerank and pack</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Measure entropy/score distribution</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Map to k (e.g., small k for exact error strings, larger k for broad topics)</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Rerank and pack</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### Implementation Steps — Adaptive k Retrieval
+#### Step 1: Measure entropy/score distribution
+Look at the retrieval score distribution — a steep drop means the query is specific (low k). A flat distribution means the query is broad (high k).
+#### Step 2: Map to k
+Use thresholds or a learned function to map score distributions to k values. E.g., entropy < 0.3 → k=2, entropy > 0.7 → k=8.
+#### Step 3: Rerank and pack
+After retrieving k chunks, rerank them (optionally with a cross-encoder) and pack using your token budget.
+> Pro tip: Log your k values and corresponding answer quality scores to build a dataset for tuning the mapping function.
+Let's look at the trade-offs...`
         },
         {
           id: 38,
@@ -1430,31 +2168,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Efficient</li>
+                      <li>Better recall when needed</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Efficient</li>
-                    <li>Better recall when needed</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Requires tuning</li>
+                      <li>Misestimation risk</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Requires tuning</li>
-                    <li>Misestimation risk</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### Pros & Cons — Adaptive k Retrieval
+#### ✅ Pros
+- **Efficient**: Doesn't waste tokens on unnecessary chunks for simple queries
+- **Better recall when needed**: Complex queries get more evidence, improving answer quality
+#### ❌ Cons
+- **Requires tuning**: The complexity-to-k mapping needs calibration for your specific domain
+- **Misestimation risk**: If complexity estimation is wrong, you'll retrieve too few or too many chunks
+> Consider: Start with a simple heuristic (score distribution shape) and refine with user feedback over time.
+And now, our final technique — the most sophisticated one: **Chain-of-Context Packing**...`
         }
       ]
     },
@@ -1469,51 +2219,88 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Goal / What It Solves</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-bullseye" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Goal / What It Solves</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Order context to match reasoning flow
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Order context to match reasoning flow
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        How It Works
+                        <MermaidPopover title="Chain-of-Context Packing Flow" diagram={`flowchart LR
+    A["❓ Query"] --> B["📋 Plan Steps"]
+    B --> C["🔍 Group Evidence"]
+    C --> D["📦 Ordered Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000`} />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Arrange evidence as steps: definitions → constraints → evidence → counterpoints
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>How It Works</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Arrange evidence as steps: definitions → constraints → evidence → counterpoints
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>When to Use</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>When to Use</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      Multi-hop QA, legal/medical reasoning, root-cause analysis
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    Multi-hop QA, legal/medical reasoning, root-cause analysis
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.6}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Example (Before → After)</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <div><strong>Before:</strong> Mixed, distracting context order</div>
+                      <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Law → precedents → case facts → exceptions</div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Example (Before → After)</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <div><strong>Before:</strong> Mixed, distracting context order</div>
-                    <div style={{ marginTop: '0.3rem' }}><strong>After:</strong> Law → precedents → case facts → exceptions</div>
-                  </div>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d3d6b',
-          notes: ''
+          notes: `### 13) Chain-of-Context Packing (CoC)
+Our final technique — **Chain-of-Context Packing** 👉 'CoC' — is the most *sophisticated*. It *orders* context to match the LLM's reasoning flow.
+#### 🎯 Goal
+**Order context to match reasoning flow** — present evidence in the order the LLM needs to think through the problem.
+#### ⚙️ How It Works
+Arrange evidence as **reasoning steps**: definitions → constraints → evidence → counterpoints, matching how the LLM would naturally reason.
+\`\`\`mermaid
+flowchart LR
+    A["❓ Query"] --> B["📋 Plan Steps"]
+    B --> C["🔍 Group Evidence"]
+    C --> D["📦 Ordered Context"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+\`\`\`
+Think of it like building a legal argument — you start with the law, then precedents, then case facts, then exceptions.
+#### 📅 When to Use
+Essential for **multi-hop QA**, **legal/medical reasoning**, and **root-cause analysis** — anywhere the *order* of evidence matters.
+#### 📝 Example
+**Before:** Mixed, distracting context order — the LLM jumps between unrelated facts.
+**After:** Law → precedents → case facts → exceptions — the LLM follows a clear reasoning path.
+> Have you ever noticed that *reordering* the same context changes the LLM's answer? That's why CoC matters.
+Let's see the implementation...`
         },
         {
           id: 40,
@@ -1521,19 +2308,29 @@ export const contextPackingDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1rem' }}>
-                <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
-                  <ol style={{ fontSize: '1.2rem' }}>
-                    <li>Draft reasoning steps from the query</li>
-                    <li>Group retrieved chunks per step</li>
-                    <li>Pack in step order with labels and citations</li>
-                  </ol>
+              <GSAPAnimated animation="slideInTop">
+                <div style={{ marginBottom: '1rem' }}>
+                  <div style={{ padding: '0.8rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '6px' }}>
+                    <GSAPStaggerList stagger={0.15} delay={0.3}>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>1. Draft reasoning steps from the query</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>2. Group retrieved chunks per step</div>
+                      <div style={{ fontSize: '1.2rem', padding: '0.3rem 0' }}>3. Pack in step order with labels and citations</div>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d3d6b',
-          notes: ''
+          notes: `### Implementation Steps — Chain-of-Context Packing
+#### Step 1: Draft reasoning steps from the query
+Analyze the query to identify the logical steps needed to answer it. E.g., "Is this refund valid?" → check policy, check date, check exceptions.
+#### Step 2: Group retrieved chunks per step
+Assign each retrieved chunk to a reasoning step based on its content.
+#### Step 3: Pack in step order with labels and citations
+Order the context following the reasoning steps. Add labels like "[Step 1: Policy]", "[Step 2: Date Check]" so the LLM can follow along.
+> Pro tip: For complex queries, use an LLM to generate the reasoning plan — it's faster and more accurate than hand-coding rules.
+Let's discuss the final trade-offs...`
         },
         {
           id: 41,
@@ -1542,31 +2339,43 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Pros</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Pros</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Better chain-of-thought alignment</li>
+                      <li>Clearer answers</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Better chain-of-thought alignment</li>
-                    <li>Clearer answers</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    <strong>Cons</strong>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.3}>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                      <strong>Cons</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Overhead to plan</li>
+                      <li>Needs accurate step mapping</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Overhead to plan</li>
-                    <li>Needs accurate step mapping</li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d3d6b',
-          notes: ''
+          notes: `### Pros & Cons — Chain-of-Context Packing
+#### ✅ Pros
+- **Better chain-of-thought alignment**: The LLM's reasoning follows a clear path, producing more coherent answers
+- **Clearer answers**: Users get well-structured, step-by-step explanations
+#### ❌ Cons
+- **Overhead to plan**: Generating a reasoning plan adds latency and complexity
+- **Needs accurate step mapping**: If chunks are assigned to the wrong reasoning step, the LLM may get confused
+> Final thought: CoC is the *capstone* technique. Start with simpler techniques and add CoC when your queries demand complex reasoning.
+Let's wrap up with our summary and best practices...`
         }
       ]
     },
@@ -1580,54 +2389,67 @@ export const contextPackingDeck: Deck = {
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ marginBottom: '1.5rem' }}>
-                <div style={{ color: '#98c379', marginBottom: '1rem' }}>
-                  <SvgIcon iconName="duo-check-circle" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Key Takeaways</strong>
-                </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                  <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #61dafb' }}>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Combine techniques</strong>
-                    </div>
-                    <div style={{ fontSize: '1.2rem' }}>
-                      Semantic chunking + dedup + relevance packing as a strong baseline
-                    </div>
-                  </div>
-                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #98c379' }}>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Track token budget</strong>
-                    </div>
-                    <div style={{ fontSize: '1.2rem' }}>
-                      Always monitor and enforce token limits; compress selectively
-                    </div>
-                  </div>
-                  <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Add hierarchy</strong>
-                    </div>
-                    <div style={{ fontSize: '1.2rem' }}>
-                      Parent summaries and global + local blends improve context quality
-                    </div>
-                  </div>
-                  <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
-                    <div style={{ marginBottom: '0.5rem' }}>
-                      <SvgIcon iconName="duo-link" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                      <strong>Optimize order</strong>
-                    </div>
-                    <div style={{ fontSize: '1.2rem' }}>
-                      Order context for reasoning flow when questions are complex
-                    </div>
+              <GSAPAnimated animation="scaleIn">
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <div style={{ color: '#98c379', marginBottom: '1rem' }}>
+                    <SvgIcon iconName="duo-check-circle" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Key Takeaways</strong>
                   </div>
                 </div>
-              </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <div style={{ background: 'rgba(97, 218, 251, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #61dafb', marginBottom: '1rem' }}>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gears" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Combine techniques</strong>
+                  </div>
+                  <div style={{ fontSize: '1.2rem' }}>
+                    Semantic chunking + dedup + relevance packing as a strong baseline
+                  </div>
+                </div>
+                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #98c379', marginBottom: '1rem' }}>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Track token budget</strong>
+                  </div>
+                  <div style={{ fontSize: '1.2rem' }}>
+                    Always monitor and enforce token limits; compress selectively
+                  </div>
+                </div>
+                <div style={{ background: 'rgba(229, 192, 123, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #e5c07b', marginBottom: '1rem' }}>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-circle-nodes" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Add hierarchy</strong>
+                  </div>
+                  <div style={{ fontSize: '1.2rem' }}>
+                    Parent summaries and global + local blends improve context quality
+                  </div>
+                </div>
+                <div style={{ background: 'rgba(198, 120, 221, 0.1)', padding: '0.8rem', borderRadius: '8px', borderLeft: '4px solid #c678dd' }}>
+                  <div style={{ marginBottom: '0.5rem' }}>
+                    <SvgIcon iconName="duo-link" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Optimize order</strong>
+                  </div>
+                  <div style={{ fontSize: '1.2rem' }}>
+                    Order context for reasoning flow when questions are complex
+                  </div>
+                </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b38',
-          notes: ''
+          notes: `### Summary / Best Practices
+Let's bring it all together. After 13 techniques, here are the **four key takeaways**:
+#### 🔧 Combine techniques
+Don't use just one — **Semantic Chunking + Dedup + Relevance Packing** is a strong *baseline* that works for most systems.
+#### 📊 Track token budget
+*Always* monitor and enforce token limits. **Token-Budget Aware Packing** (Technique 11) should be in every pipeline.
+#### 🏗️ Add hierarchy
+**Parent summaries** and **global + local blends** improve context quality dramatically, especially for structured documents.
+#### 🔗 Optimize order
+For complex reasoning tasks, **ordering context** for reasoning flow (CoC) can make the difference between a good and great answer.
+> Remember: The best RAG systems use 3-5 of these techniques together. Start simple, measure, iterate.
+Let's close with practical implementation tips...`
         },
         {
           id: 43,
@@ -1636,37 +2458,50 @@ export const contextPackingDeck: Deck = {
             <div style={{ fontSize: '2rem', lineHeight: '1.6', textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}></div>
 
-              <div style={{ marginBottom: '1.5rem' }}>
-                <div style={{ color: '#e5c07b', marginBottom: '1rem' }}>
-                  <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Implementation Tips</strong>
+              <GSAPAnimated animation="bounceIn">
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <div style={{ color: '#e5c07b', marginBottom: '1rem' }}>
+                    <SvgIcon iconName="duo-clipboard-list" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Implementation Tips</strong>
+                  </div>
+                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem', lineHeight: '1.8' }}>
+                    <li>Cache summaries/compressions; log provenance per chunk</li>
+                    <li>Measure with answer-grounding and citation metrics</li>
+                    <li>Start simple (k, relevance) → iterate with adaptive and CoC</li>
+                  </ul>
                 </div>
-                <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem', lineHeight: '1.8' }}>
-                  <li>Cache summaries/compressions; log provenance per chunk</li>
-                  <li>Measure with answer-grounding and citation metrics</li>
-                  <li>Start simple (k, relevance) → iterate with adaptive and CoC</li>
-                </ul>
-              </div>
+              </GSAPAnimated>
 
-              <div>
-                <div style={{ color: '#61dafb', marginBottom: '1rem' }}>
-                  <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Next Steps</strong>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <div>
+                  <div style={{ color: '#61dafb', marginBottom: '1rem' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Next Steps</strong>
+                  </div>
+                  <div style={{ background: 'rgba(97, 218, 251, 0.15)', padding: '1rem', borderRadius: '8px' }}>
+                    <ol style={{ marginLeft: '1.5rem', fontSize: '1.2rem', marginBottom: 0, lineHeight: '1.8' }}>
+                      <li>Pilot on one corpus; A/B two packing variants</li>
+                      <li>Instrument latency, cost, and answer quality</li>
+                    </ol>
+                  </div>
                 </div>
-                <div style={{ background: 'rgba(97, 218, 251, 0.15)', padding: '1rem', borderRadius: '8px' }}>
-                  <ol style={{ marginLeft: '1.5rem', fontSize: '1.2rem', marginBottom: 0, lineHeight: '1.8' }}>
-                    <li>Pilot on one corpus; A/B two packing variants</li>
-                    <li>Instrument latency, cost, and answer quality</li>
-                  </ol>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b38',
-          notes: ''
+          notes: `### Implementation Tips & Next Steps
+Here's your action plan for taking these techniques into production:
+#### 💡 Implementation Tips
+- **Cache everything** — summaries, compressions, dedup results. Don't recompute on every query.
+- **Measure with answer-grounding and citation metrics** — track whether answers actually use the packed context.
+- **Start simple** — begin with fixed k and relevance scoring, then iterate with adaptive k and CoC.
+#### 🚀 Next Steps
+1. **Pilot on one corpus** — pick your messiest data source and A/B test two packing variants
+2. **Instrument everything** — track latency, cost, and answer quality for each technique
+> Thank you! Questions? Remember: context packing is a *journey*, not a destination. Start with one technique today and build from there.
+**Prepared by:** Nisar A | **niisar.com**`
         }
       ]
     }
   ]
 };
-
