@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
@@ -9,6 +11,12 @@ export const llmCachingDeck: Deck = {
   description: 'Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers',
   category: 'RAG',
   theme: 'black',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -21,20 +29,44 @@ export const llmCachingDeck: Deck = {
           title: '13 Caching Patterns That Save Cost in LLM Systems',
           content: (
             <div>
-              <div style={{ fontSize: '2rem', marginBottom: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <SvgIcon iconName="duo-microchip" sizeName="2x" style={{ marginRight: '1rem' }} darkModeInvert={true} />
-                LLM CACHING PATTERNS
-              </div>
-              <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
-                Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers.
-              </div>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              <GSAPAnimated animation="rotateIn" duration={1} delay={0}>
+                <div style={{ fontSize: '2rem', marginBottom: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <SvgIcon iconName="duo-microchip" sizeName="2x" style={{ marginRight: '1rem' }} darkModeInvert={true} />
+                  LLM CACHING PATTERNS
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <div style={{ fontSize: '1.2rem', color: '#e5c07b', marginBottom: '2rem' }}>
+                  Optimize latency and cost across RAG and chat by applying caching at input, retrieval, generation, and personalization layers.
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.6}>
+                <div>
+                  <p><strong>Prepared by:</strong> Nisar A</p>
+                  <p><strong>Date:</strong> November 7, 2025</p>
+                  <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### 13 Caching Patterns That Save Cost in LLM Systems
+Welcome everyone! Today we're going to explore one of the most practical topics in production **LLM 👉 'el-el-em'** systems: caching patterns that can dramatically reduce both your costs and latency.
+
+#### Why This Matters
+Building **LLM systems** is expensive. Every API call costs money, and every millisecond of latency impacts user experience. But here's the good news: most applications show significant repetition in queries, retrieval operations, and even generation patterns. That's where intelligent caching comes in.
+
+#### What We'll Cover Today
+We're going to walk through **thirteen proven caching patterns** that address different layers of your LLM stack. From simple query embedding caches all the way to sophisticated partial response reconstruction, each pattern solves a specific problem and brings measurable savings.
+
+#### The Journey Ahead
+Think of caching as a layered strategy. You have the **input layer** where queries come in, the **retrieval layer** where you search your knowledge base, the **generation layer** where the model produces responses, and the **personalization layer** where you tailor outputs to individual users. Each layer has its own caching opportunities.
+
+> Ask the audience: "How many of you are currently running LLM applications in production?"
+
+These patterns aren't just theoretical. They're battle-tested approaches used by companies processing millions of LLM requests daily. By the end of this presentation, you'll understand exactly which patterns to apply and when.
+
+Let's begin by understanding why caching is so critical for LLM systems.`
         },
         {
           id: 2,
@@ -43,75 +75,125 @@ export const llmCachingDeck: Deck = {
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                <div>
-                  <div style={{ color: '#e06c75', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-chart-line" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong style={{ fontSize: '2rem' }}>Cost Drivers</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#e06c75', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-chart-line" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong style={{ fontSize: '2rem' }}>Cost Drivers</strong>
+                    </div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Tokenization, embedding generation, vector search operations</li>
+                      <li>Re-ranking of retrieved content</li>
+                      <li>Generation tokens, prompt processing, and tool calls</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong style={{ fontSize: '2rem' }}>What Caching Saves</strong>
+                    </div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Repeated preprocessing and tokenization steps</li>
+                      <li>Redundant retrieval operations</li>
+                      <li>Lower TTFT (time to first token) and tail latency</li>
+                    </ul>
+                  </div>
+                </div>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-network-wired" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong style={{ fontSize: '2rem' }}>
+                        Caching Layers
+                        <MermaidPopover
+                          title="Caching Architecture Layers"
+                          diagram={`flowchart TB
+    A["🌐 Edge/App Cache"] --> B["📊 Vector/Index Cache"]
+    B --> C["🤖 Model Runtime Cache"]
+    C --> D["👤 User/Session Memory"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#81c784,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#e1bee7,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Edge/app cache for responses and templates</li>
+                      <li>Vector/index cache for retrieval results</li>
+                      <li>Model-runtime cache (KV/logits) for generation</li>
+                      <li>User/session memory for contextual state</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong style={{ fontSize: '2rem' }}>Key Performance Indicators</strong>
+                    </div>
+                    <ul style={{ fontSize: '1.2rem' }}>
+                      <li>Cache hit rate and miss penalty cost</li>
+                      <li>P95 latency improvements</li>
+                      <li>Freshness SLAs for dynamic data</li>
+                      <li>Storage cost vs. compute savings ratio</li>
+                    </ul>
+                  </div>
+                </div>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong style={{ fontSize: '2rem' }}>Caching Principles:</strong>
                   </div>
                   <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Tokenization, embedding generation, vector search operations</li>
-                    <li>Re-ranking of retrieved content</li>
-                    <li>Generation tokens, prompt processing, and tool calls</li>
+                    <li>Stable cache keys with version tags</li>
+                    <li>Balanced TTLs and invalidation strategies</li>
+                    <li>Privacy and security considerations for sensitive data</li>
                   </ul>
                 </div>
-
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong style={{ fontSize: '2rem' }}>What Caching Saves</strong>
-                  </div>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Repeated preprocessing and tokenization steps</li>
-                    <li>Redundant retrieval operations</li>
-                    <li>Lower TTFT (time to first token) and tail latency</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-network-wired" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong style={{ fontSize: '2rem' }}>Caching Layers</strong>
-                  </div>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Edge/app cache for responses and templates</li>
-                    <li>Vector/index cache for retrieval results</li>
-                    <li>Model-runtime cache (KV/logits) for generation</li>
-                    <li>User/session memory for contextual state</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong style={{ fontSize: '2rem' }}>Key Performance Indicators</strong>
-                  </div>
-                  <ul style={{ fontSize: '1.2rem' }}>
-                    <li>Cache hit rate and miss penalty cost</li>
-                    <li>P95 latency improvements</li>
-                    <li>Freshness SLAs for dynamic data</li>
-                    <li>Storage cost vs. compute savings ratio</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(229, 192, 123, 0.1)', borderRadius: '8px', borderLeft: '4px solid #e5c07b' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong style={{ fontSize: '2rem' }}>Caching Principles:</strong>
-                </div>
-                <ul style={{ fontSize: '1.2rem' }}>
-                  <li>Stable cache keys with version tags</li>
-                  <li>Balanced TTLs and invalidation strategies</li>
-                  <li>Privacy and security considerations for sensitive data</li>
-                </ul>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d1d',
-          notes: ''
+          notes: `### Why Caching Matters in LLM Systems
+Now let's dive into why caching is absolutely critical when you're building production LLM systems.
+
+#### The Cost Reality
+Let's talk numbers first. Every time your system processes a query, you're paying for multiple expensive operations. **Tokenization** breaks down your text into tokens. **Embedding generation** converts text into high-dimensional vectors, which requires running neural networks. **Vector search** operations scan through potentially millions of vectors. Then there's **re-ranking** of retrieved content, which often involves another model call. And finally, the big one: **generation tokens** from the LLM itself, along with prompt processing and any tool calls.
+
+Think about a typical RAG 👉 'rag' system handling ten thousand queries per day. If even thirty percent of those queries are repeated or very similar, you're literally burning money on redundant computations. That's where intelligent caching becomes your best friend.
+
+#### What Caching Actually Saves
+Caching eliminates three major bottlenecks. First, you skip **repeated preprocessing and tokenization**. These steps might seem fast, but they add up at scale. Second, you avoid **redundant retrieval operations**. Why search your vector database again when you already found the best results for this query yesterday? Third, and perhaps most importantly, caching dramatically lowers your **TTFT** 👉 'tee-tee-eff-tee', which stands for **time to first token**, and your **tail latency**. Users notice when responses are slow, and caching can turn a three-second response into a three-hundred-millisecond response.
+
+#### The Four Caching Layers
+\`\`\`mermaid
+flowchart TB
+    A["🌐 Edge/App Cache"] --> B["📊 Vector/Index Cache"]
+    B --> C["🤖 Model Runtime Cache"]
+    C --> D["👤 User/Session Memory"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#81c784,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#e1bee7,color:#000
+\`\`\`
+
+Caching isn't one-size-fits-all. We work with **four distinct layers**. At the top, you have your **edge or application cache** that stores complete responses and templates. This is your first line of defense. Moving deeper, there's the **vector or index cache** that holds retrieval results. Then you get into the model itself with **runtime caches** like KV caches 👉 'kay-vee' and logit caches that make generation faster. Finally, at the personalization layer, you have **user and session memory** that maintains contextual state across conversations.
+
+#### Measuring Success
+How do you know if your caching strategy is working? Four key metrics tell the story. Your **cache hit rate** shows what percentage of requests are served from cache, and the **miss penalty cost** shows how expensive it is when you don't hit cache. **P95 latency** 👉 'pee ninety-five' improvements demonstrate the user experience impact. You need to balance **freshness SLAs** 👉 'service level agreements' because some data needs to be current. And finally, track your **storage cost versus compute savings ratio** to ensure caching is economically viable.
+
+#### The Guiding Principles
+Three principles govern effective caching. Use **stable cache keys with version tags** so you can invalidate when needed. Find the right balance between **TTLs** 👉 'tee-tee-els', or time-to-live values, and your invalidation strategies. And never forget **privacy and security** when you're caching sensitive data. A leaked cache entry with personal information is a disaster waiting to happen.
+
+Now that we understand why caching matters, let's explore the first of our thirteen patterns.`
         }
       ]
     },
