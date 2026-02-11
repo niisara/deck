@@ -1537,20 +1537,45 @@ If you do implement ToT in production, here are success patterns: (1) start with
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Retrieve external documents and condition the model on them to ground responses.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Grounded, cited answers from knowledge base</li>
-                <li>Fresh information beyond training cutoff</li>
-                <li>Reduced hallucinations with source grounding</li>
-                <li>Verifiable responses with citations</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for tasks requiring fresh or long-tail knowledge, compliance requirements, and when citations are needed. Grounds responses in retrieved documents.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Retrieve external documents and condition the model on them to ground responses.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.6}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Grounded, cited answers from knowledge base</li>
+                  <li>Fresh information beyond training cutoff</li>
+                  <li>Reduced hallucinations with source grounding</li>
+                  <li>Verifiable responses with citations</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p style={{ marginTop: '20px' }}>Best for tasks requiring fresh or long-tail knowledge, compliance requirements, and when citations are needed. Grounds responses in retrieved documents.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - Overview (Pronunciation: "rag" 👉 like a cleaning rag)
+
+#### What is RAG?
+**RAG** stands for **Retrieval-Augmented Generation** — think of it as giving your AI a *library card* and a *search engine* before asking it to write an essay. Instead of relying solely on what the model memorized during training, RAG retrieves relevant documents from an external knowledge base and uses them as context for generating responses.
+
+#### The Two-Stage Process
+RAG works in two distinct stages: First, **retrieval** — when you ask a question, the system searches a knowledge base (like internal documents, PDFs, or databases) and finds the most relevant passages. Second, **generation** — the LLM receives these retrieved passages as context and generates a response grounded in that specific information.
+
+#### Why This Matters
+Here's the magic: RAG solves three critical problems with vanilla LLMs. First, **hallucinations** — by grounding responses in retrieved documents, you dramatically reduce made-up facts. Second, **freshness** — the model can access information published *after* its training cutoff. Third, **verifiability** — you can cite sources and trace answers back to original documents.
+
+#### Real-World Examples
+Imagine an **enterprise policy assistant** where employees ask "What's our remote work policy?" The system retrieves the relevant HR document sections and generates an answer with citations like "[Source: Employee Handbook Section 4.2]." Or a **customer support chatbot** that searches your product documentation to answer technical questions with exact references.
+
+#### When to Use RAG
+RAG shines when you need **fresh knowledge** (news, updates), **long-tail information** (niche topics), **compliance requirements** (legal, medical), or **citations** for trust and auditability. If your use case needs grounded, verifiable answers from specific sources, RAG is your go-to pattern.`
         },
         {
           id: 36,
@@ -1558,17 +1583,47 @@ If you do implement ToT in production, here are success patterns: (1) start with
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>RAG uses a two-stage process: retrieval then generation. First, relevant documents are retrieved from a knowledge base (typically using vector similarity search). Then, these retrieved documents are provided as context to the LLM, which generates an answer grounded in the retrieved information. This approach combines the LLM's language understanding with external knowledge.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires retriever/vector database infrastructure</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.2}>
+                <p>RAG uses a two-stage process: retrieval then generation. First, relevant documents are retrieved from a knowledge base (typically using vector similarity search). Then, these retrieved documents are provided as context to the LLM, which generates an answer grounded in the retrieved information. This approach combines the LLM's language understanding with external knowledge.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires retriever/vector database infrastructure</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - How It Works (The Technical Deep-Dive)
+
+#### The Two-Stage Architecture
+Let's break down how RAG actually works under the hood. Stage one is **retrieval** — when a user asks a question, you first convert that question into a vector embedding (a mathematical representation of meaning). Then, you search a vector database to find the most semantically similar document chunks. Think of it like Google search, but instead of keyword matching, you're matching *meaning* and *concepts*.
+
+#### Vector Databases & Embeddings
+Here's where it gets interesting: **Vector databases** like Pinecone, Weaviate, or Chroma store your documents as high-dimensional vectors (typically 768 to 1536 dimensions). An **embedding model** (like OpenAI's text-embedding-ada-002 or open-source alternatives) converts both your documents and queries into these vectors. The database then performs **semantic search** — finding documents that are conceptually similar even if they use different words.
+
+#### Generation with Context
+Stage two is **generation** — once you've retrieved the top 3-10 most relevant passages, you inject them into the LLM prompt along with the original question. The LLM now has *grounded context* to work with. It's like the difference between asking someone to recall from memory versus giving them reference materials to consult. The model generates an answer based on the retrieved documents, often including citations.
+
+#### Why This Reduces Hallucinations
+RAG dramatically reduces hallucinations because the model isn't just generating from parametric memory — it's reading from actual source documents *right now*. If the retrieved documents contain the answer, the model can quote them directly. If they don't, a well-prompted model will say "I don't have enough information" rather than making something up.
+
+#### Infrastructure Requirements
+To implement RAG, you need three components: **1)** An embedding model to vectorize documents and queries, **2)** A vector database to store and search embeddings, and **3)** An LLM with a long context window to consume retrieved passages. The complexity is intermediate because you're orchestrating multiple systems, but frameworks like LangChain and LlamaIndex make this easier.
+
+#### Real-World Example Unpacked
+That enterprise policy assistant we mentioned? Here's how it works: An employee asks "What's our parental leave policy?" The system embeds this question, searches a vector database of HR documents, retrieves the relevant policy sections, and prompts the LLM with: "Given these retrieved passages, answer the question and cite sources." The LLM responds: "Our parental leave policy offers 16 weeks paid leave [Source: Employee Handbook Section 7.3]." The employee gets a verified, cited answer in seconds.`
         },
         {
           id: 37,
@@ -1576,21 +1631,47 @@ If you do implement ToT in production, here are success patterns: (1) start with
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given these retrieved passages, answer the user question. Cite sources by ID.
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given these retrieved passages, answer the user question. Cite sources by ID.
 Passages:
 [1] The first COVID-19 vaccine was approved for emergency use in December 2020.
 [2] mRNA vaccines use genetic material to teach cells to make a protein that triggers an immune response.
 [3] Traditional vaccines use weakened or inactivated viruses.
 Question: How do mRNA COVID vaccines work?"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires vector database (Pinecone, Weaviate, Chroma) and embedding model for retrieval.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires vector database (Pinecone, Weaviate, Chroma) and embedding model for retrieval.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - Implementation (Let's Build It)
+
+#### Anatomy of a RAG Prompt
+Look at this example prompt structure — it's surprisingly simple but incredibly powerful. You start with clear instructions: "Given these retrieved passages, answer the question and cite sources." Then you provide the **retrieved passages** with IDs (like [1], [2], [3]) so the model can reference them. Finally, you include the **user's question**. This structure gives the model everything it needs: context, citations, and a clear task.
+
+#### Why This Example Works
+In this COVID vaccine example, we've retrieved three passages: passage [1] gives timeline context, passage [2] explains mRNA mechanism, and passage [3] provides contrast with traditional vaccines. When the model generates an answer, it can say: "mRNA COVID vaccines work by using genetic material to teach cells to make a protein that triggers an immune response [Source: 2]." The answer is grounded, cited, and verifiable.
+
+#### The Retrieval Pipeline
+Behind this prompt, there's a whole pipeline: **Step 1** — The user asks "How do mRNA COVID vaccines work?" **Step 2** — You embed this question using an embedding model. **Step 3** — You search your vector database for similar content. **Step 4** — The database returns these three most relevant passages. **Step 5** — You construct this prompt with passages and question. **Step 6** — The LLM generates a grounded answer with citations.
+
+#### Infrastructure Requirements
+To run RAG in production, you need several components: **1) Vector Database** — Pinecone, Weaviate, Chroma, or FAISS for storing and searching embeddings. **2) Embedding Model** — OpenAI's text-embedding-ada-002, Cohere's embed-v3, or open-source models like sentence-transformers. **3) LLM** — GPT-4, Claude 3.5, or Gemini 1.5 with long context windows (typically 8k-200k tokens). **4) Orchestration** — LangChain, LlamaIndex, or custom code to coordinate retrieval and generation.
+
+#### Best Practices for Prompts
+Here are some pro tips: **1) Always include citation instructions** — tell the model *how* to cite (by ID, by title, etc.). **2) Number your passages** — makes citations easier and more reliable. **3) Keep passages concise** — chunk documents into 200-500 word segments for optimal retrieval. **4) Add instructions for "no answer" scenarios** — tell the model to say "I don't have enough information" if the passages don't contain the answer. **5) Use structured output** — ask for JSON or markdown to make parsing citations easier.
+
+#### Scaling Considerations
+When you move from prototype to production, consider: **Indexing strategy** — how often do you update your vector database? **Chunk size** — larger chunks give more context but reduce precision, smaller chunks are more precise but lose context. **Retrieval count** — typically 3-10 passages work best, balancing context richness with token costs. **Hybrid search** — combine semantic (vector) search with keyword (BM25) search for better results.`
         },
         {
           id: 38,
@@ -1598,17 +1679,42 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Garbage-in garbage-out - retrieval quality critical</li>
-                <li>Retrieval quality issues impact answer accuracy</li>
-                <li>Citation drift - model may not cite accurately</li>
-                <li>Chunking challenges affect information retrieval</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Garbage-in garbage-out - retrieval quality critical</li>
+                  <li>Retrieval quality issues impact answer accuracy</li>
+                  <li>Citation drift - model may not cite accurately</li>
+                  <li>Chunking challenges affect information retrieval</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - Considerations (The Gotchas)
+
+#### Garbage In, Garbage Out
+Here's the brutal truth about RAG: **retrieval quality is everything**. If your retrieval system returns irrelevant or poor-quality documents, the LLM will generate irrelevant or incorrect answers. It's like asking someone to write a book report but handing them the wrong book — even a genius can't give you the right answer with the wrong source material. This is the single biggest failure mode in RAG systems.
+
+#### The Retrieval Quality Problem
+Retrieval can fail in several ways: **1) Semantic mismatch** — the user asks "How do I reset my password?" but your docs use the phrase "credential recovery," so the search misses it. **2) Recency bias** — vector search might prioritize frequently-accessed documents over actually relevant ones. **3) Chunking boundaries** — important context gets split across chunks, so neither chunk ranks highly. **4) Query ambiguity** — user asks "What's the policy on remote work?" but doesn't specify location, and different regions have different policies.
+
+#### Citation Drift
+Here's a sneaky problem: **citation drift** — sometimes the model generates an answer that's *loosely* based on retrieved passages but doesn't cite them accurately. Or worse, it cites passages that don't actually support the claim. This happens because LLMs are generative models, not database queries — they can drift from the source material. To mitigate this, explicitly instruct the model: "Only cite passages that directly support your answer. If you're making an inference, say so."
+
+#### Chunking Is Hard
+**Chunking strategy** — how you split documents into searchable chunks — dramatically impacts RAG quality. Too small (50 words), and you lose context. Too large (1000 words), and retrieval becomes imprecise. The sweet spot is usually 200-500 words, but it depends on your domain. Also consider **overlap** — overlapping chunks by 20-50 words helps preserve context across boundaries. And **metadata** — adding titles, dates, and categories to chunks improves retrieval.
+
+#### Context Window Limitations
+Even with long context windows (100k-200k tokens), you can't just dump *everything* into the prompt. **1) Cost** — more tokens = higher cost. **2) Latency** — larger contexts take longer to process. **3) Lost-in-the-middle** — research shows LLMs struggle to use information in the middle of very long contexts. They're better at using information at the beginning and end. So even with RAG, you need to be strategic about what you retrieve and how you present it.
+
+#### When RAG Isn't Enough
+Sometimes RAG isn't the right solution: **1) Real-time data** — if you need *right now* information (stock prices, weather), RAG with a batch-updated database won't work. Use API calls instead. **2) Complex reasoning** — if the answer requires synthesizing information across many documents with multi-hop reasoning, RAG alone might not be enough. Consider combining with Chain-of-Thought or multi-agent systems. **3) Adversarial queries** — if users try to "jailbreak" by asking for information you don't want to provide, RAG won't help if that information is in your database.
+
+#### Practical Tips to Overcome These Issues
+Here's how to improve RAG systems: **1) Hybrid search** — combine vector search with keyword search (BM25) for better retrieval. **2) Re-ranking** — retrieve 20 candidates, then use a cross-encoder to re-rank the top 5 for the LLM. **3) Query expansion** — rewrite the user query in multiple ways to improve recall. **4) Verification loops** — ask the model to quote passages verbatim to verify citations. **5) Metadata filtering** — let users filter by date, category, or source before semantic search. **6) Human-in-the-loop** — for high-stakes applications, have humans verify retrieved passages before generation.`
         }
       ]
     },
