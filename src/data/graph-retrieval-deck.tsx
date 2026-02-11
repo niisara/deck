@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
@@ -9,6 +11,12 @@ export const graphRetrievalDeck: Deck = {
   description: 'A practical cheat-sheet for precision, reasoning, and reliable context',
   category: 'RAG',
   theme: 'sky',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -21,31 +29,55 @@ export const graphRetrievalDeck: Deck = {
           title: '13 Graph-Based Retrieval Techniques',
           content: (
             <div>
-              <div style={{ fontSize: '1.5rem', color: '#0ea5e9' }}>
-                <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-                A practical cheat-sheet for precision, reasoning, and reliable context
-              </div>
-              <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
-                <div>
-                  <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-                  <strong>Audience:</strong> RAG engineers, search engineers, data scientists
+              <GSAPAnimated animation="rotateIn" duration={1.2}>
+                <div style={{ fontSize: '1.5rem', color: '#0ea5e9' }}>
+                  <SvgIcon iconName="duo-diagram-project" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                  A practical cheat-sheet for precision, reasoning, and reliable context
                 </div>
-                <div>
-                  <SvgIcon iconName="duo-list-check" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-                  <strong>What you'll get:</strong> 13 techniques, when to use them, simple steps, pros/cons
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" duration={0.8} delay={0.3}>
+                <div style={{ fontSize: '1.2rem', color: '#10b981', lineHeight: '2' }}>
+                  <div>
+                    <SvgIcon iconName="duo-users-group" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                    <strong>Audience:</strong> RAG 👉 'rag' engineers, search engineers, data scientists
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-list-check" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                    <strong>What you'll get:</strong> 13 techniques, when to use them, simple steps, pros/cons
+                  </div>
+                  <div>
+                    <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} darkModeInvert={true} />
+                    <strong>Note:</strong> Simple visuals only (no complex diagrams)
+                  </div>
                 </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" duration={0.8} delay={0.6}>
                 <div>
-                  <SvgIcon iconName="duo-circle-info" sizeName="xl" style={iconStyle} darkModeInvert={true} />
-                  <strong>Note:</strong> Simple visuals only (no complex diagrams)
+                  <p><strong>Prepared by:</strong> Nisar A</p>
+                  <p><strong>Date:</strong> November 7, 2025</p>
+                  <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
                 </div>
-              </div>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#291e5b',
-          notes: ''
+          notes: `### 13 Graph-Based Retrieval Techniques
+
+Welcome everyone! Today we're diving into an exciting and increasingly important area in modern information retrieval: **graph-based retrieval techniques**. If you're working with RAG 👉 'rag' systems, building search engines, or trying to improve how your applications find and connect information, this presentation is your practical guide.
+
+#### What Are Graph-Based Retrieval Techniques?
+Traditional search relies on finding individual documents that match your query. But what if you want to understand **relationships** between concepts? What if you need to trace **connections** between entities? That's where graph-based retrieval shines. Instead of treating documents as isolated islands, we organize information as a **network of interconnected nodes** where relationships matter just as much as the content itself.
+
+#### Who Is This For?
+This deck is designed for **RAG engineers** building retrieval-augmented generation systems, **search engineers** improving information discovery, and **data scientists** working with knowledge graphs. Whether you're a complete beginner or have some experience, we'll break down thirteen powerful techniques in simple, practical terms.
+
+#### What You'll Learn
+By the end of this presentation, you'll have a comprehensive **cheat-sheet** covering thirteen distinct graph-based retrieval techniques. For each technique, we'll explore **when to use it**, **how it works**, **implementation steps**, and the **pros and cons** you need to consider. This isn't just theory; it's practical knowledge you can apply immediately.
+
+#### Our Approach
+We're keeping things **simple and visual**. No overwhelming complexity, no intimidating mathematical formulas. Just clear explanations, straightforward diagrams, and real-world guidance. Think of this as your friendly companion guide to navigating the world of graph-based retrieval.
+
+Let's get started with an overview of all thirteen techniques!`
         },
         {
           id: 2,
@@ -53,9 +85,44 @@ export const graphRetrievalDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ fontSize: '1.2rem', lineHeight: '1.8', textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}></div>
+              <div style={{ marginBottom: '30px' }}>
+                <h4>
+                  Technique Categories
+                  <MermaidPopover
+                    title="Graph Retrieval Technique Landscape"
+                    diagram={`graph TB
+    A[13 Graph Retrieval<br/>Techniques] --> B[Basic Retrieval<br/>1-3]
+    A --> C[Path & Community<br/>4-6]
+    A --> D[Hybrid Methods<br/>7-8]
+    A --> E[Advanced Techniques<br/>9-13]
+    
+    B --> B1[Node-Level]
+    B --> B2[Edge-Weighted]
+    B --> B3[Neighborhood]
+    
+    C --> C1[Path-Based]
+    C --> C2[Community/Cluster]
+    C --> C3[Hierarchical]
+    
+    D --> D1[Graph + Vector]
+    D --> D2[Graph + BM25 👉 'bee-em-twenty-five']
+    
+    E --> E1[Semantic Traversal]
+    E --> E2[Walk Ranking]
+    E --> E3[Query Graph]
+    E --> E4[Path Stitching]
+    E --> E5[LLM 👉 'el-el-em' Guided]
+    
+    style A fill:#ffd700,color:#000
+    style B fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#e1bee7,color:#000
+    style E fill:#ffb74d,color:#000`}
+                  />
+                </h4>
+              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div>
+                <GSAPStaggerList stagger={0.08} duration={0.6}>
                   <div style={{ marginBottom: '0.7rem' }}>
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>1</span>
                     <strong>Node-Level Retrieval</strong> — Retrieve individual concept/entity nodes
@@ -84,11 +151,9 @@ export const graphRetrievalDeck: Deck = {
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>7</span>
                     <strong>Graph + Dense Vector Hybrid</strong> — Combine embeddings with connectivity
                   </div>
-                </div>
-                <div>
                   <div style={{ marginBottom: '0.7rem' }}>
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>8</span>
-                    <strong>Graph + BM25 Hybrid</strong> — Validate with keyword BM25
+                    <strong>Graph + BM25 👉 'bee-em-twenty-five' Hybrid</strong> — Validate with keyword BM25
                   </div>
                   <div style={{ marginBottom: '0.7rem' }}>
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>9</span>
@@ -108,14 +173,33 @@ export const graphRetrievalDeck: Deck = {
                   </div>
                   <div style={{ marginBottom: '0.7rem' }}>
                     <span style={{ fontWeight: 'bold', color: '#42a5f5', marginRight: '0.5rem' }}>13</span>
-                    <strong>LLM-Guided Graph Expansion</strong> — Adaptive traversal via LLM
+                    <strong>LLM 👉 'el-el-em' Guided Graph Expansion</strong> — Adaptive traversal via LLM
                   </div>
-                </div>
+                </GSAPStaggerList>
               </div>
             </div>
           ),
           backgroundColor: '#291e5b',
-          notes: ''
+          notes: `### Overview: 13 Techniques at a Glance
+
+Let's take a bird's eye view of all thirteen techniques we'll be covering today. This roadmap will help you understand how these techniques relate to each other and when you might choose one over another.
+
+#### The Four Categories
+The thirteen techniques naturally fall into **four categories** based on their complexity and use cases. Think of this as a progression from simple to sophisticated. First, we have **basic retrieval techniques** (techniques 1-3) that focus on finding and using individual nodes and their immediate connections. These are your starting point, the foundation upon which everything else builds.
+
+Next come **path and community techniques** (techniques 4-6) that explore relationships beyond immediate neighbors. These let you trace connections across multiple hops and identify clusters of related information. Then we have **hybrid methods** (techniques 7-8) that combine graph structures with other retrieval approaches like vector embeddings and keyword search. Finally, the **advanced techniques** (techniques 9-13) bring in sophisticated concepts like semantic traversal, ranking algorithms, and even LLM 👉 'el-el-em' guidance.
+
+#### Basic Building Blocks (Techniques 1-3)
+Let's start with the fundamentals. **Node-Level Retrieval** is the simplest approach: find the specific nodes (entities or concepts) that match your query. Think of it like finding specific pages in a book by their titles. **Edge-Weighted Retrieval** adds sophistication by considering how **strong** the relationships are between nodes. Some connections are more important than others, right? Finally, **Neighborhood Expansion** says "don't just give me the node, give me its immediate neighbors too." It's like saying "I want to know about Paris, but also show me information about France, the Eiffel Tower, and French cuisine."
+
+#### Path & Community Techniques (Techniques 4-6)
+Moving beyond single nodes, **Path-Based Retrieval** traces sequences of connections. Imagine asking "How is vitamin D connected to bone health?" The answer might involve a path through calcium absorption and mineral metabolism. **Community/Cluster Retrieval** identifies densely connected groups of related concepts, perfect when you want everything about a topic. **Hierarchical Graph Retrieval** organizes information in parent-child relationships, moving from broad topics to specific details.
+
+#### Hybrid & Advanced Methods (Techniques 7-13)
+The remaining techniques combine graphs with other technologies or add sophisticated logic. The **hybrid methods** merge graph connectivity with vector similarity or keyword matching, giving you the best of multiple worlds. The **advanced techniques** include semantic traversal (following edges based on meaning), walk-based ranking (like Google's PageRank for your knowledge graph), query graph construction, path stitching for coherent context, and LLM-guided expansion where AI dynamically explores the graph.
+
+#### What's Next?
+We'll explore each technique in depth, covering exactly how it works, when to use it, implementation details, and the trade-offs involved. Ready to dive into technique number one?`
         }
       ]
     },
