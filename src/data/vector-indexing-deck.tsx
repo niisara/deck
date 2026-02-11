@@ -35,21 +35,21 @@ export const vectorIndexingDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a0f0a',
-          notes: `### 1. Vector Indexing Schemes Cheat Sheet
-Welcome everyone! Today we're going to explore one of the most crucial topics in modern AI and machine learning: vector indexing schemes.
+          notes: `### Vector Indexing Schemes Cheat Sheet
+[cheerfully] Welcome everyone! [excited] Today we're going to explore one of the most crucial topics in modern AI and machine learning: vector indexing schemes.
 
 #### What This Presentation Covers
-When you're building applications with AI, especially ones that need to search through millions of pieces of information quickly, you need special ways to organize that data. Think of it like organizing a massive library. You could check every single book one by one, but that would take forever. Instead, we use clever indexing systems. Today, we'll explore nine different approaches, each with its own strengths and trade-offs. Whether you're building a recommendation system, a chatbot, or a search engine, understanding these indexing schemes will help you choose the right tool for your specific needs.
+[conversational] When you're building applications with AI, especially ones that need to search through millions of pieces of information quickly, you need special ways to organize that data. [storytelling] Think of it like organizing a massive library. You could check every single book one by one, but that would take forever. Instead, we use clever indexing systems. [energetic] Today, we'll explore nine different approaches, each with its own strengths and trade-offs. Whether you're building a recommendation system, a chatbot, or a search engine, understanding these indexing schemes will help you choose the right tool for your specific needs.
 
 #### What We'll Learn
-We'll start with the simplest approach called "Flat" or brute force indexing, where we check everything. Then we'll progress through increasingly sophisticated methods like HNSW, which builds a clever network structure, IVF which groups similar items together, and several others. By the end, you'll understand when to use each approach and why.
+[enthusiastically] We'll start with the simplest approach called "Flat" or brute force indexing, where we check everything. Then we'll progress through increasingly sophisticated methods like HNSW, which builds a clever network structure, IVF which groups similar items together, and several others. By the end, you'll understand when to use each approach and why.
 
 #### Pronunciation Guides
 - **Vector** (VEK-tor): A list of numbers representing data
 - **Indexing** (IN-dex-ing): Organizing data for fast searching
 - **Scheme** (SKEEM): A systematic plan or approach
 
-Let's dive into our first overview slide to see how these nine schemes compare!`
+[excited] Let's dive into our first overview slide to see how these nine schemes compare!`
         },
         {
           id: 2,
@@ -155,14 +155,14 @@ Let's dive into our first overview slide to see how these nine schemes compare!`
             </div>
           ),
           backgroundColor: '#1a0f0a',
-          notes: `### 2. Overview & Quick Comparison
-Now let's look at the big picture. This comparison table is your roadmap for the entire presentation.
+          notes: `### Overview & Quick Comparison
+[energetic] Now let's look at the big picture. This comparison table is your roadmap for the entire presentation.
 
 #### Understanding the Dimensions
-We're comparing nine indexing schemes across six critical dimensions. Think of these as the "report card" for each indexing method. Speed tells us how fast we can find similar vectors. Memory use shows how much RAM or storage we need. Recall measures accuracy—how many relevant results we actually find. Updates indicate how easy it is to add new data. And scale tells us how many vectors each method can handle effectively. No single method wins in every category, which is why we need to understand all nine.
+[lecture] We're comparing nine indexing schemes across six critical dimensions. [conversational] Think of these as the "report card" for each indexing method. Speed tells us how fast we can find similar vectors. Memory use shows how much RAM or storage we need. Recall measures accuracy—how many relevant results we actually find. Updates indicate how easy it is to add new data. And scale tells us how many vectors each method can handle effectively. [seriously] No single method wins in every category, which is why we need to understand all nine.
 
 #### Reading the Table
-Let's quickly scan through what we see. Flat indexing is slow but perfectly accurate with one hundred percent recall. HNSW is fast and accurate but memory hungry. IVF and IVF plus PQ trade some accuracy for speed and efficiency. Annoy is simple but doesn't handle updates well. ScaNN and Graph-based methods are cutting-edge performers. LSH uses hashing tricks for speed. And Multi-Index Hashing specializes in binary data. Each colored row represents a different approach we'll explore in depth.
+[confidently] Let's quickly scan through what we see. Flat indexing is slow but perfectly accurate with one hundred percent recall. HNSW is fast and accurate but memory hungry. IVF and IVF plus PQ trade some accuracy for speed and efficiency. Annoy is simple but doesn't handle updates well. ScaNN and Graph-based methods are cutting-edge performers. LSH uses hashing tricks for speed. And Multi-Index Hashing specializes in binary data. Each colored row represents a different approach we'll explore in depth.
 
 #### Pronunciation Guides
 - **HNSW** (H-N-S-W): Hierarchical Navigable Small World graphs
@@ -174,9 +174,9 @@ Let's quickly scan through what we see. Flat indexing is slow but perfectly accu
 - **ANN** (A-N-N): Approximate Nearest Neighbors
 
 #### What to Look For
-As we go through each method, keep this table in mind. Ask yourself: what trade-offs is each method making? Where does it excel, and where does it compromise? Understanding these trade-offs is key to choosing the right index for your specific application.
+[thoughtfully] As we go through each method, keep this table in mind. Ask yourself: what trade-offs is each method making? Where does it excel, and where does it compromise? [confidently] Understanding these trade-offs is key to choosing the right index for your specific application.
 
-Let's start with the simplest method: Flat indexing, also known as brute force search!`
+[excited] Let's start with the simplest method: Flat indexing, also known as brute force search!`
         },
       ]
     },
@@ -232,17 +232,17 @@ Let's start with the simplest method: Flat indexing, also known as brute force s
             </div>
           ),
           backgroundColor: '#35102d',
-          notes: `### 3. Flat (Brute Force)
-Let's start with the simplest indexing scheme: Flat, also known as brute force search.
+          notes: `### Flat (Brute Force)
+[conversational] Let's start with the simplest indexing scheme: Flat, also known as brute force search.
 
 #### What is Flat Indexing?
-Imagine you have a box of photos and someone asks you to find all pictures of cats. The brute force approach means looking at every single photo, one by one, checking if it contains a cat. That's exactly what flat indexing does with vectors. There's no clever organization, no shortcuts—just a straightforward comparison of your query against every single vector in the database. While this sounds inefficient, and it is for large datasets, it has one huge advantage: it's guaranteed to find the absolute best matches every single time.
+[storytelling] Imagine you have a box of photos and someone asks you to find all pictures of cats. The brute force approach means looking at every single photo, one by one, checking if it contains a cat. [lecture] That's exactly what flat indexing does with vectors. There's no clever organization, no shortcuts—just a straightforward comparison of your query against every single vector in the database. [reassuringly] While this sounds inefficient, and it is for large datasets, it has one huge advantage: it's guaranteed to find the absolute best matches every single time.
 
 #### How It Works
-When you store vectors using flat indexing, they're simply laid out in memory one after another, like books on a shelf in the order they arrived. When a search query comes in, the system calculates the distance between your query vector and every stored vector. If you have one million vectors, it performs one million distance calculations. The good news is that modern computers can do this very fast using special SIMD instructions—that's "sim-dee," which stands for Single Instruction Multiple Data—or even GPU acceleration, which lets you compare thousands of vectors simultaneously.
+[conversational] When you store vectors using flat indexing, they're simply laid out in memory one after another, like books on a shelf in the order they arrived. When a search query comes in, the system calculates the distance between your query vector and every stored vector. [confidently] If you have one million vectors, it performs one million distance calculations. The good news is that modern computers can do this very fast using special SIMD instructions—that's "sim-dee," which stands for Single Instruction Multiple Data—or even GPU acceleration, which lets you compare thousands of vectors simultaneously.
 
 #### Performance Characteristics
-The time complexity is O of N times d, which we read as "order of N times d." N is the number of vectors, and d is how many dimensions each vector has. This means if you double your dataset size, search time doubles too. For memory, you need about four times N times d bytes for standard 32-bit floating point vectors. So a million 512-dimensional vectors would need about two gigabytes of RAM.
+[lecture] The time complexity is O of N times d, which we read as "order of N times d." N is the number of vectors, and d is how many dimensions each vector has. This means if you double your dataset size, search time doubles too. For memory, you need about four times N times d bytes for standard 32-bit floating point vectors. So a million 512-dimensional vectors would need about two gigabytes of RAM.
 
 #### Pronunciation Guides
 - **SIMD** (SIM-dee): Single Instruction Multiple Data
@@ -250,9 +250,9 @@ The time complexity is O of N times d, which we read as "order of N times d." N 
 - **Brute Force** (BROOT FORCE): Checking every possibility
 
 #### When to Use Flat Indexing
-Use flat indexing when you absolutely need perfect accuracy, when your dataset is small to medium-sized—say under ten million vectors—or when you're frequently adding or updating vectors because there's no complex index structure to rebuild. It's also perfect as a baseline for testing other approximate methods.
+[confidently] Use flat indexing when you absolutely need perfect accuracy, when your dataset is small to medium-sized—say under ten million vectors—or when you're frequently adding or updating vectors because there's no complex index structure to rebuild. It's also perfect as a baseline for testing other approximate methods.
 
-Now let's look at the best use cases in more detail!`
+[excited] Now let's look at the best use cases in more detail!`
         },
         {
           id: 4,
@@ -279,17 +279,17 @@ Now let's look at the best use cases in more detail!`
             </div>
           ),
           backgroundColor: '#35102d',
-          notes: `### 4. Flat Indexing - Best Use Case
-When should you reach for flat indexing? Let's explore the scenarios where this simple approach shines.
+          notes: `### Flat Indexing - Best Use Case
+[confidently] When should you reach for flat indexing? Let's explore the scenarios where this simple approach shines.
 
 #### Exact Search Requirements
-If your application absolutely cannot tolerate any missed results—think medical diagnosis systems, fraud detection, or compliance tools—flat indexing is your friend. It guarantees one hundred percent recall, meaning you'll never miss a relevant match. Many applications start with flat indexing and only move to approximate methods when the performance becomes genuinely problematic.
+[seriously] If your application absolutely cannot tolerate any missed results—think medical diagnosis systems, fraud detection, or compliance tools—flat indexing is your friend. [firmly] It guarantees one hundred percent recall, meaning you'll never miss a relevant match. [reassuringly] Many applications start with flat indexing and only move to approximate methods when the performance becomes genuinely problematic.
 
 #### Small to Medium Datasets
-For datasets under one to ten million vectors, depending on your hardware, flat indexing performs surprisingly well. Modern CPUs and GPUs are incredibly fast at these distance calculations. If you're building a prototype, a small SaaS application, or working with a curated dataset, flat indexing might be all you need. Don't over-engineer your solution before you have a proven performance problem.
+[conversational] For datasets under one to ten million vectors, depending on your hardware, flat indexing performs surprisingly well. [pleased] Modern CPUs and GPUs are incredibly fast at these distance calculations. [warmly] If you're building a prototype, a small SaaS application, or working with a curated dataset, flat indexing might be all you need. [cautiously] Don't over-engineer your solution before you have a proven performance problem.
 
 #### High Update Rates and Streaming
-Here's where flat indexing really excels: dynamic data. Adding a new vector is trivial—just append it to your array. No complex graph updates, no rebalancing trees, no rebuilding clusters. If you're working with streaming data where new vectors arrive constantly, or if users are frequently adding and deleting items, flat indexing handles this effortlessly. More sophisticated indexes often struggle with heavy write workloads.
+[excited] Here's where flat indexing really excels: dynamic data. [confidently] Adding a new vector is trivial—just append it to your array. No complex graph updates, no rebalancing trees, no rebuilding clusters. If you're working with streaming data where new vectors arrive constantly, or if users are frequently adding and deleting items, flat indexing handles this effortlessly. [disappointed] More sophisticated indexes often struggle with heavy write workloads.
 
 #### Pronunciation Guides
 - **Recall** (REE-call): The percentage of relevant results found
@@ -297,12 +297,12 @@ Here's where flat indexing really excels: dynamic data. Adding a new vector is t
 - **Throughput** (THROO-put): Amount of data processed per second
 
 #### As a Baseline
-Even if you end up using a more complex index in production, flat indexing serves as the perfect baseline for evaluation. You can compare how much speed improvement you're getting and how much recall you're sacrificing with approximate methods. Many vector database vendors actually recommend starting with flat and only switching when you have concrete evidence you need something more complex.
+[thoughtfully] Even if you end up using a more complex index in production, flat indexing serves as the perfect baseline for evaluation. You can compare how much speed improvement you're getting and how much recall you're sacrificing with approximate methods. [pleased] Many vector database vendors actually recommend starting with flat and only switching when you have concrete evidence you need something more complex.
 
 #### Real-World Scale
-Works beautifully up to about ten million 512-dimensional vectors on modern hardware. Beyond that, you'll want to consider the approximate methods we'll discuss next.
+[confidently] Works beautifully up to about ten million 512-dimensional vectors on modern hardware. [seriously] Beyond that, you'll want to consider the approximate methods we'll discuss next.
 
-Let's see what other advantages flat indexing offers!`
+[enthusiastically] Let's see what other advantages flat indexing offers!`
         },
         {
           id: 5,
@@ -328,17 +328,17 @@ Let's see what other advantages flat indexing offers!`
             </div>
           ),
           backgroundColor: '#35102d',
-          notes: `### 5. Flat Indexing - Key Notes
-Let's wrap up flat indexing with some important practical considerations and advantages.
+          notes: `### Flat Indexing - Key Notes
+[conversational] Let's wrap up flat indexing with some important practical considerations and advantages.
 
 #### Implementation Simplicity
-Flat indexing is beautifully simple to implement. You don't need to understand complex graph algorithms, clustering techniques, or hashing functions. It's basically: store vectors in an array, loop through them, calculate distances, keep the closest ones. This simplicity extends to maintenance too. There's no index corruption to worry about, no complex tuning parameters, no rebuilding processes. When debugging, you can actually inspect what's happening step by step.
+[pleased] Flat indexing is beautifully simple to implement. [confidently] You don't need to understand complex graph algorithms, clustering techniques, or hashing functions. It's basically: store vectors in an array, loop through them, calculate distances, keep the closest ones. [warmly] This simplicity extends to maintenance too. There's no index corruption to worry about, no complex tuning parameters, no rebuilding processes. When debugging, you can actually inspect what's happening step by step.
 
 #### Metric Flexibility
-Here's a huge advantage: flat indexing works with any distance metric you can dream up. L2 distance, cosine similarity, inner product, custom business-specific distance functions—it doesn't matter. Many approximate methods only work with specific metrics. Need to try a new similarity function? With flat indexing, just swap in your new distance calculation. This flexibility is invaluable during research and prototyping phases.
+[excited] Here's a huge advantage: flat indexing works with any distance metric you can dream up. [lecture] L2 distance, cosine similarity, inner product, custom business-specific distance functions—it doesn't matter. [disappointed] Many approximate methods only work with specific metrics. [enthusiastically] Need to try a new similarity function? With flat indexing, just swap in your new distance calculation. This flexibility is invaluable during research and prototyping phases.
 
 #### Horizontal Scaling
-Flat indexing scales horizontally beautifully. Want to search across ten machines? Just partition your vectors across them, send the query to all machines, and merge the results. There's no complex distributed coordination needed. Each machine independently searches its partition. This "embarrassingly parallel" nature means you can add more machines to handle more data or increase throughput, without sophisticated distributed systems engineering.
+[confidently] Flat indexing scales horizontally beautifully. Want to search across ten machines? [conversational] Just partition your vectors across them, send the query to all machines, and merge the results. There's no complex distributed coordination needed. Each machine independently searches its partition. [pleased] This "embarrassingly parallel" nature means you can add more machines to handle more data or increase throughput, without sophisticated distributed systems engineering.
 
 #### Pronunciation Guides
 - **L2 Distance** (L-Two Distance): Euclidean distance metric
@@ -347,12 +347,12 @@ Flat indexing scales horizontally beautifully. Want to search across ten machine
 - **FAISS** (FAYSS): Facebook AI Similarity Search library
 
 #### GPU Implementations
-Modern vector databases like FAISS, Qdrant, and Weaviate offer GPU-accelerated flat indexing. Graphics cards excel at parallel mathematical operations, and distance calculations are perfect for GPUs. A single modern GPU can search millions of vectors in milliseconds. For many real-world applications, GPU-accelerated flat indexing provides excellent performance without the complexity of approximate methods.
+[excited] Modern vector databases like FAISS, Qdrant, and Weaviate offer GPU-accelerated flat indexing. [conversational] Graphics cards excel at parallel mathematical operations, and distance calculations are perfect for GPUs. [pleased] A single modern GPU can search millions of vectors in milliseconds. For many real-world applications, GPU-accelerated flat indexing provides excellent performance without the complexity of approximate methods.
 
 #### Hybrid Retrieval
-Even in systems using approximate indexes, flat indexing plays a crucial role. A common pattern is using an approximate index for initial retrieval, then re-ranking the top candidates with exact flat search. This gives you the speed of approximation with accuracy verification on your final results. It's the best of both worlds.
+[thoughtfully] Even in systems using approximate indexes, flat indexing plays a crucial role. A common pattern is using an approximate index for initial retrieval, then re-ranking the top candidates with exact flat search. [enthusiastically] This gives you the speed of approximation with accuracy verification on your final results. It's the best of both worlds.
 
-Ready to move to our first approximate method? Let's explore HNSW!`
+[excited] Ready to move to our first approximate method? Let's explore HNSW!`
         },
       ]
     },
@@ -403,17 +403,17 @@ Ready to move to our first approximate method? Let's explore HNSW!`
             </div>
           ),
           backgroundColor: '#552b18',
-          notes: `### 6. HNSW (Hierarchical Navigable Small World)
-Now we're entering the world of approximate nearest neighbor search, starting with one of the most powerful methods: HNSW.
+          notes: `### HNSW (Hierarchical Navigable Small World)
+[excited] Now we're entering the world of approximate nearest neighbor search, starting with one of the most powerful methods: HNSW.
 
 #### What is HNSW?
-Think of HNSW like a hierarchical road system. Imagine you're in New York trying to get to Los Angeles. You don't drive through every street in America. Instead, you start on highways that cover large distances quickly, then switch to smaller roads as you get closer, and finally use local streets to reach your exact destination. HNSW works the same way with vectors. It builds multiple layers of connections, where upper layers have long-range "highways" connecting distant points, and lower layers have dense local connections.
+[storytelling] Think of HNSW like a hierarchical road system. Imagine you're in New York trying to get to Los Angeles. You don't drive through every street in America. [conversational] Instead, you start on highways that cover large distances quickly, then switch to smaller roads as you get closer, and finally use local streets to reach your exact destination. [lecture] HNSW works the same way with vectors. It builds multiple layers of connections, where upper layers have long-range "highways" connecting distant points, and lower layers have dense local connections.
 
 #### The Graph Structure
-HNSW builds a multi-layer graph where each vector is a node. The top layer is sparse with few nodes connected by long edges—this is your highway system. As you descend through layers, you get more nodes and denser connections. The bottom layer contains all your vectors with detailed local neighborhoods. During search, you start at the top, quickly jump to the right region, then progressively refine through lower layers until you find the nearest neighbors.
+[confidently] HNSW builds a multi-layer graph where each vector is a node. The top layer is sparse with few nodes connected by long edges—this is your highway system. As you descend through layers, you get more nodes and denser connections. The bottom layer contains all your vectors with detailed local neighborhoods. [conversational] During search, you start at the top, quickly jump to the right region, then progressively refine through lower layers until you find the nearest neighbors.
 
 #### Key Parameters
-The magic of HNSW comes from three main parameters. "M" controls how many connections each node has—higher M means better recall but more memory. "efConstruction" determines search thoroughness during index building—higher values create better quality graphs but take longer to build. "efSearch" controls search thoroughness during queries—you can adjust this at query time to trade speed for accuracy.
+[lecture] The magic of HNSW comes from three main parameters. "M" controls how many connections each node has—higher M means better recall but more memory. "efConstruction" determines search thoroughness during index building—higher values create better quality graphs but take longer to build. [conversational] "efSearch" controls search thoroughness during queries—you can adjust this at query time to trade speed for accuracy.
 
 #### Pronunciation Guides
 - **HNSW** (H-N-S-W): Spell it out, don't try to pronounce as a word
@@ -423,9 +423,9 @@ The magic of HNSW comes from three main parameters. "M" controls how many connec
 - **efSearch** (E-F Search): Search width during querying
 
 #### Performance Profile
-HNSW offers sub-linear search time, meaning doubling your dataset size doesn't double your search time. For a hundred million vectors, you're typically seeing millisecond-level queries with ninety-five percent-plus recall. That's dramatically faster than flat indexing while maintaining excellent accuracy. The trade-off? High memory usage—expect two to three times the memory of storing raw vectors, and updates are expensive because you need to maintain the graph structure.
+[impressed] HNSW offers sub-linear search time, meaning doubling your dataset size doesn't double your search time. [pleased] For a hundred million vectors, you're typically seeing millisecond-level queries with ninety-five percent-plus recall. That's dramatically faster than flat indexing while maintaining excellent accuracy. [cautiously] The trade-off? High memory usage—expect two to three times the memory of storing raw vectors, and updates are expensive because you need to maintain the graph structure.
 
-Let's look at when HNSW is the right choice for your application!`
+[excited] Let's look at when HNSW is the right choice for your application!`
         },
         {
           id: 7,
@@ -449,17 +449,17 @@ Let's look at when HNSW is the right choice for your application!`
             </div>
           ),
           backgroundColor: '#552b18',
-          notes: `### 7. HNSW - Best Use Case
-When should you choose HNSW over other indexing methods? Let's examine the sweet spot for this powerful algorithm.
+          notes: `### HNSW - Best Use Case
+[confidently] When should you choose HNSW over other indexing methods? Let's examine the sweet spot for this powerful algorithm.
 
 #### Read-Heavy Workloads
-HNSW shines brightest in read-heavy scenarios. If your application serves thousands or millions of queries but only occasionally adds new vectors, HNSW is excellent. Think product recommendation engines, image similarity search, or semantic search systems where the corpus is relatively stable. The expensive index construction and update costs are amortized over millions of fast queries.
+[pleased] HNSW shines brightest in read-heavy scenarios. [conversational] If your application serves thousands or millions of queries but only occasionally adds new vectors, HNSW is excellent. Think product recommendation engines, image similarity search, or semantic search systems where the corpus is relatively stable. [thoughtfully] The expensive index construction and update costs are amortized over millions of fast queries.
 
 #### Low-Latency Requirements
-Need consistently fast response times? HNSW delivers. Unlike some approximate methods that have variable performance depending on data distribution, HNSW provides predictable, low-latency queries. Whether you're searching for vectors in a dense cluster or sparse regions, performance stays relatively consistent. This makes it perfect for user-facing applications where response time directly impacts user experience.
+[enthusiastically] Need consistently fast response times? HNSW delivers. [lecture] Unlike some approximate methods that have variable performance depending on data distribution, HNSW provides predictable, low-latency queries. Whether you're searching for vectors in a dense cluster or sparse regions, performance stays relatively consistent. [confidently] This makes it perfect for user-facing applications where response time directly impacts user experience.
 
 #### High Recall Demands
-HNSW is the go-to choice when you need approximate search but can't sacrifice much accuracy. By tuning the efSearch parameter, you can achieve ninety-eight percent or even ninety-nine percent recall—nearly as good as exact search but orders of magnitude faster. This makes it ideal for applications where missing relevant results has real consequences, like medical information retrieval or legal document search.
+[firmly] HNSW is the go-to choice when you need approximate search but can't sacrifice much accuracy. [impressed] By tuning the efSearch parameter, you can achieve ninety-eight percent or even ninety-nine percent recall—nearly as good as exact search but orders of magnitude faster. [seriously] This makes it ideal for applications where missing relevant results has real consequences, like medical information retrieval or legal document search.
 
 #### Pronunciation Guides
 - **Read-Heavy** (RED HEH-vee): More queries than updates
@@ -468,12 +468,12 @@ HNSW is the go-to choice when you need approximate search but can't sacrifice mu
 - **Amortized** (AM-or-tized): Cost spread over many operations
 
 #### Scale Considerations
-HNSW works beautifully up to about one hundred million vectors on modern servers with adequate RAM. Beyond that scale, you'll need either distributed implementations or should consider other methods. Within its scale range though, HNSW often outperforms alternatives in the recall-speed trade-off.
+[confidently] HNSW works beautifully up to about one hundred million vectors on modern servers with adequate RAM. [cautiously] Beyond that scale, you'll need either distributed implementations or should consider other methods. [pleased] Within its scale range though, HNSW often outperforms alternatives in the recall-speed trade-off.
 
 #### Semi-Static Data
-Your dataset doesn't have to be completely frozen, but HNSW prefers semi-static scenarios. Occasional batch updates are fine—you can build a new index overnight or during low-traffic periods. Continuous high-volume streaming inserts? That's not HNSW's strength. In those cases, consider IVF or flat indexing with periodic reindexing to HNSW.
+[conversational] Your dataset doesn't have to be completely frozen, but HNSW prefers semi-static scenarios. [reassuringly] Occasional batch updates are fine—you can build a new index overnight or during low-traffic periods. [cautiously] Continuous high-volume streaming inserts? That's not HNSW's strength. In those cases, consider IVF or flat indexing with periodic reindexing to HNSW.
 
-What are the key implementation details you should know? Let's explore that next!`
+[excited] What are the key implementation details you should know? Let's explore that next!`
         },
         {
           id: 8,
@@ -500,17 +500,17 @@ What are the key implementation details you should know? Let's explore that next
             </div>
           ),
           backgroundColor: '#552b18',
-          notes: `### 8. HNSW - Important Notes
-Let's cover the practical considerations and gotchas you need to know when implementing HNSW.
+          notes: `### HNSW - Important Notes
+[conversational] Let's cover the practical considerations and gotchas you need to know when implementing HNSW.
 
 #### Index Construction Cost
-Building an HNSW index is computationally expensive. For a ten million vector dataset, expect index construction to take hours, not minutes. This isn't a deal-breaker—you typically build the index once and use it for millions of queries. But plan accordingly. Don't try to rebuild HNSW indexes on every data update. Instead, use batch update strategies or hybrid approaches where new data goes to a separate index temporarily.
+[seriously] Building an HNSW index is computationally expensive. [cautiously] For a ten million vector dataset, expect index construction to take hours, not minutes. [reassuringly] This isn't a deal-breaker—you typically build the index once and use it for millions of queries. But plan accordingly. [firmly] Don't try to rebuild HNSW indexes on every data update. Instead, use batch update strategies or hybrid approaches where new data goes to a separate index temporarily.
 
 #### Update and Delete Challenges
-Updating or deleting vectors in HNSW is tricky. You can't just remove a node from the graph without potentially breaking connectivity. Most implementations either don't support deletes at all, require marking vectors as deleted which wastes space, or need expensive graph repairs. For applications with frequent updates, consider accumulating changes and doing periodic full rebuilds, or use a multi-index strategy with a separate structure for recent updates.
+[concerned] Updating or deleting vectors in HNSW is tricky. You can't just remove a node from the graph without potentially breaking connectivity. [disappointed] Most implementations either don't support deletes at all, require marking vectors as deleted which wastes space, or need expensive graph repairs. [thoughtfully] For applications with frequent updates, consider accumulating changes and doing periodic full rebuilds, or use a multi-index strategy with a separate structure for recent updates.
 
 #### Distance Metric Support
-HNSW works with L2 distance, cosine similarity, and inner product—the most common metrics in vector search. However, it won't work with arbitrary custom distance functions like flat indexing does. The graph structure depends on the triangle inequality holding, which these standard metrics provide. If you need exotic distance functions, HNSW probably isn't the right choice.
+[lecture] HNSW works with L2 distance, cosine similarity, and inner product—the most common metrics in vector search. [cautiously] However, it won't work with arbitrary custom distance functions like flat indexing does. The graph structure depends on the triangle inequality holding, which these standard metrics provide. [firmly] If you need exotic distance functions, HNSW probably isn't the right choice.
 
 #### Pronunciation Guides
 - **nmslib** (N-M-S-lib): Non-Metric Space Library
@@ -519,12 +519,12 @@ HNSW works with L2 distance, cosine similarity, and inner product—the most com
 - **Triangle Inequality** (TRY-angle in-ee-KWAL-ih-tee): Mathematical property of distance metrics
 
 #### Parameter Tuning Guide
-Start with M equals sixteen and efConstruction equals one hundred for balanced performance. Need better recall? Increase M to thirty-two or sixty-four—but watch your memory usage double or quadruple. For queries, start with efSearch equal to your desired K results, then increase it if recall is too low. The beauty is you can adjust efSearch at runtime without rebuilding.
+[confidently] Start with M equals sixteen and efConstruction equals one hundred for balanced performance. [thoughtfully] Need better recall? Increase M to thirty-two or sixty-four—but watch your memory usage double or quadruple. For queries, start with efSearch equal to your desired K results, then increase it if recall is too low. [pleased] The beauty is you can adjust efSearch at runtime without rebuilding.
 
 #### Wide Ecosystem Support
-HNSW has become the de facto standard for high-quality approximate nearest neighbor search. You'll find mature implementations in FAISS from Facebook, nmslib, Milvus, Qdrant, and many commercial vector databases. This means you get well-tested code, good documentation, and community support. You're not betting on experimental technology.
+[enthusiastically] HNSW has become the de facto standard for high-quality approximate nearest neighbor search. [pleased] You'll find mature implementations in FAISS from Facebook, nmslib, Milvus, Qdrant, and many commercial vector databases. This means you get well-tested code, good documentation, and community support. You're not betting on experimental technology.
 
-Ready to explore clustering-based approaches? Let's move to IVF!`
+[excited] Ready to explore clustering-based approaches? Let's move to IVF!`
         },
       ]
     },
