@@ -1665,24 +1665,24 @@ Use TF-IDF or document frequency to identify words that appear in almost every d
           backgroundColor: '#631061',
           notes: `### 16. Light Stopword Trimming: Pros and Cons
 
-Let's examine the tradeoffs of light stopword trimming and understand when this middle-ground approach is the right choice for your NLP pipeline.
+[lecture] Let's examine the tradeoffs of light stopword trimming and understand when this middle-ground approach is the right choice for your NLP pipeline.
 
 #### The Pros: Why Light Trimming Works Well
 
-**1. Preserves Meaning Better Than Full Removal**
+[pleased] **1. Preserves Meaning Better Than Full Removal**
 
-This is the headline benefit. By keeping negations, intensifiers, and modals, you maintain crucial semantic information. Consider these examples:
+[confidently] This is the headline benefit. By keeping negations, intensifiers, and modals, you maintain crucial semantic information. [conversational] Consider these examples:
 
-- "The movie was not very good"  to  Light trim  to  "movie not very good" (meaning preserved)
-- "The movie was not very good"  to  Aggressive trim  to  "movie good" (meaning reversed!)
+- "The movie was not very good"  to  Light trim  to  "movie not very good" [pleased] (meaning preserved)
+- "The movie was not very good"  to  Aggressive trim  to  "movie good" [disappointed] (meaning reversed!)
 
-Light trimming keeps the sentiment-critical words "not" and "very" while removing the semantically empty "the" and "was." For sentiment analysis, this can be the difference between 60% accuracy and 85% accuracy.
+[lecture] Light trimming keeps the sentiment-critical words "not" and "very" while removing the semantically empty "the" and "was." [delighted] For sentiment analysis, this can be the difference between 60% accuracy and 85% accuracy.
 
 **2. Balanced Noise Reduction**
 
-You still get dimensionality benefits, just more modest ones. Instead of cutting vocabulary by 40-50%, you might cut it by 10-15%. But here's the key: that 10-15% is the MOST noisy, least informative portion. You're removing the words that appear in literally every document ("the," "a," "an") while keeping words that provide more signal.
+[conversational] You still get dimensionality benefits, just more modest ones. [lecture] Instead of cutting vocabulary by 40-50%, you might cut it by 10-15%. But here's the key: [confidently] that 10-15% is the MOST noisy, least informative portion. You're removing the words that appear in literally every document ("the," "a," "an") while keeping words that provide more signal.
 
-Think of it like filtering water: aggressive stopword removal is like filtering out everything except large rocks, while light trimming is like filtering out only large debris while keeping minerals and nutrients. You still get cleaner water, but without stripping out all the good stuff.
+[storytelling] Think of it like filtering water: aggressive stopword removal is like filtering out everything except large rocks, while light trimming is like filtering out only large debris while keeping minerals and nutrients. [pleased] You still get cleaner water, but without stripping out all the good stuff.
 
 \`\`\`mermaid
 graph LR
@@ -1698,35 +1698,35 @@ graph LR
 
 **3. Safer for Nuanced Tasks**
 
-Light trimming gives you a safety margin for tasks where linguistic nuance matters. In sarcasm detection, for example, words like "really," "just," and "oh" are critical discourse markers. In question classification, words like "can," "would," "should" distinguish different question types. Light trimming is unlikely to remove these mid-frequency function words, preserving the subtle signals your model needs.
+[confidently] Light trimming gives you a safety margin for tasks where linguistic nuance matters. [lecture] In sarcasm detection, for example, words like "really," "just," and "oh" are critical discourse markers. In question classification, words like "can," "would," "should" distinguish different question types. [pleased] Light trimming is unlikely to remove these mid-frequency function words, preserving the subtle signals your model needs.
 
 #### The Cons: Tradeoffs and Limitations
 
-**1. Requires Careful Tuning**
+[cautiously] **1. Requires Careful Tuning**
 
-Unlike aggressive stopword removal where you just load a pre-built list, light trimming demands thoughtful curation. You need to:
+[conversational] Unlike aggressive stopword removal where you just load a pre-built list, light trimming demands thoughtful curation. [lecture] You need to:
 - Define what counts as "minimal" for your use case
 - Create and maintain domain-specific whitelists
 - Validate each addition to your stopword list
 - Potentially maintain multiple light lists for different tasks
 
-This is extra work. For quick prototyping or when working with well-understood, standard tasks, this overhead might not be worth it—you might prefer the simplicity of either full removal or no removal at all.
+[sigh] This is extra work. [conversational] For quick prototyping or when working with well-understood, standard tasks, this overhead might not be worth it—you might prefer the simplicity of either full removal or no removal at all.
 
 **2. Residual Noise May Remain**
 
-Since you're only removing 10-15% of vocabulary, you still have plenty of high-frequency, low-information words cluttering your feature space. Words like "be," "have," "do," "which," "these" appear constantly but often add little semantic value. If dimensionality reduction is your primary goal, light trimming might not cut deep enough to give you the speed and memory benefits you need.
+[cautiously] Since you're only removing 10-15% of vocabulary, you still have plenty of high-frequency, low-information words cluttering your feature space. [lecture] Words like "be," "have," "do," "which," "these" appear constantly but often add little semantic value. [disappointed] If dimensionality reduction is your primary goal, light trimming might not cut deep enough to give you the speed and memory benefits you need.
 
-For very large corpora (millions of documents), the difference between 50,000 features and 45,000 features is negligible. You might need to be more aggressive to see real performance gains.
+[conversational] For very large corpora (millions of documents), the difference between 50,000 features and 45,000 features is negligible. You might need to be more aggressive to see real performance gains.
 
 **3. Still Risky for Very Short Texts**
 
-Even light trimming can be problematic when you're working with extremely short texts. Consider a 5-word tweet: "The product is not good." Light trimming might reduce this to 4 words: "product is not good." You've removed 20% of the text! For texts with fewer than 15-20 words, even removing articles can noticeably impact the information density.
+[concerned] Even light trimming can be problematic when you're working with extremely short texts. [storytelling] Consider a 5-word tweet: "The product is not good." Light trimming might reduce this to 4 words: "product is not good." You've removed 20% of the text! [cautiously] For texts with fewer than 15-20 words, even removing articles can noticeably impact the information density.
 
-In extreme cases (hashtags, search queries, chat messages), you might want to skip stopword removal entirely, regardless of how light your list is.
+[conversational] In extreme cases (hashtags, search queries, chat messages), you might want to skip stopword removal entirely, regardless of how light your list is.
 
 #### Decision Framework
 
-Here's how to decide between full removal, light trimming, and no removal:
+[lecture] Here's how to decide between full removal, light trimming, and no removal:
 
 **Choose Light Trimming When:**
 - Working with sentiment, emotion, or opinion analysis
@@ -1746,7 +1746,7 @@ Here's how to decide between full removal, light trimming, and no removal:
 - Texts are already very short (< 10 words)
 - Order and context are paramount
 
-The bottom line: light stopword trimming is the "Goldilocks" approach—not too aggressive, not too conservative, but just right for tasks that need both efficiency and meaning preservation.`
+[confidently] The bottom line: light stopword trimming is the "Goldilocks" approach—not too aggressive, not too conservative, but just right for tasks that need both efficiency and meaning preservation.`
         }
       ]
     },
@@ -1825,16 +1825,16 @@ The bottom line: light stopword trimming is the "Goldilocks" approach—not too 
           backgroundColor: '#101063',
           notes: `### 17. Stemming
 
-Stemming is one of the oldest and most widely-used text normalization techniques in NLP. It's all about reducing words to their root form—or at least an approximation of it—so that different inflections of the same word are treated as equivalent.
+[lecture] Stemming is one of the oldest and most widely-used text normalization techniques in NLP. [conversational] It's all about reducing words to their root form—or at least an approximation of it—so that different inflections of the same word are treated as equivalent.
 
 #### What Is Stemming?
 
-Stemming is the process of removing affixes (prefixes and suffixes) from words to produce a base form called a "stem." The goal is to merge grammatical variants that share the same core meaning. For example:
+[lecture] Stemming is the process of removing affixes (prefixes and suffixes) from words to produce a base form called a "stem." [confidently] The goal is to merge grammatical variants that share the same core meaning. [conversational] For example:
 - "running," "runs," "ran"  to  "run"
 - "happier," "happiest," "happiness"  to  "happi"
 - "organization," "organizational," "organize"  to  "organ"
 
-Notice something in those examples? The stems aren't always real words! "Happi" and "organ" aren't valid English words, but that's okay—stemming is about creating consistent representations, not linguistically correct ones.
+[amused] Notice something in those examples? The stems aren't always real words! [conversational] "Happi" and "organ" aren't valid English words, but that's okay—stemming is about creating consistent representations, not linguistically correct ones.
 
 \`\`\`mermaid
 graph TD
@@ -1851,24 +1851,24 @@ graph TD
 
 #### How Stemming Works
 
-Stemming algorithms are rule-based and heuristic. They don't understand language; they just apply a series of suffix-stripping rules. The most popular stemming algorithms are:
+[lecture] Stemming algorithms are rule-based and heuristic. [conversational] They don't understand language; they just apply a series of suffix-stripping rules. The most popular stemming algorithms are:
 
-**Porter Stemmer (1980)**: The classic algorithm with about 60 rules applied in phases. It's conservative and produces readable stems. Example: "ponies"  to  "poni", "universities"  to  "univers"
+[confidently] **Porter Stemmer (1980)**: The classic algorithm with about 60 rules applied in phases. It's conservative and produces readable stems. [conversational] Example: "ponies"  to  "poni", "universities"  to  "univers"
 
-**Snowball Stemmer**: An improved version of Porter, with better handling of English and support for many other languages (French, German, Spanish, etc.). It's the default choice for most modern applications.
+[pleased] **Snowball Stemmer**: An improved version of Porter, with better handling of English and support for many other languages (French, German, Spanish, etc.). [confidently] It's the default choice for most modern applications.
 
-**Lancaster Stemmer**: A more aggressive algorithm that strips more aggressively. It produces shorter stems but risks over-stemming (conflating unrelated words). Example: "maximum"  to  "maxim", "presumably"  to  "presum"
+[cautiously] **Lancaster Stemmer**: A more aggressive algorithm that strips more aggressively. [disappointed] It produces shorter stems but risks over-stemming (conflating unrelated words). [conversational] Example: "maximum"  to  "maxim", "presumably"  to  "presum"
 
-The algorithm works in stages:
+[lecture] The algorithm works in stages:
 1. **Remove plurals**: "cats"  to  "cat", "ponies"  to  "poni"
 2. **Handle past tense**: "walked"  to  "walk", "running"  to  "run"
 3. **Deal with derivational suffixes**: "happiness"  to  "happi", "organization"  to  "organ"
 
 #### When to Use Stemming
 
-Stemming is most effective in information retrieval and document clustering scenarios:
+[confidently] Stemming is most effective in information retrieval and document clustering scenarios:
 
-**Information Retrieval**: If a user searches for "running shoes," you want to also match documents containing "run," "runs," "ran," or "runner shoes." Stemming ensures that morphological variants don't fragment your search results.
+[pleased] **Information Retrieval**: If a user searches for "running shoes," you want to also match documents containing "run," "runs," "ran," or "runner shoes." [lecture] Stemming ensures that morphological variants don't fragment your search results.
 
 **Topic Modeling**: In LDA or other topic models, you want "organize," "organization," and "organized" to be counted as the same concept rather than splitting them into separate features.
 
@@ -1878,32 +1878,32 @@ Stemming is most effective in information retrieval and document clustering scen
 
 #### Pronunciation Guide
 
-- **Stemming**: STEM-ing (like the stem of a plant)
+[conversational] - **Stemming**: STEM-ing (like the stem of a plant)
 - **Porter**: POR-ter (named after Martin Porter)
 - **Lemmatization**: lem-uh-tuh-ZAY-shun (we'll cover this next—it's different!)
 
 #### Technical Considerations
 
-Stemming is fast and simple—that's its biggest advantage. It requires no linguistic resources, no dictionaries, no part-of-speech tagging. It's deterministic and reproducible. However, it has limitations:
+[confidently] Stemming is fast and simple—that's its biggest advantage. [lecture] It requires no linguistic resources, no dictionaries, no part-of-speech tagging. It's deterministic and reproducible. However, it has limitations:
 
-**Over-stemming**: Conflating words with different meanings. Example: "university" and "universal" both stem to "univers" but have different meanings.
+[cautiously] **Over-stemming**: Conflating words with different meanings. [disappointed] Example: "university" and "universal" both stem to "univers" but have different meanings.
 
-**Under-stemming**: Failing to merge related words. Example: "alumnus," "alumni," "alumna" might not all stem to the same form.
+**Under-stemming**: Failing to merge related words. [conversational] Example: "alumnus," "alumni," "alumna" might not all stem to the same form.
 
-**Language-specific**: Each language needs its own stemmer. Applying an English stemmer to Spanish text will fail spectacularly.
+**Language-specific**: Each language needs its own stemmer. [concerned] Applying an English stemmer to Spanish text will fail spectacularly.
 
 **Non-word stems**: The output is often not a real word, which makes debugging and interpretation harder.
 
-Despite these limitations, stemming has been used successfully in countless NLP applications for decades. It's simple, fast, and surprisingly effective for many tasks where perfect linguistic correctness isn't required.
+[pleased] Despite these limitations, stemming has been used successfully in countless NLP applications for decades. [conversational] It's simple, fast, and surprisingly effective for many tasks where perfect linguistic correctness isn't required.
 
 #### Practical Tips
 
-Always inspect a sample of your stemmed output! Look for cases where stemming is doing something unexpected. Some common issues:
+[lecture] Always inspect a sample of your stemmed output! [conversational] Look for cases where stemming is doing something unexpected. Some common issues:
 - Proper nouns getting stemmed (you might want to protect these)
 - Domain-specific terms being over-stemmed
 - Morphologically rich languages suffering more than English
 
-For modern deep learning, stemming is less commonly used—transformers can learn morphological relationships on their own. But for classical ML and information retrieval, stemming remains a valuable preprocessing step.`
+[conversational] For modern deep learning, stemming is less commonly used—transformers can learn morphological relationships on their own. [confidently] But for classical ML and information retrieval, stemming remains a valuable preprocessing step.`
         },
         {
           id: 18,
@@ -1954,28 +1954,28 @@ For modern deep learning, stemming is less commonly used—transformers can lear
           backgroundColor: '#101063',
           notes: `### 18. Stemming: Pros and Cons
 
-Let's dig into the tradeoffs of stemming. Like many preprocessing techniques, stemming is neither universally good nor universally bad—it depends entirely on your task and priorities.
+[lecture] Let's dig into the tradeoffs of stemming. [conversational] Like many preprocessing techniques, stemming is neither universally good nor universally bad—it depends entirely on your task and priorities.
 
 #### The Pros: Why Stemming Is Still Widely Used
 
-**1. Dramatic Dimensionality Reduction**
+[pleased] **1. Dramatic Dimensionality Reduction**
 
-Stemming can cut vocabulary size by 20-40% in inflection-rich languages like English, and even more in morphologically complex languages like Finnish or Turkish. Consider a corpus where you have:
+[confidently] Stemming can cut vocabulary size by 20-40% in inflection-rich languages like English, and even more in morphologically complex languages like Finnish or Turkish. [lecture] Consider a corpus where you have:
 - "organize" (50 occurrences)
 - "organizes" (30 occurrences)
 - "organized" (80 occurrences)
 - "organizing" (40 occurrences)
 - "organization" (100 occurrences)
 
-Without stemming, these are 5 separate features. With stemming, they all become "organ" with 300 total occurrences. This consolidation reduces sparsity and creates stronger statistical signals.
+[delighted] Without stemming, these are 5 separate features. With stemming, they all become "organ" with 300 total occurrences. [pleased] This consolidation reduces sparsity and creates stronger statistical signals.
 
-For a realistic corpus with 50,000 unique words, stemming might reduce it to 35,000 unique stems. That's 15,000 fewer features to store, process, and model. In a TF-IDF matrix for 100,000 documents, that's 1.5 billion fewer cells in your sparse matrix!
+[lecture] For a realistic corpus with 50,000 unique words, stemming might reduce it to 35,000 unique stems. That's 15,000 fewer features to store, process, and model. [confidently] In a TF-IDF matrix for 100,000 documents, that's 1.5 billion fewer cells in your sparse matrix!
 
 **2. Robust to Inflectional Variation**
 
-Stemming makes your system more forgiving of grammatical variation. This is especially valuable in:
+[pleased] Stemming makes your system more forgiving of grammatical variation. [confidently] This is especially valuable in:
 
-**Search engines**: Users don't want to worry about singular vs. plural. Searching "books" should match "book," searching "running" should match "run."
+[lecture] **Search engines**: Users don't want to worry about singular vs. plural. Searching "books" should match "book," searching "running" should match "run."
 
 **Document matching**: If one document says "companies organized" and another says "company organization," stemming helps recognize these as discussing the same concept.
 
@@ -1994,68 +1994,68 @@ graph TD
 
 **3. Speed and Simplicity**
 
-Stemming is blazingly fast. It's pure algorithmic rule application with no lookups, no models, no external resources. You can stem millions of words per second on a laptop. This makes it ideal for real-time systems, large-scale batch processing, and resource-constrained environments.
+[delighted] Stemming is blazingly fast. [lecture] It's pure algorithmic rule application with no lookups, no models, no external resources. You can stem millions of words per second on a laptop. [confidently] This makes it ideal for real-time systems, large-scale batch processing, and resource-constrained environments.
 
 #### The Cons: Where Stemming Falls Short
 
-**1. Produces Non-Words That Hurt Interpretability**
+[cautiously] **1. Produces Non-Words That Hurt Interpretability**
 
-When you inspect your processed data, you see stems like "happi," "univers," "organ" (from "organization"), "beauti" (from "beautiful"). This makes debugging harder and can confuse stakeholders looking at your results.
+[disappointed] When you inspect your processed data, you see stems like "happi," "univers," "organ" (from "organization"), "beauti" (from "beautiful"). [concerned] This makes debugging harder and can confuse stakeholders looking at your results.
 
-Imagine showing a topic model where the top words are: "comput," "algorith," "oper," "programm." A domain expert might struggle to interpret these mangled stems compared to proper words like "computer," "algorithm," "operation," "programming."
+[storytelling] Imagine showing a topic model where the top words are: "comput," "algorith," "oper," "programm." [conversational] A domain expert might struggle to interpret these mangled stems compared to proper words like "computer," "algorithm," "operation," "programming."
 
 **2. Over-Stemming: Conflating Unrelated Words**
 
-This is the most serious problem. Over-stemming occurs when the algorithm strips too aggressively, merging words with different meanings:
+[concerned] This is the most serious problem. [disappointed] Over-stemming occurs when the algorithm strips too aggressively, merging words with different meanings:
 
 - "university" and "universal"  to  both become "univers"
 - "stock" and "stocks" and "stockings"  to  all become "stock"
 - "police" and "policy"  to  both become "polic" (in Lancaster stemmer)
 
-These false conflations introduce noise and can degrade model performance. In a sentiment classifier, conflating "organization" (neutral) with "organ" (which might appear in medical contexts) could create confusing signals.
+[disappointed] These false conflations introduce noise and can degrade model performance. [concerned] In a sentiment classifier, conflating "organization" (neutral) with "organ" (which might appear in medical contexts) could create confusing signals.
 
 **3. Under-Stemming: Missing Related Words**
 
-Sometimes stemming isn't aggressive enough, failing to merge words that should be equivalent:
+[cautiously] Sometimes stemming isn't aggressive enough, failing to merge words that should be equivalent:
 
 - "best" and "good" stay separate (irregular comparative)
 - "alumni," "alumnus," "alumna" remain distinct
 - "feet" and "foot" aren't merged (irregular plural)
 
-These morphological irregularities are common in English and other languages. Rule-based stemming can't handle them without extensive exception lists.
+[lecture] These morphological irregularities are common in English and other languages. [sigh] Rule-based stemming can't handle them without extensive exception lists.
 
 **4. Language-Dependent Rules Create Maintenance Burden**
 
-Each language needs its own stemmer. If you're building a multilingual system, you need:
+[concerned] Each language needs its own stemmer. [lecture] If you're building a multilingual system, you need:
 - English: Porter/Snowball
 - Spanish: Spanish Snowball
 - French: French Snowball
 - Arabic: Arabic-specific stemmer
 - And so on...
 
-Each stemmer has its own quirks and failure modes. You can't just "apply stemming"—you need language detection first, then the appropriate stemmer for each language.
+[sigh] Each stemmer has its own quirks and failure modes. [conversational] You can't just "apply stemming"—you need language detection first, then the appropriate stemmer for each language.
 
 #### Real-World Decision Making
 
-**Use Stemming When:**
+[confidently] **Use Stemming When:**
 - Building information retrieval systems (search engines, document matching)
 - Vocabulary size is a serious concern (memory, speed constraints)
 - Using classical ML with sparse features (Naive Bayes, SVM, logistic regression)
 - Perfect linguistic correctness isn't required
 - Working with morphologically rich languages
 
-**Avoid Stemming When:**
+[cautiously] **Avoid Stemming When:**
 - Using neural networks or transformers (they learn morphology automatically)
 - Interpretability is critical (stakeholders need to understand output)
 - Working with short texts where over-stemming can cause significant information loss
 - Your task is sensitive to semantic precision (named entity recognition, question answering)
 
-**Consider Lemmatization Instead When:**
+[conversational] **Consider Lemmatization Instead When:**
 - You need real words in your output
 - Accuracy matters more than speed
 - You have access to language models and computational resources
 
-The bottom line: stemming is a fast, simple, effective technique for reducing vocabulary and normalizing inflectional variants, but it trades linguistic correctness for speed and simplicity. For many applications, that's an excellent tradeoff. For others, lemmatization or no normalization might be better choices.`
+[confidently] The bottom line: stemming is a fast, simple, effective technique for reducing vocabulary and normalizing inflectional variants, but it trades linguistic correctness for speed and simplicity. [conversational] For many applications, that's an excellent tradeoff. For others, lemmatization or no normalization might be better choices.`
         }
       ]
     },
@@ -2135,20 +2135,20 @@ The bottom line: stemming is a fast, simple, effective technique for reducing vo
           backgroundColor: '#10632c',
           notes: `### 19. Lemmatization
 
-Lemmatization is the sophisticated cousin of stemming—it reduces words to their base forms, but unlike stemming, it produces actual dictionary words and respects linguistic structure. Let's explore why lemmatization is often worth the extra computational cost.
+[lecture] Lemmatization is the sophisticated cousin of stemming—it reduces words to their base forms, but unlike stemming, it produces actual dictionary words and respects linguistic structure. [pleased] Let's explore why lemmatization is often worth the extra computational cost.
 
 #### What Is Lemmatization?
 
-Lemmatization (pronounced "lem-uh-tuh-ZAY-shun") transforms words to their canonical dictionary form, called a "lemma" (pronounced "LEM-uh"). Unlike stemming which uses crude suffix-stripping rules, lemmatization performs proper morphological analysis using dictionaries and grammatical context.
+[conversational] Lemmatization (pronounced "lem-uh-tuh-ZAY-shun") transforms words to their canonical dictionary form, called a "lemma" (pronounced "LEM-uh"). [lecture] Unlike stemming which uses crude suffix-stripping rules, lemmatization performs proper morphological analysis using dictionaries and grammatical context.
 
-Examples of lemmatization:
+[pleased] Examples of lemmatization:
 - "running," "runs," "ran"  to  "run" (infinitive form)
 - "better," "best"  to  "good" (base adjective)
 - "am," "is," "are," "was," "were," "been"  to  "be" (base verb)
 - "feet"  to  "foot" (singular noun)
 - "cacti"  to  "cactus" (singular form)
 
-Notice that these are all real, valid English words—no "happi" or "univers" nonsense!
+[delighted] Notice that these are all real, valid English words—no "happi" or "univers" nonsense!
 
 \`\`\`mermaid
 graph TD
@@ -2163,48 +2163,48 @@ graph TD
 
 #### How Lemmatization Works
 
-Lemmatization is a two-stage process that requires linguistic knowledge:
+[lecture] Lemmatization is a two-stage process that requires linguistic knowledge:
 
-**Stage 1: Part-of-Speech (POS) Tagging**
-The same word can have different lemmas depending on its grammatical role:
+[confidently] **Stage 1: Part-of-Speech (POS) Tagging**
+[conversational] The same word can have different lemmas depending on its grammatical role:
 - "meeting" as a noun  to  "meeting" (the lemma is the same)
 - "meeting" as a verb  to  "meet" (reduce to infinitive)
 
-So first, you need to determine: Is this word a noun, verb, adjective, or adverb? This requires POS tagging, which we'll discuss in detail in a later slide.
+[lecture] So first, you need to determine: Is this word a noun, verb, adjective, or adverb? [conversational] This requires POS tagging, which we'll discuss in detail in a later slide.
 
 **Stage 2: Morphological Analysis and Dictionary Lookup**
-Using the word and its POS tag, lemmatization:
+[lecture] Using the word and its POS tag, lemmatization:
 1. Consults a morphological lexicon (dictionary of word forms)
 2. Applies language-specific transformation rules
 3. Returns the canonical dictionary entry
 
-Modern lemmatizers like spaCy's use trained models that combine rule-based morphology with statistical learning. They've been trained on large annotated corpora to handle irregular forms, exceptions, and ambiguous cases.
+[pleased] Modern lemmatizers like spaCy's use trained models that combine rule-based morphology with statistical learning. [confidently] They've been trained on large annotated corpora to handle irregular forms, exceptions, and ambiguous cases.
 
 #### Popular Lemmatization Tools
 
-**WordNet Lemmatizer (NLTK)**: Uses the WordNet lexical database. Fast but requires explicit POS tags and sometimes produces unexpected results for words not in WordNet.
+[lecture] **WordNet Lemmatizer (NLTK)**: Uses the WordNet lexical database. [conversational] Fast but requires explicit POS tags and sometimes produces unexpected results for words not in WordNet.
 
-**spaCy Lemmatizer**: State-of-the-art lemmatization integrated with POS tagging. Handles context well and supports many languages. This is the gold standard for modern NLP pipelines.
+[confidently] **spaCy Lemmatizer**: State-of-the-art lemmatization integrated with POS tagging. [pleased] Handles context well and supports many languages. This is the gold standard for modern NLP pipelines.
 
 **Stanford CoreNLP**: Excellent accuracy, especially for English. Includes lemmatization as part of a full linguistic annotation pipeline.
 
 #### When to Use Lemmatization
 
-Lemmatization shines when linguistic accuracy matters:
+[pleased] Lemmatization shines when linguistic accuracy matters:
 
 **Linguistic Analysis**: If you're studying language patterns, grammatical structures, or conducting corpus linguistics research, you need real words, not stems.
 
-**Semantic Tasks**: When building semantic similarity systems, knowledge graphs, or ontologies, accurate lemmas help create better concept mappings. "Good" and "better" are semantically related, and lemmatization captures that relationship correctly.
+[confidently] **Semantic Tasks**: When building semantic similarity systems, knowledge graphs, or ontologies, accurate lemmas help create better concept mappings. [storytelling] "Good" and "better" are semantically related, and lemmatization captures that relationship correctly.
 
 **Feature Engineering for ML**: For tasks like text classification where interpretability matters, having features named "run," "good," "organize" is much clearer than "run," "good," "organ."
 
-**Preprocessing for Word Embeddings**: If you're training Word2Vec or GloVe, lemmatization can improve the quality of embeddings by consolidating inflectional variants without introducing non-words.
+[pleased] **Preprocessing for Word Embeddings**: If you're training Word2Vec or GloVe, lemmatization can improve the quality of embeddings by consolidating inflectional variants without introducing non-words.
 
 **Search and Information Retrieval**: Like stemming, lemmatization helps match queries to documents, but with better precision because it doesn't over-conflate unrelated words.
 
 #### Technical Workflow
 
-Here's a typical lemmatization pipeline:
+[conversational] Here's a typical lemmatization pipeline:
 
 \`\`\`python
 import spacy
@@ -2220,14 +2220,14 @@ lemmas = [token.lemma_ for token in doc]
 # Result: ["the", "cat", "be", "run", "quickly"]
 \`\`\`
 
-Notice how:
+[pleased] Notice how:
 - "cats"  to  "cat" (plural to singular)
 - "were"  to  "be" (past tense to infinitive)
 - "running"  to  "run" (progressive to base form)
 
 #### Lemmatization vs. Stemming: The Key Differences
 
-| Aspect | Stemming | Lemmatization |
+[lecture] | Aspect | Stemming | Lemmatization |
 |--------|----------|---------------|
 | Output | Stems (may be non-words) | Lemmas (dictionary words) |
 | Method | Rule-based suffix stripping | Morphological analysis + dictionary |
@@ -2238,22 +2238,22 @@ Notice how:
 
 #### Handling Special Cases
 
-**Out-of-Vocabulary (OOV) Words**: New words, slang, typos, and domain-specific jargon might not be in the lemmatizer's dictionary. Most lemmatizers will return the original word unchanged.
+[cautiously] **Out-of-Vocabulary (OOV) Words**: New words, slang, typos, and domain-specific jargon might not be in the lemmatizer's dictionary. [conversational] Most lemmatizers will return the original word unchanged.
 
-**Proper Nouns**: Names, places, brands should typically NOT be lemmatized. Most modern lemmatizers recognize proper nouns via POS tagging and leave them alone.
+**Proper Nouns**: Names, places, brands should typically NOT be lemmatized. [pleased] Most modern lemmatizers recognize proper nouns via POS tagging and leave them alone.
 
-**Domain-Specific Terms**: Medical, legal, and scientific texts contain specialized morphology. You might need domain-adapted lemmatizers or custom rules.
+**Domain-Specific Terms**: Medical, legal, and scientific texts contain specialized morphology. [cautiously] You might need domain-adapted lemmatizers or custom rules.
 
 #### Performance Considerations
 
-Lemmatization is significantly slower than stemming because it requires:
+[concerned] Lemmatization is significantly slower than stemming because it requires:
 1. POS tagging (neural network inference)
 2. Dictionary lookups
 3. Morphological rule application
 
-For 1 million words, stemming might take 1-2 seconds, while lemmatization might take 30-60 seconds with spaCy. If you're processing billions of documents, this difference matters!
+[storytelling] For 1 million words, stemming might take 1-2 seconds, while lemmatization might take 30-60 seconds with spaCy. [concerned] If you're processing billions of documents, this difference matters!
 
-However, the accuracy improvement is often worth it. And with modern hardware and efficient implementations, lemmatization is fast enough for most real-world applications.`
+[confidently] However, the accuracy improvement is often worth it. [pleased] And with modern hardware and efficient implementations, lemmatization is fast enough for most real-world applications.`
         },
         {
           id: 20,
@@ -2307,25 +2307,25 @@ However, the accuracy improvement is often worth it. And with modern hardware an
           backgroundColor: '#10632c',
           notes: `### 20. Lemmatization: Pros and Cons
 
-Now let's examine the tradeoffs of lemmatization compared to stemming and other normalization approaches. Understanding when to pay the computational cost for higher accuracy is crucial for effective NLP pipeline design.
+[lecture] Now let's examine the tradeoffs of lemmatization compared to stemming and other normalization approaches. [confidently] Understanding when to pay the computational cost for higher accuracy is crucial for effective NLP pipeline design.
 
 #### The Pros: Why Lemmatization Is Worth the Extra Cost
 
-**1. Significantly More Accurate Than Stemming**
+[pleased] **1. Significantly More Accurate Than Stemming**
 
-Lemmatization produces linguistically correct base forms, avoiding the conflation errors that plague stemming. Let's look at concrete comparisons:
+[confidently] Lemmatization produces linguistically correct base forms, avoiding the conflation errors that plague stemming. [lecture] Let's look at concrete comparisons:
 
 **Stemming errors that lemmatization fixes:**
-- "university" and "universal"  to  Stemmer: both become "univers" (WRONG) | Lemmatizer: "university" and "universal" remain distinct (CORRECT)
-- "organization"  to  Stemmer: "organ" (misleading) | Lemmatizer: "organization" or "organize" (correct and meaningful)
-- "news"  to  Stemmer: "new" (changes meaning!) | Lemmatizer: "news" (correctly preserved as distinct from "new")
+- "university" and "universal"  to  Stemmer: both become "univers" [disappointed] (WRONG) | Lemmatizer: "university" and "universal" remain distinct [pleased] (CORRECT)
+- "organization"  to  Stemmer: "organ" [concerned] (misleading) | Lemmatizer: "organization" or "organize" [confidently] (correct and meaningful)
+- "news"  to  Stemmer: "new" [disappointed] (changes meaning!) | Lemmatizer: "news" [pleased] (correctly preserved as distinct from "new")
 
 **Irregular forms handled correctly:**
-- "better"  to  Stemmer: "better" (unchanged) | Lemmatizer: "good" (correct base form)
+- "better"  to  Stemmer: "better" (unchanged) | Lemmatizer: "good" [delighted] (correct base form)
 - "feet"  to  Stemmer: "feet" (unchanged) | Lemmatizer: "foot" (singular form)
 - "was," "were," "been"  to  Stemmer: varies | Lemmatizer: all become "be"
 
-This accuracy difference can translate to 5-15% improvement in downstream task performance for tasks that depend on precise semantic grouping.
+[delighted] This accuracy difference can translate to 5-15% improvement in downstream task performance for tasks that depend on precise semantic grouping.
 
 \`\`\`mermaid
 graph LR
@@ -2341,75 +2341,75 @@ graph LR
 
 **2. Preserves Semantic Meaning**
 
-Because lemmatization produces real dictionary words, your processed text remains interpretable. This has several benefits:
+[pleased] Because lemmatization produces real dictionary words, your processed text remains interpretable. [confidently] This has several benefits:
 
-**Debugging**: When you inspect your processed tokens, you see "organize," "run," "good" instead of "organ," "run," "good." You can immediately understand what the original words were.
+[lecture] **Debugging**: When you inspect your processed tokens, you see "organize," "run," "good" instead of "organ," "run," "good." [pleased] You can immediately understand what the original words were.
 
-**Feature Interpretation**: In a machine learning model, if the most important feature is "good," you know it represents "good," "better," "best," etc. If the feature is "organ," does it mean "organ" (body part) or "organization" (entity)? Ambiguity creates problems.
+**Feature Interpretation**: In a machine learning model, if the most important feature is "good," you know it represents "good," "better," "best," etc. [conversational] If the feature is "organ," does it mean "organ" (body part) or "organization" (entity)? [disappointed] Ambiguity creates problems.
 
-**Stakeholder Communication**: When presenting results to non-technical stakeholders, showing them feature importance scores with real words ("compete," "innovative," "growth") is much more effective than showing stems ("compet," "innov," "grow").
+[delighted] **Stakeholder Communication**: When presenting results to non-technical stakeholders, showing them feature importance scores with real words ("compete," "innovative," "growth") is much more effective than showing stems ("compet," "innov," "grow").
 
 **3. Aids Downstream Tasks**
 
-Many NLP tasks benefit from accurate lemmatization:
+[confidently] Many NLP tasks benefit from accurate lemmatization:
 
-**Named Entity Recognition (NER)**: Lemmatization helps identify entity patterns without over-normalizing. "United States" stays intact, but "running companies" becomes "run company," making it easier to recognize "company" as an entity type.
+**Named Entity Recognition (NER)**: Lemmatization helps identify entity patterns without over-normalizing. [storytelling] "United States" stays intact, but "running companies" becomes "run company," making it easier to recognize "company" as an entity type.
 
-**Semantic Search**: When building search systems with semantic understanding, accurate lemmas improve embedding quality and retrieval precision. Word embeddings trained on lemmatized text often have better semantic properties.
+[pleased] **Semantic Search**: When building search systems with semantic understanding, accurate lemmas improve embedding quality and retrieval precision. [lecture] Word embeddings trained on lemmatized text often have better semantic properties.
 
 **Knowledge Graph Construction**: Extracting relationships like "X organizes Y" works better with "organize" as the base form rather than "organ" from stemming.
 
-**Question Answering**: Matching questions to answers requires precise semantic alignment. "Who organized the event?" should match "Event was organized by..." Lemmatization handles this better than stemming.
+**Question Answering**: Matching questions to answers requires precise semantic alignment. [storytelling] "Who organized the event?" should match "Event was organized by..." [confidently] Lemmatization handles this better than stemming.
 
 #### The Cons: Where Lemmatization Falls Short
 
-**1. Significantly Slower Processing**
+[cautiously] **1. Significantly Slower Processing**
 
-This is the biggest downside. Lemmatization requires:
+[concerned] This is the biggest downside. Lemmatization requires:
 - **POS tagging**: Running a sequence labeling model (typically a BiLSTM or transformer) over the text
 - **Dictionary lookups**: Searching morphological databases
 - **Rule application**: Applying language-specific transformation rules
 
-Benchmark on 1 million English words:
+[lecture] Benchmark on 1 million English words:
 - **Stemming**: ~1-2 seconds
 - **Lemmatization (spaCy)**: ~30-60 seconds
 - **Lemmatization (Stanford CoreNLP)**: ~90-120 seconds
 
-That's 30-60x slower than stemming! For batch processing of large corpora, this can be the difference between hours and days.
+[concerned] That's 30-60x slower than stemming! [storytelling] For batch processing of large corpora, this can be the difference between hours and days.
 
 **2. Requires External Models and Resources**
 
-Lemmatization isn't self-contained. You need:
+[cautiously] Lemmatization isn't self-contained. You need:
 - Trained language models (50-500 MB per language)
 - Morphological lexicons
 - POS tagging models
 - GPU acceleration for reasonable speed on large corpora
 
-This creates dependencies and deployment challenges. You can't just "pip install" a simple library—you need to download models, manage versions, and ensure compatibility.
+[sigh] This creates dependencies and deployment challenges. [conversational] You can't just "pip install" a simple library—you need to download models, manage versions, and ensure compatibility.
 
-For stemming, you just need a few hundred lines of pure Python code. For lemmatization, you need spaCy, Stanford CoreNLP, or similar heavyweight libraries.
+[lecture] For stemming, you just need a few hundred lines of pure Python code. For lemmatization, you need spaCy, Stanford CoreNLP, or similar heavyweight libraries.
 
 **3. Errors Under Domain Shift**
 
-Lemmatizers are trained on general corpora (news, web text, literature). When applied to specialized domains, they make mistakes:
+[cautiously] Lemmatizers are trained on general corpora (news, web text, literature). [concerned] When applied to specialized domains, they make mistakes:
 
-**Medical text**: "presents" in "patient presents with fever" might be lemmatized to "present" (correct) or "presentation" (incorrect depending on the tagger's confidence).
+[disappointed] **Medical text**: "presents" in "patient presents with fever" might be lemmatized to "present" (correct) or "presentation" (incorrect depending on the tagger's confidence).
 
-**Legal text**: "parties" could mean "party" (social event) or "party" (legal entity). Context determines the correct lemma, but the model might choose incorrectly.
+[cautiously] **Legal text**: "parties" could mean "party" (social event) or "party" (legal entity). Context determines the correct lemma, but the model might choose incorrectly.
 
-**Social media**: Slang, misspellings, and creative language break lemmatizers. "gonna" might not lemmatize to "go," "wanna" might not become "want."
+**Social media**: Slang, misspellings, and creative language break lemmatizers. [storytelling] "gonna" might not lemmatize to "go," "wanna" might not become "want."
 
 **Scientific text**: Domain-specific terminology might not be in the training data, leading to incorrect lemmatization or no lemmatization at all.
 
 #### When to Choose Lemmatization Over Stemming
 
-Use lemmatization when:
+[confidently] Use lemmatization when:
 - **Accuracy > Speed**: You need precise normalization and can afford the computational cost
 - **Interpretability matters**: Stakeholders need to understand your features
 - **Downstream tasks are sensitive**: NER, semantic search, knowledge graphs benefit from accuracy
 - **You're working with irregular morphology**: Languages with lots of irregular forms (English, French) benefit more from lemmatization
 
-Use stemming when:
+[conversational] Use stemming when:
 - **Speed is critical**: Real-time systems, large-scale batch processing
 - **Good enough is good enough**: Information retrieval where approximate matching is acceptable
 - **Resources are limited**: Edge devices, mobile apps, resource-constrained environments
@@ -2422,9 +2422,9 @@ Use neither when:
 
 #### Practical Recommendation
 
-For most modern NLP projects with adequate computational resources, lemmatization is the better choice. The accuracy gains outweigh the speed penalty, especially as hardware improves and libraries become more efficient. However, always profile your pipeline—if lemmatization is your bottleneck and you're not seeing accuracy improvements, switch to stemming or skip normalization entirely.
+[confidently] For most modern NLP projects with adequate computational resources, lemmatization is the better choice. [pleased] The accuracy gains outweigh the speed penalty, especially as hardware improves and libraries become more efficient. [cautiously] However, always profile your pipeline—if lemmatization is your bottleneck and you're not seeing accuracy improvements, switch to stemming or skip normalization entirely.
 
-A hybrid approach is also viable: use stemming for initial experiments and exploration, then switch to lemmatization for production or final models where accuracy matters most.`
+[conversational] A hybrid approach is also viable: use stemming for initial experiments and exploration, then switch to lemmatization for production or final models where accuracy matters most.`
         }
       ]
     },
@@ -2504,11 +2504,11 @@ A hybrid approach is also viable: use stemming for initial experiments and explo
           backgroundColor: '#631037',
           notes: `### 21. Part-of-Speech Tagging
 
-Part-of-speech tagging, commonly abbreviated as POS tagging (pronounced "P-O-S tagging" or sometimes "pause tagging"), is a fundamental NLP task that assigns grammatical categories to words. It's like giving each word a label describing its grammatical role in a sentence.
+[lecture] Part-of-speech tagging, commonly abbreviated as POS tagging (pronounced "P-O-S tagging" or sometimes "pause tagging"), is a fundamental NLP task that assigns grammatical categories to words. [conversational] It's like giving each word a label describing its grammatical role in a sentence.
 
 #### What Is Part-of-Speech Tagging?
 
-POS tagging identifies whether a word is a noun, verb, adjective, adverb, pronoun, preposition, and so on. For example, in the sentence "They refuse to permit us to obtain the refuse permit," POS tagging would label:
+[lecture] POS tagging identifies whether a word is a noun, verb, adjective, adverb, pronoun, preposition, and so on. [storytelling] For example, in the sentence "They refuse to permit us to obtain the refuse permit," POS tagging would label:
 
 - "They"  to  PRONOUN
 - "refuse" (first occurrence)  to  VERB
@@ -2518,10 +2518,10 @@ POS tagging identifies whether a word is a noun, verb, adjective, adverb, pronou
 - "to"  to  PARTICLE
 - "obtain"  to  VERB
 - "the"  to  DETERMINER
-- "refuse" (second occurrence)  to  NOUN (different meaning!)
-- "permit" (second occurrence)  to  NOUN (different meaning!)
+- "refuse" (second occurrence)  to  NOUN [pleased] (different meaning!)
+- "permit" (second occurrence)  to  NOUN [delighted] (different meaning!)
 
-Notice how "refuse" and "permit" are verbs in one context but nouns in another. POS tagging resolves this ambiguity using context.
+[amused] Notice how "refuse" and "permit" are verbs in one context but nouns in another. [confidently] POS tagging resolves this ambiguity using context.
 
 \`\`\`mermaid
 graph TD
@@ -2539,55 +2539,55 @@ graph TD
 
 #### Why POS Tagging Matters
 
-POS tagging is rarely an end goal—it's usually a preprocessing step that enables other NLP tasks:
+[lecture] POS tagging is rarely an end goal—it's usually a preprocessing step that enables other NLP tasks:
 
-**1. Lemmatization**: As we discussed earlier, accurate lemmatization requires knowing a word's POS. The lemma of "meeting" depends on whether it's a noun (lemma: "meeting") or verb (lemma: "meet").
+[confidently] **1. Lemmatization**: As we discussed earlier, accurate lemmatization requires knowing a word's POS. [conversational] The lemma of "meeting" depends on whether it's a noun (lemma: "meeting") or verb (lemma: "meet").
 
-**2. Named Entity Recognition (NER)**: NER systems use POS tags as features. Proper nouns (tagged as PROPN) are likely to be entities. Patterns like "PROPN PROPN" might indicate person names ("Barack Obama") or organizations ("Google Inc").
+**2. Named Entity Recognition (NER)**: NER systems use POS tags as features. [pleased] Proper nouns (tagged as PROPN) are likely to be entities. [storytelling] Patterns like "PROPN PROPN" might indicate person names ("Barack Obama") or organizations ("Google Inc").
 
-**3. Syntactic Parsing**: Building parse trees requires knowing which words are nouns, verbs, etc. POS tags are the foundation of syntactic analysis.
+**3. Syntactic Parsing**: Building parse trees requires knowing which words are nouns, verbs, etc. [confidently] POS tags are the foundation of syntactic analysis.
 
-**4. Information Extraction**: Extracting relationships often relies on POS patterns. For example, finding "NOUN VERB NOUN" patterns can identify subject-verb-object relationships.
+**4. Information Extraction**: Extracting relationships often relies on POS patterns. [lecture] For example, finding "NOUN VERB NOUN" patterns can identify subject-verb-object relationships.
 
-**5. Feature Engineering**: For text classification, you might create features like "ratio of adjectives to nouns" or "number of modal verbs." POS tags enable these syntactic features.
+**5. Feature Engineering**: For text classification, you might create features like "ratio of adjectives to nouns" or "number of modal verbs." [pleased] POS tags enable these syntactic features.
 
 #### How POS Tagging Works
 
-Modern POS tagging is treated as a sequence labeling problem. The algorithm considers the entire sentence context, not just individual words:
+[lecture] Modern POS tagging is treated as a sequence labeling problem. [confidently] The algorithm considers the entire sentence context, not just individual words:
 
 **Traditional Approaches:**
 - **Hidden Markov Models (HMMs)**: Model the probability of tag sequences and word emissions
 - **Conditional Random Fields (CRFs)**: Discriminative models that consider rich features
 
-**Modern Approaches:**
+[confidently] **Modern Approaches:**
 - **BiLSTM + CRF**: Bidirectional LSTMs capture context from both directions
 - **Transformers**: BERT-based taggers achieve 97-98% accuracy on English
 
-The key insight is that context matters. Consider "bank":
+[lecture] The key insight is that context matters. [storytelling] Consider "bank":
 - "I need to deposit money at the bank"  to  NOUN
 - "Don't bank on it happening"  to  VERB
 
-The surrounding words ("deposit," "money," "at") vs. ("on," "it") signal the correct POS tag.
+[pleased] The surrounding words ("deposit," "money," "at") vs. ("on," "it") signal the correct POS tag.
 
 #### Common POS Tagsets
 
-Different tagsets exist with varying granularity:
+[lecture] Different tagsets exist with varying granularity:
 
-**Universal POS Tags (17 tags)**: A simplified, cross-lingual standard
+[confidently] **Universal POS Tags (17 tags)**: A simplified, cross-lingual standard
 - NOUN, VERB, ADJ, ADV, PRON, DET, ADP (preposition), NUM, CONJ, PART, etc.
-- Easy to understand, works across languages
+- [pleased] Easy to understand, works across languages
 
-**Penn Treebank Tags (45 tags)**: Fine-grained English tagset
+[lecture] **Penn Treebank Tags (45 tags)**: Fine-grained English tagset
 - NN (singular noun), NNS (plural noun), NNP (proper singular noun), NNPS (proper plural noun)
 - VB (base verb), VBD (past tense), VBG (gerund), VBN (past participle), VBP (present), VBZ (3rd person present)
-- More detailed but English-specific
+- [conversational] More detailed but English-specific
 
 **Brown Corpus Tags (87 tags)**: Very detailed, including morphological information
-- Useful for linguistic research but overkill for most NLP applications
+- [cautiously] Useful for linguistic research but overkill for most NLP applications
 
 #### When to Use POS Tagging
 
-POS tagging is essential when:
+[confidently] POS tagging is essential when:
 - **Performing lemmatization**: Most lemmatizers require or benefit from POS information
 - **Building linguistic features**: Syntax-aware features for classification
 - **Doing syntactic analysis**: Parsing, chunking, dependency analysis
@@ -2634,28 +2634,28 @@ for token in doc:
 
 #### Accuracy and Limitations
 
-State-of-the-art POS taggers achieve 97-98% accuracy on standard English benchmarks. However, accuracy drops on:
+[confidently] State-of-the-art POS taggers achieve 97-98% accuracy on standard English benchmarks. [cautiously] However, accuracy drops on:
 - **Out-of-domain text**: Social media, technical jargon, creative writing
 - **Ambiguous cases**: "He will run" (will: AUX or NOUN?)
 - **Unknown words**: New slang, misspellings, rare terms
 - **Code-switching**: Multilingual text mixing languages
 
-Even 2-3% error might seem small, but in a 1000-word document, that's 20-30 incorrect tags. These errors can propagate to downstream tasks.
+[concerned] Even 2-3% error might seem small, but in a 1000-word document, that's 20-30 incorrect tags. [disappointed] These errors can propagate to downstream tasks.
 
 #### Evaluation and Validation
 
-Always spot-check your POS tags! Look at a sample of tagged text and verify:
+[lecture] Always spot-check your POS tags! [conversational] Look at a sample of tagged text and verify:
 - Are proper nouns correctly identified?
 - Are ambiguous words tagged correctly in context?
 - Are domain-specific terms handled well?
 - Do you see patterns of errors?
 
-If you notice systematic errors, you might need:
+[cautiously] If you notice systematic errors, you might need:
 - A domain-adapted POS tagger
 - A more sophisticated model
 - Custom rules for your specific vocabulary
 
-POS tagging is a foundational tool in the NLP toolkit. While it's largely been commoditized by tools like spaCy and Stanford CoreNLP, understanding how it works and when to use it remains essential for building robust NLP pipelines.`
+[confidently] POS tagging is a foundational tool in the NLP toolkit. [conversational] While it's largely been commoditized by tools like spaCy and Stanford CoreNLP, understanding how it works and when to use it remains essential for building robust NLP pipelines.`
         },
         {
           id: 22,
@@ -2708,23 +2708,23 @@ POS tagging is a foundational tool in the NLP toolkit. While it's largely been c
           backgroundColor: '#631037',
           notes: `### 22. Part-of-Speech Tagging: Pros and Cons
 
-POS tagging is a double-edged sword—it enables sophisticated linguistic analysis but also introduces potential failure points. Let's examine both sides carefully.
+[lecture] POS tagging is a double-edged sword—it enables sophisticated linguistic analysis but also introduces potential failure points. [cautiously] Let's examine both sides carefully.
 
 #### The Pros: Why POS Tagging Is Essential
 
-**1. Enables Syntax-Aware Features**
+[pleased] **1. Enables Syntax-Aware Features**
 
-POS tags unlock a wealth of linguistic features that go beyond simple word counts. You can create features like:
+[confidently] POS tags unlock a wealth of linguistic features that go beyond simple word counts. [lecture] You can create features like:
 
-**Syntactic patterns**: Count sequences like "ADJ NOUN" (descriptive phrases), "VERB ADV" (modified actions), "MODAL VERB" (possibility/obligation expressions). These patterns can be powerful features for text classification.
+**Syntactic patterns**: Count sequences like "ADJ NOUN" (descriptive phrases), "VERB ADV" (modified actions), "MODAL VERB" (possibility/obligation expressions). [pleased] These patterns can be powerful features for text classification.
 
-**Grammatical complexity metrics**: 
+[lecture] **Grammatical complexity metrics**: 
 - Ratio of adjectives to nouns (descriptive density)
 - Ratio of verbs to nouns (action vs. entity focus)
 - Presence of modal verbs ("could," "should," "might") indicating uncertainty
 - Frequency of passive voice constructions
 
-**Style indicators**: Different writing styles have different POS distributions. Academic writing has more nouns and prepositions, narrative writing has more verbs and adverbs, persuasive writing has more adjectives and modal verbs.
+[storytelling] **Style indicators**: Different writing styles have different POS distributions. [lecture] Academic writing has more nouns and prepositions, narrative writing has more verbs and adverbs, persuasive writing has more adjectives and modal verbs.
 
 \`\`\`mermaid
 graph TD
@@ -2738,44 +2738,44 @@ graph TD
     style E fill:#81c784
 \`\`\`
 
-For example, in sentiment analysis, you might discover that the ratio of adjectives in a review correlates with sentiment intensity—highly positive or negative reviews use more descriptive language.
+[storytelling] For example, in sentiment analysis, you might discover that the ratio of adjectives in a review correlates with sentiment intensity—highly positive or negative reviews use more descriptive language.
 
 **2. Dramatically Improves Lemmatization and Parsing**
 
-We've mentioned this before, but it bears repeating: accurate POS tags are crucial for accurate lemmatization. Without POS information:
+[lecture] We've mentioned this before, but it bears repeating: [confidently] accurate POS tags are crucial for accurate lemmatization. [concerned] Without POS information:
 - "meeting"  to  lemmatizer might guess wrong (is it a noun or verb?)
 - "saw"  to  could be "see" (verb) or "saw" (noun, the tool)
 - "lead"  to  could be "lead" (verb, to guide) or "lead" (noun, the metal)
 
-With POS tags, these ambiguities disappear. The lemmatizer knows exactly how to handle each word based on its grammatical role.
+[pleased] With POS tags, these ambiguities disappear. [confidently] The lemmatizer knows exactly how to handle each word based on its grammatical role.
 
-Similarly, syntactic parsing (building parse trees that show sentence structure) is nearly impossible without POS tags. Parsers need to know which words are verbs (the structural anchors) and which are nouns (the arguments) to build accurate trees.
+[lecture] Similarly, syntactic parsing (building parse trees that show sentence structure) is nearly impossible without POS tags. [conversational] Parsers need to know which words are verbs (the structural anchors) and which are nouns (the arguments) to build accurate trees.
 
 **3. Enables Advanced NLP Pipelines**
 
-POS tagging is often a gateway to more sophisticated analysis:
+[pleased] POS tagging is often a gateway to more sophisticated analysis:
 
-**Dependency parsing**: Identifies grammatical relationships between words (e.g., "dog" is the subject of "ran"). Requires POS tags as input.
+**Dependency parsing**: Identifies grammatical relationships between words (e.g., "dog" is the subject of "ran"). [lecture] Requires POS tags as input.
 
 **Semantic role labeling**: Identifies "who did what to whom" in sentences. Built on top of POS tagging and parsing.
 
-**Coreference resolution**: Determining that "he," "John," and "the CEO" refer to the same person. Uses POS patterns to identify candidate mentions.
+[confidently] **Coreference resolution**: Determining that "he," "John," and "the CEO" refer to the same person. [lecture] Uses POS patterns to identify candidate mentions.
 
 **Information extraction**: Extracting structured data from text (e.g., "Company X acquired Company Y for $Z") relies on POS patterns to identify key entities and relationships.
 
 #### The Cons: Limitations and Failure Modes
 
-**1. Errors Propagate to Downstream Tasks**
+[cautiously] **1. Errors Propagate to Downstream Tasks**
 
-This is the most critical issue. POS tagging errors compound in multi-stage pipelines:
+[concerned] This is the most critical issue. [disappointed] POS tagging errors compound in multi-stage pipelines:
 
-**Cascade failure example:**
+[storytelling] **Cascade failure example:**
 1. POS tagger incorrectly tags "lead" as NOUN instead of VERB
 2. Lemmatizer uses the wrong POS, producing "lead" (metal) instead of "lead" (guide)
 3. NER system looking for VERB + NOUN patterns misses "lead company" as a potential organization
 4. Information extraction fails to capture the relationship
 
-Even with 97% accuracy, in a 1000-word document you have ~30 incorrect tags. If 10 of those are on critical words (main verbs, key entities), downstream tasks suffer significantly.
+[concerned] Even with 97% accuracy, in a 1000-word document you have ~30 incorrect tags. [disappointed] If 10 of those are on critical words (main verbs, key entities), downstream tasks suffer significantly.
 
 \`\`\`mermaid
 graph LR
@@ -2788,7 +2788,7 @@ graph LR
     style D fill:#ffcdd2
 \`\`\`
 
-**2. Domain and Language Coverage Varies Dramatically**
+[cautiously] **2. Domain and Language Coverage Varies Dramatically**
 
 POS taggers are typically trained on news text, literature, or web text. Performance degrades on specialized domains:
 
@@ -2919,18 +2919,18 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
           backgroundColor: '#636310',
           notes: `### 23. N-gram Generation
 
-N-gram generation is a classic technique for capturing local word order and context in text. While it might seem simple, n-grams have powered countless successful NLP applications and remain relevant even in the deep learning era.
+[lecture] N-gram generation is a classic technique for capturing local word order and context in text. [pleased] While it might seem simple, n-grams have powered countless successful NLP applications and remain relevant even in the deep learning era.
 
 #### What Are N-grams?
 
-An n-gram (pronounced "N-gram") is a contiguous sequence of n items from text—typically words, but sometimes characters. The "n" specifies how many items:
+[conversational] An n-gram (pronounced "N-gram") is a contiguous sequence of n items from text—typically words, but sometimes characters. [lecture] The "n" specifies how many items:
 
 - **Unigrams (n=1)**: Individual words: "I," "love," "natural," "language," "processing"
 - **Bigrams (n=2)**: Word pairs: "I love," "love natural," "natural language," "language processing"
 - **Trigrams (n=3)**: Three-word sequences: "I love natural," "love natural language," "natural language processing"
-- **4-grams, 5-grams, etc.**: Longer sequences (less common due to sparsity)
+- **4-grams, 5-grams, etc.**: Longer sequences [cautiously] (less common due to sparsity)
 
-Consider the sentence: "The quick brown fox jumps"
+[conversational] Consider the sentence: "The quick brown fox jumps"
 
 \`\`\`mermaid
 graph TD
@@ -2945,13 +2945,13 @@ graph TD
 
 #### Why N-grams Matter
 
-**Capturing Word Order**: Bag-of-words models lose all word order information. "Dog bites man" and "Man bites dog" are identical in bag-of-words, but bigrams distinguish them: "dog bites" vs. "man bites."
+[pleased] **Capturing Word Order**: Bag-of-words models lose all word order information. [storytelling] "Dog bites man" and "Man bites dog" are identical in bag-of-words, but bigrams distinguish them: "dog bites" vs. "man bites."
 
-**Capturing Context**: In sentiment analysis, "not good" has opposite meaning from "good." Unigrams see "not" and "good" separately, but the bigram "not good" captures the negative sentiment.
+[confidently] **Capturing Context**: In sentiment analysis, "not good" has opposite meaning from "good." [disappointed] Unigrams see "not" and "good" separately, but the bigram "not good" captures the negative sentiment.
 
-**Capturing Phrases**: Multi-word expressions like "New York," "machine learning," "ice cream" should be treated as single units. Bigrams preserve these meaningful phrases.
+[pleased] **Capturing Phrases**: Multi-word expressions like "New York," "machine learning," "ice cream" should be treated as single units. [confidently] Bigrams preserve these meaningful phrases.
 
-**Improving Predictive Power**: N-grams add contextual features that improve model performance. For text classification, adding bigrams to unigrams often improves accuracy by 5-10%.
+**Improving Predictive Power**: N-grams add contextual features that improve model performance. [delighted] For text classification, adding bigrams to unigrams often improves accuracy by 5-10%.
 
 #### How N-gram Generation Works
 
@@ -3114,13 +3114,13 @@ N-grams are a simple, interpretable, and effective way to capture local context 
           backgroundColor: '#636310',
           notes: `### 24. N-gram Generation: Pros and Cons
 
-N-grams have been a cornerstone of NLP for decades, but like all techniques, they come with significant tradeoffs. Let's examine both the strengths that made them so successful and the limitations that have led to their decline in some areas.
+[lecture] N-grams have been a cornerstone of NLP for decades, but like all techniques, they come with significant tradeoffs. [confidently] Let's examine both the strengths that made them so successful and the limitations that have led to their decline in some areas.
 
 #### The Pros: Why N-grams Remain Valuable
 
-**1. Encodes Local Word Order**
+[pleased] **1. Encodes Local Word Order**
 
-This is the killer feature of n-grams. Bag-of-words models treat "dog bites man" and "man bites dog" identically, but these sentences have opposite meanings! N-grams preserve the crucial distinction:
+[confidently] This is the killer feature of n-grams. [disappointed] Bag-of-words models treat "dog bites man" and "man bites dog" identically, but these sentences have opposite meanings! [delighted] N-grams preserve the crucial distinction:
 
 - **Unigrams only**: {dog: 1, bites: 1, man: 1}  to  identical for both sentences
 - **With bigrams**: "dog bites man" includes "dog bites" and "bites man"; "man bites dog" includes "man bites" and "bites dog"  to  distinguishable!
@@ -3338,11 +3338,11 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
           backgroundColor: '#63105a',
           notes: `### 25. Phrase Detection
 
-Phrase detection, also called collocation detection or multiword expression (MWE) identification, is the process of identifying word sequences that function as single semantic units. Instead of treating "New York" as two separate words, we recognize it as a single conceptual unit referring to a specific place.
+[lecture] Phrase detection, also called collocation detection or multiword expression (MWE) identification, is the process of identifying word sequences that function as single semantic units. [conversational] Instead of treating "New York" as two separate words, we recognize it as a single conceptual unit referring to a specific place.
 
 #### What Is Phrase Detection?
 
-Some word combinations are more than the sum of their parts. These are called collocations or multiword expressions:
+[lecture] Some word combinations are more than the sum of their parts. [confidently] These are called collocations or multiword expressions:
 
 **Named Entities**: "New York City," "Barack Obama," "United Nations," "Eiffel Tower"
 **Compound Nouns**: "machine learning," "data science," "customer service," "coffee shop"
@@ -3570,16 +3570,16 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
           notes: `### 26. Phrase Detection - Pros and Cons
 
 #### The Benefits of Phrase Detection
-Phrase detection brings powerful advantages to text preprocessing. First, it dramatically improves semantics by recognizing that "New York City" is a single semantic unit, not three separate words. This means your model doesn't waste capacity treating "New," "York," and "City" as independent features that happen to co-occur. Second, it reduces vocabulary fragmentation. Instead of having "machine," "learning," and "machine learning" as three separate features, you consolidate the bigram into one meaningful unit. Third, it significantly improves retrieval and topic modeling. When users search for "ice cream," phrase detection ensures they match documents about the frozen dessert, not random documents containing both "ice" and "cream" separately.
+[pleased] Phrase detection brings powerful advantages to text preprocessing. [confidently] First, it dramatically improves semantics by recognizing that "New York City" is a single semantic unit, not three separate words. [lecture] This means your model doesn't waste capacity treating "New," "York," and "City" as independent features that happen to co-occur. [pleased] Second, it reduces vocabulary fragmentation. [conversational] Instead of having "machine," "learning," and "machine learning" as three separate features, you consolidate the bigram into one meaningful unit. [delighted] Third, it significantly improves retrieval and topic modeling. [storytelling] When users search for "ice cream," phrase detection ensures they match documents about the frozen dessert, not random documents containing both "ice" and "cream" separately.
 
-Think of phrase detection like recognizing compound words in German. "Schadenfreude" is one concept, not "Schaden" (damage) plus "Freude" (joy) independently. Phrase detection does this for English multi-word expressions.
+[conversational] Think of phrase detection like recognizing compound words in German. [storytelling] "Schadenfreude" is one concept, not "Schaden" (damage) plus "Freude" (joy) independently. [pleased] Phrase detection does this for English multi-word expressions.
 
 #### The Challenges to Consider
-However, phrase detection has three notable challenges. The biggest is threshold tuning. Set your PMI or frequency threshold too high, and you miss legitimate phrases like "ice cream" or "global warming." Set it too low, and you incorrectly merge random co-occurrences like "the of" or "is a" that just happen to appear together. Finding that sweet spot requires experimentation with your specific corpus.
+[cautiously] However, phrase detection has three notable challenges. [concerned] The biggest is threshold tuning. [disappointed] Set your PMI or frequency threshold too high, and you miss legitimate phrases like "ice cream" or "global warming." [concerned] Set it too low, and you incorrectly merge random co-occurrences like "the of" or "is a" that just happen to appear together. [conversational] Finding that sweet spot requires experimentation with your specific corpus.
 
-Second, phrase detection is highly domain-dependent. A threshold that works perfectly for news articles might fail miserably for social media where writing is informal and fragmented. Medical texts have different phrase patterns than legal documents. Finally, false positives and false negatives are inevitable. You might incorrectly merge "New York" when the text means "new York newspaper" (two separate concepts), or you might fail to merge "Los Angeles" because it appears less frequently in your corpus.
+[cautiously] Second, phrase detection is highly domain-dependent. [storytelling] A threshold that works perfectly for news articles might fail miserably for social media where writing is informal and fragmented. [lecture] Medical texts have different phrase patterns than legal documents. [disappointed] Finally, false positives and false negatives are inevitable. [concerned] You might incorrectly merge "New York" when the text means "new York newspaper" (two separate concepts), or you might fail to merge "Los Angeles" because it appears less frequently in your corpus.
 
-The key is understanding these trade-offs and validating your phrase detection with sample inspection. Always review the top phrases it detects to ensure they make semantic sense. In most applications, the semantic improvements outweigh the occasional errors, making phrase detection a valuable preprocessing step.`
+[confidently] The key is understanding these trade-offs and validating your phrase detection with sample inspection. [lecture] Always review the top phrases it detects to ensure they make semantic sense. [pleased] In most applications, the semantic improvements outweigh the occasional errors, making phrase detection a valuable preprocessing step.`
         }
       ]
     },
@@ -3644,17 +3644,17 @@ The key is understanding these trade-offs and validating your phrase detection w
           notes: `### 27. Spell Correction
 
 #### What Is Spell Correction?
-Spell correction is the process of automatically fixing typos and misspellings in text. Think about how many times you've typed "teh" instead of "the" or "recieve" instead of "receive." Humans make these mistakes constantly, especially in informal settings like social media, text messages, or quick form submissions. While we can easily understand the intended meaning, machine learning models can't. To them, "teh" is a completely different word from "the," and this confusion degrades model performance. Spell correction bridges this gap.
+[lecture] Spell correction is the process of automatically fixing typos and misspellings in text. [storytelling] Think about how many times you've typed "teh" instead of "the" or "recieve" instead of "receive." [conversational] Humans make these mistakes constantly, especially in informal settings like social media, text messages, or quick form submissions. [disappointed] While we can easily understand the intended meaning, machine learning models can't. [concerned] To them, "teh" is a completely different word from "the," and this confusion degrades model performance. [confidently] Spell correction bridges this gap.
 
 #### How Spell Correction Works
-The magic of spell correction happens in three stages. First, we detect that a word is likely misspelled by checking it against a dictionary. If "recieve" isn't in our dictionary, it's probably wrong. Second, we generate candidate corrections using edit distance, which measures how many single-character changes (insertions, deletions, substitutions) are needed to transform one word into another. For "recieve," candidates within 1-2 edits might include "receive," "relieve," and "reprieve." Third, we rank these candidates by frequency—how often does each word appear in normal text? "Receive" is far more common than "reprieve," so it wins.
+[lecture] The magic of spell correction happens in three stages. [confidently] First, we detect that a word is likely misspelled by checking it against a dictionary. [conversational] If "recieve" isn't in our dictionary, it's probably wrong. [lecture] Second, we generate candidate corrections using edit distance, which measures how many single-character changes (insertions, deletions, substitutions) are needed to transform one word into another. [conversational] For "recieve," candidates within 1-2 edits might include "receive," "relieve," and "reprieve." [lecture] Third, we rank these candidates by frequency—how often does each word appear in normal text? [pleased] "Receive" is far more common than "reprieve," so it wins.
 
-Modern spell correctors go even further by using language models that consider context. If the sentence is "I didn't recieve the package," the model knows we're probably talking about receiving something, not relieving stress. This context-aware approach dramatically reduces overcorrection errors.
+[confidently] Modern spell correctors go even further by using language models that consider context. [storytelling] If the sentence is "I didn't recieve the package," the model knows we're probably talking about receiving something, not relieving stress. [delighted] This context-aware approach dramatically reduces overcorrection errors.
 
 #### When to Use Spell Correction
-Spell correction shines in three scenarios. First, user-generated content like social media posts, product reviews, or forum discussions, where typos are rampant. Second, noisy form data where users rush through input fields. Third, search query logs where users expect the system to understand "iphone charegr" means "iPhone charger." In these contexts, spell correction can boost downstream accuracy by 10-30%.
+[pleased] Spell correction shines in three scenarios. [lecture] First, user-generated content like social media posts, product reviews, or forum discussions, where typos are rampant. [conversational] Second, noisy form data where users rush through input fields. [lecture] Third, search query logs where users expect the system to understand "iphone charegr" means "iPhone charger." [delighted] In these contexts, spell correction can boost downstream accuracy by 10-30%.
 
-However, be cautious in domains with specialized vocabulary. In medical texts, "Ca" (calcium) shouldn't be corrected to "can." In code, variable names like "usr" are intentional, not typos.`
+[cautiously] However, be cautious in domains with specialized vocabulary. [disappointed] In medical texts, "Ca" (calcium) shouldn't be corrected to "can." [concerned] In code, variable names like "usr" are intentional, not typos.`
         },
         {
           id: 28,
@@ -3698,16 +3698,16 @@ However, be cautious in domains with specialized vocabulary. In medical texts, "
           notes: `### 28. Spell Correction - Pros and Cons
 
 #### The Power of Spell Correction
-Spell correction delivers three major benefits to your NLP pipeline. First, it improves both recall and precision in downstream tasks. For example, in sentiment analysis, correcting "I lovvve this productt!" to "I love this product!" ensures the sentiment model properly recognizes the positive emotion. Second, it produces cleaner features for machine learning. Instead of your model learning separate representations for "beautiful," "beautifull," and "beutiful," it learns one strong representation for the correctly spelled word. Third, studies show spell correction can boost downstream accuracy by 5-15% in tasks like classification, search, and question answering.
+[pleased] Spell correction delivers three major benefits to your NLP pipeline. [confidently] First, it improves both recall and precision in downstream tasks. [storytelling] For example, in sentiment analysis, correcting "I lovvve this productt!" to "I love this product!" ensures the sentiment model properly recognizes the positive emotion. [pleased] Second, it produces cleaner features for machine learning. [lecture] Instead of your model learning separate representations for "beautiful," "beautifull," and "beutiful," it learns one strong representation for the correctly spelled word. [delighted] Third, studies show spell correction can boost downstream accuracy by 5-15% in tasks like classification, search, and question answering.
 
-Think of spell correction as noise reduction for your data. Just as cleaning static from an audio recording makes music clearer, fixing spelling errors makes text patterns more recognizable to models.
+[conversational] Think of spell correction as noise reduction for your data. [storytelling] Just as cleaning static from an audio recording makes music clearer, fixing spelling errors makes text patterns more recognizable to models.
 
 #### The Pitfalls to Avoid
-However, spell correction comes with significant risks. The biggest danger is overcorrection, where the system incorrectly "fixes" words that were already correct. For example, correcting "desert" to "dessert" in "the Sahara desert" completely changes the meaning. This is especially problematic with proper nouns, domain-specific terminology, and creative spellings. A medical spell checker might incorrectly change "Ca" (calcium) to "can," or a social media analyzer might ruin intentional slang like "gr8" or "luv."
+[cautiously] However, spell correction comes with significant risks. [concerned] The biggest danger is overcorrection, where the system incorrectly "fixes" words that were already correct. [disappointed] For example, correcting "desert" to "dessert" in "the Sahara desert" completely changes the meaning. [concerned] This is especially problematic with proper nouns, domain-specific terminology, and creative spellings. [storytelling] A medical spell checker might incorrectly change "Ca" (calcium) to "can," or a social media analyzer might ruin intentional slang like "gr8" or "luv."
 
-Second, spell correction is heavily language and locale-specific. A dictionary tuned for American English will incorrectly flag British spellings like "colour" and "honour." Third, there's computational overhead. Running sophisticated language models for context-aware correction can be slow, especially on large datasets.
+[cautiously] Second, spell correction is heavily language and locale-specific. [disappointed] A dictionary tuned for American English will incorrectly flag British spellings like "colour" and "honour." [concerned] Third, there's computational overhead. [conversational] Running sophisticated language models for context-aware correction can be slow, especially on large datasets.
 
-The solution? Always use confidence thresholds—only correct words when you're 95%+ confident. Log all corrections for human review. And test thoroughly on your specific domain before deployment.`
+[confidently] The solution? [lecture] Always use confidence thresholds—only correct words when you're 95%+ confident. [conversational] Log all corrections for human review. [cautiously] And test thoroughly on your specific domain before deployment.`
         }
       ]
     },
@@ -3775,19 +3775,19 @@ The solution? Always use confidence thresholds—only correct words when you're 
           notes: `### 29. OCR Error Correction
 
 #### Understanding OCR Errors
-OCR (optical character recognition) is the technology that converts images of text—like scanned documents, photos of signs, or PDFs—into digital text. While modern OCR engines are impressive, they're far from perfect. They make systematic, predictable errors based on visual similarities. The letters "rn" often get read as "m" because they look identical when squished together. Lowercase "L" becomes uppercase "I." The number "0" becomes the letter "O." Old or degraded documents are especially problematic, where faded ink, creases, or coffee stains create additional confusion.
+[lecture] OCR (optical character recognition) is the technology that converts images of text—like scanned documents, photos of signs, or PDFs—into digital text. [conversational] While modern OCR engines are impressive, they're far from perfect. [concerned] They make systematic, predictable errors based on visual similarities. [disappointed] The letters "rn" often get read as "m" because they look identical when squished together. Lowercase "L" becomes uppercase "I." The number "0" becomes the letter "O." [cautiously] Old or degraded documents are especially problematic, where faded ink, creases, or coffee stains create additional confusion.
 
-These aren't random typos like human misspellings. They're systematic patterns based on visual ambiguity. That's both the curse and the blessing of OCR errors—they're consistent enough that we can predict and correct them.
+[lecture] These aren't random typos like human misspellings. [confidently] They're systematic patterns based on visual ambiguity. [pleased] That's both the curse and the blessing of OCR errors—they're consistent enough that we can predict and correct them.
 
 #### How OCR Error Correction Works
-OCR error correction leverages these systematic patterns. First, we analyze our OCR output to identify common mistakes. We might discover that "m" frequently appears in nonsensical positions (like "mning" instead of "mining") while "rn" would make sense ("mining"). We build a confusion matrix—a lookup table of likely character substitutions: "rn↔m," "l↔I," "0↔O," etc.
+[confidently] OCR error correction leverages these systematic patterns. [lecture] First, we analyze our OCR output to identify common mistakes. [storytelling] We might discover that "m" frequently appears in nonsensical positions (like "mning" instead of "mining") while "rn" would make sense ("mining"). [lecture] We build a confusion matrix—a lookup table of likely character substitutions: "rn↔m," "l↔I," "0↔O," etc.
 
-Second, we apply rule-based replacements combined with dictionary validation. If "moming" isn't a real word but "morning" is, and we know "rn→m" is a common OCR error, we correct it. For more sophisticated correction, we use post-OCR language models that understand context. If the sentence is "The company's moming report," the model knows "morning report" is far more likely than "moming report" based on linguistic patterns.
+[confidently] Second, we apply rule-based replacements combined with dictionary validation. [storytelling] If "moming" isn't a real word but "morning" is, and we know "rn→m" is a common OCR error, we correct it. [pleased] For more sophisticated correction, we use post-OCR language models that understand context. [lecture] If the sentence is "The company's moming report," the model knows "morning report" is far more likely than "moming report" based on linguistic patterns.
 
 #### When This Technique Matters
-OCR error correction is essential for three domains. First, digitizing scanned books, especially older ones where print quality has degraded. Second, processing business documents like contracts, invoices, or forms that were scanned rather than born-digital. Third, working with historical archives where documents are decades or centuries old.
+[pleased] OCR error correction is essential for three domains. [lecture] First, digitizing scanned books, especially older ones where print quality has degraded. [conversational] Second, processing business documents like contracts, invoices, or forms that were scanned rather than born-digital. [lecture] Third, working with historical archives where documents are decades or centuries old.
 
-The quality gains can be dramatic—reducing error rates from 10-20% down to 1-2% in well-tuned systems.`
+[delighted] The quality gains can be dramatic—reducing error rates from 10-20% down to 1-2% in well-tuned systems.`
         },
         {
           id: 30,
@@ -3821,16 +3821,16 @@ The quality gains can be dramatic—reducing error rates from 10-20% down to 1-2
           notes: `### 30. OCR Error Correction - Pros and Cons
 
 #### Massive Quality Improvements
-OCR error correction delivers two game-changing benefits. First, it can produce large quality gains specifically on OCR-generated text. We're talking about error rate reductions from 15% down to 2-3%, which transforms unusable text into highly reliable data. Imagine trying to search a database of scanned historical newspapers where 1 in 7 words is wrong—it would be nearly impossible to find relevant articles. After OCR correction, that same database becomes searchable and analyzable.
+[delighted] OCR error correction delivers two game-changing benefits. [pleased] First, it can produce large quality gains specifically on OCR-generated text. [excited] We're talking about error rate reductions from 15% down to 2-3%, which transforms unusable text into highly reliable data. [storytelling] Imagine trying to search a database of scanned historical newspapers where 1 in 7 words is wrong—it would be nearly impossible to find relevant articles. [delighted] After OCR correction, that same database becomes searchable and analyzable.
 
-Second, it addresses domain-specific noise patterns that general spell checkers miss. Medical documents might confuse "mg" with "rng," legal documents might mangle case numbers, and old typewritten text might consistently misread certain fonts. By building correction models tailored to your specific document types, you handle these specialized errors that off-the-shelf tools can't touch.
+[pleased] Second, it addresses domain-specific noise patterns that general spell checkers miss. [lecture] Medical documents might confuse "mg" with "rng," legal documents might mangle case numbers, and old typewritten text might consistently misread certain fonts. [confidently] By building correction models tailored to your specific document types, you handle these specialized errors that off-the-shelf tools can't touch.
 
 #### The Investment Required
-However, OCR error correction has three significant drawbacks. First, it requires corpus-specific tuning. The confusion matrix that works perfectly for 19th-century newspapers will fail on modern receipts. You need to analyze your specific OCR output, identify your unique error patterns, and build custom rules. This isn't plug-and-play.
+[cautiously] However, OCR error correction has three significant drawbacks. [concerned] First, it requires corpus-specific tuning. [disappointed] The confusion matrix that works perfectly for 19th-century newspapers will fail on modern receipts. [sigh] You need to analyze your specific OCR output, identify your unique error patterns, and build custom rules. [conversational] This isn't plug-and-play.
 
-Second, residual errors always remain. Even the best OCR correction can't fix everything. If the original scan was too degraded, or if the OCR engine completely hallucinated text, no amount of correction will recover the original meaning. You might go from 15% error to 2%, but that final 2% can be stubborn.
+[cautiously] Second, residual errors always remain. [disappointed] Even the best OCR correction can't fix everything. [concerned] If the original scan was too degraded, or if the OCR engine completely hallucinated text, no amount of correction will recover the original meaning. [conversational] You might go from 15% error to 2%, but that final 2% can be stubborn.
 
-Third, there's significant setup effort. You need gold-standard samples (manually corrected text), tools for pattern analysis, and an iterative refinement process. For small projects, this overhead might not be worth it. For large-scale document digitization projects, it's absolutely essential.`
+[conversational] Third, there's significant setup effort. [lecture] You need gold-standard samples (manually corrected text), tools for pattern analysis, and an iterative refinement process. [cautiously] For small projects, this overhead might not be worth it. [confidently] For large-scale document digitization projects, it's absolutely essential.`
         }
       ]
     },
