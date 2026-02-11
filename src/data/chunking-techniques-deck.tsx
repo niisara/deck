@@ -2882,16 +2882,28 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Extraction quality varies across formats</li>
-                <li>Formatting loss risk during conversion</li>
-                <li>Complex tables require special handling</li>
-                <li>May miss context around tables</li>
-              </ul>
+              <GSAPStaggerList stagger={0.11} delay={0.25}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Extraction quality varies across formats</li>
+                  <li>Formatting loss risk during conversion</li>
+                  <li>Complex tables require special handling</li>
+                  <li>May miss context around tables</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: ''
+          notes: `### 53. Table-Aware Chunking - Cons
+Now let's discuss the practical challenges of table-aware chunking that you need to consider.
+#### Format Variability
+**Table extraction quality varies dramatically** across document formats. Extracting tables from HTML is relatively straightforward since tables have explicit markup. But PDF tables? That's a nightmare. PDFs store tables as positioned text fragments, not structured data. Tools have to infer table structure from spatial layout, which is error-prone. Excel sheets are easier but have their own quirks with merged cells and formulas.
+#### Formatting Loss
+During the conversion process from source format to your chunk representation, you risk **formatting loss**. Colored cells that indicate status, merged headers that group columns, footnote references, these visual cues often carry meaning. When you convert a table to Markdown or JSON, you might lose that formatting information unless you explicitly capture it as metadata.
+#### Complex Table Handling
+Not all tables are simple grids. Some have **nested headers, merged cells, sub-tables, or hierarchical structures**. A financial report might have a header row spanning multiple columns, sub-headers for quarters, and totals calculated across rows. Parsing and representing these complex structures requires sophisticated logic and potentially custom handling for each table type you encounter.
+#### Missing Context
+Tables rarely stand alone in documents. There's usually **surrounding context**: a caption explaining what the table shows, introductory text describing the data, or subsequent paragraphs interpreting the results. If you extract just the table, you lose this context. You might retrieve a benchmark table without knowing which software versions were tested or under what conditions.
+These challenges mean table-aware chunking requires more engineering effort, but the alternative of splitting tables arbitrarily is usually worse.`
         },
         {
           id: 54,
@@ -2899,25 +2911,78 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Per table (convert to Markdown/JSON)</li>
-                <li>100–500 tokens typical per table</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>0 (tables are typically self-contained units)</li>
-                <li>Consider including caption or immediately adjacent text</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Table detection and extraction requires specialized processing</li>
-                <li>Medium</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.15} duration={0.9}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
+                  Best Chunk Size
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Document] --> B[Text Chunk<br/>300 tokens]
+    A --> C[Table Chunk<br/>150 tokens]
+    A --> D[Text Chunk<br/>250 tokens]
+    C --> E[Headers: Product,Price,Rating]
+    C --> F[Row 1: Widget A,$99,4.5]
+    C --> G[Row 2: Widget B,$149,4.8]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#e1bee7
+    style F fill:#e1bee7
+    style G fill:#e1bee7`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Per table (convert to Markdown/JSON)</li>
+                  <li>100–500 tokens typical per table</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInTop" delay={0.65} duration={0.9}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.85}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>0 (tables are typically self-contained units)</li>
+                  <li>Consider including caption or immediately adjacent text</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.7}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Table detection and extraction requires specialized processing</li>
+                  <li>Medium</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: ''
+          notes: `### 54. Table-Aware Chunking - Configuration
+Let's configure table-aware chunking for optimal results in production systems.
+#### Best Chunk Size
+The approach here is fundamentally different: **per table chunking**. Each table becomes one chunk, regardless of its size. In practice, most tables fall into the **100 to 500 token range**, which works well for embedding models. A small pricing table with 3 products might be 100 tokens when converted to Markdown format. A benchmark comparison table with 10 rows and 8 columns could reach 500 tokens.
+The key decision is **representation format**. You can convert tables to Markdown, which preserves readability and works well for text-based embeddings. Or convert to JSON, which is more queryable but less natural-language-friendly. Some systems do both: store JSON for structured queries and Markdown for semantic search.
+```mermaid
+graph TD
+    A[Document] --> B[Text Chunk<br/>300 tokens]
+    A --> C[Table Chunk<br/>150 tokens]
+    A --> D[Text Chunk<br/>250 tokens]
+    C --> E[Headers: Product,Price,Rating]
+    C --> F[Row 1: Widget A,$99,4.5]
+    C --> G[Row 2: Widget B,$149,4.8]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#e1bee7
+    style F fill:#e1bee7
+    style G fill:#e1bee7
+```
+#### Overlap Size
+Tables typically have **zero overlap** with surrounding chunks. They're self-contained data structures with clear boundaries. However, a valuable enhancement is to **include the table caption** or immediately adjacent text that describes the table. This provides context without duplicating the entire table structure. Think of it as metadata rather than overlap.
+#### Computational Cost
+The cost is **Medium** because **table detection requires specialized processing**. You need computer vision techniques for PDFs, DOM analysis for HTML, or library-specific parsing for spreadsheets. Tools like Camelot or pdfplumber use heuristics and sometimes machine learning to identify table boundaries. This is more expensive than simple text splitting but essential for quality.
+This configuration ensures tables are treated as first-class data structures in your RAG system.`
         },
         {
           id: 55,
@@ -2925,26 +2990,50 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Financial reports with tabular data</li>
-                <li>Technical specifications documents</li>
-                <li>Benchmarking reports</li>
-                <li>Research papers with data tables</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Camelot (for PDF tables)</li>
-                <li>Tabula</li>
-                <li>pdfplumber</li>
-                <li>Unstructured.io</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires table detection and specialized extraction</p>
+              <GSAPAnimated animation="bounceIn" delay={0.1} duration={1.0}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Financial reports with tabular data</li>
+                  <li>Technical specifications documents</li>
+                  <li>Benchmarking reports</li>
+                  <li>Research papers with data tables</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.7} duration={1.0}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.95}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Camelot (for PDF tables)</li>
+                  <li>Tabula</li>
+                  <li>pdfplumber</li>
+                  <li>Unstructured.io</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.8}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires table detection and specialized extraction</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#65581c',
-          notes: ''
+          notes: `### 55. Table-Aware Chunking - Use Cases & Tools
+Let's explore the ideal scenarios for table-aware chunking and the practical tools that make it feasible.
+#### Use Cases
+This technique is essential for **financial reports** that are packed with tables showing revenue breakdowns, balance sheets, cash flow statements, and comparative analyses. Users asking financial questions expect to retrieve actual numbers organized in their original tabular context.
+**Technical specification documents** rely heavily on tables for parameters, configurations, compatibility matrices, and feature comparisons. Think of hardware specs where each row is a product model and columns show CPU, RAM, storage, and price. These tables are the core content, not supplementary information.
+**Benchmarking reports** are almost entirely tables comparing performance metrics across different systems, configurations, or time periods. Keeping these comparison tables intact is critical for meaningful retrieval.
+**Research papers** often include data tables presenting experimental results, statistical analyses, or literature reviews. These tables are dense with information and absolutely must remain structured for proper interpretation.
+#### Tooling Support
+The tool landscape here is specialized. **Camelot** is specifically designed for extracting tables from PDFs. It uses computer vision and machine learning to identify table boundaries and extract cell contents. It works remarkably well but requires some parameter tuning for best results.
+**Tabula** is another PDF table extraction tool, particularly good for government documents and reports with consistent table formatting. It can handle both lattice-style tables with borders and stream-style tables without visible lines.
+**pdfplumber** combines text extraction with table detection. It's Python-based and offers fine-grained control over extraction parameters. Great for programmatic workflows where you need to extract tables as part of a larger pipeline.
+**Unstructured.io** is a comprehensive document parsing library that handles tables across multiple formats including PDF, Word, HTML, and more. It provides a unified API regardless of source format.
+#### Complexity Level
+This is rated **Intermediate** because you need specialized knowledge of table detection algorithms and extraction techniques. Each format requires different approaches, and edge cases are common. However, with modern tools, it's quite manageable.
+Table-aware chunking is indispensable when your documents contain structured data that users need to query and analyze.`
         }
       ]
     },
@@ -2958,16 +3047,28 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Split by function/class/module; preserves semantics</li>
-                <li>Maintains code integrity and logical structure</li>
-                <li>Keeps related declarations together</li>
-                <li>Enhances retrieval relevance for code questions</li>
-              </ul>
+              <GSAPStaggerList stagger={0.14} delay={0.2}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Split by function/class/module; preserves semantics</li>
+                  <li>Maintains code integrity and logical structure</li>
+                  <li>Keeps related declarations together</li>
+                  <li>Enhances retrieval relevance for code questions</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: ''
+          notes: `### 56. Code-Aware Chunking - Pros
+Technique 14 is code-aware chunking, designed specifically for source code repositories and technical documentation containing code examples.
+#### Semantic Structure Preservation
+The key advantage is **splitting by logical code units**: functions, classes, and modules. Code isn't random text; it has deep structure. A function is a complete unit of logic with inputs, processing, and outputs. A class encapsulates related data and methods. By chunking along these boundaries, you **preserve semantic meaning**. You never split a function in half, which would make the code incomprehensible and useless for retrieval.
+#### Code Integrity
+**Code must remain syntactically valid** to be useful. If you arbitrarily split a Python function, you'd end up with chunks that have mismatched indentation, incomplete if-statements, or missing closing braces. Code-aware chunking ensures each chunk contains **complete, parseable code**. You can syntax-highlight it, run it through linters, or even execute it if needed.
+#### Related Declarations Stay Together
+Functions often depend on nearby code: imports at the top of the file, type definitions, helper functions, constants. Code-aware chunking can **keep related declarations together** with the main code unit. When you retrieve a function, you also get its dependencies within the chunk, making it much more comprehensible and actionable.
+#### Retrieval Relevance
+For **code-related questions**, this dramatically improves retrieval quality. When someone asks "How do I authenticate users?", you want to return the complete authentication function, not three arbitrary 500-character slices that each contain fragments of the logic. Code-aware chunking ensures your chunks align with how developers actually think about and work with code.
+This approach is essential for code search, documentation generation, and developer assistance tools.`
         },
         {
           id: 57,
@@ -2975,16 +3076,28 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Language-specific tuning required</li>
-                <li>Struggles with very long functions</li>
-                <li>May miss cross-function relationships</li>
-                <li>Parser dependency adds complexity</li>
-              </ul>
+              <GSAPStaggerList stagger={0.12} delay={0.25}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Language-specific tuning required</li>
+                  <li>Struggles with very long functions</li>
+                  <li>May miss cross-function relationships</li>
+                  <li>Parser dependency adds complexity</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: ''
+          notes: `### 57. Code-Aware Chunking - Cons
+Let's discuss the challenges and limitations of code-aware chunking that you'll need to navigate.
+#### Language-Specific Requirements
+The biggest challenge is that **each programming language requires specific handling**. Python uses indentation for structure, JavaScript uses braces and semicolons, Go has its own conventions. You need language-specific parsers that understand the syntax and can identify function and class boundaries. This means maintaining separate logic for Python, JavaScript, Java, C++, Rust, and every other language in your codebase. That's significant engineering overhead.
+#### Long Function Problem
+Code-aware chunking **struggles with very long functions**, sometimes called "god functions." If someone wrote a 2000-line function that does everything, your chunk becomes massive and exceeds embedding model limits. You could sub-chunk it, but then you lose the semantic benefits. In practice, well-written code with small, focused functions works best, but real-world code often isn't that clean.
+#### Cross-Function Relationships
+Code has **complex interdependencies**. Function A calls Function B, which uses Class C, which depends on Module D. By chunking at function boundaries, you might **miss these relationships**. When someone asks about a workflow that spans multiple functions, you might retrieve the individual pieces but lose sight of how they connect. Graph-based approaches can complement code-aware chunking here.
+#### Parser Dependencies
+You're **dependent on external parsers** that can be brittle. Tree-sitter is popular for parsing code, but it requires language-specific grammars. If the parser doesn't support a particular language feature or syntax extension, your chunking breaks. Keeping parsers updated as languages evolve adds maintenance burden.
+Despite these challenges, the benefits for code-heavy documentation and repositories make it worthwhile.`
         },
         {
           id: 58,
@@ -2992,25 +3105,83 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>200–800 tokens or 50–150 LOC</li>
-                <li>Function/class-based rather than fixed-size</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Include signature + docstring (20–80 tokens)</li>
-                <li>Function headers/imports may need to be included</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Implementation complexity and processing requirements</li>
-                <li>Medium</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1} duration={0.85}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
+                  Best Chunk Size
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Code File] --> B[Import Statements]
+    A --> C[Function: login<br/>200 tokens]
+    A --> D[Class: UserService<br/>600 tokens]
+    A --> E[Function: logout<br/>150 tokens]
+    D --> F[Method: authenticate<br/>200 tokens]
+    D --> G[Method: getProfile<br/>180 tokens]
+    D --> H[Method: updateUser<br/>220 tokens]
+    style A fill:#4fc3f7
+    style B fill:#e1bee7
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#ffd700
+    style F fill:#e1bee7
+    style G fill:#e1bee7
+    style H fill:#e1bee7`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.09} delay={0.35}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>200–800 tokens or 50–150 LOC</li>
+                  <li>Function/class-based rather than fixed-size</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.85}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.09} delay={0.8}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Include signature + docstring (20–80 tokens)</li>
+                  <li>Function headers/imports may need to be included</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.0} duration={0.7}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Implementation complexity and processing requirements</li>
+                  <li>Medium</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: ''
+          notes: `### 58. Code-Aware Chunking - Configuration
+Let's configure code-aware chunking to balance completeness with embedding model constraints.
+#### Best Chunk Size
+The approach is **function or class-based** rather than fixed-size. In practice, most functions fall into **200 to 800 tokens**, which translates to roughly **50 to 150 lines of code**. A small utility function might be 50 lines, while a more complex method with error handling and validation could reach 150 lines.
+Classes present an interesting choice. A class with many short methods might be 600 tokens total. You could chunk the entire class as one unit if it's cohesive, or chunk each method separately if they're independent. The key is **respecting logical boundaries** rather than forcing artificial splits.
+```mermaid
+graph TD
+    A[Code File] --> B[Import Statements]
+    A --> C[Function: login<br/>200 tokens]
+    A --> D[Class: UserService<br/>600 tokens]
+    A --> E[Function: logout<br/>150 tokens]
+    D --> F[Method: authenticate<br/>200 tokens]
+    D --> G[Method: getProfile<br/>180 tokens]
+    D --> H[Method: updateUser<br/>220 tokens]
+    style A fill:#4fc3f7
+    style B fill:#e1bee7
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#ffd700
+    style F fill:#e1bee7
+    style G fill:#e1bee7
+    style H fill:#e1bee7
+```
+#### Overlap Size
+Here's where code differs from prose. You want to **include the function signature and docstring** with the implementation, typically **20 to 80 tokens**. The signature tells you what the function does, its parameters, and return type. The docstring provides usage examples and describes behavior. Together, these give context without needing to reference other chunks.
+You might also **include essential imports** at the top of each chunk so the code is understandable in isolation. If a function uses numpy, include that import statement with the chunk.
+#### Computational Cost
+The cost is **Medium** due to **parser requirements**. You need to build an AST or use tree-sitter to identify function and class boundaries. This is more expensive than simple text splitting but much cheaper than semantic analysis or embedding-based approaches. For large codebases, consider caching parse results.
+This configuration creates self-contained, meaningful code chunks perfect for RAG-powered code assistants.`
         },
         {
           id: 59,
@@ -3018,26 +3189,50 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Code search and documentation</li>
-                <li>RAG on code repositories</li>
-                <li>API assistants and guides</li>
-                <li>Developer documentation generation</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>LangChain code splitters</li>
-                <li>Tree-sitter parsers</li>
-                <li>Ripgrep + heuristics</li>
-                <li>Language-specific AST parsers</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Required expertise and implementation difficulty</p>
+              <GSAPAnimated animation="rotateIn" delay={0.15} duration={0.95}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>Code search and documentation</li>
+                  <li>RAG on code repositories</li>
+                  <li>API assistants and guides</li>
+                  <li>Developer documentation generation</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="rotateIn" delay={0.7} duration={0.95}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} delay={0.95}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>LangChain code splitters</li>
+                  <li>Tree-sitter parsers</li>
+                  <li>Ripgrep + heuristics</li>
+                  <li>Language-specific AST parsers</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.75}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Required expertise and implementation difficulty</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c4b65',
-          notes: ''
+          notes: `### 59. Code-Aware Chunking - Use Cases & Tools
+Let's explore the scenarios where code-aware chunking is essential and the mature tooling that supports it.
+#### Use Cases
+**Code search and documentation** is the primary use case. Think of GitHub's code search or internal developer portals where engineers need to find specific functions or understand how APIs work. Code-aware chunking ensures search results are complete functions rather than fragments.
+**RAG on code repositories** powers modern AI coding assistants. When a developer asks "How does our authentication work?", the system retrieves relevant code chunks that contain complete functions with their context. This enables the LLM to provide accurate, actionable responses.
+**API assistants and guides** benefit tremendously. Users asking about API endpoints get back the actual implementation code, route handlers, and middleware all chunked meaningfully. They can see complete examples rather than disconnected snippets.
+**Developer documentation generation** can automatically extract functions, analyze their structure, generate summaries, and organize them hierarchically. Tools like Sphinx and JSDoc rely on structured code parsing, and code-aware chunking fits naturally into these workflows.
+#### Tooling Support
+**LangChain's code splitters** provide language-specific chunking for Python, JavaScript, and other languages. They use parsers to identify functions and classes, making implementation straightforward.
+**Tree-sitter** is a powerful parsing library that supports dozens of languages with a unified API. It builds concrete syntax trees incrementally and efficiently, making it perfect for code chunking at scale. Many modern editors use tree-sitter for syntax highlighting.
+**Ripgrep with heuristics** is a simpler approach using regex patterns to identify function definitions. It's faster than full parsing but less reliable. Works well for quick prototypes or when full parsing is overkill.
+**Language-specific AST parsers** like Python's ast module, Babel for JavaScript, or Roslyn for C# provide the most accurate parsing. They're maintained by language communities and handle all syntax edge cases correctly.
+#### Complexity Level
+This sits at **Intermediate** because you need familiarity with ASTs, parsing concepts, and language syntax. However, with modern libraries abstracting the hard parts, it's quite accessible. The bigger challenge is handling multiple languages rather than the parsing itself.
+Code-aware chunking is a must-have for any system working with codebases or technical documentation.`
         }
       ]
     },
@@ -3051,16 +3246,28 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Sentence-coherent with sliding stride; good balance</li>
-                <li>Preserves natural language boundaries</li>
-                <li>Better context preservation than fixed-size</li>
-                <li>Minimizes sentence fragmentation</li>
-              </ul>
+              <GSAPStaggerList stagger={0.17} delay={0.2}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Sentence-coherent with sliding stride; good balance</li>
+                  <li>Preserves natural language boundaries</li>
+                  <li>Better context preservation than fixed-size</li>
+                  <li>Minimizes sentence fragmentation</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: ''
+          notes: `### 60. Windowed Sentence Grouping - Pros
+Technique 15, windowed sentence grouping, offers an elegant middle ground between simplicity and semantic awareness.
+#### Sentence Coherence with Stride
+The approach uses a **sliding window that moves sentence by sentence** rather than character by character. You might take 3 sentences for one chunk, then move forward by 1 sentence and take the next 3. This creates overlapping chunks that respect natural language boundaries. It's like reading a paragraph with a sliding attention window, never cutting sentences in half.
+#### Natural Boundaries
+By **preserving sentence boundaries**, you avoid the fragmentation that plagues character-based chunking. Sentences are complete thoughts, grammatically correct units with subjects, verbs, and objects. When you chunk on sentence boundaries, each chunk remains coherent and readable. There's no "suddenly ending mid-wo" nonsense.
+#### Context Preservation
+The sliding window approach provides **better context than fixed-size chunks**. Because windows overlap, information at chunk boundaries appears in multiple chunks. This redundancy ensures that important context isn't lost when a key concept happens to fall near a boundary. You get continuity without having to manually tune overlap percentages.
+#### Minimal Fragmentation
+Traditional fixed-size chunking can split sentences awkwardly, mid-word or mid-phrase. Windowed sentence grouping **eliminates that fragmentation entirely**. Every chunk starts and ends at sentence boundaries, making them naturally more comprehensible to both humans reviewing the chunks and models embedding them.
+This technique strikes a practical balance between implementation simplicity and semantic quality, making it popular for general-purpose RAG systems.`
         },
         {
           id: 61,
@@ -3068,16 +3275,28 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Redundancy; increases storage requirements</li>
-                <li>Parameter tuning needed (window/stride size)</li>
-                <li>Uneven chunk sizes based on sentence lengths</li>
-                <li>Requires sentence boundary detection</li>
-              </ul>
+              <GSAPStaggerList stagger={0.13} delay={0.25}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Redundancy; increases storage requirements</li>
+                  <li>Parameter tuning needed (window/stride size)</li>
+                  <li>Uneven chunk sizes based on sentence lengths</li>
+                  <li>Requires sentence boundary detection</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: ''
+          notes: `### 61. Windowed Sentence Grouping - Cons
+Let's examine the practical challenges that come with windowed sentence grouping.
+#### Storage Redundancy
+The **overlapping windows create significant redundancy**. If your stride is 1 sentence and your window is 3 sentences, each sentence (except those at document edges) appears in 3 different chunks. This triples your storage requirements! For large document collections, this overhead adds up quickly in terms of database size, embedding costs, and indexing time. You're paying three times to embed and store essentially the same content.
+#### Parameter Tuning
+You need to **tune both window size and stride**. Should you use 3-sentence windows with 1-sentence stride? Or 5-sentence windows with 2-sentence stride? There's no universal answer; it depends on your content, average sentence length, and retrieval goals. Finding the right balance requires experimentation and evaluation, which takes time and domain expertise.
+#### Uneven Chunks
+Sentences vary dramatically in length. A legal document might have 100-word sentences, while a children's book has 5-word sentences. This creates **highly variable chunk sizes**. Three sentences from a legal brief might be 600 tokens, while three children's book sentences are 30 tokens. This variability makes it harder to optimize for embedding model context windows and can lead to inefficient token usage.
+#### Boundary Detection Dependency
+You **need reliable sentence boundary detection**, which is trickier than it sounds. Periods don't always end sentences, think "Dr. Smith" or "Inc." or abbreviations like "e.g." and "i.e." You need NLP libraries like spaCy 👉 'spay-see' or NLTK that understand these patterns. For multilingual content, this gets even more complex with different punctuation conventions.
+Despite these challenges, the method's simplicity and effectiveness make it a go-to choice for many production systems.`
         },
         {
           id: 62,
@@ -3085,25 +3304,78 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>2–5 sentences (~100–300 tokens)</li>
-                <li>Varies based on content complexity and sentence length</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>1–2 sentences</li>
-                <li>Stride of 1-2 sentences between window starts</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Requires sentence detection and window management</li>
-                <li>Low–Medium</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.15} duration={0.9}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
+                  Best Chunk Size
+                  <MermaidPopover
+                    diagram={`graph LR
+    A[Document] --> B[Chunk 1: S1,S2,S3<br/>250 tokens]
+    A --> C[Chunk 2: S2,S3,S4<br/>220 tokens]
+    A --> D[Chunk 3: S3,S4,S5<br/>280 tokens]
+    A --> E[Chunk 4: S4,S5,S6<br/>240 tokens]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#ffd700
+    linkStyle 0 stroke:#81c784,stroke-width:3px
+    linkStyle 1 stroke:#ffd700,stroke-width:3px
+    linkStyle 2 stroke:#81c784,stroke-width:3px
+    linkStyle 3 stroke:#ffd700,stroke-width:3px`}
+                  />
+                </h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>2–5 sentences (~100–300 tokens)</li>
+                  <li>Varies based on content complexity and sentence length</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInRight" delay={0.65} duration={0.9}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.85}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>1–2 sentences</li>
+                  <li>Stride of 1-2 sentences between window starts</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.7}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Requires sentence detection and window management</li>
+                  <li>Low–Medium</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: ''
+          notes: `### 62. Windowed Sentence Grouping - Configuration
+Let's configure windowed sentence grouping for optimal balance between context and efficiency.
+#### Best Chunk Size
+The typical configuration is **2 to 5 sentences per window**, which translates to roughly **100 to 300 tokens**. Why this range? Two sentences is usually the minimum to maintain coherent context, anything less and you're just retrieving isolated statements. Five sentences captures a complete paragraph's worth of information in most documents.
+The actual token count varies significantly based on **sentence length and complexity**. Technical writing with detailed explanations might have long, complex sentences that push 5-sentence chunks toward 400 tokens. Conversational content or news articles with shorter sentences might result in 5-sentence chunks under 200 tokens. You need to profile your specific content to find the sweet spot.
+```mermaid
+graph LR
+    A[Document] --> B[Chunk 1: S1,S2,S3<br/>250 tokens]
+    A --> C[Chunk 2: S2,S3,S4<br/>220 tokens]
+    A --> D[Chunk 3: S3,S4,S5<br/>280 tokens]
+    A --> E[Chunk 4: S4,S5,S6<br/>240 tokens]
+    style A fill:#4fc3f7
+    style B fill:#81c784
+    style C fill:#ffd700
+    style D fill:#81c784
+    style E fill:#ffd700
+    linkStyle 0 stroke:#81c784,stroke-width:3px
+    linkStyle 1 stroke:#ffd700,stroke-width:3px
+    linkStyle 2 stroke:#81c784,stroke-width:3px
+    linkStyle 3 stroke:#ffd700,stroke-width:3px
+```
+#### Overlap Size
+The overlap is defined by your **stride**, typically **1 to 2 sentences**. A stride of 1 means each sentence appears in multiple chunks, maximizing redundancy and context continuity. A stride of 2 reduces storage overhead while still providing overlap. For a 3-sentence window with 1-sentence stride, you get 2-sentence overlap between adjacent chunks. That's substantial but often justified by improved retrieval recall.
+#### Computational Cost
+The cost is **Low to Medium**. You need **sentence boundary detection**, which requires an NLP library pass over your text. Tools like spaCy or NLTK handle this efficiently, even for large documents. The window sliding logic itself is trivial, just iteration and slicing. The main overhead comes from the sentence detection preprocessing step.
+This configuration provides a practical, widely applicable chunking strategy that works well across diverse content types.`
         },
         {
           id: 63,
@@ -3111,26 +3383,50 @@ This technique is non-negotiable when working with data-heavy documents like rep
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>News articles</li>
-                <li>Product guides and documentation</li>
-                <li>Transcripts and conversational content</li>
-                <li>Content with natural narrative flow</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>spaCy + custom grouping</li>
-                <li>NLTK sentence tokenizers</li>
-                <li>Custom implementations</li>
-                <li>LangChain extensions and utilities</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Requires sentence boundary detection and window management</p>
+              <GSAPAnimated animation="flipCard" delay={0.15} duration={1.1}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>News articles</li>
+                  <li>Product guides and documentation</li>
+                  <li>Transcripts and conversational content</li>
+                  <li>Content with natural narrative flow</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="flipCard" delay={0.7} duration={1.1}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.95}>
+                <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
+                  <li>spaCy + custom grouping</li>
+                  <li>NLTK sentence tokenizers</li>
+                  <li>Custom implementations</li>
+                  <li>LangChain extensions and utilities</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.75}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Requires sentence boundary detection and window management</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4f1c65',
-          notes: ''
+          notes: `### 63. Windowed Sentence Grouping - Use Cases & Tools
+Let's explore the ideal scenarios for windowed sentence grouping and the practical tools that make implementation straightforward.
+#### Use Cases
+**News articles** are perfect for this approach. They're written in clear, complete sentences with logical flow from one to the next. The sliding window captures that flow naturally, ensuring retrieved chunks maintain the article's narrative arc.
+**Product guides and documentation** benefit from sentence-level chunking because instructions are typically sentence-based. "First do X. Then do Y. Finally do Z." A sliding window ensures that multi-step instructions stay coherent across chunk boundaries.
+**Transcripts and conversational content** work well because speech patterns naturally organize into sentence-like units. Even though transcripts can be messy with false starts and interruptions, sentence boundary detection adapted for speech can still identify natural breaking points.
+**Content with natural narrative flow** like blog posts, reports, and articles leverages the sliding window's continuity. The technique preserves the author's progression of ideas better than arbitrary fixed-size cuts.
+#### Tooling Support
+**spaCy** 👉 'spay-see' with custom grouping is the most popular approach. spaCy's sentence segmentation is highly accurate across many languages. You then write simple logic to create sliding windows over the detected sentences. It's maybe 20 lines of Python code.
+**NLTK sentence tokenizers** provide another robust option, especially the PunktSentenceTokenizer which learns sentence boundaries from your specific corpus. It's particularly good for handling domain-specific abbreviations and punctuation patterns.
+**Custom implementations** are common because the windowing logic is so straightforward once you have sentences identified. Many teams just use regex or simple NLP libraries and build their own sliding window code.
+**LangChain extensions** provide ready-made implementations with configurable window and stride parameters. If you're already using LangChain, these integrations save time.
+#### Complexity Level
+This sits at **Beginner to Intermediate**. The concepts are simple: detect sentences, slide a window. The complexity comes from handling edge cases in sentence detection and tuning parameters for your specific content. With modern libraries handling the hard NLP parts, it's quite accessible.
+This technique is a workhorse in production RAG systems for its blend of simplicity and effectiveness.`
         }
       ]
     },
