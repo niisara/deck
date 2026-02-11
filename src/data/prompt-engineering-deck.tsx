@@ -3010,20 +3010,48 @@ So when should you use Reflexion despite these limitations? When you have a capa
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Combine vision (and/or audio) with text in step-by-step reasoning.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Rationale grounded in image/text plus final answer</li>
-                <li>Cross-modal reasoning integration</li>
-                <li>Better understanding of visual information</li>
-                <li>Unified reasoning across modalities</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for charts/diagrams QA, science problems, and UI understanding. Combines visual and textual information in reasoning chains.</p>
+              <GSAPAnimated animation="slideInLeft" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Combine vision (and/or audio) with text in step-by-step reasoning.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Rationale grounded in image/text plus final answer</li>
+                  <li>Cross-modal reasoning integration</li>
+                  <li>Better understanding of visual information</li>
+                  <li>Unified reasoning across modalities</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for charts/diagrams QA, science problems, and UI understanding. Combines visual and textual information in reasoning chains.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### Multimodal Chain-of-Thought (Pronunciation: CoT 👉 'cot')
+
+Hey everyone! Let's talk about **Multimodal Chain-of-Thought**, or **MCoT** for short. Now, before we dive in — quick pronunciation guide — when we say "CoT", we pronounce it like 'cot', just like the thing you sleep on. Makes it easier to say in conversation!
+
+#### What is Multimodal CoT?
+So, what is it? Imagine you're analyzing a complex chart or a scientific diagram. Your brain doesn't just read the numbers or labels — you *look* at the visual patterns, read the text, and combine both to understand what's happening. That's exactly what Multimodal CoT does! It takes the powerful step-by-step reasoning of regular Chain-of-Thought and extends it to work with images, diagrams, audio, and even video alongside text.
+
+#### Vision Plus Language Reasoning
+The magic here is **cross-modal reasoning**. The model can literally "see" an image — whether it's a bar chart, a circuit diagram, or a screenshot of a user interface — and then reason about it step-by-step, just like it would with text. It references specific visual elements while developing its explanation, making the reasoning grounded in what it actually observes. Think of it as teaching the AI to not just *read* about something, but to *look at it* and understand it.
+
+#### Real-World Examples
+Where does this shine? Let me give you some concrete examples:
+- **OCR and Document Understanding**: Reading invoices, receipts, or forms where layout and visual structure matter
+- **Chart and Graph Analysis**: Looking at a sales dashboard and explaining trends, outliers, and patterns
+- **Diagram Reasoning**: Analyzing circuit diagrams, flowcharts, or architectural blueprints and explaining how components interact
+- **Medical Imaging**: Examining X-rays or lab results and reasoning through diagnostic steps
+- **UI Understanding**: Looking at a screenshot and explaining what each button does or how to navigate
+
+This technique is a game-changer for any problem where *seeing* the data is just as important as reading about it!`
         },
         {
           id: 68,
@@ -3031,17 +3059,45 @@ So when should you use Reflexion despite these limitations? When you have a capa
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Multimodal CoT extends chain-of-thought reasoning to incorporate visual and other non-text inputs. The model analyzes images, diagrams, or other media alongside text, explicitly reasoning through observations from each modality. This cross-modal reasoning allows the model to reference specific visual elements while developing its step-by-step explanation, leading to better grounded answers for multimodal problems.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>Multimodal CoT extends chain-of-thought reasoning to incorporate visual and other non-text inputs. The model analyzes images, diagrams, or other media alongside text, explicitly reasoning through observations from each modality. This cross-modal reasoning allows the model to reference specific visual elements while developing its step-by-step explanation, leading to better grounded answers for multimodal problems.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.2}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+                <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### How Multimodal CoT Works (CoT 👉 'cot')
+
+Alright, let's break down the mechanics! How does this actually work under the hood?
+
+#### The Process Flow
+First, the model receives both an image and a text prompt. It then processes the image through its vision encoder — this is the part that "sees" the image and understands visual features like shapes, colors, text, spatial relationships, and patterns. At the same time, it processes the text prompt through its language understanding components.
+
+Here's where it gets interesting: instead of just mashing these together, the model performs **cross-modal reasoning**. It explicitly identifies visual observations, relates them to the textual context, and then builds a step-by-step reasoning chain that references both modalities. For example, it might say: "I observe three bars in the chart. The first bar shows 45% (visual), which corresponds to Q1 revenue mentioned in the text. The second bar at 62% is higher, indicating Q2 growth..."
+
+#### Image Understanding Plus Step-by-Step Reasoning
+This is the key difference from just showing an image to a model and asking for an answer. Multimodal CoT forces the model to *explain what it sees* before jumping to conclusions. It's like having a colleague walk you through a chart: "See this line here? It dips around March. That's when we had the supply chain issue mentioned in the notes. Then it recovers in April..."
+
+This step-by-step approach dramatically reduces hallucinations because the model has to commit to specific observations before making inferences. If it claims there's a red circle in the diagram, that claim becomes part of the reasoning chain and can be verified.
+
+#### Real-World Example Deep-Dive
+Let's take that circuit diagram example. Without Multimodal CoT, you might get: "The output voltage is 12V" with no explanation. With Multimodal CoT, you get: "Looking at the diagram, I see a 24V power source at the top left. Following the circuit path, there's a resistor R1 with 100Ω marked. The current flows through R1 to the junction point. I observe a voltage divider configuration with R2 also at 100Ω to ground. Using the voltage divider formula with equal resistances, the output voltage at the middle junction is 24V × (100Ω / 200Ω) = 12V."
+
+See the difference? The model explicitly references visual elements, traces the reasoning path, and shows its work. This is **huge** for debugging, verification, and trust in AI systems!
+
+#### Why It's Advanced
+Now, this technique requires advanced multimodal models — we're talking GPT-4 with vision, Claude 3.5 Sonnet, or Gemini 1.5 Pro. These models have been specifically trained to align visual and language representations in a shared embedding space. Not every AI can do this!`
         },
         {
           id: 69,
@@ -3049,16 +3105,65 @@ So when should you use Reflexion despite these limitations? When you have a capa
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Requires multimodal models with strong vision capabilities. Models must be able to reason about visual content systematically.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="flipCard" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Requires multimodal models with strong vision capabilities. Models must be able to reason about visual content systematically.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### Implementing Multimodal CoT (CoT 👉 'cot')
+
+Let's get practical! How do you actually use this in your code?
+
+#### The Prompt Structure
+The key to effective Multimodal CoT is in your prompt design. You want to explicitly guide the model to perform visual analysis before reasoning. Here's the pattern:
+
+**Step 1:** Provide the image (as a URL, base64, or file upload depending on your API)
+**Step 2:** In your text prompt, structure it like this:
+- "Given the image above and the question: [your question]"
+- "First, list your visual observations from the image"
+- "Then, relate these observations to any text cues or context provided"
+- "Finally, reason through the answer step-by-step"
+
+This three-part structure — observe, relate, reason — is what triggers the chain-of-thought behavior across modalities.
+
+#### Real Implementation Examples
+Let me give you some practical prompts you can use today:
+
+**For Chart Analysis:**
+"Look at this sales chart. First, describe what you see: axes, data points, trends. Then explain how each trend relates to the quarterly metrics mentioned in the text. Finally, predict next quarter's performance with your reasoning."
+
+**For Diagrams:**
+"Examine this system architecture diagram. List all components you observe and their connections. Explain how data flows through the system based on the arrows and labels. Then identify the potential bottleneck and explain your reasoning."
+
+**For OCR and Document Understanding:**
+"Analyze this invoice image. Extract all visible text fields, their positions, and values. Cross-reference these with the expected invoice format described below. Then validate whether this invoice is complete and correctly formatted, explaining your reasoning."
+
+**For UI Screenshots:**
+"Look at this application interface. Describe each UI element you see and its visual state (enabled/disabled, selected, etc.). Based on the user's goal to 'submit a form', explain step-by-step which elements they should interact with and in what order."
+
+#### Model Selection
+Not all models are created equal here! You need models specifically trained on vision-language tasks:
+- **GPT-4o** (the "o" stands for "omni" — multimodal): Excellent for general-purpose visual reasoning
+- **Claude 3.5 Sonnet**: Very strong on document understanding and charts
+- **Gemini 1.5 Pro**: Great for long-context visual documents, can handle multiple images
+
+Make sure you're using the vision-enabled API endpoints. For example, with OpenAI, you'd use the chat completions API with image_url content types.
+
+#### Quick Implementation Tips
+- **Image Quality Matters**: Higher resolution images give better results, but watch out for token usage
+- **Be Specific**: Generic prompts like "what do you see?" get generic answers. Ask specific questions!
+- **Iterate on Prompts**: Your first prompt probably won't be perfect. Test and refine based on the outputs
+- **Combine with Other Techniques**: You can use Multimodal CoT *with* RAG, self-consistency, or other patterns we've covered!`
         },
         {
           id: 70,
@@ -3066,17 +3171,71 @@ So when should you use Reflexion despite these limitations? When you have a capa
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Hallucinated visual claims without grounding</li>
-                <li>Requires robust vision models with spatial reasoning</li>
-                <li>Quality varies significantly by image type</li>
-                <li>May struggle with fine-grained visual details</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Hallucinated visual claims without grounding</li>
+                  <li>Requires robust vision models with spatial reasoning</li>
+                  <li>Quality varies significantly by image type</li>
+                  <li>May struggle with fine-grained visual details</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### Limitations and Considerations for Multimodal CoT (CoT 👉 'cot')
+
+Alright, let's talk about the elephant in the room — what are the gotchas? Where does Multimodal CoT struggle?
+
+#### The Hallucination Problem
+The biggest issue is **hallucinated visual claims**. Because the model generates a reasoning chain, it might confidently describe things that aren't actually in the image. For example, it might say "I see a red button in the top-right corner" when there's actually no button there at all! The chain-of-thought format makes these hallucinations sound very convincing because they're embedded in logical-sounding reasoning.
+
+**What to do about it:** Always verify critical visual claims, especially in high-stakes applications like medical imaging or financial document processing. Consider asking the model to provide specific coordinates or bounding boxes for visual elements it references — this forces more grounding. You can also use multiple runs with self-consistency to check if the visual observations remain stable across attempts.
+
+#### Model Requirements
+This technique requires *advanced* vision capabilities, not just basic image understanding. The model needs:
+- **Spatial reasoning**: Understanding where objects are relative to each other
+- **Text extraction**: Reading labels, numbers, and embedded text in images  
+- **Visual relationships**: Understanding connections, flows, and hierarchies in diagrams
+- **Color and pattern recognition**: Distinguishing between visual elements
+
+Not all multimodal models have these capabilities equally! Some models are better at natural images (photos), while others excel at diagrams and charts. Test your specific use case.
+
+#### Image Quality Matters A LOT
+The quality and type of image dramatically affects results:
+- **Charts and Diagrams**: Usually work great, especially if clean and high-contrast
+- **Photographs**: Good for scene understanding, but can struggle with fine details
+- **Scanned Documents**: Quality varies based on scan resolution and document clarity
+- **Screenshots**: Generally excellent, but tiny text can be problematic
+- **Hand-drawn Diagrams**: Can be challenging if messy or ambiguous
+
+**Pro tip:** If you're working with low-quality images, consider pre-processing them — increase contrast, crop to relevant areas, or even use OCR to extract text separately before feeding to the model.
+
+#### Fine-Grained Visual Details
+Models can struggle with very small or detailed visual elements. Things like:
+- Tiny text in complex diagrams
+- Subtle color gradations in heat maps
+- Fine-grained differences between similar objects
+- Precise measurements or counts of many small items
+
+For these cases, you might need to combine Multimodal CoT with other techniques like explicit OCR, image segmentation, or even breaking the image into multiple focused crops.
+
+#### Cost and Latency
+Let's be real — processing images with these advanced models is more expensive than text-only prompts. Image tokens count significantly toward your API costs, and processing time is longer. For production systems, consider:
+- Caching results for identical images
+- Downsampling images when appropriate
+- Using tiered approaches (cheap model first, expensive model only if needed)
+
+#### When NOT to Use This
+Don't use Multimodal CoT when:
+- You just need basic image classification (a simple vision API is faster and cheaper)
+- The image is decorative or not central to the task
+- You're on a tight budget and text-only alternatives exist
+- You need real-time responses (video frames, live feeds)
+
+That said, when you *do* need to reason about visual information — charts, diagrams, documents, UI — Multimodal CoT is absolute gold. Just be aware of these limitations and test thoroughly!`
         }
       ]
     },
