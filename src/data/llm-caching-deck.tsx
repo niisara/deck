@@ -1500,75 +1500,161 @@ Let's move on to the next pattern, where we'll see another model-level caching t
     },
     {
       id: 'pattern-7',
-      title: 'Pattern 7: User Profile / Preference Cache',
+      title: 'Pattern 7: Logit Cache',
       slides: [
         {
           id: 15,
-          title: 'Pattern 7: User Profile / Preference Cache',
-          icon: { name: 'duo-user' },
+          title: 'Pattern 7: Logit Cache',
+          icon: { name: 'duo-chart-line' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Logit Cache Flow"
+                          diagram={`flowchart LR
+    A["📝 Input Tokens"] --> B["🔄 Forward Pass"]
+    B --> C["💾 Store Logits"]
+    C --> D["🎲 Sampling"]
+    D --> E["✨ Next Token"]
+    E --> F["🔁 Reuse Prefix Logits"]
+    F -.->|For Similar Inputs| B
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#ffd700,color:#000
+    style F fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Next-token logits/probabilities for frequent prefixes</li>
+                        <li>Optional top-k most likely tokens only</li>
+                        <li>Output probability distributions at the token level</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Compact user profile data (embeddings, preferences)</li>
-                      <li>Style, tone, tools preferences, timezone settings</li>
-                      <li>Domain defaults and personalization parameters</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(prefix_token_ids + model_id + logits_version)</li>
+                        <li>Includes decoding_bias/temperature parameters</li>
+                        <li>Versioned to handle model updates</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>user_id + profile_version + tenant_id</li>
-                      <li>May include namespace or region for multi-region systems</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-shield-check" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="slideInTop" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>CPU RAM or Redis for fast access</li>
+                        <li>Map files for large lookup tables</li>
+                        <li>Regional deployment for lower latency</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Secure KV/DB (Redis + KMS)</li>
-                      <li>DynamoDB/Firestore for persistent profiles</li>
-                      <li>Encryption at rest required for sensitive data</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Short TTL (minutes–hours)</li>
+                        <li>Purge on model/quantization change</li>
+                        <li>Frequency-based eviction for memory management</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Long TTL with sliding refresh mechanism</li>
-                      <li>Invalidate on explicit profile updates</li>
-                      <li>Purge after extended user inactivity</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#211d6b',
-          notes: ''
+          notes: `### Pattern 7: Logit Cache
+Welcome to Pattern 7: **Logit Cache**, also known as **Model Output Logit Cache**. This is a sophisticated model-level caching pattern that stores the probability distributions that come out of your language model before token sampling happens.
+
+#### What Exactly Are Logits?
+Let's start with fundamentals. When a language model processes a sequence of tokens, the final layer outputs a vector of **logits** 👉 'loj-its'. These are raw, unnormalized scores for every token in the vocabulary. A typical model vocabulary has thirty thousand to one hundred thousand tokens, so we're talking about vectors with tens of thousands of dimensions. These logits get converted into probabilities through a **softmax** function, and then your sampling strategy picks the next token based on those probabilities.
+
+Here's the key insight: computing those logits is expensive. It requires a full forward pass through the entire neural network. But if you've seen a particular prefix before, those logits will be identical every time, assuming the same model and parameters. That's the opportunity.
+
+#### What Gets Cached
+In **Logit Cache**, we're caching **next-token logits and probabilities for frequent prefixes**. Think about common prompt templates. If your system starts every customer support query with the same system prompt, maybe five hundred tokens long, the logits for the next token after that prefix are always the same. Why recompute them millions of times? Cache them once.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📝 Input Tokens"] --> B["🔄 Forward Pass"]
+    B --> C["💾 Store Logits"]
+    C --> D["🎲 Sampling"]
+    D --> E["✨ Next Token"]
+    E --> F["🔁 Reuse Prefix Logits"]
+    F -.->|For Similar Inputs| B
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style B fill:#ffd700,color:#000
+    style C fill:#ffd700,color:#000
+    style F fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+Practically speaking, you can cache the **full logit vectors** if memory allows, or you can cache only the **top-k most likely tokens** to save space. For a vocabulary of fifty thousand tokens, storing full float32 logits per prefix costs about two hundred kilobytes. That adds up quickly. But storing just the top one hundred tokens with their probabilities reduces this to a few kilobytes, and often that's sufficient because you're typically sampling from the top candidates anyway.
+
+You also capture the **output probability distributions at the token level**. This is useful not just for generation but also for tasks like **rescoring multiple candidates** or implementing **safety filters** that check probability distributions for unwanted patterns.
+
+#### The Cache Key Strategy
+The cache key is critical here. You're hashing the **prefix token IDs** plus the **model ID** and a **logits version**. Why version? Because if you change the model, even slightly, all your cached logits are invalid. Imagine you fine-tune your model or switch to a quantized version. The logits will differ. Your cache key must reflect that.
+
+You also need to include **decoding bias and temperature parameters**. If your application sometimes uses temperature zero-point-seven and sometimes one-point-zero, those produce different probability distributions even for the same logits. So either include temperature in the key, or always cache at a fixed temperature and apply temperature scaling on the fly when retrieving.
+
+Some systems also incorporate **sampling strategy metadata** like top-p or top-k settings, though this is less common because those filters can be applied post-cache.
+
+#### Where Do You Store This?
+Logit cache typically lives in **CPU RAM or Redis** for fast access. These are moderately large data structures. If you're caching logits for ten thousand common prefixes, and each entry is two hundred kilobytes, that's two gigabytes of memory. **Redis 👉 'red-iss'** handles this well, especially with **LRU** 👉 'el-are-you' eviction to keep only the hottest entries in memory.
+
+For very large deployments, some teams use **memory-mapped files** for huge lookup tables. This lets the operating system manage paging between RAM and SSD, giving you effectively unlimited storage but with slower access for cold entries. Regional deployment is important too. You want your logit cache close to your inference servers to minimize network latency.
+
+#### Expiration and Invalidation
+Logit cache has a **short TTL**, typically minutes to hours. Why? Because this cache is tied to a specific model snapshot. If you deploy a new model version, all cached logits are immediately stale. You need to **purge the entire cache on model or quantization changes**. This requires coordination between your deployment pipeline and your cache infrastructure.
+
+You also use **frequency-based eviction**. Not all prefixes are equally common. Track cache hit rates per entry and evict the least frequently used ones when memory pressure builds up. This keeps your cache focused on the highest-value prefixes.
+
+#### The Model-Level Cache Concept
+This is a **model-level cache**, meaning it operates inside or immediately adjacent to the inference layer. Unlike application-level caches that store final responses, logit cache stores intermediate computational artifacts. It's transparent to the rest of your application. Your inference server checks the cache before running the forward pass, and if it finds a hit, it skips straight to sampling. From the application's perspective, nothing changes except the latency drops dramatically.
+
+This pattern is particularly powerful when combined with other caching strategies. You might have a **KV cache** 👉 'kay-vee cache' for within-generation token reuse and a **logit cache** for across-generation prefix reuse. They complement each other beautifully.
+
+#### Real-World Scenarios
+Where does logit cache shine? Think about **template-heavy applications**. Customer support bots, code generation systems, and structured output generators often use fixed prompt templates. The first few hundred tokens are identical across millions of requests. Caching those logits can reduce **time-to-first-token by fifty to eighty percent** for those requests.
+
+Another scenario is **retry and rescoring**. Sometimes you generate multiple candidate completions and then pick the best one. If the prefix is the same across all candidates, you only compute the logits once and sample multiple times. This speeds up beam search and other multi-candidate generation strategies significantly.
+
+**Safety filtering** is another use case. Some systems run content moderation by checking the probability distributions for harmful tokens. If you're checking the same prompts repeatedly, caching the logits lets you run safety checks with near-zero overhead.
+
+#### The Economic Consideration
+Logit cache trades memory for compute. You're spending RAM to avoid GPU cycles. The economics depend on your infrastructure. If GPU time is your bottleneck and you have spare RAM, this trade is hugely favorable. If you're already memory-constrained, adding a multi-gigabyte logit cache might not be feasible.
+
+At scale, though, the savings can be substantial. A single forward pass through a seven-billion-parameter model might take fifty milliseconds on a high-end GPU. If thirty percent of your prompts share common prefixes, you're saving fifteen milliseconds per request on average. For a service handling one million requests per day, that translates to massive GPU hour savings.
+
+Let's explore the trade-offs in more detail on the next slide.`
         },
         {
           id: 16,
@@ -1576,34 +1662,94 @@ Let's move on to the next pattern, where we'll see another model-level caching t
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Faster TTFT for common prompts/prefixes</li>
+                      <li>Useful for rescoring, safety passes, or retry scenarios</li>
+                      <li>Helps maintain consistent outputs across retries</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Personalization without re-sending long profiles</li>
-                    <li>Significant cost savings per request</li>
-                    <li>Enables consistent user experiences across sessions</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Large memory footprint for many prefixes</li>
+                      <li>Exact-match sensitive; limited hit rate</li>
+                      <li>Privacy concerns with caching user-specific content</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Privacy/GDPR compliance concerns</li>
-                    <li>Risk of stale preferences affecting responses</li>
-                    <li>Cold-start issues for new users without profiles</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#211d6b',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's carefully examine the strengths and limitations of **Logit Cache** to understand when this pattern delivers exceptional value and when you need to be cautious.
+
+#### The Compelling Advantages
+On the **strengths** side, logit cache offers some unique benefits that other caching patterns can't match. First and foremost, you get **faster time-to-first-token for common prompts and prefixes**. This is a big deal for user experience. When your system uses standardized prompt templates, the first token generation can be dramatically faster. Instead of waiting fifty to one hundred milliseconds for the model to process the prefix and compute logits, you retrieve cached logits in single-digit milliseconds and immediately start sampling.
+
+The impact compounds in **high-throughput scenarios**. If you're serving thousands of requests per second and thirty to forty percent share common prefixes, you're effectively multiplying your inference capacity. The same GPU fleet can handle more requests because prefix processing is nearly free for cache hits.
+
+#### Rescoring and Multi-Candidate Generation
+Logit cache is **particularly useful for rescoring, safety passes, and retry scenarios**. Imagine you're implementing a content moderation system that needs to check multiple completion candidates. You generate the prefix logits once, then sample five different continuations. Without logit cache, you'd compute the prefix five times. With logit cache, you compute it once and sample five times. That's an eighty-percent reduction in compute for the prefix portion.
+
+The same principle applies to **beam search** and other multi-candidate strategies. In machine translation or code generation, you might explore multiple paths. Logit cache ensures that shared prefixes don't get recomputed, making these algorithms much more efficient.
+
+**Retry scenarios** also benefit immensely. Sometimes your system needs to regenerate a response because the first attempt failed a safety check or didn't meet quality criteria. If you're retrying the same prefix, logit cache means your retry is almost instant for that initial portion. This improves reliability without increasing latency proportionally.
+
+#### Output Consistency Benefits
+An underappreciated benefit is that logit cache **helps maintain consistent outputs across retries**. When you cache logits, you're locking in the probability distributions. If you sample multiple times from the same cached logits, the variability comes purely from your sampling strategy, not from subtle differences in float-point computation or quantization noise. This makes your system's behavior more predictable and reproducible, which is valuable for debugging and quality assurance.
+
+Some teams use logit cache specifically for **A-B testing**. You can cache logits from your production model and then test new sampling strategies or decoding algorithms without rerunning expensive inference. This accelerates experimentation significantly.
+
+#### The Practical Constraints
+Now let's talk about the **limitations**, because they're significant. The most obvious one is the **large memory footprint for many prefixes**. Logits are not small. For a model with a fifty-thousand-token vocabulary, a single set of logits is two hundred kilobytes in float32. If you're caching ten thousand prefixes, that's two gigabytes. Scale up to a million prefixes, and you're talking about two hundred gigabytes, which is way beyond what you can store in RAM economically.
+
+Even with top-k pruning where you only store the top one hundred tokens per prefix, you still need several gigabytes for tens of thousands of entries. This creates a memory-cost trade-off. You need to carefully monitor which prefixes get cached and use **aggressive eviction policies** to keep only the hottest entries.
+
+#### The Exact-Match Problem
+The second major limitation is that logit cache is **exact-match sensitive**, leading to a **limited hit rate**. Unlike semantic caching where you can match similar queries, logit cache requires the token sequence to be identical. Even a single token difference invalidates the cache. This is fundamental to how transformers work. The attention mechanism depends on the exact sequence of tokens, so you can't reuse logits from a slightly different prefix.
+
+In practice, this means your cache hit rate depends entirely on how much repetition exists in your workload. If you're using the same system prompts across all requests, great. But if every user query is unique, logit cache provides zero value. You need to **measure prefix repetition** in your actual traffic before investing in this pattern.
+
+Some systems try to work around this with **prefix tree** data structures that let you cache logits for partial matches, but this adds significant complexity and is only useful if your prompts have hierarchical structure.
+
+#### Privacy and Security Considerations
+The third limitation involves **privacy concerns with caching user-specific content**. If your prompts contain **PII** 👉 'pee-eye-eye', or personally identifiable information, caching those logits creates a security risk. Imagine you cache logits for a prompt that includes a user's email address or account details. If your cache is compromised, an attacker could reverse-engineer the cached data to extract sensitive information.
+
+This is less of an issue if you only cache system prompts that contain no user data. But if you're caching arbitrary user queries, you need **strict access controls**, encryption at rest, and potentially **data anonymization**. Some regulated industries may prohibit this type of caching entirely due to compliance requirements like **GDPR** 👉 'gee-dee-pee-are' or **HIPAA** 👉 'hip-ah'.
+
+You also need to consider **multi-tenancy**. If you're serving multiple customers or organizations, you must ensure cache isolation. One tenant's cached logits should never be accessible to another tenant. This requires careful cache key design and infrastructure segmentation.
+
+#### Model Update Challenges
+Logit cache creates operational challenges during **model updates**. When you deploy a new model version, every single cached entry becomes invalid. You must **purge the entire cache**, which means temporarily losing all the performance benefits until the cache warms up again. For a high-traffic service, this can cause a noticeable spike in latency and compute load right after deployment.
+
+Some teams address this with **dual caching**, maintaining separate caches for the old and new model versions during a transition period. But this doubles memory requirements temporarily and adds complexity to your deployment process.
+
+#### When to Use Logit Cache
+This pattern is most effective in **template-driven systems** with high query volume. Customer support chatbots with standardized greeting prompts, code generation tools with common imports and boilerplate, and enterprise assistants with multi-hundred-token system prompts all benefit enormously.
+
+It's less suitable for **highly dynamic, user-specific queries** where every prompt is unique, or for small-scale systems where the complexity of managing logit cache outweighs the benefits.
+
+The economics are straightforward: if your GPU cost per hour is high, your prefix repetition rate is above thirty percent, and you have spare RAM, logit cache likely pays for itself quickly. Run an analysis on your actual traffic patterns to determine hit rate potential before implementing.
+
+#### Complementary Patterns
+Logit cache works beautifully with other patterns. Combine it with **KV cache** 👉 'kay-vee cache' for maximum efficiency. KV cache handles within-request token reuse during generation, while logit cache handles across-request prefix reuse. Together, they create a comprehensive model-level caching strategy.
+
+You can also layer logit cache beneath **semantic similarity cache**. The semantic cache matches similar queries at the application level, while logit cache optimizes exact prefix matches at the inference level. They operate at different abstraction layers and complement each other perfectly.
+
+> Ask the audience: "How many of you are currently using prompt templates in your applications, and what's your typical prefix length?"
+
+With this deep understanding of logit cache complete, let's move on to the next pattern, which takes us in a different direction at the retrieval layer.`
         }
       ]
     },
