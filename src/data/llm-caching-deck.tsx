@@ -390,67 +390,123 @@ With those trade-offs in mind, let's move on to Pattern 2, which caches at a dif
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          diagram={`flowchart LR
+    A["📝 Query"] --> B["🔢 Embedding"]
+    B --> C{"🔍 Cache?"}
+    C -->|Hit| D["⚡ Return Results"]
+    C -->|Miss| E["🔎 Vector Search"]
+    E --> F["💾 Store in Cache"]
+    F --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Top-k document IDs + scores from vector search</li>
+                        <li>Optional document snippets/previews</li>
+                        <li>Results from expensive retrieval operations</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Top-k document IDs + scores from vector search</li>
-                      <li>Optional document snippets/previews</li>
-                      <li>Results from expensive retrieval operations</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(query_norm or quantized_embedding + index_snapshot_id + k + filters)</li>
+                        <li>Includes index version to ensure result consistency</li>
+                        <li>Filter parameters included to maintain result accuracy</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>hash(query_norm or quantized_embedding + index_snapshot_id + k + filters)</li>
-                      <li>Includes index version to ensure result consistency</li>
-                      <li>Filter parameters included to maintain result accuracy</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis/Memcached for fast, in-memory access</li>
+                        <li>Optional edge/CDN caching for public FAQs</li>
+                        <li>Regional deployment to minimize latency</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Redis/Memcached for fast, in-memory access</li>
-                      <li>Optional edge/CDN caching for public FAQs</li>
-                      <li>Regional deployment to minimize latency</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Short TTL (5–60 minutes)</li>
+                        <li>Purge on index refresh or collection update</li>
+                        <li>Event-driven invalidation when knowledge base changes</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Short TTL (5–60 minutes)</li>
-                      <li>Purge on index refresh or collection update</li>
-                      <li>Event-driven invalidation when knowledge base changes</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#516b1d',
-          notes: ''
+          notes: `### Pattern 2: Retrieval Results Cache
+Now let's move up one layer in the stack to **Pattern 2: Retrieval Results Cache**. While the first pattern cached embeddings, this pattern caches the actual results from your vector search operations.
+
+#### What Gets Cached
+In this pattern, we cache **the output of vector search operations**. Specifically, we're storing the **top-k document IDs, their similarity scores, and optionally document snippets or previews**. Think about what happens when you run a semantic search query. You generate an embedding, that embedding gets compared against potentially millions of vectors in your index, you compute similarity scores, sort them, apply filters, and return the top results. This entire vector search operation is computationally expensive and time-consuming.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📝 Query"] --> B["🔢 Embedding"]
+    B --> C{"🔍 Cache?"}
+    C -->|Hit| D["⚡ Return Results"]
+    C -->|Miss| E["🔎 Vector Search"]
+    E --> F["💾 Store in Cache"]
+    F --> D
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+Here's the flow. Query comes in, gets embedded, then we check the cache. On a **cache hit**, we instantly return the document IDs and scores without touching the vector database at all. On a **cache miss**, we perform the full vector search, store those results in the cache, and then return them. The key insight is that vector search is often one of the most expensive operations in your retrieval pipeline. By caching these results, you can skip that entire computation.
+
+#### The Cache Key Strategy
+The cache key here is more complex than the embedding cache. We use \\\`hash(normalized_query or quantized_embedding + index_snapshot_id + k + filters)\\\`. Let me break this down. You can either hash the normalized query text or a **quantized version of the embedding** to save space. The critical part is including the **index_snapshot_id 👉 'index snapshot I-D'**. This tracks the version of your vector index. Why is this essential? Because when you add new documents or update existing ones, the search results for the same query will change. Including the index version ensures you don't serve stale results from before that update.
+
+You also include **k**, which is the number of results requested, and any **filter parameters**. If someone asks for the top five results versus the top ten, those need different cache entries. Same with filters. A query filtered to only engineering documents versus all documents should produce different cached results.
+
+#### Storage Architecture
+For storage, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cached'** for fast in-memory access. These stores give you sub-millisecond latency, which is crucial because you're trying to avoid a vector search that might take fifty to two hundred milliseconds. For **public FAQs 👉 'frequently asked questions'**, you can optionally push results to **edge caches or CDN 👉 'content delivery network'** layers, getting them even closer to your users. The key is **regional deployment**. Deploy your cache in the same region as your vector database to minimize network hops.
+
+#### Time-to-Live Configuration
+Notice the TTL 👉 'tee-tee-el' is much **shorter** here than with embeddings. We use **five to sixty minutes** typically. Why so short? Because retrieval results become stale quickly. As soon as you update your knowledge base, add new documents, or change existing ones, the cached results are potentially outdated. You also implement **event-driven invalidation**. When your knowledge base changes, you proactively purge or invalidate affected cache entries rather than waiting for TTL expiration. This keeps your results fresh while still getting cache benefits for queries that happen repeatedly within short time windows.
+
+#### When This Pattern Shines
+The **strengths** are powerful. You completely skip expensive vector search operations. Vector similarity computation across large indices is resource-intensive, especially with high-dimensional embeddings. The **latency improvements** can be dramatic. A vector search might take one hundred milliseconds or more. A cache hit takes under one millisecond. And the results themselves are **cheap to store**. Unlike embeddings, which are large vectors, you're just storing document IDs, which are typically integers or short strings, plus some floating-point scores.
+
+#### The Limitations
+But there are important **trade-offs**. First, **results become stale when your corpus changes**. Every document update, addition, or deletion potentially invalidates cached results. You need robust invalidation logic. Second, **filter-specific cache keys can explode your cache size**. If users are applying many different filter combinations, you might end up with low hit rates because each unique filter combination needs its own cache entry. Third, you get **lower hit rates on tail or uncommon queries**. If your users are asking highly diverse questions, you won't see the same queries repeatedly, reducing cache effectiveness. This pattern works best when you have repeated queries or concentrated query patterns, like customer support with common questions.
+
+Let's dive deeper into the strengths and limitations on the next slide.`
         },
         {
           id: 6,
@@ -458,34 +514,60 @@ With those trade-offs in mind, let's move on to Pattern 2, which caches at a dif
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Skips expensive vector search operations</li>
+                      <li>Significant latency improvements</li>
+                      <li>Cheap to store compared to raw embeddings</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Skips expensive vector search operations</li>
-                    <li>Significant latency improvements</li>
-                    <li>Cheap to store compared to raw embeddings</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Results become stale when corpus changes</li>
+                      <li>Filter-specific cache keys can increase cache size</li>
+                      <li>Lower hit rate on tail/uncommon queries</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Results become stale when corpus changes</li>
-                    <li>Filter-specific cache keys can increase cache size</li>
-                    <li>Lower hit rate on tail/uncommon queries</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#516b1d',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's examine the Retrieval Results Cache more closely to understand when it delivers exceptional value and where you need to be careful.
+
+#### The Performance Wins
+On the **strengths** side, this is all about performance and cost optimization. You're **skipping expensive vector search operations**. Let me give you some concrete numbers. A typical vector search across a million documents with a seven-hundred-sixty-eight-dimensional embedding might take fifty to one hundred fifty milliseconds, depending on your index structure and whether you're using approximate nearest neighbor algorithms like **HNSW 👉 'H-N-S-W', which stands for hierarchical navigable small world**, or **IVF 👉 'I-V-F', which is inverted file index**. A cache hit returns those same results in under a millisecond. That's a hundred-x speedup or more.
+
+The **latency improvements** translate directly to better user experience. In conversational AI applications, every hundred milliseconds matters. When you're targeting sub-second response times from query to final answer, cutting out a hundred-millisecond vector search is huge. It's the difference between a snappy, responsive system and one that feels sluggish.
+
+And the storage is **incredibly cheap compared to raw embeddings**. A cached retrieval result might be ten to twenty document IDs, which are typically four or eight bytes each, plus ten to twenty float scores at four bytes each. That's maybe two hundred bytes total. Compare that to caching the full embedding vectors at twelve kilobytes or more. You can cache thousands of retrieval results in the same memory space as a hundred embeddings. This makes the pattern very cost-effective from a resource perspective.
+
+#### The Freshness Challenge
+Now for the **limitations**, and this is where things get interesting. The biggest challenge is **staleness 👉 'stay-ul-ness'**. Results become stale when your corpus changes. Imagine you're running a documentation search system. A user asks "how do I configure authentication?" and you cache the top ten results. Two hours later, your team publishes a new authentication guide that's more relevant and comprehensive than any existing docs. New users asking the same question should get this new document in their results, but if they hit the cache, they get the old results without the new guide.
+
+This is why **event-driven invalidation** is critical. You need to listen for document additions, updates, or deletions and proactively purge affected cache entries. But implementing this correctly is non-trivial. You need to decide which cache entries are affected by a given document change. In some systems, people take a conservative approach and flush the entire cache on any corpus update. In others, they try to selectively invalidate only affected entries, which is more efficient but more complex to implement.
+
+Second, **filter-specific cache keys can explode your cache size and fragment your hit rate**. Say you're building an internal knowledge base search. Users can filter by department, date range, document type, author, and tags. Each unique combination of filters creates a separate cache key. If users are applying diverse filter combinations, you end up with many cache entries that each get hit rarely. Your cache becomes bloated with low-value entries.
+
+Third, you face **lower hit rates on tail or uncommon queries**. This pattern shines when you have high query repetition. Think customer support FAQs, where you see the same hundred questions over and over. Your cache hit rate might be seventy to eighty percent. But in a research assistant tool where users are asking highly specific, diverse questions, your hit rate might drop to ten or twenty percent. At that point, you're paying the memory and operational cost of the cache without getting much benefit.
+
+#### Practical Deployment Considerations
+In practice, successful deployments of this pattern often combine it with **monitoring and adaptive cache sizing**. You track your hit rate metrics and adjust your cache size and TTL 👉 'tee-tee-el' based on actual usage patterns. Some teams use **separate cache tiers** for different query types. They might have a hot cache for common queries with a thirty-minute TTL and a warm cache for less frequent queries with a five-minute TTL. This lets them optimize for different workload characteristics.
+
+> Ask the audience: "Who here is doing RAG 👉 'rag', retrieval-augmented generation, or semantic search in production? Have you tried caching retrieval results?"
+
+With that understanding of Pattern 2, let's look at our third caching pattern, which operates at yet another layer of the system.`
         }
       ]
     },
