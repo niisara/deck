@@ -2078,49 +2078,49 @@ flowchart TB
 
 #### Wrapping Up Our Journey
 
-Congratulations! You've now explored **eleven powerful hybrid search patterns**. Let's consolidate what we've learned and provide you with actionable guidance for your next steps.
+[warmly] Congratulations! [pleased] You've now explored **eleven powerful hybrid search patterns**. [conversational] Let's consolidate what we've learned and provide you with actionable guidance for your next steps.
 
 #### What to Remember: Core Principles
 
-**Start simple** is the golden rule. Pattern 1 (weighted fusion or RRF) is a solid baseline that covers 80% of use cases. Don't over-engineer from day one. Get something working, measure it, then add complexity only where data shows you need it.
+[confidently] **Start simple** is the golden rule. [reassuringly] Pattern 1 (weighted fusion or RRF) is a solid baseline that covers 80% of use cases. [seriously] Don't over-engineer from day one. [conversational] Get something working, measure it, then add complexity only where data shows you need it.
 
-**Cascade when needed** for precision. If your baseline isn't precise enough, add two-stage retrieval (Patterns 2-3) or cross-encoder re-ranking (Pattern 8). These patterns add latency and complexity but dramatically improve precision for high-stakes applications.
+[lecture] **Cascade when needed** for precision. [conversational] If your baseline isn't precise enough, add two-stage retrieval (Patterns 2-3) or cross-encoder re-ranking (Pattern 8). [seriously] These patterns add latency and complexity but dramatically improve precision for high-stakes applications.
 
-**Control drift** with guard rails. Pure semantic search can wander off-course. Use term boosts (Pattern 4), field-aware scoring (Pattern 6), and metadata filters (Pattern 5) to keep results grounded in user intent and business requirements.
+[firmly] **Control drift** with guard rails. [cautiously] Pure semantic search can wander off-course. [confidently] Use term boosts (Pattern 4), field-aware scoring (Pattern 6), and metadata filters (Pattern 5) to keep results grounded in user intent and business requirements.
 
-**Improve recall** when users get zero results or miss obvious documents. Query expansion (Pattern 7), vector-first recall (Pattern 3), and parent-child chunking (Pattern 9) all boost recall, catching documents that simpler patterns miss.
+[enthusiastically] **Improve recall** when users get zero results or miss obvious documents. [conversational] Query expansion (Pattern 7), vector-first recall (Pattern 3), and parent-child chunking (Pattern 9) all boost recall, catching documents that simpler patterns miss.
 
-**Match the use case** – there's no one-size-fits-all. E-commerce needs different patterns than medical search. Long documents need different strategies than short tweets. Let your content characteristics and user behavior guide pattern selection.
+[thoughtfully] **Match the use case** – there's no one-size-fits-all. [conversational] E-commerce needs different patterns than medical search. Long documents need different strategies than short tweets. [confidently] Let your content characteristics and user behavior guide pattern selection.
 
 #### Operational Tips: Making It Work in Production
 
-**Tune weights per query type**. Short queries might need α=0.3 (more semantic), while long technical queries might need α=0.7 (more lexical). Consider dynamic tuning based on query classification.
+[lecture] **Tune weights per query type**. [conversational] Short queries might need α=0.3 (more semantic), while long technical queries might need α=0.7 (more lexical). [thoughtfully] Consider dynamic tuning based on query classification.
 
-**Normalize scores carefully** before linear fusion. BM25 and cosine similarity live in different ranges. Use min-max or z-score normalization, or just use RRF to avoid the problem entirely.
+[seriously] **Normalize scores carefully** before linear fusion. [lecture] BM25 and cosine similarity live in different ranges. [conversational] Use min-max or z-score normalization, or just use RRF to avoid the problem entirely.
 
-**Evaluate with the right metrics**. Traditional IR metrics like nDCG@k, Recall@k, and MRR tell you if rankings are good. But also track user metrics: CTR (click-through rate), time to click, zero-result rate, and satisfaction surveys. These reveal real-world performance.
+[confidently] **Evaluate with the right metrics**. [lecture] Traditional IR metrics like nDCG@k, Recall@k, and MRR tell you if rankings are good. [conversational] But also track user metrics: CTR (click-through rate), time to click, zero-result rate, and satisfaction surveys. [seriously] These reveal real-world performance.
 
-**Watch latency and cost budgets**. Each pattern adds overhead. BM25 is cheap, vector search is moderate, cross-encoders are expensive. Profile your system, batch aggressively, cache popular queries, and use CDNs where possible.
+[cautiously] **Watch latency and cost budgets**. [lecture] Each pattern adds overhead. BM25 is cheap, vector search is moderate, cross-encoders are expensive. [conversational] Profile your system, batch aggressively, cache popular queries, and use CDNs where possible.
 
-**A/B test everything**. Your intuitions about what works might be wrong. Test Pattern 1 vs Pattern 2 vs Pattern 8 with real user traffic. Let data drive decisions, not assumptions.
+[firmly] **A/B test everything**. [cautiously] Your intuitions about what works might be wrong. [conversational] Test Pattern 1 vs Pattern 2 vs Pattern 8 with real user traffic. [confidently] Let data drive decisions, not assumptions.
 
 #### Tools Recap: Your Implementation Toolkit
 
-You have three categories of tools at your disposal:
+[conversational] You have three categories of tools at your disposal:
 
-**Vector databases and search engines** form your foundation: Elasticsearch, Weaviate, Qdrant, Milvus, Pinecone all provide hybrid search capabilities. Choose based on your scale, latency requirements, and operational preferences.
+[lecture] **Vector databases and search engines** form your foundation: Elasticsearch, Weaviate, Qdrant, Milvus, Pinecone all provide hybrid search capabilities. [confidently] Choose based on your scale, latency requirements, and operational preferences.
 
-**Rerankers** add precision: Cohere Rerank and OpenAI ReRank offer turnkey solutions. SentenceTransformers and Jina provide open-source alternatives for self-hosting.
+[conversational] **Rerankers** add precision: Cohere Rerank and OpenAI ReRank offer turnkey solutions. [pleased] SentenceTransformers and Jina provide open-source alternatives for self-hosting.
 
-**Frameworks** accelerate development: LangChain and LlamaIndex provide high-level abstractions for RAG. Haystack offers production-ready pipelines. FAISS gives you low-level control for custom implementations.
+[enthusiastically] **Frameworks** accelerate development: LangChain and LlamaIndex provide high-level abstractions for RAG. [confidently] Haystack offers production-ready pipelines. FAISS gives you low-level control for custom implementations.
 
 #### The Path Forward
 
-**Hybrid search isn't a destination; it's a journey**. You'll start with Pattern 1, measure quality, identify gaps, layer on additional patterns, iterate based on user feedback, and continuously refine. This is how the best search systems are built – incrementally, data-driven, user-focused.
+[inspiringly] **Hybrid search isn't a destination; it's a journey**. [conversational] You'll start with Pattern 1, measure quality, identify gaps, layer on additional patterns, iterate based on user feedback, and continuously refine. [confidently] This is how the best search systems are built – incrementally, data-driven, user-focused.
 
-**Remember the core insight**: Lexical and semantic search each have strengths. BM25 excels at exact matching and rare terms. Vector search excels at meaning and paraphrases. Hybrid search gives you both, making your search system robust across diverse queries and content types.
+[warmly] **Remember the core insight**: Lexical and semantic search each have strengths. [lecture] BM25 excels at exact matching and rare terms. Vector search excels at meaning and paraphrases. [enthusiastically] Hybrid search gives you both, making your search system robust across diverse queries and content types.
 
-Start simple, measure everything, iterate based on real user feedback, and you'll build search experiences that truly serve your users. Thank you for joining this exploration of hybrid search patterns!`
+[inspiringly] Start simple, measure everything, iterate based on real user feedback, and you'll build search experiences that truly serve your users. [warmly] Thank you for joining this exploration of hybrid search patterns!`
         }
       ]
     }
