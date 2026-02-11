@@ -3656,84 +3656,110 @@ And with that, we've completed our journey through all thirteen RAG evaluation m
             <div style={{ fontSize: '2rem', lineHeight: '1.8', textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-                <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                  <div style={{ color: '#3b82f6', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-chart-line" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Key Takeaways</strong>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                  <div style={{ background: 'rgba(59, 130, 246, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <div style={{ color: '#3b82f6', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-chart-line" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Key Takeaways</strong>
+                    </div>
+                    <GSAPStaggerList stagger={0.15} delay={0.4}>
+                      <li>
+                        <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
+                      </li>
+                      <li>
+                        <strong>Context quality</strong> (5) evaluates relevance alignment
+                      </li>
+                      <li>
+                        <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
+                      </li>
+                      <li>
+                        <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
+                      </li>
+                    </GSAPStaggerList>
                   </div>
-                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>
-                      <strong>Retrieval metrics</strong> (1-4) diagnose missed evidence
-                    </li>
-                    <li>
-                      <strong>Context quality</strong> (5) evaluates relevance alignment
-                    </li>
-                    <li>
-                      <strong>Answer quality</strong> (6-10) measures faithfulness & completeness
-                    </li>
-                    <li>
-                      <strong>Efficiency metrics</strong> (11-13) optimize cost & latency
-                    </li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
 
-                <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
-                  <div style={{ color: '#10b981', marginBottom: '1rem' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Best Practices</strong>
+                <GSAPAnimated animation="slideInRight" delay={0.2}>
+                  <div style={{ background: 'rgba(16, 185, 129, 0.15)', padding: '1.5rem', borderRadius: '10px' }}>
+                    <div style={{ color: '#10b981', marginBottom: '1rem' }}>
+                      <SvgIcon iconName="duo-lightbulb" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Best Practices</strong>
+                    </div>
+                    <GSAPStaggerList stagger={0.15} delay={0.4}>
+                      <li>
+                        Use multiple metrics together for full picture
+                      </li>
+                      <li>
+                        Start with retrieval & faithfulness baselines
+                      </li>
+                      <li>
+                        Continuously monitor in production
+                      </li>
+                      <li>
+                        Balance quality with efficiency constraints
+                      </li>
+                    </GSAPStaggerList>
                   </div>
-                  <ul style={{ marginLeft: '1.5rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>
-                      Use multiple metrics together for full picture
-                    </li>
-                    <li>
-                      Start with retrieval & faithfulness baselines
-                    </li>
-                    <li>
-                      Continuously monitor in production
-                    </li>
-                    <li>
-                      Balance quality with efficiency constraints
-                    </li>
-                  </ul>
-                </div>
+                </GSAPAnimated>
               </div>
 
-              <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px', marginBottom: '1.5rem' }}>
-                <div style={{ color: '#8b5cf6', marginBottom: '1rem' }}>
-                  <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                  <strong>Implementation Roadmap</strong>
+              <GSAPAnimated animation="scaleIn" delay={0.6}>
+                <div style={{ background: 'rgba(139, 92, 246, 0.15)', padding: '1.5rem', borderRadius: '10px', marginBottom: '1.5rem' }}>
+                  <div style={{ color: '#8b5cf6', marginBottom: '1rem' }}>
+                    <SvgIcon iconName="duo-rocket" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                    <strong>Implementation Roadmap</strong>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '1.2rem' }}>
+                    <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                      <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                        Phase 1: Foundation
+                      </div>
+                      <div>Implement Recall@K, Precision@K, and Faithfulness Score</div>
+                    </div>
+                    <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                      <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                        Phase 2: Quality
+                      </div>
+                      <div>Add Context Relevance, Answer Completeness, and Hallucination Rate</div>
+                    </div>
+                    <div style={{ background: 'rgba(245, 158, 11, 0.2)', padding: '1rem', borderRadius: '8px' }}>
+                      <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
+                        Phase 3: Optimization
+                      </div>
+                      <div>Track Noise Density, Context Compression, and Latency-Cost Tradeoff</div>
+                    </div>
+                  </div>
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', fontSize: '1.2rem' }}>
-                  <div style={{ background: 'rgba(59, 130, 246, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                    <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                      Phase 1: Foundation
-                    </div>
-                    <div>Implement Recall@K, Precision@K, and Faithfulness Score</div>
-                  </div>
-                  <div style={{ background: 'rgba(16, 185, 129, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                    <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                      Phase 2: Quality
-                    </div>
-                    <div>Add Context Relevance, Answer Completeness, and Hallucination Rate</div>
-                  </div>
-                  <div style={{ background: 'rgba(245, 158, 11, 0.2)', padding: '1rem', borderRadius: '8px' }}>
-                    <div style={{ marginBottom: '0.5rem', fontWeight: 'bold' }}>
-                      Phase 3: Optimization
-                    </div>
-                    <div>Track Noise Density, Context Compression, and Latency-Cost Tradeoff</div>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ padding: '1.5rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left', fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-circle-info" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                <strong>Remember:</strong> No single metric tells the full story. Use combinations to diagnose root causes: missed retrieval vs. ungrounded reasoning vs. inefficient context.
-              </div>
+              <GSAPAnimated animation="bounceIn" delay={0.8}>
+                <div style={{ padding: '1.5rem', background: 'rgba(245, 158, 11, 0.15)', borderRadius: '10px', textAlign: 'left', fontSize: '1.2rem' }}>
+                  <SvgIcon iconName="duo-circle-info" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                  <strong>Remember:</strong> No single metric tells the full story. Use combinations to diagnose root causes: missed retrieval vs. ungrounded reasoning vs. inefficient context.
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f696f',
-          notes: ''
+          notes: `### Summary & Next Steps
+And that brings us to the end of our journey through these thirteen powerful RAG evaluation metrics! Let's recap what we've learned and chart a path forward.
+
+####  The Four Pillars of RAG Evaluation
+We've covered thirteen metrics organized into four logical categories that mirror how RAG systems actually work. **Retrieval metrics**—Recall at K, Precision at K, Hit Rate, and Context Overlap Score—diagnose whether you're finding the right documents in the first place. If your answers are incomplete or hallucinated, start here. **Context Quality**—the Context Relevance Score—evaluates whether what you retrieved is actually useful for answering the query. **Answer Quality metrics**—Hallucination Rate, Grounded Answer Score, Faithfulness Score, Answer Completeness, and Answer Specificity—measure whether your LLM is generating truthful, complete, and focused responses. And **Efficiency metrics**—Noise Density, Context Compression Efficiency, and Latency-Cost Tradeoff Score—ensure you're not wasting tokens or money.
+
+####  Best Practices for Implementation
+Here are the key principles to remember. First, never rely on a single metric. Retrieval might look great on paper, but if your LLM ignores the context, your answers will still be poor. Use multiple metrics together to get the full picture. Second, start with the fundamentals—establish baselines for retrieval quality using Recall and Precision at K, and measure faithfulness to ensure your LLM is grounding its answers. Third, continuously monitor your system in production. Metrics that look good during development can degrade over time as your document corpus evolves or user queries shift. Finally, always balance quality with efficiency constraints. Perfect retrieval that costs a fortune or takes forever isn't useful in production.
+
+####  Your Implementation Roadmap
+If you're just getting started, I recommend a phased approach. **Phase One** is your foundation: implement Recall at K, Precision at K, and Faithfulness Score. These three metrics give you visibility into whether you're retrieving the right documents and whether your LLM is using them correctly. Get these working and stable before moving on. **Phase Two** focuses on quality improvements: add Context Relevance Score, Answer Completeness, and Hallucination Rate. These metrics help you refine your system to produce better, more trustworthy answers. **Phase Three** is optimization: once your quality is solid, track Noise Density, Context Compression Efficiency, and Latency-Cost Tradeoff Score to make your system faster and more cost-effective without sacrificing quality.
+
+####  The Power of Combinations
+Here's the most important insight from this entire presentation: no single metric tells the full story. The real power comes from using combinations to diagnose root causes. If your end-to-end answer quality is poor, is it because you're missing relevant documents during retrieval? Or are you retrieving the right documents but the LLM is ignoring them and hallucinating instead? Or maybe you're retrieving too much noise and the signal is getting lost? Different combinations of metrics point to different problems, and understanding which combination you're seeing is the key to efficient debugging and improvement.
+
+####  Your Next Steps
+Start small. Pick two or three metrics that address your biggest pain points right now, implement them, and use them to drive improvements. As your system matures, gradually add more metrics to get finer-grained visibility. Remember, the goal isn't to achieve perfect scores on every metric—the goal is to build a reliable, efficient RAG system that serves your users well. Use these metrics as diagnostic tools, not as ends in themselves.
+
+Thank you for your attention! I hope these thirteen underused metrics give you the tools you need to build better RAG systems. Remember, whether you're a fresher just starting out or an experienced practitioner, systematic evaluation is the key to moving from prototypes to production-ready systems. Good luck, and happy building!`
         }
       ]
     }
