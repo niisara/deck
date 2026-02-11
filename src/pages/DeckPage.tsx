@@ -278,7 +278,7 @@ function DeckPage() {
       maxScale: 2.0,
       pdfMaxPagesPerSlide: 1,
       pdfSeparateFragments: false,
-      mouseWheel: true,
+      mouseWheel: false,
       hideInactiveCursor: true,
       hideCursorTime: 5000,
       keyboard: {

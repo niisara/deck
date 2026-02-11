@@ -56,7 +56,7 @@ export const nerMetricsDeck: Deck = {
 #### 🤔 The Big Question
 [serious] Now here's the important part — how do we know if our computer is doing a good job at this? [excited] That's exactly what today is all about. I'll show you seven different ways to measure your NER model. Think of them as seven different "report cards" for your AI.
 
-[conversational] > Ask the audience: "Can anyone give me an example of an important word in a sentence?"
+[conversational] > "Can anyone give me an example of an important word in a sentence?"
 
 [enthusiastically] Ready? Let's go!`
         },
@@ -171,7 +171,7 @@ flowchart LR
 
 [reassuringly] Seven sounds like a lot, I know, but don't worry! [confidently] We'll go one by one with plenty of examples for each. By the end of this session, you'll be comfortable with all of them.
 
-[conversational] > Ask the audience: "Ready to start?"
+[conversational] > "Ready to start?"
 
 [energetic] Let's dive into our first metric — Precision!`
         }
@@ -461,7 +461,7 @@ flowchart TB
 
 [amused] Here's a funny example: imagine a spam filter that marks EVERY email as spam. Every single one. [sarcastically] It catches 100% of spam emails — great Recall! [dismayed] But it also blocks all your real emails. [rhetorically] Would you use that filter? [firmly] No way!
 
-[conversational] > Ask the audience: "What would happen if your email filter did this?"
+[conversational] > "What would happen if your email filter did this?"
 
 [confidently] Same lesson as before: **never look at Recall by itself**. We need balance. [excited] And that brings us perfectly to our next metric — the F1 Score!`
         }
@@ -754,7 +754,7 @@ flowchart TB
 
 [cautiously] Another problem is that when you score zero, you don't know *why*. [puzzled] Was it one mistake? Five mistakes? [disappointed] Exact Match doesn't tell you. [sadly] Here's a sad example: your model finds all the entities, but it says *"the Microsoft"* instead of *"Microsoft."* [sighing] Just one extra word. Exact Match = 0. Even though you were so close!
 
-[conversational] > Ask the audience: "Does this seem fair?"
+[conversational] > "Does this seem fair?"
 
 [lecture] Best practice: use Exact Match when deciding *"Ready for production?"* [reassuringly] But during development, use F1 and others too — they're less harsh and more helpful for improving your model.
 
@@ -1345,7 +1345,7 @@ flowchart TB
 
 [seriously] Let me tell you a horror story. [storytelling] A team told their boss *"95% accuracy!"* [cheerfully] Everyone celebrated. [dramatically] Then they deployed it. [shocked] Actual entity F1? 40%. [dismayed] The project almost got canceled. [disappointed] They were using token-level accuracy including all those boring O tokens. The number looked too good because it was the wrong metric.
 
-[conversational] > Ask the audience: "If a metric looks too good to be true, what should you do?"
+[conversational] > "If a metric looks too good to be true, what should you do?"
 
 [firmly] Investigate! Always investigate!
 
@@ -1393,7 +1393,7 @@ flowchart TB
 #### 📝 Action 4: Document Everything
 [seriously] Every model should have clearly documented metrics used, per-class results, known problems, and what data you tested on. [confidently] This isn't just good practice — it's professional.
 
-[conversational] > Ask the audience: "Any questions?"
+[conversational] > "Any questions?"
 
 [warmly] Thank you so much for listening! [inspiringly] Remember: **good evaluation equals good machine learning**. [confidently] Master this, and you're ahead of most beginners. [cheerfully] Good luck with your projects!`
         }

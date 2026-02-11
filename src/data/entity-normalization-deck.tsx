@@ -189,7 +189,7 @@ export const entityNormalizationDeck: Deck = {
 #### 💡 Why This Order Matters
 [storytelling] Think of it as building a house. You don't start with the fancy chandelier—you start with the foundation. [confidently] String normalization is your foundation. Each technique builds on the previous ones, and in real-world systems, you'll often combine multiple techniques in a **pipeline**.
 
-> [conversational] Ask the audience: "How many of you have dealt with messy data where the same entity appears with different spellings?"
+> [conversational] "How many of you have dealt with messy data where the same entity appears with different spellings?"
 
 [pleased] That's exactly what we're solving today. [energetic] Let's begin with understanding the difference between normalization and disambiguation...`
         },
@@ -640,7 +640,7 @@ flowchart TB
 
 [disappointed] Case folding can also cause problems in **brand-sensitive contexts**. [storytelling] "iPhone" becoming "iphone" might matter to someone. "BlackBerry" vs "blackberry"—again, context matters. [reassuringly] For display, keep originals.
 
-> [conversational] Ask the audience: "Has anyone had a bug where two identical-looking strings didn't match?"
+> [conversational] "Has anyone had a bug where two identical-looking strings didn't match?"
 
 [confidently] That's almost always a Unicode issue. Normalize first, compare after.
 
@@ -1311,7 +1311,7 @@ flowchart TB
 
 [cautiously] **Ambiguous aliases are tricky**. [puzzled] "Apple" could be the company or the fruit. "Java" could be the programming language, the island, or coffee. [concerned] You often need **context-aware rules** to disambiguate, which takes us to our next technique.
 
-> [conversational] Ask the audience: "What's the most frustrating alias collision you've encountered in your data?"
+> [conversational] "What's the most frustrating alias collision you've encountered in your data?"
 
 #### 💡 Pro Tip
 [seriously] Track which aliases are actually being used in your data. [disappointed] Many manually created synonyms never get matched. [confidently] Focus your maintenance effort on high-impact entries.
@@ -2524,7 +2524,7 @@ flowchart LR
 #### 💡 Practical Architecture
 [confidently] Use LLMs as a **final disambiguation layer** for hard cases. [reassuringly] Let cheaper methods handle the easy 80%. Route ambiguous mentions to the LLM. [pleased] This balances cost and quality.
 
-> [conversational] Ask the audience: "What percentage of your entity mentions would need LLM-level disambiguation?"
+> [conversational] "What percentage of your entity mentions would need LLM-level disambiguation?"
 
 [energetic] Now let's wrap up with key takeaways...`
         }
@@ -2630,7 +2630,7 @@ flowchart LR
 #### 📊 The 80/20 Rule
 [conversational] In my experience, **simple techniques handle 80% of cases**. [pleased] String normalization, synonym tables, and exact matching go surprisingly far. [confidently] Invest in complex techniques for the remaining 20% where they actually matter.
 
-> [conversational] Ask the audience: "What's your current entity normalization pipeline? Which techniques are you using?"
+> [conversational] "What's your current entity normalization pipeline? Which techniques are you using?"
 
 [energetic] Let's finish with governance best practices...`
         },
