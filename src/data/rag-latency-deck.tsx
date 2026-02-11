@@ -2154,21 +2154,35 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Shorten the critical path via concurrency and parallelization to reduce overall RAG latency.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b641d',
-          notes: ''
+          notes: `### 43. Parallelize Retrieval — Goal
+We've reached the **orchestration** section with technique nine — parallelizing retrieval. This is about making your pipeline smarter by running multiple steps at the same time instead of one after another.
+
+#### 🎯 What's the Goal?
+In a typical RAG pipeline, steps run sequentially — embed the query, then search the vector store, then rerank, then generate. But many of these steps can run in parallel. The goal is to identify independent operations and execute them simultaneously, reducing total wall-clock time.
+
+#### 💡 Think of It This Way
+Imagine you're cooking a meal. A beginner cooks one thing at a time — boil the pasta, wait, then make the sauce, wait, then prepare the salad. An experienced cook starts the pasta boiling, makes the sauce while waiting, and preps the salad during downtime. The total cooking time drops dramatically even though the individual tasks take the same time. That's parallelization 👉 'par-ah-lel-ih-ZAY-shun' in action.
+
+#### ⚡ The Impact
+Well-designed parallelization can reduce your overall pipeline latency by 30-50% without any quality trade-offs. It's pure optimization — you're doing the same work, just smarter. Let's see when to apply it...`
         },
         {
           id: 44,
@@ -2177,20 +2191,39 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Applications with heterogeneous data sources</li>
                 <li>Systems with significant network I/O wait times</li>
                 <li>RAG pipelines with high p95 latency variance</li>
                 <li>Multi-source search requirements</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b641d',
-          notes: ''
+          notes: `### 44. Parallelize Retrieval — When to Use
+When should you invest in parallelizing your retrieval pipeline? Here are the key scenarios.
+
+#### 🔀 Multiple Data Sources
+If you're searching across multiple vector stores, databases, or indexes, each search can run in parallel. For example, searching a product catalog and a FAQ database simultaneously instead of one after the other.
+
+#### 🏗️ Multi-Stage Pipelines
+Pipelines with independent preprocessing steps — like query expansion, spell correction, and embedding — can run these steps concurrently. If query expansion and embedding don't depend on each other, run them at the same time.
+
+#### ⚡ Strict Latency Budgets
+When you have a hard latency SLA 👉 'ess-ell-ay' and your sequential pipeline is too slow, parallelization can bring you within budget without sacrificing quality.
+
+#### 📊 Hybrid Search
+If you're combining dense vector search with sparse BM25 👉 'bee-em twenty-five' keyword search, these two searches are completely independent and should always run in parallel. This is one of the easiest parallelization wins.
+
+Let's see how to architect parallel retrieval...`
         },
         {
           id: 45,
@@ -2199,21 +2232,70 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Parallel Retrieval Architecture"
+                    diagram={`flowchart TB
+    A["📝 Query"] --> B["⚡ Parallel\\nExecution"]
+    B --> C["🔍 Vector\\nSearch"]
+    B --> D["📑 BM25\\nSearch"]
+    B --> E["🏷️ Metadata\\nFilter"]
+    C --> F["🔀 Merge &\\nRerank"]
+    D --> F
+    E --> F
+    F --> G["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style F fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Execute multiple search operations concurrently and process results as they arrive:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Issue retrieval requests to multiple sources simultaneously (vector DB, keyword search, APIs)</li>
                 <li>Stream retrieved chunks into reranker as they arrive rather than waiting for all retrievals to complete</li>
                 <li>Implement pipeline parallelism where each stage begins processing partial results from previous stage</li>
                 <li>Set timeouts to prevent slow sources from blocking the entire pipeline</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b641d',
-          notes: ''
+          notes: `### 45. Parallelize Retrieval — How It Works
+Let's see how parallel retrieval architectures work and where the biggest gains come from.
+
+#### ⚙️ The Architecture
+\`\`\`mermaid
+flowchart TB
+    A["📝 Query"] --> B["⚡ Parallel\\nExecution"]
+    B --> C["🔍 Vector\\nSearch"]
+    B --> D["📑 BM25\\nSearch"]
+    B --> E["🏷️ Metadata\\nFilter"]
+    C --> F["🔀 Merge &\\nRerank"]
+    D --> F
+    E --> F
+    F --> G["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffd700,color:#000
+    style F fill:#e1bee7,color:#000
+    style G fill:#81c784,color:#000
+\`\`\`
+Instead of running vector search, keyword search, and metadata filtering one after another, you fire all three simultaneously. The total retrieval time becomes the maximum of the three individual times rather than their sum. If each takes 30ms, sequential takes 90ms but parallel takes just 30ms — a 3x improvement.
+
+#### 🔧 Implementation Patterns
+In Python, use **asyncio** 👉 'ay-SINK-ee-oh' with **asyncio.gather()** to run multiple coroutines concurrently. In Node.js, use **Promise.all()**. For Java, use **CompletableFuture**. The programming model is simple: start all searches, wait for all to complete, then merge results.
+
+#### 🔀 Result Merging
+After parallel searches complete, you need to merge and deduplicate results. Common strategies include **reciprocal rank fusion** 👉 'ree-SIP-roh-kal rank FEW-zhun' (RRF), which combines rankings from multiple sources into a single unified ranking. This is the standard approach in hybrid search systems. Here are the implementation steps...`
         },
         {
           id: 46,
@@ -2222,10 +2304,13 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Configure async retrievals: Set up concurrent API calls with Promise.all() or async/await patterns</li>
                 <li>Implement timeouts: Set per-source deadlines (e.g., 200-500ms) and circuit breakers</li>
@@ -2233,10 +2318,25 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                 <li>Early termination: Cut processing when top scores stabilize or quality threshold reached</li>
                 <li>Add telemetry: Track per-stage timings and implement backpressure controls</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b641d',
-          notes: ''
+          notes: `### 46. Parallelize Retrieval — Steps
+Here's how to implement parallel retrieval in your RAG pipeline.
+
+#### 📋 Implementation Steps
+**Step one: Map your pipeline.** Draw out your current pipeline and identify which steps are independent. Any step that doesn't depend on the output of another step can potentially run in parallel.
+
+**Step two: Identify parallel candidates.** Common parallelizable pairs include: vector search and keyword search, search across multiple collections, query embedding and query expansion, and retrieval from different data sources.
+
+**Step three: Implement async execution.** Use your language's async primitives. In Python: \`results = await asyncio.gather(vector_search(query), bm25_search(query))\`. Keep it simple — don't over-parallelize.
+
+**Step four: Implement result merging.** Use reciprocal rank fusion (RRF) to combine results from multiple sources. The formula is simple: \`score = sum(1 / (k + rank))\` for each document across all result sets, where k is typically 60.
+
+**Step five: Handle timeouts.** Set timeouts for each parallel task. If one search takes too long, proceed with the results from the others. This prevents a slow backend from blocking your entire pipeline.
+
+Let's look at the trade-offs...`
         },
         {
           id: 47,
@@ -2246,6 +2346,7 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -2259,6 +2360,8 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                     <li>Ability to integrate multiple search strategies</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -2272,11 +2375,22 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                     <li>May require more sophisticated error handling</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b641d',
-          notes: ''
+          notes: `### 47. Parallelize Retrieval — Pros and Cons
+Let's evaluate the benefits and challenges of parallel retrieval.
+
+#### ✅ Pros
+The good stuff: **Significant latency reduction** — wall-clock time drops to the maximum of individual operations rather than their sum. **No quality trade-off** — you're doing the same work, just faster. **Better result diversity** when combining multiple search methods. **Resilience** — if one search backend is slow, others still return quickly. And **natural fit for hybrid search** — dense and sparse search are perfect parallelization candidates.
+
+#### ❌ Cons
+The problems: **Increased code complexity** — async programming introduces race conditions, error handling challenges, and harder debugging. **Higher peak resource usage** — running multiple searches simultaneously uses more CPU and memory at peak. **Result merging complexity** — combining and deduplicating results from multiple sources requires careful design. **Timeout handling** — you need robust timeout logic to prevent slow backends from degrading the experience. And **diminishing returns** — parallelizing more than 3-4 operations often adds complexity without meaningful latency improvement.
+
+#### 🎯 Quick Win
+The easiest parallel optimization: if you're doing hybrid search (vector + keyword), make those searches parallel. It takes about 10 lines of code and can cut retrieval time in half. Next up, technique ten — streaming and partial generation...`
         }
       ]
     },
@@ -2291,21 +2405,35 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Reduce perceived latency (time-to-first-token) and enable early text-to-speech conversion for better user experience.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b471d',
-          notes: ''
+          notes: `### 48. Streaming — Goal
+Technique ten shifts our focus from actual latency to **perceived latency** — and that's streaming. This doesn't make your pipeline objectively faster, but it makes it *feel* dramatically faster to users.
+
+#### 🎯 What's the Goal?
+Instead of waiting for the entire LLM response to be generated before showing anything to the user, stream tokens as they're generated. The user sees the first words within 100-200 milliseconds, even if the full response takes 3 seconds.
+
+#### 💡 Think of It This Way
+Imagine watching a webpage load. With the old approach, you stare at a blank screen for 3 seconds, then the entire page appears at once. With streaming, the content fills in gradually — header first, then text, then images. The total load time might be the same, but the experience feels much faster because you're seeing progress.
+
+#### 📊 The Psychology
+Research shows that users perceive streaming responses as 2-3x faster than batch responses, even when the total time is identical. This is because **time-to-first-token** 👉 'time to first token' (TTFT) matters more than total generation time for user satisfaction. Let's see when to use streaming...`
         },
         {
           id: 49,
@@ -2314,20 +2442,41 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Chat/agent applications with conversational UIs</li>
                 <li>Live voice assistants and call centers</li>
                 <li>Customer support applications</li>
                 <li>Any system where perceived responsiveness is critical</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b471d',
-          notes: ''
+          notes: `### 49. Streaming — When to Use
+When should you implement streaming in your RAG system? The short answer: almost always. But here are the scenarios where it's especially impactful.
+
+#### 💬 Chat Interfaces
+Any conversational UI should stream responses. Users expect the typing-indicator experience from ChatGPT 👉 'chat gee-pee-tee'. Showing tokens as they appear creates a natural, conversational feel.
+
+#### 📝 Long-Form Generation
+When your LLM generates long responses — paragraphs, reports, or summaries — streaming is essential. Without it, users wait 5-10 seconds staring at a loading spinner, which feels like an eternity.
+
+#### ⚡ Low Time-to-First-Token Priority
+When you need to show users that the system is working as quickly as possible. Even if the full response takes 3 seconds, showing the first word in 200ms signals responsiveness.
+
+#### 🖥️ Real-Time Applications
+Voice assistants, live customer support, and interactive tutoring systems all benefit from streaming because it enables real-time interaction while the response is still being generated.
+
+> 🎤 Ask the audience: "Have you noticed how ChatGPT streams its responses? That's exactly what we're talking about here."
+
+Let's see how streaming works under the hood...`
         },
         {
           id: 50,
@@ -2336,11 +2485,29 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Streaming vs Batch Response"
+                    diagram={`flowchart LR
+    A["🤖 LLM"] --> B["Batch Mode"]
+    A --> C["Stream Mode"]
+    B --> D["⏳ Wait 3s...\\n📄 Full Response"]
+    C --> E["⚡ 200ms: first token\\n📝 tokens flow...\\n✅ Complete in 3s"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Rather than waiting for the complete LLM response, stream tokens incrementally as they're generated:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Use Server-Sent Events (SSE) or WebSockets to stream tokens from server to client</li>
                 <li>Progressively render UI elements as tokens arrive, creating typing-like effect</li>
@@ -2348,10 +2515,34 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                 <li>Allow users to interrupt generation early when they have enough information</li>
                 <li>Handle structured outputs (JSON/XML) with special streaming approaches</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b471d',
-          notes: ''
+          notes: `### 50. Streaming — How It Works
+Let's understand the technical mechanics of LLM streaming and how to implement it.
+
+#### ⚙️ Streaming vs Batch
+\`\`\`mermaid
+flowchart LR
+    A["🤖 LLM"] --> B["Batch Mode"]
+    A --> C["Stream Mode"]
+    B --> D["⏳ Wait 3s...\\n📄 Full Response"]
+    C --> E["⚡ 200ms: first token\\n📝 tokens flow...\\n✅ Complete in 3s"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+\`\`\`
+In batch mode, the LLM generates all tokens internally and returns them as one complete response. In streaming mode, each token is sent to the client as soon as it's generated. The LLM is doing the same work either way — the difference is when you see the output.
+
+#### 🔧 Server-Sent Events (SSE)
+Most LLM APIs support streaming via **Server-Sent Events** 👉 'ess-ess-ee' (SSE). The client opens a connection, and the server pushes tokens one at a time. OpenAI, Anthropic 👉 'an-THROP-ik', and most LLM providers support this with a simple \`stream=True\` parameter.
+
+#### 🌊 The Frontend
+On the frontend, you consume the stream using the **EventSource API** or **fetch with ReadableStream**. As each token arrives, you append it to the display. This creates the familiar "typing" effect that users love.
+
+#### ⚡ TTFT Optimization
+Time-to-first-token can be further optimized by reducing pre-LLM processing time. All the previous techniques — caching, compression, smaller models — reduce TTFT even with streaming. Here are the implementation steps...`
         },
         {
           id: 51,
@@ -2360,10 +2551,13 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Enable streaming API: Configure LLM provider's streaming endpoint (stream=True)</li>
                 <li>Set performance targets: Establish first-token SLA (e.g., &lt;300ms) and token heartbeat rate</li>
@@ -2371,10 +2565,25 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                 <li>Handle TTS integration: Buffer complete sentences for streaming audio synthesis</li>
                 <li>Manage structured outputs: Use speculative/partial JSON strategies for parseable incremental responses</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6b471d',
-          notes: ''
+          notes: `### 51. Streaming — Steps
+Here's how to implement streaming in your RAG application.
+
+#### 📋 Implementation Steps
+**Step one: Enable streaming on your LLM call.** With OpenAI's API, just add \`stream=True\` to your completion request. With LangChain, use the streaming callback handler. It's usually a one-parameter change.
+
+**Step two: Set up your API endpoint for streaming.** Use Server-Sent Events (SSE) or WebSockets 👉 'web-SOK-ets'. SSE is simpler and works well for one-directional streaming. Return a streaming response from your server with the appropriate content type header.
+
+**Step three: Update your frontend.** Replace your fetch-and-display logic with a stream consumer. As each chunk arrives, append it to the UI. Add a cursor or typing indicator for visual polish.
+
+**Step four: Handle errors gracefully.** Stream connections can drop. Implement reconnection logic and show the user a clear message if the stream is interrupted. Consider buffering a few tokens to smooth out network jitter.
+
+**Step five: Optimize time-to-first-token.** Profile your pre-LLM pipeline to see what's contributing to TTFT. Apply the earlier techniques — caching, compression, smaller models — to minimize the time before the first token starts flowing.
+
+Let's examine the trade-offs...`
         },
         {
           id: 52,
@@ -2384,6 +2593,7 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -2397,6 +2607,8 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                     <li>Enables earlier TTS processing for voice applications</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -2410,11 +2622,22 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
                     <li>Needs connection management for reliable delivery</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#6b471d',
-          notes: ''
+          notes: `### 52. Streaming — Pros and Cons
+Let's weigh the advantages and challenges of implementing streaming.
+
+#### ✅ Pros
+The good stuff: **Dramatically better perceived latency** — users see the first words in under 200 milliseconds. **Natural conversational feel** that matches user expectations from ChatGPT and similar tools. **No quality trade-off** — the final output is identical to batch mode. **User engagement** — users start reading while the response generates, increasing engagement. And **progressive enhancement** — users can start acting on partial information before the full response is complete.
+
+#### ❌ Cons
+The problems: **Added implementation complexity** — streaming requires SSE or WebSocket infrastructure, which is more complex than simple request-response. **Error handling is trickier** — you need to handle mid-stream failures, reconnection, and partial responses. **Post-processing challenges** — if you need to validate, filter, or format the complete response, streaming makes this harder. **Connection management overhead** — long-lived connections consume server resources differently than short-lived ones. And **not suitable for all use cases** — structured data responses like JSON, tables, or charts often need the complete response before display.
+
+#### 🎯 The Verdict
+Streaming is almost always worth implementing for user-facing RAG applications. The perceived latency improvement is significant, and most modern frameworks make it straightforward. For our final technique, let's look at using smaller or distilled LLMs...`
         }
       ]
     },
