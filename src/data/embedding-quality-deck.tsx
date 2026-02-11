@@ -42,14 +42,14 @@ export const embeddingQualityDeck: Deck = {
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: `### 1. 7 Tricks to Improve Embedding Quality
-Welcome everyone! Today we're going to explore seven powerful techniques that will dramatically improve your embedding quality without changing a single line of your model code. Think about that for a moment. You don't need to retrain anything, you don't need more compute power, and you don't need expensive new models. Just smarter preprocessing.
+          notes: `### 7 Tricks to Improve Embedding Quality
+[cheerfully] Welcome everyone! [excited] Today we're going to explore seven powerful techniques that will dramatically improve your embedding quality without changing a single line of your model code. [pause] Think about that for a moment. You don't need to retrain anything, you don't need more compute power, and you don't need expensive new models. Just smarter preprocessing.
 
 ####  The Power of Better Data Preparation
-Here's something most people miss: the quality of your embeddings depends just as much on how you prepare your data as it does on which model you choose. You could be using the best embedding model in the world, but if you're feeding it messy, inconsistent, or poorly structured text, you're not going to get great results. It's like having a Ferrari but filling it with low-quality fuel. The car is amazing, but it won't perform at its best.
+[conversational] Here's something most people miss: the quality of your embeddings depends just as much on how you prepare your data as it does on which model you choose. [storytelling] You could be using the best embedding model in the world, but if you're feeding it messy, inconsistent, or poorly structured text, you're not going to get great results. It's like having a Ferrari but filling it with low-quality fuel. The car is amazing, but it won't perform at its best.
 
 ####  What We'll Cover Today
-These seven techniques are practical, proven, and ready to use right now. Each one comes with clear instructions on what it does, how to implement it, and when to use it. By the end of this presentation, you'll have a complete toolkit for preprocessing your text data before it goes into your embedding model. Let's start by looking at the overview of all seven techniques.`
+[energetic] These seven techniques are practical, proven, and ready to use right now. [confidently] Each one comes with clear instructions on what it does, how to implement it, and when to use it. By the end of this presentation, you'll have a complete toolkit for preprocessing your text data before it goes into your embedding model. [enthusiastically] Let's start by looking at the overview of all seven techniques.`
         },
         {
           id: 2,
@@ -92,25 +92,25 @@ These seven techniques are practical, proven, and ready to use right now. Each o
             </div>
           ),
           backgroundColor: '#1a1a2e',
-          notes: `### 2. Overview: The 7 Techniques
-Let me give you the roadmap for our journey today. We have seven powerful techniques, and each one targets a specific problem you'll encounter when working with text embeddings.
+          notes: `### Overview: The 7 Techniques
+[conversational] Let me give you the roadmap for our journey today. [lecture] We have seven powerful techniques, and each one targets a specific problem you'll encounter when working with text embeddings.
 
 ####  The Seven Techniques
-Starting with **technique one: clean and normalize text**. This is all about reducing variability. When you have the same concept written in ten different ways, your embedding model sees ten different things. Cleaning and normalizing fixes that problem by standardizing your text.
+[confidently] Starting with **technique one: clean and normalize text**. This is all about reducing variability. When you have the same concept written in ten different ways, your embedding model sees ten different things. Cleaning and normalizing fixes that problem by standardizing your text.
 
-**Technique two: remove boilerplate and noise**. Think about web pages with headers, footers, cookie banners, and navigation menus. That's all noise that dilutes your embeddings. This technique strips away everything except the actual content.
+**Technique two: remove boilerplate and noise**. [storytelling] Think about web pages with headers, footers, cookie banners, and navigation menus. That's all noise that dilutes your embeddings. This technique strips away everything except the actual content.
 
-**Technique three: semantic chunking**. This is crucial for retrieval systems. You can't just split documents at arbitrary positions. You need chunks that are coherent and can answer questions on their own. This technique shows you how.
+**Technique three: semantic chunking**. [seriously] This is crucial for retrieval systems. You can't just split documents at arbitrary positions. You need chunks that are coherent and can answer questions on their own. This technique shows you how.
 
-**Technique four: add section titles to chunks**. Context is everything. A chunk that says "installation is simple" doesn't tell you much. But if you prepend "Python Installation Guide: installation is simple," now you have disambiguation and context.
+**Technique four: add section titles to chunks**. [enthusiastically] Context is everything. A chunk that says "installation is simple" doesn't tell you much. But if you prepend "Python Installation Guide: installation is simple," now you have disambiguation and context.
 
-**Technique five: light stopword trimming**. Notice I said *light*. We're not aggressively removing stopwords like old-school NLP systems. We're carefully trimming filler words while preserving meaning and negation.
+**Technique five: light stopword trimming**. [cautiously] Notice I said *light*. We're not aggressively removing stopwords like old-school NLP systems. We're carefully trimming filler words while preserving meaning and negation.
 
-**Technique six: keyphrase and topic tags as metadata**. This enriches your chunks with structured signals that improve filtering and recall. Think of it as adding facets to your search system.
+**Technique six: keyphrase and topic tags as metadata**. [pleased] This enriches your chunks with structured signals that improve filtering and recall. Think of it as adding facets to your search system.
 
 **Technique seven: convert tables to structured text**. Tables are everywhere in documents, but embedding models don't understand table layouts. This technique linearizes tabular data into model-friendly text.
 
-Now let's dive into each technique in detail, starting with cleaning and normalization.`
+[energetic] Now let's dive into each technique in detail, starting with cleaning and normalization.`
         }
       ]
     },
@@ -167,14 +167,14 @@ Now let's dive into each technique in detail, starting with cleaning and normali
             </div>
           ),
           backgroundColor: '#0f3460',
-          notes: `### 3. Clean and Normalize Text
-Let's dive into our first technique: cleaning and normalizing text. This is fundamental, and honestly, if you only implement one technique from this presentation, make it this one.
+          notes: `### Clean and Normalize Text
+[lecture] Let's dive into our first technique: cleaning and normalizing text. [seriously] This is fundamental, and honestly, if you only implement one technique from this presentation, make it this one.
 
 ####  The Problem: Textual Chaos
-Imagine you're building a search system, and users are searching for "café." But in your documents, sometimes it's written as "cafe" without the accent, sometimes it's "café" with a combining accent mark, and sometimes it's "café" with a precomposed character. To you and me, these all look the same, but to a computer, they're three completely different strings. Your embedding model will treat them as different concepts, even though they mean exactly the same thing.
+[storytelling] Imagine you're building a search system, and users are searching for "café." But in your documents, sometimes it's written as "cafe" without the accent, sometimes it's "café" with a combining accent mark, and sometimes it's "café" with a precomposed character. [conversational] To you and me, these all look the same, but to a computer, they're three completely different strings. Your embedding model will treat them as different concepts, even though they mean exactly the same thing.
 
 ####  What Normalization Does
-The goal here is simple but powerful: **reduce textual variability so the same concepts map to similar tokens**. When you normalize text, you're essentially saying "these variations are all the same thing, treat them consistently."
+[confidently] The goal here is simple but powerful: **reduce textual variability so the same concepts map to similar tokens**. When you normalize text, you're essentially saying "these variations are all the same thing, treat them consistently."
 
 ####  How It Works
 \`\`\`mermaid
@@ -185,21 +185,21 @@ flowchart LR
     style A fill:#ffcdd2,color:#000
     style D fill:#81c784,color:#000
 \`\`\`
-Think of this as a pipeline. Raw text comes in with all its quirks and inconsistencies. First, we apply **Unicode normalization** using standards like NFC 👉 'en-ef-see' or NFKC 👉 'en-ef-kay-see'. This handles things like combining characters and different representations of the same glyph. Then we standardize **whitespace and punctuation**—collapsing multiple spaces, standardizing quotes and dashes, trimming leading and trailing whitespace. Finally, we get clean, consistent output.
+[lecture] Think of this as a pipeline. Raw text comes in with all its quirks and inconsistencies. First, we apply **Unicode normalization** using standards like NFC 👉 'en-ef-see' or NFKC 👉 'en-ef-kay-see'. This handles things like combining characters and different representations of the same glyph. Then we standardize **whitespace and punctuation**—collapsing multiple spaces, standardizing quotes and dashes, trimming leading and trailing whitespace. [pleased] Finally, we get clean, consistent output.
 
 ####  The Implementation Steps
-Start with **Unicode normalization**. Use NFC or NFKC forms to handle combining characters. Also watch out for mojibake 👉 'moh-jee-bah-keh'—that's when text gets corrupted due to encoding issues, like seeing "âœ"" instead of a checkmark.
+[conversational] Start with **Unicode normalization**. Use NFC or NFKC forms to handle combining characters. [cautiously] Also watch out for mojibake 👉 'moh-jee-bah-keh'—that's when text gets corrupted due to encoding issues, like seeing "âœ"" instead of a checkmark.
 
 Next, **standardize quotes and dashes**. Convert all curly quotes to straight quotes, or vice versa—just be consistent. Replace various dash types with a single standard. Collapse multiple spaces into one. Trim whitespace from the start and end of lines.
 
 Then **normalize bullets and lists**. Different sources use different bullet characters: •, -, *, ·. Pick one standard and convert everything to it. Same with line breaks—unify them to a single style.
 
-Finally, and this is crucial: **preserve meaningful symbols**. Don't normalize away mathematical notation, code snippets, or chemical formulas. Those symbols carry important semantic meaning. You need to be smart about what you normalize and what you preserve.
+[firmly] Finally, and this is crucial: **preserve meaningful symbols**. Don't normalize away mathematical notation, code snippets, or chemical formulas. Those symbols carry important semantic meaning. You need to be smart about what you normalize and what you preserve.
 
 ####  When to Use This
-This technique is essential when you're working with **mixed sources**: maybe you're pulling data from PDFs, web scrapes, user uploads, and legacy databases. Each source has its own quirks. OCR 👉 'oh-see-are' output is notorious for weird artifacts. User-generated content has inconsistent formatting. Legacy documents might use outdated character encodings. All of these scenarios scream for text normalization.
+[confidently] This technique is essential when you're working with **mixed sources**: maybe you're pulling data from PDFs, web scrapes, user uploads, and legacy databases. Each source has its own quirks. OCR 👉 'oh-see-are' output is notorious for weird artifacts. User-generated content has inconsistent formatting. Legacy documents might use outdated character encodings. All of these scenarios scream for text normalization.
 
-Now let's look at the pros and cons of this technique.`
+[energetic] Now let's look at the pros and cons of this technique.`
         },
         {
           id: 4,
@@ -231,22 +231,22 @@ Now let's look at the pros and cons of this technique.`
             </div>
           ),
           backgroundColor: '#0f3460',
-          notes: `### 4. Pros and Cons of Text Normalization
-Let's be honest about the trade-offs here. Every preprocessing technique has upsides and downsides.
+          notes: `### Pros and Cons of Text Normalization
+[conversational] Let's be honest about the trade-offs here. Every preprocessing technique has upsides and downsides.
 
 ####  The Good Stuff
-First, the **pros**. When you normalize text consistently, you get **more consistent tokenization**. Your embedding model isn't wasting tokens on representing "café" three different ways. Everything maps to the same tokens, which means similar concepts get similar embeddings. Beautiful.
+[pleased] First, the **pros**. When you normalize text consistently, you get **more consistent tokenization**. Your embedding model isn't wasting tokens on representing "café" three different ways. Everything maps to the same tokens, which means similar concepts get similar embeddings. [delighted] Beautiful.
 
 You also get **better deduplication**. If you have duplicate content but one version has extra whitespace or different quote styles, normalization helps you catch those duplicates. Your index stays cleaner and smaller.
 
 And you eliminate **encoding and scraping artifacts**. No more weird characters from broken encodings. No more HTML entities that slipped through. Your data looks professional and clean.
 
 ####  The Problems
-Now the **cons**. The biggest risk is **over-normalization**. Sometimes case matters—"Apple" the company versus "apple" the fruit. Sometimes emphasis matters—all caps might indicate shouting or importance. If you normalize everything to lowercase and remove all special formatting, you might be throwing away useful signals.
+[cautiously] Now the **cons**. The biggest risk is **over-normalization**. [concerned] Sometimes case matters—"Apple" the company versus "apple" the fruit. Sometimes emphasis matters—all caps might indicate shouting or importance. If you normalize everything to lowercase and remove all special formatting, you might be throwing away useful signals.
 
-The other challenge is that normalization isn't one-size-fits-all. What works for English might break for German where nouns are capitalized. What works for technical docs might mess up creative writing. You need to **test per language and domain**. This adds complexity and maintenance burden to your pipeline.
+[seriously] The other challenge is that normalization isn't one-size-fits-all. What works for English might break for German where nouns are capitalized. What works for technical docs might mess up creative writing. You need to **test per language and domain**. This adds complexity and maintenance burden to your pipeline.
 
-The key is finding the right balance: normalize enough to reduce noise, but preserve enough to keep meaningful signals. Now let's move on to technique two: removing boilerplate and noise.`
+[firmly] The key is finding the right balance: normalize enough to reduce noise, but preserve enough to keep meaningful signals. [energetic] Now let's move on to technique two: removing boilerplate and noise.`
         }
       ]
     },
@@ -305,14 +305,14 @@ The key is finding the right balance: normalize enough to reduce noise, but pres
             </div>
           ),
           backgroundColor: '#1a4d2e',
-          notes: `### 5. Remove Boilerplate and Noise
-Now let's talk about technique two: removing boilerplate and noise. This is where you'll see some of the biggest quality improvements with the least effort.
+          notes: `### Remove Boilerplate and Noise
+[enthusiastically] Now let's talk about technique two: removing boilerplate and noise. [pleased] This is where you'll see some of the biggest quality improvements with the least effort.
 
 ####  The Signal-to-Noise Problem
-Think about a typical web page. You've got your main article in the center, maybe five hundred words of actual content. But surrounding it? There's a navigation menu with dozens of links, a header with the site logo and search bar, a sidebar with ads, a cookie consent banner, a footer with copyright info and social media links, and maybe some tracking pixels. If you scrape that page and embed the whole thing, you're embedding maybe ten percent signal and ninety percent noise.
+[storytelling] Think about a typical web page. You've got your main article in the center, maybe five hundred words of actual content. But surrounding it? [conversational] There's a navigation menu with dozens of links, a header with the site logo and search bar, a sidebar with ads, a cookie consent banner, a footer with copyright info and social media links, and maybe some tracking pixels. [concerned] If you scrape that page and embed the whole thing, you're embedding maybe ten percent signal and ninety percent noise.
 
 ####  What This Technique Does
-The goal is laser-focused: **eliminate non-content text that dilutes embeddings**. We want to extract the pure signal—the actual article, the actual document content—and throw away everything else. Think of it like mining for gold: you don't keep the dirt, you extract the valuable ore and discard the rest.
+[confidently] The goal is laser-focused: **eliminate non-content text that dilutes embeddings**. We want to extract the pure signal—the actual article, the actual document content—and throw away everything else. [storytelling] Think of it like mining for gold: you don't keep the dirt, you extract the valuable ore and discard the rest.
 
 ####  How It Works
 \`\`\`mermaid
@@ -325,21 +325,21 @@ flowchart TB
     style D fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000
 \`\`\`
-Here's the process. You start with a full document—maybe it's a web page, a PDF, or an email. You run **content identification** using heuristics or tools like readability algorithms. These tools look at things like text density, paragraph structure, and DOM 👉 'dom' position to figure out what's actual content versus what's boilerplate. Then you split the document: keep the main content, throw away the headers, footers, navigation, and other noise. What you end up with is a clean document that's all signal, no noise.
+[lecture] Here's the process. You start with a full document—maybe it's a web page, a PDF, or an email. You run **content identification** using heuristics or tools like readability algorithms. These tools look at things like text density, paragraph structure, and DOM 👉 'dom' position to figure out what's actual content versus what's boilerplate. [pleased] Then you split the document: keep the main content, throw away the headers, footers, navigation, and other noise. What you end up with is a clean document that's all signal, no noise.
 
 ####  Implementation Steps
-First, **parse your document structure**. For web pages, parse the DOM. For PDFs, extract the text layout. Then apply **readability heuristics**—there are great open-source libraries for this like Mozilla's Readability or Python's newspaper3k.
+[conversational] First, **parse your document structure**. For web pages, parse the DOM. For PDFs, extract the text layout. Then apply **readability heuristics**—there are great open-source libraries for this like Mozilla's Readability or Python's newspaper3k.
 
 Next, **explicitly drop known boilerplate elements**. Remove navigation menus, sidebars, footers. Strip out ads and A/B test content that changes between page loads. Get rid of cookie consent text—nobody needs that embedded.
 
 Then **strip repeated patterns**. If every page in your corpus has "Copyright 2024 CompanyName" at the bottom, remove that pattern. Same with email signatures, legal disclaimers, and tracking IDs.
 
-Finally, **log what you're removing and spot-check**. Sometimes your heuristics will be too aggressive and remove actual content. Regular sampling ensures you're not accidentally throwing away good data.
+[seriously] Finally, **log what you're removing and spot-check**. Sometimes your heuristics will be too aggressive and remove actual content. Regular sampling ensures you're not accidentally throwing away good data.
 
 ####  When to Use This
-This technique is essential for **web pages**—they're notorious for having more boilerplate than content. It's also crucial for **PDFs** from organizations that use standard templates with headers, footers, and disclaimers on every page. **Emails** with signatures, disclaimers, and quoted reply chains. Any source with **repeated templates** where the same boilerplate appears across many documents.
+[confidently] This technique is essential for **web pages**—they're notorious for having more boilerplate than content. It's also crucial for **PDFs** from organizations that use standard templates with headers, footers, and disclaimers on every page. **Emails** with signatures, disclaimers, and quoted reply chains. Any source with **repeated templates** where the same boilerplate appears across many documents.
 
-Let's look at the trade-offs.`
+[energetic] Let's look at the trade-offs.`
         },
         {
           id: 6,
@@ -371,22 +371,22 @@ Let's look at the trade-offs.`
             </div>
           ),
           backgroundColor: '#1a4d2e',
-          notes: `### 6. Pros and Cons of Boilerplate Removal
-Let's evaluate the trade-offs for removing boilerplate and noise.
+          notes: `### Pros and Cons of Boilerplate Removal
+[conversational] Let's evaluate the trade-offs for removing boilerplate and noise.
 
 ####  The Good Stuff
-The benefits here are substantial. First, you get **higher signal-to-noise ratio**. Your embeddings now represent actual content, not navigation menus and cookie banners. This translates directly to better retrieval quality. When someone searches for something, they find relevant content, not pages full of boilerplate.
+[pleased] The benefits here are substantial. First, you get **higher signal-to-noise ratio**. Your embeddings now represent actual content, not navigation menus and cookie banners. [enthusiastically] This translates directly to better retrieval quality. When someone searches for something, they find relevant content, not pages full of boilerplate.
 
 You also get a **smaller index size**. If you're removing eighty percent noise from every document, your vector database is now five times smaller. That means lower storage costs, faster searches, and the ability to index more actual content with the same resources.
 
-And most importantly, you get **better retrieval precision**. Think about it: if every page has "About Us | Contact | Privacy Policy" in the header, those terms will show up in every embedding. Someone searching for "contact information" might match hundreds of irrelevant pages just because they all have "Contact" in the header. Remove the boilerplate, and suddenly your retrieval is much more precise.
+[delighted] And most importantly, you get **better retrieval precision**. Think about it: if every page has "About Us | Contact | Privacy Policy" in the header, those terms will show up in every embedding. Someone searching for "contact information" might match hundreds of irrelevant pages just because they all have "Contact" in the header. Remove the boilerplate, and suddenly your retrieval is much more precise.
 
 ####  The Problems
-The main risk is being **too aggressive with your rules**. Sometimes what looks like boilerplate is actually useful context. Maybe the page title in the header provides important disambiguation. Maybe the sidebar contains related links that add value. If your removal rules are too broad, you might delete content that should have been kept.
+[cautiously] The main risk is being **too aggressive with your rules**. Sometimes what looks like boilerplate is actually useful context. Maybe the page title in the header provides important disambiguation. Maybe the sidebar contains related links that add value. [concerned] If your removal rules are too broad, you might delete content that should have been kept.
 
-The other challenge is **maintenance across sources**. Different websites have different structures. PDFs from different publishers use different templates. You need source-specific rules, and those rules need to be updated when sources change their layouts. This maintenance burden can add up, especially if you're working with hundreds of different sources.
+[seriously] The other challenge is **maintenance across sources**. Different websites have different structures. PDFs from different publishers use different templates. You need source-specific rules, and those rules need to be updated when sources change their layouts. This maintenance burden can add up, especially if you're working with hundreds of different sources.
 
-The key is starting conservative—remove obvious boilerplate first—then gradually refine your rules based on what you observe in your results. Now let's move on to technique three: semantic chunking.`
+[confidently] The key is starting conservative—remove obvious boilerplate first—then gradually refine your rules based on what you observe in your results. [energetic] Now let's move on to technique three: semantic chunking.`
         }
       ]
     },
@@ -444,14 +444,14 @@ The key is starting conservative—remove obvious boilerplate first—then gradu
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### 7. Use Semantic Chunking
-Technique three is semantic chunking, and this is absolutely critical if you're building any kind of retrieval system.
+          notes: `### Use Semantic Chunking
+[seriously] Technique three is semantic chunking, and this is absolutely critical if you're building any kind of retrieval system.
 
 ####  The Chunking Problem
-Here's the fundamental challenge: your documents are probably long—maybe thousands of words—but your embedding model has a limited context window, and you need each embedded unit to be a cohesive, retrievable piece of information. If you just split documents at arbitrary positions—every five hundred characters, for example—you'll cut sentences in half, split concepts across chunks, and create fragments that don't make sense on their own.
+[lecture] Here's the fundamental challenge: your documents are probably long—maybe thousands of words—but your embedding model has a limited context window, and you need each embedded unit to be a cohesive, retrievable piece of information. [concerned] If you just split documents at arbitrary positions—every five hundred characters, for example—you'll cut sentences in half, split concepts across chunks, and create fragments that don't make sense on their own.
 
 ####  What Semantic Chunking Does
-The goal is to **split documents into coherent units that can answer a question on their own**. Each chunk should be about one topic, one concept, one idea. When someone searches for something and retrieves your chunk, they should get a complete, useful piece of information, not a fragment that needs context from other chunks to make sense.
+[confidently] The goal is to **split documents into coherent units that can answer a question on their own**. Each chunk should be about one topic, one concept, one idea. [conversational] When someone searches for something and retrieves your chunk, they should get a complete, useful piece of information, not a fragment that needs context from other chunks to make sense.
 
 ####  How It Works
 \`\`\`mermaid
@@ -463,21 +463,21 @@ flowchart TB
     style A fill:#ffcdd2,color:#000
     style E fill:#81c784,color:#000
 \`\`\`
-Start with your **long document**. First, do **structure analysis**: identify headings, section breaks, paragraph boundaries. These give you natural split points. Then **split at these boundaries**—don't cut mid-sentence or mid-paragraph. Next, **add a small overlap** between chunks so that concepts that span boundaries aren't completely lost. Finally, you get **coherent chunks** where each one is semantically complete.
+[lecture] Start with your **long document**. First, do **structure analysis**: identify headings, section breaks, paragraph boundaries. These give you natural split points. Then **split at these boundaries**—don't cut mid-sentence or mid-paragraph. Next, **add a small overlap** between chunks so that concepts that span boundaries aren't completely lost. [pleased] Finally, you get **coherent chunks** where each one is semantically complete.
 
 ####  Implementation Steps
-First, **choose your target chunk size**. Somewhere between two hundred and four hundred tokens is usually a good sweet spot. Too small and you lose context; too large and you defeat the purpose of chunking. Also decide on an **overlap percentage**—typically ten to twenty percent works well. This means the end of one chunk and the beginning of the next will share some content.
+[conversational] First, **choose your target chunk size**. Somewhere between two hundred and four hundred tokens is usually a good sweet spot. Too small and you lose context; too large and you defeat the purpose of chunking. Also decide on an **overlap percentage**—typically ten to twenty percent works well. This means the end of one chunk and the beginning of the next will share some content.
 
-Second, **anchor your boundaries at document structure**. Split at headings first—those are the strongest boundaries. Within sections, split at paragraph breaks. Within paragraphs, you can split at sentence boundaries if needed, but try to avoid that.
+[confidently] Second, **anchor your boundaries at document structure**. Split at headings first—those are the strongest boundaries. Within sections, split at paragraph breaks. Within paragraphs, you can split at sentence boundaries if needed, but try to avoid that.
 
 Third, **use similarity to refine your chunks**. Within a section, you might have multiple paragraphs. Group paragraphs that are semantically similar—about the same subtopic—into a single chunk. You can use lightweight embedding similarity to guide this grouping.
 
-Finally, **ensure single topic per chunk**. Each chunk should be dominated by one main idea. And crucially, **store source references**: keep track of which document, which section, which page each chunk came from. This lets you link back to the original source when presenting results.
+[firmly] Finally, **ensure single topic per chunk**. Each chunk should be dominated by one main idea. And crucially, **store source references**: keep track of which document, which section, which page each chunk came from. This lets you link back to the original source when presenting results.
 
 ####  When to Use This
-This is essential for **long documents**—anything over a couple of pages. It's absolutely required for **RAG 👉 'rag' pipelines** where you're retrieving chunks to provide context to a language model. And anytime you're dealing with **context-window constraints**—if your model can only handle five hundred tokens at a time, you need good chunking.
+[seriously] This is essential for **long documents**—anything over a couple of pages. It's absolutely required for **RAG 👉 'rag' pipelines** where you're retrieving chunks to provide context to a language model. And anytime you're dealing with **context-window constraints**—if your model can only handle five hundred tokens at a time, you need good chunking.
 
-Let's look at the trade-offs.`
+[energetic] Let's look at the trade-offs.`
         },
         {
           id: 8,
@@ -509,22 +509,22 @@ Let's look at the trade-offs.`
             </div>
           ),
           backgroundColor: '#4a4e69',
-          notes: `### 8. Pros and Cons of Semantic Chunking
-Let's evaluate the benefits and challenges of semantic chunking.
+          notes: `### Pros and Cons of Semantic Chunking
+[conversational] Let's evaluate the benefits and challenges of semantic chunking.
 
 ####  The Advantages
-The improvements here are transformative. First and foremost, you get **better recall and precision in retrieval**. When each chunk is a coherent, complete unit of information, your embedding captures a complete concept. Someone searching for information will find exactly what they need in one chunk, not fragments spread across multiple chunks.
+[enthusiastically] The improvements here are transformative. [pleased] First and foremost, you get **better recall and precision in retrieval**. When each chunk is a coherent, complete unit of information, your embedding captures a complete concept. Someone searching for information will find exactly what they need in one chunk, not fragments spread across multiple chunks.
 
-You also **reduce context stuffing and hallucinations**. Think about what happens when you retrieve poorly chunked text and feed it to a language model. You might get three sentence fragments that don't connect logically, or a chunk that starts mid-thought. The model tries to make sense of this mess and ends up hallucinating connections that don't exist. With semantic chunking, each chunk is self-contained, so the model gets clean, coherent context.
+[delighted] You also **reduce context stuffing and hallucinations**. [storytelling] Think about what happens when you retrieve poorly chunked text and feed it to a language model. You might get three sentence fragments that don't connect logically, or a chunk that starts mid-thought. The model tries to make sense of this mess and ends up hallucinating connections that don't exist. [confidently] With semantic chunking, each chunk is self-contained, so the model gets clean, coherent context.
 
 ####  The Challenges
-The main downside is **increased pipeline complexity**. You're not just splitting on character count anymore—you're analyzing document structure, measuring semantic similarity, adding overlaps. This takes more processing time and more code to maintain.
+[cautiously] The main downside is **increased pipeline complexity**. You're not just splitting on character count anymore—you're analyzing document structure, measuring semantic similarity, adding overlaps. This takes more processing time and more code to maintain.
 
-The **overlap increases storage costs**. If you're using twenty percent overlap, you're storing point two extra copies of your content. That adds up quickly with large corpora.
+[concerned] The **overlap increases storage costs**. If you're using twenty percent overlap, you're storing point two extra copies of your content. That adds up quickly with large corpora.
 
-Finally, semantic chunking **requires tuning per corpus**. The ideal chunk size for API documentation is different from the ideal size for legal contracts or scientific papers. You need to experiment and measure to find what works for your specific use case.
+[seriously] Finally, semantic chunking **requires tuning per corpus**. The ideal chunk size for API documentation is different from the ideal size for legal contracts or scientific papers. You need to experiment and measure to find what works for your specific use case.
 
-Despite these challenges, semantic chunking is absolutely essential for quality RAG systems. The retrieval improvements far outweigh the added complexity. Now let's move to technique four: adding section titles to chunks.`
+[confidently] Despite these challenges, semantic chunking is absolutely essential for quality RAG systems. The retrieval improvements far outweigh the added complexity. [energetic] Now let's move to technique four: adding section titles to chunks.`
         }
       ]
     },
@@ -584,14 +584,14 @@ Despite these challenges, semantic chunking is absolutely essential for quality 
             </div>
           ),
           backgroundColor: '#6a4c93',
-          notes: `### 9. Add Section Titles to Chunks
-Technique four is adding section titles to chunks, and this is one of the simplest yet most effective improvements you can make.
+          notes: `### Add Section Titles to Chunks
+[conversational] Technique four is adding section titles to chunks, and this is one of the simplest yet most effective improvements you can make.
 
 ####  The Context Problem
-Imagine you've chunked a long technical manual into pieces. You retrieve a chunk that says "To configure the feature, edit the configuration file and restart the service." This is useful information, but which feature? Which service? Without context, this chunk could match dozens of different queries, and the user won't know if it's relevant to their specific need.
+[storytelling] Imagine you've chunked a long technical manual into pieces. You retrieve a chunk that says "To configure the feature, edit the configuration file and restart the service." [puzzled] This is useful information, but which feature? Which service? [concerned] Without context, this chunk could match dozens of different queries, and the user won't know if it's relevant to their specific need.
 
 ####  What This Technique Does
-The goal is to **provide context and disambiguation for each chunk**. By including the document structure—the title, the chapter, the section headings—you turn that generic chunk into something specific: "User Guide > Authentication > OAuth Configuration > To configure the feature, edit the configuration file and restart the service." Now it's crystal clear what this chunk is about.
+[confidently] The goal is to **provide context and disambiguation for each chunk**. [enthusiastically] By including the document structure—the title, the chapter, the section headings—you turn that generic chunk into something specific: "User Guide > Authentication > OAuth Configuration > To configure the feature, edit the configuration file and restart the service." [delighted] Now it's crystal clear what this chunk is about.
 
 ####  How It Works
 \`\`\`mermaid
@@ -605,23 +605,23 @@ flowchart TB
     style F fill:#81c784,color:#000
     style D fill:#4fc3f7,color:#000
 \`\`\`
-Start with your **document structure**—the hierarchy of headings and sections. **Extract this hierarchy** by parsing the heading tags, whether that's HTML H1 through H6 tags, Markdown headers, or PDF outline entries. Build a **breadcrumb path**: Document Title, then H1, then H2, then H3. This gives you the full context trail from the top level down to the specific section. **Prepend this to your chunk**—either at the beginning of the text itself or as structured metadata. The result is a **contextualized chunk** that carries its position in the document with it.
+[lecture] Start with your **document structure**—the hierarchy of headings and sections. **Extract this hierarchy** by parsing the heading tags, whether that's HTML H1 through H6 tags, Markdown headers, or PDF outline entries. Build a **breadcrumb path**: Document Title, then H1, then H2, then H3. This gives you the full context trail from the top level down to the specific section. [conversational] **Prepend this to your chunk**—either at the beginning of the text itself or as structured metadata. [pleased] The result is a **contextualized chunk** that carries its position in the document with it.
 
 ####  Implementation Steps
-First, **extract the breadcrumb**. Walk the document structure and build a path like "API Documentation > REST API > Authentication Endpoints > POST /login". Keep this hierarchical trail.
+[confidently] First, **extract the breadcrumb**. Walk the document structure and build a path like "API Documentation > REST API > Authentication Endpoints > POST /login". Keep this hierarchical trail.
 
 Second, **build a concise chunk title**. You might not need the full breadcrumb for every chunk—sometimes just the last two or three levels are sufficient. Balance completeness with token efficiency.
 
-Third, decide whether to **prepend the title to the text** or **store it as metadata**. Prepending means it's embedded directly, which can be powerful for semantic matching. Storing as metadata keeps the chunk text clean and lets you filter or display the context separately. Often doing both works well.
+[conversational] Third, decide whether to **prepend the title to the text** or **store it as metadata**. Prepending means it's embedded directly, which can be powerful for semantic matching. Storing as metadata keeps the chunk text clean and lets you filter or display the context separately. Often doing both works well.
 
-Fourth, **keep it under your token budget**. A forty-word breadcrumb on a two-hundred-word chunk is taking up twenty percent of your space. If your titles are very long, abbreviate them or use shortened forms.
+[cautiously] Fourth, **keep it under your token budget**. A forty-word breadcrumb on a two-hundred-word chunk is taking up twenty percent of your space. If your titles are very long, abbreviate them or use shortened forms.
 
-Finally, **include stable section IDs or anchors**. This lets you link back to the exact location in the source document, which is invaluable for showing users where the information came from.
+[firmly] Finally, **include stable section IDs or anchors**. This lets you link back to the exact location in the source document, which is invaluable for showing users where the information came from.
 
 ####  When to Use This
-This is essential for **hierarchical documents**—anything with chapters, sections, and subsections. **Technical manuals** where the same terminology appears in different contexts. **API documentation** where endpoint names, method names, and parameter names repeat across different services. **Research papers** with multiple sections and subsections. Anytime your corpus has structure, add that structure to your chunks.
+[seriously] This is essential for **hierarchical documents**—anything with chapters, sections, and subsections. **Technical manuals** where the same terminology appears in different contexts. **API documentation** where endpoint names, method names, and parameter names repeat across different services. **Research papers** with multiple sections and subsections. Anytime your corpus has structure, add that structure to your chunks.
 
-Let's look at the trade-offs.`
+[energetic] Let's look at the trade-offs.`
         },
         {
           id: 10,
@@ -653,24 +653,24 @@ Let's look at the trade-offs.`
             </div>
           ),
           backgroundColor: '#6a4c93',
-          notes: `### 10. Pros and Cons of Adding Section Titles
-Let's examine the benefits and potential issues with adding section titles to chunks.
+          notes: `### Pros and Cons of Adding Section Titles
+[conversational] Let's examine the benefits and potential issues with adding section titles to chunks.
 
 ####  The Benefits
-The advantages here are powerful and immediate. First, you get **stronger semantic cues**. When your chunk includes "Authentication > OAuth > Configuration", your embedding model has much richer signals to work with. It understands not just that this text is about configuration, but specifically OAuth configuration within an authentication context.
+[pleased] The advantages here are powerful and immediate. [enthusiastically] First, you get **stronger semantic cues**. When your chunk includes "Authentication > OAuth > Configuration", your embedding model has much richer signals to work with. It understands not just that this text is about configuration, but specifically OAuth configuration within an authentication context.
 
-This leads directly to **better filtering and ranking**. Users can filter results by section, by chapter, by document. Your ranking algorithms have more metadata to work with, so relevant results rise to the top. A query for "OAuth configuration" will match the chunk with that exact breadcrumb much more strongly than a generic chunk about configuration.
+[delighted] This leads directly to **better filtering and ranking**. Users can filter results by section, by chapter, by document. Your ranking algorithms have more metadata to work with, so relevant results rise to the top. A query for "OAuth configuration" will match the chunk with that exact breadcrumb much more strongly than a generic chunk about configuration.
 
-You also get **easier tracing back to source**. When you show results to users, you can display the full path: "Found in API Documentation > Authentication > OAuth Configuration." The user immediately understands where this information lives in your documentation hierarchy. For debugging or verification, you can jump directly to that section.
+[confidently] You also get **easier tracing back to source**. When you show results to users, you can display the full path: "Found in API Documentation > Authentication > OAuth Configuration." The user immediately understands where this information lives in your documentation hierarchy. For debugging or verification, you can jump directly to that section.
 
 ####  The Drawbacks
-The main concern is **extra tokens in the text**. If you're prepending section titles to every chunk, you're using up part of your embedding model's context window on metadata instead of content. For very long breadcrumbs, this can be significant. The solution is either keeping titles short, storing them as metadata instead of in-text, or both.
+[cautiously] The main concern is **extra tokens in the text**. If you're prepending section titles to every chunk, you're using up part of your embedding model's context window on metadata instead of content. For very long breadcrumbs, this can be significant. The solution is either keeping titles short, storing them as metadata instead of in-text, or both.
 
-Another risk is **skewing similarity if titles are generic**. If every chunk starts with "Product Documentation > User Guide >", that repeated prefix might dominate the embedding. Chunks become more similar to each other than they should be. The fix is to use distinctive, specific section titles rather than generic ones, or to store generic prefixes as separate metadata fields.
+[concerned] Another risk is **skewing similarity if titles are generic**. If every chunk starts with "Product Documentation > User Guide >", that repeated prefix might dominate the embedding. Chunks become more similar to each other than they should be. The fix is to use distinctive, specific section titles rather than generic ones, or to store generic prefixes as separate metadata fields.
 
-Finally, this **requires robust heading extraction**. Not all documents have clean, well-structured headings. Web pages might use CSS styling instead of semantic HTML tags. PDFs might not have outline metadata. You need good parsing logic to extract the hierarchy reliably.
+[seriously] Finally, this **requires robust heading extraction**. Not all documents have clean, well-structured headings. Web pages might use CSS styling instead of semantic HTML tags. PDFs might not have outline metadata. You need good parsing logic to extract the hierarchy reliably.
 
-Despite these challenges, adding section titles is one of the highest-value techniques for structured documents. The disambiguation and context benefits are enormous. Let's move to technique five: stopword trimming.`
+[confidently] Despite these challenges, adding section titles is one of the highest-value techniques for structured documents. The disambiguation and context benefits are enormous. [energetic] Let's move to technique five: stopword trimming.`
         }
       ]
     },
