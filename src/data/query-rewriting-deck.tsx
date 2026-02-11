@@ -370,7 +370,7 @@ Let's start with Strategy 1: Query Expansion.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Bridge vocabulary gaps, increase recall with synonyms/related terms, and improve retrieval for sparse queries</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Bridge vocabulary gaps, increase recall with synonyms/related terms, and improve retrieval for sparse queries</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                 <li>Simple implementation</li>
@@ -527,7 +527,7 @@ Now let's move on to Strategy 2: Query Reformulation.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Make queries clearer, self-contained, and unambiguous to enhance retrieval precision</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Make queries clearer, self-contained, and unambiguous to enhance retrieval precision</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Improved precision in results</li>
@@ -661,7 +661,7 @@ Next up is Strategy 3: Query Decomposition, which handles a completely different
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Handle multi-hop/complex questions that require multiple pieces of information to answer completely</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Handle multi-hop/complex questions that require multiple pieces of information to answer completely</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                 <li>Better coverage of complex topics</li>
@@ -796,7 +796,7 @@ Next, let's look at Step-Back Prompting, which takes the opposite approach — g
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Improve retrieval via abstraction and first principles thinking, allowing better information access for complex or specific queries</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Improve retrieval via abstraction and first principles thinking, allowing better information access for complex or specific queries</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                 <li>Robust to query wording variations</li>
@@ -929,7 +929,7 @@ Next up is Strategy 5: HyDE, which takes a completely different and fascinating 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Improve retrieval quality by embedding a synthetic document that provides a hypothetical answer to the query, bridging the semantic gap</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Improve retrieval quality by embedding a synthetic document that provides a hypothetical answer to the query, bridging the semantic gap</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px' }}>
                 <li>Strong recall gains in dense retrieval</li>
@@ -1073,7 +1073,7 @@ Next up is Strategy 6: Multi-Query Generation.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Cover diverse intents/phrases to improve recall and handle query ambiguity by exploring different interpretations of user intent</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Cover diverse intents/phrases to improve recall and handle query ambiguity by exploring different interpretations of user intent</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Robust to query ambiguity</li>
@@ -1218,7 +1218,7 @@ Next, Strategy 7: Context-Aware Rewriting for chat applications.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Make follow-up queries standalone and self-contained by incorporating conversation context and session history</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Make follow-up queries standalone and self-contained by incorporating conversation context and session history</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Significant quality improvement in chat</li>
@@ -1354,7 +1354,7 @@ Next, Strategy 8: Query Clarification, where we ask the user for help.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Resolve ambiguity in user queries before retrieval to improve precision and relevance of results</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Resolve ambiguity in user queries before retrieval to improve precision and relevance of results</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Significantly improves precision</li>
@@ -1489,7 +1489,7 @@ Next, Strategy 9: Query Specification.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Add explicit constraints (time, source, locale, format) to focus retrieval on relevant document subsets</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Add explicit constraints (time, source, locale, format) to focus retrieval on relevant document subsets</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>High precision retrieval</li>
@@ -1633,7 +1633,7 @@ Next, Strategy 10: Semantic Bridging.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Map user language to domain ontology/taxonomy, bridging the vocabulary gap between natural language queries and specialized terminology</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Map user language to domain ontology/taxonomy, bridging the vocabulary gap between natural language queries and specialized terminology</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Closes vocabulary gap between users and experts</li>
@@ -1768,7 +1768,7 @@ Next up, Strategy 11: Query2Doc.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Improve retrieval by turning a query into a pseudo-document that reflects likely relevant content</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Improve retrieval by turning a query into a pseudo-document that reflects likely relevant content</h3></GSAPAnimated>
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
                 <li>Strong recall improvement</li>
@@ -1900,7 +1900,7 @@ Next, Strategy 12: ITER-RETGEN, the iterative approach.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Self-refine queries via iterative retrieve→generate cycles to improve coverage and accuracy for complex questions</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Self-refine queries via iterative retrieve→generate cycles to improve coverage and accuracy for complex questions</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2042,7 +2042,7 @@ Next, Strategy 13: Template-Based Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Standardize rewrites for recurring intents and query patterns to ensure consistency and quality</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Standardize rewrites for recurring intents and query patterns to ensure consistency and quality</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2177,7 +2177,7 @@ Next, Strategy 14: Entity-Centric Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Disambiguate and ground queries to specific entities, resolving ambiguity and improving retrieval precision for entity-focused questions</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Disambiguate and ground queries to specific entities, resolving ambiguity and improving retrieval precision for entity-focused questions</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2320,7 +2320,7 @@ Next, Strategy 15: Temporal Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Make time references explicit and current, ensuring retrieval of temporally relevant information and reducing outdated results</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Make time references explicit and current, ensuring retrieval of temporally relevant information and reducing outdated results</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2458,7 +2458,7 @@ Next, Strategy 16: Domain-Specific Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Translate lay terms to domain jargon and fields, improving retrieval precision for specialized knowledge domains</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Translate lay terms to domain jargon and fields, improving retrieval precision for specialized knowledge domains</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2601,7 +2601,7 @@ Next, Strategy 17: Intent Classification and Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Match rewriting strategy to specific task types, improving retrieval performance by applying the most appropriate transformation for each intent</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Match rewriting strategy to specific task types, improving retrieval performance by applying the most appropriate transformation for each intent</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2742,7 +2742,7 @@ Next, Strategy 18: Diverse Multi-Query Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Maximize diversity among rewrites to cover multiple facets of a query, ensuring comprehensive coverage for ambiguous topics</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Maximize diversity among rewrites to cover multiple facets of a query, ensuring comprehensive coverage for ambiguous topics</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -2888,7 +2888,7 @@ Next, Strategy 19: Feedback-Based Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Learn from user interactions (clicks, ratings, session data) to intelligently refine queries based on what worked for similar users</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Learn from user interactions (clicks, ratings, session data) to intelligently refine queries based on what worked for similar users</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -3028,7 +3028,7 @@ Next, Strategy 20: Prompt-Based Rewriting.`
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Use compact, reusable prompts to standardize query rewrites across different types of questions with minimal engineering effort</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Use compact, reusable prompts to standardize query rewrites across different types of questions with minimal engineering effort</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px ' }}>
@@ -3173,7 +3173,7 @@ Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Choose the best rewrite strategy per query context, optimizing performance across diverse query types</h3>
+              <GSAPAnimated animation="slideInTop" delay={0.1}><h3>Choose the best rewrite strategy per query context, optimizing performance across diverse query types</h3></GSAPAnimated>
 
               <h3 style={{ color: '#2ecc71', marginTop: '40px' }}>Benefits</h3>
               <ul style={{ fontSize: '1.2rem', marginTop: '10px     ' }}>
