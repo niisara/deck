@@ -212,86 +212,212 @@ We'll explore each technique in depth, covering exactly how it works, when to us
           title: '1. Node-Level Retrieval - Overview',
           icon: { name: 'duo-circle-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Precise entity/topic lookup; reduces noise and hallucination.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Precise entity/topic lookup; reduces noise and hallucination.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>High precision</li>
-                <li>Simple</li>
-                <li>Fast</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>High precision</li>
+                  <li>Simple</li>
+                  <li>Fast</li>
+                </ul>
+              </GSAPAnimated>
 
-              <p>FAQs, glossaries, entity-centric KBs, short queries.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.5}>
+                <p><strong>Best For:</strong> FAQs, glossaries, entity-centric KBs 👉 'kay-bees', short queries.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e51',
-          notes: ''
+          notes: `### 1. Node-Level Retrieval - Overview
+
+Welcome to our first technique: **Node-Level Retrieval**. This is the foundational building block of graph-based retrieval, and it's beautifully simple yet incredibly powerful when used in the right situations.
+
+#### What Is Node-Level Retrieval?
+Think of your knowledge graph as a massive library where every book has a precise location and label. Node-Level Retrieval is like walking directly to the shelf and picking the exact book you need based on its title or subject label. Each **node** in your graph represents a specific entity or concept, maybe "Python Programming" or "Marie Curie" or "Machine Learning." When someone asks a question, you find the node that best matches their query and return the information attached to that node.
+
+#### The Goal: Precision and Speed
+The primary goal here is **high precision** with minimal noise. In traditional document retrieval, you might get dozens of partially relevant results that mention your topic. With node-level retrieval, you're going straight to the source. If someone asks "What is photosynthesis?" you return the node labeled "Photosynthesis" and its associated content. No ambiguity, no wading through tangentially related documents. This also dramatically **reduces hallucination** in AI systems because you're providing focused, authoritative information.
+
+#### Benefits That Matter
+First, it's **simple** to implement and understand. You're essentially doing entity linking or label matching. Second, it's **fast** because you're looking up specific nodes rather than scoring thousands of documents. Third, it delivers **high precision** which is critical for applications where accuracy matters more than broad coverage.
+
+#### When to Use This
+Node-Level Retrieval shines in specific scenarios. **FAQ systems** where users ask direct questions like "What's your return policy?" **Glossaries and dictionaries** where you want exact definitions. **Entity-centric knowledge bases** like company wikis, product catalogs, or reference databases. It works best with **short, specific queries** rather than complex, multi-part questions.
+
+Now let's see exactly how this technique works under the hood!`
         },
         {
           id: 4,
           title: '1. Node-Level Retrieval - How It Works',
           icon: { name: 'duo-gears' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</p>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>
+                    How It Works
+                    <MermaidPopover
+                      title="Node-Level Retrieval Flow"
+                      diagram={`flowchart LR
+    A["🔍 Query:<br/>Python"] --> B["📊 Match Node:<br/>Similarity Score"]
+    B --> C["🎯 Node:<br/>Python Programming"]
+    C --> D["📄 Return:<br/>Node Content"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000`}
+                    />
+                  </h3>
+                  <p>Map query to best-matching node via titles/aliases/embeddings; return node's attached content.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Data Requirements</h3>
-              <p>Node metadata (title, aliases), text chunks, node embeddings, optional entity linker.</p>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <h3>Data Requirements</h3>
+                  <p>Node metadata (title, aliases), text chunks, node embeddings, optional entity linker.</p>
+                </div>
+              </GSAPAnimated>
 
-              <h3>Pattern</h3>
-              <pre style={{ lineHeight: '1.5' }}>
-                {`A → (Node A)`}
-              </pre>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <h3>Pattern</h3>
+                <pre style={{ lineHeight: '1.5', backgroundColor: 'rgba(0,0,0,0.3)', padding: '10px', borderRadius: '5px' }}>
+                  {`Query: "Python"  →  Node: "Python Programming"  →  Content`}
+                </pre>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e51',
-          notes: ''
+          notes: `### 1. Node-Level Retrieval - How It Works
+
+Let's break down the mechanics of Node-Level Retrieval step by step. Understanding the process will help you implement this technique effectively and troubleshoot when things don't work as expected.
+
+#### The Matching Process
+Here's the core workflow: when a query comes in, you need to **find the node that best represents what the user is asking about**. This involves several matching strategies working together. First, you check for **exact title matches**. If someone asks about "Python" and you have a node titled "Python Programming," that's a strong candidate. Second, you use **aliases and synonyms**. Maybe your Python node also has aliases like "Python language" or "Python development." Third, and most powerfully, you use **embedding similarity**. You've pre-computed embeddings for each node's title and description, so you can find semantically similar nodes even when the words don't match exactly.
+
+```mermaid
+flowchart LR
+    A["🔍 Query:<br/>Python"] --> B["📊 Match Node:<br/>Similarity Score"]
+    B --> C["🎯 Node:<br/>Python Programming"]
+    C --> D["📄 Return:<br/>Node Content"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#ffb74d,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#81c784,color:#000
+```
+
+The system calculates a **combined score** from exact matching and semantic similarity, ranks all candidate nodes, and selects the top match.
+
+#### What Data Do You Need?
+To implement node-level retrieval, you need several pieces of infrastructure. Each node must have **metadata** including its title, any aliases or alternative names, and a description. You need the actual **text content** associated with each node, whether that's a definition, explanation, or related document chunks. You should have **pre-computed embeddings** for each node so you can perform fast similarity searches. Optionally, an **entity linker** or named entity recognition system can help identify entities in the query automatically.
+
+#### The Simple Pattern
+At its core, the pattern is straightforward: **Query → Match Node → Return Content**. Someone asks about concept A, you find the node representing A, you return A's information. This direct mapping is what makes the technique so fast and precise.
+
+Now let's look at the practical implementation steps!`
         },
         {
           id: 5,
           title: '1. Node-Level Retrieval - Implementation',
           icon: { name: 'duo-code' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Implementation Steps</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Embed query and search node index (title+embedding)</li>
-                <li>Rank by combined exact match + embedding</li>
-                <li>Return top-k nodes and their attached chunks</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Implementation Steps</h3>
+                <GSAPStaggerList stagger={0.15} duration={0.6}>
+                  <div style={{ marginTop: '14px', marginBottom: '10px' }}>
+                    <strong>1.</strong> Embed query and search node index (title+embedding)
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>2.</strong> Rank by combined exact match + embedding similarity
+                  </div>
+                  <div style={{ marginBottom: '10px' }}>
+                    <strong>3.</strong> Return top-k nodes and their attached chunks
+                  </div>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3>Example Use Case</h3>
-              <p>Looking up specific entity definitions in a glossary or knowledge base where precise matches are needed, such as retrieving the definition of "GraphRAG" from a technical documentation system.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.6}>
+                <h3>Example Use Case</h3>
+                <p>Looking up specific entity definitions in a glossary or knowledge base where precise matches are needed, such as retrieving the definition of "GraphRAG 👉 'graf-rag'" from a technical documentation system.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e51',
-          notes: ''
+          notes: `### 1. Node-Level Retrieval - Implementation
+
+Let's get practical. How do you actually build and deploy a node-level retrieval system? We'll walk through the implementation steps and look at a real-world example.
+
+#### Step 1: Index Your Nodes
+First, you need to prepare your node index. For each node in your graph, create an **embedding** of its title and description using your chosen embedding model, maybe something like OpenAI's text-embedding-3-small or an open-source model like BGE 👉 'bee-jee-ee'. Store these embeddings in a vector database or search index alongside the node metadata. Make sure to include any **aliases** or alternative names for the node. For example, your "Machine Learning" node might have aliases like "ML 👉 'em-el'," "Statistical Learning," and "Automated Learning."
+
+#### Step 2: Query Processing and Ranking
+When a query arrives, **embed the query** using the same embedding model you used for the nodes. This consistency is critical for accurate similarity calculations. Then search your node index using a combination of strategies. Check for **exact matches** on titles and aliases, which should get the highest weight. Calculate **cosine similarity** between the query embedding and node embeddings. Combine these scores with a weighted formula, maybe 60% embedding similarity and 40% exact match bonus. **Rank** all candidate nodes by this combined score.
+
+#### Step 3: Return Results
+Select the **top k nodes**, typically the top 1-5 depending on your application. For each selected node, retrieve its **attached content chunks**. These might be definitions, explanations, related paragraphs, or linked documents. Return this content to your downstream system, whether that's an LLM 👉 'el-el-em' generating an answer or a user interface displaying results.
+
+#### Real-World Example
+Imagine you're building a technical documentation assistant. A user types "What is GraphRAG 👉 'graf-rag'?" Your system embeds this query, searches the node index, and finds the node titled "GraphRAG" with a very high similarity score. This node has attached content explaining that GraphRAG is a retrieval-augmented generation technique that uses knowledge graphs. Your system returns this precise definition, and the LLM uses it to generate a helpful, accurate response. The user gets exactly what they needed, quickly and without irrelevant information.
+
+#### Implementation Tips
+Use a **vector database** like Pinecone, Weaviate, or Chroma for efficient similarity search at scale. Implement **caching** for frequently accessed nodes to reduce latency. Consider a **fallback strategy**: if no node scores above a confidence threshold, fall back to traditional document search. **Monitor** which queries fail to match nodes well; this feedback helps you identify missing entities or poor alias coverage.
+
+Now let's consider the trade-offs and limitations of this approach!`
         },
         {
           id: 6,
           title: '1. Node-Level Retrieval - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
-            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>High precision</li>
-                <li>Simple</li>
-                <li>Fast</li>
-              </ul>
+            <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>✅ Benefits & Impact</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>High precision</li>
+                  <li>Simple to implement</li>
+                  <li>Fast query performance</li>
+                </ul>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>May miss context or relationships</li>
-                <li>Brittle for long, multi-hop queries</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#e74c3c' }}>⚠️ Limitations & Considerations</h3>
+                <ul style={{ marginTop: '14px', fontSize: '1.3rem' }}>
+                  <li>May miss context or relationships</li>
+                  <li>Brittle for long, multi-hop queries</li>
+                  <li>Requires good node coverage</li>
+                </ul>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#5b1e51',
-          notes: ''
+          notes: `### 1. Node-Level Retrieval - Considerations
+
+Every technique has strengths and weaknesses. Let's be honest about what Node-Level Retrieval does well and where it struggles. This understanding helps you choose the right technique for each situation.
+
+#### Benefits: Why This Works
+**High precision** is the standout benefit. When you need exact, authoritative information about a specific entity or concept, node-level retrieval delivers. There's no ambiguity, no mixing of multiple topics. You asked about Python, you got Python. This precision is particularly valuable for **reducing hallucination** in LLM 👉 'el-el-em' systems because you're providing focused, verified information rather than a mishmash of tangentially related content.
+
+The technique is **simple to implement** compared to more complex graph traversal methods. You're essentially doing similarity search with some exact matching logic. Most developers can get a basic version working in a day or two. It's also **fast** at query time. You're looking up a small number of nodes rather than traversing large portions of the graph or scoring thousands of documents. This speed makes it suitable for real-time applications.
+
+#### Limitations: Where It Falls Short
+The biggest limitation is **missing context and relationships**. Node-level retrieval treats each node as isolated. If understanding the answer requires connecting multiple concepts or following a chain of reasoning, this technique won't help. For example, if someone asks "How does vitamin D affect bone health?" the answer might require linking vitamin D to calcium absorption to bone mineralization. A single node can't capture that relationship chain.
+
+It's **brittle for complex queries**. When users ask long, multi-part questions or queries that require multi-hop reasoning, node-level retrieval often fails to provide complete answers. It works best for simple, entity-focused questions.
+
+Another consideration is **node coverage**. Your system is only as good as your knowledge graph. If you don't have a node for the entity being queried, you're stuck. This means you need **comprehensive entity extraction** and graph construction upfront, which can be time-consuming for large, diverse content sets.
+
+#### When to Move Beyond This Technique
+If you find users asking questions that require understanding relationships between entities, it's time to explore **Neighborhood Expansion** or **Path-Based Retrieval**. If precision isn't your main concern but you need broader context, consider **Community Retrieval**. If you want to combine the precision of nodes with the flexibility of semantic search, look at the **Hybrid techniques** we'll cover later.
+
+Ready to explore our next technique? Let's look at Edge-Weighted Retrieval!`
         }
       ]
     },
