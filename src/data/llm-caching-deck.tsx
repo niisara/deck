@@ -1273,78 +1273,150 @@ With that deep understanding of Chunk-Level Cache, let's move on to Pattern 6, w
     },
     {
       id: 'pattern-6',
-      title: 'Pattern 6: Session Conversation Cache',
+      title: 'Pattern 6: Token-Level KV Cache',
       slides: [
         {
           id: 13,
-          title: 'Pattern 6: Session Conversation Cache',
-          icon: { name: 'duo-message-square' },
+          title: 'Pattern 6: Token-Level KV Cache',
+          icon: { name: 'duo-brain-circuit' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="KV Cache Flow in Transformer"
+                          diagram={`flowchart TB
+    A["📝 Prompt Tokens"] --> B["🔄 Transformer Layer 1"]
+    B --> C["💾 Store K,V Vectors L1"]
+    C --> D["🔄 Transformer Layer 2"]
+    D --> E["💾 Store K,V Vectors L2"]
+    E --> F["🔄 ... More Layers"]
+    F --> G["🤖 Generation Phase"]
+    G --> H["♻️ Reuse K,V for Next Tokens"]
+    H --> G
+    style A fill:#4fc3f7,color:#000
+    style G fill:#81c784,color:#000
+    style C fill:#ffd700,color:#000
+    style E fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Transformer attention K/V tensors per layer for prompt tokens</li>
+                        <li>Intermediate computation results of attention mechanisms</li>
+                        <li>Layer-specific key-value pairs for each processed token</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Recent turns window in conversation</li>
-                      <li>Distilled conversation summaries</li>
-                      <li>Tool call results and context</li>
-                      <li>Optional session KV cache offload</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>request_id/session_id + prompt_token_range + model_id + shard/block_id</li>
+                        <li>Tied to specific model architecture and parameter versions</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>session_id + user_id + history_hash + model_id</li>
-                      <li>Unique per conversation thread</li>
-                      <li>Includes model ID for version consistency</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-lock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-microchip" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>GPU VRAM (primary storage for fast access)</li>
+                        <li>Offload to CPU RAM or NVMe when needed</li>
+                        <li>Managed by PagedAttention, vLLM, or TensorRT-LLM</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Redis/KeyDB with encryption</li>
-                      <li>Optional archival DB for long-lived sessions</li>
-                      <li>Secure storage with encryption at rest</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Lives for the duration of request/session</li>
+                        <li>LRU/LFU eviction under memory pressure</li>
+                        <li>Freed upon completion or context window overflow</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Sliding TTL (15–60 min active)</li>
-                      <li>Archive for 7–30 days</li>
-                      <li>Purge on logout/PII request</li>
-                      <li>Reset on session boundaries</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d486b',
-          notes: ''
+          backgroundColor: '#5a1d6b',
+          notes: `### Pattern 6: Token-Level KV Cache
+Welcome to Pattern 6, the **Token-Level KV Cache** 👉 'kay-vee cache'. This is one of the most fundamental and powerful caching patterns in modern LLM 👉 'el-el-em' inference. Unlike the previous patterns that operated at the application level, caching queries or embeddings or retrieval results, this pattern operates deep inside the model itself, at the transformer layer level.
+
+#### What Gets Cached
+In this pattern, we cache **transformer attention key and value tensors per layer for prompt tokens**. Let me break down what that means. When a transformer model like **GPT 👉 'gee-pee-tee'** or **Llama 👉 'lah-mah'** processes text, it uses self-attention mechanisms in every layer. For each token in the input, the model computes three vectors: a query vector, a key vector, and a value vector. These are the famous **Q 👉 'cue', K 👉 'kay', and V 👉 'vee'** in the attention formula.
+
+\\\`\\\`\\\`mermaid
+flowchart TB
+    A["📝 Prompt Tokens"] --> B["🔄 Transformer Layer 1"]
+    B --> C["💾 Store K,V Vectors L1"]
+    C --> D["🔄 Transformer Layer 2"]
+    D --> E["💾 Store K,V Vectors L2"]
+    E --> F["🔄 ... More Layers"]
+    F --> G["🤖 Generation Phase"]
+    G --> H["♻️ Reuse K,V for Next Tokens"]
+    H --> G
+    style A fill:#4fc3f7,color:#000
+    style G fill:#81c784,color:#000
+    style C fill:#ffd700,color:#000
+    style E fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+Here's the key insight: when you're generating text auto-regressively, token by token, the query changes with each new token, but the keys and values for all the previous tokens remain constant. They never change. So instead of recomputing the K and V vectors for the entire prompt at every generation step, which would be incredibly wasteful, we cache them. We compute them once during the initial **prompt processing phase** and then reuse them throughout the **generation phase**.
+
+We're caching **intermediate computation results of attention mechanisms** and **layer-specific key-value pairs for each processed token**. In a model with thirty-two layers, like **Llama-2-7B 👉 'lah-mah two seven bee'**, you have thirty-two sets of K and V tensors per token. For a two-thousand-token prompt, that's sixty-four thousand cached vectors. Each vector might be forty-ninety-six dimensions, so we're talking about substantial memory usage, but the computational savings are massive.
+
+#### The Performance Impact
+This is not a minor optimization. **KV caching** is the difference between usable and unusable latency in LLM generation. Without KV caching, the **TTFT 👉 'tee-tee-eff-tee', or time to first token**, grows quadratically with prompt length because you're recomputing attention over all previous tokens at every step. A two-thousand-token prompt might take ten seconds to start generating. With KV caching, you compute once and generate immediately. TTFT drops to under a second. The speedup is typically **three to ten times faster generation**, sometimes more.
+
+#### The Cache Key Strategy
+The cache key is technical but critical: \\\`request_id/session_id + prompt_token_range + model_id + shard/block_id\\\`. Let's unpack this. The **request_id** or **session_id** identifies which generation request or conversation session this cache belongs to. The **prompt_token_range** specifies which portion of the input these cached K/V tensors correspond to. This is important for prefix caching, where you might cache a common system prompt across multiple requests.
+
+The **model_id** is essential because K/V tensors are specific to the model architecture. Tensors from **GPT-4 👉 'gee-pee-tee four'** are incompatible with **Claude 👉 'clawed'**. Even different versions of the same model, like **Llama-2-7B 👉 'lah-mah two seven bee'** versus **Llama-3-8B 👉 'lah-mah three eight bee'**, have different architectures and require separate caches.
+
+The **shard or block_id** is relevant in distributed inference systems where a single large model is sharded across multiple GPUs or nodes. Each shard maintains its own portion of the KV cache. This key structure ensures we never mix up cached tensors from different contexts or models.
+
+#### Storage Architecture
+Where do these tensors live? In **GPU VRAM 👉 'vee-ram', which is the primary storage for fast access**. This is critical. KV tensors need to be immediately accessible to the GPU during generation. Storing them in system RAM or on disk would introduce latency that defeats the entire purpose. Modern GPUs have tens of gigabytes of VRAM, and a significant portion is dedicated to KV caching.
+
+However, VRAM is expensive and limited. For long contexts or high concurrency scenarios, you can **offload to CPU RAM 👉 'cpu ram' or NVMe 👉 'en-vee-em-ee' when needed**. Systems like **PagedAttention** in **vLLM 👉 'vee-el-el-em'** manage this intelligently, keeping hot KV blocks in VRAM and evicting cold blocks to CPU memory. When needed, they're paged back in. It's like virtual memory for attention caches.
+
+Modern inference frameworks like **vLLM 👉 'vee-el-el-em', TensorRT-LLM 👉 'tensor-are-tee el-el-em', or Text Generation Inference 👉 'tee-gee-eye'** handle KV cache management automatically. They implement sophisticated algorithms like **PagedAttention** that eliminate memory fragmentation and maximize GPU utilization. As a developer, you typically don't manage KV caches directly at this level. The framework does it for you. But understanding what's happening under the hood is essential for optimizing your inference costs and latency.
+
+#### Time-to-Live Configuration
+The KV cache **lives for the duration of the request or session**. For a single-turn question-answer interaction, the cache exists from when you start processing the prompt until generation completes. For a multi-turn conversation, the cache can persist across turns, accumulating K/V tensors for the entire conversation history. This is why long conversations eventually hit context limits: you're accumulating cached tensors that consume VRAM.
+
+Under memory pressure, the system uses **LRU 👉 'el-are-you', or least recently used, or LFU 👉 'el-eff-you', or least frequently used, eviction policies**. If the GPU is running low on VRAM and a new request comes in, older or less-used KV caches get evicted. This is automatic and transparent. The request that got evicted will need to recompute its KV cache if it generates more tokens, but it ensures the system remains responsive under load.
+
+The cache is **freed upon completion or when the context window overflows**. If you hit the model's maximum context length, typically two thousand to a hundred and twenty-eight thousand tokens depending on the model, old tokens and their cached K/V tensors are discarded to make room for new tokens. This is a sliding window approach.
+
+#### The Critical Trade-Off
+The brilliance of KV caching is that it trades memory for computation. You're storing large tensors to avoid recomputing them. This trade-off is almost always favorable because modern GPUs have abundant VRAM and memory bandwidth, but compute is still relatively expensive. However, for extremely long contexts or high concurrency, memory becomes the bottleneck. This is why advanced techniques like **PagedAttention, FlashAttention 👉 'flash attention', and quantized KV caching** exist: they reduce the memory footprint while maintaining the computational benefits.
+
+Let's look at the strengths and limitations on the next slide.`
         },
         {
           id: 14,
@@ -1352,36 +1424,77 @@ With that deep understanding of Chunk-Level Cache, let's move on to Pattern 6, w
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Massive speedups in decoding (3-10x faster generation)</li>
+                      <li>Reduces re-computation of attention for prompt tokens</li>
+                      <li>Improves throughput and reduces inference costs</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Maintains continuity across conversation turns</li>
-                    <li>Reduces token usage via summaries</li>
-                    <li>Lower time-to-first-token (TTFT) on resume</li>
-                    <li>Improves user experience with context retention</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>High VRAM footprint (can consume gigabytes)</li>
+                      <li>Memory fragmentation/compaction challenges</li>
+                      <li>Strong coupling with model version and architecture</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Privacy and security obligations</li>
-                    <li>Memory growth over conversation time</li>
-                    <li>Potential for poisoning and abuse risk</li>
-                    <li>Requires careful PII management</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
-          backgroundColor: '#1d486b',
-          notes: ''
+          backgroundColor: '#5a1d6b',
+          notes: `### Strengths and Limitations of Token-Level KV Cache
+Now let's examine where **Token-Level KV 👉 'kay-vee' Cache** delivers exceptional performance and where you need to manage its challenges carefully.
+
+#### The Performance Revolution
+On the **strengths** side, this pattern is transformational. The first and most dramatic benefit is **massive speedups in decoding, typically three to ten times faster generation**. Let me put this in concrete terms. Without KV caching, generating a one-hundred-token response from a two-thousand-token prompt on a model like **Llama-2-13B 👉 'lah-mah two thirteen bee'** might take thirty seconds. With KV caching, that drops to three to five seconds. The difference is night and day for user experience.
+
+Why such a dramatic speedup? Because we're **reducing re-computation of attention for prompt tokens**. Self-attention is the most computationally expensive part of transformer inference. For each new token you generate, without KV caching, you'd compute attention over the entire prompt plus all previously generated tokens. That's quadratic complexity. If your prompt is two thousand tokens and you've generated fifty tokens, you're computing attention over two thousand and fifty tokens at every step. With KV caching, you only compute attention for the new token against cached K and V vectors. The complexity goes from quadratic to linear. That's the fundamental algorithmic win.
+
+#### The Economics of Inference
+The second strength is that this **improves throughput and reduces inference costs**. Higher throughput means you can serve more requests per GPU. If each request completes three times faster, you can handle roughly three times as many requests with the same hardware. This directly translates to lower per-request costs. For a company running millions of inference requests daily, KV caching can save hundreds of thousands of dollars in compute costs annually.
+
+There's also a latency benefit beyond just generation speed. Lower latency means better user experience, which translates to higher engagement and conversion rates. In customer-facing applications, every hundred milliseconds of latency matters. KV caching keeps your **TTFT 👉 'tee-tee-eff-tee'** and **time-per-token** low enough that users perceive the system as responsive and intelligent.
+
+This isn't optional. In modern LLM inference, KV caching is **table stakes**. Every production inference system, whether you're using **OpenAI 👉 'open-a-eye', Anthropic 👉 'ann-thro-pic', Hugging Face TGI 👉 'hugging face tee-gee-eye', vLLM 👉 'vee-el-el-em', or TensorRT-LLM 👉 'tensor-are-tee el-el-em'**, implements KV caching. It's the foundation that makes auto-regressive generation practical.
+
+#### The Memory Pressure Challenge
+Now for the **limitations**, and the primary one is **high VRAM 👉 'vee-ram' footprint that can consume gigabytes**. Let's do the math to understand the scale. Consider **Llama-2-7B 👉 'lah-mah two seven bee'** with thirty-two layers, a hidden dimension of forty ninety-six, and thirty-two attention heads. For each token, each layer stores a key vector and value vector, each of dimension forty ninety-six. In FP16 👉 'eff-pee sixteen', that's two bytes per number, so eight kilobytes per token per layer, times thirty-two layers, equals roughly two hundred and fifty-six kilobytes per token.
+
+For a context of eight thousand tokens, that's roughly two gigabytes of KV cache. An **A100 👉 'a one hundred' GPU** with eighty gigabytes of VRAM can hold maybe twenty to thirty concurrent contexts of that size, depending on what else is in memory. If you're running a high-traffic service with hundreds of concurrent users, VRAM becomes the bottleneck. You can't load more requests even though your GPU compute is underutilized.
+
+This is why techniques like **PagedAttention** were developed. PagedAttention breaks the KV cache into fixed-size blocks and manages them like virtual memory pages. It eliminates fragmentation and allows oversubscription by paging blocks to CPU memory when needed. This increases effective capacity but adds complexity. You're trading memory management overhead for higher concurrency.
+
+Quantization helps too. Storing K and V vectors in INT8 👉 'int eight' or FP8 👉 'eff-pee eight' instead of FP16 👉 'eff-pee sixteen' cuts memory usage in half or more, with minimal quality loss. But it requires specialized kernels and isn't universally supported yet.
+
+#### Memory Fragmentation and Compaction
+The second limitation is **memory fragmentation and compaction challenges**. When you have many concurrent requests of varying lengths, you end up with a **fragmented memory space**. Imagine you've allocated a block for a two-thousand-token context, but that request completes after generating only five hundred tokens. You have fifteen hundred tokens worth of wasted space. When the next request comes in with a different context size, it might not fit in that exact slot. You get fragmentation, just like in traditional memory management.
+
+Systems like **vLLM 👉 'vee-el-el-em'** solve this with **memory compaction** and **paged attention**. They dynamically allocate and deallocate KV cache blocks as needed. But this adds runtime overhead and complexity. You need sophisticated memory management algorithms and careful engineering to make it efficient. This is not trivial to implement from scratch.
+
+#### The Architecture Coupling Problem
+The third limitation is **strong coupling with model version and architecture**. KV cache tensors are tied to a specific model's layer count, hidden dimensions, and attention head configuration. If you upgrade from **Llama-2-7B 👉 'lah-mah two seven bee'** to **Llama-3-8B 👉 'lah-mah three eight bee'**, all cached K/V tensors become invalid. You can't reuse them. This means model upgrades require flushing all KV caches, which can cause a temporary spike in latency as new caches are populated.
+
+It also means you can't share KV caches across different models. If you're running multiple model variants, A/B testing different architectures, or serving different model sizes based on request complexity, each model needs its own isolated KV cache pool. This multiplies your memory requirements and operational complexity.
+
+Furthermore, if you're doing **continuous batching**, where you dynamically batch together requests as they arrive, you need to manage KV caches for each request independently. They can't interfere with each other. This requires careful indexing and isolation, which adds overhead.
+
+#### Advanced Optimizations
+Despite these challenges, KV caching is so valuable that enormous engineering effort has gone into optimizing it. Techniques like **FlashAttention 👉 'flash attention'** fuse attention operations and reduce memory traffic. **Multi-query attention 👉 'em-cue-a'** and **grouped-query attention 👉 'gee-cue-a'** reduce the number of K/V heads, cutting cache size. **Prefix caching** shares KV cache blocks across requests with common prompts, like system instructions. All of these build on the fundamental KV caching pattern we're discussing.
+
+The takeaway is that KV caching is essential but not free. You're trading memory for compute, and in production systems, memory management becomes a first-class concern. Understanding this trade-off helps you architect your inference infrastructure correctly.
+
+Let's move on to the next pattern, where we'll see another model-level caching technique that complements KV caching.`
         }
       ]
     },
