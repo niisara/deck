@@ -1951,76 +1951,129 @@ For scenarios with unbounded variable spaces or highly dynamic content, skip thi
     },
     {
       id: 'pattern-9',
-      title: 'Pattern 9: Model Output Logit Cache',
+      title: 'Pattern 9: Tool Call Cache',
       slides: [
         {
           id: 19,
-          title: 'Pattern 9: Model Output Logit Cache',
-          icon: { name: 'duo-chart-line' },
+          title: 'Pattern 9: Tool Call Cache',
+          icon: { name: 'duo-wrench' },
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Tool Call Cache Flow"
+                          diagram={`flowchart LR
+    A["🔧 Tool Name + Arguments"] --> B{"🔍 Check Cache"}
+    B -->|Hit| C["⚡ Return Cached Result"]
+    B -->|Miss| D["🤖 Execute Tool"]
+    D --> E["💾 Store Result"]
+    E --> F["📤 Return"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Tool execution results (API responses, DB queries, calculations)</li>
+                        <li>Function call outputs for deterministic tools</li>
+                        <li>Metadata: execution time, success/error status</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Next-token logits/probabilities for frequent prefixes</li>
-                      <li>Optional top-k most likely tokens only</li>
-                      <li>Output probability distributions at the token level</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(tool_name + serialized_arguments + version)</li>
+                        <li>Includes argument normalization and ordering</li>
+                        <li>Tool version tag for schema changes</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>hash(prefix_token_ids + model_id + logits_version)</li>
-                      <li>Includes decoding_bias/temperature parameters</li>
-                      <li>Versioned to handle model updates</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="bounceIn" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis/Memcached for fast lookup</li>
+                        <li>DynamoDB/PostgreSQL for persistent storage</li>
+                        <li>In-memory cache for frequently called tools</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>CPU RAM or Redis for fast access</li>
-                      <li>Map files for large lookup tables</li>
-                      <li>Regional deployment for lower latency</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Variable TTL based on tool type (seconds to days)</li>
+                        <li>Invalidate on tool schema/version changes</li>
+                        <li>Context-aware expiration for data freshness</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Short TTL (minutes–hours)</li>
-                      <li>Purge on model/quantization change</li>
-                      <li>Frequency-based eviction for memory management</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d54',
-          notes: ''
+          notes: `### Pattern 9: Tool Call Cache
+This is our ninth caching pattern: **Tool Call Cache**. This pattern operates at the tool execution layer, caching the results of external function calls and tool invocations. When your LLM agents need to call APIs, query databases, or perform calculations, tool call caching can dramatically reduce latency and cost.
+
+#### What Gets Cached
+In this pattern, we cache **tool execution results**. These are the outputs from **API responses**, **database queries**, and **calculations** performed by your tools. When a language model decides to call a tool, like searching a knowledge base, fetching weather data, or calculating a complex formula, the result of that execution is what we store. We also cache **function call outputs for deterministic tools**, meaning tools that always return the same result for the same inputs. And we include **metadata** like execution time and success or error status, which helps with debugging and monitoring.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["🔧 Tool Name + Arguments"] --> B{"🔍 Check Cache"}
+    B -->|Hit| C["⚡ Return Cached Result"]
+    B -->|Miss| D["🤖 Execute Tool"]
+    D --> E["💾 Store Result"]
+    E --> F["📤 Return"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+The flow is straightforward. When your agent decides to call a tool with specific arguments, we first check if we've cached that exact combination. On a cache hit, we return the stored result immediately, skipping the actual tool execution. On a miss, we execute the tool, store the result with a timestamp, and return it. This is especially powerful for expensive operations like API calls that have rate limits or cost money per invocation.
+
+#### The Cache Key Strategy
+The cache key is \\\`hash(tool_name + serialized_arguments + version)\\\`. We combine the tool name, like \\\`get_weather\\\` or \\\`search_database\\\`, with the serialized arguments. Crucially, we **normalize argument ordering**, so \\\`get_weather(city="Seattle", units="metric")\\\` and \\\`get_weather(units="metric", city="Seattle")\\\` produce the same cache key. We also include a **tool version tag**, which is vital. If you change a tool's implementation or schema, you bump the version, and all previous cached results are naturally invalidated because they're keyed to the old version.
+
+#### Storage Architecture
+For storage, we use **Redis 👉 'red-iss' or Memcached 👉 'mem-cash-dee'** for fast lookup of frequently called tools. These in-memory stores provide sub-millisecond access times. For persistent storage of longer-lived results, we use **DynamoDB 👉 'die-namo-dee-bee' or PostgreSQL 👉 'post-gres'**. This gives us durability for tool results that should live beyond application restarts. And for the absolute hottest tools, ones called thousands of times per minute, we maintain an **in-memory application cache** to avoid even the network hop to Redis.
+
+#### Time-to-Live Configuration
+TTL 👉 'tee-tee-el' configuration is **variable based on tool type**. This is important because different tools have different freshness requirements. A tool that fetches stock prices might have a TTL 👉 'tee-tee-el' of thirty seconds, because stock prices change constantly. A tool that queries historical data or calculates mathematical constants might have a TTL of days or even weeks. We **invalidate on tool schema or version changes**, forcing re-execution when the tool's behavior changes. And we implement **context-aware expiration** for data freshness. If the underlying data source signals that data has changed, we can proactively invalidate cached results even before TTL expires.
+
+#### When This Pattern Shines
+The **strengths** are compelling. First, you **dramatically reduce API costs and rate limit pressure**. If you're calling an external API that costs ten cents per request, and you can cache fifty percent of calls, you've just cut your API bill in half. Second, you **speed up agent response times**. Tool execution can be slow, especially for network calls or complex database queries. Cached results return in milliseconds instead of seconds. Third, you **enable offline or degraded mode operation**. If an external API goes down, you can still serve cached results to maintain partial functionality. And fourth, you **reduce load on downstream systems**. If you're querying your own database, caching tool results means fewer queries hitting your production database.
+
+#### The Limitations
+But there are real challenges. First, **stale data is a serious concern for non-deterministic or frequently changing tools**. If you cache a weather forecast and serve it six hours later, users get outdated information. You need careful TTL 👉 'tee-tee-el' management and potentially push-based invalidation from data sources. Second, there's **memory overhead for storing large tool outputs**. If your tool returns megabytes of data, like a large dataset or a rendered image, caching becomes expensive. You might need to cache only metadata or references. Third, **argument serialization complexity** can bite you. If your tool accepts complex objects or nested data structures, you need to serialize them consistently. Two semantically identical arguments that serialize differently will miss the cache. And fourth, **privacy and security concerns** are paramount. If your tools handle user-specific data, you must ensure cache keys are properly scoped to prevent data leakage between users.
+
+Let's dive deeper into the trade-offs on the next slide.`
         },
         {
           id: 20,
@@ -2028,34 +2081,103 @@ For scenarios with unbounded variable spaces or highly dynamic content, skip thi
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="slideInBottom" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Dramatically reduces API costs and rate limit pressure</li>
+                      <li>Speeds up agent response times significantly</li>
+                      <li>Enables offline or degraded mode operation</li>
+                      <li>Reduces load on downstream systems</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Faster TTFT for common prompts/prefixes</li>
-                    <li>Useful for rescoring, safety passes, or retry scenarios</li>
-                    <li>Helps maintain consistent outputs across retries</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Stale data concerns for non-deterministic tools</li>
+                      <li>Memory overhead for large tool outputs</li>
+                      <li>Argument serialization complexity</li>
+                      <li>Privacy and security concerns for user-specific data</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Large memory footprint for many prefixes</li>
-                    <li>Exact-match sensitive; limited hit rate</li>
-                    <li>Privacy concerns with caching user-specific content</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6b1d54',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's examine the Tool Call Cache pattern more deeply to understand when it delivers exceptional value and where you need to navigate carefully.
+
+#### The Economic Advantage
+On the **strengths** side, the most immediate benefit is **dramatically reducing API costs and rate limit pressure**. Let me give you a concrete example. Imagine you're building an agent that helps users book flights. One of your tools calls a flight search API that costs fifteen cents per request and has a rate limit of one hundred requests per minute. Without caching, if ten users all search for flights from Seattle to New York on the same day, you make ten separate API calls costing a dollar fifty.
+
+With tool call caching, the first user's search executes the API call, and the result gets cached for, say, fifteen minutes. The next nine users get instant results from cache. You've reduced ten API calls to one, saving a dollar thirty-five. More importantly, you've reduced your rate limit consumption from ten requests to one. At scale, if you're processing ten thousand tool calls per hour, and you achieve a sixty percent cache hit rate, you're saving six thousand API calls per hour. That's real money and operational headroom.
+
+#### The Performance Win
+The second major strength is **speeding up agent response times significantly**. Tool execution is often the slowest part of agent workflows. A database query might take two hundred milliseconds. An external API call might take five hundred milliseconds or more, especially if you're dealing with third-party services that have variable latency. Cached tool results return in single-digit milliseconds from Redis 👉 'red-iss' or instantaneously from in-memory cache.
+
+This compounds when agents make multiple tool calls in sequence. If your agent needs to call three tools to answer a question, and each tool call takes three hundred milliseconds, that's nine hundred milliseconds total. With caching, if all three are cache hits, you're looking at maybe five milliseconds total. The user perceives this as nearly instant versus a noticeable delay. In conversational AI, where users expect snappy responses, this latency reduction is transformative.
+
+#### Resilience and Reliability
+The third strength is **enabling offline or degraded mode operation**. This is subtle but incredibly valuable for production systems. When an external API goes down, and they all do eventually, your agent can still function by serving cached results. Yes, the data might be slightly stale, but it's better than complete failure. You can also implement graceful degradation where you serve cached results with a warning: "This data is from our cache and may not reflect the latest information."
+
+I've seen systems where tool call caching turned what would have been a total outage into a minor user experience degradation. The monitoring team got alerted that the API was down, but users continued to get responses. By the time the API came back online, most users hadn't even noticed the problem. That's the kind of resilience that earns trust with your users.
+
+#### Protecting Your Infrastructure
+The fourth strength is **reducing load on downstream systems**. If your tools query your own production database, every tool call is a query hitting your database. At scale, this can be significant. Imagine you have a tool that fetches user profile information. Without caching, every agent conversation that needs that user's profile hits the database. With caching, you fetch it once per user per TTL 👉 'tee-tee-el' period. If you have ten thousand active users and a one-hour TTL, you're looking at ten thousand database queries over an hour instead of potentially hundreds of thousands if each user has multiple conversations.
+
+This doesn't just save database resources. It also reduces the risk of cascading failures. If your agent system suddenly gets a traffic spike, tool call caching prevents that spike from overwhelming your database or external APIs. You're essentially using the cache as a buffer that smooths out traffic patterns.
+
+#### The Freshness Challenge
+Now for the **limitations**, and these are real. First and most important is the **stale data concern for non-deterministic or frequently changing tools**. Not all tools are cacheable. A tool that returns the current time should never be cached. A tool that checks stock prices needs very short TTLs. A tool that queries real-time inventory needs careful invalidation logic.
+
+The challenge is that LLMs 👉 'el-el-ems' don't understand staleness. If you cache a weather forecast and serve it twelve hours later, the LLM will confidently present that stale data as current information. Users will make decisions based on outdated weather. This is dangerous. You need to be disciplined about **identifying which tools are safe to cache** and setting appropriate TTLs. As a rule of thumb, deterministic tools like calculators, formatters, or reference lookups are excellent candidates. Non-deterministic tools like live data queries need short TTLs or no caching at all.
+
+#### The Storage Math
+The second limitation is **memory overhead for large tool outputs**. Some tools return small results: a number, a boolean, a short string. These are cheap to cache. But some tools return large payloads: entire documents, lists of hundreds of items, serialized objects with nested data. If your tool returns fifty kilobytes of data, and you're caching a million tool results, that's fifty gigabytes of cache storage.
+
+Redis 👉 'red-iss' pricing for fifty gigabytes can be substantial, maybe two hundred dollars per month depending on your hosting provider. You need to weigh that cost against the savings from avoiding tool execution. Sometimes it's more economical to cache only metadata or to cache compressed versions of results. Other times, you selectively cache only the smallest or most frequently called tool results and let the larger ones always execute fresh.
+
+#### Serialization Complexity
+The third limitation is **argument serialization complexity**. This is a technical challenge that bites you in subtle ways. Imagine a tool that accepts a list of tags. Is \\\`["python", "javascript"]\\\` the same as \\\`["javascript", "python"]\\\`? Semantically, maybe yes. But if you serialize them naively, they produce different cache keys, so you get cache misses even though the tool would return identical results.
+
+You need to implement **argument normalization**. Sort lists, canonicalize JSON structures, handle floating-point precision carefully, and deal with null versus undefined versus missing fields. This adds complexity to your caching layer. Get it wrong, and you either get cache misses for semantically identical calls, or worse, you get cache hits for semantically different calls, returning incorrect results.
+
+Some teams handle this by defining a strict serialization protocol for each tool, specifying exactly how arguments should be normalized before hashing. This works but requires discipline and documentation. Others use content-based hashing where you hash the semantic meaning, not the exact representation. Both approaches have trade-offs.
+
+#### Privacy and Security
+The fourth limitation is **privacy and security concerns for user-specific data**. If your tool fetches user profile information, account balances, or any personal data, caching becomes fraught with risk. You must ensure that cache keys are properly scoped to prevent user A from accidentally seeing user B's data due to a cache collision or key collision.
+
+This typically means including a user identifier in the cache key: \\\`hash(tool_name + arguments + user_id + version)\\\`. But this reduces cache hit rates because results are no longer shared across users. You also need to think about data retention policies. If a user deletes their account, do you have a process to purge all cached tool results associated with that user? What about GDPR 👉 'gee-dee-pee-are' right-to-erasure requests?
+
+And then there's the question of what to cache. Should you cache social security numbers, payment tokens, or health information? Often the answer is no, even if caching would be technically beneficial. The security risk outweighs the performance gain. You end up with a policy where certain tool types are never cached, period.
+
+#### Best Practices for Implementation
+Successful Tool Call Cache implementations follow a few patterns. First, **classify your tools by cacheability**. Create tiers: always cacheable for deterministic tools, conditionally cacheable for tools with appropriate TTLs, and never cacheable for sensitive or real-time tools. Document this taxonomy and enforce it in your caching layer.
+
+Second, implement **cache observability**. Track cache hit rates per tool, average TTL 👉 'tee-tee-el' until expiration, and the cost savings from avoided API calls. This data helps you tune TTLs and identify which tools benefit most from caching. You might discover that eighty percent of your savings come from twenty percent of your tools, guiding you to optimize those specifically.
+
+Third, use **cache warming strategies** for predictable workloads. If you know that certain tools get called frequently at the start of every user session, pre-populate the cache during off-peak hours. This ensures high cache hit rates when users arrive.
+
+Fourth, consider **partial caching** for tools with mixed deterministic and non-deterministic components. For example, a tool that fetches user data and does expensive calculations might cache the calculated result but always fetch fresh user data. You're caching the computation, not the data.
+
+#### When to Use This Pattern
+Tool Call Cache is most valuable in **agent systems with high tool call volume and significant call repetition**. If your agents are answering similar questions across many users, like customer support bots or documentation helpers, tool call patterns converge. Caching becomes very effective.
+
+It's also ideal for **expensive or rate-limited external APIs**. If you're paying per API call or dealing with strict rate limits, caching is often your only option to scale economically. And it's valuable for **tools with stable, slowly changing data**, like reference databases, configuration lookups, or historical data queries.
+
+It's less valuable in **highly personalized, unique tool calls** where every request has different arguments. If your agents are generating unique queries for every user, cache hit rates will be low. It's also challenging in **real-time systems** where staleness is unacceptable. If users demand up-to-the-second accuracy, you can't cache, or you need extremely short TTLs that reduce the benefit.
+
+> Ask the audience: "How many of you are building agents that make repeated external API calls or database queries?"
+
+With that comprehensive understanding of Tool Call Cache, let's move to Pattern 10, which takes a very different approach to caching based on semantic similarity rather than exact matching.`
         }
       ]
     },
