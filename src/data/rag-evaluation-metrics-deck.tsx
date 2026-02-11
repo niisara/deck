@@ -964,21 +964,47 @@ And that's Hit Rate! Simple, powerful, but with important limitations that you n
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures how much of the needed answer content is present in retrieved context, indicating answer coverage and retrieval completeness.</p>
+              <GSAPAnimated animation="slideInTop" duration={0.8} delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Measures how much of the needed answer content is present in retrieved context, indicating answer coverage and retrieval completeness.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li>
-                <li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li>
-                <li>Identifies specific content gaps in knowledge bases</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.6} delay={0.7}>
+                <div><li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li></div>
+                <div><li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li></div>
+                <div><li>Identifies specific content gaps in knowledge bases</li></div>
+              </GSAPStaggerList>
 
-              <p>When working with reference answers, to validate retrieval sufficiency beyond Recall@K, for testing whether all required information is available, and when evaluating complex queries requiring multiple evidence pieces.</p>
+              <GSAPAnimated animation="bounceIn" delay={1.5}>
+                <p>When working with reference answers, to validate retrieval sufficiency beyond Recall@K, for testing whether all required information is available, and when evaluating complex queries requiring multiple evidence pieces.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#646f1f',
-          notes: ''
+          notes: `### Context Overlap Score — Overview
+Welcome to our fourth metric, the Context Overlap Score. This one's all about making sure your retrieval system is actually grabbing everything you need.
+
+#### What It Measures
+Context Overlap Score 👉 pronounced CON-text OVER-lap measures how much of your needed answer content is actually present in the retrieved context. Think of it like checking if all the ingredients for your recipe are on the counter before you start cooking. It indicates both answer coverage, meaning can you build a complete answer, and retrieval completeness, meaning did your system fetch everything necessary.
+
+#### Why This Matters
+When overlap is high, three great things happen. First, it boosts faithfulness and completeness because all the necessary evidence is right there for the model to use. Second, it reduces the need for the LLM to fill gaps with potentially incorrect information, which is where hallucinations 👉 pronounced hal-loo-sin-AY-shuns often come from. Third, it helps you identify specific content gaps in your knowledge bases, showing you exactly where your documentation or data is missing key information.
+
+#### When to Use This
+Use Context Overlap Score when working with reference answers, since you need to know what facts should be in the answer. It's perfect for validating retrieval sufficiency beyond just Recall at K. Use it for testing whether all required information is available, especially when evaluating complex queries that need multiple pieces of evidence from different parts of your knowledge base.
+
+#### Pros
+The good stuff: This metric gives you concrete, actionable insights about what's missing from your retrieval. It directly measures whether your RAG system has the raw materials it needs to construct accurate answers. Unlike vaguer quality metrics, overlap scores point you to specific content problems you can fix.
+
+#### Cons
+The problems: This requires reference answers, which can be expensive to create at scale. You're essentially building a test dataset with ground truth answers. It's also sensitive to how you decompose facts, meaning your granularity choices affect the scores. It doesn't tell you whether the LLM actually uses the available context. And it may not capture semantic equivalence 👉 pronounced seh-MAN-tik ee-KWIV-uh-lence if using simple token-based matching.
+
+Let's dive into how this actually works in practice.`
         },
         {
           id: 16,
@@ -986,25 +1012,70 @@ And that's Hit Rate! Simple, powerful, but with important limitations that you n
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Context Overlap Score evaluates how much of the expected answer information is present in the retrieved context. It can be calculated using token overlap, fact coverage, or semantic similarity.</p>
+              <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <p>Context Overlap Score evaluates how much of the expected answer information is present in the retrieved context. It can be calculated using token overlap, fact coverage, or semantic similarity.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Overlap = |Answer facts in context| / |Answer facts|`}
-              </pre>
-              <p>Alternatively: Token/phrase F1 score between reference answer and context, or semantic similarity between expected answer elements and retrieved chunks.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.7}>
+                <div>
+                  <h3>Formula</h3>
+                  <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                    {`Overlap = |Answer facts in context| / |Answer facts|`}
+                  </pre>
+                  <p>Alternatively: Token/phrase F1 score between reference answer and context, or semantic similarity between expected answer elements and retrieved chunks.</p>
+                  <MermaidPopover
+                    diagram={`graph TD
+    A[Reference Answer] -->|Extract Facts| B[Fact Set: F1, F2, F3, F4, F5]
+    C[Retrieved Context] -->|Check Presence| D{Which Facts Present?}
+    B --> D
+    D -->|Found| E[F1, F2, F3, F4]
+    D -->|Missing| F[F5]
+    E --> G[Overlap = 4/5 = 0.80]
+    F -.->|Gap Identified| H[Update Knowledge Base]
+    
+    style A fill:#3b82f6
+    style C fill:#3b82f6
+    style E fill:#22c55e
+    style F fill:#ef4444
+    style G fill:#eab308`}
+                    title="Context Overlap Score Calculation"
+                  />
+                </div>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.70 for general use cases</li>
-                <li>≥0.85 for high-stakes applications</li>
-                <li>Context window size often limits feasible target values</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={1.1}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.6} delay={1.3}>
+                <div><li>≥0.70 for general use cases</li></div>
+                <div><li>≥0.85 for high-stakes applications</li></div>
+                <div><li>Context window size often limits feasible target values</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#646f1f',
-          notes: ''
+          notes: `### Context Overlap Score — How It Works
+Now let's break down the mechanics of how Context Overlap Score actually works.
+
+#### The Calculation Process
+Context Overlap Score evaluates how much of the expected answer information is present in your retrieved context. There are several ways to calculate this. You can use token overlap, where you match individual words or tokens. You can use fact coverage, where you break answers into atomic facts and check which ones appear. Or you can use semantic similarity 👉 pronounced seh-MAN-tik sim-ih-LAR-ih-tee, where embeddings measure if the meaning is present even if the exact wording differs.
+
+#### The Basic Formula
+The simplest formula is: Overlap equals the absolute value of answer facts found in context, divided by the absolute value of total answer facts. So if your reference answer needs five facts and your context contains four of them, you get four divided by five, which is point eight zero or eighty percent. Alternatively, you can compute a token or phrase F1 score between the reference answer and the context, which balances precision and recall. Or you can use semantic similarity between expected answer elements and the retrieved chunks.
+
+#### Understanding Target Values
+For general use cases, aim for point seven zero or seventy percent or higher. This means at least seventy percent of the needed facts are present. For high-stakes applications like medical or legal, target point eight five or eighty-five percent or higher. Keep in mind that context window size often limits what's feasible. If your model only accepts four thousand tokens, you might not be able to include everything, so adjust expectations accordingly.
+
+#### Visualization Insight
+Click the diagram icon to see how facts flow from the reference answer through the checking process to identify what's found versus what's missing. This visual makes it clear how gaps are identified and can guide improvements to your knowledge base.
+
+#### When to Use Which Method
+Use token overlap for quick approximations. Use fact coverage when you have structured test data with labeled facts. Use semantic similarity when you need to catch paraphrased content or when exact matching is too strict for your domain.
+
+Let's look at a concrete example to make this real.`
         },
         {
           id: 17,
@@ -1012,18 +1083,71 @@ And that's Hit Rate! Simple, powerful, but with important limitations that you n
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Query:</strong> "What are the eligibility requirements for program X?"</p>
-              <p>Reference answer requires 5 key facts about eligibility</p>
-              <p>Retrieved context contains only 4 of these facts</p>
-              <p><strong>Context Overlap Score = 4/5 = 0.80</strong></p>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3>Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p><strong>Query:</strong> "What are the eligibility requirements for program X?"</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.6} delay={0.5}>
+                <div><p>Reference answer requires 5 key facts about eligibility</p></div>
+                <div><p>Retrieved context contains only 4 of these facts</p></div>
+                <div><p><strong>Context Overlap Score = 4/5 = 0.80</strong></p></div>
+              </GSAPStaggerList>
 
-              <h3>How to Calculate</h3>
-              <p>Start with a reference answer for the query. Break it down into atomic facts or key information elements. Then check the retrieved context to see which of those facts are present. Count the facts found in context and divide by the total number of facts needed.</p>
+              <GSAPAnimated animation="bounceIn" delay={1.3}>
+                <MermaidPopover
+                  diagram={`sequenceDiagram
+    participant Q as Query
+    participant R as Reference Answer
+    participant C as Context
+    participant E as Evaluator
+    
+    Q->>R: Define Expected Facts
+    Note over R: Fact 1: Age ≥ 18<br/>Fact 2: Resident<br/>Fact 3: Income < X<br/>Fact 4: No Prior Enrollment<br/>Fact 5: Valid ID
+    Q->>C: Retrieve Context
+    Note over C: Found: Facts 1,2,3,4<br/>Missing: Fact 5
+    R->>E: Expected Facts (5)
+    C->>E: Present Facts (4)
+    E->>E: Calculate 4/5
+    E-->>Q: Score: 0.80
+    
+    style Q fill:#3b82f6
+    style R fill:#8b5cf6
+    style C fill:#3b82f6
+    style E fill:#eab308`}
+                  title="Context Overlap Calculation Flow"
+                />
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInRight" delay={1.6}>
+                <h3>How to Calculate</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.9}>
+                <p>Start with a reference answer for the query. Break it down into atomic facts or key information elements. Then check the retrieved context to see which of those facts are present. Count the facts found in context and divide by the total number of facts needed.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#646f1f',
-          notes: ''
+          notes: `### Context Overlap Score — Implementation
+Let's walk through a real implementation example to see how this works in practice.
+
+#### The Example Scenario
+Imagine a query asking "What are the eligibility requirements for program X?" Your reference answer, which you've created as ground truth, requires five key facts about eligibility. Maybe these are: age must be eighteen or older, must be a resident, income below a certain threshold, no prior enrollment, and valid identification required. When your retrieval system fetches context, it only contains four of these five facts. The fifth fact about valid ID is missing. So your Context Overlap Score is four divided by five, which equals point eight zero or eighty percent.
+
+#### Understanding What This Tells You
+This eighty percent score tells you that your retrieval is pretty good but not perfect. The user would get most of the answer, but they'd miss one critical eligibility requirement. In a real application, this could lead to someone applying who isn't eligible, wasting their time and creating frustration. The metric points you directly to the problem: your knowledge base or chunking strategy isn't surfacing the ID requirement.
+
+#### The Step-by-Step Process
+Click the diagram icon to visualize the flow. You start with the query, define expected facts from your reference answer, retrieve context from your system, then have an evaluator check which facts are present. The evaluator counts present facts, divides by total expected, and returns the score. This sequence makes it clear where information gets lost.
+
+#### How to Calculate in Practice
+Here's your implementation checklist. First, start with a reference answer for the query. This is your gold standard. Second, break it down into atomic facts or key information elements. Be consistent about granularity. Third, check the retrieved context to see which of those facts are present. You can do this with exact matching, fuzzy matching, or semantic similarity. Fourth, count the facts found in context and divide by the total number of facts needed. That's your overlap score.
+
+#### Practical Tips
+When breaking down answers into facts, aim for atomic statements that can't be subdivided further. "Age must be eighteen or older" is one fact. Don't split it into "age" and "eighteen" as separate facts. Use consistent decomposition rules across your evaluation set. Document your approach so other team members follow the same pattern. This consistency is crucial for reliable metrics.
+
+Now let's talk about the broader implications and limitations.`
         },
         {
           id: 18,
@@ -1031,24 +1155,80 @@ And that's Hit Rate! Simple, powerful, but with important limitations that you n
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li>
-                <li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li>
-                <li>Identifies specific content gaps in knowledge bases</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.18} duration={0.7} delay={0.3}>
+                <div><li>Higher overlap boosts faithfulness and completeness by ensuring necessary evidence is retrieved</li></div>
+                <div><li>Reduces need for LLM to "fill gaps" with potentially incorrect information</li></div>
+                <div><li>Identifies specific content gaps in knowledge bases</li></div>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Requires reference answers, which can be expensive to create at scale</li>
-                <li>Sensitive to how facts are decomposed (granularity varies)</li>
-                <li>Doesn't measure whether the LLM actually uses the available context</li>
-                <li>May not capture semantic equivalence if using token-based matching</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" delay={1.2}>
+                <MermaidPopover
+                  diagram={`graph LR
+    A[Context Overlap Score] --> B[High ≥0.85]
+    A --> C[Medium 0.70-0.84]
+    A --> D[Low <0.70]
+    
+    B --> E[✓ Complete Answers]
+    B --> F[✓ High Faithfulness]
+    B --> G[✓ Low Hallucination]
+    
+    C --> H[⚠ Partial Gaps]
+    C --> I[⚠ May Need LLM Inference]
+    
+    D --> J[✗ Major Gaps]
+    D --> K[✗ High Risk]
+    D --> L[✗ Poor Answer Quality]
+    
+    style B fill:#22c55e
+    style C fill:#eab308
+    style D fill:#ef4444
+    style E fill:#22c55e
+    style F fill:#22c55e
+    style G fill:#22c55e
+    style J fill:#ef4444
+    style K fill:#ef4444
+    style L fill:#ef4444`}
+                  title="How Overlap Scores Affect RAG Quality"
+                />
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInBottom" delay={1.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.6} delay={1.7}>
+                <div><li>Requires reference answers, which can be expensive to create at scale</li></div>
+                <div><li>Sensitive to how facts are decomposed (granularity varies)</li></div>
+                <div><li>Doesn't measure whether the LLM actually uses the available context</li></div>
+                <div><li>May not capture semantic equivalence if using token-based matching</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#646f1f',
-          notes: ''
+          notes: `### Context Overlap Score — Considerations
+Let's wrap up Context Overlap Score by examining its impact on your RAG system and understanding its limitations.
+
+#### Impact on RAG Performance
+When you have high context overlap, three powerful benefits emerge. First, it boosts faithfulness and completeness by ensuring all necessary evidence is retrieved. The LLM doesn't have to guess or make logical leaps. Second, it reduces the need for the LLM to fill gaps with potentially incorrect information. When all facts are present, there's nothing to hallucinate. Third, it identifies specific content gaps in your knowledge bases, giving you a roadmap for documentation improvements.
+
+#### Understanding the Impact Levels
+Click the diagram icon to visualize how different overlap scores affect your system. High scores, eighty-five percent or above, give you complete answers, high faithfulness, and low hallucination risk. Medium scores, between seventy and eighty-four percent, indicate partial gaps where the LLM may need to make some inferences, which introduces moderate risk. Low scores, below seventy percent, signal major gaps, high risk, and poor answer quality. These ranges help you triage which queries need attention first.
+
+#### When to Use This Metric
+Context Overlap Score is ideal when you have or can create reference answers. It's perfect for evaluating complex queries that require multiple pieces of evidence. Use it to validate that your chunking strategy and retrieval parameters are actually surfacing the content you need. It's also valuable for A/B testing different retrieval configurations to see which one captures more of the necessary facts.
+
+#### Pros Summary
+The good stuff: This metric provides concrete, actionable feedback. It tells you exactly what's missing, not just that something is wrong. It directly measures the raw materials available for answer generation. Unlike vague quality scores, it gives you specific facts to track down and fix. It's relatively objective once you've defined your fact decomposition rules.
+
+#### Cons and Limitations
+The problems: First, it requires reference answers, which are expensive to create at scale. Building a test set with hundreds of queries and decomposed facts takes significant time and expertise. Second, it's sensitive to how facts are decomposed. Different annotators might split facts differently, affecting consistency. Third, it doesn't measure whether the LLM actually uses the available context. Perfect overlap doesn't guarantee the model reads and incorporates everything. Fourth, it may not capture semantic equivalence if using token-based matching. Paraphrased content might be marked as missing even when the meaning is there.
+
+#### Practical Recommendations
+Start with a small but diverse set of reference queries covering your main use cases. Document your fact decomposition guidelines clearly. Consider using semantic similarity rather than exact matching to catch paraphrases. Monitor both overlap and final answer quality to ensure high overlap translates to better outputs. Use this metric alongside faithfulness and answer relevance for a complete picture.
+
+That wraps up Context Overlap Score. Next, we'll move to Context Relevance Score, which evaluates quality rather than coverage.`
         }
       ]
     },
