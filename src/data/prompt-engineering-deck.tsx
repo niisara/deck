@@ -3249,20 +3249,40 @@ That said, when you *do* need to reason about visual information — charts, dia
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Use graphs/knowledge graphs to structure context and reasoning for LLMs.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Graph-grounded explanation and answer</li>
-                <li>Structured representation of relationships</li>
-                <li>Multi-hop reasoning along graph paths</li>
-                <li>Explicit entity and relationship tracking</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for multi-document QA, multi-hop reasoning, and temporal/entity linking tasks. Structures knowledge as explicit graphs for reasoning.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Use graphs/knowledge graphs to structure context and reasoning for LLMs.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Graph-grounded explanation and answer</li>
+                  <li>Structured representation of relationships</li>
+                  <li>Multi-hop reasoning along graph paths</li>
+                  <li>Explicit entity and relationship tracking</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for multi-document QA, multi-hop reasoning, and temporal/entity linking tasks. Structures knowledge as explicit graphs for reasoning.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### Graph Prompting Overview
+
+Welcome to our final advanced technique: Graph Prompting! This is where things get really interesting, folks. Instead of treating information as a flat list or a simple hierarchy, we're organizing knowledge the way our brains do—as interconnected networks of concepts and relationships.
+
+Think about how you understand the world. When I mention "Apple," your brain doesn't just retrieve a single fact—it activates a whole web of connections. Is it the fruit? The tech company? If it's the company, you're thinking about Steve Jobs, iPhones, Silicon Valley, maybe their retail stores. Each of these nodes connects to others. That's exactly what graph prompting does for AI.
+
+The core idea is beautifully simple: we extract entities (like people, places, companies, events) and the relationships between them (founded by, located in, acquired, partnered with), then build an explicit knowledge graph. Instead of the AI reasoning through raw text, it follows the graph structure—traversing edges, connecting nodes, and making multi-hop inferences along explicit paths.
+
+This is incredibly powerful for questions like "How is Company A connected to Person B?" where the answer might require traversing through several intermediate relationships. The graph makes these connections explicit and traceable, rather than hoping the LLM magically infers them from context.
+
+Let's dive into how this works and when you'd want to use it!`
         },
         {
           id: 72,
@@ -3270,17 +3290,41 @@ That said, when you *do* need to reason about visual information — charts, dia
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Graph Prompting extracts entities and relationships from documents to build a knowledge graph representation. The LLM then reasons over this structured graph to answer questions, following entity relationships and making multi-hop inferences. This explicit structure helps track complex relationships and provides interpretable reasoning paths through the graph, making it easier to verify and explain answers.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - LLM plus graph tools/database (Neo4j, etc.)</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>Graph Prompting extracts entities and relationships from documents to build a knowledge graph representation. The LLM then reasons over this structured graph to answer questions, following entity relationships and making multi-hop inferences. This explicit structure helps track complex relationships and provides interpretable reasoning paths through the graph, making it easier to verify and explain answers.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - LLM plus graph tools/database (Neo4j, etc.)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={1.4}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.7}>
+                <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### How Graph Prompting Works
+
+Alright, let's break down the mechanics. Graph Prompting is actually a multi-stage pipeline, and each stage is crucial.
+
+**Stage one: Entity Extraction.** We scan through documents and identify the key entities—people, organizations, locations, products, events, whatever matters for your domain. This is like highlighting the main characters in a story. Modern LLMs are actually quite good at this with proper prompting, though you might use specialized Named Entity Recognition models for production systems.
+
+**Stage two: Relationship Extraction.** This is where the magic happens. We don't just want isolated entities; we want to know how they connect. Who founded what? Who reports to whom? Which company acquired which startup? These relationships become the edges in our graph. Think of it like drawing lines between dots—suddenly patterns emerge that weren't obvious before.
+
+**Stage three: Graph Construction.** We take these entities and relationships and build an actual graph structure, often stored in a graph database like Neo4j. Each entity is a node, each relationship is an edge. You might also add properties—dates, amounts, types of relationships. This gives us a queryable, traversable structure.
+
+**Stage four: Graph-Based Reasoning.** When a question comes in, we don't just throw raw text at the LLM. We identify relevant subgraphs—the portions of the knowledge graph that matter for this query—and present that structured information. The LLM can then follow paths through the graph: "Company A is owned by Holding Company B, which is controlled by Person C, who also serves on the board of Company D." That's a three-hop inference that's explicit and traceable.
+
+Think about a due diligence scenario at an investment firm. You're analyzing a company, and you need to understand its ownership structure across multiple SEC filings, press releases, and corporate documents. A traditional search would give you fragments. But with graph prompting, you construct a comprehensive ownership graph—who owns what percentage, when did acquisitions happen, what are the board relationships—and now you can answer complex queries like "Are there any circular ownership patterns?" or "Who are the ultimate beneficial owners?" The graph makes these insights accessible and verifiable.`
         },
         {
           id: 73,
@@ -3288,16 +3332,38 @@ That said, when you *do* need to reason about visual information — charts, dia
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 for language understanding, plus graph database infrastructure (Neo4j, NetworkX) and entity extraction capabilities. May require NER and relation extraction models.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="flipCard" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.7}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 for language understanding, plus graph database infrastructure (Neo4j, NetworkX) and entity extraction capabilities. May require NER and relation extraction models.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### Implementation Details
+
+Let's look at how you'd actually implement this. The prompt structure is deceptively simple, but there's significant infrastructure behind it.
+
+The basic prompt pattern goes something like: "From these documents, extract all entities and their relationships into a knowledge graph. Then, using that graph structure, answer the question: [your question]. Show me the reasoning path you followed through the graph."
+
+But here's the thing—this isn't just a prompt, it's a system. You need several components working together. First, you need the LLM to do entity and relationship extraction. GPT-4, Claude 3.5, or Gemini 1.5 can all handle this with proper prompting, though you might get better results with specialized NER models for entities.
+
+Second, you need somewhere to store and query this graph. For lightweight cases, you might use NetworkX in Python to build an in-memory graph. But for production systems, you're looking at graph databases like Neo4j or Amazon Neptune. These aren't just storage—they give you powerful graph query languages like Cypher that let you find shortest paths, detect communities, identify central nodes, all the graph theory goodness.
+
+Third, you need a strategy for subgraph extraction. You can't feed the entire graph to the LLM—it would be too large. So when a question comes in, you identify the relevant portion of the graph, maybe using keyword matching on entity names, or semantic similarity on entity descriptions. You extract that subgraph plus maybe one or two hops of neighbors for context.
+
+Real-world example: imagine you're building a research assistant for a law firm. You've ingested thousands of case documents. When someone asks "How is Defendant A connected to Corporation B?", you first extract the subgraph containing those two entities and their immediate neighbors, then you run a pathfinding algorithm to find all paths between them, and finally you present those paths to the LLM asking it to interpret which connections are legally meaningful. The LLM might say: "Defendant A served as CFO of Company X, which was acquired by Corporation B in 2015, establishing a prior business relationship."
+
+The beauty is that the reasoning path is explicit and auditable. You can show the lawyer: "Here's the graph path we followed: Defendant A → employed_by → Company X → acquired_by → Corporation B." No black box, no hallucination risk—the relationships are explicitly documented in the source material.`
         },
         {
           id: 74,
@@ -3305,17 +3371,33 @@ That said, when you *do* need to reason about visual information — charts, dia
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Knowledge graph construction errors propagate</li>
-                <li>Synchronization challenges with evolving data</li>
-                <li>Entity resolution and disambiguation required</li>
-                <li>Graph quality critical for reasoning accuracy</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Knowledge graph construction errors propagate</li>
+                  <li>Synchronization challenges with evolving data</li>
+                  <li>Entity resolution and disambiguation required</li>
+                  <li>Graph quality critical for reasoning accuracy</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### Limitations and Considerations
+
+Now let's talk about the challenges, because graph prompting is powerful but not a silver bullet. There are real gotchas you need to watch for.
+
+**Error propagation is the big one.** If your entity extraction gets something wrong—maybe it thinks "Apple" the company and "apple" the fruit are the same entity, or it misidentifies a relationship—that error becomes part of your graph. And then every downstream query that touches that part of the graph inherits that error. It's like building on a shaky foundation. The LLM might reason perfectly over the graph structure, but if the structure itself is wrong, you get wrong answers. Garbage in, gospel out—except now the garbage is structured!
+
+**Entity resolution is surprisingly hard.** Is "Microsoft," "Microsoft Corporation," "MSFT," and "MS" all the same entity? What about "Bill Gates" vs "William Henry Gates III"? Humans can figure this out from context, but automated systems struggle. You need robust entity resolution—often called entity linking or coreference resolution—and it's not trivial. Get it wrong and you fragment your graph into disconnected components or create spurious connections.
+
+**Keeping the graph current is another challenge.** The real world changes—companies merge, people change jobs, new relationships form. If your knowledge graph is built from documents ingested last month, it might be stale. You need strategies for incremental updates, versioning, or periodic rebuilds. Some systems maintain temporal graphs where relationships have timestamps, so you can ask "Who was the CEO in 2020?" versus "Who is the CEO now?"
+
+**The quality ceiling is real.** Your graph-based reasoning is only as good as your graph. If you have incomplete entity extraction—maybe you only caught 60 percent of the relevant entities—or if your relationship extraction is noisy, the LLM's answers will reflect that. Think of it like trying to navigate with an incomplete map. Sure, you can follow the roads you can see, but you might miss the highway that would get you there faster because it's not on your map.
+
+**Finally, there's the infrastructure tax.** Graph databases, entity extraction pipelines, subgraph extraction logic—this is not a simple prompt pattern you can drop into your app. It's a full system architecture. For problems that truly need multi-hop reasoning over complex relationships, it's absolutely worth it. But don't reach for graph prompting when a simpler technique would suffice. Use it where the structure of relationships is genuinely central to the problem.`
         }
       ]
     },
@@ -3330,58 +3412,74 @@ That said, when you *do* need to reason about visual information — charts, dia
           content: (
             <div style={{ fontSize: '2rem', margin: '0 auto', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
-                Complexity & Use Case Matrix
-              </h3>
-              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
-                <thead>
-                  <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style={{ padding: '10px', border: '1px solid #555', color: '#2ecc71', fontWeight: 'bold' }}>Simple</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>1. Zero-shot<br />2. Few-shot (simple)</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>Quick baselines, well-known tasks, email triage</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM API only</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '10px', border: '1px solid #555', color: '#f39c12', fontWeight: 'bold' }}>Intermediate</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>3. CoT<br />4. Meta<br />5. Self-Consistency<br />6. Generate Knowledge<br />7. Prompt Chaining<br />9. RAG</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>Math/logic, standardized outputs, grounded answers, workflows</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + orchestration<br />RAG needs vector DB</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '10px', border: '1px solid #555', color: '#e74c3c', fontWeight: 'bold' }}>Advanced</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>8. Tree of Thoughts<br />10. ART<br />11-13. APE/Active/DSP<br />14-16. PAL/ReAct/Reflexion<br />17. Multimodal CoT<br />18. Graph Prompting</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>Complex planning, tool use, code execution, optimization, multi-hop reasoning</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + tools + search control<br />Code sandbox<br />Active learning loops<br />Graph databases</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-                <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-                  <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
-                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                  <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
+                  Complexity & Use Case Matrix
+                </h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
+                  <thead>
+                    <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style={{ padding: '10px', border: '1px solid #555', color: '#2ecc71', fontWeight: 'bold' }}>Simple</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>1. Zero-shot<br />2. Few-shot (simple)</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>Quick baselines, well-known tasks, email triage</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>LLM API only</td>
+                    </tr>
+                    <tr>
+                      <td style={{ padding: '10px', border: '1px solid #555', color: '#f39c12', fontWeight: 'bold' }}>Intermediate</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>3. CoT<br />4. Meta<br />5. Self-Consistency<br />6. Generate Knowledge<br />7. Prompt Chaining<br />9. RAG</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>Math/logic, standardized outputs, grounded answers, workflows</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + orchestration<br />RAG needs vector DB</td>
+                    </tr>
+                    <tr>
+                      <td style={{ padding: '10px', border: '1px solid #555', color: '#e74c3c', fontWeight: 'bold' }}>Advanced</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>8. Tree of Thoughts<br />10. ART<br />11-13. APE/Active/DSP<br />14-16. PAL/ReAct/Reflexion<br />17. Multimodal CoT<br />18. Graph Prompting</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>Complex planning, tool use, code execution, optimization, multi-hop reasoning</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + tools + search control<br />Code sandbox<br />Active learning loops<br />Graph databases</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.7}>
+                <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                    <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
+                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+                  </div>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                    <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
+                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
+                  </div>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                    <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
+                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
+                  </div>
                 </div>
-                <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-                  <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
-                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
-                </div>
-                <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-                  <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
-                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
-                </div>
-              </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#34495E',
-          notes: ''
+          notes: `### Complexity Overview - Choosing the Right Tool
+
+Alright, now that we've covered all 18 techniques, let's step back and get the big picture. This matrix is your decision-making framework—think of it as the periodic table of prompt engineering!
+
+**The Simple tier—green light zone.** This is your starting point for almost everything: Zero-shot and Few-shot. Just LLM API, no fancy infrastructure. If you're building something new, start here. Seriously. I see way too many people jumping straight to complex architectures when a well-crafted zero-shot prompt would work perfectly fine. These techniques handle probably 80 percent of real-world tasks: email classification, content generation, simple Q&A, summarization. The infrastructure cost is minimal—just API calls—and the cognitive overhead is low. Your team can understand and maintain these easily.
+
+**The Intermediate tier—yellow, production-ready zone.** This is where most production systems eventually land. Chain of Thought for reasoning, RAG for grounded knowledge, Prompt Chaining for complex workflows, Meta-prompting for consistency. Notice the infrastructure grows: you need orchestration logic, maybe a vector database for RAG, some workflow management. But these techniques are battle-tested at scale. Companies run entire products on RAG pipelines. The complexity is justified because you're solving problems that simple prompts can't handle: you need external knowledge, or step-by-step reasoning, or standardized outputs.
+
+**The Advanced tier—red, specialized zone.** These are your power tools for when you truly need them: Tree of Thoughts for complex planning, ReAct for tool use, PAL for code execution, Graph Prompting for relationship reasoning. The infrastructure needs are significant: graph databases, code sandboxes, active learning loops, sophisticated search control. These techniques shine in specific scenarios—legal discovery, scientific research, complex automation—but they're overkill for most applications.
+
+The key insight: **climb the ladder only as high as your problem requires.** Don't start with graph prompting when few-shot would work. But also don't stay stuck on zero-shot when you're fighting a problem that needs structured reasoning. Match the technique to the task complexity, and always start simple then scale up if needed.`
         },
         {
           id: 76,
@@ -3392,55 +3490,87 @@ That said, when you *do* need to reason about visual information — charts, dia
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                    Getting Started
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Start Simple:</strong> Begin with zero-shot, move to few-shot if needed</li>
-                    <li><strong>Add CoT:</strong> For reasoning tasks, add "think step-by-step"</li>
-                    <li><strong>Use RAG:</strong> When you need fresh knowledge or citations</li>
-                    <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
-                    Production Considerations
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Monitor Outputs:</strong> Log prompts and responses</li>
-                    <li><strong>Version Control:</strong> Track prompt templates like code</li>
-                    <li><strong>Cost Management:</strong> Use simpler techniques when possible</li>
-                    <li><strong>Latency Budgets:</strong> Consider multi-call overhead</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInLeft" delay={0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                      Getting Started
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={0.3}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Start Simple:</strong> Begin with zero-shot, move to few-shot if needed</li>
+                      <li><strong>Add CoT:</strong> For reasoning tasks, add "think step-by-step"</li>
+                      <li><strong>Use RAG:</strong> When you need fresh knowledge or citations</li>
+                      <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
+                    </ul>
+                  </GSAPStaggerList>
+                  <GSAPAnimated animation="slideInLeft" delay={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
+                      Production Considerations
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={1.2}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Monitor Outputs:</strong> Log prompts and responses</li>
+                      <li><strong>Version Control:</strong> Track prompt templates like code</li>
+                      <li><strong>Cost Management:</strong> Use simpler techniques when possible</li>
+                      <li><strong>Latency Budgets:</strong> Consider multi-call overhead</li>
+                    </ul>
+                  </GSAPStaggerList>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" darkModeInvert={true} />
-                    When to Scale Up
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Inconsistent Outputs:</strong> Try self-consistency or meta-prompting</li>
-                    <li><strong>Tool Needs:</strong> Move to ReAct or ART for API/search</li>
-                    <li><strong>Code Tasks:</strong> Use PAL for algorithmic problems</li>
-                    <li><strong>Multi-hop:</strong> Consider Graph Prompting or ToT</li>
-                    <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                    Common Pitfalls
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Over-engineering:</strong> Don't use advanced techniques prematurely</li>
-                    <li><strong>Prompt Drift:</strong> Test on diverse examples regularly</li>
-                    <li><strong>Tool Failures:</strong> Add error handling and fallbacks</li>
-                    <li><strong>Token Bloat:</strong> Watch cumulative costs in multi-call patterns</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" darkModeInvert={true} />
+                      When to Scale Up
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={0.3}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Inconsistent Outputs:</strong> Try self-consistency or meta-prompting</li>
+                      <li><strong>Tool Needs:</strong> Move to ReAct or ART for API/search</li>
+                      <li><strong>Code Tasks:</strong> Use PAL for algorithmic problems</li>
+                      <li><strong>Multi-hop:</strong> Consider Graph Prompting or ToT</li>
+                      <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
+                    </ul>
+                  </GSAPStaggerList>
+                  <GSAPAnimated animation="slideInRight" delay={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                      Common Pitfalls
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={1.2}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Over-engineering:</strong> Don't use advanced techniques prematurely</li>
+                      <li><strong>Prompt Drift:</strong> Test on diverse examples regularly</li>
+                      <li><strong>Tool Failures:</strong> Add error handling and fallbacks</li>
+                      <li><strong>Token Bloat:</strong> Watch cumulative costs in multi-call patterns</li>
+                    </ul>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#145d33',
-          notes: ''
+          notes: `### Best Practices and Recommendations
+
+Let's wrap up with some hard-won wisdom from the trenches. These are the practices that separate successful prompt engineering from frustrating trial-and-error.
+
+**Getting Started—the progressive enhancement approach.** Always start with zero-shot. Literally every time. Write a clear, direct prompt and see what happens. You'll be surprised how often it just works! If it doesn't quite hit the mark, add a few examples—move to few-shot. Maybe three to five good examples. Still struggling? Now add Chain of Thought reasoning: "think step-by-step" or "explain your reasoning." This progressive approach means you only add complexity when you actually need it, and you understand exactly what each layer is buying you.
+
+When do you reach for RAG? When the LLM's training data isn't enough. If you need up-to-date information, proprietary knowledge, or verifiable citations, that's your signal. And prompt chaining—that's for when you're building workflows. If you're doing more than two or three conceptually distinct steps, break them into separate prompts. Each one can be simpler, more focused, and easier to debug.
+
+**Production considerations—treat prompts like code.** This is huge: version control your prompts. Put them in Git. When you change a prompt, you should be able to see the diff, revert if needed, and know exactly what changed when. Log everything—the prompts you send, the responses you get, the context. When something goes wrong in production (and it will), you need to be able to reconstruct exactly what happened.
+
+Cost management is real. Advanced techniques with multiple LLM calls can get expensive fast. A Tree of Thoughts evaluation might make 50 API calls for a single query. That's fine if you're solving a high-value problem, but not for every routine task. Use simpler techniques when possible. And watch your latency budgets—chained prompts add up. If your user is waiting 15 seconds for a response, maybe you need to simplify or parallelize.
+
+**Scaling up signals.** How do you know when to use more advanced techniques? Here's your checklist: Inconsistent outputs across similar inputs? Try self-consistency or meta-prompting to stabilize. Need tool use like API calls or search? That's ReAct or ART territory. Code generation or execution? PAL is your friend. Multi-hop reasoning across complex relationships? Graph Prompting or Tree of Thoughts. And if you're spending tons of time manually tuning prompts, APE might automate that optimization.
+
+**Common pitfalls—learn from others' mistakes.** Over-engineering is the number one trap. I've seen teams spend weeks building elaborate agentic systems when a simple RAG pipeline would have worked fine. Don't be that team. Prompt drift is sneaky: your prompt works great on your test cases, but in production it encounters edge cases you never thought of. Test on diverse, realistic examples regularly. Tool failures will happen—APIs go down, searches time out—so build error handling and fallbacks from day one. And token bloat: when you're chaining multiple prompts or doing self-consistency with ten samples, those tokens add up fast. Monitor your costs and optimize the expensive parts.
+
+The meta-lesson: **prompt engineering is iterative.** You won't nail it on the first try. Start simple, measure results, add complexity only where needed, and keep testing. Every technique we've covered is a tool in your toolbox. The skill is knowing which tool to reach for and when.`
         },
         {
           id: 77,
@@ -3449,53 +3579,77 @@ That said, when you *do* need to reason about visual information — charts, dia
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <h2 style={{ marginBottom: '30px' }}>From Simple to Advanced</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', margin: '0 auto', fontSize: '1.2rem', marginTop: '30px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 1: Foundations</strong>
-                    <p style={{ margin: '0px' }}>Zero-shot, Few-shot → Start here for 80% of tasks</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h2 style={{ marginBottom: '30px' }}>From Simple to Advanced</h2>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', margin: '0 auto', fontSize: '1.2rem', marginTop: '30px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 1: Foundations</strong>
+                      <p style={{ margin: '0px' }}>Zero-shot, Few-shot → Start here for 80% of tasks</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔵</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 2: Reasoning</strong>
+                      <p style={{ margin: '0px' }}>CoT, Meta, Self-Consistency → Add when logic matters</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟡</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 3: Retrieval & Orchestration</strong>
+                      <p style={{ margin: '0px' }}>RAG, Prompt Chaining → Production workflows</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟣</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 4: Agentic</strong>
+                      <p style={{ margin: '0px' }}>ReAct, PAL, Reflexion → Tools and self-improvement</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔴</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 5: Advanced</strong>
+                      <p style={{ margin: '0px' }}>ToT, APE, Graph Prompting → Research & optimization</p>
+                    </div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔵</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 2: Reasoning</strong>
-                    <p style={{ margin: '0px' }}>CoT, Meta, Self-Consistency → Add when logic matters</p>
-                  </div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.5}>
+                <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px' }}>
+                  <p style={{ fontSize: '1.2rem', margin: 0 }}>
+                    <strong>⚡ Key Insight:</strong> Start at Level 1, climb only as high as your task requires
+                  </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟡</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 3: Retrieval & Orchestration</strong>
-                    <p style={{ margin: '0px' }}>RAG, Prompt Chaining → Production workflows</p>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟣</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 4: Agentic</strong>
-                    <p style={{ margin: '0px' }}>ReAct, PAL, Reflexion → Tools and self-improvement</p>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔴</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 5: Advanced</strong>
-                    <p style={{ margin: '0px' }}>ToT, APE, Graph Prompting → Research & optimization</p>
-                  </div>
-                </div>
-              </div>
-              <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px' }}>
-                <p style={{ fontSize: '1.2rem', margin: 0 }}>
-                  <strong>⚡ Key Insight:</strong> Start at Level 1, climb only as high as your task requires
-                </p>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: ''
+          notes: `### Summary: The Prompt Engineering Ladder
+
+We've reached the end of our journey through 18 prompt engineering techniques, and I want to leave you with one powerful mental model: the ladder.
+
+**Level 1: Foundations.** Zero-shot and few-shot prompting. This is your ground floor, your default approach. Honestly, this solves about 80 percent of real-world problems. Need to categorize support tickets? Zero-shot. Want to generate marketing copy in a specific style? Few-shot with three examples. Don't overthink it. Start here, every single time. The infrastructure is trivial—just LLM API calls—and the cognitive load is minimal. Your whole team can work with these techniques.
+
+**Level 2: Reasoning.** Chain of Thought, Meta-prompting, Self-Consistency. Climb to this level when outputs need to be more thoughtful or more reliable. Math problems? CoT helps the model show its work. Need standardized JSON output? Meta-prompting sets the rules. Getting inconsistent answers? Self-consistency samples multiple reasoning paths. You're still just making API calls, but you're orchestrating them more carefully to improve quality.
+
+**Level 3: Retrieval & Orchestration.** RAG and Prompt Chaining. This is production territory. Most real-world applications eventually need external knowledge (RAG) or multi-step workflows (chaining). You're now running infrastructure: vector databases, retrieval pipelines, workflow orchestration. But these are proven patterns with tons of tooling support. Companies run entire products on this level.
+
+**Level 4: Agentic.** ReAct, PAL, Reflexion. Here's where AI starts to *do things*—calling APIs, writing and executing code, reflecting on its own outputs and improving. This is powerful but requires careful guardrails. Tool use means more failure modes. Self-correction means more LLM calls and higher costs. Use this level when the task truly requires autonomous actions or iteration.
+
+**Level 5: Advanced.** Tree of Thoughts, APE, Graph Prompting. The peak of the ladder, for specialized problems. Complex search over solution spaces, automatic prompt optimization, reasoning over knowledge graphs. The infrastructure is heavy: graph databases, sophisticated search algorithms, active learning loops. These techniques are incredible when you need them—research applications, legal discovery, complex planning problems—but they're major overkill for everyday tasks.
+
+**The key insight: Start at Level 1, climb only as high as your task requires.** Don't build Level 5 infrastructure to solve Level 1 problems. But also don't stay stuck at Level 1 when you're clearly fighting a Level 3 or 4 problem. The ladder gives you a framework for escalation. Try the simpler approach first. If it works, great—ship it! If it doesn't, move up one level and try again.
+
+This progression also maps to learning and adoption. Start by mastering the foundations. Get really good at zero-shot and few-shot prompting. Then learn reasoning techniques. Then retrieval. Each level builds on the previous ones. By the time you need agentic or advanced techniques, you'll have the judgment to use them wisely.
+
+Thank you for joining me through this deep dive. You now have a complete toolkit for prompt engineering, from the simplest techniques to the most sophisticated. Go forth and build amazing things—and remember, start simple and climb deliberately!`
         }
       ]
     }
