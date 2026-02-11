@@ -1662,21 +1662,34 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Improve precision with minimal latency overhead by applying high-quality but slower ranking only to a small subset of retrieved results.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b29',
-          notes: ''
+          notes: `### 33. Re-Ranking — Goal
+Now we're entering the **reranking and compression** section with technique seven — optimizing your re-ranker. Wait, you might ask, didn't we say we want to reduce latency? Isn't adding a reranker ADDING a step? Great question! The trick is to re-rank only a few results, not all of them.
+
+#### 🎯 What's the Goal?
+The goal is to use a lightweight re-ranker on just your top few retrieved results — say the top 3 to 5 — instead of reranking a large set. This gives you better precision without the latency penalty of scoring dozens of candidates.
+
+#### 💡 The Analogy
+Think of it like hiring. You don't deeply interview all 500 applicants. You screen resumes first to get a shortlist of 5-10 candidates, then do thorough interviews with just those few. The screening is fast and rough, the interviews are slow and precise. Same principle: fast retrieval gets you candidates, lightweight reranking picks the winners.
+
+This approach actually REDUCES overall latency because better-ranked results mean less noise for the LLM, which generates faster responses. Let's see when to use it...`
         },
         {
           id: 34,
@@ -1685,20 +1698,39 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Need quality boost beyond vector search</li>
                 <li>Latency budget is tight</li>
                 <li>Complex semantic matching needs</li>
                 <li>Applications requiring high precision</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b29',
-          notes: ''
+          notes: `### 34. Re-Ranking — When to Use
+When should you add a lightweight reranker to your pipeline? Here are the key scenarios.
+
+#### 🎯 Quality-Critical Applications
+If your RAG system needs to provide highly accurate answers — like in medical, legal, or financial contexts — a reranker significantly improves the precision of your top results. The few milliseconds it adds are well worth the quality gain.
+
+#### 📊 When Vector Search Isn't Precise Enough
+Vector similarity search is good at finding semantically related content, but it sometimes ranks results poorly. A cross-encoder reranker understands the actual relationship between the query and each result, giving much better ordering.
+
+#### ⚡ After Limiting Top-K
+This pairs beautifully with technique three. First, retrieve the top-5 with vector search, then rerank those 5 to get the best 3. The total latency is still less than retrieving top-20 without reranking.
+
+#### 🔄 Multi-Stage Retrieval
+In systems where you first do a broad retrieval and then narrow down, reranking is the natural narrowing step. It's the standard pattern in search engines and works equally well for RAG.
+
+Let's see how lightweight reranking works under the hood...`
         },
         {
           id: 35,
@@ -1707,11 +1739,30 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Re-Ranking Pipeline"
+                    diagram={`flowchart LR
+    A["🔍 Query"] --> B["📊 Vector\\nSearch"]
+    B --> C["Top-5\\nResults"]
+    C --> D["🏆 Cross-Encoder\\nReranker"]
+    D --> E["Top-3\\nBest Results"]
+    E --> F["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Two-stage retrieval process that combines speed and quality:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>First stage: Fast ANN vector search retrieves larger set (K1) of candidates</li>
                 <li>Second stage: Cross-encoder or reranker model evaluates only a subset (m) of those candidates</li>
@@ -1719,10 +1770,32 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                 <li>Final top n results (3-8) with highest reranker scores get passed to LLM</li>
                 <li>Reranker models (like cross-encoders) analyze query-document pairs directly for better matching</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b29',
-          notes: ''
+          notes: `### 35. Re-Ranking — How It Works
+Let's understand the mechanics of efficient re-ranking and why it improves both quality and speed.
+
+#### ⚙️ The Reranking Pipeline
+\`\`\`mermaid
+flowchart LR
+    A["🔍 Query"] --> B["📊 Vector\\nSearch"]
+    B --> C["Top-5\\nResults"]
+    C --> D["🏆 Cross-Encoder\\nReranker"]
+    D --> E["Top-3\\nBest Results"]
+    E --> F["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000
+\`\`\`
+Here's the key insight: vector search uses **bi-encoders** 👉 'by-en-COH-ders' that encode the query and documents separately and compare their vectors. This is fast but approximate. **Cross-encoders** 👉 'cross-en-COH-ders' process the query and document together, which is much more accurate but slower. By only running the cross-encoder on your top 3-5 results, you get the best of both worlds.
+
+#### 🏎️ Lightweight Rerankers
+Models like **MiniLM** 👉 'mini-ell-em' or **TinyBERT** 👉 'tiny-burt' can rerank 5 results in just 5-10 milliseconds on a GPU. That's a tiny latency cost for a significant quality boost. Cohere 👉 'co-HERE' also offers a fast reranking API.
+
+#### 📈 The Net Effect
+Even though reranking adds a step, the improved result quality means less noise in the LLM context, which often results in faster and shorter LLM responses. So the net latency can actually decrease! Here are the implementation steps...`
         },
         {
           id: 36,
@@ -1731,10 +1804,13 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Initial retrieval: Retrieve K1=50–100 documents quickly using vector search</li>
                 <li>Subset selection: Pass only top m=10–20 candidates to reranker</li>
@@ -1743,10 +1819,25 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                 <li>Implement safeguards: Set timeouts and fallback to first-stage results</li>
                 <li>Select final context: Pass top 3–8 reranked results to LLM</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b29',
-          notes: ''
+          notes: `### 36. Re-Ranking — Steps
+Here's how to add efficient reranking to your RAG pipeline without hurting latency.
+
+#### 📋 Implementation Steps
+**Step one: Choose a lightweight reranker.** Start with a small cross-encoder model like **ms-marco-MiniLM-L-6** 👉 'em-ess marco mini-ell-em ell six'. It's tiny, fast, and surprisingly effective. Alternatively, use Cohere's Rerank API for a managed solution.
+
+**Step two: Limit the candidate set.** Only rerank your top-5 to top-10 results from vector search. Reranking more than 10 results usually doesn't improve quality but does add latency. The sweet spot for most applications is top-5.
+
+**Step three: Implement scoring.** Pass each (query, document) pair through the cross-encoder. It outputs a relevance score between 0 and 1. Sort by this score and take the top-3 for your LLM context.
+
+**Step four: Benchmark the added latency.** Measure the time the reranker adds. If it's under 20 milliseconds for your candidate set, it's a clear win. If it's over 50ms, consider a smaller model or reducing the candidate set.
+
+**Step five: Evaluate quality improvement.** Compare answer quality with and without reranking. Track metrics like answer correctness, relevance, and faithfulness. The quality improvement should justify the small latency cost.
+
+Let's look at the trade-offs...`
         },
         {
           id: 37,
@@ -1756,6 +1847,7 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1769,6 +1861,8 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                     <li>Can use specialized rerankers (e.g., domain-specific)</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1782,11 +1876,22 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                     <li>Increased system complexity</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b29',
-          notes: ''
+          notes: `### 37. Re-Ranking — Pros and Cons
+Let's evaluate the advantages and disadvantages of adding a lightweight reranker.
+
+#### ✅ Pros
+The good stuff: **Significantly better result precision** — cross-encoders understand query-document relevance much better than vector similarity alone. **Small latency cost** when reranking only top-5 results — typically 5-15 milliseconds. **Net latency reduction** is possible because better results mean less noise for the LLM. **Works with any vector search** — you can add reranking to any existing pipeline without changing your embedding or indexing. And **proven technique** — this is standard practice in production search engines.
+
+#### ❌ Cons
+The problems: **Adds a processing step** that requires GPU or CPU resources. **Model hosting overhead** — you need to serve the reranking model somewhere, which adds infrastructure complexity. **Latency scales with candidate count** — reranking 20 results takes 4x longer than reranking 5. **Potential single point of failure** if the reranker service goes down. And **diminishing returns** — if your vector search is already very precise, reranking adds latency without much quality gain.
+
+#### 🎯 The Verdict
+For most production RAG systems, adding a lightweight reranker on top-5 results is one of the highest-ROI optimizations. The quality improvement often outweighs the small latency cost, and in many cases, the net effect is actually faster responses. Now let's move to technique eight — context compression...`
         }
       ]
     },
@@ -1801,21 +1906,35 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Reduce tokens sent to the LLM, lowering Time to First Token (TTFT) and cost while preserving essential information.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4a6b1d',
-          notes: ''
+          notes: `### 38. Context Compression — Goal
+Technique eight is **context compression** — a powerful way to reduce the amount of text you send to the LLM. This directly speeds up generation and lowers costs.
+
+#### 🎯 What's the Goal?
+Even after selecting the best chunks, there's often a lot of irrelevant text within those chunks. Context compression extracts or summarizes only the parts that are relevant to the query, dramatically reducing token count without losing important information.
+
+#### 💡 Think of It This Way
+Imagine you're studying for an exam and you have a 300-page textbook. Instead of reading the whole thing, you use a highlighter to mark only the key sentences. That's what context compression does — it highlights only the relevant parts of your retrieved chunks and discards the rest.
+
+#### 📊 The Impact
+In practice, context compression can reduce your context size by 50-80% while preserving all the relevant information. This means the LLM processes fewer tokens, generates faster responses, and costs less per query. Let's see when this technique is most valuable...`
         },
         {
           id: 39,
@@ -1824,20 +1943,39 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Applications with long retrieved chunks</li>
                 <li>When using expensive LLMs</li>
                 <li>Systems with strict TTFT targets</li>
                 <li>High query volume production environments</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4a6b1d',
-          notes: ''
+          notes: `### 39. Context Compression — When to Use
+When should you add context compression to your pipeline? Here are the key indicators.
+
+#### 📏 Large Chunks
+If your chunks are 300+ tokens and contain mixed content — some relevant, some not — compression helps isolate the useful parts. This is common when chunking at paragraph or section level.
+
+#### 💰 High Token Costs
+If you're using expensive LLMs like GPT-4 👉 'gee-pee-tee four', every token counts. Compressing your context from 2,000 tokens to 500 tokens means a 75% cost reduction per query on the context portion.
+
+#### ⚡ Generation Latency Priority
+LLM generation time scales roughly linearly with input token count. If you can cut input tokens by 60%, you can expect a roughly 40-50% reduction in generation time. For applications where the LLM step is the bottleneck, this is huge.
+
+#### 📊 Multiple Retrieved Chunks
+When you need to include information from multiple chunks — say 5-10 — compression helps fit more relevant information within the context window without hitting token limits.
+
+Let's dive into how context compression actually works...`
         },
         {
           id: 40,
@@ -1846,21 +1984,67 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Context Compression Pipeline"
+                    diagram={`flowchart TB
+    A["📄 Retrieved\\nChunks"] --> B["✂️ Compression"]
+    B --> C["📝 Extractive\\n(keep key sentences)"]
+    B --> D["📝 Abstractive\\n(summarize)"]
+    C --> E["⚡ Compact\\nContext"]
+    D --> E
+    E --> F["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Apply intelligent reduction techniques to minimize prompt size without losing critical context:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Query-focused summarization: Generate concise summaries of retrieved documents focused on query intent</li>
                 <li>Salient span extraction: Identify and extract only the most relevant passages from each document</li>
                 <li>Token pruning: Remove redundant information, repetitive content, and low-relevance sections</li>
                 <li>Citation-preserving compression: Maintain document source references while reducing content size</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4a6b1d',
-          notes: ''
+          notes: `### 40. Context Compression — How It Works
+Let's explore the two main approaches to context compression and how they reduce your token count.
+
+#### ⚙️ Two Approaches
+\`\`\`mermaid
+flowchart TB
+    A["📄 Retrieved\\nChunks"] --> B["✂️ Compression"]
+    B --> C["📝 Extractive\\n(keep key sentences)"]
+    B --> D["📝 Abstractive\\n(summarize)"]
+    C --> E["⚡ Compact\\nContext"]
+    D --> E
+    E --> F["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#ffd700,color:#000
+    style F fill:#81c784,color:#000
+\`\`\`
+
+**Extractive compression** keeps only the sentences that are relevant to the query. It's like highlighting a textbook — you don't change the words, you just skip the irrelevant parts. This is fast and preserves exact wording, which is important for factual accuracy.
+
+**Abstractive compression** uses a small model to summarize the retrieved chunks into a shorter, focused passage. This can achieve higher compression ratios but risks introducing inaccuracies through paraphrasing.
+
+#### 🔧 LangChain's LLMChainExtractor
+Tools like LangChain's **LLMChainExtractor** 👉 'ell-ell-em chain extractor' or **ContextualCompressionRetriever** make this easy to implement. They use a smaller, cheaper LLM to extract relevant sentences before sending them to your main LLM.
+
+#### ⚖️ The Compression Ratio
+Aim for a 50-70% compression ratio. Going too aggressive — say 90% — risks losing important context. The sweet spot is removing filler text while keeping all factually relevant content. Here are the steps to implement it...`
         },
         {
           id: 41,
@@ -1869,10 +2053,13 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Compress retrieved documents: Transform N retrieved docs into concise passages (keep citations/IDs)</li>
                 <li>Set token budget: Cap final context (e.g., 800–1500 tokens) with safety margin for LLM response</li>
@@ -1880,10 +2067,25 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                 <li>Implement fallback: Use larger context window for low confidence or complex queries</li>
                 <li>Fine-tune compression ratio: Balance between context size and information preservation</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4a6b1d',
-          notes: ''
+          notes: `### 41. Context Compression — Steps
+Here's how to implement context compression in your RAG pipeline.
+
+#### 📋 Implementation Steps
+**Step one: Analyze your context.** Look at the chunks currently being sent to your LLM. Highlight the sentences that actually contribute to the answer. If more than 40% is irrelevant filler, compression will help significantly.
+
+**Step two: Choose your approach.** For factual accuracy, start with extractive compression — it's simpler and preserves exact wording. For maximum compression, try abstractive summarization with a small model like Flan-T5 👉 'flan tee five'.
+
+**Step three: Implement the compressor.** If using LangChain, the **ContextualCompressionRetriever** wraps your existing retriever and adds compression automatically. For custom implementations, use a lightweight model to score sentence relevance.
+
+**Step four: Set compression targets.** Define your target compression ratio based on your latency and cost goals. A 50% reduction in tokens typically translates to a 30-40% reduction in LLM generation time.
+
+**Step five: Validate output quality.** Compare answers with and without compression on your evaluation set. Ensure that compressed contexts still produce accurate, complete answers. Watch for cases where compression removes critical qualifying information.
+
+Let's look at the trade-offs of context compression...`
         },
         {
           id: 42,
@@ -1893,6 +2095,7 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1906,6 +2109,8 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                     <li>Enhances response quality with relevant-only content</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1919,11 +2124,22 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
                     <li>Additional latency from compression step</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#4a6b1d',
-          notes: ''
+          notes: `### 42. Context Compression — Pros and Cons
+Let's evaluate when context compression is worth adding to your pipeline.
+
+#### ✅ Pros
+The good stuff: **Faster LLM generation** because fewer input tokens mean faster processing. **Lower token costs** — a 60% compression means 60% savings on the context portion of your LLM bill. **Better answer quality** in some cases because the LLM sees less noise and more relevant information. **Fits more information** in limited context windows — you can effectively use more chunks without hitting token limits. And **works with any LLM** — compression happens before the LLM step, so it's model-agnostic.
+
+#### ❌ Cons
+The problems: **Adds processing time** — the compression step itself takes 50-200 milliseconds depending on the approach. **Risk of information loss** if the compressor removes something important. **Additional model to maintain** — extractive compression needs a model for sentence scoring. **Abstractive compression can hallucinate** — the summarization model might add information that wasn't in the original text. And **complexity** — it's another component in your pipeline that needs monitoring and maintenance.
+
+#### ⚖️ When It's Worth It
+Context compression is most valuable when your LLM is the bottleneck — specifically when generation time dominates your overall latency. If your LLM step takes 2+ seconds and your pre-LLM pipeline is already fast, compression can cut that LLM time significantly. Next up, technique nine — parallelizing retrieval...`
         }
       ]
     },
