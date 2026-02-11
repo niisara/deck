@@ -30,37 +30,37 @@ export const vectorDatabasesDeck: Deck = {
                     <p style={{ marginTop: '15px', fontSize: '2rem' }}>Vector Storage</p>
                   </div>
                 </GSAPAnimated>
-                <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <GSAPAnimated animation="fadeIn" delay={0.7}>
                   <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
                 </GSAPAnimated>
-                <GSAPAnimated animation="rotateIn" delay={0.7}>
+                <GSAPAnimated animation="rotateIn" delay={0.9}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-magnifying-glass" sizeName="4x" style={{ color: '#f39c12' }} darkModeInvert={true} />
                     <p style={{ marginTop: '15px', fontSize: '2rem' }}>Similarity Search</p>
                   </div>
                 </GSAPAnimated>
-                <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <GSAPAnimated animation="fadeIn" delay={1.1}>
                   <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} darkModeInvert={true} />
                 </GSAPAnimated>
-                <GSAPAnimated animation="rotateIn" delay={0.9}>
+                <GSAPAnimated animation="rotateIn" delay={1.3}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#2ecc71' }} darkModeInvert={true} />
                     <p style={{ marginTop: '15px', fontSize: '2rem' }}>AI Applications</p>
                   </div>
                 </GSAPAnimated>
               </div>
-              <GSAPAnimated animation="fadeIn" delay={1.2}>
+              <GSAPAnimated animation="fadeIn" delay={1.5}>
                 <p style={{ marginTop: '0px', fontSize: '1.4rem' }}>
                   For similarity search, retrieval augmented generation, and AI applications • 2025
                 </p>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInBottom" delay={1.4}>
+              <GSAPAnimated animation="slideInBottom" delay={1.6}>
                 <p><strong>Prepared by:</strong> Nisar A</p>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInBottom" delay={1.5}>
+              <GSAPAnimated animation="slideInBottom" delay={1.7}>
                 <p><strong>Date:</strong> November 7, 2025</p>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInBottom" delay={1.6}>
+              <GSAPAnimated animation="slideInBottom" delay={1.8}>
                 <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
               </GSAPAnimated>
             </div>
