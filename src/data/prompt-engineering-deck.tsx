@@ -2312,20 +2312,50 @@ The bottom line? Active-Prompt is like having a continuously improving expert on
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Use a small policy model to generate instance-specific hints to steer a larger LLM.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Guided outputs aligned to a desired perspective</li>
-                <li>Instance-specific steering for better relevance</li>
-                <li>Improved compliance with requirements</li>
-                <li>Fine-grained control over output focus</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for precision framing, compliance content, pedagogical guidance, and specialized summaries. Steers outputs with targeted hints.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Use a small policy model to generate instance-specific hints to steer a larger LLM.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Guided outputs aligned to a desired perspective</li>
+                  <li>Instance-specific steering for better relevance</li>
+                  <li>Improved compliance with requirements</li>
+                  <li>Fine-grained control over output focus</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for precision framing, compliance content, pedagogical guidance, and specialized summaries. Steers outputs with targeted hints.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### Directional Stimulus Prompting - The Guided Navigation System
+
+Welcome to **Directional Stimulus Prompting**, or DSP for short. Think of this technique as having a GPS navigator for your AI — a small, specialized guide that gives turn-by-turn directions to help a larger, more powerful model reach the exact destination you want.
+
+#### What Is It Really?
+
+At its core, DSP is about *precision steering*. Imagine you're working with a brilliant analyst who can write comprehensive reports, but sometimes goes off-track. Instead of retraining them completely, you hire a smart coordinator who reads each task and whispers specific hints: "Focus on safety risks," "Emphasize regulatory compliance," or "Highlight financial implications." That coordinator is your **policy model** — a small, tunable LLM that generates instance-specific guidance. The brilliant analyst is your main **frozen LLM** like GPT-4, which follows those hints to produce exactly what you need.
+
+#### Why This Matters
+
+Traditional prompting is like shouting general instructions across a room. DSP is like having a conversation where you adapt your guidance based on *each specific situation*. For example, if you're summarizing medical research, your policy model might generate hints like "Mention patient outcomes and cite specific studies." But if the next document is about engineering safety, it adapts: "Focus on failure modes and risk mitigation." This instance-specific adaptation is what makes DSP powerful.
+
+#### Real-World Use Cases
+
+Let's talk practical applications. Financial compliance teams use DSP to ensure every report emphasizes regulatory requirements and risk factors. Educational platforms use it to generate age-appropriate explanations — the same science concept explained differently for a 10-year-old versus a college student. Content moderation systems use DSP to steer responses based on context: is this a medical question requiring careful phrasing, or a casual inquiry? The policy model makes these contextual judgments automatically.
+
+#### The Key Benefits
+
+You get **guided outputs** aligned to specific perspectives without retraining your entire LLM. You achieve **instance-specific steering** — every input gets custom guidance. You maintain **compliance** because the policy model ensures required elements are always emphasized. And you gain **fine-grained control** — much more precise than generic system prompts. This is prompt engineering meets adaptive systems design.
+
+> Remember: DSP shines when you need consistent, customized steering across many different inputs. It's like having an expert editor who knows exactly what each piece of content needs to emphasize.`
         },
         {
           id: 52,
@@ -2333,17 +2363,55 @@ The bottom line? Active-Prompt is like having a continuously improving expert on
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>DSP uses a tunable policy model to generate instance-specific stimulus hints based on the input. These hints guide a larger frozen LLM to focus on particular aspects or perspectives when generating outputs. This two-model architecture allows fine-grained steering without retraining the large model, combining the flexibility of a small tunable model with the capabilities of a large pre-trained one.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 + Policy LM (small, tunable)</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>DSP uses a tunable policy model to generate instance-specific stimulus hints based on the input. These hints guide a larger frozen LLM to focus on particular aspects or perspectives when generating outputs. This two-model architecture allows fine-grained steering without retraining the large model, combining the flexibility of a small tunable model with the capabilities of a large pre-trained one.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 + Policy LM (small, tunable)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={1.4}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.7}>
+                <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### How Directional Stimulus Prompting Actually Works
+
+Let's demystify the mechanics here. DSP is a **two-model architecture**, and understanding how these models work together is key to using this technique effectively.
+
+#### The Two-Model Dance
+
+Picture this workflow: First, your input comes in — let's say a long meeting transcript. Your **policy model** (think of it like a T5-small or a tiny GPT) reads the transcript and generates a *stimulus* or *hint*. This might be something like: "Focus on deadlines, highlight blockers, and note any budget concerns." This hint is compact, specific, and tailored to this particular transcript. 
+
+Next, that stimulus gets prepended to your input and sent to the **main LLM** — your GPT-4 or Claude 3.5. The main model sees both the stimulus hint and the original transcript, and generates a summary that naturally emphasizes what the hint specified. The beauty? Your main LLM stays frozen — no retraining needed. Only the small policy model is tuned to generate better hints over time.
+
+#### Why This Architecture Is Clever
+
+This setup gives you the best of both worlds. The **policy model** is small and cheap to train, so you can fine-tune it on your specific domain or use case. Want summaries that emphasize legal compliance? Train your policy model on examples. Need sentiment-aware responses? Same approach. Meanwhile, the **main LLM** brings all its world knowledge and language capabilities without requiring expensive retraining. It's like hiring a specialized consultant (policy model) to brief your expert team lead (main LLM) before each task.
+
+#### Practical Implementation
+
+In practice, you'd implement this as two API calls or inference steps. First call: send input to your policy model, get back a hint. Second call: combine hint + input, send to main LLM, get final output. The overhead is minimal — just one extra small model inference. Some systems even batch this for efficiency.
+
+#### Real-World Example Breakdown
+
+Let's walk through that compliance example. Your meeting transcript comes in. The policy model analyzes it and generates: "Emphasize regulatory compliance requirements, identify risk factors with severity levels, list action items with owner names and deadlines." This stimulus goes to GPT-4 along with the transcript. The result? A summary that hits *exactly* those points, consistently, every time. No hoping the model will remember to include owner names — the stimulus ensures it.
+
+#### Complexity Considerations
+
+This is marked **Advanced** for good reason. You need infrastructure to train and serve two models. You need training data to tune your policy model effectively. And you need to monitor for *stimulus drift* — where the policy model's hints gradually shift over time. But the payoff is powerful: consistent, steerable, domain-specific outputs without touching your main LLM.
+
+> Think of DSP as building a custom steering wheel for a powerful engine. The engine (main LLM) stays the same, but your steering mechanism becomes highly specialized for your specific road conditions.`
         },
         {
           id: 53,
@@ -2351,17 +2419,53 @@ The bottom line? Active-Prompt is like having a continuously improving expert on
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Stimulus: Focus on safety trade-offs and cite at least two risks.
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Stimulus: Focus on safety trade-offs and cite at least two risks.
 Task: Summarize <report> for a safety board in 150 words."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 as the main LLM, plus a smaller tunable policy model (e.g., T5, small GPT) to generate stimuli. Requires training infrastructure for the policy model.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.3}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 as the main LLM, plus a smaller tunable policy model (e.g., T5, small GPT) to generate stimuli. Requires training infrastructure for the policy model.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### Implementing Directional Stimulus Prompting in Practice
+
+Let's get concrete about implementation. This slide shows you the structure and tools you need to actually *use* DSP in production systems.
+
+#### Anatomy of a DSP Prompt
+
+Look at the example prompt carefully. It has two distinct parts. The **stimulus** is the hint generated by your policy model: "Focus on safety trade-offs and cite at least two risks." Notice how specific this is — it's not just "focus on safety," it's giving explicit guidance on *what* to focus on (trade-offs, not just benefits) and *how much* detail to include (at least two risks). The **task** is your original instruction: "Summarize this report for a safety board in 150 words." 
+
+When these combine, the main LLM gets crystal-clear direction. It's like the difference between "write me a summary" versus "write me a summary, and make absolutely sure you emphasize these three specific aspects." The stimulus acts as a focusing lens.
+
+#### Keyword-Based Hinting Strategy
+
+The most practical DSP implementations use **keyword-based stimuli**. Your policy model learns to generate concise hints using action keywords: "Focus on," "Emphasize," "Highlight," "Cite at least," "Compare," "Contrast," "List," "Prioritize." These keywords are powerful because they're unambiguous — the main LLM knows exactly what to do with them. You can train your policy model to select the right keywords based on input characteristics. Medical content? Use "Cite studies" and "Mention side effects." Financial content? Use "Highlight risks" and "Include numerical data."
+
+#### Model Selection Guidance
+
+For the **main LLM**, you want your most capable model. GPT-4, GPT-4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro are all excellent choices. These models are good at following nuanced instructions, which is exactly what stimuli are. They stay frozen — no training needed.
+
+For the **policy model**, think smaller and tunable. T5-small, T5-base, or even a small GPT-2 variant works well. Some teams use Flan-T5 because it's instruction-tuned out of the box. The key is that this model needs to be *trainable* with your domain-specific examples. If you're building a compliance system, you fine-tune this policy model on examples of good compliance hints.
+
+#### Infrastructure Requirements
+
+Here's the reality check: DSP requires **training infrastructure** for your policy model. You need a dataset of inputs paired with good stimulus hints. You need compute for fine-tuning (though it's modest for small models). And you need serving infrastructure to run two models — though the policy model is fast and cheap to run. Many teams deploy the policy model on CPU instances since it's so small, and reserve GPU for the main LLM.
+
+#### Real-World Implementation Tips
+
+Start simple. Before building a trainable policy model, try a **rule-based stimulus generator** first. Write if-else logic: if input contains "medical," return stimulus "Focus on patient outcomes." This validates whether DSP helps your use case before you invest in training. Once you confirm value, collect examples and fine-tune a real policy model. You'll be surprised how quickly a small T5 learns to generate good hints with just a few hundred examples.
+
+> The magic of DSP is in the stimulus design. Spend time crafting clear, actionable hints — they're the steering instructions that make everything else work.`
         },
         {
           id: 54,
@@ -2369,17 +2473,57 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Stimulus drift as policy model learns</li>
-                <li>Extra infrastructure to train and host policy model</li>
-                <li>Potential for bias amplification</li>
-                <li>Coordination complexity between two models</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Stimulus drift as policy model learns</li>
+                  <li>Extra infrastructure to train and host policy model</li>
+                  <li>Potential for bias amplification</li>
+                  <li>Coordination complexity between two models</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### The Realities and Trade-offs of Directional Stimulus Prompting
+
+Every powerful technique has its trade-offs, and DSP is no exception. Let's talk honestly about the challenges and considerations you'll face implementing this approach.
+
+#### Stimulus Drift - The Creeping Challenge
+
+Here's a subtle but important issue: **stimulus drift**. As your policy model continues learning from new examples or feedback, the *style and content* of its hints can gradually change. Imagine you trained the model to generate concise, factual hints. Over time, as it sees more data, it might start generating longer, more elaborate hints — or shift to emphasizing different aspects. This drift can be good (the model gets better) or bad (it deviates from your intended behavior). 
+
+The solution? **Regular monitoring and validation**. Set up automated checks to measure stimulus quality. Compare generated hints against gold-standard examples. Some teams implement "stimulus regression tests" — a test suite of inputs where you know what hints you expect. If drift is detected, you can retrain with fresh examples or adjust your training procedure. Think of it like calibrating a scientific instrument — you need to check periodically that it's still measuring what you intended.
+
+#### Infrastructure and Operational Overhead
+
+Let's be clear: DSP is **not the simplest technique** to deploy. You need training infrastructure to fine-tune your policy model. You need serving infrastructure to run two models. You need monitoring to track both models' performance. You need version control for both models — because when you update the policy model, outputs change even though the main LLM is frozen. This is manageable, but it's more operational complexity than simple prompting.
+
+The good news? The policy model is **small and cheap**. A T5-small model runs in milliseconds on CPU. Training takes minutes to hours, not days. So while there's overhead, it's not overwhelming. Many teams find the benefits — consistent, steerable outputs — justify the extra complexity.
+
+#### Bias Amplification Risk
+
+Here's a critical consideration: DSP can **amplify biases**. If your policy model learns to generate hints that systematically emphasize certain perspectives over others, those biases get baked into every output. For example, if your policy model is trained mostly on data from a specific demographic or industry, it might generate stimuli that reflect those narrow viewpoints.
+
+Mitigation strategies include: diverse training data for your policy model, regular bias audits on generated stimuli, and human-in-the-loop review of policy model outputs before they're used at scale. Some teams implement "stimulus fairness checks" — automated tests that verify hints are balanced across different input types.
+
+#### Coordination Complexity
+
+Managing **two models** means coordinating two different failure modes. What if the policy model generates a malformed hint? What if the main LLM ignores the stimulus? What if there's latency in the policy model that affects overall system performance? You need robust error handling and fallback strategies. Many implementations have a "default stimulus" that kicks in if the policy model fails, ensuring the system doesn't break completely.
+
+#### When DSP Is Worth It (And When It's Not)
+
+Here's the practical guidance: DSP is **worth the complexity** when you need consistent, domain-specific steering across thousands or millions of requests. It's excellent for compliance, where every output must hit specific requirements. It's great for multi-tenant systems where different customers need different emphasis. It's powerful for educational content where the same topic needs different framing for different audiences.
+
+DSP is **overkill** if you're making a few dozen requests and can manually craft each prompt. It's probably too complex if your steering needs are simple (use system prompts instead). And it's not ideal if you can't invest in maintaining the infrastructure.
+
+#### Final Thoughts on Trade-offs
+
+Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler techniques can't achieve, but it requires skill and care to use safely. Start with simpler techniques like few-shot prompting or system prompts. Graduate to DSP when you've proven the value and you're ready for the engineering investment.
+
+> Remember: complexity should be justified by necessity. Use DSP when its unique benefits — trainable, instance-specific steering — solve a real problem that simpler methods can't address.`
         }
       ]
     },
