@@ -2547,10 +2547,12 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
                 <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} duration={0.6}>
-                <div><li>Correct result from executed program</li></div>
-                <div><li>Exact computation for arithmetic and logic</li></div>
-                <div><li>Deterministic execution reduces hallucination</li></div>
-                <div><li>Reusable and testable code generation</li></div>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Correct result from executed program</li>
+                  <li>Exact computation for arithmetic and logic</li>
+                  <li>Deterministic execution reduces hallucination</li>
+                  <li>Reusable and testable code generation</li>
+                </ul>
               </GSAPStaggerList>
               <GSAPAnimated animation="bounceIn" delay={1.4}>
                 <p style={{ marginTop: '20px' }}>Best for arithmetic tasks, symbolic reasoning, and algorithmic problems. Delegates computation to code execution for accuracy.</p>
@@ -2627,10 +2629,12 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.2} duration={0.7}>
-                <div><li>Execution sandboxing required for security</li></div>
-                <div><li>Runtime errors can fail the entire process</li></div>
-                <div><li>Code injection risk if inputs are untrusted</li></div>
-                <div><li>Limited to problems expressible as code</li></div>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Execution sandboxing required for security</li>
+                  <li>Runtime errors can fail the entire process</li>
+                  <li>Code injection risk if inputs are untrusted</li>
+                  <li>Limited to problems expressible as code</li>
+                </ul>
               </GSAPStaggerList>
             </div>
           ),
