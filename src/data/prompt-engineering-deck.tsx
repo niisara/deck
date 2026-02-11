@@ -2537,20 +2537,28 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Model writes code as intermediate steps and delegates execution to an interpreter.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Correct result from executed program</li>
-                <li>Exact computation for arithmetic and logic</li>
-                <li>Deterministic execution reduces hallucination</li>
-                <li>Reusable and testable code generation</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for arithmetic tasks, symbolic reasoning, and algorithmic problems. Delegates computation to code execution for accuracy.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Model writes code as intermediate steps and delegates execution to an interpreter.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div><li>Correct result from executed program</li></div>
+                <div><li>Exact computation for arithmetic and logic</li></div>
+                <div><li>Deterministic execution reduces hallucination</li></div>
+                <div><li>Reusable and testable code generation</li></div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.4}>
+                <p style={{ marginTop: '20px' }}>Best for arithmetic tasks, symbolic reasoning, and algorithmic problems. Delegates computation to code execution for accuracy.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `Welcome to PAL - and yes, it's pronounced just like your friend, "pal" 👉 'pal'. This is one of the most practical techniques when you need precision. Here's the key insight: language models are great at understanding problems but terrible at math. PAL solves this beautifully by having the model generate Python code instead of trying to calculate directly. Think of it as having a smart assistant who knows when to hand off work to a calculator. The model reads your problem, writes the code to solve it, and then we execute that code in a proper interpreter to get an exact answer. No more hallucinated numbers! This is perfect for things like financial calculations, inventory optimization, or any scenario where "close enough" isn't good enough. The benefits are clear: you get deterministic results, you can test and reuse the generated code, and you avoid the LLM's tendency to make up numbers. It's like having the best of both worlds - natural language understanding combined with computational precision.`
         },
         {
           id: 56,
@@ -2558,17 +2566,31 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>PAL asks the LLM to generate code (typically Python) as an intermediate representation of the solution. This code is then executed in a sandboxed interpreter. The execution results become the final answer. This approach leverages the preciseness of code execution while using the LLM's natural language understanding to translate problems into executable programs.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro + Python runtime with sandboxing</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>PAL asks the LLM to generate code (typically Python) as an intermediate representation of the solution. This code is then executed in a sandboxed interpreter. The execution results become the final answer. This approach leverages the preciseness of code execution while using the LLM's natural language understanding to translate problems into executable programs.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.3}>
+                <p><strong>Best Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro + Python runtime with sandboxing</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={1.6}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={1.9}>
+                <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `So how does PAL actually work? The process is surprisingly elegant. You give the model your problem in plain English, and instead of asking it to solve the problem directly, you explicitly instruct it to write Python code. The model generates this code as a string - maybe it's a function to calculate optimal coin change, or a script to solve a scheduling problem. Then, the magic happens: we take that generated code and run it through a real Python interpreter. We're using actual Python here, not the LLM pretending to execute code. This gives us exact, reliable results. Now, this is definitely an advanced technique. You need infrastructure - a sandboxed Python runtime to safely execute code. You can't just run arbitrary code without security measures. Models like GPT-4o, Claude 3.5, and Gemini 1.5 Pro are excellent at generating syntactically correct and logically sound code. For a real-world example, imagine you're running a warehouse and need to optimize inventory allocation across multiple locations with complex constraints - minimums, maximums, shipping costs, demand predictions. PAL can generate and execute dynamic programming solutions that give you exact optimal answers, not approximations. This is the kind of problem where precision matters and traditional LLM outputs would be unreliable.`
         },
         {
           id: 57,
@@ -2576,16 +2598,24 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4o, Claude 3.5, Gemini 1.5 Pro - Models with strong code generation capabilities. Requires secure Python runtime environment with proper sandboxing to prevent malicious code execution.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.4}>
+                <p>GPT-4o, Claude 3.5, Gemini 1.5 Pro - Models with strong code generation capabilities. Requires secure Python runtime environment with proper sandboxing to prevent malicious code execution.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `Let's look at a concrete implementation example. Here's a classic dynamic programming problem - the coin change problem. You need to make 47 cents using the fewest coins, and you have denominations of 1, 4, and 6 cents. Your prompt is straightforward: "Write a Python function that computes the minimum coins for this problem." The key is being explicit - you want code, not an explanation. The model will generate something like a dynamic programming solution with memoization. Then your Python executor - maybe you're using RestrictedPython, or a sandboxed subprocess, or even a containerized environment - runs that code and returns the exact answer: 9 coins. The beauty here is separation of concerns. The LLM is doing what it does best: understanding the problem structure and translating it to code. Python is doing what it does best: executing algorithms precisely. You're not asking the LLM to simulate execution mentally, which is where things go wrong. Now, about models - you want GPT-4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro. These models have been trained extensively on code and produce syntactically correct, well-structured Python. But remember: you absolutely must have a secure runtime. Use sandboxing libraries, run in containers, or use cloud functions with resource limits. Never execute untrusted generated code directly in your production environment.`
         },
         {
           id: 58,
@@ -2593,17 +2623,19 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Execution sandboxing required for security</li>
-                <li>Runtime errors can fail the entire process</li>
-                <li>Code injection risk if inputs are untrusted</li>
-                <li>Limited to problems expressible as code</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.7}>
+                <div><li>Execution sandboxing required for security</li></div>
+                <div><li>Runtime errors can fail the entire process</li></div>
+                <div><li>Code injection risk if inputs are untrusted</li></div>
+                <div><li>Limited to problems expressible as code</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `Now let's talk about the reality check - what you need to watch out for with PAL. First and foremost: security. This is critical. You're executing code that an AI generated, which means you need rock-solid sandboxing. Use proper isolation - containers, restricted Python environments, or serverless functions with tight timeouts and resource limits. Treat generated code as untrusted input, because that's what it is. Second consideration: runtime errors. The model might generate syntactically valid code that still crashes - maybe it divides by zero, or references a variable that doesn't exist, or runs into an edge case. You need error handling that catches these failures gracefully and either retries with clarification or falls back to a different approach. Third: code injection risks. If user input goes into your PAL prompts, sanitize it carefully. Someone could craft input that makes the model generate malicious code. And finally, recognize the scope limitation - PAL is amazing for computational problems, algorithmic challenges, mathematical optimization. But it's not useful for creative writing, subjective analysis, or problems that don't map cleanly to code logic. So when you're designing your system, think carefully about which problems are PAL-appropriate. Use it where precision matters and the problem has a computational solution. For everything else, stick with traditional prompting techniques. PAL is powerful, but it's a specialized tool for specific use cases.`
         }
       ]
     },
