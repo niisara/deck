@@ -2062,7 +2062,15 @@ Next, Strategy 13: Template-Based Rewriting.`
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: ''
+          notes: `### 54 · Template-Based Rewriting — Overview
+Strategy 13 is **Template-Based Rewriting**, which brings consistency and speed to query transformation.
+#### 🎯 What Is It?
+Instead of generating a new rewrite for every query, you maintain a library of **predefined templates** for common query patterns. When a user asks a comparison question, you slot their terms into a comparison template. When they ask a troubleshooting question, you use a troubleshooting template. Think of it like Mad Libs for queries — the structure is fixed, you just fill in the blanks.
+#### ✅ Pros
+The good stuff: **consistent query quality** because every query of the same type gets the same structure. **Fast execution** with low latency since template filling is cheaper than full LLM generation. **Predictable behavior** that's easy to test and debug. And it **enforces standardized formats** that your retrieval system can be optimized for.
+#### 🕐 When to Use This?
+Best for **customer support and documentation QA**, **e-commerce product search**, **specialized domain knowledge** bases, and any scenario with **high-volume, predictable query patterns**.
+Let's see how it works.`
         },
         {
           id: 55,
@@ -2081,7 +2089,12 @@ Next, Strategy 13: Template-Based Rewriting.`
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: ''
+          notes: `### 55 · Template-Based Rewriting — How It Works
+The system matches queries to predefined templates and fills in the slots.
+#### 🔄 The Template Types
+There are several common template types. **Lookup templates** for finding specific items: "Find information about [product] in [category]." **Comparison templates** for contrasting items: "Compare [A] vs [B] by [attribute] in [timeframe]." **Troubleshooting templates** for fixing problems: "[error] resolution for [system] on [platform]." And **how-to templates** for procedural questions: "How to [task] with [constraints]."
+The beauty is that each template type can be optimized independently. Your comparison template can include structure that your retrieval system knows how to handle efficiently, while your troubleshooting template uses different search strategies.
+Let's look at the implementation.`
         },
         {
           id: 56,
@@ -2112,7 +2125,14 @@ Available templates:
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: ''
+          notes: `### 56 · Template-Based Rewriting — Implementation
+The implementation follows a classify-select-fill pattern.
+#### 💻 The Prompt
+The prompt provides the intent type and available templates, then asks the LLM to fill in the appropriate template with slots from the query. This is much cheaper than generating a full rewrite from scratch because the LLM only needs to extract entities and slot them in.
+#### ⚙️ The Code
+The code first classifies the intent, selects the matching template, extracts slot values from the query, and fills the template. The result is a structured, standardized query that follows a known pattern.
+One practical tip: start with five to ten templates covering your most common query patterns. You can always add more later. Monitor which queries don't match any template and use those to guide new template creation.
+Let's see an example.`
         },
         {
           id: 57,
@@ -2136,7 +2156,14 @@ Available templates:
             </div>
           ),
           backgroundColor: '#7b1e41',
-          notes: ''
+          notes: `### 57 · Template-Based Rewriting — Example & Considerations
+Here's template-based rewriting in action.
+#### 📝 Before and After
+The user searches "compare s3 vs gcs pricing." The system detects a comparison intent, selects the comparison template, and fills it in: "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1-10 TB, standard tier, 2024." Notice how the template adds the volume range, tier, and year — information that makes the retrieval much more targeted.
+#### ⚠️ Watch Out For
+The downsides: **rigid structure limits flexibility** — novel query types that don't fit any template get handled poorly. **Template maintenance** is ongoing work as new patterns emerge. The system **struggles with novel queries** that don't match existing patterns. And **intent classification errors cascade** — if you pick the wrong template, the entire rewrite is wrong.
+The key insight: template-based rewriting is perfect for **known, recurring query patterns**. Use it alongside more flexible strategies for novel queries.
+Next, Strategy 14: Entity-Centric Rewriting.`
         }
       ]
     },
@@ -2172,7 +2199,15 @@ Available templates:
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: ''
+          notes: `### 58 · Entity-Centric Rewriting — Overview
+Strategy 14 is **Entity-Centric Rewriting**, which focuses on identifying, disambiguating, and enriching entities in queries.
+#### 🎯 What Is It?
+When a user searches "jaguar speed," what do they mean? The animal? The car? The macOS version? Entity-centric rewriting uses **Named Entity Recognition** (NER 👉 'ner') and **entity linking** to figure out which entities the user is referring to, then rewrites the query with disambiguated, canonical entity names.
+#### ✅ Pros
+The good stuff: it **significantly improves precision** by eliminating entity ambiguity. It **enables knowledge graph integration** for richer queries. It **solves homonym and polysemy issues** — the same word meaning different things. It can **add helpful entity attributes** like types, categories, and relationships. And it **reduces irrelevant results** caused by entity confusion.
+#### 🕐 When to Use This?
+Best for **knowledge graph integration**, **product catalogs**, **people, places, and organization queries**, **ambiguous entity names**, and **domain-specific entity collections**.
+Let's see the process.`
         },
         {
           id: 59,
@@ -2191,7 +2226,12 @@ Available templates:
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: ''
+          notes: `### 59 · Entity-Centric Rewriting — How It Works
+The process follows an extract-link-enrich-reformulate pipeline.
+#### 🔄 The Pipeline
+First, **NER extraction** identifies all entities in the query — people, organizations, products, locations, technical terms. Second, **entity linking** connects each entity to a canonical ID in your knowledge base. Third, **entity enrichment** adds attributes from the knowledge base — types, categories, relationships. Finally, **disambiguation with entity types** clarifies which specific entity the user means.
+For example, "Apple" in a food context links to the fruit entity, while "Apple" in a tech context links to Apple Inc. The system uses surrounding terms and context to make this determination.
+Let's look at the implementation.`
         },
         {
           id: 60,
@@ -2227,7 +2267,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: ''
+          notes: `### 60 · Entity-Centric Rewriting — Implementation
+The implementation combines NER with knowledge base linking.
+#### 💻 The Prompt
+The prompt asks the LLM to identify all entities, determine their types, link them to canonical names or IDs, add disambiguation information, and then rewrite the query with the resolved entities.
+#### ⚙️ The Code
+The code extracts entities using an NER model, links them to a knowledge base for canonical names, and then rewrites the query with the disambiguated entities. This is more infrastructure-heavy than other strategies because you need both an NER model and a knowledge base.
+A practical alternative: if you don't have a full knowledge base, you can use the LLM itself for entity disambiguation by providing it with a list of known entities and their types. It's less precise but much easier to implement.
+Let's see an example.`
         },
         {
           id: 61,
@@ -2252,7 +2299,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b71',
-          notes: ''
+          notes: `### 61 · Entity-Centric Rewriting — Example & Considerations
+Here's entity-centric rewriting solving the classic ambiguity problem.
+#### 📝 Before and After
+The user searches "jaguar speed." The system identifies "jaguar" as an ambiguous entity — it could be the animal Panthera onca or the automobile manufacturer. Based on context or user profile, it rewrites to "Jaguar (animal: Panthera onca) top speed; exclude Jaguar (brand: automobile manufacturer)." Now the retrieval system knows exactly which jaguar to search for.
+#### ⚠️ Watch Out For
+The challenges: you **need a knowledge graph or entity database**, which is a significant infrastructure investment. The **entity linking system is complex** to build and maintain. It **struggles with novel or unknown entities** not in your knowledge base. There's **risk of incorrect disambiguation** when context is insufficient. And the overall **implementation complexity is higher** than simpler strategies.
+The key insight: entity-centric rewriting is **essential for domains with many ambiguous entities** — product catalogs, medical terminology, geographic locations. For general-purpose search, simpler strategies may suffice.
+Next, Strategy 15: Temporal Rewriting.`
         }
       ]
     },
@@ -2287,7 +2341,15 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: ''
+          notes: `### 62 · Temporal Rewriting — Overview
+Strategy 15 is **Temporal Rewriting**, which handles one of the most common but overlooked problems in search: time.
+#### 🎯 What Is It?
+When a user asks for "latest OpenAI API quotas," what does "latest" mean? Today? This month? This year? Temporal rewriting **makes time references explicit** by resolving relative dates, adding date ranges, and boosting recency for time-sensitive topics.
+#### ✅ Pros
+The good stuff: it **reduces stale and outdated results** — no more getting 2019 pricing when the user wants 2024 data. It provides **significant relevance gains** for time-sensitive topics. It **improves specificity** for versioned documentation — "React 18" vs "React 19" makes a huge difference. And it **handles implicit temporal context** automatically — "latest" and "current" get resolved to actual dates.
+#### 🕐 When to Use This?
+Best for **news and current events**, **product pricing and availability**, **API documentation and changelogs**, **policy and regulation updates**, and **documentation with versioning**.
+Let's see the mechanics.`
         },
         {
           id: 63,
@@ -2306,7 +2368,12 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: ''
+          notes: `### 63 · Temporal Rewriting — How It Works
+Temporal rewriting resolves and enhances time aspects through several techniques.
+#### 🔄 The Process
+**Relative time normalization** converts expressions like "yesterday," "last month," or "recently" into specific dates. **Adding explicit date ranges** constrains results to relevant time periods. **Recency boosting** prioritizes newer documents for topics where freshness matters. And **resolving ambiguous temporal references** clarifies what "latest" or "current" means in context.
+This is surprisingly impactful. Consider a search for "Python best practices" — results from 2018 recommending Python 2 are actively harmful. By adding a time constraint, you ensure the user gets current, relevant information.
+Let's see the implementation.`
         },
         {
           id: 64,
@@ -2339,7 +2406,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: ''
+          notes: `### 64 · Temporal Rewriting — Implementation
+The implementation combines date parsing with LLM-powered time resolution.
+#### 💻 The Prompt
+The prompt provides the current date and asks the LLM to normalize any relative time expressions to absolute dates, then add an explicit date range that's most relevant to the query. The output format includes the original query plus a "from start date to end date" suffix.
+#### ⚙️ The Code
+The implementation is clean: get the current date, pass it along with the query to the LLM, and receive a time-normalized rewrite. The LLM handles both explicit relative terms like "last week" and implicit temporal context like "latest" or "current."
+A practical tip: you can implement basic temporal rewriting with **simple regex rules** for common patterns like "today," "this year," "last quarter." Fall back to the LLM only for complex or ambiguous temporal expressions.
+Let's see an example.`
         },
         {
           id: 65,
@@ -2363,7 +2437,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#341e7b',
-          notes: ''
+          notes: `### 65 · Temporal Rewriting — Example & Considerations
+Here's temporal rewriting in action.
+#### 📝 Before and After
+The user searches "latest OpenAI API quotas." After temporal rewriting, it becomes "OpenAI API rate limits as of 2025-11; changes in 2024-2025." Now the retrieval system knows to prioritize recent documents and focus on the specific time period that matters.
+#### ⚠️ Watch Out For
+The risks: it **requires a fresh and updated index** — temporal constraints are useless if your documents don't have accurate timestamps. It **may miss historically relevant information** that provides important context. It **needs fine-tuning for specific domains** — "latest" means different things in fast-moving tech versus slow-changing legal. And it can **over-specify time constraints**, filtering out relevant documents that don't have explicit dates.
+The key insight: temporal rewriting is a **quick win** with high impact. Even basic date normalization can significantly improve result relevance. Start simple with regex-based rules and add LLM-based resolution for complex cases.
+Next, Strategy 16: Domain-Specific Rewriting.`
         }
       ]
     },
@@ -2398,7 +2479,15 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: ''
+          notes: `### 66 · Domain-Specific Rewriting — Overview
+Strategy 16 is **Domain-Specific Rewriting**, which is similar to semantic bridging but goes deeper into domain expertise.
+#### 🎯 What Is It?
+While semantic bridging maps terms to ontologies, domain-specific rewriting **fully translates** lay queries into expert-level formulations with field-specific constraints. It doesn't just replace "blood thinner" with "anticoagulant" — it adds specific drug names, complication types, and field tags.
+#### ✅ Pros
+The good stuff: **high precision in specialized corpora** because queries match expert terminology exactly. **Better matching to expert terminology** that documents actually use. **Improved semantic relevance** across the board. And **efficient filtering via field constraints** that narrow the search space.
+#### 🕐 When to Use This?
+Best for **legal research**, **medical and healthcare information**, **financial and investment analysis**, **technical engineering documentation**, and **scientific literature search**.
+Let's see how it works.`
         },
         {
           id: 67,
@@ -2417,7 +2506,12 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: ''
+          notes: `### 67 · Domain-Specific Rewriting — How It Works
+The system maps queries to domain terminology and applies field constraints.
+#### 🔄 The Process
+The system uses **specialized domain lexicons and ontologies** — curated vocabularies for each field. It applies **field-specific constraints and filters** — like specifying "pharmacology" as the field for a drug query. It performs **terminology standardization** — ensuring consistent use of canonical terms. And it leverages **expert-guided jargon translation** — mapping lay descriptions to precise technical language.
+Think of it like having a specialist librarian for each domain. When you walk into a medical library and ask about "blood thinners," the librarian knows to search for anticoagulants, specific drug classes, and relevant medical subfields.
+Let's see the implementation.`
         },
         {
           id: 68,
@@ -2455,7 +2549,14 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: ''
+          notes: `### 68 · Domain-Specific Rewriting — Implementation
+The implementation loads domain ontologies and applies them to queries.
+#### 💻 The Prompt
+The prompt instructs the LLM to rewrite the query using domain-appropriate terminology, preserving the original intent but using precise technical terms, standard classifications, and field constraints.
+#### ⚙️ The Code
+The code loads a domain-specific ontology, generates the domain-aware rewrite using the LLM with the ontology as context, and then adds field constraints specific to the domain. The result is a query that looks like it was written by a domain expert.
+A practical consideration: you can build lightweight domain ontologies by extracting terms from your own corpus. You don't need a full medical ontology — just a mapping of the most common lay terms to expert equivalents for your specific document collection.
+Let's see an example.`
         },
         {
           id: 69,
@@ -2479,7 +2580,14 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b3b1e',
-          notes: ''
+          notes: `### 69 · Domain-Specific Rewriting — Example & Considerations
+Here's a medical example.
+#### 📝 Before and After
+The user searches "blood thinner side effects." After domain-specific rewriting, it becomes "anticoagulant adverse effects: warfarin, DOACs 👉 'dee-oh-aks' (apixaban, rivaroxaban), hemorrhagic complications field:pharmacology." The rewrite adds specific drug names, drug classes, complication types, and a field constraint — everything a medical professional would search for.
+#### ⚠️ Watch Out For
+The challenges: it **requires domain-specific knowledge and lexicons** that take effort to build. It's **harder to maintain across evolving domains** as new terminology emerges. It **may over-specialize simple queries** that don't need expert-level formulation. And it **needs separate models per domain**, which increases infrastructure complexity.
+The key insight: domain-specific rewriting delivers the **highest precision** for specialized searches. If your RAG system serves a specific vertical like legal, medical, or financial, this strategy is essential.
+Next, Strategy 17: Intent Classification and Rewriting.`
         }
       ]
     },
@@ -2513,7 +2621,15 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: ''
+          notes: `### 70 · Intent Classification — Overview
+Strategy 17 is **Intent Classification and Rewriting**, which acts as a **router** that directs queries to the most appropriate rewriting strategy.
+#### 🎯 What Is It?
+Instead of applying the same rewriting strategy to every query, intent classification first figures out **what kind of query it is**, then applies the strategy that works best for that type. A lookup query gets entity-centric rewriting. A comparison query gets multi-query generation. A troubleshooting query gets step-back prompting. It's like having a traffic controller for your query rewriting pipeline.
+#### ✅ Pros
+The good stuff: **centralized policy control** — you manage all strategies from one place. **Highly scalable** across domains and query types. It **adapts to varied query patterns** automatically. And you can **optimize different metrics per intent** — precision for lookups, recall for comparisons.
+#### 🕐 When to Use This?
+Best for **mixed query workloads**, **systems with agent-based routing**, **enterprise search with diverse needs**, and **multi-domain knowledge bases**.
+Let's see the routing logic.`
         },
         {
           id: 71,
@@ -2532,7 +2648,12 @@ Domain: {domain}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: ''
+          notes: `### 71 · Intent Classification — How It Works
+The system classifies queries into intent categories and routes them to specific strategies.
+#### 🔄 The Routing Map
+**Lookup queries** go to entity-centric rewriting — "What is X?" gets entity disambiguation and enrichment. **Comparison queries** go to multi-query and structured expansion — "A vs B" gets split into parallel searches. **Troubleshooting queries** go to step-back prompting and domain-specific rewriting — error messages get abstracted to root causes. **Generation queries** go to template-based rewriting — "Write me a" gets structured templates.
+The power of this approach is that each query type gets the **optimal strategy**, rather than a one-size-fits-all approach. This is especially important in production systems where query types are diverse.
+Let's see the implementation.`
         },
         {
           id: 72,
@@ -2568,7 +2689,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: ''
+          notes: `### 72 · Intent Classification — Implementation
+The implementation combines an intent classifier with a strategy router.
+#### 💻 The Prompt
+The prompt classifies the query into one of four categories: lookup, compare, troubleshoot, or generate. It then rewrites the query optimized for that specific intent type and returns both the intent label and the rewritten query.
+#### ⚙️ The Code
+The code uses an intent classifier to predict the query type, looks up the appropriate strategy from a router dictionary, and applies that strategy's rewrite method. Clean and modular — you can add new intents and strategies without changing the core logic.
+A practical tip: start with a simple rule-based classifier using keyword patterns before investing in a trained model. Phrases containing "vs" or "compare" are comparison intents. Questions starting with "how to fix" are troubleshooting. You can upgrade to ML-based classification later.
+Let's see an example.`
         },
         {
           id: 73,
@@ -2592,7 +2720,15 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#7b1e35',
-          notes: ''
+          notes: `### 73 · Intent Classification — Example & Considerations
+Here's intent-based routing in action.
+#### 📝 Before and After
+The user searches "fix 500 error nginx." The system classifies this as a **troubleshoot** intent. The troubleshooting strategy rewrites it to "Nginx 500 error troubleshooting steps for Ubuntu 22.04 — common causes, log file analysis, and configuration fixes." The strategy adds platform context, problem categories, and specific troubleshooting aspects that improve retrieval.
+#### ⚠️ Watch Out For
+The challenges: you need a **high-accuracy intent model** because misclassification leads to the wrong strategy. The **intent taxonomy needs maintenance** as new query patterns emerge. **Multi-intent queries are challenging** — what if a query is both a comparison and a troubleshooting request? And there's **more engineering overhead** to build and maintain the routing infrastructure.
+> 🎤 Ask the audience: "What types of queries do your users most commonly ask? Lookups? Comparisons? Troubleshooting?"
+The key insight: intent classification is the **glue** that connects all other strategies. Once you have it, you can pick and choose which strategies to apply to which query types.
+Next, Strategy 18: Diverse Multi-Query Rewriting.`
         }
       ]
     },
