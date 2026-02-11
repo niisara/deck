@@ -40,15 +40,15 @@ export const metadataEnrichmentDeck: Deck = {
           ),
           backgroundColor: '#14283d',
           notes: `### 9 Metadata Enrichment Tricks
-Welcome everyone! Today we're diving into one of the most powerful yet often overlooked aspects of building effective RAG systems: **metadata enrichment**. Think of metadata as the secret sauce that transforms your basic document search into an intelligent, context-aware retrieval system.
+[cheerfully] Welcome everyone! [excited] Today we're diving into one of the most powerful yet often overlooked aspects of building effective RAG systems: **metadata enrichment**. Think of metadata as the secret sauce that transforms your basic document search into an intelligent, context-aware retrieval system.
 
 #### What Makes This Presentation Special
-We're not just going to talk about theory here. You'll walk away with **nine field-proven techniques** that you can implement immediately in your projects. Each trick comes with practical implementation steps, real metadata examples, and best practices that I've learned from building production RAG systems.
+[energetic] We're not just going to talk about theory here. You'll walk away with **nine field-proven techniques** that you can implement immediately in your projects. Each trick comes with practical implementation steps, real metadata examples, and best practices that I've learned from building production RAG systems.
 
 #### Why Metadata Matters
-Here's the thing: when you chunk a document for RAG, you're essentially tearing pages out of a book. Without metadata, each chunk is like a page ripped out with no context. You don't know what chapter it came from, what it's about, or how it relates to other pages. Metadata is how we preserve and enhance that context, making retrieval dramatically more accurate.
+[conversational] Here's the thing: when you chunk a document for RAG, you're essentially tearing pages out of a book. Without metadata, each chunk is like a page ripped out with no context. You don't know what chapter it came from, what it's about, or how it relates to other pages. [confidently] Metadata is how we preserve and enhance that context, making retrieval dramatically more accurate.
 
-Let's dive in and explore these nine powerful enrichment techniques...`
+[enthusiastically] Let's dive in and explore these nine powerful enrichment techniques...`
         },
         {
           id: 2,
@@ -147,10 +147,10 @@ Let's dive in and explore these nine powerful enrichment techniques...`
           ),
           backgroundColor: '#14283d',
           notes: `### Overview: The 9 Enrichment Tricks
-Let me give you a roadmap of what we'll cover today. I've organized these nine tricks into three logical categories to help you understand how they work together.
+[conversational] Let me give you a roadmap of what we'll cover today. I've organized these nine tricks into three logical categories to help you understand how they work together.
 
 #### Structure & Context: The Foundation
-First, we have **Structure and Context** techniques shown in blue. These are your foundation - they preserve the original structure and meaning of your documents. We'll cover Section-Level Titles, which is the simplest but incredibly powerful trick. Then Semantic Summaries, where we let AI create condensed versions of chunks. And finally, Parent-Child Structure, which maintains the hierarchical relationships between document parts.
+[lecture] First, we have **Structure and Context** techniques shown in blue. These are your foundation - they preserve the original structure and meaning of your documents. We'll cover Section-Level Titles, which is the simplest but incredibly powerful trick. Then Semantic Summaries, where we let AI create condensed versions of chunks. And finally, Parent-Child Structure, which maintains the hierarchical relationships between document parts.
 
 #### Classification & Taxonomy: Organization
 The purple category covers **Classification and Taxonomy**. This is all about organizing and categorizing your content. Document Type Labels help you distinguish between tutorials, API docs, and troubleshooting guides. Entity Tagging uses NER 👉 (N-E-R, Named Entity Recognition) to extract people, places, and organizations. Topic and Category Tags let you assign domain-specific labels. And Keyword Highlights pull out the most important terms from each chunk.
@@ -158,7 +158,7 @@ The purple category covers **Classification and Taxonomy**. This is all about or
 #### Freshness & Trust: Quality Signals
 Finally, in cyan, we have **Freshness and Trust**. These are your quality signals. Time and Version Metadata ensures you're retrieving the most current information. Source Confidence helps you prioritize reliable sources over questionable ones.
 
-Together, these nine tricks form a complete toolkit for intelligent metadata enrichment. Let's dive into each one...`
+[confidently] Together, these nine tricks form a complete toolkit for intelligent metadata enrichment. Let's dive into each one...`
         }
       ]
     },
@@ -227,10 +227,10 @@ Together, these nine tricks form a complete toolkit for intelligent metadata enr
           ),
           backgroundColor: '#1a4d2e',
           notes: `### Section-Level Titles as Metadata
-Our first enrichment trick is **Section-Level Titles**, and it's one of the most powerful yet simple techniques you'll use. This is the foundation that many other tricks build upon.
+[conversational] Our first enrichment trick is **Section-Level Titles**, and it's one of the most powerful yet simple techniques you'll use. This is the foundation that many other tricks build upon.
 
 #### What's the Goal Here?
-The goal is straightforward: we want to **boost retrieval precision** and **reduce hallucinations** by preserving the original section's intent. When you chunk a document, you're breaking it apart. But each chunk came from somewhere specific - maybe from a "Getting Started" section or a "Troubleshooting" section. That context is gold for retrieval.
+[lecture] The goal is straightforward: we want to **boost retrieval precision** and **reduce hallucinations** by preserving the original section's intent. [storytelling] When you chunk a document, you're breaking it apart. But each chunk came from somewhere specific - maybe from a "Getting Started" section or a "Troubleshooting" section. [confidently] That context is gold for retrieval.
 
 #### How Does It Work?
 Here's the implementation: you parse the document structure to find all headers - typically H1 through H3 in HTML or markdown. For each chunk of text, you identify which header it falls under. Then you store three key fields: the section title itself, the heading level 👉 (one through three), and optionally a full section path showing the hierarchy like "Documentation, API Reference, Authentication".
@@ -289,16 +289,16 @@ Now let's look at the pros and cons of this approach...`
           ),
           backgroundColor: '#1a4d2e',
           notes: `### Pros and Cons of Section-Level Titles
-Let's be balanced here. Every technique has trade-offs, and it's important to understand both the strengths and limitations of section-level titles.
+[conversational] Let's be balanced here. Every technique has trade-offs, and it's important to understand both the strengths and limitations of section-level titles.
 
 #### The Pros: Why This Works So Well
-Section titles give you a **strong intent signal**. When a user asks about authentication, you can immediately filter for chunks from authentication sections. This dramatically improves precision. It also enables **better reranking** - you can boost chunks where the section title matches the query topic. Finally, there's the benefit of **improved explainability**. When you show results to users, you can display "This answer comes from the Installation Guide, section three point two" which builds trust.
+[pleased] Section titles give you a **strong intent signal**. When a user asks about authentication, you can immediately filter for chunks from authentication sections. This dramatically improves precision. It also enables **better reranking** - you can boost chunks where the section title matches the query topic. Finally, there's the benefit of **improved explainability**. When you show results to users, you can display "This answer comes from the Installation Guide, section three point two" which builds trust.
 
 #### The Cons: Where It Falls Short
-The main limitation is that this technique is **weak on poorly structured documents**. If someone just wrote a wall of text with no headings, you've got nothing to work with. Also, it **requires robust parsing**. You need reliable code to extract headers correctly from HTML, PDF, Word documents - and each format has its quirks. Parsing isn't always perfect, especially with complex nested structures or documents that use inconsistent heading styles.
+[cautiously] The main limitation is that this technique is **weak on poorly structured documents**. If someone just wrote a wall of text with no headings, you've got nothing to work with. Also, it **requires robust parsing**. You need reliable code to extract headers correctly from HTML, PDF, Word documents - and each format has its quirks. Parsing isn't always perfect, especially with complex nested structures or documents that use inconsistent heading styles.
 
 #### The Key Insight
-Here's what makes this technique so fundamental: section titles provide **essential contextual intent**. They help the model understand not just what the text says, but what it's *about*. This reduces hallucinations because the model has more context. It improves response relevance because you're retrieving topically-aligned chunks. The bottom line? If your documents have headers, use this trick. It's high value for low complexity.
+[confidently] Here's what makes this technique so fundamental: section titles provide **essential contextual intent**. They help the model understand not just what the text says, but what it's *about*. This reduces hallucinations because the model has more context. It improves response relevance because you're retrieving topically-aligned chunks. The bottom line? If your documents have headers, use this trick. It's high value for low complexity.
 
 Now let's move on to document type labels...`
         }
@@ -369,16 +369,16 @@ Now let's move on to document type labels...`
           ),
           backgroundColor: '#1a1f4d',
           notes: `### Document Type Labels
-Moving to our second enrichment trick: **Document Type Labels**. This is about understanding not just what a document says, but what *kind* of document it is.
+[conversational] Moving to our second enrichment trick: **Document Type Labels**. This is about understanding not just what a document says, but what *kind* of document it is.
 
 #### Understanding the Goal
-The goal here is to **improve precision by matching user intent to document role**. Think about it: if someone asks "What's our refund policy?", you want to retrieve from policy documents, not from casual emails or meeting notes. If they ask "How do I reset my password?", an FAQ or tutorial is more helpful than a specification document.
+[lecture] The goal here is to **improve precision by matching user intent to document role**. [storytelling] Think about it: if someone asks "What's our refund policy?", you want to retrieve from policy documents, not from casual emails or meeting notes. If they ask "How do I reset my password?", an FAQ or tutorial is more helpful than a specification document.
 
 #### How Document Type Classification Works
-The implementation combines **rules and machine learning**. You use signals like file path - documents in the slash-policies folder are probably policies. Layout patterns matter too - FAQs have that distinctive question-and-answer structure. Keywords are helpful: documents with "standard operating procedure" in the title are likely SOPs 👉 (S-O-Ps, Standard Operating Procedures). You can start with simple rules and progressively add ML for trickier cases.
+The implementation combines **rules and machine learning**. You use signals like file path - documents in the slash-policies folder are probably policies. Layout patterns matter too - FAQs have that distinctive question-and-answer structure. [conversational] Keywords are helpful: documents with "standard operating procedure" in the title are likely SOPs 👉 (S-O-Ps, Standard Operating Procedures). You can start with simple rules and progressively add ML for trickier cases.
 
 #### Implementation Steps
-First, define your **controlled vocabulary** of document types. Common ones include FAQ, policy, SOP, email, memo, and meeting notes. Keep it manageable - maybe five to ten types. Next, build heuristic features and train a lightweight classifier. Use something simple like logistic regression or a small neural network. Then backfill your historical documents. Finally, store the document type, and optionally add department and audience tags. At retrieval time, filter by type or boost documents of the relevant type.
+[confidently] First, define your **controlled vocabulary** of document types. Common ones include FAQ, policy, SOP, email, memo, and meeting notes. Keep it manageable - maybe five to ten types. Next, build heuristic features and train a lightweight classifier. Use something simple like logistic regression or a small neural network. Then backfill your historical documents. Finally, store the document type, and optionally add department and audience tags. At retrieval time, filter by type or boost documents of the relevant type.
 
 #### When to Use This
 This technique shines when you have a **mixed corpus** - FAQs mixed with support tickets, emails, specifications. Knowledge bases with varied document types are perfect candidates. It's especially valuable in support and customer service contexts where the document format really matters to answering the question correctly.
@@ -433,16 +433,16 @@ Now let's examine the trade-offs...`
           ),
           backgroundColor: '#1a1f4d',
           notes: `### Pros and Cons of Document Type Labels
-Let's evaluate document type labels objectively. This technique has some compelling advantages but also requires upfront investment.
+[conversational] Let's evaluate document type labels objectively. This technique has some compelling advantages but also requires upfront investment.
 
 #### The Advantages
-Document types provide a **fast filter for retrieval**. You can quickly narrow down your search space before even doing semantic search. This **reduces irrelevant context** that might confuse the language model. There's also a governance benefit - having explicit document types is **good for governance** and compliance, helping you track what types of content you have and who can access what. Finally, it **improves user satisfaction** because people get answers in the format they expect.
+[pleased] Document types provide a **fast filter for retrieval**. You can quickly narrow down your search space before even doing semantic search. This **reduces irrelevant context** that might confuse the language model. There's also a governance benefit - having explicit document types is **good for governance** and compliance, helping you track what types of content you have and who can access what. Finally, it **improves user satisfaction** because people get answers in the format they expect.
 
 #### The Challenges
-The main challenge is the **initial labeling effort**. Someone needs to classify your existing documents, which can be time-consuming for large corpora. You can use semi-supervised learning to reduce this burden, but you still need a seed set of labeled examples. Another issue is **classifier drift** - document patterns change over time, so you need periodic audits to ensure your classifier stays accurate. Finally, you need **governance of your label taxonomy**. If people start creating new document types haphazardly, your controlled vocabulary breaks down.
+[cautiously] The main challenge is the **initial labeling effort**. Someone needs to classify your existing documents, which can be time-consuming for large corpora. You can use semi-supervised learning to reduce this burden, but you still need a seed set of labeled examples. Another issue is **classifier drift** - document patterns change over time, so you need periodic audits to ensure your classifier stays accurate. Finally, you need **governance of your label taxonomy**. If people start creating new document types haphazardly, your controlled vocabulary breaks down.
 
 #### The Core Value Proposition
-The key insight is that document type labels provide **contextual relevance for different user intents**. They ensure responses match the appropriate format and purpose. A policy question gets answered with policy documents. A how-to question gets answered with tutorials. This alignment between intent and document type is fundamental to delivering satisfying answers. The upfront investment pays off through better retrieval precision and happier users.
+[confidently] The key insight is that document type labels provide **contextual relevance for different user intents**. They ensure responses match the appropriate format and purpose. A policy question gets answered with policy documents. A how-to question gets answered with tutorials. This alignment between intent and document type is fundamental to delivering satisfying answers. The upfront investment pays off through better retrieval precision and happier users.
 
 Next, let's explore entity tagging with named entity recognition...`
         }
@@ -515,19 +515,19 @@ Next, let's explore entity tagging with named entity recognition...`
           ),
           backgroundColor: '#4d1a43',
           notes: `### Entity Tagging with NER
-Now we're getting into more advanced territory with **Entity Tagging** using **Named Entity Recognition** or NER 👉 (N-E-R). This technique extracts structured information about real-world entities from unstructured text.
+[conversational] Now we're getting into more advanced territory with **Entity Tagging** using **Named Entity Recognition** or NER 👉 (N-E-R). This technique extracts structured information about real-world entities from unstructured text.
 
 #### The Goal of Entity Tagging
-Entity tagging gives you **precision through entity filters**. If someone searches for documents about "Microsoft", you want to find all chunks where Microsoft is mentioned, even if they abbreviate it as "MSFT" or say "Redmond-based tech giant". Entity tagging also enables **disambiguation** - distinguishing between Apple the company and apple the fruit. And it enables **cross-linking across sources** by identifying the same entities mentioned in different documents.
+[lecture] Entity tagging gives you **precision through entity filters**. [storytelling] If someone searches for documents about "Microsoft", you want to find all chunks where Microsoft is mentioned, even if they abbreviate it as "MSFT" or say "Redmond-based tech giant". Entity tagging also enables **disambiguation** - distinguishing between Apple the company and apple the fruit. And it enables **cross-linking across sources** by identifying the same entities mentioned in different documents.
 
 #### How NER Works
-The technical implementation involves running a Named Entity Recognition model on your text. Popular options include spaCy 👉 (spay-see), Hugging Face transformers, AWS Comprehend, or Azure Text Analytics. These models identify entities and classify them into types like person, organization, location, product, or custom categories. The crucial next step is **normalization** - mapping variations like "MSFT", "Microsoft Corp", and "Microsoft" to a single canonical ID. Finally, you store entities as arrays grouped by type in your metadata.
+[confidently] The technical implementation involves running a Named Entity Recognition model on your text. Popular options include spaCy 👉 (spay-see), Hugging Face transformers, AWS Comprehend, or Azure Text Analytics. These models identify entities and classify them into types like person, organization, location, product, or custom categories. The crucial next step is **normalization** - mapping variations like "MSFT", "Microsoft Corp", and "Microsoft" to a single canonical ID. Finally, you store entities as arrays grouped by type in your metadata.
 
 #### Implementation Steps
 First, choose your NER tool based on your language, domain, and accuracy requirements. SpaCy is great for standard entities in English. For specialized domains like medical or legal, you might need fine-tuned models. Second, build your normalization layer. This might involve a simple lookup table or a more sophisticated entity resolution system. Third, store entities organized by type, making faceted filtering and boosting possible at retrieval time.
 
 #### When to Use This
-Entity tagging shines with **product-heavy, customer-heavy, or regulation-heavy content**. Technical support teams benefit enormously because they can filter by product name or customer. Legal documentation with many references to regulations, cases, and parties is a perfect candidate. Anywhere you need to answer "Find all documents about X" where X is a real-world entity.
+This technique shines with **product-heavy, customer-heavy, or regulation-heavy content**. Technical support teams benefit enormously because they can filter by product name or customer. Legal documentation with many references to regulations, cases, and parties is a perfect candidate. Anywhere you need to answer "Find all documents about X" where X is a real-world entity.
 
 Let's examine the trade-offs...`
         },
@@ -578,16 +578,16 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#4d1a43',
           notes: `### Pros and Cons of Entity Tagging
-Entity tagging with NER is powerful but comes with real implementation challenges. Let's break down both sides honestly.
+[conversational] Entity tagging with NER is powerful but comes with real implementation challenges. Let's break down both sides honestly.
 
 #### The Significant Advantages
-Entity tagging provides **powerful filters** that dramatically improve precision. You can answer questions like "Show me all support tickets from Amazon" or "Find documentation mentioning Product X" with high accuracy. It also enables **better grounding** - when the model generates a response, having explicit entities helps it stay factual and reduces hallucinations. Finally, entity tagging **enables per-entity analytics**. You can track which products are mentioned most in support tickets, which customers appear in which documents, which regulations are cited most frequently.
+[pleased] Entity tagging provides **powerful filters** that dramatically improve precision. You can answer questions like "Show me all support tickets from Amazon" or "Find documentation mentioning Product X" with high accuracy. It also enables **better grounding** - when the model generates a response, having explicit entities helps it stay factual and reduces hallucinations. [enthusiastically] Finally, entity tagging **enables per-entity analytics**. You can track which products are mentioned most in support tickets, which customers appear in which documents, which regulations are cited most frequently.
 
 #### The Real Challenges
-The **compute cost** can be significant. Running NER models on every chunk adds latency and infrastructure cost, especially at scale. You also have to deal with **PII handling** or Personally Identifiable Information 👉 (P-I-I). If you're extracting person names, you need proper security, access controls, and possibly anonymization. The **normalization complexity** is often underestimated. Building a system that correctly maps "Amazon", "Amazon dot com", "AWS", and "Amazon Web Services" to the same canonical entity requires ongoing maintenance.
+[cautiously] The **compute cost** can be significant. Running NER models on every chunk adds latency and infrastructure cost, especially at scale. [seriously] You also have to deal with **PII handling** or Personally Identifiable Information 👉 (P-I-I). If you're extracting person names, you need proper security, access controls, and possibly anonymization. [sigh] The **normalization complexity** is often underestimated. Building a system that correctly maps "Amazon", "Amazon dot com", "AWS", and "Amazon Web Services" to the same canonical entity requires ongoing maintenance.
 
 #### The Core Value
-The key insight is that **entity recognition provides structured disambiguation**. This is crucial when domain-specific entities are critical to understanding. In technical support, legal documents, or medical records, getting the entities right isn't optional - it's essential for correctness. The investment in entity tagging pays off when precision on entity-related queries directly impacts your users' satisfaction or your organization's compliance requirements.
+[confidently] The key insight is that **entity recognition provides structured disambiguation**. This is crucial when domain-specific entities are critical to understanding. In technical support, legal documents, or medical records, getting the entities right isn't optional - it's essential for correctness. The investment in entity tagging pays off when precision on entity-related queries directly impacts your users' satisfaction or your organization's compliance requirements.
 
 Let's move on to topic and category tags...`
         }
@@ -660,19 +660,19 @@ Let's move on to topic and category tags...`
           ),
           backgroundColor: '#4d441a',
           notes: `### Topic and Category Tags
-Our fourth enrichment trick is **Topic and Category Tags**, also known as taxonomy mapping. This is about organizing your content into a controlled hierarchical structure.
+[conversational] Our fourth enrichment trick is **Topic and Category Tags**, also known as taxonomy mapping. This is about organizing your content into a controlled hierarchical structure.
 
 #### The Goal of Topic Tagging
-Topic tagging **improves both recall and precision** by providing consistent domain labels. When someone searches for payment information, you want to retrieve all chunks tagged with payment-related topics, even if they don't explicitly mention the word "payment". A controlled taxonomy ensures consistency - everyone uses the same labels, not some people saying "refunds" while others say "returns" or "money back".
+[lecture] Topic tagging **improves both recall and precision** by providing consistent domain labels. [storytelling] When someone searches for payment information, you want to retrieve all chunks tagged with payment-related topics, even if they don't explicitly mention the word "payment". A controlled taxonomy ensures consistency - everyone uses the same labels, not some people saying "refunds" while others say "returns" or "money back".
 
 #### How Taxonomy Mapping Works
-The technical approach involves mapping each chunk to your **controlled taxonomy** using either multi-label classifiers or LLM tagging. Multi-label means a chunk can belong to multiple categories - a document about credit card refunds might be tagged with both "Payments, Refunds" and "Compliance, KYC" 👉 (K-Y-C, Know Your Customer). You can train traditional classifiers like BERT-based models, or you can use modern LLMs with carefully crafted prompts that ask "Which of these categories apply to this text?"
+[confidently] The technical approach involves mapping each chunk to your **controlled taxonomy** using either multi-label classifiers or LLM tagging. Multi-label means a chunk can belong to multiple categories - a document about credit card refunds might be tagged with both "Payments, Refunds" and "Compliance, KYC" 👉 (K-Y-C, Know Your Customer). You can train traditional classifiers like BERT-based models, or you can use modern LLMs with carefully crafted prompts that ask "Which of these categories apply to this text?"
 
 #### Implementation Steps
 First, **define your taxonomy**. Make it hierarchical with parent-child relationships like "Payments, Refunds" or "Risk, KYC". Keep it manageable - maybe twenty to fifty top-level categories with subcategories. Too many categories and your classifier gets confused. Second, train or evaluate your tagger. Set **confidence thresholds** - only accept tags above say eighty percent confidence to maintain quality. Third, store both human-readable topic paths and numeric topic IDs for efficient filtering.
 
 #### When to Use This
-Topic tagging excels with **large heterogeneous corpora** where content spans many subjects. Compliance domains benefit because regulatory categories are well-defined. Customer-facing help centers need topics for user navigation. Any knowledge base with diverse topics where users expect to browse by category is a strong candidate.
+This technique excels with **large heterogeneous corpora** where content spans many subjects. Compliance domains benefit because regulatory categories are well-defined. Customer-facing help centers need topics for user navigation. Any knowledge base with diverse topics where users expect to browse by category is a strong candidate.
 
 Now let's evaluate the trade-offs...`
         },
@@ -725,16 +725,16 @@ Now let's evaluate the trade-offs...`
           backgroundColor: '#4d441a',
           notes: `### Pros and Cons of Topic and Category Tags
 
-Now let's honestly assess the trade-offs of implementing a taxonomy-based tagging system. Like any sophisticated feature, topic and category tags come with both significant benefits and important considerations you need to plan for.
+[conversational] Now let's honestly assess the trade-offs of implementing a taxonomy-based tagging system. Like any sophisticated feature, topic and category tags come with both significant benefits and important considerations you need to plan for.
 
 #### The Advantages: Stability and Organization
-The **pros** are compelling. First, you get *stable navigation and filters* - once your taxonomy is established, users can consistently browse and filter content using the same categories over time. This stability is incredibly valuable for user experience. Second, taxonomies are **excellent for reporting and analytics**. You can easily generate insights like "What percentage of our documentation is about security?" or "Which categories get the most queries?" Finally, a well-designed taxonomy *enhances your user interface organization*, making it intuitive for users to explore related content and understand how different topics relate to each other.
+[pleased] The **pros** are compelling. First, you get *stable navigation and filters* - once your taxonomy is established, users can consistently browse and filter content using the same categories over time. This stability is incredibly valuable for user experience. Second, taxonomies are **excellent for reporting and analytics**. You can easily generate insights like "What percentage of our documentation is about security?" or "Which categories get the most queries?" Finally, a well-designed taxonomy *enhances your user interface organization*, making it intuitive for users to explore related content and understand how different topics relate to each other.
 
 #### The Challenges: Governance and Maintenance
-On the **cons** side, the biggest challenge is *taxonomy governance*. Someone needs to own and maintain your category structure, deciding when to add new categories, merge similar ones, or deprecate outdated ones. This is ongoing work that requires both domain expertise and coordination across teams. Second, when you do change your taxonomy, you'll need to **re-tag existing content**, which can be a significant effort depending on your corpus size. Finally, there's *initial setup complexity* - designing a good taxonomy requires careful thought about your domain, your users' mental models, and how categories will be used in practice.
+[cautiously] On the **cons** side, the biggest challenge is *taxonomy governance*. Someone needs to own and maintain your category structure, deciding when to add new categories, merge similar ones, or deprecate outdated ones. This is ongoing work that requires both domain expertise and coordination across teams. Second, when you do change your taxonomy, you'll need to **re-tag existing content**, which can be a significant effort depending on your corpus size. Finally, there's *initial setup complexity* - designing a good taxonomy requires careful thought about your domain, your users' mental models, and how categories will be used in practice.
 
 #### Making It Work
-The key insight here is that a **well-maintained taxonomy** provides tremendous value, but only if you're committed to maintaining it. Think of it like a garden - it needs regular tending to remain useful. The filtering capabilities and improved precision you gain are absolutely worth the investment if you have heterogeneous document collections that span multiple topics or domains.
+[confidently] The key insight here is that a **well-maintained taxonomy** provides tremendous value, but only if you're committed to maintaining it. Think of it like a garden - it needs regular tending to remain useful. The filtering capabilities and improved precision you gain are absolutely worth the investment if you have heterogeneous document collections that span multiple topics or domains.
 
 Let's move on to our next enrichment technique...`
         }
@@ -824,13 +824,13 @@ Let's move on to our next enrichment technique...`
           backgroundColor: '#4d1a1a',
           notes: `### Time/Version Metadata: Adding Temporal Awareness
 
-Let's talk about enrichment technique number five: **Time and Version Metadata**. This is where we add temporal intelligence to our RAG system, ensuring that users always get the most current and relevant information.
+[conversational] Let's talk about enrichment technique number five: **Time and Version Metadata**. This is where we add temporal intelligence to our RAG system, ensuring that users always get the most current and relevant information.
 
 #### Why Temporal Metadata Matters
-Think about this scenario: your company updates its privacy policy every quarter. Without time metadata, your RAG system might happily serve up last year's policy, giving users outdated or even legally incorrect information. That's a serious problem. **Time and version metadata** gives your system *freshness control*, allowing it to retrieve the latest and most final versions of documents while explicitly filtering out outdated content.
+[storytelling] Think about this scenario: your company updates its privacy policy every quarter. Without time metadata, your RAG system might happily serve up last year's policy, giving users outdated or even legally incorrect information. [seriously] That's a serious problem. [confidently] **Time and version metadata** gives your system *freshness control*, allowing it to retrieve the latest and most final versions of documents while explicitly filtering out outdated content.
 
 #### How the System Works
-The mechanism is straightforward but powerful. You extract multiple types of timestamps - when a document was **created**, when it was last **updated**, and most importantly, when it becomes **effective**. You also track version fields and maintain *validity windows* - explicit start and end dates for when information is applicable. This is crucial for things like pricing that changes over time or policies that have defined effective periods.
+[lecture] The mechanism is straightforward but powerful. You extract multiple types of timestamps - when a document was **created**, when it was last **updated**, and most importantly, when it becomes **effective**. You also track version fields and maintain *validity windows* - explicit start and end dates for when information is applicable. This is crucial for things like pricing that changes over time or policies that have defined effective periods.
 
 #### Practical Implementation
 Let me walk you through the implementation. First, you **parse timestamps and version numbers** from both the document content itself and the file system metadata. Then you store several key fields: the effective date, validity windows with both valid_from and valid_to dates, the version number, and a boolean flag called is_latest to quickly identify current versions. During retrieval, you filter by date ranges to exclude expired content, and you sort or boost results that are marked as latest or have the newest version numbers.
@@ -889,16 +889,16 @@ Now let's evaluate the trade-offs of implementing temporal metadata...`
           backgroundColor: '#4d1a1a',
           notes: `### Pros and Cons of Time/Version Metadata
 
-Let's weigh the benefits and challenges of implementing temporal metadata in your RAG system. As with any enrichment technique, understanding the trade-offs helps you make informed decisions about when and how to apply it.
+[conversational] Let's weigh the benefits and challenges of implementing temporal metadata in your RAG system. As with any enrichment technique, understanding the trade-offs helps you make informed decisions about when and how to apply it.
 
 #### The Strong Benefits
-The **pros** are significant and immediately impactful. First and foremost, you get *time-aware answers* - your system inherently understands that information has a temporal dimension and can provide context about when something was true or valid. This is incredibly powerful for maintaining accuracy. Second, you get **easy recency enforcement**. Want to only show results from the last six months? Simple filter. Need the latest version? One boolean check. The implementation is straightforward once the metadata is in place. Third, you get *clear versioning support*, which is essential for any organization that maintains multiple versions of documents, software, or policies simultaneously.
+[pleased] The **pros** are significant and immediately impactful. First and foremost, you get *time-aware answers* - your system inherently understands that information has a temporal dimension and can provide context about when something was true or valid. This is incredibly powerful for maintaining accuracy. Second, you get **easy recency enforcement**. Want to only show results from the last six months? Simple filter. Need the latest version? One boolean check. The implementation is straightforward once the metadata is in place. Third, you get *clear versioning support*, which is essential for any organization that maintains multiple versions of documents, software, or policies simultaneously.
 
 #### The Implementation Challenges
-On the **cons** side, the main challenges are around data consistency and initial setup. First, temporal metadata *requires consistent source dates* - if your source documents don't reliably include timestamps or version information, you'll have to extract or infer them, which can be error-prone. Second, **backfilling historical data** can be tedious, especially if you have a large corpus of existing documents that need temporal metadata added retroactively. Finally, you need *date format standardization* - dates come in many formats, and you need a consistent approach to parsing and storing them to make filtering work correctly.
+[cautiously] On the **cons** side, the main challenges are around data consistency and initial setup. First, temporal metadata *requires consistent source dates* - if your source documents don't reliably include timestamps or version information, you'll have to extract or infer them, which can be error-prone. Second, **backfilling historical data** can be tedious, especially if you have a large corpus of existing documents that need temporal metadata added retroactively. Finally, you need *date format standardization* - dates come in many formats, and you need a consistent approach to parsing and storing them to make filtering work correctly.
 
 #### The Bottom Line
-The key insight is powerful: **adding temporal awareness** to your RAG system ensures users always get the most current information and dramatically reduces confusion caused by outdated or superseded content. For any domain where information changes over time - which is most domains - this enrichment technique pays for itself quickly. The initial setup effort is worth it for the long-term reliability gains.
+[confidently] The key insight is powerful: **adding temporal awareness** to your RAG system ensures users always get the most current information and dramatically reduces confusion caused by outdated or superseded content. For any domain where information changes over time - which is most domains - this enrichment technique pays for itself quickly. The initial setup effort is worth it for the long-term reliability gains.
 
 Next, let's explore how semantic summaries can enhance our retrieval quality...`
         }
