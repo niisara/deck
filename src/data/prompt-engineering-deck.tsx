@@ -1728,20 +1728,43 @@ Here's how to improve RAG systems: **1) Hybrid search** — combine vector searc
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Use a frozen LLM to auto-generate multi-step reasoning and interleave tool calls with observations.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tool-interleaved reasoning traces and answer</li>
-                <li>Automatic tool selection and integration</li>
-                <li>Extended capabilities beyond pre-training</li>
-                <li>Zero-shot planning for complex tasks</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for tasks needing external tools, search integration, code execution, and database queries. Automatically plans tool usage.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Use a frozen LLM to auto-generate multi-step reasoning and interleave tool calls with observations.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Tool-interleaved reasoning traces and answer</li>
+                  <li>Automatic tool selection and integration</li>
+                  <li>Extended capabilities beyond pre-training</li>
+                  <li>Zero-shot planning for complex tasks</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.3}>
+                <p style={{ marginTop: '20px' }}>Best for tasks needing external tools, search integration, code execution, and database queries. Automatically plans tool usage.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### ART - Automatic Reasoning & Tool-use
+
+**Pronunciation**: "ART 👉 'art'" — it's literally pronounced like the word "art", which is fitting because this technique is all about the *art* of combining reasoning with real-world actions.
+
+#### What Is ART?
+Think of ART as giving your AI model a **toolbelt and the intelligence to use it**. Imagine you're solving a complex problem that requires both *thinking* and *doing*. You might need to search the web for information, calculate some numbers, check a database, or even run code. ART enables the model to automatically figure out: "I need this tool now, let me use it, integrate what I learned, and continue reasoning."
+
+It's called **Automatic Reasoning & Tool-use** because the model *automatically decomposes* the task into steps and decides when to call external tools — all without you manually scripting each action.
+
+#### Real-World Analogy
+Picture a brilliant research assistant who not only thinks critically but also knows when to grab a calculator, when to look something up in a library, and when to call an expert. That's ART — it's **agentic behavior** where the AI reasons about what it needs, uses tools to get it, and continues the task seamlessly.
+
+#### Why It Matters
+Before ART, we had to hardcode: "Step 1: search this. Step 2: calculate that." ART changes the game — the model figures it out on-the-fly. It's **zero-shot planning** with **tool integration**, making AI systems far more flexible and capable for complex, real-world tasks.`
         },
         {
           id: 40,
@@ -1749,17 +1772,53 @@ Here's how to improve RAG systems: **1) Hybrid search** — combine vector searc
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>ART enables models to automatically decompose tasks, select appropriate tools, and interleave reasoning with tool execution. The model generates a plan, executes tool calls, integrates observations, and continues reasoning. This creates a flexible cycle of thinking, acting, and observing without requiring explicit orchestration for each task type.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool APIs and orchestration runtime</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <p>ART enables models to automatically decompose tasks, select appropriate tools, and interleave reasoning with tool execution. The model generates a plan, executes tool calls, integrates observations, and continues reasoning. This creates a flexible cycle of thinking, acting, and observing without requiring explicit orchestration for each task type.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool APIs and orchestration runtime</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={1.0}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.2}>
+                <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### How ART Works - The Thinking-Acting Cycle
+
+#### The Core Mechanism: Automatic Decomposition
+Here's the magic: the model doesn't just follow a script — it **automatically breaks down** your complex task into logical steps. Think of it like a chef reading a recipe and realizing, "Oh, I need to check the pantry (tool call), then calculate ingredient ratios (calculator tool), then proceed with cooking (reasoning)."
+
+#### The Four-Phase Cycle
+1. **Plan**: The model analyzes the task and creates a mental plan
+2. **Act**: It identifies which tool to call (search engine, calculator, database, API, code executor)
+3. **Observe**: It receives the tool's output (the observation)
+4. **Integrate & Continue**: It weaves that observation back into its reasoning and continues
+
+This cycle repeats until the task is complete. It's like a conversation between the model's brain and the external world.
+
+#### Real-World Tool Integration Patterns
+- **Web Search**: "I need current information? Call the search API."
+- **Calculator**: "This requires precise math? Use the calculator tool."
+- **Database**: "I need to look up user data? Query the database."
+- **Code Execution**: "This needs computation? Run Python code."
+- **APIs**: "I need weather data, stock prices, or translations? Call the relevant API."
+
+#### Why "Automatic" Is Key
+Traditional systems required you to hardcode: "If user asks X, call tool Y." ART flips this — the model *figures it out itself*. It's **zero-shot planning** — you don't need to give examples for every possible tool combination.
+
+#### Agentic Behavior Explained
+This is **agentic AI** — the model acts like an autonomous agent that can perceive (read the task), decide (choose tools), act (execute tools), and learn (integrate observations). It's the foundation of AI systems that can operate semi-independently in complex environments.`
         },
         {
           id: 41,
@@ -1767,16 +1826,59 @@ Here's how to improve RAG systems: **1) Hybrid search** — combine vector searc
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and an orchestration framework to manage tool execution and observation integration.</p>
+              <GSAPAnimated animation="slideInBottom" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="flipCard" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.9}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and an orchestration framework to manage tool execution and observation integration.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### Implementing ART - Practical Guidance
+
+#### The Prompt Structure
+Notice how simple the prompt is? That's intentional. You're giving the model **freedom** to plan and act. The key elements:
+- **Task Definition**: "Given task <T>" — clearly state what needs to be done
+- **Planning Instruction**: "plan steps" — tells the model to decompose the task
+- **Tool Availability**: "call TOOL[search/calculator]" — lists available tools
+- **Integration Directive**: "integrate results before continuing" — ensures observations inform reasoning
+- **Output Requirement**: "Provide final answer" — clarifies the end goal
+
+#### Real-World Example: Research Question
+User asks: "What's the population of Tokyo and how many people would that be per square kilometer?"
+
+**ART's Internal Process**:
+1. **Reasoning**: "I need Tokyo's population AND its area, then calculate density"
+2. **Tool Call 1**: SEARCH["Tokyo population 2024"] → Observation: "~14 million"
+3. **Tool Call 2**: SEARCH["Tokyo area square kilometers"] → Observation: "~2,194 km²"
+4. **Tool Call 3**: CALCULATOR[14000000 / 2194] → Observation: "~6,380 people/km²"
+5. **Final Answer**: "Tokyo has approximately 14 million people across 2,194 km², resulting in a density of about 6,380 people per square kilometer."
+
+See how it *automatically* orchestrated three different tool calls without being told exactly what to do?
+
+#### Tool Integration Patterns
+- **Sequential Tools**: Search → Calculate → Format
+- **Conditional Tools**: "If result is unclear, search again with refined query"
+- **Parallel Tools**: "Check multiple APIs and compare results"
+- **Recursive Tools**: "Use calculator output as input to next search"
+
+#### Infrastructure Requirements
+You need:
+1. **Tool Registry**: Define available tools (search, calculator, database, API clients)
+2. **Orchestration Runtime**: Execute tool calls and capture outputs
+3. **Observation Handler**: Feed tool results back to the model
+4. **Safety Layer**: Sandbox tool execution (especially code execution)
+
+This is why ART is "Advanced" complexity — it's not just the prompt, it's the entire infrastructure around it.`
         },
         {
           id: 42,
@@ -1784,17 +1886,62 @@ Here's how to improve RAG systems: **1) Hybrid search** — combine vector searc
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tool errors can derail entire plans</li>
-                <li>Requires sandboxing and guardrails for safety</li>
-                <li>Complex orchestration infrastructure needed</li>
-                <li>Debugging tool interaction failures is challenging</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Tool errors can derail entire plans</li>
+                  <li>Requires sandboxing and guardrails for safety</li>
+                  <li>Complex orchestration infrastructure needed</li>
+                  <li>Debugging tool interaction failures is challenging</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### ART Limitations & Considerations - The Reality Check
+
+#### When Tools Fail, Plans Crumble
+Here's the hard truth: ART is only as reliable as its tools. Imagine your research assistant suddenly gets wrong information from the library or the calculator breaks mid-computation. The model might continue reasoning with *bad data*, leading to confident but incorrect answers.
+
+**Mitigation**: Implement tool validation, error handling, and fallback mechanisms. Always validate tool outputs before feeding them back to the model.
+
+#### The Safety Imperative: Sandboxing
+This is **critical** — especially with code execution tools. If you give an AI the ability to "run Python code" or "execute shell commands," you're essentially handing it the keys to your system. Without proper sandboxing, a malicious prompt could trigger dangerous operations.
+
+**Analogy**: It's like giving someone access to your house but not putting valuables in a safe. You need **guardrails**:
+- Sandboxed execution environments (Docker, VMs)
+- API rate limiting
+- Output validation
+- Permission systems for sensitive tools
+
+#### Infrastructure Complexity
+ART isn't a simple prompt trick — it's an architectural pattern. You need:
+- **Tool orchestration**: Managing multiple tool APIs
+- **State management**: Tracking observations across the reasoning chain
+- **Error recovery**: Handling timeouts, API failures, malformed responses
+- **Logging & monitoring**: Understanding what the model is doing
+
+Think of it like building a self-driving car versus a regular car. The AI (ART) is the driver, but you need sensors (tools), communication systems (APIs), and safety mechanisms (sandboxing).
+
+#### Debugging Is Hard
+When ART fails, you're debugging a *dynamic* system. The model might:
+- Choose the wrong tool
+- Misinterpret tool outputs
+- Get stuck in reasoning loops
+- Combine tools in unexpected ways
+
+**Tip**: Implement detailed logging of every reasoning step and tool call. Visualize the thinking-acting-observing cycle so you can see where things went wrong.
+
+#### When NOT to Use ART
+- Simple, deterministic tasks (use ReAct or basic prompting)
+- When tools are unreliable or slow
+- When you need predictable, repeatable behavior
+- Resource-constrained environments (ART requires multiple model calls + tool execution)
+
+#### The Bottom Line
+ART is *powerful* but not magic. It's best for complex, open-ended tasks where automatic tool selection outweighs the infrastructure cost. Always weigh the **flexibility** against the **complexity** of maintaining an ART system.`
         }
       ]
     },
