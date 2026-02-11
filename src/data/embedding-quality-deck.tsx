@@ -731,14 +731,14 @@ Second, **build a concise chunk title**. You might not need the full breadcrumb 
             </div>
           ),
           backgroundColor: '#851736',
-          notes: `### 11. Apply Light Stopword Trimming
-Technique five is stopword trimming, and I want to emphasize the word "light" here. This technique is powerful but requires a careful touch.
+          notes: `### Apply Light Stopword Trimming
+[cautiously] Technique five is stopword trimming, and I want to emphasize the word "light" here. [seriously] This technique is powerful but requires a careful touch.
 
 ####  The Filler Token Problem
-Look at a typical English sentence: "The user can configure the system by editing the configuration file in the settings directory." Count the content words versus the filler: "user", "configure", "system", "editing", "configuration", "file", "settings", "directory"—those are your content words. But "the", "can", "by", "the", "in", "the"—those are just grammatical glue. They're necessary for the sentence to read well, but they don't add semantic meaning. If you're working with tight token budgets, removing some of these fillers can free up space for more content.
+[conversational] Look at a typical English sentence: "The user can configure the system by editing the configuration file in the settings directory." [lecture] Count the content words versus the filler: "user", "configure", "system", "editing", "configuration", "file", "settings", "directory"—those are your content words. But "the", "can", "by", "the", "in", "the"—those are just grammatical glue. They're necessary for the sentence to read well, but they don't add semantic meaning. [conversational] If you're working with tight token budgets, removing some of these fillers can free up space for more content.
 
 ####  What This Technique Does
-The goal is to **reduce filler tokens while preserving meaning and negation**. You want to remove the words that take up space without adding much information, but you absolutely must keep words that change meaning. "Not secure" and "secure" are opposites—you cannot remove "not" just because it's a common word.
+[confidently] The goal is to **reduce filler tokens while preserving meaning and negation**. [firmly] You want to remove the words that take up space without adding much information, but you absolutely must keep words that change meaning. "Not secure" and "secure" are opposites—you cannot remove "not" just because it's a common word.
 
 ####  How It Works
 \`\`\`mermaid
@@ -753,21 +753,21 @@ flowchart TB
     style E fill:#81c784,color:#000
     style F fill:#4fc3f7,color:#000
 \`\`\`
-Start with your **original text**. Run **token analysis** to identify which words are stopwords—things like "a", "the", "of", "in", "to", "for". Split your tokens: **keep content words**, **remove filler words**. But here's the crucial part: **light removal only**. You're removing maybe five to ten percent of tokens, not fifty percent. The goal is to densify your text slightly, not to strip it bare. The result is **denser text** that fits more semantic content in the same token budget.
+[lecture] Start with your **original text**. Run **token analysis** to identify which words are stopwords—things like "a", "the", "of", "in", "to", "for". Split your tokens: **keep content words**, **remove filler words**. [seriously] But here's the crucial part: **light removal only**. You're removing maybe five to ten percent of tokens, not fifty percent. The goal is to densify your text slightly, not to strip it bare. [pleased] The result is **denser text** that fits more semantic content in the same token budget.
 
 ####  Implementation Steps
-First, **start with a small stoplist**. Don't use one of those massive five-hundred-word stoplists. Use maybe twenty to thirty of the most common, least meaningful words: "the", "a", "an", "and", "or", "in", "on", "at", "to", "for". Make it **language-specific**—stopwords in English are different from stopwords in Spanish or German.
+[conversational] First, **start with a small stoplist**. [cautiously] Don't use one of those massive five-hundred-word stoplists. Use maybe twenty to thirty of the most common, least meaningful words: "the", "a", "an", "and", "or", "in", "on", "at", "to", "for". Make it **language-specific**—stopwords in English are different from stopwords in Spanish or German.
 
-Second, **protect important words**. Never remove **negations** like "not", "never", "no", "none". These flip meanings entirely. Never remove **numerals, dates, or units**—these are highly specific data points. Protect **named entities**: person names, company names, product names, places. These are the most important tokens for retrieval.
+[firmly] Second, **protect important words**. Never remove **negations** like "not", "never", "no", "none". These flip meanings entirely. Never remove **numerals, dates, or units**—these are highly specific data points. Protect **named entities**: person names, company names, product names, places. These are the most important tokens for retrieval.
 
-Third, **skip stopword removal inside code blocks, formulas, or commands**. In code, even common words like "for" or "in" have precise syntactic meaning. In formulas, every symbol matters. Only trim stopwords from natural language prose.
+[seriously] Third, **skip stopword removal inside code blocks, formulas, or commands**. In code, even common words like "for" or "in" have precise syntactic meaning. In formulas, every symbol matters. Only trim stopwords from natural language prose.
 
-Finally, **measure the impact**. Before and after trimming, check your retrieval metrics: precision, recall, NDCG 👉 'n-d-c-g'. If quality drops, you're removing too much. As a rule of thumb, keep your removal under ten percent of total tokens.
+[cautiously] Finally, **measure the impact**. Before and after trimming, check your retrieval metrics: precision, recall, NDCG 👉 'n-d-c-g'. If quality drops, you're removing too much. As a rule of thumb, keep your removal under ten percent of total tokens.
 
 ####  When to Use This
-Use stopword trimming when you have **tight token budgets**—maybe your embedding model has a small context window, or you're storing millions of chunks and want to reduce index size. It's useful for **repetitive narrative text** where the same filler words appear over and over. And it can help with **noisy corpora** where you've got a lot of unstructured, conversational text with lots of grammatical filler but limited content density.
+[conversational] Use stopword trimming when you have **tight token budgets**—maybe your embedding model has a small context window, or you're storing millions of chunks and want to reduce index size. It's useful for **repetitive narrative text** where the same filler words appear over and over. And it can help with **noisy corpora** where you've got a lot of unstructured, conversational text with lots of grammatical filler but limited content density.
 
-Let's look at the pros and cons.`
+[energetic] Let's look at the pros and cons.`
         },
         {
           id: 12,
@@ -799,25 +799,25 @@ Let's look at the pros and cons.`
             </div>
           ),
           backgroundColor: '#851736',
-          notes: `### 12. Pros and Cons of Stopword Trimming
-Let's evaluate the benefits and risks of stopword trimming, keeping in mind that this technique requires the most careful tuning.
+          notes: `### Pros and Cons of Stopword Trimming
+[seriously] Let's evaluate the benefits and risks of stopword trimming, keeping in mind that this technique requires the most careful tuning.
 
 ####  The Advantages
-When done correctly, stopword trimming delivers clear benefits. You get **smaller, denser chunks**. If you're removing ten percent of your tokens, your chunks are ten percent smaller, which means you can fit more chunks in the same storage space or fit more context in the same embedding window.
+[conversational] When done correctly, stopword trimming delivers clear benefits. [pleased] You get **smaller, denser chunks**. If you're removing ten percent of your tokens, your chunks are ten percent smaller, which means you can fit more chunks in the same storage space or fit more context in the same embedding window.
 
 You also get **faster indexing**. Fewer tokens means less processing time when generating embeddings. If you're indexing millions of documents, this adds up to real time and cost savings.
 
-Most importantly, you **can improve signal-to-noise ratio**. When you remove filler words, the remaining words—the content words—get more weight in the embedding. Your embedding now represents the core concepts more strongly.
+[confidently] Most importantly, you **can improve signal-to-noise ratio**. When you remove filler words, the remaining words—the content words—get more weight in the embedding. Your embedding now represents the core concepts more strongly.
 
 ####  The Significant Risks
-Here's where things get tricky. **Over-trimming harms semantics and question answering**. If you remove too many words, your text stops making sense. "User configure system editing configuration file settings directory" is technically more dense, but it's also unreadable and loses nuance. Modern embedding models are trained on natural language, not keyword soup. If you strip too much grammar, the model can't understand the text properly.
+[cautiously] Here's where things get tricky. [concerned] **Over-trimming harms semantics and question answering**. If you remove too many words, your text stops making sense. "User configure system editing configuration file settings directory" is technically more dense, but it's also unreadable and loses nuance. [seriously] Modern embedding models are trained on natural language, not keyword soup. If you strip too much grammar, the model can't understand the text properly.
 
-The effect is even worse for question answering. When you retrieve a chunk and show it to users or feed it to a language model, they need coherent, readable text. Over-trimmed text confuses both humans and models.
+[disappointed] The effect is even worse for question answering. When you retrieve a chunk and show it to users or feed it to a language model, they need coherent, readable text. Over-trimmed text confuses both humans and models.
 
-**Multilingual handling adds significant complexity**. Every language has different stopwords. The stoplist for English doesn't work for French or Japanese or Arabic. You need language-specific stoplists, and you need language detection to apply the right list. If you're working with mixed-language corpora, this complexity multiplies.
+[firmly] **Multilingual handling adds significant complexity**. Every language has different stopwords. The stoplist for English doesn't work for French or Japanese or Arabic. You need language-specific stoplists, and you need language detection to apply the right list. If you're working with mixed-language corpora, this complexity multiplies.
 
 ####  The Bottom Line
-Stopword trimming is the highest-risk technique in our toolkit. The potential damage from over-trimming outweighs the benefits from conservative trimming. My recommendation: start without stopword trimming, measure your baseline quality, then experiment with very light trimming—only the most common, least meaningful words—and measure again. Only keep it if you see clear improvements. Now let's move to technique six: keyphrase tags.`
+[seriously] Stopword trimming is the highest-risk technique in our toolkit. The potential damage from over-trimming outweighs the benefits from conservative trimming. [cautiously] My recommendation: start without stopword trimming, measure your baseline quality, then experiment with very light trimming—only the most common, least meaningful words—and measure again. Only keep it if you see clear improvements. [energetic] Now let's move to technique six: keyphrase tags.`
         }
       ]
     },
@@ -877,14 +877,14 @@ Stopword trimming is the highest-risk technique in our toolkit. The potential da
             </div>
           ),
           backgroundColor: '#1976d2',
-          notes: `### 13. Add Keyphrase and Topic Tags as Metadata
-Technique six is adding keyphrase and topic tags as metadata, and this transforms your retrieval system from purely semantic to hybrid semantic-plus-structured.
+          notes: `### Add Keyphrase and Topic Tags as Metadata
+[enthusiastically] Technique six is adding keyphrase and topic tags as metadata, and this transforms your retrieval system from purely semantic to hybrid semantic-plus-structured.
 
 ####  The Discoverability Problem
-Semantic search with embeddings is powerful—it finds concepts even when the exact words don't match. But sometimes you need explicit, structured filters. Imagine you're searching a large corporate knowledge base. You want documents about "security" but only from the "infrastructure" department, only from the last quarter, and only tagged with "AWS". Pure semantic search can't reliably enforce those constraints. You need structured metadata.
+[conversational] Semantic search with embeddings is powerful—it finds concepts even when the exact words don't match. [cautiously] But sometimes you need explicit, structured filters. [storytelling] Imagine you're searching a large corporate knowledge base. You want documents about "security" but only from the "infrastructure" department, only from the last quarter, and only tagged with "AWS". [seriously] Pure semantic search can't reliably enforce those constraints. You need structured metadata.
 
 ####  What This Technique Does
-The goal is to **enrich chunks with facetable concepts for better filtering and recall**. You extract the key topics, entities, products, technologies, and concepts from each chunk, normalize them into a controlled vocabulary, and attach them as metadata tags. Now users can filter by these tags, and your search can boost results that match on both semantic similarity and tag overlap.
+[confidently] The goal is to **enrich chunks with facetable concepts for better filtering and recall**. You extract the key topics, entities, products, technologies, and concepts from each chunk, normalize them into a controlled vocabulary, and attach them as metadata tags. [pleased] Now users can filter by these tags, and your search can boost results that match on both semantic similarity and tag overlap.
 
 ####  How It Works
 \`\`\`mermaid
@@ -898,21 +898,21 @@ flowchart TB
     style F fill:#81c784,color:#000
     style D fill:#4fc3f7,color:#000
 \`\`\`
-Start with your **chunk text**. Run **keyphrase extraction** using algorithms like RAKE 👉 'rake', YAKE 👉 'yake', or KeyBERT 👉 'key-bert', or use simple noun-phrase extraction heuristics. These tools identify the most important terms and phrases. Then **normalize and deduplicate**: convert to lowercase, apply lemmatization 👉 'lemma-tization' so "running" and "runs" become "run", and remove duplicates. Next, **map to a controlled vocabulary**. Maybe "machine learning", "ML", and "M-L" all map to the canonical term "machine-learning". This ensures consistency. Finally, **attach these tags as metadata** to your chunk. Now each chunk has structured labels alongside its text. The result is an **enriched chunk** that's both semantically embedded and explicitly tagged.
+[lecture] Start with your **chunk text**. Run **keyphrase extraction** using algorithms like RAKE 👉 'rake', YAKE 👉 'yake', or KeyBERT 👉 'key-bert', or use simple noun-phrase extraction heuristics. These tools identify the most important terms and phrases. Then **normalize and deduplicate**: convert to lowercase, apply lemmatization 👉 'lemma-tization' so "running" and "runs" become "run", and remove duplicates. Next, **map to a controlled vocabulary**. Maybe "machine learning", "ML", and "M-L" all map to the canonical term "machine-learning". This ensures consistency. Finally, **attach these tags as metadata** to your chunk. [delighted] Now each chunk has structured labels alongside its text. The result is an **enriched chunk** that's both semantically embedded and explicitly tagged.
 
 ####  Implementation Steps
-First, **run keyphrase extraction**. There are several excellent algorithms. **RAKE** stands for Rapid Automatic Keyword Extraction—it's fast and works well for general text. **YAKE** stands for Yet Another Keyword Extractor—it's more sophisticated and handles multiple languages. **KeyBERT** uses BERT embeddings to find keyphrases semantically similar to the document. Or you can use **noun-phrase heuristics**: extract all noun phrases using part-of-speech tagging, then rank by frequency and TF-IDF 👉 't-f-i-d-f'.
+[conversational] First, **run keyphrase extraction**. There are several excellent algorithms. **RAKE** stands for Rapid Automatic Keyword Extraction—it's fast and works well for general text. **YAKE** stands for Yet Another Keyword Extractor—it's more sophisticated and handles multiple languages. **KeyBERT** uses BERT embeddings to find keyphrases semantically similar to the document. Or you can use **noun-phrase heuristics**: extract all noun phrases using part-of-speech tagging, then rank by frequency and TF-IDF 👉 't-f-i-d-f'.
 
-Second, **normalize everything**. Lowercase all tags. Apply lemmatization to reduce words to their base form. Deduplicate: if the same phrase appears three times, keep it once. **Map synonyms**: create a synonym dictionary so variations of the same concept map to one canonical tag.
+[confidently] Second, **normalize everything**. Lowercase all tags. Apply lemmatization to reduce words to their base form. Deduplicate: if the same phrase appears three times, keep it once. **Map synonyms**: create a synonym dictionary so variations of the same concept map to one canonical tag.
 
 Third, **attach tags to chunks**. You might extract tags for topics: "authentication", "security", "compliance". For entities: "AWS", "Google Cloud", "Azure". For products: "Product-X-Version-2", "Product-Y-Version-3". For dates or versions: "2024-Q4", "Version-5.2". Store all these as structured metadata fields on each chunk.
 
-Finally, **index these tags and enable filterable search**. Your vector database should support metadata filtering. Users can search for "API authentication" and filter to only chunks tagged with "AWS" and "OAuth". This combines the power of semantic search with the precision of structured filters.
+[pleased] Finally, **index these tags and enable filterable search**. Your vector database should support metadata filtering. Users can search for "API authentication" and filter to only chunks tagged with "AWS" and "OAuth". This combines the power of semantic search with the precision of structured filters.
 
 ####  When to Use This
-This is essential for **large corpora** where users need to narrow down results. It's crucial for **multi-domain search**—if your index covers HR documents, engineering docs, sales materials, and legal contracts, tags help users filter to the right domain. It's vital for **governance and compliance filters**—maybe certain documents are tagged "confidential" or "internal-only", and your access controls use these tags to restrict visibility.
+[seriously] This is essential for **large corpora** where users need to narrow down results. It's crucial for **multi-domain search**—if your index covers HR documents, engineering docs, sales materials, and legal contracts, tags help users filter to the right domain. It's vital for **governance and compliance filters**—maybe certain documents are tagged "confidential" or "internal-only", and your access controls use these tags to restrict visibility.
 
-Let's examine the trade-offs.`
+[energetic] Let's examine the trade-offs.`
         },
         {
           id: 14,
@@ -944,25 +944,25 @@ Let's examine the trade-offs.`
             </div>
           ),
           backgroundColor: '#1976d2',
-          notes: `### 14. Pros and Cons of Keyphrase Tags
-Let's evaluate the benefits and challenges of adding keyphrase and topic tags to your chunks.
+          notes: `### Pros and Cons of Keyphrase Tags
+[conversational] Let's evaluate the benefits and challenges of adding keyphrase and topic tags to your chunks.
 
 ####  The Powerful Benefits
-The advantages here are substantial and multi-dimensional. First, you get **better recall and precision**. Semantic search alone might miss results where the terminology is unusual or ambiguous. Tags provide explicit signals: if a chunk is tagged "OAuth" and "authentication", queries containing those terms will match strongly, even if the chunk text uses different phrasing. This improves both recall—finding relevant documents—and precision—avoiding irrelevant ones.
+[enthusiastically] The advantages here are substantial and multi-dimensional. [pleased] First, you get **better recall and precision**. Semantic search alone might miss results where the terminology is unusual or ambiguous. Tags provide explicit signals: if a chunk is tagged "OAuth" and "authentication", queries containing those terms will match strongly, even if the chunk text uses different phrasing. This improves both recall—finding relevant documents—and precision—avoiding irrelevant ones.
 
-You also get **vastly improved navigability**. Users can explore your corpus by browsing tags: "Show me all documents tagged with AWS", "Now filter to just the ones about security", "Now just from 2024". This faceted navigation is intuitive and powerful.
+[delighted] You also get **vastly improved navigability**. Users can explore your corpus by browsing tags: "Show me all documents tagged with AWS", "Now filter to just the ones about security", "Now just from 2024". This faceted navigation is intuitive and powerful.
 
-Tags **enable access controls**. You can tag chunks with sensitivity levels—"public", "internal", "confidential"—and enforce permissions at query time. Only show users the chunks they're allowed to see.
+[confidently] Tags **enable access controls**. You can tag chunks with sensitivity levels—"public", "internal", "confidential"—and enforce permissions at query time. Only show users the chunks they're allowed to see.
 
 Tags also **enable analytics**. Track which topics are most searched, which products are most mentioned, which tags appear together most often. This gives you insight into how people use your knowledge base and where you might have gaps.
 
 ####  The Significant Challenges
-The main problem is **extraction noise**. Keyphrase extraction algorithms aren't perfect. They'll extract terms that aren't actually important, miss terms that are important, and sometimes extract nonsense like partial phrases or formatting artifacts. You need **quality assurance and thresholding**: maybe only keep keyphrases that appear at least three times, or that score above a confidence threshold, or that match your expected vocabulary. This requires manual review and tuning.
+[cautiously] The main problem is **extraction noise**. [concerned] Keyphrase extraction algorithms aren't perfect. They'll extract terms that aren't actually important, miss terms that are important, and sometimes extract nonsense like partial phrases or formatting artifacts. [seriously] You need **quality assurance and thresholding**: maybe only keep keyphrases that appear at least three times, or that score above a confidence threshold, or that match your expected vocabulary. This requires manual review and tuning.
 
 The other major challenge is **taxonomy maintenance**. Over time, your vocabulary evolves. New products launch, old products are deprecated, terminology shifts. Your synonym mappings need updates: maybe "machine learning" becomes "AI", or a product gets renamed. Someone needs to maintain this taxonomy, merge duplicate tags, split ambiguous tags, and keep everything consistent. This ongoing maintenance can be significant work.
 
 ####  The Verdict
-Despite these challenges, keyphrase tagging is incredibly valuable for production search systems. The combination of semantic embeddings plus structured tags gives you the best of both worlds: semantic understanding with structured precision. Just plan for the maintenance burden. Now let's look at our final technique: converting tables to structured text.`
+[confidently] Despite these challenges, keyphrase tagging is incredibly valuable for production search systems. [pleased] The combination of semantic embeddings plus structured tags gives you the best of both worlds: semantic understanding with structured precision. [seriously] Just plan for the maintenance burden. [energetic] Now let's look at our final technique: converting tables to structured text.`
         }
       ]
     },
@@ -1022,14 +1022,14 @@ Despite these challenges, keyphrase tagging is incredibly valuable for productio
             </div>
           ),
           backgroundColor: '#558b2f',
-          notes: `### 15. Convert Tables to Structured Text
-Our final technique is converting tables to structured text, and this is critical for making tabular data searchable and embeddable.
+          notes: `### Convert Tables to Structured Text
+[enthusiastically] Our final technique is converting tables to structured text, and this is critical for making tabular data searchable and embeddable.
 
 ####  The Table Problem
-Tables are everywhere: specification sheets, pricing tables, benchmark results, log files, CSV exports, database dumps. They're incredibly information-dense and well-structured. But here's the problem: embedding models are trained on linear text. They expect sentences and paragraphs, not rows and columns. If you just extract the raw text from a table—"Name Age Department Alice 32 Engineering Bob 28 Sales"—you lose all the structure. The model doesn't know which values go with which columns.
+[conversational] Tables are everywhere: specification sheets, pricing tables, benchmark results, log files, CSV exports, database dumps. They're incredibly information-dense and well-structured. [concerned] But here's the problem: embedding models are trained on linear text. They expect sentences and paragraphs, not rows and columns. [storytelling] If you just extract the raw text from a table—"Name Age Department Alice 32 Engineering Bob 28 Sales"—you lose all the structure. The model doesn't know which values go with which columns.
 
 ####  What This Technique Does
-The goal is to **preserve relational information in a model-friendly linear form**. We want to convert the two-dimensional table structure into one-dimensional text while keeping the relationships between headers and values explicit. Think of it as serializing the table into a format that both machines and humans can understand.
+[confidently] The goal is to **preserve relational information in a model-friendly linear form**. We want to convert the two-dimensional table structure into one-dimensional text while keeping the relationships between headers and values explicit. [conversational] Think of it as serializing the table into a format that both machines and humans can understand.
 
 ####  How It Works
 \`\`\`mermaid
@@ -1043,23 +1043,23 @@ flowchart TB
     style F fill:#81c784,color:#000
     style E fill:#4fc3f7,color:#000
 \`\`\`
-Start with your **table**—maybe it's HTML, a CSV file, or an Excel spreadsheet. **Parse the structure**: identify headers, rows, and cells. **Extract the schema**: the header row tells you what each column represents. Then **linearize the rows**: convert each row into a text representation. Use **key-value format**: pair each header with its corresponding value. The result is **structured text** that preserves all the table information but in a linear, embeddable form.
+[lecture] Start with your **table**—maybe it's HTML, a CSV file, or an Excel spreadsheet. **Parse the structure**: identify headers, rows, and cells. **Extract the schema**: the header row tells you what each column represents. Then **linearize the rows**: convert each row into a text representation. Use **key-value format**: pair each header with its corresponding value. [pleased] The result is **structured text** that preserves all the table information but in a linear, embeddable form.
 
 ####  Implementation Steps
-First, **keep the header row as your schema**. The headers are your column names: "Product", "Price", "Stock", "Category". Also **identify primary key columns**—which columns uniquely identify each row. Maybe it's "ProductID" or "Name".
+[conversational] First, **keep the header row as your schema**. The headers are your column names: "Product", "Price", "Stock", "Category". Also **identify primary key columns**—which columns uniquely identify each row. Maybe it's "ProductID" or "Name".
 
-Second, **emit per-row sentences**. For each row, create a structured sentence or paragraph. For example: "ProductID equals P-123; Product: Widget-A; Price: $29.99 (USD); Stock: 150 units; Category: Electronics." This makes every relationship explicit. The embedding model can now understand that "$29.99" is the price of "Widget-A".
+[confidently] Second, **emit per-row sentences**. For each row, create a structured sentence or paragraph. For example: "ProductID equals P-123; Product: Widget-A; Price: $29.99 (USD); Stock: 150 units; Category: Electronics." This makes every relationship explicit. The embedding model can now understand that "$29.99" is the price of "Widget-A".
 
-Third, **verticalize wide tables**. If your table has thirty columns, a single per-row sentence becomes unwieldy. Instead, create multiple chunks per row, each covering a subset of related columns. Or **group related columns**: maybe product attributes in one chunk, pricing information in another, inventory details in a third.
+[conversational] Third, **verticalize wide tables**. If your table has thirty columns, a single per-row sentence becomes unwieldy. Instead, create multiple chunks per row, each covering a subset of related columns. Or **group related columns**: maybe product attributes in one chunk, pricing information in another, inventory details in a third.
 
 Fourth, **include summary statistics when helpful**. For tables with numeric data—like benchmark results—add summary rows: "Minimum: 12ms, Mean: 45ms, Maximum: 203ms". This gives the model aggregate context.
 
-Finally, **attach the original CSV or JSON path as metadata**. Users might want to see the raw table, so keep a reference to the source file.
+[firmly] Finally, **attach the original CSV or JSON path as metadata**. Users might want to see the raw table, so keep a reference to the source file.
 
 ####  When to Use This
-This technique is essential for **product specifications**—tables of features, dimensions, technical specs. For **pricing sheets**—products, tiers, costs, discounts. For **CSV and log files**—any tabular data exports. For **benchmark results**—performance metrics across different configurations. For **database exports**—when you want to make structured database content searchable.
+[seriously] This technique is essential for **product specifications**—tables of features, dimensions, technical specs. For **pricing sheets**—products, tiers, costs, discounts. For **CSV and log files**—any tabular data exports. For **benchmark results**—performance metrics across different configurations. For **database exports**—when you want to make structured database content searchable.
 
-Let's look at the pros and cons.`
+[energetic] Let's look at the pros and cons.`
         },
         {
           id: 16,
@@ -1091,25 +1091,25 @@ Let's look at the pros and cons.`
             </div>
           ),
           backgroundColor: '#558b2f',
-          notes: `### 16. Pros and Cons of Converting Tables
-Let's evaluate the benefits and challenges of converting tables to structured text.
+          notes: `### Pros and Cons of Converting Tables
+[conversational] Let's evaluate the benefits and challenges of converting tables to structured text.
 
 ####  The Clear Benefits
-The advantages here are significant for anyone working with tabular data. First, you get **better matching for row-level queries**. When someone searches for "products under thirty dollars", your embedding can match the linearized row where "Price: $29.99" appears alongside "Product: Widget-A". The model understands the relationship between the price and the product because you've made it explicit in the text.
+[enthusiastically] The advantages here are significant for anyone working with tabular data. [pleased] First, you get **better matching for row-level queries**. When someone searches for "products under thirty dollars", your embedding can match the linearized row where "Price: $29.99" appears alongside "Product: Widget-A". The model understands the relationship between the price and the product because you've made it explicit in the text.
 
-Without this conversion, the embedding sees "Widget-A" in one cell and "$29.99" in another with no clear connection. With conversion, the connection is obvious and embeddable.
+[conversational] Without this conversion, the embedding sees "Widget-A" in one cell and "$29.99" in another with no clear connection. [delighted] With conversion, the connection is obvious and embeddable.
 
-Second, this approach **works across models without layout awareness**. Most embedding models are pure text models—they have no concept of tables, rows, or columns. By converting to structured text, you make your tabular data compatible with any text embedding model, not just specialized multimodal models that can handle tables. This gives you flexibility and broad compatibility.
+[confidently] Second, this approach **works across models without layout awareness**. Most embedding models are pure text models—they have no concept of tables, rows, or columns. By converting to structured text, you make your tabular data compatible with any text embedding model, not just specialized multimodal models that can handle tables. This gives you flexibility and broad compatibility.
 
 ####  The Trade-offs
-The main cost is **higher token count**. When you convert "Alice | 32 | Engineering" to "Name: Alice; Age: 32 years; Department: Engineering", you've added a lot of extra text. Each value now includes its column label. For large tables, this multiplies your token usage significantly. More tokens means higher embedding costs and slower processing.
+[cautiously] The main cost is **higher token count**. When you convert "Alice | 32 | Engineering" to "Name: Alice; Age: 32 years; Department: Engineering", you've added a lot of extra text. [concerned] Each value now includes its column label. For large tables, this multiplies your token usage significantly. More tokens means higher embedding costs and slower processing.
 
-There's also **potential loss of layout cues**. Tables have visual structure—columns, rows, alignment—that help humans scan and understand data quickly. When you linearize to text, you lose that visual structure. If you're showing results to users, they might prefer to see the original table rather than the linearized text. The solution is to keep both: store the linearized version for embedding and searching, but keep a reference to the original table for display.
+There's also **potential loss of layout cues**. Tables have visual structure—columns, rows, alignment—that help humans scan and understand data quickly. When you linearize to text, you lose that visual structure. [conversational] If you're showing results to users, they might prefer to see the original table rather than the linearized text. The solution is to keep both: store the linearized version for embedding and searching, but keep a reference to the original table for display.
 
-Finally, this technique **requires careful formatting for very large tables**. A table with a thousand rows and fifty columns can't be processed as a single chunk. You need strategies: maybe one chunk per row, maybe group related rows, maybe create summary chunks with aggregated statistics. This adds complexity to your preprocessing pipeline.
+[seriously] Finally, this technique **requires careful formatting for very large tables**. A table with a thousand rows and fifty columns can't be processed as a single chunk. You need strategies: maybe one chunk per row, maybe group related rows, maybe create summary chunks with aggregated statistics. This adds complexity to your preprocessing pipeline.
 
 ####  The Verdict
-For anyone building search over structured data—product catalogs, specification sheets, logs, benchmarks—converting tables to structured text is essential. The retrieval improvements far outweigh the increased token costs. Just plan your chunking strategy carefully for large tables. That completes our seven techniques. Let's summarize what we've learned.`
+[confidently] For anyone building search over structured data—product catalogs, specification sheets, logs, benchmarks—converting tables to structured text is essential. [pleased] The retrieval improvements far outweigh the increased token costs. [cautiously] Just plan your chunking strategy carefully for large tables. [energetic] That completes our seven techniques. Let's summarize what we've learned.`
         }
       ]
     },
@@ -1163,11 +1163,11 @@ For anyone building search over structured data—product catalogs, specificatio
             </div>
           ),
           backgroundColor: '#1a237e',
-          notes: `### 17. Summary and Next Steps
-We've covered a lot of ground today. Let's recap the seven techniques and talk about how to measure their impact.
+          notes: `### Summary and Next Steps
+[energetic] We've covered a lot of ground today. Let's recap the seven techniques and talk about how to measure their impact.
 
 ####  Recap: The Seven Techniques
-Let's quickly review our toolkit. **Technique one: clean and normalize text**. Standardize your input to reduce variability—fix encodings, normalize whitespace, handle special characters consistently. This is your foundation.
+[conversational] Let's quickly review our toolkit. [confidently] **Technique one: clean and normalize text**. Standardize your input to reduce variability—fix encodings, normalize whitespace, handle special characters consistently. This is your foundation.
 
 **Technique two: remove boilerplate and noise**. Strip away headers, footers, navigation, ads, and all the other non-content that dilutes your embeddings. Focus on pure signal.
 
@@ -1175,20 +1175,20 @@ Let's quickly review our toolkit. **Technique one: clean and normalize text**. S
 
 **Technique four: add section titles to chunks**. Provide context by including the document hierarchy—the breadcrumb trail from title through headings. This disambiguates and enriches your chunks.
 
-**Technique five: apply light stopword trimming**. Carefully remove the most common, least meaningful filler words. Keep it light—under ten percent removal—and always preserve negations and entities.
+[cautiously] **Technique five: apply light stopword trimming**. Carefully remove the most common, least meaningful filler words. Keep it light—under ten percent removal—and always preserve negations and entities.
 
-**Technique six: add keyphrase and topic tags as metadata**. Extract important terms and concepts, normalize them into a controlled vocabulary, and attach them as structured metadata. This enables filtering, faceting, and hybrid search.
+[pleased] **Technique six: add keyphrase and topic tags as metadata**. Extract important terms and concepts, normalize them into a controlled vocabulary, and attach them as structured metadata. This enables filtering, faceting, and hybrid search.
 
 **Technique seven: convert tables to structured text**. Linearize tabular data into key-value format so embedding models can understand the relationships between columns and values.
 
 ####  What to Measure
-Now, how do you know if these techniques are working? You need metrics. For **relevance**, measure things like **nDCG** 👉 'n-d-c-g'—Normalized Discounted Cumulative Gain—which evaluates ranking quality. **MRR-at-K** 👉 'M-R-R-at-K'—Mean Reciprocal Rank—which measures how high your first relevant result appears. **Recall-at-K**—how many of the relevant documents appear in your top K results. **Hit rate**—what percentage of queries return at least one relevant result.
+[seriously] Now, how do you know if these techniques are working? You need metrics. [lecture] For **relevance**, measure things like **nDCG** 👉 'n-d-c-g'—Normalized Discounted Cumulative Gain—which evaluates ranking quality. **MRR-at-K** 👉 'M-R-R-at-K'—Mean Reciprocal Rank—which measures how high your first relevant result appears. **Recall-at-K**—how many of the relevant documents appear in your top K results. **Hit rate**—what percentage of queries return at least one relevant result.
 
-For **performance**, measure **latency**—how long does search take. **Index size**—how much storage are you using. **Embedding time**—how long does preprocessing and embedding take.
+[conversational] For **performance**, measure **latency**—how long does search take. **Index size**—how much storage are you using. **Embedding time**—how long does preprocessing and embedding take.
 
-But the most important measurement: **A/B test with your application's end-user metrics**. Are users clicking on results more often? Spending less time searching? Finding what they need faster? These real-world metrics matter more than any synthetic benchmark.
+[firmly] But the most important measurement: **A/B test with your application's end-user metrics**. Are users clicking on results more often? Spending less time searching? Finding what they need faster? These real-world metrics matter more than any synthetic benchmark.
 
-Let's talk about implementation strategy.`
+[energetic] Let's talk about implementation strategy.`
         },
         {
           id: 18,
@@ -1234,32 +1234,32 @@ Let's talk about implementation strategy.`
             </div>
           ),
           backgroundColor: '#1a237e',
-          notes: `### 18. Implementation Playbook and Next Steps
-Let's talk about the practical path forward. How do you actually implement these techniques, and in what order?
+          notes: `### Implementation Playbook and Next Steps
+[confidently] Let's talk about the practical path forward. How do you actually implement these techniques, and in what order?
 
 ####  Implementation Playbook
-Here's my recommended implementation order, ranked by return on investment and risk.
+[conversational] Here's my recommended implementation order, ranked by return on investment and risk.
 
-**Start with cleaning and de-boilerplating**. These give you the **biggest ROI** with the lowest risk. Cleaning is straightforward—normalize encodings, fix whitespace, handle special characters. De-boilerplating removes obvious noise—headers, footers, navigation. Both techniques are hard to mess up, and the improvements are immediate and substantial.
+[enthusiastically] **Start with cleaning and de-boilerplating**. These give you the **biggest ROI** with the lowest risk. Cleaning is straightforward—normalize encodings, fix whitespace, handle special characters. De-boilerplating removes obvious noise—headers, footers, navigation. [pleased] Both techniques are hard to mess up, and the improvements are immediate and substantial.
 
-**Next, add semantic chunking and section titles**. Together, these dramatically **improve retrieval precision**. Semantic chunking ensures each embedded unit is coherent and self-contained. Section titles provide the context and disambiguation that makes chunks truly useful. These techniques require more engineering—parsing structure, analyzing boundaries—but the payoff is huge.
+[confidently] **Next, add semantic chunking and section titles**. Together, these dramatically **improve retrieval precision**. Semantic chunking ensures each embedded unit is coherent and self-contained. Section titles provide the context and disambiguation that makes chunks truly useful. [conversational] These techniques require more engineering—parsing structure, analyzing boundaries—but the payoff is huge.
 
-**Then enrich with keyphrase tags and convert tables to structured text**. These are more advanced techniques that unlock new capabilities. Keyphrase tags enable filtering, faceting, and hybrid search. Table conversion makes structured data searchable. Both require more sophisticated preprocessing—keyphrase extraction, table parsing—but they're essential for production systems with diverse data types.
+[pleased] **Then enrich with keyphrase tags and convert tables to structured text**. These are more advanced techniques that unlock new capabilities. Keyphrase tags enable filtering, faceting, and hybrid search. Table conversion makes structured data searchable. Both require more sophisticated preprocessing—keyphrase extraction, table parsing—but they're essential for production systems with diverse data types.
 
-**Finally, carefully test light stopword trimming**. This is the **most sensitive technique**. Done wrong, it can hurt quality. Done right, it provides modest gains. Only implement this after you have solid baselines and can measure the impact carefully. Keep it light, measure constantly, and be prepared to disable it if it doesn't help.
+[cautiously] **Finally, carefully test light stopword trimming**. This is the **most sensitive technique**. Done wrong, it can hurt quality. Done right, it provides modest gains. [seriously] Only implement this after you have solid baselines and can measure the impact carefully. Keep it light, measure constantly, and be prepared to disable it if it doesn't help.
 
 ####  Next Steps
-So you're sold on these techniques. What do you actually do tomorrow? Four concrete steps.
+[energetic] So you're sold on these techniques. What do you actually do tomorrow? Four concrete steps.
 
-**First, build a small labeled evaluation set**. You need ground truth. Collect maybe fifty to a hundred real queries from your users. For each query, manually identify which documents in your corpus are relevant. This is your gold standard for measuring improvements. Without this, you're flying blind.
+[confidently] **First, build a small labeled evaluation set**. You need ground truth. Collect maybe fifty to a hundred real queries from your users. For each query, manually identify which documents in your corpus are relevant. [firmly] This is your gold standard for measuring improvements. Without this, you're flying blind.
 
-**Second, run ablations per technique**. Ablation 👉 'ab-lay-shun' means turning features on and off systematically. Start with your baseline: no preprocessing. Measure quality. Add technique one: cleaning. Measure again. Add technique two: de-boilerplating. Measure again. This tells you exactly how much each technique contributes.
+[conversational] **Second, run ablations per technique**. Ablation 👉 'ab-lay-shun' means turning features on and off systematically. Start with your baseline: no preprocessing. Measure quality. Add technique one: cleaning. Measure again. Add technique two: de-boilerplating. Measure again. This tells you exactly how much each technique contributes.
 
-**Third, choose defaults per corpus**. There's no one-size-fits-all configuration. The ideal chunk size for API docs is different from the ideal size for blog posts. The best stoplist for English technical writing is different from the best for conversational Spanish. Tune your parameters for your specific data.
+**Third, choose defaults per corpus**. [seriously] There's no one-size-fits-all configuration. The ideal chunk size for API docs is different from the ideal size for blog posts. The best stoplist for English technical writing is different from the best for conversational Spanish. Tune your parameters for your specific data.
 
-**Fourth, automate quality assurance sampling**. You can't manually review every chunk, but you should regularly sample random chunks and check if your preprocessing is working correctly. Are section titles attached properly? Are tables converted cleanly? Is boilerplate actually removed? Automated sampling catches issues before they impact users.
+[firmly] **Fourth, automate quality assurance sampling**. You can't manually review every chunk, but you should regularly sample random chunks and check if your preprocessing is working correctly. Are section titles attached properly? Are tables converted cleanly? Is boilerplate actually removed? Automated sampling catches issues before they impact users.
 
-Let's close with one final insight.`
+[warmly] Let's close with one final insight.`
         },
         {
           id: 19,
@@ -1280,23 +1280,23 @@ Let's close with one final insight.`
             </div>
           ),
           backgroundColor: '#1a237e',
-          notes: `### 19. Final Insight
-Let me leave you with one crucial insight that I want you to remember.
+          notes: `### Final Insight
+[inspiringly] Let me leave you with one crucial insight that I want you to remember.
 
 ####  The Power of Data Preparation
-Many embedding quality improvements come from **better data preparation, not just model selection**. Here's what I mean by that. When people want to improve their embedding quality, the first instinct is often to swap models. "Let's try this newer model with more parameters. Let's try that model that scored higher on the benchmark." And sure, model selection matters. Better models produce better embeddings.
+[seriously] Many embedding quality improvements come from **better data preparation, not just model selection**. [conversational] Here's what I mean by that. When people want to improve their embedding quality, the first instinct is often to swap models. "Let's try this newer model with more parameters. Let's try that model that scored higher on the benchmark." [conversational] And sure, model selection matters. Better models produce better embeddings.
 
-But here's what people miss: if you're feeding messy, inconsistent, poorly structured data into even the best model, you're not going to get great results. It's like having a world-class chef but giving them spoiled ingredients. The chef can only do so much.
+[firmly] But here's what people miss: if you're feeding messy, inconsistent, poorly structured data into even the best model, you're not going to get great results. [storytelling] It's like having a world-class chef but giving them spoiled ingredients. The chef can only do so much.
 
-On the other hand, if you **clean your data, remove noise, chunk semantically, add context, and structure your information**, you transform what the model has to work with. You're now giving that same model clean, well-organized, semantically coherent input. The model can focus on understanding meaning instead of fighting through noise.
+[enthusiastically] On the other hand, if you **clean your data, remove noise, chunk semantically, add context, and structure your information**, you transform what the model has to work with. [pleased] You're now giving that same model clean, well-organized, semantically coherent input. The model can focus on understanding meaning instead of fighting through noise.
 
 ####  Small Changes, Big Impact
-And here's the beautiful part: **even small preprocessing changes can yield meaningful performance gains**. You don't need to implement all seven techniques perfectly. Even just cleaning and de-boilerplating—two relatively simple steps—can improve your retrieval metrics by twenty or thirty percent. Add semantic chunking and section titles, and you might see fifty percent improvement or more. These are transformative gains from preprocessing alone, without touching your model.
+[delighted] And here's the beautiful part: **even small preprocessing changes can yield meaningful performance gains**. [conversational] You don't need to implement all seven techniques perfectly. [enthusiastically] Even just cleaning and de-boilerplating—two relatively simple steps—can improve your retrieval metrics by twenty or thirty percent. Add semantic chunking and section titles, and you might see fifty percent improvement or more. [excited] These are transformative gains from preprocessing alone, without touching your model.
 
 ####  Your Next Steps
-So here's my challenge to you: go back to your embedding pipeline. Look at your raw data. Is it clean? Is it structured? Are you removing boilerplate? Are your chunks coherent? Pick one or two techniques from today's presentation—start with cleaning and de-boilerplating if you haven't done them—and implement them this week. Measure the impact. I think you'll be surprised at how much better your results get.
+[inspiringly] So here's my challenge to you: go back to your embedding pipeline. Look at your raw data. [conversational] Is it clean? Is it structured? Are you removing boilerplate? Are your chunks coherent? [confidently] Pick one or two techniques from today's presentation—start with cleaning and de-boilerplating if you haven't done them—and implement them this week. Measure the impact. [warmly] I think you'll be surprised at how much better your results get.
 
-Thank you for your attention. These seven techniques are your toolkit for better embeddings. Use them wisely, measure everything, and remember: great embeddings start with great data preparation.`
+[warmly] Thank you for your attention. [inspiringly] These seven techniques are your toolkit for better embeddings. Use them wisely, measure everything, and remember: [confidently] great embeddings start with great data preparation.`
         }
       ]
     }
