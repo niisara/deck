@@ -1,5 +1,9 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
+
+const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
 export const promptEngineeringDeck: Deck = {
   id: 'prompt-engineering-deck',
@@ -7,6 +11,12 @@ export const promptEngineeringDeck: Deck = {
   description: 'A Comprehensive Guide to Advanced Prompting Patterns',
   category: 'RAG',
   theme: 'moon',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -19,35 +29,52 @@ export const promptEngineeringDeck: Deck = {
           title: '18 Prompt Engineering Techniques',
           content: (
             <div style={{ color: '#fff' }}>
-              <h2 style={{ marginBottom: '30px' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h2 style={{ marginBottom: '30px', fontSize: '2.5rem', color: '#e5c07b' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Retrieval</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Agentic</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Hybrid</p>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Retrieval</p>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Agentic</p>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Hybrid</p>
-                </div>
-              </div>
-              <p style={{ marginTop: '20px', fontSize: '2rem' }}>
-                For Practitioners, Data Scientists & Product Engineers
-              </p>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.6}>
+                <p style={{ marginTop: '20px', fontSize: '2rem' }}>
+                  For Practitioners, Data Scientists & Product Engineers
+                </p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a3957',
-          notes: ''
+          notes: `### 18 Prompt Engineering Techniques
+Welcome to this comprehensive deep-dive into **18 Prompt Engineering Techniques** — the essential patterns and strategies you need to build *reliable*, *accurate*, and *production-ready* **LLM** 👉 'L-L-M' (Large Language Model) applications.
+
+#### Why This Matters
+Prompt engineering is the *art and science* of communicating with AI models. Think of it like learning to speak a new language — except this language unlocks superhuman capabilities in reasoning, retrieval, and task automation. Whether you're building chatbots, RAG systems, or agentic workflows, mastering these 18 techniques will dramatically improve your results.
+
+#### What You'll Learn Today
+We've organized these techniques into **four categories**: Reasoning techniques help models think step-by-step, Retrieval techniques ground responses in external knowledge, Agentic techniques enable models to use tools and self-correct, and Hybrid techniques combine multiple approaches for complex workflows. Each technique includes clear definitions, practical examples, and real-world use cases.
+
+> By the end of this deck, you'll know *exactly* when to use each technique and how to implement it effectively. Let's dive in!`
         },
         {
           id: 2,
@@ -55,61 +82,90 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Reasoning Techniques (1-8, 17)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>1. Zero-shot Prompting</li>
-                    <li>2. Few-shot Prompting</li>
-                    <li>3. Chain-of-Thought (CoT)</li>
-                    <li>4. Meta Prompting</li>
-                    <li>5. Self-Consistency</li>
-                    <li>6. Generate Knowledge Prompting</li>
-                    <li>8. Tree of Thoughts (ToT)</li>
-                    <li>17. Multimodal Chain-of-Thought</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Retrieval (9)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>9. Retrieval-Augmented Generation (RAG)</li>
-                  </ul>
+              <GSAPAnimated animation="fadeIn" delay={0}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                  <div>
+                    <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Reasoning Techniques (1-8, 17)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPStaggerList stagger={0.1} delay={0.4}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>1. Zero-shot Prompting</li>
+                        <li>2. Few-shot Prompting</li>
+                        <li>3. Chain-of-Thought (CoT)</li>
+                        <li>4. Meta Prompting</li>
+                        <li>5. Self-Consistency</li>
+                        <li>6. Generate Knowledge Prompting</li>
+                        <li>8. Tree of Thoughts (ToT)</li>
+                        <li>17. Multimodal Chain-of-Thought</li>
+                      </ul>
+                    </GSAPStaggerList>
+                    <GSAPAnimated animation="slideInLeft" delay={0.9}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Retrieval (9)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPAnimated animation="fadeIn" delay={1.0}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>9. Retrieval-Augmented Generation (RAG)</li>
+                      </ul>
+                    </GSAPAnimated>
+                  </div>
+                  <div>
+                    <GSAPAnimated animation="slideInRight" delay={0.2}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Agentic Techniques (10, 14-16)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPStaggerList stagger={0.1} delay={0.4}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>10. Automatic Reasoning & Tool-use (ART)</li>
+                        <li>14. Program-Aided LMs (PAL)</li>
+                        <li>15. ReAct</li>
+                        <li>16. Reflexion</li>
+                      </ul>
+                    </GSAPStaggerList>
+                    <GSAPAnimated animation="slideInRight" delay={0.9}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Hybrid Techniques (7, 11-13, 18)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPStaggerList stagger={0.1} delay={1.0}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>7. Prompt Chaining</li>
+                        <li>11. Automatic Prompt Engineer (APE)</li>
+                        <li>12. Active-Prompt</li>
+                        <li>13. Directional Stimulus Prompting</li>
+                        <li>18. Graph Prompting</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Agentic Techniques (10, 14-16)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>10. Automatic Reasoning & Tool-use (ART)</li>
-                    <li>14. Program-Aided LMs (PAL)</li>
-                    <li>15. ReAct</li>
-                    <li>16. Reflexion</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Hybrid Techniques (7, 11-13, 18)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>7. Prompt Chaining</li>
-                    <li>11. Automatic Prompt Engineer (APE)</li>
-                    <li>12. Active-Prompt</li>
-                    <li>13. Directional Stimulus Prompting</li>
-                    <li>18. Graph Prompting</li>
-                  </ul>
-                </div>
-              </div>
-              <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '2rem', fontWeight: 'bold' }}>
-                18 advanced prompting patterns for reliable LLM systems
-              </p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.3}>
+                <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '2rem', fontWeight: 'bold' }}>
+                  18 advanced prompting patterns for reliable LLM systems
+                </p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a3957',
-          notes: ''
+          notes: `### Table of Contents
+Here's your roadmap for today's journey through 18 powerful prompt engineering techniques! We've organized these into **four logical categories** to make it easier to understand when and how to use each one.
+
+#### The Four Categories
+First, we have **Reasoning Techniques** — these are your foundational patterns like Zero-shot, Few-shot, and Chain-of-Thought. They teach models *how to think* through problems step by step. Second is **Retrieval** with RAG 👉 'rag', which grounds your model's responses in external knowledge bases and documents. Third, we have **Agentic Techniques** like ReAct and Reflexion, where models learn to use tools, execute code, and self-correct their mistakes. Finally, **Hybrid Techniques** combine multiple approaches to tackle complex, multi-step workflows.
+
+#### How to Use This Deck
+Each technique gets multiple slides covering the definition, how it works, when to use it, and real-world examples. Feel free to jump to specific techniques you're curious about, but I recommend going through them in order to build a strong mental model of the progression from simple to advanced patterns.
+
+> Pro tip: Keep your specific use case in mind as we go through each technique — you'll quickly identify which ones are perfect for your needs!`
         }
       ]
     },
@@ -123,19 +179,38 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Ask the model to perform a task with clear instructions and no examples.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Direct answer or formatted summary</li>
-                <li>Fastest way to get baseline results</li>
-                <li>Minimal token usage</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for quick baselines, well-known tasks, and situations with low token budgets. Ideal when you need fast results without additional context.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Ask the model to perform a task with clear instructions and no examples.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Direct answer or formatted summary</li>
+                  <li>Fastest way to get baseline results</li>
+                  <li>Minimal token usage</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for quick baselines, well-known tasks, and situations with low token budgets. Ideal when you need fast results without additional context.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
+          notes: `### Zero-shot Prompting - Overview
+Let's start our journey with the simplest and most fundamental technique — **Zero-shot Prompting**. Think of this as the "just ask" approach to working with language models.
+
+#### What Makes Zero-shot Special
+Zero-shot means you're asking the model to do something *without giving it any examples first*. It's like asking a knowledgeable friend for help — you state your request clearly and trust they'll understand what you need. The model relies entirely on what it learned during training to interpret your instruction and generate a response. This is your **baseline technique** that you'll use more often than any other.
+
+#### When to Reach for Zero-shot
+Use zero-shot when you need *quick results* for well-known tasks like summarization, translation, or basic classification. It's perfect when you're working with tight token budgets or need a fast baseline to iterate from. For example, asking "Summarize this customer feedback in 3 bullets" is a classic zero-shot task that most models handle beautifully.
+
+> Remember: Zero-shot is your starting point. If results aren't good enough, you can always upgrade to few-shot or more advanced techniques!`
         },
         {
           id: 4,
@@ -143,17 +218,41 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Zero-shot prompting relies on the model's pre-trained knowledge and capabilities. You provide clear, direct instructions without any demonstrations or examples. The model interprets your intent from the instruction alone and generates a response based on what it learned during training.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Simple</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Zero-shot prompting relies on the model's pre-trained knowledge and capabilities. You provide clear, direct instructions without any demonstrations or examples. The model interprets your intent from the instruction alone and generates a response based on what it learned during training.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Simple</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
+          notes: `### Zero-shot Prompting - How It Works
+Now let's understand the mechanics behind zero-shot prompting and why it's so powerful despite its simplicity.
+
+#### The Magic of Pre-training
+Here's the key insight: modern language models like **GPT-4** 👉 'G-P-T four', **Claude 3.5** 👉 'Claude three point five', and **Gemini 1.5** 👉 'Gemini one point five' have been trained on *massive* amounts of text data. During that training, they learned patterns for thousands of tasks — summarization, classification, translation, question-answering, and more. When you use zero-shot prompting, you're essentially activating this *pre-learned knowledge* with your instruction.
+
+#### Complexity and Model Selection
+Zero-shot is our **simplest technique** — it requires no special setup, no examples, and works across virtually all modern LLMs. Even smaller models can handle straightforward zero-shot tasks, though larger, more capable models will give you better accuracy and consistency. The beauty is that you can start with zero-shot on any model and immediately get results.
+
+#### Real-World Application: Email Triage
+Imagine you're building an email management system. You can use zero-shot to classify emails as Urgent, Normal, or Low priority by simply providing clear definitions: "Urgent emails require action within 24 hours, Normal within a week, Low are informational only." The model will apply this logic without seeing any example emails first!
+
+> Pro tip: The quality of your instruction directly impacts results. Be specific about what you want, but don't overthink it — clear and concise wins!`
         },
         {
           id: 5,
@@ -161,18 +260,38 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Summarize the following article 
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Summarize the following article 
 in 3 bullets for executives:
 [paste text here]"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support zero-shot prompting out of the box. Even smaller models can handle simple zero-shot tasks effectively.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support zero-shot prompting out of the box. Even smaller models can handle simple zero-shot tasks effectively.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
+          notes: `### Zero-shot Prompting - Implementation
+Let's look at a concrete example to see zero-shot prompting in action and understand which models work best for it.
+
+#### Anatomy of a Good Zero-shot Prompt
+The example prompt here is beautifully simple: "Summarize the following article in 3 bullets for executives." Notice how it's *clear* about what to do (summarize), *specific* about format (3 bullets), and *targeted* to audience (executives). This level of clarity helps the model understand exactly what you need without requiring any examples. The key is being **direct and unambiguous** in your instruction.
+
+#### Model Compatibility
+The great news about zero-shot prompting is that it's **universally supported**. Every modern LLM from GPT-4, Claude 3.5, and Gemini 1.5 down to smaller open-source models can handle zero-shot tasks. The difference is in *quality* and *consistency* — larger, more capable models will give you better results, but even smaller models can handle straightforward tasks like classification or basic summarization.
+
+#### Practical Tips for Implementation
+When writing your zero-shot prompts, think about *what*, *how*, and *for whom*. What task needs to be done? How should the output be formatted? For whom or what purpose is this being created? Answering these three questions in your prompt will dramatically improve your results. For example, "Summarize for executives" produces different output than "Summarize for technical teams" — same task, different audience, different results.
+
+> Remember: Start simple. If the model doesn't understand, add more detail to your instruction before jumping to few-shot examples.`
         },
         {
           id: 6,
@@ -180,18 +299,34 @@ in 3 bullets for executives:
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>May misinterpret intent without examples</li>
-                <li>Brittle on novel or nuanced tasks</li>
-                <li>Less control over output format</li>
-                <li>Performance varies significantly by model capability</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>May misinterpret intent without examples</li>
+                  <li>Brittle on novel or nuanced tasks</li>
+                  <li>Less control over output format</li>
+                  <li>Performance varies significantly by model capability</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
-        }
+          notes: `### Zero-shot Prompting - Considerations
+While zero-shot prompting is incredibly useful, it's important to understand its limitations so you know when to reach for more advanced techniques.
+
+#### When Zero-shot Struggles
+The biggest challenge with zero-shot prompting is **ambiguity**. Without examples, the model might misinterpret what you want, especially for nuanced tasks or domain-specific requirements. For instance, asking to "extract key information" from a medical report might work, but the model might miss critical details that a healthcare professional would recognize. Novel tasks that the model hasn't seen during training are particularly challenging — if it's truly new territory, zero-shot might give you inconsistent or incorrect results.
+
+#### Format and Consistency Issues
+Another limitation is *control over output format*. You can request JSON or specific structures, but without examples showing exactly what you want, the model might deviate from your expectations. This becomes especially problematic in production systems where you need **reliable, consistent formatting** for downstream processing. If you find yourself repeatedly reformatting outputs, that's a sign you need few-shot examples or more structured approaches.
+
+#### Model Capability Matters
+Finally, remember that **model capability significantly impacts zero-shot performance**. GPT-4 might nail a task on the first try, while a smaller model might struggle. This isn't a flaw in zero-shot prompting itself — it's just reality. If you're using smaller models for cost or latency reasons, you'll often need to supplement zero-shot with few-shot examples or other techniques to get comparable results.
+
+> Pro tip: Start with zero-shot, measure performance, then upgrade to few-shot or other techniques only if needed. Don't over-engineer from the start!`
+        },
       ]
     },
     {
@@ -204,19 +339,41 @@ in 3 bullets for executives:
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Guide the model with a few labeled examples to shape outputs.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Classification and structured outputs matching examples</li>
-                <li>Consistent formatting and tone</li>
-                <li>Better handling of domain-specific terminology</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for tasks requiring custom formats, specific domain tone, or when you need to demonstrate edge cases. Examples guide the model to match your desired output style.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Guide the model with a few labeled examples to shape outputs.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Classification and structured outputs matching examples</li>
+                  <li>Consistent formatting and tone</li>
+                  <li>Better handling of domain-specific terminology</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for tasks requiring custom formats, specific domain tone, or when you need to demonstrate edge cases. Examples guide the model to match your desired output style.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
+          notes: `### Few-shot Prompting - Overview
+Now we're leveling up from zero-shot to **Few-shot Prompting** — one of the most practical and widely-used techniques in production systems. Think of this as "teaching by example."
+
+#### The Power of Examples
+Few-shot prompting means providing the model with *2 to 5 labeled examples* before asking it to perform the actual task. These examples demonstrate exactly what you want — the input format, the output format, the style, the tone, and even how to handle edge cases. It's like showing someone how to fill out a form correctly before handing them a blank one. The model learns the pattern from your examples and applies it to new inputs.
+
+#### When Few-shot Shines
+Use few-shot when you need **consistent formatting and tone**, especially for domain-specific tasks. For example, if you're building a customer support system that needs to respond in your company's specific voice with certain terminology, showing 3-5 examples of good responses will dramatically improve consistency. Few-shot is also excellent for classification tasks where categories might be ambiguous without concrete examples.
+
+#### The Sweet Spot
+Few-shot sits in a perfect middle ground — it's more powerful than zero-shot but simpler than complex reasoning techniques. You're essentially showing the model "this is what good looks like" without needing to engineer elaborate prompts or chains of reasoning. This makes it **practical, effective, and easy to implement** in real applications.
+
+> Pro tip: Quality matters more than quantity with few-shot. Three excellent examples beat ten mediocre ones!`
         },
         {
           id: 8,
@@ -224,17 +381,41 @@ in 3 bullets for executives:
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Few-shot prompting provides 2-5 input-output examples before presenting the actual task. The model learns the pattern from these demonstrations and applies it to new inputs. This approach helps the model understand not just what to do, but how to format and style the response.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Simple–Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Mid-size models benefit noticeably from examples</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Few-shot prompting provides 2-5 input-output examples before presenting the actual task. The model learns the pattern from these demonstrations and applies it to new inputs. This approach helps the model understand not just what to do, but how to format and style the response.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Simple–Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Mid-size models benefit noticeably from examples</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
+          notes: `### Few-shot Prompting - How It Works
+Let's dive into the mechanics of few-shot prompting and understand why those examples are so powerful.
+
+#### The Pattern Recognition Engine
+Here's what happens behind the scenes: When you provide examples, the model's attention mechanism *analyzes the patterns* across your input-output pairs. It notices structural similarities, stylistic choices, terminology usage, and formatting conventions. Then when you present the new task, it applies those learned patterns to generate a response that matches your examples. Think of it like the model saying, "Oh, I see the pattern — when you give me X, you want Y formatted like this."
+
+#### Optimal Complexity Level
+Few-shot is classified as **Simple to Intermediate** complexity because it doesn't require complex chains of reasoning or special model capabilities. However, it does require some thought in *selecting good examples*. You want examples that are representative of the task, cover common cases and maybe an edge case or two, and demonstrate the exact format you need. The beauty is that even mid-size models show **significant improvement** with just a few examples.
+
+#### Real-World Application: Support Macros
+Imagine you're building automated support responses for a SaaS company. You need responses that use company-specific terminology (like your product names), maintain a friendly but professional tone, and follow certain formatting (like always ending with a link to docs). By showing 3-5 examples of perfect support responses, the model will generate new responses that *feel like they came from your team*, not a generic AI.
+
+> Pro tip: Include at least one edge case example (like handling a frustrated customer) to teach the model how to handle tricky situations!`
         },
         {
           id: 9,
@@ -242,19 +423,39 @@ in 3 bullets for executives:
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"You are a sentiment classifier.
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"You are a sentiment classifier.
 Example: 'Loved it' -> positive
 'Too slow' -> negative
 Classify: 'It was okay, but pricey.'"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support few-shot learning. Mid-size models especially benefit from the additional context provided by examples.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support few-shot learning. Mid-size models especially benefit from the additional context provided by examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
+          notes: `### Few-shot Prompting - Implementation
+Let's look at a concrete implementation of few-shot prompting to see how examples transform model behavior.
+
+#### Anatomy of the Example
+Look at this sentiment classification example carefully. Notice the structure: first, we set context ("You are a sentiment classifier"), then provide two examples showing the input-output pattern, and finally present the actual task. The examples are *crisp and clear* — "Loved it" is obviously positive, "Too slow" is clearly negative. This gives the model strong signal about what positive and negative mean in your domain. When it sees "It was okay, but pricey," it can confidently classify it as negative because "pricey" has negative sentiment similar to "too slow."
+
+#### The Example Selection Process
+Choosing good examples is an **art and science**. You want diversity that covers your input space — in sentiment analysis, that might mean examples with different lengths, styles, and intensity levels. You also want clarity — ambiguous examples confuse the model. And you want representation of all your categories — if you're doing multi-class classification, show at least one example of each class. For this sentiment task, you might add a neutral example like "It works as expected" -> neutral to teach the model about the middle ground.
+
+#### Universal Model Support
+The good news is that few-shot learning is **universally supported** across modern LLMs. Every major model from GPT-4 to smaller open-source alternatives can learn from examples. The difference is in how many examples different models need — larger models might nail it with 2-3 examples, while smaller models might need 5-7 for the same performance.
+
+> Pro tip: Test your examples! Run the prompt with different inputs to verify the pattern is clear and the model generalizes correctly.`
         },
         {
           id: 10,
@@ -262,18 +463,37 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Example bias - model may overfit to example patterns</li>
-                <li>Token overhead increases with number of examples</li>
-                <li>Data leakage risk if examples contain sensitive information</li>
-                <li>Example selection significantly impacts results</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Example bias - model may overfit to example patterns</li>
+                  <li>Token overhead increases with number of examples</li>
+                  <li>Data leakage risk if examples contain sensitive information</li>
+                  <li>Example selection significantly impacts results</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
-        }
+          notes: `### Few-shot Prompting - Considerations
+While few-shot prompting is incredibly powerful, it comes with important tradeoffs and considerations you need to understand.
+
+#### The Example Bias Problem
+The biggest gotcha with few-shot is **example bias** — the model might overfit to the specific patterns in your examples rather than learning the general task. For instance, if all your sentiment examples use adjectives, the model might rely too heavily on adjectives and miss sentiment expressed through verbs or context. This is why *example diversity* is critical. You want examples that demonstrate the task from different angles, not just variations of the same pattern.
+
+#### Token Economics
+Every example you add increases your token count, which means **higher costs and increased latency**. If you're using 5 examples of 100 tokens each, that's 500 tokens per request before you even get to the actual task! At scale, this adds up fast. You need to find the sweet spot — enough examples to get good performance, but not so many that costs become prohibitive. Often, 3-5 carefully chosen examples hit that sweet spot.
+
+#### Security and Privacy Considerations
+Here's something many people overlook: if your examples contain actual customer data, medical information, or proprietary details, you're potentially creating **data leakage risks**. Those examples go to the model provider in every single request. Always use synthetic or anonymized examples, especially in production systems. This protects your users' privacy and keeps your sensitive information secure.
+
+#### Example Selection is Critical
+Finally, remember that **bad examples teach bad patterns**. If your examples have errors, inconsistencies, or don't actually represent what you want, the model will learn those flaws. Take time to curate high-quality examples, test them thoroughly, and update them as you learn what works. Think of your examples as training data — quality matters immensely.
+
+> Pro tip: Start with 3 examples, measure performance, then add more only if needed. More isn't always better!`
+        },
       ]
     },
     {
@@ -286,20 +506,42 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Ask the model to reason step-by-step before the final answer.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Intermediate reasoning steps plus final answer</li>
-                <li>Improved accuracy on complex reasoning tasks</li>
-                <li>Transparent decision-making process</li>
-                <li>Better handling of multi-step problems</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for math and logic problems, multi-hop question answering, and planning tasks. The step-by-step approach significantly improves reasoning accuracy.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Ask the model to reason step-by-step before the final answer.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Intermediate reasoning steps plus final answer</li>
+                  <li>Improved accuracy on complex reasoning tasks</li>
+                  <li>Transparent decision-making process</li>
+                  <li>Better handling of multi-step problems</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for math and logic problems, multi-hop question answering, and planning tasks. The step-by-step approach significantly improves reasoning accuracy.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
+          notes: `### Chain-of-Thought - Overview
+Welcome to **Chain-of-Thought** or **CoT** 👉 'cot' — one of the most transformative techniques in modern prompt engineering. This is where we teach models to *think* before they answer.
+
+#### The Revolutionary Insight
+Here's the breakthrough: when you ask a model to show its reasoning step-by-step before giving the final answer, accuracy on complex tasks can improve by **30-50%** or more! It's like the difference between a student who writes down their work versus one who just guesses the answer. The act of explicitly reasoning through intermediate steps helps the model catch errors, maintain logical consistency, and arrive at better conclusions. This simple insight has revolutionized how we use LLMs for complex reasoning.
+
+#### When Chain-of-Thought Shines
+CoT is your go-to technique for **math problems, logic puzzles, multi-hop question answering**, and any task that requires connecting multiple pieces of information. For example, answering "How many years passed between the founding of Apple and the first iPhone?" requires finding two dates, then calculating the difference. CoT makes these multi-step problems dramatically more reliable.
+
+#### The Transparency Advantage
+Beyond accuracy, CoT gives you **transparency**. You can see *how* the model arrived at its answer, which is crucial for debugging, building trust, and meeting explainability requirements. If the answer is wrong, you can look at the reasoning steps to see where it went off track. This makes CoT invaluable in production systems where you need to understand and validate model behavior.
+
+> Pro tip: CoT transforms LLMs from pattern matchers into reasoning engines. It's the technique that makes complex applications possible!`
         },
         {
           id: 12,
@@ -307,17 +549,44 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Chain-of-Thought prompting instructs the model to break down complex problems into intermediate steps. By explicitly reasoning through each step, the model can catch errors and maintain logical consistency. This mimics human problem-solving and dramatically improves performance on tasks requiring multi-step reasoning.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Smaller models may overfit or produce inconsistent reasoning</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Chain-of-Thought prompting instructs the model to break down complex problems into intermediate steps. By explicitly reasoning through each step, the model can catch errors and maintain logical consistency. This mimics human problem-solving and dramatically improves performance on tasks requiring multi-step reasoning.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Smaller models may overfit or produce inconsistent reasoning</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
+          notes: `### Chain-of-Thought - How It Works
+Let's understand the mechanics of Chain-of-Thought and why it's such a powerful reasoning amplifier.
+
+#### The Step-by-Step Mechanism
+Here's what CoT does: instead of jumping directly to an answer, it forces the model to **generate intermediate reasoning steps**. For a math problem like "If Sarah has 15 apples and gives away 40% to friends, then buys 8 more, how many does she have?" — CoT makes the model show: "Step 1: Calculate 40% of 15 = 6 apples. Step 2: 15 - 6 = 9 apples remaining. Step 3: 9 + 8 = 17 apples total." Each step is a checkpoint where the model must maintain correctness, dramatically reducing compound errors.
+
+#### Why It Works So Well
+The magic is in how language models generate text. They predict one token at a time, and *earlier tokens influence later ones*. By generating reasoning steps first, those steps become part of the context for generating the final answer. It's like building a scaffold — each reasoning step supports the next, leading to a much more solid final answer. This is why CoT works even though we're not actually changing the model itself!
+
+#### Model Requirements
+CoT is classified as **Intermediate** complexity because it requires models with strong reasoning capabilities. GPT-4, Claude 3.5, and Gemini 1.5 excel at maintaining coherent multi-step reasoning. Smaller models can struggle — they might generate plausible-sounding reasoning that's actually incorrect, or they might shortcut the reasoning and jump to an answer. This is one technique where **model capability really matters**.
+
+#### Real-World Application: Finance Approvals
+Imagine a system that reviews purchase requests. Using CoT, it can show: "Base cost: $10,000. Tax (8%): $800. Volume discount (15%): -$1,500. Net cost: $9,300. Expected annual savings: $15,000. ROI: 161% in year one. Recommendation: Approve." This transparency builds trust and makes auditing easy!
+
+> Pro tip: CoT turns abstract reasoning into visible, debuggable steps. It's like having X-ray vision into the model's thinking!`
         },
         {
           id: 13,
@@ -325,16 +594,36 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, and Gemini 1.5 excel at chain-of-thought reasoning. Works best with larger, more capable models that can maintain coherent multi-step reasoning.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, and Gemini 1.5 excel at chain-of-thought reasoning. Works best with larger, more capable models that can maintain coherent multi-step reasoning.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
+          notes: `### Chain-of-Thought - Implementation
+Let's examine a concrete CoT prompt to understand how to craft effective step-by-step reasoning instructions.
+
+#### Anatomy of a CoT Prompt
+Look at this marble problem carefully. The key phrase is **"Think step by step"** at the end — this is the trigger that activates chain-of-thought reasoning. Without it, the model might jump to an answer. With it, the model knows to show its work. The problem itself is multi-step: first count total marbles (12 + 8 = 20), then remove 4 reds (12 - 4 = 8 reds remaining), then calculate the new total (8 + 8 = 16), finally compute the fraction (8/16 = 1/2). CoT ensures the model works through each step explicitly.
+
+#### Variations That Work
+You can trigger CoT with different phrases: "Think step by step", "Let's solve this systematically", "Show your work", or "Explain your reasoning before answering". Some practitioners combine CoT with few-shot by showing one example with reasoning steps, then asking the model to apply the same approach. The key is **signaling that you want intermediate steps**, not just the final answer.
+
+#### Model Capabilities Matter
+GPT-4, Claude 3.5, and Gemini 1.5 are the **gold standard** for CoT. They can maintain logical coherence across multiple reasoning steps, catch their own errors, and generate reasoning that actually makes sense. Smaller models can attempt CoT, but they often produce reasoning that *looks* plausible but contains logical errors. If you're using CoT in production, invest in the best models you can afford — the reasoning quality directly impacts your results.
+
+> Pro tip: Combine CoT with output formatting instructions like "Provide your reasoning in numbered steps, then give the final answer after 'Answer:'" to make parsing easier!`
         },
         {
           id: 14,
@@ -342,18 +631,37 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Longer outputs increase token costs and latency</li>
-                <li>Potential for verbose hallucinations in reasoning steps</li>
-                <li>May generate plausible but incorrect reasoning paths</li>
-                <li>Requires careful prompt engineering to avoid shortcuts</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Longer outputs increase token costs and latency</li>
+                  <li>Potential for verbose hallucinations in reasoning steps</li>
+                  <li>May generate plausible but incorrect reasoning paths</li>
+                  <li>Requires careful prompt engineering to avoid shortcuts</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
-        }
+          notes: `### Chain-of-Thought - Considerations
+While CoT is powerful, it comes with important tradeoffs that you need to understand and manage.
+
+#### The Token Cost Reality
+CoT generates **significantly more tokens** than direct answers. Where a direct answer might be 10-20 tokens, CoT reasoning could be 100-200 tokens or more. At scale, this means higher API costs and increased latency. You need to decide: is the accuracy improvement worth the extra cost? For critical reasoning tasks where correctness matters more than speed or cost, absolutely yes. For simple tasks where basic accuracy is fine, maybe not. Always **measure the cost-benefit tradeoff** for your specific use case.
+
+#### The Hallucination Risk
+Here's a subtle danger: CoT can produce **confident-sounding but incorrect reasoning**. The model might generate plausible-looking steps that contain errors, and because it looks logical, you might trust it. For example, it might say "Step 1: Calculate 40% of 50 = 25" (wrong!) and then build subsequent steps on that error. The reasoning *reads* convincingly, but it's wrong from the start. This is why you need validation — check the reasoning steps, not just the final answer, especially in high-stakes applications.
+
+#### Shortcut Behavior
+Models can be clever in ways you don't want. Sometimes they'll "fake" reasoning by jumping to the answer and then backfilling plausible-sounding steps. To prevent this, you need **careful prompt engineering** — be explicit that you want genuine step-by-step reasoning, perhaps by using few-shot examples that show real work, or by using techniques like "show uncertainty at each step" to force genuine thinking.
+
+#### When NOT to Use CoT
+Don't use CoT for simple tasks where direct answers work fine — you're just wasting tokens. Don't use it when you need ultra-fast responses and can tolerate some error. And be cautious with smaller models that might generate nonsense reasoning. CoT is a **power tool** — use it when you need the power, but don't overuse it everywhere.
+
+> Pro tip: For production systems, implement validation of reasoning steps, not just final answers. Catch errors early in the chain!`
+        },
       ]
     },
     {
@@ -366,20 +674,42 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Specify abstract structure, syntax, and format rather than content-specific examples.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Consistent, schema-compliant outputs</li>
-                <li>Improved standardization across tasks</li>
-                <li>Better tool integration</li>
-                <li>Comparable evaluation results</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for standardized pipelines, tool integration, and when evaluation comparability is important. Focuses on structure over specific content examples.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Specify abstract structure, syntax, and format rather than content-specific examples.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Consistent, schema-compliant outputs</li>
+                  <li>Improved standardization across tasks</li>
+                  <li>Better tool integration</li>
+                  <li>Comparable evaluation results</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for standardized pipelines, tool integration, and when evaluation comparability is important. Focuses on structure over specific content examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
+          notes: `### Meta Prompting - Overview
+Let's explore **Meta Prompting** — a technique that shifts focus from *what* to *how*, defining the structure and format of outputs rather than providing content examples.
+
+#### Structure Over Content
+Here's the key distinction: while few-shot shows *specific examples*, meta prompting defines *abstract structure*. Instead of showing "Input: X, Output: Y", you specify "Output must be JSON with fields [name, description, status]". Instead of demonstrating tone through examples, you say "Use professional language, avoid jargon, keep sentences under 20 words". You're defining the **blueprint** rather than showing finished products. This makes meta prompting incredibly powerful for standardization.
+
+#### When Meta Prompting Excels
+Use meta prompting when you need **consistent, machine-readable outputs** across many tasks. It's perfect for building standardized pipelines where downstream systems expect specific schemas. For example, if you're extracting structured data from documents to feed into a database, meta prompting ensures every extraction follows the same schema, making integration seamless. It's also excellent when you need comparable results across different models or prompts — the schema acts as a contract.
+
+#### The Abstraction Advantage
+Meta prompting works because modern LLMs have learned countless schemas, formats, and structures during training. By specifying structural requirements, you're tapping into this learned knowledge without needing to provide examples. This saves tokens, reduces maintenance (no example library to curate), and often generalizes better than specific examples. Think of it as **programming by specification** rather than programming by example.
+
+> Pro tip: Meta prompting is your secret weapon for building reliable, maintainable production systems that need consistent outputs!`
         },
         {
           id: 16,
@@ -387,17 +717,44 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Meta prompting defines the abstract structure and format requirements without providing content-specific examples. By specifying schemas, field types, and structural constraints, you guide the model to produce outputs that conform to your requirements while allowing flexibility in content generation.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong instruction-following capabilities</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Meta prompting defines the abstract structure and format requirements without providing content-specific examples. By specifying schemas, field types, and structural constraints, you guide the model to produce outputs that conform to your requirements while allowing flexibility in content generation.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong instruction-following capabilities</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
+          notes: `### Meta Prompting - How It Works
+Let's understand the mechanics of meta prompting and why schema-based specifications are so powerful.
+
+#### The Schema-Based Approach
+Meta prompting works by leveraging the model's **deep understanding of formats and structures**. During training, models saw countless JSON objects, XML documents, data schemas, and structured formats. When you specify "Output as JSON with fields [id: integer, name: string, tags: array]", the model knows exactly what that means and how to generate it. You're activating pre-learned structural knowledge rather than teaching through examples. This makes meta prompting incredibly efficient — you get structured outputs with minimal prompt overhead.
+
+#### Flexibility Within Structure
+Here's the beauty: meta prompting gives you **control over structure while allowing content flexibility**. If you're extracting key points from various documents, specifying a schema ensures consistent output format, but the model still applies intelligence to determine what content fits each field. It's like providing a template — the structure is fixed, but the model fills it intelligently based on context. This balance between constraint and flexibility is perfect for production systems.
+
+#### Model Requirements
+Meta prompting works best with **instruction-following champions** like GPT-4, Claude 3.5, and Gemini 1.5. These models excel at understanding and adhering to structural specifications. They can parse complex schema definitions, understand type constraints, and maintain consistency across long outputs. Smaller models might struggle with complex schemas or deviate from specifications, so invest in capable models if meta prompting is core to your system.
+
+#### Real-World Application: Incident Reports
+Imagine a large organization where different teams report incidents differently, making analysis impossible. With meta prompting, you define a schema: "JSON with fields: {timestamp: ISO8601, severity: enum[low, medium, high, critical], category: string, description: string, affected_systems: array, resolution_steps: array}". Now every team's reports, processed through the LLM, come out in this standard format, making aggregation and analysis trivial!
+
+> Pro tip: Start with simple schemas and add complexity gradually. Test that the model reliably follows your structure before deploying!`
         },
         {
           id: 17,
@@ -405,18 +762,38 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Problem: <text>. Goal: <target>. Constraints: <list>.
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Problem: <text>. Goal: <target>. Constraints: <list>.
 Output schema: JSON with fields [steps, rationale, answer].
 Populate schema only."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well with meta prompting. These models excel at understanding and following structural specifications.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well with meta prompting. These models excel at understanding and following structural specifications.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
+          notes: `### Meta Prompting - Implementation
+Let's examine a concrete meta prompting example to understand how to craft effective structural specifications.
+
+#### Anatomy of the Meta Prompt
+Look at this example structure: it starts with **input placeholders** (Problem, Goal, Constraints), then specifies the **output schema** (JSON with specific fields), and ends with a clear directive ("Populate schema only"). Notice how it doesn't show any concrete examples — it's purely structural. The model understands that it needs to take the problem, goal, and constraints, then generate a JSON object with "steps" (likely an array), "rationale" (probably a string), and "answer" (could be any type). This abstraction is powerful!
+
+#### Best Practices for Schema Definition
+When crafting meta prompts, be **explicit about data types and structures**. Instead of just "output JSON", specify field names, types (string, integer, array, object), and any constraints (enums, ranges, formats). For example: "status must be one of [pending, approved, rejected]" or "timestamp in ISO8601 format". The more specific your schema, the more reliable the output. Think like you're writing an API contract — because essentially, you are!
+
+#### The "Populate Schema Only" Directive
+That final instruction — "Populate schema only" — is crucial. It tells the model **don't add explanation, don't add preamble, just give me the structured data**. This makes parsing much easier in code. You can be even more explicit: "Return only valid JSON, no markdown formatting, no explanation text". This ensures you get machine-readable output that won't break your parser.
+
+> Pro tip: Validate outputs programmatically! Use JSON schema validators or pydantic models to catch when the model deviates from your specification!`
         },
         {
           id: 18,
@@ -424,18 +801,37 @@ Populate schema only."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Assumes task knowledge from the model</li>
-                <li>May underperform on novel domains without examples</li>
-                <li>Requires clear schema definitions</li>
-                <li>Less guidance on nuanced content decisions</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Assumes task knowledge from the model</li>
+                  <li>May underperform on novel domains without examples</li>
+                  <li>Requires clear schema definitions</li>
+                  <li>Less guidance on nuanced content decisions</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
-        }
+          notes: `### Meta Prompting - Considerations
+While meta prompting is powerful for structuring outputs, it has important limitations you need to understand.
+
+#### The Knowledge Assumption
+Meta prompting **assumes the model already knows how to do the task** — you're just telling it how to format the output. If the task is novel, domain-specific, or requires nuanced understanding that the model doesn't have, meta prompting alone won't help. For example, specifying a JSON schema for legal document analysis doesn't help if the model doesn't understand legal terminology. In these cases, you need to combine meta prompting with few-shot examples or detailed task instructions. The schema handles the "how to format", but you still need to teach the "what to extract".
+
+#### Novel Domain Challenges
+When working in specialized domains — medical diagnosis, legal analysis, scientific research — meta prompting might give you well-structured but **incorrect content**. The schema ensures format consistency, but not content accuracy. You might get perfect JSON with completely wrong diagnoses! This is where hybrid approaches shine: use few-shot to teach domain knowledge, then meta prompting to standardize the output format.
+
+#### Schema Complexity Matters
+Overly complex schemas can confuse even the best models. If your schema has deeply nested objects, circular references, or ambiguous field descriptions, the model might generate **malformed or inconsistent outputs**. Keep schemas as simple as possible while meeting your needs. Test iteratively — start simple, add complexity gradually, validate at each step.
+
+#### Content vs. Structure Tradeoff
+Meta prompting gives great **structural control but less content guidance**. You're not showing examples of good vs. bad content, just specifying the container. This means the model might make nuanced content decisions differently than you'd prefer. If specific content quality matters as much as structure, consider combining meta prompting with few-shot examples or detailed content guidelines.
+
+> Pro tip: Combine techniques! Use few-shot for content quality, meta prompting for output structure. Best of both worlds!`
+        },
       ]
     },
     {
@@ -448,20 +844,42 @@ Populate schema only."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Sample multiple CoT paths and select the majority/most consistent answer.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Aggregated answer with higher reliability</li>
-                <li>Reduced variance in outputs</li>
-                <li>Better handling of edge cases</li>
-                <li>Improved accuracy through voting</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for arithmetic, commonsense reasoning, and logic tasks where single-pass inference is unstable. Multiple reasoning paths provide more reliable answers.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Sample multiple CoT paths and select the majority/most consistent answer.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Aggregated answer with higher reliability</li>
+                  <li>Reduced variance in outputs</li>
+                  <li>Better handling of edge cases</li>
+                  <li>Improved accuracy through voting</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for arithmetic, commonsense reasoning, and logic tasks where single-pass inference is unstable. Multiple reasoning paths provide more reliable answers.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
+          notes: `### Self-Consistency - Overview
+Let's explore **Self-Consistency**, a powerful technique that leverages the wisdom of crowds — except the crowd is the same AI model thinking multiple times!
+
+#### The Ensemble Approach
+Here's the brilliant insight: instead of asking the model once and hoping for the right answer, we ask it **multiple times** with different reasoning paths, then vote on the most common answer. Think of it like getting multiple expert opinions — if 8 out of 10 doctors agree on a diagnosis, you can be more confident than if you only asked one. Self-consistency brings this ensemble thinking to LLMs by generating diverse reasoning paths and aggregating the results.
+
+#### When Self-Consistency Shines
+Use self-consistency for **high-stakes reasoning tasks** where accuracy matters more than speed or cost. It's particularly powerful for math problems, logic puzzles, and commonsense reasoning where a single model run might make a calculation error or logical slip. For example, if you're building a financial calculator that needs to be highly accurate, running 5-10 reasoning paths and voting on the answer dramatically reduces errors. The technique works because **errors are often random** — different runs make different mistakes, but the correct answer appears most frequently.
+
+#### The Reliability Advantage
+Self-consistency gives you two major benefits: **higher accuracy** through error cancellation, and **reduced variance** making outputs more predictable. Instead of getting different answers each time you run the same prompt, self-consistency converges on the most consistent solution. This makes your system more reliable and trustworthy, which is crucial for production applications where users expect consistent behavior.
+
+> Pro tip: Self-consistency is your "insurance policy" for critical reasoning tasks where getting it right matters more than speed!`
         },
         {
           id: 20,
@@ -469,17 +887,44 @@ Populate schema only."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Self-consistency generates multiple independent reasoning paths for the same problem using temperature sampling. Each path produces a candidate answer. The system then aggregates these answers, typically by majority voting, to select the most consistent solution. This approach compensates for individual reasoning errors.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate–Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs temperature sampling capability</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Self-consistency generates multiple independent reasoning paths for the same problem using temperature sampling. Each path produces a candidate answer. The system then aggregates these answers, typically by majority voting, to select the most consistent solution. This approach compensates for individual reasoning errors.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate–Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs temperature sampling capability</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
+          notes: `### Self-Consistency - How It Works
+Let's dive into the mechanics of self-consistency and understand how this ensemble approach dramatically improves reliability.
+
+#### The Multi-Path Generation Process
+Self-consistency works through **temperature sampling** — you set a non-zero temperature (typically 0.7-1.0) to get diverse outputs, then run the same Chain-of-Thought prompt multiple times (typically 5-10 times). Each run generates a different reasoning path because of the randomness introduced by temperature. For example, solving "12 × 15" might use different approaches: "12 × 10 = 120, 12 × 5 = 60, total 180" in one path, versus "15 × 10 = 150, 15 × 2 = 30, total 180" in another. Different paths, same answer!
+
+#### The Voting Mechanism
+After generating multiple answers, you implement **majority voting** to select the final answer. If 7 out of 10 runs say "180", 2 say "175", and 1 says "185", you choose "180" as the most consistent answer. The beauty is that random errors (like "175" or "185") get outvoted by the correct answer that appears most frequently. You can also weight votes by confidence scores or use more sophisticated aggregation like selecting the median for numeric answers.
+
+#### Complexity and Model Requirements
+Self-consistency is **Intermediate to Advanced** because it requires orchestration code to run multiple inferences and aggregate results. You need models that support temperature sampling (all major LLMs do) and enough API throughput to handle parallel requests. The technique works best with capable models like GPT-4, Claude 3.5, and Gemini 1.5 that can generate genuinely different reasoning paths rather than identical outputs.
+
+#### Real-World Application: Math Benchmarks
+Self-consistency shines on math benchmarks like **GSM8K** 👉 'G-S-M eight-K', a dataset of grade school math problems. Single-pass accuracy might be 85%, but with self-consistency using 10 samples, accuracy can jump to 92-95%! This improvement comes from catching calculation errors, logic mistakes, and edge cases that individual runs miss.
+
+> Pro tip: Start with 5 samples, measure improvement, then increase to 10 only if the accuracy gain justifies the cost!`
         },
         {
           id: 21,
@@ -487,16 +932,36 @@ Populate schema only."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires models that support temperature sampling to generate diverse reasoning paths. Typically requires 3-10 samples.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires models that support temperature sampling to generate diverse reasoning paths. Typically requires 3-10 samples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
+          notes: `### Self-Consistency - Implementation
+Let's look at how to implement self-consistency in practice, including both the prompting strategy and the aggregation logic.
+
+#### Two Implementation Approaches
+You can implement self-consistency in two ways. **Approach 1: Single prompt, multiple runs** — run the same CoT prompt multiple times with temperature > 0, collect all answers, then implement voting in your code. **Approach 2: Meta-prompt** — like the example here, ask the model to generate multiple solutions within one call, then vote. Approach 1 gives you more control and truly independent samples. Approach 2 is simpler but the "solutions" might be less diverse since they're generated sequentially in one context.
+
+#### The Voting Implementation
+For numeric answers, majority voting is straightforward — count occurrences and pick the most common. For text answers, you might need fuzzy matching or semantic similarity. Some advanced implementations use **weighted voting** where you assign confidence scores to each answer based on the reasoning quality, or use the model itself to judge which answer is best. The key is having robust aggregation logic that handles ties, outliers, and edge cases.
+
+#### Practical Configuration
+Start with **5-7 samples** and temperature around **0.7-0.8**. Higher temperature (>0.9) gives more diversity but might produce more errors. Lower temperature (<0.5) gives less diversity, reducing the benefit of self-consistency. For critical applications, use 10 samples. Monitor the answer distribution — if all 10 runs agree, you have high confidence. If votes are split 6-4, you might need more samples or manual review.
+
+> Pro tip: Log the full distribution of answers, not just the winner. It gives you confidence estimates and helps debug when things go wrong!`
         },
         {
           id: 22,
@@ -504,18 +969,34 @@ Populate schema only."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Higher latency due to multiple inference calls</li>
-                <li>Increased cost (3-10x token usage)</li>
-                <li>Correlated errors if prompt is fundamentally flawed</li>
-                <li>Requires aggregation logic implementation</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Higher latency due to multiple inference calls</li>
+                  <li>Increased cost (3-10x token usage)</li>
+                  <li>Correlated errors if prompt is fundamentally flawed</li>
+                  <li>Requires aggregation logic implementation</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
-        }
+          notes: `### Self-Consistency - Considerations
+While self-consistency improves accuracy, it comes with significant costs and important limitations to consider.
+
+#### The Cost-Latency Tradeoff
+The most obvious limitation is **cost and latency multiplication**. If you run 5 samples, you're paying 5x the API cost and potentially waiting 5x longer (unless you parallelize). For a single prompt that costs $0.10, self-consistency at 10 samples costs $1.00. At scale, this adds up fast! You need to carefully evaluate: does the accuracy improvement justify the cost? For critical decisions with high stakes, absolutely. For routine tasks, probably not. This is where **selective application** matters — use self-consistency only where accuracy is truly critical.
+
+#### The Systematic Error Problem
+Here's a subtle but important limitation: self-consistency helps with **random errors** but not **systematic errors**. If your prompt is fundamentally flawed or the model lacks knowledge for the task, all reasoning paths will be wrong in the same way. Voting won't help if everyone's voting for the wrong answer! For example, if you ask a math question with a trick that the model consistently misses, all 10 runs might give the same wrong answer. This looks like high confidence, but it's confidently wrong!
+
+#### Implementation Complexity
+Self-consistency requires **orchestration code** to manage multiple API calls, collect responses, and implement voting logic. You need error handling for failed calls, timeout management, and decision logic for handling ties or ambiguous votes. This adds complexity to your system and more points of failure. Make sure the accuracy benefit justifies this additional engineering effort.
+
+> Pro tip: Use self-consistency as a "dial" — run 3 samples for normal tasks, 5-7 for important ones, 10+ only for critical high-stakes decisions!`
+        },
       ]
     },
     {
@@ -528,20 +1009,42 @@ Populate schema only."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>First ask the model to generate background facts, then answer using those facts.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Knowledge-grounded reasoning and answer</li>
-                <li>Contextual understanding before answering</li>
-                <li>Better recall of relevant information</li>
-                <li>Improved accuracy on knowledge-intensive tasks</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for commonsense question answering, domain recall tasks, and exam-style questions. Generating relevant facts first improves answer quality.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>First ask the model to generate background facts, then answer using those facts.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Knowledge-grounded reasoning and answer</li>
+                  <li>Contextual understanding before answering</li>
+                  <li>Better recall of relevant information</li>
+                  <li>Improved accuracy on knowledge-intensive tasks</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for commonsense question answering, domain recall tasks, and exam-style questions. Generating relevant facts first improves answer quality.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
+          notes: `### Generate Knowledge - Overview
+Welcome to **Generate Knowledge Prompting**, a technique that primes the model's memory before asking it to answer questions. Think of it as warming up before a race!
+
+#### The Knowledge Activation Strategy
+Here's the core idea: before asking the model to answer a question, you first ask it to **generate relevant background facts and knowledge** about the topic. This two-stage approach activates the model's relevant knowledge, bringing important facts to the forefront of its "attention" before it needs to use them. It's like asking a student to review their notes before taking a test — the act of retrieving and stating relevant facts makes them more likely to use that knowledge correctly in their answer.
+
+#### When Generate Knowledge Excels
+Use this technique for **knowledge-intensive tasks** where the answer depends on recalling and applying domain facts. It's perfect for commonsense reasoning ("Why do plants need sunlight?"), exam-style questions, trivia, and any task where the model needs to combine multiple facts. For example, answering "Why did the Roman Empire fall?" benefits from first generating facts about economic factors, military challenges, and political instability, then synthesizing those facts into a coherent answer.
+
+#### The Grounding Benefit
+Generate Knowledge provides **explicit grounding** for the answer. Instead of the model pulling facts from its implicit knowledge in opaque ways, it explicitly states the facts it's using, then builds the answer from those stated facts. This makes the reasoning more transparent and debuggable — if the answer is wrong, you can see whether the facts themselves were wrong or whether the reasoning from facts to answer was flawed.
+
+> Pro tip: Generate Knowledge is like giving the model a notepad to jot down relevant facts before solving a problem. It improves both accuracy and explainability!`
         },
         {
           id: 24,
