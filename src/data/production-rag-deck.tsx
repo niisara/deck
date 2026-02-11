@@ -54,15 +54,15 @@ export const productionRagDeck: Deck = {
             </div>
           ),
           backgroundColor: '#3c1651',
-          notes: `### 1. Title Slide - 11 Production RAG Architecture Patterns
+          notes: `### Title Slide - 11 Production RAG Architecture Patterns
 
-Welcome everyone! Today we're diving deep into eleven production-ready RAG architecture patterns that will transform how you build retrieval-augmented generation systems. RAG, or Retrieval-Augmented Generation 👉 [rag], combines the power of large language models with external knowledge retrieval to create more accurate, factual, and context-aware AI applications.
+[cheerfully] Welcome everyone! [excited] Today we're diving deep into eleven production-ready RAG architecture patterns that will transform how you build retrieval-augmented generation systems. RAG, or Retrieval-Augmented Generation 👉 [rag], combines the power of large language models with external knowledge retrieval to create more accurate, factual, and context-aware AI applications.
 
 #### Why This Matters
-Think of RAG as giving your AI a library card. Instead of relying solely on what it memorized during training, your AI can now look up current information, company-specific knowledge, or domain expertise on demand. This presentation covers four critical dimensions: retrieval accuracy, which ensures we find the right information; context handling, which manages how we package that information; answer quality, which validates our outputs are trustworthy; and scalability, which ensures our systems work at production scale.
+[storytelling] Think of RAG as giving your AI a library card. Instead of relying solely on what it memorized during training, your AI can now look up current information, company-specific knowledge, or domain expertise on demand. [confidently] This presentation covers four critical dimensions: retrieval accuracy, which ensures we find the right information; context handling, which manages how we package that information; answer quality, which validates our outputs are trustworthy; and scalability, which ensures our systems work at production scale.
 
 #### What You'll Learn Today
-We'll explore eleven battle-tested patterns, from basic implementations to sophisticated multi-agent systems. Each pattern solves specific challenges you'll encounter when moving from proof-of-concept to production. Whether you're building an internal knowledge assistant, a customer support system, or a technical documentation search tool, you'll leave with practical blueprints for success. Let's begin this exciting journey into production RAG architectures!`
+[enthusiastically] We'll explore eleven battle-tested patterns, from basic implementations to sophisticated multi-agent systems. Each pattern solves specific challenges you'll encounter when moving from proof-of-concept to production. Whether you're building an internal knowledge assistant, a customer support system, or a technical documentation search tool, you'll leave with practical blueprints for success. [inspiringly] Let's begin this exciting journey into production RAG architectures!`
         },
         {
           id: 2,
@@ -93,15 +93,15 @@ We'll explore eleven battle-tested patterns, from basic implementations to sophi
             </div>
           ),
           backgroundColor: '#3c1651',
-          notes: `### 2. Agenda & Patterns Overview
+          notes: `### Agenda & Patterns Overview
 
-Let's set the stage for what we'll cover today. When companies first experiment with RAG systems, they often start with simple prototypes that work great in demos but struggle in real-world production environments. The gap between prototype and production is where most RAG projects face their biggest challenges.
+[conversational] Let's set the stage for what we'll cover today. When companies first experiment with RAG systems, they often start with simple prototypes that work great in demos but [cautiously] struggle in real-world production environments. The gap between prototype and production is where most RAG projects face their biggest challenges.
 
 #### The Four Pillars of Production RAG
-First, retrieval accuracy and precision. It's not enough to just find similar documents—we need to find the RIGHT documents consistently. Second, context handling and efficiency. Token limits are real, and sending too much irrelevant context wastes money and degrades performance. Third, answer quality and hallucination mitigation 👉 [hal-oo-sin-AY-shun]. This is critical—our systems must know when they don't know something, rather than making up plausible-sounding but incorrect answers. Fourth, scalability and operational reliability. What works for ten users must work for ten thousand, with consistent latency 👉 [LAY-ten-see] and uptime.
+[lecture] First, retrieval accuracy and precision. [firmly] It's not enough to just find similar documents—we need to find the RIGHT documents consistently. Second, context handling and efficiency. Token limits are real, and sending too much irrelevant context wastes money and degrades performance. Third, answer quality and hallucination mitigation 👉 [hal-oo-sin-AY-shun]. [seriously] This is critical—our systems must know when they don't know something, rather than making up plausible-sounding but incorrect answers. Fourth, scalability and operational reliability. What works for ten users must work for ten thousand, with consistent latency 👉 [LAY-ten-see] and uptime.
 
 #### What's Coming Next
-In this presentation, we'll systematically explore eleven architectural patterns, each addressing specific production challenges. You'll see concrete implementation details, understand when to use each pattern, and learn how to combine them for maximum effect. Ready to transform your RAG systems from demos to dependable production services? Let's dive into our pattern catalog!`
+[confidently] In this presentation, we'll systematically explore eleven architectural patterns, each addressing specific production challenges. You'll see concrete implementation details, understand when to use each pattern, and learn how to combine them for maximum effect. [excited] Ready to transform your RAG systems from demos to dependable production services? Let's dive into our pattern catalog!`
         },
         {
           id: 3,
@@ -169,18 +169,18 @@ In this presentation, we'll systematically explore eleven architectural patterns
             </div>
           ),
           backgroundColor: '#3c1651',
-          notes: `### 3. Cheat Sheets and Selection Guidance
+          notes: `### Cheat Sheets and Selection Guidance
 
-Here's your roadmap to the eleven patterns we'll explore. Think of these as building blocks—you can use them individually or combine them to create powerful custom architectures. Let me break down the four categories so you understand how they fit together.
+[energetic] Here's your roadmap to the eleven patterns we'll explore. [conversational] Think of these as building blocks—you can use them individually or combine them to create powerful custom architectures. Let me break down the four categories so you understand how they fit together.
 
 #### Foundation Patterns
-We start with the basics. Basic RAG is your simplest retrieve-and-generate pattern—perfect for learning and prototyping. RAG with Re-Ranking adds a critical precision layer, using specialized models to reorder retrieved documents by actual relevance. These foundations handle about seventy percent of production use cases when implemented well.
+[lecture] We start with the basics. Basic RAG is your simplest retrieve-and-generate pattern—perfect for learning and prototyping. RAG with Re-Ranking adds a critical precision layer, using specialized models to reorder retrieved documents by actual relevance. [pleased] These foundations handle about seventy percent of production use cases when implemented well.
 
 #### Query Optimization and Advanced Retrieval
-Next, we address the retrieval problem from the query side. Query Rewriting transforms user questions into better search queries. Multi-Query Retrieval generates multiple search variations to cast a wider net. HyDE 👉 [HIDE] creates hypothetical answers first, then searches for documents matching those answers—surprisingly effective! The Advanced Retrieval patterns tackle complex document structures: Parent-Child handles hierarchical 👉 [high-er-AR-ki-kal] documents, Graph-Based leverages relationships between entities, and External Tools integrates real-time APIs and calculators.
+[confidently] Next, we address the retrieval problem from the query side. Query Rewriting transforms user questions into better search queries. Multi-Query Retrieval generates multiple search variations to cast a wider net. HyDE 👉 [HIDE] creates hypothetical answers first, then searches for documents matching those answers—[excited] surprisingly effective! [storytelling] The Advanced Retrieval patterns tackle complex document structures: Parent-Child handles hierarchical 👉 [high-er-AR-ki-kal] documents, Graph-Based leverages relationships between entities, and External Tools integrates real-time APIs and calculators.
 
 #### Hybrid & Optimization Patterns
-Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility with custom model training. Multi-Step Retrieval Loops implement iterative search and reasoning. Context Compression shrinks your retrieved content to fit more relevant information in limited context windows. Master these eleven patterns, and you'll handle any RAG challenge production throws at you!`
+[enthusiastically] Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility with custom model training. Multi-Step Retrieval Loops implement iterative search and reasoning. Context Compression shrinks your retrieved content to fit more relevant information in limited context windows. [inspiringly] Master these eleven patterns, and you'll handle any RAG challenge production throws at you!`
         }
       ]
     },
@@ -266,16 +266,16 @@ Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility 
             </div>
           ),
           backgroundColor: '#136b5e',
-          notes: `### 4. Pattern 1 - Basic RAG (Single Retrieve → Generate)
+          notes: `### Pattern 1 - Basic RAG (Single Retrieve → Generate)
 
-Let's dive into our first pattern—Basic RAG. This is the foundation that every other pattern builds upon, so understanding it deeply is crucial. Think of Basic RAG as a simple question-answering system that looks up information before responding, just like you might search through a textbook before answering an exam question.
+[conversational] Let's dive into our first pattern—Basic RAG. [lecture] This is the foundation that every other pattern builds upon, so understanding it deeply is crucial. [storytelling] Think of Basic RAG as a simple question-answering system that looks up information before responding, just like you might search through a textbook before answering an exam question.
 
 
 #### The Six Core Components
-Every Basic RAG system needs six essential pieces. First, the LLM 👉 [el-el-em] or Large Language Model generates your final answers. Second, an embedding model converts text into mathematical vectors—think of these as coordinates in meaning-space. Third, a chunker splits documents into digestible pieces, typically two hundred to five hundred words each. Fourth, a vector database stores these embeddings and performs lightning-fast similarity searches. Fifth, a retriever orchestrates the search process. Sixth, prompt templates format everything nicely for the LLM.
+[confidently] Every Basic RAG system needs six essential pieces. First, the LLM 👉 [el-el-em] or Large Language Model generates your final answers. Second, an embedding model converts text into mathematical vectors—[playfully] think of these as coordinates in meaning-space. Third, a chunker splits documents into digestible pieces, typically two hundred to five hundred words each. Fourth, a vector database stores these embeddings and performs lightning-fast similarity searches. Fifth, a retriever orchestrates the search process. Sixth, prompt templates format everything nicely for the LLM.
 
 #### How It Works
-When a user asks a question, we convert that question into a vector using the same embedding model that processed our documents. Then we search the vector database for the top-K most similar chunks—usually three to five chunks work best. These chunks get concatenated 👉 [con-CAT-en-ay-ted] together with the user's question into a prompt, and the LLM generates an answer based on this retrieved context. The entire process typically takes one to three seconds, making it suitable for interactive applications. This simplicity is both Basic RAG's greatest strength and its primary limitation, which we'll explore next!`
+[lecture] When a user asks a question, we convert that question into a vector using the same embedding model that processed our documents. Then we search the vector database for the top-K most similar chunks—usually three to five chunks work best. These chunks get concatenated 👉 [con-CAT-en-ay-ted] together with the user's question into a prompt, and the LLM generates an answer based on this retrieved context. The entire process typically takes one to three seconds, making it suitable for interactive applications. [thoughtfully] This simplicity is both Basic RAG's greatest strength and its primary limitation, which we'll explore next!`
         },
         {
           id: 5,
@@ -317,18 +317,18 @@ When a user asks a question, we convert that question into a vector using the sa
             </div>
           ),
           backgroundColor: '#136b5e',
-          notes: `### 5. Basic RAG - Strengths and Limitations
+          notes: `### Basic RAG - Strengths and Limitations
 
-Every architectural pattern has its sweet spot and its challenges. Let's be honest about where Basic RAG shines and where it struggles, so you can make informed decisions about when to use it.
+[conversational] Every architectural pattern has its sweet spot and its challenges. [seriously] Let's be honest about where Basic RAG shines and where it struggles, so you can make informed decisions about when to use it.
 
 #### Strengths
-Basic RAG's simplicity is its superpower. You can implement a working system in an afternoon using tools like LangChain or LlamaIndex. The single retrieval step means low latency—typically under two seconds end-to-end, which feels instant to users. Operationally, you're managing just a vector database and an LLM API, making deployment and monitoring straightforward. For well-defined domains with clear queries, Basic RAG achieves eighty to ninety percent accuracy, which is excellent for many business applications. Plus, the fast iteration cycle lets you experiment quickly with different chunk sizes, embedding models, and prompt templates.
+[pleased] Basic RAG's simplicity is its superpower. You can implement a working system in an afternoon using tools like LangChain or LlamaIndex. The single retrieval step means low latency—typically under two seconds end-to-end, which feels instant to users. Operationally, you're managing just a vector database and an LLM API, making deployment and monitoring straightforward. For well-defined domains with clear queries, Basic RAG achieves eighty to ninety percent accuracy, which is excellent for many business applications. [enthusiastically] Plus, the fast iteration cycle lets you experiment quickly with different chunk sizes, embedding models, and prompt templates.
 
 #### Limitations
-However, Basic RAG has real constraints. The K parameter 👉 [kay] creates a rigid tradeoff: too few chunks and you miss relevant information, too many and you dilute the important content with noise. Vague queries like "tell me about the product" retrieve random-seeming results. Your chunk boundaries matter immensely—if you split mid-paragraph, you lose context. Multi-hop questions like "compare the pricing of option A and option B" struggle because relevant information might be in different chunks that don't get retrieved together. Finally, when retrieval returns marginally relevant content, the LLM might hallucinate rather than admit it doesn't know.
+[cautiously] However, Basic RAG has real constraints. The K parameter 👉 [kay] creates a rigid tradeoff: too few chunks and you miss relevant information, too many and you dilute the important content with noise. [disappointed] Vague queries like "tell me about the product" retrieve random-seeming results. Your chunk boundaries matter immensely—if you split mid-paragraph, you lose context. Multi-hop questions like "compare the pricing of option A and option B" struggle because relevant information might be in different chunks that don't get retrieved together. [seriously] Finally, when retrieval returns marginally relevant content, the LLM might hallucinate rather than admit it doesn't know.
 
 #### When to Use Basic RAG
-Use Basic RAG for FAQs, internal wikis, straightforward technical documentation, and proof-of-concept projects. When queries are predictable and documents are well-structured, Basic RAG delivers excellent results with minimal complexity. For everything else, the patterns we'll explore next add the sophistication you need!`
+[confidently] Use Basic RAG for FAQs, internal wikis, straightforward technical documentation, and proof-of-concept projects. When queries are predictable and documents are well-structured, Basic RAG delivers excellent results with minimal complexity. [excited] For everything else, the patterns we'll explore next add the sophistication you need!`
         }
       ]
     },
@@ -413,16 +413,16 @@ Use Basic RAG for FAQs, internal wikis, straightforward technical documentation,
             </div>
           ),
           backgroundColor: '#714425',
-          notes: `### 6. Pattern 2 - RAG with Re-Ranking
+          notes: `### Pattern 2 - RAG with Re-Ranking
 
-Now we level up with Re-Ranking, which solves one of Basic RAG's biggest problems: precision. Think of it like a two-stage filter—first, cast a wide net to capture many potentially relevant documents, then use a more sophisticated model to identify which ones truly matter.
+[excited] Now we level up with Re-Ranking, which solves one of Basic RAG's biggest problems: precision. [storytelling] Think of it like a two-stage filter—first, cast a wide net to capture many potentially relevant documents, then use a more sophisticated model to identify which ones truly matter.
 
 
 #### The Two-Stage Approach
-Here's how it works: instead of retrieving just five chunks like Basic RAG, we retrieve one hundred to three hundred candidates using fast vector similarity search. This ensures high recall—we probably have the right answer somewhere in that set. Then comes the magic: a reranker model, typically a cross-encoder 👉 [cross en-COH-der], scores each candidate against the query with much higher accuracy than embedding similarity alone. Cross-encoders are slower but more precise because they analyze the query and document together, not separately. Finally, we keep only the top five to ten highest-scoring chunks for the LLM.
+[lecture] Here's how it works: instead of retrieving just five chunks like Basic RAG, we retrieve one hundred to three hundred candidates using fast vector similarity search. This ensures high recall—we probably have the right answer somewhere in that set. [enthusiastically] Then comes the magic: a reranker model, typically a cross-encoder 👉 [cross en-COH-der], scores each candidate against the query with much higher accuracy than embedding similarity alone. Cross-encoders are slower but more precise because they analyze the query and document together, not separately. Finally, we keep only the top five to ten highest-scoring chunks for the LLM.
 
 #### Why This Works
-Rerankers excel at understanding nuance 👉 [NEW-ahnss]. Where embedding models might think "bank" (financial) and "bank" (river) are similar contexts, a reranker understands the query's intent and picks the right meaning. Companies like Cohere 👉 [koh-HERE], Voyage 👉 [voy-AHDGE], and open-source projects like BGE 👉 [bee-gee-ee] provide specialized reranker models. The result? Typically fifteen to thirty percent accuracy improvement over Basic RAG, especially on ambiguous queries. The tradeoff is added latency—maybe an extra five hundred milliseconds to one second—but for applications where accuracy matters more than speed, this is absolutely worth it!`
+[confidently] Rerankers excel at understanding nuance 👉 [NEW-ahnss]. [playfully] Where embedding models might think "bank" (financial) and "bank" (river) are similar contexts, a reranker understands the query's intent and picks the right meaning. Companies like Cohere 👉 [koh-HERE], Voyage 👉 [voy-AHDGE], and open-source projects like BGE 👉 [bee-gee-ee] provide specialized reranker models. [pleased] The result? Typically fifteen to thirty percent accuracy improvement over Basic RAG, especially on ambiguous queries. The tradeoff is added latency—maybe an extra five hundred milliseconds to one second—but for applications where accuracy matters more than speed, this is absolutely worth it!`
         },
         {
           id: 7,
@@ -464,18 +464,18 @@ Rerankers excel at understanding nuance 👉 [NEW-ahnss]. Where embedding models
             </div>
           ),
           backgroundColor: '#714425',
-          notes: `### 7. Re-Ranking Pattern - Strengths and Limitations
+          notes: `### Re-Ranking Pattern - Strengths and Limitations
 
-Let's evaluate Re-Ranking honestly. Like any architectural decision, it comes with tradeoffs you need to understand before implementing it in production.
+[conversational] Let's evaluate Re-Ranking honestly. [seriously] Like any architectural decision, it comes with tradeoffs you need to understand before implementing it in production.
 
 #### Strengths
-The precision improvement is substantial and measurable. In our production deployments, we've seen fifteen to thirty-five percent accuracy gains compared to Basic RAG, especially on complex queries. Re-Ranking shines in large knowledge bases—when you have thousands or millions of documents, the initial vector search brings back many false positives, and reranking filters them brilliantly. Nuanced queries that confuse embedding models get handled correctly because cross-encoders deeply analyze query-document pairs. Better retrieval means better context for your LLM, which directly translates to higher answer quality and fewer hallucinations. Users notice the difference immediately.
+[pleased] The precision improvement is substantial and measurable. In our production deployments, we've seen fifteen to thirty-five percent accuracy gains compared to Basic RAG, especially on complex queries. [enthusiastically] Re-Ranking shines in large knowledge bases—when you have thousands or millions of documents, the initial vector search brings back many false positives, and reranking filters them brilliantly. Nuanced queries that confuse embedding models get handled correctly because cross-encoders deeply analyze query-document pairs. [confidently] Better retrieval means better context for your LLM, which directly translates to higher answer quality and fewer hallucinations. Users notice the difference immediately.
 
 #### Limitations  
-However, nothing comes free. Reranking adds latency—typically five hundred milliseconds to one point five seconds depending on your reranker and the number of candidates. API-based rerankers like Cohere add cost per request, while self-hosted options require GPU infrastructure. Domain matching matters: a reranker trained on general web text might underperform on specialized medical or legal content, requiring fine-tuning. The engineering complexity increases—you're now managing two models, monitoring their performance separately, and debugging a more complex pipeline. Finally, remember that reranking can only work with what the initial retrieval found; if your vector search missed the relevant documents entirely, reranking won't magically find them.
+[cautiously] However, nothing comes free. Reranking adds latency—typically five hundred milliseconds to one point five seconds depending on your reranker and the number of candidates. API-based rerankers like Cohere add cost per request, while self-hosted options require GPU infrastructure. [concerned] Domain matching matters: a reranker trained on general web text might underperform on specialized medical or legal content, requiring fine-tuning. The engineering complexity increases—you're now managing two models, monitoring their performance separately, and debugging a more complex pipeline. [seriously] Finally, remember that reranking can only work with what the initial retrieval found; if your vector search missed the relevant documents entirely, reranking won't magically find them.
 
 #### When to Choose Re-Ranking
-Use Re-Ranking when accuracy justifies the added complexity and cost. Enterprise knowledge management, customer support systems, legal document search, and technical documentation—these applications benefit immensely. If you're building an FAQ bot with fifty documents, stick with Basic RAG. But for serious production systems with quality requirements, Re-Ranking is your tier-one upgrade!`
+[confidently] Use Re-Ranking when accuracy justifies the added complexity and cost. Enterprise knowledge management, customer support systems, legal document search, and technical documentation—these applications benefit immensely. [playfully] If you're building an FAQ bot with fifty documents, stick with Basic RAG. [inspiringly] But for serious production systems with quality requirements, Re-Ranking is your tier-one upgrade!`
         }
       ]
     },
