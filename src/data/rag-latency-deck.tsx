@@ -1,5 +1,7 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated } from '../components/GSAPAnimated';
+import { MermaidPopover } from '../components/MermaidPopover';
 
 const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
@@ -9,6 +11,12 @@ export const ragLatencyDeck: Deck = {
   description: 'Practical, production-ready optimizations for faster RAG pipelines',
   category: 'RAG',
   theme: 'black',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -21,30 +29,49 @@ export const ragLatencyDeck: Deck = {
           title: '11 Techniques to Reduce RAG Latency',
           content: (
             <div>
-              <div style={{ fontSize: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ marginRight: '1rem' }} darkModeInvert={true} />
-                RAG Optimization
-              </div>
-              <div style={{ fontSize: '2rem', color: '#98c379' }}>
-                Practical, production-ready optimizations for faster RAG
-              </div>
-              <div style={{ fontSize: '1.2rem' }}>
-                <SvgIcon iconName="duo-stream" sizeName="lg" style={iconStyle} darkModeInvert={true} />
-                Technical Guide
-              </div>
-              <div style={{ fontSize: '1.2rem' }}>
-                How to lower end-to-end latency across <span style={{ color: '#e06c75' }}>embedding</span>,
-                <span style={{ color: '#d19a66' }}> retrieval</span>,
-                <span style={{ color: '#98c379' }}> orchestration</span>, and
-                <span style={{ color: '#61dafb' }}> generation</span> without sacrificing too much quality.
-              </div>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              <GSAPAnimated animation="rotateIn" duration={1} delay={0}>
+                <div style={{ fontSize: '2rem', color: '#61dafb', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <SvgIcon iconName="duo-gauge-high" sizeName="2x" style={{ marginRight: '1rem' }} darkModeInvert={true} />
+                  RAG Optimization
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <div style={{ fontSize: '2rem', color: '#98c379' }}>
+                  Practical, production-ready optimizations for faster RAG
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.6}>
+                <div style={{ fontSize: '1.2rem' }}>
+                  <SvgIcon iconName="duo-stream" sizeName="lg" style={iconStyle} darkModeInvert={true} />
+                  Technical Guide
+                </div>
+                <div style={{ fontSize: '1.2rem' }}>
+                  How to lower end-to-end latency across <span style={{ color: '#e06c75' }}>embedding</span>,
+                  <span style={{ color: '#d19a66' }}> retrieval</span>,
+                  <span style={{ color: '#98c379' }}> orchestration</span>, and
+                  <span style={{ color: '#61dafb' }}> generation</span> without sacrificing too much quality.
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d5a6b',
-          notes: ''
+          notes: `### 1. 11 Techniques to Reduce RAG Latency
+Welcome everyone! Today we're going to tackle one of the most critical challenges in production RAG systems — **latency** 👉 'LAY-ten-see'. If you've ever built a RAG pipeline and wondered why it takes so long to return answers, this presentation is for you.
+
+#### 🎯 What We'll Cover
+We'll walk through **eleven practical techniques** that you can apply right away to speed up your RAG 👉 'rag' pipelines. These aren't just theoretical ideas — they're battle-tested optimizations used in real production systems. We'll cover four key areas: **embedding and chunking**, **retrieval**, **caching**, and **generation/UX** optimizations.
+
+#### 💡 Why Latency Matters
+Think of it this way — if your RAG system takes five seconds to answer a question, users will get frustrated and stop using it. But if you can get that down to under one second, it feels almost magical. The techniques we'll cover today can collectively reduce your end-to-end latency by 50-90% depending on your setup.
+
+> 🎤 Ask the audience: "How many of you have worked with RAG systems before?"
+
+Let's dive in and see how we can make your RAG pipelines lightning fast!`
         },
         {
           id: 2,
@@ -52,79 +79,122 @@ export const ragLatencyDeck: Deck = {
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}>
+                <MermaidPopover
+                  title="RAG Pipeline Stages"
+                  diagram={`flowchart LR
+    A["📝 Query"] --> B["🔢 Embed"]
+    B --> C["🔍 Retrieve"]
+    C --> D["📊 Rerank"]
+    D --> E["🤖 Generate"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000`}
+                />
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                <div>
-                  <div style={{ color: '#e06c75', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-microchip" sizeName="2x" darkModeInvert={true} />
-                    <strong>Embeddings & Chunking</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#e06c75', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-microchip" sizeName="2x" darkModeInvert={true} />
+                      <strong>Embeddings & Chunking</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
+                      <div><strong>1)</strong> Use Smaller Embedding Models</div>
+                      <div><strong>2)</strong> Reduce Chunk Size</div>
+                    </div>
                   </div>
-                  <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
-                    <div><strong>1)</strong> Use Smaller Embedding Models</div>
-                    <div><strong>2)</strong> Reduce Chunk Size</div>
-                  </div>
-                </div>
-                <div>
-                  <div style={{ color: '#d19a66', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-filter" sizeName="2x" darkModeInvert={true} />
-                    <strong>Retrieval</strong>
-                  </div>
-                  <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
-                    <div><strong>3)</strong> Limit Top-K Retrieval</div>
-                    <div><strong>4)</strong> Use ANN Indexes (HNSW/IVF)</div>
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                <div>
-                  <div style={{ color: '#98c379', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" darkModeInvert={true} />
-                    <strong>Caching</strong>
-                  </div>
-                  <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
-                    <div><strong>5)</strong> Cache Query Embeddings</div>
-                    <div><strong>6)</strong> Cache Retrieval Results</div>
+                  <div>
+                    <div style={{ color: '#d19a66', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-filter" sizeName="2x" darkModeInvert={true} />
+                      <strong>Retrieval</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
+                      <div><strong>3)</strong> Limit Top-K Retrieval</div>
+                      <div><strong>4)</strong> Use ANN Indexes (HNSW/IVF)</div>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-ranking-star" sizeName="2x" darkModeInvert={true} />
-                    <strong>Reranking & Compression</strong>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#98c379', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-database" sizeName="2x" darkModeInvert={true} />
+                      <strong>Caching</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
+                      <div><strong>5)</strong> Cache Query Embeddings</div>
+                      <div><strong>6)</strong> Cache Retrieval Results</div>
+                    </div>
                   </div>
-                  <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
-                    <div><strong>7)</strong> Re-rank Only Top Few</div>
-                    <div><strong>8)</strong> Context Compression</div>
-                  </div>
-                </div>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
-                    <strong>Orchestration</strong>
-                  </div>
-                  <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
-                    <div><strong>9)</strong> Parallelize Retrieval + Re-Rank</div>
-                  </div>
-                </div>
-                <div>
-                  <div style={{ color: '#e5c07b', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" darkModeInvert={true} />
-                    <strong>Generation/UX & LLM Choice</strong>
-                  </div>
-                  <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
-                    <div><strong>10)</strong> Streaming / Partial Generation</div>
-                    <div><strong>11)</strong> Distilled or Smaller LLM</div>
+                  <div>
+                    <div style={{ color: '#61dafb', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-ranking-star" sizeName="2x" darkModeInvert={true} />
+                      <strong>Reranking & Compression</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
+                      <div><strong>7)</strong> Re-rank Only Top Few</div>
+                      <div><strong>8)</strong> Context Compression</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '8px', borderLeft: '4px solid #61dafb', fontSize: '1.2rem' }}>
-                <strong>Key idea:</strong> Optimize the critical path and perceived latency first; then tune infrastructure. Focus on different latency stages: Precompute/storage, Retrieval, Pre-LLM, and LLM/UX to comprehensively reduce end-to-end latency.
-              </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-gears" sizeName="2x" darkModeInvert={true} />
+                      <strong>Orchestration</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
+                      <div><strong>9)</strong> Parallelize Retrieval + Re-Rank</div>
+                    </div>
+                  </div>
+                  <div>
+                    <div style={{ color: '#e5c07b', fontSize: '2rem', marginBottom: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                      <SvgIcon iconName="duo-wand-magic-sparkles" sizeName="2x" darkModeInvert={true} />
+                      <strong>Generation/UX & LLM Choice</strong>
+                    </div>
+                    <div style={{ marginLeft: '10px', fontSize: '1.2rem' }}>
+                      <div><strong>10)</strong> Streaming / Partial Generation</div>
+                      <div><strong>11)</strong> Distilled or Smaller LLM</div>
+                    </div>
+                  </div>
+                </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <div style={{ marginTop: '1.5rem', padding: '1rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '8px', borderLeft: '4px solid #61dafb', fontSize: '1.2rem' }}>
+                  <strong>Key idea:</strong> Optimize the critical path and perceived latency first; then tune infrastructure. Focus on different latency stages: Precompute/storage, Retrieval, Pre-LLM, and LLM/UX to comprehensively reduce end-to-end latency.
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d5a6b',
-          notes: ''
+          notes: `### 2. Overview — The 11 Techniques at a Glance
+Here's your roadmap for today. We've organized the eleven techniques into five categories, each targeting a different part of the RAG pipeline.
+
+#### 🔧 The Categories
+First up, **Embeddings & Chunking** — techniques one and two focus on making your data preparation faster. Then **Retrieval** — techniques three and four speed up how you search through your vector store. **Caching** in techniques five and six is all about avoiding redundant work. **Reranking & Compression** in seven and eight reduce the amount of data your LLM 👉 'ell-ell-em' needs to process. And finally, **Orchestration and Generation/UX** in techniques nine through eleven optimize the overall pipeline flow.
+
+#### 📊 The Pipeline Flow
+\`\`\`mermaid
+flowchart LR
+    A["📝 Query"] --> B["🔢 Embed"]
+    B --> C["🔍 Retrieve"]
+    C --> D["📊 Rerank"]
+    D --> E["🤖 Generate"]
+    style A fill:#4fc3f7,color:#000
+    style B fill:#e1bee7,color:#000
+    style C fill:#ffd700,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#81c784,color:#000
+\`\`\`
+Each technique targets one or more of these stages. The key insight is that you don't need to apply all eleven — pick the ones that address your biggest bottleneck first.
+
+#### 🎯 Key Takeaway
+The key idea here is simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. Now let's dive into each technique, starting with smaller embedding models...`
         }
       ]
     },
