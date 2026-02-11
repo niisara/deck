@@ -1242,22 +1242,48 @@ That wraps up Context Overlap Score. Next, we'll move to Context Relevance Score
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>LLM-as-judge score of how relevant the retrieved chunks are to the query, measuring the quality of retrieval context alignment to user information needs.</p>
+              <GSAPAnimated animation="bounceIn" duration={1} delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>LLM-as-judge score of how relevant the retrieved chunks are to the query, measuring the quality of retrieval context alignment to user information needs.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Improves precision by identifying and removing irrelevant context</li>
-                <li>Reduces hallucinations caused by misleading information</li>
-                <li>Enables continuous monitoring without reference answers</li>
-                <li>Helps identify specific queries with poor retrieval performance</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.6}>
+                <div><li>Improves precision by identifying and removing irrelevant context</li></div>
+                <div><li>Reduces hallucinations caused by misleading information</li></div>
+                <div><li>Enables continuous monitoring without reference answers</li></div>
+                <div><li>Helps identify specific queries with poor retrieval performance</li></div>
+              </GSAPStaggerList>
 
-              <p>When ground truth relevance labels are unavailable, for online monitoring of production RAG systems, during A/B testing of retrieval approaches, and to evaluate quality without human annotation effort.</p>
+              <GSAPAnimated animation="slideInBottom" delay={0.7}>
+                <p>When ground truth relevance labels are unavailable, for online monitoring of production RAG systems, during A/B testing of retrieval approaches, and to evaluate quality without human annotation effort.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f656f',
-          notes: ''
+          notes: `### Context Relevance Score Overview
+Welcome to Metric 5, Context Relevance Score. This is where we start using AI to judge AI—pretty meta, right?
+
+#### What Is Context Relevance Score?
+Context Relevance Score, or CRS for short, is an LLM-as-judge metric. That means we're using a language model—like GPT-4 or Claude—to evaluate how relevant your retrieved chunks are to the user's query. Think of it as having an expert reviewer who reads each chunk and says "Yes, this is helpful" or "Nope, this is off-topic." Instead of needing humans to label everything, we let an AI judge do the heavy lifting. This score tells you whether your retrieval system is pulling in the right information or just grabbing random chunks that happen to match some keywords.
+
+#### The Real-World Benefits
+Let's talk about why you'd want this. First, it improves precision. If your retrieval system is pulling in five chunks but only three are relevant, Context Relevance Score will flag that. You can then tune your system to filter out the noise. Second, it reduces hallucinations. When the LLM generation model sees irrelevant or misleading context, it might make stuff up or get confused. By scoring relevance upfront, you catch those bad chunks before they poison the answer. Third, you can monitor your RAG system in production without needing reference answers. That's huge—it means automated quality checks at scale. Finally, it helps you identify specific queries where retrieval is failing. Maybe certain question types always get low scores. Now you know where to focus your improvements.
+
+#### When to Use This
+Use Context Relevance Score when you don't have ground truth labels—when you can't afford to have humans annotate which chunks are relevant. It's perfect for online monitoring in production, where you're processing thousands of queries and need real-time quality signals. Use it during A/B testing to compare retrieval strategies—does chunking strategy A give higher relevance scores than strategy B? And use it whenever you want to evaluate quality without the human annotation effort. It's your automated quality guard.
+
+#### Pros
+The good stuff: It's automated and scalable—no humans needed once it's set up. It provides continuous monitoring, giving you real-time quality signals. It works without reference data, which is often expensive or impossible to obtain. And it helps you pinpoint exactly where your retrieval is weak, so you can iterate and improve.
+
+#### Cons
+The problems: LLM judges aren't perfect. Different models might score the same chunk differently, and even the same model can vary. That's consistency risk. It adds latency and cost—every evaluation requires an extra LLM call. The scores might not align perfectly with human judgment, so you need to validate. And you'll need careful prompt engineering to get reliable, stable scores. The judge prompt matters just as much as the retrieval quality.
+
+That's Context Relevance Score—your automated relevance quality inspector. Next up, we'll dive into how it actually works.`
         },
         {
           id: 20,
@@ -1265,27 +1291,84 @@ That wraps up Context Overlap Score. Next, we'll move to Context Relevance Score
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>An LLM judge evaluates each retrieved chunk for its relevance to the query on a 0-1 scale. The scores are then averaged across all chunks to produce an overall context relevance score.</p>
+              <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <p>An LLM judge evaluates each retrieved chunk for its relevance to the query on a 0-1 scale. The scores are then averaged across all chunks to produce an overall context relevance score.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Context Relevance = mean(score_i)
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <p>
+                  View the scoring process flow
+                  <MermaidPopover
+                    title="Context Relevance Scoring Process"
+                    diagram={`flowchart TD
+    A[User Query] --> B[Retrieval System]
+    B --> C[Retrieved Chunks]
+    C --> D{LLM Judge}
+    D --> E[Score Chunk 1: 0-1]
+    D --> F[Score Chunk 2: 0-1]
+    D --> G[Score Chunk N: 0-1]
+    E --> H[Calculate Mean]
+    F --> H
+    G --> H
+    H --> I[Context Relevance Score]
+    
+    style A fill:#3498db,color:#fff
+    style D fill:#e74c3c,color:#fff
+    style I fill:#2ecc71,color:#fff`}
+                  />
+                </p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <h3>Formula</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.6}>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`Context Relevance = mean(score_i)
 where score_i ∈ [0,1] for each chunk`}
-              </pre>
-              <p>Have an LLM judge each chunk's relevance to the query on a 0-1 scale. Optional: Weight by chunk length for more accurate representation. Compute mean across all retrieved chunks.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.7}>
+                <p>Have an LLM judge each chunk's relevance to the query on a 0-1 scale. Optional: Weight by chunk length for more accurate representation. Compute mean across all retrieved chunks.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.70 considered good performance</li>
-                <li>≥0.80 indicates strong retrieval alignment</li>
-                <li>Scores &lt;0.50 often signal problematic retrieval</li>
-                <li>Thresholds may vary by domain complexity</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.65}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} duration={0.5}>
+                <div><li>≥0.70 considered good performance</li></div>
+                <div><li>≥0.80 indicates strong retrieval alignment</li></div>
+                <div><li>Scores &lt;0.50 often signal problematic retrieval</li></div>
+                <div><li>Thresholds may vary by domain complexity</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f656f',
-          notes: ''
+          notes: `### How Context Relevance Scoring Works
+Let's break down exactly how this metric calculates a relevance score for your retrieved context.
+
+#### The Evaluation Process
+Here's the step-by-step. First, your retrieval system pulls in a set of chunks—let's say five chunks. Now, instead of just blindly passing those to the generation model, you send each chunk to an LLM judge along with the original query. The judge's job is to answer: "On a scale from zero to one, how relevant is this chunk to answering the user's question?" Zero means completely irrelevant—maybe it's about cats when the user asked about databases. One means perfectly on-target—exactly what the user needs. The judge gives a decimal score like 0.85 or 0.3 for each chunk. Once you have all the individual scores, you calculate the mean—the average—across all chunks. That average is your Context Relevance Score.
+
+#### The Simple Formula
+The formula is refreshingly simple: Context Relevance equals the mean of score-i, where each score-i is between zero and one for each chunk. If you retrieved five chunks with scores of 0.9, 0.8, 0.7, 0.5, and 0.3, you'd add them up and divide by five. That gives you a Context Relevance Score of 0.64. Optionally, some implementations weight chunks by length—so a longer, highly relevant chunk contributes more to the average. But the basic approach is just a straight average.
+
+#### What Good Looks Like
+Now, what's a good score? Generally, 0.70 or higher is considered good performance. You're hitting the mark—most of your chunks are relevant. A score of 0.80 or above indicates strong retrieval alignment. Your system is really nailing it. If you're scoring below 0.50, that's a red flag. Half your context or more is probably irrelevant, which means you're wasting tokens and risking confusing the generation model. Keep in mind that thresholds vary by domain complexity. If you're working in a niche domain with complex queries, even 0.65 might be acceptable. But for straightforward Q&A, you should aim higher.
+
+#### When to Use This
+Use Context Relevance Score to compare different retrieval strategies. Does embedding model A give better relevance than model B? Does a certain chunking strategy improve scores? It's your data-driven way to optimize retrieval. Also use it as a gating mechanism: if a query's context relevance is too low, maybe you don't generate an answer at all, or you flag it for human review.
+
+#### Pros
+The good stuff: It's intuitive and easy to explain to stakeholders. "We score each chunk's relevance from zero to one." Simple. It directly measures what matters—relevance. And it's actionable: low scores tell you where to improve retrieval.
+
+#### Cons
+The problems: The LLM judge might have biases or inconsistencies. It adds latency and cost—each evaluation is an API call. And you need a good judge prompt, or your scores will be noisy. Garbage judge prompt equals garbage scores.
+
+That's the mechanics of Context Relevance Scoring. Up next, we'll see it in action with a concrete example.`
         },
         {
           id: 21,
@@ -1293,22 +1376,58 @@ where score_i ∈ [0,1] for each chunk`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Query:</strong> "How do I reset my account password?"</p>
-              <p>LLM relevance scores for 3 retrieved chunks:</p>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Chunk 1 (password reset): 0.9</li>
-                <li>Chunk 2 (account security): 0.8</li>
-                <li>Chunk 3 (billing info): 0.3</li>
-              </ul>
-              <p><strong>Context Relevance = (0.9 + 0.8 + 0.3) / 3 = 0.67</strong></p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.25}>
+                <p><strong>Query:</strong> "How do I reset my account password?"</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.35}>
+                <p>LLM relevance scores for 3 retrieved chunks:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
+                <div><li>Chunk 1 (password reset): 0.9</li></div>
+                <div><li>Chunk 2 (account security): 0.8</li></div>
+                <div><li>Chunk 3 (billing info): 0.3</li></div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={0.6}>
+                <p><strong>Context Relevance = (0.9 + 0.8 + 0.3) / 3 = 0.67</strong></p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>For each chunk in the retrieved context, prompt an LLM judge to rate its relevance to the query on a 0-1 scale. Collect all the scores and compute the average. This gives you an automated quality assessment without requiring manual labels.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.7}>
+                <h3>How to Calculate</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p>For each chunk in the retrieved context, prompt an LLM judge to rate its relevance to the query on a 0-1 scale. Collect all the scores and compute the average. This gives you an automated quality assessment without requiring manual labels.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f656f',
-          notes: ''
+          notes: `### Context Relevance Score Implementation Example
+Now let's see this metric in action with a real-world example. This is where the theory meets practice.
+
+#### The Setup
+Imagine a user asks: "How do I reset my account password?" Your retrieval system pulls three chunks from your knowledge base. Chunk 1 is from the password reset documentation. Chunk 2 is from account security best practices. Chunk 3 is from billing information—somehow it got pulled in, maybe because it mentioned "account." Now we need to score these.
+
+#### The Scoring Process
+You send each chunk, along with the original query, to an LLM judge. The judge reads Chunk 1—the password reset instructions—and says, "This is highly relevant. It directly answers the question." Score: 0.9. Then the judge evaluates Chunk 2—account security tips. "This is somewhat relevant. It's about accounts and security, which relates to passwords, but it doesn't directly explain how to reset." Score: 0.8. Finally, Chunk 3—billing info. "This is barely relevant. It mentions accounts, but it's about billing, not password resets." Score: 0.3. Now you have three scores: 0.9, 0.8, and 0.3.
+
+#### The Calculation
+To get the Context Relevance Score, you calculate the average: 0.9 plus 0.8 plus 0.3, divided by 3. That gives you 2.0 divided by 3, which equals 0.67—rounded. So your Context Relevance Score is 0.67. Is that good or bad? Well, it's below 0.70, which is the threshold for good performance. The culprit is Chunk 3. It's dragging down your average. If you had only retrieved Chunks 1 and 2, your score would be 0.85—much better. This tells you that your retrieval system has a precision problem. It's pulling in irrelevant chunks.
+
+#### How to Calculate in Practice
+Here's the step-by-step for implementation. First, for each chunk in your retrieved context, construct a prompt for the LLM judge. The prompt might say: "Given the query '[query text]' and the following chunk: '[chunk text]', rate the relevance of this chunk to answering the query on a scale from 0 to 1, where 0 is completely irrelevant and 1 is perfectly relevant. Output only the numeric score." Send that prompt to your LLM judge—could be GPT-4, Claude, or any capable model. Collect all the scores. Then compute the average: sum of scores divided by number of chunks. That's your Context Relevance Score. You now have an automated quality assessment without requiring manual labels or reference data.
+
+#### When to Use This
+Use this calculation in your evaluation pipeline before generation. Check the context relevance score before passing chunks to the generation model. If the score is too low, maybe you re-retrieve with a different strategy, or you alert the user that the system couldn't find good information. Also use it in batch evaluation when testing retrieval improvements. Did your new embedding model increase the average context relevance? That's a win.
+
+#### Pros
+The good stuff: It's fully automated—no human labeling needed. It's interpretable—you can see exactly which chunks are dragging down your score. And it's actionable—you can filter out low-scoring chunks before generation.
+
+#### Cons
+The problems: You're dependent on the LLM judge's reliability. If the judge is inconsistent, your scores will be noisy. It adds cost and latency for every evaluation. And you need to tune the judge prompt to get stable, meaningful scores.
+
+That's Context Relevance Score in action. Next, we'll explore the considerations and trade-offs.`
         },
         {
           id: 22,
@@ -1316,26 +1435,73 @@ where score_i ∈ [0,1] for each chunk`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Improves precision by identifying and removing irrelevant context</li>
-                <li>Reduces hallucinations caused by misleading information</li>
-                <li>Enables continuous monitoring without reference answers</li>
-                <li>Helps identify specific queries with poor retrieval performance</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.6}>
+                <div><li>Improves precision by identifying and removing irrelevant context</li></div>
+                <div><li>Reduces hallucinations caused by misleading information</li></div>
+                <div><li>Enables continuous monitoring without reference answers</li></div>
+                <div><li>Helps identify specific queries with poor retrieval performance</li></div>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>LLM judge quality and consistency can vary across models</li>
-                <li>Adds latency and cost for evaluation (requires additional LLM calls)</li>
-                <li>May not align perfectly with human judgment</li>
-                <li>Requires careful prompt engineering to get reliable scores</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.55}>
+                <p>
+                  Explore impact on system quality
+                  <MermaidPopover
+                    title="Context Relevance Impact Diagram"
+                    diagram={`flowchart LR
+    A[Low Relevance Score] --> B[Filter Chunks]
+    B --> C[Higher Precision Context]
+    C --> D[Better Generation]
+    C --> E[Fewer Hallucinations]
+    
+    F[High Relevance Score] --> G[Keep All Chunks]
+    G --> H[Confident Generation]
+    
+    I[Monitor Scores] --> J[Identify Problem Queries]
+    J --> K[Improve Retrieval]
+    
+    style A fill:#e74c3c,color:#fff
+    style F fill:#2ecc71,color:#fff
+    style D fill:#3498db,color:#fff
+    style E fill:#3498db,color:#fff`}
+                  />
+                </p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="bounceIn" delay={0.6}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} duration={0.5}>
+                <div><li>LLM judge quality and consistency can vary across models</li></div>
+                <div><li>Adds latency and cost for evaluation (requires additional LLM calls)</li></div>
+                <div><li>May not align perfectly with human judgment</li></div>
+                <div><li>Requires careful prompt engineering to get reliable scores</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1f656f',
-          notes: ''
-        }
+          notes: `### Context Relevance Score Considerations
+Let's wrap up Context Relevance Score by discussing its impact on your RAG system and the trade-offs you need to consider.
+
+#### The Positive Impact on RAG
+First, the good stuff. Context Relevance Score improves precision by identifying and removing irrelevant context. If a chunk scores 0.2, you can filter it out before generation. That means less noise, which leads to cleaner, more focused answers. Second, it reduces hallucinations. When the generation model sees irrelevant or misleading chunks, it might try to incorporate them anyway, leading to fabricated information. By scoring relevance upfront, you prevent bad chunks from reaching the generation stage. Third, it enables continuous monitoring without reference answers. You don't need expensive human annotations or pre-labeled test sets. The LLM judge gives you ongoing quality signals in production. Fourth, it helps identify specific queries with poor retrieval performance. If certain question types consistently get low relevance scores, you know where to focus your optimization efforts—maybe you need better embeddings for those queries or more granular chunking.
+
+#### When to Use This
+Use Context Relevance Score as a gating mechanism. Set a threshold—say, 0.60—and if a query's context relevance falls below it, don't generate an answer. Instead, return a message like "We couldn't find relevant information" or trigger a fallback strategy. Use it for A/B testing: compare relevance scores between two retrieval approaches to see which one delivers better context. And use it for monitoring: track average relevance scores over time to detect retrieval drift or degradation.
+
+#### The Limitations and Challenges
+Now the limitations. First, LLM judge quality and consistency can vary across models. GPT-4 might score a chunk at 0.8, while another model scores it at 0.6. Even the same model can give different scores on repeated evaluations due to temperature settings or inherent randomness. That's a consistency problem. Second, this metric adds latency and cost. Every evaluation requires an additional LLM call—actually, multiple calls if you're scoring multiple chunks. For high-volume production systems, that can add up quickly in both time and money. Third, LLM judge scores may not align perfectly with human judgment. What the judge considers relevant might not match what a human expert considers relevant. You should validate your judge's scores against human evaluations periodically. Fourth, you need careful prompt engineering to get reliable scores. A poorly worded judge prompt can lead to noisy, inconsistent scores. You'll need to invest time in crafting a good prompt and testing it across different queries and chunk types.
+
+#### Pros
+The good stuff: It's automated and scalable—no manual labeling. It provides real-time quality signals for production monitoring. It's actionable—low scores tell you exactly where to improve. And it works without ground truth data, which is often hard to obtain.
+
+#### Cons
+The problems: Consistency and reliability depend on the LLM judge. It adds operational complexity, latency, and cost. Scores may not perfectly match human judgment. And it requires prompt engineering effort to get stable results.
+
+That's Context Relevance Score—your automated relevance quality inspector. Up next, we'll move on to Metric 6: Hallucination Rate, which focuses on generation quality.`
+        },
       ]
     },
     {
@@ -1348,22 +1514,48 @@ where score_i ∈ [0,1] for each chunk`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures the frequency of unsupported or invented claims in generated answers that cannot be traced back to the retrieved context.</p>
+              <GSAPAnimated animation="scaleIn" duration={1} delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <p>Measures the frequency of unsupported or invented claims in generated answers that cannot be traced back to the retrieved context.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Lower hallucination rates directly increase trust in the system</li>
-                <li>Reduces misinformation risk and potential legal/reputation damage</li>
-                <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
-                <li>Enables reliable citation of source materials</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} duration={0.6}>
+                <div><li>Lower hallucination rates directly increase trust in the system</li></div>
+                <div><li>Reduces misinformation risk and potential legal/reputation damage</li></div>
+                <div><li>Critical for safety-sensitive domains where incorrect information can cause harm</li></div>
+                <div><li>Enables reliable citation of source materials</li></div>
+              </GSAPStaggerList>
 
-              <p>As a primary generation quality guardrail, during regression testing before deployment, for continuous production monitoring, and when safety and accuracy are mission-critical.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.7}>
+                <p>As a primary generation quality guardrail, during regression testing before deployment, for continuous production monitoring, and when safety and accuracy are mission-critical.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6f1f6d',
-          notes: ''
+          notes: `### Hallucination Rate Overview
+Welcome to Metric 6: Hallucination Rate. This is arguably the most critical metric for RAG systems, because it measures trustworthiness—does your system make stuff up?
+
+#### What Is Hallucination Rate?
+Hallucination Rate, often called the 👉 hal-oo-sin-AY-shun rate, measures the frequency of unsupported or invented claims in your generated answers. These are statements that cannot be traced back to the retrieved context. In other words, the LLM generation model is fabricating information—making things up out of thin air. Imagine asking "What's the return policy?" and the system says "30 days," but your actual policy is 14 days. That's a hallucination. The model invented a fact that wasn't in the context. Hallucination Rate tells you what percentage of the claims in your answer are these fabricated statements. Lower is better—ideally, you want zero hallucinations.
+
+#### Why Hallucination Rate Matters
+Let's talk about why this metric is so important. First, lower hallucination rates directly increase trust in the system. Users won't trust a system that gives them wrong information. If they catch even one hallucination, they'll doubt everything else. Second, it reduces misinformation risk and potential legal or reputation damage. If your customer support bot tells users incorrect billing information, that's a problem. If your medical RAG system hallucinates drug dosages, that's dangerous. Third, it's critical for safety-sensitive domains where incorrect information can cause harm—healthcare, legal, financial services. In these areas, even a small hallucination rate is unacceptable. Fourth, it enables reliable citation of source materials. If your system cites sources for its claims, you need to be sure those claims actually come from those sources. Hallucinations break that promise.
+
+#### When to Use This Metric
+Use Hallucination Rate as a primary generation quality guardrail. Before you deploy a new model or prompt template, check the hallucination rate on your test set. Use it during regression testing before deployment—make sure your changes haven't increased hallucinations. Use it for continuous production monitoring, tracking hallucination rate over time to catch drift or degradation. And absolutely use it when safety and accuracy are mission-critical. For healthcare, legal, or financial RAG applications, hallucination rate should be your top priority metric.
+
+#### Pros
+The good stuff: It directly measures trustworthiness—the single most important quality for user confidence. It's critical for safety—catching fabricated information before it causes harm. It's measurable and trackable—you can set thresholds and alert when they're exceeded. And it's actionable—high hallucination rates tell you to improve generation prompts, retrieval quality, or model selection.
+
+#### Cons
+The problems: Detecting hallucinations accurately is challenging. You need to parse the answer into claims, then check each claim against the context. That's complex. Not all unsupported claims are harmful—some might be reasonable inferences or general knowledge. The detection quality depends on your evaluation method—LLM judge, specialized model like HHEM, or manual review. And it may penalize valid general knowledge that's not in the specific retrieved context. If the model says "Water boils at 100 degrees Celsius," but the context doesn't mention it, is that a hallucination or just common knowledge? It's a gray area.
+
+That's Hallucination Rate—your trustworthiness barometer. Next up, we'll dive into how it's calculated.`
         },
         {
           id: 24,
@@ -1371,26 +1563,95 @@ where score_i ∈ [0,1] for each chunk`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Hallucination Rate measures the proportion of claims in the answer that lack supporting evidence in the retrieved context. It's the inverse of faithfulness.</p>
+              <GSAPAnimated animation="rotateIn" duration={0.9} delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Hallucination Rate measures the proportion of claims in the answer that lack supporting evidence in the retrieved context. It's the inverse of faithfulness.</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`HallucinationRate = 1 - Faithfulness
+              <GSAPAnimated animation="slideInBottom" delay={0.45}>
+                <p>
+                  View the detection process
+                  <MermaidPopover
+                    title="Hallucination Detection Process"
+                    diagram={`flowchart TD
+    A[Generated Answer] --> B[Extract Claims]
+    B --> C[Claim 1]
+    B --> D[Claim 2]
+    B --> E[Claim N]
+    
+    F[Retrieved Context] --> G{Verify Each Claim}
+    
+    C --> G
+    D --> G
+    E --> G
+    
+    G --> H[Supported Claims]
+    G --> I[Unsupported Claims]
+    
+    I --> J[Count Hallucinations]
+    J --> K[Calculate Rate]
+    
+    H --> K
+    K --> L[Hallucination Rate]
+    
+    style A fill:#3498db,color:#fff
+    style I fill:#e74c3c,color:#fff
+    style L fill:#9b59b6,color:#fff`}
+                  />
+                </p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <h3>Formula</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`HallucinationRate = 1 - Faithfulness
 = (# unsupported claims) / (# total claims)`}
-              </pre>
-              <p>Extract all factual claims from the answer. Check each claim against the retrieved context. Count claims without supporting evidence. Implementation options: HHEM-2.1-Open model or LLM judge.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.7}>
+                <p>Extract all factual claims from the answer. Check each claim against the retrieved context. Count claims without supporting evidence. Implementation options: HHEM-2.1-Open model or LLM judge.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>&lt;5% for high-stakes applications (medical, legal, financial)</li>
-                <li>&lt;10-15% for general-purpose applications</li>
-                <li>Zero tolerance for critical facts in regulated domains</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0.65}>
+                <h3>Target Values</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} duration={0.5}>
+                <div><li>&lt;5% for high-stakes applications (medical, legal, financial)</li></div>
+                <div><li>&lt;10-15% for general-purpose applications</li></div>
+                <div><li>Zero tolerance for critical facts in regulated domains</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6f1f6d',
-          notes: ''
+          notes: `### How Hallucination Rate Is Calculated
+Let's get into the mechanics of calculating Hallucination Rate. This is a bit more complex than the previous metrics, because you need to parse claims and verify them.
+
+#### The Core Process
+Here's how it works. First, you take the generated answer and extract all factual claims. A claim is any statement that makes a factual assertion—something that can be true or false. For example, in the answer "Our product costs $50 and ships within 2 days," you have two claims: "costs $50" and "ships within 2 days." Next, you check each claim against the retrieved context. Can you find supporting evidence in the context for this claim? If yes, it's supported. If no, it's unsupported—a potential hallucination. Count the number of unsupported claims, divide by the total number of claims, and you get your Hallucination Rate. It's that simple conceptually, but the devil is in the details—specifically, in accurately extracting and verifying claims.
+
+#### The Formula
+The formula is straightforward: Hallucination Rate equals 1 minus Faithfulness. Or more directly, it's the number of unsupported claims divided by the total number of claims. If your answer contains 10 claims and 2 of them are unsupported, your Hallucination Rate is 2 divided by 10, which equals 0.2 or 20 percent. That's high—it means one in five claims is fabricated. Alternatively, if all 10 claims are supported, your Hallucination Rate is zero. That's perfect.
+
+#### Implementation Options
+How do you actually implement this? You have a few options. Option one: Use a specialized model like 👉 H-H-E-M (HHEM-2.1-Open). This is a fine-tuned model designed specifically for detecting hallucinations. It's fast and accurate. Option two: Use an LLM judge. You prompt a large language model to extract claims and verify them against the context. This is more flexible but potentially slower and more expensive. Option three: Manual review, which is the gold standard but doesn't scale. For production, you'll likely use HHEM or an LLM judge.
+
+#### Target Values and Thresholds
+What's a good Hallucination Rate? It depends on your domain. For high-stakes applications—medical, legal, financial—you want less than 5 percent. Ideally, closer to zero. Even one fabricated medical fact can be dangerous. For general-purpose applications—customer support, knowledge bases—less than 10 to 15 percent is acceptable, though lower is always better. And for critical facts in regulated domains, you need zero tolerance. If the law says X and your system says Y, that's unacceptable.
+
+#### When to Use This
+Use Hallucination Rate as a gating metric before deployment. If your test set shows a 20 percent hallucination rate, don't ship it. Use it for A/B testing: does a new prompt reduce hallucinations? And use it for continuous monitoring: track hallucination rate daily or weekly to catch regressions.
+
+#### Pros
+The good stuff: It directly measures trustworthiness. It's the clearest signal of generation quality problems. It's actionable—high rates tell you to improve prompts, retrieval, or model choice. And it's critical for safety.
+
+#### Cons
+The problems: Claim extraction is challenging. What counts as a "claim"? Is an inference a hallucination? Detection quality depends on your method. And it may penalize reasonable inferences or general knowledge not in the context.
+
+That's the mechanics of Hallucination Rate. Up next, we'll see a concrete example.`
         },
         {
           id: 25,
@@ -1398,18 +1659,56 @@ where score_i ∈ [0,1] for each chunk`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p>Answer contains 12 factual claims</p>
-              <p>Context supports 10 claims</p>
-              <p>Context doesn't support 2 claims (invented details)</p>
-              <p><strong>Hallucination Rate = 2/12 = 16.7% (exceeds target)</strong></p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Answer contains 12 factual claims</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p>Context supports 10 claims</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <p>Context doesn't support 2 claims (invented details)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
+                <p><strong>Hallucination Rate = 2/12 = 16.7% (exceeds target)</strong></p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Parse the generated answer into individual factual claims. For each claim, check whether it can be verified against the retrieved context. Count the number of unsupported claims and divide by the total number of claims. Use automated tools like HHEM-2.1-Open or an LLM judge for scaling.</p>
+              <GSAPAnimated animation="rotateIn" delay={0.6}>
+                <h3>How to Calculate</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p>Parse the generated answer into individual factual claims. For each claim, check whether it can be verified against the retrieved context. Count the number of unsupported claims and divide by the total number of claims. Use automated tools like HHEM-2.1-Open or an LLM judge for scaling.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#6f1f6d',
-          notes: ''
+          notes: `### Hallucination Rate Implementation Example
+Now let's walk through a real-world example of calculating Hallucination Rate. This is where rubber meets road.
+
+#### The Scenario
+Imagine your RAG system generates an answer that contains 12 factual claims. Maybe the user asked about a product, and the answer includes claims about features, pricing, shipping times, and availability. Now you need to verify each claim against the retrieved context—the chunks your retrieval system pulled in.
+
+#### The Verification Process
+You go through each claim one by one. Claim 1: "The product costs $99." You check the context—yes, there's a chunk that says "$99." Supported. Claim 2: "It ships within 24 hours." You check the context—yes, shipping information is there. Supported. You continue through all 12 claims. At the end, you find that the context supports 10 of the claims. But 2 claims—let's say "It's available in 20 colors" and "It has a 5-year warranty"—are not mentioned anywhere in the retrieved context. Those are invented details. The model made them up. Those are hallucinations.
+
+#### The Calculation
+Now you calculate the Hallucination Rate. You have 2 unsupported claims out of 12 total claims. So Hallucination Rate equals 2 divided by 12, which is approximately 0.167, or 16.7 percent. Is that good or bad? For a general-purpose application, you'd want less than 10 to 15 percent. So 16.7 percent exceeds the target—it's too high. For a high-stakes application like medical or legal, this would be completely unacceptable. You'd need to investigate why the model is hallucinating and fix it—maybe improve the generation prompt, filter out irrelevant chunks, or use a more faithful model.
+
+#### How to Calculate in Practice
+Here's the step-by-step for implementation. First, parse the generated answer into individual factual claims. You can do this with an LLM prompt that says "Extract all factual claims from this answer. List each claim separately." The LLM will break the answer into discrete statements. Second, for each claim, check whether it can be verified against the retrieved context. Again, you can use an LLM prompt: "Given this claim and this context, is the claim supported by the context? Answer yes or no." Or use a specialized model like HHEM-2.1-Open, which is trained for this exact task. Third, count the number of unsupported claims—the "no" answers. Fourth, divide by the total number of claims. That's your Hallucination Rate. Fifth, use automated tools for scaling. Manual review is too slow for production. You need HHEM or an LLM judge to process thousands of answers efficiently.
+
+#### When to Use This
+Use Hallucination Rate calculation in your evaluation pipeline. After generation, before serving the answer to the user, calculate the hallucination rate. If it's above your threshold, maybe you reject the answer and fall back to a safer response, or you flag it for human review. Also use it in batch testing when you're evaluating model changes or prompt tweaks. Did your new generation prompt reduce hallucinations? The numbers will tell you.
+
+#### Pros
+The good stuff: It's objective and quantifiable—you get a clear percentage. It's automatable—you can run it on thousands of answers with HHEM or an LLM judge. It's actionable—high rates point you to specific problems. And it's critical for trust and safety.
+
+#### Cons
+The problems: Claim extraction can be inconsistent—different methods might identify different numbers of claims. Verification depends on the quality of your evaluation tool. And not all unsupported claims are equally harmful—inventing a color option is different from inventing a drug interaction.
+
+That's Hallucination Rate in action. Next, we'll discuss the broader considerations and trade-offs.`
         },
         {
           id: 26,
@@ -1417,25 +1716,77 @@ where score_i ∈ [0,1] for each chunk`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Lower hallucination rates directly increase trust in the system</li>
-                <li>Reduces misinformation risk and potential legal/reputation damage</li>
-                <li>Critical for safety-sensitive domains where incorrect information can cause harm</li>
-                <li>Enables reliable citation of source materials</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} duration={0.6}>
+                <div><li>Lower hallucination rates directly increase trust in the system</li></div>
+                <div><li>Reduces misinformation risk and potential legal/reputation damage</li></div>
+                <div><li>Critical for safety-sensitive domains where incorrect information can cause harm</li></div>
+                <div><li>Enables reliable citation of source materials</li></div>
+              </GSAPStaggerList>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Claim extraction can be challenging and inconsistent</li>
-                <li>Not all unsupported claims are harmful — some may be reasonable inferences</li>
-                <li>Detection quality depends on the evaluation method used</li>
-                <li>May penalize valid general knowledge not in the specific context</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.6}>
+                <p>
+                  Explore the trust relationship
+                  <MermaidPopover
+                    title="Hallucination Rate Impact on Trust"
+                    diagram={`flowchart TB
+    A[High Hallucination Rate] --> B[Low User Trust]
+    B --> C[Reduced Adoption]
+    B --> D[Legal/Safety Risks]
+    
+    E[Low Hallucination Rate] --> F[High User Trust]
+    F --> G[Increased Adoption]
+    F --> H[Reliable Citations]
+    
+    I[Monitor & Reduce] --> J[Improve Prompts]
+    I --> K[Better Context]
+    I --> L[Model Selection]
+    
+    J --> E
+    K --> E
+    L --> E
+    
+    style A fill:#e74c3c,color:#fff
+    style E fill:#2ecc71,color:#fff
+    style D fill:#c0392b,color:#fff
+    style H fill:#3498db,color:#fff`}
+                  />
+                </p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="bounceIn" delay={0.65}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.5}>
+                <div><li>Claim extraction can be challenging and inconsistent</li></div>
+                <div><li>Not all unsupported claims are harmful — some may be reasonable inferences</li></div>
+                <div><li>Detection quality depends on the evaluation method used</li></div>
+                <div><li>May penalize valid general knowledge not in the specific context</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#6f1f6d',
-          notes: ''
+          notes: `### Hallucination Rate Considerations
+Let's wrap up Hallucination Rate by discussing its impact on your RAG system and the important trade-offs to consider.
+
+#### The Critical Impact on RAG
+First, the positive impact. Lower hallucination rates directly increase trust in the system. Trust is everything. If users catch your system making up information even once, they'll question everything it says afterward. You lose credibility fast. Second, reducing hallucinations reduces misinformation risk and potential legal or reputation damage. If your customer service bot tells users the wrong information about warranties or returns, you could face legal consequences or angry customers. If your medical RAG system hallucinates treatment information, that's a safety disaster. Third, low hallucination rates are critical for safety-sensitive domains where incorrect information can cause harm. Healthcare, legal, financial—these domains have zero tolerance for fabricated information. People's health, legal rights, and money are on the line. Fourth, it enables reliable citation of source materials. Many RAG systems cite their sources—"According to document X, the answer is Y." If the answer contains hallucinations, those citations become meaningless. Low hallucination rates make citations trustworthy.
+
+#### When to Use This
+Use Hallucination Rate as your primary quality gate for deployment. Before shipping a new model or prompt, check the hallucination rate. If it's too high, don't ship. Use it for regression testing—make sure new changes haven't increased hallucinations. Use it for continuous monitoring—track hallucination rate daily, weekly, or per query batch. And use it as a gating mechanism: if a specific answer has a high predicted hallucination rate, don't serve it. Fall back to "I don't know" or route to a human.
+
+#### The Challenges and Nuances
+Now the limitations. First, claim extraction can be challenging and inconsistent. Different tools might extract different numbers of claims from the same answer. Is "The product costs $99 and ships fast" one claim or two? It's subjective. Second, not all unsupported claims are harmful. Some may be reasonable inferences. If the context says "This product is popular with athletes," and the answer says "This product is durable," is that a hallucination? It's an inference—athletes need durable products. But it's not explicitly stated. How do you handle that? Third, detection quality depends on the evaluation method used. HHEM might catch 90 percent of hallucinations, an LLM judge might catch 80 percent, and manual review might catch 95 percent. You're always dealing with imperfect detection. Fourth, this metric may penalize valid general knowledge not in the specific context. If the model says "Paris is the capital of France," but the retrieved context doesn't mention it, is that a hallucination? Technically, yes—it's not in the context. But it's common knowledge. Should you penalize it? It depends on your use case.
+
+#### Pros
+The good stuff: It's the clearest measure of trustworthiness. It's critical for safety and compliance in regulated domains. It's measurable and trackable over time. And it's actionable—high rates tell you exactly where to focus improvement efforts.
+
+#### Cons
+The problems: Claim extraction is complex and inconsistent. Not all unsupported claims are equally harmful. Detection is imperfect no matter which method you use. And it may penalize reasonable inferences or general knowledge.
+
+That's Hallucination Rate—your trustworthiness and safety metric. It's one of the most important metrics for any RAG system, especially in high-stakes domains. Next, we'll move on to other generation quality metrics.`
         }
       ]
     },
