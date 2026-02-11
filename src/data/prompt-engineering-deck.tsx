@@ -1052,53 +1052,119 @@ Generate Knowledge provides **explicit grounding** for the answer. Instead of th
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Generate Knowledge prompting uses a two-stage approach. First, the model generates relevant background facts or knowledge about the topic. Then, in the second stage, the model uses these self-generated facts as context to answer the actual question. This helps activate relevant knowledge and provides grounding for the answer.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong knowledge recall capabilities</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Generate Knowledge prompting uses a two-stage approach. First, the model generates relevant background facts or knowledge about the topic. Then, in the second stage, the model uses these self-generated facts as context to answer the actual question. This helps activate relevant knowledge and provides grounding for the answer.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong knowledge recall capabilities</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
+          notes: `### Generate Knowledge - How It Works
+Let's understand the two-stage mechanism that makes Generate Knowledge prompting so effective for knowledge-intensive tasks.
+
+#### The Two-Stage Process
+Generate Knowledge works through **explicit knowledge retrieval followed by application**. Stage 1: You ask "What are relevant facts about X?" and the model generates a list of pertinent information from its training. Stage 2: You ask "Given these facts, answer Y" and the model uses the just-generated facts as context. This separation is powerful because it forces the model to commit to specific facts before reasoning, reducing the chance of contradictory or inconsistent reasoning. It's like requiring someone to show their sources before making an argument!
+
+#### Why Separation Matters
+The magic is in the **separation of retrieval and reasoning**. When you ask the model to answer directly, it interleaves knowledge recall and reasoning in opaque ways. With Generate Knowledge, you make knowledge recall explicit and observable. This has two benefits: first, you can verify the facts are correct before using them. Second, the model's attention is primed with relevant information, improving the quality of subsequent reasoning. Think of it as organizing your thoughts before writing — the act of organization improves the final output.
+
+#### Model Requirements and Capabilities
+This technique requires models with **strong factual knowledge** like GPT-4, Claude 3.5, and Gemini 1.5. These models have broad, deep knowledge bases from training and can retrieve relevant facts effectively. The technique is Intermediate complexity because you need to orchestrate the two stages — either in a single prompt with clear sections or across separate API calls.
+
+#### Real-World Application: Medical Triage
+Imagine a symptom checker app. Instead of directly diagnosing "headache, fever, stiff neck", you first prompt: "List risk factors and relevant medical facts about these symptoms." The model might generate: "Fever + stiff neck + headache can indicate meningitis. Meningitis risk factors include: recent illness, college dorms, immunocompromised status." Then you ask: "Given these facts, what should the patient do?" This produces more grounded, reliable medical advice!
+
+> Pro tip: Verify generated facts against trusted sources for critical applications. Don't blindly trust model-generated knowledge!`
         },
-        {
+{
           id: 25,
           title: '6. Generate Knowledge - Implementation',
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well for knowledge generation. Best results with models that have strong factual knowledge bases.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well for knowledge generation. Best results with models that have strong factual knowledge bases.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
+          notes: `### Generate Knowledge - Implementation
+Let's examine how to structure Generate Knowledge prompts for maximum effectiveness in practice.
+
+#### Prompt Structure Best Practices
+The example shows the classic structure: **"Before answering, list facts about X. Then, using those facts, answer Y."** This explicit structure with "before" and "then" creates clear stages. You can enhance this with specificity: instead of "list facts", try "list 3-5 relevant facts including risks, benefits, and considerations" to guide what kind of knowledge to retrieve. The more specific you are about what facts you need, the better the model can retrieve relevant information.
+
+#### Single vs. Multi-Call Approaches
+You can implement this as **one prompt with two sections** (as shown) or as **two separate API calls**. Single-prompt is simpler and faster but gives you less control. Multi-call lets you inspect and filter the facts before proceeding to the answer stage, which is valuable for critical applications. For example, you might validate facts against a knowledge base, filter out hallucinations, or supplement with retrieved documents before the answering stage.
+
+#### Fact Quantity and Quality
+How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few and you might miss important context. Too many and you dilute attention with irrelevant information. For complex topics, you might go higher (7-10 facts), but test whether more facts actually improve answers — sometimes less is more. Focus on fact *relevance* over quantity.
+
+> Pro tip: For production systems, implement fact verification! Cross-check generated facts against trusted knowledge bases or use retrieval-augmented generation to ground facts in real documents!`
         },
-        {
+{
           id: 26,
           title: '6. Generate Knowledge - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Generated facts may be incorrect or hallucinated</li>
-                <li>Consider verification or retrieval for critical facts</li>
-                <li>Adds latency and token costs</li>
-                <li>May reinforce incorrect knowledge from training</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Generated facts may be incorrect or hallucinated</li>
+                  <li>Consider verification or retrieval for critical facts</li>
+                  <li>Adds latency and token costs</li>
+                  <li>May reinforce incorrect knowledge from training</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
-        }
+          notes: `### Generate Knowledge - Considerations
+While Generate Knowledge is powerful, it has critical limitations around factual accuracy that you must understand.
+
+#### The Hallucination Risk
+The biggest danger with Generate Knowledge is **hallucinated facts**. The model might confidently generate plausible-sounding but completely incorrect facts. Since these become the foundation for the answer, hallucinated facts lead to confidently wrong conclusions. This is especially dangerous because the explicit facts look trustworthy — "The model listed its sources, so it must be right!" Wrong! For critical applications in medicine, law, finance, or any domain where errors have serious consequences, **never trust generated facts without verification**.
+
+#### Verification Strategies
+For production systems, implement **fact verification** through multiple strategies. Cross-check facts against trusted knowledge bases or APIs. Use retrieval-augmented generation (RAG) to ground facts in actual documents rather than model memory. Implement confidence scoring where the model indicates certainty for each fact. For high-stakes decisions, require human review of generated facts before proceeding to the answer stage. Think of generated knowledge as a hypothesis that needs validation, not as ground truth.
+
+#### Cost and Latency Considerations
+Generate Knowledge adds **overhead** — you're generating a list of facts before the actual answer, increasing both token costs and latency. The facts themselves might be 50-200 tokens, then the answer is built on top of that. At scale, this adds up. Evaluate whether the quality improvement justifies the cost. For routine tasks, simpler techniques might suffice. For knowledge-intensive tasks where accuracy matters, the cost is worthwhile.
+
+#### The Training Data Problem
+Finally, remember that generated knowledge comes from the model's **training data**, which has a cutoff date and may contain biases or errors. If the training data encoded incorrect information, Generate Knowledge will surface and reinforce those errors. For rapidly changing domains or topics where accuracy is critical, combine this technique with retrieval from up-to-date, verified sources rather than relying solely on model memory.
+
+> Pro tip: Treat Generate Knowledge as a retrieval stage, then verify before using. Never skip verification for critical applications!`
+        },
       ]
     },
     {
@@ -1111,20 +1177,42 @@ Generate Knowledge provides **explicit grounding** for the answer. Instead of th
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Break a task into subtasks across multiple prompts where outputs feed subsequent prompts.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Multi-stage pipeline outputs (extractions → synthesis)</li>
-                <li>Better decomposition of complex workflows</li>
-                <li>Improved accuracy per subtask</li>
-                <li>Easier debugging and optimization</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for complex workflows, transformation pipelines, and data cleanup tasks. Breaking tasks into stages improves reliability and maintainability.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Break a task into subtasks across multiple prompts where outputs feed subsequent prompts.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Multi-stage pipeline outputs (extractions → synthesis)</li>
+                  <li>Better decomposition of complex workflows</li>
+                  <li>Improved accuracy per subtask</li>
+                  <li>Easier debugging and optimization</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for complex workflows, transformation pipelines, and data cleanup tasks. Breaking tasks into stages improves reliability and maintainability.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
+          notes: `### Prompt Chaining - Overview
+Welcome to **Prompt Chaining**, a fundamental technique for building complex AI workflows by breaking them into manageable, sequential stages.
+
+#### The Decomposition Strategy
+Prompt chaining is based on a simple but powerful idea: **complex tasks are easier when broken into simpler subtasks**. Instead of asking the model to do everything in one shot (extract data, transform it, analyze it, and format results), you create a chain where each step does one thing well. Step 1: Extract raw data. Step 2: Clean and normalize. Step 3: Analyze. Step 4: Format for output. Each stage is simpler, more reliable, and easier to optimize than trying to do everything at once.
+
+#### When Prompt Chaining Shines
+Use prompt chaining for **multi-stage workflows** like document processing pipelines, data transformation tasks, or content generation workflows. It's perfect when your task has natural stages that depend on each other. For example: reading a resume → extracting key info → matching to job requirements → generating interview questions. Each stage builds on the previous, but they're independent enough to test and optimize separately. This modularity is incredibly valuable for production systems.
+
+#### The Production Advantage
+Prompt chaining makes systems **maintainable and debuggable**. When something goes wrong, you can pinpoint which stage failed. You can improve individual stages without touching others. You can A/B test different prompts for specific stages. You can even mix techniques — use zero-shot for stage 1, few-shot for stage 2, CoT for stage 3. This flexibility and control make prompt chaining essential for real-world applications.
+
+> Pro tip: Prompt chaining is like an assembly line — each station does one job well, and the product improves at each stage!`
         },
         {
           id: 28,
@@ -1132,17 +1220,44 @@ Generate Knowledge provides **explicit grounding** for the answer. Instead of th
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Prompt chaining decomposes complex tasks into a series of simpler subtasks. Each subtask is handled by a separate prompt, with the output from one stage becoming input for the next. This sequential approach allows each stage to focus on a specific transformation or analysis step, improving overall quality and making the pipeline easier to debug and optimize.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Any LLM; long-context models help with larger intermediate outputs</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Prompt chaining decomposes complex tasks into a series of simpler subtasks. Each subtask is handled by a separate prompt, with the output from one stage becoming input for the next. This sequential approach allows each stage to focus on a specific transformation or analysis step, improving overall quality and making the pipeline easier to debug and optimize.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Any LLM; long-context models help with larger intermediate outputs</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
+          notes: `### Prompt Chaining - How It Works
+Let's understand the mechanics of prompt chaining and how to design effective multi-stage pipelines.
+
+#### The Sequential Pipeline Architecture
+Prompt chaining works through **sequential transformation**. You start with input, apply Prompt 1 to get Output 1, then use Output 1 as input to Prompt 2 to get Output 2, and so on. Each prompt is specialized for its stage. For example: Prompt 1 might be "Extract all dates and amounts from this contract", Prompt 2 might be "Classify each transaction as revenue or expense", Prompt 3 might be "Calculate total revenue and flag unusual patterns". Each stage is focused and testable.
+
+#### Designing Effective Chains
+Good chain design requires **clear stage boundaries**. Each stage should have a single clear responsibility. Outputs should be clean and well-formatted because they become inputs to the next stage — messy outputs cause cascading problems. Use structured formats (JSON, markdown) for intermediate outputs to make parsing easier. For example, instead of free-form text between stages, use JSON with defined fields so the next stage knows exactly what to expect.
+
+#### Context Management with Long-Context Models
+One challenge is **context accumulation** — as you chain prompts, context grows (original input + Output 1 + Output 2...). Modern long-context models like GPT-4 (128k tokens), Claude 3.5 (200k tokens), and Gemini 1.5 (2M tokens) handle this well, letting you carry full context through multiple stages. Alternatively, you can use selective context where each stage only receives what it needs, reducing token costs.
+
+#### Real-World Application: Legal Brief Generation
+Imagine generating legal briefs from case documents. **Stage 1**: Extract relevant case law, statutes, and facts (extraction prompt). **Stage 2**: Summarize each case's relevance to current matter (summarization prompt). **Stage 3**: Draft argument structure with cited cases (planning prompt). **Stage 4**: Generate polished legal writing (drafting prompt). Each stage is simpler than trying to do everything at once, and you can optimize each independently!
+
+> Pro tip: Add validation stages between main stages to catch errors before they propagate downstream!`
         },
         {
           id: 29,
@@ -1150,17 +1265,37 @@ Generate Knowledge provides **explicit grounding** for the answer. Instead of th
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Step 1: Extract key quotes from document about <question>.
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Step 1: Extract key quotes from document about <question>.
 Step 2: Using quotes, answer <question> with citations."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and any LLM that can maintain context. Long-context models (100k+ tokens) are particularly effective for handling large intermediate outputs.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and any LLM that can maintain context. Long-context models (100k+ tokens) are particularly effective for handling large intermediate outputs.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
+          notes: `### Prompt Chaining - Implementation
+Let's examine practical implementation strategies for prompt chaining, from simple to sophisticated approaches.
+
+#### Single-Prompt vs. Multi-Call Implementation
+The example shows a **single-prompt approach** where stages are defined within one call ("Step 1... Step 2..."). This is simpler but less flexible. The **multi-call approach** uses separate API calls for each stage, giving you full control to inspect, validate, and transform intermediate outputs. Multi-call also lets you use different models for different stages — maybe GPT-4 for complex reasoning stages and a faster/cheaper model for simple transformation stages. Choose based on your needs for control, cost, and complexity.
+
+#### Intermediate Output Formatting
+Design your stages to produce **clean, parseable outputs**. Instead of "Extract quotes and explain them", split it: Stage 1 outputs JSON with {quote, page, context} for each quote. Stage 2 receives this structured data and generates analysis. Structured intermediate formats make your pipeline robust to variations in model output and make debugging much easier — you can log and inspect exactly what each stage produced.
+
+#### Error Handling and Fallbacks
+Prod uction chains need **error handling at each stage**. What if Stage 2 receives malformed output from Stage 1? Implement validation, retry logic, and fallbacks. For example, if extraction fails, try a simplified extraction prompt. If that fails, use default values or flag for human review. Never let errors propagate silently through your chain — catch and handle them explicitly at each stage.
+
+> Pro tip: Build your chain incrementally! Start with 2 stages, validate thoroughly, then add more. Don't build a 5-stage chain all at once!`
         },
         {
           id: 30,
@@ -1168,18 +1303,37 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Orchestration complexity increases with chain length</li>
-                <li>Error propagation without validation checks</li>
-                <li>Cumulative latency from multiple calls</li>
-                <li>Requires careful stage design and testing</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Orchestration complexity increases with chain length</li>
+                  <li>Error propagation without validation checks</li>
+                  <li>Cumulative latency from multiple calls</li>
+                  <li>Requires careful stage design and testing</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
-        }
+          notes: `### Prompt Chaining - Considerations
+While prompt chaining is incredibly useful, it introduces complexity and challenges that you need to manage carefully.
+
+#### The Orchestration Challenge
+As chains grow longer, **orchestration complexity explodes**. A 2-stage chain is simple. A 5-stage chain with conditional branching, error handling, and validation at each stage becomes a substantial engineering effort. You need infrastructure to manage the pipeline, handle failures, track state, and coordinate multiple API calls. This isn't insurmountable, but it's real work. Start simple and add complexity only when needed. Don't over-engineer from the start.
+
+#### Error Propagation Is Your Enemy
+The biggest danger is **cascading errors**. Stage 1 produces slightly wrong output. Stage 2 builds on it and makes it worse. Stage 3 compounds the errors further. By the end, your result is completely wrong, but each stage seemed to work! This is why validation between stages is critical. Check that Stage 1's output meets expectations before feeding it to Stage 2. Implement schema validation, sanity checks, and confidence thresholds. Fail fast rather than propagating bad data.
+
+#### Latency and Cost Accumulation
+Each stage adds **latency and cost**. A 5-stage chain where each stage takes 2 seconds means 10 seconds total latency (unless you can parallelize some stages). Each stage incurs API costs. For high-volume applications, this adds up. You need to evaluate: is the quality improvement worth the extra time and cost? Sometimes a single well-crafted prompt performs almost as well as a chain, with much lower latency and cost.
+
+#### Design and Testing Overhead
+Prompt chaining requires **careful stage design**. You need to define clear responsibilities, design clean interfaces between stages, and test each stage independently plus the whole chain end-to-end. This is more work than writing a single prompt. But for complex tasks, this investment pays off in reliability, maintainability, and performance. Think of it as software engineering — more upfront work, but better long-term outcomes.
+
+> Pro tip: Monitor each stage independently in production. Know where failures happen and which stages need optimization!`
+        },
       ]
     },
     {
