@@ -562,7 +562,7 @@ Let's see the mechanics.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Query Reformulation Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Reformulation Works</h3></GSAPAnimated>
               <p>Rephrase queries with complete information by adding:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Full entity names and identifiers</strong> - Replace pronouns and abbreviations with complete names</li>
@@ -696,7 +696,7 @@ Let's see the workflow.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Query Decomposition Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Decomposition Works</h3></GSAPAnimated>
               <p>Breaks complex queries into simpler sub-questions through an orchestrated workflow:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Split original query into atomic sub-questions</strong> - Identify independent components of the complex question</li>
@@ -831,7 +831,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Step-Back Prompting Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Step-Back Prompting Works</h3></GSAPAnimated>
               <p>Generate high-level concepts, then retrieve with that summary:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Extract underlying principles from specific query</strong> - Identify fundamental concepts behind the question</li>
@@ -966,7 +966,7 @@ Let's see the mechanics.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How HyDE Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How HyDE Works</h3></GSAPAnimated>
               <p>Instead of embedding the query directly:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>LLM generates a hypothetical answer document</strong> - Create synthetic document as if answering the query</li>
@@ -1108,7 +1108,7 @@ Let's see the mechanism.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Multi-Query Generation Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Multi-Query Generation Works</h3></GSAPAnimated>
               <p>Generate multiple alternative query formulations:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Generate k diverse query variants</strong> - Create multiple formulations exploring different angles</li>
@@ -1253,7 +1253,7 @@ Let's see the mechanism.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Context-Aware Rewriting Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Context-Aware Rewriting Works</h3></GSAPAnimated>
               <p>Inject relevant contextual elements into the query:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Entities mentioned in previous turns</strong> - Replace pronouns with specific entity references</li>
@@ -1389,7 +1389,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Query Clarification Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Clarification Works</h3></GSAPAnimated>
               <p>The system:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Detects missing constraints or ambiguities</strong> - Analyze query for undefined terms or parameters</li>
@@ -1526,7 +1526,7 @@ Let's see the mechanics.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Query Specification Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query Specification Works</h3></GSAPAnimated>
               <p>Expand queries with structured filters and fielded search terms:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Time range specifications</strong> - Constrain results to specific date ranges</li>
@@ -1668,7 +1668,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Semantic Bridging Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Semantic Bridging Works</h3></GSAPAnimated>
               <p>Expand/translate queries to canonical terms through:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Domain-specific ontology lookups</strong> - Match terms to formal taxonomies and classifications</li>
@@ -1803,7 +1803,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How Query2Doc Works</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>How Query2Doc Works</h3></GSAPAnimated>
               <p>Generate a document-style expansion of the query that:</p>
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li><strong>Mimics the style and content of relevant passages</strong> - Generated text resembles actual documents</li>
@@ -1937,7 +1937,7 @@ Let's see the workflow.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Alternates between answer drafts and targeted follow-up queries</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Alternates between answer drafts and targeted follow-up queries</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Initial response identifies knowledge gaps</li>
@@ -2078,7 +2078,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Fill predefined domain templates based on intent types</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Fill predefined domain templates based on intent types</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Lookup templates (product, document, person)</li>
@@ -2215,7 +2215,7 @@ Let's see the process.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Extract entities → link to knowledge base → enrich with attributes → reformulate query</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Extract entities → link to knowledge base → enrich with attributes → reformulate query</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Named Entity Recognition (NER) extraction</li>
@@ -2357,7 +2357,7 @@ Let's see the mechanics.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Resolves and enhances temporal aspects through time normalization + recency boost</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Resolves and enhances temporal aspects through time normalization + recency boost</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Relative time normalization (e.g., "yesterday" → specific date)</li>
@@ -2495,7 +2495,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Maps query terms to domain-specific terminology and applies field-specific filters</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Maps query terms to domain-specific terminology and applies field-specific filters</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Specialized domain lexicons/ontologies</li>
@@ -2637,7 +2637,7 @@ Let's see the routing logic.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Classify query into intent categories, then apply specific strategies</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Classify query into intent categories, then apply specific strategies</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Lookup → entity-centric rewriting</li>
@@ -2778,7 +2778,7 @@ Let's see how diversity is enforced.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Generate queries with explicit diversity constraints</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Generate queries with explicit diversity constraints</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Produce multiple rewrites covering different angles</li>
@@ -2924,7 +2924,7 @@ Let's see the mechanism.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Uses feedback signals to improve queries</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Uses feedback signals to improve queries</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Promote terms/entities from clicked documents</li>
@@ -3064,7 +3064,7 @@ Let's see how it works.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Utilizes well-crafted system prompts and few-shot examples</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Utilizes well-crafted system prompts and few-shot examples</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Enforce consistent style and structure</li>
@@ -3209,7 +3209,7 @@ Let's see how it selects strategies.`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Uses a policy model or agent to select among strategies</h3>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}><h3>Uses a policy model or agent to select among strategies</h3></GSAPAnimated>
 
               <ul style={{ fontSize: '1.2rem', marginTop: '30px' }}>
                 <li>Query characteristics (length, ambiguity)</li>
