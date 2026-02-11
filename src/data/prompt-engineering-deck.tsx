@@ -1955,20 +1955,40 @@ ART is *powerful* but not magic. It's best for complex, open-ended tasks where a
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Automatically generate and rank candidate instructions based on I/O demonstrations.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Optimized instruction prompt with consistent behavior</li>
-                <li>Automated prompt discovery and optimization</li>
-                <li>Better performance than hand-crafted prompts</li>
-                <li>Systematic exploration of prompt space</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for scaling prompt design, tackling new tasks, and rapid optimization. Automatically discovers effective prompts from examples.</p>
+              <GSAPAnimated animation="fadeIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <p>Automatically generate and rank candidate instructions based on I/O demonstrations.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.6}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Optimized instruction prompt with consistent behavior</li>
+                  <li>Automated prompt discovery and optimization</li>
+                  <li>Better performance than hand-crafted prompts</li>
+                  <li>Systematic exploration of prompt space</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <p style={{ marginTop: '20px' }}>Best for scaling prompt design, tackling new tasks, and rapid optimization. Automatically discovers effective prompts from examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Pronunciation: APE 👉 Say it like 'ape' (the animal) or spell it out as 'A-P-E' - either works!
+
+Welcome to Automatic Prompt Engineer! Think of APE as your tireless prompt scientist who works 24/7 running experiments to find the perfect prompts. Instead of you manually tweaking prompts over and over, APE does it automatically.
+
+Here's the brilliant idea: You give APE examples of inputs and the outputs you want. Then APE generates dozens or even hundreds of candidate prompts, tests each one, and picks the winner. It's like having a prompt lab that runs controlled experiments at scale.
+
+Real-world example: Imagine an e-commerce company routing customer questions. They have thousands of historical examples - questions paired with the correct department. APE takes these examples, generates 50 different routing prompts, tests each against validation data, and discovers "Based on the customer inquiry, identify the primary intent and route to: Technical Support, Billing, or Product Questions" performs 15% better than their hand-crafted prompt.
+
+The meta-learning magic: APE uses the LLM itself to generate prompts. It's AI helping you engineer better AI prompts - like teaching a robot to teach itself! This approach systematically explores the "prompt space" - all possible ways to phrase instructions - far beyond what humans would think to try.
+
+When does APE shine? When you need consistency at scale, when you're tackling a new domain, or when prompt quality directly impacts business metrics. It's especially powerful for A/B testing different prompt strategies automatically.`
         },
         {
           id: 44,
@@ -1976,17 +1996,43 @@ ART is *powerful* but not magic. It's best for complex, open-ended tasks where a
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>APE uses the LLM itself to generate multiple candidate prompts from input-output demonstrations. Each candidate is then tested on a validation set to measure performance. The system ranks candidates by accuracy and selects the best-performing prompt. This meta-learning approach can discover prompts that outperform human-designed alternatives.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires evaluation loop and validation dataset</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>APE uses the LLM itself to generate multiple candidate prompts from input-output demonstrations. Each candidate is then tested on a validation set to measure performance. The system ranks candidates by accuracy and selects the best-performing prompt. This meta-learning approach can discover prompts that outperform human-designed alternatives.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires evaluation loop and validation dataset</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.9}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Let's break down the APE workflow - it's like running a scientific tournament to find the champion prompt!
+
+Step 1 - Generation Phase: You provide APE with input-output demonstrations. Think of these as "before and after" snapshots. APE then asks the LLM: "Given these examples, generate 20 different instruction prompts that could produce these outputs." The LLM brainstorms creative variations - some formal, some casual, some detailed, some concise.
+
+Step 2 - Evaluation Phase: Now comes the tournament! APE takes each candidate prompt and runs it against a validation dataset - fresh examples the LLM hasn't seen. It's like testing 20 different recipes on new ingredients. Each prompt gets a performance score based on accuracy, relevance, or whatever metric you care about.
+
+Step 3 - Selection Phase: APE ranks all candidates by performance and picks the winner. The top-performing prompt becomes your production instruction.
+
+The evolution strategy: Think of APE like natural selection for prompts. Random variation (generation) plus survival of the fittest (evaluation) leads to optimized results. Some implementations even iterate - using the best prompts to generate even better candidates, like breeding champion racehorses!
+
+Real-world complexity: This is advanced because you need infrastructure - the orchestration layer managing multiple LLM calls, a validation dataset that represents real usage, and metrics that align with business goals. You're also spending more tokens upfront for better long-term performance.
+
+Customer service example deep dive: A platform with 10,000 historical tickets uses APE. It generates 50 routing prompts, tests each on 500 validation tickets, and discovers a prompt that reduces misrouting by 23%. The improved accuracy means happier customers and lower operational costs - the investment in prompt engineering pays for itself.`
         },
         {
           id: 45,
@@ -1994,9 +2040,12 @@ ART is *powerful* but not magic. It's best for complex, open-ended tasks where a
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given these I/O pairs:
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given these I/O pairs:
 Input: 'What is the capital of France?'
 Output: 'The capital of France is Paris.'
 
@@ -2005,13 +2054,37 @@ Output: 'There are 8 planets in our solar system: Mercury, Venus, Earth, Mars, J
 
 Propose 5 instruction prompts that would elicit these types of responses. Then execute each on the validation set and rank them by accuracy."
 `}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires orchestration to manage generate-evaluate-select loop and compute resources for multiple evaluations.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires orchestration to manage generate-evaluate-select loop and compute resources for multiple evaluations.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Let's look at implementing APE in practice - this is where theory meets reality!
+
+The meta-prompt structure: Notice how we're prompting the LLM to generate prompts. It's meta! We show input-output pairs and ask "What instruction would produce these results?" This is the generation phase in action. The LLM becomes a prompt designer, proposing different ways to phrase instructions.
+
+Example variations you might get: For those I/O pairs, APE might generate:
+- "Answer factual questions with precise, encyclopedic information"
+- "Provide direct answers to questions about geography, science, and general knowledge"
+- "You are a knowledgeable assistant. Answer questions clearly and completely"
+- "Respond to queries with accurate facts, including relevant details"
+- "Give informative answers that directly address the question asked"
+
+Each has subtle differences in tone, specificity, and framing!
+
+The evaluation trick: In practice, you'd run each generated prompt on your validation set - maybe 100 test questions - and measure success rate. Prompt 3 might get 94% correct, while Prompt 1 gets 87%. The numbers tell you which phrasing works best for your specific use case.
+
+A/B testing at scale: Think of APE as automated A/B testing for prompts. Instead of manually trying variations and checking results, APE does it systematically. Some teams run APE weekly, continuously optimizing prompts as their data distribution shifts.
+
+Infrastructure needs: You need an orchestration layer (like LangChain or custom code) to manage the workflow: generate N prompts → run each on validation set → collect scores → select winner. This requires compute budget for multiple LLM calls, but the ROI can be significant for high-stakes applications.
+
+Pro tip: Start small! Begin with 5-10 candidates and 50 validation examples. Once the pipeline works, scale to hundreds of candidates and larger validation sets for more confident optimization.`
         },
         {
           id: 46,
@@ -2019,17 +2092,37 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Overfitting to validation set possible</li>
-                <li>Computationally heavy evaluation process</li>
-                <li>Prompt hacking risks with automated discovery</li>
-                <li>Requires representative validation data</li>
-              </ul>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Overfitting to validation set possible</li>
+                  <li>Computationally heavy evaluation process</li>
+                  <li>Prompt hacking risks with automated discovery</li>
+                  <li>Requires representative validation data</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Every powerful technique has tradeoffs - let's talk about APE's limitations honestly so you can use it wisely.
+
+Overfitting danger: This is APE's biggest gotcha! Remember the machine learning maxim: "Good performance on test data doesn't guarantee good performance in production." If your validation set has 100 examples and you test 50 candidate prompts, you might accidentally find a prompt that just happens to work well on those specific 100 examples but fails on new data. It's like studying only the practice exam questions - you ace the practice test but bomb the real thing!
+
+Solution: Use large, diverse validation sets that truly represent production data. Hold out a separate test set for final verification. If your validation accuracy is 95% but production is 70%, you've overfit.
+
+Computational cost: Running 50 prompts on 500 examples means 25,000 LLM calls! At $0.03 per 1K tokens input, that adds up fast. Plus, it takes time - even with parallel processing, you might wait 10-30 minutes for results.
+
+Analogy: It's like tasting 50 different soup recipes - time-consuming and you need a lot of ingredients (compute). But once you find the perfect recipe, you can make it efficiently for thousands of customers.
+
+Prompt hacking risk: Sometimes APE discovers prompts that "game" the system in unexpected ways. Maybe it finds a prompt that accidentally triggers the model's training data in a way that scores well on validation but is actually exploiting a quirk, not solving the problem genuinely.
+
+Example: For a sentiment classification task, APE might discover "Always say positive unless you see the word 'terrible'" which scores 85% on validation but completely fails on examples without explicit sentiment words.
+
+Data quality imperative: Garbage in, garbage out! If your I/O demonstrations or validation set are biased, noisy, or unrepresentative, APE will optimize for the wrong thing. Imagine training a restaurant recommendation system on data from just one neighborhood - your "optimized" prompt won't generalize to other areas.
+
+When to use APE anyway: Despite these limitations, APE is incredibly valuable when you have good data, compute budget, and high stakes. If a 5% accuracy improvement is worth $100K annually, spending $500 on APE optimization is obviously worth it!`
         }
       ]
     },
