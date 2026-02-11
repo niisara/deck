@@ -2762,7 +2762,15 @@ Next, Strategy 18: Diverse Multi-Query Rewriting.`
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: ''
+          notes: `### 74 · Diverse Multi-Query Rewriting — Overview
+Strategy 18 is **Diverse Multi-Query Rewriting**, or DMQR 👉 'dee-em-queue-ar'. It's like multi-query generation on steroids.
+#### 🎯 What Is It?
+Regular multi-query generation creates multiple query variants, but they can end up being too similar to each other. DMQR **explicitly enforces diversity** among the generated queries, ensuring each variant covers a genuinely different facet or perspective of the user's intent. Think of it as sending out scouts in every direction instead of sending them all down the same path.
+#### ✅ Pros
+The good stuff: **comprehensive coverage** across different facets of a topic. It **improves recall for complex topics** by exploring multiple angles. It **handles ambiguous queries** better because different interpretations all get explored. And it **surfaces different perspectives** that a single query would miss.
+#### 🕐 When to Use This?
+Best for **broad, ambiguous topics**, **exploratory search needs**, **queries with multiple potential interpretations**, and scenarios requiring **high recall across different facets** of a subject.
+Let's see how diversity is enforced.`
         },
         {
           id: 75,
@@ -2781,7 +2789,12 @@ Next, Strategy 18: Diverse Multi-Query Rewriting.`
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: ''
+          notes: `### 75 · Diverse Multi-Query Rewriting — How It Works
+The key differentiator is the **explicit diversity constraints**.
+#### 🔄 The Process
+The system **produces multiple rewrites covering different angles** — not just paraphrases but genuinely different perspectives. It **applies diversity penalties** to minimize overlap between generated queries. It uses **controlled sampling techniques** like high-temperature generation with deduplication. And it **penalizes n-gram overlap** between queries to ensure each one brings something new to the table.
+The n-gram penalty is clever: if two generated queries share more than three consecutive words, the system penalizes or regenerates one of them. This mechanical check ensures diversity even when the LLM tends to produce similar outputs.
+Let's see the implementation.`
         },
         {
           id: 76,
@@ -2815,7 +2828,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: ''
+          notes: `### 76 · Diverse Multi-Query Rewriting — Implementation
+The implementation generates queries with explicit diversity checks.
+#### 💻 The Prompt
+The prompt asks for six diverse rewrites, each covering a different aspect: different intents, different timeframes, different terminology. It explicitly constrains n-gram overlap to no more than three words between rewrites. This structural constraint forces the LLM to think creatively about different angles.
+#### ⚙️ The Code
+After generating the rewrites, the code embeds them all and calculates pairwise similarity. It then selects a diverse subset by filtering out queries that are too similar to each other. The result is a set of queries that collectively cover the broadest possible range of the topic.
+A practical tip: you can also use **maximal marginal relevance** (MMR 👉 'em-em-ar') selection after generating many candidates to pick the most diverse subset.
+Let's see an example.`
         },
         {
           id: 77,
@@ -2847,7 +2867,14 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e7b3e',
-          notes: ''
+          notes: `### 77 · Diverse Multi-Query Rewriting — Example & Considerations
+Here's DMQR tackling a broad topic.
+#### 📝 Before and After
+The user searches "data governance framework." DMQR generates six diverse queries covering enterprise policies, software tools, regulatory compliance, case studies, effectiveness metrics, and risk management. Each query targets a completely different facet of data governance. Together, they provide comprehensive coverage that no single query could achieve.
+#### ⚠️ Watch Out For
+The costs: **fusion and deduplication cost** — combining results from six queries requires careful merging. **Careful reranking is needed** to sort through the combined results. **Higher token usage** from generating and processing multiple queries. And the **implementation is more complex** than single-query approaches.
+The key insight: DMQR is your best tool for **exploratory search** where the user's intent is broad or unclear. It casts the widest net possible while ensuring each cast covers new territory.
+Next, Strategy 19: Feedback-Based Rewriting.`
         }
       ]
     },
@@ -2881,7 +2908,15 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: ''
+          notes: `### 78 · Feedback-Based Rewriting — Overview
+Strategy 19 is **Feedback-Based Rewriting**, which learns from actual user behavior to improve queries over time.
+#### 🎯 What Is It?
+This strategy uses **real user interaction data** — clicks, ratings, dwell time, session behavior — to refine how queries are rewritten. If users who search for "vector database comparison" consistently click on documents about HNSW and FAISS, the system learns to include those terms in future rewrites of similar queries. It's the **only strategy that gets smarter over time**.
+#### ✅ Pros
+The good stuff: it **improves continuously** with usage — the more users interact, the better the rewrites become. It's **user-aligned and personalized** because it learns what users actually want. It **adapts to changing content and trends** automatically. And it **leverages collective intelligence** — one user's successful search helps all future users.
+#### 🕐 When to Use This?
+Best for **production systems with telemetry**, **high-volume search applications**, **domain-specific search engines**, and **customer-facing RAG systems** with enough traffic to generate meaningful signals.
+Let's see the mechanism.`
         },
         {
           id: 79,
@@ -2900,7 +2935,12 @@ Query: {query}
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: ''
+          notes: `### 79 · Feedback-Based Rewriting — How It Works
+The system uses feedback signals to progressively refine queries.
+#### 🔄 The Process
+It **promotes terms and entities from clicked documents** — if users consistently click on documents containing "HNSW," that term gets boosted in future queries about vector databases. It **suppresses noise terms** with low engagement — terms that appear in skipped results get demoted. It applies **collaborative filtering techniques** — "users who searched for X also found Y useful." And it **incrementally updates term weights** based on ongoing feedback.
+Think of it like Amazon's recommendation system, but for search queries. Instead of "customers who bought this also bought," it's "users who searched this found these terms useful."
+Let's look at the implementation.`
         },
         {
           id: 80,
@@ -2935,7 +2975,14 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: ''
+          notes: `### 80 · Feedback-Based Rewriting — Implementation
+The implementation connects user telemetry to the rewriting pipeline.
+#### 💻 The Prompt
+The prompt provides the original query along with clicked documents and user ratings, then asks the LLM to suggest a refined query that emphasizes terms found in positively rated documents.
+#### ⚙️ The Code
+The code retrieves the user's click history, extracts documents they engaged with positively, identifies common terms across those documents, and uses the LLM to generate a refined query. The refined query naturally incorporates the vocabulary and concepts that real users found useful.
+A practical consideration: you need a **minimum volume threshold** before feedback signals are reliable. For queries with very few interactions, fall back to other strategies until you have enough data.
+Let's see an example.`
         },
         {
           id: 81,
@@ -2960,7 +3007,14 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e2b7b',
-          notes: ''
+          notes: `### 81 · Feedback-Based Rewriting — Example & Considerations
+Here's feedback-based rewriting learning from user behavior.
+#### 📝 Before and After
+The user searches "vector database comparison." The system notices that previous users who searched similar queries consistently clicked on documents about HNSW vs IVF index types, FAISS, Qdrant 👉 'queue-drant', and Milvus 👉 'mil-vus'. It rewrites to "vector database comparison HNSW vs IVF FAISS Qdrant Milvus efSearch time-accuracy tradeoff." This enriched query reflects what real users actually care about.
+#### ⚠️ Watch Out For
+The challenges: it **requires a data pipeline and telemetry** infrastructure, which is a significant investment. **Cold-start issues** mean new or rare queries have no feedback data. **Privacy considerations** arise when tracking user behavior. And it can **amplify popularity biases** — popular documents get more clicks, which generates more feedback, which makes them appear even more often.
+The key insight: feedback-based rewriting is the **long game**. It takes time to build up enough data, but once it's running, it continuously improves without manual intervention.
+Next, Strategy 20: Prompt-Based Rewriting.`
         }
       ]
     },
@@ -2994,7 +3048,15 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: ''
+          notes: `### 82 · Prompt-Based Rewriting — Overview
+Strategy 20 is **Prompt-Based Rewriting**, and it's the **easiest strategy to deploy** — you literally just write a good prompt.
+#### 🎯 What Is It?
+Instead of building complex pipelines, ontologies, or feedback systems, you craft a **well-designed prompt** that instructs an LLM to rewrite any query into a retrieval-optimized format. The prompt includes rules, examples, and guidelines. It's like writing an instruction manual for a human assistant: "When you receive a query, add the main entity, temporal context, document type preference, and essential constraints."
+#### ✅ Pros
+The good stuff: **fast to deploy** with virtually no infrastructure. **Highly flexible** across different query types. **Easy to update** — just edit the prompt. And it **works with any capable LLM** without fine-tuning.
+#### 🕐 When to Use This?
+Perfect for **quick wins without complex pipelines**, **rapid prototyping and testing**, **low engineering lift** projects, and scenarios where you want **minimal infrastructure changes**.
+Let's see how it works.`
         },
         {
           id: 83,
@@ -3013,7 +3075,12 @@ Return only the refined query without explanation.
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: ''
+          notes: `### 83 · Prompt-Based Rewriting — How It Works
+The approach uses well-crafted system prompts with few-shot examples.
+#### 🔄 The Process
+The prompt **enforces consistent style and structure** across all rewrites. It **includes critical information fields** that should always be present in the rewritten query. It **guides the LLM** to maintain specific patterns and formatting. And it **applies guardrails** against hallucination by instructing the model not to add information it's unsure about.
+The few-shot examples are crucial — they show the LLM exactly what a good rewrite looks like. Include three to five examples covering different query types, and the LLM will generalize the pattern to new queries.
+Let's look at the implementation.`
         },
         {
           id: 84,
@@ -3054,7 +3121,14 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: ''
+          notes: `### 84 · Prompt-Based Rewriting — Implementation
+The implementation is refreshingly simple.
+#### 💻 The Prompt
+The prompt instructs the LLM to make the query explicit, self-contained, and retrieval-optimized. It specifies what to include: main entity, temporal context, document type preference, and essential constraints. Then it provides examples showing before-and-after transformations — "nodejs security" becomes "Node.js security best practices 2024 with code examples for protecting Express applications."
+#### ⚙️ The Code
+The code is minimal: set a system prompt establishing the LLM as a query optimization expert, then pass the user's query through the template. That's it. No NER models, no knowledge bases, no feedback loops — just a well-crafted prompt.
+This is why prompt-based rewriting is the **starting point** for most teams. You can have it running in production within an hour. Then gradually add more sophisticated strategies as needed.
+Let's see an example.`
         },
         {
           id: 85,
@@ -3078,7 +3152,14 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#1e7b53',
-          notes: ''
+          notes: `### 85 · Prompt-Based Rewriting — Example & Considerations
+Here's the simplest strategy delivering real results.
+#### 📝 Before and After
+The user types "api auth" — two words. After prompt-based rewriting, it becomes "OAuth 2.0 authentication for Acme API docs 2024, guide or tutorial with implementation examples." The prompt-based approach added the authentication protocol, temporal context, the company name from context, document type preferences, and specificity. All from a single prompt call.
+#### ⚠️ Watch Out For
+The risks: **prompt drift over time** — as your corpus evolves, the prompt may need updating. **Quality varies by LLM capability** — a smaller model may produce worse rewrites. It's **less structured than rule-based systems**, so outputs can be unpredictable. And it's **harder to enforce strict constraints** compared to template-based approaches.
+The bottom line: prompt-based rewriting is your **MVP strategy**. Start here, measure the improvement, and then decide which of the more complex strategies to add based on where your system still struggles.
+Finally, Strategy 21: Adaptive Query Rewriting — the strategy to rule them all.`
         }
       ]
     },
@@ -3112,7 +3193,15 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: ''
+          notes: `### 86 · Adaptive Query Rewriting — Overview
+Our final strategy, number 21, is **Adaptive Query Rewriting** — the grand orchestrator.
+#### 🎯 What Is It?
+Adaptive rewriting doesn't commit to a single strategy. Instead, it **dynamically selects the best strategy** for each query based on the query's characteristics, the conversation context, past performance, and cost constraints. It's like having an experienced engineer who knows all 20 previous strategies and picks the right one for each situation.
+#### ✅ Pros
+The good stuff: **balanced quality and cost optimization** — expensive strategies are only used when they're worth it. **Robust across diverse query types** since it can handle anything. **Self-improving with feedback** as it learns which strategies work best for which queries. And **flexible scaling** — you can allocate more compute for important queries and less for simple ones.
+#### 🕐 When to Use This?
+Best for **heterogeneous query workloads**, **variable cost and latency constraints**, **production systems with metrics**, and **complex RAG pipelines** that already implement multiple strategies.
+Let's see how it selects strategies.`
         },
         {
           id: 87,
@@ -3131,7 +3220,12 @@ QUERY: {query}
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: ''
+          notes: `### 87 · Adaptive Query Rewriting — How It Works
+The system uses a **policy model or agent** to select among available strategies.
+#### 🔄 The Decision Factors
+The policy considers **query characteristics** — length, ambiguity level, entity count, complexity. It looks at **conversation context and history** — is this a follow-up? Is the topic established? It uses **past performance signals** — which strategies have worked well for similar queries? And it respects **cost and latency budgets** — if the user needs a fast response, skip the expensive strategies.
+Think of it as a decision tree or a learned policy. Short, ambiguous queries might get sent to clarification. Long, complex queries go to decomposition. Follow-ups go to context-aware rewriting. And simple, clear queries might skip rewriting entirely to save latency.
+Let's see the implementation.`
         },
         {
           id: 88,
@@ -3168,7 +3262,14 @@ Signals:
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: ''
+          notes: `### 88 · Adaptive Query Rewriting — Implementation
+The implementation uses a policy model to route queries to strategies.
+#### 💻 The Prompt
+The prompt provides the query along with signals like length category, ambiguity score, conversation history, and previous recall metrics. It asks the LLM to choose the optimal strategy, apply it, and return the strategy name, rewritten query, and rationale.
+#### ⚙️ The Code
+The adaptive rewriter class extracts signals from the query and state, uses a policy model to select the best strategy, applies that strategy, and logs everything for future evaluation. The logging is critical — it's what enables the system to learn and improve over time.
+A practical approach: start with a **rule-based policy** using simple heuristics, then gradually replace it with a **learned policy** trained on your logs. The rule-based version gets you 80% of the benefit with 20% of the complexity.
+Let's see a final example.`
         },
         {
           id: 89,
@@ -3195,7 +3296,16 @@ Signals:
             </div>
           ),
           backgroundColor: '#521e7b',
-          notes: ''
+          notes: `### 89 · Adaptive Query Rewriting — Example & Considerations
+Let's see the adaptive approach making decisions.
+#### 📝 Before and After
+First example: the query is just "apple." The policy detects an ambiguous short query and routes it to the **clarification strategy**: "Did you mean Apple Inc. products, apple fruit nutrition, or Apple software?" Second example: "compare MongoDB vs PostgreSQL for IoT data" — the policy detects a complex multi-entity comparison and routes it to the **decomposition strategy**, breaking it into focused sub-queries.
+#### ⚠️ Watch Out For
+The challenges: it **requires policy training** which needs historical data about strategy performance. It **needs an evaluation feedback loop** to continuously improve the policy. The **orchestration is more complex** than any single strategy. And there are **cold-start challenges** when you don't have enough data to train the policy.
+#### 🎉 Wrapping Up
+And that's all twenty-one strategies! Remember, you don't need to implement all of them. Start with **prompt-based rewriting** for a quick win. Add **context-aware rewriting** for chat. Then gradually add more strategies based on where your system struggles. The adaptive approach is the end goal — but it's built on top of the individual strategies we've covered.
+> 🎤 Ask the audience: "Which strategy are you most excited to try first?"
+Thank you for your attention!`
         }
       ]
     }
