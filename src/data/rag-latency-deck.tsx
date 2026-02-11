@@ -1167,21 +1167,35 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Avoid recomputing embeddings for repeated queries, significantly reducing embedding model latency and API costs.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d416b',
-          notes: ''
+          notes: `### 23. Cache Query Embeddings — Goal
+Welcome to the caching section! Technique five is about caching query embeddings. This is one of the most underutilized optimizations in RAG pipelines, and it can eliminate a significant portion of your latency.
+
+#### 🎯 What's the Goal?
+Every time a user asks a question, your system converts that query into a vector using an embedding model. This embedding step typically takes 10-50 milliseconds. If the same or similar question has been asked before, why compute the embedding again? That's the idea behind caching query embeddings.
+
+#### 💡 Think of It This Way
+Imagine a receptionist at a hotel. The first time someone asks "Where's the pool?", the receptionist looks it up on the map. But after the hundredth guest asks the same question, the receptionist just answers from memory — no need to check the map again. That's exactly what embedding caching does.
+
+#### 📊 The Impact
+In many production systems, a large percentage of queries are repeats or near-duplicates. If 30% of your queries hit the cache, you eliminate the embedding step for almost a third of all requests. Let's see when this technique is most valuable...`
         },
         {
           id: 24,
@@ -1190,20 +1204,41 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>FAQs and support bots with repetitive queries</li>
                 <li>Dashboard or analytics applications</li>
                 <li>Systems with bursty traffic patterns</li>
                 <li>Applications with predictable query patterns</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d416b',
-          notes: ''
+          notes: `### 24. Cache Query Embeddings — When to Use
+When should you implement query embedding caching? Here are the key indicators that this technique will give you big wins.
+
+#### 🔄 Repetitive Query Patterns
+If your users tend to ask similar questions — like in a customer support bot or FAQ system — caching shines. Even if the exact wording differs slightly, you can use fuzzy matching to find cached embeddings for similar queries.
+
+#### ⚡ Latency-Sensitive Applications
+When every millisecond counts, eliminating the 10-50ms embedding step makes a noticeable difference. For real-time chat applications or voice assistants, this can be the difference between a natural and an awkward conversation pace.
+
+#### 💰 Cost Reduction Priority
+If you're using a paid embedding API like OpenAI's, each embedding call costs money. Caching eliminates API calls for repeated queries, directly reducing your operational costs.
+
+#### 📊 High Query Volume
+The more queries you process, the more likely you are to see repeats. At scale — say 10,000+ queries per day — the cache hit rate increases and the savings compound.
+
+> 🎤 Ask the audience: "What percentage of queries in your systems do you think are duplicates?"
+
+Let's look at how embedding caching actually works...`
         },
         {
           id: 25,
@@ -1212,21 +1247,64 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Embedding Cache Flow"
+                    diagram={`flowchart TB
+    A["📝 User Query"] --> B{"🔍 Cache\\nLookup"}
+    B -->|Hit| C["⚡ Return\\nCached Vector"]
+    B -->|Miss| D["🤖 Compute\\nEmbedding"]
+    D --> E["💾 Store in Cache"]
+    E --> C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Store and reuse embeddings for previously seen queries to bypass the embedding model:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Implement LRU+TTL cache keyed by normalized query text</li>
                 <li>Store vector embeddings for frequent queries in memory or distributed cache</li>
                 <li>Optionally implement semantic cache to match similar but non-identical queries</li>
                 <li>For semantic caching, use nearest-neighbor lookup of query embeddings with a similarity threshold</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d416b',
-          notes: ''
+          notes: `### 25. Cache Query Embeddings — How It Works
+Let's dive into the mechanics of embedding caching. It's a classic cache pattern adapted for vector operations.
+
+#### ⚙️ The Cache Flow
+\`\`\`mermaid
+flowchart TB
+    A["📝 User Query"] --> B{"🔍 Cache\\nLookup"}
+    B -->|Hit| C["⚡ Return\\nCached Vector"]
+    B -->|Miss| D["🤖 Compute\\nEmbedding"]
+    D --> E["💾 Store in Cache"]
+    E --> C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+\`\`\`
+The flow is straightforward. When a query comes in, you first check if you've seen it before. If it's a cache hit, you return the stored embedding vector immediately — no API call needed. If it's a cache miss, you compute the embedding normally, store it in the cache, and return it.
+
+#### 🔑 Cache Key Strategies
+You can cache by exact string match — fast and simple. Or you can use **normalized queries** — lowercasing, removing punctuation, and trimming whitespace — to increase hit rates. Advanced systems use **semantic hashing** to match queries that mean the same thing but are worded differently.
+
+#### 🗄️ Storage Options
+Use Redis 👉 'RED-iss' or Memcached 👉 'MEM-cached' for in-memory caching with TTL 👉 'tee-tee-ell' (time-to-live) expiration. For persistent caching, a simple key-value store works great. The cache size is usually small since embedding vectors are only a few kilobytes each.
+
+Here's how to implement it step by step...`
         },
         {
           id: 26,
@@ -1235,10 +1313,13 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Normalize queries: Lowercase, trim whitespace, redact PII, standardize format</li>
                 <li>Configure cache parameters: Set TTL (1-24h) and size based on traffic patterns</li>
@@ -1246,10 +1327,25 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
                 <li>For semantic caching: Reuse embedding if cosine similarity ≥ threshold (e.g., δ ≥ 0.92)</li>
                 <li>Add versioning mechanism: Invalidate cache when embedding model changes</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d416b',
-          notes: ''
+          notes: `### 26. Cache Query Embeddings — Steps
+Let's walk through the implementation process for query embedding caching. This is one of the easiest optimizations to set up.
+
+#### 📋 Implementation Steps
+**Step one: Set up a cache store.** Redis is the most popular choice for this. It gives you in-memory speed with optional persistence. Set a TTL of 24-48 hours for most use cases — long enough to catch repeat queries but short enough to stay fresh.
+
+**Step two: Define your cache key.** Start simple with the exact query text as the key. Normalize it by lowercasing and stripping extra whitespace. This alone catches most duplicate queries.
+
+**Step three: Implement the cache-aside pattern.** Before calling your embedding API, check the cache. On a miss, compute the embedding, store it in the cache, and return it. On a hit, return the cached vector directly.
+
+**Step four: Add monitoring.** Track your cache hit rate. If it's below 10%, your queries are too diverse for basic caching and you might want semantic matching. If it's above 30%, you're getting excellent savings.
+
+**Step five: Tune cache size and TTL.** Monitor memory usage and adjust your cache size. A typical setup with 100,000 cached embeddings at 3KB 👉 'three kilobytes' each uses only about 300MB of Redis memory. That's very affordable for the speed gains.
+
+Let's evaluate the trade-offs...`
         },
         {
           id: 27,
@@ -1259,6 +1355,7 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1272,6 +1369,8 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
                     <li>Zero quality impact for exact matches</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1284,11 +1383,22 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
                     <li>Semantic cache tuning challenges</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d416b',
-          notes: ''
+          notes: `### 27. Cache Query Embeddings — Pros and Cons
+Let's look at the advantages and disadvantages of caching query embeddings.
+
+#### ✅ Pros
+The good stuff: **Eliminates embedding latency** for repeated queries — going from 50ms to sub-millisecond. **Reduces API costs** significantly if you're using paid embedding services. **Simple to implement** — it's just a key-value cache lookup before your embedding call. **No quality impact** — cached embeddings are identical to freshly computed ones. And **scales beautifully** — the more queries you process, the higher your hit rate tends to be.
+
+#### ❌ Cons
+The problems: **Additional infrastructure** — you need to run and maintain a Redis or similar cache service. **Memory usage** — storing thousands of embedding vectors requires dedicated RAM. **Cache invalidation** complexity if you change embedding models — all cached vectors become invalid. **Cold start problem** — a fresh cache has zero hits, so you don't see benefits until it warms up. And **limited benefit for diverse queries** — if every query is unique, your hit rate will be close to zero.
+
+#### 💡 Pro Tip
+Start with a simple exact-match cache and measure your hit rate. If it's above 15%, the investment is already paying off. You can always add semantic matching later to increase hits further. Now let's move to technique six — caching retrieval results...`
         }
       ]
     },
@@ -1303,21 +1413,35 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Skip vector DB operations for repeated queries, eliminating expensive similarity search operations.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b63',
-          notes: ''
+          notes: `### 28. Cache Retrieval Results — Goal
+Technique six takes caching one step further — instead of just caching the query embedding, we cache the **entire retrieval result**. This can eliminate both the embedding AND the vector search step in one shot.
+
+#### 🎯 What's the Goal?
+The goal is to skip the vector database search entirely for queries you've seen before. If someone asks "What's the return policy?" and you already know the top-3 chunks that answer this question, why search the database again? Just return the cached results directly.
+
+#### 💡 Think of It This Way
+Going back to our hotel receptionist analogy — caching embeddings is like memorizing the room number. But caching retrieval results is like memorizing the complete answer: "The pool is on the third floor, open from 6 AM to 10 PM, towels are provided." No lookup needed at all.
+
+#### ⚡ The Latency Impact
+Vector search typically takes 5-50 milliseconds depending on your index size and configuration. By caching the full retrieval results, you eliminate this entire step, often cutting 30-60% of your pre-LLM latency. Let's see when this is most effective...`
         },
         {
           id: 29,
@@ -1326,20 +1450,39 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-calendar-check" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Mostly static document corpora</li>
                 <li>Applications with frequent repeat questions (FAQs)</li>
                 <li>Voice IVR/customer support systems</li>
                 <li>High-traffic applications where DB is a bottleneck</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b63',
-          notes: ''
+          notes: `### 29. Cache Retrieval Results — When to Use
+When should you cache retrieval results? This technique is most powerful in specific scenarios.
+
+#### 🔄 Stable Document Collections
+If your underlying documents don't change frequently, cached retrieval results stay valid for a long time. Think reference documentation, policy documents, or knowledge bases that update weekly or monthly rather than hourly.
+
+#### 📊 High Query Repetition
+Customer support bots, FAQ systems, and internal knowledge assistants often see the same questions repeatedly. If 40% of queries are repeats, caching retrieval results eliminates the search step for nearly half your traffic.
+
+#### ⚡ Strict Latency Budgets
+When your end-to-end latency budget is under 500 milliseconds and the vector search alone takes 50ms, saving that 50ms by caching can be critical. Every millisecond counts in real-time applications.
+
+#### 💰 Expensive Vector Search
+Some vector databases charge per query or have limited throughput. Caching reduces the load on your vector database, lowering costs and freeing up capacity for cache-miss queries.
+
+Let's understand the mechanics of retrieval result caching...`
         },
         {
           id: 30,
@@ -1348,21 +1491,68 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Retrieval Cache Flow"
+                    diagram={`flowchart TB
+    A["📝 Query"] --> B{"🔍 Result\\nCache?"}
+    B -->|Hit| C["⚡ Cached\\nChunks"]
+    B -->|Miss| D["🔢 Embed"]
+    D --> E["🔍 Vector\\nSearch"]
+    E --> F["💾 Cache\\nResults"]
+    F --> C
+    C --> G["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style G fill:#e1bee7,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Store and reuse search results for queries that have been previously processed:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Cache top-k document IDs and snippets using query text or embedding hash as key</li>
                 <li>Implement LRU (Least Recently Used) + TTL (Time To Live) cache structure</li>
                 <li>Set up cache invalidation triggers when documents are updated or added</li>
                 <li>Optionally implement semantic caching: reuse results for semantically similar queries</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b63',
-          notes: ''
+          notes: `### 30. Cache Retrieval Results — How It Works
+Let's see how retrieval result caching works and how it differs from embedding caching.
+
+#### ⚙️ The Cache Flow
+\`\`\`mermaid
+flowchart TB
+    A["📝 Query"] --> B{"🔍 Result\\nCache?"}
+    B -->|Hit| C["⚡ Cached\\nChunks"]
+    B -->|Miss| D["🔢 Embed"]
+    D --> E["🔍 Vector\\nSearch"]
+    E --> F["💾 Cache\\nResults"]
+    F --> C
+    C --> G["🤖 LLM"]
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style G fill:#e1bee7,color:#000
+\`\`\`
+The flow works like this: when a query comes in, you first check if you have cached results for it. On a cache hit, you skip both the embedding and the vector search steps entirely and go straight to the LLM with your cached chunks. On a cache miss, you proceed normally — embed, search, cache the results, then send to the LLM.
+
+#### 🔑 Cache Invalidation
+The tricky part is knowing when to invalidate cached results. If your documents change, cached results might be stale. Common strategies include TTL-based expiration 👉 'tee-tee-ell', version-based invalidation when documents update, and event-driven invalidation when specific documents are modified.
+
+#### 📦 What to Cache
+Cache the retrieved chunk IDs, their text content, and their relevance scores. This gives you everything you need to skip the search step while still being able to apply downstream processing like reranking.
+
+Here are the practical implementation steps...`
         },
         {
           id: 31,
@@ -1371,10 +1561,13 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Create cache key: Use hash(query) or hash(rounded_embedding) as lookup key</li>
                 <li>Store rich results: Cache document IDs, relevance scores, and short snippets</li>
@@ -1382,10 +1575,25 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
                 <li>Implement invalidation: On document updates, invalidate by namespace/collection/version</li>
                 <li>Monitor hit rate: Track and tune cache size based on hit/miss metrics</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1d6b63',
-          notes: ''
+          notes: `### 31. Cache Retrieval Results — Steps
+Here's how to implement retrieval result caching in your RAG pipeline. It builds on the same infrastructure as embedding caching.
+
+#### 📋 Implementation Steps
+**Step one: Define your cache key strategy.** Use normalized query text as the key, similar to embedding caching. Consider adding a version prefix that changes when your document collection updates, so stale results get automatically invalidated.
+
+**Step two: Choose your storage.** Redis works great here too. Store the full retrieval results — chunk IDs, text content, and scores — as JSON values. Set TTL based on how often your documents change.
+
+**Step three: Implement the cache-aside pattern.** Check the cache before starting the embedding step. On a hit, skip embedding AND vector search. On a miss, proceed normally and cache the results after retrieval.
+
+**Step four: Handle cache invalidation.** Set up a mechanism to invalidate cached results when documents are updated. A simple approach is to change the cache key prefix whenever your document index is updated.
+
+**Step five: Monitor staleness.** Track how often cached results diverge from fresh results. If your data changes frequently, shorter TTLs prevent serving outdated information. Aim for a staleness rate below 5%.
+
+Now let's examine the trade-offs...`
         },
         {
           id: 32,
@@ -1395,6 +1603,7 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1408,6 +1617,8 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
                     <li>Reduced infrastructure requirements</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -1421,11 +1632,22 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
                     <li>Potential cache consistency issues</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#1d6b63',
-          notes: ''
+          notes: `### 32. Cache Retrieval Results — Pros and Cons
+Let's weigh the benefits and challenges of caching retrieval results.
+
+#### ✅ Pros
+The good stuff: **Eliminates both embedding and search latency** for cached queries — the biggest time savings of any single caching technique. **Reduces vector database load**, which can lower infrastructure costs. **Consistent response times** for cached queries, improving user experience predictability. **Works well with embedding caching** — you can layer both for maximum benefit. And **simple cache-aside pattern** makes implementation straightforward.
+
+#### ❌ Cons
+The problems: **Stale results risk** — if documents change between cache writes and reads, users may get outdated information. **Cache invalidation complexity** — knowing exactly when to invalidate which cached results is a hard problem. **Higher memory usage** than embedding caching because you're storing full text chunks, not just vectors. **Cold start is worse** — a cold cache means zero benefit until queries start repeating. And **not suitable for rapidly changing data** — if your documents update every few minutes, caching provides little value.
+
+#### 🎯 Best Practice
+Combine embedding caching (technique 5) with retrieval caching (technique 6) for maximum impact. Use embedding caching for all queries, and add retrieval caching for stable document collections. Together, they can eliminate 50-80% of your pre-LLM latency. Now let's move into reranking optimization — technique seven...`
         }
       ]
     },
