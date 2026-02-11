@@ -686,21 +686,34 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.4}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Reduce downstream processing and prompt size by retrieving only the most relevant content.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#571d6b',
-          notes: ''
+          notes: `### 13. Limit Top-K Retrieval — Goal
+Now let's look at technique number three — limiting Top-K retrieval. This is one of the simplest yet most effective optimizations you can make to your RAG pipeline.
+
+#### 🎯 What's the Goal?
+Top-K 👉 'top kay' refers to how many results your vector search returns. If you're fetching the top 20 most similar chunks when you only really need the top 3, you're wasting time on retrieval, reranking, and sending unnecessary tokens to the LLM.
+
+#### 💡 The Analogy
+Imagine you're searching Google for a recipe. You don't read all 10 million results — you look at the first 3 or 4 and pick the best one. The same principle applies here. Most of the relevant information is in the top few results, and the rest is just noise that slows everything down.
+
+The beauty of this technique is that it costs nothing to implement and often improves both speed AND quality. Let's see when to apply it...`
         },
         {
           id: 14,
@@ -709,20 +722,39 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Latency-sensitive applications (chat/voice)</li>
                 <li>When using re-rankers in the pipeline</li>
                 <li>Systems with strong embedding models</li>
                 <li>When memory or token budget is constrained</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#571d6b',
-          notes: ''
+          notes: `### 14. Limit Top-K Retrieval — When to Use
+When should you limit your Top-K? Here are the scenarios where cutting down retrieval results makes the biggest impact.
+
+#### ⚡ High-Latency Pipelines
+If your pipeline is slow and you're currently fetching 10 or more results, try cutting to 3-5. Each additional result adds latency at every downstream step — reranking, token processing, and generation.
+
+#### 🎯 Well-Indexed Collections
+When your embeddings are high quality and your data is well-organized, the top 3-5 results are usually sufficient. The tenth-best result rarely adds meaningful information.
+
+#### 💰 Cost-Sensitive Applications
+Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tokens each, that's 2,000 tokens of context. Cutting to 3 chunks saves you 1,400 tokens per query — that's a 70% reduction in context token costs.
+
+#### 🔄 Simple Question-Answering
+For straightforward factual questions like "What is the return policy?" or "When was the company founded?", the answer is almost always in the top 1-2 results. Fetching more is wasteful.
+
+Let's see the mechanics of how this optimization works...`
         },
         {
           id: 15,
@@ -731,21 +763,62 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="Top-K Retrieval Flow"
+                    diagram={`flowchart LR
+    A["🔍 Query"] --> B["📊 Vector Search"]
+    B --> C["Top-20 Results"]
+    B --> D["Top-3 Results"]
+    C --> E["🐢 Slow Processing"]
+    D --> F["🚀 Fast Processing"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#ffcdd2,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1.5rem' }}>Retrieve only the minimal number of documents (K) that maintains answer quality while reducing processing overhead:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Set a minimal K value that preserves acceptable result quality</li>
                 <li>Apply relevance score thresholds to filter low-quality matches (e.g., cosine_similarity ≥ 0.75)</li>
                 <li>Implement token budgets to cap total context size</li>
                 <li>Dynamically adjust K based on score distribution or query complexity</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#571d6b',
-          notes: ''
+          notes: `### 15. Limit Top-K Retrieval — How It Works
+Let's understand why reducing Top-K has such a dramatic effect on latency. It's not just about the retrieval step — it cascades through the entire pipeline.
+
+#### ⚙️ The Cascade Effect
+\`\`\`mermaid
+flowchart LR
+    A["🔍 Query"] --> B["📊 Vector Search"]
+    B --> C["Top-20 Results"]
+    B --> D["Top-3 Results"]
+    C --> E["🐢 Slow Processing"]
+    D --> F["🚀 Fast Processing"]
+    style A fill:#4fc3f7,color:#000
+    style E fill:#ffcdd2,color:#000
+    style F fill:#81c784,color:#000
+\`\`\`
+When you fetch Top-20 instead of Top-3, every downstream step gets slower. The reranker has to score 20 items instead of 3. The context window fills up with 20 chunks instead of 3. The LLM has to process all that extra text. It's a multiplier effect.
+
+#### 📉 Diminishing Returns
+Research shows that retrieval quality follows a curve of diminishing returns. The first result captures maybe 60% of the relevant information. The second adds another 20%. The third adds 10%. By the time you get to result 10, you're adding less than 1% of useful information but significantly increasing processing time.
+
+#### 🎛️ Dynamic Top-K
+Advanced systems use **dynamic Top-K** — adjusting the number of results based on query complexity. Simple factual queries might use Top-1, while complex analytical questions might use Top-5. Here are the steps to implement this...`
         },
         {
           id: 16,
@@ -754,10 +827,13 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>Start conservative: Begin with K=5-8 for most applications</li>
                 <li>Measure quality: Track answer accuracy and latency metrics</li>
@@ -765,10 +841,25 @@ Start with 200 tokens and adjust from there based on your content type. Technica
                 <li>Set token budget: Limit total context tokens sent to LLM</li>
                 <li>Implement adaptive K: Dynamically adjust based on score decay between top results</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#571d6b',
-          notes: ''
+          notes: `### 16. Limit Top-K Retrieval — Steps
+Here's how to systematically optimize your Top-K setting. It's a simple process, but doing it methodically ensures you don't sacrifice quality.
+
+#### 📋 Implementation Steps
+**Step one: Profile current usage.** Check what Top-K value you're currently using. Many frameworks default to 10 or 20, which is often excessive. Log how many results actually get used in your final answers.
+
+**Step two: Analyze result relevance.** For a sample of queries, look at the relevance scores of each returned chunk. If results 5 through 20 consistently have low similarity scores, they're adding noise, not value.
+
+**Step three: A/B test reduced values.** Try Top-3, Top-5, and your current value side by side. Measure answer quality using your evaluation metrics and compare latency at each setting.
+
+**Step four: Implement with a safety margin.** Set your Top-K to the lowest value that maintains acceptable quality, plus one extra as a buffer. So if Top-3 works well, use Top-4 as your production setting.
+
+**Step five: Monitor in production.** Track answer quality metrics continuously. If you notice degradation on certain query types, consider implementing dynamic Top-K based on query classification.
+
+Now let's look at the trade-offs of this approach...`
         },
         {
           id: 17,
@@ -778,6 +869,7 @@ Start with 200 tokens and adjust from there based on your content type. Technica
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -791,6 +883,8 @@ Start with 200 tokens and adjust from there based on your content type. Technica
                     <li>Improved focus on most relevant content</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -803,11 +897,22 @@ Start with 200 tokens and adjust from there based on your content type. Technica
                     <li>Can increase hallucinations if context is insufficient</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#571d6b',
-          notes: ''
+          notes: `### 17. Limit Top-K Retrieval — Pros and Cons
+Let's weigh the benefits and risks of limiting Top-K retrieval. Spoiler alert: this technique has an excellent benefit-to-risk ratio.
+
+#### ✅ Pros
+The good stuff: **Zero implementation cost** — it's literally changing a single parameter. **Immediate latency reduction** across retrieval, reranking, and generation steps. **Lower token costs** because you're sending less context to the LLM. **Often improves quality** because you're removing noisy, low-relevance results that can confuse the LLM. And it **reduces the chance of contradictory information** in your context window.
+
+#### ❌ Cons
+The problems: **Risk of missing relevant information** if important data happens to be in lower-ranked results. **Multi-topic queries suffer** — questions that span multiple topics might need more results to cover all aspects. **Inconsistent vector quality** can mean relevant results sometimes appear lower in the rankings. And **some query types need more context** — comparison questions or summarization tasks benefit from seeing more documents.
+
+#### 🎯 Bottom Line
+This is the single easiest optimization you can make. Start by cutting your current Top-K in half and measure the impact. Most teams find they can go from Top-10 to Top-3 with no quality loss and a significant speed improvement. Moving on to technique four — approximate nearest neighbor indexes...`
         }
       ]
     },
@@ -822,21 +927,34 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.6' }}>
               <div style={{ marginBottom: '40px' }}></div>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <div style={{ color: '#61dafb' }}>
                   <strong>Goal</strong>
                 </div>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
               <div style={{ padding: '2rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '12px', borderLeft: '6px solid #61dafb' }}>
                 <p style={{ margin: 0 }}>
                   Accelerate vector search at scale without sacrificing too much accuracy.
                 </p>
               </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#281d6b',
-          notes: ''
+          notes: `### 18. Use Approximate Nearest Neighbor Indexes — Goal
+Technique number four takes us deeper into the retrieval layer — using **Approximate Nearest Neighbor** indexes, or ANN 👉 'ann' indexes for short. This is where things get really interesting from a computer science perspective.
+
+#### 🎯 What's the Goal?
+When you search a vector database, the naive approach is to compare your query vector against every single stored vector. This is called **exact nearest neighbor** search, and it's incredibly slow for large datasets. ANN indexes trade a tiny bit of accuracy for massive speed improvements — we're talking 100x to 1000x (one hundred x to one thousand x) faster searches.
+
+#### 💡 Think of It This Way
+Imagine you're looking for a book in a library. The exact search approach would be reading every single book to find the most similar one. An ANN index is like having a smart catalog system that organizes books by topic, author, and style — so you can jump directly to the right shelf and compare just a few books instead of millions.
+
+Two popular ANN algorithms are HNSW 👉 'H-N-S-W' and IVF 👉 'eye-vee-eff'. Let's explore when to use them...`
         },
         {
           id: 19,
@@ -845,20 +963,39 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
               <div style={{ color: '#61dafb', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                 <strong>When to Use</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.7}>
               <ul>
                 <li>Collections with 1M+ vectors</li>
                 <li>Applications with strict p95 latency targets</li>
                 <li>CPU-bound search environments</li>
                 <li>Large-scale production RAG systems</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#281d6b',
-          notes: ''
+          notes: `### 19. Use ANN Indexes — When to Use
+When should you invest in setting up ANN indexes? Here are the scenarios where they make the biggest difference.
+
+#### 📊 Large Vector Collections
+If you have more than 100,000 vectors, exact search starts becoming a bottleneck. At a million vectors, it's practically unusable for real-time applications. ANN indexes make sub-millisecond search possible even at billions of vectors.
+
+#### ⚡ Low-Latency Requirements
+When your SLA 👉 'ess-ell-ay' requires responses under 100 milliseconds, you simply can't afford to do brute-force vector comparison. ANN indexes bring search time down from seconds to single-digit milliseconds.
+
+#### 🔄 High Query Throughput
+If you're handling hundreds or thousands of queries per second, ANN indexes reduce the CPU load per query, letting you serve more users with the same hardware.
+
+#### 💰 Cost Optimization at Scale
+At large scale, the compute savings from ANN indexes can be substantial. You might need ten servers for exact search but only one for ANN search with the same performance.
+
+Most production vector databases like Pinecone 👉 'pine-cone', Weaviate 👉 'WEE-vee-ayt', and Milvus 👉 'MIL-vus' support ANN indexes out of the box. Let's see how they work...`
         },
         {
           id: 20,
@@ -867,20 +1004,61 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="slideInRight" delay={0.1}>
               <div style={{ color: '#98c379', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
-                <strong>How It Works</strong>
+                <strong>
+                  How It Works
+                  <MermaidPopover
+                    title="ANN Index Search"
+                    diagram={`flowchart TB
+    A["🔍 Query Vector"] --> B["📂 HNSW Graph"]
+    A --> C["📂 IVF Clusters"]
+    B --> D["Navigate layers\\n→ nearest neighbors"]
+    C --> E["Search nearest\\nclusters only"]
+    D --> F["✅ ~95-99% accurate\\n⚡ 100x faster"]
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </strong>
               </div>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
               <p style={{ marginBottom: '1rem' }}>Two popular approaches for approximate nearest neighbor search:</p>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li><strong>HNSW (Hierarchical Navigable Small World):</strong> Uses multi-layer graph structure with "shortcuts" at higher layers for efficient navigation. Parameters to tune include M (max connections), efSearch (search quality), and efConstruction (index quality).</li>
                 <li><strong>IVF (Inverted File):</strong> Partitions vector space into nlist clusters, searches only nprobe most relevant clusters. Can be combined with PQ (Product Quantization) to reduce memory.</li>
               </ul>
+              </GSAPStaggerList>
               <p>Both methods trade exact results for approximate ones that are "good enough" for most cases, drastically improving search speed.</p>
             </div>
           ),
           backgroundColor: '#281d6b',
-          notes: ''
+          notes: `### 20. Use ANN Indexes — How It Works
+Let's understand how ANN indexes achieve such dramatic speedups. There are two main approaches you'll encounter in production.
+
+#### ⚙️ HNSW — Hierarchical Navigable Small World
+\`\`\`mermaid
+flowchart TB
+    A["🔍 Query Vector"] --> B["📂 HNSW Graph"]
+    A --> C["📂 IVF Clusters"]
+    B --> D["Navigate layers\\n→ nearest neighbors"]
+    C --> E["Search nearest\\nclusters only"]
+    D --> F["✅ ~95-99% accurate\\n⚡ 100x faster"]
+    E --> F
+    style A fill:#4fc3f7,color:#000
+    style F fill:#81c784,color:#000
+\`\`\`
+HNSW 👉 'H-N-S-W' builds a multi-layer graph where each layer connects vectors to their approximate neighbors. When searching, you start at the top layer with few connections and "zoom in" through lower layers with more connections. It's like using Google Maps — you start at the country level and zoom down to the street level. The result is typically 95-99% accurate with 100x faster search.
+
+#### 📊 IVF — Inverted File Index
+IVF 👉 'eye-vee-eff' divides your vectors into clusters using k-means 👉 'kay means'. When searching, instead of scanning all vectors, you only search the nearest clusters. It's like dividing a library into sections — you only search the relevant section instead of the whole building.
+
+#### ⚖️ The Accuracy Trade-off
+You might miss the absolute best match occasionally, but you'll almost always find results that are 95-99% as good, in a fraction of the time. For most RAG applications, this is a very worthwhile trade-off. Here are the implementation steps...`
         },
         {
           id: 21,
@@ -889,10 +1067,13 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
               <div style={{ color: '#d19a66', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                 <SvgIcon iconName="duo-list-ol" sizeName="2x" darkModeInvert={true} />
                 <strong>Steps</strong>
               </div>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} duration={0.7}>
               <ul>
                 <li>For HNSW: Start with M=16-32, efSearch=64-128, efConstruction=200-400</li>
                 <li>For IVF: Choose nlist ≈ sqrt(N) where N is collection size, set nprobe to balance recall vs speed</li>
@@ -900,10 +1081,25 @@ Start with 200 tokens and adjust from there based on your content type. Technica
                 <li>Test with filters: Evaluate performance with attribute filters as they can impact latency</li>
                 <li>Benchmark: Compare accuracy and latency across parameter settings to find optimal configuration</li>
               </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#281d6b',
-          notes: ''
+          notes: `### 21. Use ANN Indexes — Steps
+Here's how to set up ANN indexes in your vector database. The good news is most modern vector databases handle the heavy lifting for you.
+
+#### 📋 Implementation Steps
+**Step one: Choose your algorithm.** HNSW is the most popular choice for RAG applications because it offers the best balance of speed, accuracy, and memory usage. IVF is better when you have very large datasets and memory constraints.
+
+**Step two: Configure parameters.** For HNSW, the key parameters are **M** (number of connections per layer, typically 16-64) and **ef_construction** 👉 'ee-eff construction' (build-time quality, typically 100-200). Higher values mean better accuracy but slower index building and more memory.
+
+**Step three: Build the index.** Most vector databases like Pinecone, Qdrant 👉 'kew-drant', or Weaviate build HNSW indexes automatically. For custom setups, libraries like FAISS 👉 'face' from Meta make it straightforward.
+
+**Step four: Tune search parameters.** The **ef_search** parameter controls the accuracy-speed trade-off at query time. Start with ef_search equal to Top-K times 2 and adjust based on your quality requirements.
+
+**Step five: Benchmark.** Compare exact search versus ANN search on your data. Measure recall@k to ensure the accuracy loss is acceptable, and celebrate the latency improvement.
+
+Let's weigh the pros and cons...`
         },
         {
           id: 22,
@@ -913,6 +1109,7 @@ Start with 200 tokens and adjust from there based on your content type. Technica
             <div>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.2}>
                 <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -926,6 +1123,8 @@ Start with 200 tokens and adjust from there based on your content type. Technica
                     <li>Enables real-time search in large datasets</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
+                <GSAPAnimated animation="slideInRight" delay={0.4}>
                 <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
                   <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
@@ -938,11 +1137,22 @@ Start with 200 tokens and adjust from there based on your content type. Technica
                     <li>Filtered searches can be slower (especially with HNSW)</li>
                   </ul>
                 </div>
+                </GSAPAnimated>
               </div>
             </div>
           ),
           backgroundColor: '#281d6b',
-          notes: ''
+          notes: `### 22. Use ANN Indexes — Pros and Cons
+Let's evaluate when ANN indexes are worth the setup effort and when you might want to stick with exact search.
+
+#### ✅ Pros
+The good stuff: **Massive speedups** — we're talking 100x to 1000x faster search compared to brute force. **Scales to billions of vectors** without proportional increase in search time. **Supported natively** by most production vector databases, so there's minimal implementation effort. **Low accuracy loss** — typically 95-99% recall compared to exact search. And **reduced compute costs** because each query uses far less CPU time.
+
+#### ❌ Cons
+The problems: **Additional memory overhead** — HNSW indexes can use 1.5-2x more memory than the raw vectors. **Index build time** can be significant for large datasets — hours for hundreds of millions of vectors. **Parameter tuning required** — you need to find the right balance of M, ef_construction, and ef_search for your data. **Not ideal for small datasets** — if you have fewer than 10,000 vectors, exact search is already fast enough. And **index updates can be expensive** — adding or removing vectors may require partial or full index rebuilds.
+
+#### 🎯 The Verdict
+If you have more than 100,000 vectors and need low-latency search, ANN indexes are a no-brainer. The setup effort is minimal with modern vector databases, and the performance gains are enormous. Next up, we'll explore caching strategies, starting with caching query embeddings...`
         }
       ]
     },
