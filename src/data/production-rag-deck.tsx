@@ -54,15 +54,15 @@ export const productionRagDeck: Deck = {
             </div>
           ),
           backgroundColor: '#3c1651',
-          notes: `### 1. Title Slide - 11 Production RAG Architecture Patterns
+          notes: `### Title Slide - 11 Production RAG Architecture Patterns
 
-Welcome everyone! Today we're diving deep into eleven production-ready RAG architecture patterns that will transform how you build retrieval-augmented generation systems. RAG, or Retrieval-Augmented Generation 👉 [rag], combines the power of large language models with external knowledge retrieval to create more accurate, factual, and context-aware AI applications.
+[cheerfully] Welcome everyone! [excited] Today we're diving deep into eleven production-ready RAG architecture patterns that will transform how you build retrieval-augmented generation systems. RAG, or Retrieval-Augmented Generation 👉 [rag], combines the power of large language models with external knowledge retrieval to create more accurate, factual, and context-aware AI applications.
 
 #### Why This Matters
-Think of RAG as giving your AI a library card. Instead of relying solely on what it memorized during training, your AI can now look up current information, company-specific knowledge, or domain expertise on demand. This presentation covers four critical dimensions: retrieval accuracy, which ensures we find the right information; context handling, which manages how we package that information; answer quality, which validates our outputs are trustworthy; and scalability, which ensures our systems work at production scale.
+[storytelling] Think of RAG as giving your AI a library card. Instead of relying solely on what it memorized during training, your AI can now look up current information, company-specific knowledge, or domain expertise on demand. [confidently] This presentation covers four critical dimensions: retrieval accuracy, which ensures we find the right information; context handling, which manages how we package that information; answer quality, which validates our outputs are trustworthy; and scalability, which ensures our systems work at production scale.
 
 #### What You'll Learn Today
-We'll explore eleven battle-tested patterns, from basic implementations to sophisticated multi-agent systems. Each pattern solves specific challenges you'll encounter when moving from proof-of-concept to production. Whether you're building an internal knowledge assistant, a customer support system, or a technical documentation search tool, you'll leave with practical blueprints for success. Let's begin this exciting journey into production RAG architectures!`
+[enthusiastically] We'll explore eleven battle-tested patterns, from basic implementations to sophisticated multi-agent systems. Each pattern solves specific challenges you'll encounter when moving from proof-of-concept to production. Whether you're building an internal knowledge assistant, a customer support system, or a technical documentation search tool, you'll leave with practical blueprints for success. [inspiringly] Let's begin this exciting journey into production RAG architectures!`
         },
         {
           id: 2,
@@ -93,15 +93,15 @@ We'll explore eleven battle-tested patterns, from basic implementations to sophi
             </div>
           ),
           backgroundColor: '#3c1651',
-          notes: `### 2. Agenda & Patterns Overview
+          notes: `### Agenda & Patterns Overview
 
-Let's set the stage for what we'll cover today. When companies first experiment with RAG systems, they often start with simple prototypes that work great in demos but struggle in real-world production environments. The gap between prototype and production is where most RAG projects face their biggest challenges.
+[conversational] Let's set the stage for what we'll cover today. When companies first experiment with RAG systems, they often start with simple prototypes that work great in demos but [cautiously] struggle in real-world production environments. The gap between prototype and production is where most RAG projects face their biggest challenges.
 
 #### The Four Pillars of Production RAG
-First, retrieval accuracy and precision. It's not enough to just find similar documents—we need to find the RIGHT documents consistently. Second, context handling and efficiency. Token limits are real, and sending too much irrelevant context wastes money and degrades performance. Third, answer quality and hallucination mitigation 👉 [hal-oo-sin-AY-shun]. This is critical—our systems must know when they don't know something, rather than making up plausible-sounding but incorrect answers. Fourth, scalability and operational reliability. What works for ten users must work for ten thousand, with consistent latency 👉 [LAY-ten-see] and uptime.
+[lecture] First, retrieval accuracy and precision. [firmly] It's not enough to just find similar documents—we need to find the RIGHT documents consistently. Second, context handling and efficiency. Token limits are real, and sending too much irrelevant context wastes money and degrades performance. Third, answer quality and hallucination mitigation 👉 [hal-oo-sin-AY-shun]. [seriously] This is critical—our systems must know when they don't know something, rather than making up plausible-sounding but incorrect answers. Fourth, scalability and operational reliability. What works for ten users must work for ten thousand, with consistent latency 👉 [LAY-ten-see] and uptime.
 
 #### What's Coming Next
-In this presentation, we'll systematically explore eleven architectural patterns, each addressing specific production challenges. You'll see concrete implementation details, understand when to use each pattern, and learn how to combine them for maximum effect. Ready to transform your RAG systems from demos to dependable production services? Let's dive into our pattern catalog!`
+[confidently] In this presentation, we'll systematically explore eleven architectural patterns, each addressing specific production challenges. You'll see concrete implementation details, understand when to use each pattern, and learn how to combine them for maximum effect. [excited] Ready to transform your RAG systems from demos to dependable production services? Let's dive into our pattern catalog!`
         },
         {
           id: 3,
@@ -169,18 +169,18 @@ In this presentation, we'll systematically explore eleven architectural patterns
             </div>
           ),
           backgroundColor: '#3c1651',
-          notes: `### 3. Cheat Sheets and Selection Guidance
+          notes: `### Cheat Sheets and Selection Guidance
 
-Here's your roadmap to the eleven patterns we'll explore. Think of these as building blocks—you can use them individually or combine them to create powerful custom architectures. Let me break down the four categories so you understand how they fit together.
+[energetic] Here's your roadmap to the eleven patterns we'll explore. [conversational] Think of these as building blocks—you can use them individually or combine them to create powerful custom architectures. Let me break down the four categories so you understand how they fit together.
 
 #### Foundation Patterns
-We start with the basics. Basic RAG is your simplest retrieve-and-generate pattern—perfect for learning and prototyping. RAG with Re-Ranking adds a critical precision layer, using specialized models to reorder retrieved documents by actual relevance. These foundations handle about seventy percent of production use cases when implemented well.
+[lecture] We start with the basics. Basic RAG is your simplest retrieve-and-generate pattern—perfect for learning and prototyping. RAG with Re-Ranking adds a critical precision layer, using specialized models to reorder retrieved documents by actual relevance. [pleased] These foundations handle about seventy percent of production use cases when implemented well.
 
 #### Query Optimization and Advanced Retrieval
-Next, we address the retrieval problem from the query side. Query Rewriting transforms user questions into better search queries. Multi-Query Retrieval generates multiple search variations to cast a wider net. HyDE 👉 [HIDE] creates hypothetical answers first, then searches for documents matching those answers—surprisingly effective! The Advanced Retrieval patterns tackle complex document structures: Parent-Child handles hierarchical 👉 [high-er-AR-ki-kal] documents, Graph-Based leverages relationships between entities, and External Tools integrates real-time APIs and calculators.
+[confidently] Next, we address the retrieval problem from the query side. Query Rewriting transforms user questions into better search queries. Multi-Query Retrieval generates multiple search variations to cast a wider net. HyDE 👉 [HIDE] creates hypothetical answers first, then searches for documents matching those answers—[excited] surprisingly effective! [storytelling] The Advanced Retrieval patterns tackle complex document structures: Parent-Child handles hierarchical 👉 [high-er-AR-ki-kal] documents, Graph-Based leverages relationships between entities, and External Tools integrates real-time APIs and calculators.
 
 #### Hybrid & Optimization Patterns
-Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility with custom model training. Multi-Step Retrieval Loops implement iterative search and reasoning. Context Compression shrinks your retrieved content to fit more relevant information in limited context windows. Master these eleven patterns, and you'll handle any RAG challenge production throws at you!`
+[enthusiastically] Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility with custom model training. Multi-Step Retrieval Loops implement iterative search and reasoning. Context Compression shrinks your retrieved content to fit more relevant information in limited context windows. [inspiringly] Master these eleven patterns, and you'll handle any RAG challenge production throws at you!`
         }
       ]
     },
@@ -266,16 +266,16 @@ Finally, our power patterns. Fine-Tuned Model Hybrid combines RAG's flexibility 
             </div>
           ),
           backgroundColor: '#136b5e',
-          notes: `### 4. Pattern 1 - Basic RAG (Single Retrieve → Generate)
+          notes: `### Pattern 1 - Basic RAG (Single Retrieve → Generate)
 
-Let's dive into our first pattern—Basic RAG. This is the foundation that every other pattern builds upon, so understanding it deeply is crucial. Think of Basic RAG as a simple question-answering system that looks up information before responding, just like you might search through a textbook before answering an exam question.
+[conversational] Let's dive into our first pattern—Basic RAG. [lecture] This is the foundation that every other pattern builds upon, so understanding it deeply is crucial. [storytelling] Think of Basic RAG as a simple question-answering system that looks up information before responding, just like you might search through a textbook before answering an exam question.
 
 
 #### The Six Core Components
-Every Basic RAG system needs six essential pieces. First, the LLM 👉 [el-el-em] or Large Language Model generates your final answers. Second, an embedding model converts text into mathematical vectors—think of these as coordinates in meaning-space. Third, a chunker splits documents into digestible pieces, typically two hundred to five hundred words each. Fourth, a vector database stores these embeddings and performs lightning-fast similarity searches. Fifth, a retriever orchestrates the search process. Sixth, prompt templates format everything nicely for the LLM.
+[confidently] Every Basic RAG system needs six essential pieces. First, the LLM 👉 [el-el-em] or Large Language Model generates your final answers. Second, an embedding model converts text into mathematical vectors—[playfully] think of these as coordinates in meaning-space. Third, a chunker splits documents into digestible pieces, typically two hundred to five hundred words each. Fourth, a vector database stores these embeddings and performs lightning-fast similarity searches. Fifth, a retriever orchestrates the search process. Sixth, prompt templates format everything nicely for the LLM.
 
 #### How It Works
-When a user asks a question, we convert that question into a vector using the same embedding model that processed our documents. Then we search the vector database for the top-K most similar chunks—usually three to five chunks work best. These chunks get concatenated 👉 [con-CAT-en-ay-ted] together with the user's question into a prompt, and the LLM generates an answer based on this retrieved context. The entire process typically takes one to three seconds, making it suitable for interactive applications. This simplicity is both Basic RAG's greatest strength and its primary limitation, which we'll explore next!`
+[lecture] When a user asks a question, we convert that question into a vector using the same embedding model that processed our documents. Then we search the vector database for the top-K most similar chunks—usually three to five chunks work best. These chunks get concatenated 👉 [con-CAT-en-ay-ted] together with the user's question into a prompt, and the LLM generates an answer based on this retrieved context. The entire process typically takes one to three seconds, making it suitable for interactive applications. [thoughtfully] This simplicity is both Basic RAG's greatest strength and its primary limitation, which we'll explore next!`
         },
         {
           id: 5,
@@ -317,18 +317,18 @@ When a user asks a question, we convert that question into a vector using the sa
             </div>
           ),
           backgroundColor: '#136b5e',
-          notes: `### 5. Basic RAG - Strengths and Limitations
+          notes: `### Basic RAG - Strengths and Limitations
 
-Every architectural pattern has its sweet spot and its challenges. Let's be honest about where Basic RAG shines and where it struggles, so you can make informed decisions about when to use it.
+[conversational] Every architectural pattern has its sweet spot and its challenges. [seriously] Let's be honest about where Basic RAG shines and where it struggles, so you can make informed decisions about when to use it.
 
 #### Strengths
-Basic RAG's simplicity is its superpower. You can implement a working system in an afternoon using tools like LangChain or LlamaIndex. The single retrieval step means low latency—typically under two seconds end-to-end, which feels instant to users. Operationally, you're managing just a vector database and an LLM API, making deployment and monitoring straightforward. For well-defined domains with clear queries, Basic RAG achieves eighty to ninety percent accuracy, which is excellent for many business applications. Plus, the fast iteration cycle lets you experiment quickly with different chunk sizes, embedding models, and prompt templates.
+[pleased] Basic RAG's simplicity is its superpower. You can implement a working system in an afternoon using tools like LangChain or LlamaIndex. The single retrieval step means low latency—typically under two seconds end-to-end, which feels instant to users. Operationally, you're managing just a vector database and an LLM API, making deployment and monitoring straightforward. For well-defined domains with clear queries, Basic RAG achieves eighty to ninety percent accuracy, which is excellent for many business applications. [enthusiastically] Plus, the fast iteration cycle lets you experiment quickly with different chunk sizes, embedding models, and prompt templates.
 
 #### Limitations
-However, Basic RAG has real constraints. The K parameter 👉 [kay] creates a rigid tradeoff: too few chunks and you miss relevant information, too many and you dilute the important content with noise. Vague queries like "tell me about the product" retrieve random-seeming results. Your chunk boundaries matter immensely—if you split mid-paragraph, you lose context. Multi-hop questions like "compare the pricing of option A and option B" struggle because relevant information might be in different chunks that don't get retrieved together. Finally, when retrieval returns marginally relevant content, the LLM might hallucinate rather than admit it doesn't know.
+[cautiously] However, Basic RAG has real constraints. The K parameter 👉 [kay] creates a rigid tradeoff: too few chunks and you miss relevant information, too many and you dilute the important content with noise. [disappointed] Vague queries like "tell me about the product" retrieve random-seeming results. Your chunk boundaries matter immensely—if you split mid-paragraph, you lose context. Multi-hop questions like "compare the pricing of option A and option B" struggle because relevant information might be in different chunks that don't get retrieved together. [seriously] Finally, when retrieval returns marginally relevant content, the LLM might hallucinate rather than admit it doesn't know.
 
 #### When to Use Basic RAG
-Use Basic RAG for FAQs, internal wikis, straightforward technical documentation, and proof-of-concept projects. When queries are predictable and documents are well-structured, Basic RAG delivers excellent results with minimal complexity. For everything else, the patterns we'll explore next add the sophistication you need!`
+[confidently] Use Basic RAG for FAQs, internal wikis, straightforward technical documentation, and proof-of-concept projects. When queries are predictable and documents are well-structured, Basic RAG delivers excellent results with minimal complexity. [excited] For everything else, the patterns we'll explore next add the sophistication you need!`
         }
       ]
     },
@@ -413,16 +413,16 @@ Use Basic RAG for FAQs, internal wikis, straightforward technical documentation,
             </div>
           ),
           backgroundColor: '#714425',
-          notes: `### 6. Pattern 2 - RAG with Re-Ranking
+          notes: `### Pattern 2 - RAG with Re-Ranking
 
-Now we level up with Re-Ranking, which solves one of Basic RAG's biggest problems: precision. Think of it like a two-stage filter—first, cast a wide net to capture many potentially relevant documents, then use a more sophisticated model to identify which ones truly matter.
+[excited] Now we level up with Re-Ranking, which solves one of Basic RAG's biggest problems: precision. [storytelling] Think of it like a two-stage filter—first, cast a wide net to capture many potentially relevant documents, then use a more sophisticated model to identify which ones truly matter.
 
 
 #### The Two-Stage Approach
-Here's how it works: instead of retrieving just five chunks like Basic RAG, we retrieve one hundred to three hundred candidates using fast vector similarity search. This ensures high recall—we probably have the right answer somewhere in that set. Then comes the magic: a reranker model, typically a cross-encoder 👉 [cross en-COH-der], scores each candidate against the query with much higher accuracy than embedding similarity alone. Cross-encoders are slower but more precise because they analyze the query and document together, not separately. Finally, we keep only the top five to ten highest-scoring chunks for the LLM.
+[lecture] Here's how it works: instead of retrieving just five chunks like Basic RAG, we retrieve one hundred to three hundred candidates using fast vector similarity search. This ensures high recall—we probably have the right answer somewhere in that set. [enthusiastically] Then comes the magic: a reranker model, typically a cross-encoder 👉 [cross en-COH-der], scores each candidate against the query with much higher accuracy than embedding similarity alone. Cross-encoders are slower but more precise because they analyze the query and document together, not separately. Finally, we keep only the top five to ten highest-scoring chunks for the LLM.
 
 #### Why This Works
-Rerankers excel at understanding nuance 👉 [NEW-ahnss]. Where embedding models might think "bank" (financial) and "bank" (river) are similar contexts, a reranker understands the query's intent and picks the right meaning. Companies like Cohere 👉 [koh-HERE], Voyage 👉 [voy-AHDGE], and open-source projects like BGE 👉 [bee-gee-ee] provide specialized reranker models. The result? Typically fifteen to thirty percent accuracy improvement over Basic RAG, especially on ambiguous queries. The tradeoff is added latency—maybe an extra five hundred milliseconds to one second—but for applications where accuracy matters more than speed, this is absolutely worth it!`
+[confidently] Rerankers excel at understanding nuance 👉 [NEW-ahnss]. [playfully] Where embedding models might think "bank" (financial) and "bank" (river) are similar contexts, a reranker understands the query's intent and picks the right meaning. Companies like Cohere 👉 [koh-HERE], Voyage 👉 [voy-AHDGE], and open-source projects like BGE 👉 [bee-gee-ee] provide specialized reranker models. [pleased] The result? Typically fifteen to thirty percent accuracy improvement over Basic RAG, especially on ambiguous queries. The tradeoff is added latency—maybe an extra five hundred milliseconds to one second—but for applications where accuracy matters more than speed, this is absolutely worth it!`
         },
         {
           id: 7,
@@ -464,18 +464,18 @@ Rerankers excel at understanding nuance 👉 [NEW-ahnss]. Where embedding models
             </div>
           ),
           backgroundColor: '#714425',
-          notes: `### 7. Re-Ranking Pattern - Strengths and Limitations
+          notes: `### Re-Ranking Pattern - Strengths and Limitations
 
-Let's evaluate Re-Ranking honestly. Like any architectural decision, it comes with tradeoffs you need to understand before implementing it in production.
+[conversational] Let's evaluate Re-Ranking honestly. [seriously] Like any architectural decision, it comes with tradeoffs you need to understand before implementing it in production.
 
 #### Strengths
-The precision improvement is substantial and measurable. In our production deployments, we've seen fifteen to thirty-five percent accuracy gains compared to Basic RAG, especially on complex queries. Re-Ranking shines in large knowledge bases—when you have thousands or millions of documents, the initial vector search brings back many false positives, and reranking filters them brilliantly. Nuanced queries that confuse embedding models get handled correctly because cross-encoders deeply analyze query-document pairs. Better retrieval means better context for your LLM, which directly translates to higher answer quality and fewer hallucinations. Users notice the difference immediately.
+[pleased] The precision improvement is substantial and measurable. In our production deployments, we've seen fifteen to thirty-five percent accuracy gains compared to Basic RAG, especially on complex queries. [enthusiastically] Re-Ranking shines in large knowledge bases—when you have thousands or millions of documents, the initial vector search brings back many false positives, and reranking filters them brilliantly. Nuanced queries that confuse embedding models get handled correctly because cross-encoders deeply analyze query-document pairs. [confidently] Better retrieval means better context for your LLM, which directly translates to higher answer quality and fewer hallucinations. Users notice the difference immediately.
 
 #### Limitations  
-However, nothing comes free. Reranking adds latency—typically five hundred milliseconds to one point five seconds depending on your reranker and the number of candidates. API-based rerankers like Cohere add cost per request, while self-hosted options require GPU infrastructure. Domain matching matters: a reranker trained on general web text might underperform on specialized medical or legal content, requiring fine-tuning. The engineering complexity increases—you're now managing two models, monitoring their performance separately, and debugging a more complex pipeline. Finally, remember that reranking can only work with what the initial retrieval found; if your vector search missed the relevant documents entirely, reranking won't magically find them.
+[cautiously] However, nothing comes free. Reranking adds latency—typically five hundred milliseconds to one point five seconds depending on your reranker and the number of candidates. API-based rerankers like Cohere add cost per request, while self-hosted options require GPU infrastructure. [concerned] Domain matching matters: a reranker trained on general web text might underperform on specialized medical or legal content, requiring fine-tuning. The engineering complexity increases—you're now managing two models, monitoring their performance separately, and debugging a more complex pipeline. [seriously] Finally, remember that reranking can only work with what the initial retrieval found; if your vector search missed the relevant documents entirely, reranking won't magically find them.
 
 #### When to Choose Re-Ranking
-Use Re-Ranking when accuracy justifies the added complexity and cost. Enterprise knowledge management, customer support systems, legal document search, and technical documentation—these applications benefit immensely. If you're building an FAQ bot with fifty documents, stick with Basic RAG. But for serious production systems with quality requirements, Re-Ranking is your tier-one upgrade!`
+[confidently] Use Re-Ranking when accuracy justifies the added complexity and cost. Enterprise knowledge management, customer support systems, legal document search, and technical documentation—these applications benefit immensely. [playfully] If you're building an FAQ bot with fifty documents, stick with Basic RAG. [inspiringly] But for serious production systems with quality requirements, Re-Ranking is your tier-one upgrade!`
         }
       ]
     },
@@ -558,19 +558,19 @@ Use Re-Ranking when accuracy justifies the added complexity and cost. Enterprise
             </div>
           ),
           backgroundColor: '#391f5f',
-          notes: `### 8. Pattern 3 - RAG with Query Rewriting
+          notes: `### Pattern 3 - RAG with Query Rewriting
 
-Now we shift focus from improving what we retrieve to improving how we search. Query Rewriting transforms messy, ambiguous user questions into precise search queries before retrieval even begins. Think of it as having a helpful librarian who clarifies what you're really looking for before searching.
+[excited] Now we shift focus from improving what we retrieve to improving how we search. [lecture] Query Rewriting transforms messy, ambiguous user questions into precise search queries before retrieval even begins. [storytelling] Think of it as having a helpful librarian who clarifies what you're really looking for before searching.
 
 
 #### Why Users Write Bad Queries
-Let's be honest: users rarely phrase queries optimally for search systems. They might ask "How do I get my money back?" when your documentation uses the term "refund process." They write vague questions like "tell me about pricing" instead of "Compare Enterprise versus Pro plan features and costs." Query Rewriting fixes this mismatch between how users think and how your documents are structured.
+[conversational] Let's be honest: users rarely phrase queries optimally for search systems. [playfully] They might ask "How do I get my money back?" when your documentation uses the term "refund process." They write vague questions like "tell me about pricing" instead of "Compare Enterprise versus Pro plan features and costs." [confidently] Query Rewriting fixes this mismatch between how users think and how your documents are structured.
 
 #### Rewriting Strategies
-There are several effective approaches. Query expansion adds synonyms and related terms—"refund" becomes "refund OR reimbursement OR money-back." Entity normalization standardizes names—"GPT-four" becomes "GPT-4." Step-back prompting transforms specific questions into broader ones first—"Why doesn't feature X work?" becomes "How does feature X work?" then retrieves from that context. You can also decompose complex multi-part questions into simpler sub-queries.
+[lecture] There are several effective approaches. Query expansion adds synonyms and related terms—"refund" becomes "refund OR reimbursement OR money-back." Entity normalization standardizes names—"GPT-four" becomes "GPT-4." [enthusiastically] Step-back prompting transforms specific questions into broader ones first—"Why doesn't feature X work?" becomes "How does feature X work?" then retrieves from that context. You can also decompose complex multi-part questions into simpler sub-queries.
 
 #### Implementation
-Use a small, fast LLM 👉 [el-el-em] like GPT-3.5 👉 [gee-pee-tee three point five] for rewriting—no need for your most powerful model here. Include both original and rewritten queries in your logs for evaluation. The key is transparency: show users how their query was transformed so they can correct misunderstandings. Query Rewriting adds about two hundred to five hundred milliseconds of latency, but the retrieval quality improvement often justifies this cost, especially for consumer-facing applications!`
+[conversational] Use a small, fast LLM 👉 [el-el-em] like GPT-3.5 👉 [gee-pee-tee three point five] for rewriting—no need for your most powerful model here. Include both original and rewritten queries in your logs for evaluation. [firmly] The key is transparency: show users how their query was transformed so they can correct misunderstandings. [pleased] Query Rewriting adds about two hundred to five hundred milliseconds of latency, but the retrieval quality improvement often justifies this cost, especially for consumer-facing applications!`
         },
         {
           id: 9,
@@ -612,18 +612,18 @@ Use a small, fast LLM 👉 [el-el-em] like GPT-3.5 👉 [gee-pee-tee three point
             </div>
           ),
           backgroundColor: '#391f5f',
-          notes: `### 9. Query Rewriting - Strengths and Limitations
+          notes: `### Query Rewriting - Strengths and Limitations
 
-Query Rewriting is powerful but requires careful implementation. Let's examine when it delivers value and when it might cause problems.
+[conversational] Query Rewriting is powerful but requires careful implementation. [seriously] Let's examine when it delivers value and when it might cause problems.
 
 #### Strengths
-Query Rewriting excels at handling the messiness of real user input. When users ask vague questions like "tell me about the product," rewriting can transform this into specific facets: "product features AND pricing AND specifications." The terminology normalization is invaluable—users say "cancel subscription" but your docs say "terminate membership"—rewriting bridges this gap automatically. For domain-specific applications like medical or legal systems where precise terminology matters, rewriting ensures consistent vocabulary. It's also remarkably robust to different phrasing styles, cultural variations, and even typos when combined with spell-checking.
+[pleased] Query Rewriting excels at handling the messiness of real user input. When users ask vague questions like "tell me about the product," rewriting can transform this into specific facets: "product features AND pricing AND specifications." [enthusiastically] The terminology normalization is invaluable—users say "cancel subscription" but your docs say "terminate membership"—rewriting bridges this gap automatically. For domain-specific applications like medical or legal systems where precise terminology matters, rewriting ensures consistent vocabulary. It's also remarkably robust to different phrasing styles, cultural variations, and even typos when combined with spell-checking.
 
 #### Limitations
-However, rewriting can go wrong. Intent drift occurs when the rewriter misunderstands what the user actually wants—"python tips" for programming becomes "python snake care" in a general-purpose system. Over-constraining happens when you add too many specific terms, narrowing results unnecessarily. The rewriting step adds latency—typically two hundred to five hundred milliseconds, which compounds with other preprocessing. You absolutely must log and audit rewrites because they directly affect what users find. Biases in your rewriting prompts can amplify biases in user queries—"female doctor" shouldn't get rewritten to just "doctor" if gender specificity was intentional.
+[cautiously] However, rewriting can go wrong. Intent drift occurs when the rewriter misunderstands what the user actually wants—[playfully] "python tips" for programming becomes "python snake care" in a general-purpose system. Over-constraining happens when you add too many specific terms, narrowing results unnecessarily. The rewriting step adds latency—typically two hundred to five hundred milliseconds, which compounds with other preprocessing. [firmly] You absolutely must log and audit rewrites because they directly affect what users find. [concerned] Biases in your rewriting prompts can amplify biases in user queries—"female doctor" shouldn't get rewritten to just "doctor" if gender specificity was intentional.
 
 #### Best Practices
-To use Query Rewriting effectively, start with conservative rewrites—just normalize obvious synonyms and entities. Log every rewrite for offline analysis. Show users the rewritten query when helpful for transparency. Combine with other patterns like Re-Ranking for maximum effect. Test extensively with real user queries, not synthetic examples. When done right, Query Rewriting dramatically improves the user experience by making your system understand natural language better!`
+[confidently] To use Query Rewriting effectively, start with conservative rewrites—just normalize obvious synonyms and entities. Log every rewrite for offline analysis. Show users the rewritten query when helpful for transparency. Combine with other patterns like Re-Ranking for maximum effect. Test extensively with real user queries, not synthetic examples. [inspiringly] When done right, Query Rewriting dramatically improves the user experience by making your system understand natural language better!`
         }
       ]
     },
@@ -723,42 +723,41 @@ To use Query Rewriting effectively, start with conservative rewrites—just norm
             </div>
           ),
           backgroundColor: '#2f600f',
-          notes: `### 10. RAG with Multi-Query Retrieval
+          notes: `### RAG with Multi-Query Retrieval
 
 #### Introduction to Multi-Query Retrieval
 
-Welcome to slide 10, where we explore Multi-Query Retrieval, a powerful pattern that addresses one of RAG's biggest challenges: query ambiguity and limited recall. Think of this pattern as casting a wider net by asking the same question in multiple ways.
+[enthusiastically] Welcome to slide 10, where we explore Multi-Query Retrieval, a powerful pattern that addresses one of RAG's biggest challenges: query ambiguity and limited recall. [conversational] Think of this pattern as casting a wider net by asking the same question in multiple ways.
 
 #### How Multi-Query Retrieval Works
 
-The core idea is deceptively simple but remarkably effective. When a user submits a query like "How do I secure my API?", the system doesn't just search once. Instead, it uses an LLM to generate 3-5 variations of that query—perhaps "API security best practices," "Authentication methods for APIs," and "Preventing API vulnerabilities." Each variant captures a different facet or interpretation of the original question.
+[confidently] The core idea is deceptively simple but remarkably effective. When a user submits a query like "How do I secure my API?", the system doesn't just search once. [excited] Instead, it uses an LLM to generate 3-5 variations of that query—perhaps "API security best practices," "Authentication methods for APIs," and "Preventing API vulnerabilities." Each variant captures a different facet or interpretation of the original question.
 
 These query variations then execute **parallel retrieval** (👉 "pair-uh-lel ree-TREE-vul") operations against your vector database. This parallel approach is crucial because it doesn't add sequential latency—all searches happen simultaneously.
 
 #### The Fusion Magic: RRF Algorithm
 
-Now comes the sophisticated part: combining results. The system uses **Reciprocal Rank Fusion** (👉 "rih-SIP-ruh-kul rank FYOO-zhun"), or RRF, an algorithm that doesn't just merge results but intelligently weights them based on where documents appear across different query results. A document appearing in the top results of multiple queries gets boosted significantly.
-
+[enthusiastically] Now comes the sophisticated part: combining results. The system uses **Reciprocal Rank Fusion** (👉 "rih-SIP-ruh-kul rank FYOO-zhun"), or RRF, an algorithm that doesn't just merge results but intelligently weights them based on where documents appear across different query results. A document appearing in the top results of multiple queries gets boosted significantly.
 
 After fusion, a **deduplication pipeline** removes similar or identical chunks. This is important because the same document might surface through multiple query variants, and you don't want to waste context window space on duplicates.
 
 #### Components and Architecture
 
-The architecture requires several key components working in concert. You'll need an LLM capable of generating quality query variations—this can be the same LLM you use for final answer generation or a smaller, faster model. Hybrid retrievers combine embedding-based semantic search with traditional keyword matching for better coverage.
+[lecture] The architecture requires several key components working in concert. You'll need an LLM capable of generating quality query variations—this can be the same LLM you use for final answer generation or a smaller, faster model. Hybrid retrievers combine embedding-based semantic search with traditional keyword matching for better coverage.
 
 The citation and source tracking system becomes more complex here because you need to trace which query variant retrieved each chunk. This metadata helps with debugging and transparency.
 
 #### Context Packing Strategy
 
-When packing context, you're balancing **breadth versus depth**. Do you include many diverse sources (breadth) or fewer sources with more complete information (depth)? Multi-query naturally leans toward breadth, so you might include a brief rationale for each chunk—explaining which query variant it satisfied.
+[thoughtfully] When packing context, you're balancing **breadth versus depth**. Do you include many diverse sources (breadth) or fewer sources with more complete information (depth)? Multi-query naturally leans toward breadth, so you might include a brief rationale for each chunk—explaining which query variant it satisfied.
 
 #### Best Use Cases
 
-This pattern shines in research-oriented applications where comprehensive answers matter more than sub-second response times. Educational platforms benefit enormously because student questions often lack precision. When your knowledge base is broad and diverse, multi-query helps surface relevant information that a single query might miss due to vocabulary mismatch or phrasing differences.
+[pleased] This pattern shines in research-oriented applications where comprehensive answers matter more than sub-second response times. Educational platforms benefit enormously because student questions often lack precision. When your knowledge base is broad and diverse, multi-query helps surface relevant information that a single query might miss due to vocabulary mismatch or phrasing differences.
 
 #### Transition to Next Slide
 
-Now that we understand the power of multi-query retrieval, let's examine its strengths and limitations to understand when this added complexity is worth the investment.`
+[conversational] Now that we understand the power of multi-query retrieval, let's examine its strengths and limitations to understand when this added complexity is worth the investment.`
         },
         {
           id: 11,
@@ -804,29 +803,29 @@ Now that we understand the power of multi-query retrieval, let's examine its str
             </div>
           ),
           backgroundColor: '#2f600f',
-          notes: `### 11. Multi-Query Retrieval: Strengths and Limitations
+          notes: `### Multi-Query Retrieval: Strengths and Limitations
 
 #### Understanding the Tradeoffs
 
-Every architectural pattern involves tradeoffs, and multi-query retrieval is no exception. Let's examine both sides honestly so you can make informed decisions.
+[conversational] Every architectural pattern involves tradeoffs, and multi-query retrieval is no exception. [seriously] Let's examine both sides honestly so you can make informed decisions.
 
 #### Key Strengths
 
-The most significant strength is **improved recall** (👉 "ree-CALL")—the ability to find relevant documents that a single query would miss. Imagine searching for "Python async patterns" versus "asynchronous programming in Python" versus "concurrent Python code examples." Different documents might match each variant better, and multi-query captures them all.
+[enthusiastically] The most significant strength is **improved recall** (👉 "ree-CALL")—the ability to find relevant documents that a single query would miss. Imagine searching for "Python async patterns" versus "asynchronous programming in Python" versus "concurrent Python code examples." Different documents might match each variant better, and multi-query captures them all.
 
-This pattern is remarkably **robust to phrasing variations**. Users rarely phrase questions optimally. A developer might ask "Why is my code slow?" when they mean "Python performance optimization techniques." Query variations help bridge these vocabulary mismatches.
+[pleased] This pattern is remarkably **robust to phrasing variations**. Users rarely phrase questions optimally. A developer might ask "Why is my code slow?" when they mean "Python performance optimization techniques." Query variations help bridge these vocabulary mismatches.
 
 For **multi-faceted topics**, this approach excels. A question like "How do I deploy a machine learning model?" touches deployment infrastructure, model serialization, API design, monitoring, and scaling. Different query variants can surface documents covering each facet.
 
-The pattern **reduces chunking dependency**. If your chunking strategy isn't perfect (and it never is), multi-query provides a safety net by searching from multiple angles. A poorly chunked document might not surface for one query but appears for another variant.
+The pattern **reduces chunking dependency**. If your chunking strategy isn't perfect (and it never is), multi-query provides a safety net by searching from multiple angles. [conversational] A poorly chunked document might not surface for one query but appears for another variant.
 
 #### Notable Limitations
 
-The primary limitation is **cost and latency**. You're making multiple LLM calls: one to generate query variants, then multiple retrieval operations, then the final answer generation. While retrievals can run in parallel, you still pay for each one. In high-traffic systems, this can become expensive quickly.
+[cautiously] The primary limitation is **cost and latency**. You're making multiple LLM calls: one to generate query variants, then multiple retrieval operations, then the final answer generation. While retrievals can run in parallel, you still pay for each one. [sighing] In high-traffic systems, this can become expensive quickly.
 
-**Token usage** increases significantly. You're not just paying for query generation and answer—you're also potentially packing more diverse chunks into your context window. Monitor your token consumption carefully.
+**Token usage** increases significantly. You're not just paying for query generation and answer—you're also potentially packing more diverse chunks into your context window. [firmly] Monitor your token consumption carefully.
 
-**Fusion tuning complexity** is often underestimated. The RRF algorithm has parameters that need tuning for your specific domain. How much do you weight document rank versus frequency across queries? These choices significantly impact results but require experimentation and evaluation.
+[thoughtfully] **Fusion tuning complexity** is often underestimated. The RRF algorithm has parameters that need tuning for your specific domain. [puzzled] How much do you weight document rank versus frequency across queries? These choices significantly impact results but require experimentation and evaluation.
 
 **Explainability suffers** because it's harder to explain why a document was retrieved. Did it match the original query, a variant, or multiple variants? This matters for debugging and building user trust, especially in regulated industries.
 
@@ -834,11 +833,11 @@ The primary limitation is **cost and latency**. You're making multiple LLM calls
 
 #### Decision Framework
 
-Use multi-query when **accuracy and coverage trump speed and cost**. Research tools, educational platforms, and knowledge management systems are ideal candidates. Avoid it for real-time applications where sub-100ms latency is critical, or when operating at massive scale where the cost multiplier becomes prohibitive.
+[confidently] Use multi-query when **accuracy and coverage trump speed and cost**. Research tools, educational platforms, and knowledge management systems are ideal candidates. [cautiously] Avoid it for real-time applications where sub-100ms latency is critical, or when operating at massive scale where the cost multiplier becomes prohibitive.
 
 #### Transition to HyDE
 
-Next, we'll explore HyDE—a pattern that takes a completely different approach by searching with hypothetical answers instead of actual queries. Where multi-query asks "what are different ways to phrase my question?", HyDE asks "what would a good answer look like?" This conceptual shift opens up fascinating possibilities.`
+[enthusiastically] Next, we'll explore HyDE—a pattern that takes a completely different approach by searching with hypothetical answers instead of actual queries. [playfully] Where multi-query asks "what are different ways to phrase my question?", HyDE asks "what would a good answer look like?" This conceptual shift opens up fascinating possibilities.`
         }
       ]
     },
@@ -928,46 +927,45 @@ Next, we'll explore HyDE—a pattern that takes a completely different approach 
             </div>
           ),
           backgroundColor: '#1a2d2e',
-          notes: `### 12. RAG with HyDE (Hypothetical Document Embeddings)
+          notes: `### RAG with HyDE (Hypothetical Document Embeddings)
 
 #### The Conceptual Breakthrough
 
-HyDE, pronounced "hide" like the word, represents a fascinating inversion of traditional retrieval logic. Instead of searching with your question, you search with what a good answer might look like. This seemingly counterintuitive approach yields remarkable results, especially in zero-shot scenarios.
+[enthusiastically] HyDE, pronounced "hide" like the word, represents a fascinating inversion of traditional retrieval logic. Instead of searching with your question, you search with what a good answer might look like. [excited] This seemingly counterintuitive approach yields remarkable results, especially in zero-shot scenarios.
 
 #### Understanding the Problem HyDE Solves
 
-Traditional semantic search has a fundamental mismatch problem. Queries and documents live in different linguistic spaces. A query might be "How do I prevent SQL injection?", which is a question format. But your documents contain statements like "SQL injection is prevented by using parameterized queries..." The embedding spaces for questions versus declarative statements differ significantly, reducing match quality.
+[lecture] Traditional semantic search has a fundamental mismatch problem. Queries and documents live in different linguistic spaces. [conversational] A query might be "How do I prevent SQL injection?", which is a question format. But your documents contain statements like "SQL injection is prevented by using parameterized queries..." The embedding spaces for questions versus declarative statements differ significantly, reducing match quality.
 
-HyDE bridges this gap brilliantly. It asks an LLM: "What would a good answer to this query look like?" The LLM generates a **hypothetical document** (👉 "hi-puh-THET-ih-kul DOK-yoo-ment")—a plausible answer based on its training. This hypothetical answer might be factually imperfect or even wrong, but that's okay! You're not using it as the final answer.
+[confidently] HyDE bridges this gap brilliantly. It asks an LLM: "What would a good answer to this query look like?" The LLM generates a **hypothetical document** (👉 "hi-puh-THET-ih-kul DOK-yoo-ment")—a plausible answer based on its training. [playfully] This hypothetical answer might be factually imperfect or even wrong, but that's okay! You're not using it as the final answer.
 
 #### The HyDE Process Flow
 
-Let's walk through a concrete example. User asks: "How to secure JWT tokens?" 
-
+[conversational] Let's walk through a concrete example. User asks: "How to secure JWT tokens?" 
 
 The LLM generates a hypothetical answer: "JWT tokens should use HMAC-SHA256 or RS256 algorithms, implement key rotation, validate all claims including expiration..." This hypothetical text is then **embedded**—converted to a vector representation.
 
-Here's the key insight: you search your vector database using the **embedding of the hypothetical answer**, not the original query. Documents in your database that discuss JWT security best practices will have similar embeddings to this hypothetical answer because they're both in "declarative statement" format, not "question" format.
+[enthusiastically] Here's the key insight: you search your vector database using the **embedding of the hypothetical answer**, not the original query. Documents in your database that discuss JWT security best practices will have similar embeddings to this hypothetical answer because they're both in "declarative statement" format, not "question" format.
 
 #### Why This Works Better
 
-The embedding space alignment is superior. Both the hypothetical document and your real documents are statements of fact or instructions, using similar vocabulary and structure. The semantic similarity matching works better because you're comparing apples to apples, not questions to statements.
+[confidently] The embedding space alignment is superior. Both the hypothetical document and your real documents are statements of fact or instructions, using similar vocabulary and structure. The semantic similarity matching works better because you're comparing apples to apples, not questions to statements.
 
 The LLM's prior knowledge helps formulate the hypothetical answer using domain-appropriate terminology. Even if your query uses layman's terms, the hypothetical document uses technical jargon that better matches your documentation.
 
 #### Hybrid Approaches
 
-Many production systems blend HyDE with traditional query search. You might retrieve 10 chunks using HyDE and 5 using direct query embedding, then merge them. This hedges against cases where the hypothetical document leads you astray.
+[thoughtfully] Many production systems blend HyDE with traditional query search. You might retrieve 10 chunks using HyDE and 5 using direct query embedding, then merge them. This hedges against cases where the hypothetical document leads you astray.
 
 #### Architecture Considerations
 
-The hypothetical document generator can be a smaller, faster LLM than your answer generation model. Some systems use GPT-3.5 for hypothesis generation and GPT-4 for final answering. The hypothesis doesn't need to be perfect—it just needs to be in the right semantic neighborhood.
+[conversational] The hypothetical document generator can be a smaller, faster LLM than your answer generation model. Some systems use GPT-3.5 for hypothesis generation and GPT-4 for final answering. The hypothesis doesn't need to be perfect—it just needs to be in the right semantic neighborhood.
 
 A **hypo-doc quality evaluator** is optional but valuable. It can assess whether the generated hypothesis seems on-topic before using it for retrieval, preventing wildly off-base searches when the LLM hallucinates.
 
 #### Best Use Cases
 
-HyDE excels in **cold-start scenarios** where you haven't fine-tuned embeddings on your specific domain. It leverages the LLM's broad training to bridge vocabulary gaps immediately.
+[pleased] HyDE excels in **cold-start scenarios** where you haven't fine-tuned embeddings on your specific domain. It leverages the LLM's broad training to bridge vocabulary gaps immediately.
 
 For **multi-lingual retrieval**, HyDE can generate a hypothetical answer in the document language, even if the query was in another language, improving cross-lingual search.
 
@@ -975,7 +973,7 @@ For **multi-lingual retrieval**, HyDE can generate a hypothetical answer in the 
 
 #### Transition to Next Slide
 
-While HyDE offers elegant solutions to semantic search challenges, it introduces new tradeoffs. Let's examine when this pattern shines and when simpler approaches might be better.`
+[conversational] While HyDE offers elegant solutions to semantic search challenges, it introduces new tradeoffs. Let's examine when this pattern shines and when simpler approaches might be better.`
         },
         {
           id: 13,
@@ -1019,49 +1017,49 @@ While HyDE offers elegant solutions to semantic search challenges, it introduces
             </div>
           ),
           backgroundColor: '#1a2d2e',
-          notes: `### 13. HyDE: Strengths and Limitations
+          notes: `### HyDE: Strengths and Limitations
 
 #### The Power of Zero-Shot Improvement
 
-HyDE's greatest strength is **zero-shot performance gain**. You don't need to fine-tune embeddings, collect training data, or adjust your vector database. Simply add a hypothesis generation step, and retrieval quality often improves immediately, especially for out-of-domain queries.
+[enthusiastically] HyDE's greatest strength is **zero-shot performance gain**. You don't need to fine-tune embeddings, collect training data, or adjust your vector database. [excited] Simply add a hypothesis generation step, and retrieval quality often improves immediately, especially for out-of-domain queries.
 
-The pattern **handles ambiguous or short queries** exceptionally well. A terse query like "JWT security" gets expanded into a rich hypothetical document discussing token signing, algorithm selection, key rotation, claim validation, and more. This expansion provides multiple semantic anchors for matching relevant documents.
+[pleased] The pattern **handles ambiguous or short queries** exceptionally well. A terse query like "JWT security" gets expanded into a rich hypothetical document discussing token signing, algorithm selection, key rotation, claim validation, and more. This expansion provides multiple semantic anchors for matching relevant documents.
 
-**Vocabulary mismatch** is one of RAG's persistent challenges. Users say "cheap cloud storage" while your docs say "cost-effective object storage solutions." HyDE's LLM naturally translates colloquial language into domain terminology when generating the hypothesis, dramatically improving match quality.
+[confidently] **Vocabulary mismatch** is one of RAG's persistent challenges. Users say "cheap cloud storage" while your docs say "cost-effective object storage solutions." HyDE's LLM naturally translates colloquial language into domain terminology when generating the hypothesis, dramatically improving match quality.
 
 The implementation **works with existing infrastructure**. No need to rebuild indexes or deploy new databases. HyDE is a retrieval-time pattern that slots into your current pipeline with minimal changes.
 
 #### Understanding the Limitations
 
-The most critical limitation is **domain mismatch risk**. If your LLM wasn't trained on your specific domain, the hypothetical document might use incorrect terminology or concepts. Imagine asking about a proprietary internal system—the LLM might generate a plausible-sounding but completely wrong hypothesis, leading you to irrelevant documents.
+[cautiously] The most critical limitation is **domain mismatch risk**. If your LLM wasn't trained on your specific domain, the hypothetical document might use incorrect terminology or concepts. [seriously] Imagine asking about a proprietary internal system—the LLM might generate a plausible-sounding but completely wrong hypothesis, leading you to irrelevant documents.
 
-**Additional latency** is unavoidable. You're adding an entire LLM generation step before retrieval even begins. While this might only add 500-1000ms, it's sequential latency that compounds with other processing steps. For interactive applications, every millisecond counts.
+[sighing] **Additional latency** is unavoidable. You're adding an entire LLM generation step before retrieval even begins. While this might only add 500-1000ms, it's sequential latency that compounds with other processing steps. For interactive applications, every millisecond counts.
 
 **Cost implications** are straightforward but significant. Each query now requires generating a hypothetical document (consuming tokens proportional to the hypothesis length) plus your normal retrieval and answer generation costs. At scale, this can double your LLM API expenses.
 
-**Quality dependency** creates brittleness. If your hypothesis generator produces low-quality or off-topic hypotheses, your entire retrieval pipeline suffers. Some queries might confuse the LLM, leading to vague or generic hypotheses that match poorly with your specific documents.
+[anxiously] **Quality dependency** creates brittleness. If your hypothesis generator produces low-quality or off-topic hypotheses, your entire retrieval pipeline suffers. Some queries might confuse the LLM, leading to vague or generic hypotheses that match poorly with your specific documents.
 
-**Bias introduction** is subtle but important. The LLM's training biases influence the hypothetical document. If the LLM has strong priors about what answers "should" look like, it might steer retrieval away from valid but unconventional documents in your corpus.
+[thoughtfully] **Bias introduction** is subtle but important. The LLM's training biases influence the hypothetical document. If the LLM has strong priors about what answers "should" look like, it might steer retrieval away from valid but unconventional documents in your corpus.
 
 #### Hybrid Strategy Recommendations
 
-Many teams start with a **safety-first hybrid**: retrieve using both HyDE and traditional query embedding, then use a reranker to select the best results from the combined pool. This adds complexity but provides fallback if HyDE misfires.
+[confidently] Many teams start with a **safety-first hybrid**: retrieve using both HyDE and traditional query embedding, then use a reranker to select the best results from the combined pool. This adds complexity but provides fallback if HyDE misfires.
 
 Another approach is **selective HyDE**: use simple heuristics to detect when a query would benefit from HyDE (ambiguous, short, colloquial language) versus when direct query search suffices (specific, technical, uses domain terminology).
 
 #### Evaluation is Critical
 
-With HyDE, **rigorous evaluation** becomes non-negotiable. Create test sets with ground-truth query-document pairs and measure retrieval quality with and without HyDE. Monitor for cases where HyDE degrades rather than improves results, and implement fallback logic.
+[firmly] With HyDE, **rigorous evaluation** becomes non-negotiable. Create test sets with ground-truth query-document pairs and measure retrieval quality with and without HyDE. Monitor for cases where HyDE degrades rather than improves results, and implement fallback logic.
 
 #### When to Use HyDE
 
-Choose HyDE for **FAQ systems** where questions are phrased colloquially but documentation is formal. Deploy it in **multi-lingual scenarios** where hypothesis generation in the document language improves matching. Use it for **cold-start applications** where you can't yet fine-tune embeddings on domain data.
+[conversational] Choose HyDE for **FAQ systems** where questions are phrased colloquially but documentation is formal. Deploy it in **multi-lingual scenarios** where hypothesis generation in the document language improves matching. Use it for **cold-start applications** where you can't yet fine-tune embeddings on domain data.
 
-Avoid HyDE for **highly specialized domains** where general-purpose LLMs lack knowledge, or **latency-critical applications** where the extra generation step is unacceptable.
+[cautiously] Avoid HyDE for **highly specialized domains** where general-purpose LLMs lack knowledge, or **latency-critical applications** where the extra generation step is unacceptable.
 
 #### Transition to Parent-Child Retrieval
 
-Next, we'll shift gears to address a different RAG challenge: the tension between precise matching and comprehensive context. Parent-child retrieval offers an elegant solution through hierarchical chunking.`
+[enthusiastically] Next, we'll shift gears to address a different RAG challenge: the tension between precise matching and comprehensive context. Parent-child retrieval offers an elegant solution through hierarchical chunking.`
         }
       ]
     },
@@ -1141,38 +1139,38 @@ Next, we'll shift gears to address a different RAG challenge: the tension betwee
             </div>
           ),
           backgroundColor: '#3e1625',
-          notes: `### 14. RAG with Parent-Child Retrieval
+          notes: `### RAG with Parent-Child Retrieval
 
 #### The Chunking Dilemma
 
-Every RAG system faces a fundamental tension: small chunks enable precise matching but lack context; large chunks provide rich context but dilute match precision. Parent-child retrieval elegantly resolves this dilemma through hierarchical chunking.
+[confidently] Every RAG system faces a fundamental tension: small chunks enable precise matching but lack context; large chunks provide rich context but dilute match precision. [enthusiastically] Parent-child retrieval elegantly resolves this dilemma through hierarchical chunking.
 
 #### How Parent-Child Retrieval Works
 
-Imagine a technical document about Kubernetes networking. In parent-child retrieval, you create two levels of chunks. **Child chunks** might be single paragraphs or small sections—perhaps 100-200 tokens. These are small and semantically focused, perfect for precise matching.
+[conversational] Imagine a technical document about Kubernetes networking. In parent-child retrieval, you create two levels of chunks. **Child chunks** might be single paragraphs or small sections—perhaps 100-200 tokens. These are small and semantically focused, perfect for precise matching.
 
 **Parent chunks** are larger sections containing multiple child chunks—perhaps 800-1200 tokens. They might be entire document sections, multiple related paragraphs, or even whole chapters.
 
-Here's the magic: you **index and search the child chunks**, but you **return the parent chunks** to the LLM. This gives you precision during retrieval and context during generation.
+[enthusiastically] Here's the magic: you **index and search the child chunks**, but you **return the parent chunks** to the LLM. This gives you precision during retrieval and context during generation.
 
 #### Concrete Example
 
-Consider searching "How does Kubernetes service discovery work?" Your child chunks might include:
+[conversational] Consider searching "How does Kubernetes service discovery work?" Your child chunks might include:
 - Child 1: "Service discovery in Kubernetes uses DNS..."
 - Child 2: "The kube-dns component provides..."
 - Child 3: "Services expose endpoints through..."
 
-Child 2 matches best. But instead of returning just that paragraph, you return its parent: a 1000-token section covering DNS, kube-dns, CoreDNS, service endpoints, and DNS caching. The LLM gets precise relevant content plus surrounding context for coherent answers.
+Child 2 matches best. [pleased] But instead of returning just that paragraph, you return its parent: a 1000-token section covering DNS, kube-dns, CoreDNS, service endpoints, and DNS caching. The LLM gets precise relevant content plus surrounding context for coherent answers.
 
 #### Sibling and Window Strategies
 
-Some implementations also retrieve **sibling chunks**—other children of the same parent. If Child 2 matched, you might also grab Child 1 and Child 3, even if they didn't match directly, because they're part of the same conceptual unit.
+[thoughtfully] Some implementations also retrieve **sibling chunks**—other children of the same parent. If Child 2 matched, you might also grab Child 1 and Child 3, even if they didn't match directly, because they're part of the same conceptual unit.
 
 **Sliding windows** provide overlapping context. Parent chunks might overlap by 20-30%, ensuring that information at chunk boundaries isn't lost. This is especially important for documents where key information spans section boundaries.
 
 #### Hierarchical Processing Pipeline
 
-The **ingestion pipeline** becomes more sophisticated. You need to:
+[lecture] The **ingestion pipeline** becomes more sophisticated. You need to:
 1. Parse document structure (sections, subsections)
 2. Create parent chunks respecting natural boundaries
 3. Split parents into child chunks
@@ -1184,27 +1182,27 @@ This adds complexity but pays dividends in retrieval quality.
 
 #### Document Structure Metadata
 
-Including **structural metadata** enhances answer quality. Tags like "section: networking", "subsection: service discovery", "document: kubernetes-guide" help the LLM understand where information fits in the broader document context.
+[confidently] Including **structural metadata** enhances answer quality. Tags like "section: networking", "subsection: service discovery", "document: kubernetes-guide" help the LLM understand where information fits in the broader document context.
 
 #### Technical Documentation Sweet Spot
 
-This pattern **excels for technical documentation** because these documents have clear hierarchical structure (chapters, sections, subsections) and benefit from context. A code example makes more sense when you see the explanation before and after it.
+[enthusiastically] This pattern **excels for technical documentation** because these documents have clear hierarchical structure (chapters, sections, subsections) and benefit from context. A code example makes more sense when you see the explanation before and after it.
 
-**Legal documents** with nested clauses, **academic papers** with introduction-method-results structure, and **API documentation** with endpoint groupings all benefit enormously from parent-child retrieval.
+[pleased] **Legal documents** with nested clauses, **academic papers** with introduction-method-results structure, and **API documentation** with endpoint groupings all benefit enormously from parent-child retrieval.
 
 #### Implementation Considerations
 
-**Parent size tuning** is critical. Too small and you don't get enough context benefit; too large and you waste tokens on irrelevant information. Typical parent sizes range from 500-1500 tokens depending on document characteristics.
+[seriously] **Parent size tuning** is critical. Too small and you don't get enough context benefit; too large and you waste tokens on irrelevant information. Typical parent sizes range from 500-1500 tokens depending on document characteristics.
 
 Some systems use **multi-level hierarchies**: grandparent to parent to child. This provides even more flexibility but increases complexity.
 
 #### Storage Implications
 
-You're essentially storing documents twice: once as embedded child chunks and again as parent content. For large corpora, this can significantly increase storage requirements. Plan accordingly.
+[cautiously] You're essentially storing documents twice: once as embedded child chunks and again as parent content. For large corpora, this can significantly increase storage requirements. Plan accordingly.
 
 #### Transition to Next Slide
 
-Parent-child retrieval offers compelling benefits for structured content, but it's not free. Let's examine the tradeoffs to understand when this added complexity delivers enough value to justify the implementation effort.`
+[conversational] Parent-child retrieval offers compelling benefits for structured content, but it's not free. Let's examine the tradeoffs to understand when this added complexity delivers enough value to justify the implementation effort.`
         },
         {
           id: 15,
@@ -1248,41 +1246,41 @@ Parent-child retrieval offers compelling benefits for structured content, but it
             </div>
           ),
           backgroundColor: '#3e1625',
-          notes: `### 15. Parent-Child Retrieval: Strengths and Limitations
+          notes: `### Parent-Child Retrieval: Strengths and Limitations
 
 #### The Power of Hierarchical Context
 
-Parent-child retrieval delivers **remarkable answer quality improvements** in practice. By providing the LLM with broader context around precisely matched content, you dramatically reduce hallucinations and improve coherence. The LLM can see how concepts relate and flow naturally from surrounding content.
+[enthusiastically] Parent-child retrieval delivers **remarkable answer quality improvements** in practice. By providing the LLM with broader context around precisely matched content, you dramatically reduce hallucinations and improve coherence. The LLM can see how concepts relate and flow naturally from surrounding content.
 
-**Structured document preservation** is often overlooked but crucial. When you maintain parent-child relationships, you preserve the original document structure that authors carefully crafted. Section headings, introductory paragraphs, and transitional content that provide context aren't lost to chunking.
+[pleased] **Structured document preservation** is often overlooked but crucial. When you maintain parent-child relationships, you preserve the original document structure that authors carefully crafted. Section headings, introductory paragraphs, and transitional content that provide context aren't lost to chunking.
 
-For **nested and complex documents**, this pattern is almost essential. Think of API documentation where an endpoint description includes prerequisites, parameters, request examples, response schemas, and error codes. Returning just the matched paragraph about parameters without seeing the full endpoint context produces incomplete answers.
+[confidently] For **nested and complex documents**, this pattern is almost essential. Think of API documentation where an endpoint description includes prerequisites, parameters, request examples, response schemas, and error codes. Returning just the matched paragraph about parameters without seeing the full endpoint context produces incomplete answers.
 
 The **precision-recall balance** is superior to fixed chunking. Small child chunks ensure you match precisely what the query asks for, while parent chunks ensure you don't lose critical context that makes the match meaningful.
 
 #### Understanding the Costs
 
-**Implementation complexity** is the first barrier. Your ingestion pipeline needs to understand document structure, create hierarchies, maintain bidirectional references, and handle edge cases like documents without clear structure. This is significantly more complex than naive chunking.
+[cautiously] **Implementation complexity** is the first barrier. Your ingestion pipeline needs to understand document structure, create hierarchies, maintain bidirectional references, and handle edge cases like documents without clear structure. This is significantly more complex than naive chunking.
 
-**Token consumption increases** because parent chunks are larger than typical fixed chunks. If you were retrieving 5 chunks of 200 tokens (1000 tokens total), you might now retrieve 3 parents of 800 tokens (2400 tokens total). At scale, this impacts both cost and latency.
+[sighing] **Token consumption increases** because parent chunks are larger than typical fixed chunks. If you were retrieving 5 chunks of 200 tokens (1000 tokens total), you might now retrieve 3 parents of 800 tokens (2400 tokens total). At scale, this impacts both cost and latency.
 
-**Storage doubles** or more. You're storing embedded child chunks plus full parent content. For a 100GB document corpus, you might need 200-250GB after implementing parent-child retrieval. Budget for this in your infrastructure planning.
+**Storage doubles** or more. You're storing embedded child chunks plus full parent content. For a 100GB document corpus, you might need 200-250GB after implementing parent-child retrieval. [firmly] Budget for this in your infrastructure planning.
 
-**Context dilution risk** emerges when parent chunks are too large. Including a 2000-token parent might provide useful context, but it might also include tangential information that confuses the LLM or competes for attention with the relevant content.
+[anxiously] **Context dilution risk** emerges when parent chunks are too large. Including a 2000-token parent might provide useful context, but it might also include tangential information that confuses the LLM or competes for attention with the relevant content.
 
 **Tuning parent size** is non-trivial and document-type dependent. Legal documents might need 1500-token parents; code documentation might work best with 500-token parents. There's no universal setting, requiring experimentation and evaluation per domain.
 
 #### When Parent-Child Shines
 
-This pattern **excels for documentation** where structure matters and context improves comprehension. Technical manuals, developer documentation, knowledge bases with well-structured content—all benefit enormously.
+[confidently] This pattern **excels for documentation** where structure matters and context improves comprehension. Technical manuals, developer documentation, knowledge bases with well-structured content—all benefit enormously.
 
 **Long-form content** like academic papers, research reports, and books work well because the hierarchical structure (chapters, sections, subsections) naturally maps to parent-child relationships.
 
-Avoid parent-child for **unstructured content** like chat logs, emails, or social media where there's no clear hierarchy. Also avoid it for **short documents** where parent chunks would encompass entire documents, eliminating the precision benefit.
+[cautiously] Avoid parent-child for **unstructured content** like chat logs, emails, or social media where there's no clear hierarchy. Also avoid it for **short documents** where parent chunks would encompass entire documents, eliminating the precision benefit.
 
 #### Optimization Strategies
 
-Consider **adaptive parent sizing**: dynamically determine parent size based on document structure rather than fixed token counts. A parent could be "the current section" regardless of length, with maximum caps.
+[thoughtfully] Consider **adaptive parent sizing**: dynamically determine parent size based on document structure rather than fixed token counts. A parent could be "the current section" regardless of length, with maximum caps.
 
 Implement **partial parent retrieval**: analyze which portions of the parent are most relevant and trim less relevant parts before sending to the LLM, balancing context with efficiency.
 
@@ -1290,7 +1288,7 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
 
 #### Transition to Graph-Based Retrieval
 
-Where parent-child retrieval preserves hierarchical document structure, graph-based retrieval takes a fundamentally different approach: representing knowledge as entities and relationships. This enables multi-hop reasoning and relationship-centric retrieval that hierarchical structures can't provide.`
+[enthusiastically] Where parent-child retrieval preserves hierarchical document structure, graph-based retrieval takes a fundamentally different approach: representing knowledge as entities and relationships. This enables multi-hop reasoning and relationship-centric retrieval that hierarchical structures can't provide.`
         }
       ]
     },
@@ -1393,15 +1391,15 @@ Where parent-child retrieval preserves hierarchical document structure, graph-ba
             </div>
           ),
           backgroundColor: '#58600f',
-          notes: `### 16. RAG with Graph-Based Retrieval (GraphRAG)
+          notes: `### RAG with Graph-Based Retrieval (GraphRAG)
 
 #### The Relationship Revolution
 
-GraphRAG, or Graph-Based RAG, represents a paradigm shift from document-centric to **relationship-centric** knowledge retrieval. Instead of treating documents as isolated text chunks, we model information as entities connected by explicit relationships in a knowledge graph.
+[enthusiastically] GraphRAG, or Graph-Based RAG, represents a paradigm shift from document-centric to **relationship-centric** knowledge retrieval. [confidently] Instead of treating documents as isolated text chunks, we model information as entities connected by explicit relationships in a knowledge graph.
 
 #### What is a Knowledge Graph?
 
-A **knowledge graph** (👉 "NOL-ij graf") is a structured representation where entities (people, companies, products, concepts) are nodes, and relationships (founded_by, works_for, located_in) are edges. Think of LinkedIn's professional network or Google's Knowledge Graph showing facts about entities in search results.
+[lecture] A **knowledge graph** (👉 "NOL-ij graf") is a structured representation where entities (people, companies, products, concepts) are nodes, and relationships (founded_by, works_for, located_in) are edges. [conversational] Think of LinkedIn's professional network or Google's Knowledge Graph showing facts about entities in search results.
 
 For example, instead of storing "Microsoft was founded by Bill Gates in 1975" as text, a knowledge graph stores:
 - Node: Microsoft (Company)
@@ -1410,23 +1408,22 @@ For example, instead of storing "Microsoft was founded by Bill Gates in 1975" as
 
 #### The GraphRAG Architecture
 
-
-When a query arrives, GraphRAG first **extracts entities** mentioned—perhaps "Company X". It then queries the knowledge graph using languages like **Cypher** (👉 "SY-fer") for Neo4j or SPARQL for RDF graphs. These queries can traverse relationships: "Find all nodes connected to Company X by FUNDED_BY relationships."
+[confidently] When a query arrives, GraphRAG first **extracts entities** mentioned—perhaps "Company X". It then queries the knowledge graph using languages like **Cypher** (👉 "SY-fer") for Neo4j or SPARQL for RDF graphs. These queries can traverse relationships: "Find all nodes connected to Company X by FUNDED_BY relationships."
 
 The retrieved entities and relationships are then used to enhance or guide vector search, creating a **hybrid retrieval** strategy that leverages both structured knowledge and semantic similarity.
 
 #### Multi-Hop Reasoning
 
-One of GraphRAG's superpowers is **multi-hop traversal** (👉 "MUL-tee hop truh-VER-sul"). Questions like "Who are the investors in companies that employ former Google engineers?" require reasoning across multiple relationship steps:
+[enthusiastically] One of GraphRAG's superpowers is **multi-hop traversal** (👉 "MUL-tee hop truh-VER-sul"). Questions like "Who are the investors in companies that employ former Google engineers?" require reasoning across multiple relationship steps:
 1. Find Person nodes with WORKED_AT at Google
 2. Find Company nodes with EMPLOYS those persons  
 3. Find Person/Entity nodes with INVESTED_IN those companies
 
-Traditional vector search struggles with this compositional reasoning; graphs handle it naturally.
+[conversational] Traditional vector search struggles with this compositional reasoning; graphs handle it naturally.
 
 #### Entity Extraction Pipeline
 
-Building GraphRAG requires sophisticated **entity and relationship extraction**. Modern approaches use:
+[seriously] Building GraphRAG requires sophisticated **entity and relationship extraction**. Modern approaches use:
 - Named Entity Recognition (NER) models to identify entities
 - Relation Extraction models to detect relationships
 - Entity linking to disambiguate (which "Apple"—fruit or company?)
@@ -1436,31 +1433,31 @@ This ingestion complexity is significant but pays dividends at query time.
 
 #### Community Detection
 
-Advanced GraphRAG implementations use **community detection** (👉 "kuh-MYOO-nih-tee dee-TEK-shun") algorithms to identify clusters of densely connected entities. Microsoft's GraphRAG paper emphasizes generating summaries of these communities, providing "global" context about topic areas alongside "local" context from specific retrieved chunks.
+[thoughtfully] Advanced GraphRAG implementations use **community detection** (👉 "kuh-MYOO-nih-tee dee-TEK-shun") algorithms to identify clusters of densely connected entities. Microsoft's GraphRAG paper emphasizes generating summaries of these communities, providing "global" context about topic areas alongside "local" context from specific retrieved chunks.
 
 #### Text2Cypher: Natural Language to Graph Queries
 
-**Text2Cypher** systems use LLMs to convert natural language queries into Cypher database queries. "Who funded Microsoft?" becomes a MATCH query selecting companies with FUNDED_BY relationships. This enables non-technical users to query complex graph structures.
+[confidently] **Text2Cypher** systems use LLMs to convert natural language queries into Cypher database queries. "Who funded Microsoft?" becomes a MATCH query selecting companies with FUNDED_BY relationships. This enables non-technical users to query complex graph structures.
 
-However, Text2Cypher reliability remains challenging. Graph schemas can be complex, and LLMs sometimes generate syntactically valid but semantically wrong queries.
+[cautiously] However, Text2Cypher reliability remains challenging. Graph schemas can be complex, and LLMs sometimes generate syntactically valid but semantically wrong queries.
 
 #### Context Packing with Graph Structure
 
-When packing context, GraphRAG includes **relationship paths** explicitly: "Microsoft -[FOUNDED_BY]-> Bill Gates -[INVESTED_IN]-> OpenAI". This structured format helps LLMs understand the knowledge provenance and relationship types.
+[lecture] When packing context, GraphRAG includes **relationship paths** explicitly: "Microsoft -[FOUNDED_BY]-> Bill Gates -[INVESTED_IN]-> OpenAI". This structured format helps LLMs understand the knowledge provenance and relationship types.
 
 **Ontology context**—explaining what relationship types mean—helps the LLM interpret graph data correctly. Include schema information like "FUNDED_BY means a Person or Entity provided capital investment."
 
 #### Best Use Cases
 
-GraphRAG excels in domains with rich, explicit relationships. **Compliance and regulatory** applications tracking policy changes and their impact. **Healthcare** connecting diseases, treatments, genes, and clinical trials. **Financial analysis** mapping ownership, investments, and business relationships.
+[pleased] GraphRAG excels in domains with rich, explicit relationships. **Compliance and regulatory** applications tracking policy changes and their impact. **Healthcare** connecting diseases, treatments, genes, and clinical trials. **Financial analysis** mapping ownership, investments, and business relationships.
 
 **Legal reasoning** benefits from tracking case citations, precedents, and statutory relationships. **Research analysis** connecting papers, authors, institutions, and concepts.
 
-Avoid GraphRAG for unstructured content without clear entities/relationships, or when implementation complexity outweighs benefits.
+[cautiously] Avoid GraphRAG for unstructured content without clear entities/relationships, or when implementation complexity outweighs benefits.
 
 #### Transition to Strengths and Limitations
 
-Graph-based retrieval offers powerful capabilities but demands significant engineering investment. Let's examine when this complexity delivers sufficient value to justify the operational overhead.`
+[conversational] Graph-based retrieval offers powerful capabilities but demands significant engineering investment. Let's examine when this complexity delivers sufficient value to justify the operational overhead.`
         },
         {
           id: 17,
@@ -1508,38 +1505,38 @@ Graph-based retrieval offers powerful capabilities but demands significant engin
             </div>
           ),
           backgroundColor: '#58600f',
-          notes: `### 17. GraphRAG: Strengths and Limitations
+          notes: `### GraphRAG: Strengths and Limitations
 
 #### The Power of Explicit Relationships
 
-GraphRAG's fundamental advantage is **explicit relationship modeling**. Where vector similarity says "these documents are semantically similar," graphs say "Company A ACQUIRED Company B on 2023-05-15 for $50M." This explicit structure enables reasoning that semantic search simply cannot provide.
+[confidently] GraphRAG's fundamental advantage is **explicit relationship modeling**. [conversational] Where vector similarity says "these documents are semantically similar," graphs say "Company A ACQUIRED Company B on 2023-05-15 for $50M." This explicit structure enables reasoning that semantic search simply cannot provide.
 
-**Multi-hop reasoning** unlocks compositional questions. "What drugs treat diseases connected to genes affected by this mutation?" requires traversing: Mutation to Gene to Disease to Treatment. Each hop filters and focuses the search, building a logical chain of evidence.
+[enthusiastically] **Multi-hop reasoning** unlocks compositional questions. "What drugs treat diseases connected to genes affected by this mutation?" requires traversing: Mutation to Gene to Disease to Treatment. Each hop filters and focuses the search, building a logical chain of evidence.
 
-**Explainability** reaches new levels. You can show users the exact path through the knowledge graph that led to an answer: "We found this because Entity A is connected to Entity B via relationship C, which links to Entity D through relationship E." This transparency builds trust, especially in high-stakes domains like healthcare or finance.
+[pleased] **Explainability** reaches new levels. You can show users the exact path through the knowledge graph that led to an answer: "We found this because Entity A is connected to Entity B via relationship C, which links to Entity D through relationship E." This transparency builds trust, especially in high-stakes domains like healthcare or finance.
 
-**Global context accessibility** through community summarization (as in Microsoft's GraphRAG) provides high-level topical overviews alongside specific facts. The system can answer both "tell me about AI ethics" (community summary) and "what ethical concerns did Paper X raise?" (specific retrieval).
+**Global context accessibility** through community summarization (as in Microsoft's GraphRAG) provides high-level topical overviews alongside specific facts. [conversational] The system can answer both "tell me about AI ethics" (community summary) and "what ethical concerns did Paper X raise?" (specific retrieval).
 
 **Entity-centric integration** naturally connects information across documents. All facts about "TensorFlow" aggregate regardless of which document mentioned it, providing comprehensive entity profiles impossible with isolated chunk retrieval.
 
 #### Understanding the Heavy Costs
 
-**Ingestion complexity** is GraphRAG's biggest barrier. You need:
+[sighing] **Ingestion complexity** is GraphRAG's biggest barrier. You need:
 - Entity extraction (NER models, linking, disambiguation)
 - Relationship extraction (relation classifiers)
 - Graph schema design (ontology engineering)
 - Quality assurance (manual review cycles)
 - Continuous updates as new information arrives
 
-This can take months of ML engineering effort before you retrieve your first result.
+[frustrated] This can take months of ML engineering effort before you retrieve your first result.
 
-**Ontology and schema design** requires domain expertise. What entities matter? What relationships exist? How should they be typed? A poorly designed schema leads to brittle queries and limited expressiveness. Yet over-engineering creates unwieldy complexity.
+[cautiously] **Ontology and schema design** requires domain expertise. What entities matter? What relationships exist? How should they be typed? A poorly designed schema leads to brittle queries and limited expressiveness. Yet over-engineering creates unwieldy complexity.
 
-**Entity extraction quality** becomes a hard dependency. If your NER model misses "Apple" as a company or conflates "Apple Inc." with "Apple Records," your entire graph suffers. Garbage in, garbage out—at a structural level.
+[anxiously] **Entity extraction quality** becomes a hard dependency. If your NER model misses "Apple" as a company or conflates "Apple Inc." with "Apple Records," your entire graph suffers. [firmly] Garbage in, garbage out—at a structural level.
 
 **Computational overhead** for graph traversals can be significant. A poorly optimized multi-hop query across millions of nodes can timeout. Graph databases require careful indexing, query optimization, and often more powerful hardware than vector databases.
 
-**Text2Cypher reliability** remains an active research problem. While impressive, LLM-generated queries sometimes:
+[disappointed] **Text2Cypher reliability** remains an active research problem. While impressive, LLM-generated queries sometimes:
 - Use non-existent relationship types
 - Create infinite loops in traversals
 - Misinterpret query intent
@@ -1547,27 +1544,27 @@ This can take months of ML engineering effort before you retrieve your first res
 
 Manual query templates work reliably but limit flexibility to predefined patterns.
 
-**Operational expertise** demands graph database knowledge (Neo4j, Neptune, TigerGraph), Cypher/SPARQL query languages, graph algorithms, and ML pipelines for entity extraction. This is a substantial team capability requirement.
+[seriously] **Operational expertise** demands graph database knowledge (Neo4j, Neptune, TigerGraph), Cypher/SPARQL query languages, graph algorithms, and ML pipelines for entity extraction. This is a substantial team capability requirement.
 
 #### When GraphRAG is Worth It
 
-Deploy GraphRAG when **relationship-based reasoning is core** to your use case. Financial fraud detection (tracking money flows), drug discovery (connecting biological entities), compliance tracking (policy impact chains), and legal reasoning (case precedents) all require explicit relationship modeling.
+[confidently] Deploy GraphRAG when **relationship-based reasoning is core** to your use case. Financial fraud detection (tracking money flows), drug discovery (connecting biological entities), compliance tracking (policy impact chains), and legal reasoning (case precedents) all require explicit relationship modeling.
 
-Avoid GraphRAG for **simple FAQ or documentation** search where semantic similarity suffices. The complexity overhead isn't justified. Also avoid when your domain lacks clear entities and relationships—not all knowledge naturally fits graph structure.
+[cautiously] Avoid GraphRAG for **simple FAQ or documentation** search where semantic similarity suffices. The complexity overhead isn't justified. Also avoid when your domain lacks clear entities and relationships—not all knowledge naturally fits graph structure.
 
 #### Hybrid Approaches: The Practical Middle Ground
 
-Many production systems use **graph + vector hybrid**: maintain both a knowledge graph for structured queries and a vector database for semantic search. Route queries intelligently: entity-relationship questions go to the graph; open-ended semantic queries go to vectors.
+[thoughtfully] Many production systems use **graph + vector hybrid**: maintain both a knowledge graph for structured queries and a vector database for semantic search. Route queries intelligently: entity-relationship questions go to the graph; open-ended semantic queries go to vectors.
 
 Some teams start with vector-only RAG, then incrementally add graph capabilities for specific query types, gradually building the graph infrastructure as value is proven.
 
 #### The Future of GraphRAG
 
-Tools like Microsoft's GraphRAG framework, Neo4j's LangChain integrations, and emerging libraries are reducing implementation complexity. As entity extraction and Text2Cypher mature, expect GraphRAG to become more accessible.
+[warmly] Tools like Microsoft's GraphRAG framework, Neo4j's LangChain integrations, and emerging libraries are reducing implementation complexity. As entity extraction and Text2Cypher mature, expect GraphRAG to become more accessible.
 
 #### Transition to External Tools and Agents
 
-While GraphRAG extends retrieval with structured knowledge, our next pattern—External Tools and Agents—takes a fundamentally different approach: instead of pre-indexing knowledge, it retrieves information dynamically from live systems and external APIs at query time.`
+[enthusiastically] While GraphRAG extends retrieval with structured knowledge, our next pattern—External Tools and Agents—takes a fundamentally different approach: instead of pre-indexing knowledge, it retrieves information dynamically from live systems and external APIs at query time.`
         }
       ]
     },
@@ -1666,19 +1663,19 @@ While GraphRAG extends retrieval with structured knowledge, our next pattern—E
             </div>
           ),
           backgroundColor: '#2e1e1a',
-          notes: `### 18. RAG with External Tools and Agents
+          notes: `### RAG with External Tools and Agents
 
 #### Breaking Free from Static Knowledge
 
-Traditional RAG is fundamentally limited to pre-indexed, static knowledge. What happens when you need live data—current stock prices, real-time metrics, database queries, API calls, or computational results? **Tool-augmented RAG** with agents bridges this gap.
+[enthusiastically] Traditional RAG is fundamentally limited to pre-indexed, static knowledge. [conversational] What happens when you need live data—current stock prices, real-time metrics, database queries, API calls, or computational results? [confidently] **Tool-augmented RAG** with agents bridges this gap.
 
 #### What are AI Agents with Tools?
 
-An **AI agent** (👉 "A-I AY-jent") is an LLM-powered system that can autonomously plan actions, select and use tools, and iteratively work toward solving a task. Think of it as giving your RAG system hands—it can query databases, call APIs, execute code, search the web, and more.
+[lecture] An **AI agent** (👉 "A-I AY-jent") is an LLM-powered system that can autonomously plan actions, select and use tools, and iteratively work toward solving a task. [playfully] Think of it as giving your RAG system hands—it can query databases, call APIs, execute code, search the web, and more.
 
 #### Agent Frameworks: ReAct and Plan-Execute
 
-**ReAct** (Reason + Act) is a popular pattern where the agent alternates between reasoning about what to do next and taking actions. For example:
+[confidently] **ReAct** (Reason + Act) is a popular pattern where the agent alternates between reasoning about what to do next and taking actions. For example:
 1. Thought: "I need current revenue data to answer this"
 2. Action: Execute SQL query on revenue database
 3. Observation: Revenue = $2.5M in Q3
@@ -1690,10 +1687,9 @@ An **AI agent** (👉 "A-I AY-jent") is an LLM-powered system that can autonomou
 
 **Plan-Execute** separates planning from execution: first, create a multi-step plan, then execute each step sequentially, adapting the plan if needed.
 
-
 #### The Tool Ecosystem
 
-Agents can use diverse tools:
+[enthusiastically] Agents can use diverse tools:
 - **SQL/Database tools**: Query structured data sources
 - **API tools**: Call REST APIs for real-time information
 - **Search tools**: Web search, documentation search
@@ -1705,7 +1701,7 @@ Each tool has a description the agent uses to decide when to invoke it. Tool sel
 
 #### Working Memory and State Management
 
-Unlike stateless RAG, agents maintain **working memory** (👉 "WERK-ing MEM-or-ee")—a scratchpad tracking:
+[lecture] Unlike stateless RAG, agents maintain **working memory** (👉 "WERK-ing MEM-or-ee")—a scratchpad tracking:
 - Tools used so far
 - Results from each tool invocation
 - Current reasoning state
@@ -1715,7 +1711,7 @@ This state enables multi-step workflows where later steps build on earlier resul
 
 #### Verification and Guardrails
 
-With great power comes great responsibility. Agents can make mistakes—executing wrong SQL queries, misinterpreting API responses, or entering infinite loops. Production systems need:
+[seriously] With great power comes great responsibility. [anxiously] Agents can make mistakes—executing wrong SQL queries, misinterpreting API responses, or entering infinite loops. [firmly] Production systems need:
 - **Guardrails**: Preventing dangerous operations (DELETE without WHERE clauses)
 - **Verification modules**: Checking tool output sanity
 - **Timeout mechanisms**: Preventing runaway executions
@@ -1724,13 +1720,13 @@ With great power comes great responsibility. Agents can make mistakes—executin
 
 #### Context Packing with Tool Traces
 
-The final context includes **scratchpad traces**—showing the agent's reasoning steps and tool executions. This provides transparency but consumes significant tokens. Smart systems summarize tool outputs rather than including raw results.
+[thoughtfully] The final context includes **scratchpad traces**—showing the agent's reasoning steps and tool executions. This provides transparency but consumes significant tokens. Smart systems summarize tool outputs rather than including raw results.
 
-For example, instead of including 1000 rows from a SQL query, summarize: "Query returned 1,000 revenue transactions totaling $2.5M across 50 customers."
+[conversational] For example, instead of including 1000 rows from a SQL query, summarize: "Query returned 1,000 revenue transactions totaling $2.5M across 50 customers."
 
 #### Tool Integration Complexity
 
-Each tool requires an integration:
+[lecture] Each tool requires an integration:
 - Tool description for agent selection
 - Input/output schema definition
 - Error handling and retry logic
@@ -1741,7 +1737,7 @@ Maintaining this toolset is ongoing work as APIs evolve and new tools are added.
 
 #### Best Use Cases
 
-**Business intelligence assistants** excel with tool-augmented RAG—"What were sales in the midwest region last quarter?" requires database queries, not just document retrieval.
+[pleased] **Business intelligence assistants** excel with tool-augmented RAG—"What were sales in the midwest region last quarter?" requires database queries, not just document retrieval.
 
 **Operations and SRE copilots** can check logs, query metrics systems, restart services, and retrieve runbook documentation—combining live system access with static knowledge.
 
@@ -1749,7 +1745,7 @@ Maintaining this toolset is ongoing work as APIs evolve and new tools are added.
 
 #### Transition to Limitations
 
-Tool-augmented RAG unlocks powerful capabilities but introduces new complexity dimensions. Let's examine when this sophistication is warranted versus when simpler approaches suffice.`
+[conversational] Tool-augmented RAG unlocks powerful capabilities but introduces new complexity dimensions. Let's examine when this sophistication is warranted versus when simpler approaches suffice.`
         },
         {
           id: 19,
@@ -1794,38 +1790,38 @@ Tool-augmented RAG unlocks powerful capabilities but introduces new complexity d
             </div>
           ),
           backgroundColor: '#2e1e1a',
-          notes: `### 19. External Tools/Agents: Strengths and Limitations
+          notes: `### External Tools/Agents: Strengths and Limitations
 
 #### The Power of Dynamic Information Access
 
-Tool-augmented RAG with agents delivers **unmatched flexibility** for handling diverse, complex tasks. Unlike pure RAG locked into static documents, agents can adapt to virtually any information need by selecting and orchestrating appropriate tools dynamically.
+[enthusiastically] Tool-augmented RAG with agents delivers **unmatched flexibility** for handling diverse, complex tasks. Unlike pure RAG locked into static documents, agents can adapt to virtually any information need by selecting and orchestrating appropriate tools dynamically.
 
-**Multi-step task handling** becomes natural. A query like "Compare our Q3 sales to competitors and explain any discrepancies" requires: querying internal databases, searching competitor reports, performing calculations, and synthesizing insights. Agents decompose this automatically.
+[confidently] **Multi-step task handling** becomes natural. A query like "Compare our Q3 sales to competitors and explain any discrepancies" requires: querying internal databases, searching competitor reports, performing calculations, and synthesizing insights. Agents decompose this automatically.
 
-**Live data access** transforms RAG from a historical knowledge system to a real-time intelligence platform. Stock prices, server metrics, customer counts, API status—information that changes minute-by-minute becomes accessible alongside static documentation.
+[pleased] **Live data access** transforms RAG from a historical knowledge system to a real-time intelligence platform. Stock prices, server metrics, customer counts, API status—information that changes minute-by-minute becomes accessible alongside static documentation.
 
-**Autonomous problem-solving** means agents can recover from failures and adapt. If one API times out, try an alternative. If data is missing, search for proxy information. This resilience is impossible with rigid retrieval pipelines.
+**Autonomous problem-solving** means agents can recover from failures and adapt. [conversational] If one API times out, try an alternative. If data is missing, search for proxy information. This resilience is impossible with rigid retrieval pipelines.
 
 **Adaptability to changing requirements** is crucial in production. Need a new data source? Add a tool and its description—the agent automatically incorporates it into its decision-making without rewriting retrieval logic.
 
 #### The Considerable Costs and Risks
 
-**Latency multiplies dramatically**. Each tool invocation adds round-trip time: LLM reasoning (500ms), tool execution (200-2000ms depending on the tool), result processing (300ms). With 3-5 tool calls common in complex queries, total latency can reach 10-30 seconds—unacceptable for interactive applications.
+[sighing] **Latency multiplies dramatically**. Each tool invocation adds round-trip time: LLM reasoning (500ms), tool execution (200-2000ms depending on the tool), result processing (300ms). [frustrated] With 3-5 tool calls common in complex queries, total latency can reach 10-30 seconds—unacceptable for interactive applications.
 
-**Cost per interaction skyrockets**. You're paying for:
+[anxiously] **Cost per interaction skyrockets**. You're paying for:
 - Planning LLM calls
 - Tool selection reasoning
 - Per-tool execution costs (API charges, compute)
 - Result synthesis
 - Final answer generation
 
-A single complex query might consume 10-20× the tokens of basic RAG.
+[gasping] A single complex query might consume 10-20× the tokens of basic RAG.
 
-**Monitoring and debugging complexity** increases exponentially. When something goes wrong, you must trace through: which tools were selected, in what order, with what parameters, what each returned, how the agent reasoned about results. Standard logging isn't sufficient—you need specialized agent observability tools.
+[disappointed] **Monitoring and debugging complexity** increases exponentially. When something goes wrong, you must trace through: which tools were selected, in what order, with what parameters, what each returned, how the agent reasoned about results. [firmly] Standard logging isn't sufficient—you need specialized agent observability tools.
 
-**Error propagation** is insidious. A SQL query with a subtle bug returns plausible but wrong data. The agent uses this to make decisions. Downstream tools execute based on faulty information. The final answer is confidently wrong with no obvious error signal.
+[anxiously] **Error propagation** is insidious. A SQL query with a subtle bug returns plausible but wrong data. The agent uses this to make decisions. Downstream tools execute based on faulty information. The final answer is confidently wrong with no obvious error signal.
 
-**Guardrail requirements** are non-negotiable but challenging to implement correctly. You need to prevent:
+[seriously] **Guardrail requirements** are non-negotiable but challenging to implement correctly. You need to prevent:
 - SQL injection in generated queries
 - Destructive operations (DELETE, DROP)
 - Unauthorized data access
@@ -1834,31 +1830,31 @@ A single complex query might consume 10-20× the tokens of basic RAG.
 
 Each requires careful design and testing.
 
-**Tool integration maintenance** becomes a perpetual burden. APIs change, databases evolve, authentication methods update. Each tool in your ecosystem requires ongoing maintenance, version compatibility testing, and error handling updates.
+[sighing] **Tool integration maintenance** becomes a perpetual burden. APIs change, databases evolve, authentication methods update. Each tool in your ecosystem requires ongoing maintenance, version compatibility testing, and error handling updates.
 
 #### When Tool-Augmented RAG Shines
 
-Deploy agents when **task complexity and information needs exceed what static retrieval can provide**. Business intelligence, operations automation, and research analysis are prime candidates where the flexibility justifies the complexity.
+[confidently] Deploy agents when **task complexity and information needs exceed what static retrieval can provide**. Business intelligence, operations automation, and research analysis are prime candidates where the flexibility justifies the complexity.
 
 Use agents when **combining multiple information sources** is core to answering questions. If queries routinely require joining data from databases, APIs, document stores, and computational tools, agents provide elegant orchestration.
 
 #### When to Avoid Agents
 
-Skip agents for **high-frequency, latency-sensitive applications**. Real-time chatbots, autocomplete systems, or anything requiring sub-second response times won't tolerate agent overhead.
+[cautiously] Skip agents for **high-frequency, latency-sensitive applications**. Real-time chatbots, autocomplete systems, or anything requiring sub-second response times won't tolerate agent overhead.
 
 Avoid agents for **simple lookup tasks**. If 90% of queries can be answered by retrieving documents, adding agent complexity is over-engineering. Start simple, add agents only when proven necessary.
 
-Don't use agents without **proper observability infrastructure**. Flying blind with agents leads to production disasters. Invest in logging, tracing, and monitoring before deploying agent-based systems.
+[firmly] Don't use agents without **proper observability infrastructure**. Flying blind with agents leads to production disasters. Invest in logging, tracing, and monitoring before deploying agent-based systems.
 
 #### Hybrid Strategies
 
-Many production systems use **selective agent activation**: classify incoming queries and route simple ones to standard RAG, complex ones to agents. This optimizes the latency/capability tradeoff.
+[thoughtfully] Many production systems use **selective agent activation**: classify incoming queries and route simple ones to standard RAG, complex ones to agents. This optimizes the latency/capability tradeoff.
 
 Some teams implement **agent fallback**: try standard RAG first, invoke agents only when confidence is low or explicit tool indicators are detected ("show me current...","calculate...","query database...").
 
 #### Transition to RAG + Fine-Tuned Models
 
-While agents add dynamic flexibility, our next pattern—combining RAG with fine-tuned models—takes the opposite approach: baking domain knowledge directly into the LLM weights for improved efficiency and quality in specialized domains.`
+[conversational] While agents add dynamic flexibility, our next pattern—combining RAG with fine-tuned models—takes the opposite approach: baking domain knowledge directly into the LLM weights for improved efficiency and quality in specialized domains.`
         }
       ]
     },
@@ -1937,29 +1933,29 @@ While agents add dynamic flexibility, our next pattern—combining RAG with fine
             </div>
           ),
           backgroundColor: '#163e3e',
-          notes: `### 20. RAG + Fine-Tuned Model Hybrid
+          notes: `### RAG + Fine-Tuned Model Hybrid
 
 #### The Best of Both Worlds
 
-The RAG vs. Fine-Tuning debate is a false dichotomy. **Hybrid approaches** combining RAG's dynamic knowledge access with fine-tuning's domain specialization often deliver superior results to either alone.
+[confidently] The RAG vs. Fine-Tuning debate is a false dichotomy. [enthusiastically] **Hybrid approaches** combining RAG's dynamic knowledge access with fine-tuning's domain specialization often deliver superior results to either alone.
 
 #### Understanding Fine-Tuning Basics
 
-**Fine-tuning** (👉 "fine TYOO-ning") adapts a pre-trained LLM to your specific domain by training it further on domain-specific examples. Unlike RAG which supplements the model with external context, fine-tuning modifies the model's internal weights, baking knowledge directly into the neural network.
+[lecture] **Fine-tuning** (👉 "fine TYOO-ning") adapts a pre-trained LLM to your specific domain by training it further on domain-specific examples. Unlike RAG which supplements the model with external context, fine-tuning modifies the model's internal weights, baking knowledge directly into the neural network.
 
-For example, fine-tuning a legal model on thousands of case summaries teaches it legal reasoning patterns, terminology, and formatting conventions. This knowledge becomes intrinsic—no context window required.
+[conversational] For example, fine-tuning a legal model on thousands of case summaries teaches it legal reasoning patterns, terminology, and formatting conventions. This knowledge becomes intrinsic—no context window required.
 
 #### Why Combine RAG with Fine-Tuning?
 
-Fine-tuned models excel at **style, format, and reasoning patterns** specific to your domain. A medical fine-tuned model naturally uses proper medical terminology, follows clinical reasoning structures, and formats notes according to standards.
+[confidently] Fine-tuned models excel at **style, format, and reasoning patterns** specific to your domain. A medical fine-tuned model naturally uses proper medical terminology, follows clinical reasoning structures, and formats notes according to standards.
 
-But fine-tuning has limits. Models can't learn every fact—context windows are still needed for specific information. A fine-tuned legal model knows legal reasoning but still needs RAG to access specific case details or recent regulatory changes.
+[thoughtfully] But fine-tuning has limits. Models can't learn every fact—context windows are still needed for specific information. A fine-tuned legal model knows legal reasoning but still needs RAG to access specific case details or recent regulatory changes.
 
-The hybrid approach: **fine-tune for domain expertise, RAG for factual grounding**. The model understands "how to think" about your domain; RAG provides "what to think about" for each specific query.
+[enthusiastically] The hybrid approach: **fine-tune for domain expertise, RAG for factual grounding**. The model understands "how to think" about your domain; RAG provides "what to think about" for each specific query.
 
 #### Architecture Considerations
 
-You might fine-tune on:
+[lecture] You might fine-tune on:
 - **Domain-specific instructions**: Teaching the model how to format outputs, structure reasoning, handle domain edge cases
 - **Synthetic QA pairs**: Generated from your documents to teach domain knowledge patterns
 - **User interaction data**: Real queries and ideal responses from your production system
@@ -1969,7 +1965,7 @@ The fine-tuned model then uses RAG-retrieved context but interprets and responds
 
 #### Leaner Prompts and Efficiency
 
-One major benefit is **reduced prompt overhead**. With a general LLM, you might need 500 tokens of instructions explaining domain conventions, output formats, and reasoning approaches. A fine-tuned model internalizes these, cutting your prompt to 100 tokens—saving tokens and improving consistency.
+[pleased] One major benefit is **reduced prompt overhead**. With a general LLM, you might need 500 tokens of instructions explaining domain conventions, output formats, and reasoning approaches. A fine-tuned model internalizes these, cutting your prompt to 100 tokens—saving tokens and improving consistency.
 
 **Domain-specific templates** become simpler. The model already knows your output format preferences, requiring minimal examples rather than extensive few-shot demonstrations.
 
@@ -1977,13 +1973,13 @@ One major benefit is **reduced prompt overhead**. With a general LLM, you might 
 
 #### Tighter Retrieval Parameters
 
-Fine-tuned models can work with **tighter similarity thresholds**. Because they better understand domain nuance, they can make do with fewer but higher-quality retrieved chunks, reducing noise in the context window.
+[confidently] Fine-tuned models can work with **tighter similarity thresholds**. Because they better understand domain nuance, they can make do with fewer but higher-quality retrieved chunks, reducing noise in the context window.
 
 **Domain-specific embeddings** pair naturally with fine-tuned models. If you've invested in fine-tuning the LLM, also fine-tune your embedding model on domain data for superior retrieval quality.
 
 #### Best Use Cases
 
-**High-volume domain QA** systems justify the fine-tuning investment. Customer support systems handling thousands of daily queries in a specialized domain see ROI from reduced token costs and improved answer quality.
+[pleased] **High-volume domain QA** systems justify the fine-tuning investment. Customer support systems handling thousands of daily queries in a specialized domain see ROI from reduced token costs and improved answer quality.
 
 **Structured output generation** improves dramatically. Financial report generation, medical note formatting, legal document drafting—tasks requiring consistent structure benefit from fine-tuned format adherence.
 
@@ -1993,7 +1989,7 @@ Fine-tuned models can work with **tighter similarity thresholds**. Because they 
 
 #### Implementation Challenges
 
-**MLOps burden** increases significantly. You need:
+[cautiously] **MLOps burden** increases significantly. You need:
 - Training data collection and curation
 - Fine-tuning infrastructure
 - Model versioning and deployment
@@ -2001,13 +1997,13 @@ Fine-tuned models can work with **tighter similarity thresholds**. Because they 
 - Performance monitoring
 - Retraining pipelines
 
-This requires ML engineering capabilities beyond basic RAG implementation.
+[seriously] This requires ML engineering capabilities beyond basic RAG implementation.
 
 **Version drift** becomes a concern. Your retrieval system evolves separately from your fine-tuned model. Ensuring they remain compatible requires coordination and testing.
 
 #### Transition to Tradeoffs
 
-Combining RAG with fine-tuning delivers powerful capabilities but demands substantial investment. Let's examine when this complexity translates to sufficient business value.`
+[conversational] Combining RAG with fine-tuning delivers powerful capabilities but demands substantial investment. Let's examine when this complexity translates to sufficient business value.`
         },
         {
           id: 21,
@@ -2052,25 +2048,25 @@ Combining RAG with fine-tuning delivers powerful capabilities but demands substa
             </div>
           ),
           backgroundColor: '#163e3e',
-          notes: `### 21. RAG + Fine-Tuned Model: Strengths and Limitations
+          notes: `### RAG + Fine-Tuned Model: Strengths and Limitations
 
 #### The Compounding Benefits
 
-When RAG and fine-tuning work together, benefits compound. **Domain quality improvements** are substantial—responses use correct terminology, follow domain conventions, and demonstrate sophisticated reasoning patterns that general models lack.
+[enthusiastically] When RAG and fine-tuning work together, benefits compound. **Domain quality improvements** are substantial—responses use correct terminology, follow domain conventions, and demonstrate sophisticated reasoning patterns that general models lack.
 
-**Formatting and style adherence** reaches production-grade consistency. Legal documents follow proper citation formats, medical notes use standardized terminology, financial reports match required structures—all without extensive prompt engineering.
+[pleased] **Formatting and style adherence** reaches production-grade consistency. Legal documents follow proper citation formats, medical notes use standardized terminology, financial reports match required structures—all without extensive prompt engineering.
 
-**Prompt overhead reduction** delivers real cost savings at scale. If you're handling millions of queries monthly, reducing prompt size from 800 to 300 tokens per query saves substantial API costs while improving consistency.
+[confidently] **Prompt overhead reduction** delivers real cost savings at scale. If you're handling millions of queries monthly, reducing prompt size from 800 to 300 tokens per query saves substantial API costs while improving consistency.
 
 **Domain-specific reasoning** quality improves measurably. A fine-tuned medical model naturally considers differential diagnoses, drug interactions, and clinical guidelines—reasoning patterns difficult to consistently achieve through prompting alone.
 
 **Hallucination reduction** on familiar domain patterns is significant. The model has seen thousands of examples during fine-tuning and learns what "reasonable" responses look like for your domain, reducing confident fabrication.
 
-**Long-term cost efficiency** emerges at volume. While upfront investment is high, per-query costs decrease through reduced context requirements and more efficient token usage.
+[warmly] **Long-term cost efficiency** emerges at volume. While upfront investment is high, per-query costs decrease through reduced context requirements and more efficient token usage.
 
 #### The Substantial Burdens
 
-**MLOps complexity** is the primary barrier. You need:
+[sighing] **MLOps complexity** is the primary barrier. You need:
 - Training data collection infrastructure
 - Data quality assurance processes
 - Fine-tuning compute resources
@@ -2080,29 +2076,29 @@ When RAG and fine-tuning work together, benefits compound. **Domain quality impr
 - Retraining pipelines
 - Deployment orchestration
 
-This demands dedicated ML engineering team capabilities.
+[firmly] This demands dedicated ML engineering team capabilities.
 
-**Version drift** creates ongoing challenges. Your document corpus evolves, your retrieval system improves, but your fine-tuned model is frozen at training time. Managing these moving parts requires careful coordination.
+[anxiously] **Version drift** creates ongoing challenges. Your document corpus evolves, your retrieval system improves, but your fine-tuned model is frozen at training time. Managing these moving parts requires careful coordination.
 
 **Governance and evaluation complexity** increases. You must evaluate both retrieval quality and model generation quality, tracking how they interact. Changes to one affect the other in non-obvious ways.
 
-**Training data collection** is perpetual work. To keep models current, you need continuous collection of high-quality query-response pairs from production, requiring human review and curation.
+[frustrated] **Training data collection** is perpetual work. To keep models current, you need continuous collection of high-quality query-response pairs from production, requiring human review and curation.
 
-**Adaptability constraints** emerge. Need to support a new domain or use case? You can't just add documents—you need to retrain or fine-tune a new model, adding latency to new feature development.
+[cautiously] **Adaptability constraints** emerge. Need to support a new domain or use case? You can't just add documents—you need to retrain or fine-tune a new model, adding latency to new feature development.
 
 **Response pattern rigidity** can be limiting. Fine-tuned models learn specific patterns and may struggle with requests outside their training distribution more than general models would.
 
 #### When the Investment Pays Off
 
-The break-even point typically arrives at **high query volumes** (hundreds of thousands monthly) in **well-defined domains** where quality and consistency justify the investment.
+[confidently] The break-even point typically arrives at **high query volumes** (hundreds of thousands monthly) in **well-defined domains** where quality and consistency justify the investment.
 
-**Enterprise applications** with dedicated ML teams and long product lifecycles can amortize the upfront investment. Consumer products with viral growth might not afford the slow iteration cycles.
+**Enterprise applications** with dedicated ML teams and long product lifecycles can amortize the upfront investment. [cautiously] Consumer products with viral growth might not afford the slow iteration cycles.
 
 **Regulated industries** where compliance, auditability, and consistency are paramount often find the rigidity of fine-tuned outputs valuable rather than limiting.
 
 #### Hybrid Strategy Evolution
 
-Many teams follow a progression:
+[thoughtfully] Many teams follow a progression:
 1. **Start with RAG-only**: Prove product-market fit
 2. **Collect production data**: Gather query-response pairs from real usage
 3. **Fine-tune incrementally**: Start with output formatting, expand to domain knowledge
@@ -2112,7 +2108,7 @@ This de-risks the investment while building toward the hybrid ideal.
 
 #### Transition to Multi-Step Retrieval
 
-While fine-tuning optimizes model capabilities, multi-step retrieval loops optimize the retrieval process itself—iteratively refining queries and accumulating evidence through multiple retrieval cycles to handle complex, compositional questions.`
+[conversational] While fine-tuning optimizes model capabilities, multi-step retrieval loops optimize the retrieval process itself—iteratively refining queries and accumulating evidence through multiple retrieval cycles to handle complex, compositional questions.`
         }
       ]
     },
@@ -2206,18 +2202,18 @@ While fine-tuning optimizes model capabilities, multi-step retrieval loops optim
             </div>
           ),
           backgroundColor: '#3e600f',
-          notes: `### 22. Pattern 10 - RAG with Multi-Step Retrieval Loops
+          notes: `### Pattern 10 - RAG with Multi-Step Retrieval Loops
 
-Welcome to one of the most sophisticated RAG patterns—Multi-Step Retrieval Loops! This pattern handles complex questions that can't be answered with a single retrieval round. Think of it as teaching your RAG system to think through problems step by step, just like a human researcher would.
+[enthusiastically] Welcome to one of the most sophisticated RAG patterns—Multi-Step Retrieval Loops! This pattern handles complex questions that can't be answered with a single retrieval round. [conversational] Think of it as teaching your RAG system to think through problems step by step, just like a human researcher would.
 
 #### The Problem with Single-Shot Retrieval
-Imagine asking "How does the pricing of Company A compare to Company B, and which offers better value for startups?" Basic RAG retrieves documents and tries to answer everything at once, often missing crucial details or failing to make the comparison. Multi-step retrieval breaks this down: first retrieve Company A pricing, then Company B pricing, then startup-specific considerations, then synthesize the comparison.
+[lecture] Imagine asking "How does the pricing of Company A compare to Company B, and which offers better value for startups?" [disappointed] Basic RAG retrieves documents and tries to answer everything at once, often missing crucial details or failing to make the comparison. [confidently] Multi-step retrieval breaks this down: first retrieve Company A pricing, then Company B pricing, then startup-specific considerations, then synthesize the comparison.
 
 #### How Multi-Step Loops Work
-The system uses Chain-of-Thought 👉 [chain-of-thawt] reasoning to decompose your question into sub-questions. Each sub-question triggers its own retrieval cycle. The system maintains a working memory of what it's learned so far, using that context to formulate better subsequent queries. After each retrieval, a verifier checks if we have sufficient evidence to answer the original question. If not, generate more sub-questions and continue. This creates an iterative loop of plan-retrieve-reason-verify until completion.
+[enthusiastically] The system uses Chain-of-Thought 👉 [chain-of-thawt] reasoning to decompose your question into sub-questions. Each sub-question triggers its own retrieval cycle. The system maintains a working memory of what it's learned so far, using that context to formulate better subsequent queries. [conversational] After each retrieval, a verifier checks if we have sufficient evidence to answer the original question. If not, generate more sub-questions and continue. This creates an iterative loop of plan-retrieve-reason-verify until completion.
 
 #### Key Components
-Seven critical pieces make this work: an iterative retriever that handles multiple retrieval rounds; a hypothesis generator using Chain-of-Thought reasoning; a question decomposition module that breaks complex queries into simpler ones; a fact-checker verifier; stopping criteria logic to prevent infinite loops; working memory to track progress; and an evidence tracker to maintain provenance 👉 [PROV-en-ance] of every fact. The complexity is substantial, but so are the capabilities. This pattern can discover relationships between documents that humans might miss and construct comprehensive answers from distributed evidence across your knowledge base!`
+[lecture] Seven critical pieces make this work: an iterative retriever that handles multiple retrieval rounds; a hypothesis generator using Chain-of-Thought reasoning; a question decomposition module that breaks complex queries into simpler ones; a fact-checker verifier; stopping criteria logic to prevent infinite loops; working memory to track progress; and an evidence tracker to maintain provenance 👉 [PROV-en-ance] of every fact. [excited] The complexity is substantial, but so are the capabilities. [enthusiastically] This pattern can discover relationships between documents that humans might miss and construct comprehensive answers from distributed evidence across your knowledge base!`
         },
         {
           id: 23,
@@ -2261,18 +2257,18 @@ Seven critical pieces make this work: an iterative retriever that handles multip
             </div>
           ),
           backgroundColor: '#3e600f',
-          notes: `### 23. Multi-Step Retrieval - Strengths and Limitations
+          notes: `### Multi-Step Retrieval - Strengths and Limitations
 
-Multi-Step Retrieval Loops represent the cutting edge of RAG architecture, but they come with significant tradeoffs. Let's examine when this complexity delivers sufficient value to justify the implementation overhead.
+[conversational] Multi-Step Retrieval Loops represent the cutting edge of RAG architecture, but they come with significant tradeoffs. Let's examine when this complexity delivers sufficient value to justify the implementation overhead.
 
 #### Strengths
-The ability to solve compositional questions is transformative. Questions like "What did Company A announce last quarter that competes with Company B's product launched two quarters ago?" require retrieving multiple pieces of information and connecting them logically—exactly what multi-step retrieval excels at. Complex reasoning chains that would confuse single-shot retrieval become manageable when broken into sub-problems. The system can discover unexpected relationships by following evidence trails: while researching topic A, it might find a connection to topic C through intermediate topic B, revealing insights humans might miss. Evidence from multiple disparate sources gets combined coherently, and the system maintains full provenance 👉 [PROV-en-ance] tracking so users can audit the reasoning path. For truly complex queries, accuracy improvements of thirty to fifty percent over basic patterns are common.
+[enthusiastically] The ability to solve compositional questions is transformative. Questions like "What did Company A announce last quarter that competes with Company B's product launched two quarters ago?" require retrieving multiple pieces of information and connecting them logically—exactly what multi-step retrieval excels at. [pleased] Complex reasoning chains that would confuse single-shot retrieval become manageable when broken into sub-problems. The system can discover unexpected relationships by following evidence trails: while researching topic A, it might find a connection to topic C through intermediate topic B, revealing insights humans might miss. [confidently] Evidence from multiple disparate sources gets combined coherently, and the system maintains full provenance 👉 [PROV-en-ance] tracking so users can audit the reasoning path. For truly complex queries, accuracy improvements of thirty to fifty percent over basic patterns are common.
 
 #### Limitations
-The cost and latency are substantial. Each iteration means another LLM call and another retrieval round. Simple queries that took two seconds with Basic RAG might take ten to fifteen seconds with multi-step loops, and cost five to ten times more in API fees. Reasoning drift is a real risk—after three or four steps, the system might lose sight of the original question and hallucinate down tangential paths. Implementation complexity increases dramatically: you're managing state across iterations, implementing stopping conditions, tracking evidence chains, and debugging failures across multiple steps. Evaluation becomes challenging because you need to assess not just the final answer but also the quality of intermediate reasoning steps.
+[sighing] The cost and latency are substantial. Each iteration means another LLM call and another retrieval round. [disappointed] Simple queries that took two seconds with Basic RAG might take ten to fifteen seconds with multi-step loops, and cost five to ten times more in API fees. [anxiously] Reasoning drift is a real risk—after three or four steps, the system might lose sight of the original question and hallucinate down tangential paths. [frustrated] Implementation complexity increases dramatically: you're managing state across iterations, implementing stopping conditions, tracking evidence chains, and debugging failures across multiple steps. [cautiously] Evaluation becomes challenging because you need to assess not just the final answer but also the quality of intermediate reasoning steps.
 
 #### When to Use Multi-Step Retrieval
-Deploy this pattern when question complexity justifies the cost. Legal research, academic literature reviews, investigative journalism, strategic business analysis—these domains have inherently complex, multi-hop questions where the value of accurate answers far exceeds the computational cost. For consumer FAQ bots, stick with simpler patterns!`
+[confidently] Deploy this pattern when question complexity justifies the cost. Legal research, academic literature reviews, investigative journalism, strategic business analysis—these domains have inherently complex, multi-hop questions where the value of accurate answers far exceeds the computational cost. [playfully] For consumer FAQ bots, stick with simpler patterns!`
         }
       ]
     },
@@ -2350,18 +2346,18 @@ Deploy this pattern when question complexity justifies the cost. Legal research,
             </div>
           ),
           backgroundColor: '#2e1a2e',
-          notes: `### 24. Pattern 11 - RAG with Context Compression and Summarization
+          notes: `### Pattern 11 - RAG with Context Compression and Summarization
 
-Our final pattern addresses one of RAG's most persistent challenges: the context window bottleneck. Modern LLMs 👉 [el-el-ems] can handle one hundred thousand or even two hundred thousand tokens, but that doesn't mean you should fill them all! Context Compression intelligently distills retrieved documents down to their most relevant, information-dense content.
+[energetic] Our final pattern addresses one of RAG's most persistent challenges: the context window bottleneck. Modern LLMs 👉 [el-el-ems] can handle one hundred thousand or even two hundred thousand tokens, but that doesn't mean you should fill them all! [enthusiastically] Context Compression intelligently distills retrieved documents down to their most relevant, information-dense content.
 
 #### The Token Economics Problem
-Every token you send to your LLM costs money and adds latency. If you retrieve ten documents of one thousand tokens each, that's ten thousand tokens before you even add the user's question and generate an answer. At scale, this gets expensive fast. Worse, research shows that LLMs perform worse when context is filled with irrelevant information—it's like trying to find a needle in a haystack. The solution? Smart compression that keeps signal while removing noise.
+[seriously] Every token you send to your LLM costs money and adds latency. [conversational] If you retrieve ten documents of one thousand tokens each, that's ten thousand tokens before you even add the user's question and generate an answer. [sighing] At scale, this gets expensive fast. [cautiously] Worse, research shows that LLMs perform worse when context is filled with irrelevant information—it's like trying to find a needle in a haystack. [confidently] The solution? Smart compression that keeps signal while removing noise.
 
 #### How Context Compression Works
-The pattern operates in stages. First, contextual retrieval: instead of embedding bare chunks, add surrounding document context to each chunk before embedding it—this dramatically improves retrieval accuracy. Second, retrieve broadly: pull ten to twenty potentially relevant chunks using hybrid search combining semantic and lexical matching. Third, compress: use specialized models to extract only the most relevant sentences or phrases from each chunk. Fourth, rerank: order the compressed snippets by relevance. Finally, pack your context window with ten to twenty high-signal compressed passages rather than five to seven full, uncompressed chunks.
+[lecture] The pattern operates in stages. First, contextual retrieval: instead of embedding bare chunks, add surrounding document context to each chunk before embedding it—this dramatically improves retrieval accuracy. Second, retrieve broadly: pull ten to twenty potentially relevant chunks using hybrid search combining semantic and lexical matching. Third, compress: use specialized models to extract only the most relevant sentences or phrases from each chunk. Fourth, rerank: order the compressed snippets by relevance. [pleased] Finally, pack your context window with ten to twenty high-signal compressed passages rather than five to seven full, uncompressed chunks.
 
 #### Real-World Impact
-Companies like Anthropic 👉 [an-THROP-ik] report up to sixty-seven percent reduction in retrieval failures using contextual embeddings and compression. You fit more relevant information in the same token budget, reducing both cost and improving answer quality. The preprocessing overhead is real—compressing content takes additional compute—but at query time, you're sending fewer tokens to the LLM, which often nets positive on cost and always improves latency. For enterprise systems with massive document collections, Context Compression is transformative!`
+[enthusiastically] Companies like Anthropic 👉 [an-THROP-ik] report up to sixty-seven percent reduction in retrieval failures using contextual embeddings and compression. You fit more relevant information in the same token budget, reducing both cost and improving answer quality. [thoughtfully] The preprocessing overhead is real—compressing content takes additional compute—but at query time, you're sending fewer tokens to the LLM, which often nets positive on cost and always improves latency. [warmly] For enterprise systems with massive document collections, Context Compression is transformative!`
         },
         {
           id: 25,
@@ -2403,18 +2399,18 @@ Companies like Anthropic 👉 [an-THROP-ik] report up to sixty-seven percent red
             </div>
           ),
           backgroundColor: '#2e1a2e',
-          notes: `### 25. Context Compression - Strengths and Limitations
+          notes: `### Context Compression - Strengths and Limitations
 
-Context Compression represents a paradigm shift in how we think about RAG systems. Rather than accepting the tradeoff between recall and context limits, we intelligently compress information to optimize both. Let's examine the impact and costs.
+[conversational] Context Compression represents a paradigm shift in how we think about RAG systems. Rather than accepting the tradeoff between recall and context limits, we intelligently compress information to optimize both. Let's examine the impact and costs.
 
 #### Strengths
-The numbers are compelling. Research from Anthropic 👉 [an-THROP-ik] shows up to sixty-seven percent reduction in retrieval failures when using contextual embeddings compared to standard chunking. This is huge! Every chunk includes surrounding context, so embeddings capture meaning more accurately. Signal density increases dramatically—instead of five full documents with lots of filler, you get twenty compressed, highly-relevant snippets. Token efficiency translates directly to cost savings: at large scale, compression pays for itself many times over through reduced LLM API costs. Long documents become manageable—academic papers, legal contracts, technical specifications—the compression step extracts the nuggets of relevant information without overwhelming the LLM. Answer reliability improves because the LLM sees richer, more relevant context rather than loosely-related full documents.
+[enthusiastically] The numbers are compelling. Research from Anthropic 👉 [an-THROP-ik] shows up to sixty-seven percent reduction in retrieval failures when using contextual embeddings compared to standard chunking. [gasping] This is huge! Every chunk includes surrounding context, so embeddings capture meaning more accurately. [pleased] Signal density increases dramatically—instead of five full documents with lots of filler, you get twenty compressed, highly-relevant snippets. [confidently] Token efficiency translates directly to cost savings: at large scale, compression pays for itself many times over through reduced LLM API costs. Long documents become manageable—academic papers, legal contracts, technical specifications—the compression step extracts the nuggets of relevant information without overwhelming the LLM. Answer reliability improves because the LLM sees richer, more relevant context rather than loosely-related full documents.
 
 #### Limitations
-The preprocessing requirements increase substantially. Generating contextual embeddings means more computation during document ingestion. The compression step itself requires additional processing—typically using another LLM or specialized extraction model. This upfront investment pays off at query time, but it's not free. Compression is lossy by definition—you might remove nuanced details that turn out to be important later. This is especially risky for creative use cases where context matters more than pure fact extraction. The additional latency during retrieval—compressing and reranking—adds hundreds of milliseconds per query. Architecture complexity increases: you're managing contextual embedding pipelines, compression models, and more sophisticated retrieval logic.
+[cautiously] The preprocessing requirements increase substantially. Generating contextual embeddings means more computation during document ingestion. The compression step itself requires additional processing—typically using another LLM or specialized extraction model. [conversational] This upfront investment pays off at query time, but it's not free. [anxiously] Compression is lossy by definition—you might remove nuanced details that turn out to be important later. This is especially risky for creative use cases where context matters more than pure fact extraction. [thoughtfully] The additional latency during retrieval—compressing and reranking—adds hundreds of milliseconds per query. Architecture complexity increases: you're managing contextual embedding pipelines, compression models, and more sophisticated retrieval logic.
 
 #### Cost-Benefit Analysis
-Context Compression shines in high-volume production systems where query-time cost and latency dominate total cost of ownership. The preprocessing investment amortizes 👉 [AM-or-tie-zez] quickly when you're serving thousands of queries daily. For prototype systems or low-volume applications, simpler patterns may be more appropriate!`
+[confidently] Context Compression shines in high-volume production systems where query-time cost and latency dominate total cost of ownership. The preprocessing investment amortizes 👉 [AM-or-tie-zez] quickly when you're serving thousands of queries daily. [cautiously] For prototype systems or low-volume applications, simpler patterns may be more appropriate!`
         }
       ]
     },
@@ -2509,21 +2505,21 @@ Context Compression shines in high-volume production systems where query-time co
             </div>
           ),
           backgroundColor: '#3e1616',
-          notes: `### 26. Pattern Selection Guide and Final Recommendations
+          notes: `### Pattern Selection Guide and Final Recommendations
 
-Congratulations! We've journeyed through eleven production-ready RAG architecture patterns. Now comes the most important question: which pattern should YOU use? Let's synthesize everything into actionable guidance.
+[warmly] Congratulations! We've journeyed through eleven production-ready RAG architecture patterns. [conversational] Now comes the most important question: which pattern should YOU use? Let's synthesize everything into actionable guidance.
 
 #### The Progressive Approach
-Start simple, then scale complexity as needs demand. Begin with Basic RAG to prove your concept works and establish baseline metrics. As your document corpus grows beyond a few hundred documents, add Re-Ranking for precision improvements. When user queries become more varied and ambiguous, layer in Query Rewriting or Multi-Query Retrieval. This progressive approach manages risk while building production expertise incrementally.
+[confidently] Start simple, then scale complexity as needs demand. Begin with Basic RAG to prove your concept works and establish baseline metrics. As your document corpus grows beyond a few hundred documents, add Re-Ranking for precision improvements. [thoughtfully] When user queries become more varied and ambiguous, layer in Query Rewriting or Multi-Query Retrieval. This progressive approach manages risk while building production expertise incrementally.
 
 #### Pattern Selection by Use Case
-The matrix on this slide provides quick guidance. For straightforward FAQs and small knowledge bases, Basic RAG delivers excellent results with minimal complexity. Enterprise knowledge management with thousands of documents benefits from Re-Ranking plus Context Compression. Legal and academic research applications need Multi-Step Retrieval Loops to handle complex reasoning. Systems requiring real-time information must integrate External Tools and Agents. High-volume applications with consistent formatting can justify the investment in Fine-Tuned Model Hybrids. Long technical documents work best with Parent-Child Retrieval. Relationship-heavy domains like fraud detection or recommendation systems shine with Graph-Based RAG.
+[lecture] The matrix on this slide provides quick guidance. For straightforward FAQs and small knowledge bases, Basic RAG delivers excellent results with minimal complexity. Enterprise knowledge management with thousands of documents benefits from Re-Ranking plus Context Compression. [seriously] Legal and academic research applications need Multi-Step Retrieval Loops to handle complex reasoning. Systems requiring real-time information must integrate External Tools and Agents. [pleased] High-volume applications with consistent formatting can justify the investment in Fine-Tuned Model Hybrids. Long technical documents work best with Parent-Child Retrieval. Relationship-heavy domains like fraud detection or recommendation systems shine with Graph-Based RAG.
 
 #### Critical Success Factors
-Regardless of pattern choice, three factors determine production success. First, instrumentation 👉 [in-stroo-men-TAY-shun]: measure relevance, hallucination rate, latency, and cost from day one. Second, evaluation: establish ground-truth test sets and continuously validate improvements. Third, iteration: RAG systems improve through data-driven refinement, not initial perfection. Start collecting user feedback immediately and use it to guide your evolution.
+[firmly] Regardless of pattern choice, three factors determine production success. First, instrumentation 👉 [in-stroo-men-TAY-shun]: measure relevance, hallucination rate, latency, and cost from day one. Second, evaluation: establish ground-truth test sets and continuously validate improvements. [confidently] Third, iteration: RAG systems improve through data-driven refinement, not initial perfection. Start collecting user feedback immediately and use it to guide your evolution.
 
 #### Your Journey Starts Now
-You're now equipped with eleven powerful patterns, implementation guidance, and selection criteria. The RAG landscape evolves rapidly—stay curious, keep experimenting, and share your learnings with the community. Thank you for joining this deep dive into production RAG architectures. Now go build something amazing!`
+[inspiringly] You're now equipped with eleven powerful patterns, implementation guidance, and selection criteria. The RAG landscape evolves rapidly—stay curious, keep experimenting, and share your learnings with the community. [warmly] Thank you for joining this deep dive into production RAG architectures. [enthusiastically] Now go build something amazing!`
         }
       ]
     }
