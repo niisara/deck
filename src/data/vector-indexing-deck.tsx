@@ -36,10 +36,10 @@ export const vectorIndexingDeck: Deck = {
           ),
           backgroundColor: '#1a0f0a',
           notes: `### Vector Indexing Schemes Cheat Sheet
-[cheerfully] Welcome everyone! [excited] Today we're going to explore one of the most crucial topics in modern AI and machine learning: vector indexing schemes.
+[cheerfully] Welcome everyone! Today we're going to explore one of the most crucial topics in modern AI and machine learning: vector indexing schemes.
 
 #### What This Presentation Covers
-[conversational] When you're building applications with AI, especially ones that need to search through millions of pieces of information quickly, you need special ways to organize that data. [storytelling] Think of it like organizing a massive library. You could check every single book one by one, but that would take forever. Instead, we use clever indexing systems. [energetic] Today, we'll explore nine different approaches, each with its own strengths and trade-offs. Whether you're building a recommendation system, a chatbot, or a search engine, understanding these indexing schemes will help you choose the right tool for your specific needs.
+[conversational] When you're building applications with AI, especially ones that need to search through millions of pieces of information quickly, you need special ways to organize that data. Think of it like organizing a massive library. You could check every single book one by one, but that would take forever. Instead, we use clever indexing systems. Today, we'll explore nine different approaches, each with its own strengths and trade-offs. Whether you're building a recommendation system, a chatbot, or a search engine, understanding these indexing schemes will help you choose the right tool for your specific needs.
 
 #### What We'll Learn
 [enthusiastically] We'll start with the simplest approach called "Flat" or brute force indexing, where we check everything. Then we'll progress through increasingly sophisticated methods like HNSW, which builds a clever network structure, IVF which groups similar items together, and several others. By the end, you'll understand when to use each approach and why.
@@ -335,7 +335,7 @@ export const vectorIndexingDeck: Deck = {
 [pleased] Flat indexing is beautifully simple to implement. [confidently] You don't need to understand complex graph algorithms, clustering techniques, or hashing functions. It's basically: store vectors in an array, loop through them, calculate distances, keep the closest ones. [warmly] This simplicity extends to maintenance too. There's no index corruption to worry about, no complex tuning parameters, no rebuilding processes. When debugging, you can actually inspect what's happening step by step.
 
 #### Metric Flexibility
-[excited] Here's a huge advantage: flat indexing works with any distance metric you can dream up. [lecture] L2 distance, cosine similarity, inner product, custom business-specific distance functions—it doesn't matter. [disappointed] Many approximate methods only work with specific metrics. [enthusiastically] Need to try a new similarity function? With flat indexing, just swap in your new distance calculation. This flexibility is invaluable during research and prototyping phases.
+[pleased] Here's a huge advantage: flat indexing works with any distance metric you can dream up. L2 distance, cosine similarity, inner product, custom business-specific distance functions—it doesn't matter. Many approximate methods only work with specific metrics. Need to try a new similarity function? With flat indexing, just swap in your new distance calculation. This flexibility is invaluable during research and prototyping phases.
 
 #### Horizontal Scaling
 [confidently] Flat indexing scales horizontally beautifully. Want to search across ten machines? [conversational] Just partition your vectors across them, send the query to all machines, and merge the results. There's no complex distributed coordination needed. Each machine independently searches its partition. [pleased] This "embarrassingly parallel" nature means you can add more machines to handle more data or increase throughput, without sophisticated distributed systems engineering.
@@ -504,7 +504,7 @@ export const vectorIndexingDeck: Deck = {
 [conversational] Let's cover the practical considerations and gotchas you need to know when implementing HNSW.
 
 #### Index Construction Cost
-[seriously] Building an HNSW index is computationally expensive. [cautiously] For a ten million vector dataset, expect index construction to take hours, not minutes. [reassuringly] This isn't a deal-breaker—you typically build the index once and use it for millions of queries. But plan accordingly. [firmly] Don't try to rebuild HNSW indexes on every data update. Instead, use batch update strategies or hybrid approaches where new data goes to a separate index temporarily.
+[seriously] Building an HNSW index is computationally expensive. For a ten million vector dataset, expect index construction to take hours, not minutes. This isn't a deal-breaker—you typically build the index once and use it for millions of queries. But plan accordingly. Don't try to rebuild HNSW indexes on every data update. Instead, use batch update strategies or hybrid approaches where new data goes to a separate index temporarily.
 
 #### Update and Delete Challenges
 [concerned] Updating or deleting vectors in HNSW is tricky. You can't just remove a node from the graph without potentially breaking connectivity. [disappointed] Most implementations either don't support deletes at all, require marking vectors as deleted which wastes space, or need expensive graph repairs. [thoughtfully] For applications with frequent updates, consider accumulating changes and doing periodic full rebuilds, or use a multi-index strategy with a separate structure for recent updates.
