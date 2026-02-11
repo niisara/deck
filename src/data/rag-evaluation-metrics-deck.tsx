@@ -199,21 +199,45 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures how many relevant documents were successfully retrieved in the top-K results, indicating retrieval coverage completeness.</p>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Measures how many relevant documents were successfully retrieved in the top-K results, indicating retrieval coverage completeness.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
-                <li>Improves answer completeness by ensuring all relevant information is available</li>
-                <li>Critical for complex queries requiring multiple evidence pieces</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.5}>
+                  <li>Reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
+                  <li>Improves answer completeness by ensuring all relevant information is available</li>
+                  <li>Critical for complex queries requiring multiple evidence pieces</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <p>When tuning embedding models and chunking strategies, to detect missing evidence causing answer omissions, when adjusting top-K parameter settings, and to identify cases where relevant documents are missed.</p>
+              <GSAPAnimated animation="slideInBottom" delay={0.7}>
+                <p>When tuning embedding models and chunking strategies, to detect missing evidence causing answer omissions, when adjusting top-K parameter settings, and to identify cases where relevant documents are missed.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#231f6f',
-          notes: ''
+          notes: `### Retrieval Recall@K — Overview
+Alright, let's dive into our first metric! This is Retrieval Recall at K 👉 'recall at kay', and it's one of the most fundamental metrics you need to understand.
+
+####  What Is Retrieval Recall@K?
+Think of Recall at K like this: imagine you're a librarian, and a student asks you to find all the books about climate change. There are ten relevant books in the library, but you only bring back seven of them. Your recall would be seven out of ten, or seventy percent. In RAG systems, Retrieval Recall at K measures how many of the relevant documents you actually managed to retrieve in your top-K results. The "K" just means the number of documents you're looking at—maybe your top five, top ten, or top twenty results.
+
+####  Why Does This Matter?
+Here's the critical insight: if your retrieval system misses important documents, your LLM has no choice but to either ignore parts of the question or, worse, make things up to fill the gaps. This is called "omission-driven hallucination," and it's a huge problem in RAG systems. High recall means you're giving your LLM all the puzzle pieces it needs to construct a complete, accurate answer.
+
+####  When to Use This
+You should pay special attention to Recall at K when you're tuning your embedding models—these are the neural networks that convert text into mathematical vectors for similarity search. It's also crucial when you're adjusting your chunking strategies, meaning how you break up your documents into smaller pieces. If you notice your system giving incomplete answers or hallucinating to fill knowledge gaps, low recall is often the culprit.
+
+####  The Good Stuff
+The beauty of high recall is that it directly reduces hallucinations and improves answer completeness. For complex queries that require pulling together information from multiple sources, high recall is absolutely critical. You can't answer a multi-faceted question if you only retrieve one or two of the five relevant documents.
+
+####  The Problems
+The main challenge with recall is that it requires ground truth labels—you need to know in advance which documents are actually relevant, and creating these labels can be expensive and time-consuming. Also, recall by itself doesn't tell you about quality—you could retrieve all the relevant documents but also retrieve a ton of junk. Finally, optimizing purely for recall might push you to retrieve too many documents, increasing noise and costs.
+
+Now let's see how this metric actually works under the hood!`
         },
         {
           id: 4,
@@ -221,25 +245,66 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Retrieval Recall@K measures the proportion of all relevant documents that appear in the top-K results. It answers: "Of all relevant documents, how many did we retrieve?"</p>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
+                <h3>How It Works
+                  <MermaidPopover
+                    title="Recall@K Calculation Process"
+                    diagram={`flowchart TD
+    A[Start: Query + Corpus] --> B[Identify ALL Relevant Docs<br/>in Corpus]
+    B --> C[Run Retrieval System<br/>Get Top-K Results]
+    C --> D[Count Overlap:<br/>Relevant ∩ TopK]
+    D --> E[Divide by Total<br/>Relevant Docs]
+    E --> F[Recall@K Score]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#3b82f6,color:#fff
+    style C fill:#0ea5e9,color:#fff
+    style D fill:#10b981,color:#fff
+    style E fill:#fbbf24,color:#000
+    style F fill:#81c784,color:#000`}
+                  />
+                </h3>
+                <p>Retrieval Recall@K measures the proportion of all relevant documents that appear in the top-K results. It answers: "Of all relevant documents, how many did we retrieve?"</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Recall@K = |Rel ∩ TopK| / |Rel|`}
-              </pre>
-              <p>Where |Rel ∩ TopK| is the number of relevant documents in the top-K results, and |Rel| is the total number of relevant documents in the corpus.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <h3>Formula</h3>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`Recall@K = |Rel ∩ TopK| / |Rel|`}
+                </pre>
+                <p>Where |Rel ∩ TopK| is the number of relevant documents in the top-K results, and |Rel| is the total number of relevant documents in the corpus.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.80 for carefully curated question-answer sets</li>
-                <li>≥0.60 for broad open-domain queries</li>
-                <li>Higher values critical for comprehensive information needs</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3>Target Values</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.7}>
+                  <li>≥0.80 for carefully curated question-answer sets</li>
+                  <li>≥0.60 for broad open-domain queries</li>
+                  <li>Higher values critical for comprehensive information needs</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#231f6f',
-          notes: ''
+          notes: `### Retrieval Recall@K — How It Works
+Now let's break down the mechanics of how we actually calculate this metric. Don't worry if math isn't your strong suit—this is simpler than it looks!
+
+####  The Core Question
+Recall at K answers one fundamental question: "Of all the relevant documents that exist in our database, what percentage did we successfully retrieve in our top-K results?" It's all about coverage—are we catching everything we should be catching?
+
+####  The Formula Explained
+The formula is Recall at K equals the absolute value of Rel intersection TopK, divided by the absolute value of Rel. Let me translate that into English. "Rel" means all the relevant documents in your entire corpus—think of this as the complete set of documents that should be retrieved for a given query. "TopK" means the top-K results your retrieval system actually returned. The "intersection" symbol just means "documents that appear in both sets"—so we're counting how many relevant documents made it into your top-K results. Then we divide by the total number of relevant documents to get a percentage.
+
+####  A Visual Example
+Imagine your corpus has exactly ten documents about climate change that are relevant to the query. Your retrieval system returns the top five results, and three of those five are from the relevant set. Your Recall at five would be three divided by ten, which equals zero point three or thirty percent. That's pretty low—you missed seven relevant documents!
+
+####  Target Benchmarks
+So what's a good score? For carefully curated question-answer sets where you've hand-labeled everything, you should aim for at least zero point eight or eighty percent recall. For broad, open-domain queries where relevance is fuzzier, sixty percent or higher is acceptable. The key insight is that for comprehensive information needs—like answering "What are all the symptoms of disease X?"—you really need high recall. Missing even a few relevant documents can lead to incomplete or misleading answers.
+
+####  Why These Targets?
+These benchmarks come from years of information retrieval research and practical experience. Below sixty percent recall, you're missing so much relevant information that your LLM is forced to fill gaps, leading to hallucinations. Above eighty percent, you've captured most of what matters, and the cost of chasing that last twenty percent often isn't worth it.
+
+Next, let's see this in action with a concrete example!`
         },
         {
           id: 5,
@@ -247,18 +312,76 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Query:</strong> "What are the side effects of medication X?"</p>
-              <p>Corpus has 4 relevant documents discussing side effects</p>
-              <p>Top-5 retrieval returns 3 of those relevant documents</p>
-              <p><strong>Recall@5 = 3/4 = 0.75</strong></p>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3>Example
+                  <MermaidPopover
+                    title="Recall@K Example Visualization"
+                    diagram={`graph TD
+    A[Query: Side effects of medication X?] --> B[Corpus Analysis]
+    B --> C[Total Relevant Docs: 4]
+    C --> D1[Doc A: Primary side effects]
+    C --> D2[Doc B: Rare side effects]
+    C --> D3[Doc C: Drug interactions]
+    C --> D4[Doc D: Long-term effects]
+    
+    A --> E[Retrieval System]
+    E --> F[Top-5 Results]
+    F --> G1[✅ Doc A]
+    F --> G2[✅ Doc B]
+    F --> G3[❌ Doc Z - irrelevant]
+    F --> G4[✅ Doc C]
+    F --> G5[❌ Doc Y - irrelevant]
+    
+    G1 --> H[Retrieved: 3/4]
+    G2 --> H
+    G4 --> H
+    
+    H --> I[Recall@5 = 3/4 = 0.75]
+    
+    style A fill:#4fc3f7,color:#000
+    style I fill:#81c784,color:#000
+    style G1 fill:#10b981,color:#fff
+    style G2 fill:#10b981,color:#fff
+    style G4 fill:#10b981,color:#fff
+    style G3 fill:#ef4444,color:#fff
+    style G5 fill:#ef4444,color:#fff`}
+                  />
+                </h3>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>First, identify all relevant documents in your corpus for the query. Then run your retrieval system to get the top-K results. Count how many of the relevant documents appear in those top-K results. Finally, divide that count by the total number of relevant documents to get your Recall@K score.</p>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p><strong>Query:</strong> "What are the side effects of medication X?"</p>
+                <p>Corpus has 4 relevant documents discussing side effects</p>
+                <p>Top-5 retrieval returns 3 of those relevant documents</p>
+                <p><strong>Recall@5 = 3/4 = 0.75</strong></p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3>How to Calculate</h3>
+                <p>First, identify all relevant documents in your corpus for the query. Then run your retrieval system to get the top-K results. Count how many of the relevant documents appear in those top-K results. Finally, divide that count by the total number of relevant documents to get your Recall@K score.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#231f6f',
-          notes: ''
+          notes: `### Retrieval Recall@K — Implementation
+Let's walk through a concrete example to really solidify your understanding of how Recall at K works in practice.
+
+####  The Scenario
+Imagine you're building a medical information RAG system, and a user asks, "What are the side effects of medication X?" Now, you've done your homework and labeled your corpus, and you know there are exactly four documents in your database that discuss side effects of this medication. Let's call them Document A (covering primary side effects), Document B (rare side effects), Document C (drug interactions), and Document D (long-term effects).
+
+####  What Happens During Retrieval
+You run your retrieval system with K equals five, meaning you ask for the top five most relevant documents. Your system returns five results: Document A, Document B, Document Z (which turns out to be about a totally different medication), Document C, and Document Y (which is about dietary recommendations, not side effects). So out of your top five results, three are from the set of relevant documents, and two are noise.
+
+####  The Calculation
+Now we calculate Recall at five. We have three relevant documents in our top-K results (A, B, and C), and the total number of relevant documents in the corpus is four. Three divided by four equals zero point seventy-five, or seventy-five percent. Notice that Document D about long-term effects was completely missed—it didn't make it into the top five at all. This means if the LLM only has access to these top five documents, it has no information about long-term effects and might either skip that aspect or hallucinate something to fill the gap.
+
+####  Step-by-Step Process
+Here's how you'd implement this in practice. First, before you even start retrieval, you need ground truth labels identifying which documents are relevant for each query. This is usually done through human annotation or using a reference dataset. Second, run your retrieval system as normal, fetching the top-K results. Third, count how many of those top-K results are in your set of relevant documents—this is just set intersection. Finally, divide that count by the total number of relevant documents to get your score. Most RAG frameworks have built-in evaluation tools that can automate this process.
+
+####  What This Tells You
+A score of seventy-five percent isn't terrible, but it means you're missing twenty-five percent of relevant information. In a medical context, that missing twenty-five percent could be critical. This low recall would be a red flag that you need to tune your embedding model, adjust your chunking strategy, or increase your K parameter to retrieve more documents.
+
+Now let's talk about when Recall at K is most useful and what its limitations are!`
         },
         {
           id: 6,
@@ -266,24 +389,63 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
-                <li>Improves answer completeness by ensuring all relevant information is available</li>
-                <li>Critical for complex queries requiring multiple evidence pieces</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG
+                  <MermaidPopover
+                    title="Impact of High vs Low Recall"
+                    diagram={`graph LR
+    A[Low Recall<br/>Missing Docs] --> B[Incomplete Context]
+    B --> C[LLM Fills Gaps]
+    C --> D[❌ Hallucinations<br/>❌ Omissions]
+    
+    E[High Recall<br/>Complete Coverage] --> F[Rich Context]
+    F --> G[LLM Has All Info]
+    G --> H[✅ Accurate Answers<br/>✅ Completeness]
+    
+    style A fill:#ef4444,color:#fff
+    style D fill:#ef4444,color:#fff
+    style E fill:#10b981,color:#fff
+    style H fill:#10b981,color:#fff`}
+                  />
+                </h3>
+                <GSAPStaggerList stagger={0.15} delay={0.3}>
+                  <li>Higher recall reduces omission-driven hallucinations where the LLM fills knowledge gaps</li>
+                  <li>Improves answer completeness by ensuring all relevant information is available</li>
+                  <li>Critical for complex queries requiring multiple evidence pieces</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Requires ground truth relevance labels, which can be expensive to obtain</li>
-                <li>Does not account for the quality or precision of retrieved documents</li>
-                <li>May incentivize retrieving too many documents, increasing noise</li>
-                <li>Difficult to optimize when relevant documents are poorly embedded or chunked</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.7}>
+                  <li>Requires ground truth relevance labels, which can be expensive to obtain</li>
+                  <li>Does not account for the quality or precision of retrieved documents</li>
+                  <li>May incentivize retrieving too many documents, increasing noise</li>
+                  <li>Difficult to optimize when relevant documents are poorly embedded or chunked</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#231f6f',
-          notes: ''
+          notes: `### Retrieval Recall@K — Considerations
+We've covered what Recall at K is and how to calculate it. Now let's talk about the bigger picture—when should you use it, and what are its limitations?
+
+####  The Positive Impact on RAG Systems
+High recall has a profound impact on your RAG system's quality. When you have high recall, you're giving your LLM all the relevant information it needs, which directly translates to better, more complete answers. Think of it like preparing for an exam—if you bring all your relevant notes, you can answer comprehensively. If you forget half your notes, you're going to struggle and might guess at answers. The same principle applies here. High recall is especially critical for complex queries that need information from multiple sources. For example, if someone asks "Compare the efficacy of treatments A, B, and C for condition X," you need to retrieve documents about all three treatments. Missing even one means your comparison is incomplete.
+
+####  When to Use This Metric
+You should actively monitor Recall at K in several scenarios. First, when you're tuning your embedding models—these are the neural networks that convert text into vectors for similarity search. If you switch from one embedding model to another and your recall drops, that's a red flag. Second, when you're experimenting with chunking strategies—how you break up documents matters a lot. If your chunks are too small or too large, recall can suffer. Third, if users are complaining about incomplete answers or if you notice the LLM hallucinating to fill knowledge gaps, check your recall first. It's often the root cause.
+
+####  The Good Stuff
+The benefits are clear: reduced hallucinations, improved completeness, and more trustworthy answers. Recall at K gives you a direct line of sight into whether your retrieval system is doing its job. It's also relatively straightforward to interpret—a score of seventy percent means you're getting seventy percent of what you should be getting. No complex statistics needed.
+
+####  The Problems
+But Recall at K isn't perfect. The biggest challenge is that it requires ground truth labels. Someone has to manually identify which documents are relevant for each query, and this is expensive and time-consuming. For large-scale systems, this can be prohibitive. Second, recall doesn't tell you about precision—you could have perfect recall but also retrieve tons of irrelevant documents, overwhelming your LLM with noise. Third, optimizing purely for recall can be dangerous. You might end up retrieving way too many documents just to chase a perfect score, which increases costs, latency, and context window usage. Finally, if your documents are poorly embedded or chunked to begin with, improving recall can be nearly impossible without fixing those underlying issues first.
+
+####  A Balanced Approach
+The key is to use Recall at K as one metric among many. Don't optimize for recall alone—balance it with precision, efficiency, and answer quality. Think of it as a diagnostic tool: low recall tells you that retrieval is missing important documents, but it doesn't tell you how to fix it or whether fixing it will actually improve your end-to-end system performance.
+
+Alright, let's move on to our second metric—Retrieval Precision at K!`
         }
       ]
     },
@@ -297,22 +459,46 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Measures how relevant the top-K retrieved chunks are (relevance purity). Evaluates the accuracy and quality of the retrieval system's results.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Measures how relevant the top-K retrieved chunks are (relevance purity). Evaluates the accuracy and quality of the retrieval system's results.</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Improves grounding by focusing LLM on relevant information</li>
-                <li>Reduces irrelevant context that can distract the LLM</li>
-                <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
-                <li>Particularly important for smaller models with limited context processing ability</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <GSAPStaggerList stagger={0.12} delay={0.5}>
+                  <li>Improves grounding by focusing LLM on relevant information</li>
+                  <li>Reduces irrelevant context that can distract the LLM</li>
+                  <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
+                  <li>Particularly important for smaller models with limited context processing ability</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <p>When working with tight context budgets (token limits), to reduce context pollution and hallucination risk, when fine-tuning reranking models, and when evaluating retrieval quality for concise responses.</p>
+              <GSAPAnimated animation="bounceIn" delay={0.7}>
+                <p>When working with tight context budgets (token limits), to reduce context pollution and hallucination risk, when fine-tuning reranking models, and when evaluating retrieval quality for concise responses.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f616f',
-          notes: ''
+          notes: `### Retrieval Precision@K — Overview
+Moving on from Recall, let's talk about its complementary twin—Retrieval Precision at K. While recall asks "Did we find everything?", precision asks "Is what we found actually good?"
+
+####  What Is Retrieval Precision@K?
+Think of precision like quality control in manufacturing. If you're building a car and you order a hundred parts, precision tells you what percentage of those hundred parts are actually usable versus defective. In RAG systems, Precision at K measures the relevance purity of your retrieved documents. Out of the K documents you retrieved, how many are actually relevant to the query? If you retrieve ten documents but only seven are relevant, your precision is seventy percent.
+
+####  Why This Matters
+Here's the key difference from recall: recall cares about completeness, but precision cares about cleanliness. Low precision means you're polluting your LLM's context with irrelevant junk. Imagine trying to study for an exam while someone keeps handing you random notes from completely different subjects—that's what low precision does to your LLM. The model gets distracted by tangential information, which can lead to hallucinations or off-topic answers.
+
+####  When to Use This
+Precision becomes critical in several scenarios. First, when you're working with tight token budgets—if your context window is limited, you can't afford to waste tokens on irrelevant documents. Second, if you're using smaller language models with limited context processing ability, high precision helps them focus on what matters. Third, when you're fine-tuning reranking models—these are secondary models that reorder your initial retrieval results to improve relevance. Precision tells you how well your reranker is working.
+
+####  The Good Stuff
+High precision means your LLM gets clean, focused context. This directly improves grounding—the LLM sticks to the facts in the retrieved documents instead of wandering off into speculation. It reduces hallucination risk because the model isn't exposed to confusing or tangential information. And it's especially important for smaller models that struggle to filter out noise on their own.
+
+####  The Problems
+But here's the catch: there's often a trade-off between precision and recall. You can achieve perfect precision by only retrieving one document that you're absolutely certain is relevant, but then your recall will be terrible. Also, like recall, precision requires ground truth labels—someone has to judge whether each document is relevant or not. And precision doesn't account for redundancy. If you retrieve ten documents that all say the exact same thing, you'd have perfect precision, but you're wasting context on repetition.
+
+Let's dive into how precision is calculated!`
         },
         {
           id: 8,
@@ -320,25 +506,69 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Retrieval Precision@K measures the proportion of retrieved documents that are actually relevant. It answers: "Of the K documents we retrieved, how many are relevant?"</p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>How It Works
+                  <MermaidPopover
+                    title="Precision@K vs Recall@K"
+                    diagram={`graph LR
+    A[Top-K Retrieved] --> B{Evaluate Each}
+    B --> C[Relevant Docs<br/>in TopK]
+    B --> D[Irrelevant Docs<br/>in TopK]
+    
+    C --> E[Precision@K:<br/>Relevant / K]
+    
+    F[All Relevant Docs<br/>in Corpus] --> G[Recall@K:<br/>Retrieved / Total]
+    C --> G
+    
+    style A fill:#4fc3f7,color:#000
+    style C fill:#10b981,color:#fff
+    style D fill:#ef4444,color:#fff
+    style E fill:#fbbf24,color:#000
+    style F fill:#8b5cf6,color:#fff
+    style G fill:#fbbf24,color:#000`}
+                  />
+                </h3>
+                <p>Retrieval Precision@K measures the proportion of retrieved documents that are actually relevant. It answers: "Of the K documents we retrieved, how many are relevant?"</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`Precision@K = |Rel ∩ TopK| / K`}
-              </pre>
-              <p>Where |Rel ∩ TopK| is the number of relevant documents in the top-K results, and K is the total number of retrieved documents being evaluated.</p>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <h3>Formula</h3>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`Precision@K = |Rel ∩ TopK| / K`}
+                </pre>
+                <p>Where |Rel ∩ TopK| is the number of relevant documents in the top-K results, and K is the total number of retrieved documents being evaluated.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.70 typical for general RAG applications</li>
-                <li>≥0.85 for systems with small context windows</li>
-                <li>Higher values critical when LLM context capacity is limited</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3>Target Values</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.7}>
+                  <li>≥0.70 typical for general RAG applications</li>
+                  <li>≥0.85 for systems with small context windows</li>
+                  <li>Higher values critical when LLM context capacity is limited</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f616f',
-          notes: ''
+          notes: `### Retrieval Precision@K — How It Works
+Let's break down the calculation for Precision at K and understand how it differs from recall.
+
+####  The Core Question
+Precision at K answers: "Of the K documents I retrieved, what percentage are actually relevant?" Notice how this is fundamentally different from recall. Recall asks "How much did I find of everything?" while precision asks "How clean is what I found?"
+
+####  The Formula Explained
+The formula is Precision at K equals the absolute value of Rel intersection TopK, divided by K. Let me unpack this. The numerator—Rel intersection TopK—is the number of relevant documents in your top-K results. This is the same numerator we used for recall! But here's the key difference: the denominator. For precision, we divide by K, the number of documents we actually retrieved. For recall, we divided by the total number of relevant documents in the entire corpus. This distinction is crucial.
+
+####  The Difference in Practice
+Let's say you retrieve five documents, three of which are relevant. Your precision is three divided by five, which equals zero point six or sixty percent. But what if there are twenty relevant documents total in your corpus? Your recall would be three divided by twenty, which is only fifteen percent. Same retrieval result, but very different scores! This illustrates the trade-off: you can have high precision with low recall (you're picky but you miss stuff), or high recall with low precision (you cast a wide net but catch a lot of junk).
+
+####  Target Benchmarks
+For general RAG applications, aim for precision of at least seventy percent. This means at least seven out of every ten retrieved documents should be relevant. For systems with small context windows—maybe you're using a model with only four thousand tokens of context—you need higher precision, at least eighty-five percent. Every wasted token hurts when space is tight. The target also depends on your domain: in medical or legal applications where accuracy is critical, you might want ninety percent or higher precision.
+
+####  Why These Targets?
+These benchmarks balance practicality with quality. Below seventy percent precision, you're wasting too much of your context window on noise, which confuses the LLM and increases hallucination risk. Above ninety percent, you're probably being too conservative, missing out on potentially useful documents to maintain that ultra-high bar. The sweet spot for most applications is between seventy-five and eighty-five percent.
+
+Now let's see a concrete example!`
         },
         {
           id: 9,
@@ -346,17 +576,70 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p><strong>Query:</strong> "How to reset account password?"</p>
-              <p>Top-5 retrieved documents: 4 relevant password reset guides, 1 irrelevant login page doc</p>
-              <p><strong>Precision@5 = 4/5 = 0.80</strong></p>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
+                <h3>Example
+                  <MermaidPopover
+                    title="Precision@K Example"
+                    diagram={`graph TD
+    A[Query: Reset password?] --> B[Retrieval: Top-5]
+    B --> C1[✅ Doc 1: Password reset guide]
+    B --> C2[✅ Doc 2: Step-by-step reset]
+    B --> C3[❌ Doc 3: Login page info]
+    B --> C4[✅ Doc 4: Security tips for reset]
+    B --> C5[✅ Doc 5: Common reset errors]
+    
+    C1 --> D[Relevant: 4]
+    C2 --> D
+    C4 --> D
+    C5 --> D
+    
+    C3 --> E[Irrelevant: 1]
+    
+    D --> F[Precision@5 = 4/5 = 0.80]
+    
+    style A fill:#4fc3f7,color:#000
+    style C1 fill:#10b981,color:#fff
+    style C2 fill:#10b981,color:#fff
+    style C4 fill:#10b981,color:#fff
+    style C5 fill:#10b981,color:#fff
+    style C3 fill:#ef4444,color:#fff
+    style F fill:#81c784,color:#000`}
+                  />
+                </h3>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>Run your retrieval system to get the top-K results. For each retrieved document, label it as relevant or irrelevant to the query. Count the number of relevant documents and divide by K (the total number of documents retrieved).</p>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p><strong>Query:</strong> "How to reset account password?"</p>
+                <p>Top-5 retrieved documents: 4 relevant password reset guides, 1 irrelevant login page doc</p>
+                <p><strong>Precision@5 = 4/5 = 0.80</strong></p>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3>How to Calculate</h3>
+                <p>Run your retrieval system to get the top-K results. For each retrieved document, label it as relevant or irrelevant to the query. Count the number of relevant documents and divide by K (the total number of documents retrieved).</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f616f',
-          notes: ''
+          notes: `### Retrieval Precision@K — Implementation
+Let's walk through a practical example to see how Precision at K works in a real scenario.
+
+####  The Scenario
+Imagine you're building a customer support RAG system for a software company. A user submits the query, "How to reset account password?" Your retrieval system is configured to return the top five most relevant documents. After running the retrieval, you get back five documents: a comprehensive password reset guide, a step-by-step reset tutorial, an article about the login page structure, a guide on security tips for password resets, and a troubleshooting document about common reset errors.
+
+####  Labeling for Relevance
+Now comes the key step: you need to evaluate each of these five documents for relevance to the query. The password reset guide? Clearly relevant—it directly answers the question. The step-by-step tutorial? Also relevant. The login page article? This one's tricky—it mentions passwords, but it's really about how the login interface works, not about resetting passwords. This is irrelevant noise. The security tips guide? Relevant—it helps users reset passwords safely. The troubleshooting document? Relevant—it addresses problems users might encounter during resets. So we have four relevant documents and one irrelevant one.
+
+####  The Calculation
+Precision at five equals four divided by five, which equals zero point eight or eighty percent. This is pretty good! It means that eighty percent of what we retrieved is actually useful, and only twenty percent is noise. The LLM will have to sift through that one irrelevant document, but the signal-to-noise ratio is still healthy.
+
+####  Implementation Steps
+Here's how you'd implement this in your system. First, run your retrieval to get the top-K results—in this case, top five. Second, for each document, apply a relevance judgment. This can be done manually by human annotators, or you can use an LLM-as-a-judge approach where another model evaluates relevance. Third, count the number of relevant documents. Fourth, divide by K to get your precision score. Most RAG evaluation frameworks automate steps three and four.
+
+####  What This Tells You
+A precision of eighty percent tells you that your retrieval is reasonably clean, but there's room for improvement. That irrelevant document about the login page suggests your embedding model might be conflating "login" with "password reset" due to shared vocabulary. You might improve precision by using a reranker—a secondary model that reorders results based on deeper semantic understanding. Or you could adjust your chunking strategy to make documents more semantically distinct.
+
+Let's look at when precision is most important and what its limitations are!`
         },
         {
           id: 10,
@@ -364,25 +647,67 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Higher precision improves grounding by focusing LLM on relevant information</li>
-                <li>Reduces irrelevant context that can distract the LLM</li>
-                <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
-                <li>Particularly important for smaller models with limited context processing ability</li>
-              </ul>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG
+                  <MermaidPopover
+                    title="Precision-Recall Trade-off"
+                    diagram={`graph TD
+    A[Conservative Retrieval<br/>High Threshold] --> B[High Precision<br/>Clean Results]
+    B --> C[Low Recall<br/>Missing Docs]
+    C --> D[Incomplete Answers]
+    
+    E[Aggressive Retrieval<br/>Low Threshold] --> F[High Recall<br/>Complete Coverage]
+    F --> G[Low Precision<br/>Noisy Results]
+    G --> H[Distracted LLM]
+    
+    I[Balanced Approach] --> J[Moderate Precision<br/>& Recall]
+    J --> K[Best Overall Quality]
+    
+    style A fill:#fbbf24,color:#000
+    style E fill:#ef4444,color:#fff
+    style I fill:#10b981,color:#fff
+    style K fill:#81c784,color:#000`}
+                  />
+                </h3>
+                <GSAPStaggerList stagger={0.12} delay={0.3}>
+                  <li>Higher precision improves grounding by focusing LLM on relevant information</li>
+                  <li>Reduces irrelevant context that can distract the LLM</li>
+                  <li>Lowers hallucination risk by minimizing exposure to tangential information</li>
+                  <li>Particularly important for smaller models with limited context processing ability</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>High precision can come at the cost of lower recall (missing relevant documents)</li>
-                <li>Requires ground truth relevance judgments</li>
-                <li>May be too conservative for complex queries requiring diverse perspectives</li>
-                <li>Doesn't account for redundancy — multiple similar documents may inflate precision</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <GSAPStaggerList stagger={0.12} delay={0.7}>
+                  <li>High precision can come at the cost of lower recall (missing relevant documents)</li>
+                  <li>Requires ground truth relevance judgments</li>
+                  <li>May be too conservative for complex queries requiring diverse perspectives</li>
+                  <li>Doesn't account for redundancy — multiple similar documents may inflate precision</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f616f',
-          notes: ''
+          notes: `### Retrieval Precision@K — Considerations
+Now let's discuss the strategic implications of precision—when to optimize for it and what trade-offs you're making.
+
+####  The Positive Impact on RAG Systems
+High precision is like having a well-organized library where every book on the shelf is exactly what you need. When your LLM receives high-precision context, it can ground its answers in clean, relevant information without getting distracted by noise. This is especially powerful for smaller language models—say, models with seven billion parameters or fewer—that don't have the capacity to intelligently filter out irrelevant information on their own. High precision also directly reduces hallucination risk because the model isn't exposed to tangential information that might confuse it or lead it astray.
+
+####  When to Use This Metric
+You should prioritize precision in several key scenarios. First, when you're operating under tight token budgets. If your context window is limited to four thousand tokens, you can't afford to waste a single token on irrelevant documents. Every document must count. Second, when you're using smaller or less capable models that struggle with noisy context. Third, when you're evaluating or fine-tuning reranking models—these secondary models that reorder your initial retrieval results. Precision tells you if your reranker is successfully filtering out noise. Fourth, when your application requires concise, focused responses rather than comprehensive exploration of a topic.
+
+####  The Good Stuff
+High precision makes your RAG system more reliable and efficient. Your LLM spends less time processing irrelevant information, which means faster responses and lower costs. The answers tend to be more focused and less prone to wandering off topic. For production systems, high precision is often more important than high recall because it's better to give a focused, accurate answer based on a few highly relevant documents than to give a confused or hallucinated answer based on a mix of relevant and irrelevant documents.
+
+####  The Problems
+But precision comes with significant trade-offs. The most fundamental is the precision-recall trade-off: if you only retrieve documents you're absolutely certain are relevant, your precision will be high, but you'll miss a lot of relevant documents, making your recall low. This is a classic dilemma in information retrieval. Second, like recall, precision requires ground truth judgments—someone has to label what's relevant and what's not. Third, high precision can be too conservative for complex queries that benefit from diverse perspectives. Sometimes exposure to tangentially related information actually helps the LLM synthesize a better answer. Fourth, precision doesn't account for redundancy. If you retrieve ten documents that all say the exact same thing, your precision might be perfect, but you're wasting context on repetition instead of diversity.
+
+####  Finding the Balance
+The key is to not optimize for precision in isolation. Monitor both precision and recall together, and understand that different use cases require different balances. For factual question answering where you need focused, accurate responses, lean toward higher precision. For open-ended research queries where you want comprehensive coverage, lean toward higher recall. Most importantly, always evaluate the end-to-end impact on answer quality—sometimes a bit more noise is worth it if it means capturing critical information.
+
+Next up, let's talk about Hit Rate—a simpler but equally important metric!`
         }
       ]
     },
@@ -396,22 +721,46 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Definition</h3>
-              <p>Fraction of queries where at least one relevant item appears in top-K results (minimum success criterion).</p>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
+                <h3>Definition</h3>
+                <p>Fraction of queries where at least one relevant item appears in top-K results (minimum success criterion).</p>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
-                <li>Stabilizes answer quality by preventing complete retrieval failures</li>
-                <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
-                <li>Critical baseline before optimizing for more nuanced metrics</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.5}>
+                  <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
+                  <li>Stabilizes answer quality by preventing complete retrieval failures</li>
+                  <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
+                  <li>Critical baseline before optimizing for more nuanced metrics</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <p>As a production guardrail to ensure some support is present, when designing fallback strategies for low-relevance cases, for quick health checks of retrieval systems, and to evaluate base retrieval success before precision-focused tuning.</p>
+              <GSAPAnimated animation="slideInBottom" delay={0.7}>
+                <p>As a production guardrail to ensure some support is present, when designing fallback strategies for low-relevance cases, for quick health checks of retrieval systems, and to evaluate base retrieval success before precision-focused tuning.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f6f28',
-          notes: ''
+          notes: `### Hit Rate — Overview
+Welcome to our third metric: Hit Rate! This is often called the "minimum success criterion" for retrieval systems, and you'll see why in just a moment.
+
+####  What Is Hit Rate?
+Think of Hit Rate as a yes-or-no question: "Did we find at least one good document?" That's it. It's beautifully simple. If your system retrieves ten documents for a query and even just one of them is relevant, that counts as a hit. If all ten are irrelevant, that's a miss. Hit Rate tells you the fraction of your queries where you managed to retrieve at least something useful in your top-K 👉 'top kay' results.
+
+####  Why This Matters for RAG
+Here's the thing: if your retrieval system completely whiffs and returns zero relevant documents, your LLM is flying blind. It has nothing to ground its response in, so you're almost guaranteed to get a hallucinated or "I don't know" response. Hit Rate ensures that your generator has at least one anchor point, one piece of relevant evidence to build from. It's the bare minimum for stable answer quality.
+
+####  When to Use This
+Hit Rate is your go-to metric for production guardrails—you want to make sure that at least some relevant information makes it through for every query. It's perfect for quick health checks of your retrieval system, like a smoke test. Use it when designing fallback strategies for cases where retrieval struggles. And importantly, establish a good baseline Hit Rate before you start optimizing for more sophisticated metrics like precision or MRR 👉 'M R R'.
+
+####  Pros
+The good stuff: Hit Rate prevents catastrophic retrieval failures where you get absolutely nothing useful. It's a critical early warning signal—if your Hit Rate is low, you know immediately that you need to expand your knowledge base, generate synthetic training data, or fundamentally rethink your retrieval approach. It's also incredibly easy to understand and compute.
+
+####  Cons
+The problems: Hit Rate is a very coarse metric. It treats "found one marginally relevant document" the same as "found ten highly relevant documents." It doesn't care about quality, it doesn't care about ranking position, and it won't help you with fine-grained optimization. Once you've got a decent Hit Rate, you need other metrics to actually improve your system.
+
+Let's see how this binary success metric actually works!`
         },
         {
           id: 12,
@@ -419,25 +768,71 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>How It Works</h3>
-              <p>Hit Rate measures the fraction of queries where at least one relevant document appears in the top-K results. It's a binary success metric: did we retrieve anything useful?</p>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
+                <h3>How It Works
+                  <MermaidPopover
+                    title="Hit Rate Binary Evaluation"
+                    diagram={`flowchart TD
+    A[Start: Query + Corpus] --> B[Run Retrieval System<br/>Get Top-K Results]
+    B --> C{At Least 1<br/>Relevant Doc?}
+    C -->|Yes| D[Hit = 1 ✓]
+    C -->|No| E[Miss = 0 ✗]
+    D --> F[Sum All Hits]
+    E --> F
+    F --> G[Divide by Total<br/>Number of Queries]
+    G --> H[Hit Rate Score]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#3b82f6,color:#fff
+    style C fill:#8b5cf6,color:#fff
+    style D fill:#10b981,color:#fff
+    style E fill:#ef4444,color:#fff
+    style F fill:#0ea5e9,color:#fff
+    style G fill:#fbbf24,color:#000
+    style H fill:#81c784,color:#000`}
+                  />
+                </h3>
+                <p>Hit Rate measures the fraction of queries where at least one relevant document appears in the top-K results. It's a binary success metric: did we retrieve anything useful?</p>
+              </GSAPAnimated>
 
-              <h3>Formula</h3>
-              <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
-                {`HitRate@K = (1/N) Σ 1[|Rel ∩ TopK| ≥ 1]`}
-              </pre>
-              <p>Where N is the total number of queries, and the indicator function returns 1 if at least one relevant document appears in top-K, 0 otherwise. Sum over all queries.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <h3>Formula</h3>
+                <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.85rem' }}>
+                  {`HitRate@K = (1/N) Σ 1[|Rel ∩ TopK| ≥ 1]`}
+                </pre>
+                <p>Where N is the total number of queries, and the indicator function returns 1 if at least one relevant document appears in top-K, 0 otherwise. Sum over all queries.</p>
+              </GSAPAnimated>
 
-              <h3>Target Values</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>≥0.95 for FAQs or narrow/specialized corpora</li>
-                <li>≥0.80 for broad or diverse document collections</li>
-                <li>Lower values indicate need for embedding model or chunking improvements</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3>Target Values</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.7}>
+                  <li>≥0.95 for FAQs or narrow/specialized corpora</li>
+                  <li>≥0.80 for broad or diverse document collections</li>
+                  <li>Lower values indicate need for embedding model or chunking improvements</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f6f28',
-          notes: ''
+          notes: `### Hit Rate — How It Works
+Now let's break down the mechanics of how Hit Rate is actually calculated. Don't worry, it's refreshingly simple compared to some other metrics!
+
+####  The Binary Decision
+Here's how it works: For each query in your test set, you run your retrieval system and get back your top-K results—maybe the top five or top ten documents. Then you ask one simple question: "Is at least one of these documents relevant?" If yes, you record a hit, which is a one. If no, you record a miss, which is a zero. That's the binary part—there's no middle ground, no partial credit.
+
+####  The Calculation
+Once you've done this for all your queries, you sum up all the hits—all those ones—and divide by the total number of queries. That gives you your Hit Rate. The formula you see here uses an indicator function, which is just a fancy mathematical way of saying "this returns one if the condition is true, zero otherwise." The condition is whether the intersection of relevant documents and your top-K results is greater than or equal to one.
+
+####  What the Numbers Mean
+So what should you aim for? If you're working with FAQs 👉 'frequently asked questions' or a highly specialized corpus where queries are well-matched to your content, you want a Hit Rate of at least ninety-five percent. For broader or more diverse document collections where queries might be more varied, aim for at least eighty percent. If you're seeing lower values, that's a red flag—you probably need to improve your embedding model or rethink your chunking strategy.
+
+####  The Indicator Function
+That indicator function in the formula is doing something clever: it checks if the size of the intersection between relevant documents and your top-K is at least one. The intersection symbol means "what's in both sets," and if that intersection has at least one document, boom, you get a hit. Otherwise, you get a miss.
+
+####  Why Binary Works
+The beauty of this binary approach is that it's incredibly robust and easy to compute. You don't need to worry about edge cases or complex scoring—either you found something or you didn't. This makes Hit Rate a fantastic early-stage diagnostic metric.
+
+Now let's look at a concrete example to make this crystal clear!`
         },
         {
           id: 13,
@@ -445,17 +840,42 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3>Example</h3>
-              <p>Test set: 100 user queries against product documentation</p>
-              <p>Result: 92 queries have at least one relevant document in top-10 results</p>
-              <p><strong>Hit Rate@10 = 92/100 = 0.92</strong></p>
+              <GSAPAnimated animation="bounceIn" delay={0.1}>
+                <h3>Example</h3>
+                <p>Test set: 100 user queries against product documentation</p>
+                <p>Result: 92 queries have at least one relevant document in top-10 results</p>
+                <p><strong>Hit Rate@10 = 92/100 = 0.92</strong></p>
+              </GSAPAnimated>
 
-              <h3>How to Calculate</h3>
-              <p>For each query in your test set, run retrieval to get the top-K results. Check if at least one of those K documents is relevant. If yes, count it as a hit (1), otherwise count it as a miss (0). Sum all the hits and divide by the total number of queries.</p>
+              <GSAPAnimated animation="slideInTop" delay={0.4}>
+                <h3>How to Calculate</h3>
+                <p>For each query in your test set, run retrieval to get the top-K results. Check if at least one of those K documents is relevant. If yes, count it as a hit (1), otherwise count it as a miss (0). Sum all the hits and divide by the total number of queries.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f6f28',
-          notes: ''
+          notes: `### Hit Rate — Implementation
+Let's walk through a concrete example so you can see exactly how this works in practice.
+
+####  The Scenario
+Imagine you're running a RAG system for a software company's product documentation. You've put together a test set of one hundred real user queries—questions that actual customers asked your support team. Now you want to know: how often does your retrieval system find at least one useful document for these queries? Let's find out.
+
+####  Running the Test
+You take each of those one hundred queries and run them through your retrieval system, asking for the top-ten results each time. That's your top-K—K equals ten. Now comes the simple but crucial part: for each query, you manually check or use a pre-labeled dataset to determine whether at least one of those ten documents is actually relevant to the question.
+
+####  The Results
+In this example, you find that ninety-two of your one hundred queries successfully retrieved at least one relevant document. That means eight queries completely missed—they got ten results, but none of them were actually helpful. So your Hit Rate at ten is ninety-two divided by one hundred, which equals zero point ninety-two, or ninety-two percent.
+
+####  Interpreting This Result
+Is ninety-two percent good? For product documentation with well-defined queries, it's decent but not great. Those eight misses represent eight cases where a customer would get a completely hallucinated or unhelpful answer because the retrieval system failed to find any grounding information. You'd probably want to dig into those eight failures, understand why they missed, and improve your system to catch them.
+
+####  Step-by-Step Process
+Let me repeat the calculation process because it's so simple yet powerful: First, for each query, run retrieval and get your top-K results. Second, check if at least one of those K documents is relevant—this gives you a one for hit or zero for miss. Third, sum up all those ones and zeros. Fourth, divide by the total number of queries. That's your Hit Rate. No complex math, no weighting schemes, just a straightforward success-or-failure count.
+
+####  Practical Tips
+When you're implementing this yourself, make sure you're consistent about what "relevant" means. Are you checking if the document contains the answer? If it's on the right topic? If it would help a human answer the question? Define this clearly up front, because consistency in your relevance judgments is what makes this metric meaningful.
+
+Now let's talk about the broader impact and some important limitations you need to be aware of!`
         },
         {
           id: 14,
@@ -463,25 +883,74 @@ Let's dive into the first category—**Retrieval Quality Metrics**—starting wi
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2' }}>
-              <h3 style={{ color: '#2ecc71' }}>Impact on RAG</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
-                <li>Stabilizes answer quality by preventing complete retrieval failures</li>
-                <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
-                <li>Critical baseline before optimizing for more nuanced metrics</li>
-              </ul>
+              <GSAPAnimated animation="slideInLeft" delay={0.1}>
+                <h3 style={{ color: '#2ecc71' }}>Impact on RAG
+                  <MermaidPopover
+                    title="Hit Rate Impact on RAG Pipeline"
+                    diagram={`flowchart LR
+    A["❓ Query"] --> B["🔍 Retrieval"]
+    B -->|Hit Rate ≥0.8| C["✅ At Least 1<br/>Relevant Doc"]
+    B -->|Hit Rate <0.8| D["❌ Zero<br/>Relevant Docs"]
+    C --> E["🤖 LLM:<br/>Grounded Answer"]
+    D --> F["🤖 LLM:<br/>Hallucination Risk"]
+    E --> G["✓ Quality Output"]
+    F --> H["✗ Poor Output"]
+    
+    style A fill:#4fc3f7,color:#000
+    style B fill:#3b82f6,color:#fff
+    style C fill:#10b981,color:#fff
+    style D fill:#ef4444,color:#fff
+    style E fill:#81c784,color:#000
+    style F fill:#fbbf24,color:#000
+    style G fill:#10b981,color:#fff
+    style H fill:#ef4444,color:#fff`}
+                  />
+                </h3>
+                <GSAPStaggerList stagger={0.15} delay={0.3}>
+                  <li>Ensures the generator sees at least one relevant "anchor" for grounding</li>
+                  <li>Stabilizes answer quality by preventing complete retrieval failures</li>
+                  <li>Low hit rate signals need for synthetic data or knowledge base expansion</li>
+                  <li>Critical baseline before optimizing for more nuanced metrics</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
 
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ marginTop: '14px' }}>
-                <li>Binary metric doesn't capture how many relevant documents were retrieved</li>
-                <li>Can be misleadingly high if only marginally relevant documents are retrieved</li>
-                <li>Doesn't account for quality or ranking position of the hit</li>
-                <li>May not be sensitive enough for fine-grained optimization</li>
-              </ul>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+                <GSAPStaggerList stagger={0.15} delay={0.7}>
+                  <li>Binary metric doesn't capture how many relevant documents were retrieved</li>
+                  <li>Can be misleadingly high if only marginally relevant documents are retrieved</li>
+                  <li>Doesn't account for quality or ranking position of the hit</li>
+                  <li>May not be sensitive enough for fine-grained optimization</li>
+                </GSAPStaggerList>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1f6f28',
-          notes: ''
+          notes: `### Hit Rate — Considerations
+Let's wrap up Hit Rate by talking about its real-world impact on your RAG system and the important limitations you need to keep in mind.
+
+####  Impact on RAG Systems
+The primary impact of Hit Rate is that it ensures your LLM has at least one anchor point for grounding its responses. Think of it like this: if you're writing an essay and you have zero sources, you're just making stuff up. But if you have even one good source, you can at least build something factual around it. High Hit Rate stabilizes answer quality by preventing those catastrophic cases where retrieval completely fails and the LLM has nothing to work with.
+
+####  Early Warning System
+A low Hit Rate is one of the clearest signals that something is fundamentally wrong with your retrieval setup. It might mean your knowledge base doesn't actually contain the information users are asking about—in which case you need to expand it or generate synthetic data to fill the gaps. Or it could mean your embedding model is mismatched to your domain, your chunking strategy is breaking up important information in weird ways, or your queries need preprocessing. Whatever the cause, fix Hit Rate first before you worry about precision or ranking quality.
+
+####  Why It's a Baseline Metric
+Hit Rate is what we call a baseline metric because it measures the absolute minimum requirement: did we get anything useful at all? It's like checking if a car engine starts before you worry about fuel efficiency or acceleration. You need a solid Hit Rate foundation before it makes sense to optimize for more nuanced metrics like MRR 👉 'M R R' or NDCG 👉 'N D C G'.
+
+####  The Binary Nature Problem
+Now, here's the big limitation: Hit Rate is binary, which means it treats all hits equally. Imagine two scenarios. In scenario A, you retrieve ten documents and exactly one of them is marginally relevant—maybe it mentions the topic but doesn't really help answer the question. In scenario B, you retrieve ten documents and eight of them are highly relevant, perfectly answering different aspects of the query. Both scenarios get the exact same Hit Rate of one hundred percent! The metric can't tell them apart.
+
+####  Missing the Quality Picture
+Hit Rate also doesn't care about where in your results the relevant document appears. Finding one relevant document in position one is treated the same as finding it in position ten, even though the first scenario is obviously better for your RAG system. And it doesn't capture the quality or relevance strength of the documents you found—a perfectly matching document counts the same as one that's barely on-topic.
+
+####  When Hit Rate Isn't Enough
+Once you've achieved a decent Hit Rate—say, above eighty or ninety percent—it stops being a useful optimization target. At that point, you're hitting something relevant for most queries, and you need finer-grained metrics to actually improve your system. You need to know things like: are you retrieving enough relevant documents? Are the most relevant ones ranked highly? Are you also retrieving a lot of irrelevant junk? Hit Rate can't answer any of those questions.
+
+####  The Right Tool for the Job
+The key takeaway is this: Hit Rate is a fantastic health check and a critical baseline, but it's not a silver bullet. Use it to ensure your retrieval system is working at a fundamental level, then graduate to more sophisticated metrics for optimization. Think of it as the first line of defense, not your only line of defense.
+
+And that's Hit Rate! Simple, powerful, but with important limitations that you need to understand to use it effectively.`
         }
       ]
     },
