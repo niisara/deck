@@ -1543,16 +1543,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.12} animation="slideInLeft">
                 <li>Parsing/layout extraction can be brittle</li>
                 <li>Requires well-structured documents</li>
                 <li>May produce uneven chunk sizes</li>
                 <li>Quality depends on document formatting</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: ''
+          notes: `### 21. Structure-Aware Chunking - Cons
+Every technique has trade-offs, and structure-aware chunking is no exception. Let's explore where this approach can run into trouble.
+
+#### Parsing Challenges
+The biggest challenge with structure-aware chunking is that **parsing and layout extraction can be brittle**. Think of it like trying to read a book where the formatting is inconsistent, some chapters have headings and some don't, or the table of contents doesn't match the actual content. Your parsing tools might work perfectly on one document but fail miserably on another. When the structure isn't clean, the parser struggles to identify boundaries correctly.
+
+#### Document Quality Dependencies
+This technique **requires well-structured documents** to shine. If you're working with PDFs that were scanned from paper, documents with inconsistent heading styles, or content that was poorly formatted to begin with, you're going to have a bad time. It's like trying to organize a messy closet when half the items don't have labels. The technique assumes your input already follows some organizational logic.
+
+#### Size Variability
+Structure-aware chunking **may produce uneven chunk sizes** because it respects the natural boundaries of your document structure. One section might be 100 tokens while another is 1,500 tokens. This isn't always bad, but it can cause problems if you have strict size requirements for your embedding model or retrieval system. Some chunks might be too small to be meaningful, while others exceed your context window.
+
+#### Formatting Dependence
+Ultimately, the **quality depends heavily on document formatting**. Well-formatted documents with clear hierarchies produce excellent results. Poorly formatted documents? Not so much. You're essentially at the mercy of whoever created the original document.
+
+Understanding these limitations helps you decide when this technique is worth the effort and when a simpler approach might be more reliable.`
         },
         {
           id: 22,
@@ -1560,24 +1575,42 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="slideInRight" delay={0.1} duration={0.7}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.3}>
                 <li>300–1200 tokens (by section)</li>
                 <li>Sizes vary based on document structure and heading levels</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.7}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.7}>
                 <li>Minimal across sections</li>
                 <li>Only necessary to maintain cross-sectional references</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInRight" delay={0.9} duration={0.7}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={1.0}>
                 <li>Medium (structure parsing and analysis requirements)</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: ''
+          notes: `### 22. Structure-Aware Chunking - Configuration
+Now let's get practical and talk numbers. How do you actually configure structure-aware chunking for real-world use?
+
+#### Best Chunk Size
+For structure-aware chunking, aim for **300 to 1200 tokens per section**. Notice that's quite a range! That's because this technique respects the natural boundaries of your document structure. A subsection might be 300 tokens, while a major section could be 1200 tokens. Think of it like organizing a book, some chapters are naturally shorter than others. The **sizes vary based on document structure and heading levels**. If you're working with deeply nested headings (H1, H2, H3, H4), you might chunk at the H3 level to keep sizes manageable. For flatter documents, chunking at H2 might be perfect.
+
+#### Overlap Configuration
+Structure-aware chunking uses **minimal overlap across sections**, and that's actually a strength! Since you're breaking at natural semantic boundaries (like section headings), you don't need much overlap to preserve context. You **only need overlap to maintain cross-sectional references**, like when one section refers to concepts from a previous section. Think of it like chapters in a book, each chapter is self-contained, but occasionally one chapter references another.
+
+#### Computational Requirements  
+The **computational cost is medium** because you need **structure parsing and analysis**. You're not just counting characters or tokens, you're actually analyzing the document to identify headings, sections, and hierarchies. It's more work than fixed-size chunking but less expensive than semantic embedding-based approaches. Think of it as a middle ground between simple and sophisticated.
+
+These configurations give you a solid starting point, but remember to tune based on your specific documents and retrieval needs.`
         },
         {
           id: 23,
@@ -1585,26 +1618,44 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="bounceIn" delay={0.1} duration={0.8}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <li>Manuals, whitepapers, SOWs</li>
                 <li>Documentation sites</li>
                 <li>Academic papers with clear sections</li>
                 <li>Technical reports, legal documents</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.8}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.8}>
                 <li>Azure Document Layout</li>
                 <li>Unstructured.io</li>
                 <li>Docling</li>
                 <li>LangChain HTML/MD splitters</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires structure parsing knowledge</p>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.1} duration={0.7}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires structure parsing knowledge</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c6521',
-          notes: ''
+          notes: `### 23. Structure-Aware Chunking - Use Cases & Tools
+Let's explore where structure-aware chunking really shines and what tools can help you implement it effectively.
+
+#### Perfect Use Cases
+Structure-aware chunking is ideal for **manuals, whitepapers, and SOWs** (Statements of Work) because these documents are typically well-structured with clear sections, headings, and hierarchies. Think of a user manual with chapters like "Getting Started," "Installation," and "Troubleshooting." Each section is naturally self-contained and meaningful. **Documentation sites** are another perfect fit, websites built with tools like ReadTheDocs or GitBook already have a clear structure that this technique can leverage beautifully. **Academic papers with clear sections** like Abstract, Introduction, Methodology, Results, and Conclusion are ideal candidates. The structure is standardized and semantic. Finally, **technical reports and legal documents** often have numbered sections and subsections that map perfectly to this chunking strategy.
+
+#### Available Tools
+You're not building this from scratch! **Azure Document Layout** provides powerful APIs for extracting structure from PDFs and documents. **Unstructured.io** is a fantastic open-source library that handles structure extraction across many formats. **Docling** is another great tool specialized for document understanding and structure parsing. And if you're working with HTML or Markdown, **LangChain's HTML and Markdown splitters** have built-in support for structure-aware chunking with minimal configuration. These tools handle the heavy lifting of parsing and boundary detection.
+
+#### Complexity Assessment
+This is an **intermediate-level technique** that **requires structure parsing knowledge**. You need to understand document formats, heading hierarchies, and how to configure parsers. It's not as simple as "split every 500 characters," but it's also not as complex as building custom NLP models. Most developers can learn this with a few days of practice.
+
+Structure-aware chunking is powerful when your documents cooperate. Use it when structure exists and matters!`
         }
       ]
     },
@@ -1618,16 +1669,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.18} animation="slideInRight">
                 <li>Heuristics by content type (lists, bullets, code, tables)</li>
                 <li>Preserves meaning of special content elements</li>
                 <li>Adapts to document formatting patterns</li>
                 <li>Better chunk boundaries for mixed content</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: ''
+          notes: `### 24. Content-Aware Chunking - Pros
+Welcome to content-aware chunking, a sophisticated approach that understands *what* type of content it's dealing with, not just *where* to split. Let's explore why this technique is so powerful.
+
+#### Intelligent Content Recognition
+Content-aware chunking uses **heuristics based on content type**, recognizing whether you're dealing with lists, bullets, code blocks, tables, or regular prose. Think of it like a smart librarian who doesn't just organize books by size, but by genre and topic. If you have a Python code block, this technique knows to keep it together as one unit rather than splitting it mid-function. If you have a table, it keeps the entire table intact so the data relationships remain meaningful.
+
+#### Semantic Preservation
+The key advantage is that it **preserves the meaning of special content elements**. A bulleted list makes sense as a complete unit. A code example needs to stay together to be understandable. A table's rows and columns form a cohesive whole. Regular character-based or token-based chunking would happily split these elements in arbitrary places, destroying their meaning. Content-aware chunking respects the semantics of your content.
+
+#### Adaptive Intelligence
+It **adapts to document formatting patterns** automatically. If your document alternates between prose paragraphs, code blocks, and tables, this technique adjusts the chunking strategy on the fly based on what it encounters. It's like having a smart assistant who changes their approach based on what they're organizing.
+
+#### Mixed Content Excellence
+For documents with **mixed content**, this technique produces **better chunk boundaries** than one-size-fits-all approaches. Each chunk is more likely to be semantically complete and meaningful because the chunker understands the content structure.
+
+This intelligence comes at a cost, but for documents with rich formatting, it's often worth it!`
         },
         {
           id: 25,
@@ -1635,16 +1701,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.16} animation="fadeIn" delay={0.2}>
                 <li>Rules require tuning for different domains</li>
                 <li>Domain-specific heuristics needed</li>
                 <li>Harder to maintain than simpler methods</li>
                 <li>May break on unusual formatting</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: ''
+          notes: `### 25. Content-Aware Chunking - Cons
+While content-aware chunking is intelligent, that intelligence comes with practical challenges. Let's be honest about where this technique struggles.
+
+#### Domain-Specific Tuning
+The **rules require tuning for different domains**, and this is a significant maintenance burden. What works for technical documentation might not work for legal contracts. What works for scientific papers might fail spectacularly on marketing materials. You can't just set it and forget it. Each new document type or domain may require you to adjust the heuristics, recognition patterns, and boundary rules. It's like having a sophisticated tool that needs constant calibration.
+
+#### Heuristic Development
+You need **domain-specific heuristics**, which means understanding your content deeply before you can chunk it effectively. How do you recognize a code block versus a formatted quote? How do you identify a table that should stay together versus a list that can be split? These rules don't write themselves, you need domain expertise to craft them.
+
+#### Maintenance Overhead
+This approach is **harder to maintain than simpler methods** like fixed-size or sentence-based chunking. Every time your document formats change, you might need to update your content recognition rules. New content types require new heuristics. It's an ongoing engineering investment rather than a one-time setup.
+
+#### Edge Case Fragility
+The system **may break on unusual formatting** that doesn't match your heuristics. Encounter a document with a weird mix of Markdown and HTML? Tables nested inside lists? Code blocks with unusual delimiters? Your carefully crafted rules might fail in unexpected ways. Simple, right? Not always!
+
+These challenges don't make content-aware chunking bad, they just mean you need to weigh the benefits against the ongoing maintenance costs.`
         },
         {
           id: 26,
@@ -1652,24 +1733,42 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="rotateIn" delay={0.1} duration={0.9}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.3}>
                 <li>200–800 tokens (dynamic)</li>
                 <li>Varies based on content type and complexity</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="rotateIn" delay={0.5} duration={0.9}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.7}>
                 <li>0–15% depending on content type</li>
                 <li>More for complex content, less for structured elements</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.9}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={1.0}>
                 <li>Medium (implementation complexity and processing requirements)</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: ''
+          notes: `### 26. Content-Aware Chunking - Configuration
+Let's talk numbers and practical settings. How do you configure content-aware chunking for production use?
+
+#### Dynamic Chunk Sizing
+Aim for **200 to 800 tokens, but expect this to be dynamic**. Unlike fixed-size chunking where every chunk is exactly 512 tokens, content-aware chunking produces variable sizes. A code block might be 150 tokens, a prose paragraph might be 400 tokens, and a complex table with explanation might be 750 tokens. The **size varies based on content type and complexity**. Think of it like packing boxes, you adjust the box size to fit the item, not vice versa. This variability is a feature, not a bug, because it preserves semantic completeness.
+
+#### Context-Sensitive Overlap
+Use **0 to 15% overlap depending on content type**. This is where content-awareness really shines! For **complex content** like interrelated paragraphs or sequential explanations, use **more overlap** (maybe 10-15%) to preserve context across chunks. For **structured elements** like code blocks, tables, or bulleted lists, use **less overlap** (0-5%) because these elements are self-contained. A code function doesn't need overlap with the next function. A table is complete on its own. But narrative text benefits from context bridges.
+
+#### Computational Investment
+Expect a **medium computational cost** due to **implementation complexity and processing requirements**. You're running content detection heuristics, pattern matching, and adaptive logic for every piece of content. It's more expensive than "split every N tokens" but less expensive than generating embeddings for semantic chunking. The processing happens once during ingestion, so this cost is typically acceptable for production systems.
+
+These configurations give you flexibility while preserving content integrity. Adjust based on your specific needs!`
         },
         {
           id: 27,
@@ -1678,25 +1777,41 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
               <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPStaggerList stagger={0.14} delay={0.3}>
                 <li>Ebooks and technical guides</li>
                 <li>Documentation sites and wikis</li>
                 <li>Mixed content with lists/tables/code</li>
                 <li>Formatting-rich documents</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="flipCard" delay={0.6} duration={1.0}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.8}>
                 <li>Custom heuristics (often bespoke)</li>
                 <li>Coveo chunking strategies</li>
                 <li>Unstructured.io content extractors</li>
                 <li>Rule-based custom splitters</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires expertise and domain-specific implementation</p>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.0} duration={0.8}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires expertise and domain-specific implementation</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c655a',
-          notes: ''
+          notes: `### 27. Content-Aware Chunking - Use Cases & Tools
+Now let's see where content-aware chunking really earns its keep, and what tools can help you implement it without building everything from scratch.
+
+#### Ideal Applications
+Content-aware chunking shines for **ebooks and technical guides** where you have a mix of narrative prose, code examples, diagrams, and tables all in one document. Think of an O'Reilly book on Python programming, it has explanatory text, code blocks, output examples, and tables comparing features. Each content type needs different handling. **Documentation sites and wikis** are another sweet spot, they typically have prose sections, API examples, configuration snippets, and structured data that benefit from content-aware boundaries. Any document with **mixed content including lists, tables, and code** is a prime candidate. And **formatting-rich documents** where the formatting carries semantic meaning (like Markdown with various elements) work beautifully with this approach.
+
+#### Implementation Tools
+Here's where it gets interesting, much of this is **custom heuristics that are often bespoke** to your specific needs. You'll write rules like "keep code blocks together" or "don't split tables." But you're not completely on your own! **Coveo** provides chunking strategies with content-awareness built in. **Unstructured.io** has excellent content extractors that understand different element types. And you can build **rule-based custom splitters** using pattern matching and content detection logic. The tooling landscape here is more fragmented than simple methods, but the flexibility is worth it.
+
+#### Skill Requirements
+This is an **intermediate-level technique** that **requires expertise and domain-specific implementation** skills. You need to understand your document formats deeply, write effective heuristics, and test thoroughly across your content types. Expect a learning curve, but the results justify the investment for content-rich applications.
+
+Content-aware chunking is your go-to when content diversity demands intelligent handling!`
         }
       ]
     },
@@ -1710,16 +1825,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.2} animation="slideInBottom">
                 <li>Topic-coherent chunks; high retrieval precision</li>
                 <li>Better semantic understanding and context preservation</li>
                 <li>Groups similar content regardless of physical proximity</li>
                 <li>Improved relevance in retrieval results</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: ''
+          notes: `### 28. Semantic Chunking (Embedding-Based) - Pros
+Now we're entering advanced territory! Semantic chunking uses embeddings to understand meaning, not just structure. This is where AI meets chunking strategy.
+
+#### Topic Coherence and Precision
+Semantic chunking creates **topic-coherent chunks** that result in **high retrieval precision**. Instead of breaking text at arbitrary character counts or sentence boundaries, this technique uses embedding models to identify where topics actually change. Think of it like a smart reader who can tell when the conversation shifts from discussing databases to discussing APIs, even if there's no heading to mark the transition. This leads to chunks that are semantically complete and topically focused, which dramatically improves retrieval quality.
+
+#### Semantic Intelligence
+It provides **better semantic understanding and context preservation** than any technique we've discussed so far. When you embed sentences or paragraphs, you're capturing their *meaning* in vector space. Sentences about the same topic cluster together, even if they use different words. This is huge! You can group content about "machine learning model training" even if some parts say "neural network optimization" and others say "teaching algorithms."
+
+#### Physical Independence
+Semantic chunking **groups similar content regardless of physical proximity** in the document. If page 5 and page 47 discuss the same concept, semantic chunking recognizes that relationship. This is especially powerful for documents where related concepts are scattered throughout.
+
+#### Retrieval Excellence
+The end result is **improved relevance in retrieval results**. When users query your system, they get chunks that are semantically aligned with their question, not just keyword matches. This is the gold standard for RAG applications.
+
+The intelligence comes at a cost, but for many applications, it's absolutely worth it!`
         },
         {
           id: 29,
@@ -1727,16 +1857,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.17} animation="slideInTop" delay={0.2}>
                 <li>Requires embeddings; adds computation cost</li>
                 <li>Tuning similarity thresholds can be challenging</li>
                 <li>Quality depends on embedding model choice</li>
                 <li>More implementation complexity than fixed methods</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: ''
+          notes: `### 29. Semantic Chunking (Embedding-Based) - Cons
+With great power comes great complexity. Let's talk about the real challenges you'll face with semantic chunking.
+
+#### Computational Requirements
+This technique **requires embeddings**, which **adds significant computation cost**. You're not just splitting text, you're running every sentence or paragraph through an embedding model to generate vector representations. For a large document corpus, this can mean thousands or millions of embedding calls. That's real money if you're using commercial APIs, or real infrastructure if you're self-hosting models. The compute happens during the chunking phase, before you even start your retrieval pipeline.
+
+#### Threshold Tuning Challenges
+**Tuning similarity thresholds can be challenging** and often requires experimentation. How similar do two sentences need to be before you group them into the same chunk? Set the threshold too high, and you get tiny chunks that lack context. Set it too low, and you get massive chunks that include multiple unrelated topics. There's no universal magic number, it varies by document type, embedding model, and your specific use case. Expect to iterate!
+
+#### Model Dependency
+The **quality depends heavily on your embedding model choice**. Use a weak or generic embedding model, and you get poor topic detection. Use a domain-specific model, and you might get great results on one content type but poor results on another. Different models have different strengths, some excel at code, others at legal text, others at conversational content. Your chunking quality is fundamentally limited by your model's semantic understanding.
+
+#### Complexity Overhead
+This has **more implementation complexity than fixed methods** by an order of magnitude. You need to manage embedding model deployment, handle batching for efficiency, tune similarity thresholds, and debug semantic grouping issues. It's not plug-and-play.
+
+These challenges don't disqualify semantic chunking, but they do mean you should use it deliberately, not casually!`
         },
         {
           id: 30,
@@ -1744,24 +1889,42 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="slideInLeft" delay={0.1} duration={0.8}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} delay={0.3}>
                 <li>200–600 tokens per semantic unit</li>
                 <li>Varies based on topic cohesion and content density</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInLeft" delay={0.5} duration={0.8}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} delay={0.7}>
                 <li>0–10% (minimal overlap needed)</li>
                 <li>Semantic boundaries reduce need for significant overlap</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInLeft" delay={0.9} duration={0.8}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.11} delay={1.0}>
                 <li>Medium–High (embedding generation and similarity calculations add overhead)</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: ''
+          notes: `### 30. Semantic Chunking (Embedding-Based) - Configuration
+Let's get practical about configuring semantic chunking for production systems. The numbers matter here!
+
+#### Semantic Unit Sizing
+Target **200 to 600 tokens per semantic unit**, which is typically smaller than structure-based chunks. Why? Because semantic chunking creates naturally cohesive units based on meaning, not structure. A semantic unit might be a single concept explained across multiple sentences, or a subsection discussing one specific point. The **size varies based on topic cohesion and content density**. Dense technical content might produce smaller chunks (200-300 tokens) where each concept is tightly packed. Narrative or explanatory content might produce larger chunks (400-600 tokens) where ideas flow more loosely. Let the semantics guide the size, not arbitrary limits.
+
+#### Minimal Overlap Strategy
+Use **0 to 10% overlap**, which is **minimal compared to fixed-size methods**. Here's why this works: **semantic boundaries naturally reduce the need for significant overlap**. When you break at topic transitions, the adjacent chunks are about different things, so overlap doesn't add much value. It's like chapters in a book, Chapter 2 doesn't need to repeat the ending of Chapter 1 because they're about different topics. You might use some overlap (5-10%) if your topics are closely related and build on each other sequentially, but often 0% works just fine.
+
+#### Performance Considerations
+Expect **medium to high computational cost** due to **embedding generation and similarity calculations**. Every sentence or small paragraph needs to be embedded, which means multiple API calls or model inferences. Then you need to compute similarity between embeddings to find topic boundaries. This is significantly more expensive than simple text manipulation. Budget accordingly, both in terms of infrastructure and latency. The good news is this happens once during ingestion, not during every query.
+
+These configurations balance quality with computational reality. Tune based on your retrieval metrics!`
         },
         {
           id: 31,
@@ -1769,26 +1932,44 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1} duration={0.9}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.3}>
                 <li>Multi-topic documents and research papers</li>
                 <li>Knowledge bases with diverse content</li>
                 <li>Product documentation libraries</li>
                 <li>When retrieval precision is critical</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={0.6} duration={0.9}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.8}>
                 <li>Sentence-transformers library</li>
                 <li>Pinecone examples and guides</li>
                 <li>Superlinked VectorHub</li>
                 <li>LlamaIndex SemanticSplitter</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate–Advanced</strong> - Requires understanding of embeddings and similarity thresholds</p>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.0} duration={0.8}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate–Advanced</strong> - Requires understanding of embeddings and similarity thresholds</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c1c65',
-          notes: ''
+          notes: `### 31. Semantic Chunking (Embedding-Based) - Use Cases & Tools
+When should you invest in semantic chunking, and what tools make it easier? Let's explore the sweet spots and practical implementation paths.
+
+#### Prime Use Cases
+Semantic chunking excels with **multi-topic documents and research papers** where topics shift subtly without clear structural markers. Think of a research paper that discusses methodology, then pivots to related work, then discusses results, all without always having explicit section headers. **Knowledge bases with diverse content** are another perfect fit, when you have articles about completely different topics all mixed together, semantic chunking groups related concepts correctly. **Product documentation libraries** benefit enormously because users ask semantic questions like "how do I authenticate?" and you need chunks that capture complete authentication-related concepts, even if they span multiple pages. Use this technique **when retrieval precision is absolutely critical** and the computational cost is justified by business value.
+
+#### Production-Ready Tools
+You're in luck, excellent tools exist! **Sentence-transformers library** provides state-of-the-art embedding models specifically designed for semantic similarity. It's open-source and battle-tested. **Pinecone** offers examples and guides for semantic chunking as part of their vector database ecosystem. **Superlinked VectorHub** has excellent resources and implementations for semantic chunking patterns. And **LlamaIndex SemanticSplitter** provides a turnkey solution if you're already in the LlamaIndex ecosystem. These tools handle much of the complexity for you.
+
+#### Skill Level
+This is **intermediate to advanced** territory, requiring **understanding of embeddings and similarity thresholds**. You need to grasp vector spaces, cosine similarity, and how different embedding models behave. You'll need to experiment with thresholds and evaluate results quantitatively. It's not beginner-friendly, but it's learnable with effort.
+
+Semantic chunking is the premium option for applications where retrieval quality directly impacts user value!`
         }
       ]
     },
@@ -1802,16 +1983,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.19} animation="slideInRight" delay={0.1}>
                 <li>Topic segmentation via cohesion drops; classic, explainable</li>
                 <li>Finds natural topic boundaries in text</li>
                 <li>Good for documents with distinct topic shifts</li>
                 <li>Based on linguistic principles of lexical cohesion</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: ''
+          notes: `### 32. TextTiling - Pros
+TextTiling is a classic algorithm from computational linguistics that's stood the test of time. Let's explore why this technique remains relevant decades after its invention.
+
+#### Explainable Topic Segmentation
+TextTiling uses **topic segmentation via cohesion drops**, and it's **classic and explainable**. Unlike black-box neural approaches, you can actually understand *why* TextTiling chose a particular boundary. It measures lexical cohesion (how related the words are) between text blocks, and when cohesion drops significantly, that's a topic boundary. Think of it like watching the conversation at a dinner party, when everyone stops talking about vacation plans and starts discussing politics, there's a clear shift. TextTiling detects those shifts mathematically by analyzing word repetition and semantic relatedness patterns.
+
+#### Natural Boundary Detection
+It **finds natural topic boundaries in text** without requiring explicit markers like headings or section breaks. The algorithm analyzes the text itself to identify where topics change. This is powerful for unstructured content like transcripts, articles, or books where the author didn't provide clear structural cues. The boundaries emerge from the content itself.
+
+#### Topic Shift Excellence
+TextTiling is particularly **good for documents with distinct topic shifts**. If your content has clear topical organization but poor structural markers, this is ideal. Think of a news article that discusses multiple related but distinct topics, or a transcript of a presentation that covers several themes sequentially.
+
+#### Linguistic Foundation
+It's **based on linguistic principles of lexical cohesion**, which means it has decades of research backing its approach. This isn't someone's random heuristic, it's grounded in understanding how human language actually works. Lexical cohesion theory tells us that related ideas tend to use related vocabulary, and TextTiling leverages that insight elegantly.
+
+This is a sophisticated yet understandable approach that bridges classic NLP with modern chunking needs!`
         },
         {
           id: 33,
@@ -1819,16 +2015,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.15} animation="fadeIn" delay={0.3}>
                 <li>Sensitive to parameters; domain variance</li>
                 <li>Can struggle with gradual topic transitions</li>
                 <li>Requires preprocessing and tuning</li>
                 <li>Performance varies with text style and genre</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: ''
+          notes: `### 33. TextTiling - Cons
+TextTiling is powerful but finicky. Let's be realistic about where this classic algorithm shows its age and limitations.
+
+#### Parameter Sensitivity
+TextTiling is **sensitive to parameters** and shows **domain variance** that can be frustrating. You need to configure window sizes, smoothing factors, and threshold values, and these settings that work beautifully for news articles might fail completely for technical documentation. It's like trying to tune a musical instrument, getting it just right requires patience and experimentation. Different text genres have different cohesion patterns, so one-size-fits-all configurations rarely work well.
+
+#### Gradual Transition Struggles
+The algorithm **can struggle with gradual topic transitions** where ideas shift slowly rather than abruptly. If a document gradually moves from discussing database design principles to specific SQL optimization techniques, TextTiling might miss the transition because there's no sharp cohesion drop. It's designed to detect valleys between hills, not gentle slopes. This makes it less effective for flowing narrative content where topics blend seamlessly.
+
+#### Configuration Overhead
+It **requires preprocessing and tuning** before it works well. You can't just point it at text and expect great results. You need to tokenize properly, potentially remove stopwords, configure the window parameters, and tune the sensitivity. This upfront work is an investment that might not be worth it for simple use cases.
+
+#### Style Dependence
+**Performance varies significantly with text style and genre**. Academic papers, news articles, transcripts, and technical docs all have different cohesion patterns. What works for one genre often needs retuning for another. This lack of generalization can be a maintenance burden if you're processing diverse content types.
+
+TextTiling is powerful but demands respect and careful tuning to deliver its best results!`
         },
         {
           id: 34,
@@ -1836,24 +2047,42 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="bounceIn" delay={0.1} duration={1.0}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.3}>
                 <li>Variable by tile/window (often 200–800 tokens)</li>
                 <li>Based on topic boundaries, not fixed size</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.5} duration={1.0}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={0.7}>
                 <li>None</li>
                 <li>Algorithm itself handles transitions between topics</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9} duration={1.0}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.14} delay={1.0}>
                 <li>Medium (requires lexical cohesion calculations across text segments)</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: ''
+          notes: `### 34. TextTiling - Configuration
+Let's talk about the practical settings for TextTiling. This algorithm is unique because it's *driven by content*, not by arbitrary size limits.
+
+#### Dynamic Size by Topic
+The chunk size is **variable by tile or window**, typically ranging from **200 to 800 tokens**, but the key insight is that it's **based on topic boundaries, not fixed size**. You don't tell TextTiling "make 500-token chunks." Instead, you configure window parameters and let the algorithm find natural boundaries. One topic might be expressed in 250 tokens while another needs 700. This variability is a feature! It means each chunk is topically coherent rather than artificially truncated. Think of it like cutting a cake along the layer lines rather than with a ruler.
+
+#### Zero Overlap Strategy
+TextTiling uses **no overlap** between chunks, and here's why that's okay: the **algorithm itself handles transitions between topics** by detecting the cohesion valleys. When you break at a natural topic boundary, the concepts on either side are distinct enough that overlap doesn't add value. It's like chapters in a textbook, Chapter 3 about databases doesn't need to repeat the end of Chapter 2 about data structures because they're different topics. The boundary is clean. If you need context preservation, consider post-processing to add minimal overlap, but the algorithm doesn't include it natively.
+
+#### Processing Requirements
+Expect **medium computational cost** because it **requires lexical cohesion calculations across text segments**. For each potential boundary point, the algorithm computes similarity scores between adjacent text blocks, looking for cohesion drops. This involves tokenization, vocabulary analysis, and similarity calculations across sliding windows. It's more expensive than simple splitting but much less expensive than embedding-based approaches. The math is tractable and deterministic.
+
+TextTiling's configurations reflect its linguistic foundation, prioritize semantic boundaries over arbitrary size limits!`
         },
         {
           id: 35,
@@ -1861,26 +2090,44 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="rotateIn" delay={0.1} duration={0.9}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} delay={0.3}>
                 <li>Articles, transcripts with topic shifts</li>
                 <li>Academic papers, technical documentation</li>
                 <li>Long-form content with distinct sections</li>
                 <li>Multi-topic document segmentation</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.9}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.16} delay={0.8}>
                 <li>NLTK-style implementations</li>
                 <li>Open-source repos (DeepTiling)</li>
                 <li>Custom Python implementations</li>
                 <li>Research-oriented NLP libraries</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires understanding of lexical cohesion and parameter tuning</p>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="flipCard" delay={1.0} duration={0.9}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires understanding of lexical cohesion and parameter tuning</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#651c5d',
-          notes: ''
+          notes: `### 35. TextTiling - Use Cases & Tools
+Where does TextTiling shine, and how can you actually implement it? Let's explore the practical landscape.
+
+#### Ideal Scenarios
+TextTiling excels with **articles and transcripts that have topic shifts**. Think of a podcast transcript that moves from discussing one guest's background to their current work to future plans, distinct topics but no structural markers. **Academic papers and technical documentation** work well because they tend to have clear topical organization even when section headers are missing or inconsistent. **Long-form content with distinct sections** is perfect, like a blog post discussing three different case studies sequentially. And for **multi-topic document segmentation** where you need to identify where topics change without relying on formatting, TextTiling is a solid choice.
+
+#### Implementation Resources
+The tooling landscape for TextTiling is more academic than commercial. **NLTK-style implementations** exist in various NLP libraries, giving you ready-to-use versions of the classic algorithm. **Open-source repositories like DeepTiling** provide modernized implementations with better defaults. Many teams end up with **custom Python implementations** because the algorithm is well-documented and not overly complex to code from scratch. You'll find it in **research-oriented NLP libraries** rather than production-focused commercial tools. This means you might need to package it yourself for production use.
+
+#### Skill Requirements
+This is an **intermediate-level technique** requiring **understanding of lexical cohesion and parameter tuning**. You need to grasp the linguistic concepts behind cohesion analysis and be comfortable experimenting with window sizes, smoothing parameters, and thresholds. It's not plug-and-play, but it's also not rocket science. With some NLP background and willingness to iterate, most developers can make it work effectively.
+
+TextTiling bridges classic computational linguistics with modern chunking needs beautifully!`
         }
       ]
     },
@@ -1894,16 +2141,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.17} animation="slideInLeft" delay={0.2}>
                 <li>Uses discourse units (EDUs) and relations for high fidelity semantics</li>
                 <li>Captures rhetorical structure and text organization</li>
                 <li>Preserves argumentative flow and logical connections</li>
                 <li>Excellent for long-form content comprehension</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: ''
+          notes: `### 36. Discourse / RST Chunking - Pros
+Now we're entering the cutting edge of linguistic analysis! Discourse and RST (Rhetorical Structure Theory) chunking represents the most sophisticated understanding of how text is organized. Let's explore why this is so powerful.
+
+#### Deep Semantic Understanding
+This approach **uses discourse units (EDUs, or Elementary Discourse Units) and relations for high fidelity semantics**. An EDU is roughly a clause, the smallest unit that expresses a complete idea. RST analysis identifies how these EDUs relate to each other through rhetorical relations like "elaboration," "contrast," "cause-effect," or "evidence." This is like understanding not just what sentences say, but *how* they work together to build arguments and narratives. You're capturing the author's communicative strategy, not just the words.
+
+#### Rhetorical Structure Capture
+It **captures rhetorical structure and text organization** at a level that no other chunking technique approaches. You understand which parts of the text are claims versus support, which are background versus new information, which are main points versus details. Think of it like understanding the skeleton of an argument, not just the flesh. This structural understanding enables much more intelligent retrieval because you can match queries to the right *type* of content.
+
+#### Argumentative Coherence
+RST chunking **preserves argumentative flow and logical connections** between ideas. If sentence A provides evidence for claim B, and claim B supports conclusion C, RST captures those relationships. When you chunk at discourse boundaries, you keep complete argumentative units together. This is invaluable for question answering and reasoning tasks where understanding the logical structure matters.
+
+#### Long-Form Excellence
+It's **excellent for long-form content comprehension** where understanding the overall structure is as important as understanding individual parts. Research papers, legal briefs, technical proposals, they all benefit from discourse-aware chunking.
+
+This is the most linguistically sophisticated chunking approach available!`
         },
         {
           id: 37,
@@ -1911,16 +2173,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.18} animation="slideInRight" delay={0.3}>
                 <li>Parsers are computationally heavy</li>
                 <li>Not turnkey; requires specialized knowledge</li>
                 <li>Lower throughput than simpler methods</li>
                 <li>Limited availability of production-ready tools</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: ''
+          notes: `### 37. Discourse / RST Chunking - Cons
+The sophistication of RST chunking comes with serious practical challenges. This is not an approach for the faint of heart or tight deadlines!
+
+#### Computational Intensity
+**Parsers are computationally heavy**, and that's an understatement. RST parsing requires analyzing syntactic structure, identifying EDU boundaries, determining rhetorical relations between all EDU pairs, and building a complete discourse tree. This is orders of magnitude more expensive than any technique we've discussed. We're talking seconds per document, not milliseconds. For large corpora, the processing time can be prohibitive unless you have serious compute resources.
+
+#### Expertise Barrier
+This is **not turnkey and requires specialized knowledge**. You can't just pip install a package and start chunking. You need to understand RST theory, how discourse parsers work, how to interpret their output, and how to tune them for your domain. The learning curve is steep. Most NLP engineers haven't worked with RST, and the pool of expertise is limited. This can be a blocker for teams without deep NLP experience.
+
+#### Performance Trade-offs
+Expect **lower throughput than simpler methods** by several orders of magnitude. Fixed-size chunking processes documents in milliseconds. RST parsing might take 10-30 seconds per document. If you're processing millions of documents, this matters enormously. The throughput difference can make or break the feasibility of using this approach at scale.
+
+#### Tooling Scarcity
+There's **limited availability of production-ready tools**. Most RST parsers are research-grade implementations, not production-hardened services. They might crash on edge cases, lack proper error handling, or require specific input formats. You'll likely need to do significant engineering to productionize them.
+
+RST chunking delivers unmatched linguistic sophistication, but the practical barriers are substantial!`
         },
         {
           id: 38,
@@ -1928,24 +2205,42 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="flipCard" delay={0.1} duration={1.1}>
+                <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <li>Combine Elementary Discourse Units (EDUs) to ~150–400 tokens</li>
                 <li>Size based on discourse relation boundaries, not fixed counts</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="flipCard" delay={0.6} duration={1.1}>
+                <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={0.8}>
                 <li>None by default (discourse boundaries are respected)</li>
                 <li>Optional minimal overlap when coherence requires it</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="flipCard" delay={1.0} duration={1.1}>
+                <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.13} delay={1.1}>
                 <li>High (implementation complexity and heavy processing requirements)</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: ''
+          notes: `### 38. Discourse / RST Chunking - Configuration
+How do you actually configure RST chunking? The settings here reflect its unique linguistic foundation.
+
+#### EDU-Based Sizing
+You **combine Elementary Discourse Units (EDUs) to reach approximately 150 to 400 tokens** per chunk. An individual EDU might be just 5-15 tokens (a single clause), so you're grouping multiple EDUs together based on their rhetorical relationships. If three EDUs form a complete argumentative unit (claim + evidence + elaboration), you keep them together even if the total is only 180 tokens. The **size is based on discourse relation boundaries, not fixed counts**. You're respecting the natural rhetorical structure of the text. Think of it like chapters in a book, they vary in length but each is a complete narrative unit.
+
+#### Boundary-Respecting Overlap
+Use **no overlap by default** because **discourse boundaries are naturally respected**. When you break at a discourse boundary (the end of a complete argumentative unit), the next chunk starts a new rhetorical structure. There's a clean conceptual break, so overlap doesn't add value. However, you might use **optional minimal overlap when coherence requires it**, such as when one discourse unit explicitly references the previous one. But this is the exception, not the rule. The discourse structure itself provides the context.
+
+#### Heavy Processing
+Expect **high computational cost** due to **implementation complexity and heavy processing requirements**. RST parsing involves syntactic analysis, EDU segmentation, relation classification between all EDU pairs, and tree construction. This is the most expensive chunking approach by far. Plan for seconds-per-document processing times and significant CPU/memory requirements. This is research-grade computational linguistics in production!
+
+These configurations reflect RST's unique approach, linguistic structure trumps arbitrary sizing!`
         },
         {
           id: 39,
@@ -1953,26 +2248,44 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              <GSAPAnimated animation="scaleIn" delay={0.1} duration={1.0}>
+                <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <li>Long-form question answering</li>
                 <li>Summarization grounding</li>
                 <li>Academic papers and legal documents</li>
                 <li>Complex reasoning over structured arguments</li>
-              </ul>
-              <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={0.6} duration={1.0}>
+                <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.8}>
                 <li>Research-grade RST parsers</li>
                 <li>Discourse segmentation toolkits</li>
                 <li>Custom NLP pipelines</li>
                 <li>Academic libraries (e.g., NLTK-RST)</li>
-              </ul>
-              <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
-              <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires specialized expertise and implementation difficulty</p>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="rotateIn" delay={1.0} duration={0.9}>
+                <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
+                <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires specialized expertise and implementation difficulty</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c653f',
-          notes: ''
+          notes: `### 39. Discourse / RST Chunking - Use Cases & Tools
+When is the computational and intellectual investment in RST chunking actually worthwhile? Let's identify the high-value scenarios.
+
+#### Premium Applications
+RST chunking excels at **long-form question answering** where understanding argumentative structure helps select the right evidence chunks. If someone asks "What evidence supports the authors' main claim?" RST helps you identify claim-evidence relationships. **Summarization grounding** is another killer app, when generating summaries, knowing which EDUs are main points versus supporting details is invaluable. **Academic papers and legal documents** are natural fits because they have explicit rhetorical structure, introductions support claims, methodology sections elaborate on procedures, and conclusions synthesize arguments. Finally, **complex reasoning over structured arguments** where you need to understand logical relationships, not just keyword matches, benefits enormously from discourse-aware chunking.
+
+#### Implementation Landscape
+The tooling is academic-grade, expect challenges. **Research-grade RST parsers** like DPLP or neural discourse parsers exist but require significant setup. **Discourse segmentation toolkits** provide EDU boundary detection as a first step. Most production use requires **custom NLP pipelines** that you build and maintain yourself. **Academic libraries like NLTK-RST** provide foundations but aren't production-ready. You'll need serious NLP engineering to deploy this.
+
+#### Expert-Level Technique
+This is an **advanced technique** requiring **specialized expertise and significant implementation difficulty**. You need deep understanding of RST theory, experience with discourse parsing, and strong NLP engineering skills. This is not a weekend project! Expect weeks or months to get it working well. Only pursue this if the value justifies the investment.
+
+RST chunking is the pinnacle of linguistic sophistication, use it when nothing else will suffice!`
         }
       ]
     },
@@ -1986,16 +2299,31 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
+              <GSAPStaggerList stagger={0.16} animation="slideInBottom" delay={0.2}>
                 <li>Honors tokenizer limits; predictable fit</li>
                 <li>Avoids truncation by embedding models</li>
                 <li>Matches exact token windows of models</li>
                 <li>More accurate size estimation than characters</li>
-              </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#656a1c',
-          notes: ''
+          notes: `### 40. Token-Aware Chunking - Pros
+Let's shift gears to a more practical, engineering-focused approach. Token-aware chunking addresses a real problem: making sure your chunks actually fit in your models' context windows!
+
+#### Tokenizer Alignment
+Token-aware chunking **honors tokenizer limits** and provides **predictable fit** for your models. This is huge! Instead of guessing "is 500 characters about 128 tokens?" you *know* exactly how many tokens each chunk contains because you're using the actual tokenizer. Different models tokenize differently, "GPT" in GPT-3.5's tokenizer might be one token, while in another tokenizer it's three. Token-aware chunking eliminates this uncertainty by using the same tokenizer that your embedding model uses.
+
+#### Truncation Prevention
+It **avoids truncation by embedding models**, which is a silent killer of quality. Many embedding models have hard limits like 512 tokens. If you send 600 tokens, they silently truncate the last 88 tokens, losing information and degrading retrieval quality. You might not even notice this is happening! Token-aware chunking ensures every chunk fits perfectly within the model's window, no truncation, no loss.
+
+#### Exact Window Matching
+It **matches the exact token windows of models** you're using. If your embedding model performs best with 256-token inputs, you can chunk at exactly 256 tokens. If your retrieval model has a 1024-token limit, you can chunk at 1024. This precision ensures you're using your models optimally, not leaving capacity unused or exceeding limits.
+
+#### Accuracy Over Characters
+It provides **more accurate size estimation than character-based methods**. A character count might suggest your chunk is small enough, but after tokenization it exceeds limits. Token-aware chunking measures what actually matters: tokens, not characters or words.
+
+This is engineering pragmatism at its finest, solving real production problems!`
         },
         {
           id: 41,
