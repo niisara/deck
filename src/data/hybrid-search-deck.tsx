@@ -525,39 +525,39 @@ flowchart TB
 
 #### Flipping the Script
 
-Welcome to **Pattern 3**, which is essentially Pattern 2 in reverse. Instead of starting with keywords and refining with semantics, we start with **semantic understanding** and refine with **exact term matching**. It's like casting a wide net based on meaning, then filtering for specific words.
+[cheerfully] Welcome to **Pattern 3**, which is essentially Pattern 2 in reverse. [conversational] Instead of starting with keywords and refining with semantics, we start with **semantic understanding** and refine with **exact term matching**. [playfully] It's like casting a wide net based on meaning, then filtering for specific words.
 
 #### How It Works: Semantics First, Keywords Second
 
-In **Stage 1**, we use **ANN** (Approximate Nearest Neighbor) search with vector embeddings. This finds documents that are semantically similar to your query, even if they use completely different words. Think of it like finding recipes that match your taste preferences, regardless of whether they use the exact ingredient names you mentioned.
+[lecture] In **Stage 1**, we use **ANN** (Approximate Nearest Neighbor) search with vector embeddings. [confidently] This finds documents that are semantically similar to your query, even if they use completely different words. [storytelling] Think of it like finding recipes that match your taste preferences, regardless of whether they use the exact ingredient names you mentioned.
 
-The **ANN** algorithms (like HNSW or IVF) are fast approximations that navigate through high-dimensional **embedding space** to find similar vectors. They're like taking shortcuts through a massive library by understanding the "neighborhood" of related concepts.
+[conversational] The **ANN** algorithms (like HNSW or IVF) are fast approximations that navigate through high-dimensional **embedding space** to find similar vectors. [playfully] They're like taking shortcuts through a massive library by understanding the "neighborhood" of related concepts.
 
-In **Stage 2**, we take those semantic candidates and compute their **BM25** scores. This adds a layer of keyword-based ranking that promotes documents containing the exact terms from your query. You can either use BM25 scores alone or combine them with the original vector scores for a blended ranking.
+[lecture] In **Stage 2**, we take those semantic candidates and compute their **BM25** scores. [seriously] This adds a layer of keyword-based ranking that promotes documents containing the exact terms from your query. [conversational] You can either use BM25 scores alone or combine them with the original vector scores for a blended ranking.
 
 #### When This Pattern Shines
 
-This pattern is perfect for **paraphrastic queries** – questions asked in many different ways. Imagine a customer support system where users ask "How do I reset my password?" in dozens of variations: "forgot my password," "can't log in," "password recovery," "account access issues," etc. Vector search catches all these variations in Stage 1.
+[enthusiastically] This pattern is perfect for **paraphrastic queries** – questions asked in many different ways. [storytelling] Imagine a customer support system where users ask "How do I reset my password?" in dozens of variations: "forgot my password," "can't log in," "password recovery," "account access issues," etc. [confidently] Vector search catches all these variations in Stage 1.
 
-It's also excellent for **vocabulary mismatch** problems. In multilingual contexts or domains with lots of synonyms (medical, legal, technical), users often search using different terminology than what's in the documents. **Semantic retrieval** solves this problem upfront.
+[pleased] It's also excellent for **vocabulary mismatch** problems. [conversational] In multilingual contexts or domains with lots of synonyms (medical, legal, technical), users often search using different terminology than what's in the documents. [excited] **Semantic retrieval** solves this problem upfront.
 
 #### The Re-Ranking Strategy
 
-The BM25 re-ranking serves as a **precision filter**. After casting a wide semantic net, you want to promote results that actually contain the user's specific terms. This provides **control** – you can ensure that when someone searches for "organic vegetables," documents with those exact words rank higher than documents that are just generally about healthy food.
+[lecture] The BM25 re-ranking serves as a **precision filter**. [conversational] After casting a wide semantic net, you want to promote results that actually contain the user's specific terms. [confidently] This provides **control** – you can ensure that when someone searches for "organic vegetables," documents with those exact words rank higher than documents that are just generally about healthy food.
 
 #### Architecture Considerations
 
-This pattern typically requires **multiple systems** or a platform that supports both vector and lexical search. You might use Pinecone or Qdrant for the ANN stage, then join with Elasticsearch for BM25 scoring. Some modern platforms like **Vespa** or **Weaviate** support both stages natively with two-phase ranking.
+[thoughtfully] This pattern typically requires **multiple systems** or a platform that supports both vector and lexical search. [conversational] You might use Pinecone or Qdrant for the ANN stage, then join with Elasticsearch for BM25 scoring. [pleased] Some modern platforms like **Vespa** or **Weaviate** support both stages natively with two-phase ranking.
 
 #### Trade-offs to Consider
 
-The main challenge is the **extra roundtrip** – you need to retrieve documents from the vector store, then compute BM25 scores, possibly requiring a join by document IDs. This adds latency and complexity.
+[cautiously] The main challenge is the **extra roundtrip** – you need to retrieve documents from the vector store, then compute BM25 scores, possibly requiring a join by document IDs. [seriously] This adds latency and complexity.
 
-There's also a risk that BM25 re-ranking can **demote valid paraphrases**. If a document perfectly answers the query but uses synonyms instead of exact terms, the BM25 stage might push it down in rankings. You need to tune the balance carefully.
+[thoughtfully] There's also a risk that BM25 re-ranking can **demote valid paraphrases**. [conversational] If a document perfectly answers the query but uses synonyms instead of exact terms, the BM25 stage might push it down in rankings. [seriously] You need to tune the balance carefully.
 
 #### Best Use Cases
 
-This pattern works best for **conversational search**, **question answering**, and **multilingual applications** where semantic recall is paramount. It's less suitable for highly technical searches where exact terminology is critical from the start.`
+[confidently] This pattern works best for **conversational search**, **question answering**, and **multilingual applications** where semantic recall is paramount. [cautiously] It's less suitable for highly technical searches where exact terminology is critical from the start.`
         },
         {
           id: 8,
@@ -599,31 +599,31 @@ This pattern works best for **conversational search**, **question answering**, a
 
 #### Understanding the Reverse Pattern
 
-Now let's analyze the pros and cons of starting with **semantic search** and refining with **keyword matching**. This flip changes the entire character of your search system.
+[conversational] Now let's analyze the pros and cons of starting with **semantic search** and refining with **keyword matching**. [seriously] This flip changes the entire character of your search system.
 
 #### Strengths: Semantic Power from the Start
 
-The biggest advantage is **strong semantic recall**. You're using vector embeddings right from the start, which means you catch relevant documents even when they use completely different vocabulary. This is like having a translator who understands meaning, not just words.
+[enthusiastically] The biggest advantage is **strong semantic recall**. [lecture] You're using vector embeddings right from the start, which means you catch relevant documents even when they use completely different vocabulary. [playfully] This is like having a translator who understands meaning, not just words.
 
-Think about **multilingual content** or **paraphrase-heavy domains**. A user searching "how to troubleshoot internet connectivity" will find documents about "resolving network connection problems" or "fixing WiFi issues" because the vector stage understands these are semantically related.
+[storytelling] Think about **multilingual content** or **paraphrase-heavy domains**. [conversational] A user searching "how to troubleshoot internet connectivity" will find documents about "resolving network connection problems" or "fixing WiFi issues" because the vector stage understands these are semantically related.
 
-The **BM25 re-ranking** adds precision and control back into the mix. After casting a wide semantic net, you can promote documents that contain the user's exact terms. This gives you the **best of both worlds** – broad semantic recall with targeted lexical precision.
+[confidently] The **BM25 re-ranking** adds precision and control back into the mix. [pleased] After casting a wide semantic net, you can promote documents that contain the user's exact terms. [excited] This gives you the **best of both worlds** – broad semantic recall with targeted lexical precision.
 
-This pattern is particularly effective for **question-answering systems** where users ask natural language questions. The semantic stage handles the variety of question formats, while the lexical stage ensures answers containing key terms rank higher.
+[enthusiastically] This pattern is particularly effective for **question-answering systems** where users ask natural language questions. [conversational] The semantic stage handles the variety of question formats, while the lexical stage ensures answers containing key terms rank higher.
 
 #### Limitations: Architectural Complexity
 
-The first challenge is **infrastructure complexity**. You need robust ANN search with good **filter support**. Not all vector databases handle metadata filtering efficiently at scale, which can be problematic if you need to filter by user permissions, date ranges, or other constraints.
+[cautiously] The first challenge is **infrastructure complexity**. [seriously] You need robust ANN search with good **filter support**. Not all vector databases handle metadata filtering efficiently at scale, which can be problematic if you need to filter by user permissions, date ranges, or other constraints.
 
-There's a risk that **lexical re-ranking can demote valid paraphrases**. Imagine a document that perfectly answers the query but uses synonyms throughout. The BM25 stage might unfairly penalize it for not containing exact terms. You need to balance the weights carefully.
+[concerned] There's a risk that **lexical re-ranking can demote valid paraphrases**. [storytelling] Imagine a document that perfectly answers the query but uses synonyms throughout. [cautiously] The BM25 stage might unfairly penalize it for not containing exact terms. [seriously] You need to balance the weights carefully.
 
-The **extra roundtrip** is another consideration. You're retrieving document IDs from the vector store, then computing BM25 scores (possibly from a different system), then joining and re-ranking. This adds latency and requires careful orchestration.
+[thoughtfully] The **extra roundtrip** is another consideration. [conversational] You're retrieving document IDs from the vector store, then computing BM25 scores (possibly from a different system), then joining and re-ranking. [cautiously] This adds latency and requires careful orchestration.
 
 #### When to Choose This Pattern
 
-Choose reverse two-stage when **semantic recall is your primary concern**. If users struggle with vocabulary (medical patients searching with layman's terms, international users with language barriers, or domains with heavy jargon), this pattern captures more relevant documents upfront.
+[confidently] Choose reverse two-stage when **semantic recall is your primary concern**. [reassuringly] If users struggle with vocabulary (medical patients searching with layman's terms, international users with language barriers, or domains with heavy jargon), this pattern captures more relevant documents upfront.
 
-Avoid it when **exact terminology is critical from the start**. If you're building a legal search where "negligent" and "careless" have different legal meanings despite being semantically similar, Pattern 2 (BM25 first) might be safer.`
+[seriously] Avoid it when **exact terminology is critical from the start**. [cautiously] If you're building a legal search where "negligent" and "careless" have different legal meanings despite being semantically similar, Pattern 2 (BM25 first) might be safer.`
         }
       ]
     },
@@ -690,39 +690,39 @@ Avoid it when **exact terminology is critical from the start**. If you're buildi
 
 #### Introduction to Term Boosting
 
-Welcome to **Pattern 4**, which adds **keyword intelligence** directly into vector search scoring. Think of this as adding guard rails to semantic search – you still get the power of understanding meaning, but you can enforce that certain important words must appear or should be heavily weighted.
+[cheerfully] Welcome to **Pattern 4**, which adds **keyword intelligence** directly into vector search scoring. [conversational] Think of this as adding guard rails to semantic search – you still get the power of understanding meaning, but you can enforce that certain important words must appear or should be heavily weighted.
 
 #### How It Works: Blending Vectors with Keywords
 
-The core idea is to run **vector similarity search** as your base, then layer on **lexical features** to adjust the scores. It's like having a base recipe (vector similarity) that you season to taste with specific ingredients (keyword matches).
+[lecture] The core idea is to run **vector similarity search** as your base, then layer on **lexical features** to adjust the scores. [playfully] It's like having a base recipe (vector similarity) that you season to taste with specific ingredients (keyword matches).
 
-First, you compute the **vector similarity** between your query embedding and document embeddings. This gives you semantic relevance scores. Then you compute **lexical features** – things like: Does the document contain the exact search terms? How many times? In which fields (title, body, tags)?
+[confidently] First, you compute the **vector similarity** between your query embedding and document embeddings. This gives you semantic relevance scores. [conversational] Then you compute **lexical features** – things like: Does the document contain the exact search terms? How many times? In which fields (title, body, tags)?
 
-These features are combined with a **weighted formula**: final_score = α × vector_score + β × keyword_boost. The α and β parameters let you tune how much weight to give to semantics versus exact matches. You can even add **must-hit clauses** that require certain terms to be present.
+[lecture] These features are combined with a **weighted formula**: final_score = α × vector_score + β × keyword_boost. [conversational] The α and β parameters let you tune how much weight to give to semantics versus exact matches. [seriously] You can even add **must-hit clauses** that require certain terms to be present.
 
 #### When This Pattern Excels
 
-This pattern is perfect for **product search** and **entity search**. Imagine an e-commerce site – if someone searches "red Nike running shoes size 10," you want semantic understanding (finding athletic footwear) but also strict matching on key attributes like brand, color, and size. The term boosts ensure Nike products rank higher than Adidas.
+[enthusiastically] This pattern is perfect for **product search** and **entity search**. [storytelling] Imagine an e-commerce site – if someone searches "red Nike running shoes size 10," you want semantic understanding (finding athletic footwear) but also strict matching on key attributes like brand, color, and size. [confidently] The term boosts ensure Nike products rank higher than Adidas.
 
-It's also essential for **compliance and legal terms**. In regulated industries, certain keywords must appear in documents – terms like "HIPAA compliant" or "FDA approved." You can make these **must-hit terms** that filter results before semantic ranking even happens.
+[seriously] It's also essential for **compliance and legal terms**. [firmly] In regulated industries, certain keywords must appear in documents – terms like "HIPAA compliant" or "FDA approved." [confidently] You can make these **must-hit terms** that filter results before semantic ranking even happens.
 
-**Disambiguation** is another key use case. If someone searches "apple," do they mean the fruit or the tech company? Term boosts on related words ("iPhone," "orchard," "pie") help disambiguate by giving extra weight when contextual keywords appear.
+[conversational] **Disambiguation** is another key use case. [playfully] If someone searches "apple," do they mean the fruit or the tech company? [lecture] Term boosts on related words ("iPhone," "orchard," "pie") help disambiguate by giving extra weight when contextual keywords appear.
 
 #### The Math Behind the Magic
 
-The beauty of this pattern is its **transparency and tunability**. Unlike a black-box neural model, you can explain exactly why a document ranked high: "It scored 0.85 on semantic similarity, plus got a 0.3 boost for containing 'FDA approved' in the title."
+[pleased] The beauty of this pattern is its **transparency and tunability**. [confidently] Unlike a black-box neural model, you can explain exactly why a document ranked high: "It scored 0.85 on semantic similarity, plus got a 0.3 boost for containing 'FDA approved' in the title."
 
-You can implement this with **function_score** queries in Elasticsearch, **rank features** in Vespa, or **alpha parameter weighting** in Weaviate. The key is having fine-grained control over how different signals combine.
+[conversational] You can implement this with **function_score** queries in Elasticsearch, **rank features** in Vespa, or **alpha parameter weighting** in Weaviate. [confidently] The key is having fine-grained control over how different signals combine.
 
 #### Feature Engineering Considerations
 
-The challenge is **feature engineering** – you need to decide which terms or phrases deserve boosts, how much to boost them, and in which fields. This requires domain knowledge and experimentation. Too much boosting can harm recall; too little and the boosts are meaningless.
+[cautiously] The challenge is **feature engineering** – you need to decide which terms or phrases deserve boosts, how much to boost them, and in which fields. [thoughtfully] This requires domain knowledge and experimentation. [seriously] Too much boosting can harm recall; too little and the boosts are meaningless.
 
-Modern tools like **SPLADE** (Sparse Lexical And Expansion) use neural networks to learn these sparse keyword signals automatically, removing some of the manual feature engineering burden.
+[pleased] Modern tools like **SPLADE** (Sparse Lexical And Expansion) use neural networks to learn these sparse keyword signals automatically, removing some of the manual feature engineering burden.
 
 #### Guarding Against Semantic Drift
 
-One of the biggest benefits is **preventing semantic drift**. Pure vector search can sometimes return documents that are semantically similar but miss the mark on specifics. Term boosting keeps the search grounded in the user's actual words while still benefiting from semantic understanding.`
+[confidently] One of the biggest benefits is **preventing semantic drift**. [cautiously] Pure vector search can sometimes return documents that are semantically similar but miss the mark on specifics. [reassuringly] Term boosting keeps the search grounded in the user's actual words while still benefiting from semantic understanding.`
         },
         {
           id: 10,
@@ -764,33 +764,33 @@ One of the biggest benefits is **preventing semantic drift**. Pure vector search
 
 #### The Power of Controlled Semantic Search
 
-Let's dive into why **term-boosted vector search** gives you powerful control, and where you need to be careful.
+[conversational] Let's dive into why **term-boosted vector search** gives you powerful control, and where you need to be careful.
 
 #### Strengths: Precision with Flexibility
 
-The most important strength is **guarding against semantic drift**. Pure vector search can sometimes wander off course, returning documents that are topically related but miss the user's specific intent. Term boosting acts like an anchor, keeping results tethered to the user's actual keywords.
+[confidently] The most important strength is **guarding against semantic drift**. [cautiously] Pure vector search can sometimes wander off course, returning documents that are topically related but miss the user's specific intent. [reassuringly] Term boosting acts like an anchor, keeping results tethered to the user's actual keywords.
 
-**Enforcing critical terms** is another huge advantage. In domains like healthcare, legal, or compliance, certain terms are non-negotiable. You can create must-hit clauses that require documents to contain "FDA approved" or "GDPR compliant" or specific medical codes. This ensures regulatory requirements are met.
+[firmly] **Enforcing critical terms** is another huge advantage. [seriously] In domains like healthcare, legal, or compliance, certain terms are non-negotiable. [confidently] You can create must-hit clauses that require documents to contain "FDA approved" or "GDPR compliant" or specific medical codes. This ensures regulatory requirements are met.
 
-The **tunable blend** gives you incredible flexibility. You can adjust the α and β weights based on query type, user preferences, or A/B testing results. Short queries might need more semantic help (higher α), while long technical queries might benefit from stronger keyword matching (higher β).
+[pleased] The **tunable blend** gives you incredible flexibility. [conversational] You can adjust the α and β weights based on query type, user preferences, or A/B testing results. [lecture] Short queries might need more semantic help (higher α), while long technical queries might benefit from stronger keyword matching (higher β).
 
-**Transparency** is underrated but valuable. With term boosting, you can explain to users or stakeholders exactly why results ranked as they did. "This product ranked #1 because it had high semantic similarity (0.82) plus a brand boost (+0.3) and color match (+0.2)." This explainability builds trust.
+[enthusiastically] **Transparency** is underrated but valuable. [conversational] With term boosting, you can explain to users or stakeholders exactly why results ranked as they did. [confidently] "This product ranked #1 because it had high semantic similarity (0.82) plus a brand boost (+0.3) and color match (+0.2)." This explainability builds trust.
 
 #### Limitations: The Engineering Tax
 
-The main challenge is **feature engineering**. You need domain expertise to identify which terms deserve boosts, how much to boost them, whether they should be must-haves, and which fields to prioritize. This is iterative work that requires testing and refinement.
+[cautiously] The main challenge is **feature engineering**. [seriously] You need domain expertise to identify which terms deserve boosts, how much to boost them, whether they should be must-haves, and which fields to prioritize. [thoughtfully] This is iterative work that requires testing and refinement.
 
-**Over-boosting is dangerous**. If you boost too aggressively, you essentially turn vector search back into pure keyword search, losing the semantic benefits. If someone searches "best wireless headphones" but you over-boost "wireless," you might miss excellent Bluetooth headphones that use different terminology.
+[concerned] **Over-boosting is dangerous**. [cautiously] If you boost too aggressively, you essentially turn vector search back into pure keyword search, losing the semantic benefits. [conversational] If someone searches "best wireless headphones" but you over-boost "wireless," you might miss excellent Bluetooth headphones that use different terminology.
 
-The **scoring configuration** becomes more complex than simple vector search. You're managing multiple parameters, potentially different boost values for different query types, and field-specific weights. This complexity can make debugging and optimization more difficult.
+[thoughtfully] The **scoring configuration** becomes more complex than simple vector search. [seriously] You're managing multiple parameters, potentially different boost values for different query types, and field-specific weights. This complexity can make debugging and optimization more difficult.
 
 #### Finding the Right Balance
 
-The key is **starting simple and iterating**. Begin with modest boosts (maybe 10-20% of the vector score) and tune based on actual search quality metrics. Use A/B testing to validate that boosts improve user satisfaction, not just match your intuitions.
+[confidently] The key is **starting simple and iterating**. [reassuringly] Begin with modest boosts (maybe 10-20% of the vector score) and tune based on actual search quality metrics. Use A/B testing to validate that boosts improve user satisfaction, not just match your intuitions.
 
 #### Modern Solutions
 
-Tools like **SPLADE** represent the future of this pattern – using neural networks to learn sparse keyword signals automatically from data, rather than hand-coding them. This reduces the engineering burden while keeping the benefits of term boosting.`
+[enthusiastically] Tools like **SPLADE** represent the future of this pattern – using neural networks to learn sparse keyword signals automatically from data, rather than hand-coding them. [pleased] This reduces the engineering burden while keeping the benefits of term boosting.`
         }
       ]
     },
