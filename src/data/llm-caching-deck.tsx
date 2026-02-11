@@ -583,67 +583,141 @@ With that understanding of Pattern 2, let's look at our third caching pattern, w
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          diagram={`flowchart LR
+    A["📋 Template ID + Variables"] --> B{"🔍 Cache Check"}
+    B -->|Hit| C["⚡ Return Rendered Prompt"]
+    B -->|Miss| D["🔨 Render Template"]
+    D --> E["💾 Store in Cache"]
+    E --> C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Rendered system/instruction templates and tokenized IDs</li>
+                        <li>Pre-processed templates per model/locale</li>
+                        <li>Common static prompt components</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Rendered system/instruction templates and tokenized IDs</li>
-                      <li>Pre-processed templates per model/locale</li>
-                      <li>Common static prompt components</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>template_id + template_version + model_id</li>
+                        <li>locale + formatting_mode</li>
+                        <li>Hash of all template parameters combined</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>template_id + template_version + model_id</li>
-                      <li>locale + formatting_mode</li>
-                      <li>Hash of all template parameters combined</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>In-process memory for token IDs</li>
+                        <li>Redis for cross-instance sharing</li>
+                        <li>Application-level memory for high access frequency</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>In-process memory for token IDs</li>
-                      <li>Redis for cross-instance sharing</li>
-                      <li>Application-level memory for high access frequency</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Very long TTL (weeks to months)</li>
+                        <li>Invalidate on template update or model switch</li>
+                        <li>Version-based cache invalidation triggers</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Very long TTL (weeks to months)</li>
-                      <li>Invalidate on template update or model switch</li>
-                      <li>Version-based cache invalidation triggers</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2d6b1d',
-          notes: ''
+          notes: `### Pattern 3: Prompt Template Cache
+Here's our third caching pattern: **Prompt Template Cache**. This pattern operates at a different layer than embeddings or retrieval results. We're caching at the prompt assembly and tokenization stage, right before sending text to the LLM.
+
+#### What Gets Cached
+In this pattern, we cache **rendered system and instruction templates along with their tokenized IDs**. Let me explain what this means in practice. Most LLM applications don't send raw, ad-hoc text to the model. You typically have structured prompt templates with placeholders for dynamic content. Something like: "You are a helpful assistant specializing in {domain}. Answer the following question: {user_question}." The static parts, like "You are a helpful assistant," remain constant across thousands of requests. The dynamic parts, like the domain and user question, change per request.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📋 Template ID + Variables"] --> B{"🔍 Cache Check"}
+    B -->|Hit| C["⚡ Return Rendered Prompt"]
+    B -->|Miss| D["🔨 Render Template"]
+    D --> E["💾 Store in Cache"]
+    E --> C
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffd700,color:#000
+\\\`\\\`\\\`
+
+When a request comes in with a template ID and variables, we check the cache. On a hit, we get back the pre-rendered prompt text or, even better, the pre-tokenized token IDs ready to send to the model. On a miss, we render the template, tokenize it if needed, store it in the cache, and return it. The beauty here is that we're avoiding repetitive template rendering and tokenization operations.
+
+We also cache **pre-processed templates per model and locale**. Different models may require different prompt formats. **GPT-4 👉 'G-P-T four'** and **Claude 👉 'Clawed'** have different instruction-following characteristics, so you might maintain separate template variants. Similarly, if you're serving a multilingual application, you have templates in English, Spanish, Japanese, et cetera. Each of these can be pre-rendered and cached separately.
+
+Finally, we cache **common static prompt components**. Think of these as reusable building blocks. System messages, role definitions, output format instructions. These fragments appear in many different prompts. By caching them, you avoid reprocessing the same text repeatedly.
+
+#### The Cache Key Strategy
+The cache key here is comprehensive: \\\`template_id + template_version + model_id + locale + formatting_mode + hash(parameters)\\\`. Let's unpack this. The \\\`template_id\\\` identifies which template you're using. Maybe you have templates called "customer_support_greeting" or "code_review_analysis." The \\\`template_version\\\` is critical. When you update a template, you need to bust the cache. Including the version in the key ensures old cached versions don't get served after an update.
+
+The \\\`model_id\\\` accounts for model-specific formatting. Different models have different tokenizers and different optimal prompt structures. A cached template for **GPT-4** shouldn't be used for **Claude** or **Llama 👉 'Lama', like the animal**. The \\\`locale\\\` handles internationalization. Your Spanish template shouldn't be served to English users. And \\\`formatting_mode\\\` covers things like whether you're rendering to plain text, markdown, or some other format.
+
+Finally, you hash all the template parameters together. If your template has five placeholders for dynamic content, the hash of those five values becomes part of the key. This means identical parameter sets get cache hits, while different parameter sets get unique entries.
+
+#### Storage Architecture
+For storage, we use **in-process memory for token IDs**. Tokenized prompts are accessed on every single LLM call, so you want them in the fastest possible storage. That's your application's local memory. No network hops, no serialization overhead. Just a hash map lookup and you have your token array.
+
+For sharing across service instances, you can use **Redis 👉 'red-iss'**. If you're running multiple instances of your application server, Redis lets them share the same cache. One instance renders and caches a template, and other instances can immediately benefit. This is especially valuable in autoscaling environments where new instances spin up frequently.
+
+You also keep templates in **application-level memory for high-access frequency items**. Your most common templates, used on every request, stay hot in memory. Less common templates can be fetched from Redis or re-rendered on demand.
+
+#### Time-to-Live Configuration
+Notice we use a **very long TTL 👉 'tee-tee-el', weeks to months**. Templates are deterministic. For the same template version, model, locale, and parameters, you'll always get the same output. So there's no reason to expire them frequently. Instead, we **invalidate on template update or model switch**. When you deploy a new template version, you explicitly purge or version-bump the cache keys. When you upgrade your model, the model_id in the key changes naturally, so old cached entries become irrelevant.
+
+This is **version-based cache invalidation**, not time-based. You're explicitly controlling cache lifetime based on semantic changes to your system, not arbitrary time windows.
+
+#### When This Pattern Shines
+The **strengths** are subtle but valuable. You get **faster prompt assembly and tokenization**. Template rendering involves string interpolation, validation, and potentially complex logic. Tokenization requires running your text through the model's tokenizer, which can take a few milliseconds. Caching eliminates this overhead. It's not huge, maybe five to twenty milliseconds saved per request, but it adds up at scale.
+
+You also get **consistent outputs across service instances**. All your servers use the same cached templates, so there's no risk of discrepancies from template logic bugs or race conditions during updates.
+
+Finally, there's **low implementation complexity**. This is one of the simpler caching patterns to implement. You're just caching strings or token arrays. No complex invalidation logic or coordination required.
+
+#### The Limitations
+But there are trade-offs. The **absolute savings per request are modest**. Unlike caching the LLM call itself, which might save hundreds of milliseconds and significant cost, caching templates saves you maybe ten milliseconds and a tiny fraction of compute cost. The value comes from applying it to millions of requests.
+
+You face **per-model differences requiring separate caches**. Every model you support multiplies your cache size. If you support five models and three locales, that's fifteen separate cache variants for each template. This increases memory footprint and complexity.
+
+And you need to **manage multi-locale variants**. Internationalization adds significant complexity. You need to track which template versions exist in which languages, ensure they're kept in sync, and handle fallbacks gracefully when a translation is missing.
+
+Let's examine the strengths and limitations more closely on the next slide.`
         },
         {
           id: 8,
@@ -651,34 +725,70 @@ With that understanding of Pattern 2, let's look at our third caching pattern, w
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="fadeIn" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Faster prompt assembly and tokenization</li>
+                      <li>Consistent outputs across service instances</li>
+                      <li>Low implementation complexity</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Faster prompt assembly and tokenization</li>
-                    <li>Consistent outputs across service instances</li>
-                    <li>Low implementation complexity</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Modest absolute savings per request</li>
+                      <li>Per-model differences require separate caches</li>
+                      <li>Requires management of multi-locale variants</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Modest absolute savings per request</li>
-                    <li>Per-model differences require separate caches</li>
-                    <li>Requires management of multi-locale variants</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2d6b1d',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's dive deeper into the Prompt Template Cache to understand where it delivers real value and where you need to temper your expectations.
+
+#### The Efficiency Gains
+On the **strengths** side, the primary benefit is **faster prompt assembly and tokenization**. Let me give you concrete numbers to make this tangible. Template rendering typically involves string interpolation, validation checks, and potentially some conditional logic. This might take one to five milliseconds depending on template complexity. Tokenization adds another five to fifteen milliseconds depending on the tokenizer and prompt length. That's up to twenty milliseconds you're saving per request.
+
+Now, twenty milliseconds doesn't sound like much. But let's do the math. If you're processing ten thousand requests per hour, that's two hundred thousand milliseconds saved per hour, which is over three minutes of compute time. At a million requests per day, you're saving over five hours of compute time daily. The savings accumulate. And in latency-sensitive applications where you're targeting sub-second end-to-end response times, every millisecond counts.
+
+The second strength is **consistent outputs across service instances**. When you cache templates centrally in **Redis 👉 'red-iss'** or share them across your application instances, every server is working from the same rendered templates. This eliminates a class of bugs where different servers might render templates slightly differently due to race conditions during deployments or configuration drift. You get deterministic behavior across your entire fleet.
+
+Third, this pattern has **low implementation complexity**. It's one of the simpler caching strategies to implement. You're caching strings or token arrays. The cache key is straightforward. There's no complex invalidation logic beyond version bumping when you update templates. You don't need to worry about staleness in the way you do with retrieval results or embeddings. Templates are deterministic, so once cached, they're valid until you explicitly change them.
+
+#### The Reality Check
+Now for the **limitations**, and this is where you need to be realistic about what this pattern can and cannot do. First, the **absolute savings per request are modest**. Unlike caching the actual LLM call, which might save you five hundred milliseconds of latency and five cents of cost, caching templates saves you maybe ten to twenty milliseconds and a fraction of a cent. The value comes from volume. This pattern makes sense when you're operating at scale, handling thousands or millions of requests. For a small application with a hundred requests per day, the engineering effort to implement template caching might not be justified.
+
+Second, **per-model differences require separate caches**. Every model you support multiplies your cache footprint. **GPT-4 👉 'G-P-T four'**, **Claude 👉 'Clawed'**, **Llama 👉 'Lama'**, **Gemini 👉 'Gem-in-eye'**—each has different tokenizers and optimal prompt formats. Your cache needs separate entries for each model variant. If you support five models, three locales, and two formatting modes, that's thirty separate cache variants for each template. This increases memory usage and operational complexity.
+
+#### The Internationalization Challenge
+The third limitation is **managing multi-locale variants**. Internationalization adds significant complexity. You need a workflow to ensure that when you update a template in English, corresponding updates are made to Spanish, French, Japanese, and all other supported languages. You need to track which translations are up to date and which are stale. You need fallback logic for when a template doesn't exist in the requested locale.
+
+In practice, many teams implement a **template versioning system** where each template has a version number, and each locale of that template is tracked separately. When you update the English template from version three to version four, the Spanish and French versions remain at version three until translators update them. Your system needs to handle this gracefully, either falling back to the previous version or showing a warning that translations are pending.
+
+#### Practical Deployment Patterns
+Successful deployments of this pattern often use **tiered caching**. Your most frequently used templates live in in-process memory for maximum speed. Less common templates are fetched from **Redis** or re-rendered on demand. You also implement **prewarming strategies**, where you proactively render and cache common templates during deployment rather than waiting for the first user request to trigger caching.
+
+Some teams also use **template composition**, breaking large templates into reusable fragments. You cache these fragments independently and assemble them as needed. This reduces cache size because common fragments are stored once and reused across multiple templates.
+
+#### When to Use This Pattern
+This pattern is most valuable in **high-throughput systems where template rendering and tokenization overhead adds up**. If you're running a customer service chatbot handling thousands of conversations simultaneously, or a code generation tool serving millions of API requests, the accumulated savings justify the implementation effort.
+
+It's less valuable in **low-volume applications or research prototypes** where you're iterating rapidly on prompts. In those cases, the caching overhead might exceed the benefits.
+
+> Ask the audience: "How many of you are using structured prompt templates rather than ad-hoc string formatting in your LLM applications?"
+
+With that understanding of Pattern 3, let's move on to Pattern 4, which caches at yet another critical layer: the final generated answers.`
         }
       ]
     },
