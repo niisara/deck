@@ -491,7 +491,7 @@ Let's look at a concrete before-and-after example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "flu treatment"<br />
                 <strong>After:</strong> "flu treatment" OR "influenza therapy" OR "antiviral medication" OR "oseltamivir" OR "flu remedies" OR "fever reduction"
@@ -625,7 +625,7 @@ Let's see a before-and-after.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "What about pricing?"<br />
                 <strong>After:</strong> "What is the pricing for the Pro plan of Acme API in 2024?"
@@ -759,7 +759,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "Compare Snowflake vs BigQuery costs for 10 TB/month"<br />
                 <strong>After:</strong> 1. What is Snowflake's pricing model and costs for 10 TB/month? 2. What is BigQuery's pricing model and costs for 10 TB/month? 3. What compute resources would be needed for this data volume? 4. How do the pricing structures compare for this workload?
@@ -893,7 +893,7 @@ Let's look at an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "How to fix CUDA OOM with Llama 3.1 70B?"<br />
                 <strong>After:</strong> "LLM memory optimization, quantization, gradient checkpointing, batch sizing, GPU VRAM constraints"
@@ -1031,7 +1031,7 @@ Let's see a concrete example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "causal ml uplift modeling tutorial"<br />
                 <strong>After (Hypothetical Document):</strong>
@@ -1174,7 +1174,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "LLM eval methods"<br />
                 <strong>After:</strong>
@@ -1318,7 +1318,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "And its limits?"<br />
                 <strong>After:</strong> "What are the 2024 rate limits for the Acme Pro API we discussed above?"
@@ -1451,7 +1451,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example - Interactive Clarification Flow</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example - Interactive Clarification Flow</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>User Query:</strong> "Apple pay policy"<br />
                 <strong>System Clarification:</strong> "Do you mean Apple Inc.'s payment policies or the fruit industry's payment policies? For Apple Inc., which region are you interested in?"<br /><br />
@@ -1596,7 +1596,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "GDPR fines"<br />
                 <strong>After:</strong> "GDPR fines site:ec.europa.eu time:2018-2024 filetype:pdf entity:\"data protection authority\""
@@ -1732,7 +1732,7 @@ Let's see a medical example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "heart attack treatment"<br />
                 <strong>After:</strong> "myocardial infarction (MI) management" OR "acute coronary syndrome therapy" OR "thrombolysis" OR "PCI" OR "cardiac revascularization"
@@ -1864,7 +1864,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)', padding: '20px', borderRadius: '8px', fontSize: '1.2rem', marginTop: '20px' }}>
                 <strong>Before:</strong> "vector DB HNSW tuning"<br />
                 <strong>After (Pseudo-doc):</strong> "HNSW (Hierarchical Navigable Small World) is a graph-based indexing algorithm used in vector databases for approximate nearest neighbor search. Key tuning parameters include M (maximum connections per node), which controls graph connectivity; efConstruction (search width during build) affecting index quality; and efSearch (search width during query) balancing speed vs recall. Proper tuning requires understanding the tradeoff between index build time, search latency, and recall performance..."
@@ -2002,7 +2002,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Start:</strong> Initial query: "What are effective LLM guardrails?"<br />
                 <strong>Iter 1:</strong> Draft mentions input filtering. Follow-up: "prompt injection prevention techniques"<br />
@@ -2140,7 +2140,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "compare s3 vs gcs pricing"<br />
                 <strong>After:</strong> "Compare storage pricing: AWS S3 vs Google Cloud Storage for 1–10 TB, standard tier, 2024"
@@ -2282,7 +2282,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "jaguar speed"<br />
                 <strong>After:</strong> "Jaguar (animal:Panthera onca) top speed; exclude Jaguar (brand:automobile manufacturer)"
@@ -2421,7 +2421,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "latest OpenAI API quotas"<br />
                 <strong>After:</strong> "OpenAI API rate limits as of 2025-11; changes in 2024–2025"
@@ -2564,7 +2564,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "blood thinner side effects"<br />
                 <strong>After:</strong> "anticoagulant adverse effects: warfarin, DOACs (apixaban, rivaroxaban), hemorrhagic complications field:pharmacology"
@@ -2704,7 +2704,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "fix 500 error nginx"<br />
                 <strong>After:</strong> Intent: troubleshoot → "Nginx 500 error troubleshooting steps for Ubuntu 22.04 - common causes, log file analysis, and configuration fixes"
@@ -2843,7 +2843,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "data governance framework"<br />
                 <strong>After:</strong>
@@ -2990,7 +2990,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "vector database comparison"<br />
                 <strong>After:</strong> "vector database comparison HNSW vs IVF FAISS Qdrant Milvus efSearch time-accuracy tradeoff"<br />
@@ -3136,7 +3136,7 @@ Let's see an example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Before:</strong> "api auth"<br />
                 <strong>After:</strong> "OAuth 2.0 authentication for Acme API docs 2024, guide/tutorial with implementation examples"
@@ -3277,7 +3277,7 @@ Let's see a final example.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example</h3>
+              <GSAPAnimated animation="bounceIn" delay={0.2}><h3>Example</h3></GSAPAnimated>
               <div style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '20px', borderRadius: '5px', fontSize: '1.2rem' }}>
                 <strong>Query:</strong> "apple"<br />
                 <strong>Policy:</strong> Ambiguous short query → Clarification Strategy<br />
