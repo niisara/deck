@@ -803,67 +803,155 @@ With that understanding of Pattern 3, let's move on to Pattern 4, which caches a
           content: (
             <div style={{ fontSize: '2rem', lineHeight: '1.5' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>What is Cached</strong>
+              <GSAPAnimated animation="rotateIn" delay={0.1}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#d19a66', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>
+                        What is Cached
+                        <MermaidPopover
+                          title="Semantic Cache Flow"
+                          diagram={`flowchart LR
+    A["📝 Query"] --> B["🔢 Embedding"]
+    B --> C["🔍 Similarity Search"]
+    C --> D{"📊 Above Threshold?"}
+    D -->|Yes| E["⚡ Return Cached Response"]
+    D -->|No| F["🤖 Generate New"]
+    F --> G["💾 Store"]
+    G --> E
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000
+    style D fill:#ffcdd2,color:#000`}
+                        />
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Final LLM answer (with citations) conditioned on query</li>
+                        <li>Complete generated responses including retrieved context set</li>
+                        <li>Full response with source document references</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(209, 154, 102, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Final LLM answer (with citations) conditioned on query</li>
-                      <li>Complete generated responses including retrieved context set</li>
-                      <li>Full response with source document references</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Key</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>hash(query_norm + context_doc_ids/hashes)</li>
+                        <li>prompt_version + model + decoding_params</li>
+                        <li>Must include all context sources for consistency</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#61dafb', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-tags" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Key</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(97, 218, 251, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>hash(query_norm + context_doc_ids/hashes)</li>
-                      <li>prompt_version + model + decoding_params</li>
-                      <li>Must include all context sources for consistency</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
-                <div>
-                  <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Cache Storage Location</strong>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
+                  <div>
+                    <div style={{ color: '#c678dd', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-floppy-disk" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Cache Storage Location</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Redis for hot cache items</li>
+                        <li>Durable KV/DB for high-value queries</li>
+                        <li>Encrypt if sensitive data is included</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(198, 120, 221, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Redis for hot cache items</li>
-                      <li>Durable KV/DB for high-value queries</li>
-                      <li>Encrypt if sensitive data is included</li>
-                    </ul>
+                  <div>
+                    <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
+                      <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
+                      <strong>Expiration Strategy / TTL</strong>
+                    </div>
+                    <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
+                      <ul>
+                        <li>Medium TTL (1–7 days)</li>
+                        <li>Event-based invalidation on any source doc change</li>
+                        <li>Content-dependent staleness policies</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
-                <div>
-                  <div style={{ color: '#98c379', marginBottom: '0.5rem' }}>
-                    <SvgIcon iconName="duo-clock" sizeName="2x" style={iconStyle} darkModeInvert={true} />
-                    <strong>Expiration Strategy / TTL</strong>
-                  </div>
-                  <div style={{ padding: '0.8rem', background: 'rgba(152, 195, 121, 0.1)', borderRadius: '6px', fontSize: '1.2rem' }}>
-                    <ul>
-                      <li>Medium TTL (1–7 days)</li>
-                      <li>Event-based invalidation on any source doc change</li>
-                      <li>Content-dependent staleness policies</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b42',
-          notes: ''
+          notes: `### Pattern 4: RAG Answer Cache
+Welcome to Pattern 4, the **RAG Answer Cache** 👉 'rag answer cache'. This is where we cache at the highest level of abstraction: the complete generated answers from your LLM, including all citations and context. While the previous patterns cached individual components like embeddings or retrieval results, this pattern caches the final output that your users actually see.
+
+#### What Gets Cached
+In this pattern, we cache the **final LLM answer with citations, conditioned on the query**. This is the complete response that your RAG 👉 'rag' system generates after retrieving context and prompting the model. Think of it as caching the entire output of your RAG pipeline. When a user asks "What is our refund policy?" your system retrieves relevant documents from your knowledge base, constructs a prompt with that context, generates an answer from the LLM, and adds citations pointing back to source documents. All of that, the complete package, gets cached.
+
+\\\`\\\`\\\`mermaid
+flowchart LR
+    A["📝 Query"] --> B["🔢 Embedding"]
+    B --> C["🔍 Similarity Search"]
+    C --> D{"📊 Above Threshold?"}
+    D -->|Yes| E["⚡ Return Cached Response"]
+    D -->|No| F["🤖 Generate New"]
+    F --> G["💾 Store"]
+    G --> E
+    style A fill:#4fc3f7,color:#000
+    style E fill:#81c784,color:#000
+    style F fill:#ffd700,color:#000
+    style D fill:#ffcdd2,color:#000
+\\\`\\\`\\\`
+
+The flow is elegant. A query comes in, you generate or retrieve its embedding, and perform a **similarity search** against previously cached queries. Here's where it gets interesting: instead of checking for exact matches like Pattern 1, this pattern uses **semantic similarity**. If the similarity score is above your threshold, maybe zero-point-nine on a cosine similarity scale, you return the cached response. If it's below threshold, you generate a new response, store it with its query embedding, and return it.
+
+We're caching **complete generated responses including the retrieved context set**. This means not just the answer text, but metadata about which documents were retrieved and used. This is crucial for debugging and for cache invalidation. If document seventeen in your knowledge base gets updated, you can invalidate all cached answers that referenced it.
+
+We also cache the **full response with source document references**. Citations are part of the value. Your users need to know where information came from, especially in domains like legal, medical, or financial services where trustworthiness is critical.
+
+#### The Semantic Similarity Advantage
+This is fundamentally different from exact-match caching. Consider two queries: "How's the weather today?" and "What's it like outside right now?" They're phrased differently, but they're semantically identical. With semantic caching, both queries would match the same cached answer because their embeddings are nearly identical in vector space. This dramatically increases your cache hit rate compared to exact-match approaches.
+
+However, it also introduces complexity. You need to choose a **similarity threshold** carefully. Set it too high, like zero-point-nine-nine, and you'll only match near-exact duplicates, defeating the purpose. Set it too low, like zero-point-seven, and you risk serving cached answers for queries that are similar but not identical, leading to incorrect or irrelevant responses.
+
+#### The Cache Key Strategy
+The cache key here is comprehensive: \\\`hash(query_norm + context_doc_ids/hashes) + prompt_version + model + decoding_params\\\`. Let's break this down. The \\\`query_norm\\\` is your normalized query text. We normalize to handle variations in capitalization, whitespace, and punctuation. The \\\`context_doc_ids\\\` or \\\`context_doc_hashes\\\` capture which documents were retrieved and used in generating the answer. This is critical because the same query with different context should produce different answers.
+
+The \\\`prompt_version\\\` tracks changes to your prompt template. If you update your system prompt or instruction format, you need to invalidate cached answers generated with the old prompt. The \\\`model\\\` parameter is obvious: answers from **GPT-4 👉 'G-P-T four'** shouldn't be conflated with answers from **Claude 👉 'Clawed'** or **Gemini 👉 'Gem-in-eye'**. And \\\`decoding_params\\\` includes things like temperature, top-p, and other sampling parameters. Different parameters can produce meaningfully different answers even from the same model and prompt.
+
+Including **all context sources** in the key is non-negotiable. If you don't, you'll get cache hits when the underlying context has changed, serving stale or incorrect information.
+
+#### Storage Architecture
+For storage, we use **Redis 👉 'red-iss' for hot cache items**. Complete answers with citations can be several kilobytes each, but they're still small enough to store in memory. Redis gives you sub-millisecond access times, which is essential for maintaining low latency.
+
+For **high-value queries** that you know will be repeated often, you can use a **durable key-value store or database** like DynamoDB 👉 'die-nam-oh-dee-bee' or PostgreSQL 👉 'post-gres'. This provides persistence beyond what in-memory stores offer. If your Redis instance crashes, you lose your cache. With a durable store, you don't.
+
+Critical point: **encrypt if sensitive data is included**. Unlike embedding vectors, which are opaque, cached answers contain readable text. If that text includes personal information, financial data, or other sensitive content, you must encrypt it at rest. This adds overhead but is non-negotiable for compliance with regulations like **GDPR 👉 'gee-dee-pee-are'** or **HIPAA 👉 'hip-pa'**.
+
+#### Time-to-Live Configuration
+We use a **medium TTL 👉 'tee-tee-el', typically one to seven days**. This is shorter than embedding caches but longer than retrieval result caches. Why? Because answers reference specific content that may change, but they're expensive to regenerate. You want to balance freshness with cost savings.
+
+More importantly, you implement **event-based invalidation on any source document change**. If document one-hundred-twenty in your knowledge base gets updated, you need to invalidate all cached answers that cited that document. This requires maintaining an index mapping from document IDs to cached answer keys. It's additional complexity, but it's essential for correctness.
+
+You also need **content-dependent staleness policies**. Some answers are time-sensitive. If a user asks "What's our current promotion?" the answer might change weekly. Other answers are stable. "What's the boiling point of water?" won't change. Your caching system should understand these distinctions, either through metadata tags or heuristics.
+
+#### When This Pattern Shines
+The **strengths** are substantial. You get **large cost and latency savings** by avoiding expensive LLM inference calls. Generating an answer might cost you a few cents and take two to three seconds. Serving from cache costs fractions of a cent and takes milliseconds. At scale, this adds up to thousands or tens of thousands of dollars saved monthly.
+
+This pattern is **ideal for FAQs and static knowledge domains**. If you're building a customer support bot for a SaaS product, many queries will be variations of the same questions: "How do I reset my password?" "What payment methods do you accept?" "Where's my order?" These questions don't change frequently, and caching their answers is extremely valuable.
+
+You **eliminate repeated expensive inference calls**, which not only saves money but also reduces load on your LLM API provider, avoiding rate limits and improving reliability.
+
+#### The Limitations
+But there are significant trade-offs. This pattern is **brittle to small context changes**. If your retrieval system returns a slightly different set of documents, the cache key changes, and you miss the cache. Even if the final answer would have been identical, you regenerate it. This limits cache hit rates in systems with non-deterministic retrieval.
+
+There's also **storage overhead for complete responses**. Answers with citations can be several kilobytes each. If you're caching millions of answers, that's gigabytes of storage. This is manageable but non-trivial, especially if you're encrypting everything.
+
+Finally, **freshness guarantees are required**. Serving stale answers is worse than being slow. If your knowledge base updates frequently, you need sophisticated invalidation logic to ensure users never get outdated information. This adds operational complexity and development effort.
+
+Let's examine these trade-offs more closely on the next slide.`
         },
         {
           id: 10,
@@ -871,34 +959,83 @@ With that understanding of Pattern 3, let's move on to Pattern 4, which caches a
           content: (
             <div>
               <div style={{ marginBottom: '30px' }}></div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Strengths</strong>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <div style={{ background: 'rgba(152, 195, 121, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#98c379', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-thumbs-up" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Strengths</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Large cost and latency savings</li>
+                      <li>Ideal for FAQs and static knowledge</li>
+                      <li>Eliminates repeated expensive inference calls</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Large cost and latency savings</li>
-                    <li>Ideal for FAQs and static knowledge</li>
-                    <li>Eliminates repeated expensive inference calls</li>
-                  </ul>
-                </div>
-                <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
-                  <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
-                    <strong>Limitations</strong>
+                  <div style={{ background: 'rgba(224, 108, 117, 0.1)', padding: '0.8rem', borderRadius: '8px' }}>
+                    <div style={{ color: '#e06c75', marginBottom: '0.3rem', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '2rem' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                      <strong>Limitations</strong>
+                    </div>
+                    <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
+                      <li>Brittle to small context changes</li>
+                      <li>Storage overhead for complete responses</li>
+                      <li>Freshness guarantees required</li>
+                    </ul>
                   </div>
-                  <ul style={{ marginLeft: '1.2rem', fontSize: '1.2rem', marginBottom: 0 }}>
-                    <li>Brittle to small context changes</li>
-                    <li>Storage overhead for complete responses</li>
-                    <li>Freshness guarantees required</li>
-                  </ul>
                 </div>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1d6b42',
-          notes: ''
+          notes: `### Strengths and Limitations
+Let's dive deeper into when RAG Answer Cache delivers exceptional value and when you need to exercise caution.
+
+#### The Compelling Benefits
+On the **strengths** side, this pattern offers some of the most dramatic improvements you'll see in any caching strategy. The **cost and latency savings are substantial**. Think about the economics here. Generating a complete RAG 👉 'rag' answer involves multiple expensive steps: embedding the query, searching your vector database, retrieving full document content, constructing a prompt with potentially thousands of tokens, running inference through an LLM, and streaming back the response. All of that might cost you two to five cents per query and take two to four seconds.
+
+Now compare that to a cache hit. You do a similarity search against cached query embeddings, which takes maybe twenty milliseconds, retrieve the cached answer from **Redis 👉 'red-iss'**, which takes another five milliseconds, and return it. Total cost: fractions of a cent. Total latency: under fifty milliseconds. That's a **ninety-percent latency reduction** and potentially **ninety-five-percent cost savings**. When you're handling millions of queries per month, this translates to tens of thousands of dollars saved and dramatically better user experience.
+
+#### The Perfect Use Case
+This pattern is **ideal for FAQ and static knowledge domains**. Consider a customer support chatbot for a SaaS company. The most common questions are variations on the same themes. "How do I reset my password?" might appear as "I forgot my password, what do I do?" or "Can you help me get back into my account?" Semantic caching captures all these variations. Your knowledge base articles explaining password resets don't change daily. Once you've generated a high-quality answer with proper citations, you can safely cache it for days or weeks.
+
+Documentation search is another perfect fit. Questions like "How do I configure authentication?" or "What are the rate limits for this API?" have stable answers. The underlying documentation might update occasionally, but not constantly. Cache hit rates in these domains can exceed **sixty to seventy percent**, meaning the majority of your queries are served from cache.
+
+#### Eliminating the Expensive Operations
+You **completely eliminate repeated expensive inference calls**. This isn't just about saving money. It's also about reliability and control. Every external API call is a potential failure point. LLM providers have rate limits, occasional outages, and variable latency. By serving more queries from cache, you reduce your dependency on external services. Your application becomes more resilient to provider issues.
+
+There's also an interesting quality benefit. Because you're caching complete answers that your LLM has already generated and that presumably passed your quality checks, users see consistent responses. There's no risk of the model having an "off day" and producing a weird or incorrect answer on a retry of the same query. You've essentially locked in the quality of your best responses.
+
+#### The Reality Check on Limitations
+Now for the **limitations**, and these are significant. First, this pattern is **brittle to small context changes**. Here's the problem: your cache key includes the retrieved context documents. If your retrieval system returns a slightly different set of documents, even if they're semantically equivalent, the cache key changes and you miss the cache. And retrieval systems can be non-deterministic. **Approximate nearest neighbor 👉 'A-N-N'** algorithms like **HNSW 👉 'H-N-S-W'** or **IVF 👉 'I-V-F'** don't guarantee identical results every time, especially if your index is being updated or if you're using probabilistic pruning for speed.
+
+This means your actual cache hit rate might be lower than expected. You might have semantically identical queries that should hit the cache but don't because the underlying retrieval produced slightly different context. Some teams address this by using **query embeddings alone** as the cache key, ignoring context, but then you risk serving cached answers that were generated with outdated or different context.
+
+#### The Storage Economics
+The second limitation is **storage overhead for complete responses**. Let's do the math. A typical answer with citations might be one to three kilobytes of text. If you're caching a million answers, that's one to three gigabytes. Add in encryption overhead, cache metadata, and you might be looking at five gigabytes or more. For **Redis 👉 'red-iss'** running in memory, this gets expensive. AWS ElastiCache 👉 'Elastic Cache' with five gigabytes of memory costs around fifty dollars per month. That's not prohibitive, but it's not negligible either.
+
+And if you want persistence and durability, storing in **DynamoDB 👉 'die-nam-oh-dee-bee'** or **RDS 👉 'are-dee-ess'**, you pay for storage plus read/write capacity. At scale, these costs add up. You need to ensure your cost savings from avoiding LLM calls exceed your caching infrastructure costs. Usually they do by a wide margin, but it's worth monitoring.
+
+#### The Freshness Challenge
+The third limitation is the most operationally complex: **freshness guarantees are required**. Serving a stale answer is often worse than being slow. Imagine a user asks "What's your return policy?" and your cached answer references a policy that changed last month. You've just given incorrect information, potentially causing customer frustration or even legal issues.
+
+To handle this, you need **event-based cache invalidation**. When a document in your knowledge base gets updated, you must identify and invalidate all cached answers that referenced it. This requires maintaining a **reverse index** mapping from document IDs to cache keys. It's doable, but it adds complexity to your system architecture.
+
+You also need **content classification** to determine appropriate TTLs 👉 'tee-tee-els'. Some queries are inherently time-sensitive. "What's today's special offer?" can't be cached for days. Others, like "What's the speed of light?" are effectively permanent. Your system needs heuristics or metadata to distinguish these cases.
+
+#### Practical Implementation Patterns
+Successful deployments often use **tiered TTLs**. Answers tagged as "policies" or "documentation" get long TTLs, maybe seven days. Answers tagged as "promotions" or "inventory" get short TTLs, maybe one day. You can also implement **popularity-based caching**, where only queries that have been asked multiple times get cached. This reduces storage for one-off queries while ensuring high-value queries benefit.
+
+Some teams use **cache warming** strategies, proactively generating and caching answers for known frequent queries during off-peak hours. This ensures your cache is pre-populated when traffic spikes.
+
+#### When to Use This Pattern
+This pattern delivers maximum value in **high-traffic FAQ systems** where questions repeat frequently and answers are relatively stable. Customer support, product documentation, and knowledge base search are ideal domains. It's less suitable for **highly dynamic content** where the knowledge base changes constantly, or for **highly personalized queries** where every user needs a unique answer.
+
+The cost-benefit analysis is straightforward: if your cache hit rate is above **thirty percent** and your average LLM call costs more than **one cent**, you'll almost certainly see positive ROI. Most well-implemented systems achieve **fifty to sixty percent hit rates**, making this pattern one of the most impactful in the entire caching toolkit.
+
+> Ask the audience: "How many of you are currently caching LLM responses, and what hit rates are you seeing?"
+
+With that deep dive into RAG Answer Cache complete, let's move on to Pattern 5, which takes a different approach to caching at the generation layer.`
         }
       ]
     },
