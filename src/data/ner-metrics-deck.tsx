@@ -68,7 +68,7 @@ export const nerMetricsDeck: Deck = {
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-circle-info" sizeName="2x" darkModeInvert={true} />
                     <h3>Context</h3>
@@ -81,7 +81,7 @@ export const nerMetricsDeck: Deck = {
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-key" sizeName="2x" darkModeInvert={true} />
                     <h4>
@@ -190,16 +190,16 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Of all predicted entities, how many are correct (exact span + type)</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Formula
                     <MermaidPopover
@@ -216,7 +216,7 @@ flowchart LR
     style E fill:#ffd700,color:#000`}
                     />
                   </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li><strong>TP:</strong> predicted entities with exact match to gold</li>
                     <li><strong>FP:</strong> predicted entities without a match</li>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
@@ -225,9 +225,9 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.6}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>When false positives are costly (e.g., automated actions)</li>
                     <li>Tuning decision thresholds</li>
                   </ul>
@@ -235,7 +235,7 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.9}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Example Calculation
                     <MermaidPopover
@@ -308,12 +308,12 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Intuitive; useful for threshold calibration</li>
                     <li>Not inflated by abundant O tokens</li>
                   </ul>
@@ -321,12 +321,12 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Ignores missed entities (FN)</li>
                     <li>Can be gamed by predicting fewer entities</li>
                     <li>Rare-class issues can be masked by micro-averaging</li>
@@ -370,16 +370,16 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Of all gold (true) entities, how many did the model find correctly</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Formula
                     <MermaidPopover
@@ -396,7 +396,7 @@ flowchart TB
     style E fill:#ffd700,color:#000`}
                     />
                   </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li><strong>TP:</strong> exact matches (span + type)</li>
                     <li><strong>FN:</strong> gold entities without a matching prediction</li>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Recall} = \\frac{TP}{TP + FN}\\]' }} />
@@ -405,9 +405,9 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.6}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>When missing entities is costly (medical, legal, security)</li>
                     <li>Measuring coverage and data sufficiency</li>
                   </ul>
@@ -415,7 +415,7 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.9}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Example Calculation
                     <MermaidPopover
@@ -492,12 +492,12 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="flipCard" duration={0.9} delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Captures model coverage</li>
                     <li>Highlights under-detection and data gaps</li>
                   </ul>
@@ -505,12 +505,12 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="flipCard" duration={0.9} delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Ignores false positives</li>
                     <li>Can be inflated by very permissive prediction</li>
                     <li>Micro-averaging can hide minority class gaps</li>
@@ -556,16 +556,16 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Balance between precision and recall (harmonic mean)</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="flipCard" duration={1} delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Formula
                     <MermaidPopover
@@ -580,7 +580,7 @@ flowchart TB
     style D fill:#e1bee7,color:#000`}
                     />
                   </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
                     <li>Usually micro-F1 across all entities</li>
                     <li>Macro-F1 averages per type (treats classes equally)</li>
@@ -589,9 +589,9 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.65}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>General-purpose single-number comparison</li>
                     <li>Model selection & leaderboard reporting</li>
                   </ul>
@@ -599,7 +599,7 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.95}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Model Comparison Example
                     <MermaidPopover
@@ -685,12 +685,12 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInRight" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Balances FP and FN errors</li>
                     <li>Widely understood and comparable</li>
                     <li>Single number for quick comparison</li>
@@ -699,12 +699,12 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Hides trade-offs between precision and recall</li>
                     <li>Macro vs micro choices can change conclusions</li>
                     <li>Can mask poor performance on rare entity types</li>
@@ -750,16 +750,16 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Percentage of sentences where predicted entity set exactly equals gold set</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInTop" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Formula
                     <MermaidPopover
@@ -782,9 +782,9 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.7}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>End-to-end reliability & quality gates for production</li>
                     <li>Downstream tasks requiring perfect extraction</li>
                   </ul>
@@ -792,7 +792,7 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={1.0}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Example Walkthrough
                     <MermaidPopover
@@ -888,12 +888,12 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInBottom" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Very strict; reflects true task completeness</li>
                     <li>Sensitive to any error — catches everything</li>
                   </ul>
@@ -901,12 +901,12 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>All-or-nothing; punishes minor boundary/label mistakes</li>
                     <li>Not diagnostic — doesn't tell you <em>what</em> went wrong</li>
                     <li>9/10 correct and 0/10 correct both score zero</li>
@@ -954,16 +954,16 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" duration={0.9} delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Credit for near-miss spans; reduces sensitivity to boundary noise</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     How It Works
                     <MermaidPopover
@@ -982,7 +982,7 @@ flowchart TB
     style G fill:#ffcdd2,color:#000`}
                     />
                   </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li><strong>IoU</strong> = |tokens overlap| / |tokens union|</li>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{IoU} = \\frac{|\\text{tokens}_\\text{overlap}|}{|\\text{tokens}_\\text{union}|}\\]' }} />
                     <li>Match if IoU ≥ τ (tau) and types match (common τ = 0.5)</li>
@@ -992,16 +992,16 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.6}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Noisy boundaries, weak supervision, fair span comparisons</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.9}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Example Walkthrough
                     <MermaidPopover
@@ -1089,12 +1089,12 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Rewards close spans — partial credit!</li>
                     <li>More stable with annotation noise</li>
                     <li>Tunable strictness via τ (tau) threshold</li>
@@ -1103,12 +1103,12 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Not standardized — choice of τ and matching algorithm matters</li>
                     <li>Can mask consistent boundary errors</li>
                     <li>Less comparable across papers if definitions differ</li>
@@ -1152,9 +1152,9 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Accuracy of type classification when spans are given (gold spans)</li>
                     <li>Isolates typing from detection — focuses solely on labeling quality</li>
                   </ul>
@@ -1162,7 +1162,7 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="flipCard" duration={1} delay={0.35}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Formula
                     <MermaidPopover
@@ -1180,7 +1180,7 @@ flowchart TB
     style F fill:#ffd700,color:#000`}
                     />
                   </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
                     <li>Option: macro-averaged over types for class balance</li>
                   </ul>
@@ -1188,9 +1188,9 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.65}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Pipeline analysis & diagnosing label confusions</li>
                     <li>Ablations on classifier heads</li>
                   </ul>
@@ -1198,7 +1198,7 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.95}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Example Walkthrough
                     <MermaidPopover
@@ -1282,12 +1282,12 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Clear diagnostic of typing component</li>
                     <li>Unaffected by detection errors</li>
                     <li>Highly interpretable for debugging</li>
@@ -1296,12 +1296,12 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Not end-to-end — doesn't reflect real-world performance</li>
                     <li>Can overstate performance</li>
                     <li>Influenced by class imbalance unless macro-averaged</li>
@@ -1347,9 +1347,9 @@ flowchart LR
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>What It Measures</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Where the model confuses types and how often</li>
                     <li>Error patterns across entity classes</li>
                   </ul>
@@ -1357,7 +1357,7 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     How It Works
                     <MermaidPopover
@@ -1377,7 +1377,7 @@ flowchart LR
     style G fill:#ffd700,color:#000`}
                     />
                   </h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Rows = gold types, Columns = predicted types</li>
                     <li>Diagonal = correct, Off-diagonal = mistakes</li>
                     <li>Include FN (missed) and FP (spurious) as margins</li>
@@ -1387,16 +1387,16 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Diagnosing confusions, guiding data collection, schema refinement</li>
                   </ul>
                 </div>
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={1.0}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <h4>
                     Example Confusion Matrix
                     <MermaidPopover
@@ -1475,12 +1475,12 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="bounceIn" duration={0.9} delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-thumbs-up" sizeName="2x" darkModeInvert={true} />
                     <h4>Pros</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Highly diagnostic for targeted improvements</li>
                     <li>Reveals minority-class issues hidden by averaging</li>
                     <li>Supports data-driven schema refinement</li>
@@ -1489,12 +1489,12 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                     <h4>Cons</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Not a single-number metric — harder to compare models</li>
                     <li>Requires enough data per class for significance</li>
                     <li>Depends on chosen matching rule (strict vs partial)</li>
@@ -1604,12 +1604,12 @@ flowchart TB
               <div style={{ marginBottom: '30px' }}>
               </div>
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#27AE60' }} />
                     <h4>Do's</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Define matching rule (strict vs partial), averaging (micro vs macro), and scope</li>
                     <li>Report per-class metrics alongside micro-F1 for imbalanced datasets</li>
                     <li>Document evaluation settings in your code</li>
@@ -1618,12 +1618,12 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.4}>
-                <div style={{ marginBottom: '0.7em' }}>
+                <div style={{ marginBottom: '0em' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
                     <SvgIcon iconName="duo-circle-xmark" sizeName="2x" style={{ color: '#E74C3C' }} />
                     <h4>Don'ts</h4>
                   </div>
-                  <ul style={{ fontSize: '0.7em' }}>
+                  <ul style={{ fontSize: '0.5em' }}>
                     <li>Don't rely on token accuracy or overall accuracy including O tokens</li>
                     <li>Don't compare results without aligning evaluation settings</li>
                     <li>Don't celebrate "95% accuracy" without checking entity-level F1</li>
