@@ -301,17 +301,6 @@ Let's break down the mechanics of Node-Level Retrieval step by step. Understandi
 #### The Matching Process
 Here's the core workflow: when a query comes in, you need to **find the node that best represents what the user is asking about**. This involves several matching strategies working together. First, you check for **exact title matches**. If someone asks about "Python" and you have a node titled "Python Programming," that's a strong candidate. Second, you use **aliases and synonyms**. Maybe your Python node also has aliases like "Python language" or "Python development." Third, and most powerfully, you use **embedding similarity**. You've pre-computed embeddings for each node's title and description, so you can find semantically similar nodes even when the words don't match exactly.
 
-```mermaid
-flowchart LR
-    A["🔍 Query:<br/>Python"] --> B["📊 Match Node:<br/>Similarity Score"]
-    B --> C["🎯 Node:<br/>Python Programming"]
-    C --> D["📄 Return:<br/>Node Content"]
-    
-    style A fill:#4fc3f7,color:#000
-    style B fill:#ffb74d,color:#000
-    style C fill:#ffd700,color:#000
-    style D fill:#81c784,color:#000
-```
 
 The system calculates a **combined score** from exact matching and semantic similarity, ranks all candidate nodes, and selects the top match.
 
@@ -538,18 +527,6 @@ The workflow starts similarly to node-level retrieval but adds sophistication th
 
 Next comes the key difference: instead of treating all neighbors equally, you **retrieve connected nodes along with their edge weights**. Maybe "Neural Networks" has an edge weight of 0.9 (strong relationship), "Healthcare AI 👉 'ay-eye'" has 0.85, "Data Science" has 0.7, and "Statistics" has 0.3. These weights might represent co-occurrence frequency, confidence scores from an extraction system, or manually assigned importance.
 
-```mermaid
-flowchart TD
-    A["🔍 Query:<br/>Machine Learning"] --> B["📊 Find Seed Node:<br/>ML Concept"]
-    B --> C["🔗 Get Connected Nodes<br/>with Edge Weights"]
-    C --> D["📈 Score Neighbors:<br/>weight × relevance"]
-    D --> E1["⭐ Node B<br/>weight=0.9"]
-    D --> E2["🌟 Node C<br/>weight=0.7"]
-    D --> E3["💫 Node D<br/>weight=0.3"]
-    E1 --> F["🎯 Rank by Score<br/>Return Top-k"]
-    E2 --> F
-    E3 --> F
-```
 
 #### Scoring and Ranking
 Now you **compute a combined score** for each neighbor. This typically involves multiplying the edge weight by a relevance score. The relevance score might come from embedding similarity between the neighbor's content and the query. So if "Neural Networks" has edge weight 0.9 and query relevance 0.8, its combined score is 0.72. You **rank all neighbors** by this combined score and select the top k.
@@ -604,9 +581,9 @@ Now let's get hands-on with implementing edge-weighted retrieval. We'll walk thr
 Start by finding your seed nodes just like in node-level retrieval. **Embed the query** using your chosen model. **Search your node index** using cosine similarity or exact matching on titles and aliases. For the query "machine learning techniques," you might identify the seed node "Machine Learning" with high confidence. Store these seed node IDs for the next step.
 
 #### Step 2: Neighbor Retrieval with Weights
-This is where edge-weighted retrieval diverges from simpler techniques. Query your graph database to **retrieve all neighbors** of the seed nodes along with their edge weights. Most graph databases support this natively—in Cypher for Neo4j 👉 'nee-oh-for-jay', you'd write something like `MATCH (seed)-[r]->(neighbor) RETURN neighbor, r.weight`. Store each neighbor with its edge weight and edge type.
+This is where edge-weighted retrieval diverges from simpler techniques. Query your graph database to **retrieve all neighbors** of the seed nodes along with their edge weights. Most graph databases support this natively—in Cypher for Neo4j 👉 'nee-oh-for-jay', you'd write something like \`MATCH (seed)-[r]->(neighbor) RETURN neighbor, r.weight\`. Store each neighbor with its edge weight and edge type.
 
-Now **compute combined scores**. For each neighbor, calculate: `combined_score = edge_weight × query_relevance`. The query relevance comes from embedding similarity between the query and the neighbor's content. So if a neighbor has edge_weight=0.9 and its content embedding has 0.75 cosine similarity to the query, the combined score is 0.675.
+Now **compute combined scores**. For each neighbor, calculate: \`combined_score = edge_weight × query_relevance\`. The query relevance comes from embedding similarity between the query and the neighbor's content. So if a neighbor has edge_weight=0.9 and its content embedding has 0.75 cosine similarity to the query, the combined score is 0.675.
 
 #### Step 3: Normalization and Decay
 Before ranking, **normalize edge weights** if they're on different scales. If some edges use citation counts (0-1000) and others use confidence (0-1), apply min-max scaling to bring them to a common range. For **multi-hop scenarios**, apply decay. A simple approach: multiply by 0.7 for each additional hop. So a 1-hop edge with weight 0.9 stays 0.9, but a 2-hop path with weights 0.9 and 0.8 becomes 0.9 × 0.8 × 0.7 = 0.504.
@@ -813,24 +790,8 @@ Let's explore the mechanics of neighborhood expansion. Understanding the process
 #### The Expansion Process
 Neighborhood expansion follows a clear workflow. First, **identify the seed node** just like in node-level retrieval. Use embedding similarity or exact matching to find the central node that best represents the query. For "Python authentication," you might find the seed node "authenticate() function."
 
-Next comes the expansion step: **retrieve all 1-hop neighbors**. This is a standard graph traversal operation. In graph databases, it's typically a single query. In Neo4j, you might write: `MATCH (seed {id: 'authenticate'})-[r]-(neighbor) RETURN neighbor, r, labels(neighbor)`. This gives you all directly connected nodes along with their relationship types and node types.
+Next comes the expansion step: **retrieve all 1-hop neighbors**. This is a standard graph traversal operation. In graph databases, it's typically a single query. In Neo4j, you might write: \`MATCH (seed {id: 'authenticate'})-[r]-(neighbor) RETURN neighbor, r, labels(neighbor)\`. This gives you all directly connected nodes along with their relationship types and node types.
 
-```mermaid
-flowchart TD
-    A["🔍 Query:<br/>Python Function"] --> B["🎯 Seed Node:<br/>authenticate()"]
-    B --> C["🔗 1-Hop Expansion"]
-    C --> D1["📋 Parameters"]
-    C --> D2["📤 Return Type"]
-    C --> D3["⚠️ Exceptions"]
-    C --> D4["📝 Examples"]
-    C --> D5["🔗 Related Functions"]
-    D1 --> E["📦 Aggregate Context"]
-    D2 --> E
-    D3 --> E
-    D4 --> E
-    D5 --> E
-    E --> F["✅ Return Enriched Result"]
-```
 
 #### Filtering and Pruning
 Raw neighbor retrieval might return too many nodes. You need **filtering strategies** to keep results manageable and relevant. **Type-based filtering** is common: if you only want parameter and return type nodes, filter by node type. **Edge-type filtering** lets you include specific relationships: "has_parameter," "returns," "throws," but exclude "mentioned_in" or "similar_to."
@@ -896,9 +857,9 @@ Time to get practical. Let's walk through implementing neighborhood expansion wi
 Start with your standard seed node identification. **Embed the query** and **search your node index** for the best matching node. For a query like "Python logging configuration," you might find the seed node "logging.config" with high similarity. Store the seed node ID and its content for later aggregation.
 
 #### Step 2: 1-Hop Neighbor Retrieval
-Execute your **graph traversal query**. The exact syntax depends on your graph database. In **Neo4j**, you'd write: `MATCH (seed {id: $seedId})-[r]-(neighbor) WHERE type(r) IN $allowedRelationships RETURN neighbor, type(r), labels(neighbor)`. This retrieves all neighbors connected via specified relationship types.
+Execute your **graph traversal query**. The exact syntax depends on your graph database. In **Neo4j**, you'd write: \`MATCH (seed {id: $seedId})-[r]-(neighbor) WHERE type(r) IN $allowedRelationships RETURN neighbor, type(r), labels(neighbor)\`. This retrieves all neighbors connected via specified relationship types.
 
-In **property graph databases**, you can filter directly in the query. In **RDF 👉 'are-dee-eff' triple stores**, you'd query for all triples where the seed is subject or object. In **Python with NetworkX 👉 'network-ex'**, you'd use `G.neighbors(seed_node)`. Retrieve not just node IDs but also **node content, types, and relationship metadata**.
+In **property graph databases**, you can filter directly in the query. In **RDF 👉 'are-dee-eff' triple stores**, you'd query for all triples where the seed is subject or object. In **Python with NetworkX 👉 'network-ex'**, you'd use \`G.neighbors(seed_node)\`. Retrieve not just node IDs but also **node content, types, and relationship metadata**.
 
 #### Step 3: Filtering and Capacity Management
 Now apply your filters. **Type filtering** first: if you only want certain node types (Parameter, ReturnType, Example), filter the neighbor list. **Edge-type filtering**: include "has_parameter" and "returns" relationships but exclude "mentioned_in." Compute **relevance scores** for each neighbor by comparing its content embedding to the query. Sort neighbors by relevance within each type category.
@@ -910,7 +871,7 @@ Check for **duplicate neighbors** that might appear through multiple relationshi
 
 #### Step 5: Aggregation and Structuring
 **Aggregate** the seed node content with neighbor content. A good structure: 
-```
+\`\`\`
 {
   "seed": {seed_node_content},
   "parameters": [param_node_1, param_node_2, ...],
@@ -919,7 +880,7 @@ Check for **duplicate neighbors** that might appear through multiple relationshi
   "examples": [example_node_1, example_node_2, ...],
   "related": [related_node_1, related_node_2]
 }
-```
+\`\`\`
 
 This structured format makes it easy for downstream systems to use the context appropriately. An LLM can prioritize the seed content and reference neighbor content as supporting detail. A UI can display sections clearly.
 
@@ -1132,19 +1093,6 @@ Path-based retrieval starts by **identifying endpoints**. Unlike node-level retr
 
 Next comes **pathfinding**—discovering sequences of edges that connect source to target. This is classic graph traversal. Common algorithms include **BFS 👉 'bee-eff-ess'** (Breadth-First Search) which explores all paths systematically, **Dijkstra's algorithm** which finds shortest weighted paths, or **A-star** which uses heuristics to guide search efficiently.
 
-```mermaid
-flowchart LR
-    A["🔍 Query:<br/>Vitamin D → Bone Health"] --> B["🎯 Find Endpoints:<br/>Start & Target Nodes"]
-    B --> C["🛤️ Pathfinding:<br/>BFS/Dijkstra"]
-    C --> D1["Path 1:<br/>A→B→C→D"]
-    C --> D2["Path 2:<br/>A→E→F→D"]
-    C --> D3["Path 3:<br/>A→G→D"]
-    D1 --> E["📊 Score Paths:<br/>length + weights + semantics"]
-    D2 --> E
-    D3 --> E
-    E --> F["🏆 Rank Paths"]
-    F --> G["✅ Return Best Paths<br/>with Evidence"]
-```
 
 #### Path Constraints and Pruning
 Without constraints, pathfinding can explode combinatorially. A node with 10 neighbors at each hop means 10^3 = 1,000 possible 3-hop paths. You need **constraints** to keep search tractable. **Maximum path length** (e.g., max 4 hops) limits how far you explore. **Edge type constraints** specify which relationship types are allowed; in a medical graph, you might allow "treats," "causes," "prevents" but exclude "mentioned_in." **Semantic constraints** use embedding similarity to prune paths where intermediate nodes are semantically unrelated to the query.
@@ -1154,7 +1102,7 @@ Without constraints, pathfinding can explode combinatorially. A node with 10 nei
 #### Path Scoring and Ranking
 Once you have candidate paths, **score them** to identify the best ones. Scoring typically combines multiple factors. **Path length**: shorter paths are often better (fewer inference steps), but not always—sometimes a longer path is more informative. **Edge weights**: if your edges have weights (confidence, strength), sum or multiply along the path. **Semantic relevance**: compute how well each intermediate node relates to the query. **Path coherence**: do the relationships form a logical chain?
 
-A common scoring formula: `score = α×(1/length) + β×(avg_edge_weight) + γ×(semantic_relevance)` where α, β, γ are weights you tune. Higher scores indicate better paths. **Rank all candidate paths** by score and select the top k, typically k=1-5.
+A common scoring formula: \`score = α×(1/length) + β×(avg_edge_weight) + γ×(semantic_relevance)\` where α, β, γ are weights you tune. Higher scores indicate better paths. **Rank all candidate paths** by score and select the top k, typically k=1-5.
 
 #### Data Requirements in Detail
 You need **edge types** stored on every relationship, enabling type-based path constraints. **Edge weights** (if available) inform path scoring. Define **path constraints** as configuration: maximum length (3-5 hops common), allowed/forbidden edge types, minimum edge weight thresholds. Implement an **efficient scoring function** that balances the factors mentioned above. Maintain **graph indexes** that accelerate traversal; most graph databases provide this, but for large-scale systems, consider specialized path-finding indexes or bidirectional search.
@@ -1214,7 +1162,7 @@ Map extracted concepts to **nodes in your graph**. For each concept, query your 
 Now run your **pathfinding algorithm**. Let's say you choose **BFS** for comprehensive path discovery up to 4 hops. Initialize a queue with the source node and a path object tracking visited nodes. For each node, expand to neighbors, checking your **constraints**: is the path length under the limit? Is the edge type allowed? Is the intermediate node semantically relevant enough? If a neighbor is the target node, you've found a complete path—add it to your results. Continue until you've explored all possibilities within constraints or hit a maximum number of paths.
 
 **Example BFS pseudocode**:
-```
+\`\`\`
 queue = [(source_node, [source_node])]
 found_paths = []
 while queue and len(found_paths) < max_paths:
@@ -1230,25 +1178,25 @@ while queue and len(found_paths) < max_paths:
         else:
             queue.append((neighbor, new_path))
 return found_paths
-```
+\`\`\`
 
 For **weighted paths**, use **Dijkstra's algorithm** to find the highest-weighted (or lowest-cost) path. For **large graphs**, use **A-star** with a heuristic like embedding similarity to the target, dramatically reducing nodes explored.
 
 #### Step 4: Path Scoring
 For each discovered path, **compute a score**. Combine multiple factors with learned or tuned weights. Here's a common approach:
 
-**Length score**: `1 / path_length` (shorter is better, usually)
-**Weight score**: `average_edge_weight` or `min_edge_weight` along the path
+**Length score**: \`1 / path_length\` (shorter is better, usually)
+**Weight score**: \`average_edge_weight\` or \`min_edge_weight\` along the path
 **Semantic score**: Average similarity between each intermediate node's embedding and the query embedding
 
-**Combined score**: `score = 0.3×length_score + 0.4×weight_score + 0.3×semantic_score`
+**Combined score**: \`score = 0.3×length_score + 0.4×weight_score + 0.3×semantic_score\`
 
 Tune these weights based on your domain. In some cases, longer paths are more informative (comprehensive explanations). In others, shorter paths are better (direct evidence).
 
 #### Step 5: Ranking and Return
 **Sort paths** by score in descending order. Select the **top k paths**, typically k=1-5. For each path, retrieve **node content** for every node along the path and **relationship types** for every edge. Structure the output to show the path clearly:
 
-```
+\`\`\`
 Path 1 (score: 0.87):
   Vitamin D -[enhances]→ Calcium Absorption -[increases]→ Bone Mineralization -[improves]→ Bone Health
   
@@ -1257,7 +1205,7 @@ Path 1 (score: 0.87):
   - Calcium Absorption: [content]
   - Bone Mineralization: [content]
   - Bone Health: [content]
-```
+\`\`\`
 
 This structured format helps LLMs generate clear explanations: "Vitamin D enhances calcium absorption, which increases bone mineralization, ultimately improving bone health."
 
@@ -1482,29 +1430,6 @@ Before you can retrieve communities, you need to detect them. This is typically 
 
 **Semantic Clustering** uses node embeddings rather than pure graph structure. You embed each node into a vector space, then apply clustering algorithms like K-means or DBSCAN 👉 'dee-bee-scan'. This approach captures semantic similarity and works well when graph connectivity alone doesn't reflect thematic relationships.
 
-```mermaid
-graph TB
-    subgraph Community1["🔵 Community 1: ML"]
-        A[Neural Networks]
-        B[Deep Learning]
-        C[Backprop]
-        A --- B
-        B --- C
-        A --- C
-    end
-    
-    subgraph Community2["🟢 Community 2: Web Dev"]
-        D[React]
-        E[JavaScript]
-        F[CSS]
-        D --- E
-        E --- F
-        D --- F
-    end
-    
-    Q["🔍 Query:<br/>Machine Learning"] -.-> Community1
-    Community1 --> R["📦 Return:<br/>All nodes in Community 1"]
-```
 
 #### Phase 2: Query-to-Community Mapping
 When a query arrives, you need to determine which community or communities are most relevant. One approach is **community-level embeddings**: compute an aggregate embedding for each community (perhaps by averaging node embeddings) and compare query embeddings to community embeddings. Another approach is **seed node mapping**: find the most relevant individual node first, then return its entire community. You can also use **keyword matching** on community metadata if you've labeled communities with topic names.
@@ -1567,7 +1492,7 @@ An alternative is **seed node lookup**: use node-level retrieval to find the bes
 #### Step 3: Intra-Community Ranking
 You've identified the relevant community, but it might contain 50 or 200 nodes. You can't return them all. Instead, **rank within the community**. Compute **centrality scores**: degree centrality (how many connections), betweenness centrality (how often the node bridges other nodes), or PageRank within the community subgraph. These metrics identify the most important or representative nodes.
 
-Alternatively, rank by **semantic relevance**: compute similarity between the query embedding and each community member's embedding. Return the top-k by similarity. You can also **combine** structural centrality and semantic similarity with a weighted formula: `score = 0.4 * centrality + 0.6 * similarity`.
+Alternatively, rank by **semantic relevance**: compute similarity between the query embedding and each community member's embedding. Return the top-k by similarity. You can also **combine** structural centrality and semantic similarity with a weighted formula: \`score = 0.4 * centrality + 0.6 * similarity\`.
 
 #### Step 4: Content Aggregation
 Once you have your top-k nodes, retrieve their associated content chunks. If you're generating a summary, you might pass all chunks to an LLM 👉 'el-el-em' with instructions to synthesize a comprehensive overview. If you're displaying results to users, show each node with its content in a structured list or card layout.
@@ -1776,25 +1701,6 @@ Once you know the desired granularity, find the best-matching node at or near th
 
 You can use **node-level retrieval** techniques: embed nodes at each level and find the best semantic match, or use exact title matching with aliases. The key is that you're **searching within a level** rather than across the entire graph indiscriminately.
 
-```mermaid
-graph TD
-    Root["📚 Root:<br/>Programming"] --> A["🐍 Python"]
-    Root --> B["☕ Java"]
-    Root --> C["📘 JavaScript"]
-    
-    A --> A1["📝 Lists"]
-    A --> A2["🔧 Functions"]
-    A --> A3["🎯 Classes"]
-    
-    A1 --> A1a["✨ List<br/>Comprehensions"]
-    A1 --> A1b["🔄 Iteration"]
-    
-    Q1["🔍 Query:<br/>Python basics"] -.-> A
-    Q2["🔍 Query:<br/>List comprehensions"] -.-> A1a
-    
-    A --> R1["📦 Return:<br/>Mid-level"]
-    A1a --> R2["📦 Return:<br/>Leaf detail"]
-```
 
 #### Step 3: Hierarchical Expansion
 Once you have an entry node, you might need to **expand** to provide complete context. Several expansion strategies exist:
@@ -2084,38 +1990,13 @@ The process starts with **parallel execution** of two retrieval strategies. Thin
 
 **Graph Traversal Path**: Identify seed nodes from the query using node-level retrieval or entity linking. From these seeds, perform graph expansion—maybe 1-hop or 2-hop traversal to find connected nodes. For each node in the graph results, compute **structural relevance scores** based on metrics like proximity to seed nodes (fewer hops = higher score), centrality within the local subgraph, edge weights if available, or community membership with seeds.
 
-```mermaid
-flowchart TB
-    Q["🔍 Query:<br/>ML Applications"] --> V["🎯 Vector Search:<br/>Top-k by Similarity"]
-    Q --> G["🕸️ Graph Seeds:<br/>Find Anchor Nodes"]
-    
-    V --> V1["📄 Node A<br/>sim=0.92"]
-    V --> V2["📄 Node B<br/>sim=0.87"]
-    V --> V3["📄 Node C<br/>sim=0.81"]
-    
-    G --> G1["⚓ Seed X"]
-    G --> G2["⚓ Seed Y"]
-    
-    G1 --> GE1["🔗 Connected<br/>Node D"]
-    G1 --> GE2["🔗 Connected<br/>Node E"]
-    G2 --> GE3["🔗 Connected<br/>Node F"]
-    
-    V1 --> M["⚖️ Fusion:<br/>Combine Scores"]
-    V2 --> M
-    V3 --> M
-    GE1 --> M
-    GE2 --> M
-    GE3 --> M
-    
-    M --> R["🎯 Ranked Results:<br/>Best Combined Scores"]
-```
 
 #### Phase 2: Result Fusion
 Now you have two sets of candidate nodes with different scoring schemes. The challenge is **combining them meaningfully**. Several fusion strategies exist:
 
-**Linear Combination**: The simplest approach. Normalize both scores to [0,1], then compute `final_score = α * semantic_score + β * structural_score` where α and β are weights (often α=0.5, β=0.5 for balanced fusion, but tunable). Nodes that appear in both result sets get both scores; nodes in only one set get zero for the missing score.
+**Linear Combination**: The simplest approach. Normalize both scores to [0,1], then compute \`final_score = α * semantic_score + β * structural_score\` where α and β are weights (often α=0.5, β=0.5 for balanced fusion, but tunable). Nodes that appear in both result sets get both scores; nodes in only one set get zero for the missing score.
 
-**Rank-Based Fusion**: Instead of raw scores, use ranks. If a node ranks 3rd in vector results and 7th in graph results, its fusion score might be `1/rank_vector + 1/rank_graph`. This is more robust when score scales differ dramatically between methods.
+**Rank-Based Fusion**: Instead of raw scores, use ranks. If a node ranks 3rd in vector results and 7th in graph results, its fusion score might be \`1/rank_vector + 1/rank_graph\`. This is more robust when score scales differ dramatically between methods.
 
 **Learned Fusion**: Train a model (simple logistic regression or neural network) that takes semantic score, structural score, and additional features (node degree, content length, freshness) and predicts relevance. This requires labeled training data but can achieve better performance than fixed formulas.
 
@@ -2185,9 +2066,9 @@ For the graph database, **Neo4j** is the most popular with excellent query langu
 **Data synchronization**: Ensure node IDs are consistent across both systems. When you add or update a node, update both the vector index and graph database. Consider using a **message queue** like Kafka or RabbitMQ to ensure eventual consistency.
 
 #### Step 2: Parallel Query Execution
-When a query arrives, launch **parallel retrieval tasks**. In Python, use `asyncio` or `concurrent.futures` to run both retrievals simultaneously, minimizing latency.
+When a query arrives, launch **parallel retrieval tasks**. In Python, use \`asyncio\` or \`concurrent.futures\` to run both retrievals simultaneously, minimizing latency.
 
-**Vector retrieval**: Embed the query with your embedding model. Query your vector index with `top_k=100` (or whatever number gives sufficient recall). Each result includes node ID and similarity score. This typically completes in 10-50 milliseconds for millions of vectors.
+**Vector retrieval**: Embed the query with your embedding model. Query your vector index with \`top_k=100\` (or whatever number gives sufficient recall). Each result includes node ID and similarity score. This typically completes in 10-50 milliseconds for millions of vectors.
 
 **Graph retrieval**: Use node-level retrieval or entity linking to identify 1-3 seed nodes from the query. From these seeds, perform Cypher queries (Neo4j) or equivalent graph traversal to find nodes within 1-2 hops. For each connected node, compute structural relevance: hop distance (1-hop gets score 1.0, 2-hop gets 0.5), edge weights if available, or use Personalized PageRank 👉 'page-rank' from the seed nodes. Graph queries typically complete in 50-200 milliseconds depending on graph density.
 
@@ -2196,14 +2077,14 @@ When a query arrives, launch **parallel retrieval tasks**. In Python, use `async
 #### Step 3: Hybrid Scoring and Fusion
 Now compute the final score for each candidate node. The **weighted linear combination** is most common:
 
-```
+\`\`\`
 final_score = α * semantic_score + β * structural_score + γ * bonus_score
-```
+\`\`\`
 
 Where:
-- `semantic_score`: Normalized similarity from vector search (0-1)
-- `structural_score`: Normalized structural relevance from graph (0-1)
-- `bonus_score`: Extra boost for nodes in both result sets (overlap bonus)
+- \`semantic_score\`: Normalized similarity from vector search (0-1)
+- \`structural_score\`: Normalized structural relevance from graph (0-1)
+- \`bonus_score\`: Extra boost for nodes in both result sets (overlap bonus)
 - α, β, γ: Tunable weights (start with α=0.5, β=0.4, γ=0.1)
 
 **Normalization is critical**. Semantic scores from cosine similarity are naturally 0-1. Structural scores need normalization: divide by max score in the set, or use min-max scaling.
@@ -2211,7 +2092,7 @@ Where:
 For nodes appearing in both results, you might apply a **synergy boost**: if a node is both semantically similar AND structurally connected, it's particularly relevant. Multiply the combined score by 1.2 or add a fixed bonus.
 
 #### Step 4: Ranking and Return
-Sort all candidate nodes by `final_score` descending. Take the top-k (typically 5-20 for end-user display, more for LLM 👉 'el-el-em' context). Return these nodes with their content chunks, scores, and optionally **explanations**: "This result scored highly due to semantic similarity (0.89) and close proximity to related concepts in the graph."
+Sort all candidate nodes by \`final_score\` descending. Take the top-k (typically 5-20 for end-user display, more for LLM 👉 'el-el-em' context). Return these nodes with their content chunks, scores, and optionally **explanations**: "This result scored highly due to semantic similarity (0.89) and close proximity to related concepts in the graph."
 
 #### Real-World Example
 Imagine a customer support system for a SaaS 👉 'sass' platform. A user asks "Why isn't my dashboard loading?" Your **vector search** finds nodes with similar semantic content: "Dashboard performance issues," "Loading problems," "Display errors." Your **graph expansion** starts from the "Dashboard" product node and finds connected nodes: "Authentication requirements," "Browser compatibility," "API 👉 'ay-pee-eye' rate limits"—structurally relevant but not semantically similar to the query.
@@ -2437,25 +2318,25 @@ The process runs **two retrieval operations simultaneously**, just like the dens
 
 **BM25 Retrieval Path**: Build or query an **inverted index** mapping terms to documents (nodes). For the query, extract keywords and compute BM25 scores for each node in your corpus. BM25 scoring considers: **term frequency** (TF 👉 'tee-eff')—how often query terms appear in the node, **inverse document frequency** (IDF 👉 'eye-dee-eff')—how rare/important each term is across all nodes, **document length normalization**—penalizing very long documents that accumulate high term counts, and **saturation**—diminishing returns for repeated terms (the 10th occurrence of "Python" adds less value than the 2nd).
 
-The BM25 formula is: `score = Σ IDF(term) × (TF × (k+1)) / (TF + k × (1 - b + b × doc_length/avg_length))` where k and b are tuning parameters (typically k=1.5, b=0.75). Don't worry about memorizing this—most libraries implement it for you.
+The BM25 formula is: \`score = Σ IDF(term) × (TF × (k+1)) / (TF + k × (1 - b + b × doc_length/avg_length))\` where k and b are tuning parameters (typically k=1.5, b=0.75). Don't worry about memorizing this—most libraries implement it for you.
 
 #### Phase 2: Result Fusion Strategies
 Now you have two candidate sets with different scoring schemes. The challenge is combining them meaningfully. Several strategies exist:
 
-**Intersection Strategy**: Only return nodes that appear in BOTH result sets. This maximizes precision—you only get nodes that are structurally relevant AND contain the exact keywords. Very conservative. Good when you can't afford false positives. The combined score might be `score = graph_score × BM25_score` or `score = α × graph_score + β × BM25_score`.
+**Intersection Strategy**: Only return nodes that appear in BOTH result sets. This maximizes precision—you only get nodes that are structurally relevant AND contain the exact keywords. Very conservative. Good when you can't afford false positives. The combined score might be \`score = graph_score × BM25_score\` or \`score = α × graph_score + β × BM25_score\`.
 
-**Union Strategy**: Return nodes from EITHER result set. This maximizes recall—you get anything structurally relevant OR keyword-matched. For nodes in only one set, assign zero for the missing score. Combined score: `score = α × graph_score + β × BM25_score` where missing scores are zero. This is more forgiving and returns more results.
+**Union Strategy**: Return nodes from EITHER result set. This maximizes recall—you get anything structurally relevant OR keyword-matched. For nodes in only one set, assign zero for the missing score. Combined score: \`score = α × graph_score + β × BM25_score\` where missing scores are zero. This is more forgiving and returns more results.
 
 **Threshold-Based Filtering**: Use one method for retrieval, the other for validation. For example, retrieve top-100 from graph expansion, then filter to only nodes with BM25 score above a threshold (e.g., BM25 > 1.0). Or retrieve from BM25, then boost nodes that are also graph-connected. This is computationally cheaper than full parallel retrieval.
 
-**Rank-Based Fusion**: Combine based on ranks rather than raw scores. If a node ranks 5th in graph results and 8th in BM25 results, its fusion score is `1/5 + 1/8 = 0.325`. This is more robust when score scales differ dramatically.
+**Rank-Based Fusion**: Combine based on ranks rather than raw scores. If a node ranks 5th in graph results and 8th in BM25 results, its fusion score is \`1/5 + 1/8 = 0.325\`. This is more robust when score scales differ dramatically.
 
 #### Phase 3: Score Normalization and Combination
 **Normalization** is critical because graph scores and BM25 scores live on different scales. Graph scores might be 0-1 (similarity scores) while BM25 scores range from 0 to 10+ (depending on term frequency and document counts).
 
-Apply **min-max normalization** to each score set: `normalized_score = (score - min_score) / (max_score - min_score)`. This maps both to [0,1]. Alternatively, use **z-score normalization** if you want to preserve outliers: `z = (score - mean) / std_dev`.
+Apply **min-max normalization** to each score set: \`normalized_score = (score - min_score) / (max_score - min_score)\`. This maps both to [0,1]. Alternatively, use **z-score normalization** if you want to preserve outliers: \`z = (score - mean) / std_dev\`.
 
-After normalization, compute the **combined score**: `final_score = α × normalized_graph + β × normalized_BM25` where α and β are weights (start with α=0.5, β=0.5, then tune based on your domain). Nodes appearing in both sets might receive a **synergy bonus** because they satisfy both criteria.
+After normalization, compute the **combined score**: \`final_score = α × normalized_graph + β × normalized_BM25\` where α and β are weights (start with α=0.5, β=0.5, then tune based on your domain). Nodes appearing in both sets might receive a **synergy bonus** because they satisfy both criteria.
 
 #### Phase 4: Re-ranking and Filtering
 Sort all candidate nodes by final score. Apply any final **filters**—minimum BM25 threshold to ensure at least some keyword match, maximum rank from graph to avoid distant nodes. Return the **top-k results** with their content and scores.
@@ -2524,19 +2405,19 @@ Extract **query keywords** from the user's query. Remove stopwords (common words
 
 Execute the **BM25 search** against your inverted index with these keywords. The index returns nodes ranked by BM25 score, representing how well each node's content matches the query keywords. Retrieve the **top-k candidates** (k=50-100) to ensure sufficient recall.
 
-For Elasticsearch, this is a simple query: `{"query": {"match": {"content": "Section 409A requirements"}}}`. Elasticsearch computes BM25 scores automatically. For rank_bm25 👉 'rank bee-em-twenty-five' library: `bm25.get_top_n(query_tokens, corpus, n=100)`.
+For Elasticsearch, this is a simple query: \`{"query": {"match": {"content": "Section 409A requirements"}}}\`. Elasticsearch computes BM25 scores automatically. For rank_bm25 👉 'rank bee-em-twenty-five' library: \`bm25.get_top_n(query_tokens, corpus, n=100)\`.
 
 #### Step 4: Result Fusion
 Now merge the two candidate sets. Your **fusion strategy** depends on your precision/recall priorities:
 
-**For high-precision applications** (legal, medical, compliance): Use **intersection**. Only return nodes appearing in BOTH graph results AND BM25 results. Combined score: `final_score = graph_score × BM25_score` or `final_score = 0.5 × graph_score + 0.5 × BM25_score`. This ensures results are structurally relevant and contain exact keywords.
+**For high-precision applications** (legal, medical, compliance): Use **intersection**. Only return nodes appearing in BOTH graph results AND BM25 results. Combined score: \`final_score = graph_score × BM25_score\` or \`final_score = 0.5 × graph_score + 0.5 × BM25_score\`. This ensures results are structurally relevant and contain exact keywords.
 
-**For balanced applications** (technical documentation, customer support): Use **weighted union**. Return nodes from either set. Normalize both score types to [0,1]. For each node: if in both sets, `final_score = α × graph_score + β × BM25_score`; if in one set, assign zero for missing score. Start with α=0.5, β=0.5, then tune based on evaluation metrics.
+**For balanced applications** (technical documentation, customer support): Use **weighted union**. Return nodes from either set. Normalize both score types to [0,1]. For each node: if in both sets, \`final_score = α × graph_score + β × BM25_score\`; if in one set, assign zero for missing score. Start with α=0.5, β=0.5, then tune based on evaluation metrics.
 
 **For recall-focused applications** (exploratory search, research): Use **union with low thresholds**. Include nodes from either set as long as they meet minimum criteria (graph_score > 0.3 OR BM25_score > 1.0). This maximizes coverage.
 
 #### Step 5: Score Normalization and Ranking
-Apply **min-max normalization** to each score distribution: `norm_score = (score - min) / (max - min)`. This maps both graph and BM25 scores to [0,1] ranges. If your BM25 scores are naturally well-scaled (using Elasticsearch), you might skip normalization and tune fusion weights instead.
+Apply **min-max normalization** to each score distribution: \`norm_score = (score - min) / (max - min)\`. This maps both graph and BM25 scores to [0,1] ranges. If your BM25 scores are naturally well-scaled (using Elasticsearch), you might skip normalization and tune fusion weights instead.
 
 Compute **final scores** for all candidates. Sort by final score descending. Apply any **post-filters**—minimum BM25 threshold to ensure keyword presence, diversity filtering to avoid redundant results. Return the **top-k results** (k=5-20) with their content, scores, and optionally **explanations**: "Ranked #1 due to graph proximity (0.85) and strong keyword match (BM25: 3.2)."
 
@@ -2783,31 +2664,10 @@ Next, **identify seed nodes** from the query using entity linking, exact matchin
 #### Phase 2: Traversal with Semantic Gating
 Start from each seed node and begin exploration. The key innovation is the **similarity gate** at each step:
 
-**For each current node**, retrieve its neighbors from the graph. For **each neighbor**, compute the **semantic similarity** between the neighbor's embedding and the query embedding. Use cosine similarity: `similarity = dot(query_embedding, node_embedding) / (||query|| × ||node||)`. This gives a score from -1 to 1 (typically 0 to 1 for meaningful content).
+**For each current node**, retrieve its neighbors from the graph. For **each neighbor**, compute the **semantic similarity** between the neighbor's embedding and the query embedding. Use cosine similarity: \`similarity = dot(query_embedding, node_embedding) / (||query|| × ||node||)\`. This gives a score from -1 to 1 (typically 0 to 1 for meaningful content).
 
-**Apply the threshold filter**: If `similarity >= τ`, add this neighbor to the expansion queue. If `similarity < τ`, skip this neighbor entirely—don't traverse its edges. This is the semantic gating mechanism that prevents topic drift.
+**Apply the threshold filter**: If \`similarity >= τ\`, add this neighbor to the expansion queue. If \`similarity < τ\`, skip this neighbor entirely—don't traverse its edges. This is the semantic gating mechanism that prevents topic drift.
 
-```mermaid
-flowchart TB
-    Q["Query: Quantum Computing"] --> S["Seed: Quantum Computing Node"]
-    S --> E["Embed Query"]
-    E --> T["Start Traversal"]
-    
-    T --> N1["Neighbor A: Quantum Algorithms"]
-    T --> N2["Neighbor B: Classical Computing"]
-    T --> N3["Neighbor C: Physics History"]
-    
-    N1 --> C1["Similarity: 0.89"]
-    N2 --> C2["Similarity: 0.72"]
-    N3 --> C3["Similarity: 0.43"]
-    
-    C1 --> D1["✅ Expand (above τ=0.70)"]
-    C2 --> D2["✅ Expand (above τ=0.70)"]
-    C3 --> D3["❌ Skip (below τ=0.70)"]
-    
-    D1 --> R["Collect Results"]
-    D2 --> R
-```
 
 **Continue traversal** from accepted neighbors. Repeat the similarity check for their neighbors. This creates a **recursive exploration** that follows semantically coherent paths and prunes irrelevant branches.
 
@@ -2824,7 +2684,7 @@ flowchart TB
 **Rank the collected nodes** by their similarity scores (or combined scores if using other features like edge weights or centrality). Return the **top-k nodes** with their content. Optionally, return the **subgraph structure** showing how nodes are connected, which can be visualized or used for explanation.
 
 #### Advanced: Combined Scoring
-For more sophisticated systems, combine **semantic similarity with other features**: edge weights (if available), graph proximity (fewer hops = higher score), node centrality (PageRank 👉 'page-rank' or degree), or content freshness. A combined score might be: `score = α × similarity + β × (1 / hop_distance) + γ × edge_weight` where α, β, γ are tunable weights.
+For more sophisticated systems, combine **semantic similarity with other features**: edge weights (if available), graph proximity (fewer hops = higher score), node centrality (PageRank 👉 'page-rank' or degree), or content freshness. A combined score might be: \`score = α × similarity + β × (1 / hop_distance) + γ × edge_weight\` where α, β, γ are tunable weights.
 
 This gives you **multi-signal ranking** that leverages both semantic relevance and structural importance while still maintaining the semantic gating mechanism to prevent drift.
 
@@ -2897,7 +2757,7 @@ Initialize your **data structures**: visited set (to avoid revisiting nodes), ex
 #### Step 4: Core Traversal Loop
 Implement the traversal algorithm:
 
-```python
+\`\`\`python
 def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
     visited = set()
     queue = [(1.0, seed) for seed in seed_nodes]  # Priority queue: (score, node)
@@ -2926,7 +2786,7 @@ def semantic_traversal(seed_nodes, query_embedding, threshold, budget):
                 heappush(queue, (-similarity, neighbor))  # Negative for max-heap
     
     return sorted(results, key=lambda x: x[1], reverse=True)
-```
+\`\`\`
 
 This implements **priority-based traversal** with semantic gating. Neighbors passing the threshold are added to both results and the expansion queue.
 
@@ -2952,7 +2812,7 @@ The traversal continues, following highly relevant clinical pathways while avoid
 #### Implementation Tips
 Use **vector databases** like Pinecone, Weaviate, or Milvus for efficient embedding storage and similarity search. **Pre-normalize** embeddings for faster dot-product similarity. Implement **concurrent traversal** from multiple seeds using async I/O or threading to reduce latency. **Monitor threshold performance**—log queries where results are too narrow (increase budget or lower threshold) or too noisy (raise threshold).
 
-**A/B test thresholds** on real queries with relevance judgments. **Combine with edge weights** if available: `accept_neighbor = (similarity >= τ) AND (edge_weight >= w_min)`. Implement **progressive deepening**—start with high threshold for quick, precise results; if too few, retry with lower threshold.
+**A/B test thresholds** on real queries with relevance judgments. **Combine with edge weights** if available: \`accept_neighbor = (similarity >= τ) AND (edge_weight >= w_min)\`. Implement **progressive deepening**—start with high threshold for quick, precise results; if too few, retry with lower threshold.
 
 Now let's examine benefits and limitations!`
         },
@@ -3025,7 +2885,7 @@ It's particularly valuable in **research and literature exploration** where topi
 **Avoid this technique** when recall is more important than precision—exhaustive retrieval matters more than avoiding false positives. When your **embeddings are weak** or not domain-specific, making similarity scores unreliable. When **weak connections are valuable**—in discovery applications where surprising connections across domains provide value. When you lack the **infrastructure** for embedding storage and fast similarity computation at scale.
 
 #### Combining with Other Techniques
-Semantic traversal works well **in combination with other methods**. Use it as a **re-ranking** step after initial graph expansion—expand broadly, then filter results by semantic similarity. Combine with **edge weights**: `accept = (similarity >= τ) AND (edge_weight >= w)` for dual filtering. Use **progressive relaxation**—start with high threshold; if results are too sparse, retry with lower threshold.
+Semantic traversal works well **in combination with other methods**. Use it as a **re-ranking** step after initial graph expansion—expand broadly, then filter results by semantic similarity. Combine with **edge weights**: \`accept = (similarity >= τ) AND (edge_weight >= w)\` for dual filtering. Use **progressive relaxation**—start with high threshold; if results are too sparse, retry with lower threshold.
 
 Consider **hybrid traversal** that uses semantic gating for some edge types but follows all edges of other types (e.g., always follow "definedBy" or "partOf" relationships, but filter "relatedTo" relationships semantically). This preserves important structural patterns while filtering noise.
 
@@ -3179,7 +3039,7 @@ Let's break down the mechanics of random walk-based ranking, focusing on Persona
 #### Phase 1: Graph Preparation
 Start by representing your graph in a format suitable for random walks. The **adjacency matrix** A is an N×N matrix where A[i][j] indicates an edge from node i to node j. For weighted graphs, A[i][j] stores the edge weight; for unweighted graphs, it's 0 or 1.
 
-Transform the adjacency matrix into a **transition matrix** P. For each node i, the transition probabilities to its neighbors must sum to 1. Compute: `P[i][j] = A[i][j] / sum(A[i])` where sum(A[i]) is the sum of all outgoing edges from node i. This represents: "If I'm at node i, what's the probability of moving to node j next?"
+Transform the adjacency matrix into a **transition matrix** P. For each node i, the transition probabilities to its neighbors must sum to 1. Compute: \`P[i][j] = A[i][j] / sum(A[i])\` where sum(A[i]) is the sum of all outgoing edges from node i. This represents: "If I'm at node i, what's the probability of moving to node j next?"
 
 Handle **dangling nodes** (nodes with no outgoing edges) by adding self-loops or uniform transitions to all nodes. This prevents the random walker from getting stuck.
 
@@ -3194,9 +3054,9 @@ For standard **PageRank** (non-personalized), the personalization vector is unif
 Initialize the **rank vector** r as the personalization vector: r = s. This represents the initial probability distribution—walker starts at seed nodes.
 
 **Iterate** using the PageRank update formula:
-```
+\`\`\`
 r_new = α × P^T × r_old + (1 - α) × s
-```
+\`\`\`
 
 Where:
 - α is the **damping factor** (typically 0.85), representing the probability of following an edge
@@ -3206,31 +3066,8 @@ Where:
 
 This formula says: "The new probability of being at each node equals the probability of walking there from neighbors, plus the probability of teleporting there."
 
-**Iterate** until convergence: `||r_new - r_old|| < ε` where ε 👉 'epsilon' is a small threshold (e.g., 10^-6). Typically converges in 20-50 iterations for most graphs.
+**Iterate** until convergence: \`||r_new - r_old|| < ε\` where ε 👉 'epsilon' is a small threshold (e.g., 10^-6). Typically converges in 20-50 iterations for most graphs.
 
-```mermaid
-flowchart TB
-    Q["Query: ML"] --> S["Seeds: ML Nodes"]
-    S --> M["Build Transition Matrix"]
-    M --> I["Initialize: Prob at Seeds"]
-    
-    I --> W1["Random Walk Iteration 1"]
-    W1 --> W2["Random Walk Iteration 2"]
-    W2 --> W3["Random Walk ..."]
-    
-    W3 --> C["Converged?"]
-    
-    C -->|No| W3
-    C -->|Yes| D["Stationary Distribution"]
-    
-    D --> R1["Node A: PPR = 0.15"]
-    D --> R2["Node B: PPR = 0.12"]
-    D --> R3["Node C: PPR = 0.08"]
-    
-    R1 --> F["Rank & Return Top-k"]
-    R2 --> F
-    R3 --> F
-```
 
 #### Phase 4: Convergence and Result Extraction
 After convergence, the rank vector r contains **PPR 👉 'pee-pee-arr' scores** for all nodes. r[i] represents the probability of finding the random walker at node i in the stationary distribution. Higher scores mean the node is **more important relative to the seed nodes**.
@@ -3238,12 +3075,12 @@ After convergence, the rank vector r contains **PPR 👉 'pee-pee-arr' scores** 
 **Sort nodes** by their PPR scores in descending order. The top-k nodes are those most central to your query seeds according to graph structure. Return these nodes with their scores.
 
 #### The Mathematics: Why It Works
-The PageRank formula has an elegant interpretation. The stationary distribution satisfies: `r = α × P^T × r + (1 - α) × s`. This is a **fixed point equation**. The random walker's long-term behavior is described by this equilibrium where the probability flow in equals flow out at every node.
+The PageRank formula has an elegant interpretation. The stationary distribution satisfies: \`r = α × P^T × r + (1 - α) × s\`. This is a **fixed point equation**. The random walker's long-term behavior is described by this equilibrium where the probability flow in equals flow out at every node.
 
-The **power iteration** method we use (repeatedly applying the update formula) is guaranteed to converge because the matrix `α × P^T + (1-α) × s × 1^T` is **stochastic** (rows sum to 1), **irreducible** (all nodes reachable from seeds), and **aperiodic** (damping ensures non-periodic walks). These properties guarantee a unique stationary distribution.
+The **power iteration** method we use (repeatedly applying the update formula) is guaranteed to converge because the matrix \`α × P^T + (1-α) × s × 1^T\` is **stochastic** (rows sum to 1), **irreducible** (all nodes reachable from seeds), and **aperiodic** (damping ensures non-periodic walks). These properties guarantee a unique stationary distribution.
 
 #### Advanced: Weighted Walks
-If your graph has **edge weights**, incorporate them into the transition matrix. Instead of uniform probabilities to neighbors, weight transitions by edge weights: `P[i][j] = weight(i→j) / sum(weights from i)`. This makes the walker more likely to follow high-weight edges, incorporating edge importance into rankings.
+If your graph has **edge weights**, incorporate them into the transition matrix. Instead of uniform probabilities to neighbors, weight transitions by edge weights: \`P[i][j] = weight(i→j) / sum(weights from i)\`. This makes the walker more likely to follow high-weight edges, incorporating edge importance into rankings.
 
 #### Advanced: Approximate PPR 👉 'pee-pee-arr'
 For very large graphs (millions of nodes), full PPR computation is expensive. Use **approximation methods**:
@@ -3304,9 +3141,9 @@ Start by loading or building your graph. Use **sparse matrix representations** (
 
 **Build the adjacency matrix** A where A[i][j] represents the edge from node i to node j. For **weighted graphs**, store edge weights; for **unweighted graphs**, use 1 for edges, 0 for non-edges. Use **Compressed Sparse Row (CSR 👉 'see-es-are')** format for efficient row operations.
 
-**Compute the transition matrix** P. For each node i, normalize outgoing edges: `P[i][j] = A[i][j] / sum(A[i])`. Handle **dangling nodes** (zero outgoing edges) by adding a small uniform probability to all nodes: `P[i][j] = 1/N for all j` if node i has no outgoing edges. Or add self-loops: `P[i][i] = 1`.
+**Compute the transition matrix** P. For each node i, normalize outgoing edges: \`P[i][j] = A[i][j] / sum(A[i])\`. Handle **dangling nodes** (zero outgoing edges) by adding a small uniform probability to all nodes: \`P[i][j] = 1/N for all j\` if node i has no outgoing edges. Or add self-loops: \`P[i][i] = 1\`.
 
-**Implementation tip**: Use vectorized operations. In NumPy: `row_sums = A.sum(axis=1); P = A / row_sums[:, np.newaxis]`. For sparse matrices, use `sklearn.preprocessing.normalize(A, norm='l1', axis=1)` which handles zero rows automatically.
+**Implementation tip**: Use vectorized operations. In NumPy: \`row_sums = A.sum(axis=1); P = A / row_sums[:, np.newaxis]\`. For sparse matrices, use \`sklearn.preprocessing.normalize(A, norm='l1', axis=1)\` which handles zero rows automatically.
 
 #### Step 2: Seed Node Identification
 When a query arrives, identify **seed nodes** using your preferred method. **Entity linking** if the query mentions specific entities: "What papers cite BERT 👉 'bert'?" links to the BERT paper node. **Semantic search** using embeddings: embed the query, find top-k similar nodes (k=3-5), use them as seeds. **Keyword matching** for simple queries where node names match query terms.
@@ -3318,7 +3155,7 @@ Create the **personalization vector** s. Initialize a zero vector of length N (n
 #### Step 3: Power Iteration Algorithm
 Implement the **iterative update** for PPR:
 
-```python
+\`\`\`python
 def personalized_pagerank(P, seeds, alpha=0.85, epsilon=1e-6, max_iter=100):
     N = P.shape[0]
     
@@ -3344,25 +3181,25 @@ def personalized_pagerank(P, seeds, alpha=0.85, epsilon=1e-6, max_iter=100):
     
     print(f"Max iterations ({max_iter}) reached")
     return r
-```
+\`\`\`
 
-**Key parameters**: `alpha` (damping factor, 0.85 is standard but tune for your graph), `epsilon` (convergence threshold, 10^-6 works well), `max_iter` (safety limit, 100 is usually enough).
+**Key parameters**: \`alpha\` (damping factor, 0.85 is standard but tune for your graph), \`epsilon\` (convergence threshold, 10^-6 works well), \`max_iter\` (safety limit, 100 is usually enough).
 
 **Optimization**: Use sparse matrix operations (P.T.dot with scipy.sparse) for large graphs. The transpose P.T is needed because we're computing incoming probabilities. Most graph libraries (NetworkX, igraph) provide built-in PPR implementations—use those when possible for performance.
 
 #### Step 4: Ranking and Result Return
-After convergence, the rank vector r contains PPR scores for all N nodes. **Sort nodes** by their scores: `ranked_indices = np.argsort(r)[::-1]` (descending order). Take the **top-k nodes**: `top_k = ranked_indices[:k]` where k is your result size (10-50 typical).
+After convergence, the rank vector r contains PPR scores for all N nodes. **Sort nodes** by their scores: \`ranked_indices = np.argsort(r)[::-1]\` (descending order). Take the **top-k nodes**: \`top_k = ranked_indices[:k]\` where k is your result size (10-50 typical).
 
 For each top node, **retrieve its content**—attached documents, descriptions, metadata. Return results with their PPR scores and optionally **explanations**: "Ranked #1 (PPR 👉 'pee-pee-arr' = 0.142) due to strong connectivity to query seeds and high centrality."
 
-**Filtering**: You might filter results by minimum PPR score threshold (e.g., PPR > 0.001) to remove very low-probability nodes. Or combine PPR scores with other signals: `final_score = 0.5 × PPR + 0.5 × semantic_similarity`.
+**Filtering**: You might filter results by minimum PPR score threshold (e.g., PPR > 0.001) to remove very low-probability nodes. Or combine PPR scores with other signals: \`final_score = 0.5 × PPR + 0.5 × semantic_similarity\`.
 
 #### Step 5: Combining with Other Retrieval Methods
 PPR works excellently in combination with other techniques. **PPR + Semantic Search**: Use semantic search to find seed nodes, then PPR to rank structurally important nodes near those seeds. This combines semantic understanding with structural authority.
 
 **PPR + Edge Weights**: Incorporate edge weights into the transition matrix so the random walk preferentially follows strong edges. This makes PPR aware of edge importance, not just connectivity.
 
-**Pre-ranked + PPR**: Precompute standard PageRank for the entire graph. At query time, multiply PPR scores by PageRank: `combined = PPR × PageRank`. This boosts nodes that are both query-relevant (high PPR) and globally important (high PageRank).
+**Pre-ranked + PPR**: Precompute standard PageRank for the entire graph. At query time, multiply PPR scores by PageRank: \`combined = PPR × PageRank\`. This boosts nodes that are both query-relevant (high PPR) and globally important (high PageRank).
 
 #### Real-World Example: Research Paper Discovery
 Imagine a research assistant for computer science. A graduate student asks: "What are the most influential papers on attention mechanisms in NLP 👉 'en-el-pee'?" Your system identifies seed nodes: "Attention Mechanisms," "Natural Language Processing," and the landmark paper "Attention Is All You Need."
@@ -3482,12 +3319,12 @@ Ready to explore even more advanced techniques? Our journey through graph retrie
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="fadeInUp" delay={0.1}>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3>Definition</h3>
                 <p>Parse the query itself into a mini-graph (entities + relations), then match this query graph structurally against the knowledge base 👉 'kay-bee' for precise retrieval.</p>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="zoomIn" delay={0.3}>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Capture structured, relational query intent</li>
@@ -3558,7 +3395,7 @@ Now let's see how Query Graph Construction works in practice!`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="flipIn" delay={0.1}>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <h3>
                     How It Works
@@ -3604,7 +3441,7 @@ Now let's see how Query Graph Construction works in practice!`
                 </div>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="fadeInRight" delay={0.3}>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <h3>Data Requirements</h3>
                   <p>NER 👉 'en-ee-arr' model (domain-adapted), Relation Extraction model, entity linking system, KB 👉 'kay-bee' schema, subgraph matching algorithm (VF2 👉 'vee-eff-two', approximate matching), entity synonyms/ontology.</p>
@@ -3653,10 +3490,10 @@ Handle **implicit relationships**. If the query says "companies with Series A fu
 Combine entities (nodes) and relationships (edges) into a **structured graph**. Each entity becomes a node. Each extracted relationship becomes a directed edge between nodes. The result is a **query graph**—a small subgraph representing the query's structure.
 
 For our example, the query graph might look like:
-```
+\`\`\`
 [Company] --raised--> [Series A Funding] --in--> [2023]
 [Company] --hiring--> [ML Engineers]
-```
+\`\`\`
 
 Notice **[Company]** is a shared node—it appears in both relationships. This captures the constraint: the *same company* must satisfy both conditions. This structural constraint is what makes Query Graph Construction powerful.
 
@@ -3708,10 +3545,10 @@ Consider the query: "Show me projects depending on deprecated APIs not yet migra
 **RE** identifies relationships: [projects] --depends_on--> [deprecated APIs], [projects] --NOT migrated_to--> [new version].
 
 **Query Graph**:
-```
+\`\`\`
 [Project] --depends_on--> [Deprecated API]
 [Project] --NOT(migrated_to)--> [New Version]
-```
+\`\`\`
 
 **Entity Linking**: Link [Deprecated API] to specific API nodes in KB marked as deprecated.
 
@@ -3727,23 +3564,23 @@ This structured approach ensures you retrieve exactly the projects matching the 
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '1.8rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="slideInUp" delay={0.1}>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
               </GSAPAnimated>
               
               <GSAPStaggerList delay={0.3} stagger={0.15}>
                 <ul style={{ fontSize: '1.1rem' }}>
                   <li><strong>1. NER 👉 'en-ee-arr' & RE 👉 'arr-ee':</strong> Apply domain-adapted models to extract entities and relations from query. Use spaCy 👉 'space-ee', Transformers, or custom models.</li>
-                  <li><strong>2. Build Query Graph:</strong> Create nodes for entities, edges for relations. Add attribute constraints (e.g., date > X, type = Y).</li>
+                  <li><strong>2. Build Query Graph:</strong> Create nodes for entities, edges for relations. Add attribute constraints (e.g., date &gt; X, type = Y).</li>
                   <li><strong>3. Entity Linking:</strong> Map query entities to KB 👉 'kay-bee' nodes using fuzzy matching, embeddings, or disambiguation models.</li>
                   <li><strong>4. Subgraph Matching:</strong> Run VF2 👉 'vee-eff-two' or approximate matching. Use candidate filtering and indexing for scale.</li>
                   <li><strong>5. Rank & Return:</strong> Score matches by quality, node importance, path length. Return subgraphs with mappings for explainability.</li>
                 </ul>
               </GSAPStaggerList>
 
-              <GSAPAnimated animation="zoomIn" delay={0.8}>
+              <GSAPAnimated animation="scaleIn" delay={0.8}>
                 <h3>Example Use Case</h3>
-                <p style={{ fontSize: '1.1rem' }}>IT troubleshooting: Query "database connection errors in production" → NER extracts [database], [connection errors], [production]. RE identifies [database]--has_issue-->[connection errors], [database]--deployed_in-->[production]. Query graph matched against infrastructure KB to find all production databases experiencing connection issues, returning exact matches with deployment topology for root cause analysis.</p>
+                <p style={{ fontSize: '1.1rem' }}>IT troubleshooting: Query "database connection errors in production" → NER extracts [database], [connection errors], [production]. RE identifies [database]--has_issue--&gt;[connection errors], [database]--deployed_in--&gt;[production]. Query graph matched against infrastructure KB to find all production databases experiencing connection issues, returning exact matches with deployment topology for root cause analysis.</p>
               </GSAPAnimated>
             </div>
           ),
@@ -3789,16 +3626,16 @@ For **generic entity types** (e.g., "companies"), you're not linking to a specif
 #### Step 4: Subgraph Matching
 This is the retrieval core. You need an algorithm that finds KB subgraphs matching the query graph's structure.
 
-**VF2 👉 'vee-eff-two'** is a classic subgraph isomorphism algorithm. It's available in libraries like NetworkX (Python): `nx.isomorphism.GraphMatcher`. For small to medium KB subgraphs, VF2 works well. It systematically tries node mappings, pruning branches that violate constraints (edge mismatches, type incompatibilities).
+**VF2 👉 'vee-eff-two'** is a classic subgraph isomorphism algorithm. It's available in libraries like NetworkX (Python): \`nx.isomorphism.GraphMatcher\`. For small to medium KB subgraphs, VF2 works well. It systematically tries node mappings, pruning branches that violate constraints (edge mismatches, type incompatibilities).
 
 **Graph databases** offer built-in pattern matching. **Neo4j 👉 'neo-four-jay'** with Cypher 👉 'sigh-fur' queries is ideal for this. You translate the query graph into a Cypher MATCH pattern, and Neo4j's query planner efficiently finds matching subgraphs. Cypher handles variable nodes, attribute filters, and optional edges naturally.
 
 Example Cypher pattern for our earlier query:
-```cypher
+\`\`\`cypher
 MATCH (c:Company)-[:raised]->(f:Funding {round: 'Series A', year: 2023}),
       (c)-[:hiring]->(e:Engineer {specialty: 'ML'})
 RETURN c, f, e
-```
+\`\`\`
 
 This finds all (c, f, e) triples satisfying the pattern. Neo4j optimizes using indices and query planning.
 
@@ -3840,19 +3677,19 @@ Imagine a query: **"Show database connection errors in production environments"*
 - [database] --deployed_in--> [production]
 
 **Query graph**:
-```
+\`\`\`
 [Database] --has_issue--> [Connection Error]
 [Database] --deployed_in--> [Production Environment]
-```
+\`\`\`
 
 **Entity linking**: Link [Database] to any database nodes (type match), [Connection Error] to error type nodes, [Production] to production environment nodes.
 
 **Subgraph matching** (Cypher):
-```cypher
+\`\`\`cypher
 MATCH (db:Database)-[:has_issue]->(err:Error {type: 'connection'}),
       (db)-[:deployed_in]->(env:Environment {name: 'production'})
 RETURN db, err, env
-```
+\`\`\`
 
 **Result**: All production databases currently experiencing connection errors. The system returns specific database instances (e.g., "prod-mysql-01", "prod-postgres-02") with their error details and deployment context. This precise retrieval helps ops teams quickly identify and remediate issues.
 
@@ -4014,7 +3851,7 @@ Query Graph Construction is a powerful technique for structured, relational retr
                 <p>Retrieve multiple graph paths and stitch them together into a coherent, narrative-style context that flows logically for LLM 👉 'el-el-em' consumption.</p>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="fadeInLeft" delay={0.3}>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Transform disjoint paths into readable narratives</li>
@@ -4112,7 +3949,7 @@ Now let's see how Context Path Stitching operates in practice!`
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="slideInDown" delay={0.1}>
+              <GSAPAnimated animation="slideInBottom" delay={0.1}>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <h3>
                     How It Works
@@ -4158,7 +3995,7 @@ Now let's see how Context Path Stitching operates in practice!`
                 </div>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="fadeInUp" delay={0.3}>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <h3>Data Requirements</h3>
                   <p>Retrieved path lists with node/edge texts, node deduplication logic (entity IDs), ordering heuristic (timestamps, causality), transition templates, text generation model or summarizer (optional LLM 👉 'el-el-em').</p>
@@ -4248,8 +4085,8 @@ Transitions can be **template-based** (predefined phrases) or **generated** (usi
 Now convert the ordered, deduplicated paths with transitions into **prose**. This is where triples (Node, Edge, Node) become sentences.
 
 **Template-based generation** uses patterns like:
-- `"{Node1} {Edge} {Node2}."` → "Einstein developed the Theory of Relativity."
-- `"{Node1}, {attribute}, {Edge} {Node2}."` → "Einstein, a German physicist, developed the Theory of Relativity."
+- \`"{Node1} {Edge} {Node2}."\` → "Einstein developed the Theory of Relativity."
+- \`"{Node1}, {attribute}, {Edge} {Node2}."\` → "Einstein, a German physicist, developed the Theory of Relativity."
 
 Templates are fast and reliable but can feel formulaic. Use varied templates to avoid monotony.
 
@@ -4265,14 +4102,14 @@ Templates are fast and reliable but can feel formulaic. Use varied templates to 
 #### Phase 6: Feeding to the LLM
 The final stitched context becomes part of your **LLM prompt**. Structure the prompt like:
 
-```
+\`\`\`
 Context:
 [Stitched narrative]
 
 Question: [User's query]
 
 Answer:
-```
+\`\`\`
 
 The LLM generates an answer based on the coherent context. Because the context is well-organized and narrative-style, the LLM can directly reference it, reducing hallucinations and improving answer quality.
 
@@ -4301,13 +4138,13 @@ Imagine retrieving paths about a software bug:
 "On January 15, 2024, a user reported a bug affecting the authentication module. Investigation revealed the issue was caused by a code change in commit abc123, authored by [Developer]. This change inadvertently introduced an error in the authentication logic..."
 
 **LLM Prompt**:
-```
+\`\`\`
 Context: On January 15, 2024, a user reported a bug affecting the authentication module. Investigation revealed the issue was caused by a code change in commit abc123, authored by [Developer]. This change inadvertently introduced an error in the authentication logic.
 
 Question: What caused the authentication bug and who is responsible?
 
 Answer: The authentication bug was caused by a code change in commit abc123, authored by [Developer]. The change was made recently and introduced an error affecting the authentication module.
-```
+\`\`\`
 
 The stitched context allows the LLM to answer accurately and completely, with clear provenance.
 
@@ -4326,7 +4163,7 @@ Context Path Stitching is a powerful post-processing technique that transforms r
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '1.8rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="fadeInLeft" delay={0.1}>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3>Implementation Steps</h3>
               </GSAPAnimated>
               
@@ -4367,16 +4204,16 @@ Retrieve **top-k paths** based on relevance. Don't try to stitch hundreds of pat
 #### Step 2: Deduplicate Nodes and Edges
 Implement **entity tracking** to avoid redundancy. Create a dictionary (map) tracking which entities have been mentioned:
 
-```python
+\`\`\`python
 entity_registry = {}  # node_id -> {first_mention: str, count: int}
-```
+\`\`\`
 
 When encountering a node:
 - **First mention**: Use full description. "Albert Einstein (1879-1955), a German-born theoretical physicist..."
 - **Subsequent mentions**: Use short reference. "Einstein" or "he" or "the physicist".
 
 For each path, iterate through nodes:
-```python
+\`\`\`python
 for node in path.nodes:
     if node.id not in entity_registry:
         # First mention
@@ -4387,13 +4224,13 @@ for node in path.nodes:
         entity_registry[node.id]['count'] += 1
         text = node.short_name  # or pronoun if appropriate
     stitched_text.append(text)
-```
+\`\`\`
 
 **Edge deduplication** works similarly. Track (source_id, edge_type, target_id) triples. If a triple has been stated, skip it in subsequent paths or reference it briefly ("As mentioned earlier, ...").
 
 **Merging overlapping paths**: If Path 1 is [A, B, C] and Path 2 is [B, C, D], merge into [A, B, C, D] if they're causally or temporally connected. Use node ID matching to detect overlaps.
 
-```python
+\`\`\`python
 def merge_paths(path1, path2):
     # Find overlap
     for i, node1 in enumerate(path1):
@@ -4404,23 +4241,23 @@ def merge_paths(path1, path2):
                 return path1[:i+1] + path2[j+1:]
     # No overlap, keep separate
     return None
-```
+\`\`\`
 
 #### Step 3: Logical Ordering
 Choose an **ordering strategy** based on your domain and query type. Implement sorting logic:
 
 **Temporal Ordering**:
-```python
+\`\`\`python
 def temporal_sort(paths):
     # Assume each path has a timestamp (earliest event in path)
     return sorted(paths, key=lambda p: p.earliest_timestamp)
-```
+\`\`\`
 
 Extract timestamps from node attributes (event dates, creation times) or edge metadata. If nodes don't have explicit timestamps, you might infer from graph structure (e.g., citation order in academic graphs).
 
 **Causal Ordering**:
 If your graph encodes causality (edge types like "caused_by", "resulted_in"), use **topological sort** to order paths respecting dependencies:
-```python
+\`\`\`python
 from collections import defaultdict, deque
 
 def topological_sort(paths):
@@ -4449,11 +4286,11 @@ def topological_sort(paths):
                 queue.append(neighbor)
     
     return ordered
-```
+\`\`\`
 
 **Topical Ordering**:
 Cluster paths by semantic similarity, then order clusters:
-```python
+\`\`\`python
 from sklearn.cluster import KMeans
 import numpy as np
 
@@ -4480,14 +4317,14 @@ def topical_sort(paths, embeddings):
         ordered_paths.extend(cluster_paths)
     
     return ordered_paths
-```
+\`\`\`
 
 **Hybrid**: Combine strategies. E.g., cluster topically first, then within each cluster order temporally.
 
 #### Step 4: Generate Transitions
 Create **transition templates** based on path relationships:
 
-```python
+\`\`\`python
 TRANSITIONS = {
     'temporal_next': ['Subsequently', 'Later', 'Following this', 'After this'],
     'temporal_concurrent': ['Meanwhile', 'At the same time', 'Concurrently'],
@@ -4509,10 +4346,10 @@ def choose_transition(path1, path2):
     else:
         # Distinct topics
         return random.choice(TRANSITIONS['additive'])
-```
+\`\`\`
 
 **LLM-based transitions** (higher quality, slower):
-```python
+\`\`\`python
 def generate_transition_llm(path1_text, path2_text):
     prompt = f"""
     Given two pieces of information:
@@ -4523,7 +4360,7 @@ def generate_transition_llm(path1_text, path2_text):
     """
     response = llm.generate(prompt, max_tokens=50)
     return response.strip()
-```
+\`\`\`
 
 Use LLM transitions sparingly—perhaps only between major sections or clusters. Use templates within sections for speed.
 
@@ -4531,7 +4368,7 @@ Use LLM transitions sparingly—perhaps only between major sections or clusters.
 Convert the ordered, deduplicated paths with transitions into **natural language text**.
 
 **Template-based**:
-```python
+\`\`\`python
 def triple_to_sentence(subject, predicate, object_):
     # Simple templates
     templates = [
@@ -4575,10 +4412,10 @@ def format_paths_to_prose(ordered_paths, transitions):
         paragraphs.append(' '.join(current_paragraph))
     
     return '\n\n'.join(paragraphs)
-```
+\`\`\`
 
 **LLM-based** (full prose generation):
-```python
+\`\`\`python
 def generate_prose_llm(paths):
     # Extract key facts from paths
     facts = []
@@ -4596,7 +4433,7 @@ def generate_prose_llm(paths):
     
     response = llm.generate(prompt, max_tokens=500)
     return response.strip()
-```
+\`\`\`
 
 **Hybrid**: Use templates for straightforward paths, LLM for complex or ambiguous cases.
 
@@ -4607,7 +4444,7 @@ def generate_prose_llm(paths):
 
 #### Step 6: Integration with LLM Prompt
 Structure your final prompt:
-```python
+\`\`\`python
 stitched_context = format_paths_to_prose(ordered_paths, transitions)
 
 prompt = f"""
@@ -4622,7 +4459,7 @@ Answer:
 """
 
 llm_response = llm.generate(prompt)
-```
+\`\`\`
 
 The coherent context helps the LLM produce accurate, well-supported answers.
 
@@ -4653,13 +4490,13 @@ Imagine synthesizing findings from multiple scientific papers on "effects of sle
 "A 2018 study (Study A) found that sleep deprivation leads to reduced cognitive performance. Building on this, Study B in 2020 demonstrated that such deprivation also impairs memory consolidation. Consequently, a 2022 study (Study C) confirmed these findings and extended them, linking chronic sleep deprivation to mood disorders such as depression and anxiety."
 
 **LLM Prompt**:
-```
+\`\`\`
 Context: [stitched text above]
 
 Question: What are the cognitive and psychological effects of sleep deprivation based on recent research?
 
 Answer: Recent research indicates that sleep deprivation has significant cognitive and psychological effects. A 2018 study found reduced cognitive performance, which was further supported by 2020 research showing impaired memory consolidation. Most recently, a 2022 study extended these findings, linking chronic sleep deprivation to mood disorders including depression and anxiety. These studies collectively demonstrate the serious impact of insufficient sleep on both cognitive function and mental health.
-```
+\`\`\`
 
 The stitched context provides temporal flow, causal connections, and comprehensive coverage—enabling the LLM to generate a well-supported, structured answer.
 
@@ -4680,7 +4517,7 @@ Context Path Stitching is an art as much as a science. The best implementation d
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="fadeInDown" delay={0.1}>
+              <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
               </GSAPAnimated>
               
@@ -4693,7 +4530,7 @@ Context Path Stitching is an art as much as a science. The best implementation d
                 </ul>
               </GSAPStaggerList>
 
-              <GSAPAnimated animation="fadeInUp" delay={0.7}>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
               
@@ -4839,12 +4676,12 @@ Context Path Stitching is a transformative technique when applied thoughtfully. 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="flipInX" delay={0.1}>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
                 <h3>Definition</h3>
                 <p>Use an LLM 👉 'el-el-em' to dynamically decide which graph edges and nodes to explore during retrieval, adapting the traversal path based on query context and discovered information.</p>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="slideInUp" delay={0.3}>
+              <GSAPAnimated animation="slideInTop" delay={0.3}>
                 <h3 style={{ color: '#2ecc71' }}>Goal & Benefits</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Intelligent, adaptive exploration under budget constraints</li>
@@ -4853,7 +4690,7 @@ Context Path Stitching is a transformative technique when applied thoughtfully. 
                 </ul>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="zoomIn" delay={0.5}>
+              <GSAPAnimated animation="scaleIn" delay={0.5}>
                 <p><strong>Best For:</strong> Large, complex knowledge graphs requiring selective exploration; open-ended research queries; interactive Q&A where query intent evolves; domains where exhaustive traversal is infeasible; adaptive retrieval needing reasoning about relevance.</p>
               </GSAPAnimated>
             </div>
@@ -4986,7 +4823,7 @@ Now let's see how LLM-Guided Graph Expansion operates in practice!`
                 </div>
               </GSAPAnimated>
 
-              <GSAPAnimated animation="fadeInLeft" delay={0.3}>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
                 <div style={{ marginBottom: '1.5rem' }}>
                   <h3>Data Requirements</h3>
                   <p>Seed node identification, node summaries/descriptions, edge metadata (types, labels), LLM 👉 'el-el-em' API for decision-making, budget policy (max steps, tokens, time), graph query API (neighbor retrieval), optional: feedback signals for tuning.</p>
@@ -5033,7 +4870,7 @@ Construct a prompt describing:
 - **Budget status**: "You have 3 more exploration steps and 2000 tokens remaining."
 
 Example prompt:
-```
+\`\`\`
 Query: What were the societal impacts of Einstein's work?
 
 Current Nodes:
@@ -5049,16 +4886,16 @@ Exploration History: Starting exploration from Einstein node.
 Budget: 4 steps remaining, 3000 tokens remaining.
 
 Task: Which edges should we explore next to answer the query? Provide your reasoning and select up to 2 edges to follow. Format: Edge ID, Reason.
-```
+\`\`\`
 
 **Substep B: LLM Decides Next Actions**
 The LLM responds with its decisions and reasoning. Example response:
-```
+\`\`\`
 Reasoning: To understand societal impacts, I should focus on Einstein's scientific contributions and their applications. The "worked_on" edges lead to his theories, which I can then trace to see how they were applied in society. I'll prioritize "worked_on → Theory of Relativity" because relativity has had significant technological and cultural impacts.
 
 Selected Edges:
 1. worked_on → Theory of Relativity (Reason: Major work with broad applications)
-```
+\`\`\`
 
 Parse the LLM's response to extract:
 - **Selected edges**: Which edges to follow.
@@ -5094,14 +4931,14 @@ Once exploration stops, **compile the accumulated context**. This is the informa
 Optionally, **stitch the context** using Context Path Stitching (Technique 12) to format it coherently. Or simply present the accumulated facts as a structured list.
 
 **Generate the final answer** by passing the context to the LLM:
-```
+\`\`\`
 Context:
 Einstein (1879-1955) worked on the Theory of Relativity, a framework describing gravity. The Theory of Relativity is applied in GPS technology, which is used in navigation systems worldwide. GPS technology is used in billions of devices and has transformed logistics, emergency services, and personal navigation, representing a major societal impact.
 
 Query: What were the societal impacts of Einstein's work?
 
 Answer:
-```
+\`\`\`
 
 The LLM generates an answer grounded in the explored context. Because the exploration was guided by the query, the context is highly relevant, leading to a high-quality answer.
 
@@ -5179,7 +5016,7 @@ LLM-Guided Graph Expansion is a sophisticated, powerful technique that brings in
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '1.8rem', padding: '30px', lineHeight: '2', textAlign: 'left' }}>
-              <GSAPAnimated animation="flipInY" delay={0.1}>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
                 <h3>Implementation Steps</h3>
               </GSAPAnimated>
               
@@ -5207,7 +5044,7 @@ Let's get hands-on with implementing LLM-Guided Graph Expansion. This section co
 #### Step 1: Initialization and Seed Selection
 Begin by **identifying seed nodes** from the query. Use techniques from earlier in the deck:
 
-```python
+\`\`\`python
 def get_seed_nodes(query, graph, embedding_model):
     # Option 1: Entity linking
     entities = extract_entities(query)  # NER
@@ -5237,24 +5074,24 @@ state = {
         'start_time': time.time()
     }
 }
-```
+\`\`\`
 
 **Set budget policies** appropriate to your use case. Real-time chatbots might allow only 3-5 steps and 2000 tokens. Research tools might allow 15 steps and 10K tokens. Define these limits clearly.
 
 **Get node summaries** for seed nodes. If precomputed, retrieve from storage. If not, generate on-the-fly:
-```python
+\`\`\`python
 def get_node_summary(node, graph):
     if 'summary' in node.attributes:
         return node.attributes['summary']
     else:
         # Generate summary from node attributes
         return f"{node.label} ({node.type}): {node.attributes.get('description', 'No description available')}"
-```
+\`\`\`
 
 #### Step 2: Main Iterative Loop
 Implement the **exploration loop** that alternates between LLM decisions and graph queries:
 
-```python
+\`\`\`python
 def llm_guided_expansion(query, state, graph, llm):
     while not should_stop(state):
         # Substep A: Prepare prompt with current state
@@ -5291,10 +5128,10 @@ def llm_guided_expansion(query, state, graph, llm):
         state['budget']['tokens_used'] += count_tokens(prompt) + count_tokens(llm_response)
     
     return state['context']
-```
+\`\`\`
 
 **Building the decision prompt** is critical:
-```python
+\`\`\`python
 def build_decision_prompt(query, state, graph):
     prompt = f"Query: {query}\n\n"
     
@@ -5332,10 +5169,10 @@ Stop: [Yes/No] (Yes if you have sufficient information to answer the query)
 """
     
     return prompt
-```
+\`\`\`
 
 **Parsing LLM decision**:
-```python
+\`\`\`python
 import re
 
 def parse_llm_decision(llm_response):
@@ -5367,10 +5204,10 @@ def parse_llm_decision(llm_response):
         decision['stop'] = True
     
     return decision
-```
+\`\`\`
 
 **Stopping condition**:
-```python
+\`\`\`python
 def should_stop(state):
     budget = state['budget']
     
@@ -5391,12 +5228,12 @@ def should_stop(state):
         return True
     
     return False
-```
+\`\`\`
 
 #### Step 3: Context Compilation and Answer Generation
 After exploration, **compile the context**:
 
-```python
+\`\`\`python
 def compile_context(context_list):
     # Simple compilation: join all summaries
     compiled = "Retrieved Information:\n"
@@ -5412,10 +5249,10 @@ def compile_context_stitched(context_list):
     # Apply stitching logic (from Technique 12)
     stitched = stitch_paths(paths)
     return stitched
-```
+\`\`\`
 
 **Generate final answer**:
-```python
+\`\`\`python
 def generate_answer(query, compiled_context, llm):
     answer_prompt = f"""
 Context:
@@ -5436,13 +5273,13 @@ context = llm_guided_expansion(query, state, graph, llm)
 compiled_context = compile_context_stitched(context)
 answer = generate_answer(query, compiled_context, llm)
 print(answer)
-```
+\`\`\`
 
 #### Step 4: Optimizations and Best Practices
 
 **Parallel Exploration**:
 Instead of selecting one edge at a time, allow the LLM to select multiple edges and explore them **concurrently**:
-```python
+\`\`\`python
 from concurrent.futures import ThreadPoolExecutor
 
 def retrieve_neighbors_parallel(selections, graph):
@@ -5451,11 +5288,11 @@ def retrieve_neighbors_parallel(selections, graph):
                    for node_id, edge_type in selections]
         results = [f.result() for f in futures]
     return [neighbor for result in results for neighbor in result]
-```
+\`\`\`
 
 **Caching LLM Decisions**:
 For common query patterns, cache decisions:
-```python
+\`\`\`python
 import hashlib
 
 decision_cache = {}
@@ -5469,11 +5306,11 @@ def cached_llm_decision(prompt, llm):
     response = llm.generate(prompt)
     decision_cache[prompt_hash] = response
     return response
-```
+\`\`\`
 
 **Function Calling for Structured Decisions**:
 Use OpenAI's function calling or similar features for reliable parsing:
-```python
+\`\`\`python
 def llm_decision_with_function_calling(prompt, llm):
     functions = [{
         'name': 'select_edges',
@@ -5500,11 +5337,11 @@ def llm_decision_with_function_calling(prompt, llm):
     
     response = llm.generate_with_functions(prompt, functions)
     return response['function_call']['arguments']  # Already parsed JSON
-```
+\`\`\`
 
 **Graceful Degradation**:
 If LLM makes a poor decision (e.g., selects non-existent edge), fall back to heuristics:
-```python
+\`\`\`python
 def execute_decision_with_fallback(decision, graph, state):
     new_nodes = []
     for node_id, edge_type in decision['selected_edges']:
@@ -5516,7 +5353,7 @@ def execute_decision_with_fallback(decision, graph, state):
             neighbors = rank_by_similarity(all_neighbors, state['query'], graph)[:2]
         new_nodes.extend(neighbors)
     return new_nodes
-```
+\`\`\`
 
 #### Step 5: Technology Stack
 A practical stack for LLM-Guided Expansion:
@@ -5547,7 +5384,7 @@ The system **dynamically adapts** to the evolving conversation, building on prev
 
 #### Monitoring and Improvement
 **Log everything**:
-```python
+\`\`\`python
 import json
 
 def log_exploration(query, state, decision, result):
@@ -5561,7 +5398,7 @@ def log_exploration(query, state, decision, result):
     }
     with open('exploration_logs.jsonl', 'a') as f:
         f.write(json.dumps(log_entry) + '\n')
-```
+\`\`\`
 
 **Analyze logs** to identify:
 - **Common decision patterns**: Which edges are frequently explored for certain query types? Precompute or cache these.
