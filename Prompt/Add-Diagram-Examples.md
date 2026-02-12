@@ -16,7 +16,10 @@ Add MermaidPopover diagrams when slides contain:
 
 ### 1. Identify Target Locations
 Look for sections with:
-- A "When to Use" section or similar informational bullet points
+- A "When to Use" section with bullet points
+- A "Formula" section with equations and/or bullet points
+- A "How It Works" section with explanatory content
+- Any informational section with bullet points
 - Concrete numerical examples in the speaker notes
 - Scenarios comparing different outcomes
 - Text in notes that walks through specific cases
@@ -44,8 +47,10 @@ graph TB
 </GSAPAnimated>
 ```
 
+**Note:** Replace "When to Use" with appropriate heading: "Formula", "How It Works", etc.
+
 ### 3. Placement Guidelines
-- Add to an existing section (typically "When to Use")
+- Add to an existing section (typically "When to Use", "Formula", or "How It Works")
 - Make the parent div `position: 'relative'`
 - Place MermaidPopover in absolutely positioned div: `top: '-5px', right: 0`
 - DO NOT create a separate GSAPAnimated section
@@ -63,6 +68,20 @@ graph TB
       <MermaidPopover ... />
     </h4>
     <p>Click to see...</p>
+  </div>
+</GSAPAnimated>
+```
+
+OR
+
+```tsx
+<GSAPAnimated animation="fadeIn" delay={0.3}>
+  <div>
+    <h4>
+      Formula
+      <MermaidPopover ... />
+    </h4>
+    <ul>...</ul>
   </div>
 </GSAPAnimated>
 ```
@@ -205,6 +224,60 @@ flowchart LR
 </GSAPAnimated>
 ```
 
+### Template 5: Formula Section
+```tsx
+<GSAPAnimated animation="slideInLeft" delay={0.3}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+      <MermaidPopover
+        title="Calculation Process Visualization"
+        diagram={`flowchart TB
+    A["🤖 Input"] --> B{"Decision?"}
+    B -->|Yes| C["✅ Case A"]
+    B -->|No| D["❌ Case B"]
+    C --> E["📊 Result = X"]
+    D --> E
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#ffd700,color:#000`}
+      />
+    </div>
+    <h4>Formula</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li><strong>Variable:</strong> description</li>
+      <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Formula} = \\frac{A}{B}\\]' }} />
+    </ul>
+  </div>
+</GSAPAnimated>
+```
+
+### Template 6: How It Works Section
+```tsx
+<GSAPAnimated animation="scaleIn" delay={0.4}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+      <MermaidPopover
+        title="Process Flow Example"
+        diagram={`flowchart LR
+    A["📋 Input"] --> B["🔀 Process"]
+    B --> C{"Check?"}
+    C -->|"✅"| D["Success"]
+    C -->|"❌"| E["Fail"]
+    style A fill:#4fc3f7,color:#000
+    style D fill:#81c784,color:#000
+    style E fill:#ffcdd2,color:#000`}
+      />
+    </div>
+    <h4>How It Works</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>Step-by-step explanation</li>
+      <li>Key concepts</li>
+    </ul>
+  </div>
+</GSAPAnimated>
+```
+
 ## Color Scheme Guidelines
 
 ### Standard Colors (copy these for consistency)
@@ -340,6 +413,7 @@ flowchart TB
 
 ## Example: Complete Implementation
 
+### Example 1: "When to Use" Section
 From NER Metrics Deck - Exact Match Score:
 
 **Before (Old Pattern - Don't Use):**
@@ -403,6 +477,56 @@ graph TB
 </GSAPAnimated>
 ```
 
+### Example 2: "Formula" Section
+From NER Metrics Deck - Precision:
+
+**Before (Old Pattern - Don't Use):**
+```tsx
+<GSAPAnimated animation="slideInLeft" delay={0.3}>
+  <div style={{ marginBottom: '0em' }}>
+    <h4>
+      Formula
+      <MermaidPopover
+        title="Precision Calculation"
+        diagram={`...`}
+      />
+    </h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li><strong>TP:</strong> true positives</li>
+      <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
+    </ul>
+  </div>
+</GSAPAnimated>
+```
+
+**After (New Pattern - Use This):**
+```tsx
+<GSAPAnimated animation="slideInLeft" delay={0.3}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+      <MermaidPopover
+        title="Precision Calculation"
+        diagram={`flowchart TB
+    A["🤖 Model Predictions"] --> B{"Correct?"}
+    B -->|Yes| C["✅ TP = 8"]
+    B -->|No| D["❌ FP = 2"]
+    C --> E["📊 Precision = 8/10 = 80%"]
+    D --> E
+    style A fill:#4fc3f7,color:#000
+    style C fill:#81c784,color:#000
+    style D fill:#ffcdd2,color:#000
+    style E fill:#ffd700,color:#000`}
+      />
+    </div>
+    <h4>Formula</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li><strong>TP:</strong> true positives</li>
+      <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Precision} = \\frac{TP}{TP + FP}\\]' }} />
+    </ul>
+  </div>
+</GSAPAnimated>
+```
+
 **Key Differences:**
 1. ✅ Single GSAPAnimated section (not two)
 2. ✅ Parent div has `position: 'relative'`
@@ -410,18 +534,33 @@ graph TB
 4. ✅ MermaidPopover has no h4 wrapper
 5. ✅ No helper p tag
 6. ✅ Badge appears in top-right corner of existing content
+7. ✅ Works for any section type: "When to Use", "Formula", "How It Works", etc.
 
 ## Quick Reference Commands
 
+### Common Section Types to Target
+All MermaidPopover diagrams should be right-aligned in the following sections:
+- **"When to Use"** - Use cases and application scenarios
+- **"Formula"** - Mathematical formulas with visual explanations
+- **"How It Works"** - Process flows and mechanisms
+- **Any section with examples** - Example calculations, walkthroughs, comparisons
+
 ### Search in VS Code
+Search for sections that need conversion:
 ```
-Search: "Example Walkthrough|Example Calculation|Model Comparison"
+Search: "<h4>\n                    (Formula|How It Works|Example)"
 Use regex enabled
+```
+
+Or search for old pattern:
+```
+Search: "Formula\n                    <MermaidPopover"
+Use regex disabled
 ```
 
 ### Multi-Replace Pattern
 Use `multi_replace_string_in_file` for multiple edits:
-- Identify all example sections
+- Identify all sections with MermaidPopover in h4 wrappers
 - Create replacement array
 - Execute all changes at once
 

@@ -199,9 +199,8 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Formula
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision Calculation"
                       diagram={`flowchart TB
@@ -215,7 +214,8 @@ flowchart LR
     style D fill:#ffcdd2,color:#000
     style E fill:#ffd700,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Formula</h4>
                   <ul style={{ fontSize: '0.5em' }}>
                     <li><strong>TP:</strong> predicted entities with exact match to gold</li>
                     <li><strong>FP:</strong> predicted entities without a match</li>
@@ -372,9 +372,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.3}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Formula
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Recall Calculation"
                       diagram={`flowchart TB
@@ -388,7 +387,8 @@ flowchart TB
     style D fill:#ffcdd2,color:#000
     style E fill:#ffd700,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Formula</h4>
                   <ul style={{ fontSize: '0.5em' }}>
                     <li><strong>TP:</strong> exact matches (span + type)</li>
                     <li><strong>FN:</strong> gold entities without a matching prediction</li>
@@ -551,9 +551,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="flipCard" duration={1} delay={0.35}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Formula
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="F1 Score — Finding the Balance"
                       diagram={`flowchart LR
@@ -565,7 +564,8 @@ flowchart TB
     style C fill:#ffd700,color:#000
     style D fill:#e1bee7,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Formula</h4>
                   <ul style={{ fontSize: '0.5em' }}>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[F1 = \\frac{2 \\times (\\text{Precision} \\times \\text{Recall})}{\\text{Precision} + \\text{Recall}}\\]' }} />
                     <li>Usually micro-F1 across all entities</li>
@@ -738,9 +738,8 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInTop" delay={0.4}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Formula
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Exact Match — All or Nothing"
                       diagram={`flowchart TB
@@ -754,7 +753,8 @@ flowchart LR
     style D fill:#ffcdd2,color:#000
     style E fill:#ffd700,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Formula</h4>
                   <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{EM}_i = \\begin{cases} 1 & \\text{if predicted set == gold set} \\\\ 0 & \\text{otherwise} \\end{cases}\\]' }} />
                   <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Exact Match Score} = \\text{mean}_i(\\text{EM}_i)\\]' }} />
                 </div>
@@ -935,9 +935,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInLeft" delay={0.35}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    How It Works
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="IoU Partial Match Process"
                       diagram={`flowchart TB
@@ -953,7 +952,8 @@ flowchart TB
     style F fill:#81c784,color:#000
     style G fill:#ffcdd2,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>How It Works</h4>
                   <ul style={{ fontSize: '0.5em' }}>
                     <li><strong>IoU</strong> = |tokens overlap| / |tokens union|</li>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{IoU} = \\frac{|\\text{tokens}_\\text{overlap}|}{|\\text{tokens}_\\text{union}|}\\]' }} />
@@ -1127,9 +1127,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="flipCard" duration={1} delay={0.35}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Formula
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity-Level Accuracy — Labeling Test"
                       diagram={`flowchart LR
@@ -1144,7 +1143,8 @@ flowchart TB
     style E fill:#ffcdd2,color:#000
     style F fill:#ffd700,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>Formula</h4>
                   <ul style={{ fontSize: '0.5em' }}>
                     <p className="formula-left" dangerouslySetInnerHTML={{ __html: '\\[\\text{Accuracy} = \\frac{\\text{# gold entities with correct type}}{\\text{total gold entities}}\\]' }} />
                     <li>Option: macro-averaged over types for class balance</li>
@@ -1315,9 +1315,8 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="scaleIn" delay={0.4}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    How It Works
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Confusion Matrix Structure"
                       diagram={`flowchart TB
@@ -1334,7 +1333,8 @@ flowchart LR
     style F fill:#81c784,color:#000
     style G fill:#ffd700,color:#000`}
                     />
-                  </h4>
+                  </div>
+                  <h4>How It Works</h4>
                   <ul style={{ fontSize: '0.5em' }}>
                     <li>Rows = gold types, Columns = predicted types</li>
                     <li>Diagonal = correct, Off-diagonal = mistakes</li>
