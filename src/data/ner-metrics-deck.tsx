@@ -233,6 +233,43 @@ flowchart LR
                   </ul>
                 </div>
               </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={0.9}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Example Calculation
+                    <MermaidPopover
+                      title="Precision Example: 10 Predictions"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Pred["\ud83e\udd16 Model Found 10 Entities"]
+        P1["1. Apple \u2705"]
+        P2["2. iPhone \u2705"]
+        P3["3. Tim Cook \u2705"]
+        P4["4. California \u2705"]
+        P5["5. Microsoft \u2705"]
+        P6["6. Tesla \u2705"]
+        P7["7. New York \u2705"]
+        P8["8. Amazon \u2705"]
+        P9["9. the CEO \u274c (not an entity)"]
+        P10["10. very great \u274c (not an entity)"]
+    end
+    
+    Pred --> Calc["\ud83d\udcca Calculation"]
+    Calc --> TP["TP = 8 (correct)"]
+    Calc --> FP["FP = 2 (wrong)"]
+    TP --> Result["Precision = 8 / 10 = 80%"]
+    FP --> Result
+    
+    style Pred fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+    style TP fill:#c8e6c9,color:#000
+    style FP fill:#ffcdd2,color:#000
+    style Result fill:#fff9c4,color:#000,stroke:#fbc02d,stroke-width:2px`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see prediction breakdown</p>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#27AE60',
@@ -374,6 +411,45 @@ flowchart TB
                     <li>When missing entities is costly (medical, legal, security)</li>
                     <li>Measuring coverage and data sufficiency</li>
                   </ul>
+                </div>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={0.9}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Example Calculation
+                    <MermaidPopover
+                      title="Recall Example: Treasure Hunt"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Gold["\ud83c\udfaf 10 Real Entities in Text"]
+        G1["1. Apple"]
+        G2["2. iPhone"]
+        G3["3. Tim Cook"]
+        G4["4. California"]
+        G5["5. Microsoft"]
+        G6["6. Tesla"]
+        G7["7. New York"]
+        G8["8. Amazon"]
+        G9["9. IBM"]
+        G10["10. Google"]
+    end
+    
+    Gold --> Found["\ud83d\udd0d Model Found"]
+    Found --> TP["TP = 8 entities found \u2705"]
+    Gold --> Missed["\u274c Model Missed"]
+    Missed --> FN["FN = 2 entities (IBM, Google)"]
+    
+    TP --> Result["Recall = 8 / 10 = 80%"]
+    FN --> Result
+    
+    style Gold fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    style TP fill:#c8e6c9,color:#000
+    style FN fill:#ffcdd2,color:#000
+    style Result fill:#fff9c4,color:#000,stroke:#fbc02d,stroke-width:2px`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see what was found vs missed</p>
                 </div>
               </GSAPAnimated>
             </div>
@@ -521,6 +597,56 @@ flowchart TB
                   </ul>
                 </div>
               </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={0.95}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Model Comparison Example
+                    <MermaidPopover
+                      title="F1 Score: Comparing 3 Models"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph ModelA["Model A: Too Careful"]
+        A1["Precision: 90%"]
+        A2["Recall: 40%"]
+        A3["F1: 55%"]
+        A4["❌ Playing it too safe!"]
+        A1 --> A3
+        A2 --> A3
+        A3 --> A4
+    end
+    
+    subgraph ModelB["Model B: Too Aggressive"]
+        B1["Precision: 50%"]
+        B2["Recall: 95%"]
+        B3["F1: 66%"]
+        B4["❌ Too many false positives!"]
+        B1 --> B3
+        B2 --> B3
+        B3 --> B4
+    end
+    
+    subgraph ModelC["Model C: Balanced ✨"]
+        C1["Precision: 70%"]
+        C2["Recall: 75%"]
+        C3["F1: 72%"]
+        C4["✅ Best Balance — Winner!"]
+        C1 --> C3
+        C2 --> C3
+        C3 --> C4
+    end
+    
+    style ModelA fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style ModelB fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#000
+    style ModelC fill:#c8e6c9,stroke:#2e7d32,stroke-width:3px,color:#000
+    style A3 fill:#ffebee,color:#000
+    style B3 fill:#fff8e1,color:#000
+    style C3 fill:#a5d6a7,color:#000,stroke:#2e7d32,stroke-width:2px`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see why balanced models win</p>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#8E44AD',
@@ -662,6 +788,59 @@ flowchart LR
                     <li>End-to-end reliability & quality gates for production</li>
                     <li>Downstream tasks requiring perfect extraction</li>
                   </ul>
+                </div>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Example Walkthrough
+                    <MermaidPopover
+                      title="Exact Match Example: 4 Predictions"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
+graph TB
+    subgraph Truth["🎯 Ground Truth"]
+        GT["Apple=ORG | Tim Cook=PERSON | Tesla=ORG"]
+    end
+    
+    subgraph P1["Prediction 1: ✅ EM = 1"]
+        P1E["Apple=ORG | Tim Cook=PERSON | Tesla=ORG"]
+        P1R["✅ Perfect Match!"]
+    end
+    
+    subgraph P2["Prediction 2: ❌ EM = 0"]
+        P2E["Apple=ORG | Tim Cook=PERSON | Tesla=LOC"]
+        P2R["❌ Wrong Label (LOC vs ORG)"]
+    end
+    
+    subgraph P3["Prediction 3: ❌ EM = 0"]
+        P3E["Apple=ORG | Tim Cook=PERSON | ø"]
+        P3R["❌ Missing Entity (Tesla)"]
+    end
+    
+    subgraph P4["Prediction 4: ❌ EM = 0"]
+        P4E["Apple=ORG | Tim=PERSON | Cook=PERSON | Tesla=ORG"]
+        P4R["❌ Wrong Boundaries (split name)"]
+    end
+    
+    Truth --> P1
+    Truth --> P2
+    Truth --> P3
+    Truth --> P4
+    
+    style Truth fill:#e3f2fd,stroke:#1976d2,stroke-width:3px,color:#000
+    style P1 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
+    style P2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style P3 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style P4 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
+    style GT fill:#fff,color:#000
+    style P1E fill:#fff,color:#000
+    style P2E fill:#fff,color:#000
+    style P3E fill:#fff,color:#000
+    style P4E fill:#fff,color:#000`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click diagram to see 4 prediction scenarios</p>
                 </div>
               </GSAPAnimated>
             </div>
@@ -820,6 +999,52 @@ flowchart TB
                   </ul>
                 </div>
               </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={0.9}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Example Walkthrough
+                    <MermaidPopover
+                      title="IoU Examples: Partial Match Scoring"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Ex1["Example 1: Tim Cook"]
+        E1G["\u2705 Gold: 'Tim Cook' (2 tokens)"]
+        E1P["\ud83e\udd16 Pred: 'Tim' (1 token)"]
+        E1O["Overlap = 1 | Union = 2"]
+        E1R["IoU = 1/2 = 50%"]
+        E1M["\u2705 Match! (IoU \u2265 0.5)"]
+        E1G --> E1O
+        E1P --> E1O
+        E1O --> E1R
+        E1R --> E1M
+    end
+    
+    subgraph Ex2["Example 2: New York City"]
+        E2G["\u2705 Gold: 'New York City' (3 tokens)"]
+        E2P["\ud83e\udd16 Pred: 'York City' (2 tokens)"]
+        E2O["Overlap = 2 | Union = 3"]
+        E2R["IoU = 2/3 = 67%"]
+        E2M["\u2705 Match! (IoU \u2265 0.5)"]
+        E2G --> E2O
+        E2P --> E2O
+        E2O --> E2R
+        E2R --> E2M
+    end
+    
+    style Ex1 fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Ex2 fill:#e3f2fd,stroke:#2196f3,stroke-width:2px,color:#000
+    style E1G fill:#fff,color:#000
+    style E1P fill:#fff,color:#000
+    style E2G fill:#fff,color:#000
+    style E2P fill:#fff,color:#000
+    style E1M fill:#c8e6c9,color:#000
+    style E2M fill:#c8e6c9,color:#000`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see IoU calculations</p>
+                </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1ABC9C',
@@ -969,6 +1194,51 @@ flowchart TB
                     <li>Pipeline analysis & diagnosing label confusions</li>
                     <li>Ablations on classifier heads</li>
                   </ul>
+                </div>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={0.95}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Example Walkthrough
+                    <MermaidPopover
+                      title="Entity-Level Accuracy Examples"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Ex1["Example 1: Perfect Score"]
+        E1T["\ud83d\udccb Given Spans: 'Apple', 'Tim Cook'"]
+        E1L1["\ud83c\udff7\ufe0f Apple \u2192 ORG \u2705"]
+        E1L2["\ud83c\udff7\ufe0f Tim Cook \u2192 PERSON \u2705"]
+        E1R["\ud83d\udcca Accuracy = 2/2 = 100%"]
+        E1T --> E1L1
+        E1T --> E1L2
+        E1L1 --> E1R
+        E1L2 --> E1R
+    end
+    
+    subgraph Ex2["Example 2: One Error"]
+        E2T["\ud83d\udccb Given: 'Apple', 'Tim Cook', 'iPhone'"]
+        E2L1["\ud83c\udff7\ufe0f Apple \u2192 ORG \u2705"]
+        E2L2["\ud83c\udff7\ufe0f Tim Cook \u2192 ORG \u274c (should be PERSON)"]
+        E2L3["\ud83c\udff7\ufe0f iPhone \u2192 PRODUCT \u2705"]
+        E2R["\ud83d\udcca Accuracy = 2/3 = 67%"]
+        E2T --> E2L1
+        E2T --> E2L2
+        E2T --> E2L3
+        E2L1 --> E2R
+        E2L2 --> E2R
+        E2L3 --> E2R
+    end
+    
+    style Ex1 fill:#e8f5e9,stroke:#4caf50,stroke-width:2px,color:#000
+    style Ex2 fill:#fff3e0,stroke:#ff9800,stroke-width:2px,color:#000
+    style E1T fill:#fff,color:#000
+    style E2T fill:#fff,color:#000
+    style E1R fill:#c8e6c9,color:#000
+    style E2R fill:#ffe0b2,color:#000`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see labeling accuracy examples</p>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1122,6 +1392,45 @@ flowchart LR
                   <ul style={{ fontSize: '0.7em' }}>
                     <li>Diagnosing confusions, guiding data collection, schema refinement</li>
                   </ul>
+                </div>
+              </GSAPAnimated>
+
+              <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <div style={{ marginBottom: '0.7em' }}>
+                  <h4>
+                    Example Confusion Matrix
+                    <MermaidPopover
+                      title="Confusion Matrix Example"
+                      diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
+graph TB
+    subgraph Matrix["Confusion Matrix (Gold vs Predicted)"]
+        direction TB
+        Header["       | PERSON | ORG | LOC |"]
+        Row1["PERSON |  120   |  5  |  0  |"]
+        Row2["ORG    |   8    | 95  |  2  |"]
+        Row3["LOC    |   1    |  1  | 108 |"]
+    end
+    
+    subgraph Analysis["Key Insights"]
+        I1["✅ PERSON: 96% correct (120/125)"]
+        I2["✅ LOC: 98% correct (108/110)"]
+        I3["⚠️ ORG: 90% correct (95/105)"]
+        I4["❌ Main Confusion: PERSON ↔️ ORG"]
+        I5["🔧 Action: More PERSON/ORG training data"]
+    end
+    
+    Matrix --> Analysis
+    
+    style Matrix fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
+    style Analysis fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
+    style Header fill:#bbdefb,color:#000
+    style Row1 fill:#fff,color:#000
+    style Row2 fill:#fff,color:#000
+    style Row3 fill:#fff,color:#000
+    style I4 fill:#ffccbc,color:#000`}
+                    />
+                  </h4>
+                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see confusion patterns</p>
                 </div>
               </GSAPAnimated>
             </div>
