@@ -225,19 +225,8 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.6}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>When false positives are costly (e.g., automated actions)</li>
-                    <li>Tuning decision thresholds</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={0.9}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Example Calculation
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Precision Example: 10 Predictions"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
@@ -266,8 +255,12 @@ graph TB
     style FP fill:#ffcdd2,color:#000
     style Result fill:#fff9c4,color:#000,stroke:#fbc02d,stroke-width:2px`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see prediction breakdown</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>When false positives are costly (e.g., automated actions)</li>
+                    <li>Tuning decision thresholds</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -405,19 +398,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.6}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>When missing entities is costly (medical, legal, security)</li>
-                    <li>Measuring coverage and data sufficiency</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={0.9}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Example Calculation
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Recall Example: Treasure Hunt"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
@@ -448,8 +430,12 @@ graph TB
     style FN fill:#ffcdd2,color:#000
     style Result fill:#fff9c4,color:#000,stroke:#fbc02d,stroke-width:2px`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see what was found vs missed</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>When missing entities is costly (medical, legal, security)</li>
+                    <li>Measuring coverage and data sufficiency</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -589,19 +575,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.65}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>General-purpose single-number comparison</li>
-                    <li>Model selection & leaderboard reporting</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={0.95}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Model Comparison Example
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="F1 Score: Comparing 3 Models"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
@@ -643,8 +618,12 @@ graph TB
     style B3 fill:#fff8e1,color:#000
     style C3 fill:#a5d6a7,color:#000,stroke:#2e7d32,stroke-width:2px`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see why balanced models win</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>General-purpose single-number comparison</li>
+                    <li>Model selection & leaderboard reporting</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -782,19 +761,8 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="fadeIn" delay={0.7}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>End-to-end reliability & quality gates for production</li>
-                    <li>Downstream tasks requiring perfect extraction</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={1.0}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Example Walkthrough
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Exact Match Example: 4 Predictions"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
@@ -839,8 +807,12 @@ graph TB
     style P3E fill:#fff,color:#000
     style P4E fill:#fff,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click diagram to see 4 prediction scenarios</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>End-to-end reliability & quality gates for production</li>
+                    <li>Downstream tasks requiring perfect extraction</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -992,18 +964,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInRight" delay={0.6}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>Noisy boundaries, weak supervision, fair span comparisons</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={0.9}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Example Walkthrough
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="IoU Examples: Partial Match Scoring"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
@@ -1041,8 +1003,11 @@ graph TB
     style E1M fill:#c8e6c9,color:#000
     style E2M fill:#c8e6c9,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see IoU calculations</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>Noisy boundaries, weak supervision, fair span comparisons</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1188,19 +1153,8 @@ flowchart TB
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.65}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>Pipeline analysis & diagnosing label confusions</li>
-                    <li>Ablations on classifier heads</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={0.95}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Example Walkthrough
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Entity-Level Accuracy Examples"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
@@ -1237,8 +1191,12 @@ graph TB
     style E1R fill:#c8e6c9,color:#000
     style E2R fill:#ffe0b2,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see labeling accuracy examples</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>Pipeline analysis & diagnosing label confusions</li>
+                    <li>Ablations on classifier heads</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>
@@ -1387,18 +1345,8 @@ flowchart LR
               </GSAPAnimated>
 
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>When to Use</h4>
-                  <ul style={{ fontSize: '0.5em' }}>
-                    <li>Diagnosing confusions, guiding data collection, schema refinement</li>
-                  </ul>
-                </div>
-              </GSAPAnimated>
-
-              <GSAPAnimated animation="fadeIn" delay={1.0}>
-                <div style={{ marginBottom: '0em' }}>
-                  <h4>
-                    Example Confusion Matrix
+                <div style={{ marginBottom: '0em', position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
                     <MermaidPopover
                       title="Confusion Matrix Example"
                       diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
@@ -1429,8 +1377,11 @@ graph TB
     style Row3 fill:#fff,color:#000
     style I4 fill:#ffccbc,color:#000`}
                     />
-                  </h4>
-                  <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see confusion patterns</p>
+                  </div>
+                  <h4>When to Use</h4>
+                  <ul style={{ fontSize: '0.5em' }}>
+                    <li>Diagnosing confusions, guiding data collection, schema refinement</li>
+                  </ul>
                 </div>
               </GSAPAnimated>
             </div>

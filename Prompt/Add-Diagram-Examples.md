@@ -1,7 +1,7 @@
 # Adding Interactive Diagram Examples to Slides
 
 ## Purpose
-This prompt helps you add interactive MermaidPopover diagrams to example sections in slide decks, making technical concepts more engaging and visual during presentations.
+This prompt helps you add interactive MermaidPopover diagrams as inline clickable badges to slides, making technical concepts more engaging and visual during presentations without adding vertical space or requiring scrolling.
     
 ## When to Use This Pattern
 Add MermaidPopover diagrams when slides contain:
@@ -16,19 +16,18 @@ Add MermaidPopover diagrams when slides contain:
 
 ### 1. Identify Target Locations
 Look for sections with:
-- Headings like "Example Walkthrough", "Example Calculation", "Model Comparison"
-- Concrete numerical examples in the notes
+- A "When to Use" section or similar informational bullet points
+- Concrete numerical examples in the speaker notes
 - Scenarios comparing different outcomes
-- Text that walks through specific cases
+- Text in notes that walks through specific cases
 
-### 2. Add GSAPAnimated Component with MermaidPopover
+### 2. Add Inline Badge with MermaidPopover
 
 **General Structure:**
 ```tsx
-<GSAPAnimated animation="fadeIn" delay={0.9}>
-  <div style={{ marginBottom: '0.7em' }}>
-    <h4>
-      Example Title
+<GSAPAnimated animation="fadeIn" delay={0.6}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
       <MermaidPopover
         title="Descriptive Diagram Title"
         diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
@@ -36,28 +35,60 @@ graph TB
     // Your mermaid diagram code here
         `}
       />
-    </h4>
-    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see [description]</p>
+    </div>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>Your existing bullet points here</li>
+    </ul>
   </div>
 </GSAPAnimated>
 ```
 
 ### 3. Placement Guidelines
-- Add AFTER "When to Use" section
-- Use delays like 0.9, 1.0 to appear last
-- Don't replace existing text in notes
-- Place before the closing `</div>` of content section
+- Add to an existing section (typically "When to Use")
+- Make the parent div `position: 'relative'`
+- Place MermaidPopover in absolutely positioned div: `top: '-5px', right: 0`
+- DO NOT create a separate GSAPAnimated section
+- DO NOT add h4 wrapper around the MermaidPopover
+- DO NOT add helper text (p tag) below the badge
+- The MermaidPopover component itself is clickable and will show a tooltip on hover
+
+### 4. Key Changes from Previous Pattern
+❌ **OLD (Don't do this):**
+```tsx
+<GSAPAnimated animation="fadeIn" delay={0.9}>
+  <div>
+    <h4>
+      Example Calculation
+      <MermaidPopover ... />
+    </h4>
+    <p>Click to see...</p>
+  </div>
+</GSAPAnimated>
+```
+
+✅ **NEW (Do this):**
+```tsx
+<GSAPAnimated animation="fadeIn" delay={0.6}>
+  <div style={{ position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
+      <MermaidPopover ... />
+    </div>
+    <h4>When to Use</h4>
+    <ul>...</ul>
+  </div>
+</GSAPAnimated>
+```
 
 ## Example Templates
 
 ### Template 1: Calculation Example
 ```tsx
-<GSAPAnimated animation="fadeIn" delay={0.9}>
-  <div style={{ marginBottom: '0.7em' }}>
-    <h4>
-      Example Calculation
+<GSAPAnimated animation="fadeIn" delay={0.6}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
       <MermaidPopover
-        title="Step-by-Step Calculation"
+        title="Step-by-Step Calculation Example"
         diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
 graph TB
     Input["📊 Input Data"] --> Step1["Step 1: Calculate X"]
@@ -68,20 +99,22 @@ graph TB
     style Result fill:#c8e6c9,color:#000
         `}
       />
-    </h4>
-    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see calculation steps</p>
+    </div>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>Your use case here</li>
+    </ul>
   </div>
 </GSAPAnimated>
 ```
 
 ### Template 2: Multiple Scenarios
 ```tsx
-<GSAPAnimated animation="fadeIn" delay={1.0}>
-  <div style={{ marginBottom: '0.7em' }}>
-    <h4>
-      Scenario Comparison
+<GSAPAnimated animation="slideInRight" delay={0.6}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
       <MermaidPopover
-        title="Comparing Different Cases"
+        title="Scenario Comparison Examples"
         diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
 graph TB
     subgraph Case1["✅ Success Case"]
@@ -96,18 +129,20 @@ graph TB
     style Case2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000
         `}
       />
-    </h4>
-    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see scenarios</p>
+    </div>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>Your use cases</li>
+    </ul>
   </div>
 </GSAPAnimated>
 ```
 
 ### Template 3: Confusion Matrix / Table
 ```tsx
-<GSAPAnimated animation="fadeIn" delay={1.0}>
-  <div style={{ marginBottom: '0.7em' }}>
-    <h4>
-      Example Matrix
+<GSAPAnimated animation="slideInBottom" delay={0.7}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
       <MermaidPopover
         title="Confusion Matrix Example"
         diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'13px'}}}%%
@@ -131,20 +166,22 @@ graph TB
     style Insight fill:#fff9c4,stroke:#f57c00,stroke-width:2px,color:#000
         `}
       />
-    </h4>
-    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see confusion patterns</p>
+    </div>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>Diagnosing patterns and issues</li>
+    </ul>
   </div>
 </GSAPAnimated>
 ```
 
 ### Template 4: Multi-Step Process
 ```tsx
-<GSAPAnimated animation="fadeIn" delay={0.95}>
-  <div style={{ marginBottom: '0.7em' }}>
-    <h4>
-      Process Example
+<GSAPAnimated animation="fadeIn" delay={0.6}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
       <MermaidPopover
-        title="Multi-Step Workflow"
+        title="Multi-Step Workflow Example"
         diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
 flowchart LR
     A["Input"] --> B["Process 1"]
@@ -159,8 +196,11 @@ flowchart LR
     style D fill:#fff,color:#000
         `}
       />
-    </h4>
-    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see process flow</p>
+    </div>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>Your use cases</li>
+    </ul>
   </div>
 </GSAPAnimated>
 ```
@@ -207,24 +247,45 @@ Background (subgraph): fill:#f5f5f5,color:#000
 1. **Don't remove notes** - Keep existing speaker notes intact
 2. **Placement timing** - Add after main content, before closing tag
 3. **Delay sequencing** - Use appropriate delays (0.9, 1.0) for last items
-4. **Helper text** - Always add "Click to see..." description
+## Best Practices
 
-## Search and Replace Pattern
+### Diagram Design
+1. **Keep it simple** - Max 5-7 nodes per diagram
+2. **Use emojis** - Makes diagrams more engaging (📊 📈 ✅ ❌ ⚠️ 🔧)
+3. **Label clearly** - Use descriptive text in nodes
+4. **Show flow** - Use arrows to indicate relationships
+5. **Subgraphs for grouping** - Group related elements
 
-### Step 1: Find Example Sections
-Search for patterns like:
-```
-Example Walkthrough
-Example Calculation  
-Model Comparison
-Scenario Analysis
-```
+### Code Organization
+1. **Font size**: Use 13-14px for readability
+2. **Positioning**: Use `position: 'absolute', top: '-5px', right: 0` for badge placement
+3. **Parent container**: Set `position: 'relative'` on parent div
+4. **No extra wrappers**: Place MermaidPopover directly without h4 or p tags
 
-### Step 2: Locate Insertion Point
-Find the last `</GSAPAnimated>` before `</div>\n          ),`
+## Implementation Steps
 
-### Step 3: Insert New GSAPAnimated Block
-Add between the last animation and the closing tag
+### Step 1: Identify Target Section
+Look for an existing section in the slide that could host the badge, typically:
+- "When to Use" section
+- Any informational section with bullet points
+- The last GSAPAnimated section before closing
+
+### Step 2: Modify Existing Section
+1. Add `position: 'relative'` to the section's div style
+2. Add absolutely positioned div at the start with MermaidPopover
+3. Keep all existing content below the badge div
+
+### Step 3: Create Diagram
+1. Review speaker notes for concrete examples
+2. Design a clear, simple Mermaid diagram
+3. Use appropriate colors and styling
+4. Test that the diagram is readable
+
+### Step 4: Verify
+1. Check that badge appears in top-right corner
+2. Verify hover tooltip works
+3. Ensure click opens diagram popover
+4. Confirm no scrolling is needed on the slide
 
 ## Common Mermaid Diagram Types
 
@@ -267,22 +328,47 @@ flowchart TB
 - [ ] Colors are consistent with guidelines
 - [ ] Font size is 13-14px
 - [ ] Title is descriptive and clear
-- [ ] Helper text explains what clicking shows
-- [ ] Delay timing doesn't conflict with other animations
+- [ ] Badge is positioned absolutely in top-right corner
+- [ ] Parent div has `position: 'relative'`
+- [ ] No h4 wrapper around MermaidPopover
+- [ ] No helper p tag below the badge
 - [ ] Code is properly indented
 - [ ] No syntax errors in Mermaid code
 - [ ] Emojis render correctly
 - [ ] Diagram viewable without scrolling
+- [ ] Badge doesn't add vertical space to slide
 
 ## Example: Complete Implementation
 
 From NER Metrics Deck - Exact Match Score:
 
+**Before (Old Pattern - Don't Use):**
 ```tsx
+<GSAPAnimated animation="fadeIn" delay={0.7}>
+  <div style={{ marginBottom: '0em' }}>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>End-to-end reliability</li>
+    </ul>
+  </div>
+</GSAPAnimated>
+
 <GSAPAnimated animation="fadeIn" delay={1.0}>
-  <div style={{ marginBottom: '0.7em' }}>
+  <div style={{ marginBottom: '0em' }}>
     <h4>
       Example Walkthrough
+      <MermaidPopover title="..." diagram={`...`} />
+    </h4>
+    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click to see...</p>
+  </div>
+</GSAPAnimated>
+```
+
+**After (New Pattern - Use This):**
+```tsx
+<GSAPAnimated animation="fadeIn" delay={0.7}>
+  <div style={{ marginBottom: '0em', position: 'relative' }}>
+    <div style={{ position: 'absolute', top: '-5px', right: 0 }}>
       <MermaidPopover
         title="Exact Match Example: 4 Predictions"
         diagram={`%%{init: {'theme':'base', 'themeVariables': { 'fontSize':'14px'}}}%%
@@ -308,11 +394,22 @@ graph TB
     style P1 fill:#c8e6c9,stroke:#388e3c,stroke-width:2px,color:#000
     style P2 fill:#ffcdd2,stroke:#c62828,stroke-width:2px,color:#000`}
       />
-    </h4>
-    <p style={{ fontSize: '0.65em', fontStyle: 'italic' }}>Click diagram to see 4 prediction scenarios</p>
+    </div>
+    <h4>When to Use</h4>
+    <ul style={{ fontSize: '0.5em' }}>
+      <li>End-to-end reliability</li>
+    </ul>
   </div>
 </GSAPAnimated>
 ```
+
+**Key Differences:**
+1. ✅ Single GSAPAnimated section (not two)
+2. ✅ Parent div has `position: 'relative'`
+3. ✅ Badge div has `position: 'absolute', top: '-5px', right: 0`
+4. ✅ MermaidPopover has no h4 wrapper
+5. ✅ No helper p tag
+6. ✅ Badge appears in top-right corner of existing content
 
 ## Quick Reference Commands
 
