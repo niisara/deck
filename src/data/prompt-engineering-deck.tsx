@@ -1,9 +1,6 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
 import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
-import { MermaidPopover } from '../components/MermaidPopover';
-
-const iconStyle = { marginRight: '0.5rem', verticalAlign: 'middle' };
 
 export const promptEngineeringDeck: Deck = {
   id: 'prompt-engineering-deck',
