@@ -19,12 +19,12 @@ export const metadataEnrichmentDeck: Deck = {
           center: true,
           title: '9 Metadata Enrichment Tricks',
           content: (
-            <div style={{ marginTop: '30px', color: '#fff' }}>
+            <div style={{ color: '#fff' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <h2>Cheat-sheets, patterns, and practical implementations</h2>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInBottom" delay={0.5}>
-                <div style={{ marginTop: '20px', fontSize: '0.9em', lineHeight: '1.8' }}>
+                <div style={{ marginTop: '20px', fontSize: '1.2rem' }}>
                   <div>What you'll get:</div>
                   <p>9 field-proven enrichment techniques</p>
                   <p>Implementation steps and metadata examples</p>
@@ -58,12 +58,12 @@ export const metadataEnrichmentDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', fontSize: '0.75em', color: '#fff' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', fontSize: '1.6rem', color: '#fff' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#42a5f5', marginBottom: '15px' }}>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#42a5f5', paddingBottom: '15px' }}>
                       <GSAPAnimated animation="rotateIn" delay={0.3}>
-                        <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-sitemap" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Structure & Context
                     </h3>
@@ -71,17 +71,17 @@ export const metadataEnrichmentDeck: Deck = {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#42a5f5' }}>1</span>
                         <SvgIcon iconName="duo-heading" sizeName="1x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
-                        <span>Section-Level Titles</span>
+                        <span style={{ fontSize: '1.2rem' }}>Section-Level Titles</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#42a5f5' }}>6</span>
                         <SvgIcon iconName="duo-align-left" sizeName="1x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
-                        <span>Semantic Summary</span>
+                        <span style={{ fontSize: '1.2rem' }}>Semantic Summary</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#42a5f5' }}>9</span>
                         <SvgIcon iconName="duo-diagram-nested" sizeName="1x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
-                        <span>Parent–Child Structure</span>
+                        <span style={{ fontSize: '1.2rem' }}>Parent–Child Structure</span>
                       </div>
                     </div>
                   </div>
@@ -89,9 +89,9 @@ export const metadataEnrichmentDeck: Deck = {
 
                 <GSAPAnimated animation="slideInBottom" delay={0.4}>
                   <div>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#7e57c2', marginBottom: '15px' }}>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#7e57c2', paddingBottom: '15px' }}>
                       <GSAPAnimated animation="bounceIn" delay={0.5}>
-                        <SvgIcon iconName="duo-folder-tree" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-folder-tree" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Classification & Taxonomy
                     </h3>
@@ -99,22 +99,22 @@ export const metadataEnrichmentDeck: Deck = {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#7e57c2' }}>2</span>
                         <SvgIcon iconName="duo-file-lines" sizeName="1x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                        <span>Document Type Labels</span>
+                        <span style={{ fontSize: '1.2rem' }}>Document Type Labels</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#7e57c2' }}>3</span>
                         <SvgIcon iconName="duo-user-tag" sizeName="1x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                        <span>Entity Tagging (NER)</span>
+                        <span style={{ fontSize: '1.2rem' }}>Entity Tagging (NER)</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#7e57c2' }}>4</span>
                         <SvgIcon iconName="duo-tag" sizeName="1x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                        <span>Topic/Category Tags</span>
+                        <span style={{ fontSize: '1.2rem' }}>Topic/Category Tags</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#7e57c2' }}>7</span>
                         <SvgIcon iconName="duo-highlighter" sizeName="1x" style={{ color: '#9575cd' }} darkModeInvert={true} />
-                        <span>Keyword Highlights</span>
+                        <span style={{ fontSize: '1.2rem' }}>Keyword Highlights</span>
                       </div>
                     </div>
                   </div>
@@ -122,9 +122,9 @@ export const metadataEnrichmentDeck: Deck = {
 
                 <GSAPAnimated animation="slideInRight" delay={0.6}>
                   <div>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#26c6da', marginBottom: '15px' }}>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#26c6da', paddingBottom: '15px' }}>
                       <GSAPAnimated animation="scaleIn" delay={0.7}>
-                        <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Freshness & Trust
                     </h3>
@@ -132,12 +132,12 @@ export const metadataEnrichmentDeck: Deck = {
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#26c6da' }}>5</span>
                         <SvgIcon iconName="duo-clock" sizeName="1x" style={{ color: '#4dd0e1' }} darkModeInvert={true} />
-                        <span>Time/Version Metadata</span>
+                        <span style={{ fontSize: '1.2rem' }}>Time/Version Metadata</span>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                         <span style={{ fontWeight: 'bold', color: '#26c6da' }}>8</span>
                         <SvgIcon iconName="duo-certificate" sizeName="1x" style={{ color: '#4dd0e1' }} darkModeInvert={true} />
-                        <span>Source Confidence/Trust</span>
+                        <span style={{ fontSize: '1.2rem' }}>Source Confidence/Trust</span>
                       </div>
                     </div>
                   </div>
@@ -174,21 +174,21 @@ Finally, in cyan, we have **Freshness and Trust**. These are your quality signal
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.75em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.2}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.3}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Goal:</strong>
-                      <p style={{ marginTop: '5px' }}>Boosts retrieval precision and reduces hallucinations by preserving section intent</p>
+                      <p style={{ margin: '0px' }}>Boosts retrieval precision and reduces hallucinations by preserving section intent</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
-                      <p style={{ marginTop: '5px' }}>Parse headers (H1–H3) and nearest title per chunk; store section_title, heading_level, section_path</p>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.6}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
+                      <p style={{ margin: '0px' }}>Parse headers (H1–H3) and nearest title per chunk; store section_title, heading_level, section_path</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.7}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.8}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.8}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
                       <ul>
                         <li>Extract headings with HTML/PDF parser; map each chunk to nearest header</li>
                         <li>Store fields: section_title, heading_level, section_path</li>
@@ -200,7 +200,7 @@ Finally, in cyan, we have **Freshness and Trust**. These are your quality signal
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
                     <div style={{ padding: '12px', backgroundColor: '#315f43', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                         <li>Technical docs</li>
                         <li>Policies</li>
                         <li>Knowledge bases</li>
@@ -316,21 +316,21 @@ Now let's move on to document type labels...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.75em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="slideInTop" delay={0.1}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.2}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Goal:</strong>
-                      <p style={{ marginTop: '5px' }}>Improves precision by matching user intent to doc role (FAQ, Policy, Email, SOP)</p>
+                      <p style={{ margin: '0px' }}>Improves precision by matching user intent to doc role (FAQ, Policy, Email, SOP)</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="fadeIn" delay={0.4}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.5}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
-                      <p style={{ marginTop: '5px' }}>Classify each document/chunk into doc_type via rules + ML (file path, layout, keywords)</p>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.5}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
+                      <p style={{ margin: '0px' }}>Classify each document/chunk into doc_type via rules + ML (file path, layout, keywords)</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.7}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.7}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
                       <ul>
                         <li>Define controlled vocabulary (faq, policy, sop, email, memo, meeting_notes)</li>
                         <li>Build heuristic features and train lightweight classifier; backfill historical docs</li>
@@ -340,9 +340,9 @@ Now let's move on to document type labels...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.3}>
-                    <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '12px', backgroundColor: '#31365f', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                         <li>Mixed corpora (FAQs, tickets, emails, specs)</li>
                         <li>Knowledge bases with varied document types</li>
                         <li>Content where document role matters for answers</li>
@@ -460,21 +460,21 @@ Next, let's explore entity tagging with named entity recognition...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.7em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.1}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.2}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Goal:</strong>
-                      <p style={{ marginTop: '5px' }}>Precision via entity filters; disambiguation; cross-linking across sources</p>
+                      <p style={{ margin: '0px' }}>Precision via entity filters; disambiguation; cross-linking across sources</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.4}>
-                      <strong style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.5}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
-                      <p style={{ marginTop: '5px' }}>Run NER; normalize entities to canonical IDs; store arrays by type</p>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.5}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
+                      <p style={{ margin: '0px' }}>Run NER; normalize entities to canonical IDs; store arrays by type</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.6}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.7}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.7}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
                       <ul>
                         <li>Choose NER (spaCy, HF, AWS Comprehend, Azure, etc.) and target labels</li>
                         <li>Normalize (e.g., map "MSFT"→"Microsoft", attach IDs)</li>
@@ -484,9 +484,9 @@ Next, let's explore entity tagging with named entity recognition...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.3}>
-                    <div style={{ padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '10px', backgroundColor: '#5f3156', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                         <li>Product, customer, project, or regulation-heavy content</li>
                         <li>Support teams</li>
                         <li>Legal documentation</li>
@@ -605,21 +605,21 @@ Let's move on to topic and category tags...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.75em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="slideInTop" delay={0.2}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="rotateIn" delay={0.3}><SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Goal:</strong>
-                      <p style={{ marginTop: '5px' }}>Improves both recall and precision with consistent domain labels</p>
+                      <p style={{ margin: '0px' }}>Improves both recall and precision with consistent domain labels</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="fadeIn" delay={0.5}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.6}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
-                      <p style={{ marginTop: '5px' }}>Map chunks to a controlled taxonomy using multi-label classifiers or LLM tagging</p>
+                      <strong style={{ margin: '0px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="scaleIn" delay={0.6}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>How It Works:</strong>
+                      <p style={{ margin: '0px' }}>Map chunks to a controlled taxonomy using multi-label classifiers or LLM tagging</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.7}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.8}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.8}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
                       <ul>
                         <li>Define taxonomy (e.g., Payments&gt;Refunds, Risk&gt;KYC)</li>
                         <li>Train/evaluate multi-label classifier or LLM prompt; set confidence thresholds</li>
@@ -629,9 +629,9 @@ Let's move on to topic and category tags...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
-                    <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '12px', backgroundColor: '#5f5731', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                         <li>Large heterogeneous corpora</li>
                         <li>Compliance domains</li>
                         <li>Customer-facing help centers</li>
@@ -752,7 +752,7 @@ Let's move on to our next enrichment technique...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.7em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -762,38 +762,33 @@ Let's move on to our next enrichment technique...`
                         </GSAPAnimated>
                         Goal:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Freshness control; retrieves latest/final data; reduces outdated answers</p>
+                      <p style={{ margin: '0px' }}>Freshness control; retrieves latest/final data; reduces outdated answers</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                      <strong style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="bounceIn" delay={0.6}>
                           <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         How It Works:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Extract timestamps (created, updated, effective) and version fields; maintain validity windows</p>
+                      <p style={{ margin: '0px' }}>Extract timestamps (created, updated, effective) and version fields; maintain validity windows</p>
                     </GSAPAnimated>
 
-                    <GSAPAnimated animation="slideInLeft" delay={0.8}>
-                      <strong style={{ marginTop: '12px', display: 'block' }}>
-                        <GSAPAnimated animation="scaleIn" delay={0.9}>
-                          <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
-                        </GSAPAnimated>
-                        Implementation Steps:
-                      </strong>
-                    </GSAPAnimated>
-                    <GSAPStaggerList stagger={0.15} >{[<ul>
-                        <li>Parse timestamp/version from content and file system</li>
+                    <GSAPAnimated animation="slideInLeft" delay={0.7}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.8}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
+                      <ul>
+                      <li>Parse timestamp/version from content and file system</li>
                         <li>Store effective_date, valid_from/valid_to, version, is_latest</li>
                         <li>Retrieval: filter by date range; sort/boost is_latest and newest version</li>
-                      </ul>]}</GSAPStaggerList>
+                      </ul>
+                    </GSAPAnimated>
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
-                    <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '10px', backgroundColor: '#5f3131', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                           <li>Policies</li>
                           <li>Release notes</li>
                           <li>Price lists</li>
@@ -916,7 +911,7 @@ Next, let's explore how semantic summaries can enhance our retrieval quality...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.75em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -926,21 +921,21 @@ Next, let's explore how semantic summaries can enhance our retrieval quality...`
                         </GSAPAnimated>
                         Goal:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Speeds candidate pruning; improves reranking; reduces hallucinations with intent-aligned blurbs</p>
+                      <p style={{ margin: '0px' }}>Speeds candidate pruning; improves reranking; reduces hallucinations with intent-aligned blurbs</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="rotateIn" delay={0.6}>
                           <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         How It Works:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Generate 1–3 sentence, query-agnostic summaries per chunk via LLM; store alongside content</p>
+                      <p style={{ margin: '0px' }}>Generate 1–3 sentence, query-agnostic summaries per chunk via LLM; store alongside content</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.8}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="bounceIn" delay={0.9}>
                           <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
@@ -955,9 +950,9 @@ Next, let's explore how semantic summaries can enhance our retrieval quality...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
-                    <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '12px', backgroundColor: '#42315f', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                           <li>Long sections</li>
                           <li>Dense PDFs</li>
                           <li>When using self-query or hybrid search</li>
@@ -971,8 +966,8 @@ Next, let's explore how semantic summaries can enhance our retrieval quality...`
                     <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                       <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
                       <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`{
-  "summary": "Explains refund eligibility, timelines, and exclusions
-  for subscriptions."
+  "summary": "Explains refund eligibility, timelines,
+  and exclusions for subscriptions."
 }`}</pre>
                     </div>
                   </GSAPAnimated>
@@ -1073,7 +1068,7 @@ Let's explore our next enrichment technique...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.75em' }}>
+              <div style={{ fontSize: '2rem' }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.2}>
@@ -1083,21 +1078,21 @@ Let's explore our next enrichment technique...`
                         </GSAPAnimated>
                         Goal:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Strong lexical signals for hybrid search and explainable matches</p>
+                      <p style={{ margin: '0px' }}>Strong lexical signals for hybrid search and explainable matches</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="rotateIn" delay={0.6}>
                           <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         How It Works:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Extract salient keyphrases (RAKE, KeyBERT, YAKE) + domain dictionaries; dedupe/stem</p>
+                      <p style={{ margin: '0px' }}>Extract salient keyphrases (RAKE, KeyBERT, YAKE) + domain dictionaries; dedupe/stem</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.8}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="scaleIn" delay={0.9}>
                           <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
@@ -1112,9 +1107,9 @@ Let's explore our next enrichment technique...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
-                    <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '12px', backgroundColor: '#5f5d31', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                           <li>Exact-match needs (IDs, codes)</li>
                           <li>Jargon-heavy domains</li>
                           <li>Search log-driven synonyms</li>
@@ -1127,12 +1122,10 @@ Let's explore our next enrichment technique...`
                   <GSAPAnimated animation="fadeIn" delay={1.3}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                       <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
-                      <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`{
+                      <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '1rem' }}>{`{
   "keywords": [
-    "refund window",
-    "restocking fee",
-    "RMA",
-    "chargeback"
+    "refund window", "restocking fee",
+    "RMA", "chargeback"
   ]
 }`}</pre>
                     </div>
@@ -1234,8 +1227,8 @@ Now let's explore how to score source reliability...`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ fontSize: '0.7em' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '15px', marginBottom: '15px' }}>
+              <div style={{ fontSize: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '15px', marginBottom: '4px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.2}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>
@@ -1244,24 +1237,24 @@ Now let's explore how to score source reliability...`
                         </GSAPAnimated>
                         Goal:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Reliability and governance; prioritizes authoritative sources</p>
+                      <p style={{ margin: '0px', fontSize: '1rem' }}>Reliability and governance; prioritizes authoritative sources</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                      <strong style={{ marginTop: '10px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="rotateIn" delay={0.6}>
                           <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         How It Works:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Compute trust_score using source type, authorship, verification, recency; store 0–1 score</p>
+                      <p style={{ margin: '0px', fontSize: '1rem' }}>Compute trust_score using source type, authorship, verification, recency; store 0–1 score</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="fadeIn" delay={0.8}>
-                      <div style={{ marginTop: '12px', padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
-                        <strong>Trust Score Examples:</strong>
+                      <div style={{ marginTop: '8px', padding: '10px', backgroundColor: '#315f3d', borderRadius: '8px' }}>
+                        <strong style={{ fontSize: '1rem' }}>Trust Score Examples:</strong>
                         <GSAPStaggerList stagger={0.1} >
-                          {[<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginTop: '8px', fontSize: '1.2rem' }}>
+                          {[<div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '8px', marginTop: '8px', fontSize: '0.8rem' }}>
                             <div style={{ textAlign: 'left' }}>Policy: <strong>0.95</strong></div>
                             <div style={{ textAlign: 'left' }}>KB: <strong>0.80</strong></div>
                             <div style={{ textAlign: 'left' }}>Email: <strong>0.60</strong></div>
@@ -1272,14 +1265,14 @@ Now let's explore how to score source reliability...`
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={1.2}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="bounceIn" delay={1.3}>
                           <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Implementation Steps:
                       </strong>
                     </GSAPAnimated>
-                    <GSAPStaggerList stagger={0.15} >{[<ul>
+                    <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1rem' }}>
                         <li>Define rubric (policy&gt;kb&gt;chat&gt;email; +verified; +recent)</li>
                         <li>Calculate trust_score; store source_type, verified, reviewer</li>
                         <li>Retrieval: threshold or boost by trust_score; expose in UI</li>
@@ -1287,9 +1280,9 @@ Now let's explore how to score source reliability...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
-                    <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '10px', backgroundColor: '#315f3d', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
-                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                           <li>Mixed sources (official docs, chats, emails)</li>
                           <li>Regulated environments</li>
                           <li>Knowledge bases with varied quality</li>
@@ -1303,7 +1296,7 @@ Now let's explore how to score source reliability...`
                   <GSAPAnimated animation="fadeIn" delay={1.7}>
                     <div style={{ padding: '10px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.8em' }}>
                       <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
-                      <pre style={{ marginTop: '8px', lineHeight: '1.4' }}>{`{
+                      <pre style={{ marginTop: '8px', lineHeight: '1.4', fontSize: '0.8rem' }}>{`{
   "source_type": "policy",
   "trust_score": 0.92,
   "verified": true,
@@ -1409,10 +1402,10 @@ Let's move to our final enrichment technique...`
           icon: { name: 'duo-diagram-nested' },
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div style={{ marginBottom: '15px' }}>
               </div>
-              <div style={{ fontSize: '0.75em' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '15px' }}>
+              <div style={{ fontSize: '2rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '15px', marginBottom: '4px' }}>
                   <div>
                     <GSAPAnimated animation="fadeIn" delay={0.2}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>
@@ -1421,28 +1414,28 @@ Let's move to our final enrichment technique...`
                         </GSAPAnimated>
                         Goal:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Preserves document hierarchy; enables fetching sibling/ancestor context</p>
+                      <p style={{ margin: '0px', fontSize: '1rem' }}>Preserves document hierarchy; enables fetching sibling/ancestor context</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.5}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="scaleIn" delay={0.6}>
                           <SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         How It Works:
                       </strong>
-                      <p style={{ marginTop: '5px' }}>Assign stable IDs at doc/section/paragraph; store parent_id and ancestors path per chunk</p>
+                      <p style={{ margin: '0px', fontSize: '1rem' }}>Assign stable IDs at doc/section/paragraph; store parent_id and ancestors path per chunk</p>
                     </GSAPAnimated>
 
                     <GSAPAnimated animation="slideInLeft" delay={0.8}>
-                      <strong style={{ marginTop: '12px', display: 'flex', alignItems: 'center' }}>
+                      <strong style={{ display: 'flex', alignItems: 'center' }}>
                         <GSAPAnimated animation="bounceIn" delay={0.9}>
                           <SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Implementation Steps:
                       </strong>
                     </GSAPAnimated>
-                    <GSAPStaggerList stagger={0.15} >{[<ul>
+                    <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1rem' }}>
                         <li>Build tree during parsing; generate unique ids; store id, parent_id, ancestors</li>
                         <li>Retrieval: fetch hit + k siblings/parent for full context window</li>
                         <li>Keep referential integrity on re-ingest via content hashing</li>
@@ -1450,9 +1443,9 @@ Let's move to our final enrichment technique...`
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
-                    <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
+                    <div style={{ padding: '12px', backgroundColor: '#5f3152', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
-                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                           <li>Manuals</li>
                           <li>Textbooks</li>
                           <li>Web docs with TOCs</li>
@@ -1466,7 +1459,7 @@ Let's move to our final enrichment technique...`
                   <GSAPAnimated animation="fadeIn" delay={1.3}>
                     <div style={{ padding: '12px', backgroundColor: 'rgba(33, 33, 33, 0.3)', borderRadius: '8px', fontFamily: 'monospace', fontSize: '0.85em' }}>
                       <strong style={{ color: '#81c784' }}>Example of Metadata Field:</strong>
-                      <pre style={{ marginTop: '8px', lineHeight: '1.5' }}>{`{
+                      <pre style={{ marginTop: '8px', lineHeight: '1.5', fontSize: '0.8rem' }}>{`{
   "id": "chunk_123",
   "parent_id": "sec_5",
   "ancestors": [
@@ -1583,11 +1576,11 @@ Now let's synthesize what we've learned into best practices...`
                     <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#42a5f5', marginBottom: '10px' }}>
                         <GSAPAnimated animation="rotateIn" delay={0.3}>
-                          <SvgIcon iconName="duo-pen-ruler" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-pen-ruler" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Design & Governance
                       </h4>
-                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
                           <li>Define a typed schema; use <code>lower_snake_case</code> keys</li>
                           <li>Separate content fields vs. metadata fields; avoid overloading</li>
                           <li>Establish clear tagging guidelines for consistency</li>
@@ -1600,11 +1593,11 @@ Now let's synthesize what we've learned into best practices...`
                     <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#7e57c2', marginBottom: '10px' }}>
                         <GSAPAnimated animation="bounceIn" delay={0.5}>
-                          <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-robot" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Automation & Quality
                       </h4>
-                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
                           <li>Automate enrichment (parsers, NER, classifiers, LLM summaries) with confidence scores</li>
                           <li>Implement human-in-the-loop for low-confidence tags</li>
                           <li>Establish QA processes with regular validation cycles</li>
@@ -1617,11 +1610,11 @@ Now let's synthesize what we've learned into best practices...`
                     <div style={{ padding: '12px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#26c6da', marginBottom: '10px' }}>
                         <GSAPAnimated animation="scaleIn" delay={0.7}>
-                          <SvgIcon iconName="duo-magnifying-glass-chart" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-magnifying-glass-chart" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Retrieval Strategy
                       </h4>
-                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
                           <li>Use hybrid search (BM25 + vectors) with metadata filters</li>
                           <li>Implement self-query retrievers for dynamic filtering</li>
                           <li>Rerank with <code>section_title</code>, <code>trust_score</code>, and recency</li>
@@ -1663,11 +1656,11 @@ These first three practice areas set the foundation for success. Let's continue 
                     <div style={{ padding: '12px', backgroundColor: 'rgba(255, 152, 0, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ff9800', marginBottom: '10px' }}>
                         <GSAPAnimated animation="scaleIn" delay={0.3}>
-                          <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-shield-halved" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Ops & Safety
                       </h4>
-                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
                           <li>Handle PII in entities with appropriate anonymization</li>
                           <li>Implement access control on sensitive metadata</li>
                           <li>Use versioning and change-data-capture to refresh metadata reliably</li>
@@ -1681,11 +1674,11 @@ These first three practice areas set the foundation for success. Let's continue 
                     <div style={{ padding: '12px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#81c784', marginBottom: '10px' }}>
                         <GSAPAnimated animation="bounceIn" delay={0.5}>
-                          <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-chart-line" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Measurement
                       </h4>
-                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                      <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
                           <li>Track precision@k, MRR, and coverage of tags</li>
                           <li>Measure filter hit rate and time-to-answer improvements</li>
                           <li>Analyze user feedback on response quality</li>
@@ -1700,11 +1693,11 @@ These first three practice areas set the foundation for success. Let's continue 
                   <div style={{ marginTop: '15px', padding: '12px', backgroundColor: 'rgba(255, 215, 0, 0.15)', borderRadius: '8px' }}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#ffd700', marginBottom: '10px' }}>
                       <GSAPAnimated animation="rotateIn" delay={1.2}>
-                        <SvgIcon iconName="duo-star" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                        <SvgIcon iconName="duo-star" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Key Success Factors
                     </h4>
-                    <div style={{ display: 'flex', fontSize: '1.2rem', lineHeight: '1.6' }}>
+                    <div style={{ display: 'flex', fontSize: '1rem', lineHeight: '1.6' }}>
                       <GSAPStaggerList stagger={0.12} >{[<ul>
                           <li><strong>Consistency</strong> in metadata application across all documents</li>
                           <li><strong>Integration</strong> of metadata at all pipeline stages</li>
@@ -1748,11 +1741,11 @@ These practices separate successful metadata enrichment from failed attempts. Le
                     <div style={{ padding: '12px', backgroundColor: 'rgba(66, 165, 245, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ color: '#42a5f5', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <GSAPAnimated animation="rotateIn" delay={0.3}>
-                          <SvgIcon iconName="duo-sitemap" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-sitemap" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Structure & Context
                       </h4>
-                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                           <li>Section titles</li>
                           <li>Semantic summaries</li>
                           <li>Parent-child relationships</li>
@@ -1764,11 +1757,11 @@ These practices separate successful metadata enrichment from failed attempts. Le
                     <div style={{ padding: '12px', backgroundColor: 'rgba(126, 87, 194, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ color: '#7e57c2', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <GSAPAnimated animation="bounceIn" delay={0.5}>
-                          <SvgIcon iconName="duo-folder-tree" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-folder-tree" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Classification & Taxonomy
                       </h4>
-                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+                      <GSAPStaggerList stagger={0.12} >{[<ul style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                           <li>Document types</li>
                           <li>Entity tagging (NER)</li>
                           <li>Topic/category tags</li>
@@ -1781,11 +1774,11 @@ These practices separate successful metadata enrichment from failed attempts. Le
                     <div style={{ padding: '12px', backgroundColor: 'rgba(38, 198, 218, 0.1)', borderRadius: '8px' }}>
                       <h4 style={{ color: '#26c6da', display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <GSAPAnimated animation="scaleIn" delay={0.7}>
-                          <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ marginTop: '12px' }} darkModeInvert={true} />
+                          <SvgIcon iconName="duo-shield-check" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                         </GSAPAnimated>
                         Freshness & Trust
                       </h4>
-                      <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
+                      <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1rem', lineHeight: '1.6' }}>
                           <li>Time/version metadata</li>
                           <li>Source confidence scoring</li>
                         </ul>]}</GSAPStaggerList>
@@ -1797,7 +1790,7 @@ These practices separate successful metadata enrichment from failed attempts. Le
                   <div style={{ padding: '15px', backgroundColor: 'rgba(129, 199, 132, 0.15)', borderRadius: '8px', marginBottom: '15px' }}>
                     <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#81c784' }}>
                       <GSAPAnimated animation="rotateIn" delay={1.2}>
-                        <SvgIcon iconName="duo-rocket" sizeName="2x" darkModeInvert={true} />
+                        <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                       </GSAPAnimated>
                       Adopt in Phases
                     </h3>
@@ -1805,7 +1798,7 @@ These practices separate successful metadata enrichment from failed attempts. Le
                       <GSAPAnimated animation="slideInLeft" delay={1.3}>
                         <div style={{ padding: '10px', backgroundColor: 'rgba(66, 165, 245, 0.2)', borderRadius: '8px' }}>
                           <strong style={{ color: '#42a5f5', display: 'flex', alignItems: 'center' }}>Phase 1: +15-25%</strong>
-                          <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                          <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                               <li>Section titles</li>
                               <li>Document type labels</li>
                               <li>Time/version metadata</li>
@@ -1815,7 +1808,7 @@ These practices separate successful metadata enrichment from failed attempts. Le
                       <GSAPAnimated animation="slideInBottom" delay={1.4}>
                         <div style={{ padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.2)', borderRadius: '8px' }}>
                           <strong style={{ color: '#7e57c2', display: 'flex', alignItems: 'center' }}>Phase 2: +30-45%</strong>
-                          <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                          <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                               <li>Entity tagging (NER)</li>
                               <li>Topic/category tags</li>
                               <li>Keywords/key-phrases</li>
@@ -1825,7 +1818,7 @@ These practices separate successful metadata enrichment from failed attempts. Le
                       <GSAPAnimated animation="slideInRight" delay={1.5}>
                         <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.2)', borderRadius: '8px' }}>
                           <strong style={{ color: '#26c6da', display: 'flex', alignItems: 'center' }}>Phase 3: +50-70%</strong>
-                          <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1.2rem' }}>
+                          <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
                               <li>Semantic summaries</li>
                               <li>Source confidence scoring</li>
                               <li>Parent-child structure</li>
