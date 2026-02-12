@@ -1,5 +1,6 @@
 import type { Deck } from './types';
 import SvgIcon from '../lib/icons/SvgIcon';
+import { GSAPAnimated, GSAPStaggerList } from '../components/GSAPAnimated';
 
 export const promptEngineeringDeck: Deck = {
   id: 'prompt-engineering-deck',
@@ -7,6 +8,12 @@ export const promptEngineeringDeck: Deck = {
   description: 'A Comprehensive Guide to Advanced Prompting Patterns',
   category: 'RAG',
   theme: 'moon',
+  cardClassName: 'glass-morphism',
+  cardStyle: {
+    backgroundImage: 'url(https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1920&q=80)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  },
   slides: [],
   slideGroups: [
     {
@@ -19,35 +26,52 @@ export const promptEngineeringDeck: Deck = {
           title: '18 Prompt Engineering Techniques',
           content: (
             <div style={{ color: '#fff' }}>
-              <h2 style={{ marginBottom: '30px' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h2 style={{ marginBottom: '30px', fontSize: '2.5rem', color: '#e5c07b' }}>A Comprehensive Guide to 18 Advanced Prompting Patterns</h2>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '50px', marginTop: '50px' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-brain" sizeName="4x" style={{ color: '#3498db' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Reasoning</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Retrieval</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Agentic</p>
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
+                    <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Hybrid</p>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-database" sizeName="4x" style={{ color: '#2ecc71' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Retrieval</p>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-robot" sizeName="4x" style={{ color: '#9b59b6' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Agentic</p>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-layer-group" sizeName="4x" style={{ color: '#f39c12' }} />
-                  <p style={{ marginTop: '10px', fontSize: '1.2rem' }}>Hybrid</p>
-                </div>
-              </div>
-              <p style={{ marginTop: '20px', fontSize: '2rem' }}>
-                For Practitioners, Data Scientists & Product Engineers
-              </p>
-              <p><strong>Prepared by:</strong> Nisar A</p>
-              <p><strong>Date:</strong> November 7, 2025</p>
-              <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.6}>
+                <p style={{ marginTop: '20px', fontSize: '2rem' }}>
+                  For Practitioners, Data Scientists & Product Engineers
+                </p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <p><strong>Prepared by:</strong> Nisar A</p>
+                <p><strong>Date:</strong> November 7, 2025</p>
+                <p><a href="https://niisar.com" target="_blank">niisar.com</a></p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a3957',
-          notes: ''
+          notes: `### 18 Prompt Engineering Techniques
+Welcome to this comprehensive deep-dive into **18 Prompt Engineering Techniques** — the essential patterns and strategies you need to build *reliable*, *accurate*, and *production-ready* **LLM** 👉 'L-L-M' (Large Language Model) applications.
+
+#### Why This Matters
+Prompt engineering is the *art and science* of communicating with AI models. Think of it like learning to speak a new language — except this language unlocks superhuman capabilities in reasoning, retrieval, and task automation. Whether you're building chatbots, RAG systems, or agentic workflows, mastering these 18 techniques will dramatically improve your results.
+
+#### What You'll Learn Today
+We've organized these techniques into **four categories**: Reasoning techniques help models think step-by-step, Retrieval techniques ground responses in external knowledge, Agentic techniques enable models to use tools and self-correct, and Hybrid techniques combine multiple approaches for complex workflows. Each technique includes clear definitions, practical examples, and real-world use cases.
+
+> By the end of this deck, you'll know *exactly* when to use each technique and how to implement it effectively. Let's dive in!`
         },
         {
           id: 2,
@@ -55,61 +79,90 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Reasoning Techniques (1-8, 17)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>1. Zero-shot Prompting</li>
-                    <li>2. Few-shot Prompting</li>
-                    <li>3. Chain-of-Thought (CoT)</li>
-                    <li>4. Meta Prompting</li>
-                    <li>5. Self-Consistency</li>
-                    <li>6. Generate Knowledge Prompting</li>
-                    <li>8. Tree of Thoughts (ToT)</li>
-                    <li>17. Multimodal Chain-of-Thought</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Retrieval (9)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>9. Retrieval-Augmented Generation (RAG)</li>
-                  </ul>
+              <GSAPAnimated animation="fadeIn" delay={0}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
+                  <div>
+                    <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#3498db', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-brain" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Reasoning Techniques (1-8, 17)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPStaggerList stagger={0.1} delay={0.4}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>1. Zero-shot Prompting</li>
+                        <li>2. Few-shot Prompting</li>
+                        <li>3. Chain-of-Thought (CoT)</li>
+                        <li>4. Meta Prompting</li>
+                        <li>5. Self-Consistency</li>
+                        <li>6. Generate Knowledge Prompting</li>
+                        <li>8. Tree of Thoughts (ToT)</li>
+                        <li>17. Multimodal Chain-of-Thought</li>
+                      </ul>
+                    </GSAPStaggerList>
+                    <GSAPAnimated animation="slideInLeft" delay={0.9}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#2ecc71', marginTop: '15px', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-database" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Retrieval (9)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPAnimated animation="fadeIn" delay={1.0}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>9. Retrieval-Augmented Generation (RAG)</li>
+                      </ul>
+                    </GSAPAnimated>
+                  </div>
+                  <div>
+                    <GSAPAnimated animation="slideInRight" delay={0.2}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Agentic Techniques (10, 14-16)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPStaggerList stagger={0.1} delay={0.4}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>10. Automatic Reasoning & Tool-use (ART)</li>
+                        <li>14. Program-Aided LMs (PAL)</li>
+                        <li>15. ReAct</li>
+                        <li>16. Reflexion</li>
+                      </ul>
+                    </GSAPStaggerList>
+                    <GSAPAnimated animation="slideInRight" delay={0.9}>
+                      <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
+                        <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
+                        Hybrid Techniques (7, 11-13, 18)
+                      </h4>
+                    </GSAPAnimated>
+                    <GSAPStaggerList stagger={0.1} delay={1.0}>
+                      <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
+                        <li>7. Prompt Chaining</li>
+                        <li>11. Automatic Prompt Engineer (APE)</li>
+                        <li>12. Active-Prompt</li>
+                        <li>13. Directional Stimulus Prompting</li>
+                        <li>18. Graph Prompting</li>
+                      </ul>
+                    </GSAPStaggerList>
+                  </div>
                 </div>
-                <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#9b59b6', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-robot" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Agentic Techniques (10, 14-16)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>10. Automatic Reasoning & Tool-use (ART)</li>
-                    <li>14. Program-Aided LMs (PAL)</li>
-                    <li>15. ReAct</li>
-                    <li>16. Reflexion</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
-                    <SvgIcon iconName="duo-layer-group" sizeName="2x" style={{ marginTop: '14px' }} darkModeInvert={true} />
-                    Hybrid Techniques (7, 11-13, 18)
-                  </h4>
-                  <ul style={{ lineHeight: '1.7', fontSize: '1.2rem' }}>
-                    <li>7. Prompt Chaining</li>
-                    <li>11. Automatic Prompt Engineer (APE)</li>
-                    <li>12. Active-Prompt</li>
-                    <li>13. Directional Stimulus Prompting</li>
-                    <li>18. Graph Prompting</li>
-                  </ul>
-                </div>
-              </div>
-              <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '2rem', fontWeight: 'bold' }}>
-                18 advanced prompting patterns for reliable LLM systems
-              </p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.3}>
+                <p style={{ textAlign: 'center', marginTop: '20px', fontSize: '2rem', fontWeight: 'bold' }}>
+                  18 advanced prompting patterns for reliable LLM systems
+                </p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a3957',
-          notes: ''
+          notes: `### Table of Contents
+Here's your roadmap for today's journey through 18 powerful prompt engineering techniques! We've organized these into **four logical categories** to make it easier to understand when and how to use each one.
+
+#### The Four Categories
+First, we have **Reasoning Techniques** — these are your foundational patterns like Zero-shot, Few-shot, and Chain-of-Thought. They teach models *how to think* through problems step by step. Second is **Retrieval** with RAG 👉 'rag', which grounds your model's responses in external knowledge bases and documents. Third, we have **Agentic Techniques** like ReAct and Reflexion, where models learn to use tools, execute code, and self-correct their mistakes. Finally, **Hybrid Techniques** combine multiple approaches to tackle complex, multi-step workflows.
+
+#### How to Use This Deck
+Each technique gets multiple slides covering the definition, how it works, when to use it, and real-world examples. Feel free to jump to specific techniques you're curious about, but I recommend going through them in order to build a strong mental model of the progression from simple to advanced patterns.
+
+> Pro tip: Keep your specific use case in mind as we go through each technique — you'll quickly identify which ones are perfect for your needs!`
         }
       ]
     },
@@ -123,19 +176,38 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Ask the model to perform a task with clear instructions and no examples.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Direct answer or formatted summary</li>
-                <li>Fastest way to get baseline results</li>
-                <li>Minimal token usage</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for quick baselines, well-known tasks, and situations with low token budgets. Ideal when you need fast results without additional context.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Ask the model to perform a task with clear instructions and no examples.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Direct answer or formatted summary</li>
+                  <li>Fastest way to get baseline results</li>
+                  <li>Minimal token usage</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for quick baselines, well-known tasks, and situations with low token budgets. Ideal when you need fast results without additional context.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
+          notes: `### Zero-shot Prompting - Overview
+Let's start our journey with the simplest and most fundamental technique — **Zero-shot Prompting**. Think of this as the "just ask" approach to working with language models.
+
+#### What Makes Zero-shot Special
+Zero-shot means you're asking the model to do something *without giving it any examples first*. It's like asking a knowledgeable friend for help — you state your request clearly and trust they'll understand what you need. The model relies entirely on what it learned during training to interpret your instruction and generate a response. This is your **baseline technique** that you'll use more often than any other.
+
+#### When to Reach for Zero-shot
+Use zero-shot when you need *quick results* for well-known tasks like summarization, translation, or basic classification. It's perfect when you're working with tight token budgets or need a fast baseline to iterate from. For example, asking "Summarize this customer feedback in 3 bullets" is a classic zero-shot task that most models handle beautifully.
+
+> Remember: Zero-shot is your starting point. If results aren't good enough, you can always upgrade to few-shot or more advanced techniques!`
         },
         {
           id: 4,
@@ -143,17 +215,41 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Zero-shot prompting relies on the model's pre-trained knowledge and capabilities. You provide clear, direct instructions without any demonstrations or examples. The model interprets your intent from the instruction alone and generates a response based on what it learned during training.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Simple</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Zero-shot prompting relies on the model's pre-trained knowledge and capabilities. You provide clear, direct instructions without any demonstrations or examples. The model interprets your intent from the instruction alone and generates a response based on what it learned during training.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Simple</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Works on most LLMs</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p>Email triage — classify incoming emails into Urgent/Normal/Low priority categories with clear definitions of each level.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
+          notes: `### Zero-shot Prompting - How It Works
+Now let's understand the mechanics behind zero-shot prompting and why it's so powerful despite its simplicity.
+
+#### The Magic of Pre-training
+Here's the key insight: modern language models like **GPT-4** 👉 'G-P-T four', **Claude 3.5** 👉 'Claude three point five', and **Gemini 1.5** 👉 'Gemini one point five' have been trained on *massive* amounts of text data. During that training, they learned patterns for thousands of tasks — summarization, classification, translation, question-answering, and more. When you use zero-shot prompting, you're essentially activating this *pre-learned knowledge* with your instruction.
+
+#### Complexity and Model Selection
+Zero-shot is our **simplest technique** — it requires no special setup, no examples, and works across virtually all modern LLMs. Even smaller models can handle straightforward zero-shot tasks, though larger, more capable models will give you better accuracy and consistency. The beauty is that you can start with zero-shot on any model and immediately get results.
+
+#### Real-World Application: Email Triage
+Imagine you're building an email management system. You can use zero-shot to classify emails as Urgent, Normal, or Low priority by simply providing clear definitions: "Urgent emails require action within 24 hours, Normal within a week, Low are informational only." The model will apply this logic without seeing any example emails first!
+
+> Pro tip: The quality of your instruction directly impacts results. Be specific about what you want, but don't overthink it — clear and concise wins!`
         },
         {
           id: 5,
@@ -161,18 +257,38 @@ export const promptEngineeringDeck: Deck = {
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Summarize the following article 
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Summarize the following article 
 in 3 bullets for executives:
 [paste text here]"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support zero-shot prompting out of the box. Even smaller models can handle simple zero-shot tasks effectively.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support zero-shot prompting out of the box. Even smaller models can handle simple zero-shot tasks effectively.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
+          notes: `### Zero-shot Prompting - Implementation
+Let's look at a concrete example to see zero-shot prompting in action and understand which models work best for it.
+
+#### Anatomy of a Good Zero-shot Prompt
+The example prompt here is beautifully simple: "Summarize the following article in 3 bullets for executives." Notice how it's *clear* about what to do (summarize), *specific* about format (3 bullets), and *targeted* to audience (executives). This level of clarity helps the model understand exactly what you need without requiring any examples. The key is being **direct and unambiguous** in your instruction.
+
+#### Model Compatibility
+The great news about zero-shot prompting is that it's **universally supported**. Every modern LLM from GPT-4, Claude 3.5, and Gemini 1.5 down to smaller open-source models can handle zero-shot tasks. The difference is in *quality* and *consistency* — larger, more capable models will give you better results, but even smaller models can handle straightforward tasks like classification or basic summarization.
+
+#### Practical Tips for Implementation
+When writing your zero-shot prompts, think about *what*, *how*, and *for whom*. What task needs to be done? How should the output be formatted? For whom or what purpose is this being created? Answering these three questions in your prompt will dramatically improve your results. For example, "Summarize for executives" produces different output than "Summarize for technical teams" — same task, different audience, different results.
+
+> Remember: Start simple. If the model doesn't understand, add more detail to your instruction before jumping to few-shot examples.`
         },
         {
           id: 6,
@@ -180,18 +296,34 @@ in 3 bullets for executives:
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>May misinterpret intent without examples</li>
-                <li>Brittle on novel or nuanced tasks</li>
-                <li>Less control over output format</li>
-                <li>Performance varies significantly by model capability</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>May misinterpret intent without examples</li>
+                  <li>Brittle on novel or nuanced tasks</li>
+                  <li>Less control over output format</li>
+                  <li>Performance varies significantly by model capability</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#103e5d',
-          notes: ''
-        }
+          notes: `### Zero-shot Prompting - Considerations
+While zero-shot prompting is incredibly useful, it's important to understand its limitations so you know when to reach for more advanced techniques.
+
+#### When Zero-shot Struggles
+The biggest challenge with zero-shot prompting is **ambiguity**. Without examples, the model might misinterpret what you want, especially for nuanced tasks or domain-specific requirements. For instance, asking to "extract key information" from a medical report might work, but the model might miss critical details that a healthcare professional would recognize. Novel tasks that the model hasn't seen during training are particularly challenging — if it's truly new territory, zero-shot might give you inconsistent or incorrect results.
+
+#### Format and Consistency Issues
+Another limitation is *control over output format*. You can request JSON or specific structures, but without examples showing exactly what you want, the model might deviate from your expectations. This becomes especially problematic in production systems where you need **reliable, consistent formatting** for downstream processing. If you find yourself repeatedly reformatting outputs, that's a sign you need few-shot examples or more structured approaches.
+
+#### Model Capability Matters
+Finally, remember that **model capability significantly impacts zero-shot performance**. GPT-4 might nail a task on the first try, while a smaller model might struggle. This isn't a flaw in zero-shot prompting itself — it's just reality. If you're using smaller models for cost or latency reasons, you'll often need to supplement zero-shot with few-shot examples or other techniques to get comparable results.
+
+> Pro tip: Start with zero-shot, measure performance, then upgrade to few-shot or other techniques only if needed. Don't over-engineer from the start!`
+        },
       ]
     },
     {
@@ -204,19 +336,41 @@ in 3 bullets for executives:
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Guide the model with a few labeled examples to shape outputs.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Classification and structured outputs matching examples</li>
-                <li>Consistent formatting and tone</li>
-                <li>Better handling of domain-specific terminology</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for tasks requiring custom formats, specific domain tone, or when you need to demonstrate edge cases. Examples guide the model to match your desired output style.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Guide the model with a few labeled examples to shape outputs.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Classification and structured outputs matching examples</li>
+                  <li>Consistent formatting and tone</li>
+                  <li>Better handling of domain-specific terminology</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for tasks requiring custom formats, specific domain tone, or when you need to demonstrate edge cases. Examples guide the model to match your desired output style.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
+          notes: `### Few-shot Prompting - Overview
+Now we're leveling up from zero-shot to **Few-shot Prompting** — one of the most practical and widely-used techniques in production systems. Think of this as "teaching by example."
+
+#### The Power of Examples
+Few-shot prompting means providing the model with *2 to 5 labeled examples* before asking it to perform the actual task. These examples demonstrate exactly what you want — the input format, the output format, the style, the tone, and even how to handle edge cases. It's like showing someone how to fill out a form correctly before handing them a blank one. The model learns the pattern from your examples and applies it to new inputs.
+
+#### When Few-shot Shines
+Use few-shot when you need **consistent formatting and tone**, especially for domain-specific tasks. For example, if you're building a customer support system that needs to respond in your company's specific voice with certain terminology, showing 3-5 examples of good responses will dramatically improve consistency. Few-shot is also excellent for classification tasks where categories might be ambiguous without concrete examples.
+
+#### The Sweet Spot
+Few-shot sits in a perfect middle ground — it's more powerful than zero-shot but simpler than complex reasoning techniques. You're essentially showing the model "this is what good looks like" without needing to engineer elaborate prompts or chains of reasoning. This makes it **practical, effective, and easy to implement** in real applications.
+
+> Pro tip: Quality matters more than quantity with few-shot. Three excellent examples beat ten mediocre ones!`
         },
         {
           id: 8,
@@ -224,17 +378,41 @@ in 3 bullets for executives:
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Few-shot prompting provides 2-5 input-output examples before presenting the actual task. The model learns the pattern from these demonstrations and applies it to new inputs. This approach helps the model understand not just what to do, but how to format and style the response.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Simple–Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Mid-size models benefit noticeably from examples</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Few-shot prompting provides 2-5 input-output examples before presenting the actual task. The model learns the pattern from these demonstrations and applies it to new inputs. This approach helps the model understand not just what to do, but how to format and style the response.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Simple–Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Mid-size models benefit noticeably from examples</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p>Support macros generation with style-consistent examples that match company terminology and formatting guidelines.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
+          notes: `### Few-shot Prompting - How It Works
+Let's dive into the mechanics of few-shot prompting and understand why those examples are so powerful.
+
+#### The Pattern Recognition Engine
+Here's what happens behind the scenes: When you provide examples, the model's attention mechanism *analyzes the patterns* across your input-output pairs. It notices structural similarities, stylistic choices, terminology usage, and formatting conventions. Then when you present the new task, it applies those learned patterns to generate a response that matches your examples. Think of it like the model saying, "Oh, I see the pattern — when you give me X, you want Y formatted like this."
+
+#### Optimal Complexity Level
+Few-shot is classified as **Simple to Intermediate** complexity because it doesn't require complex chains of reasoning or special model capabilities. However, it does require some thought in *selecting good examples*. You want examples that are representative of the task, cover common cases and maybe an edge case or two, and demonstrate the exact format you need. The beauty is that even mid-size models show **significant improvement** with just a few examples.
+
+#### Real-World Application: Support Macros
+Imagine you're building automated support responses for a SaaS company. You need responses that use company-specific terminology (like your product names), maintain a friendly but professional tone, and follow certain formatting (like always ending with a link to docs). By showing 3-5 examples of perfect support responses, the model will generate new responses that *feel like they came from your team*, not a generic AI.
+
+> Pro tip: Include at least one edge case example (like handling a frustrated customer) to teach the model how to handle tricky situations!`
         },
         {
           id: 9,
@@ -242,19 +420,39 @@ in 3 bullets for executives:
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"You are a sentiment classifier.
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(52, 152, 219, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"You are a sentiment classifier.
 Example: 'Loved it' -> positive
 'Too slow' -> negative
 Classify: 'It was okay, but pricey.'"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support few-shot learning. Mid-size models especially benefit from the additional context provided by examples.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and most modern LLMs support few-shot learning. Mid-size models especially benefit from the additional context provided by examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
+          notes: `### Few-shot Prompting - Implementation
+Let's look at a concrete implementation of few-shot prompting to see how examples transform model behavior.
+
+#### Anatomy of the Example
+Look at this sentiment classification example carefully. Notice the structure: first, we set context ("You are a sentiment classifier"), then provide two examples showing the input-output pattern, and finally present the actual task. The examples are *crisp and clear* — "Loved it" is obviously positive, "Too slow" is clearly negative. This gives the model strong signal about what positive and negative mean in your domain. When it sees "It was okay, but pricey," it can confidently classify it as negative because "pricey" has negative sentiment similar to "too slow."
+
+#### The Example Selection Process
+Choosing good examples is an **art and science**. You want diversity that covers your input space — in sentiment analysis, that might mean examples with different lengths, styles, and intensity levels. You also want clarity — ambiguous examples confuse the model. And you want representation of all your categories — if you're doing multi-class classification, show at least one example of each class. For this sentiment task, you might add a neutral example like "It works as expected" -> neutral to teach the model about the middle ground.
+
+#### Universal Model Support
+The good news is that few-shot learning is **universally supported** across modern LLMs. Every major model from GPT-4 to smaller open-source alternatives can learn from examples. The difference is in how many examples different models need — larger models might nail it with 2-3 examples, while smaller models might need 5-7 for the same performance.
+
+> Pro tip: Test your examples! Run the prompt with different inputs to verify the pattern is clear and the model generalizes correctly.`
         },
         {
           id: 10,
@@ -262,18 +460,37 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Example bias - model may overfit to example patterns</li>
-                <li>Token overhead increases with number of examples</li>
-                <li>Data leakage risk if examples contain sensitive information</li>
-                <li>Example selection significantly impacts results</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Example bias - model may overfit to example patterns</li>
+                  <li>Token overhead increases with number of examples</li>
+                  <li>Data leakage risk if examples contain sensitive information</li>
+                  <li>Example selection significantly impacts results</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#284d67',
-          notes: ''
-        }
+          notes: `### Few-shot Prompting - Considerations
+While few-shot prompting is incredibly powerful, it comes with important tradeoffs and considerations you need to understand.
+
+#### The Example Bias Problem
+The biggest gotcha with few-shot is **example bias** — the model might overfit to the specific patterns in your examples rather than learning the general task. For instance, if all your sentiment examples use adjectives, the model might rely too heavily on adjectives and miss sentiment expressed through verbs or context. This is why *example diversity* is critical. You want examples that demonstrate the task from different angles, not just variations of the same pattern.
+
+#### Token Economics
+Every example you add increases your token count, which means **higher costs and increased latency**. If you're using 5 examples of 100 tokens each, that's 500 tokens per request before you even get to the actual task! At scale, this adds up fast. You need to find the sweet spot — enough examples to get good performance, but not so many that costs become prohibitive. Often, 3-5 carefully chosen examples hit that sweet spot.
+
+#### Security and Privacy Considerations
+Here's something many people overlook: if your examples contain actual customer data, medical information, or proprietary details, you're potentially creating **data leakage risks**. Those examples go to the model provider in every single request. Always use synthetic or anonymized examples, especially in production systems. This protects your users' privacy and keeps your sensitive information secure.
+
+#### Example Selection is Critical
+Finally, remember that **bad examples teach bad patterns**. If your examples have errors, inconsistencies, or don't actually represent what you want, the model will learn those flaws. Take time to curate high-quality examples, test them thoroughly, and update them as you learn what works. Think of your examples as training data — quality matters immensely.
+
+> Pro tip: Start with 3 examples, measure performance, then add more only if needed. More isn't always better!`
+        },
       ]
     },
     {
@@ -286,20 +503,42 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Ask the model to reason step-by-step before the final answer.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Intermediate reasoning steps plus final answer</li>
-                <li>Improved accuracy on complex reasoning tasks</li>
-                <li>Transparent decision-making process</li>
-                <li>Better handling of multi-step problems</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for math and logic problems, multi-hop question answering, and planning tasks. The step-by-step approach significantly improves reasoning accuracy.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Ask the model to reason step-by-step before the final answer.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Intermediate reasoning steps plus final answer</li>
+                  <li>Improved accuracy on complex reasoning tasks</li>
+                  <li>Transparent decision-making process</li>
+                  <li>Better handling of multi-step problems</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for math and logic problems, multi-hop question answering, and planning tasks. The step-by-step approach significantly improves reasoning accuracy.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
+          notes: `### Chain-of-Thought - Overview
+Welcome to **Chain-of-Thought** or **CoT** 👉 'cot' — one of the most transformative techniques in modern prompt engineering. This is where we teach models to *think* before they answer.
+
+#### The Revolutionary Insight
+Here's the breakthrough: when you ask a model to show its reasoning step-by-step before giving the final answer, accuracy on complex tasks can improve by **30-50%** or more! It's like the difference between a student who writes down their work versus one who just guesses the answer. The act of explicitly reasoning through intermediate steps helps the model catch errors, maintain logical consistency, and arrive at better conclusions. This simple insight has revolutionized how we use LLMs for complex reasoning.
+
+#### When Chain-of-Thought Shines
+CoT is your go-to technique for **math problems, logic puzzles, multi-hop question answering**, and any task that requires connecting multiple pieces of information. For example, answering "How many years passed between the founding of Apple and the first iPhone?" requires finding two dates, then calculating the difference. CoT makes these multi-step problems dramatically more reliable.
+
+#### The Transparency Advantage
+Beyond accuracy, CoT gives you **transparency**. You can see *how* the model arrived at its answer, which is crucial for debugging, building trust, and meeting explainability requirements. If the answer is wrong, you can look at the reasoning steps to see where it went off track. This makes CoT invaluable in production systems where you need to understand and validate model behavior.
+
+> Pro tip: CoT transforms LLMs from pattern matchers into reasoning engines. It's the technique that makes complex applications possible!`
         },
         {
           id: 12,
@@ -307,17 +546,44 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Chain-of-Thought prompting instructs the model to break down complex problems into intermediate steps. By explicitly reasoning through each step, the model can catch errors and maintain logical consistency. This mimics human problem-solving and dramatically improves performance on tasks requiring multi-step reasoning.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Smaller models may overfit or produce inconsistent reasoning</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Chain-of-Thought prompting instructs the model to break down complex problems into intermediate steps. By explicitly reasoning through each step, the model can catch errors and maintain logical consistency. This mimics human problem-solving and dramatically improves performance on tasks requiring multi-step reasoning.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Smaller models may overfit or produce inconsistent reasoning</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Price breakdown reasoning in finance approvals — showing step-by-step calculation of total costs, taxes, discounts, and ROI to justify purchase decisions.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
+          notes: `### Chain-of-Thought - How It Works
+Let's understand the mechanics of Chain-of-Thought and why it's such a powerful reasoning amplifier.
+
+#### The Step-by-Step Mechanism
+Here's what CoT does: instead of jumping directly to an answer, it forces the model to **generate intermediate reasoning steps**. For a math problem like "If Sarah has 15 apples and gives away 40% to friends, then buys 8 more, how many does she have?" — CoT makes the model show: "Step 1: Calculate 40% of 15 = 6 apples. Step 2: 15 - 6 = 9 apples remaining. Step 3: 9 + 8 = 17 apples total." Each step is a checkpoint where the model must maintain correctness, dramatically reducing compound errors.
+
+#### Why It Works So Well
+The magic is in how language models generate text. They predict one token at a time, and *earlier tokens influence later ones*. By generating reasoning steps first, those steps become part of the context for generating the final answer. It's like building a scaffold — each reasoning step supports the next, leading to a much more solid final answer. This is why CoT works even though we're not actually changing the model itself!
+
+#### Model Requirements
+CoT is classified as **Intermediate** complexity because it requires models with strong reasoning capabilities. GPT-4, Claude 3.5, and Gemini 1.5 excel at maintaining coherent multi-step reasoning. Smaller models can struggle — they might generate plausible-sounding reasoning that's actually incorrect, or they might shortcut the reasoning and jump to an answer. This is one technique where **model capability really matters**.
+
+#### Real-World Application: Finance Approvals
+Imagine a system that reviews purchase requests. Using CoT, it can show: "Base cost: $10,000. Tax (8%): $800. Volume discount (15%): -$1,500. Net cost: $9,300. Expected annual savings: $15,000. ROI: 161% in year one. Recommendation: Approve." This transparency builds trust and makes auditing easy!
+
+> Pro tip: CoT turns abstract reasoning into visible, debuggable steps. It's like having X-ray vision into the model's thinking!`
         },
         {
           id: 13,
@@ -325,16 +591,36 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, and Gemini 1.5 excel at chain-of-thought reasoning. Works best with larger, more capable models that can maintain coherent multi-step reasoning.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Solve step-by-step: If a box has 12 red and 8 blue marbles and 4 reds are removed, what fraction are red now? Think step by step."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, and Gemini 1.5 excel at chain-of-thought reasoning. Works best with larger, more capable models that can maintain coherent multi-step reasoning.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
+          notes: `### Chain-of-Thought - Implementation
+Let's examine a concrete CoT prompt to understand how to craft effective step-by-step reasoning instructions.
+
+#### Anatomy of a CoT Prompt
+Look at this marble problem carefully. The key phrase is **"Think step by step"** at the end — this is the trigger that activates chain-of-thought reasoning. Without it, the model might jump to an answer. With it, the model knows to show its work. The problem itself is multi-step: first count total marbles (12 + 8 = 20), then remove 4 reds (12 - 4 = 8 reds remaining), then calculate the new total (8 + 8 = 16), finally compute the fraction (8/16 = 1/2). CoT ensures the model works through each step explicitly.
+
+#### Variations That Work
+You can trigger CoT with different phrases: "Think step by step", "Let's solve this systematically", "Show your work", or "Explain your reasoning before answering". Some practitioners combine CoT with few-shot by showing one example with reasoning steps, then asking the model to apply the same approach. The key is **signaling that you want intermediate steps**, not just the final answer.
+
+#### Model Capabilities Matter
+GPT-4, Claude 3.5, and Gemini 1.5 are the **gold standard** for CoT. They can maintain logical coherence across multiple reasoning steps, catch their own errors, and generate reasoning that actually makes sense. Smaller models can attempt CoT, but they often produce reasoning that *looks* plausible but contains logical errors. If you're using CoT in production, invest in the best models you can afford — the reasoning quality directly impacts your results.
+
+> Pro tip: Combine CoT with output formatting instructions like "Provide your reasoning in numbered steps, then give the final answer after 'Answer:'" to make parsing easier!`
         },
         {
           id: 14,
@@ -342,18 +628,37 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Longer outputs increase token costs and latency</li>
-                <li>Potential for verbose hallucinations in reasoning steps</li>
-                <li>May generate plausible but incorrect reasoning paths</li>
-                <li>Requires careful prompt engineering to avoid shortcuts</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Longer outputs increase token costs and latency</li>
+                  <li>Potential for verbose hallucinations in reasoning steps</li>
+                  <li>May generate plausible but incorrect reasoning paths</li>
+                  <li>Requires careful prompt engineering to avoid shortcuts</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#91420e',
-          notes: ''
-        }
+          notes: `### Chain-of-Thought - Considerations
+While CoT is powerful, it comes with important tradeoffs that you need to understand and manage.
+
+#### The Token Cost Reality
+CoT generates **significantly more tokens** than direct answers. Where a direct answer might be 10-20 tokens, CoT reasoning could be 100-200 tokens or more. At scale, this means higher API costs and increased latency. You need to decide: is the accuracy improvement worth the extra cost? For critical reasoning tasks where correctness matters more than speed or cost, absolutely yes. For simple tasks where basic accuracy is fine, maybe not. Always **measure the cost-benefit tradeoff** for your specific use case.
+
+#### The Hallucination Risk
+Here's a subtle danger: CoT can produce **confident-sounding but incorrect reasoning**. The model might generate plausible-looking steps that contain errors, and because it looks logical, you might trust it. For example, it might say "Step 1: Calculate 40% of 50 = 25" (wrong!) and then build subsequent steps on that error. The reasoning *reads* convincingly, but it's wrong from the start. This is why you need validation — check the reasoning steps, not just the final answer, especially in high-stakes applications.
+
+#### Shortcut Behavior
+Models can be clever in ways you don't want. Sometimes they'll "fake" reasoning by jumping to the answer and then backfilling plausible-sounding steps. To prevent this, you need **careful prompt engineering** — be explicit that you want genuine step-by-step reasoning, perhaps by using few-shot examples that show real work, or by using techniques like "show uncertainty at each step" to force genuine thinking.
+
+#### When NOT to Use CoT
+Don't use CoT for simple tasks where direct answers work fine — you're just wasting tokens. Don't use it when you need ultra-fast responses and can tolerate some error. And be cautious with smaller models that might generate nonsense reasoning. CoT is a **power tool** — use it when you need the power, but don't overuse it everywhere.
+
+> Pro tip: For production systems, implement validation of reasoning steps, not just final answers. Catch errors early in the chain!`
+        },
       ]
     },
     {
@@ -366,20 +671,42 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Specify abstract structure, syntax, and format rather than content-specific examples.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Consistent, schema-compliant outputs</li>
-                <li>Improved standardization across tasks</li>
-                <li>Better tool integration</li>
-                <li>Comparable evaluation results</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for standardized pipelines, tool integration, and when evaluation comparability is important. Focuses on structure over specific content examples.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Specify abstract structure, syntax, and format rather than content-specific examples.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Consistent, schema-compliant outputs</li>
+                  <li>Improved standardization across tasks</li>
+                  <li>Better tool integration</li>
+                  <li>Comparable evaluation results</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for standardized pipelines, tool integration, and when evaluation comparability is important. Focuses on structure over specific content examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
+          notes: `### Meta Prompting - Overview
+Let's explore **Meta Prompting** — a technique that shifts focus from *what* to *how*, defining the structure and format of outputs rather than providing content examples.
+
+#### Structure Over Content
+Here's the key distinction: while few-shot shows *specific examples*, meta prompting defines *abstract structure*. Instead of showing "Input: X, Output: Y", you specify "Output must be JSON with fields [name, description, status]". Instead of demonstrating tone through examples, you say "Use professional language, avoid jargon, keep sentences under 20 words". You're defining the **blueprint** rather than showing finished products. This makes meta prompting incredibly powerful for standardization.
+
+#### When Meta Prompting Excels
+Use meta prompting when you need **consistent, machine-readable outputs** across many tasks. It's perfect for building standardized pipelines where downstream systems expect specific schemas. For example, if you're extracting structured data from documents to feed into a database, meta prompting ensures every extraction follows the same schema, making integration seamless. It's also excellent when you need comparable results across different models or prompts — the schema acts as a contract.
+
+#### The Abstraction Advantage
+Meta prompting works because modern LLMs have learned countless schemas, formats, and structures during training. By specifying structural requirements, you're tapping into this learned knowledge without needing to provide examples. This saves tokens, reduces maintenance (no example library to curate), and often generalizes better than specific examples. Think of it as **programming by specification** rather than programming by example.
+
+> Pro tip: Meta prompting is your secret weapon for building reliable, maintainable production systems that need consistent outputs!`
         },
         {
           id: 16,
@@ -387,17 +714,44 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Meta prompting defines the abstract structure and format requirements without providing content-specific examples. By specifying schemas, field types, and structural constraints, you guide the model to produce outputs that conform to your requirements while allowing flexibility in content generation.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong instruction-following capabilities</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Meta prompting defines the abstract structure and format requirements without providing content-specific examples. By specifying schemas, field types, and structural constraints, you guide the model to produce outputs that conform to your requirements while allowing flexibility in content generation.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong instruction-following capabilities</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Unified incident report format across teams — creating a consistent structure for reporting issues with categorical fields that make analysis and tracking more efficient.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
+          notes: `### Meta Prompting - How It Works
+Let's understand the mechanics of meta prompting and why schema-based specifications are so powerful.
+
+#### The Schema-Based Approach
+Meta prompting works by leveraging the model's **deep understanding of formats and structures**. During training, models saw countless JSON objects, XML documents, data schemas, and structured formats. When you specify "Output as JSON with fields [id: integer, name: string, tags: array]", the model knows exactly what that means and how to generate it. You're activating pre-learned structural knowledge rather than teaching through examples. This makes meta prompting incredibly efficient — you get structured outputs with minimal prompt overhead.
+
+#### Flexibility Within Structure
+Here's the beauty: meta prompting gives you **control over structure while allowing content flexibility**. If you're extracting key points from various documents, specifying a schema ensures consistent output format, but the model still applies intelligence to determine what content fits each field. It's like providing a template — the structure is fixed, but the model fills it intelligently based on context. This balance between constraint and flexibility is perfect for production systems.
+
+#### Model Requirements
+Meta prompting works best with **instruction-following champions** like GPT-4, Claude 3.5, and Gemini 1.5. These models excel at understanding and adhering to structural specifications. They can parse complex schema definitions, understand type constraints, and maintain consistency across long outputs. Smaller models might struggle with complex schemas or deviate from specifications, so invest in capable models if meta prompting is core to your system.
+
+#### Real-World Application: Incident Reports
+Imagine a large organization where different teams report incidents differently, making analysis impossible. With meta prompting, you define a schema: "JSON with fields: {timestamp: ISO8601, severity: enum[low, medium, high, critical], category: string, description: string, affected_systems: array, resolution_steps: array}". Now every team's reports, processed through the LLM, come out in this standard format, making aggregation and analysis trivial!
+
+> Pro tip: Start with simple schemas and add complexity gradually. Test that the model reliably follows your structure before deploying!`
         },
         {
           id: 17,
@@ -405,18 +759,38 @@ Classify: 'It was okay, but pricey.'"`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Problem: <text>. Goal: <target>. Constraints: <list>.
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Problem: <text>. Goal: <target>. Constraints: <list>.
 Output schema: JSON with fields [steps, rationale, answer].
 Populate schema only."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well with meta prompting. These models excel at understanding and following structural specifications.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well with meta prompting. These models excel at understanding and following structural specifications.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
+          notes: `### Meta Prompting - Implementation
+Let's examine a concrete meta prompting example to understand how to craft effective structural specifications.
+
+#### Anatomy of the Meta Prompt
+Look at this example structure: it starts with **input placeholders** (Problem, Goal, Constraints), then specifies the **output schema** (JSON with specific fields), and ends with a clear directive ("Populate schema only"). Notice how it doesn't show any concrete examples — it's purely structural. The model understands that it needs to take the problem, goal, and constraints, then generate a JSON object with "steps" (likely an array), "rationale" (probably a string), and "answer" (could be any type). This abstraction is powerful!
+
+#### Best Practices for Schema Definition
+When crafting meta prompts, be **explicit about data types and structures**. Instead of just "output JSON", specify field names, types (string, integer, array, object), and any constraints (enums, ranges, formats). For example: "status must be one of [pending, approved, rejected]" or "timestamp in ISO8601 format". The more specific your schema, the more reliable the output. Think like you're writing an API contract — because essentially, you are!
+
+#### The "Populate Schema Only" Directive
+That final instruction — "Populate schema only" — is crucial. It tells the model **don't add explanation, don't add preamble, just give me the structured data**. This makes parsing much easier in code. You can be even more explicit: "Return only valid JSON, no markdown formatting, no explanation text". This ensures you get machine-readable output that won't break your parser.
+
+> Pro tip: Validate outputs programmatically! Use JSON schema validators or pydantic models to catch when the model deviates from your specification!`
         },
         {
           id: 18,
@@ -424,18 +798,37 @@ Populate schema only."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Assumes task knowledge from the model</li>
-                <li>May underperform on novel domains without examples</li>
-                <li>Requires clear schema definitions</li>
-                <li>Less guidance on nuanced content decisions</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Assumes task knowledge from the model</li>
+                  <li>May underperform on novel domains without examples</li>
+                  <li>Requires clear schema definitions</li>
+                  <li>Less guidance on nuanced content decisions</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#0e9135',
-          notes: ''
-        }
+          notes: `### Meta Prompting - Considerations
+While meta prompting is powerful for structuring outputs, it has important limitations you need to understand.
+
+#### The Knowledge Assumption
+Meta prompting **assumes the model already knows how to do the task** — you're just telling it how to format the output. If the task is novel, domain-specific, or requires nuanced understanding that the model doesn't have, meta prompting alone won't help. For example, specifying a JSON schema for legal document analysis doesn't help if the model doesn't understand legal terminology. In these cases, you need to combine meta prompting with few-shot examples or detailed task instructions. The schema handles the "how to format", but you still need to teach the "what to extract".
+
+#### Novel Domain Challenges
+When working in specialized domains — medical diagnosis, legal analysis, scientific research — meta prompting might give you well-structured but **incorrect content**. The schema ensures format consistency, but not content accuracy. You might get perfect JSON with completely wrong diagnoses! This is where hybrid approaches shine: use few-shot to teach domain knowledge, then meta prompting to standardize the output format.
+
+#### Schema Complexity Matters
+Overly complex schemas can confuse even the best models. If your schema has deeply nested objects, circular references, or ambiguous field descriptions, the model might generate **malformed or inconsistent outputs**. Keep schemas as simple as possible while meeting your needs. Test iteratively — start simple, add complexity gradually, validate at each step.
+
+#### Content vs. Structure Tradeoff
+Meta prompting gives great **structural control but less content guidance**. You're not showing examples of good vs. bad content, just specifying the container. This means the model might make nuanced content decisions differently than you'd prefer. If specific content quality matters as much as structure, consider combining meta prompting with few-shot examples or detailed content guidelines.
+
+> Pro tip: Combine techniques! Use few-shot for content quality, meta prompting for output structure. Best of both worlds!`
+        },
       ]
     },
     {
@@ -448,20 +841,42 @@ Populate schema only."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Sample multiple CoT paths and select the majority/most consistent answer.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Aggregated answer with higher reliability</li>
-                <li>Reduced variance in outputs</li>
-                <li>Better handling of edge cases</li>
-                <li>Improved accuracy through voting</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for arithmetic, commonsense reasoning, and logic tasks where single-pass inference is unstable. Multiple reasoning paths provide more reliable answers.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Sample multiple CoT paths and select the majority/most consistent answer.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Aggregated answer with higher reliability</li>
+                  <li>Reduced variance in outputs</li>
+                  <li>Better handling of edge cases</li>
+                  <li>Improved accuracy through voting</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for arithmetic, commonsense reasoning, and logic tasks where single-pass inference is unstable. Multiple reasoning paths provide more reliable answers.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
+          notes: `### Self-Consistency - Overview
+Let's explore **Self-Consistency**, a powerful technique that leverages the wisdom of crowds — except the crowd is the same AI model thinking multiple times!
+
+#### The Ensemble Approach
+Here's the brilliant insight: instead of asking the model once and hoping for the right answer, we ask it **multiple times** with different reasoning paths, then vote on the most common answer. Think of it like getting multiple expert opinions — if 8 out of 10 doctors agree on a diagnosis, you can be more confident than if you only asked one. Self-consistency brings this ensemble thinking to LLMs by generating diverse reasoning paths and aggregating the results.
+
+#### When Self-Consistency Shines
+Use self-consistency for **high-stakes reasoning tasks** where accuracy matters more than speed or cost. It's particularly powerful for math problems, logic puzzles, and commonsense reasoning where a single model run might make a calculation error or logical slip. For example, if you're building a financial calculator that needs to be highly accurate, running 5-10 reasoning paths and voting on the answer dramatically reduces errors. The technique works because **errors are often random** — different runs make different mistakes, but the correct answer appears most frequently.
+
+#### The Reliability Advantage
+Self-consistency gives you two major benefits: **higher accuracy** through error cancellation, and **reduced variance** making outputs more predictable. Instead of getting different answers each time you run the same prompt, self-consistency converges on the most consistent solution. This makes your system more reliable and trustworthy, which is crucial for production applications where users expect consistent behavior.
+
+> Pro tip: Self-consistency is your "insurance policy" for critical reasoning tasks where getting it right matters more than speed!`
         },
         {
           id: 20,
@@ -469,17 +884,44 @@ Populate schema only."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Self-consistency generates multiple independent reasoning paths for the same problem using temperature sampling. Each path produces a candidate answer. The system then aggregates these answers, typically by majority voting, to select the most consistent solution. This approach compensates for individual reasoning errors.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate–Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs temperature sampling capability</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Self-consistency generates multiple independent reasoning paths for the same problem using temperature sampling. Each path produces a candidate answer. The system then aggregates these answers, typically by majority voting, to select the most consistent solution. This approach compensates for individual reasoning errors.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate–Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs temperature sampling capability</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Benchmark problem sets (GSM8K-style) with voting on multiple generated solutions to improve mathematical accuracy.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
+          notes: `### Self-Consistency - How It Works
+Let's dive into the mechanics of self-consistency and understand how this ensemble approach dramatically improves reliability.
+
+#### The Multi-Path Generation Process
+Self-consistency works through **temperature sampling** — you set a non-zero temperature (typically 0.7-1.0) to get diverse outputs, then run the same Chain-of-Thought prompt multiple times (typically 5-10 times). Each run generates a different reasoning path because of the randomness introduced by temperature. For example, solving "12 × 15" might use different approaches: "12 × 10 = 120, 12 × 5 = 60, total 180" in one path, versus "15 × 10 = 150, 15 × 2 = 30, total 180" in another. Different paths, same answer!
+
+#### The Voting Mechanism
+After generating multiple answers, you implement **majority voting** to select the final answer. If 7 out of 10 runs say "180", 2 say "175", and 1 says "185", you choose "180" as the most consistent answer. The beauty is that random errors (like "175" or "185") get outvoted by the correct answer that appears most frequently. You can also weight votes by confidence scores or use more sophisticated aggregation like selecting the median for numeric answers.
+
+#### Complexity and Model Requirements
+Self-consistency is **Intermediate to Advanced** because it requires orchestration code to run multiple inferences and aggregate results. You need models that support temperature sampling (all major LLMs do) and enough API throughput to handle parallel requests. The technique works best with capable models like GPT-4, Claude 3.5, and Gemini 1.5 that can generate genuinely different reasoning paths rather than identical outputs.
+
+#### Real-World Application: Math Benchmarks
+Self-consistency shines on math benchmarks like **GSM8K** 👉 'G-S-M eight-K', a dataset of grade school math problems. Single-pass accuracy might be 85%, but with self-consistency using 10 samples, accuracy can jump to 92-95%! This improvement comes from catching calculation errors, logic mistakes, and edge cases that individual runs miss.
+
+> Pro tip: Start with 5 samples, measure improvement, then increase to 10 only if the accuracy gain justifies the cost!`
         },
         {
           id: 21,
@@ -487,16 +929,36 @@ Populate schema only."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires models that support temperature sampling to generate diverse reasoning paths. Typically requires 3-10 samples.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Generate 5 step-by-step solutions. Provide only the final numeric answer for each, then vote for the most frequent."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires models that support temperature sampling to generate diverse reasoning paths. Typically requires 3-10 samples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
+          notes: `### Self-Consistency - Implementation
+Let's look at how to implement self-consistency in practice, including both the prompting strategy and the aggregation logic.
+
+#### Two Implementation Approaches
+You can implement self-consistency in two ways. **Approach 1: Single prompt, multiple runs** — run the same CoT prompt multiple times with temperature > 0, collect all answers, then implement voting in your code. **Approach 2: Meta-prompt** — like the example here, ask the model to generate multiple solutions within one call, then vote. Approach 1 gives you more control and truly independent samples. Approach 2 is simpler but the "solutions" might be less diverse since they're generated sequentially in one context.
+
+#### The Voting Implementation
+For numeric answers, majority voting is straightforward — count occurrences and pick the most common. For text answers, you might need fuzzy matching or semantic similarity. Some advanced implementations use **weighted voting** where you assign confidence scores to each answer based on the reasoning quality, or use the model itself to judge which answer is best. The key is having robust aggregation logic that handles ties, outliers, and edge cases.
+
+#### Practical Configuration
+Start with **5-7 samples** and temperature around **0.7-0.8**. Higher temperature (>0.9) gives more diversity but might produce more errors. Lower temperature (<0.5) gives less diversity, reducing the benefit of self-consistency. For critical applications, use 10 samples. Monitor the answer distribution — if all 10 runs agree, you have high confidence. If votes are split 6-4, you might need more samples or manual review.
+
+> Pro tip: Log the full distribution of answers, not just the winner. It gives you confidence estimates and helps debug when things go wrong!`
         },
         {
           id: 22,
@@ -504,18 +966,34 @@ Populate schema only."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Higher latency due to multiple inference calls</li>
-                <li>Increased cost (3-10x token usage)</li>
-                <li>Correlated errors if prompt is fundamentally flawed</li>
-                <li>Requires aggregation logic implementation</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Higher latency due to multiple inference calls</li>
+                  <li>Increased cost (3-10x token usage)</li>
+                  <li>Correlated errors if prompt is fundamentally flawed</li>
+                  <li>Requires aggregation logic implementation</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7b0e91',
-          notes: ''
-        }
+          notes: `### Self-Consistency - Considerations
+While self-consistency improves accuracy, it comes with significant costs and important limitations to consider.
+
+#### The Cost-Latency Tradeoff
+The most obvious limitation is **cost and latency multiplication**. If you run 5 samples, you're paying 5x the API cost and potentially waiting 5x longer (unless you parallelize). For a single prompt that costs $0.10, self-consistency at 10 samples costs $1.00. At scale, this adds up fast! You need to carefully evaluate: does the accuracy improvement justify the cost? For critical decisions with high stakes, absolutely. For routine tasks, probably not. This is where **selective application** matters — use self-consistency only where accuracy is truly critical.
+
+#### The Systematic Error Problem
+Here's a subtle but important limitation: self-consistency helps with **random errors** but not **systematic errors**. If your prompt is fundamentally flawed or the model lacks knowledge for the task, all reasoning paths will be wrong in the same way. Voting won't help if everyone's voting for the wrong answer! For example, if you ask a math question with a trick that the model consistently misses, all 10 runs might give the same wrong answer. This looks like high confidence, but it's confidently wrong!
+
+#### Implementation Complexity
+Self-consistency requires **orchestration code** to manage multiple API calls, collect responses, and implement voting logic. You need error handling for failed calls, timeout management, and decision logic for handling ties or ambiguous votes. This adds complexity to your system and more points of failure. Make sure the accuracy benefit justifies this additional engineering effort.
+
+> Pro tip: Use self-consistency as a "dial" — run 3 samples for normal tasks, 5-7 for important ones, 10+ only for critical high-stakes decisions!`
+        },
       ]
     },
     {
@@ -528,20 +1006,42 @@ Populate schema only."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>First ask the model to generate background facts, then answer using those facts.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Knowledge-grounded reasoning and answer</li>
-                <li>Contextual understanding before answering</li>
-                <li>Better recall of relevant information</li>
-                <li>Improved accuracy on knowledge-intensive tasks</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for commonsense question answering, domain recall tasks, and exam-style questions. Generating relevant facts first improves answer quality.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>First ask the model to generate background facts, then answer using those facts.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Knowledge-grounded reasoning and answer</li>
+                  <li>Contextual understanding before answering</li>
+                  <li>Better recall of relevant information</li>
+                  <li>Improved accuracy on knowledge-intensive tasks</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for commonsense question answering, domain recall tasks, and exam-style questions. Generating relevant facts first improves answer quality.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
+          notes: `### Generate Knowledge - Overview
+Welcome to **Generate Knowledge Prompting**, a technique that primes the model's memory before asking it to answer questions. Think of it as warming up before a race!
+
+#### The Knowledge Activation Strategy
+Here's the core idea: before asking the model to answer a question, you first ask it to **generate relevant background facts and knowledge** about the topic. This two-stage approach activates the model's relevant knowledge, bringing important facts to the forefront of its "attention" before it needs to use them. It's like asking a student to review their notes before taking a test — the act of retrieving and stating relevant facts makes them more likely to use that knowledge correctly in their answer.
+
+#### When Generate Knowledge Excels
+Use this technique for **knowledge-intensive tasks** where the answer depends on recalling and applying domain facts. It's perfect for commonsense reasoning ("Why do plants need sunlight?"), exam-style questions, trivia, and any task where the model needs to combine multiple facts. For example, answering "Why did the Roman Empire fall?" benefits from first generating facts about economic factors, military challenges, and political instability, then synthesizing those facts into a coherent answer.
+
+#### The Grounding Benefit
+Generate Knowledge provides **explicit grounding** for the answer. Instead of the model pulling facts from its implicit knowledge in opaque ways, it explicitly states the facts it's using, then builds the answer from those stated facts. This makes the reasoning more transparent and debuggable — if the answer is wrong, you can see whether the facts themselves were wrong or whether the reasoning from facts to answer was flawed.
+
+> Pro tip: Generate Knowledge is like giving the model a notepad to jot down relevant facts before solving a problem. It improves both accuracy and explainability!`
         },
         {
           id: 24,
@@ -549,53 +1049,119 @@ Populate schema only."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Generate Knowledge prompting uses a two-stage approach. First, the model generates relevant background facts or knowledge about the topic. Then, in the second stage, the model uses these self-generated facts as context to answer the actual question. This helps activate relevant knowledge and provides grounding for the answer.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong knowledge recall capabilities</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Generate Knowledge prompting uses a two-stage approach. First, the model generates relevant background facts or knowledge about the topic. Then, in the second stage, the model uses these self-generated facts as context to answer the actual question. This helps activate relevant knowledge and provides grounding for the answer.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Models with strong knowledge recall capabilities</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p>Medical symptom triage with preliminary risk-factor listing before diagnosis suggestions.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
+          notes: `### Generate Knowledge - How It Works
+Let's understand the two-stage mechanism that makes Generate Knowledge prompting so effective for knowledge-intensive tasks.
+
+#### The Two-Stage Process
+Generate Knowledge works through **explicit knowledge retrieval followed by application**. Stage 1: You ask "What are relevant facts about X?" and the model generates a list of pertinent information from its training. Stage 2: You ask "Given these facts, answer Y" and the model uses the just-generated facts as context. This separation is powerful because it forces the model to commit to specific facts before reasoning, reducing the chance of contradictory or inconsistent reasoning. It's like requiring someone to show their sources before making an argument!
+
+#### Why Separation Matters
+The magic is in the **separation of retrieval and reasoning**. When you ask the model to answer directly, it interleaves knowledge recall and reasoning in opaque ways. With Generate Knowledge, you make knowledge recall explicit and observable. This has two benefits: first, you can verify the facts are correct before using them. Second, the model's attention is primed with relevant information, improving the quality of subsequent reasoning. Think of it as organizing your thoughts before writing — the act of organization improves the final output.
+
+#### Model Requirements and Capabilities
+This technique requires models with **strong factual knowledge** like GPT-4, Claude 3.5, and Gemini 1.5. These models have broad, deep knowledge bases from training and can retrieve relevant facts effectively. The technique is Intermediate complexity because you need to orchestrate the two stages — either in a single prompt with clear sections or across separate API calls.
+
+#### Real-World Application: Medical Triage
+Imagine a symptom checker app. Instead of directly diagnosing "headache, fever, stiff neck", you first prompt: "List risk factors and relevant medical facts about these symptoms." The model might generate: "Fever + stiff neck + headache can indicate meningitis. Meningitis risk factors include: recent illness, college dorms, immunocompromised status." Then you ask: "Given these facts, what should the patient do?" This produces more grounded, reliable medical advice!
+
+> Pro tip: Verify generated facts against trusted sources for critical applications. Don't blindly trust model-generated knowledge!`
         },
-        {
+{
           id: 25,
           title: '6. Generate Knowledge - Implementation',
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well for knowledge generation. Best results with models that have strong factual knowledge bases.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Before answering, list 3 relevant facts about <topic>. Then, using those facts, answer: <question>"`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 work well for knowledge generation. Best results with models that have strong factual knowledge bases.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
+          notes: `### Generate Knowledge - Implementation
+Let's examine how to structure Generate Knowledge prompts for maximum effectiveness in practice.
+
+#### Prompt Structure Best Practices
+The example shows the classic structure: **"Before answering, list facts about X. Then, using those facts, answer Y."** This explicit structure with "before" and "then" creates clear stages. You can enhance this with specificity: instead of "list facts", try "list 3-5 relevant facts including risks, benefits, and considerations" to guide what kind of knowledge to retrieve. The more specific you are about what facts you need, the better the model can retrieve relevant information.
+
+#### Single vs. Multi-Call Approaches
+You can implement this as **one prompt with two sections** (as shown) or as **two separate API calls**. Single-prompt is simpler and faster but gives you less control. Multi-call lets you inspect and filter the facts before proceeding to the answer stage, which is valuable for critical applications. For example, you might validate facts against a knowledge base, filter out hallucinations, or supplement with retrieved documents before the answering stage.
+
+#### Fact Quantity and Quality
+How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few and you might miss important context. Too many and you dilute attention with irrelevant information. For complex topics, you might go higher (7-10 facts), but test whether more facts actually improve answers — sometimes less is more. Focus on fact *relevance* over quantity.
+
+> Pro tip: For production systems, implement fact verification! Cross-check generated facts against trusted knowledge bases or use retrieval-augmented generation to ground facts in real documents!`
         },
-        {
+{
           id: 26,
           title: '6. Generate Knowledge - Considerations',
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Generated facts may be incorrect or hallucinated</li>
-                <li>Consider verification or retrieval for critical facts</li>
-                <li>Adds latency and token costs</li>
-                <li>May reinforce incorrect knowledge from training</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Generated facts may be incorrect or hallucinated</li>
+                  <li>Consider verification or retrieval for critical facts</li>
+                  <li>Adds latency and token costs</li>
+                  <li>May reinforce incorrect knowledge from training</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7d6b1c',
-          notes: ''
-        }
+          notes: `### Generate Knowledge - Considerations
+While Generate Knowledge is powerful, it has critical limitations around factual accuracy that you must understand.
+
+#### The Hallucination Risk
+The biggest danger with Generate Knowledge is **hallucinated facts**. The model might confidently generate plausible-sounding but completely incorrect facts. Since these become the foundation for the answer, hallucinated facts lead to confidently wrong conclusions. This is especially dangerous because the explicit facts look trustworthy — "The model listed its sources, so it must be right!" Wrong! For critical applications in medicine, law, finance, or any domain where errors have serious consequences, **never trust generated facts without verification**.
+
+#### Verification Strategies
+For production systems, implement **fact verification** through multiple strategies. Cross-check facts against trusted knowledge bases or APIs. Use retrieval-augmented generation (RAG) to ground facts in actual documents rather than model memory. Implement confidence scoring where the model indicates certainty for each fact. For high-stakes decisions, require human review of generated facts before proceeding to the answer stage. Think of generated knowledge as a hypothesis that needs validation, not as ground truth.
+
+#### Cost and Latency Considerations
+Generate Knowledge adds **overhead** — you're generating a list of facts before the actual answer, increasing both token costs and latency. The facts themselves might be 50-200 tokens, then the answer is built on top of that. At scale, this adds up. Evaluate whether the quality improvement justifies the cost. For routine tasks, simpler techniques might suffice. For knowledge-intensive tasks where accuracy matters, the cost is worthwhile.
+
+#### The Training Data Problem
+Finally, remember that generated knowledge comes from the model's **training data**, which has a cutoff date and may contain biases or errors. If the training data encoded incorrect information, Generate Knowledge will surface and reinforce those errors. For rapidly changing domains or topics where accuracy is critical, combine this technique with retrieval from up-to-date, verified sources rather than relying solely on model memory.
+
+> Pro tip: Treat Generate Knowledge as a retrieval stage, then verify before using. Never skip verification for critical applications!`
+        },
       ]
     },
     {
@@ -608,20 +1174,42 @@ Populate schema only."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Break a task into subtasks across multiple prompts where outputs feed subsequent prompts.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Multi-stage pipeline outputs (extractions → synthesis)</li>
-                <li>Better decomposition of complex workflows</li>
-                <li>Improved accuracy per subtask</li>
-                <li>Easier debugging and optimization</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for complex workflows, transformation pipelines, and data cleanup tasks. Breaking tasks into stages improves reliability and maintainability.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Break a task into subtasks across multiple prompts where outputs feed subsequent prompts.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.1} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Multi-stage pipeline outputs (extractions → synthesis)</li>
+                  <li>Better decomposition of complex workflows</li>
+                  <li>Improved accuracy per subtask</li>
+                  <li>Easier debugging and optimization</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for complex workflows, transformation pipelines, and data cleanup tasks. Breaking tasks into stages improves reliability and maintainability.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
+          notes: `### Prompt Chaining - Overview
+Welcome to **Prompt Chaining**, a fundamental technique for building complex AI workflows by breaking them into manageable, sequential stages.
+
+#### The Decomposition Strategy
+Prompt chaining is based on a simple but powerful idea: **complex tasks are easier when broken into simpler subtasks**. Instead of asking the model to do everything in one shot (extract data, transform it, analyze it, and format results), you create a chain where each step does one thing well. Step 1: Extract raw data. Step 2: Clean and normalize. Step 3: Analyze. Step 4: Format for output. Each stage is simpler, more reliable, and easier to optimize than trying to do everything at once.
+
+#### When Prompt Chaining Shines
+Use prompt chaining for **multi-stage workflows** like document processing pipelines, data transformation tasks, or content generation workflows. It's perfect when your task has natural stages that depend on each other. For example: reading a resume → extracting key info → matching to job requirements → generating interview questions. Each stage builds on the previous, but they're independent enough to test and optimize separately. This modularity is incredibly valuable for production systems.
+
+#### The Production Advantage
+Prompt chaining makes systems **maintainable and debuggable**. When something goes wrong, you can pinpoint which stage failed. You can improve individual stages without touching others. You can A/B test different prompts for specific stages. You can even mix techniques — use zero-shot for stage 1, few-shot for stage 2, CoT for stage 3. This flexibility and control make prompt chaining essential for real-world applications.
+
+> Pro tip: Prompt chaining is like an assembly line — each station does one job well, and the product improves at each stage!`
         },
         {
           id: 28,
@@ -629,17 +1217,44 @@ Populate schema only."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Prompt chaining decomposes complex tasks into a series of simpler subtasks. Each subtask is handled by a separate prompt, with the output from one stage becoming input for the next. This sequential approach allows each stage to focus on a specific transformation or analysis step, improving overall quality and making the pipeline easier to debug and optimize.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Any LLM; long-context models help with larger intermediate outputs</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Prompt chaining decomposes complex tasks into a series of simpler subtasks. Each subtask is handled by a separate prompt, with the output from one stage becoming input for the next. This sequential approach allows each stage to focus on a specific transformation or analysis step, improving overall quality and making the pipeline easier to debug and optimize.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Any LLM; long-context models help with larger intermediate outputs</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Legal brief generation from case documents via extract→summarize→draft chain.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
+          notes: `### Prompt Chaining - How It Works
+Let's understand the mechanics of prompt chaining and how to design effective multi-stage pipelines.
+
+#### The Sequential Pipeline Architecture
+Prompt chaining works through **sequential transformation**. You start with input, apply Prompt 1 to get Output 1, then use Output 1 as input to Prompt 2 to get Output 2, and so on. Each prompt is specialized for its stage. For example: Prompt 1 might be "Extract all dates and amounts from this contract", Prompt 2 might be "Classify each transaction as revenue or expense", Prompt 3 might be "Calculate total revenue and flag unusual patterns". Each stage is focused and testable.
+
+#### Designing Effective Chains
+Good chain design requires **clear stage boundaries**. Each stage should have a single clear responsibility. Outputs should be clean and well-formatted because they become inputs to the next stage — messy outputs cause cascading problems. Use structured formats (JSON, markdown) for intermediate outputs to make parsing easier. For example, instead of free-form text between stages, use JSON with defined fields so the next stage knows exactly what to expect.
+
+#### Context Management with Long-Context Models
+One challenge is **context accumulation** — as you chain prompts, context grows (original input + Output 1 + Output 2...). Modern long-context models like GPT-4 (128k tokens), Claude 3.5 (200k tokens), and Gemini 1.5 (2M tokens) handle this well, letting you carry full context through multiple stages. Alternatively, you can use selective context where each stage only receives what it needs, reducing token costs.
+
+#### Real-World Application: Legal Brief Generation
+Imagine generating legal briefs from case documents. **Stage 1**: Extract relevant case law, statutes, and facts (extraction prompt). **Stage 2**: Summarize each case's relevance to current matter (summarization prompt). **Stage 3**: Draft argument structure with cited cases (planning prompt). **Stage 4**: Generate polished legal writing (drafting prompt). Each stage is simpler than trying to do everything at once, and you can optimize each independently!
+
+> Pro tip: Add validation stages between main stages to catch errors before they propagate downstream!`
         },
         {
           id: 29,
@@ -647,17 +1262,37 @@ Populate schema only."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Step 1: Extract key quotes from document about <question>.
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Step 1: Extract key quotes from document about <question>.
 Step 2: Using quotes, answer <question> with citations."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and any LLM that can maintain context. Long-context models (100k+ tokens) are particularly effective for handling large intermediate outputs.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5, and any LLM that can maintain context. Long-context models (100k+ tokens) are particularly effective for handling large intermediate outputs.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
+          notes: `### Prompt Chaining - Implementation
+Let's examine practical implementation strategies for prompt chaining, from simple to sophisticated approaches.
+
+#### Single-Prompt vs. Multi-Call Implementation
+The example shows a **single-prompt approach** where stages are defined within one call ("Step 1... Step 2..."). This is simpler but less flexible. The **multi-call approach** uses separate API calls for each stage, giving you full control to inspect, validate, and transform intermediate outputs. Multi-call also lets you use different models for different stages — maybe GPT-4 for complex reasoning stages and a faster/cheaper model for simple transformation stages. Choose based on your needs for control, cost, and complexity.
+
+#### Intermediate Output Formatting
+Design your stages to produce **clean, parseable outputs**. Instead of "Extract quotes and explain them", split it: Stage 1 outputs JSON with {quote, page, context} for each quote. Stage 2 receives this structured data and generates analysis. Structured intermediate formats make your pipeline robust to variations in model output and make debugging much easier — you can log and inspect exactly what each stage produced.
+
+#### Error Handling and Fallbacks
+Prod uction chains need **error handling at each stage**. What if Stage 2 receives malformed output from Stage 1? Implement validation, retry logic, and fallbacks. For example, if extraction fails, try a simplified extraction prompt. If that fails, use default values or flag for human review. Never let errors propagate silently through your chain — catch and handle them explicitly at each stage.
+
+> Pro tip: Build your chain incrementally! Start with 2 stages, validate thoroughly, then add more. Don't build a 5-stage chain all at once!`
         },
         {
           id: 30,
@@ -665,18 +1300,37 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Orchestration complexity increases with chain length</li>
-                <li>Error propagation without validation checks</li>
-                <li>Cumulative latency from multiple calls</li>
-                <li>Requires careful stage design and testing</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Orchestration complexity increases with chain length</li>
+                  <li>Error propagation without validation checks</li>
+                  <li>Cumulative latency from multiple calls</li>
+                  <li>Requires careful stage design and testing</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#7d1c3c',
-          notes: ''
-        }
+          notes: `### Prompt Chaining - Considerations
+While prompt chaining is incredibly useful, it introduces complexity and challenges that you need to manage carefully.
+
+#### The Orchestration Challenge
+As chains grow longer, **orchestration complexity explodes**. A 2-stage chain is simple. A 5-stage chain with conditional branching, error handling, and validation at each stage becomes a substantial engineering effort. You need infrastructure to manage the pipeline, handle failures, track state, and coordinate multiple API calls. This isn't insurmountable, but it's real work. Start simple and add complexity only when needed. Don't over-engineer from the start.
+
+#### Error Propagation Is Your Enemy
+The biggest danger is **cascading errors**. Stage 1 produces slightly wrong output. Stage 2 builds on it and makes it worse. Stage 3 compounds the errors further. By the end, your result is completely wrong, but each stage seemed to work! This is why validation between stages is critical. Check that Stage 1's output meets expectations before feeding it to Stage 2. Implement schema validation, sanity checks, and confidence thresholds. Fail fast rather than propagating bad data.
+
+#### Latency and Cost Accumulation
+Each stage adds **latency and cost**. A 5-stage chain where each stage takes 2 seconds means 10 seconds total latency (unless you can parallelize some stages). Each stage incurs API costs. For high-volume applications, this adds up. You need to evaluate: is the quality improvement worth the extra time and cost? Sometimes a single well-crafted prompt performs almost as well as a chain, with much lower latency and cost.
+
+#### Design and Testing Overhead
+Prompt chaining requires **careful stage design**. You need to define clear responsibilities, design clean interfaces between stages, and test each stage independently plus the whole chain end-to-end. This is more work than writing a single prompt. But for complex tasks, this investment pays off in reliability, maintainability, and performance. Think of it as software engineering — more upfront work, but better long-term outcomes.
+
+> Pro tip: Monitor each stage independently in production. Know where failures happen and which stages need optimization!`
+        },
       ]
     },
     {
@@ -689,20 +1343,42 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam).</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Selected best reasoning path and final solution</li>
-                <li>Systematic exploration of solution space</li>
-                <li>Better handling of complex planning problems</li>
-                <li>Ability to backtrack from dead ends</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for search-heavy reasoning, puzzles and planning tasks, and complex decompositions. Explores multiple paths before committing to a solution.</p>
+              <GSAPAnimated animation="flipCard" delay={0.1}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <p>Explore multiple reasoning branches with lookahead and backtracking (BFS/DFS/Beam).</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={0.5}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.6}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Selected best reasoning path and final solution</li>
+                  <li>Systematic exploration of solution space</li>
+                  <li>Better handling of complex planning problems</li>
+                  <li>Ability to backtrack from dead ends</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <p style={{ marginTop: '20px' }}>Best for search-heavy reasoning, puzzles and planning tasks, and complex decompositions. Explores multiple paths before committing to a solution.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - Overview
+Welcome to Tree of Thoughts, or ToT 👉 pronounced "tot" like the word for a small child. Think of it as the AI's way of being thorough before making a decision.
+
+#### What Makes ToT Different
+Unlike techniques that follow a single line of reasoning, Tree of Thoughts creates an actual *tree structure* of possible reasoning paths. Imagine you're planning a road trip and instead of just picking one route, you sketch out three different options, evaluate each one's pros and cons, and then systematically explore the most promising path while keeping the others as backup options. That's exactly what ToT does with problem-solving.
+
+#### The Power of Exploration
+The magic here is in the **exploration strategy**. ToT uses classic search algorithms like breadth-first search (BFS), depth-first search (DFS), or beam search to navigate this tree of possibilities. At each decision point, the model generates multiple candidate next steps, evaluates each one (labeling them as "sure", "maybe", or "impossible"), and then intelligently decides which branches to explore further. If a path turns out to be a dead end, no problem—it simply backtracks and tries a different branch.
+
+#### When to Use This Powerhouse
+This technique shines in **complex planning scenarios**, like designing a multi-phase product strategy, solving intricate puzzles, or decomposing a complicated technical problem into optimal sub-tasks. It's overkill for simple questions, but when you need systematic exploration of a solution space with the ability to course-correct, ToT is your go-to technique.
+
+> Pro tip: ToT is computationally expensive because it explores multiple paths. Use it when the quality of the solution justifies the extra cost and latency.`
         },
         {
           id: 32,
@@ -710,17 +1386,49 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Tree of Thoughts maintains a tree of reasoning paths, generating multiple candidate next steps at each node. The model evaluates each candidate (e.g., sure/maybe/impossible) and uses search algorithms (BFS, DFS, or beam search) to explore promising branches. This allows systematic exploration with the ability to backtrack from unproductive paths.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires external controller logic for search management</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
+              <GSAPAnimated animation="scaleIn" delay={0.1}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>Tree of Thoughts maintains a tree of reasoning paths, generating multiple candidate next steps at each node. The model evaluates each candidate (e.g., sure/maybe/impossible) and uses search algorithms (BFS, DFS, or beam search) to explore promising branches. This allows systematic exploration with the ability to backtrack from unproductive paths.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.6}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires external controller logic for search management</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.75}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.9}>
+                <p>Strategic product roadmap trade-off exploration — systematically evaluating different feature prioritization paths and their downstream impacts on market adoption, engineering resources, and business outcomes.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - How It Works
+Now let's peek under the hood and see how Tree of Thoughts actually operates. This is where the technique gets really interesting.
+
+#### The Mechanics of Tree Building
+Picture a chess grandmaster considering their next move. They don't just think one move ahead—they explore multiple possible moves, then for each move they imagine several opponent responses, and so on, creating a branching tree of possibilities. Tree of Thoughts works similarly. At each node in the reasoning tree, the model generates *multiple candidate next steps* rather than just one. For example, if solving a complex planning problem, it might generate three different approaches: Option A, Option B, and Option C.
+
+#### The Evaluation Phase
+Here's where it gets clever. The model doesn't just generate options blindly—it **evaluates each candidate** before proceeding. Think of it as a quality checkpoint. The evaluation can be as simple as labeling each option as "sure" (very promising), "maybe" (worth exploring), or "impossible" (dead end). This evaluation step is crucial because it guides the search algorithm on where to focus its attention.
+
+#### Search Algorithms in Action
+ToT leverages classic computer science search algorithms. **Breadth-first search** explores all options at each level before going deeper. **Depth-first search** follows one path all the way down before trying alternatives. **Beam search** keeps only the top K most promising paths at each level. The beauty is that if a path hits a dead end, the algorithm simply backtracks to a previous node and explores a different branch—something traditional chain-of-thought can't do.
+
+#### Orchestration Complexity
+This is an *advanced* technique that requires sophisticated infrastructure. You need an external controller—essentially a program that manages the search process, calls the LLM multiple times to generate and evaluate candidates, maintains the tree structure, and decides when to explore versus when to backtrack. Models like GPT-4, Claude 3.5, and Gemini 1.5 have the reasoning capability, but you're building the orchestration layer yourself.
+
+#### Real-World Application
+The example shown—strategic product roadmap planning—is perfect for ToT. Imagine you're deciding whether to build Feature X first or Feature Y. With ToT, you can systematically explore both paths: "If we build X first, that leads to outcomes A, B, C... If we build Y first, that leads to D, E, F..." You're essentially simulating different futures and evaluating their downstream impacts before committing resources.
+
+> Pro tip: The quality of your evaluation function is critical. If your evaluation incorrectly labels promising paths as "impossible," the search will miss good solutions. Invest time in crafting good evaluation prompts.`
         },
         {
           id: 33,
@@ -728,16 +1436,45 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires sophisticated orchestration layer to manage the search process, evaluate candidates, and control exploration depth.</p>
+              <GSAPAnimated animation="slideInTop" delay={0.1}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(230, 126, 34, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires sophisticated orchestration layer to manage the search process, evaluate candidates, and control exploration depth.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - Implementation
+Let's talk about actually implementing Tree of Thoughts in your applications. This is where theory meets practice.
+
+#### Crafting the Core Prompt
+The example prompt shown is beautifully simple yet powerful: *"Propose 3 candidate next steps. Label each as sure/maybe/impossible for reaching the goal. Expand promising branches until a solution."* Notice the three key elements here. First, you're asking for **multiple candidates** (not just one next step). Second, you're requesting an **evaluation** (sure/maybe/impossible labels). Third, you're instructing the model to **continue exploration** of promising branches. This single prompt encapsulates the entire ToT philosophy.
+
+#### Prompt Engineering Tips
+In practice, you'll often want to be more specific. For example: "Given the current state of our software architecture, propose 3 different refactoring approaches. For each approach, evaluate: (1) implementation complexity (low/medium/high), (2) risk of introducing bugs (low/medium/high), (3) expected performance improvement (low/medium/high). Then explore the most promising approach in detail." The more structure you provide in your evaluation criteria, the better the model can guide the search.
+
+#### The Orchestration Challenge
+Here's the reality check: ToT requires **significant engineering effort**. You're not just sending one prompt and getting one response. You're building a system that: (1) sends an initial prompt to generate candidates, (2) parses the response to extract the candidates and their evaluations, (3) implements a search algorithm to decide which candidate to explore next, (4) sends follow-up prompts to expand chosen branches, (5) maintains the tree structure in memory, (6) decides when to backtrack versus when to continue, and (7) determines when a solution is found.
+
+#### Model Selection
+You need the most capable models for ToT—specifically GPT-4/4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro. Why? Because you're asking the model to both generate creative next steps *and* evaluate their quality. This requires strong reasoning abilities. Smaller or less capable models will struggle with the evaluation phase, leading to poor search decisions.
+
+#### Cost and Latency Considerations
+Be prepared for **multiple LLM calls per problem**. If your tree has 3 branches per node and you explore 3 levels deep, that's potentially 3 + 9 + 27 = 39 nodes to evaluate. At $0.03 per 1K tokens for GPT-4, even modest trees can add up. Use beam search to limit the number of active branches and set maximum depth limits to control costs.
+
+#### When to Actually Use ToT
+Don't reach for Tree of Thoughts for simple problems where chain-of-thought would suffice. Use it when: (1) the solution space is large and complex, (2) there are multiple viable approaches to explore, (3) early decisions significantly impact downstream outcomes, (4) backtracking capability is valuable, and (5) solution quality justifies the extra cost and engineering complexity.
+
+> Pro tip: Start with a breadth limit (beam width) of 2-3 branches and a depth limit of 3-4 levels. This prevents exponential explosion while still getting the benefits of exploration. You can always expand the search space if initial results are promising.`
         },
         {
           id: 34,
@@ -745,17 +1482,45 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Significantly higher cost and latency</li>
-                <li>Requires search control and pruning strategies</li>
-                <li>Complex orchestration infrastructure needed</li>
-                <li>Evaluation quality critical for good search decisions</li>
-              </ul>
+              <GSAPAnimated animation="flipCard" delay={0.15}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Significantly higher cost and latency</li>
+                  <li>Requires search control and pruning strategies</li>
+                  <li>Complex orchestration infrastructure needed</li>
+                  <li>Evaluation quality critical for good search decisions</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1c257d',
-          notes: ''
+          notes: `### Tree of Thoughts - Considerations
+Before you rush to implement Tree of Thoughts everywhere, let's have an honest conversation about its limitations and considerations. This technique is powerful but comes with significant tradeoffs.
+
+#### The Cost Factor
+Let's be blunt: ToT is **expensive**. While a single chain-of-thought prompt might cost you one API call, Tree of Thoughts can easily require 10, 20, or even 50+ calls for complex problems. At each node, you're generating multiple candidates (that's multiple calls) and then evaluating them (more calls). If you're exploring a tree with a branching factor of 3 and depth of 4, you could be looking at dozens of API requests for a single problem. With GPT-4 pricing, this adds up fast. Budget accordingly and reserve ToT for high-value problems where the improved solution quality justifies the expense.
+
+#### Latency Concerns
+Cost isn't the only multiplier—so is **latency**. Instead of waiting 2-3 seconds for a response, you might be waiting 30-60 seconds or more as the system explores multiple branches sequentially. Some of this can be parallelized (evaluating multiple candidates at the same level can happen simultaneously), but the depth-wise exploration is inherently sequential. For user-facing applications, this latency may be unacceptable unless you're clever about progress indicators and async processing.
+
+#### The Pruning Challenge
+Here's a critical engineering decision: *how do you decide which branches to explore and which to prune?* If you explore everything, you'll hit exponential explosion—a tree with branching factor 3 and depth 5 has 243 leaf nodes. That's not feasible. So you need **pruning strategies**: beam search (keep only top-K paths), confidence thresholds (abandon branches below certain evaluation scores), depth limits, or even dynamic pruning based on remaining compute budget. Getting these strategies right requires experimentation and domain knowledge.
+
+#### Orchestration Infrastructure
+Unlike simpler techniques that are just clever prompts, ToT requires you to build actual **infrastructure**. You need: state management (storing the tree), search algorithm implementation (BFS/DFS/beam search), prompt generation logic (turning tree nodes into queries), response parsing (extracting candidates and evaluations), decision logic (explore vs. backtrack), and termination conditions (when to stop searching). This is a non-trivial engineering project. Don't underestimate the complexity.
+
+#### The Evaluation Quality Problem
+This is perhaps the most subtle but important consideration: ToT's success depends entirely on the *quality of its evaluations*. If your evaluation prompt consistently mislabels good paths as "impossible" or rates poor paths as "sure," the search algorithm will make bad decisions and explore suboptimal branches. You need to invest significant effort in **evaluation prompt engineering** and potentially run experiments to validate that your evaluation criteria actually correlate with solution quality. Bad evaluations can make ToT perform worse than simpler approaches.
+
+#### When ToT Isn't Worth It
+Be honest about when simpler techniques would suffice. For straightforward question-answering, use zero-shot or few-shot prompting. For step-by-step reasoning, chain-of-thought is plenty. For problems that benefit from verification, self-consistency is simpler. Reserve Tree of Thoughts for genuinely complex problems with large solution spaces, multiple valid approaches, and scenarios where exploring alternatives before committing adds significant value.
+
+#### Making It Work in Production
+If you do implement ToT in production, here are success patterns: (1) start with small trees (branching factor 2-3, depth 3-4), (2) use aggressive pruning to control costs, (3) implement caching so similar subtrees don't get re-explored, (4) provide progress indicators since users will wait longer, (5) A/B test against simpler baselines to ensure the complexity is justified, and (6) monitor costs vigilantly—it's easy for them to spiral.
+
+> Pro tip: Consider a hybrid approach: use ToT for the initial exploration phase to identify the most promising approach, then switch to cheaper techniques like chain-of-thought for execution. This gives you ToT's exploration benefits at a fraction of the cost.`
         }
       ]
     },
@@ -769,20 +1534,45 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Retrieve external documents and condition the model on them to ground responses.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Grounded, cited answers from knowledge base</li>
-                <li>Fresh information beyond training cutoff</li>
-                <li>Reduced hallucinations with source grounding</li>
-                <li>Verifiable responses with citations</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for tasks requiring fresh or long-tail knowledge, compliance requirements, and when citations are needed. Grounds responses in retrieved documents.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.2}>
+                <p>Retrieve external documents and condition the model on them to ground responses.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.12} delay={0.6}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Grounded, cited answers from knowledge base</li>
+                  <li>Fresh information beyond training cutoff</li>
+                  <li>Reduced hallucinations with source grounding</li>
+                  <li>Verifiable responses with citations</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.0}>
+                <p style={{ marginTop: '20px' }}>Best for tasks requiring fresh or long-tail knowledge, compliance requirements, and when citations are needed. Grounds responses in retrieved documents.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - Overview (Pronunciation: "rag" 👉 like a cleaning rag)
+
+#### What is RAG?
+**RAG** stands for **Retrieval-Augmented Generation** — think of it as giving your AI a *library card* and a *search engine* before asking it to write an essay. Instead of relying solely on what the model memorized during training, RAG retrieves relevant documents from an external knowledge base and uses them as context for generating responses.
+
+#### The Two-Stage Process
+RAG works in two distinct stages: First, **retrieval** — when you ask a question, the system searches a knowledge base (like internal documents, PDFs, or databases) and finds the most relevant passages. Second, **generation** — the LLM receives these retrieved passages as context and generates a response grounded in that specific information.
+
+#### Why This Matters
+Here's the magic: RAG solves three critical problems with vanilla LLMs. First, **hallucinations** — by grounding responses in retrieved documents, you dramatically reduce made-up facts. Second, **freshness** — the model can access information published *after* its training cutoff. Third, **verifiability** — you can cite sources and trace answers back to original documents.
+
+#### Real-World Examples
+Imagine an **enterprise policy assistant** where employees ask "What's our remote work policy?" The system retrieves the relevant HR document sections and generates an answer with citations like "[Source: Employee Handbook Section 4.2]." Or a **customer support chatbot** that searches your product documentation to answer technical questions with exact references.
+
+#### When to Use RAG
+RAG shines when you need **fresh knowledge** (news, updates), **long-tail information** (niche topics), **compliance requirements** (legal, medical), or **citations** for trust and auditability. If your use case needs grounded, verifiable answers from specific sources, RAG is your go-to pattern.`
         },
         {
           id: 36,
@@ -790,17 +1580,47 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>RAG uses a two-stage process: retrieval then generation. First, relevant documents are retrieved from a knowledge base (typically using vector similarity search). Then, these retrieved documents are provided as context to the LLM, which generates an answer grounded in the retrieved information. This approach combines the LLM's language understanding with external knowledge.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Intermediate</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires retriever/vector database infrastructure</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.2}>
+                <p>RAG uses a two-stage process: retrieval then generation. First, relevant documents are retrieved from a knowledge base (typically using vector similarity search). Then, these retrieved documents are provided as context to the LLM, which generates an answer grounded in the retrieved information. This approach combines the LLM's language understanding with external knowledge.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p><strong>Level:</strong> Intermediate</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires retriever/vector database infrastructure</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.9}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.0}>
+                <p>Enterprise policy assistant with vector search over internal PDFs, enabling employees to query company guidelines with precise citations to source documents.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - How It Works (The Technical Deep-Dive)
+
+#### The Two-Stage Architecture
+Let's break down how RAG actually works under the hood. Stage one is **retrieval** — when a user asks a question, you first convert that question into a vector embedding (a mathematical representation of meaning). Then, you search a vector database to find the most semantically similar document chunks. Think of it like Google search, but instead of keyword matching, you're matching *meaning* and *concepts*.
+
+#### Vector Databases & Embeddings
+Here's where it gets interesting: **Vector databases** like Pinecone, Weaviate, or Chroma store your documents as high-dimensional vectors (typically 768 to 1536 dimensions). An **embedding model** (like OpenAI's text-embedding-ada-002 or open-source alternatives) converts both your documents and queries into these vectors. The database then performs **semantic search** — finding documents that are conceptually similar even if they use different words.
+
+#### Generation with Context
+Stage two is **generation** — once you've retrieved the top 3-10 most relevant passages, you inject them into the LLM prompt along with the original question. The LLM now has *grounded context* to work with. It's like the difference between asking someone to recall from memory versus giving them reference materials to consult. The model generates an answer based on the retrieved documents, often including citations.
+
+#### Why This Reduces Hallucinations
+RAG dramatically reduces hallucinations because the model isn't just generating from parametric memory — it's reading from actual source documents *right now*. If the retrieved documents contain the answer, the model can quote them directly. If they don't, a well-prompted model will say "I don't have enough information" rather than making something up.
+
+#### Infrastructure Requirements
+To implement RAG, you need three components: **1)** An embedding model to vectorize documents and queries, **2)** A vector database to store and search embeddings, and **3)** An LLM with a long context window to consume retrieved passages. The complexity is intermediate because you're orchestrating multiple systems, but frameworks like LangChain and LlamaIndex make this easier.
+
+#### Real-World Example Unpacked
+That enterprise policy assistant we mentioned? Here's how it works: An employee asks "What's our parental leave policy?" The system embeds this question, searches a vector database of HR documents, retrieves the relevant policy sections, and prompts the LLM with: "Given these retrieved passages, answer the question and cite sources." The LLM responds: "Our parental leave policy offers 16 weeks paid leave [Source: Employee Handbook Section 7.3]." The employee gets a verified, cited answer in seconds.`
         },
         {
           id: 37,
@@ -808,21 +1628,47 @@ Step 2: Using quotes, answer <question> with citations."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given these retrieved passages, answer the user question. Cite sources by ID.
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given these retrieved passages, answer the user question. Cite sources by ID.
 Passages:
 [1] The first COVID-19 vaccine was approved for emergency use in December 2020.
 [2] mRNA vaccines use genetic material to teach cells to make a protein that triggers an immune response.
 [3] Traditional vaccines use weakened or inactivated viruses.
 Question: How do mRNA COVID vaccines work?"`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires vector database (Pinecone, Weaviate, Chroma) and embedding model for retrieval.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires vector database (Pinecone, Weaviate, Chroma) and embedding model for retrieval.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - Implementation (Let's Build It)
+
+#### Anatomy of a RAG Prompt
+Look at this example prompt structure — it's surprisingly simple but incredibly powerful. You start with clear instructions: "Given these retrieved passages, answer the question and cite sources." Then you provide the **retrieved passages** with IDs (like [1], [2], [3]) so the model can reference them. Finally, you include the **user's question**. This structure gives the model everything it needs: context, citations, and a clear task.
+
+#### Why This Example Works
+In this COVID vaccine example, we've retrieved three passages: passage [1] gives timeline context, passage [2] explains mRNA mechanism, and passage [3] provides contrast with traditional vaccines. When the model generates an answer, it can say: "mRNA COVID vaccines work by using genetic material to teach cells to make a protein that triggers an immune response [Source: 2]." The answer is grounded, cited, and verifiable.
+
+#### The Retrieval Pipeline
+Behind this prompt, there's a whole pipeline: **Step 1** — The user asks "How do mRNA COVID vaccines work?" **Step 2** — You embed this question using an embedding model. **Step 3** — You search your vector database for similar content. **Step 4** — The database returns these three most relevant passages. **Step 5** — You construct this prompt with passages and question. **Step 6** — The LLM generates a grounded answer with citations.
+
+#### Infrastructure Requirements
+To run RAG in production, you need several components: **1) Vector Database** — Pinecone, Weaviate, Chroma, or FAISS for storing and searching embeddings. **2) Embedding Model** — OpenAI's text-embedding-ada-002, Cohere's embed-v3, or open-source models like sentence-transformers. **3) LLM** — GPT-4, Claude 3.5, or Gemini 1.5 with long context windows (typically 8k-200k tokens). **4) Orchestration** — LangChain, LlamaIndex, or custom code to coordinate retrieval and generation.
+
+#### Best Practices for Prompts
+Here are some pro tips: **1) Always include citation instructions** — tell the model *how* to cite (by ID, by title, etc.). **2) Number your passages** — makes citations easier and more reliable. **3) Keep passages concise** — chunk documents into 200-500 word segments for optimal retrieval. **4) Add instructions for "no answer" scenarios** — tell the model to say "I don't have enough information" if the passages don't contain the answer. **5) Use structured output** — ask for JSON or markdown to make parsing citations easier.
+
+#### Scaling Considerations
+When you move from prototype to production, consider: **Indexing strategy** — how often do you update your vector database? **Chunk size** — larger chunks give more context but reduce precision, smaller chunks are more precise but lose context. **Retrieval count** — typically 3-10 passages work best, balancing context richness with token costs. **Hybrid search** — combine semantic (vector) search with keyword (BM25) search for better results.`
         },
         {
           id: 38,
@@ -830,17 +1676,42 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Garbage-in garbage-out - retrieval quality critical</li>
-                <li>Retrieval quality issues impact answer accuracy</li>
-                <li>Citation drift - model may not cite accurately</li>
-                <li>Chunking challenges affect information retrieval</li>
-              </ul>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Garbage-in garbage-out - retrieval quality critical</li>
+                  <li>Retrieval quality issues impact answer accuracy</li>
+                  <li>Citation drift - model may not cite accurately</li>
+                  <li>Chunking challenges affect information retrieval</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a673a',
-          notes: ''
+          notes: `### 9. RAG - Considerations (The Gotchas)
+
+#### Garbage In, Garbage Out
+Here's the brutal truth about RAG: **retrieval quality is everything**. If your retrieval system returns irrelevant or poor-quality documents, the LLM will generate irrelevant or incorrect answers. It's like asking someone to write a book report but handing them the wrong book — even a genius can't give you the right answer with the wrong source material. This is the single biggest failure mode in RAG systems.
+
+#### The Retrieval Quality Problem
+Retrieval can fail in several ways: **1) Semantic mismatch** — the user asks "How do I reset my password?" but your docs use the phrase "credential recovery," so the search misses it. **2) Recency bias** — vector search might prioritize frequently-accessed documents over actually relevant ones. **3) Chunking boundaries** — important context gets split across chunks, so neither chunk ranks highly. **4) Query ambiguity** — user asks "What's the policy on remote work?" but doesn't specify location, and different regions have different policies.
+
+#### Citation Drift
+Here's a sneaky problem: **citation drift** — sometimes the model generates an answer that's *loosely* based on retrieved passages but doesn't cite them accurately. Or worse, it cites passages that don't actually support the claim. This happens because LLMs are generative models, not database queries — they can drift from the source material. To mitigate this, explicitly instruct the model: "Only cite passages that directly support your answer. If you're making an inference, say so."
+
+#### Chunking Is Hard
+**Chunking strategy** — how you split documents into searchable chunks — dramatically impacts RAG quality. Too small (50 words), and you lose context. Too large (1000 words), and retrieval becomes imprecise. The sweet spot is usually 200-500 words, but it depends on your domain. Also consider **overlap** — overlapping chunks by 20-50 words helps preserve context across boundaries. And **metadata** — adding titles, dates, and categories to chunks improves retrieval.
+
+#### Context Window Limitations
+Even with long context windows (100k-200k tokens), you can't just dump *everything* into the prompt. **1) Cost** — more tokens = higher cost. **2) Latency** — larger contexts take longer to process. **3) Lost-in-the-middle** — research shows LLMs struggle to use information in the middle of very long contexts. They're better at using information at the beginning and end. So even with RAG, you need to be strategic about what you retrieve and how you present it.
+
+#### When RAG Isn't Enough
+Sometimes RAG isn't the right solution: **1) Real-time data** — if you need *right now* information (stock prices, weather), RAG with a batch-updated database won't work. Use API calls instead. **2) Complex reasoning** — if the answer requires synthesizing information across many documents with multi-hop reasoning, RAG alone might not be enough. Consider combining with Chain-of-Thought or multi-agent systems. **3) Adversarial queries** — if users try to "jailbreak" by asking for information you don't want to provide, RAG won't help if that information is in your database.
+
+#### Practical Tips to Overcome These Issues
+Here's how to improve RAG systems: **1) Hybrid search** — combine vector search with keyword search (BM25) for better retrieval. **2) Re-ranking** — retrieve 20 candidates, then use a cross-encoder to re-rank the top 5 for the LLM. **3) Query expansion** — rewrite the user query in multiple ways to improve recall. **4) Verification loops** — ask the model to quote passages verbatim to verify citations. **5) Metadata filtering** — let users filter by date, category, or source before semantic search. **6) Human-in-the-loop** — for high-stakes applications, have humans verify retrieved passages before generation.`
         }
       ]
     },
@@ -854,20 +1725,43 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Use a frozen LLM to auto-generate multi-step reasoning and interleave tool calls with observations.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tool-interleaved reasoning traces and answer</li>
-                <li>Automatic tool selection and integration</li>
-                <li>Extended capabilities beyond pre-training</li>
-                <li>Zero-shot planning for complex tasks</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for tasks needing external tools, search integration, code execution, and database queries. Automatically plans tool usage.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Use a frozen LLM to auto-generate multi-step reasoning and interleave tool calls with observations.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.7}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Tool-interleaved reasoning traces and answer</li>
+                  <li>Automatic tool selection and integration</li>
+                  <li>Extended capabilities beyond pre-training</li>
+                  <li>Zero-shot planning for complex tasks</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.3}>
+                <p style={{ marginTop: '20px' }}>Best for tasks needing external tools, search integration, code execution, and database queries. Automatically plans tool usage.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### ART - Automatic Reasoning & Tool-use
+
+**Pronunciation**: "ART 👉 'art'" — it's literally pronounced like the word "art", which is fitting because this technique is all about the *art* of combining reasoning with real-world actions.
+
+#### What Is ART?
+Think of ART as giving your AI model a **toolbelt and the intelligence to use it**. Imagine you're solving a complex problem that requires both *thinking* and *doing*. You might need to search the web for information, calculate some numbers, check a database, or even run code. ART enables the model to automatically figure out: "I need this tool now, let me use it, integrate what I learned, and continue reasoning."
+
+It's called **Automatic Reasoning & Tool-use** because the model *automatically decomposes* the task into steps and decides when to call external tools — all without you manually scripting each action.
+
+#### Real-World Analogy
+Picture a brilliant research assistant who not only thinks critically but also knows when to grab a calculator, when to look something up in a library, and when to call an expert. That's ART — it's **agentic behavior** where the AI reasons about what it needs, uses tools to get it, and continues the task seamlessly.
+
+#### Why It Matters
+Before ART, we had to hardcode: "Step 1: search this. Step 2: calculate that." ART changes the game — the model figures it out on-the-fly. It's **zero-shot planning** with **tool integration**, making AI systems far more flexible and capable for complex, real-world tasks.`
         },
         {
           id: 40,
@@ -875,17 +1769,53 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>ART enables models to automatically decompose tasks, select appropriate tools, and interleave reasoning with tool execution. The model generates a plan, executes tool calls, integrates observations, and continues reasoning. This creates a flexible cycle of thinking, acting, and observing without requiring explicit orchestration for each task type.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool APIs and orchestration runtime</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.3}>
+                <p>ART enables models to automatically decompose tasks, select appropriate tools, and interleave reasoning with tool execution. The model generates a plan, executes tool calls, integrates observations, and continues reasoning. This creates a flexible cycle of thinking, acting, and observing without requiring explicit orchestration for each task type.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool APIs and orchestration runtime</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={1.0}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.2}>
+                <p>Zero-shot research assistant that can automatically mix search engine queries with mathematical calculation tools to answer complex questions without explicit instructions for each step.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### How ART Works - The Thinking-Acting Cycle
+
+#### The Core Mechanism: Automatic Decomposition
+Here's the magic: the model doesn't just follow a script — it **automatically breaks down** your complex task into logical steps. Think of it like a chef reading a recipe and realizing, "Oh, I need to check the pantry (tool call), then calculate ingredient ratios (calculator tool), then proceed with cooking (reasoning)."
+
+#### The Four-Phase Cycle
+1. **Plan**: The model analyzes the task and creates a mental plan
+2. **Act**: It identifies which tool to call (search engine, calculator, database, API, code executor)
+3. **Observe**: It receives the tool's output (the observation)
+4. **Integrate & Continue**: It weaves that observation back into its reasoning and continues
+
+This cycle repeats until the task is complete. It's like a conversation between the model's brain and the external world.
+
+#### Real-World Tool Integration Patterns
+- **Web Search**: "I need current information? Call the search API."
+- **Calculator**: "This requires precise math? Use the calculator tool."
+- **Database**: "I need to look up user data? Query the database."
+- **Code Execution**: "This needs computation? Run Python code."
+- **APIs**: "I need weather data, stock prices, or translations? Call the relevant API."
+
+#### Why "Automatic" Is Key
+Traditional systems required you to hardcode: "If user asks X, call tool Y." ART flips this — the model *figures it out itself*. It's **zero-shot planning** — you don't need to give examples for every possible tool combination.
+
+#### Agentic Behavior Explained
+This is **agentic AI** — the model acts like an autonomous agent that can perceive (read the task), decide (choose tools), act (execute tools), and learn (integrate observations). It's the foundation of AI systems that can operate semi-independently in complex environments.`
         },
         {
           id: 41,
@@ -893,16 +1823,59 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and an orchestration framework to manage tool execution and observation integration.</p>
+              <GSAPAnimated animation="slideInBottom" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="flipCard" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given task <T>, plan steps. When needed, call TOOL[search/calculator] and integrate results before continuing. Provide final answer."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={0.9}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and an orchestration framework to manage tool execution and observation integration.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### Implementing ART - Practical Guidance
+
+#### The Prompt Structure
+Notice how simple the prompt is? That's intentional. You're giving the model **freedom** to plan and act. The key elements:
+- **Task Definition**: "Given task <T>" — clearly state what needs to be done
+- **Planning Instruction**: "plan steps" — tells the model to decompose the task
+- **Tool Availability**: "call TOOL[search/calculator]" — lists available tools
+- **Integration Directive**: "integrate results before continuing" — ensures observations inform reasoning
+- **Output Requirement**: "Provide final answer" — clarifies the end goal
+
+#### Real-World Example: Research Question
+User asks: "What's the population of Tokyo and how many people would that be per square kilometer?"
+
+**ART's Internal Process**:
+1. **Reasoning**: "I need Tokyo's population AND its area, then calculate density"
+2. **Tool Call 1**: SEARCH["Tokyo population 2024"] → Observation: "~14 million"
+3. **Tool Call 2**: SEARCH["Tokyo area square kilometers"] → Observation: "~2,194 km²"
+4. **Tool Call 3**: CALCULATOR[14000000 / 2194] → Observation: "~6,380 people/km²"
+5. **Final Answer**: "Tokyo has approximately 14 million people across 2,194 km², resulting in a density of about 6,380 people per square kilometer."
+
+See how it *automatically* orchestrated three different tool calls without being told exactly what to do?
+
+#### Tool Integration Patterns
+- **Sequential Tools**: Search → Calculate → Format
+- **Conditional Tools**: "If result is unclear, search again with refined query"
+- **Parallel Tools**: "Check multiple APIs and compare results"
+- **Recursive Tools**: "Use calculator output as input to next search"
+
+#### Infrastructure Requirements
+You need:
+1. **Tool Registry**: Define available tools (search, calculator, database, API clients)
+2. **Orchestration Runtime**: Execute tool calls and capture outputs
+3. **Observation Handler**: Feed tool results back to the model
+4. **Safety Layer**: Sandbox tool execution (especially code execution)
+
+This is why ART is "Advanced" complexity — it's not just the prompt, it's the entire infrastructure around it.`
         },
         {
           id: 42,
@@ -910,17 +1883,62 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tool errors can derail entire plans</li>
-                <li>Requires sandboxing and guardrails for safety</li>
-                <li>Complex orchestration infrastructure needed</li>
-                <li>Debugging tool interaction failures is challenging</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Tool errors can derail entire plans</li>
+                  <li>Requires sandboxing and guardrails for safety</li>
+                  <li>Complex orchestration infrastructure needed</li>
+                  <li>Debugging tool interaction failures is challenging</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `### ART Limitations & Considerations - The Reality Check
+
+#### When Tools Fail, Plans Crumble
+Here's the hard truth: ART is only as reliable as its tools. Imagine your research assistant suddenly gets wrong information from the library or the calculator breaks mid-computation. The model might continue reasoning with *bad data*, leading to confident but incorrect answers.
+
+**Mitigation**: Implement tool validation, error handling, and fallback mechanisms. Always validate tool outputs before feeding them back to the model.
+
+#### The Safety Imperative: Sandboxing
+This is **critical** — especially with code execution tools. If you give an AI the ability to "run Python code" or "execute shell commands," you're essentially handing it the keys to your system. Without proper sandboxing, a malicious prompt could trigger dangerous operations.
+
+**Analogy**: It's like giving someone access to your house but not putting valuables in a safe. You need **guardrails**:
+- Sandboxed execution environments (Docker, VMs)
+- API rate limiting
+- Output validation
+- Permission systems for sensitive tools
+
+#### Infrastructure Complexity
+ART isn't a simple prompt trick — it's an architectural pattern. You need:
+- **Tool orchestration**: Managing multiple tool APIs
+- **State management**: Tracking observations across the reasoning chain
+- **Error recovery**: Handling timeouts, API failures, malformed responses
+- **Logging & monitoring**: Understanding what the model is doing
+
+Think of it like building a self-driving car versus a regular car. The AI (ART) is the driver, but you need sensors (tools), communication systems (APIs), and safety mechanisms (sandboxing).
+
+#### Debugging Is Hard
+When ART fails, you're debugging a *dynamic* system. The model might:
+- Choose the wrong tool
+- Misinterpret tool outputs
+- Get stuck in reasoning loops
+- Combine tools in unexpected ways
+
+**Tip**: Implement detailed logging of every reasoning step and tool call. Visualize the thinking-acting-observing cycle so you can see where things went wrong.
+
+#### When NOT to Use ART
+- Simple, deterministic tasks (use ReAct or basic prompting)
+- When tools are unreliable or slow
+- When you need predictable, repeatable behavior
+- Resource-constrained environments (ART requires multiple model calls + tool execution)
+
+#### The Bottom Line
+ART is *powerful* but not magic. It's best for complex, open-ended tasks where automatic tool selection outweighs the infrastructure cost. Always weigh the **flexibility** against the **complexity** of maintaining an ART system.`
         }
       ]
     },
@@ -934,20 +1952,40 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Automatically generate and rank candidate instructions based on I/O demonstrations.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Optimized instruction prompt with consistent behavior</li>
-                <li>Automated prompt discovery and optimization</li>
-                <li>Better performance than hand-crafted prompts</li>
-                <li>Systematic exploration of prompt space</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for scaling prompt design, tackling new tasks, and rapid optimization. Automatically discovers effective prompts from examples.</p>
+              <GSAPAnimated animation="fadeIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.2}>
+                <p>Automatically generate and rank candidate instructions based on I/O demonstrations.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.6}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Optimized instruction prompt with consistent behavior</li>
+                  <li>Automated prompt discovery and optimization</li>
+                  <li>Better performance than hand-crafted prompts</li>
+                  <li>Systematic exploration of prompt space</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <p style={{ marginTop: '20px' }}>Best for scaling prompt design, tackling new tasks, and rapid optimization. Automatically discovers effective prompts from examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Pronunciation: APE 👉 Say it like 'ape' (the animal) or spell it out as 'A-P-E' - either works!
+
+Welcome to Automatic Prompt Engineer! Think of APE as your tireless prompt scientist who works 24/7 running experiments to find the perfect prompts. Instead of you manually tweaking prompts over and over, APE does it automatically.
+
+Here's the brilliant idea: You give APE examples of inputs and the outputs you want. Then APE generates dozens or even hundreds of candidate prompts, tests each one, and picks the winner. It's like having a prompt lab that runs controlled experiments at scale.
+
+Real-world example: Imagine an e-commerce company routing customer questions. They have thousands of historical examples - questions paired with the correct department. APE takes these examples, generates 50 different routing prompts, tests each against validation data, and discovers "Based on the customer inquiry, identify the primary intent and route to: Technical Support, Billing, or Product Questions" performs 15% better than their hand-crafted prompt.
+
+The meta-learning magic: APE uses the LLM itself to generate prompts. It's AI helping you engineer better AI prompts - like teaching a robot to teach itself! This approach systematically explores the "prompt space" - all possible ways to phrase instructions - far beyond what humans would think to try.
+
+When does APE shine? When you need consistency at scale, when you're tackling a new domain, or when prompt quality directly impacts business metrics. It's especially powerful for A/B testing different prompt strategies automatically.`
         },
         {
           id: 44,
@@ -955,17 +1993,43 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>APE uses the LLM itself to generate multiple candidate prompts from input-output demonstrations. Each candidate is then tested on a validation set to measure performance. The system ranks candidates by accuracy and selects the best-performing prompt. This meta-learning approach can discover prompts that outperform human-designed alternatives.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires evaluation loop and validation dataset</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>APE uses the LLM itself to generate multiple candidate prompts from input-output demonstrations. Each candidate is then tested on a validation set to measure performance. The system ranks candidates by accuracy and selects the best-performing prompt. This meta-learning approach can discover prompts that outperform human-designed alternatives.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.5}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires evaluation loop and validation dataset</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.9}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.0}>
+                <p>Customer service platform uses APE to automatically tune prompt templates for routing customer intent. The system uses historical customer queries and agent responses as I/O pairs, generates multiple prompt candidates, tests them on validation data, and deploys the highest-performing prompt to production.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Let's break down the APE workflow - it's like running a scientific tournament to find the champion prompt!
+
+Step 1 - Generation Phase: You provide APE with input-output demonstrations. Think of these as "before and after" snapshots. APE then asks the LLM: "Given these examples, generate 20 different instruction prompts that could produce these outputs." The LLM brainstorms creative variations - some formal, some casual, some detailed, some concise.
+
+Step 2 - Evaluation Phase: Now comes the tournament! APE takes each candidate prompt and runs it against a validation dataset - fresh examples the LLM hasn't seen. It's like testing 20 different recipes on new ingredients. Each prompt gets a performance score based on accuracy, relevance, or whatever metric you care about.
+
+Step 3 - Selection Phase: APE ranks all candidates by performance and picks the winner. The top-performing prompt becomes your production instruction.
+
+The evolution strategy: Think of APE like natural selection for prompts. Random variation (generation) plus survival of the fittest (evaluation) leads to optimized results. Some implementations even iterate - using the best prompts to generate even better candidates, like breeding champion racehorses!
+
+Real-world complexity: This is advanced because you need infrastructure - the orchestration layer managing multiple LLM calls, a validation dataset that represents real usage, and metrics that align with business goals. You're also spending more tokens upfront for better long-term performance.
+
+Customer service example deep dive: A platform with 10,000 historical tickets uses APE. It generates 50 routing prompts, tests each on 500 validation tickets, and discovers a prompt that reduces misrouting by 23%. The improved accuracy means happier customers and lower operational costs - the investment in prompt engineering pays for itself.`
         },
         {
           id: 45,
@@ -973,9 +2037,12 @@ Question: How do mRNA COVID vaccines work?"`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given these I/O pairs:
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given these I/O pairs:
 Input: 'What is the capital of France?'
 Output: 'The capital of France is Paris.'
 
@@ -984,13 +2051,37 @@ Output: 'There are 8 planets in our solar system: Mercury, Venus, Earth, Mars, J
 
 Propose 5 instruction prompts that would elicit these types of responses. Then execute each on the validation set and rank them by accuracy."
 `}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires orchestration to manage generate-evaluate-select loop and compute resources for multiple evaluations.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.6}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.8}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires orchestration to manage generate-evaluate-select loop and compute resources for multiple evaluations.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Let's look at implementing APE in practice - this is where theory meets reality!
+
+The meta-prompt structure: Notice how we're prompting the LLM to generate prompts. It's meta! We show input-output pairs and ask "What instruction would produce these results?" This is the generation phase in action. The LLM becomes a prompt designer, proposing different ways to phrase instructions.
+
+Example variations you might get: For those I/O pairs, APE might generate:
+- "Answer factual questions with precise, encyclopedic information"
+- "Provide direct answers to questions about geography, science, and general knowledge"
+- "You are a knowledgeable assistant. Answer questions clearly and completely"
+- "Respond to queries with accurate facts, including relevant details"
+- "Give informative answers that directly address the question asked"
+
+Each has subtle differences in tone, specificity, and framing!
+
+The evaluation trick: In practice, you'd run each generated prompt on your validation set - maybe 100 test questions - and measure success rate. Prompt 3 might get 94% correct, while Prompt 1 gets 87%. The numbers tell you which phrasing works best for your specific use case.
+
+A/B testing at scale: Think of APE as automated A/B testing for prompts. Instead of manually trying variations and checking results, APE does it systematically. Some teams run APE weekly, continuously optimizing prompts as their data distribution shifts.
+
+Infrastructure needs: You need an orchestration layer (like LangChain or custom code) to manage the workflow: generate N prompts → run each on validation set → collect scores → select winner. This requires compute budget for multiple LLM calls, but the ROI can be significant for high-stakes applications.
+
+Pro tip: Start small! Begin with 5-10 candidates and 50 validation examples. Once the pipeline works, scale to hundreds of candidates and larger validation sets for more confident optimization.`
         },
         {
           id: 46,
@@ -998,17 +2089,37 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Overfitting to validation set possible</li>
-                <li>Computationally heavy evaluation process</li>
-                <li>Prompt hacking risks with automated discovery</li>
-                <li>Requires representative validation data</li>
-              </ul>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Overfitting to validation set possible</li>
+                  <li>Computationally heavy evaluation process</li>
+                  <li>Prompt hacking risks with automated discovery</li>
+                  <li>Requires representative validation data</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a6167',
-          notes: ''
+          notes: `Every powerful technique has tradeoffs - let's talk about APE's limitations honestly so you can use it wisely.
+
+Overfitting danger: This is APE's biggest gotcha! Remember the machine learning maxim: "Good performance on test data doesn't guarantee good performance in production." If your validation set has 100 examples and you test 50 candidate prompts, you might accidentally find a prompt that just happens to work well on those specific 100 examples but fails on new data. It's like studying only the practice exam questions - you ace the practice test but bomb the real thing!
+
+Solution: Use large, diverse validation sets that truly represent production data. Hold out a separate test set for final verification. If your validation accuracy is 95% but production is 70%, you've overfit.
+
+Computational cost: Running 50 prompts on 500 examples means 25,000 LLM calls! At $0.03 per 1K tokens input, that adds up fast. Plus, it takes time - even with parallel processing, you might wait 10-30 minutes for results.
+
+Analogy: It's like tasting 50 different soup recipes - time-consuming and you need a lot of ingredients (compute). But once you find the perfect recipe, you can make it efficiently for thousands of customers.
+
+Prompt hacking risk: Sometimes APE discovers prompts that "game" the system in unexpected ways. Maybe it finds a prompt that accidentally triggers the model's training data in a way that scores well on validation but is actually exploiting a quirk, not solving the problem genuinely.
+
+Example: For a sentiment classification task, APE might discover "Always say positive unless you see the word 'terrible'" which scores 85% on validation but completely fails on examples without explicit sentiment words.
+
+Data quality imperative: Garbage in, garbage out! If your I/O demonstrations or validation set are biased, noisy, or unrepresentative, APE will optimize for the wrong thing. Imagine training a restaurant recommendation system on data from just one neighborhood - your "optimized" prompt won't generalize to other areas.
+
+When to use APE anyway: Despite these limitations, APE is incredibly valuable when you have good data, compute budget, and high stakes. If a 5% accuracy improvement is worth $100K annually, spending $500 on APE optimization is obviously worth it!`
         }
       ]
     },
@@ -1022,20 +2133,41 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Improved task-specific exemplars and accuracy</li>
-                <li>Efficient use of human annotation resources</li>
-                <li>Adaptive learning from uncertainty</li>
-                <li>Better coverage of difficult cases</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for diverse datasets where fixed exemplars underperform. Focuses human effort on the most informative examples.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>Definition</h3>
+                <p>Select uncertain examples for human CoT annotation to adapt few-shot exemplars.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Improved task-specific exemplars and accuracy</li>
+                  <li>Efficient use of human annotation resources</li>
+                  <li>Adaptive learning from uncertainty</li>
+                  <li>Better coverage of difficult cases</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.1}>
+                <p style={{ marginTop: '20px' }}>Best for diverse datasets where fixed exemplars underperform. Focuses human effort on the most informative examples.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### Active-Prompt Overview
+
+Hey everyone, let's talk about **Active-Prompt** - this is where prompt engineering meets active learning in a really clever way!
+
+#### What's the Big Idea?
+Think about how you'd learn a new skill. You wouldn't just practice random things, right? You'd focus on the stuff that's hardest for you. That's exactly what Active-Prompt does for AI models. Instead of using the same few-shot examples for everyone, it figures out which examples the model is *most uncertain* about, gets humans to annotate those tricky cases, and then uses those as the new examples.
+
+#### Why This Matters
+Here's the beauty: not all examples are created equal. Some examples teach the model way more than others. Active-Prompt finds those high-value examples by looking for where the model disagrees with itself the most. It's like finding the edge cases that really challenge your understanding.
+
+#### Real-World Impact
+Imagine you're building a medical diagnosis assistant. Instead of randomly picking cases for your few-shot examples, Active-Prompt would identify the ambiguous cases where the model is genuinely uncertain - maybe symptoms that could indicate multiple conditions. A human expert annotates the reasoning for those cases, and boom - your model gets dramatically better at handling edge cases.
+
+The efficiency gain is huge: you're focusing your expensive human annotation time on exactly the examples that will teach the model the most. It's smart resource allocation meets machine learning!`
         },
         {
           id: 48,
@@ -1043,17 +2175,40 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Active-Prompt generates multiple CoT solutions for candidate examples and measures disagreement between them. High disagreement indicates uncertainty. The system selects the most uncertain examples for human annotation, then updates the few-shot exemplar set with these human-annotated chains of thought. This active learning approach efficiently improves prompt quality.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop and human annotators</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Math word-problem tutor adapting to student cohorts.</p>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Active-Prompt generates multiple CoT solutions for candidate examples and measures disagreement between them. High disagreement indicates uncertainty. The system selects the most uncertain examples for human annotation, then updates the few-shot exemplar set with these human-annotated chains of thought. This active learning approach efficiently improves prompt quality.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.7}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Needs active learning loop and human annotators</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.1}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+                <p>Math word-problem tutor adapting to student cohorts.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### How Active-Prompt Works
+
+Alright, let's break down the mechanics here - this is really fascinating!
+
+#### The Uncertainty Estimation Process
+Here's the secret sauce: the system generates multiple Chain-of-Thought solutions for each candidate example. Let's say you ask the model to solve a problem 10 different times. If all 10 answers are the same, the model is confident. But if you get 5 different answers? That's high disagreement, which signals uncertainty. That's your gold mine!
+
+Think of it like polling a group of experts - when they all agree, you're probably on solid ground. When they disagree wildly, that's where you need to dig deeper and get more information.
+
+#### The Active Learning Loop
+Step one: Generate multiple responses using Chain-of-Thought for your candidate examples. Step two: Calculate disagreement scores - you might use metrics like variance in answers or entropy in the distribution. Step three: Rank examples by uncertainty and select the top-m most uncertain ones. Step four: Send those to human annotators to provide high-quality Chain-of-Thought reasoning. Step five: Update your few-shot exemplar set with these newly annotated examples. Then repeat!
+
+#### Real-World Example Deep Dive
+Picture a math tutoring system for middle schoolers. The system encounters word problems like "If Sarah has 3 apples and gives away half, how many does she have?" Simple, right? But then you get: "A train leaves Station A at 60mph..." and the model starts generating wildly different solution paths. That high disagreement signals this is the type of problem your students are struggling with! You get a human expert to annotate the proper reasoning steps, and now your exemplar set includes exactly the kind of problem that was causing confusion.
+
+The beauty is that this adapts over time - as your model gets better at certain problem types, it'll identify new areas of uncertainty to improve on.`
         },
         {
           id: 49,
@@ -1061,16 +2216,37 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires infrastructure for uncertainty estimation, human annotation workflow, and exemplar management.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Generate k answers with CoT for these questions. Compute disagreement. Select top-m uncertain for human CoT annotation; update exemplar set."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.7}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires infrastructure for uncertainty estimation, human annotation workflow, and exemplar management.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### Active-Prompt Implementation
+
+Let's get practical - how do you actually build this?
+
+#### The Implementation Architecture
+You'll need three main components: First, a prompt execution engine that can generate multiple responses with Chain-of-Thought reasoning. Second, an uncertainty quantification module that calculates disagreement metrics across those responses. And third, a human-in-the-loop annotation interface where experts can provide high-quality reasoning chains for uncertain examples.
+
+Here's what that looks like in practice: You run your model with temperature set fairly high - maybe 0.7 to 0.9 - to get diverse responses. For each candidate example, generate k responses (often 5-10). Then compute disagreement using something like the percentage of unique answers or entropy across answer distributions. Sort by disagreement score and select the top m examples - maybe the top 10 or 20 most uncertain cases.
+
+#### The Prompt Strategy
+The example prompt here is actually a meta-instruction for the system. You're telling it: "Hey, I want you to generate k different solutions showing your reasoning for each question. I'll measure how much you disagree with yourself. Then I'll cherry-pick the cases where you're most uncertain and get expert humans to annotate the correct reasoning. Finally, I'll update your exemplar set with those expert-annotated chains."
+
+#### Infrastructure Requirements
+This isn't a quick weekend project - you need real infrastructure. You'll want a database to track examples, uncertainty scores, and annotation status. You'll need a workflow system for routing uncertain examples to human annotators. You'll need versioning for your exemplar sets so you can track improvements over time. And you'll want monitoring to ensure the active learning loop is actually improving performance.
+
+But here's the payoff: once you have this infrastructure, it becomes a continuously improving system. Every annotation cycle makes your model smarter at handling edge cases!`
         },
         {
           id: 50,
@@ -1078,17 +2254,48 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Annotation cost for human CoT examples</li>
-                <li>Feedback-loop bias in exemplar selection</li>
-                <li>Orchestration complexity for active learning</li>
-                <li>Requires quality control on annotations</li>
-              </ul>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Annotation cost for human CoT examples</li>
+                  <li>Feedback-loop bias in exemplar selection</li>
+                  <li>Orchestration complexity for active learning</li>
+                  <li>Requires quality control on annotations</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#671a2d',
-          notes: ''
+          notes: `### Active-Prompt Considerations & Limitations
+
+Let's be real - Active-Prompt is powerful, but it's not a silver bullet. Here are the gotchas you need to know about.
+
+#### The Annotation Cost Reality
+Human annotation is expensive, period. Yes, Active-Prompt is more efficient than random sampling because you're focusing on high-value examples, but you're still paying humans to carefully reason through complex problems and document their thinking. For a medical application, you might need senior physicians spending 10-15 minutes per annotation. At $200/hour, that adds up fast!
+
+The key question is: does the improvement justify the cost? For high-stakes applications like medical diagnosis, legal analysis, or financial forecasting, the answer is often yes. For a chatbot that recommends movies? Probably not.
+
+#### The Feedback Loop Trap
+Here's a subtle but important problem: your model selects examples based on its current uncertainty, humans annotate them, and then those become your new exemplars. But what if your model has a systematic blind spot? The examples it's uncertain about might all share some characteristic that reinforces a bias. You could end up with an exemplar set that's great at certain types of problems but completely misses other important cases.
+
+This is called "feedback loop bias" or "active learning bias." The solution? Periodically include some random sampling in your selection, and have domain experts review the exemplar set holistically to ensure good coverage.
+
+#### Orchestration Complexity
+You're now running a full machine learning pipeline with human-in-the-loop processes. That means scheduling, task routing, quality checks, versioning, monitoring, and rollback capabilities. Your system needs to handle annotators who disagree, annotations that need revision, and graceful degradation when the annotation pipeline gets backed up.
+
+This is production ML infrastructure, not a simple API call. Budget for DevOps and ML engineering time!
+
+#### Quality Control is Critical
+Not all human annotations are created equal. Annotators get tired, make mistakes, or might not fully understand the task. You need inter-annotator agreement metrics, spot-checking by senior reviewers, and feedback mechanisms. Bad annotations in your exemplar set can actually make the model worse - garbage in, garbage out!
+
+#### When to Use Active-Prompt
+Use it when: you have complex, diverse tasks where examples matter a lot; you can afford expert human annotation; you're building production systems that need to improve over time; and you have the engineering resources for the active learning infrastructure.
+
+Don't use it when: you have simple tasks with clear patterns; annotation costs outweigh benefits; you need immediate results without iteration; or you're prototyping and need to move fast.
+
+The bottom line? Active-Prompt is like having a continuously improving expert on your team, but you need to invest in the infrastructure and process to make it work. Choose wisely!`
         }
       ]
     },
@@ -1102,20 +2309,50 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Use a small policy model to generate instance-specific hints to steer a larger LLM.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Guided outputs aligned to a desired perspective</li>
-                <li>Instance-specific steering for better relevance</li>
-                <li>Improved compliance with requirements</li>
-                <li>Fine-grained control over output focus</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for precision framing, compliance content, pedagogical guidance, and specialized summaries. Steers outputs with targeted hints.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Use a small policy model to generate instance-specific hints to steer a larger LLM.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Guided outputs aligned to a desired perspective</li>
+                  <li>Instance-specific steering for better relevance</li>
+                  <li>Improved compliance with requirements</li>
+                  <li>Fine-grained control over output focus</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for precision framing, compliance content, pedagogical guidance, and specialized summaries. Steers outputs with targeted hints.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### Directional Stimulus Prompting - The Guided Navigation System
+
+Welcome to **Directional Stimulus Prompting**, or DSP for short. Think of this technique as having a GPS navigator for your AI — a small, specialized guide that gives turn-by-turn directions to help a larger, more powerful model reach the exact destination you want.
+
+#### What Is It Really?
+
+At its core, DSP is about *precision steering*. Imagine you're working with a brilliant analyst who can write comprehensive reports, but sometimes goes off-track. Instead of retraining them completely, you hire a smart coordinator who reads each task and whispers specific hints: "Focus on safety risks," "Emphasize regulatory compliance," or "Highlight financial implications." That coordinator is your **policy model** — a small, tunable LLM that generates instance-specific guidance. The brilliant analyst is your main **frozen LLM** like GPT-4, which follows those hints to produce exactly what you need.
+
+#### Why This Matters
+
+Traditional prompting is like shouting general instructions across a room. DSP is like having a conversation where you adapt your guidance based on *each specific situation*. For example, if you're summarizing medical research, your policy model might generate hints like "Mention patient outcomes and cite specific studies." But if the next document is about engineering safety, it adapts: "Focus on failure modes and risk mitigation." This instance-specific adaptation is what makes DSP powerful.
+
+#### Real-World Use Cases
+
+Let's talk practical applications. Financial compliance teams use DSP to ensure every report emphasizes regulatory requirements and risk factors. Educational platforms use it to generate age-appropriate explanations — the same science concept explained differently for a 10-year-old versus a college student. Content moderation systems use DSP to steer responses based on context: is this a medical question requiring careful phrasing, or a casual inquiry? The policy model makes these contextual judgments automatically.
+
+#### The Key Benefits
+
+You get **guided outputs** aligned to specific perspectives without retraining your entire LLM. You achieve **instance-specific steering** — every input gets custom guidance. You maintain **compliance** because the policy model ensures required elements are always emphasized. And you gain **fine-grained control** — much more precise than generic system prompts. This is prompt engineering meets adaptive systems design.
+
+> Remember: DSP shines when you need consistent, customized steering across many different inputs. It's like having an expert editor who knows exactly what each piece of content needs to emphasize.`
         },
         {
           id: 52,
@@ -1123,17 +2360,55 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>DSP uses a tunable policy model to generate instance-specific stimulus hints based on the input. These hints guide a larger frozen LLM to focus on particular aspects or perspectives when generating outputs. This two-model architecture allows fine-grained steering without retraining the large model, combining the flexibility of a small tunable model with the capabilities of a large pre-trained one.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 + Policy LM (small, tunable)</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>DSP uses a tunable policy model to generate instance-specific stimulus hints based on the input. These hints guide a larger frozen LLM to focus on particular aspects or perspectives when generating outputs. This two-model architecture allows fine-grained steering without retraining the large model, combining the flexibility of a small tunable model with the capabilities of a large pre-trained one.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 + Policy LM (small, tunable)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={1.4}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.7}>
+                <p>Compliance-focused meeting summaries with required emphasis on regulatory requirements, risk factors, and action items with clear ownership.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### How Directional Stimulus Prompting Actually Works
+
+Let's demystify the mechanics here. DSP is a **two-model architecture**, and understanding how these models work together is key to using this technique effectively.
+
+#### The Two-Model Dance
+
+Picture this workflow: First, your input comes in — let's say a long meeting transcript. Your **policy model** (think of it like a T5-small or a tiny GPT) reads the transcript and generates a *stimulus* or *hint*. This might be something like: "Focus on deadlines, highlight blockers, and note any budget concerns." This hint is compact, specific, and tailored to this particular transcript. 
+
+Next, that stimulus gets prepended to your input and sent to the **main LLM** — your GPT-4 or Claude 3.5. The main model sees both the stimulus hint and the original transcript, and generates a summary that naturally emphasizes what the hint specified. The beauty? Your main LLM stays frozen — no retraining needed. Only the small policy model is tuned to generate better hints over time.
+
+#### Why This Architecture Is Clever
+
+This setup gives you the best of both worlds. The **policy model** is small and cheap to train, so you can fine-tune it on your specific domain or use case. Want summaries that emphasize legal compliance? Train your policy model on examples. Need sentiment-aware responses? Same approach. Meanwhile, the **main LLM** brings all its world knowledge and language capabilities without requiring expensive retraining. It's like hiring a specialized consultant (policy model) to brief your expert team lead (main LLM) before each task.
+
+#### Practical Implementation
+
+In practice, you'd implement this as two API calls or inference steps. First call: send input to your policy model, get back a hint. Second call: combine hint + input, send to main LLM, get final output. The overhead is minimal — just one extra small model inference. Some systems even batch this for efficiency.
+
+#### Real-World Example Breakdown
+
+Let's walk through that compliance example. Your meeting transcript comes in. The policy model analyzes it and generates: "Emphasize regulatory compliance requirements, identify risk factors with severity levels, list action items with owner names and deadlines." This stimulus goes to GPT-4 along with the transcript. The result? A summary that hits *exactly* those points, consistently, every time. No hoping the model will remember to include owner names — the stimulus ensures it.
+
+#### Complexity Considerations
+
+This is marked **Advanced** for good reason. You need infrastructure to train and serve two models. You need training data to tune your policy model effectively. And you need to monitor for *stimulus drift* — where the policy model's hints gradually shift over time. But the payoff is powerful: consistent, steerable, domain-specific outputs without touching your main LLM.
+
+> Think of DSP as building a custom steering wheel for a powerful engine. The engine (main LLM) stays the same, but your steering mechanism becomes highly specialized for your specific road conditions.`
         },
         {
           id: 53,
@@ -1141,17 +2416,53 @@ Propose 5 instruction prompts that would elicit these types of responses. Then e
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Stimulus: Focus on safety trade-offs and cite at least two risks.
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Stimulus: Focus on safety trade-offs and cite at least two risks.
 Task: Summarize <report> for a safety board in 150 words."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 as the main LLM, plus a smaller tunable policy model (e.g., T5, small GPT) to generate stimuli. Requires training infrastructure for the policy model.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.3}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 as the main LLM, plus a smaller tunable policy model (e.g., T5, small GPT) to generate stimuli. Requires training infrastructure for the policy model.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### Implementing Directional Stimulus Prompting in Practice
+
+Let's get concrete about implementation. This slide shows you the structure and tools you need to actually *use* DSP in production systems.
+
+#### Anatomy of a DSP Prompt
+
+Look at the example prompt carefully. It has two distinct parts. The **stimulus** is the hint generated by your policy model: "Focus on safety trade-offs and cite at least two risks." Notice how specific this is — it's not just "focus on safety," it's giving explicit guidance on *what* to focus on (trade-offs, not just benefits) and *how much* detail to include (at least two risks). The **task** is your original instruction: "Summarize this report for a safety board in 150 words." 
+
+When these combine, the main LLM gets crystal-clear direction. It's like the difference between "write me a summary" versus "write me a summary, and make absolutely sure you emphasize these three specific aspects." The stimulus acts as a focusing lens.
+
+#### Keyword-Based Hinting Strategy
+
+The most practical DSP implementations use **keyword-based stimuli**. Your policy model learns to generate concise hints using action keywords: "Focus on," "Emphasize," "Highlight," "Cite at least," "Compare," "Contrast," "List," "Prioritize." These keywords are powerful because they're unambiguous — the main LLM knows exactly what to do with them. You can train your policy model to select the right keywords based on input characteristics. Medical content? Use "Cite studies" and "Mention side effects." Financial content? Use "Highlight risks" and "Include numerical data."
+
+#### Model Selection Guidance
+
+For the **main LLM**, you want your most capable model. GPT-4, GPT-4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro are all excellent choices. These models are good at following nuanced instructions, which is exactly what stimuli are. They stay frozen — no training needed.
+
+For the **policy model**, think smaller and tunable. T5-small, T5-base, or even a small GPT-2 variant works well. Some teams use Flan-T5 because it's instruction-tuned out of the box. The key is that this model needs to be *trainable* with your domain-specific examples. If you're building a compliance system, you fine-tune this policy model on examples of good compliance hints.
+
+#### Infrastructure Requirements
+
+Here's the reality check: DSP requires **training infrastructure** for your policy model. You need a dataset of inputs paired with good stimulus hints. You need compute for fine-tuning (though it's modest for small models). And you need serving infrastructure to run two models — though the policy model is fast and cheap to run. Many teams deploy the policy model on CPU instances since it's so small, and reserve GPU for the main LLM.
+
+#### Real-World Implementation Tips
+
+Start simple. Before building a trainable policy model, try a **rule-based stimulus generator** first. Write if-else logic: if input contains "medical," return stimulus "Focus on patient outcomes." This validates whether DSP helps your use case before you invest in training. Once you confirm value, collect examples and fine-tune a real policy model. You'll be surprised how quickly a small T5 learns to generate good hints with just a few hundred examples.
+
+> The magic of DSP is in the stimulus design. Spend time crafting clear, actionable hints — they're the steering instructions that make everything else work.`
         },
         {
           id: 54,
@@ -1159,17 +2470,57 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Stimulus drift as policy model learns</li>
-                <li>Extra infrastructure to train and host policy model</li>
-                <li>Potential for bias amplification</li>
-                <li>Coordination complexity between two models</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.5}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Stimulus drift as policy model learns</li>
+                  <li>Extra infrastructure to train and host policy model</li>
+                  <li>Potential for bias amplification</li>
+                  <li>Coordination complexity between two models</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#501a67',
-          notes: ''
+          notes: `### The Realities and Trade-offs of Directional Stimulus Prompting
+
+Every powerful technique has its trade-offs, and DSP is no exception. Let's talk honestly about the challenges and considerations you'll face implementing this approach.
+
+#### Stimulus Drift - The Creeping Challenge
+
+Here's a subtle but important issue: **stimulus drift**. As your policy model continues learning from new examples or feedback, the *style and content* of its hints can gradually change. Imagine you trained the model to generate concise, factual hints. Over time, as it sees more data, it might start generating longer, more elaborate hints — or shift to emphasizing different aspects. This drift can be good (the model gets better) or bad (it deviates from your intended behavior). 
+
+The solution? **Regular monitoring and validation**. Set up automated checks to measure stimulus quality. Compare generated hints against gold-standard examples. Some teams implement "stimulus regression tests" — a test suite of inputs where you know what hints you expect. If drift is detected, you can retrain with fresh examples or adjust your training procedure. Think of it like calibrating a scientific instrument — you need to check periodically that it's still measuring what you intended.
+
+#### Infrastructure and Operational Overhead
+
+Let's be clear: DSP is **not the simplest technique** to deploy. You need training infrastructure to fine-tune your policy model. You need serving infrastructure to run two models. You need monitoring to track both models' performance. You need version control for both models — because when you update the policy model, outputs change even though the main LLM is frozen. This is manageable, but it's more operational complexity than simple prompting.
+
+The good news? The policy model is **small and cheap**. A T5-small model runs in milliseconds on CPU. Training takes minutes to hours, not days. So while there's overhead, it's not overwhelming. Many teams find the benefits — consistent, steerable outputs — justify the extra complexity.
+
+#### Bias Amplification Risk
+
+Here's a critical consideration: DSP can **amplify biases**. If your policy model learns to generate hints that systematically emphasize certain perspectives over others, those biases get baked into every output. For example, if your policy model is trained mostly on data from a specific demographic or industry, it might generate stimuli that reflect those narrow viewpoints.
+
+Mitigation strategies include: diverse training data for your policy model, regular bias audits on generated stimuli, and human-in-the-loop review of policy model outputs before they're used at scale. Some teams implement "stimulus fairness checks" — automated tests that verify hints are balanced across different input types.
+
+#### Coordination Complexity
+
+Managing **two models** means coordinating two different failure modes. What if the policy model generates a malformed hint? What if the main LLM ignores the stimulus? What if there's latency in the policy model that affects overall system performance? You need robust error handling and fallback strategies. Many implementations have a "default stimulus" that kicks in if the policy model fails, ensuring the system doesn't break completely.
+
+#### When DSP Is Worth It (And When It's Not)
+
+Here's the practical guidance: DSP is **worth the complexity** when you need consistent, domain-specific steering across thousands or millions of requests. It's excellent for compliance, where every output must hit specific requirements. It's great for multi-tenant systems where different customers need different emphasis. It's powerful for educational content where the same topic needs different framing for different audiences.
+
+DSP is **overkill** if you're making a few dozen requests and can manually craft each prompt. It's probably too complex if your steering needs are simple (use system prompts instead). And it's not ideal if you can't invest in maintaining the infrastructure.
+
+#### Final Thoughts on Trade-offs
+
+Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler techniques can't achieve, but it requires skill and care to use safely. Start with simpler techniques like few-shot prompting or system prompts. Graduate to DSP when you've proven the value and you're ready for the engineering investment.
+
+> Remember: complexity should be justified by necessity. Use DSP when its unique benefits — trainable, instance-specific steering — solve a real problem that simpler methods can't address.`
         }
       ]
     },
@@ -1183,20 +2534,30 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Model writes code as intermediate steps and delegates execution to an interpreter.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Correct result from executed program</li>
-                <li>Exact computation for arithmetic and logic</li>
-                <li>Deterministic execution reduces hallucination</li>
-                <li>Reusable and testable code generation</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for arithmetic tasks, symbolic reasoning, and algorithmic problems. Delegates computation to code execution for accuracy.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Model writes code as intermediate steps and delegates execution to an interpreter.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Correct result from executed program</li>
+                  <li>Exact computation for arithmetic and logic</li>
+                  <li>Deterministic execution reduces hallucination</li>
+                  <li>Reusable and testable code generation</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.4}>
+                <p style={{ marginTop: '20px' }}>Best for arithmetic tasks, symbolic reasoning, and algorithmic problems. Delegates computation to code execution for accuracy.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `Welcome to PAL - and yes, it's pronounced just like your friend, "pal" 👉 'pal'. This is one of the most practical techniques when you need precision. Here's the key insight: language models are great at understanding problems but terrible at math. PAL solves this beautifully by having the model generate Python code instead of trying to calculate directly. Think of it as having a smart assistant who knows when to hand off work to a calculator. The model reads your problem, writes the code to solve it, and then we execute that code in a proper interpreter to get an exact answer. No more hallucinated numbers! This is perfect for things like financial calculations, inventory optimization, or any scenario where "close enough" isn't good enough. The benefits are clear: you get deterministic results, you can test and reuse the generated code, and you avoid the LLM's tendency to make up numbers. It's like having the best of both worlds - natural language understanding combined with computational precision.`
         },
         {
           id: 56,
@@ -1204,17 +2565,31 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>PAL asks the LLM to generate code (typically Python) as an intermediate representation of the solution. This code is then executed in a sandboxed interpreter. The execution results become the final answer. This approach leverages the preciseness of code execution while using the LLM's natural language understanding to translate problems into executable programs.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro + Python runtime with sandboxing</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>PAL asks the LLM to generate code (typically Python) as an intermediate representation of the solution. This code is then executed in a sandboxed interpreter. The execution results become the final answer. This approach leverages the preciseness of code execution while using the LLM's natural language understanding to translate problems into executable programs.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.3}>
+                <p><strong>Best Models:</strong> GPT-4o, Claude 3.5, Gemini 1.5 Pro + Python runtime with sandboxing</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="rotateIn" delay={1.6}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={1.9}>
+                <p>Operations optimization via dynamic programming utilities — solving inventory management allocation problems that need exact solutions with complex constraints.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `So how does PAL actually work? The process is surprisingly elegant. You give the model your problem in plain English, and instead of asking it to solve the problem directly, you explicitly instruct it to write Python code. The model generates this code as a string - maybe it's a function to calculate optimal coin change, or a script to solve a scheduling problem. Then, the magic happens: we take that generated code and run it through a real Python interpreter. We're using actual Python here, not the LLM pretending to execute code. This gives us exact, reliable results. Now, this is definitely an advanced technique. You need infrastructure - a sandboxed Python runtime to safely execute code. You can't just run arbitrary code without security measures. Models like GPT-4o, Claude 3.5, and Gemini 1.5 Pro are excellent at generating syntactically correct and logically sound code. For a real-world example, imagine you're running a warehouse and need to optimize inventory allocation across multiple locations with complex constraints - minimums, maximums, shipping costs, demand predictions. PAL can generate and execute dynamic programming solutions that give you exact optimal answers, not approximations. This is the kind of problem where precision matters and traditional LLM outputs would be unreliable.`
         },
         {
           id: 57,
@@ -1222,16 +2597,24 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4o, Claude 3.5, Gemini 1.5 Pro - Models with strong code generation capabilities. Requires secure Python runtime environment with proper sandboxing to prevent malicious code execution.</p>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.5}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Write a Python function that computes the minimum coins for amount=47 given denominations [1,4,6]. Return only the final numeric result."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.4}>
+                <p>GPT-4o, Claude 3.5, Gemini 1.5 Pro - Models with strong code generation capabilities. Requires secure Python runtime environment with proper sandboxing to prevent malicious code execution.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `Let's look at a concrete implementation example. Here's a classic dynamic programming problem - the coin change problem. You need to make 47 cents using the fewest coins, and you have denominations of 1, 4, and 6 cents. Your prompt is straightforward: "Write a Python function that computes the minimum coins for this problem." The key is being explicit - you want code, not an explanation. The model will generate something like a dynamic programming solution with memoization. Then your Python executor - maybe you're using RestrictedPython, or a sandboxed subprocess, or even a containerized environment - runs that code and returns the exact answer: 9 coins. The beauty here is separation of concerns. The LLM is doing what it does best: understanding the problem structure and translating it to code. Python is doing what it does best: executing algorithms precisely. You're not asking the LLM to simulate execution mentally, which is where things go wrong. Now, about models - you want GPT-4o, Claude 3.5 Sonnet, or Gemini 1.5 Pro. These models have been trained extensively on code and produce syntactically correct, well-structured Python. But remember: you absolutely must have a secure runtime. Use sandboxing libraries, run in containers, or use cloud functions with resource limits. Never execute untrusted generated code directly in your production environment.`
         },
         {
           id: 58,
@@ -1239,17 +2622,21 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Execution sandboxing required for security</li>
-                <li>Runtime errors can fail the entire process</li>
-                <li>Code injection risk if inputs are untrusted</li>
-                <li>Limited to problems expressible as code</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Execution sandboxing required for security</li>
+                  <li>Runtime errors can fail the entire process</li>
+                  <li>Code injection risk if inputs are untrusted</li>
+                  <li>Limited to problems expressible as code</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#60671a',
-          notes: ''
+          notes: `Now let's talk about the reality check - what you need to watch out for with PAL. First and foremost: security. This is critical. You're executing code that an AI generated, which means you need rock-solid sandboxing. Use proper isolation - containers, restricted Python environments, or serverless functions with tight timeouts and resource limits. Treat generated code as untrusted input, because that's what it is. Second consideration: runtime errors. The model might generate syntactically valid code that still crashes - maybe it divides by zero, or references a variable that doesn't exist, or runs into an edge case. You need error handling that catches these failures gracefully and either retries with clarification or falls back to a different approach. Third: code injection risks. If user input goes into your PAL prompts, sanitize it carefully. Someone could craft input that makes the model generate malicious code. And finally, recognize the scope limitation - PAL is amazing for computational problems, algorithmic challenges, mathematical optimization. But it's not useful for creative writing, subjective analysis, or problems that don't map cleanly to code logic. So when you're designing your system, think carefully about which problems are PAL-appropriate. Use it where precision matters and the problem has a computational solution. For everything else, stick with traditional prompting techniques. PAL is powerful, but it's a specialized tool for specific use cases.`
         }
       ]
     },
@@ -1263,20 +2650,42 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Interleave reasoning traces with actions and observations (think→act→observe loops).</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Transparent action-reasoning trajectory plus answer</li>
-                <li>Dynamic adaptation based on observations</li>
-                <li>Grounded reasoning with external information</li>
-                <li>Interpretable decision-making process</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for knowledge-intensive QA, web tasks, and interactive environments. Combines reasoning with actions in a continuous loop.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Interleave reasoning traces with actions and observations (think→act→observe loops).</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <div><li>Transparent action-reasoning trajectory plus answer</li></div>
+                <div><li>Dynamic adaptation based on observations</li></div>
+                <div><li>Grounded reasoning with external information</li></div>
+                <div><li>Interpretable decision-making process</li></div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for knowledge-intensive QA, web tasks, and interactive environments. Combines reasoning with actions in a continuous loop.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - Overview
+
+Welcome to **ReAct** — which you can pronounce either as "react" like the JavaScript library, or spell it out "R-E-act" for Reasoning and Acting. Both are perfectly fine! This is one of the most powerful agentic patterns we have today.
+
+#### What is ReAct?
+
+ReAct is all about creating a continuous **think-act-observe loop**. Instead of just thinking through a problem or just executing actions blindly, ReAct interleaves both! The model reasons about what to do next, takes an action like searching the web or calling an API, observes what happened, and then reasons again based on that new information. It's like having a conversation with reality — think, act, learn, repeat.
+
+#### Why This Matters
+
+The magic of ReAct is that it's **grounded in reality**. Traditional reasoning happens entirely in the model's "head" — it can hallucinate or make assumptions. But with ReAct, every reasoning step can be informed by real-world observations from tools and APIs. This creates a transparent, interpretable decision-making process where you can see exactly *why* the agent took each action and *what* it learned from the results.
+
+#### When to Use ReAct
+
+ReAct shines in **knowledge-intensive tasks** where the model needs to look things up, **web navigation** where it needs to interact with websites, and **interactive environments** where it needs to respond to changing conditions. Think customer support agents that look up account details, research assistants that verify claims by searching multiple sources, or shopping agents that compare products across different stores. Anywhere you need reasoning *plus* real-world actions, ReAct is your go-to pattern.`
         },
         {
           id: 60,
@@ -1284,17 +2693,49 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>ReAct creates a loop of Reasoning, Acting, and Observing. The model first reasons about what to do next, then takes an action (like searching or using a tool), observes the result, and incorporates that observation into its next reasoning step. This cycle continues until the task is complete. The approach provides both transparency and grounding through real observations.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs or environments required</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>ReAct creates a loop of Reasoning, Acting, and Observing. The model first reasons about what to do next, then takes an action (like searching or using a tool), observes the result, and incorporates that observation into its next reasoning step. This cycle continues until the task is complete. The approach provides both transparency and grounding through real observations.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Tool APIs or environments required</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={1.4}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.7}>
+                <p>Shopping agent (WebShop) planning and verifying product specifications, comparing options and justifying recommendations through reasoning and external search.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - How It Works
+
+Let me walk you through the **ReAct cycle** step by step, because once you understand this loop, you'll see how incredibly powerful it is.
+
+#### The Three-Step Cycle
+
+**Step 1: Reasoning** — The model thinks about the current state and decides what to do next. "I need to find out the current weather in Tokyo to answer this question."
+
+**Step 2: Acting** — The model executes an action using a tool. It might call a weather API, search the web, or query a database. The key is that it's actually *doing something* in the world, not just thinking.
+
+**Step 3: Observing** — The model receives the result of its action — the weather data, search results, or database response. This observation becomes part of the context for the next reasoning step.
+
+Then the cycle repeats! The model reasons about what the observation means, decides if it needs more information, takes another action if needed, observes the result, and so on. This continues until the model has enough information to provide a final answer.
+
+#### Why This Works So Well
+
+The brilliance of ReAct is that **each step informs the next**. If the first search doesn't give good results, the model can reason about why and try a different search. If a tool returns an error, the model can adapt its approach. It's dynamic, self-correcting, and grounded in reality at every step. You get both transparency — you can see the reasoning — and reliability — because it's based on real observations, not hallucinations.
+
+#### Real-World Power
+
+Think about a shopping agent using ReAct. It reads the user's request, reasons about what kind of product to search for, searches an online store, observes the results, reasons about which products might match the criteria, looks up detailed specs for promising options, compares them, and finally recommends the best choice with a full justification. Every step is traceable and grounded in real data from the store!`
         },
         {
           id: 61,
@@ -1302,21 +2743,49 @@ Task: Summarize <report> for a safety board in 150 words."`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`Question: <q>
+              <GSAPAnimated animation="flipCard" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`Question: <q>
 Thought: <plan step>
 Action: Search[<query>]
 Observation: <result>
 ...
 Repeat until enough info, then give Final Answer: <answer>`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and orchestration to manage the think-act-observe cycle. Tools can include search, calculation, database access, etc.</p>
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.1}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Requires tool calling capabilities and orchestration to manage the think-act-observe cycle. Tools can include search, calculation, database access, etc.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - Implementation
+
+Now let's talk about how to actually **implement ReAct** in your applications. The good news is that the pattern itself is pretty straightforward once you understand the cycle!
+
+#### The Prompt Structure
+
+The key to ReAct is structuring your prompts to encourage the model to alternate between reasoning and acting. You typically use a format like: **Question** — what the user is asking, **Thought** — the model's reasoning about what to do, **Action** — a specific tool call or command, and **Observation** — the result from that action. Then the cycle repeats!
+
+The model learns to follow this pattern, and your orchestration layer manages the back-and-forth between the model and your tools. When the model outputs an action, your code intercepts it, executes the tool call, captures the result as an observation, and feeds it back to the model. The model then reasons about that observation and either takes another action or provides a final answer.
+
+#### Tool Integration is Key
+
+ReAct **requires tool-calling capabilities**, which modern models like GPT-4, Claude 3.5, and Gemini 1.5 all support beautifully. You define your tools — search APIs, calculators, databases, web scrapers, whatever your agent needs — and the model learns to call them appropriately. The orchestration layer (your application code) manages executing these tools and feeding results back.
+
+#### Practical Example
+
+Let's say you're building a customer support agent. The user asks "What's the status of my order?" The model thinks "I need to look up the order ID first," searches the customer database, observes "Order 12345 found, status: shipped," thinks "Now I should get tracking details," calls the shipping API, observes tracking info, and finally responds "Your order was shipped yesterday and will arrive on Tuesday, tracking number XYZ." Each action is grounded in real data from your systems!
+
+#### Framework Support
+
+Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support for ReAct patterns. They handle the orchestration, tool management, and observation loop for you. But understanding the underlying pattern helps you customize and debug when needed.`
         },
         {
           id: 62,
@@ -1324,17 +2793,41 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Tool dependency - quality depends on tool reliability</li>
-                <li>Cascading errors from bad observations</li>
-                <li>Can get stuck in reasoning loops</li>
-                <li>Requires careful action space design</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <div><li>Tool dependency - quality depends on tool reliability</li></div>
+                <div><li>Cascading errors from bad observations</li></div>
+                <div><li>Can get stuck in reasoning loops</li></div>
+                <div><li>Requires careful action space design</li></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a5667',
-          notes: ''
+          notes: `### ReAct - Considerations
+
+Let's be honest about the **challenges and limitations** of ReAct, because understanding these helps you build more robust systems.
+
+#### Tool Dependency is Real
+
+ReAct is only as good as the tools you give it. If your search API returns garbage, or your database query fails, or your web scraper breaks, the entire reasoning chain can go off track. The model is **completely dependent on the quality and reliability of observations**. Garbage in, garbage out! This means you need robust error handling, fallback mechanisms, and careful validation of tool outputs.
+
+#### Cascading Errors
+
+Here's a subtle but important problem: if the model makes a mistake early in the reasoning chain — maybe it misinterprets a search result or calls the wrong tool — that error can **cascade through subsequent steps**. The model reasons based on faulty observations, takes more wrong actions, gets more confusing results, and spirals further from the right answer. You need to build in validation checkpoints and ways for the agent to recognize when it's going down the wrong path.
+
+#### Reasoning Loops
+
+Sometimes ReAct agents get **stuck in loops** — they keep searching for the same thing, or repeating the same actions without making progress. This usually happens when the model doesn't recognize that it has enough information, or when tool outputs are ambiguous. You need to implement loop detection and limits on the number of reasoning steps to prevent infinite cycles.
+
+#### Action Space Design
+
+Finally, designing the **right set of tools** is an art! Too few tools and the agent can't accomplish its tasks. Too many tools and the model gets confused about which one to use. Tools need clear descriptions, consistent interfaces, and well-defined outputs. Spend time crafting your tool definitions and testing how the model uses them.
+
+#### Best Practices
+
+To succeed with ReAct: keep your tool set focused and well-documented, validate observations before using them in reasoning, set maximum step limits to prevent loops, log the entire reasoning chain for debugging, and test extensively with edge cases. When done right, ReAct is incredibly powerful — just be aware of these gotchas!`
         }
       ]
     },
@@ -1348,20 +2841,42 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Agents self-evaluate outcomes and write linguistic feedback to improve future attempts.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Iteratively improved outputs guided by self-feedback</li>
-                <li>Learn from failures without model retraining</li>
-                <li>Accumulate experience across episodes</li>
-                <li>Self-improvement through reflection</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for trial-and-error tasks, code development, planning scenarios, and multi-episode agents. Self-critique drives iterative improvement.</p>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" duration={0.8} delay={0.3}>
+                <p>Agents self-evaluate outcomes and write linguistic feedback to improve future attempts.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" duration={0.6} delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} duration={0.6}>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Iteratively improved outputs guided by self-feedback</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Learn from failures without model retraining</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Accumulate experience across episodes</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Self-improvement through reflection</li>
+                </ul></div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="fadeIn" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for trial-and-error tasks, code development, planning scenarios, and multi-episode agents. Self-critique drives iterative improvement.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Welcome to Reflexion! This is one of my favorite techniques because it mirrors how we humans actually learn. Think about it - when you make a mistake, you don't immediately forget everything and start from scratch, right? You think about what went wrong, learn from it, and try again with that new knowledge. That's exactly what Reflexion does for AI agents.
+
+Here's the core idea: instead of just running a task and hoping for the best, the agent actually stops, looks at its own work, and writes out feedback to itself. It's like having an internal coach that says "hey, that didn't work because of X, Y, and Z - let's try this approach instead next time."
+
+The beauty of this technique is that the learning happens through language, not through retraining the model weights. That means it's fast, adaptable, and can happen in real-time. The agent builds up a memory of its own critiques and uses them to get better with each attempt.
+
+This is particularly powerful for tasks where you need to iterate - like writing code that passes tests, planning complex projects, or any scenario where the first attempt might not be perfect. Instead of treating each failure as a dead end, Reflexion turns every mistake into a learning opportunity. The agent literally writes down "I failed because..." and "next time I should..." which becomes part of its working memory for future attempts.`
         },
         {
           id: 64,
@@ -1369,17 +2884,43 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Reflexion has the agent attempt a task, then evaluate its own performance. The agent writes a self-critique identifying what went wrong and how to improve. This critique is stored in memory and used to guide the next attempt. Over multiple iterations, the agent learns from its mistakes through linguistic reflection rather than parameter updates, enabling rapid adaptation to task requirements.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Optional memory store for critique history</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
+              <GSAPAnimated animation="slideInTop" duration={0.8} delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" duration={1} delay={0.4}>
+                <p>Reflexion has the agent attempt a task, then evaluate its own performance. The agent writes a self-critique identifying what went wrong and how to improve. This critique is stored in memory and used to guide the next attempt. Over multiple iterations, the agent learns from its mistakes through linguistic reflection rather than parameter updates, enabling rapid adaptation to task requirements.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" duration={0.8} delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" duration={0.6} delay={1.3}>
+                <p><strong>Level:</strong> Advanced</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" duration={0.6} delay={1.5}>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - Optional memory store for critique history</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" duration={0.8} delay={1.8}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={2.2}>
+                <p>Coding assistants iterating on failing test cases. The agent writes code, analyzes test failures, critiques its approach, then generates an improved solution based on its own feedback until all tests pass.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Let me walk you through how this actually works in practice, because it's a really elegant cycle once you see it in action.
+
+Step one: the agent attempts the task. Maybe it's writing a function, planning a route, or solving a puzzle - whatever the goal is, it gives it a shot.
+
+Step two: the agent evaluates what happened. Did it work? Did tests pass? Did it achieve the goal? Here's where it gets interesting - the agent doesn't just get a pass/fail grade. It actually analyzes its own work and writes out a detailed critique. Something like "My function failed because I didn't handle edge cases for empty arrays. I also used an inefficient algorithm that times out on large inputs."
+
+Step three: this critique gets stored in memory. This is crucial - it's not thrown away, it becomes part of the agent's context for the next attempt.
+
+Step four: the agent tries again, but this time with its own feedback front and center. It's literally reading its own notes from the last attempt and using them to make better decisions.
+
+Now, here's a real-world example that makes this concrete: imagine a coding assistant trying to fix a bug. First attempt - it writes some code but three tests fail. Instead of just trying random fixes, it writes: "Tests failed because I assumed input would always be a string, but test 2 passes an object. My logic also doesn't handle null values." Second attempt - armed with this self-critique, it adds type checking and null handling. The tests pass. That's Reflexion in action.
+
+The key insight is that this happens through language and memory, not model retraining. That makes it incredibly fast and flexible. You do need a capable model though - something like GPT-4 or Claude 3.5 that can genuinely analyze its own work critically.`
         },
         {
           id: 65,
@@ -1387,16 +2928,34 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Benefits from memory systems to store critique history across multiple episodes, enabling long-term learning from experience.</p>
+              <GSAPAnimated animation="rotateIn" duration={0.8} delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" duration={1} delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" duration={0.8} delay={1}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" duration={0.8} delay={1.4}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 - Benefits from memory systems to store critique history across multiple episodes, enabling long-term learning from experience.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Now let's talk about how to actually implement this in your own projects. The good news is that the basic prompt structure is surprisingly simple, though you can make it as sophisticated as you need.
+
+Here's a straightforward prompt that captures the essence of Reflexion: "Attempt the task. Then write a concise self-critique with 3 improvements. Use that critique to produce a refined attempt." That's it! That simple instruction is enough to trigger the self-reflection loop.
+
+But let's break down what makes this work: First, you're explicitly telling the agent to try the task. Then, you're asking it to step back and analyze - "write a self-critique with 3 improvements" is key because it forces specific, actionable feedback rather than vague observations. Finally, you connect the critique to the next attempt, creating that learning loop.
+
+In practice, you might want to make this more sophisticated. For example, you could ask the agent to identify which assumptions failed, what constraints it violated, or what it learned from error messages. If you're working with code, you might say "analyze the test failures and explain why your implementation caused each one." If it's a planning task, maybe "identify which steps failed and why, then propose an alternative approach."
+
+The models that really shine here are GPT-4, Claude 3.5, and Gemini 1.5 - you need that level of sophistication for genuine self-critique. Weaker models tend to either be too gentle on themselves or miss the root causes of failures.
+
+One pro tip: if you're building a production system with Reflexion, set up a memory store to keep critique history across multiple episodes. That way your agent isn't just learning within a single conversation - it's building up institutional knowledge over time. Imagine an agent that remembers "oh, last week I struggled with parsing date formats, so this time I should be extra careful there." That's when Reflexion becomes really powerful.`
         },
         {
           id: 66,
@@ -1404,17 +2963,37 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Feedback quality varies with model capability</li>
-                <li>May entrench mistakes without external validation</li>
-                <li>Can increase token usage significantly</li>
-                <li>Risk of self-reinforcing incorrect assumptions</li>
-              </ul>
+              <GSAPAnimated animation="flipCard" duration={1} delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} duration={0.7}>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Feedback quality varies with model capability</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>May entrench mistakes without external validation</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Can increase token usage significantly</li>
+                </ul></div>
+                <div><ul style={{ fontSize: '1.2rem' }}>
+                  <li>Risk of self-reinforcing incorrect assumptions</li>
+                </ul></div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#4c1a67',
-          notes: ''
+          notes: `Now, let's be real about the limitations here, because Reflexion isn't a magic bullet and it's important to understand when it might not work as well as you'd hope.
+
+First up: feedback quality varies with model capability. This is huge. If your model isn't sophisticated enough to genuinely understand why something failed, its self-critique will be shallow or even wrong. It's like asking a novice programmer to review their own code - they might spot syntax errors but miss the architectural problems. So if you're using a weaker model, the reflection might be "it didn't work, I should try harder" instead of "my algorithm has O(n²) complexity and that's causing timeouts on large inputs."
+
+Second limitation: Reflexion can entrench mistakes without external validation. Here's a scenario - the agent makes an incorrect assumption, then critiques itself based on that same faulty assumption, then tries again still working from that wrong premise. It's like digging a hole in the wrong place and reflecting "I should dig faster" instead of "am I even in the right spot?" This is why you often want to combine Reflexion with external feedback like test results, user corrections, or ground truth data.
+
+Third: token usage. Every reflection cycle adds significant tokens - you're not just running the task, you're also generating critique, storing that critique in context, and then processing it for the next attempt. If you're doing multiple iterations, this can get expensive fast. Something to budget for in production systems.
+
+Finally, there's the risk of self-reinforcing incorrect assumptions. If the agent develops a mental model that's fundamentally flawed, its reflections might actually strengthen that wrong model rather than breaking out of it. It's the AI equivalent of confirmation bias.
+
+So when should you use Reflexion despite these limitations? When you have a capable model, when external validation is available to catch entrenched errors, when the task benefits from iteration, and when the improvement in success rate justifies the extra token cost. It's powerful, but it needs the right conditions to shine.`
         }
       ]
     },
@@ -1428,20 +3007,48 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Combine vision (and/or audio) with text in step-by-step reasoning.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Rationale grounded in image/text plus final answer</li>
-                <li>Cross-modal reasoning integration</li>
-                <li>Better understanding of visual information</li>
-                <li>Unified reasoning across modalities</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for charts/diagrams QA, science problems, and UI understanding. Combines visual and textual information in reasoning chains.</p>
+              <GSAPAnimated animation="slideInLeft" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Combine vision (and/or audio) with text in step-by-step reasoning.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Rationale grounded in image/text plus final answer</li>
+                  <li>Cross-modal reasoning integration</li>
+                  <li>Better understanding of visual information</li>
+                  <li>Unified reasoning across modalities</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="scaleIn" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for charts/diagrams QA, science problems, and UI understanding. Combines visual and textual information in reasoning chains.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### Multimodal Chain-of-Thought (Pronunciation: CoT 👉 'cot')
+
+Hey everyone! Let's talk about **Multimodal Chain-of-Thought**, or **MCoT** for short. Now, before we dive in — quick pronunciation guide — when we say "CoT", we pronounce it like 'cot', just like the thing you sleep on. Makes it easier to say in conversation!
+
+#### What is Multimodal CoT?
+So, what is it? Imagine you're analyzing a complex chart or a scientific diagram. Your brain doesn't just read the numbers or labels — you *look* at the visual patterns, read the text, and combine both to understand what's happening. That's exactly what Multimodal CoT does! It takes the powerful step-by-step reasoning of regular Chain-of-Thought and extends it to work with images, diagrams, audio, and even video alongside text.
+
+#### Vision Plus Language Reasoning
+The magic here is **cross-modal reasoning**. The model can literally "see" an image — whether it's a bar chart, a circuit diagram, or a screenshot of a user interface — and then reason about it step-by-step, just like it would with text. It references specific visual elements while developing its explanation, making the reasoning grounded in what it actually observes. Think of it as teaching the AI to not just *read* about something, but to *look at it* and understand it.
+
+#### Real-World Examples
+Where does this shine? Let me give you some concrete examples:
+- **OCR and Document Understanding**: Reading invoices, receipts, or forms where layout and visual structure matter
+- **Chart and Graph Analysis**: Looking at a sales dashboard and explaining trends, outliers, and patterns
+- **Diagram Reasoning**: Analyzing circuit diagrams, flowcharts, or architectural blueprints and explaining how components interact
+- **Medical Imaging**: Examining X-rays or lab results and reasoning through diagnostic steps
+- **UI Understanding**: Looking at a screenshot and explaining what each button does or how to navigate
+
+This technique is a game-changer for any problem where *seeing* the data is just as important as reading about it!`
         },
         {
           id: 68,
@@ -1449,17 +3056,45 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Multimodal CoT extends chain-of-thought reasoning to incorporate visual and other non-text inputs. The model analyzes images, diagrams, or other media alongside text, explicitly reasoning through observations from each modality. This cross-modal reasoning allows the model to reference specific visual elements while developing its step-by-step explanation, leading to better grounded answers for multimodal problems.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>Multimodal CoT extends chain-of-thought reasoning to incorporate visual and other non-text inputs. The model analyzes images, diagrams, or other media alongside text, explicitly reasoning through observations from each modality. This cross-modal reasoning allows the model to reference specific visual elements while developing its step-by-step explanation, leading to better grounded answers for multimodal problems.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInBottom" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Multimodal LLMs only</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="scaleIn" delay={1.2}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+                <p>ScienceQA-style diagram reasoning: "Analyze this circuit diagram, identify the components, explain how current flows through each element, and determine the output voltage."</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### How Multimodal CoT Works (CoT 👉 'cot')
+
+Alright, let's break down the mechanics! How does this actually work under the hood?
+
+#### The Process Flow
+First, the model receives both an image and a text prompt. It then processes the image through its vision encoder — this is the part that "sees" the image and understands visual features like shapes, colors, text, spatial relationships, and patterns. At the same time, it processes the text prompt through its language understanding components.
+
+Here's where it gets interesting: instead of just mashing these together, the model performs **cross-modal reasoning**. It explicitly identifies visual observations, relates them to the textual context, and then builds a step-by-step reasoning chain that references both modalities. For example, it might say: "I observe three bars in the chart. The first bar shows 45% (visual), which corresponds to Q1 revenue mentioned in the text. The second bar at 62% is higher, indicating Q2 growth..."
+
+#### Image Understanding Plus Step-by-Step Reasoning
+This is the key difference from just showing an image to a model and asking for an answer. Multimodal CoT forces the model to *explain what it sees* before jumping to conclusions. It's like having a colleague walk you through a chart: "See this line here? It dips around March. That's when we had the supply chain issue mentioned in the notes. Then it recovers in April..."
+
+This step-by-step approach dramatically reduces hallucinations because the model has to commit to specific observations before making inferences. If it claims there's a red circle in the diagram, that claim becomes part of the reasoning chain and can be verified.
+
+#### Real-World Example Deep-Dive
+Let's take that circuit diagram example. Without Multimodal CoT, you might get: "The output voltage is 12V" with no explanation. With Multimodal CoT, you get: "Looking at the diagram, I see a 24V power source at the top left. Following the circuit path, there's a resistor R1 with 100Ω marked. The current flows through R1 to the junction point. I observe a voltage divider configuration with R2 also at 100Ω to ground. Using the voltage divider formula with equal resistances, the output voltage at the middle junction is 24V × (100Ω / 200Ω) = 12V."
+
+See the difference? The model explicitly references visual elements, traces the reasoning path, and shows its work. This is **huge** for debugging, verification, and trust in AI systems!
+
+#### Why It's Advanced
+Now, this technique requires advanced multimodal models — we're talking GPT-4 with vision, Claude 3.5 Sonnet, or Gemini 1.5 Pro. These models have been specifically trained to align visual and language representations in a shared embedding space. Not every AI can do this!`
         },
         {
           id: 69,
@@ -1467,16 +3102,65 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Requires multimodal models with strong vision capabilities. Models must be able to reason about visual content systematically.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInTop" delay={0.4}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"Given the image [image] and question '', list visual observations, relate them to text cues, then infer the answer step-by-step."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="flipCard" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 Pro - Requires multimodal models with strong vision capabilities. Models must be able to reason about visual content systematically.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### Implementing Multimodal CoT (CoT 👉 'cot')
+
+Let's get practical! How do you actually use this in your code?
+
+#### The Prompt Structure
+The key to effective Multimodal CoT is in your prompt design. You want to explicitly guide the model to perform visual analysis before reasoning. Here's the pattern:
+
+**Step 1:** Provide the image (as a URL, base64, or file upload depending on your API)
+**Step 2:** In your text prompt, structure it like this:
+- "Given the image above and the question: [your question]"
+- "First, list your visual observations from the image"
+- "Then, relate these observations to any text cues or context provided"
+- "Finally, reason through the answer step-by-step"
+
+This three-part structure — observe, relate, reason — is what triggers the chain-of-thought behavior across modalities.
+
+#### Real Implementation Examples
+Let me give you some practical prompts you can use today:
+
+**For Chart Analysis:**
+"Look at this sales chart. First, describe what you see: axes, data points, trends. Then explain how each trend relates to the quarterly metrics mentioned in the text. Finally, predict next quarter's performance with your reasoning."
+
+**For Diagrams:**
+"Examine this system architecture diagram. List all components you observe and their connections. Explain how data flows through the system based on the arrows and labels. Then identify the potential bottleneck and explain your reasoning."
+
+**For OCR and Document Understanding:**
+"Analyze this invoice image. Extract all visible text fields, their positions, and values. Cross-reference these with the expected invoice format described below. Then validate whether this invoice is complete and correctly formatted, explaining your reasoning."
+
+**For UI Screenshots:**
+"Look at this application interface. Describe each UI element you see and its visual state (enabled/disabled, selected, etc.). Based on the user's goal to 'submit a form', explain step-by-step which elements they should interact with and in what order."
+
+#### Model Selection
+Not all models are created equal here! You need models specifically trained on vision-language tasks:
+- **GPT-4o** (the "o" stands for "omni" — multimodal): Excellent for general-purpose visual reasoning
+- **Claude 3.5 Sonnet**: Very strong on document understanding and charts
+- **Gemini 1.5 Pro**: Great for long-context visual documents, can handle multiple images
+
+Make sure you're using the vision-enabled API endpoints. For example, with OpenAI, you'd use the chat completions API with image_url content types.
+
+#### Quick Implementation Tips
+- **Image Quality Matters**: Higher resolution images give better results, but watch out for token usage
+- **Be Specific**: Generic prompts like "what do you see?" get generic answers. Ask specific questions!
+- **Iterate on Prompts**: Your first prompt probably won't be perfect. Test and refine based on the outputs
+- **Combine with Other Techniques**: You can use Multimodal CoT *with* RAG, self-consistency, or other patterns we've covered!`
         },
         {
           id: 70,
@@ -1484,17 +3168,71 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Hallucinated visual claims without grounding</li>
-                <li>Requires robust vision models with spatial reasoning</li>
-                <li>Quality varies significantly by image type</li>
-                <li>May struggle with fine-grained visual details</li>
-              </ul>
+              <GSAPAnimated animation="slideInBottom" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Hallucinated visual claims without grounding</li>
+                  <li>Requires robust vision models with spatial reasoning</li>
+                  <li>Quality varies significantly by image type</li>
+                  <li>May struggle with fine-grained visual details</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#674b1a',
-          notes: ''
+          notes: `### Limitations and Considerations for Multimodal CoT (CoT 👉 'cot')
+
+Alright, let's talk about the elephant in the room — what are the gotchas? Where does Multimodal CoT struggle?
+
+#### The Hallucination Problem
+The biggest issue is **hallucinated visual claims**. Because the model generates a reasoning chain, it might confidently describe things that aren't actually in the image. For example, it might say "I see a red button in the top-right corner" when there's actually no button there at all! The chain-of-thought format makes these hallucinations sound very convincing because they're embedded in logical-sounding reasoning.
+
+**What to do about it:** Always verify critical visual claims, especially in high-stakes applications like medical imaging or financial document processing. Consider asking the model to provide specific coordinates or bounding boxes for visual elements it references — this forces more grounding. You can also use multiple runs with self-consistency to check if the visual observations remain stable across attempts.
+
+#### Model Requirements
+This technique requires *advanced* vision capabilities, not just basic image understanding. The model needs:
+- **Spatial reasoning**: Understanding where objects are relative to each other
+- **Text extraction**: Reading labels, numbers, and embedded text in images  
+- **Visual relationships**: Understanding connections, flows, and hierarchies in diagrams
+- **Color and pattern recognition**: Distinguishing between visual elements
+
+Not all multimodal models have these capabilities equally! Some models are better at natural images (photos), while others excel at diagrams and charts. Test your specific use case.
+
+#### Image Quality Matters A LOT
+The quality and type of image dramatically affects results:
+- **Charts and Diagrams**: Usually work great, especially if clean and high-contrast
+- **Photographs**: Good for scene understanding, but can struggle with fine details
+- **Scanned Documents**: Quality varies based on scan resolution and document clarity
+- **Screenshots**: Generally excellent, but tiny text can be problematic
+- **Hand-drawn Diagrams**: Can be challenging if messy or ambiguous
+
+**Pro tip:** If you're working with low-quality images, consider pre-processing them — increase contrast, crop to relevant areas, or even use OCR to extract text separately before feeding to the model.
+
+#### Fine-Grained Visual Details
+Models can struggle with very small or detailed visual elements. Things like:
+- Tiny text in complex diagrams
+- Subtle color gradations in heat maps
+- Fine-grained differences between similar objects
+- Precise measurements or counts of many small items
+
+For these cases, you might need to combine Multimodal CoT with other techniques like explicit OCR, image segmentation, or even breaking the image into multiple focused crops.
+
+#### Cost and Latency
+Let's be real — processing images with these advanced models is more expensive than text-only prompts. Image tokens count significantly toward your API costs, and processing time is longer. For production systems, consider:
+- Caching results for identical images
+- Downsampling images when appropriate
+- Using tiered approaches (cheap model first, expensive model only if needed)
+
+#### When NOT to Use This
+Don't use Multimodal CoT when:
+- You just need basic image classification (a simple vision API is faster and cheaper)
+- The image is decorative or not central to the task
+- You're on a tight budget and text-only alternatives exist
+- You need real-time responses (video frames, live feeds)
+
+That said, when you *do* need to reason about visual information — charts, diagrams, documents, UI — Multimodal CoT is absolute gold. Just be aware of these limitations and test thoroughly!`
         }
       ]
     },
@@ -1508,20 +3246,40 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Definition</h3>
-              <p>Use graphs/knowledge graphs to structure context and reasoning for LLMs.</p>
-              <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Graph-grounded explanation and answer</li>
-                <li>Structured representation of relationships</li>
-                <li>Multi-hop reasoning along graph paths</li>
-                <li>Explicit entity and relationship tracking</li>
-              </ul>
-              <p style={{ marginTop: '20px' }}>Best for multi-document QA, multi-hop reasoning, and temporal/entity linking tasks. Structures knowledge as explicit graphs for reasoning.</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3>Definition</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <p>Use graphs/knowledge graphs to structure context and reasoning for LLMs.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={0.6}>
+                <h3 style={{ color: '#2ecc71', marginTop: '30px' }}>Goal & Benefits</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.15} delay={0.9}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Graph-grounded explanation and answer</li>
+                  <li>Structured representation of relationships</li>
+                  <li>Multi-hop reasoning along graph paths</li>
+                  <li>Explicit entity and relationship tracking</li>
+                </ul>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="slideInBottom" delay={1.5}>
+                <p style={{ marginTop: '20px' }}>Best for multi-document QA, multi-hop reasoning, and temporal/entity linking tasks. Structures knowledge as explicit graphs for reasoning.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### Graph Prompting Overview
+
+Welcome to our final advanced technique: Graph Prompting! This is where things get really interesting, folks. Instead of treating information as a flat list or a simple hierarchy, we're organizing knowledge the way our brains do—as interconnected networks of concepts and relationships.
+
+Think about how you understand the world. When I mention "Apple," your brain doesn't just retrieve a single fact—it activates a whole web of connections. Is it the fruit? The tech company? If it's the company, you're thinking about Steve Jobs, iPhones, Silicon Valley, maybe their retail stores. Each of these nodes connects to others. That's exactly what graph prompting does for AI.
+
+The core idea is beautifully simple: we extract entities (like people, places, companies, events) and the relationships between them (founded by, located in, acquired, partnered with), then build an explicit knowledge graph. Instead of the AI reasoning through raw text, it follows the graph structure—traversing edges, connecting nodes, and making multi-hop inferences along explicit paths.
+
+This is incredibly powerful for questions like "How is Company A connected to Person B?" where the answer might require traversing through several intermediate relationships. The graph makes these connections explicit and traceable, rather than hoping the LLM magically infers them from context.
+
+Let's dive into how this works and when you'd want to use it!`
         },
         {
           id: 72,
@@ -1529,17 +3287,41 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>How It Works</h3>
-              <p>Graph Prompting extracts entities and relationships from documents to build a knowledge graph representation. The LLM then reasons over this structured graph to answer questions, following entity relationships and making multi-hop inferences. This explicit structure helps track complex relationships and provides interpretable reasoning paths through the graph, making it easier to verify and explain answers.</p>
-              <h3 style={{ marginTop: '30px' }}>Complexity</h3>
-              <p><strong>Level:</strong> Advanced</p>
-              <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - LLM plus graph tools/database (Neo4j, etc.)</p>
-              <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
-              <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
+              <GSAPAnimated animation="rotateIn" delay={0}>
+                <h3>How It Works</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.4}>
+                <p>Graph Prompting extracts entities and relationships from documents to build a knowledge graph representation. The LLM then reasons over this structured graph to answer questions, following entity relationships and making multi-hop inferences. This explicit structure helps track complex relationships and provides interpretable reasoning paths through the graph, making it easier to verify and explain answers.</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.8}>
+                <h3 style={{ marginTop: '30px' }}>Complexity</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="bounceIn" delay={1.1}>
+                <p><strong>Level:</strong> Advanced</p>
+                <p><strong>Best Models:</strong> GPT-4/4o, Claude 3.5, Gemini 1.5 - LLM plus graph tools/database (Neo4j, etc.)</p>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInLeft" delay={1.4}>
+                <h3 style={{ marginTop: '30px' }}>Real-World Example</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1.7}>
+                <p>Due-diligence assistant tracing ownership across filings by constructing knowledge graphs of corporate entities and their relationships, allowing for multi-hop inference on complex ownership structures.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### How Graph Prompting Works
+
+Alright, let's break down the mechanics. Graph Prompting is actually a multi-stage pipeline, and each stage is crucial.
+
+**Stage one: Entity Extraction.** We scan through documents and identify the key entities—people, organizations, locations, products, events, whatever matters for your domain. This is like highlighting the main characters in a story. Modern LLMs are actually quite good at this with proper prompting, though you might use specialized Named Entity Recognition models for production systems.
+
+**Stage two: Relationship Extraction.** This is where the magic happens. We don't just want isolated entities; we want to know how they connect. Who founded what? Who reports to whom? Which company acquired which startup? These relationships become the edges in our graph. Think of it like drawing lines between dots—suddenly patterns emerge that weren't obvious before.
+
+**Stage three: Graph Construction.** We take these entities and relationships and build an actual graph structure, often stored in a graph database like Neo4j. Each entity is a node, each relationship is an edge. You might also add properties—dates, amounts, types of relationships. This gives us a queryable, traversable structure.
+
+**Stage four: Graph-Based Reasoning.** When a question comes in, we don't just throw raw text at the LLM. We identify relevant subgraphs—the portions of the knowledge graph that matter for this query—and present that structured information. The LLM can then follow paths through the graph: "Company A is owned by Holding Company B, which is controlled by Person C, who also serves on the board of Company D." That's a three-hop inference that's explicit and traceable.
+
+Think about a due diligence scenario at an investment firm. You're analyzing a company, and you need to understand its ownership structure across multiple SEC filings, press releases, and corporate documents. A traditional search would give you fragments. But with graph prompting, you construct a comprehensive ownership graph—who owns what percentage, when did acquisitions happen, what are the board relationships—and now you can answer complex queries like "Are there any circular ownership patterns?" or "Who are the ultimate beneficial owners?" The graph makes these insights accessible and verifiable.`
         },
         {
           id: 73,
@@ -1547,16 +3329,38 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-code' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3>Example Prompt</h3>
-              <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
-                {`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
-              </pre>
-              <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
-              <p>GPT-4/4o, Claude 3.5, Gemini 1.5 for language understanding, plus graph database infrastructure (Neo4j, NetworkX) and entity extraction capabilities. May require NER and relation extraction models.</p>
+              <GSAPAnimated animation="slideInTop" delay={0}>
+                <h3>Example Prompt</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="flipCard" delay={0.3}>
+                <pre style={{ backgroundColor: 'rgba(46, 204, 113, 0.1)', padding: '12px', borderRadius: '8px', fontSize: '1.2rem', whiteSpace: 'pre-wrap' }}>
+                  {`"From the corpus, extract entities/relations into a mini knowledge graph. Using that graph, answer: <question>. Show the path used."`}
+                </pre>
+              </GSAPAnimated>
+              <GSAPAnimated animation="slideInRight" delay={0.7}>
+                <h3 style={{ marginTop: '30px' }}>Supported Models</h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={1}>
+                <p>GPT-4/4o, Claude 3.5, Gemini 1.5 for language understanding, plus graph database infrastructure (Neo4j, NetworkX) and entity extraction capabilities. May require NER and relation extraction models.</p>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### Implementation Details
+
+Let's look at how you'd actually implement this. The prompt structure is deceptively simple, but there's significant infrastructure behind it.
+
+The basic prompt pattern goes something like: "From these documents, extract all entities and their relationships into a knowledge graph. Then, using that graph structure, answer the question: [your question]. Show me the reasoning path you followed through the graph."
+
+But here's the thing—this isn't just a prompt, it's a system. You need several components working together. First, you need the LLM to do entity and relationship extraction. GPT-4, Claude 3.5, or Gemini 1.5 can all handle this with proper prompting, though you might get better results with specialized NER models for entities.
+
+Second, you need somewhere to store and query this graph. For lightweight cases, you might use NetworkX in Python to build an in-memory graph. But for production systems, you're looking at graph databases like Neo4j or Amazon Neptune. These aren't just storage—they give you powerful graph query languages like Cypher that let you find shortest paths, detect communities, identify central nodes, all the graph theory goodness.
+
+Third, you need a strategy for subgraph extraction. You can't feed the entire graph to the LLM—it would be too large. So when a question comes in, you identify the relevant portion of the graph, maybe using keyword matching on entity names, or semantic similarity on entity descriptions. You extract that subgraph plus maybe one or two hops of neighbors for context.
+
+Real-world example: imagine you're building a research assistant for a law firm. You've ingested thousands of case documents. When someone asks "How is Defendant A connected to Corporation B?", you first extract the subgraph containing those two entities and their immediate neighbors, then you run a pathfinding algorithm to find all paths between them, and finally you present those paths to the LLM asking it to interpret which connections are legally meaningful. The LLM might say: "Defendant A served as CFO of Company X, which was acquired by Corporation B in 2015, establishing a prior business relationship."
+
+The beauty is that the reasoning path is explicit and auditable. You can show the lawyer: "Here's the graph path we followed: Defendant A → employed_by → Company X → acquired_by → Corporation B." No black box, no hallucination risk—the relationships are explicitly documented in the source material.`
         },
         {
           id: 74,
@@ -1564,17 +3368,33 @@ Repeat until enough info, then give Final Answer: <answer>`}
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ fontSize: '2rem', padding: '30px', lineHeight: '2', color: '#fff' }}>
-              <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Knowledge graph construction errors propagate</li>
-                <li>Synchronization challenges with evolving data</li>
-                <li>Entity resolution and disambiguation required</li>
-                <li>Graph quality critical for reasoning accuracy</li>
-              </ul>
+              <GSAPAnimated animation="bounceIn" delay={0}>
+                <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.4}>
+                <ul style={{ fontSize: '1.2rem' }}>
+                  <li>Knowledge graph construction errors propagate</li>
+                  <li>Synchronization challenges with evolving data</li>
+                  <li>Entity resolution and disambiguation required</li>
+                  <li>Graph quality critical for reasoning accuracy</li>
+                </ul>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#1a6731',
-          notes: ''
+          notes: `### Limitations and Considerations
+
+Now let's talk about the challenges, because graph prompting is powerful but not a silver bullet. There are real gotchas you need to watch for.
+
+**Error propagation is the big one.** If your entity extraction gets something wrong—maybe it thinks "Apple" the company and "apple" the fruit are the same entity, or it misidentifies a relationship—that error becomes part of your graph. And then every downstream query that touches that part of the graph inherits that error. It's like building on a shaky foundation. The LLM might reason perfectly over the graph structure, but if the structure itself is wrong, you get wrong answers. Garbage in, gospel out—except now the garbage is structured!
+
+**Entity resolution is surprisingly hard.** Is "Microsoft," "Microsoft Corporation," "MSFT," and "MS" all the same entity? What about "Bill Gates" vs "William Henry Gates III"? Humans can figure this out from context, but automated systems struggle. You need robust entity resolution—often called entity linking or coreference resolution—and it's not trivial. Get it wrong and you fragment your graph into disconnected components or create spurious connections.
+
+**Keeping the graph current is another challenge.** The real world changes—companies merge, people change jobs, new relationships form. If your knowledge graph is built from documents ingested last month, it might be stale. You need strategies for incremental updates, versioning, or periodic rebuilds. Some systems maintain temporal graphs where relationships have timestamps, so you can ask "Who was the CEO in 2020?" versus "Who is the CEO now?"
+
+**The quality ceiling is real.** Your graph-based reasoning is only as good as your graph. If you have incomplete entity extraction—maybe you only caught 60 percent of the relevant entities—or if your relationship extraction is noisy, the LLM's answers will reflect that. Think of it like trying to navigate with an incomplete map. Sure, you can follow the roads you can see, but you might miss the highway that would get you there faster because it's not on your map.
+
+**Finally, there's the infrastructure tax.** Graph databases, entity extraction pipelines, subgraph extraction logic—this is not a simple prompt pattern you can drop into your app. It's a full system architecture. For problems that truly need multi-hop reasoning over complex relationships, it's absolutely worth it. But don't reach for graph prompting when a simpler technique would suffice. Use it where the structure of relationships is genuinely central to the problem.`
         }
       ]
     },
@@ -1589,58 +3409,74 @@ Repeat until enough info, then give Final Answer: <answer>`}
           content: (
             <div style={{ fontSize: '2rem', margin: '0 auto', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-                <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
-                Complexity & Use Case Matrix
-              </h3>
-              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
-                <thead>
-                  <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
-                    <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td style={{ padding: '10px', border: '1px solid #555', color: '#2ecc71', fontWeight: 'bold' }}>Simple</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>1. Zero-shot<br />2. Few-shot (simple)</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>Quick baselines, well-known tasks, email triage</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM API only</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '10px', border: '1px solid #555', color: '#f39c12', fontWeight: 'bold' }}>Intermediate</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>3. CoT<br />4. Meta<br />5. Self-Consistency<br />6. Generate Knowledge<br />7. Prompt Chaining<br />9. RAG</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>Math/logic, standardized outputs, grounded answers, workflows</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + orchestration<br />RAG needs vector DB</td>
-                  </tr>
-                  <tr>
-                    <td style={{ padding: '10px', border: '1px solid #555', color: '#e74c3c', fontWeight: 'bold' }}>Advanced</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>8. Tree of Thoughts<br />10. ART<br />11-13. APE/Active/DSP<br />14-16. PAL/ReAct/Reflexion<br />17. Multimodal CoT<br />18. Graph Prompting</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>Complex planning, tool use, code execution, optimization, multi-hop reasoning</td>
-                    <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + tools + search control<br />Code sandbox<br />Active learning loops<br />Graph databases</td>
-                  </tr>
-                </tbody>
-              </table>
-              <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-                <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-                  <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
-                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h3 style={{ marginBottom: '25px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
+                  <SvgIcon iconName="duo-chart-bar" sizeName="2x" darkModeInvert={true} />
+                  Complexity & Use Case Matrix
+                </h3>
+              </GSAPAnimated>
+              <GSAPAnimated animation="fadeIn" delay={0.3}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '1.2rem' }}>
+                  <thead>
+                    <tr style={{ backgroundColor: 'rgba(52, 152, 219, 0.2)' }}>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Complexity</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Techniques</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Best For</th>
+                      <th style={{ padding: '10px', border: '1px solid #555', fontSize: '2rem' }}>Infrastructure Needs</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style={{ padding: '10px', border: '1px solid #555', color: '#2ecc71', fontWeight: 'bold' }}>Simple</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>1. Zero-shot<br />2. Few-shot (simple)</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>Quick baselines, well-known tasks, email triage</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>LLM API only</td>
+                    </tr>
+                    <tr>
+                      <td style={{ padding: '10px', border: '1px solid #555', color: '#f39c12', fontWeight: 'bold' }}>Intermediate</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>3. CoT<br />4. Meta<br />5. Self-Consistency<br />6. Generate Knowledge<br />7. Prompt Chaining<br />9. RAG</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>Math/logic, standardized outputs, grounded answers, workflows</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + orchestration<br />RAG needs vector DB</td>
+                    </tr>
+                    <tr>
+                      <td style={{ padding: '10px', border: '1px solid #555', color: '#e74c3c', fontWeight: 'bold' }}>Advanced</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>8. Tree of Thoughts<br />10. ART<br />11-13. APE/Active/DSP<br />14-16. PAL/ReAct/Reflexion<br />17. Multimodal CoT<br />18. Graph Prompting</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>Complex planning, tool use, code execution, optimization, multi-hop reasoning</td>
+                      <td style={{ padding: '10px', border: '1px solid #555' }}>LLM + tools + search control<br />Code sandbox<br />Active learning loops<br />Graph databases</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.7}>
+                <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                    <strong style={{ color: '#2ecc71' }}>🟢 Start Here</strong>
+                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Zero-shot and few-shot for quick wins</p>
+                  </div>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                    <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
+                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
+                  </div>
+                  <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
+                    <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
+                    <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
+                  </div>
                 </div>
-                <div style={{ padding: '10px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-                  <strong style={{ color: '#f39c12' }}>🟡 Production Ready</strong>
-                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>CoT, RAG, and chaining for most use cases</p>
-                </div>
-                <div style={{ padding: '10px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '8px', textAlign: 'center' }}>
-                  <strong style={{ color: '#e74c3c' }}>🔴 Specialized</strong>
-                  <p style={{ fontSize: '1.2rem', marginTop: '5px' }}>Advanced techniques for complex problems</p>
-                </div>
-              </div>
+              </GSAPStaggerList>
             </div>
           ),
           backgroundColor: '#34495E',
-          notes: ''
+          notes: `### Complexity Overview - Choosing the Right Tool
+
+Alright, now that we've covered all 18 techniques, let's step back and get the big picture. This matrix is your decision-making framework—think of it as the periodic table of prompt engineering!
+
+**The Simple tier—green light zone.** This is your starting point for almost everything: Zero-shot and Few-shot. Just LLM API, no fancy infrastructure. If you're building something new, start here. Seriously. I see way too many people jumping straight to complex architectures when a well-crafted zero-shot prompt would work perfectly fine. These techniques handle probably 80 percent of real-world tasks: email classification, content generation, simple Q&A, summarization. The infrastructure cost is minimal—just API calls—and the cognitive overhead is low. Your team can understand and maintain these easily.
+
+**The Intermediate tier—yellow, production-ready zone.** This is where most production systems eventually land. Chain of Thought for reasoning, RAG for grounded knowledge, Prompt Chaining for complex workflows, Meta-prompting for consistency. Notice the infrastructure grows: you need orchestration logic, maybe a vector database for RAG, some workflow management. But these techniques are battle-tested at scale. Companies run entire products on RAG pipelines. The complexity is justified because you're solving problems that simple prompts can't handle: you need external knowledge, or step-by-step reasoning, or standardized outputs.
+
+**The Advanced tier—red, specialized zone.** These are your power tools for when you truly need them: Tree of Thoughts for complex planning, ReAct for tool use, PAL for code execution, Graph Prompting for relationship reasoning. The infrastructure needs are significant: graph databases, code sandboxes, active learning loops, sophisticated search control. These techniques shine in specific scenarios—legal discovery, scientific research, complex automation—but they're overkill for most applications.
+
+The key insight: **climb the ladder only as high as your problem requires.** Don't start with graph prompting when few-shot would work. But also don't stay stuck on zero-shot when you're fighting a problem that needs structured reasoning. Match the technique to the task complexity, and always start simple then scale up if needed.`
         },
         {
           id: 76,
@@ -1651,55 +3487,87 @@ Repeat until enough info, then give Final Answer: <answer>`}
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
-                    Getting Started
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Start Simple:</strong> Begin with zero-shot, move to few-shot if needed</li>
-                    <li><strong>Add CoT:</strong> For reasoning tasks, add "think step-by-step"</li>
-                    <li><strong>Use RAG:</strong> When you need fresh knowledge or citations</li>
-                    <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
-                    Production Considerations
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Monitor Outputs:</strong> Log prompts and responses</li>
-                    <li><strong>Version Control:</strong> Track prompt templates like code</li>
-                    <li><strong>Cost Management:</strong> Use simpler techniques when possible</li>
-                    <li><strong>Latency Budgets:</strong> Consider multi-call overhead</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInLeft" delay={0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
+                      Getting Started
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={0.3}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Start Simple:</strong> Begin with zero-shot, move to few-shot if needed</li>
+                      <li><strong>Add CoT:</strong> For reasoning tasks, add "think step-by-step"</li>
+                      <li><strong>Use RAG:</strong> When you need fresh knowledge or citations</li>
+                      <li><strong>Chain When Complex:</strong> Break multi-step tasks into pipelines</li>
+                    </ul>
+                  </GSAPStaggerList>
+                  <GSAPAnimated animation="slideInLeft" delay={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#3498db', marginTop: '20px', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
+                      Production Considerations
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={1.2}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Monitor Outputs:</strong> Log prompts and responses</li>
+                      <li><strong>Version Control:</strong> Track prompt templates like code</li>
+                      <li><strong>Cost Management:</strong> Use simpler techniques when possible</li>
+                      <li><strong>Latency Budgets:</strong> Consider multi-call overhead</li>
+                    </ul>
+                  </GSAPStaggerList>
                 </div>
                 <div>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-arrow-right" sizeName="2x" darkModeInvert={true} />
-                    When to Scale Up
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Inconsistent Outputs:</strong> Try self-consistency or meta-prompting</li>
-                    <li><strong>Tool Needs:</strong> Move to ReAct or ART for API/search</li>
-                    <li><strong>Code Tasks:</strong> Use PAL for algorithmic problems</li>
-                    <li><strong>Multi-hop:</strong> Consider Graph Prompting or ToT</li>
-                    <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
-                  </ul>
-                  <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
-                    <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
-                    Common Pitfalls
-                  </h4>
-                  <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
-                    <li><strong>Over-engineering:</strong> Don't use advanced techniques prematurely</li>
-                    <li><strong>Prompt Drift:</strong> Test on diverse examples regularly</li>
-                    <li><strong>Tool Failures:</strong> Add error handling and fallbacks</li>
-                    <li><strong>Token Bloat:</strong> Watch cumulative costs in multi-call patterns</li>
-                  </ul>
+                  <GSAPAnimated animation="slideInRight" delay={0}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-arrow-right" sizeName="2x" darkModeInvert={true} />
+                      When to Scale Up
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={0.3}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Inconsistent Outputs:</strong> Try self-consistency or meta-prompting</li>
+                      <li><strong>Tool Needs:</strong> Move to ReAct or ART for API/search</li>
+                      <li><strong>Code Tasks:</strong> Use PAL for algorithmic problems</li>
+                      <li><strong>Multi-hop:</strong> Consider Graph Prompting or ToT</li>
+                      <li><strong>Optimization:</strong> Try APE for automatic prompt tuning</li>
+                    </ul>
+                  </GSAPStaggerList>
+                  <GSAPAnimated animation="slideInRight" delay={0.9}>
+                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#e74c3c', marginTop: '20px', marginBottom: '15px' }}>
+                      <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
+                      Common Pitfalls
+                    </h4>
+                  </GSAPAnimated>
+                  <GSAPStaggerList stagger={0.15} delay={1.2}>
+                    <ul style={{ lineHeight: '1.8', fontSize: '1.2rem' }}>
+                      <li><strong>Over-engineering:</strong> Don't use advanced techniques prematurely</li>
+                      <li><strong>Prompt Drift:</strong> Test on diverse examples regularly</li>
+                      <li><strong>Tool Failures:</strong> Add error handling and fallbacks</li>
+                      <li><strong>Token Bloat:</strong> Watch cumulative costs in multi-call patterns</li>
+                    </ul>
+                  </GSAPStaggerList>
                 </div>
               </div>
             </div>
           ),
           backgroundColor: '#145d33',
-          notes: ''
+          notes: `### Best Practices and Recommendations
+
+Let's wrap up with some hard-won wisdom from the trenches. These are the practices that separate successful prompt engineering from frustrating trial-and-error.
+
+**Getting Started—the progressive enhancement approach.** Always start with zero-shot. Literally every time. Write a clear, direct prompt and see what happens. You'll be surprised how often it just works! If it doesn't quite hit the mark, add a few examples—move to few-shot. Maybe three to five good examples. Still struggling? Now add Chain of Thought reasoning: "think step-by-step" or "explain your reasoning." This progressive approach means you only add complexity when you actually need it, and you understand exactly what each layer is buying you.
+
+When do you reach for RAG? When the LLM's training data isn't enough. If you need up-to-date information, proprietary knowledge, or verifiable citations, that's your signal. And prompt chaining—that's for when you're building workflows. If you're doing more than two or three conceptually distinct steps, break them into separate prompts. Each one can be simpler, more focused, and easier to debug.
+
+**Production considerations—treat prompts like code.** This is huge: version control your prompts. Put them in Git. When you change a prompt, you should be able to see the diff, revert if needed, and know exactly what changed when. Log everything—the prompts you send, the responses you get, the context. When something goes wrong in production (and it will), you need to be able to reconstruct exactly what happened.
+
+Cost management is real. Advanced techniques with multiple LLM calls can get expensive fast. A Tree of Thoughts evaluation might make 50 API calls for a single query. That's fine if you're solving a high-value problem, but not for every routine task. Use simpler techniques when possible. And watch your latency budgets—chained prompts add up. If your user is waiting 15 seconds for a response, maybe you need to simplify or parallelize.
+
+**Scaling up signals.** How do you know when to use more advanced techniques? Here's your checklist: Inconsistent outputs across similar inputs? Try self-consistency or meta-prompting to stabilize. Need tool use like API calls or search? That's ReAct or ART territory. Code generation or execution? PAL is your friend. Multi-hop reasoning across complex relationships? Graph Prompting or Tree of Thoughts. And if you're spending tons of time manually tuning prompts, APE might automate that optimization.
+
+**Common pitfalls—learn from others' mistakes.** Over-engineering is the number one trap. I've seen teams spend weeks building elaborate agentic systems when a simple RAG pipeline would have worked fine. Don't be that team. Prompt drift is sneaky: your prompt works great on your test cases, but in production it encounters edge cases you never thought of. Test on diverse, realistic examples regularly. Tool failures will happen—APIs go down, searches time out—so build error handling and fallbacks from day one. And token bloat: when you're chaining multiple prompts or doing self-consistency with ten samples, those tokens add up fast. Monitor your costs and optimize the expensive parts.
+
+The meta-lesson: **prompt engineering is iterative.** You won't nail it on the first try. Start simple, measure results, add complexity only where needed, and keep testing. Every technique we've covered is a tool in your toolbox. The skill is knowing which tool to reach for and when.`
         },
         {
           id: 77,
@@ -1708,53 +3576,77 @@ Repeat until enough info, then give Final Answer: <answer>`}
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <h2 style={{ marginBottom: '30px' }}>From Simple to Advanced</h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', margin: '0 auto', fontSize: '1.2rem', marginTop: '30px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 1: Foundations</strong>
-                    <p style={{ margin: '0px' }}>Zero-shot, Few-shot → Start here for 80% of tasks</p>
+              <GSAPAnimated animation="scaleIn" delay={0}>
+                <h2 style={{ marginBottom: '30px' }}>From Simple to Advanced</h2>
+              </GSAPAnimated>
+              <GSAPStaggerList stagger={0.2} delay={0.3}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', margin: '0 auto', fontSize: '1.2rem', marginTop: '30px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟢</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 1: Foundations</strong>
+                      <p style={{ margin: '0px' }}>Zero-shot, Few-shot → Start here for 80% of tasks</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔵</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 2: Reasoning</strong>
+                      <p style={{ margin: '0px' }}>CoT, Meta, Self-Consistency → Add when logic matters</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟡</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 3: Retrieval & Orchestration</strong>
+                      <p style={{ margin: '0px' }}>RAG, Prompt Chaining → Production workflows</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟣</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 4: Agentic</strong>
+                      <p style={{ margin: '0px' }}>ReAct, PAL, Reflexion → Tools and self-improvement</p>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px' }}>
+                    <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔴</div>
+                    <div style={{ textAlign: 'left' }}>
+                      <strong>Level 5: Advanced</strong>
+                      <p style={{ margin: '0px' }}>ToT, APE, Graph Prompting → Research & optimization</p>
+                    </div>
                   </div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(52, 152, 219, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔵</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 2: Reasoning</strong>
-                    <p style={{ margin: '0px' }}>CoT, Meta, Self-Consistency → Add when logic matters</p>
-                  </div>
+              </GSAPStaggerList>
+              <GSAPAnimated animation="bounceIn" delay={1.5}>
+                <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px' }}>
+                  <p style={{ fontSize: '1.2rem', margin: 0 }}>
+                    <strong>⚡ Key Insight:</strong> Start at Level 1, climb only as high as your task requires
+                  </p>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(243, 156, 18, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟡</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 3: Retrieval & Orchestration</strong>
-                    <p style={{ margin: '0px' }}>RAG, Prompt Chaining → Production workflows</p>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(155, 89, 182, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🟣</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 4: Agentic</strong>
-                    <p style={{ margin: '0px' }}>ReAct, PAL, Reflexion → Tools and self-improvement</p>
-                  </div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px', padding: '15px', backgroundColor: 'rgba(231, 76, 60, 0.15)', borderRadius: '10px' }}>
-                  <div style={{ fontSize: '2em', minWidth: '50px', textAlign: 'center' }}>🔴</div>
-                  <div style={{ textAlign: 'left' }}>
-                    <strong>Level 5: Advanced</strong>
-                    <p style={{ margin: '0px' }}>ToT, APE, Graph Prompting → Research & optimization</p>
-                  </div>
-                </div>
-              </div>
-              <div style={{ marginTop: '30px', padding: '20px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '10px' }}>
-                <p style={{ fontSize: '1.2rem', margin: 0 }}>
-                  <strong>⚡ Key Insight:</strong> Start at Level 1, climb only as high as your task requires
-                </p>
-              </div>
+              </GSAPAnimated>
             </div>
           ),
           backgroundColor: '#2C3E50',
-          notes: ''
+          notes: `### Summary: The Prompt Engineering Ladder
+
+We've reached the end of our journey through 18 prompt engineering techniques, and I want to leave you with one powerful mental model: the ladder.
+
+**Level 1: Foundations.** Zero-shot and few-shot prompting. This is your ground floor, your default approach. Honestly, this solves about 80 percent of real-world problems. Need to categorize support tickets? Zero-shot. Want to generate marketing copy in a specific style? Few-shot with three examples. Don't overthink it. Start here, every single time. The infrastructure is trivial—just LLM API calls—and the cognitive load is minimal. Your whole team can work with these techniques.
+
+**Level 2: Reasoning.** Chain of Thought, Meta-prompting, Self-Consistency. Climb to this level when outputs need to be more thoughtful or more reliable. Math problems? CoT helps the model show its work. Need standardized JSON output? Meta-prompting sets the rules. Getting inconsistent answers? Self-consistency samples multiple reasoning paths. You're still just making API calls, but you're orchestrating them more carefully to improve quality.
+
+**Level 3: Retrieval & Orchestration.** RAG and Prompt Chaining. This is production territory. Most real-world applications eventually need external knowledge (RAG) or multi-step workflows (chaining). You're now running infrastructure: vector databases, retrieval pipelines, workflow orchestration. But these are proven patterns with tons of tooling support. Companies run entire products on this level.
+
+**Level 4: Agentic.** ReAct, PAL, Reflexion. Here's where AI starts to *do things*—calling APIs, writing and executing code, reflecting on its own outputs and improving. This is powerful but requires careful guardrails. Tool use means more failure modes. Self-correction means more LLM calls and higher costs. Use this level when the task truly requires autonomous actions or iteration.
+
+**Level 5: Advanced.** Tree of Thoughts, APE, Graph Prompting. The peak of the ladder, for specialized problems. Complex search over solution spaces, automatic prompt optimization, reasoning over knowledge graphs. The infrastructure is heavy: graph databases, sophisticated search algorithms, active learning loops. These techniques are incredible when you need them—research applications, legal discovery, complex planning problems—but they're major overkill for everyday tasks.
+
+**The key insight: Start at Level 1, climb only as high as your task requires.** Don't build Level 5 infrastructure to solve Level 1 problems. But also don't stay stuck at Level 1 when you're clearly fighting a Level 3 or 4 problem. The ladder gives you a framework for escalation. Try the simpler approach first. If it works, great—ship it! If it doesn't, move up one level and try again.
+
+This progression also maps to learning and adoption. Start by mastering the foundations. Get really good at zero-shot and few-shot prompting. Then learn reasoning techniques. Then retrieval. Each level builds on the previous ones. By the time you need agentic or advanced techniques, you'll have the judgment to use them wisely.
+
+Thank you for joining me through this deep dive. You now have a complete toolkit for prompt engineering, from the simplest techniques to the most sophisticated. Go forth and build amazing things—and remember, start simple and climb deliberately!`
         }
       ]
     }
