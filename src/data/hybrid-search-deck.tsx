@@ -20,7 +20,7 @@ export const hybridSearchDeck: Deck = {
           center: true,
           title: '11 Hybrid Search Patterns',
           content: (
-            <div style={{  }}>
+            <div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
                 <h3 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', gap: '10px' }}>
                   <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
