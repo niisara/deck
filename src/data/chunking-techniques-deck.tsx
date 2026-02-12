@@ -21,36 +21,36 @@ export const chunkingTechniquesDeck: Deck = {
           title: '26 Chunking Techniques & Cheat Sheet',
           content: (
             <div style={{ color: '#fff' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.2} duration={1.0}>
+              <GSAPAnimated delay={0.2} duration={1.0}>
                 <h2 style={{ marginBottom: '40px' }}>Practical guidance, defaults, and trade-offs for high-quality retrieval in RAG and NLP applications</h2>
               </GSAPAnimated>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '40px', marginTop: '50px' }}>
-                <GSAPAnimated animation="rotateIn" delay={0.5} duration={0.8}>
+                <GSAPAnimated delay={0.5} duration={0.8}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-file" sizeName="4x" style={{ color: '#3498db' }} />
                     <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Document</p>
                   </div>
                 </GSAPAnimated>
-                <GSAPAnimated animation="fadeIn" delay={0.8} duration={0.6}>
+                <GSAPAnimated delay={0.8} duration={0.6}>
                   <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
                 </GSAPAnimated>
-                <GSAPAnimated animation="rotateIn" delay={0.7} duration={0.8}>
+                <GSAPAnimated delay={0.7} duration={0.8}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-scissors" sizeName="4x" style={{ color: '#f39c12' }} />
                     <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Chunking</p>
                   </div>
                 </GSAPAnimated>
-                <GSAPAnimated animation="fadeIn" delay={1.0} duration={0.6}>
+                <GSAPAnimated delay={1.0} duration={0.6}>
                   <SvgIcon iconName="duo-arrow-right" sizeName="3x" style={{ color: '#95a5a6' }} />
                 </GSAPAnimated>
-                <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.8}>
+                <GSAPAnimated delay={0.9} duration={0.8}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <SvgIcon iconName="duo-cubes" sizeName="4x" style={{ color: '#2ecc71' }} />
                     <p style={{ marginTop: '15px', fontSize: '1.2rem' }}>Retrievable Units</p>
                   </div>
                 </GSAPAnimated>
               </div>
-              <GSAPAnimated animation="slideInBottom" delay={1.2} duration={0.7}>
+              <GSAPAnimated delay={1.2} duration={0.7}>
                 <div>
                   <p><strong>Prepared by:</strong> Nisar A</p>
                   <p><strong>Date:</strong> November 7, 2025</p>
@@ -81,7 +81,7 @@ Let's begin this journey by understanding what chunking really means and why it'
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#fff' }}>
               <div style={{ marginBottom: '30px' }}></div>
-              <GSAPAnimated animation="slideInTop" delay={0.1} duration={0.7}>
+              <GSAPAnimated delay={0.1} duration={0.7}>
                 <div style={{ marginBottom: '30px' }}>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#3498db', marginBottom: '15px' }}>
                     <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
@@ -99,7 +99,6 @@ Let's begin this journey by understanding what chunking really means and why it'
     style C fill:#81c784
     style D fill:#81c784
     style E fill:#e1bee7`}
-                      triggerText="View Process"
                     />
                   </h3>
                   <p style={{ fontSize: '1.2rem', lineHeight: '1.6' }}>
@@ -109,7 +108,7 @@ Let's begin this journey by understanding what chunking really means and why it'
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px' }}>
                 <div>
-                  <GSAPAnimated animation="slideInLeft" delay={0.3} duration={0.8}>
+                  <GSAPAnimated delay={0.3} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#2ecc71', marginBottom: '12px' }}>
                       <SvgIcon iconName="duo-check-circle" sizeName="2x" darkModeInvert={true} />
                       Why It's Important
@@ -123,7 +122,7 @@ Let's begin this journey by understanding what chunking really means and why it'
                       <li>Combats "lost-in-the-middle" effect in LLMs</li>
                     </ul>
                   </GSAPStaggerList>
-                  <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
+                  <GSAPAnimated delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#f39c12', marginTop: '15px', marginBottom: '12px' }}>
                       <SvgIcon iconName="duo-sliders" sizeName="2x" darkModeInvert={true} />
                       Key Variables
@@ -140,7 +139,7 @@ Let's begin this journey by understanding what chunking really means and why it'
                   </GSAPStaggerList>
                 </div>
                 <div>
-                  <GSAPAnimated animation="slideInRight" delay={0.3} duration={0.8}>
+                  <GSAPAnimated delay={0.3} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#9b59b6', marginBottom: '12px' }}>
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" darkModeInvert={true} />
                       Desired Outcomes
@@ -192,7 +191,7 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#4ad786' }}>
               <div style={{ marginBottom: '30px' }}></div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '15px' }}>
-                <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+                <GSAPAnimated delay={0.2} duration={0.8}>
                   <div>
                     <h4 style={{ color: '#3498db', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-ruler" sizeName="2x" darkModeInvert={true} />
@@ -208,7 +207,6 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
     style C fill:#81c784
     style D fill:#81c784
     style E fill:#81c784`}
-                        triggerText="📊"
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.4}>
@@ -232,7 +230,6 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
     style A fill:#4fc3f7
     style E fill:#81c784
     style F fill:#81c784`}
-                        triggerText="📊"
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
@@ -244,7 +241,7 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
                     </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
-                <GSAPAnimated animation="slideInTop" delay={0.3} duration={0.8}>
+                <GSAPAnimated delay={0.3} duration={0.8}>
                   <div>
                     <h4 style={{ color: '#9b59b6', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-sitemap" sizeName="2x" darkModeInvert={true} />
@@ -260,7 +257,6 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
     style D fill:#81c784
     style E fill:#ffd700
     style F fill:#e1bee7`}
-                        triggerText="📊"
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.08} delay={0.5}>
@@ -276,7 +272,7 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
                     </GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
-                <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.8}>
+                <GSAPAnimated delay={0.4} duration={0.8}>
                   <div>
                     <h4 style={{ color: '#f39c12', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-brain" sizeName="2x" darkModeInvert={true} />
@@ -291,7 +287,6 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
     style B fill:#e1bee7
     style D fill:#81c784
     style E fill:#81c784`}
-                        triggerText="📊"
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.1} delay={0.6}>
@@ -319,7 +314,6 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
     style C fill:#81c784
     style E fill:#81c784
     style G fill:#81c784`}
-                        triggerText="📊"
                       />
                     </h4>
                     <GSAPStaggerList stagger={0.12} delay={0.8}>
@@ -336,7 +330,7 @@ The diagram on screen shows the basic chunking pipeline. A large document flows 
                   </div>
                 </GSAPAnimated>
               </div>
-              <GSAPAnimated animation="bounceIn" delay={1.0} duration={0.8}>
+              <GSAPAnimated delay={1.0} duration={0.8}>
                 <p style={{ marginTop: '20px', textAlign: 'center', fontSize: '1.2rem', padding: '12px', backgroundColor: 'rgba(52, 152, 219, 0.1)', borderRadius: '8px' }}>
                   <strong>Each technique includes:</strong> Pros, Cons, Best Chunk Size, Overlap Size, Computational Cost, Use Cases, Tooling Support, and Complexity Level
                 </p>
@@ -379,7 +373,7 @@ The diagrams on screen show simplified workflows for each category. Let's dive d
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
@@ -428,7 +422,7 @@ This simplicity makes fixed-size chunking the go-to choice when you need somethi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
@@ -477,7 +471,7 @@ Despite these limitations, fixed-size chunking still has its place – you just 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
-              <GSAPAnimated animation="flipCard" delay={0.3} duration={1.0}>
+              <GSAPAnimated delay={0.3} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-ruler" sizeName="1x" />
                   Best Chunk Size
@@ -493,13 +487,13 @@ Despite these limitations, fixed-size chunking still has its place – you just 
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInLeft" delay={0.5} duration={0.7}>
+              <GSAPAnimated delay={0.5} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>300–1000 tokens (start with 512)</li>
                   <li>Varies by embedding model and content density</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="flipCard" delay={0.7} duration={1.0}>
+              <GSAPAnimated delay={0.7} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-link" sizeName="1x" />
                   Overlap Size
@@ -513,19 +507,19 @@ Despite these limitations, fixed-size chunking still has its place – you just 
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInLeft" delay={0.9} duration={0.7}>
+              <GSAPAnimated delay={0.9} duration={0.7}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>10–20% of chunk size (50–150 tokens)</li>
                   <li>Helps preserve context across chunk boundaries</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={1.1} duration={0.8}>
+              <GSAPAnimated delay={1.1} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gauge" sizeName="1x" />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.3} duration={0.6}>
+              <GSAPAnimated delay={1.3} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Low (implementation complexity and processing requirements)</li>
                 </ul>
@@ -557,7 +551,7 @@ These configurations give you a solid starting point, but remember: always test 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#c985ff', padding: '30px' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
                   Use Cases / Examples
@@ -586,7 +580,7 @@ These configurations give you a solid starting point, but remember: always test 
                 <div><li>Baseline RAG implementations</li></div>
                 <div><li>Simple knowledge bases</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInBottom" delay={0.8} duration={0.8}>
+              <GSAPAnimated delay={0.8} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-wrench" sizeName="1x" />
                   Tooling Support
@@ -598,13 +592,13 @@ These configurations give you a solid starting point, but remember: always test 
                 <div><li>Chroma, Weaviate, Pinecone</li></div>
                 <div><li>Custom implementations (simple)</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={1.3} duration={0.9}>
+              <GSAPAnimated delay={1.3} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.5} duration={0.6}>
+              <GSAPAnimated delay={1.5} duration={0.6}>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Required expertise and implementation difficulty</p>
               </GSAPAnimated>
             </div>
@@ -642,7 +636,7 @@ Now let's move on to our next technique, which addresses some of these semantic 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.3} duration={0.9}>
+              <GSAPAnimated delay={0.3} duration={0.9}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
@@ -694,7 +688,7 @@ This semantic integrity makes sentence-level chunking excellent for applications
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
@@ -750,7 +744,7 @@ Despite these challenges, sentence-level chunking remains valuable when precisio
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.9}>
+              <GSAPAnimated delay={0.2} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-ruler" sizeName="1x" />
                   Best Chunk Size
@@ -766,13 +760,13 @@ Despite these challenges, sentence-level chunking remains valuable when precisio
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={0.5} duration={0.6}>
+              <GSAPAnimated delay={0.5} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>1–3 sentences (~50–150 tokens)</li>
                   <li>Depends on sentence complexity and domain</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="rotateIn" delay={0.8} duration={0.9}>
+              <GSAPAnimated delay={0.8} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-link" sizeName="1x" />
                   Overlap Size
@@ -786,19 +780,19 @@ Despite these challenges, sentence-level chunking remains valuable when precisio
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.1} duration={0.6}>
+              <GSAPAnimated delay={1.1} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>Optional 1 sentence</li>
                   <li>Often unnecessary as sentences form natural boundaries</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="scaleIn" delay={1.4} duration={0.7}>
+              <GSAPAnimated delay={1.4} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gauge" sizeName="1x" />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.6} duration={0.6}>
+              <GSAPAnimated delay={1.6} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Medium (requires sentence segmentation processing)</li>
                 </ul>
@@ -830,7 +824,7 @@ These configurations strike a balance between precision and context, making sent
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6464', padding: '30px' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.7}>
+              <GSAPAnimated delay={0.2} duration={0.7}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
                   Use Cases / Examples
@@ -859,7 +853,7 @@ These configurations strike a balance between precision and context, making sent
                 <div><li>Snippet retrieval</li></div>
                 <div><li>FAQ systems and knowledge bases</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInBottom" delay={0.9} duration={0.8}>
+              <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-wrench" sizeName="1x" />
                   Tooling Support
@@ -871,13 +865,13 @@ These configurations strike a balance between precision and context, making sent
                 <div><li>Stanza sentence splitter</li></div>
                 <div><li>syntok and other sentence tokenizers</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={1.4} duration={0.8}>
+              <GSAPAnimated delay={1.4} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.6} duration={0.6}>
+              <GSAPAnimated delay={1.6} duration={0.6}>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Simple concept with some NLP preprocessing</p>
               </GSAPAnimated>
             </div>
@@ -917,7 +911,7 @@ Next, we'll look at paragraph-level chunking, which gives us even more context w
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#68ff95', padding: '30px' }}>
-              <GSAPAnimated animation="slideInBottom" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
@@ -971,7 +965,7 @@ This makes paragraph-level chunking the sweet spot for many real-world applicati
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#68ff95', padding: '30px' }}>
-              <GSAPAnimated animation="flipCard" delay={0.3} duration={1.0}>
+              <GSAPAnimated delay={0.3} duration={1.0}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
@@ -1026,7 +1020,7 @@ Despite these limitations, when you *do* have well-formatted prose documents, pa
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#68ff95', padding: '30px' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-ruler" sizeName="1x" />
                   Best Chunk Size
@@ -1044,13 +1038,13 @@ Despite these limitations, when you *do* have well-formatted prose documents, pa
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={0.5} duration={0.6}>
+              <GSAPAnimated delay={0.5} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>150–400 tokens (paragraph-bound)</li>
                   <li>Size varies based on document formatting</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.8} duration={0.8}>
+              <GSAPAnimated delay={0.8} duration={0.8}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-link" sizeName="1x" />
                   Overlap Size
@@ -1066,19 +1060,19 @@ Despite these limitations, when you *do* have well-formatted prose documents, pa
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.1} duration={0.6}>
+              <GSAPAnimated delay={1.1} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>0–1 sentence</li>
                   <li>Minimal overlap needed as paragraphs are natural breaks</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="scaleIn" delay={1.4} duration={0.7}>
+              <GSAPAnimated delay={1.4} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gauge" sizeName="1x" />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.6} duration={0.6}>
+              <GSAPAnimated delay={1.6} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Low (simple implementation and minimal processing)</li>
                 </ul>
@@ -1112,7 +1106,7 @@ This simplicity combined with semantic awareness makes paragraph chunking a go-t
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#68ff95', padding: '30px' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.9}>
+              <GSAPAnimated delay={0.2} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
                   Use Cases / Examples
@@ -1141,7 +1135,7 @@ This simplicity combined with semantic awareness makes paragraph chunking a go-t
                 <div><li>Content with clear paragraph delineation</li></div>
                 <div><li>Articles and essays</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInLeft" delay={0.9} duration={0.8}>
+              <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-wrench" sizeName="1x" />
                   Tooling Support
@@ -1153,13 +1147,13 @@ This simplicity combined with semantic awareness makes paragraph chunking a go-t
                 <div><li>Common text processing libraries</li></div>
                 <div><li>Simple string split on double newlines</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={1.5} duration={0.8}>
+              <GSAPAnimated delay={1.5} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.7} duration={0.6}>
+              <GSAPAnimated delay={1.7} duration={0.6}>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Simple implementation with minimal expertise required</p>
               </GSAPAnimated>
             </div>
@@ -1197,7 +1191,7 @@ Next, we'll explore recursive character text splitting, which combines the simpl
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
@@ -1256,7 +1250,7 @@ Recursive splitting gives you production-ready chunking that works well across d
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
-              <GSAPAnimated animation="flipCard" delay={0.3} duration={1.0}>
+              <GSAPAnimated delay={0.3} duration={1.0}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#e74c3c', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-xmark" sizeName="2x" darkModeInvert={true} />
                   Disadvantages
@@ -1310,7 +1304,7 @@ Despite these limitations, recursive character splitting is often the "good enou
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.3} duration={0.9}>
+              <GSAPAnimated delay={0.3} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-ruler" sizeName="1x" />
                   Best Chunk Size
@@ -1330,13 +1324,13 @@ Despite these limitations, recursive character splitting is often the "good enou
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={0.6} duration={0.6}>
+              <GSAPAnimated delay={0.6} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>400–800 tokens (typical)</li>
                   <li>Depends on document structure and separator frequency</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="bounceIn" delay={0.9} duration={0.9}>
+              <GSAPAnimated delay={0.9} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-link" sizeName="1x" />
                   Overlap Size
@@ -1355,19 +1349,19 @@ Despite these limitations, recursive character splitting is often the "good enou
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.2} duration={0.6}>
+              <GSAPAnimated delay={1.2} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>50–150 tokens</li>
                   <li>Higher overlap (20%) for complex content with many separators</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="rotateIn" delay={1.5} duration={0.8}>
+              <GSAPAnimated delay={1.5} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-gauge" sizeName="1x" />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.7} duration={0.6}>
+              <GSAPAnimated delay={1.7} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Low (simple string operations, slightly more than fixed-size)</li>
                 </ul>
@@ -1399,7 +1393,7 @@ These configurations give you a robust, general-purpose chunking strategy that w
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8db7ff', padding: '30px' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
                   <SvgIcon iconName="duo-lightbulb" sizeName="1x" />
                   Use Cases / Examples
@@ -1428,7 +1422,7 @@ These configurations give you a robust, general-purpose chunking strategy that w
                 <div><li>Text with varying structure</li></div>
                 <div><li>General-purpose chunking baseline</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInRight" delay={0.9} duration={0.8}>
+              <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-wrench" sizeName="1x" />
                   Tooling Support
@@ -1440,13 +1434,13 @@ These configurations give you a robust, general-purpose chunking strategy that w
                 <div><li>Snowflake SPLIT_TEXT_RECURSIVE_CHARACTER</li></div>
                 <div><li>Easy to implement custom in any language</li></div>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={1.4} duration={0.9}>
+              <GSAPAnimated delay={1.4} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px', marginTop: '25px' }}>
                   <SvgIcon iconName="duo-graduation-cap" sizeName="1x" />
                   Complexity Level
                 </h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.6} duration={0.6}>
+              <GSAPAnimated delay={1.6} duration={0.6}>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Simple to implement and use with minimal tuning</p>
               </GSAPAnimated>
             </div>
@@ -1486,7 +1480,7 @@ Next, we'll look at structure-aware chunking, which takes document understanding
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.2} duration={0.8}>
+              <GSAPAnimated delay={0.2} duration={0.8}>
                 <h3 style={{ display: 'flex', alignItems: 'center', gap: '12px', color: '#2ecc71', marginBottom: '25px' }}>
                   <SvgIcon iconName="duo-circle-check" sizeName="2x" darkModeInvert={true} />
                   Advantages
@@ -1543,7 +1537,7 @@ Structure-aware chunking transforms your retrieval from "finding text" to "findi
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.12} animation="slideInLeft">
+              <GSAPStaggerList stagger={0.12}>
                 <li>Parsing/layout extraction can be brittle</li>
                 <li>Requires well-structured documents</li>
                 <li>May produce uneven chunk sizes</li>
@@ -1575,21 +1569,21 @@ Understanding these limitations helps you decide when this technique is worth th
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.1} duration={0.7}>
+              <GSAPAnimated delay={0.1} duration={0.7}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.3}>
                 <li>300–1200 tokens (by section)</li>
                 <li>Sizes vary based on document structure and heading levels</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.7}>
+              <GSAPAnimated delay={0.5} duration={0.7}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.7}>
                 <li>Minimal across sections</li>
                 <li>Only necessary to maintain cross-sectional references</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInRight" delay={0.9} duration={0.7}>
+              <GSAPAnimated delay={0.9} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={1.0}>
@@ -1618,7 +1612,7 @@ These configurations give you a solid starting point, but remember to tune based
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#58ff64', padding: '30px' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.1} duration={0.8}>
+              <GSAPAnimated delay={0.1} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
@@ -1627,7 +1621,7 @@ These configurations give you a solid starting point, but remember to tune based
                 <li>Academic papers with clear sections</li>
                 <li>Technical reports, legal documents</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.8}>
+              <GSAPAnimated delay={0.6} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.8}>
@@ -1636,7 +1630,7 @@ These configurations give you a solid starting point, but remember to tune based
                 <li>Docling</li>
                 <li>LangChain HTML/MD splitters</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.1} duration={0.7}>
+              <GSAPAnimated delay={1.1} duration={0.7}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires structure parsing knowledge</p>
               </GSAPAnimated>
@@ -1669,7 +1663,7 @@ Structure-aware chunking is powerful when your documents cooperate. Use it when 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.18} animation="slideInRight">
+              <GSAPStaggerList stagger={0.18}>
                 <li>Heuristics by content type (lists, bullets, code, tables)</li>
                 <li>Preserves meaning of special content elements</li>
                 <li>Adapts to document formatting patterns</li>
@@ -1701,7 +1695,7 @@ This intelligence comes at a cost, but for documents with rich formatting, it's 
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.16} animation="fadeIn" delay={0.2}>
+              <GSAPStaggerList stagger={0.16} delay={0.2}>
                 <li>Rules require tuning for different domains</li>
                 <li>Domain-specific heuristics needed</li>
                 <li>Harder to maintain than simpler methods</li>
@@ -1733,21 +1727,21 @@ These challenges don't make content-aware chunking bad, they just mean you need 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#83ffec', padding: '30px' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.1} duration={0.9}>
+              <GSAPAnimated delay={0.1} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.3}>
                 <li>200–800 tokens (dynamic)</li>
                 <li>Varies based on content type and complexity</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={0.5} duration={0.9}>
+              <GSAPAnimated delay={0.5} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.7}>
                 <li>0–15% depending on content type</li>
                 <li>More for complex content, less for structured elements</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={0.9} duration={0.9}>
+              <GSAPAnimated delay={0.9} duration={0.9}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={1.0}>
@@ -1783,7 +1777,7 @@ These configurations give you flexibility while preserving content integrity. Ad
                 <li>Mixed content with lists/tables/code</li>
                 <li>Formatting-rich documents</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={0.6} duration={1.0}>
+              <GSAPAnimated delay={0.6} duration={1.0}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.8}>
@@ -1792,7 +1786,7 @@ These configurations give you flexibility while preserving content integrity. Ad
                 <li>Unstructured.io content extractors</li>
                 <li>Rule-based custom splitters</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.0} duration={0.8}>
+              <GSAPAnimated delay={1.0} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires expertise and domain-specific implementation</p>
               </GSAPAnimated>
@@ -1825,7 +1819,7 @@ Content-aware chunking is your go-to when content diversity demands intelligent 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.2} animation="slideInBottom">
+              <GSAPStaggerList stagger={0.2}>
                 <li>Topic-coherent chunks; high retrieval precision</li>
                 <li>Better semantic understanding and context preservation</li>
                 <li>Groups similar content regardless of physical proximity</li>
@@ -1857,7 +1851,7 @@ The intelligence comes at a cost, but for many applications, it's absolutely wor
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.17} animation="slideInTop" delay={0.2}>
+              <GSAPStaggerList stagger={0.17} delay={0.2}>
                 <li>Requires embeddings; adds computation cost</li>
                 <li>Tuning similarity thresholds can be challenging</li>
                 <li>Quality depends on embedding model choice</li>
@@ -1889,21 +1883,21 @@ These challenges don't disqualify semantic chunking, but they do mean you should
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1} duration={0.8}>
+              <GSAPAnimated delay={0.1} duration={0.8}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.3}>
                 <li>200–600 tokens per semantic unit</li>
                 <li>Varies based on topic cohesion and content density</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInLeft" delay={0.5} duration={0.8}>
+              <GSAPAnimated delay={0.5} duration={0.8}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.7}>
                 <li>0–10% (minimal overlap needed)</li>
                 <li>Semantic boundaries reduce need for significant overlap</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInLeft" delay={0.9} duration={0.8}>
+              <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={1.0}>
@@ -1932,7 +1926,7 @@ These configurations balance quality with computational reality. Tune based on y
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7b7bff', padding: '30px' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1} duration={0.9}>
+              <GSAPAnimated delay={0.1} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.3}>
@@ -1941,7 +1935,7 @@ These configurations balance quality with computational reality. Tune based on y
                 <li>Product documentation libraries</li>
                 <li>When retrieval precision is critical</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={0.6} duration={0.9}>
+              <GSAPAnimated delay={0.6} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.8}>
@@ -1950,7 +1944,7 @@ These configurations balance quality with computational reality. Tune based on y
                 <li>Superlinked VectorHub</li>
                 <li>LlamaIndex SemanticSplitter</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={1.0} duration={0.8}>
+              <GSAPAnimated delay={1.0} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate–Advanced</strong> - Requires understanding of embeddings and similarity thresholds</p>
               </GSAPAnimated>
@@ -1983,7 +1977,7 @@ Semantic chunking is the premium option for applications where retrieval quality
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.19} animation="slideInRight" delay={0.1}>
+              <GSAPStaggerList stagger={0.19} delay={0.1}>
                 <li>Topic segmentation via cohesion drops; classic, explainable</li>
                 <li>Finds natural topic boundaries in text</li>
                 <li>Good for documents with distinct topic shifts</li>
@@ -2015,7 +2009,7 @@ This is a sophisticated yet understandable approach that bridges classic NLP wit
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.15} animation="fadeIn" delay={0.3}>
+              <GSAPStaggerList stagger={0.15} delay={0.3}>
                 <li>Sensitive to parameters; domain variance</li>
                 <li>Can struggle with gradual topic transitions</li>
                 <li>Requires preprocessing and tuning</li>
@@ -2047,21 +2041,21 @@ TextTiling is powerful but demands respect and careful tuning to deliver its bes
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.1} duration={1.0}>
+              <GSAPAnimated delay={0.1} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.3}>
                 <li>Variable by tile/window (often 200–800 tokens)</li>
                 <li>Based on topic boundaries, not fixed size</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.5} duration={1.0}>
+              <GSAPAnimated delay={0.5} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={0.7}>
                 <li>None</li>
                 <li>Algorithm itself handles transitions between topics</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.9} duration={1.0}>
+              <GSAPAnimated delay={0.9} duration={1.0}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.14} delay={1.0}>
@@ -2090,7 +2084,7 @@ TextTiling's configurations reflect its linguistic foundation, prioritize semant
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff6eef', padding: '30px' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.1} duration={0.9}>
+              <GSAPAnimated delay={0.1} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.3}>
@@ -2099,7 +2093,7 @@ TextTiling's configurations reflect its linguistic foundation, prioritize semant
                 <li>Long-form content with distinct sections</li>
                 <li>Multi-topic document segmentation</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.9}>
+              <GSAPAnimated delay={0.6} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.16} delay={0.8}>
@@ -2108,7 +2102,7 @@ TextTiling's configurations reflect its linguistic foundation, prioritize semant
                 <li>Custom Python implementations</li>
                 <li>Research-oriented NLP libraries</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={1.0} duration={0.9}>
+              <GSAPAnimated delay={1.0} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires understanding of lexical cohesion and parameter tuning</p>
               </GSAPAnimated>
@@ -2141,7 +2135,7 @@ TextTiling bridges classic computational linguistics with modern chunking needs 
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.17} animation="slideInLeft" delay={0.2}>
+              <GSAPStaggerList stagger={0.17} delay={0.2}>
                 <li>Uses discourse units (EDUs) and relations for high fidelity semantics</li>
                 <li>Captures rhetorical structure and text organization</li>
                 <li>Preserves argumentative flow and logical connections</li>
@@ -2173,7 +2167,7 @@ This is the most linguistically sophisticated chunking approach available!`
           icon: { name: 'duo-circle-xmark' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.18} animation="slideInRight" delay={0.3}>
+              <GSAPStaggerList stagger={0.18} delay={0.3}>
                 <li>Parsers are computationally heavy</li>
                 <li>Not turnkey; requires specialized knowledge</li>
                 <li>Lower throughput than simpler methods</li>
@@ -2205,21 +2199,21 @@ RST chunking delivers unmatched linguistic sophistication, but the practical bar
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <GSAPAnimated animation="flipCard" delay={0.1} duration={1.1}>
+              <GSAPAnimated delay={0.1} duration={1.1}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
                 <li>Combine Elementary Discourse Units (EDUs) to ~150–400 tokens</li>
                 <li>Size based on discourse relation boundaries, not fixed counts</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={0.6} duration={1.1}>
+              <GSAPAnimated delay={0.6} duration={1.1}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.8}>
                 <li>None by default (discourse boundaries are respected)</li>
                 <li>Optional minimal overlap when coherence requires it</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={1.0} duration={1.1}>
+              <GSAPAnimated delay={1.0} duration={1.1}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', marginTop: '30px' }}>Computational Cost</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={1.1}>
@@ -2248,7 +2242,7 @@ These configurations reflect RST's unique approach, linguistic structure trumps 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#63ffae', padding: '30px' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.1} duration={1.0}>
+              <GSAPAnimated delay={0.1} duration={1.0}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.3}>
@@ -2257,7 +2251,7 @@ These configurations reflect RST's unique approach, linguistic structure trumps 
                 <li>Academic papers and legal documents</li>
                 <li>Complex reasoning over structured arguments</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={0.6} duration={1.0}>
+              <GSAPAnimated delay={0.6} duration={1.0}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px', marginTop: '30px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.15} delay={0.8}>
@@ -2266,7 +2260,7 @@ These configurations reflect RST's unique approach, linguistic structure trumps 
                 <li>Custom NLP pipelines</li>
                 <li>Academic libraries (e.g., NLTK-RST)</li>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={1.0} duration={0.9}>
+              <GSAPAnimated delay={1.0} duration={0.9}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px', marginTop: '30px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires specialized expertise and implementation difficulty</p>
               </GSAPAnimated>
@@ -2299,7 +2293,7 @@ RST chunking is the pinnacle of linguistic sophistication, use it when nothing e
           icon: { name: 'duo-circle-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <GSAPStaggerList stagger={0.16} animation="slideInBottom" delay={0.2}>
+              <GSAPStaggerList stagger={0.16} delay={0.2}>
                 <li>Honors tokenizer limits; predictable fit</li>
                 <li>Avoids truncation by embedding models</li>
                 <li>Matches exact token windows of models</li>
@@ -2360,7 +2354,7 @@ This is why token-aware chunking works best when combined with other strategies 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.15} duration={0.7}>
+              <GSAPAnimated delay={0.15} duration={0.7}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.3}>
@@ -2369,7 +2363,7 @@ This is why token-aware chunking works best when combined with other strategies 
                   <li>Should align with context window of target model</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInLeft" delay={0.5} duration={0.7}>
+              <GSAPAnimated delay={0.5} duration={0.7}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.7}>
@@ -2378,10 +2372,10 @@ This is why token-aware chunking works best when combined with other strategies 
                   <li>Helps preserve context across token boundaries</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInLeft" delay={0.9} duration={0.7}>
+              <GSAPAnimated delay={0.9} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.6}>
+              <GSAPAnimated delay={1.05} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Low (simple implementation complexity and minimal processing)</li>
                 </ul>
@@ -2406,7 +2400,7 @@ These configurations give you a solid starting point that works for most RAG app
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#eeff82', padding: '30px' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.1} duration={0.8}>
+              <GSAPAnimated delay={0.1} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.08} delay={0.35}>
@@ -2417,7 +2411,7 @@ These configurations give you a solid starting point that works for most RAG app
                   <li>Production RAG systems</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.8}>
+              <GSAPAnimated delay={0.6} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.08} delay={0.85}>
@@ -2428,7 +2422,7 @@ These configurations give you a solid starting point that works for most RAG app
                   <li>spaCy tokenizers</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.1} duration={0.7}>
+              <GSAPAnimated delay={1.1} duration={0.7}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner</strong> - Simple implementation with minimal expertise required</p>
               </GSAPAnimated>
@@ -2519,7 +2513,7 @@ Despite these challenges, for well-structured documentation, the benefits usuall
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.1} duration={0.8}>
+              <GSAPAnimated delay={0.1} duration={0.8}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -2548,7 +2542,7 @@ Despite these challenges, for well-structured documentation, the benefits usuall
                   <li>Varies based on document structure and heading density</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInRight" delay={0.55} duration={0.8}>
+              <GSAPAnimated delay={0.55} duration={0.8}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.08} delay={0.7}>
@@ -2557,10 +2551,10 @@ Despite these challenges, for well-structured documentation, the benefits usuall
                   <li>Sometimes includes parent heading for context</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInRight" delay={0.9} duration={0.8}>
+              <GSAPAnimated delay={0.9} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.6}>
+              <GSAPAnimated delay={1.05} duration={0.6}>
                 <ul style={{ lineHeight: '2', fontSize: '1.2rem' }}>
                   <li>Low–Medium (implementation complexity and processing requirements)</li>
                 </ul>
@@ -2573,7 +2567,7 @@ Let's dial in the practical settings for heading-based chunking so you can imple
 #### Best Chunk Size
 Unlike fixed-size chunking, heading-based chunks are **section-bounded**, meaning the chunk size is determined by your document structure rather than an arbitrary number. In practice, sections typically range from **200 to 1200 tokens**. That's quite a range, right? A short "Overview" section might be 200 tokens, while a detailed "API Reference" section could hit 1200 tokens or more.
 The key insight is that **heading density** affects your chunk sizes. Documents with many subsections create smaller, more focused chunks. Documents with sparse headings create larger, more comprehensive chunks. Think of a GitHub README with tons of H2 and H3 sections versus a blog post with just a few main headings.
-```mermaid
+\`\`\`mermaid
 graph TD
     A[Document] --> B[H1: Introduction<br/>200 tokens]
     A --> C[H1: Setup<br/>400 tokens]
@@ -2590,7 +2584,7 @@ graph TD
     style F fill:#e1bee7
     style G fill:#e1bee7
     style H fill:#e1bee7
-```
+\`\`\`
 #### Overlap Size
 For overlap, you typically want **0 to 5 percent**, which is minimal. Why so low? Because headings already provide natural boundaries. However, there's a clever trick: you can **include the parent heading** with each sub-section chunk. This gives context without bloating storage. For example, if you have "Installation > Linux Setup", you'd include the "Installation" heading with the "Linux Setup" content.
 #### Computational Cost
@@ -2603,7 +2597,7 @@ This configuration gives you semantically meaningful chunks that align with how 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7adcff', padding: '30px' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.1} duration={0.9}>
+              <GSAPAnimated delay={0.1} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.35}>
@@ -2614,7 +2608,7 @@ This configuration gives you semantically meaningful chunks that align with how 
                   <li>Wikis and developer documentation</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.9}>
+              <GSAPAnimated delay={0.6} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.85}>
@@ -2625,7 +2619,7 @@ This configuration gives you semantically meaningful chunks that align with how 
                   <li>LangChain's MarkdownTextSplitter</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.1} duration={0.7}>
+              <GSAPAnimated delay={1.1} duration={0.7}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Requires basic expertise and implementation</p>
               </GSAPAnimated>
@@ -2718,7 +2712,7 @@ Despite these challenges, the payoff in chunk quality often justifies the extra 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <GSAPAnimated animation="flipCard" delay={0.1} duration={1.0}>
+              <GSAPAnimated delay={0.1} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -2745,7 +2739,7 @@ Despite these challenges, the payoff in chunk quality often justifies the extra 
                   <li>Varies by element type (paragraph vs. section)</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={0.65} duration={1.0}>
+              <GSAPAnimated delay={0.65} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.09} delay={0.9}>
@@ -2754,7 +2748,7 @@ Despite these challenges, the payoff in chunk quality often justifies the extra 
                   <li>Often header/context overlap</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.1} duration={0.7}>
+              <GSAPAnimated delay={1.1} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Medium (parser overhead and DOM/AST processing requirements)</li>
@@ -2768,7 +2762,7 @@ Let's get into the practical configuration for structure-based chunking to help 
 #### Best Chunk Size
 Chunks are **element-grouped**, typically ranging from **300 to 900 tokens**. What does element-grouped mean? Instead of counting characters or tokens arbitrarily, you're grouping based on structural elements. A single paragraph might be 150 tokens, perfect for one chunk. A section element containing multiple paragraphs might be 600 tokens, still a great chunk. A complex article with code examples could hit 900 tokens.
 The key is that **element type determines size**. Small elements like paragraphs and list items create small chunks. Larger container elements like sections and articles create bigger chunks. You might configure your chunker to combine small adjacent elements like multiple paragraphs until you reach a minimum size, or to split large elements that exceed a maximum threshold.
-```mermaid
+\`\`\`mermaid
 graph LR
     A[HTML Page] --> B[Section: 600 tokens]
     A --> C[Div: 300 tokens]
@@ -2783,7 +2777,7 @@ graph LR
     style E fill:#e1bee7
     style F fill:#ffd700
     style G fill:#e1bee7
-```
+\`\`\`
 #### Overlap Size
 Overlap is typically **0 to 10 percent** between structural elements. Since elements already have natural boundaries, you don't need as much overlap as with arbitrary splitting. However, a common pattern is to include **header or context information** with each chunk. For example, include the parent section's heading with each sub-element's content. This gives context without literal text duplication.
 #### Computational Cost
@@ -2796,7 +2790,7 @@ This configuration leverages document structure to create semantically rich, mea
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ee77ff', padding: '30px' }}>
-              <GSAPAnimated animation="slideInBottom" delay={0.15} duration={0.8}>
+              <GSAPAnimated delay={0.15} duration={0.8}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.35}>
@@ -2807,7 +2801,7 @@ This configuration leverages document structure to create semantically rich, mea
                   <li>API documentation</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInBottom" delay={0.6} duration={0.8}>
+              <GSAPAnimated delay={0.6} duration={0.8}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.8}>
@@ -2818,7 +2812,7 @@ This configuration leverages document structure to create semantically rich, mea
                   <li>Documentation frameworks</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.05} duration={0.7}>
+              <GSAPAnimated delay={1.05} duration={0.7}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires HTML/Markdown parsing knowledge and structure handling</p>
               </GSAPAnimated>
@@ -2911,7 +2905,7 @@ These challenges mean table-aware chunking requires more engineering effort, but
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.15} duration={0.9}>
+              <GSAPAnimated delay={0.15} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -2938,7 +2932,7 @@ These challenges mean table-aware chunking requires more engineering effort, but
                   <li>100–500 tokens typical per table</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInTop" delay={0.65} duration={0.9}>
+              <GSAPAnimated delay={0.65} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.85}>
@@ -2947,7 +2941,7 @@ These challenges mean table-aware chunking requires more engineering effort, but
                   <li>Consider including caption or immediately adjacent text</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.7}>
+              <GSAPAnimated delay={1.05} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Table detection and extraction requires specialized processing</li>
@@ -2962,7 +2956,7 @@ Let's configure table-aware chunking for optimal results in production systems.
 #### Best Chunk Size
 The approach here is fundamentally different: **per table chunking**. Each table becomes one chunk, regardless of its size. In practice, most tables fall into the **100 to 500 token range**, which works well for embedding models. A small pricing table with 3 products might be 100 tokens when converted to Markdown format. A benchmark comparison table with 10 rows and 8 columns could reach 500 tokens.
 The key decision is **representation format**. You can convert tables to Markdown, which preserves readability and works well for text-based embeddings. Or convert to JSON, which is more queryable but less natural-language-friendly. Some systems do both: store JSON for structured queries and Markdown for semantic search.
-```mermaid
+\`\`\`mermaid
 graph TD
     A[Document] --> B[Text Chunk<br/>300 tokens]
     A --> C[Table Chunk<br/>150 tokens]
@@ -2977,7 +2971,7 @@ graph TD
     style E fill:#e1bee7
     style F fill:#e1bee7
     style G fill:#e1bee7
-```
+\`\`\`
 #### Overlap Size
 Tables typically have **zero overlap** with surrounding chunks. They're self-contained data structures with clear boundaries. However, a valuable enhancement is to **include the table caption** or immediately adjacent text that describes the table. This provides context without duplicating the entire table structure. Think of it as metadata rather than overlap.
 #### Computational Cost
@@ -2990,7 +2984,7 @@ This configuration ensures tables are treated as first-class data structures in 
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ffe983', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.1} duration={1.0}>
+              <GSAPAnimated delay={0.1} duration={1.0}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
@@ -3001,7 +2995,7 @@ This configuration ensures tables are treated as first-class data structures in 
                   <li>Research papers with data tables</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.7} duration={1.0}>
+              <GSAPAnimated delay={0.7} duration={1.0}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.95}>
@@ -3012,7 +3006,7 @@ This configuration ensures tables are treated as first-class data structures in 
                   <li>Unstructured.io</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.8}>
+              <GSAPAnimated delay={1.2} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires table detection and specialized extraction</p>
               </GSAPAnimated>
@@ -3105,7 +3099,7 @@ Despite these challenges, the benefits for code-heavy documentation and reposito
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="slideInLeft" delay={0.1} duration={0.85}>
+              <GSAPAnimated delay={0.1} duration={0.85}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -3134,7 +3128,7 @@ Despite these challenges, the benefits for code-heavy documentation and reposito
                   <li>Function/class-based rather than fixed-size</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.85}>
+              <GSAPAnimated delay={0.6} duration={0.85}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.09} delay={0.8}>
@@ -3143,7 +3137,7 @@ Despite these challenges, the benefits for code-heavy documentation and reposito
                   <li>Function headers/imports may need to be included</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.0} duration={0.7}>
+              <GSAPAnimated delay={1.0} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Implementation complexity and processing requirements</li>
@@ -3158,7 +3152,7 @@ Let's configure code-aware chunking to balance completeness with embedding model
 #### Best Chunk Size
 The approach is **function or class-based** rather than fixed-size. In practice, most functions fall into **200 to 800 tokens**, which translates to roughly **50 to 150 lines of code**. A small utility function might be 50 lines, while a more complex method with error handling and validation could reach 150 lines.
 Classes present an interesting choice. A class with many short methods might be 600 tokens total. You could chunk the entire class as one unit if it's cohesive, or chunk each method separately if they're independent. The key is **respecting logical boundaries** rather than forcing artificial splits.
-```mermaid
+\`\`\`mermaid
 graph TD
     A[Code File] --> B[Import Statements]
     A --> C[Function: login<br/>200 tokens]
@@ -3175,7 +3169,7 @@ graph TD
     style F fill:#e1bee7
     style G fill:#e1bee7
     style H fill:#e1bee7
-```
+\`\`\`
 #### Overlap Size
 Here's where code differs from prose. You want to **include the function signature and docstring** with the implementation, typically **20 to 80 tokens**. The signature tells you what the function does, its parameters, and return type. The docstring provides usage examples and describes behavior. Together, these give context without needing to reference other chunks.
 You might also **include essential imports** at the top of each chunk so the code is understandable in isolation. If a function uses numpy, include that import statement with the chunk.
@@ -3189,7 +3183,7 @@ This configuration creates self-contained, meaningful code chunks perfect for RA
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#7ad0ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.15} duration={0.95}>
+              <GSAPAnimated delay={0.15} duration={0.95}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.4}>
@@ -3200,7 +3194,7 @@ This configuration creates self-contained, meaningful code chunks perfect for RA
                   <li>Developer documentation generation</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={0.7} duration={0.95}>
+              <GSAPAnimated delay={0.7} duration={0.95}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.95}>
@@ -3211,7 +3205,7 @@ This configuration creates self-contained, meaningful code chunks perfect for RA
                   <li>Language-specific AST parsers</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.75}>
+              <GSAPAnimated delay={1.2} duration={0.75}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Required expertise and implementation difficulty</p>
               </GSAPAnimated>
@@ -3304,7 +3298,7 @@ Despite these challenges, the method's simplicity and effectiveness make it a go
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.15} duration={0.9}>
+              <GSAPAnimated delay={0.15} duration={0.9}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -3331,7 +3325,7 @@ Despite these challenges, the method's simplicity and effectiveness make it a go
                   <li>Varies based on content complexity and sentence length</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInRight" delay={0.65} duration={0.9}>
+              <GSAPAnimated delay={0.65} duration={0.9}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.1} delay={0.85}>
@@ -3340,7 +3334,7 @@ Despite these challenges, the method's simplicity and effectiveness make it a go
                   <li>Stride of 1-2 sentences between window starts</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.05} duration={0.7}>
+              <GSAPAnimated delay={1.05} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Requires sentence detection and window management</li>
@@ -3355,7 +3349,7 @@ Let's configure windowed sentence grouping for optimal balance between context a
 #### Best Chunk Size
 The typical configuration is **2 to 5 sentences per window**, which translates to roughly **100 to 300 tokens**. Why this range? Two sentences is usually the minimum to maintain coherent context, anything less and you're just retrieving isolated statements. Five sentences captures a complete paragraph's worth of information in most documents.
 The actual token count varies significantly based on **sentence length and complexity**. Technical writing with detailed explanations might have long, complex sentences that push 5-sentence chunks toward 400 tokens. Conversational content or news articles with shorter sentences might result in 5-sentence chunks under 200 tokens. You need to profile your specific content to find the sweet spot.
-```mermaid
+\`\`\`mermaid
 graph LR
     A[Document] --> B[Chunk 1: S1,S2,S3<br/>250 tokens]
     A --> C[Chunk 2: S2,S3,S4<br/>220 tokens]
@@ -3370,7 +3364,7 @@ graph LR
     linkStyle 1 stroke:#ffd700,stroke-width:3px
     linkStyle 2 stroke:#81c784,stroke-width:3px
     linkStyle 3 stroke:#ffd700,stroke-width:3px
-```
+\`\`\`
 #### Overlap Size
 The overlap is defined by your **stride**, typically **1 to 2 sentences**. A stride of 1 means each sentence appears in multiple chunks, maximizing redundancy and context continuity. A stride of 2 reduces storage overhead while still providing overlap. For a 3-sentence window with 1-sentence stride, you get 2-sentence overlap between adjacent chunks. That's substantial but often justified by improved retrieval recall.
 #### Computational Cost
@@ -3383,7 +3377,7 @@ This configuration provides a practical, widely applicable chunking strategy tha
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#dc8aff', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="flipCard" delay={0.15} duration={1.1}>
+              <GSAPAnimated delay={0.15} duration={1.1}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
@@ -3394,7 +3388,7 @@ This configuration provides a practical, widely applicable chunking strategy tha
                   <li>Content with natural narrative flow</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={0.7} duration={1.1}>
+              <GSAPAnimated delay={0.7} duration={1.1}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.95}>
@@ -3405,7 +3399,7 @@ This configuration provides a practical, widely applicable chunking strategy tha
                   <li>LangChain extensions and utilities</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.75}>
+              <GSAPAnimated delay={1.2} duration={0.75}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Beginner–Intermediate</strong> - Requires sentence boundary detection and window management</p>
               </GSAPAnimated>
@@ -3499,7 +3493,7 @@ Despite these challenges, adaptive chunking can significantly improve retrieval 
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff8787', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.15} duration={1.0}>
+              <GSAPAnimated delay={0.15} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -3529,7 +3523,7 @@ Despite these challenges, adaptive chunking can significantly improve retrieval 
                   <li>Simple content: larger chunks (600-1000 tokens)</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.75} duration={1.0}>
+              <GSAPAnimated delay={0.75} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.09} delay={1.0}>
@@ -3539,7 +3533,7 @@ Despite these challenges, adaptive chunking can significantly improve retrieval 
                   <li>Lower overlap for simpler sections</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.2} duration={0.7}>
+              <GSAPAnimated delay={1.2} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Requires complexity analysis for each document section</li>
@@ -3555,7 +3549,7 @@ Let's configure adaptive chunking with practical parameters that balance quality
 The chunk size range is **200 to 1000 tokens**, dynamically determined by complexity analysis. For **high-complexity content** like dense technical specifications, mathematical proofs, or legal language, target **200 to 400 tokens**. This keeps chunks focused on manageable information units that embed well and retrieve precisely.
 For **medium-complexity content** like typical documentation or explanatory text, aim for **400 to 600 tokens**. This provides enough context while staying digestible.
 For **low-complexity content** like narratives, simple instructions, or conversational text, you can use **600 to 1000 tokens**. Larger chunks are fine here because the content is straightforward and benefits from more surrounding context.
-```mermaid
+\`\`\`mermaid
 graph TD
     A[Document Analysis] --> B{Complexity Check}
     B -->|High Complexity| C[Small Chunk<br/>200-400 tokens]
@@ -3572,7 +3566,7 @@ graph TD
     style F fill:#e1bee7
     style G fill:#e1bee7
     style H fill:#e1bee7
-```
+\`\`\`
 #### Dynamic Overlap
 Overlap also adapts, ranging from **5 to 20 percent**. **Complex sections get higher overlap**, maybe 15-20%, because context is crucial for understanding dense information. **Simple sections get lower overlap**, maybe 5-10%, since there's less risk of losing critical context and you can save storage.
 #### Computational Cost
@@ -3585,7 +3579,7 @@ This configuration creates an intelligent chunking system that adapts to your co
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff8787', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="slideInBottom" delay={0.15} duration={0.9}>
+              <GSAPAnimated delay={0.15} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.4}>
@@ -3596,7 +3590,7 @@ This configuration creates an intelligent chunking system that adapts to your co
                   <li>Knowledge bases with heterogeneous content</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInBottom" delay={0.7} duration={0.9}>
+              <GSAPAnimated delay={0.7} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.95}>
@@ -3607,7 +3601,7 @@ This configuration creates an intelligent chunking system that adapts to your co
                   <li>Advanced text processing frameworks</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.8}>
+              <GSAPAnimated delay={1.2} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires expertise in text analysis and complexity metrics</p>
               </GSAPAnimated>
@@ -3700,7 +3694,7 @@ Despite these costs, the retrieval quality improvements can justify the investme
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7af6', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.15} duration={1.0}>
+              <GSAPAnimated delay={0.15} duration={1.0}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -3725,7 +3719,7 @@ Despite these costs, the retrieval quality improvements can justify the investme
                   <li>Can be combined with other chunking methods</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="rotateIn" delay={0.75} duration={1.0}>
+              <GSAPAnimated delay={0.75} duration={1.0}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.09} delay={1.0}>
@@ -3734,7 +3728,7 @@ Despite these costs, the retrieval quality improvements can justify the investme
                   <li>Summary provides cross-chunk context, reducing need for large overlaps</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.2} duration={0.7}>
+              <GSAPAnimated delay={1.2} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Requires LLM inference for summary generation</li>
@@ -3749,7 +3743,7 @@ Let's configure summarization-based chunking to balance quality with the inevita
 #### Chunk Size with Summaries
 Start with a **base chunk of 400 to 800 tokens** from your chosen chunking strategy, whether that's fixed-size, semantic, or structural. Then add a **brief summary of 50 to 150 tokens**. The summary should capture the chunk's main topic, key points, and how it relates to the broader document. Keep it concise because the summary will be embedded along with the original content.
 This approach is **composable**. You can combine it with other techniques. Use semantic chunking for the base chunks, then add summaries. Use heading-based chunking, then summarize each section. The summarization layer adds contextual richness on top of your existing strategy.
-```mermaid
+\`\`\`mermaid
 graph TD
     A[Original Chunk<br/>600 tokens] --> B[Generate Summary]
     B --> C[Summary<br/>100 tokens]
@@ -3762,7 +3756,7 @@ graph TD
     style D fill:#81c784
     style E fill:#e1bee7
     style F fill:#e1bee7
-```
+\`\`\`
 #### Reduced Overlap Needs
 You can use **less overlap** than you normally would, maybe **0 to 10 percent**, because **summaries provide cross-chunk context naturally**. The summary mentions related concepts and connections that would otherwise require overlapping text to capture. This partially offsets the storage overhead from the summaries themselves.
 #### High Computational Cost
@@ -3775,7 +3769,7 @@ This configuration creates contextually rich chunks that significantly improve r
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#ff7af6', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="slideInTop" delay={0.15} duration={0.9}>
+              <GSAPAnimated delay={0.15} duration={0.9}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.4}>
@@ -3786,7 +3780,7 @@ This configuration creates contextually rich chunks that significantly improve r
                   <li>Multi-hop reasoning tasks</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="slideInTop" delay={0.7} duration={0.9}>
+              <GSAPAnimated delay={0.7} duration={0.9}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.13} delay={0.95}>
@@ -3797,7 +3791,7 @@ This configuration creates contextually rich chunks that significantly improve r
                   <li>Anthropic's contextual retrieval</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.2} duration={0.8}>
+              <GSAPAnimated delay={1.2} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Requires LLM prompting expertise and pipeline optimization</p>
               </GSAPAnimated>
@@ -3819,26 +3813,6 @@ Let's explore the scenarios where summarization-based chunking justifies its cos
 #### Complexity Level
 This is rated **Advanced** because you need **LLM prompting expertise** to generate good summaries consistently, **pipeline optimization** to manage costs and latency, and careful evaluation to ensure summaries improve rather than harm retrieval quality. You're essentially building a multi-stage system with dependencies and potential failure modes at each stage.
 Summarization-based chunking is worth the investment for high-value, complex documents where retrieval quality directly impacts business outcomes.`
-        }
-              <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>Base 400–800 tokens + brief summary (50-150 tokens)</li>
-                <li>Can be combined with other chunking methods</li>
-              </ul>
-              <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
-              <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
-                <li>0–10% of base chunk size</li>
-                <li>Summary provides cross-chunk context, reducing need for large overlaps</li>
-              </ul>
-              <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
-              <ul style={{ fontSize: '1.2rem' }}>
-                <li>Requires LLM inference for summary generation</li>
-                <li>High</li>
-              </ul>
-            </div>
-          ),
-          backgroundColor: '#651c60',
-          notes: ''
         },
         {
           id: 71,
@@ -3937,7 +3911,7 @@ Despite these challenges, for high-stakes applications where retrieval quality i
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#95ff7a', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="flipCard" delay={0.15} duration={1.1}>
+              <GSAPAnimated delay={0.15} duration={1.1}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>
                   Best Chunk Size
                   <MermaidPopover
@@ -3966,7 +3940,7 @@ Despite these challenges, for high-stakes applications where retrieval quality i
                   <li>Determined by graph structure and topic cohesion</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="flipCard" delay={0.75} duration={1.1}>
+              <GSAPAnimated delay={0.75} duration={1.1}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.09} delay={1.0}>
@@ -3975,7 +3949,7 @@ Despite these challenges, for high-stakes applications where retrieval quality i
                   <li>Communities form natural boundaries without need for overlap</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="fadeIn" delay={1.2} duration={0.7}>
+              <GSAPAnimated delay={1.2} duration={0.7}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>Implementation complexity and processing requirements</li>
@@ -3990,7 +3964,7 @@ Let's configure graph-based chunking with practical parameters based on research
 #### Variable Community Sizes
 Chunks are **variable-sized based on community detection**, typically ranging from **150 to 600 tokens**. The size isn't predetermined; it emerges from the **graph structure and topic cohesion**. A tightly-knit topic with many related sentences forms a larger chunk. A standalone concept mentioned briefly forms a smaller chunk.
 This variability is actually a feature, not a bug. It means chunk sizes adapt naturally to the semantic structure of your content. Complex topics that require more explanation get larger chunks. Simple, discrete points get smaller chunks.
-```mermaid
+\`\`\`mermaid
 graph TD
     A[Sentence Graph] --> B{Community Detection}
     B --> C[Community 1<br/>5 sentences<br/>300 tokens]
@@ -4007,7 +3981,7 @@ graph TD
     style F fill:#e1bee7
     style G fill:#e1bee7
     style H fill:#e1bee7
-```
+\`\`\`
 #### Zero Overlap
 There's **typically no overlap** because **communities form natural semantic boundaries**. A sentence either belongs to one topic community or another; there's no need for redundant inclusion in adjacent chunks. The semantic relationships themselves provide the "bridges" between communities without requiring literal text duplication. This is more storage-efficient than windowed approaches while maintaining high retrieval quality.
 #### High Computational Cost
@@ -4020,7 +3994,7 @@ This configuration creates semantically optimal chunks at the cost of computatio
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#95ff7a', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="bounceIn" delay={0.15} duration={1.0}>
+              <GSAPAnimated delay={0.15} duration={1.0}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={0.45}>
@@ -4031,7 +4005,7 @@ This configuration creates semantically optimal chunks at the cost of computatio
                   <li>Academic literature with dense concepts</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="bounceIn" delay={0.75} duration={1.0}>
+              <GSAPAnimated delay={0.75} duration={1.0}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.12} delay={1.0}>
@@ -4042,7 +4016,7 @@ This configuration creates semantically optimal chunks at the cost of computatio
                   <li>Custom research implementations</li>
                 </ul>
               </GSAPStaggerList>
-              <GSAPAnimated animation="scaleIn" delay={1.25} duration={0.8}>
+              <GSAPAnimated delay={1.25} duration={0.8}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Advanced</strong> - Required expertise and implementation difficulty</p>
               </GSAPAnimated>
@@ -4137,28 +4111,28 @@ These limitations mean time-based chunking works best when audio quality is high
           icon: { name: 'duo-gears' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8197ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="slideInRight" delay={0.2} duration={0.6}>
+              <GSAPAnimated delay={0.2} duration={0.6}>
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
                 <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>15–60 seconds audio (or 150–500 tokens text)</li>
                   <li>Balances completeness vs processing requirements</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.6}>
+              <GSAPAnimated delay={0.5} duration={0.6}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px' }}>Overlap Size</h3>
                 <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>1–2 seconds (or 10–30 tokens)</li>
                   <li>Helps maintain context across time-based boundaries</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="slideInRight" delay={0.8} duration={0.6}>
+              <GSAPAnimated delay={0.8} duration={0.6}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px' }}>Computational Cost</h3>
                 <ul style={{ fontSize: '1.2rem' }}>
                   <li>ASR processing and timestamp alignment requirements</li>
                   <li>Medium</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="fadeIn" delay={1.2} duration={0.8}>
+              <GSAPAnimated delay={1.2} duration={0.8}>
                 <div style={{ marginTop: '30px' }}>
                   <MermaidPopover
                     title="Audio Chunking Timeline"
@@ -4179,19 +4153,7 @@ These limitations mean time-based chunking works best when audio quality is high
     section Chunk 3
     Overlap :crit, 116, 2s
     Audio Segment 3 :a3, 116, 60s`}
-                  >
-                    <button style={{
-                      padding: '10px 20px',
-                      fontSize: '1rem',
-                      backgroundColor: '#3498db',
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '5px',
-                      cursor: 'pointer'
-                    }}>
-                      View Timeline Diagram
-                    </button>
-                  </MermaidPopover>
+                  />
                 </div>
               </GSAPAnimated>
             </div>
@@ -4217,7 +4179,7 @@ These parameters provide a solid starting point, but always evaluate with your s
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', margin: '0 auto', fontSize: '2rem', color: '#8197ff', padding: '30px', lineHeight: '2' }}>
-              <GSAPAnimated animation="rotateIn" delay={0.2} duration={0.7}>
+              <GSAPAnimated delay={0.2} duration={0.7}>
                 <h3 style={{ color: '#3498db', marginBottom: '20px' }}>Use Cases / Examples</h3>
                 <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>Podcasts, earnings calls, lectures</li>
@@ -4226,7 +4188,7 @@ These parameters provide a solid starting point, but always evaluate with your s
                   <li>Real-time speech processing</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.7}>
+              <GSAPAnimated delay={0.6} duration={0.7}>
                 <h3 style={{ color: '#9b59b6', marginBottom: '20px' }}>Tooling Support</h3>
                 <ul style={{ fontSize: '1.2rem', marginBottom: '30px' }}>
                   <li>Whisper (OpenAI)</li>
@@ -4235,7 +4197,7 @@ These parameters provide a solid starting point, but always evaluate with your s
                   <li>Pyannote (for diarization)</li>
                 </ul>
               </GSAPAnimated>
-              <GSAPAnimated animation="rotateIn" delay={1.0} duration={0.7}>
+              <GSAPAnimated delay={1.0} duration={0.7}>
                 <h3 style={{ color: '#1abc9c', marginBottom: '20px' }}>Complexity Level</h3>
                 <p style={{ fontSize: '1.2rem' }}><strong>Intermediate</strong> - Requires audio processing pipelines and ASR integration</p>
               </GSAPAnimated>
