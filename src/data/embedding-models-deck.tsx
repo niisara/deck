@@ -26,7 +26,7 @@ export const embeddingModelsDeck: Deck = {
           center: true,
           title: '9 Embedding Models Cheat Sheet',
           content: (
-            <div style={{ }}>
+            <div>
               <GSAPAnimated animation="scaleIn" duration={0.8} delay={0.3}>
                 <h2>Quick-reference for RAG 👉 'rag', semantic search, clustering, and more</h2>
               </GSAPAnimated>
@@ -577,7 +577,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A[Query] --> B[BGE-Large<br/>1024-dim]
     C[Document] --> B
@@ -701,7 +701,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TB
     A["query: search query"] --> B[E5-Base<br/>768-dim]
     C["passage: document"] --> B
@@ -829,7 +829,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A["query: text"] --> B[E5-Large<br/>1024-dim]
     C["passage: doc"] --> B
@@ -959,7 +959,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TB
     A["Instruction:<br/>Represent for retrieval"] --> B[Instructor-XL<br/>768-dim]
     C[Text Content] --> B
@@ -1086,7 +1086,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A[Query] --> B[GTE-Base<br/>768-dim]
     C[Documents] --> B
@@ -1216,7 +1216,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TB
     A[Input Text] --> B[GTE-Large<br/>1024-dim]
     B --> C[Rich Semantic<br/>Embeddings]
@@ -1344,7 +1344,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TD
     A[Start] --> B{Budget?}
     B -->|Limited| C[OpenAI Small<br/>or BGE Base]
@@ -1461,7 +1461,7 @@ What are the strengths and weaknesses? Let's break it down!`
             <div style={{ textAlign: 'left', color: '#fff' }}>
               <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A[Text] --> B[Chunk<br/>200-400 tokens]
     B --> C[Embed]
