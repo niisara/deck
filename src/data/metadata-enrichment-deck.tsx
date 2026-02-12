@@ -691,10 +691,10 @@ Now let's evaluate the trade-offs...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Stable navigation and filters</li>
-                    <li>Good for reporting and analytics</li>
-                    <li>Enhances user interface organization</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Stable navigation and filters</li>
+                  <li>Good for reporting and analytics</li>
+                  <li>Enhances user interface organization</li>
+                </ul>]}</GSAPStaggerList>
                 <GSAPAnimated animation="slideInLeft" delay={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <GSAPAnimated animation="rotateIn" delay={1.0}>
@@ -704,10 +704,10 @@ Now let's evaluate the trade-offs...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Taxonomy governance needed</li>
-                    <li>Re-tag on taxonomy changes</li>
-                    <li>Initial setup complexity</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Taxonomy governance needed</li>
+                  <li>Re-tag on taxonomy changes</li>
+                  <li>Initial setup complexity</li>
+                </ul>]}</GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.6}>
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f5731', borderRadius: '8px' }}>
@@ -778,7 +778,7 @@ Let's move on to our next enrichment technique...`
                     <GSAPAnimated animation="slideInLeft" delay={0.7}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}><GSAPAnimated animation="bounceIn" delay={0.8}><SvgIcon iconName="duo-list-check" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /></GSAPAnimated>Implementation Steps:</strong>
                       <ul>
-                      <li>Parse timestamp/version from content and file system</li>
+                        <li>Parse timestamp/version from content and file system</li>
                         <li>Store effective_date, valid_from/valid_to, version, is_latest</li>
                         <li>Retrieval: filter by date range; sort/boost is_latest and newest version</li>
                       </ul>
@@ -789,12 +789,12 @@ Let's move on to our next enrichment technique...`
                     <div style={{ padding: '10px', backgroundColor: '#5f3131', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
                       <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                          <li>Policies</li>
-                          <li>Release notes</li>
-                          <li>Price lists</li>
-                          <li>SLAs</li>
-                          <li>Changelogs</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Policies</li>
+                        <li>Release notes</li>
+                        <li>Price lists</li>
+                        <li>SLAs</li>
+                        <li>Changelogs</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -850,10 +850,10 @@ Now let's evaluate the trade-offs of implementing temporal metadata...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Time-aware answers</li>
-                    <li>Easy recency enforcement</li>
-                    <li>Clear versioning support</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Time-aware answers</li>
+                  <li>Easy recency enforcement</li>
+                  <li>Clear versioning support</li>
+                </ul>]}</GSAPStaggerList>
                 <GSAPAnimated animation="slideInRight" delay={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <GSAPAnimated animation="flipCard" delay={1.0}>
@@ -863,10 +863,10 @@ Now let's evaluate the trade-offs of implementing temporal metadata...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Requires consistent source dates</li>
-                    <li>Backfill can be tedious</li>
-                    <li>Date format standardization needed</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Requires consistent source dates</li>
+                  <li>Backfill can be tedious</li>
+                  <li>Date format standardization needed</li>
+                </ul>]}</GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.6}>
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f3131', borderRadius: '8px' }}>
@@ -943,20 +943,20 @@ Next, let's explore how semantic summaries can enhance our retrieval quality...`
                       </strong>
                     </GSAPAnimated>
                     <GSAPStaggerList stagger={0.15} >{[<ul>
-                        <li>Prompt LLM: extract key claims, scope, constraints; limit 50–70 tokens</li>
-                        <li>Store summary and optional bullets/QA-focused tags</li>
-                        <li>Use summary field in hybrid BM25 + vector search and in UI previews</li>
-                      </ul>]}</GSAPStaggerList>
+                      <li>Prompt LLM: extract key claims, scope, constraints; limit 50–70 tokens</li>
+                      <li>Store summary and optional bullets/QA-focused tags</li>
+                      <li>Use summary field in hybrid BM25 + vector search and in UI previews</li>
+                    </ul>]}</GSAPStaggerList>
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
                     <div style={{ padding: '12px', backgroundColor: '#42315f', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
                       <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                          <li>Long sections</li>
-                          <li>Dense PDFs</li>
-                          <li>When using self-query or hybrid search</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Long sections</li>
+                        <li>Dense PDFs</li>
+                        <li>When using self-query or hybrid search</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1009,9 +1009,9 @@ Now let's evaluate the trade-offs...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Strong relevance signals</li>
-                    <li>Improves user scanability</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Strong relevance signals</li>
+                  <li>Improves user scanability</li>
+                </ul>]}</GSAPStaggerList>
                 <GSAPAnimated animation="slideInBottom" delay={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <GSAPAnimated animation="scaleIn" delay={1.0}>
@@ -1021,9 +1021,9 @@ Now let's evaluate the trade-offs...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>LLM cost</li>
-                    <li>Periodic refresh as content changes</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>LLM cost</li>
+                  <li>Periodic refresh as content changes</li>
+                </ul>]}</GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.5}>
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#42315f', borderRadius: '8px' }}>
@@ -1100,20 +1100,20 @@ Let's explore our next enrichment technique...`
                       </strong>
                     </GSAPAnimated>
                     <GSAPStaggerList stagger={0.15} >{[<ul>
-                        <li>Run extractor; cap to top-N phrases; normalize (lowercase, stem)</li>
-                        <li>Merge with domain synonyms; store as keywords array</li>
-                        <li>Index as separate BM25 field; boost matches</li>
-                      </ul>]}</GSAPStaggerList>
+                      <li>Run extractor; cap to top-N phrases; normalize (lowercase, stem)</li>
+                      <li>Merge with domain synonyms; store as keywords array</li>
+                      <li>Index as separate BM25 field; boost matches</li>
+                    </ul>]}</GSAPStaggerList>
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
                     <div style={{ padding: '12px', backgroundColor: '#5f5d31', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
                       <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                          <li>Exact-match needs (IDs, codes)</li>
-                          <li>Jargon-heavy domains</li>
-                          <li>Search log-driven synonyms</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Exact-match needs (IDs, codes)</li>
+                        <li>Jargon-heavy domains</li>
+                        <li>Search log-driven synonyms</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1168,9 +1168,9 @@ Let's evaluate the trade-offs...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Cheap to compute</li>
-                    <li>Great for hybrid retrieval</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Cheap to compute</li>
+                  <li>Great for hybrid retrieval</li>
+                </ul>]}</GSAPStaggerList>
                 <GSAPAnimated animation="slideInTop" delay={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <GSAPAnimated animation="bounceIn" delay={1.0}>
@@ -1180,9 +1180,9 @@ Let's evaluate the trade-offs...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.2} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Can be noisy</li>
-                    <li>Requires periodic curation</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Can be noisy</li>
+                  <li>Requires periodic curation</li>
+                </ul>]}</GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.5}>
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f5d31', borderRadius: '8px' }}>
@@ -1273,21 +1273,21 @@ Now let's explore how to score source reliability...`
                       </strong>
                     </GSAPAnimated>
                     <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1rem' }}>
-                        <li>Define rubric (policy&gt;kb&gt;chat&gt;email; +verified; +recent)</li>
-                        <li>Calculate trust_score; store source_type, verified, reviewer</li>
-                        <li>Retrieval: threshold or boost by trust_score; expose in UI</li>
-                      </ul>]}</GSAPStaggerList>
+                      <li>Define rubric (policy&gt;kb&gt;chat&gt;email; +verified; +recent)</li>
+                      <li>Calculate trust_score; store source_type, verified, reviewer</li>
+                      <li>Retrieval: threshold or boost by trust_score; expose in UI</li>
+                    </ul>]}</GSAPStaggerList>
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
                     <div style={{ padding: '10px', backgroundColor: '#315f3d', borderRadius: '8px' }}>
                       <strong>When to Use:</strong>
                       <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                          <li>Mixed sources (official docs, chats, emails)</li>
-                          <li>Regulated environments</li>
-                          <li>Knowledge bases with varied quality</li>
-                          <li>Customer-facing applications requiring reliable information</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Mixed sources (official docs, chats, emails)</li>
+                        <li>Regulated environments</li>
+                        <li>Knowledge bases with varied quality</li>
+                        <li>Customer-facing applications requiring reliable information</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1342,11 +1342,11 @@ Let's assess the pros and cons...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Reduces low-quality context</li>
-                    <li>Auditable</li>
-                    <li>Prioritizes reliable sources</li>
-                    <li>Increases answer confidence</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Reduces low-quality context</li>
+                  <li>Auditable</li>
+                  <li>Prioritizes reliable sources</li>
+                  <li>Increases answer confidence</li>
+                </ul>]}</GSAPStaggerList>
                 <GSAPAnimated animation="slideInLeft" delay={1.0}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <GSAPAnimated animation="rotateIn" delay={1.1}>
@@ -1356,10 +1356,10 @@ Let's assess the pros and cons...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Potential bias</li>
-                    <li>Needs upkeep and reviewer workflows</li>
-                    <li>Subjective scoring criteria</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Potential bias</li>
+                  <li>Needs upkeep and reviewer workflows</li>
+                  <li>Subjective scoring criteria</li>
+                </ul>]}</GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.7}>
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#315f3d', borderRadius: '8px' }}>
@@ -1436,21 +1436,21 @@ Let's move to our final enrichment technique...`
                       </strong>
                     </GSAPAnimated>
                     <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1rem' }}>
-                        <li>Build tree during parsing; generate unique ids; store id, parent_id, ancestors</li>
-                        <li>Retrieval: fetch hit + k siblings/parent for full context window</li>
-                        <li>Keep referential integrity on re-ingest via content hashing</li>
-                      </ul>]}</GSAPStaggerList>
+                      <li>Build tree during parsing; generate unique ids; store id, parent_id, ancestors</li>
+                      <li>Retrieval: fetch hit + k siblings/parent for full context window</li>
+                      <li>Keep referential integrity on re-ingest via content hashing</li>
+                    </ul>]}</GSAPStaggerList>
                   </div>
 
                   <GSAPAnimated animation="slideInRight" delay={0.4}>
                     <div style={{ padding: '12px', backgroundColor: '#5f3152', borderRadius: '8px' }}>
                       <strong style={{ display: 'flex', alignItems: 'center' }}>When to Use:</strong>
                       <GSAPStaggerList stagger={0.12} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                          <li>Manuals</li>
-                          <li>Textbooks</li>
-                          <li>Web docs with TOCs</li>
-                          <li>Dense PDFs</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Manuals</li>
+                        <li>Textbooks</li>
+                        <li>Web docs with TOCs</li>
+                        <li>Dense PDFs</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1509,10 +1509,10 @@ Let's evaluate the trade-offs of this sophisticated approach...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>Better coherence</li>
-                    <li>Fewer orphan chunks</li>
-                    <li>Improves contextual understanding</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>Better coherence</li>
+                  <li>Fewer orphan chunks</li>
+                  <li>Improves contextual understanding</li>
+                </ul>]}</GSAPStaggerList>
                 <GSAPAnimated animation="slideInRight" delay={0.9}>
                   <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#e74c3c', marginTop: '12px' }}>
                     <GSAPAnimated animation="flipCard" delay={1.0}>
@@ -1522,10 +1522,10 @@ Let's evaluate the trade-offs of this sophisticated approach...`
                   </h4>
                 </GSAPAnimated>
                 <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem' }}>
-                    <li>More complex pipeline</li>
-                    <li>Migration/versioning concerns</li>
-                    <li>Requires document structure</li>
-                  </ul>]}</GSAPStaggerList>
+                  <li>More complex pipeline</li>
+                  <li>Migration/versioning concerns</li>
+                  <li>Requires document structure</li>
+                </ul>]}</GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" delay={1.6}>
                 <div style={{ marginTop: '15px', padding: '12px', backgroundColor: '#5f3152', borderRadius: '8px' }}>
@@ -1581,11 +1581,11 @@ Now let's synthesize what we've learned into best practices...`
                         Design & Governance
                       </h4>
                       <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
-                          <li>Define a typed schema; use <code>lower_snake_case</code> keys</li>
-                          <li>Separate content fields vs. metadata fields; avoid overloading</li>
-                          <li>Establish clear tagging guidelines for consistency</li>
-                          <li>Implement version control for metadata schema evolution</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Define a typed schema; use <code>lower_snake_case</code> keys</li>
+                        <li>Separate content fields vs. metadata fields; avoid overloading</li>
+                        <li>Establish clear tagging guidelines for consistency</li>
+                        <li>Implement version control for metadata schema evolution</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
 
@@ -1598,11 +1598,11 @@ Now let's synthesize what we've learned into best practices...`
                         Automation & Quality
                       </h4>
                       <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
-                          <li>Automate enrichment (parsers, NER, classifiers, LLM summaries) with confidence scores</li>
-                          <li>Implement human-in-the-loop for low-confidence tags</li>
-                          <li>Establish QA processes with regular validation cycles</li>
-                          <li>Audit and retrain quarterly to prevent drift</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Automate enrichment (parsers, NER, classifiers, LLM summaries) with confidence scores</li>
+                        <li>Implement human-in-the-loop for low-confidence tags</li>
+                        <li>Establish QA processes with regular validation cycles</li>
+                        <li>Audit and retrain quarterly to prevent drift</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
 
@@ -1615,11 +1615,11 @@ Now let's synthesize what we've learned into best practices...`
                         Retrieval Strategy
                       </h4>
                       <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
-                          <li>Use hybrid search (BM25 + vectors) with metadata filters</li>
-                          <li>Implement self-query retrievers for dynamic filtering</li>
-                          <li>Rerank with <code>section_title</code>, <code>trust_score</code>, and recency</li>
-                          <li>Use metadata to expand context when needed</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Use hybrid search (BM25 + vectors) with metadata filters</li>
+                        <li>Implement self-query retrievers for dynamic filtering</li>
+                        <li>Rerank with <code>section_title</code>, <code>trust_score</code>, and recency</li>
+                        <li>Use metadata to expand context when needed</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1661,12 +1661,12 @@ These first three practice areas set the foundation for success. Let's continue 
                         Ops & Safety
                       </h4>
                       <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
-                          <li>Handle PII in entities with appropriate anonymization</li>
-                          <li>Implement access control on sensitive metadata</li>
-                          <li>Use versioning and change-data-capture to refresh metadata reliably</li>
-                          <li>Log and monitor metadata usage patterns</li>
-                          <li>Create fallback strategies when metadata is incomplete</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Handle PII in entities with appropriate anonymization</li>
+                        <li>Implement access control on sensitive metadata</li>
+                        <li>Use versioning and change-data-capture to refresh metadata reliably</li>
+                        <li>Log and monitor metadata usage patterns</li>
+                        <li>Create fallback strategies when metadata is incomplete</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
 
@@ -1679,12 +1679,12 @@ These first three practice areas set the foundation for success. Let's continue 
                         Measurement
                       </h4>
                       <GSAPStaggerList stagger={0.1} >{[<ul style={{ lineHeight: '1.7', fontSize: '1rem' }}>
-                          <li>Track precision@k, MRR, and coverage of tags</li>
-                          <li>Measure filter hit rate and time-to-answer improvements</li>
-                          <li>Analyze user feedback on response quality</li>
-                          <li>Assess hallucination reduction with/without metadata</li>
-                          <li>Create dashboards for metadata quality metrics</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Track precision@k, MRR, and coverage of tags</li>
+                        <li>Measure filter hit rate and time-to-answer improvements</li>
+                        <li>Analyze user feedback on response quality</li>
+                        <li>Assess hallucination reduction with/without metadata</li>
+                        <li>Create dashboards for metadata quality metrics</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1699,12 +1699,12 @@ These first three practice areas set the foundation for success. Let's continue 
                     </h4>
                     <div style={{ display: 'flex', fontSize: '1rem', lineHeight: '1.6' }}>
                       <GSAPStaggerList stagger={0.12} >{[<ul>
-                          <li><strong>Consistency</strong> in metadata application across all documents</li>
-                          <li><strong>Integration</strong> of metadata at all pipeline stages</li>
-                          <li><strong>Automation</strong> to reduce manual tagging burden</li>
-                          <li><strong>Governance</strong> to maintain metadata quality over time</li>
-                          <li><strong>Measurement</strong> to quantify metadata's impact on retrieval</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li><strong>Consistency</strong> in metadata application across all documents</li>
+                        <li><strong>Integration</strong> of metadata at all pipeline stages</li>
+                        <li><strong>Automation</strong> to reduce manual tagging burden</li>
+                        <li><strong>Governance</strong> to maintain metadata quality over time</li>
+                        <li><strong>Measurement</strong> to quantify metadata's impact on retrieval</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </div>
                 </GSAPAnimated>
@@ -1746,10 +1746,10 @@ These practices separate successful metadata enrichment from failed attempts. Le
                         Structure & Context
                       </h4>
                       <GSAPStaggerList stagger={0.12} >{[<ul style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-                          <li>Section titles</li>
-                          <li>Semantic summaries</li>
-                          <li>Parent-child relationships</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Section titles</li>
+                        <li>Semantic summaries</li>
+                        <li>Parent-child relationships</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
 
@@ -1762,11 +1762,11 @@ These practices separate successful metadata enrichment from failed attempts. Le
                         Classification & Taxonomy
                       </h4>
                       <GSAPStaggerList stagger={0.12} >{[<ul style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-                          <li>Document types</li>
-                          <li>Entity tagging (NER)</li>
-                          <li>Topic/category tags</li>
-                          <li>Keywords/key-phrases</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Document types</li>
+                        <li>Entity tagging (NER)</li>
+                        <li>Topic/category tags</li>
+                        <li>Keywords/key-phrases</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
 
@@ -1779,9 +1779,9 @@ These practices separate successful metadata enrichment from failed attempts. Le
                         Freshness & Trust
                       </h4>
                       <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-                          <li>Time/version metadata</li>
-                          <li>Source confidence scoring</li>
-                        </ul>]}</GSAPStaggerList>
+                        <li>Time/version metadata</li>
+                        <li>Source confidence scoring</li>
+                      </ul>]}</GSAPStaggerList>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1799,30 +1799,30 @@ These practices separate successful metadata enrichment from failed attempts. Le
                         <div style={{ padding: '10px', backgroundColor: 'rgba(66, 165, 245, 0.2)', borderRadius: '8px' }}>
                           <strong style={{ color: '#42a5f5', display: 'flex', alignItems: 'center' }}>Phase 1: +15-25%</strong>
                           <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                              <li>Section titles</li>
-                              <li>Document type labels</li>
-                              <li>Time/version metadata</li>
-                            </ul>]}</GSAPStaggerList>
+                            <li>Section titles</li>
+                            <li>Document type labels</li>
+                            <li>Time/version metadata</li>
+                          </ul>]}</GSAPStaggerList>
                         </div>
                       </GSAPAnimated>
                       <GSAPAnimated animation="slideInBottom" delay={1.4}>
                         <div style={{ padding: '10px', backgroundColor: 'rgba(126, 87, 194, 0.2)', borderRadius: '8px' }}>
                           <strong style={{ color: '#7e57c2', display: 'flex', alignItems: 'center' }}>Phase 2: +30-45%</strong>
                           <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                              <li>Entity tagging (NER)</li>
-                              <li>Topic/category tags</li>
-                              <li>Keywords/key-phrases</li>
-                            </ul>]}</GSAPStaggerList>
+                            <li>Entity tagging (NER)</li>
+                            <li>Topic/category tags</li>
+                            <li>Keywords/key-phrases</li>
+                          </ul>]}</GSAPStaggerList>
                         </div>
                       </GSAPAnimated>
                       <GSAPAnimated animation="slideInRight" delay={1.5}>
                         <div style={{ padding: '10px', backgroundColor: 'rgba(38, 198, 218, 0.2)', borderRadius: '8px' }}>
                           <strong style={{ color: '#26c6da', display: 'flex', alignItems: 'center' }}>Phase 3: +50-70%</strong>
                           <GSAPStaggerList stagger={0.1} >{[<ul style={{ marginTop: '8px', lineHeight: '1.6', fontSize: '1rem' }}>
-                              <li>Semantic summaries</li>
-                              <li>Source confidence scoring</li>
-                              <li>Parent-child structure</li>
-                            </ul>]}</GSAPStaggerList>
+                            <li>Semantic summaries</li>
+                            <li>Source confidence scoring</li>
+                            <li>Parent-child structure</li>
+                          </ul>]}</GSAPStaggerList>
                         </div>
                       </GSAPAnimated>
                     </div>
@@ -1879,11 +1879,11 @@ Now, let's end with the key takeaway you should remember...`
                       Call to Action
                     </h4>
                     <GSAPStaggerList stagger={0.15} >{[<ul style={{ fontSize: '1.2rem', lineHeight: '1.7' }}>
-                        <li>Define your metadata schema and baselines this week</li>
-                        <li>Enable metadata filters and reranking in your retriever</li>
-                        <li>Measure impact; iterate on low-signal fields</li>
-                        <li>Prioritize techniques that match your data types</li>
-                      </ul>]}</GSAPStaggerList>
+                      <li>Define your metadata schema and baselines this week</li>
+                      <li>Enable metadata filters and reranking in your retriever</li>
+                      <li>Measure impact; iterate on low-signal fields</li>
+                      <li>Prioritize techniques that match your data types</li>
+                    </ul>]}</GSAPStaggerList>
                   </div>
                 </GSAPAnimated>
               </div>
