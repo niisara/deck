@@ -643,7 +643,7 @@ export const productionRagDeck: Deck = {
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                    diagram={`graph TD
+                      diagram={`graph TD
     A[User Query] --> B[LLM Query Generator]
     B --> C1[Variant 1]
     B --> C2[Variant 2]
@@ -657,8 +657,8 @@ export const productionRagDeck: Deck = {
     E --> F[Deduplication]
     F --> G[Final Context]
     G --> H[LLM Answer]`}
-                    
-                  /></span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1rem' }}>
                         <li>LLM for query variation generation</li>
@@ -854,15 +854,15 @@ The pattern **reduces chunking dependency**. If your chunking strategy isn't per
                 <GSAPAnimated animation="slideInTop" delay={0.3}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                    diagram={`graph LR
+                      diagram={`graph LR
     A[User Query:<br/>'How to secure JWT tokens?'] --> B[LLM: Generate<br/>Hypothetical Answer]
     B --> C[Hypothetical Doc:<br/>'JWT tokens should use...<br/>HMAC-SHA256, rotate keys...']
     C --> D[Embed Hypothetical<br/>Answer]
     D --> E[Vector Search on<br/>Real Documents]
     E --> F[Retrieve Similar<br/>Real Documents]
     F --> G[LLM: Final Answer<br/>from Real Docs]`}
-                    
-                  /></span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Hypothetical document generator (LLM)</li>
@@ -1207,7 +1207,7 @@ Some systems use **multi-level hierarchies**: grandparent to parent to child. Th
                 <div style={{ marginBottom: '30px' }}>
                 </div>
               </GSAPAnimated>
-              <div style={{  display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.3}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1302,7 +1302,7 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                    diagram={`graph TD
+                      diagram={`graph TD
     A[Query: Who funded<br/>Company X?] --> B[Entity<br/>Extraction]
     B --> C[Entity: Company X]
     C --> D[Graph Query:<br/>Cypher/SPARQL]
@@ -1315,8 +1315,8 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
     I --> J[LLM Answer]
     style E fill:#4fc3f7
     style C fill:#81c784`}
-                    
-                  /></span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1rem' }}>
                         <li>Knowledge graph (e.g., Neo4j)</li>
@@ -1571,14 +1571,14 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
             <div style={{ textAlign: 'left' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <div style={{ marginBottom: '30px', display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  
+
                 </div>
               </GSAPAnimated>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.3}>
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
-                    diagram={`graph TD
+                      diagram={`graph TD
     A[User Query] --> B[Agent Planner]
     B --> C{Select Tool}
     C -->|Need Data| D[SQL Query Tool]
@@ -1593,8 +1593,8 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
     I --> J[LLM Final Answer]
     style B fill:#4fc3f7
     style I fill:#81c784`}
-                    
-                  /></span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1rem' }}>
                         <li>Agent planner (ReAct, Plan-Execute)</li>
