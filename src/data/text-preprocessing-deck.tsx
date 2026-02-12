@@ -197,7 +197,7 @@ export const textPreprocessingDeck: Deck = {
     style B fill:#ffd700
     style C fill:#81c784`} />
                     </h4>
-                    <p>Split text into meaningful units (tokens) such as words, subwords, or sentences.</p>
+                    <p style={{ margin: '0px' }}>Split text into meaningful units (tokens) such as words, subwords, or sentences.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -209,12 +209,12 @@ export const textPreprocessingDeck: Deck = {
     style C fill:#81c784
     style D fill:#81c784`} />
                     </h4>
-                    <p>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
+                    <p style={{ margin: '0px' }}>Rule-based (whitespace/punctuation) or model-based (BPE/WordPiece) segmentation</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Almost always as an early step before feature extraction or modeling</p>
+                    <p style={{ margin: '0px' }}>Almost always as an early step before feature extraction or modeling</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.8}>
@@ -388,7 +388,7 @@ graph LR
     style B fill:#ffd700
     style C fill:#81c784`} />
                     </h4>
-                    <p>Reduce case-related variance to shrink vocabulary and improve robustness.</p>
+                    <p style={{ margin: '0px' }}>Reduce case-related variance to shrink vocabulary and improve robustness.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -402,12 +402,12 @@ graph LR
     style D fill:#81c784
     style E fill:#e1bee7`} />
                     </h4>
-                    <p>Convert text to lowercase or Unicode casefolding for broader equivalence.</p>
+                    <p style={{ margin: '0px' }}>Convert text to lowercase or Unicode casefolding for broader equivalence.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Case-insensitive tasks (IR, topic modeling) or noisy user text.</p>
+                    <p style={{ margin: '0px' }}>Case-insensitive tasks (IR, topic modeling) or noisy user text.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.5} duration={0.8}>
@@ -595,7 +595,7 @@ graph LR
     style N fill:#ffd700
     style C fill:#81c784`} />
                     </h4>
-                    <p>Ensure canonical representation of characters to avoid duplicate forms.</p>
+                    <p style={{ margin: '0px' }}>Ensure canonical representation of characters to avoid duplicate forms.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -611,12 +611,12 @@ graph LR
     style E fill:#e1bee7
     style F fill:#e1bee7`} />
                     </h4>
-                    <p>Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose/compatibility-normalize.</p>
+                    <p style={{ margin: '0px' }}>Apply Unicode NFC/NFD/NFKC/NFKD to compose/decompose/compatibility-normalize.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Mixed sources, accented characters, search/dedup pipelines, cross-platform data.</p>
+                    <p style={{ margin: '0px' }}>Mixed sources, accented characters, search/dedup pipelines, cross-platform data.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.6} duration={0.8}>
@@ -808,7 +808,7 @@ graph TD
     style B fill:#ffd700
     style C fill:#81c784`} />
                     </h4>
-                    <p>Standardize spacing to make token boundaries predictable.</p>
+                    <p style={{ margin: '0px' }}>Standardize spacing to make token boundaries predictable.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -822,12 +822,12 @@ graph TD
     style D fill:#ffd700
     style E fill:#81c784`} />
                     </h4>
-                    <p>Collapse multiple spaces; normalize tabs/newlines; trim leading/trailing whitespace.</p>
+                    <p style={{ margin: '0px' }}>Collapse multiple spaces; normalize tabs/newlines; trim leading/trailing whitespace.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Before tokenization; after OCR; logs and scraped text.</p>
+                    <p style={{ margin: '0px' }}>Before tokenization; after OCR; logs and scraped text.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.5} duration={0.7}>
@@ -1055,7 +1055,7 @@ Not              an              accident
     style B fill:#ffd700
     style C fill:#81c784`} />
                     </h4>
-                    <p>Reduce punctuation variants and noise.</p>
+                    <p style={{ margin: '0px' }}>Reduce punctuation variants and noise.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -1069,12 +1069,12 @@ Not              an              accident
     style E fill:#4fc3f7
     style F fill:#81c784`} />
                     </h4>
-                    <p>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
+                    <p style={{ margin: '0px' }}>Map curly to straight quotes; unify hyphen/dash; collapse repeated punctuation; optionally strip.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
+                    <p style={{ margin: '0px' }}>Prior to tokenization/features; noisy UGC; cross-locale corpora.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.8}>
@@ -1262,7 +1262,7 @@ graph LR
     style C fill:#81c784
     style D fill:#ffcdd2`} />
                     </h4>
-                    <p>Remove very frequent function words that add little topical value.</p>
+                    <p style={{ margin: '0px' }}>Remove very frequent function words that add little topical value.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1276,14 +1276,14 @@ graph LR
     style E fill:#81c784
     style D fill:#ffcdd2`} />
                     </h4>
-                    <p>Filter tokens against a language-specific stopword list.</p>
+                    <p style={{ margin: '0px' }}>Filter tokens against a language-specific stopword list.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
+                    <p style={{ margin: '0px' }}>Bag-of-words/TF-IDF features, IR, topic modeling, keyword extraction.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -1494,7 +1494,7 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
     style D fill:#ffcdd2
     style B fill:#ffd700`} />
                     </h4>
-                    <p>Conservatively remove only the most generic function words while keeping nuance.</p>
+                    <p style={{ margin: '0px' }}>Conservatively remove only the most generic function words while keeping nuance.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="rotateIn" delay={0.4} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1510,14 +1510,14 @@ Stopword lists are typically derived from general text corpora. [cautiously] But
     style E fill:#e1bee7
     style F fill:#e1bee7`} />
                     </h4>
-                    <p>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
+                    <p style={{ margin: '0px' }}>Use a minimal curated list or importance scores (e.g., TF-IDF) to trim lightly.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="rotateIn" delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Sentiment, short texts, tasks sensitive to negation/modality.</p>
+                    <p style={{ margin: '0px' }}>Sentiment, short texts, tasks sensitive to negation/modality.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -1776,7 +1776,7 @@ graph LR
     style E fill:#4fc3f7
     style B fill:#81c784`} />
                     </h4>
-                    <p>Reduce inflected words to stems to merge variants.</p>
+                    <p style={{ margin: '0px' }}>Reduce inflected words to stems to merge variants.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="scaleIn" delay={0.4} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -1793,14 +1793,14 @@ graph LR
     style F fill:#81c784
     style B fill:#ffd700`} />
                     </h4>
-                    <p>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
+                    <p style={{ margin: '0px' }}>Heuristic algorithms (Porter, Snowball, Lancaster) strip suffixes.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="scaleIn" delay={0.6} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>IR, topic modeling, when lexical precision is not critical.</p>
+                    <p style={{ margin: '0px' }}>IR, topic modeling, when lexical precision is not critical.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -2088,7 +2088,7 @@ graph TD
     style F fill:#81c784
     style H fill:#81c784`} />
                     </h4>
-                    <p>Map tokens to dictionary base forms (lemmas).</p>
+                    <p style={{ margin: '0px' }}>Map tokens to dictionary base forms (lemmas).</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.4} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2102,14 +2102,14 @@ graph TD
     style C fill:#e1bee7
     style D fill:#81c784`} />
                     </h4>
-                    <p>Morphological analysis using lexicons and POS/context.</p>
+                    <p style={{ margin: '0px' }}>Morphological analysis using lexicons and POS/context.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="fadeIn" delay={0.6} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Need precise base forms; linguistic analysis; better semantic grouping.</p>
+                    <p style={{ margin: '0px' }}>Need precise base forms; linguistic analysis; better semantic grouping.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -2457,7 +2457,7 @@ Use neither when:
     style F fill:#ffd700
     style H fill:#81c784`} />
                     </h4>
-                    <p>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
+                    <p style={{ margin: '0px' }}>Assign grammatical categories (e.g., noun, verb) to tokens.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.4} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2471,14 +2471,14 @@ Use neither when:
     style C fill:#e1bee7
     style D fill:#81c784`} />
                     </h4>
-                    <p>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
+                    <p style={{ margin: '0px' }}>Sequence labeling via HMM/CRF/neural models trained on tagged corpora.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="slideInLeft" delay={0.6} duration={0.8}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Before lemmatization, parsing, NER, feature engineering.</p>
+                    <p style={{ margin: '0px' }}>Before lemmatization, parsing, NER, feature engineering.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -2872,7 +2872,7 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
     style C fill:#e1bee7
     style D fill:#ffd700`} />
                     </h4>
-                    <p>Capture local context by creating contiguous token sequences.</p>
+                    <p style={{ margin: '0px' }}>Capture local context by creating contiguous token sequences.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="bounceIn" delay={0.4} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -2886,14 +2886,14 @@ The bottom line: POS tagging is a powerful tool that enables advanced NLP, but i
     style C fill:#e1bee7
     style D fill:#81c784`} />
                     </h4>
-                    <p>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
+                    <p style={{ margin: '0px' }}>Sliding window to build bigrams/trigrams/etc.; optional weighting.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="bounceIn" delay={0.6} duration={0.9}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Linear models, IR, text classification, feature engineering.</p>
+                    <p style={{ margin: '0px' }}>Linear models, IR, text classification, feature engineering.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -3292,7 +3292,7 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
     style D fill:#81c784
     style F fill:#81c784`} />
                     </h4>
-                    <p>Treat multiword expressions as single units (e.g., "New York").</p>
+                    <p style={{ margin: '0px' }}>Treat multiword expressions as single units (e.g., "New York").</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="flipCard" delay={0.4} duration={1.0}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -3306,14 +3306,14 @@ The bottom line: N-grams are a powerful, interpretable way to capture local cont
     style C fill:#81c784
     style D fill:#81c784`} />
                     </h4>
-                    <p>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
+                    <p style={{ margin: '0px' }}>Statistical collocation metrics (PMI, t-score) or model-based detection.</p>
                   </GSAPAnimated>
                   <GSAPAnimated animation="flipCard" delay={0.6} duration={1.0}>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
+                    <p style={{ margin: '0px' }}>IR, topic modeling, entity-heavy domains, prior to tokenization updates.</p>
                   </GSAPAnimated>
                 </div>
                 <div>
@@ -3600,7 +3600,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Fix misspellings to improve readability and model input quality.</p>
+                    <p style={{ margin: '0px' }}>Fix misspellings to improve readability and model input quality.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -3614,12 +3614,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style A fill:#4fc3f7
     style G fill:#81c784`} />
                     </h4>
-                    <p>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
+                    <p style={{ margin: '0px' }}>Candidate generation via edit distance; ranking by frequency/context (language models).</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>User-generated content, noisy forms, query logs.</p>
+                    <p style={{ margin: '0px' }}>User-generated content, noisy forms, query logs.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.9}>
@@ -3728,7 +3728,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Correct systematic errors from optical character recognition.</p>
+                    <p style={{ margin: '0px' }}>Correct systematic errors from optical character recognition.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -3745,12 +3745,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style C fill:#ffcdd2
     style H fill:#81c784`} />
                     </h4>
-                    <p>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
+                    <p style={{ margin: '0px' }}>Rule-based replacements, confusion matrices, dictionaries, post-OCR language models.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Scanned books, PDFs, historical documents.</p>
+                    <p style={{ margin: '0px' }}>Scanned books, PDFs, historical documents.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.5} duration={1.0}>
@@ -3851,7 +3851,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
+                    <p style={{ margin: '0px' }}>Expand contractions (e.g., "don't"  to  "do not") for clarity and handling negation.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph LR
@@ -3866,12 +3866,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style D fill:#81c784
     style H fill:#81c784`} />
                     </h4>
-                    <p>Regex + mapping dictionary; optional context-aware models.</p>
+                    <p style={{ margin: '0px' }}>Regex + mapping dictionary; optional context-aware models.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Sentiment, rule-based parsing, tasks expecting full forms.</p>
+                    <p style={{ margin: '0px' }}>Sentiment, rule-based parsing, tasks expecting full forms.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.4} duration={0.9}>
@@ -3978,7 +3978,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Standardize numeric expressions for comparability and reduced sparsity.</p>
+                    <p style={{ margin: '0px' }}>Standardize numeric expressions for comparability and reduced sparsity.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -3995,12 +3995,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style F fill:#81c784
     style I fill:#81c784`} />
                     </h4>
-                    <p>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
+                    <p style={{ margin: '0px' }}>Parse numerals/words; normalize format; unit conversion; masking (e.g., "NUM").</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>De-identification, aggregation, generalization in models.</p>
+                    <p style={{ margin: '0px' }}>De-identification, aggregation, generalization in models.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.5} duration={1.0}>
@@ -4110,7 +4110,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
+                    <p style={{ margin: '0px' }}>Control or remove emojis, symbols, control chars, and non-text artifacts.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -4128,12 +4128,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style G fill:#81c784
     style I fill:#ffcdd2`} />
                     </h4>
-                    <p>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
+                    <p style={{ margin: '0px' }}>Use Unicode categories; whitelists/blacklists; regex filters or mappings.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Formal documents, security sanitization, systems with limited character sets.</p>
+                    <p style={{ margin: '0px' }}>Formal documents, security sanitization, systems with limited character sets.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4} duration={0.8}>
@@ -4233,7 +4233,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Remove template-like non-content (headers, footers, nav, ads).</p>
+                    <p style={{ margin: '0px' }}>Remove template-like non-content (headers, footers, nav, ads).</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -4253,12 +4253,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style I fill:#81c784
     style H fill:#ffcdd2`} />
                     </h4>
-                    <p>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
+                    <p style={{ margin: '0px' }}>HTML/DOM parsing; text-density heuristics; boilerplate detectors (e.g., Boilerpipe, JusText).</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Web/news scraping, emails, PDFs, templated reports.</p>
+                    <p style={{ margin: '0px' }}>Web/news scraping, emails, PDFs, templated reports.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.5} duration={0.9}>
@@ -4370,7 +4370,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
+                    <p style={{ margin: '0px' }}>Eliminate exact/near-duplicate sentences to reduce bias and leakage.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -4387,12 +4387,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style H fill:#ffcdd2
     style I fill:#81c784`} />
                     </h4>
-                    <p>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
+                    <p style={{ margin: '0px' }}>Hashing for exact dupes; MinHash/LSH or embeddings + cosine for near dupes.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Dataset building, deduplication before training/evaluation.</p>
+                    <p style={{ margin: '0px' }}>Dataset building, deduplication before training/evaluation.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInBottom" delay={0.5} duration={0.9}>
@@ -4495,7 +4495,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Split text into sentences for sentence-level processing.</p>
+                    <p style={{ margin: '0px' }}>Split text into sentences for sentence-level processing.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -4510,12 +4510,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style E fill:#81c784
     style H fill:#81c784`} />
                     </h4>
-                    <p>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
+                    <p style={{ margin: '0px' }}>Rule-based with abbreviations + ML/neural models to handle edge cases.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Summarization, translation, sentiment at sentence granularity.</p>
+                    <p style={{ margin: '0px' }}>Summarization, translation, sentiment at sentence granularity.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="flipCard" delay={0.5} duration={1.0}>
@@ -4625,7 +4625,7 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
                       <SvgIcon iconName="duo-bullseye" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       Goal
                     </h4>
-                    <p>Identify language and route/filter text accordingly.</p>
+                    <p style={{ margin: '0px' }}>Identify language and route/filter text accordingly.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <SvgIcon iconName="duo-gears" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       How It Works <MermaidPopover diagram={`graph TD
@@ -4640,12 +4640,12 @@ Phrase detection is a powerful preprocessing step that transforms word sequences
     style E fill:#81c784
     style H fill:#81c784`} />
                     </h4>
-                    <p>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
+                    <p style={{ margin: '0px' }}>Character n-grams with probabilistic classifiers (e.g., fastText, CLD3), sometimes with confidence scores.</p>
                     <h4 style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
                       <SvgIcon iconName="duo-calendar-check" sizeName="2x" style={{ marginTop: '16px' }} darkModeInvert={true} />
                       When to Use
                     </h4>
-                    <p>Multilingual corpora; language-specific pipelines or content moderation.</p>
+                    <p style={{ margin: '0px' }}>Multilingual corpora; language-specific pipelines or content moderation.</p>
                   </div>
                 </GSAPAnimated>
                 <GSAPAnimated animation="rotateIn" delay={0.5} duration={1.0}>
