@@ -20,7 +20,7 @@ export const embeddingQualityDeck: Deck = {
           center: true,
           title: '7 Tricks to Improve Embedding Quality',
           content: (
-            <div style={{ marginTop: '30px' }}>
+            <div>
               <GSAPAnimated animation="rotateIn" duration={1} delay={0}>
                 <SvgIcon iconName="duo-lightbulb" sizeName="4x" darkModeInvert={true} />
               </GSAPAnimated>
@@ -57,7 +57,7 @@ export const embeddingQualityDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ fontSize: '2rem' }}>
+              <div style={{ fontSize: '1.6rem' }}>
                 <GSAPStaggerList stagger={0.12} duration={0.7}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '16px', margin: '28px 0' }}>
                     <SvgIcon iconName="duo-broom" sizeName="2x" style={{ color: '#4fc3f7' }} />

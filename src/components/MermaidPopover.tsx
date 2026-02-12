@@ -205,7 +205,7 @@ export const MermaidPopover = ({ diagram, title }: MermaidPopoverProps) => {
         onMouseEnter={(e) => (e.currentTarget.style.opacity = '1')}
         onMouseLeave={(e) => (e.currentTarget.style.opacity = '0.7')}
       >
-        <SvgIcon iconName="duo-diagram-project" sizeName="2x" darkModeInvert={true} />
+        <SvgIcon iconName="duo-diagram-project" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
       </span>
       {modal && createPortal(modal, document.body)}
     </>
