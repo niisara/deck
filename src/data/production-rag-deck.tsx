@@ -22,25 +22,25 @@ export const productionRagDeck: Deck = {
           content: (
             <div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
-                <h3 style={{ fontSize: '2rem', marginTop: '30px', color: '#4fc3f7' }}>
+                <h3 style={{ fontSize: '1.6rem', marginTop: '30px', color: '#4fc3f7' }}>
                   Proven designs for reliable, scalable Retrieval-Augmented Generation
                 </h3>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.5}>
                 <div style={{ marginTop: '30px', display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', fontSize: '1.8rem' }}>
                     <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" darkModeInvert={true} />
                     <span>Retrieval accuracy</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(129, 199, 132, 0.2)', borderRadius: '8px', fontSize: '1.8rem' }}>
                     <SvgIcon iconName="duo-book-open" sizeName="2x" darkModeInvert={true} />
                     <span>Context handling</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(255, 183, 77, 0.2)', borderRadius: '8px', fontSize: '1.8rem' }}>
                     <SvgIcon iconName="duo-shield-check" sizeName="2x" darkModeInvert={true} />
                     <span>Answer quality</span>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', padding: '15px 20px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', fontSize: '1.8rem' }}>
                     <SvgIcon iconName="duo-gauge-high" sizeName="2x" darkModeInvert={true} />
                     <span>Scalability</span>
                   </div>
@@ -284,7 +284,7 @@ export const productionRagDeck: Deck = {
             <div style={{ textAlign: 'left', fontSize: '0.75em' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -431,7 +431,7 @@ export const productionRagDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -579,7 +579,7 @@ export const productionRagDeck: Deck = {
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.2}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -637,10 +637,13 @@ export const productionRagDeck: Deck = {
           icon: { name: 'duo-copy' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <GSAPAnimated animation="fadeIn" delay={0.2}>
-                <div style={{ marginBottom: '30px', display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  <MermaidPopover
-                    diagram={`graph TD
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
+                      diagram={`graph TD
     A[User Query] --> B[LLM Query Generator]
     B --> C1[Variant 1]
     B --> C2[Variant 2]
@@ -654,16 +657,10 @@ export const productionRagDeck: Deck = {
     E --> F[Deduplication]
     F --> G[Final Context]
     G --> H[LLM Answer]`}
-                    
-                  />
-                </div>
-              </GSAPAnimated>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>LLM for query variation generation</li>
                         <li>Hybrid retrievers (embedding + keyword)</li>
                         <li>Reciprocal rank fusion algorithm</li>
@@ -678,7 +675,7 @@ export const productionRagDeck: Deck = {
                   <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Generate diverse query variations (3-5)</li>
                         <li>Create facet/intent variants</li>
                         <li>Parallel retrieval for each variant</li>
@@ -693,7 +690,7 @@ export const productionRagDeck: Deck = {
                   <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Deduplicate overlapping chunks</li>
                         <li>Diversify by source when possible</li>
                         <li>Include brief per-chunk rationale</li>
@@ -708,7 +705,7 @@ export const productionRagDeck: Deck = {
                   <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Research-oriented queries</li>
                         <li>Multi-faceted or complex questions</li>
                         <li>Broad knowledge bases with diverse content</li>
@@ -768,7 +765,7 @@ The citation and source tracking system becomes more complex here because you ne
                 <div style={{ marginBottom: '30px' }}>
                 </div>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.3}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -851,24 +848,21 @@ The pattern **reduces chunking dependency**. If your chunking strategy isn't per
           icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <GSAPAnimated animation="scaleIn" delay={0.2}>
-                <div style={{ marginBottom: '30px', display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  <MermaidPopover
-                    diagram={`graph LR
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <GSAPAnimated animation="slideInTop" delay={0.3}>
+                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
+                      diagram={`graph LR
     A[User Query:<br/>'How to secure JWT tokens?'] --> B[LLM: Generate<br/>Hypothetical Answer]
     B --> C[Hypothetical Doc:<br/>'JWT tokens should use...<br/>HMAC-SHA256, rotate keys...']
     C --> D[Embed Hypothetical<br/>Answer]
     D --> E[Vector Search on<br/>Real Documents]
     E --> F[Retrieve Similar<br/>Real Documents]
     F --> G[LLM: Final Answer<br/>from Real Docs]`}
-                    
-                  />
-                </div>
-              </GSAPAnimated>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                <GSAPAnimated animation="slideInTop" delay={0.3}>
-                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
                       <ul style={{ fontSize: '1.2rem' }}>
                         <li>Hypothetical document generator (LLM)</li>
@@ -984,7 +978,7 @@ For **multi-lingual retrieval**, HyDE can generate a hypothetical answer in the 
                 <div style={{ marginBottom: '30px' }}>
                 </div>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.3}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1213,7 +1207,7 @@ Some systems use **multi-level hierarchies**: grandparent to parent to child. Th
                 <div style={{ marginBottom: '30px' }}>
                 </div>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="rotateIn" delay={0.3}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1302,10 +1296,13 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <GSAPAnimated animation="fadeIn" delay={0.2}>
-                <div style={{ marginBottom: '30px', display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  <MermaidPopover
-                    diagram={`graph TD
+              <div style={{ marginBottom: '30px' }}>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <GSAPAnimated animation="slideInLeft" delay={0.3}>
+                  <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
+                      diagram={`graph TD
     A[Query: Who funded<br/>Company X?] --> B[Entity<br/>Extraction]
     B --> C[Entity: Company X]
     C --> D[Graph Query:<br/>Cypher/SPARQL]
@@ -1318,16 +1315,10 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
     I --> J[LLM Answer]
     style E fill:#4fc3f7
     style C fill:#81c784`}
-                    
-                  />
-                </div>
-              </GSAPAnimated>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                <GSAPAnimated animation="slideInLeft" delay={0.3}>
-                  <div style={{ padding: '10px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Knowledge graph (e.g., Neo4j)</li>
                         <li>Entity/relationship extraction</li>
                         <li>Vector database (semantic search)</li>
@@ -1341,9 +1332,9 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.3}>
                   <div style={{ padding: '10px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Graph-enhanced vector search</li>
                         <li>Entity linking to relevant nodes</li>
                         <li>Multi-hop traversal with depth control</li>
@@ -1357,9 +1348,9 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                 </GSAPAnimated>
                 <GSAPAnimated animation="bounceIn" delay={0.4}>
                   <div style={{ padding: '10px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Include path structure and relationships</li>
                         <li>Entity-focused contextual assembly</li>
                         <li>Incorporate community summaries</li>
@@ -1373,9 +1364,9 @@ Use **parent caching**: if multiple child chunks from the same parent are retrie
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" delay={0.4}>
                   <div style={{ padding: '10px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ margin: '0px 5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Compliance and regulatory applications</li>
                         <li>Enterprise knowledge management</li>
                         <li>Complex research analysis</li>
@@ -1468,7 +1459,7 @@ This ingestion complexity is significant but pays dividends at query time.
                 <div style={{ marginBottom: '30px' }}>
                 </div>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '12px', marginTop: '12px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '12px' }}>
                 <GSAPAnimated animation="slideInBottom" delay={0.3}>
                   <div style={{ flex: 1, padding: '10px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -1580,8 +1571,14 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
             <div style={{ textAlign: 'left' }}>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <div style={{ marginBottom: '30px', display: 'flex', gap: '15px', alignItems: 'center' }}>
-                  <MermaidPopover
-                    diagram={`graph TD
+
+                </div>
+              </GSAPAnimated>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <GSAPAnimated animation="rotateIn" delay={0.3}>
+                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
+                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:<MermaidPopover
+                      diagram={`graph TD
     A[User Query] --> B[Agent Planner]
     B --> C{Select Tool}
     C -->|Need Data| D[SQL Query Tool]
@@ -1596,16 +1593,10 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
     I --> J[LLM Final Answer]
     style B fill:#4fc3f7
     style I fill:#81c784`}
-                    
-                  />
-                </div>
-              </GSAPAnimated>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
-                <GSAPAnimated animation="rotateIn" delay={0.3}>
-                  <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
-                    <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
+
+                    /></span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Agent planner (ReAct, Plan-Execute)</li>
                         <li>Toolset (SQL, APIs, search engines, code)</li>
                         <li>External knowledge sources (databases, APIs)</li>
@@ -1620,7 +1611,7 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
                   <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Tool-augmented retrieval (SQL, API calls)</li>
                         <li>Iterative planning with decomposition</li>
                         <li>Multi-tool orchestration</li>
@@ -1634,7 +1625,7 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
                   <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Scratchpad traces for tool executions</li>
                         <li>Selective tool outputs (summarized)</li>
                         <li>Citation of retrieved information</li>
@@ -1648,7 +1639,7 @@ Some teams start with vector-only RAG, then incrementally add graph capabilities
                   <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.7}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Business intelligence assistants</li>
                         <li>Operations/SRE copilots</li>
                         <li>Research analysis agents</li>
@@ -1756,7 +1747,7 @@ Maintaining this toolset is ongoing work as APIs evolve and new tools are added.
                 <div style={{ marginBottom: '30px' }}>
                 </div>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="scaleIn" delay={0.3}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2013,7 +2004,7 @@ The fine-tuned model then uses RAG-retrieved context but interprets and responds
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <div style={{ marginBottom: '30px' }}></div>
               </GSAPAnimated>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.3}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2141,7 +2132,7 @@ This de-risks the investment while building toward the hybrid ideal.
     style B fill:#ffd700
     style H fill:#ffcdd2`} /></span></strong></p>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Iterative retriever (multi-hop)</li>
                         <li>Hypothesis generator (CoT reasoning)</li>
                         <li>Question decomposition module</li>
@@ -2157,7 +2148,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Self-ask/multi-hop retrieval loops</li>
                         <li>Plan-execute-refine sequences</li>
                         <li>Breadth-then-depth exploration</li>
@@ -2172,7 +2163,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Maintain working context set across turns</li>
                         <li>Prune redundant/irrelevant information</li>
                         <li>Merge complementary evidence</li>
@@ -2187,7 +2178,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Legal reasoning and case research</li>
                         <li>Academic/scientific literature review</li>
                         <li>Investigative analysis</li>
@@ -2222,7 +2213,7 @@ This de-risks the investment while building toward the hybrid ideal.
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="flipCard" delay={0.2}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2289,7 +2280,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(79, 195, 247, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-gear" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Components:</span></strong></p>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Contextual retrieval (contextualized embeddings)</li>
                         <li>Contextual BM25 (contextual lexical matching)</li>
                         <li>Context compressors (extractive/abstractive)</li>
@@ -2304,7 +2295,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(129, 199, 132, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Retrieval Strategy:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Add context to chunks before embedding</li>
                         <li>Hybrid recall with contextual embeddings + BM25</li>
                         <li>Compress retrieved content to salient spans</li>
@@ -2318,7 +2309,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(255, 183, 77, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-book-open" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Context Packing Approach:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Include snippets with source lines/citations</li>
                         <li>Provide concise summaries with context</li>
                         <li>Use reference markers for traceability</li>
@@ -2332,7 +2323,7 @@ This de-risks the investment while building toward the hybrid ideal.
                   <div style={{ padding: '12px', background: 'rgba(186, 104, 200, 0.1)', borderRadius: '5px' }}>
                     <p style={{ margin: '0px' }}><strong style={{ display: 'flex', alignItems: 'center' }}><SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '5px' }} darkModeInvert={true} /><span style={{ marginTop: '4px', fontSize: '2rem' }}>Best Fit Use Cases:</span></strong></p>
                     <GSAPStaggerList stagger={0.12} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem' }}>
+                      <ul style={{ fontSize: '1rem' }}>
                         <li>Enterprise systems with huge document collections</li>
                         <li>Long document analysis (academic papers, legal docs)</li>
                         <li>Latency or cost-sensitive applications</li>
@@ -2366,7 +2357,7 @@ This de-risks the investment while building toward the hybrid ideal.
             <div style={{ textAlign: 'left' }}>
               <div style={{ marginBottom: '30px' }}>
               </div>
-              <div style={{ display: 'flex', gap: '15px', marginTop: '15px' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', marginTop: '15px' }}>
                 <GSAPAnimated animation="bounceIn" delay={0.2}>
                   <div style={{ flex: 1, padding: '12px', background: 'rgba(129, 199, 132, 0.15)', borderRadius: '5px' }}>
                     <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} /> <strong>Strengths:</strong></p>
@@ -2433,7 +2424,7 @@ This de-risks the investment while building toward the hybrid ideal.
                       Quick Pattern Selection Guide
                     </h3>
                     <GSAPStaggerList stagger={0.1} duration={0.6}>
-                      <ul style={{ fontSize: '1.2rem', lineHeight: '1.7', listStyle: 'none', paddingLeft: 0 }}>
+                      <ul style={{ fontSize: '1rem', lineHeight: '1.7', listStyle: 'none', paddingLeft: 0 }}>
                         <li><strong>Start with:</strong> Basic RAG → add Re-Ranking as corpus grows</li>
                         <li><strong>Ambiguous queries:</strong> Query Rewriting + Multi-Query</li>
                         <li><strong>Zero-shot domains:</strong> HyDE (Hypothetical Document Embeddings)</li>
@@ -2491,7 +2482,7 @@ This de-risks the investment while building toward the hybrid ideal.
                     Next Steps for RAG Implementation
                   </h3>
                   <GSAPStaggerList stagger={0.1} duration={0.6}>
-                    <ul style={{ fontSize: '1.2rem', lineHeight: '1.6', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                    <ul style={{ fontSize: '1rem', lineHeight: '1.6', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                       <li>Instrument evaluation metrics (relevance, hallucination rate, latency)</li>
                       <li>A/B test retrieval parameters (K, fusion methods, reranker configs)</li>
                       <li>Implement feedback loops for continuous improvement</li>

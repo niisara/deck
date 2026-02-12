@@ -20,20 +20,20 @@ export const hybridSearchDeck: Deck = {
           center: true,
           title: '11 Hybrid Search Patterns',
           content: (
-            <div style={{ marginTop: '20px' }}>
+            <div>
               <GSAPAnimated animation="scaleIn" delay={0.1}>
-                <h2 style={{ marginBottom: '20px', alignItems: 'center' }}>
-                  <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
+                <h3 style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', gap: '10px' }}>
+                  <SvgIcon iconName="duo-magnifying-glass" sizeName="2x" style={{ margin: '0px' }} darkModeInvert={true} />
                   Vector + BM25
-                </h2>
+                </h3>
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={0.4}>
-                <p style={{ fontSize: '1.4rem', marginTop: '30px' }}>
+                <p style={{ fontSize: '1.3rem', marginTop: '30px' }}>
                   A practical cheat sheet for combining lexical and semantic search to build more powerful retrieval systems
                 </p>
               </GSAPAnimated>
               <GSAPAnimated animation="slideInBottom" delay={0.7}>
-                <div style={{ marginTop: '20px', fontSize: '1.2rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
+                <div style={{ marginTop: '20px', fontSize: '1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px', flexWrap: 'wrap' }}>
                   <span>Weighted Hybrid</span>
                   <span>•</span>
                   <span>Two-Stage Retrieval</span>
@@ -81,8 +81,6 @@ export const hybridSearchDeck: Deck = {
           icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
                   <div>
@@ -190,8 +188,6 @@ flowchart LR
           icon: { name: 'duo-sliders' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <div style={{ fontSize: '0.8em' }}>
                   <p><strong>Idea / Pattern Summary:</strong> Blend BM25 and embedding similarity into one normalized score.</p>
@@ -271,7 +267,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -327,8 +323,6 @@ flowchart TB
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Recall with fast BM25, then re-rank candidates using embedding similarity.</p>
@@ -407,7 +401,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -475,8 +469,6 @@ flowchart TB
           icon: { name: 'duo-arrows-rotate' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="slideInRight" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Recall with vector ANN, then re-rank by BM25 to emphasize exact terms.</p>
@@ -565,7 +557,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -637,8 +629,6 @@ flowchart TB
           icon: { name: 'duo-gauge-high' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Add keyword boosts/must-haves to vector similarity to control precision.</p>
@@ -730,7 +720,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -804,8 +794,6 @@ flowchart TB
           icon: { name: 'duo-filter' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="slideInRight" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Apply faceted/ACL metadata filters, then run hybrid scoring within the slice.</p>
@@ -899,7 +887,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -971,8 +959,6 @@ flowchart TB
           icon: { name: 'duo-table' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Weight important fields (e.g., title &gt; body) in hybrid lexical + vector scoring.</p>
@@ -1066,7 +1052,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -1134,8 +1120,6 @@ flowchart TB
           icon: { name: 'duo-book-open' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="slideInRight" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Expand the query with lexical synonyms and semantic neighbors before hybrid retrieval.</p>
@@ -1239,7 +1223,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -1307,8 +1291,6 @@ flowchart TB
           icon: { name: 'duo-check-double' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Use a cross-encoder to re-rank a small hybrid candidate set for maximal precision.</p>
@@ -1401,7 +1383,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -1469,8 +1451,6 @@ flowchart TB
           icon: { name: 'duo-circle-nodes' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Retrieve on small child chunks (vectors), return ranked parent chunks for context.</p>
@@ -1578,7 +1558,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -1646,8 +1626,6 @@ flowchart TB
           icon: { name: 'duo-rocket' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="fadeIn" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Combine fast ANN vector recall with exact BM25 ranking/fusion for scale and quality.</p>
@@ -1752,7 +1730,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -1820,8 +1798,6 @@ flowchart TB
           icon: { name: 'duo-book' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '45px' }}>
-              </div>
               <div style={{ fontSize: '0.8em' }}>
                 <GSAPAnimated animation="slideInRight" delay={0.1}>
                   <p><strong>Idea / Pattern Summary:</strong> Inject domain ontologies, synonyms, and entity linking into hybrid retrieval.</p>
@@ -1932,7 +1908,7 @@ flowchart TB
           content: (
             <div style={{ textAlign: 'left' }}>
               <div style={{ fontSize: '2rem' }}>
-                <div style={{ display: 'flex', gap: '40px', marginTop: '20px' }}>
+                <div style={{ display: 'flex', gap: '40px' }}>
                   <GSAPAnimated animation="slideInLeft" delay={0.2}>
                     <div style={{ flex: 1 }}>
                       <p style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><SvgIcon iconName="duo-circle-check" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} /> <strong style={{ fontSize: '2rem' }}>Strengths:</strong></p>
@@ -2000,8 +1976,6 @@ flowchart TB
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div>
@@ -2010,7 +1984,7 @@ flowchart TB
                       What to Remember
                     </h3>
                     <GSAPAnimated animation="fadeIn" delay={0.3}>
-                      <ul style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+                      <ul style={{ fontSize: '1rem', lineHeight: '1.8' }}>
                         <li>Start simple: Weighted fusion or RRF is a solid baseline</li>
                         <li>Cascade when needed: Two-stage or cross-encoder for precision</li>
                         <li>Control drift: Term boosts, field-aware scoring, metadata filters</li>
@@ -2027,7 +2001,7 @@ flowchart TB
                       Operational Tips
                     </h3>
                     <GSAPAnimated animation="fadeIn" delay={0.3}>
-                      <ul style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+                      <ul style={{ fontSize: '1rem', lineHeight: '1.8' }}>
                         <li>Tune alpha/weights per query type; consider dynamic tuning</li>
                         <li>Normalize scores before linear fusion; or use RRF to avoid it</li>
                         <li>Evaluate with nDCG@k, Recall@k, MRR, user CTR/zero-result rate</li>
@@ -2039,24 +2013,24 @@ flowchart TB
                 </GSAPAnimated>
               </div>
               <GSAPAnimated animation="scaleIn" delay={0.7}>
-                <div style={{ marginTop: '30px' }}>
+                <div>
                   <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ffb74d', marginBottom: '15px', fontSize: '2rem' }}>
                     <SvgIcon iconName="duo-circle-nodes" sizeName="2x" darkModeInvert={true} />
                     Tools Recap
                   </h3>
                   <GSAPAnimated animation="fadeIn" delay={0.8}>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', fontSize: '1.4rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '20px', fontSize: '1.2rem' }}>
                       <div>
                         <h4 style={{ color: '#ba68c8', marginBottom: '10px' }}>Vector Databases & Search Engines</h4>
-                        <p style={{ fontSize: '1.2rem' }}>Elasticsearch/OpenSearch, Vespa, Weaviate, Qdrant, Milvus, Pinecone, Azure AI Search</p>
+                        <p style={{ fontSize: '1rem' }}>Elasticsearch/OpenSearch, Vespa, Weaviate, Qdrant, Milvus, Pinecone, Azure AI Search</p>
                       </div>
                       <div>
                         <h4 style={{ color: '#f06292', marginBottom: '10px' }}>Rerankers</h4>
-                        <p style={{ fontSize: '1.2rem' }}>Cohere Rerank, OpenAI ReRank, Jina Reranker, SentenceTransformers</p>
+                        <p style={{ fontSize: '1rem' }}>Cohere Rerank, OpenAI ReRank, Jina Reranker, SentenceTransformers</p>
                       </div>
                       <div>
                         <h4 style={{ color: '#64b5f6', marginBottom: '10px' }}>Frameworks</h4>
-                        <p style={{ fontSize: '1.2rem' }}>LangChain, LlamaIndex, Haystack, FAISS, SPLADE</p>
+                        <p style={{ fontSize: '1rem' }}>LangChain, LlamaIndex, Haystack, FAISS, SPLADE</p>
                       </div>
                     </div>
                   </GSAPAnimated>
@@ -2064,8 +2038,8 @@ flowchart TB
               </GSAPAnimated>
               <GSAPAnimated animation="fadeIn" delay={1.0}>
                 <div style={{ marginTop: '25px', padding: '10px', background: 'rgba(79, 195, 247, 0.2)', borderRadius: '8px', textAlign: 'left' }}>
-                  <p style={{ fontSize: '1.2rem' }}>
-                    <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '10px' }} darkModeInvert={true} />
+                  <p style={{ fontSize: '0.8rem', margin: '0px', display: 'flex', alignItems: 'center', gap: '5px' }}>
+                    <SvgIcon iconName="duo-trophy" sizeName="1x" style={{ margin: '0px' }} darkModeInvert={true} />
                     <strong>Remember:</strong> Hybrid search is about combining the strengths of lexical and semantic approaches.
                     Start simple, measure everything, and iterate based on real user feedback.
                   </p>

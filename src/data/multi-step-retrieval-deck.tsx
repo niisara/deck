@@ -19,13 +19,13 @@ export const multiStepRetrievalDeck: Deck = {
           center: true,
           title: 'Multi-Step Retrieval Strategies',
           content: (
-            <div style={{ marginTop: '20px', color: '#fff' }}>
+            <div>
               <GSAPAnimated animation="fadeIn" delay={0.2}>
                 <h2>Retrieve → Generate → Retrieve</h2>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.5}>
-                <p style={{ fontSize: '1.4rem', marginTop: '30px' }}>
-                  <SvgIcon iconName="duo-arrows-rotate" sizeName="2x" style={{ marginRight: '15px', verticalAlign: 'middle' }} darkModeInvert={true} />
+                <p style={{ fontSize: '1.2rem', display: 'flex', gap: '5px' }}>
+                  <SvgIcon iconName="duo-arrows-rotate" sizeName="2x" style={{ margin: '0px', verticalAlign: 'middle' }} darkModeInvert={true} />
                   A comprehensive guide to 9 techniques that improve retrieval augmented generation through multi-step processes
                 </p>
               </GSAPAnimated>
@@ -70,8 +70,6 @@ export const multiStepRetrievalDeck: Deck = {
           icon: { name: 'duo-lightbulb' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '2rem' }}>
-              <div style={{ marginBottom: '30px' }}>
-              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div>
@@ -1543,16 +1541,14 @@ Now let's bring everything together with our summary and decision guide.`
           icon: { name: 'duo-clipboard-check' },
           content: (
             <div style={{ textAlign: 'left', fontSize: '2rem' }}>
-              <div style={{ marginBottom: '25px' }}>
-              </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '30px' }}>
                 <GSAPAnimated animation="slideInLeft" delay={0.2}>
                   <div>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px' }}>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#4fc3f7', marginBottom: '15px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-map" sizeName="2x" darkModeInvert={true} />
                       Quick Chooser
                     </h3>
-                    <ul style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+                    <ul style={{ fontSize: '1rem', lineHeight: '1.8' }}>
                       <li><strong>Need recall boost with minimal changes:</strong> HyDE</li>
                       <li><strong>Ambiguous or exploratory:</strong> Iterative Retrieve-and-Refine</li>
                       <li><strong>Multi-fact tasks:</strong> Query Decomposition</li>
@@ -1567,21 +1563,21 @@ Now let's bring everything together with our summary and decision guide.`
                 </GSAPAnimated>
                 <GSAPAnimated animation="slideInRight" delay={0.4}>
                   <div>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ef5350', marginBottom: '15px' }}>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#ef5350', marginBottom: '15px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-triangle-exclamation" sizeName="2x" darkModeInvert={true} />
                       Common Pitfalls
                     </h3>
-                    <ul style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+                    <ul style={{ fontSize: '1rem', lineHeight: '1.8' }}>
                       <li><strong>Drift:</strong> Query reformulation moving away from original intent</li>
                       <li><strong>Hallucination anchoring:</strong> Initial errors propagating through pipeline</li>
                       <li><strong>Path explosion:</strong> Too many branches in multi-hop retrieval</li>
                       <li><strong>Latency budgets:</strong> Multiple retrieval rounds adding excessive delay</li>
                     </ul>
-                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#81c784', marginBottom: '15px', marginTop: '20px' }}>
+                    <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#81c784', marginBottom: '15px', marginTop: '20px', fontSize: '2rem' }}>
                       <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                       Implementation Tips
                     </h3>
-                    <ul style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>
+                    <ul style={{ fontSize: '1rem', lineHeight: '1.8' }}>
                       <li>Define clear stop criteria for iterative approaches</li>
                       <li>Cache embeddings/results between iterations</li>
                       <li>Log traces for evaluation and debugging</li>
@@ -1593,7 +1589,7 @@ Now let's bring everything together with our summary and decision guide.`
               </div>
               <GSAPAnimated animation="fadeIn" delay={0.7}>
                 <div style={{ marginTop: '10px', padding: '10px', background: 'rgba(186, 104, 200, 0.2)', borderRadius: '8px', textAlign: 'left' }}>
-                  <p style={{ fontSize: '1rem', margin: 0 }}>
+                  <p style={{ fontSize: '0.85rem', margin: 0 }}>
                     <SvgIcon iconName="duo-rocket" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '10px' }} darkModeInvert={true} />
                     <strong>Pro Tip:</strong> Consider combining strategies: use simple techniques for initial query understanding,
                     then more complex ones for evidence gathering and verification

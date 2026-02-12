@@ -26,10 +26,7 @@ export const embeddingModelsDeck: Deck = {
           center: true,
           title: '9 Embedding Models Cheat Sheet',
           content: (
-            <div style={{ marginTop: '18px' }}>
-              <GSAPAnimated animation="rotateIn" duration={1.2}>
-                <SvgIcon iconName="duo-microchip" sizeName="5x" style={{ color: '#ffd700', marginBottom: '20px' }} darkModeInvert={true} />
-              </GSAPAnimated>
+            <div>
               <GSAPAnimated animation="scaleIn" duration={0.8} delay={0.3}>
                 <h2>Quick-reference for RAG 👉 'rag', semantic search, clustering, and more</h2>
               </GSAPAnimated>
@@ -67,7 +64,7 @@ export const embeddingModelsDeck: Deck = {
           icon: { name: 'duo-list-check' },
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div style={{ marginBottom: '15px' }}>
                 <h4>
                   <MermaidPopover
                     diagram={`graph TB
@@ -91,48 +88,50 @@ export const embeddingModelsDeck: Deck = {
                   />
                 </h4>
               </div>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', fontSize: '0.9em' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '25px', fontSize: '2rem' }}>
                 <GSAPStaggerList stagger={0.15}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(79, 195, 247, 0.1)', borderRadius: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(79, 195, 247, 0.1)', borderRadius: '10px', marginBottom: '20px' }}>
                     <SvgIcon iconName="duo-cloud" sizeName="2x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
                     <div>
                       <strong>OpenAI</strong>
-                      <div style={{ fontSize: '1.4rem' }}>text-embedding-3-small/large</div>
+                      <div style={{ fontSize: '1.2rem' }}>text-embedding-3-small/large</div>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '10px' }}>
-                    <SvgIcon iconName="duo-code-branch" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
-                    <div>
-                      <strong>BGE 👉 'bee-jee-ee' (BAAI 👉 'bye')</strong>
-                      <div style={{ fontSize: '1.4rem' }}>Base/Large EN v1.5</div>
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(255, 183, 77, 0.1)', borderRadius: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(255, 183, 77, 0.1)', borderRadius: '10px', marginBottom: '20px' }}>
                     <SvgIcon iconName="duo-building" sizeName="2x" style={{ color: '#ffb74d' }} darkModeInvert={true} />
                     <div>
                       <strong>E5 (Microsoft)</strong>
-                      <div style={{ fontSize: '1.4rem' }}>Base/Large</div>
+                      <div style={{ fontSize: '1.2rem' }}>Base/Large</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '10px' }}>
+                    <SvgIcon iconName="duo-shop" sizeName="2x" style={{ color: '#f06292' }} darkModeInvert={true} />
+                    <div>
+                      <strong>GTE 👉 'jee-tee-ee' (Alibaba)</strong>
+                      <div style={{ fontSize: '1.2rem' }}>Base/Large</div>
+                    </div>
+                  </div>
+                </GSAPStaggerList>
+                <GSAPStaggerList stagger={0.15}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(129, 199, 132, 0.1)', borderRadius: '10px', marginBottom: '20px' }}>
+                    <SvgIcon iconName="duo-code-branch" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
+                    <div>
+                      <strong>BGE 👉 'bee-jee-ee' (BAAI 👉 'bye')</strong>
+                      <div style={{ fontSize: '1.2rem' }}>Base/Large EN v1.5</div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(186, 104, 200, 0.1)', borderRadius: '10px' }}>
                     <SvgIcon iconName="duo-graduation-cap" sizeName="2x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
                     <div>
                       <strong>Instructor (HKU NLP)</strong>
-                      <div style={{ fontSize: '1.4rem' }}>Instructor-XL</div>
-                    </div>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '15px', padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '10px', gridColumn: '1 / -1' }}>
-                    <SvgIcon iconName="duo-shop" sizeName="2x" style={{ color: '#f06292' }} darkModeInvert={true} />
-                    <div>
-                      <strong>GTE 👉 'jee-tee-ee' (Alibaba)</strong>
-                      <div style={{ fontSize: '1.4rem' }}>Base/Large</div>
+                      <div style={{ fontSize: '1.2rem' }}>Instructor-XL</div>
                     </div>
                   </div>
                 </GSAPStaggerList>
               </div>
               <GSAPAnimated animation="fadeIn" duration={0.8} delay={1.2}>
-                <div style={{ marginTop: '40px', fontSize: '2rem' }}>
-                  <p><SvgIcon iconName="duo-info-circle" sizeName="1x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
+                <div style={{ fontSize: '2rem' }}>
+                  <p><SvgIcon iconName="duo-info-circle" sizeName="2x" style={{ verticalAlign: 'middle', marginRight: '8px' }} darkModeInvert={true} />
                     Each model includes: Type, Best Use Case, Strengths, Weaknesses, Typical Chunk Size, and Notes</p>
                 </div>
               </GSAPAnimated>
@@ -169,7 +168,7 @@ export const embeddingModelsDeck: Deck = {
           icon: { name: 'duo-cloud' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
                   <MermaidPopover
                     diagram={`graph LR
@@ -304,7 +303,7 @@ export const embeddingModelsDeck: Deck = {
           icon: { name: 'duo-cloud' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
                   <MermaidPopover
                     diagram={`graph LR
@@ -438,7 +437,7 @@ What are the trade-offs? Let's evaluate strengths and weaknesses!`
           icon: { name: 'duo-code-branch' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
                   <MermaidPopover
                     diagram={`graph TB
@@ -576,9 +575,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-code-branch' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A[Query] --> B[BGE-Large<br/>1024-dim]
     C[Document] --> B
@@ -700,9 +699,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-building' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TB
     A["query: search query"] --> B[E5-Base<br/>768-dim]
     C["passage: document"] --> B
@@ -828,9 +827,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-building' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A["query: text"] --> B[E5-Large<br/>1024-dim]
     C["passage: doc"] --> B
@@ -958,9 +957,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-graduation-cap' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TB
     A["Instruction:<br/>Represent for retrieval"] --> B[Instructor-XL<br/>768-dim]
     C[Text Content] --> B
@@ -1085,9 +1084,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-shop' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A[Query] --> B[GTE-Base<br/>768-dim]
     C[Documents] --> B
@@ -1215,9 +1214,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-shop' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TB
     A[Input Text] --> B[GTE-Large<br/>1024-dim]
     B --> C[Rich Semantic<br/>Embeddings]
@@ -1251,7 +1250,7 @@ What are the strengths and weaknesses? Let's break it down!`
                 </GSAPAnimated>
                 <GSAPAnimated animation="scaleIn" duration={1.0} delay={0.7}>
                   <div style={{ padding: '15px', backgroundColor: 'rgba(240, 98, 146, 0.1)', borderRadius: '8px' }}>
-                    <div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
                       <SvgIcon iconName="duo-lightbulb" sizeName="2x" darkModeInvert={true} />
                       <strong>Notes:</strong>
                     </div>
@@ -1343,9 +1342,9 @@ What are the strengths and weaknesses? Let's break it down!`
           icon: { name: 'duo-compass' },
           content: (
             <div style={{ textAlign: 'left' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph TD
     A[Start] --> B{Budget?}
     B -->|Limited| C[OpenAI Small<br/>or BGE Base]
@@ -1379,7 +1378,7 @@ What are the strengths and weaknesses? Let's break it down!`
                         <SvgIcon iconName="duo-coins" sizeName="2x" style={{ color: '#ffd54f' }} darkModeInvert={true} />
                         <strong>Budget-Conscious?</strong>
                       </div>
-                      <p>→ OpenAI text-embedding-3-small or BGE Base</p>
+                      <p style={{ margin: '0px' }}>→ OpenAI text-embedding-3-small or BGE Base</p>
                     </div>
                   </GSAPAnimated>
 
@@ -1389,7 +1388,7 @@ What are the strengths and weaknesses? Let's break it down!`
                         <SvgIcon iconName="duo-trophy" sizeName="2x" style={{ color: '#ffd54f' }} darkModeInvert={true} />
                         <strong>Need Top Accuracy?</strong>
                       </div>
-                      <p>→ OpenAI text-embedding-3-large or BGE Large</p>
+                      <p style={{ margin: '0px' }}>→ OpenAI text-embedding-3-large or BGE Large</p>
                     </div>
                   </GSAPAnimated>
 
@@ -1399,7 +1398,7 @@ What are the strengths and weaknesses? Let's break it down!`
                         <SvgIcon iconName="duo-globe" sizeName="2x" style={{ color: '#64b5f6' }} darkModeInvert={true} />
                         <strong>Multilingual Support?</strong>
                       </div>
-                      <p>→ E5 multilingual variants or OpenAI 3-large</p>
+                      <p style={{ margin: '0px' }}>→ E5 multilingual variants or OpenAI 3-large</p>
                     </div>
                   </GSAPAnimated>
 
@@ -1409,7 +1408,7 @@ What are the strengths and weaknesses? Let's break it down!`
                         <SvgIcon iconName="duo-server" sizeName="2x" style={{ color: '#81c784' }} darkModeInvert={true} />
                         <strong>Self-Hosted Required?</strong>
                       </div>
-                      <p>→ BGE, E5, or GTE models</p>
+                      <p style={{ margin: '0px' }}>→ BGE, E5, or GTE models</p>
                     </div>
                   </GSAPAnimated>
 
@@ -1419,7 +1418,7 @@ What are the strengths and weaknesses? Let's break it down!`
                         <SvgIcon iconName="duo-graduation-cap" sizeName="2x" style={{ color: '#ba68c8' }} darkModeInvert={true} />
                         <strong>Specialized Domain?</strong>
                       </div>
-                      <p>→ Instructor XL with custom instructions</p>
+                      <p style={{ margin: '0px' }}>→ Instructor XL with custom instructions</p>
                     </div>
                   </GSAPAnimated>
 
@@ -1429,7 +1428,7 @@ What are the strengths and weaknesses? Let's break it down!`
                         <SvgIcon iconName="duo-gauge" sizeName="2x" style={{ color: '#4fc3f7' }} darkModeInvert={true} />
                         <strong>Limited Resources?</strong>
                       </div>
-                      <p>→ GTE Base or BGE Base</p>
+                      <p style={{ margin: '0px' }}>→ GTE Base or BGE Base</p>
                     </div>
                   </GSAPAnimated>
                 </div>
@@ -1460,9 +1459,9 @@ What are the strengths and weaknesses? Let's break it down!`
           title: 'Pro Tips',
           content: (
             <div style={{ textAlign: 'left', color: '#fff' }}>
-              <div style={{ marginBottom: '30px' }}>
+              <div>
                 <h4>
-                  <MermaidPopover 
+                  <MermaidPopover
                     diagram={`graph LR
     A[Text] --> B[Chunk<br/>200-400 tokens]
     B --> C[Embed]
