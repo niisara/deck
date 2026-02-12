@@ -24,7 +24,7 @@ export const multiStepRetrievalDeck: Deck = {
                 <h2>Retrieve → Generate → Retrieve</h2>
               </GSAPAnimated>
               <GSAPAnimated animation="scaleIn" delay={0.5}>
-                <p style={{ fontSize: '1.2rem', display:'flex', gap: '5px' }}>
+                <p style={{ fontSize: '1.2rem', display: 'flex', gap: '5px' }}>
                   <SvgIcon iconName="duo-arrows-rotate" sizeName="2x" style={{ margin: '0px', verticalAlign: 'middle' }} darkModeInvert={true} />
                   A comprehensive guide to 9 techniques that improve retrieval augmented generation through multi-step processes
                 </p>
