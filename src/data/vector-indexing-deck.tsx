@@ -198,7 +198,7 @@ export const vectorIndexingDeck: Deck = {
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
                     <strong style={{ color: '#00d4ff' }}>Index Structure:</strong>
-                    <MermaidPopover 
+                    <MermaidPopover
                       diagram={`graph LR
     A[Query Vector] --> B[Compare to Vector 1]
     A --> C[Compare to Vector 2]
@@ -268,11 +268,11 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
                         <li>Exact search</li>
-                      <li>Small-to-mid datasets</li>
-                      <li>High update rates</li>
-                      <li>Streaming</li>
-                      <li>Ideal for applications requiring perfect accuracy, supporting heavy write workloads, or serving as a baseline for evaluating approximate algorithms</li>
-                      <li>Works well for datasets under ~1-10M vectors depending on hardware</li>
+                        <li>Small-to-mid datasets</li>
+                        <li>High update rates</li>
+                        <li>Streaming</li>
+                        <li>Ideal for applications requiring perfect accuracy, supporting heavy write workloads, or serving as a baseline for evaluating approximate algorithms</li>
+                        <li>Works well for datasets under ~1-10M vectors depending on hardware</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -318,12 +318,12 @@ export const vectorIndexingDeck: Deck = {
                 <div>
                   <div style={{ padding: '12px', backgroundColor: 'rgba(0, 212, 255, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.12}>
-                      <ul> 
+                      <ul>
                         <li>Easiest to implement and maintain</li>
-                      <li>Supports any distance metric (L2, cosine, IP, custom functions)</li>
-                      <li>Trivially sharded/partitioned across multiple machines</li>
-                      <li>Often available as GPU implementation (FAISS, Qdrant, Weaviate)</li>
-                      <li>Used as refine step after approximate search in hybrid retrieval</li>
+                        <li>Supports any distance metric (L2, cosine, IP, custom functions)</li>
+                        <li>Trivially sharded/partitioned across multiple machines</li>
+                        <li>Often available as GPU implementation (FAISS, Qdrant, Weaviate)</li>
+                        <li>Used as refine step after approximate search in hybrid retrieval</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -377,7 +377,7 @@ export const vectorIndexingDeck: Deck = {
                   <h3 style={{ color: '#00d4ff' }}>Hierarchical Navigable Small World - High-recall approximate nearest neighbor search</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
-                    <MermaidPopover 
+                    <MermaidPopover
                       diagram={`graph TD
     A[Entry Point] --> B[Layer 2: Coarse]
     B --> C[Layer 1: Medium]
@@ -445,9 +445,9 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.18}>
                       <ul>
                         <li>Ideal for applications requiring low-latency</li>
-                      <li>high-recall approximate nearest neighbor search with datasets up to ~100M vectors</li>
-                      <li>Best suited for read-heavy or semi-static datasets where query performance is critical</li>
-                        </ul>
+                        <li>high-recall approximate nearest neighbor search with datasets up to ~100M vectors</li>
+                        <li>Best suited for read-heavy or semi-static datasets where query performance is critical</li>
+                      </ul>
                     </GSAPStaggerList>
                   </div>
                 </div>
@@ -495,11 +495,11 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.14}>
                       <ul>
                         <li>Costly builds: Index construction is computationally expensive</li>
-                      <li>Updates/deletes: Expensive operations that may require partial rebuilds</li>
-                      <li>Distance metrics: Supports L2, cosine similarity, and inner product</li>
-                      <li>Parameter tuning: Tune M and ef* for recall/performance trade-offs</li>
-                      <li>Wide availability: Implemented in FAISS, nmslib, Milvus, Qdrant, and other vector databases</li>
-                      <li>Performance tip: Higher M improves recall but increases memory usage</li>
+                        <li>Updates/deletes: Expensive operations that may require partial rebuilds</li>
+                        <li>Distance metrics: Supports L2, cosine similarity, and inner product</li>
+                        <li>Parameter tuning: Tune M and ef* for recall/performance trade-offs</li>
+                        <li>Wide availability: Implemented in FAISS, nmslib, Milvus, Qdrant, and other vector databases</li>
+                        <li>Performance tip: Higher M improves recall but increases memory usage</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -553,7 +553,7 @@ export const vectorIndexingDeck: Deck = {
                   <h3 style={{ color: '#4ecdc4', marginBottom: '15px' }}>A coarse quantization-based approach for efficient vector indexing and retrieval</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
-                    <MermaidPopover 
+                    <MermaidPopover
                       diagram={`graph TD
     A[K-means Clustering] --> B[Create nlist Centroids]
     B --> C[Assign Vectors to Clusters]
@@ -621,10 +621,10 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '12px', backgroundColor: 'rgba(78, 205, 196, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.2}>
                       <ul>
-                      <li>Large datasets needing high throughput and tunable recall</li>
-                      <li>Environments where online insertions are required</li>
-                      <li>Systems with moderate memory constraints but high recall requirements</li>
-                        </ul>
+                        <li>Large datasets needing high throughput and tunable recall</li>
+                        <li>Environments where online insertions are required</li>
+                        <li>Systems with moderate memory constraints but high recall requirements</li>
+                      </ul>
                     </GSAPStaggerList>
                   </div>
                 </div>
@@ -672,10 +672,10 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.16}>
                       <ul>
                         <li>Requires training phase to generate cluster centroids</li>
-                      <li>Performance heavily depends on tuning nlist (number of clusters) and nprobe (clusters examined)</li>
-                      <li>Sensitive to data distribution - unbalanced clusters may impact performance</li>
-                      <li>Often combined with re-ranking strategies for higher recall</li>
-                      <li>Widely implemented in libraries like FAISS, Hnswlib, and Milvus</li>
+                        <li>Performance heavily depends on tuning nlist (number of clusters) and nprobe (clusters examined)</li>
+                        <li>Sensitive to data distribution - unbalanced clusters may impact performance</li>
+                        <li>Often combined with re-ranking strategies for higher recall</li>
+                        <li>Widely implemented in libraries like FAISS, Hnswlib, and Milvus</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -729,7 +729,7 @@ export const vectorIndexingDeck: Deck = {
                   <h3 style={{ color: '#ffc300', marginBottom: '15px' }}>Inverted File Index combined with Product Quantization for efficient vector compression</h3>
 
                   <div style={{ marginBottom: '12px', marginTop: '15px' }}>
-                    <MermaidPopover 
+                    <MermaidPopover
                       diagram={`graph TD
     A[IVF Clustering] --> B[Compute Residuals]
     B --> C[Split into M Subspaces]
@@ -799,8 +799,8 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.17}>
                       <ul>
                         <li>Ideal for memory-constrained large-scale approximate nearest neighbor search (100M-B+ vectors)</li>
-                      <li>Well-suited for read-heavy workloads where some approximation in recall is acceptable</li>
-                      <li>Particularly effective when paired with a refinement step for critical results</li>
+                        <li>Well-suited for read-heavy workloads where some approximation in recall is acceptable</li>
+                        <li>Particularly effective when paired with a refinement step for critical results</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -849,9 +849,9 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.19}>
                       <ul>
                         <li>Requires training on representative data sample</li>
-                      <li>Consider OPQ (Optimized Product Quantization) rotation for better accuracy</li>
-                      <li>Critical parameters include m (number of subquantizers), code size, and nprobe (clusters to search)</li>
-                      <li>Adding a refine stage significantly boosts recall at the cost of extra latency</li>
+                        <li>Consider OPQ (Optimized Product Quantization) rotation for better accuracy</li>
+                        <li>Critical parameters include m (number of subquantizers), code size, and nprobe (clusters to search)</li>
+                        <li>Adding a refine stage significantly boosts recall at the cost of extra latency</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -905,7 +905,7 @@ export const vectorIndexingDeck: Deck = {
                   <h3 style={{ color: '#9b59b6', marginBottom: '15px' }}>Approximate Nearest Neighbors Oh Yeah - Simple and Efficient Vector Search</h3>
 
                   <div style={{ marginBottom: '15px', marginTop: '15px' }}>
-                    <MermaidPopover 
+                    <MermaidPopover
                       diagram={`graph TD
     A[Build Forest of Trees] --> B[Random Hyperplane Splits]
     B --> C[Tree 1]
@@ -977,11 +977,11 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
                         <li>Simple deployment</li>
-                      <li>Read-only applications</li>
-                      <li>Quick startup/cold start</li>
-                      <li>Small-to-mid datasets</li>
-                      <li>Production services with fixed indexes</li>
-                      <li>Particularly well-suited for recommendation systems, content-based search, and embedding lookup in applications with infrequent index updates</li>
+                        <li>Read-only applications</li>
+                        <li>Quick startup/cold start</li>
+                        <li>Small-to-mid datasets</li>
+                        <li>Production services with fixed indexes</li>
+                        <li>Particularly well-suited for recommendation systems, content-based search, and embedding lookup in applications with infrequent index updates</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1030,10 +1030,10 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.17}>
                       <ul>
                         <li>No dynamic deletes and limited update capabilities (effectively read-only after build)</li>
-                      <li>Index build process is deterministic with a fixed random seed</li>
-                      <li>Key tuning parameters: n_trees (more trees = higher recall but more memory) and search_k (more candidates = higher recall but slower)</li>
-                      <li>Implemented in multiple languages with Python bindings being most popular</li>
-                      <li>Used extensively at Spotify for music recommendations</li>
+                        <li>Index build process is deterministic with a fixed random seed</li>
+                        <li>Key tuning parameters: n_trees (more trees = higher recall but more memory) and search_k (more candidates = higher recall but slower)</li>
+                        <li>Implemented in multiple languages with Python bindings being most popular</li>
+                        <li>Used extensively at Spotify for music recommendations</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1087,7 +1087,7 @@ export const vectorIndexingDeck: Deck = {
                   <h3 style={{ color: '#4285f4', marginBottom: '15px' }}>Scalable Nearest Neighbors - Google's Vector Search Architecture</h3>
 
                   <div style={{ marginBottom: '12px', marginTop: '15px' }}>
-                    <MermaidPopover 
+                    <MermaidPopover
                       diagram={`graph TD
     A[Partitioning] --> B[K-means/Tree]
     B --> C[Quantization]
@@ -1153,11 +1153,11 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.14}>
                       <ul>
                         <li>Large-scale semantic search with inner product/cosine distance metrics</li>
-                      <li>TensorFlow/TF-Serving pipelines</li>
-                      <li>Production deployments with high QPS requirements</li>
-                      <li>Semantic Search</li>
-                      <li>High QPS Systems</li>
-                      <li>Ecosystem</li>
+                        <li>TensorFlow/TF-Serving pipelines</li>
+                        <li>Production deployments with high QPS requirements</li>
+                        <li>Semantic Search</li>
+                        <li>High QPS Systems</li>
+                        <li>Ecosystem</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1183,10 +1183,10 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.16}>
                       <ul>
                         <li>Requires training and careful configuration</li>
-                      <li>Updates less friendly</li>
-                      <li>Open-source by Google</li>
-                      <li>Complex but performant</li>
-                      <li>Excellent integration with TensorFlow serving and Google Cloud AI infrastructure</li>
+                        <li>Updates less friendly</li>
+                        <li>Open-source by Google</li>
+                        <li>Complex but performant</li>
+                        <li>Excellent integration with TensorFlow serving and Google Cloud AI infrastructure</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1253,9 +1253,9 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
                         <li>Sparse or high-dimensional data where traditional methods struggle</li>
-                      <li>Streaming scenarios requiring fast updates</li>
-                      <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
-                      <li>Particularly effective for specialized metrics with good LSH families</li>
+                        <li>Streaming scenarios requiring fast updates</li>
+                        <li>Applications where theoretical guarantees for specific distance metrics are needed</li>
+                        <li>Particularly effective for specialized metrics with good LSH families</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1280,11 +1280,11 @@ export const vectorIndexingDeck: Deck = {
                   <div style={{ padding: '12px', backgroundColor: 'rgba(231, 76, 60, 0.1)', borderRadius: '8px' }}>
                     <GSAPStaggerList stagger={0.13}>
                       <ul>
-                         <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
-                      <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
-                      <li>Insertions and deletions are straightforward</li>
-                      <li>Recall degrades without careful tuning</li>
-                      <li>Better theoretical understanding compared to graph-based methods</li>
+                        <li>Only works for metrics with valid LSH families (cosine, Hamming, L1/L2, Jaccard)</li>
+                        <li>Critical parameters to tune are L (tables) and k (hashes per table)</li>
+                        <li>Insertions and deletions are straightforward</li>
+                        <li>Recall degrades without careful tuning</li>
+                        <li>Better theoretical understanding compared to graph-based methods</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1355,9 +1355,9 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.16}>
                       <ul>
                         <li>Web-scale search under RAM constraints</li>
-                      <li>Production environments with strict latency SLOs</li>
-                      <li>Read-heavy workloads with billions of vectors</li>
-                      <li>DiskANN specifically addresses the RAM bottleneck for very large indices</li>
+                        <li>Production environments with strict latency SLOs</li>
+                        <li>Read-heavy workloads with billions of vectors</li>
+                        <li>DiskANN specifically addresses the RAM bottleneck for very large indices</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1383,10 +1383,10 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.14}>
                       <ul>
                         <li>Complex build processes with careful pruning strategies</li>
-                      <li>Difficult to update (mostly batch builds)</li>
-                      <li>Tune graph degree and beam search width for optimal performance</li>
-                      <li>Achieves strong recall with careful construction</li>
-                      <li>DiskANN provides excellent disk-based performance but requires SSD storage</li>
+                        <li>Difficult to update (mostly batch builds)</li>
+                        <li>Tune graph degree and beam search width for optimal performance</li>
+                        <li>Achieves strong recall with careful construction</li>
+                        <li>DiskANN provides excellent disk-based performance but requires SSD storage</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1451,9 +1451,9 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.15}>
                       <ul>
                         <li>Binary embeddings or PQ code matching</li>
-                      <li>Refine stage for IVF-PQ</li>
-                      <li>When exact Hamming kNN is needed</li>
-                      <li>Ideal for applications requiring precise matching in binary space such as image fingerprinting, duplicate detection, and compact binary feature matching</li>
+                        <li>Refine stage for IVF-PQ</li>
+                        <li>When exact Hamming kNN is needed</li>
+                        <li>Ideal for applications requiring precise matching in binary space such as image fingerprinting, duplicate detection, and compact binary feature matching</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1479,11 +1479,11 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.13}>
                       <ul>
                         <li>Limited to Hamming/binary codes</li>
-                      <li>parameter m critical</li>
-                      <li>GPU-friendly; common in large-scale code search pipelines</li>
-                      <li>Optimal m typically depends on code length and query radius</li>
-                      <li>Well-suited for hardware acceleration with bitwise operations</li>
-                      <li>Efficient for binary hashes from techniques like LSH</li>
+                        <li>parameter m critical</li>
+                        <li>GPU-friendly; common in large-scale code search pipelines</li>
+                        <li>Optimal m typically depends on code length and query radius</li>
+                        <li>Well-suited for hardware acceleration with bitwise operations</li>
+                        <li>Efficient for binary hashes from techniques like LSH</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
@@ -1617,13 +1617,13 @@ export const vectorIndexingDeck: Deck = {
                     <GSAPStaggerList stagger={0.12}>
                       <ul>
                         <li>Always measure recall@k vs latency tradeoff for your specific data</li>
-                      <li>Batch queries together for better throughput</li>
-                      <li>Normalize vectors for cosine similarity before indexing</li>
-                      <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
-                      <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
-                      <li>Shard large indices by coarse partitions for parallelism</li>
-                      <li>Consider dimensionality reduction (PCA) before indexing</li>
-                      <li>For production, test with realistic data distributions and queries</li>
+                        <li>Batch queries together for better throughput</li>
+                        <li>Normalize vectors for cosine similarity before indexing</li>
+                        <li>Explore hybrid strategies (e.g., ScaNN+refine) for better results</li>
+                        <li>Use re-ranking when using heavy compression (IVF+PQ, ScaNN)</li>
+                        <li>Shard large indices by coarse partitions for parallelism</li>
+                        <li>Consider dimensionality reduction (PCA) before indexing</li>
+                        <li>For production, test with realistic data distributions and queries</li>
                       </ul>
                     </GSAPStaggerList>
                   </div>
