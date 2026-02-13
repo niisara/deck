@@ -63,15 +63,15 @@ export const promptEngineeringDeck: Deck = {
           ),
           backgroundColor: '#1a3957',
           notes: `### 18 Prompt Engineering Techniques
-Welcome to this comprehensive deep-dive into **18 Prompt Engineering Techniques** — the essential patterns and strategies you need to build *reliable*, *accurate*, and *production-ready* **LLM** 👉 'L-L-M' (Large Language Model) applications.
+[cheerfully] Welcome to this comprehensive deep-dive into **18 Prompt Engineering Techniques** — the essential patterns and strategies you need to build *reliable*, *accurate*, and *production-ready* **LLM** 👉 'L-L-M' (Large Language Model) applications.
 
 #### Why This Matters
-Prompt engineering is the *art and science* of communicating with AI models. Think of it like learning to speak a new language — except this language unlocks superhuman capabilities in reasoning, retrieval, and task automation. Whether you're building chatbots, RAG systems, or agentic workflows, mastering these 18 techniques will dramatically improve your results.
+[energetic] Prompt engineering is the *art and science* of communicating with AI models. Think of it like learning to speak a new language — except this language unlocks superhuman capabilities in reasoning, retrieval, and task automation. Whether you're building chatbots, RAG systems, or agentic workflows, mastering these 18 techniques will dramatically improve your results.
 
 #### What You'll Learn Today
-We've organized these techniques into **four categories**: Reasoning techniques help models think step-by-step, Retrieval techniques ground responses in external knowledge, Agentic techniques enable models to use tools and self-correct, and Hybrid techniques combine multiple approaches for complex workflows. Each technique includes clear definitions, practical examples, and real-world use cases.
+[excited] We've organized these techniques into **four categories**: Reasoning techniques help models think step-by-step, Retrieval techniques ground responses in external knowledge, Agentic techniques enable models to use tools and self-correct, and Hybrid techniques combine multiple approaches for complex workflows. Each technique includes clear definitions, practical examples, and real-world use cases.
 
-> By the end of this deck, you'll know *exactly* when to use each technique and how to implement it effectively. Let's dive in!`
+> [inspiringly] By the end of this deck, you'll know *exactly* when to use each technique and how to implement it effectively. Let's dive in!`
         },
         {
           id: 2,
@@ -154,10 +154,10 @@ We've organized these techniques into **four categories**: Reasoning techniques 
           ),
           backgroundColor: '#1a3957',
           notes: `### Table of Contents
-Here's your roadmap for today's journey through 18 powerful prompt engineering techniques! We've organized these into **four logical categories** to make it easier to understand when and how to use each one.
+[energetic] Here's your roadmap for today's journey through 18 powerful prompt engineering techniques! We've organized these into **four logical categories** to make it easier to understand when and how to use each one.
 
 #### The Four Categories
-First, we have **Reasoning Techniques** — these are your foundational patterns like Zero-shot, Few-shot, and Chain-of-Thought. They teach models *how to think* through problems step by step. Second is **Retrieval** with RAG 👉 'rag', which grounds your model's responses in external knowledge bases and documents. Third, we have **Agentic Techniques** like ReAct and Reflexion, where models learn to use tools, execute code, and self-correct their mistakes. Finally, **Hybrid Techniques** combine multiple approaches to tackle complex, multi-step workflows.
+[conversational] First, we have **Reasoning Techniques** — these are your foundational patterns like Zero-shot, Few-shot, and Chain-of-Thought. They teach models *how to think* through problems step by step. Second is **Retrieval** with RAG 👉 'rag', which grounds your model's responses in external knowledge bases and documents. Third, we have **Agentic Techniques** like ReAct and Reflexion, where models learn to use tools, execute code, and self-correct their mistakes. Finally, **Hybrid Techniques** combine multiple approaches to tackle complex, multi-step workflows.
 
 #### How to Use This Deck
 Each technique gets multiple slides covering the definition, how it works, when to use it, and real-world examples. Feel free to jump to specific techniques you're curious about, but I recommend going through them in order to build a strong mental model of the progression from simple to advanced patterns.
@@ -199,10 +199,10 @@ Each technique gets multiple slides covering the definition, how it works, when 
           ),
           backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - Overview
-Let's start our journey with the simplest and most fundamental technique — **Zero-shot Prompting**. Think of this as the "just ask" approach to working with language models.
+[confidently] Let's start our journey with the simplest and most fundamental technique — **Zero-shot Prompting**. [storytelling] Think of this as the "just ask" approach to working with language models.
 
 #### What Makes Zero-shot Special
-Zero-shot means you're asking the model to do something *without giving it any examples first*. It's like asking a knowledgeable friend for help — you state your request clearly and trust they'll understand what you need. The model relies entirely on what it learned during training to interpret your instruction and generate a response. This is your **baseline technique** that you'll use more often than any other.
+[enthusiastically] Zero-shot means you're asking the model to do something *without giving it any examples first*. It's like asking a knowledgeable friend for help — you state your request clearly and trust they'll understand what you need. The model relies entirely on what it learned during training to interpret your instruction and generate a response. [pleased] This is your **baseline technique** that you'll use more often than any other.
 
 #### When to Reach for Zero-shot
 Use zero-shot when you need *quick results* for well-known tasks like summarization, translation, or basic classification. It's perfect when you're working with tight token budgets or need a fast baseline to iterate from. For example, asking "Summarize this customer feedback in 3 bullets" is a classic zero-shot task that most models handle beautifully.
@@ -238,13 +238,13 @@ Use zero-shot when you need *quick results* for well-known tasks like summarizat
           ),
           backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - How It Works
-Now let's understand the mechanics behind zero-shot prompting and why it's so powerful despite its simplicity.
+[conversational] Now let's understand the mechanics behind zero-shot prompting and why it's so powerful despite its simplicity.
 
 #### The Magic of Pre-training
-Here's the key insight: modern language models like **GPT-4** 👉 'G-P-T four', **Claude 3.5** 👉 'Claude three point five', and **Gemini 1.5** 👉 'Gemini one point five' have been trained on *massive* amounts of text data. During that training, they learned patterns for thousands of tasks — summarization, classification, translation, question-answering, and more. When you use zero-shot prompting, you're essentially activating this *pre-learned knowledge* with your instruction.
+[confidently] Here's the key insight: modern language models like **GPT-4** 👉 'G-P-T four', **Claude 3.5** 👉 'Claude three point five', and **Gemini 1.5** 👉 'Gemini one point five' have been trained on *massive* amounts of text data. During that training, they learned patterns for thousands of tasks — summarization, classification, translation, question-answering, and more. When you use zero-shot prompting, you're essentially activating this *pre-learned knowledge* with your instruction.
 
 #### Complexity and Model Selection
-Zero-shot is our **simplest technique** — it requires no special setup, no examples, and works across virtually all modern LLMs. Even smaller models can handle straightforward zero-shot tasks, though larger, more capable models will give you better accuracy and consistency. The beauty is that you can start with zero-shot on any model and immediately get results.
+Zero-shot is our **simplest technique** — it requires no special setup, no examples, and works across virtually all modern LLMs. Even smaller models can handle straightforward zero-shot tasks, though larger, more capable models will give you better accuracy and consistency. [enthusiastically] The beauty is that you can start with zero-shot on any model and immediately get results.
 
 #### Real-World Application: Email Triage
 Imagine you're building an email management system. You can use zero-shot to classify emails as Urgent, Normal, or Low priority by simply providing clear definitions: "Urgent emails require action within 24 hours, Normal within a week, Low are informational only." The model will apply this logic without seeing any example emails first!
@@ -277,10 +277,10 @@ in 3 bullets for executives:
           ),
           backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - Implementation
-Let's look at a concrete example to see zero-shot prompting in action and understand which models work best for it.
+[enthusiastically] Let's look at a concrete example to see zero-shot prompting in action and understand which models work best for it.
 
 #### Anatomy of a Good Zero-shot Prompt
-The example prompt here is beautifully simple: "Summarize the following article in 3 bullets for executives." Notice how it's *clear* about what to do (summarize), *specific* about format (3 bullets), and *targeted* to audience (executives). This level of clarity helps the model understand exactly what you need without requiring any examples. The key is being **direct and unambiguous** in your instruction.
+[conversational] The example prompt here is beautifully simple: "Summarize the following article in 3 bullets for executives." [pleased] Notice how it's *clear* about what to do (summarize), *specific* about format (3 bullets), and *targeted* to audience (executives). This level of clarity helps the model understand exactly what you need without requiring any examples. [confidently] The key is being **direct and unambiguous** in your instruction.
 
 #### Model Compatibility
 The great news about zero-shot prompting is that it's **universally supported**. Every modern LLM from GPT-4, Claude 3.5, and Gemini 1.5 down to smaller open-source models can handle zero-shot tasks. The difference is in *quality* and *consistency* — larger, more capable models will give you better results, but even smaller models can handle straightforward tasks like classification or basic summarization.
@@ -311,10 +311,10 @@ When writing your zero-shot prompts, think about *what*, *how*, and *for whom*. 
           ),
           backgroundColor: '#103e5d',
           notes: `### Zero-shot Prompting - Considerations
-While zero-shot prompting is incredibly useful, it's important to understand its limitations so you know when to reach for more advanced techniques.
+[seriously] While zero-shot prompting is incredibly useful, it's important to understand its limitations so you know when to reach for more advanced techniques.
 
 #### When Zero-shot Struggles
-The biggest challenge with zero-shot prompting is **ambiguity**. Without examples, the model might misinterpret what you want, especially for nuanced tasks or domain-specific requirements. For instance, asking to "extract key information" from a medical report might work, but the model might miss critical details that a healthcare professional would recognize. Novel tasks that the model hasn't seen during training are particularly challenging — if it's truly new territory, zero-shot might give you inconsistent or incorrect results.
+[cautiously] The biggest challenge with zero-shot prompting is **ambiguity**. Without examples, the model might misinterpret what you want, especially for nuanced tasks or domain-specific requirements. For instance, asking to "extract key information" from a medical report might work, but the model might miss critical details that a healthcare professional would recognize. Novel tasks that the model hasn't seen during training are particularly challenging — if it's truly new territory, zero-shot might give you inconsistent or incorrect results.
 
 #### Format and Consistency Issues
 Another limitation is *control over output format*. You can request JSON or specific structures, but without examples showing exactly what you want, the model might deviate from your expectations. This becomes especially problematic in production systems where you need **reliable, consistent formatting** for downstream processing. If you find yourself repeatedly reformatting outputs, that's a sign you need few-shot examples or more structured approaches.
@@ -359,13 +359,13 @@ Finally, remember that **model capability significantly impacts zero-shot perfor
           ),
           backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - Overview
-Now we're leveling up from zero-shot to **Few-shot Prompting** — one of the most practical and widely-used techniques in production systems. Think of this as "teaching by example."
+[confidently] Now we're leveling up from zero-shot to **Few-shot Prompting** — one of the most practical and widely-used techniques in production systems. [storytelling] Think of this as "teaching by example."
 
 #### The Power of Examples
-Few-shot prompting means providing the model with *2 to 5 labeled examples* before asking it to perform the actual task. These examples demonstrate exactly what you want — the input format, the output format, the style, the tone, and even how to handle edge cases. It's like showing someone how to fill out a form correctly before handing them a blank one. The model learns the pattern from your examples and applies it to new inputs.
+[enthusiastically] Few-shot prompting means providing the model with *2 to 5 labeled examples* before asking it to perform the actual task. These examples demonstrate exactly what you want — the input format, the output format, the style, the tone, and even how to handle edge cases. It's like showing someone how to fill out a form correctly before handing them a blank one. The model learns the pattern from your examples and applies it to new inputs.
 
 #### When Few-shot Shines
-Use few-shot when you need **consistent formatting and tone**, especially for domain-specific tasks. For example, if you're building a customer support system that needs to respond in your company's specific voice with certain terminology, showing 3-5 examples of good responses will dramatically improve consistency. Few-shot is also excellent for classification tasks where categories might be ambiguous without concrete examples.
+[enthusiastically] Use few-shot when you need **consistent formatting and tone**, especially for domain-specific tasks. For example, if you're building a customer support system that needs to respond in your company's specific voice with certain terminology, showing 3-5 examples of good responses will dramatically improve consistency. Few-shot is also excellent for classification tasks where categories might be ambiguous without concrete examples.
 
 #### The Sweet Spot
 Few-shot sits in a perfect middle ground — it's more powerful than zero-shot but simpler than complex reasoning techniques. You're essentially showing the model "this is what good looks like" without needing to engineer elaborate prompts or chains of reasoning. This makes it **practical, effective, and easy to implement** in real applications.
@@ -407,7 +407,7 @@ Let's dive into the mechanics of few-shot prompting and understand why those exa
 Here's what happens behind the scenes: When you provide examples, the model's attention mechanism *analyzes the patterns* across your input-output pairs. It notices structural similarities, stylistic choices, terminology usage, and formatting conventions. Then when you present the new task, it applies those learned patterns to generate a response that matches your examples. Think of it like the model saying, "Oh, I see the pattern — when you give me X, you want Y formatted like this."
 
 #### Optimal Complexity Level
-Few-shot is classified as **Simple to Intermediate** complexity because it doesn't require complex chains of reasoning or special model capabilities. However, it does require some thought in *selecting good examples*. You want examples that are representative of the task, cover common cases and maybe an edge case or two, and demonstrate the exact format you need. The beauty is that even mid-size models show **significant improvement** with just a few examples.
+Few-shot is classified as **Simple to Intermediate** complexity because it doesn't require complex chains of reasoning or special model capabilities. However, it does require some thought in *selecting good examples*. You want examples that are representative of the task, cover common cases and maybe an edge case or two, and demonstrate the exact format you need. [enthusiastically] The beauty is that even mid-size models show **significant improvement** with just a few examples.
 
 #### Real-World Application: Support Macros
 Imagine you're building automated support responses for a SaaS company. You need responses that use company-specific terminology (like your product names), maintain a friendly but professional tone, and follow certain formatting (like always ending with a link to docs). By showing 3-5 examples of perfect support responses, the model will generate new responses that *feel like they came from your team*, not a generic AI.
@@ -441,13 +441,13 @@ Classify: 'It was okay, but pricey.'"`}
           ),
           backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - Implementation
-Let's look at a concrete implementation of few-shot prompting to see how examples transform model behavior.
+[enthusiastically] Let's look at a concrete implementation of few-shot prompting to see how examples transform model behavior.
 
 #### Anatomy of the Example
-Look at this sentiment classification example carefully. Notice the structure: first, we set context ("You are a sentiment classifier"), then provide two examples showing the input-output pattern, and finally present the actual task. The examples are *crisp and clear* — "Loved it" is obviously positive, "Too slow" is clearly negative. This gives the model strong signal about what positive and negative mean in your domain. When it sees "It was okay, but pricey," it can confidently classify it as negative because "pricey" has negative sentiment similar to "too slow."
+[conversational] Look at this sentiment classification example carefully. Notice the structure: first, we set context ("You are a sentiment classifier"), then provide two examples showing the input-output pattern, and finally present the actual task. The examples are *crisp and clear* — "Loved it" is obviously positive, "Too slow" is clearly negative. This gives the model strong signal about what positive and negative mean in your domain. When it sees "It was okay, but pricey," it can confidently classify it as negative because "pricey" has negative sentiment similar to "too slow."
 
 #### The Example Selection Process
-Choosing good examples is an **art and science**. You want diversity that covers your input space — in sentiment analysis, that might mean examples with different lengths, styles, and intensity levels. You also want clarity — ambiguous examples confuse the model. And you want representation of all your categories — if you're doing multi-class classification, show at least one example of each class. For this sentiment task, you might add a neutral example like "It works as expected" -> neutral to teach the model about the middle ground.
+[conversational] Choosing good examples is an **art and science**. You want diversity that covers your input space — in sentiment analysis, that might mean examples with different lengths, styles, and intensity levels. You also want clarity — ambiguous examples confuse the model. And you want representation of all your categories — if you're doing multi-class classification, show at least one example of each class. For this sentiment task, you might add a neutral example like "It works as expected" -> neutral to teach the model about the middle ground.
 
 #### Universal Model Support
 The good news is that few-shot learning is **universally supported** across modern LLMs. Every major model from GPT-4 to smaller open-source alternatives can learn from examples. The difference is in how many examples different models need — larger models might nail it with 2-3 examples, while smaller models might need 5-7 for the same performance.
@@ -475,7 +475,7 @@ The good news is that few-shot learning is **universally supported** across mode
           ),
           backgroundColor: '#284d67',
           notes: `### Few-shot Prompting - Considerations
-While few-shot prompting is incredibly powerful, it comes with important tradeoffs and considerations you need to understand.
+[seriously] While few-shot prompting is incredibly powerful, it comes with important tradeoffs and considerations you need to understand.
 
 #### The Example Bias Problem
 The biggest gotcha with few-shot is **example bias** — the model might overfit to the specific patterns in your examples rather than learning the general task. For instance, if all your sentiment examples use adjectives, the model might rely too heavily on adjectives and miss sentiment expressed through verbs or context. This is why *example diversity* is critical. You want examples that demonstrate the task from different angles, not just variations of the same pattern.
@@ -527,13 +527,13 @@ Finally, remember that **bad examples teach bad patterns**. If your examples hav
           ),
           backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - Overview
-Welcome to **Chain-of-Thought** or **CoT** 👉 'cot' — one of the most transformative techniques in modern prompt engineering. This is where we teach models to *think* before they answer.
+[confidently] Welcome to **Chain-of-Thought** or **CoT** 👉 'cot' — one of the most transformative techniques in modern prompt engineering. This is where we teach models to *think* before they answer.
 
 #### The Revolutionary Insight
 Here's the breakthrough: when you ask a model to show its reasoning step-by-step before giving the final answer, accuracy on complex tasks can improve by **30-50%** or more! It's like the difference between a student who writes down their work versus one who just guesses the answer. The act of explicitly reasoning through intermediate steps helps the model catch errors, maintain logical consistency, and arrive at better conclusions. This simple insight has revolutionized how we use LLMs for complex reasoning.
 
 #### When Chain-of-Thought Shines
-CoT is your go-to technique for **math problems, logic puzzles, multi-hop question answering**, and any task that requires connecting multiple pieces of information. For example, answering "How many years passed between the founding of Apple and the first iPhone?" requires finding two dates, then calculating the difference. CoT makes these multi-step problems dramatically more reliable.
+[enthusiastically] CoT is your go-to technique for **math problems, logic puzzles, multi-hop question answering**, and any task that requires connecting multiple pieces of information. For example, answering "How many years passed between the founding of Apple and the first iPhone?" requires finding two dates, then calculating the difference. CoT makes these multi-step problems dramatically more reliable.
 
 #### The Transparency Advantage
 Beyond accuracy, CoT gives you **transparency**. You can see *how* the model arrived at its answer, which is crucial for debugging, building trust, and meeting explainability requirements. If the answer is wrong, you can look at the reasoning steps to see where it went off track. This makes CoT invaluable in production systems where you need to understand and validate model behavior.
@@ -575,7 +575,7 @@ Let's understand the mechanics of Chain-of-Thought and why it's such a powerful 
 Here's what CoT does: instead of jumping directly to an answer, it forces the model to **generate intermediate reasoning steps**. For a math problem like "If Sarah has 15 apples and gives away 40% to friends, then buys 8 more, how many does she have?" — CoT makes the model show: "Step 1: Calculate 40% of 15 = 6 apples. Step 2: 15 - 6 = 9 apples remaining. Step 3: 9 + 8 = 17 apples total." Each step is a checkpoint where the model must maintain correctness, dramatically reducing compound errors.
 
 #### Why It Works So Well
-The magic is in how language models generate text. They predict one token at a time, and *earlier tokens influence later ones*. By generating reasoning steps first, those steps become part of the context for generating the final answer. It's like building a scaffold — each reasoning step supports the next, leading to a much more solid final answer. This is why CoT works even though we're not actually changing the model itself!
+[enthusiastically] The magic is in how language models generate text. They predict one token at a time, and *earlier tokens influence later ones*. By generating reasoning steps first, those steps become part of the context for generating the final answer. It's like building a scaffold — each reasoning step supports the next, leading to a much more solid final answer. [excited] This is why CoT works even though we're not actually changing the model itself!
 
 #### Model Requirements
 CoT is classified as **Intermediate** complexity because it requires models with strong reasoning capabilities. GPT-4, Claude 3.5, and Gemini 1.5 excel at maintaining coherent multi-step reasoning. Smaller models can struggle — they might generate plausible-sounding reasoning that's actually incorrect, or they might shortcut the reasoning and jump to an answer. This is one technique where **model capability really matters**.
@@ -609,13 +609,13 @@ Imagine a system that reviews purchase requests. Using CoT, it can show: "Base c
           ),
           backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - Implementation
-Let's examine a concrete CoT prompt to understand how to craft effective step-by-step reasoning instructions.
+[enthusiastically] Let's examine a concrete CoT prompt to understand how to craft effective step-by-step reasoning instructions.
 
 #### Anatomy of a CoT Prompt
-Look at this marble problem carefully. The key phrase is **"Think step by step"** at the end — this is the trigger that activates chain-of-thought reasoning. Without it, the model might jump to an answer. With it, the model knows to show its work. The problem itself is multi-step: first count total marbles (12 + 8 = 20), then remove 4 reds (12 - 4 = 8 reds remaining), then calculate the new total (8 + 8 = 16), finally compute the fraction (8/16 = 1/2). CoT ensures the model works through each step explicitly.
+[conversational] Look at this marble problem carefully. [confidently] The key phrase is **"Think step by step"** at the end — this is the trigger that activates chain-of-thought reasoning. Without it, the model might jump to an answer. With it, the model knows to show its work. The problem itself is multi-step: first count total marbles (12 + 8 = 20), then remove 4 reds (12 - 4 = 8 reds remaining), then calculate the new total (8 + 8 = 16), finally compute the fraction (8/16 = 1/2). CoT ensures the model works through each step explicitly.
 
 #### Variations That Work
-You can trigger CoT with different phrases: "Think step by step", "Let's solve this systematically", "Show your work", or "Explain your reasoning before answering". Some practitioners combine CoT with few-shot by showing one example with reasoning steps, then asking the model to apply the same approach. The key is **signaling that you want intermediate steps**, not just the final answer.
+You can trigger CoT with different phrases: "Think step by step", "Let's solve this systematically", "Show your work", or "Explain your reasoning before answering". Some practitioners combine CoT with few-shot by showing one example with reasoning steps, then asking the model to apply the same approach. [confidently] The key is **signaling that you want intermediate steps**, not just the final answer.
 
 #### Model Capabilities Matter
 GPT-4, Claude 3.5, and Gemini 1.5 are the **gold standard** for CoT. They can maintain logical coherence across multiple reasoning steps, catch their own errors, and generate reasoning that actually makes sense. Smaller models can attempt CoT, but they often produce reasoning that *looks* plausible but contains logical errors. If you're using CoT in production, invest in the best models you can afford — the reasoning quality directly impacts your results.
@@ -643,10 +643,10 @@ GPT-4, Claude 3.5, and Gemini 1.5 are the **gold standard** for CoT. They can ma
           ),
           backgroundColor: '#91420e',
           notes: `### Chain-of-Thought - Considerations
-While CoT is powerful, it comes with important tradeoffs that you need to understand and manage.
+[seriously] While CoT is powerful, it comes with important tradeoffs that you need to understand and manage.
 
 #### The Token Cost Reality
-CoT generates **significantly more tokens** than direct answers. Where a direct answer might be 10-20 tokens, CoT reasoning could be 100-200 tokens or more. At scale, this means higher API costs and increased latency. You need to decide: is the accuracy improvement worth the extra cost? For critical reasoning tasks where correctness matters more than speed or cost, absolutely yes. For simple tasks where basic accuracy is fine, maybe not. Always **measure the cost-benefit tradeoff** for your specific use case.
+[firmly] CoT generates **significantly more tokens** than direct answers. Where a direct answer might be 10-20 tokens, CoT reasoning could be 100-200 tokens or more. At scale, this means higher API costs and increased latency. You need to decide: is the accuracy improvement worth the extra cost? For critical reasoning tasks where correctness matters more than speed or cost, absolutely yes. For simple tasks where basic accuracy is fine, maybe not. Always **measure the cost-benefit tradeoff** for your specific use case.
 
 #### The Hallucination Risk
 Here's a subtle danger: CoT can produce **confident-sounding but incorrect reasoning**. The model might generate plausible-looking steps that contain errors, and because it looks logical, you might trust it. For example, it might say "Step 1: Calculate 40% of 50 = 25" (wrong!) and then build subsequent steps on that error. The reasoning *reads* convincingly, but it's wrong from the start. This is why you need validation — check the reasoning steps, not just the final answer, especially in high-stakes applications.
@@ -655,7 +655,7 @@ Here's a subtle danger: CoT can produce **confident-sounding but incorrect reaso
 Models can be clever in ways you don't want. Sometimes they'll "fake" reasoning by jumping to the answer and then backfilling plausible-sounding steps. To prevent this, you need **careful prompt engineering** — be explicit that you want genuine step-by-step reasoning, perhaps by using few-shot examples that show real work, or by using techniques like "show uncertainty at each step" to force genuine thinking.
 
 #### When NOT to Use CoT
-Don't use CoT for simple tasks where direct answers work fine — you're just wasting tokens. Don't use it when you need ultra-fast responses and can tolerate some error. And be cautious with smaller models that might generate nonsense reasoning. CoT is a **power tool** — use it when you need the power, but don't overuse it everywhere.
+[cautiously] Don't use CoT for simple tasks where direct answers work fine — you're just wasting tokens. Don't use it when you need ultra-fast responses and can tolerate some error. And be cautious with smaller models that might generate nonsense reasoning. CoT is a **power tool** — use it when you need the power, but don't overuse it everywhere.
 
 > Pro tip: For production systems, implement validation of reasoning steps, not just final answers. Catch errors early in the chain!`
         },
@@ -695,7 +695,7 @@ Don't use CoT for simple tasks where direct answers work fine — you're just wa
           ),
           backgroundColor: '#0e9135',
           notes: `### Meta Prompting - Overview
-Let's explore **Meta Prompting** — a technique that shifts focus from *what* to *how*, defining the structure and format of outputs rather than providing content examples.
+[confidently] Let's explore **Meta Prompting** — a technique that shifts focus from *what* to *how*, defining the structure and format of outputs rather than providing content examples.
 
 #### Structure Over Content
 Here's the key distinction: while few-shot shows *specific examples*, meta prompting defines *abstract structure*. Instead of showing "Input: X, Output: Y", you specify "Output must be JSON with fields [name, description, status]". Instead of demonstrating tone through examples, you say "Use professional language, avoid jargon, keep sentences under 20 words". You're defining the **blueprint** rather than showing finished products. This makes meta prompting incredibly powerful for standardization.
@@ -704,7 +704,7 @@ Here's the key distinction: while few-shot shows *specific examples*, meta promp
 Use meta prompting when you need **consistent, machine-readable outputs** across many tasks. It's perfect for building standardized pipelines where downstream systems expect specific schemas. For example, if you're extracting structured data from documents to feed into a database, meta prompting ensures every extraction follows the same schema, making integration seamless. It's also excellent when you need comparable results across different models or prompts — the schema acts as a contract.
 
 #### The Abstraction Advantage
-Meta prompting works because modern LLMs have learned countless schemas, formats, and structures during training. By specifying structural requirements, you're tapping into this learned knowledge without needing to provide examples. This saves tokens, reduces maintenance (no example library to curate), and often generalizes better than specific examples. Think of it as **programming by specification** rather than programming by example.
+Meta prompting works because modern LLMs have learned countless schemas, formats, and structures during training. By specifying structural requirements, you're tapping into this learned knowledge without needing to provide examples. This saves tokens, reduces maintenance (no example library to curate), and often generalizes better than specific examples. [storytelling] Think of it as **programming by specification** rather than programming by example.
 
 > Pro tip: Meta prompting is your secret weapon for building reliable, maintainable production systems that need consistent outputs!`
         },
@@ -779,10 +779,10 @@ Populate schema only."`}
           ),
           backgroundColor: '#0e9135',
           notes: `### Meta Prompting - Implementation
-Let's examine a concrete meta prompting example to understand how to craft effective structural specifications.
+[enthusiastically] Let's examine a concrete meta prompting example to understand how to craft effective structural specifications.
 
 #### Anatomy of the Meta Prompt
-Look at this example structure: it starts with **input placeholders** (Problem, Goal, Constraints), then specifies the **output schema** (JSON with specific fields), and ends with a clear directive ("Populate schema only"). Notice how it doesn't show any concrete examples — it's purely structural. The model understands that it needs to take the problem, goal, and constraints, then generate a JSON object with "steps" (likely an array), "rationale" (probably a string), and "answer" (could be any type). This abstraction is powerful!
+[conversational] Look at this example structure: it starts with **input placeholders** (Problem, Goal, Constraints), then specifies the **output schema** (JSON with specific fields), and ends with a clear directive ("Populate schema only"). [pleased] Notice how it doesn't show any concrete examples — it's purely structural. The model understands that it needs to take the problem, goal, and constraints, then generate a JSON object with "steps" (likely an array), "rationale" (probably a string), and "answer" (could be any type). This abstraction is powerful!
 
 #### Best Practices for Schema Definition
 When crafting meta prompts, be **explicit about data types and structures**. Instead of just "output JSON", specify field names, types (string, integer, array, object), and any constraints (enums, ranges, formats). For example: "status must be one of [pending, approved, rejected]" or "timestamp in ISO8601 format". The more specific your schema, the more reliable the output. Think like you're writing an API contract — because essentially, you are!
@@ -813,13 +813,13 @@ That final instruction — "Populate schema only" — is crucial. It tells the m
           ),
           backgroundColor: '#0e9135',
           notes: `### Meta Prompting - Considerations
-While meta prompting is powerful for structuring outputs, it has important limitations you need to understand.
+[seriously] While meta prompting is powerful for structuring outputs, it has important limitations you need to understand.
 
 #### The Knowledge Assumption
 Meta prompting **assumes the model already knows how to do the task** — you're just telling it how to format the output. If the task is novel, domain-specific, or requires nuanced understanding that the model doesn't have, meta prompting alone won't help. For example, specifying a JSON schema for legal document analysis doesn't help if the model doesn't understand legal terminology. In these cases, you need to combine meta prompting with few-shot examples or detailed task instructions. The schema handles the "how to format", but you still need to teach the "what to extract".
 
 #### Novel Domain Challenges
-When working in specialized domains — medical diagnosis, legal analysis, scientific research — meta prompting might give you well-structured but **incorrect content**. The schema ensures format consistency, but not content accuracy. You might get perfect JSON with completely wrong diagnoses! This is where hybrid approaches shine: use few-shot to teach domain knowledge, then meta prompting to standardize the output format.
+[cautiously] When working in specialized domains — medical diagnosis, legal analysis, scientific research — meta prompting might give you well-structured but **incorrect content**. The schema ensures format consistency, but not content accuracy. You might get perfect JSON with completely wrong diagnoses! This is where hybrid approaches shine: use few-shot to teach domain knowledge, then meta prompting to standardize the output format.
 
 #### Schema Complexity Matters
 Overly complex schemas can confuse even the best models. If your schema has deeply nested objects, circular references, or ambiguous field descriptions, the model might generate **malformed or inconsistent outputs**. Keep schemas as simple as possible while meeting your needs. Test iteratively — start simple, add complexity gradually, validate at each step.
@@ -865,13 +865,13 @@ Meta prompting gives great **structural control but less content guidance**. You
           ),
           backgroundColor: '#7b0e91',
           notes: `### Self-Consistency - Overview
-Let's explore **Self-Consistency**, a powerful technique that leverages the wisdom of crowds — except the crowd is the same AI model thinking multiple times!
+[confidently] Let's explore **Self-Consistency**, a powerful technique that leverages the wisdom of crowds — except the crowd is the same AI model thinking multiple times!
 
 #### The Ensemble Approach
-Here's the brilliant insight: instead of asking the model once and hoping for the right answer, we ask it **multiple times** with different reasoning paths, then vote on the most common answer. Think of it like getting multiple expert opinions — if 8 out of 10 doctors agree on a diagnosis, you can be more confident than if you only asked one. Self-consistency brings this ensemble thinking to LLMs by generating diverse reasoning paths and aggregating the results.
+Here's the brilliant insight: instead of asking the model once and hoping for the right answer, we ask it **multiple times** with different reasoning paths, then vote on the most common answer. [storytelling] Think of it like getting multiple expert opinions — if 8 out of 10 doctors agree on a diagnosis, you can be more confident than if you only asked one. Self-consistency brings this ensemble thinking to LLMs by generating diverse reasoning paths and aggregating the results.
 
 #### When Self-Consistency Shines
-Use self-consistency for **high-stakes reasoning tasks** where accuracy matters more than speed or cost. It's particularly powerful for math problems, logic puzzles, and commonsense reasoning where a single model run might make a calculation error or logical slip. For example, if you're building a financial calculator that needs to be highly accurate, running 5-10 reasoning paths and voting on the answer dramatically reduces errors. The technique works because **errors are often random** — different runs make different mistakes, but the correct answer appears most frequently.
+[enthusiastically] Use self-consistency for **high-stakes reasoning tasks** where accuracy matters more than speed or cost. It's particularly powerful for math problems, logic puzzles, and commonsense reasoning where a single model run might make a calculation error or logical slip. For example, if you're building a financial calculator that needs to be highly accurate, running 5-10 reasoning paths and voting on the answer dramatically reduces errors. The technique works because **errors are often random** — different runs make different mistakes, but the correct answer appears most frequently.
 
 #### The Reliability Advantage
 Self-consistency gives you two major benefits: **higher accuracy** through error cancellation, and **reduced variance** making outputs more predictable. Instead of getting different answers each time you run the same prompt, self-consistency converges on the most consistent solution. This makes your system more reliable and trustworthy, which is crucial for production applications where users expect consistent behavior.
@@ -910,10 +910,10 @@ Self-consistency gives you two major benefits: **higher accuracy** through error
 Let's dive into the mechanics of self-consistency and understand how this ensemble approach dramatically improves reliability.
 
 #### The Multi-Path Generation Process
-Self-consistency works through **temperature sampling** — you set a non-zero temperature (typically 0.7-1.0) to get diverse outputs, then run the same Chain-of-Thought prompt multiple times (typically 5-10 times). Each run generates a different reasoning path because of the randomness introduced by temperature. For example, solving "12 × 15" might use different approaches: "12 × 10 = 120, 12 × 5 = 60, total 180" in one path, versus "15 × 10 = 150, 15 × 2 = 30, total 180" in another. Different paths, same answer!
+[lecture] Self-consistency works through **temperature sampling** — you set a non-zero temperature (typically 0.7-1.0) to get diverse outputs, then run the same Chain-of-Thought prompt multiple times (typically 5-10 times). Each run generates a different reasoning path because of the randomness introduced by temperature. For example, solving "12 × 15" might use different approaches: "12 × 10 = 120, 12 × 5 = 60, total 180" in one path, versus "15 × 10 = 150, 15 × 2 = 30, total 180" in another. Different paths, same answer!
 
 #### The Voting Mechanism
-After generating multiple answers, you implement **majority voting** to select the final answer. If 7 out of 10 runs say "180", 2 say "175", and 1 says "185", you choose "180" as the most consistent answer. The beauty is that random errors (like "175" or "185") get outvoted by the correct answer that appears most frequently. You can also weight votes by confidence scores or use more sophisticated aggregation like selecting the median for numeric answers.
+After generating multiple answers, you implement **majority voting** to select the final answer. If 7 out of 10 runs say "180", 2 say "175", and 1 says "185", you choose "180" as the most consistent answer. [enthusiastically] The beauty is that random errors (like "175" or "185") get outvoted by the correct answer that appears most frequently. You can also weight votes by confidence scores or use more sophisticated aggregation like selecting the median for numeric answers.
 
 #### Complexity and Model Requirements
 Self-consistency is **Intermediate to Advanced** because it requires orchestration code to run multiple inferences and aggregate results. You need models that support temperature sampling (all major LLMs do) and enough API throughput to handle parallel requests. The technique works best with capable models like GPT-4, Claude 3.5, and Gemini 1.5 that can generate genuinely different reasoning paths rather than identical outputs.
@@ -947,13 +947,13 @@ Self-consistency shines on math benchmarks like **GSM8K** 👉 'G-S-M eight-K', 
           ),
           backgroundColor: '#7b0e91',
           notes: `### Self-Consistency - Implementation
-Let's look at how to implement self-consistency in practice, including both the prompting strategy and the aggregation logic.
+[enthusiastically] Let's look at how to implement self-consistency in practice, including both the prompting strategy and the aggregation logic.
 
 #### Two Implementation Approaches
 You can implement self-consistency in two ways. **Approach 1: Single prompt, multiple runs** — run the same CoT prompt multiple times with temperature > 0, collect all answers, then implement voting in your code. **Approach 2: Meta-prompt** — like the example here, ask the model to generate multiple solutions within one call, then vote. Approach 1 gives you more control and truly independent samples. Approach 2 is simpler but the "solutions" might be less diverse since they're generated sequentially in one context.
 
 #### The Voting Implementation
-For numeric answers, majority voting is straightforward — count occurrences and pick the most common. For text answers, you might need fuzzy matching or semantic similarity. Some advanced implementations use **weighted voting** where you assign confidence scores to each answer based on the reasoning quality, or use the model itself to judge which answer is best. The key is having robust aggregation logic that handles ties, outliers, and edge cases.
+For numeric answers, majority voting is straightforward — count occurrences and pick the most common. For text answers, you might need fuzzy matching or semantic similarity. Some advanced implementations use **weighted voting** where you assign confidence scores to each answer based on the reasoning quality, or use the model itself to judge which answer is best. [confidently] The key is having robust aggregation logic that handles ties, outliers, and edge cases.
 
 #### Practical Configuration
 Start with **5-7 samples** and temperature around **0.7-0.8**. Higher temperature (>0.9) gives more diversity but might produce more errors. Lower temperature (<0.5) gives less diversity, reducing the benefit of self-consistency. For critical applications, use 10 samples. Monitor the answer distribution — if all 10 runs agree, you have high confidence. If votes are split 6-4, you might need more samples or manual review.
@@ -984,7 +984,7 @@ Start with **5-7 samples** and temperature around **0.7-0.8**. Higher temperatur
 While self-consistency improves accuracy, it comes with significant costs and important limitations to consider.
 
 #### The Cost-Latency Tradeoff
-The most obvious limitation is **cost and latency multiplication**. If you run 5 samples, you're paying 5x the API cost and potentially waiting 5x longer (unless you parallelize). For a single prompt that costs $0.10, self-consistency at 10 samples costs $1.00. At scale, this adds up fast! You need to carefully evaluate: does the accuracy improvement justify the cost? For critical decisions with high stakes, absolutely. For routine tasks, probably not. This is where **selective application** matters — use self-consistency only where accuracy is truly critical.
+[firmly] The most obvious limitation is **cost and latency multiplication**. If you run 5 samples, you're paying 5x the API cost and potentially waiting 5x longer (unless you parallelize). For a single prompt that costs $0.10, self-consistency at 10 samples costs $1.00. At scale, this adds up fast! You need to carefully evaluate: does the accuracy improvement justify the cost? For critical decisions with high stakes, absolutely. For routine tasks, probably not. This is where **selective application** matters — use self-consistency only where accuracy is truly critical.
 
 #### The Systematic Error Problem
 Here's a subtle but important limitation: self-consistency helps with **random errors** but not **systematic errors**. If your prompt is fundamentally flawed or the model lacks knowledge for the task, all reasoning paths will be wrong in the same way. Voting won't help if everyone's voting for the wrong answer! For example, if you ask a math question with a trick that the model consistently misses, all 10 runs might give the same wrong answer. This looks like high confidence, but it's confidently wrong!
@@ -1030,7 +1030,7 @@ Self-consistency requires **orchestration code** to manage multiple API calls, c
           ),
           backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - Overview
-Welcome to **Generate Knowledge Prompting**, a technique that primes the model's memory before asking it to answer questions. Think of it as warming up before a race!
+[confidently] Welcome to **Generate Knowledge Prompting**, a technique that primes the model's memory before asking it to answer questions. [storytelling] Think of it as warming up before a race!
 
 #### The Knowledge Activation Strategy
 Here's the core idea: before asking the model to answer a question, you first ask it to **generate relevant background facts and knowledge** about the topic. This two-stage approach activates the model's relevant knowledge, bringing important facts to the forefront of its "attention" before it needs to use them. It's like asking a student to review their notes before taking a test — the act of retrieving and stating relevant facts makes them more likely to use that knowledge correctly in their answer.
@@ -1075,10 +1075,10 @@ Generate Knowledge provides **explicit grounding** for the answer. Instead of th
 Let's understand the two-stage mechanism that makes Generate Knowledge prompting so effective for knowledge-intensive tasks.
 
 #### The Two-Stage Process
-Generate Knowledge works through **explicit knowledge retrieval followed by application**. Stage 1: You ask "What are relevant facts about X?" and the model generates a list of pertinent information from its training. Stage 2: You ask "Given these facts, answer Y" and the model uses the just-generated facts as context. This separation is powerful because it forces the model to commit to specific facts before reasoning, reducing the chance of contradictory or inconsistent reasoning. It's like requiring someone to show their sources before making an argument!
+[lecture] Generate Knowledge works through **explicit knowledge retrieval followed by application**. Stage 1: You ask "What are relevant facts about X?" and the model generates a list of pertinent information from its training. Stage 2: You ask "Given these facts, answer Y" and the model uses the just-generated facts as context. This separation is powerful because it forces the model to commit to specific facts before reasoning, reducing the chance of contradictory or inconsistent reasoning. It's like requiring someone to show their sources before making an argument!
 
 #### Why Separation Matters
-The magic is in the **separation of retrieval and reasoning**. When you ask the model to answer directly, it interleaves knowledge recall and reasoning in opaque ways. With Generate Knowledge, you make knowledge recall explicit and observable. This has two benefits: first, you can verify the facts are correct before using them. Second, the model's attention is primed with relevant information, improving the quality of subsequent reasoning. Think of it as organizing your thoughts before writing — the act of organization improves the final output.
+[enthusiastically] The magic is in the **separation of retrieval and reasoning**. When you ask the model to answer directly, it interleaves knowledge recall and reasoning in opaque ways. With Generate Knowledge, you make knowledge recall explicit and observable. This has two benefits: first, you can verify the facts are correct before using them. Second, the model's attention is primed with relevant information, improving the quality of subsequent reasoning. Think of it as organizing your thoughts before writing — the act of organization improves the final output.
 
 #### Model Requirements and Capabilities
 This technique requires models with **strong factual knowledge** like GPT-4, Claude 3.5, and Gemini 1.5. These models have broad, deep knowledge bases from training and can retrieve relevant facts effectively. The technique is Intermediate complexity because you need to orchestrate the two stages — either in a single prompt with clear sections or across separate API calls.
@@ -1112,10 +1112,10 @@ Imagine a symptom checker app. Instead of directly diagnosing "headache, fever, 
           ),
           backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - Implementation
-Let's examine how to structure Generate Knowledge prompts for maximum effectiveness in practice.
+[enthusiastically] Let's examine how to structure Generate Knowledge prompts for maximum effectiveness in practice.
 
 #### Prompt Structure Best Practices
-The example shows the classic structure: **"Before answering, list facts about X. Then, using those facts, answer Y."** This explicit structure with "before" and "then" creates clear stages. You can enhance this with specificity: instead of "list facts", try "list 3-5 relevant facts including risks, benefits, and considerations" to guide what kind of knowledge to retrieve. The more specific you are about what facts you need, the better the model can retrieve relevant information.
+[conversational] The example shows the classic structure: **"Before answering, list facts about X. Then, using those facts, answer Y."** This explicit structure with "before" and "then" creates clear stages. You can enhance this with specificity: instead of "list facts", try "list 3-5 relevant facts including risks, benefits, and considerations" to guide what kind of knowledge to retrieve. The more specific you are about what facts you need, the better the model can retrieve relevant information.
 
 #### Single vs. Multi-Call Approaches
 You can implement this as **one prompt with two sections** (as shown) or as **two separate API calls**. Single-prompt is simpler and faster but gives you less control. Multi-call lets you inspect and filter the facts before proceeding to the answer stage, which is valuable for critical applications. For example, you might validate facts against a knowledge base, filter out hallucinations, or supplement with retrieved documents before the answering stage.
@@ -1146,16 +1146,16 @@ How many facts to generate? **3-5 is the sweet spot** for most tasks. Too few an
           ),
           backgroundColor: '#7d6b1c',
           notes: `### Generate Knowledge - Considerations
-While Generate Knowledge is powerful, it has critical limitations around factual accuracy that you must understand.
+[seriously] While Generate Knowledge is powerful, it has critical limitations around factual accuracy that you must understand.
 
 #### The Hallucination Risk
-The biggest danger with Generate Knowledge is **hallucinated facts**. The model might confidently generate plausible-sounding but completely incorrect facts. Since these become the foundation for the answer, hallucinated facts lead to confidently wrong conclusions. This is especially dangerous because the explicit facts look trustworthy — "The model listed its sources, so it must be right!" Wrong! For critical applications in medicine, law, finance, or any domain where errors have serious consequences, **never trust generated facts without verification**.
+The biggest danger with Generate Knowledge is **hallucinated facts**. The model might confidently generate plausible-sounding but completely incorrect facts. Since these become the foundation for the answer, hallucinated facts lead to confidently wrong conclusions. [seriously] This is especially dangerous because the explicit facts look trustworthy — "The model listed its sources, so it must be right!" Wrong! For critical applications in medicine, law, finance, or any domain where errors have serious consequences, **never trust generated facts without verification**.
 
 #### Verification Strategies
 For production systems, implement **fact verification** through multiple strategies. Cross-check facts against trusted knowledge bases or APIs. Use retrieval-augmented generation (RAG) to ground facts in actual documents rather than model memory. Implement confidence scoring where the model indicates certainty for each fact. For high-stakes decisions, require human review of generated facts before proceeding to the answer stage. Think of generated knowledge as a hypothesis that needs validation, not as ground truth.
 
 #### Cost and Latency Considerations
-Generate Knowledge adds **overhead** — you're generating a list of facts before the actual answer, increasing both token costs and latency. The facts themselves might be 50-200 tokens, then the answer is built on top of that. At scale, this adds up. Evaluate whether the quality improvement justifies the cost. For routine tasks, simpler techniques might suffice. For knowledge-intensive tasks where accuracy matters, the cost is worthwhile.
+[firmly] Generate Knowledge adds **overhead** — you're generating a list of facts before the actual answer, increasing both token costs and latency. The facts themselves might be 50-200 tokens, then the answer is built on top of that. At scale, this adds up. Evaluate whether the quality improvement justifies the cost. For routine tasks, simpler techniques might suffice. For knowledge-intensive tasks where accuracy matters, the cost is worthwhile.
 
 #### The Training Data Problem
 Finally, remember that generated knowledge comes from the model's **training data**, which has a cutoff date and may contain biases or errors. If the training data encoded incorrect information, Generate Knowledge will surface and reinforce those errors. For rapidly changing domains or topics where accuracy is critical, combine this technique with retrieval from up-to-date, verified sources rather than relying solely on model memory.
@@ -1198,13 +1198,13 @@ Finally, remember that generated knowledge comes from the model's **training dat
           ),
           backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - Overview
-Welcome to **Prompt Chaining**, a fundamental technique for building complex AI workflows by breaking them into manageable, sequential stages.
+[confidently] Welcome to **Prompt Chaining**, a fundamental technique for building complex AI workflows by breaking them into manageable, sequential stages.
 
 #### The Decomposition Strategy
 Prompt chaining is based on a simple but powerful idea: **complex tasks are easier when broken into simpler subtasks**. Instead of asking the model to do everything in one shot (extract data, transform it, analyze it, and format results), you create a chain where each step does one thing well. Step 1: Extract raw data. Step 2: Clean and normalize. Step 3: Analyze. Step 4: Format for output. Each stage is simpler, more reliable, and easier to optimize than trying to do everything at once.
 
 #### When Prompt Chaining Shines
-Use prompt chaining for **multi-stage workflows** like document processing pipelines, data transformation tasks, or content generation workflows. It's perfect when your task has natural stages that depend on each other. For example: reading a resume → extracting key info → matching to job requirements → generating interview questions. Each stage builds on the previous, but they're independent enough to test and optimize separately. This modularity is incredibly valuable for production systems.
+[enthusiastically] Use prompt chaining for **multi-stage workflows** like document processing pipelines, data transformation tasks, or content generation workflows. It's perfect when your task has natural stages that depend on each other. For example: reading a resume → extracting key info → matching to job requirements → generating interview questions. Each stage builds on the previous, but they're independent enough to test and optimize separately. This modularity is incredibly valuable for production systems.
 
 #### The Production Advantage
 Prompt chaining makes systems **maintainable and debuggable**. When something goes wrong, you can pinpoint which stage failed. You can improve individual stages without touching others. You can A/B test different prompts for specific stages. You can even mix techniques — use zero-shot for stage 1, few-shot for stage 2, CoT for stage 3. This flexibility and control make prompt chaining essential for real-world applications.
@@ -1281,7 +1281,7 @@ Step 2: Using quotes, answer <question> with citations."`}
           ),
           backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - Implementation
-Let's examine practical implementation strategies for prompt chaining, from simple to sophisticated approaches.
+[enthusiastically] Let's examine practical implementation strategies for prompt chaining, from simple to sophisticated approaches.
 
 #### Single-Prompt vs. Multi-Call Implementation
 The example shows a **single-prompt approach** where stages are defined within one call ("Step 1... Step 2..."). This is simpler but less flexible. The **multi-call approach** uses separate API calls for each stage, giving you full control to inspect, validate, and transform intermediate outputs. Multi-call also lets you use different models for different stages — maybe GPT-4 for complex reasoning stages and a faster/cheaper model for simple transformation stages. Choose based on your needs for control, cost, and complexity.
@@ -1315,19 +1315,19 @@ Prod uction chains need **error handling at each stage**. What if Stage 2 receiv
           ),
           backgroundColor: '#7d1c3c',
           notes: `### Prompt Chaining - Considerations
-While prompt chaining is incredibly useful, it introduces complexity and challenges that you need to manage carefully.
+[seriously] While prompt chaining is incredibly useful, it introduces complexity and challenges that you need to manage carefully.
 
 #### The Orchestration Challenge
-As chains grow longer, **orchestration complexity explodes**. A 2-stage chain is simple. A 5-stage chain with conditional branching, error handling, and validation at each stage becomes a substantial engineering effort. You need infrastructure to manage the pipeline, handle failures, track state, and coordinate multiple API calls. This isn't insurmountable, but it's real work. Start simple and add complexity only when needed. Don't over-engineer from the start.
+[cautiously] As chains grow longer, **orchestration complexity explodes**. A 2-stage chain is simple. A 5-stage chain with conditional branching, error handling, and validation at each stage becomes a substantial engineering effort. You need infrastructure to manage the pipeline, handle failures, track state, and coordinate multiple API calls. This isn't insurmountable, but it's real work. Start simple and add complexity only when needed. Don't over-engineer from the start.
 
 #### Error Propagation Is Your Enemy
 The biggest danger is **cascading errors**. Stage 1 produces slightly wrong output. Stage 2 builds on it and makes it worse. Stage 3 compounds the errors further. By the end, your result is completely wrong, but each stage seemed to work! This is why validation between stages is critical. Check that Stage 1's output meets expectations before feeding it to Stage 2. Implement schema validation, sanity checks, and confidence thresholds. Fail fast rather than propagating bad data.
 
 #### Latency and Cost Accumulation
-Each stage adds **latency and cost**. A 5-stage chain where each stage takes 2 seconds means 10 seconds total latency (unless you can parallelize some stages). Each stage incurs API costs. For high-volume applications, this adds up. You need to evaluate: is the quality improvement worth the extra time and cost? Sometimes a single well-crafted prompt performs almost as well as a chain, with much lower latency and cost.
+[firmly] Each stage adds **latency and cost**. A 5-stage chain where each stage takes 2 seconds means 10 seconds total latency (unless you can parallelize some stages). Each stage incurs API costs. For high-volume applications, this adds up. You need to evaluate: is the quality improvement worth the extra time and cost? Sometimes a single well-crafted prompt performs almost as well as a chain, with much lower latency and cost.
 
 #### Design and Testing Overhead
-Prompt chaining requires **careful stage design**. You need to define clear responsibilities, design clean interfaces between stages, and test each stage independently plus the whole chain end-to-end. This is more work than writing a single prompt. But for complex tasks, this investment pays off in reliability, maintainability, and performance. Think of it as software engineering — more upfront work, but better long-term outcomes.
+Prompt chaining requires **careful stage design**. You need to define clear responsibilities, design clean interfaces between stages, and test each stage independently plus the whole chain end-to-end. This is more work than writing a single prompt. But [sigh] for complex tasks, this investment pays off in reliability, maintainability, and performance. Think of it as software engineering — more upfront work, but better long-term outcomes.
 
 > Pro tip: Monitor each stage independently in production. Know where failures happen and which stages need optimization!`
         },
@@ -1367,16 +1367,16 @@ Prompt chaining requires **careful stage design**. You need to define clear resp
           ),
           backgroundColor: '#1c257d',
           notes: `### Tree of Thoughts - Overview
-Welcome to Tree of Thoughts, or ToT 👉 pronounced "tot" like the word for a small child. Think of it as the AI's way of being thorough before making a decision.
+[confidently] Welcome to Tree of Thoughts, or ToT 👉 pronounced "tot" like the word for a small child. [storytelling] Think of it as the AI's way of being thorough before making a decision.
 
 #### What Makes ToT Different
 Unlike techniques that follow a single line of reasoning, Tree of Thoughts creates an actual *tree structure* of possible reasoning paths. Imagine you're planning a road trip and instead of just picking one route, you sketch out three different options, evaluate each one's pros and cons, and then systematically explore the most promising path while keeping the others as backup options. That's exactly what ToT does with problem-solving.
 
 #### The Power of Exploration
-The magic here is in the **exploration strategy**. ToT uses classic search algorithms like breadth-first search (BFS), depth-first search (DFS), or beam search to navigate this tree of possibilities. At each decision point, the model generates multiple candidate next steps, evaluates each one (labeling them as "sure", "maybe", or "impossible"), and then intelligently decides which branches to explore further. If a path turns out to be a dead end, no problem—it simply backtracks and tries a different branch.
+[enthusiastically] The magic here is in the **exploration strategy**. ToT uses classic search algorithms like breadth-first search (BFS), depth-first search (DFS), or beam search to navigate this tree of possibilities. At each decision point, the model generates multiple candidate next steps, evaluates each one (labeling them as "sure", "maybe", or "impossible"), and then intelligently decides which branches to explore further. If a path turns out to be a dead end, no problem—it simply backtracks and tries a different branch.
 
 #### When to Use This Powerhouse
-This technique shines in **complex planning scenarios**, like designing a multi-phase product strategy, solving intricate puzzles, or decomposing a complicated technical problem into optimal sub-tasks. It's overkill for simple questions, but when you need systematic exploration of a solution space with the ability to course-correct, ToT is your go-to technique.
+[enthusiastically] This technique shines in **complex planning scenarios**, like designing a multi-phase product strategy, solving intricate puzzles, or decomposing a complicated technical problem into optimal sub-tasks. It's overkill for simple questions, but when you need systematic exploration of a solution space with the ability to course-correct, ToT is your go-to technique.
 
 > Pro tip: ToT is computationally expensive because it explores multiple paths. Use it when the quality of the solution justifies the extra cost and latency.`
         },
@@ -1411,16 +1411,16 @@ This technique shines in **complex planning scenarios**, like designing a multi-
           ),
           backgroundColor: '#1c257d',
           notes: `### Tree of Thoughts - How It Works
-Now let's peek under the hood and see how Tree of Thoughts actually operates. This is where the technique gets really interesting.
+[conversational] Now let's peek under the hood and see how Tree of Thoughts actually operates. This is where the technique gets really interesting.
 
 #### The Mechanics of Tree Building
-Picture a chess grandmaster considering their next move. They don't just think one move ahead—they explore multiple possible moves, then for each move they imagine several opponent responses, and so on, creating a branching tree of possibilities. Tree of Thoughts works similarly. At each node in the reasoning tree, the model generates *multiple candidate next steps* rather than just one. For example, if solving a complex planning problem, it might generate three different approaches: Option A, Option B, and Option C.
+[lecture] Picture a chess grandmaster considering their next move. They don't just think one move ahead—they explore multiple possible moves, then for each move they imagine several opponent responses, and so on, creating a branching tree of possibilities. Tree of Thoughts works similarly. At each node in the reasoning tree, the model generates *multiple candidate next steps* rather than just one. For example, if solving a complex planning problem, it might generate three different approaches: Option A, Option B, and Option C.
 
 #### The Evaluation Phase
 Here's where it gets clever. The model doesn't just generate options blindly—it **evaluates each candidate** before proceeding. Think of it as a quality checkpoint. The evaluation can be as simple as labeling each option as "sure" (very promising), "maybe" (worth exploring), or "impossible" (dead end). This evaluation step is crucial because it guides the search algorithm on where to focus its attention.
 
 #### Search Algorithms in Action
-ToT leverages classic computer science search algorithms. **Breadth-first search** explores all options at each level before going deeper. **Depth-first search** follows one path all the way down before trying alternatives. **Beam search** keeps only the top K most promising paths at each level. The beauty is that if a path hits a dead end, the algorithm simply backtracks to a previous node and explores a different branch—something traditional chain-of-thought can't do.
+[lecture] ToT leverages classic computer science search algorithms. **Breadth-first search** explores all options at each level before going deeper. **Depth-first search** follows one path all the way down before trying alternatives. **Beam search** keeps only the top K most promising paths at each level. [enthusiastically] The beauty is that if a path hits a dead end, the algorithm simply backtracks to a previous node and explores a different branch—something traditional chain-of-thought can't do.
 
 #### Orchestration Complexity
 This is an *advanced* technique that requires sophisticated infrastructure. You need an external controller—essentially a program that manages the search process, calls the LLM multiple times to generate and evaluate candidates, maintains the tree structure, and decides when to explore versus when to backtrack. Models like GPT-4, Claude 3.5, and Gemini 1.5 have the reasoning capability, but you're building the orchestration layer yourself.
@@ -1500,13 +1500,13 @@ Don't reach for Tree of Thoughts for simple problems where chain-of-thought woul
 Before you rush to implement Tree of Thoughts everywhere, let's have an honest conversation about its limitations and considerations. This technique is powerful but comes with significant tradeoffs.
 
 #### The Cost Factor
-Let's be blunt: ToT is **expensive**. While a single chain-of-thought prompt might cost you one API call, Tree of Thoughts can easily require 10, 20, or even 50+ calls for complex problems. At each node, you're generating multiple candidates (that's multiple calls) and then evaluating them (more calls). If you're exploring a tree with a branching factor of 3 and depth of 4, you could be looking at dozens of API requests for a single problem. With GPT-4 pricing, this adds up fast. Budget accordingly and reserve ToT for high-value problems where the improved solution quality justifies the expense.
+[firmly] Let's be blunt: ToT is **expensive**. While a single chain-of-thought prompt might cost you one API call, Tree of Thoughts can easily require 10, 20, or even 50+ calls for complex problems. At each node, you're generating multiple candidates (that's multiple calls) and then evaluating them (more calls). If you're exploring a tree with a branching factor of 3 and depth of 4, you could be looking at dozens of API requests for a single problem. With GPT-4 pricing, this adds up fast. Budget accordingly and reserve ToT for high-value problems where the improved solution quality justifies the expense.
 
 #### Latency Concerns
 Cost isn't the only multiplier—so is **latency**. Instead of waiting 2-3 seconds for a response, you might be waiting 30-60 seconds or more as the system explores multiple branches sequentially. Some of this can be parallelized (evaluating multiple candidates at the same level can happen simultaneously), but the depth-wise exploration is inherently sequential. For user-facing applications, this latency may be unacceptable unless you're clever about progress indicators and async processing.
 
 #### The Pruning Challenge
-Here's a critical engineering decision: *how do you decide which branches to explore and which to prune?* If you explore everything, you'll hit exponential explosion—a tree with branching factor 3 and depth 5 has 243 leaf nodes. That's not feasible. So you need **pruning strategies**: beam search (keep only top-K paths), confidence thresholds (abandon branches below certain evaluation scores), depth limits, or even dynamic pruning based on remaining compute budget. Getting these strategies right requires experimentation and domain knowledge.
+[cautiously] Here's a critical engineering decision: *how do you decide which branches to explore and which to prune?* If you explore everything, you'll hit exponential explosion—a tree with branching factor 3 and depth 5 has 243 leaf nodes. That's not feasible. So you need **pruning strategies**: beam search (keep only top-K paths), confidence thresholds (abandon branches below certain evaluation scores), depth limits, or even dynamic pruning based on remaining compute budget. Getting these strategies right requires experimentation and domain knowledge.
 
 #### Orchestration Infrastructure
 Unlike simpler techniques that are just clever prompts, ToT requires you to build actual **infrastructure**. You need: state management (storing the tree), search algorithm implementation (BFS/DFS/beam search), prompt generation logic (turning tree nodes into queries), response parsing (extracting candidates and evaluations), decision logic (explore vs. backtrack), and termination conditions (when to stop searching). This is a non-trivial engineering project. Don't underestimate the complexity.
@@ -1515,7 +1515,7 @@ Unlike simpler techniques that are just clever prompts, ToT requires you to buil
 This is perhaps the most subtle but important consideration: ToT's success depends entirely on the *quality of its evaluations*. If your evaluation prompt consistently mislabels good paths as "impossible" or rates poor paths as "sure," the search algorithm will make bad decisions and explore suboptimal branches. You need to invest significant effort in **evaluation prompt engineering** and potentially run experiments to validate that your evaluation criteria actually correlate with solution quality. Bad evaluations can make ToT perform worse than simpler approaches.
 
 #### When ToT Isn't Worth It
-Be honest about when simpler techniques would suffice. For straightforward question-answering, use zero-shot or few-shot prompting. For step-by-step reasoning, chain-of-thought is plenty. For problems that benefit from verification, self-consistency is simpler. Reserve Tree of Thoughts for genuinely complex problems with large solution spaces, multiple valid approaches, and scenarios where exploring alternatives before committing adds significant value.
+[cautiously] Be honest about when simpler techniques would suffice. For straightforward question-answering, use zero-shot or few-shot prompting. For step-by-step reasoning, chain-of-thought is plenty. For problems that benefit from verification, self-consistency is simpler. Reserve Tree of Thoughts for genuinely complex problems with large solution spaces, multiple valid approaches, and scenarios where exploring alternatives before committing adds significant value.
 
 #### Making It Work in Production
 If you do implement ToT in production, here are success patterns: (1) start with small trees (branching factor 2-3, depth 3-4), (2) use aggressive pruning to control costs, (3) implement caching so similar subtrees don't get re-explored, (4) provide progress indicators since users will wait longer, (5) A/B test against simpler baselines to ensure the complexity is justified, and (6) monitor costs vigilantly—it's easy for them to spiral.
@@ -1653,10 +1653,10 @@ Question: How do mRNA COVID vaccines work?"`}
           notes: `### 9. RAG - Implementation (Let's Build It)
 
 #### Anatomy of a RAG Prompt
-Look at this example prompt structure — it's surprisingly simple but incredibly powerful. You start with clear instructions: "Given these retrieved passages, answer the question and cite sources." Then you provide the **retrieved passages** with IDs (like [1], [2], [3]) so the model can reference them. Finally, you include the **user's question**. This structure gives the model everything it needs: context, citations, and a clear task.
+[conversational] Look at this example prompt structure — it's surprisingly simple but incredibly powerful. You start with clear instructions: "Given these retrieved passages, answer the question and cite sources." Then you provide the **retrieved passages** with IDs (like [1], [2], [3]) so the model can reference them. Finally, you include the **user's question**. This structure gives the model everything it needs: context, citations, and a clear task.
 
 #### Why This Example Works
-In this COVID vaccine example, we've retrieved three passages: passage [1] gives timeline context, passage [2] explains mRNA mechanism, and passage [3] provides contrast with traditional vaccines. When the model generates an answer, it can say: "mRNA COVID vaccines work by using genetic material to teach cells to make a protein that triggers an immune response [Source: 2]." The answer is grounded, cited, and verifiable.
+[conversational] In this COVID vaccine example, we've retrieved three passages: passage [1] gives timeline context, passage [2] explains mRNA mechanism, and passage [3] provides contrast with traditional vaccines. When the model generates an answer, it can say: "mRNA COVID vaccines work by using genetic material to teach cells to make a protein that triggers an immune response [Source: 2]." The answer is grounded, cited, and verifiable.
 
 #### The Retrieval Pipeline
 Behind this prompt, there's a whole pipeline: **Step 1** — The user asks "How do mRNA COVID vaccines work?" **Step 2** — You embed this question using an embedding model. **Step 3** — You search your vector database for similar content. **Step 4** — The database returns these three most relevant passages. **Step 5** — You construct this prompt with passages and question. **Step 6** — The LLM generates a grounded answer with citations.
@@ -1705,10 +1705,10 @@ Here's a sneaky problem: **citation drift** — sometimes the model generates an
 **Chunking strategy** — how you split documents into searchable chunks — dramatically impacts RAG quality. Too small (50 words), and you lose context. Too large (1000 words), and retrieval becomes imprecise. The sweet spot is usually 200-500 words, but it depends on your domain. Also consider **overlap** — overlapping chunks by 20-50 words helps preserve context across boundaries. And **metadata** — adding titles, dates, and categories to chunks improves retrieval.
 
 #### Context Window Limitations
-Even with long context windows (100k-200k tokens), you can't just dump *everything* into the prompt. **1) Cost** — more tokens = higher cost. **2) Latency** — larger contexts take longer to process. **3) Lost-in-the-middle** — research shows LLMs struggle to use information in the middle of very long contexts. They're better at using information at the beginning and end. So even with RAG, you need to be strategic about what you retrieve and how you present it.
+[cautiously] Even with long context windows (100k-200k tokens), you can't just dump *everything* into the prompt. **1) Cost** — more tokens = higher cost. **2) Latency** — larger contexts take longer to process. **3) Lost-in-the-middle** — research shows LLMs struggle to use information in the middle of very long contexts. They're better at using information at the beginning and end. So even with RAG, you need to be strategic about what you retrieve and how you present it.
 
 #### When RAG Isn't Enough
-Sometimes RAG isn't the right solution: **1) Real-time data** — if you need *right now* information (stock prices, weather), RAG with a batch-updated database won't work. Use API calls instead. **2) Complex reasoning** — if the answer requires synthesizing information across many documents with multi-hop reasoning, RAG alone might not be enough. Consider combining with Chain-of-Thought or multi-agent systems. **3) Adversarial queries** — if users try to "jailbreak" by asking for information you don't want to provide, RAG won't help if that information is in your database.
+[cautiously] Sometimes RAG isn't the right solution: **1) Real-time data** — if you need *right now* information (stock prices, weather), RAG with a batch-updated database won't work. Use API calls instead. **2) Complex reasoning** — if the answer requires synthesizing information across many documents with multi-hop reasoning, RAG alone might not be enough. Consider combining with Chain-of-Thought or multi-agent systems. **3) Adversarial queries** — if users try to "jailbreak" by asking for information you don't want to provide, RAG won't help if that information is in your database.
 
 #### Practical Tips to Overcome These Issues
 Here's how to improve RAG systems: **1) Hybrid search** — combine vector search with keyword search (BM25) for better retrieval. **2) Re-ranking** — retrieve 20 candidates, then use a cross-encoder to re-rank the top 5 for the LLM. **3) Query expansion** — rewrite the user query in multiple ways to improve recall. **4) Verification loops** — ask the model to quote passages verbatim to verify citations. **5) Metadata filtering** — let users filter by date, category, or source before semantic search. **6) Human-in-the-loop** — for high-stakes applications, have humans verify retrieved passages before generation.`
@@ -1900,7 +1900,7 @@ This is why ART is "Advanced" complexity — it's not just the prompt, it's the 
           notes: `### ART Limitations & Considerations - The Reality Check
 
 #### When Tools Fail, Plans Crumble
-Here's the hard truth: ART is only as reliable as its tools. Imagine your research assistant suddenly gets wrong information from the library or the calculator breaks mid-computation. The model might continue reasoning with *bad data*, leading to confident but incorrect answers.
+[cautiously] Here's the hard truth: ART is only as reliable as its tools. Imagine your research assistant suddenly gets wrong information from the library or the calculator breaks mid-computation. The model might continue reasoning with *bad data*, leading to confident but incorrect answers.
 
 **Mitigation**: Implement tool validation, error handling, and fallback mechanisms. Always validate tool outputs before feeding them back to the model.
 
@@ -2198,7 +2198,7 @@ The efficiency gain is huge: you're focusing your expensive human annotation tim
 Alright, let's break down the mechanics here - this is really fascinating!
 
 #### The Uncertainty Estimation Process
-Here's the secret sauce: the system generates multiple Chain-of-Thought solutions for each candidate example. Let's say you ask the model to solve a problem 10 different times. If all 10 answers are the same, the model is confident. But if you get 5 different answers? That's high disagreement, which signals uncertainty. That's your gold mine!
+[lecture] Here's the secret sauce: the system generates multiple Chain-of-Thought solutions for each candidate example. Let's say you ask the model to solve a problem 10 different times. If all 10 answers are the same, the model is confident. But if you get 5 different answers? That's high disagreement, which signals uncertainty. [enthusiastically] That's your gold mine!
 
 Think of it like polling a group of experts - when they all agree, you're probably on solid ground. When they disagree wildly, that's where you need to dig deeper and get more information.
 
@@ -2208,7 +2208,7 @@ Step one: Generate multiple responses using Chain-of-Thought for your candidate 
 #### Real-World Example Deep Dive
 Picture a math tutoring system for middle schoolers. The system encounters word problems like "If Sarah has 3 apples and gives away half, how many does she have?" Simple, right? But then you get: "A train leaves Station A at 60mph..." and the model starts generating wildly different solution paths. That high disagreement signals this is the type of problem your students are struggling with! You get a human expert to annotate the proper reasoning steps, and now your exemplar set includes exactly the kind of problem that was causing confusion.
 
-The beauty is that this adapts over time - as your model gets better at certain problem types, it'll identify new areas of uncertainty to improve on.`
+[enthusiastically] The beauty is that this adapts over time - as your model gets better at certain problem types, it'll identify new areas of uncertainty to improve on.`
         },
         {
           id: 49,
@@ -2246,7 +2246,7 @@ The example prompt here is actually a meta-instruction for the system. You're te
 #### Infrastructure Requirements
 This isn't a quick weekend project - you need real infrastructure. You'll want a database to track examples, uncertainty scores, and annotation status. You'll need a workflow system for routing uncertain examples to human annotators. You'll need versioning for your exemplar sets so you can track improvements over time. And you'll want monitoring to ensure the active learning loop is actually improving performance.
 
-But here's the payoff: once you have this infrastructure, it becomes a continuously improving system. Every annotation cycle makes your model smarter at handling edge cases!`
+But [sigh] here's the payoff: once you have this infrastructure, it becomes a continuously improving system. Every annotation cycle makes your model smarter at handling edge cases!`
         },
         {
           id: 50,
@@ -2270,15 +2270,15 @@ But here's the payoff: once you have this infrastructure, it becomes a continuou
           backgroundColor: '#671a2d',
           notes: `### Active-Prompt Considerations & Limitations
 
-Let's be real - Active-Prompt is powerful, but it's not a silver bullet. Here are the gotchas you need to know about.
+[conversational] Let's be real - Active-Prompt is powerful, but it's not a silver bullet. Here are the gotchas you need to know about.
 
 #### The Annotation Cost Reality
-Human annotation is expensive, period. Yes, Active-Prompt is more efficient than random sampling because you're focusing on high-value examples, but you're still paying humans to carefully reason through complex problems and document their thinking. For a medical application, you might need senior physicians spending 10-15 minutes per annotation. At $200/hour, that adds up fast!
+[firmly] Human annotation is expensive, period. Yes, Active-Prompt is more efficient than random sampling because you're focusing on high-value examples, but you're still paying humans to carefully reason through complex problems and document their thinking. For a medical application, you might need senior physicians spending 10-15 minutes per annotation. At $200/hour, that adds up fast!
 
 The key question is: does the improvement justify the cost? For high-stakes applications like medical diagnosis, legal analysis, or financial forecasting, the answer is often yes. For a chatbot that recommends movies? Probably not.
 
 #### The Feedback Loop Trap
-Here's a subtle but important problem: your model selects examples based on its current uncertainty, humans annotate them, and then those become your new exemplars. But what if your model has a systematic blind spot? The examples it's uncertain about might all share some characteristic that reinforces a bias. You could end up with an exemplar set that's great at certain types of problems but completely misses other important cases.
+[firmly] Here's a subtle but important problem: your model selects examples based on its current uncertainty, humans annotate them, and then those become your new exemplars. But [sigh] what if your model has a systematic blind spot? The examples it's uncertain about might all share some characteristic that reinforces a bias. You could end up with an exemplar set that's great at certain types of problems but completely misses other important cases.
 
 This is called "feedback loop bias" or "active learning bias." The solution? Periodically include some random sampling in your selection, and have domain experts review the exemplar set holistically to ensure good coverage.
 
@@ -2291,7 +2291,7 @@ This is production ML infrastructure, not a simple API call. Budget for DevOps a
 Not all human annotations are created equal. Annotators get tired, make mistakes, or might not fully understand the task. You need inter-annotator agreement metrics, spot-checking by senior reviewers, and feedback mechanisms. Bad annotations in your exemplar set can actually make the model worse - garbage in, garbage out!
 
 #### When to Use Active-Prompt
-Use it when: you have complex, diverse tasks where examples matter a lot; you can afford expert human annotation; you're building production systems that need to improve over time; and you have the engineering resources for the active learning infrastructure.
+[cautiously] Use it when: you have complex, diverse tasks where examples matter a lot; you can afford expert human annotation; you're building production systems that need to improve over time; and you have the engineering resources for the active learning infrastructure.
 
 Don't use it when: you have simple tasks with clear patterns; annotation costs outweigh benefits; you need immediate results without iteration; or you're prototyping and need to move fast.
 
@@ -2342,7 +2342,7 @@ At its core, DSP is about *precision steering*. Imagine you're working with a br
 
 #### Why This Matters
 
-Traditional prompting is like shouting general instructions across a room. DSP is like having a conversation where you adapt your guidance based on *each specific situation*. For example, if you're summarizing medical research, your policy model might generate hints like "Mention patient outcomes and cite specific studies." But if the next document is about engineering safety, it adapts: "Focus on failure modes and risk mitigation." This instance-specific adaptation is what makes DSP powerful.
+Traditional prompting is like shouting general instructions across a room. DSP is like having a conversation where you adapt your guidance based on *each specific situation*. For example, if you're summarizing medical research, your policy model might generate hints like "Mention patient outcomes and cite specific studies." But [sigh] if the next document is about engineering safety, it adapts: "Focus on failure modes and risk mitigation." This instance-specific adaptation is what makes DSP powerful.
 
 #### Real-World Use Cases
 
@@ -2406,7 +2406,7 @@ Let's walk through that compliance example. Your meeting transcript comes in. Th
 
 #### Complexity Considerations
 
-This is marked **Advanced** for good reason. You need infrastructure to train and serve two models. You need training data to tune your policy model effectively. And you need to monitor for *stimulus drift* — where the policy model's hints gradually shift over time. But the payoff is powerful: consistent, steerable, domain-specific outputs without touching your main LLM.
+This is marked **Advanced** for good reason. You need infrastructure to train and serve two models. You need training data to tune your policy model effectively. And you need to monitor for *stimulus drift* — where the policy model's hints gradually shift over time. But [sigh] the payoff is powerful: consistent, steerable, domain-specific outputs without touching your main LLM.
 
 > Think of DSP as building a custom steering wheel for a powerful engine. The engine (main LLM) stays the same, but your steering mechanism becomes highly specialized for your specific road conditions.`
         },
@@ -2673,7 +2673,7 @@ Think of DSP as an **advanced power tool**. It unlocks capabilities that simpler
           backgroundColor: '#1a5667',
           notes: `### ReAct - Overview
 
-Welcome to **ReAct** — which you can pronounce either as "react" like the JavaScript library, or spell it out "R-E-act" for Reasoning and Acting. Both are perfectly fine! This is one of the most powerful agentic patterns we have today.
+[confidently] Welcome to **ReAct** — which you can pronounce either as "react" like the JavaScript library, or spell it out "R-E-act" for Reasoning and Acting. Both are perfectly fine! This is one of the most powerful agentic patterns we have today.
 
 #### What is ReAct?
 
@@ -2681,7 +2681,7 @@ ReAct is all about creating a continuous **think-act-observe loop**. Instead of 
 
 #### Why This Matters
 
-The magic of ReAct is that it's **grounded in reality**. Traditional reasoning happens entirely in the model's "head" — it can hallucinate or make assumptions. But with ReAct, every reasoning step can be informed by real-world observations from tools and APIs. This creates a transparent, interpretable decision-making process where you can see exactly *why* the agent took each action and *what* it learned from the results.
+The magic of ReAct is that it's **grounded in reality**. Traditional reasoning happens entirely in the model's "head" — it can hallucinate or make assumptions. But [sigh] with ReAct, every reasoning step can be informed by real-world observations from tools and APIs. This creates a transparent, interpretable decision-making process where you can see exactly *why* the agent took each action and *what* it learned from the results.
 
 #### When to Use ReAct
 
@@ -2717,7 +2717,7 @@ ReAct shines in **knowledge-intensive tasks** where the model needs to look thin
           backgroundColor: '#1a5667',
           notes: `### ReAct - How It Works
 
-Let me walk you through the **ReAct cycle** step by step, because once you understand this loop, you'll see how incredibly powerful it is.
+[conversational] Let me walk you through the **ReAct cycle** step by step, because once you understand this loop, you'll see how incredibly powerful it is.
 
 #### The Three-Step Cycle
 
@@ -2785,7 +2785,7 @@ Let's say you're building a customer support agent. The user asks "What's the st
 
 #### Framework Support
 
-Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support for ReAct patterns. They handle the orchestration, tool management, and observation loop for you. But understanding the underlying pattern helps you customize and debug when needed.`
+Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support for ReAct patterns. They handle the orchestration, tool management, and observation loop for you. But [sigh] understanding the underlying pattern helps you customize and debug when needed.`
         },
         {
           id: 62,
@@ -2807,7 +2807,7 @@ Most AI frameworks like LangChain, LlamaIndex, and Autogen have built-in support
           backgroundColor: '#1a5667',
           notes: `### ReAct - Considerations
 
-Let's be honest about the **challenges and limitations** of ReAct, because understanding these helps you build more robust systems.
+[seriously] Let's be honest about the **challenges and limitations** of ReAct, because understanding these helps you build more robust systems.
 
 #### Tool Dependency is Real
 
@@ -3079,7 +3079,7 @@ This technique is a game-changer for any problem where *seeing* the data is just
 Alright, let's break down the mechanics! How does this actually work under the hood?
 
 #### The Process Flow
-First, the model receives both an image and a text prompt. It then processes the image through its vision encoder — this is the part that "sees" the image and understands visual features like shapes, colors, text, spatial relationships, and patterns. At the same time, it processes the text prompt through its language understanding components.
+[lecture] First, the model receives both an image and a text prompt. It then processes the image through its vision encoder — this is the part that "sees" the image and understands visual features like shapes, colors, text, spatial relationships, and patterns. At the same time, it processes the text prompt through its language understanding components.
 
 Here's where it gets interesting: instead of just mashing these together, the model performs **cross-modal reasoning**. It explicitly identifies visual observations, relates them to the textual context, and then builds a step-by-step reasoning chain that references both modalities. For example, it might say: "I observe three bars in the chart. The first bar shows 45% (visual), which corresponds to Q1 revenue mentioned in the text. The second bar at 62% is higher, indicating Q2 growth..."
 
@@ -3091,7 +3091,7 @@ This step-by-step approach dramatically reduces hallucinations because the model
 #### Real-World Example Deep-Dive
 Let's take that circuit diagram example. Without Multimodal CoT, you might get: "The output voltage is 12V" with no explanation. With Multimodal CoT, you get: "Looking at the diagram, I see a 24V power source at the top left. Following the circuit path, there's a resistor R1 with 100Ω marked. The current flows through R1 to the junction point. I observe a voltage divider configuration with R2 also at 100Ω to ground. Using the voltage divider formula with equal resistances, the output voltage at the middle junction is 24V × (100Ω / 200Ω) = 12V."
 
-See the difference? The model explicitly references visual elements, traces the reasoning path, and shows its work. This is **huge** for debugging, verification, and trust in AI systems!
+See the difference? The model explicitly references visual elements, traces the reasoning path, and shows its work. [excited] This is **huge** for debugging, verification, and trust in AI systems!
 
 #### Why It's Advanced
 Now, this technique requires advanced multimodal models — we're talking GPT-4 with vision, Claude 3.5 Sonnet, or Gemini 1.5 Pro. These models have been specifically trained to align visual and language representations in a shared embedding space. Not every AI can do this!`
@@ -3220,13 +3220,13 @@ Models can struggle with very small or detailed visual elements. Things like:
 For these cases, you might need to combine Multimodal CoT with other techniques like explicit OCR, image segmentation, or even breaking the image into multiple focused crops.
 
 #### Cost and Latency
-Let's be real — processing images with these advanced models is more expensive than text-only prompts. Image tokens count significantly toward your API costs, and processing time is longer. For production systems, consider:
+[conversational] Let's be real — processing images with these advanced models is more expensive than text-only prompts. Image tokens count significantly toward your API costs, and processing time is longer. For production systems, consider:
 - Caching results for identical images
 - Downsampling images when appropriate
 - Using tiered approaches (cheap model first, expensive model only if needed)
 
 #### When NOT to Use This
-Don't use Multimodal CoT when:
+[cautiously] Don't use Multimodal CoT when:
 - You just need basic image classification (a simple vision API is faster and cheaper)
 - The image is decorative or not central to the task
 - You're on a tight budget and text-only alternatives exist
@@ -3271,7 +3271,7 @@ That said, when you *do* need to reason about visual information — charts, dia
           backgroundColor: '#1a6731',
           notes: `### Graph Prompting Overview
 
-Welcome to our final advanced technique: Graph Prompting! This is where things get really interesting, folks. Instead of treating information as a flat list or a simple hierarchy, we're organizing knowledge the way our brains do—as interconnected networks of concepts and relationships.
+[confidently] Welcome to our final advanced technique: Graph Prompting! This is where things get really interesting, folks. Instead of treating information as a flat list or a simple hierarchy, we're organizing knowledge the way our brains do—as interconnected networks of concepts and relationships.
 
 Think about how you understand the world. When I mention "Apple," your brain doesn't just retrieve a single fact—it activates a whole web of connections. Is it the fruit? The tech company? If it's the company, you're thinking about Steve Jobs, iPhones, Silicon Valley, maybe their retail stores. Each of these nodes connects to others. That's exactly what graph prompting does for AI.
 
@@ -3279,7 +3279,7 @@ The core idea is beautifully simple: we extract entities (like people, places, c
 
 This is incredibly powerful for questions like "How is Company A connected to Person B?" where the answer might require traversing through several intermediate relationships. The graph makes these connections explicit and traceable, rather than hoping the LLM magically infers them from context.
 
-Let's dive into how this works and when you'd want to use it!`
+[confidently] Let's dive into how this works and when you'd want to use it!`
         },
         {
           id: 72,
@@ -3321,7 +3321,7 @@ Alright, let's break down the mechanics. Graph Prompting is actually a multi-sta
 
 **Stage four: Graph-Based Reasoning.** When a question comes in, we don't just throw raw text at the LLM. We identify relevant subgraphs—the portions of the knowledge graph that matter for this query—and present that structured information. The LLM can then follow paths through the graph: "Company A is owned by Holding Company B, which is controlled by Person C, who also serves on the board of Company D." That's a three-hop inference that's explicit and traceable.
 
-Think about a due diligence scenario at an investment firm. You're analyzing a company, and you need to understand its ownership structure across multiple SEC filings, press releases, and corporate documents. A traditional search would give you fragments. But with graph prompting, you construct a comprehensive ownership graph—who owns what percentage, when did acquisitions happen, what are the board relationships—and now you can answer complex queries like "Are there any circular ownership patterns?" or "Who are the ultimate beneficial owners?" The graph makes these insights accessible and verifiable.`
+Think about a due diligence scenario at an investment firm. You're analyzing a company, and you need to understand its ownership structure across multiple SEC filings, press releases, and corporate documents. A traditional search would give you fragments. But [sigh] with graph prompting, you construct a comprehensive ownership graph—who owns what percentage, when did acquisitions happen, what are the board relationships—and now you can answer complex queries like "Are there any circular ownership patterns?" or "Who are the ultimate beneficial owners?" The graph makes these insights accessible and verifiable.`
         },
         {
           id: 73,
@@ -3348,11 +3348,11 @@ Think about a due diligence scenario at an investment firm. You're analyzing a c
           backgroundColor: '#1a6731',
           notes: `### Implementation Details
 
-Let's look at how you'd actually implement this. The prompt structure is deceptively simple, but there's significant infrastructure behind it.
+[enthusiastically] Let's look at how you'd actually implement this. The prompt structure is deceptively simple, but there's significant infrastructure behind it.
 
 The basic prompt pattern goes something like: "From these documents, extract all entities and their relationships into a knowledge graph. Then, using that graph structure, answer the question: [your question]. Show me the reasoning path you followed through the graph."
 
-But here's the thing—this isn't just a prompt, it's a system. You need several components working together. First, you need the LLM to do entity and relationship extraction. GPT-4, Claude 3.5, or Gemini 1.5 can all handle this with proper prompting, though you might get better results with specialized NER models for entities.
+But [sigh] here's the thing—this isn't just a prompt, it's a system. You need several components working together. First, you need the LLM to do entity and relationship extraction. GPT-4, Claude 3.5, or Gemini 1.5 can all handle this with proper prompting, though you might get better results with specialized NER models for entities.
 
 Second, you need somewhere to store and query this graph. For lightweight cases, you might use NetworkX in Python to build an in-memory graph. But for production systems, you're looking at graph databases like Neo4j or Amazon Neptune. These aren't just storage—they give you powerful graph query languages like Cypher that let you find shortest paths, detect communities, identify central nodes, all the graph theory goodness.
 
@@ -3394,7 +3394,7 @@ Now let's talk about the challenges, because graph prompting is powerful but not
 
 **The quality ceiling is real.** Your graph-based reasoning is only as good as your graph. If you have incomplete entity extraction—maybe you only caught 60 percent of the relevant entities—or if your relationship extraction is noisy, the LLM's answers will reflect that. Think of it like trying to navigate with an incomplete map. Sure, you can follow the roads you can see, but you might miss the highway that would get you there faster because it's not on your map.
 
-**Finally, there's the infrastructure tax.** Graph databases, entity extraction pipelines, subgraph extraction logic—this is not a simple prompt pattern you can drop into your app. It's a full system architecture. For problems that truly need multi-hop reasoning over complex relationships, it's absolutely worth it. But don't reach for graph prompting when a simpler technique would suffice. Use it where the structure of relationships is genuinely central to the problem.`
+**Finally, there's the infrastructure tax.** Graph databases, entity extraction pipelines, subgraph extraction logic—this is not a simple prompt pattern you can drop into your app. It's a full system architecture. For problems that truly need multi-hop reasoning over complex relationships, it's absolutely worth it. But [sigh] don't reach for graph prompting when a simpler technique would suffice. Use it where the structure of relationships is genuinely central to the problem.`
         }
       ]
     },
@@ -3472,7 +3472,7 @@ Alright, now that we've covered all 18 techniques, let's step back and get the b
 
 **The Simple tier—green light zone.** This is your starting point for almost everything: Zero-shot and Few-shot. Just LLM API, no fancy infrastructure. If you're building something new, start here. Seriously. I see way too many people jumping straight to complex architectures when a well-crafted zero-shot prompt would work perfectly fine. These techniques handle probably 80 percent of real-world tasks: email classification, content generation, simple Q&A, summarization. The infrastructure cost is minimal—just API calls—and the cognitive overhead is low. Your team can understand and maintain these easily.
 
-**The Intermediate tier—yellow, production-ready zone.** This is where most production systems eventually land. Chain of Thought for reasoning, RAG for grounded knowledge, Prompt Chaining for complex workflows, Meta-prompting for consistency. Notice the infrastructure grows: you need orchestration logic, maybe a vector database for RAG, some workflow management. But these techniques are battle-tested at scale. Companies run entire products on RAG pipelines. The complexity is justified because you're solving problems that simple prompts can't handle: you need external knowledge, or step-by-step reasoning, or standardized outputs.
+**The Intermediate tier—yellow, production-ready zone.** This is where most production systems eventually land. Chain of Thought for reasoning, RAG for grounded knowledge, Prompt Chaining for complex workflows, Meta-prompting for consistency. Notice the infrastructure grows: you need orchestration logic, maybe a vector database for RAG, some workflow management. But [sigh] these techniques are battle-tested at scale. Companies run entire products on RAG pipelines. The complexity is justified because you're solving problems that simple prompts can't handle: you need external knowledge, or step-by-step reasoning, or standardized outputs.
 
 **The Advanced tier—red, specialized zone.** These are your power tools for when you truly need them: Tree of Thoughts for complex planning, ReAct for tool use, PAL for code execution, Graph Prompting for relationship reasoning. The infrastructure needs are significant: graph databases, code sandboxes, active learning loops, sophisticated search control. These techniques shine in specific scenarios—legal discovery, scientific research, complex automation—but they're overkill for most applications.
 
@@ -3553,7 +3553,7 @@ The key insight: **climb the ladder only as high as your problem requires.** Don
           backgroundColor: '#145d33',
           notes: `### Best Practices and Recommendations
 
-Let's wrap up with some hard-won wisdom from the trenches. These are the practices that separate successful prompt engineering from frustrating trial-and-error.
+[warmly] Let's wrap up with some hard-won wisdom from the trenches. These are the practices that separate successful prompt engineering from frustrating trial-and-error.
 
 **Getting Started—the progressive enhancement approach.** Always start with zero-shot. Literally every time. Write a clear, direct prompt and see what happens. You'll be surprised how often it just works! If it doesn't quite hit the mark, add a few examples—move to few-shot. Maybe three to five good examples. Still struggling? Now add Chain of Thought reasoning: "think step-by-step" or "explain your reasoning." This progressive approach means you only add complexity when you actually need it, and you understand exactly what each layer is buying you.
 
@@ -3630,19 +3630,19 @@ The meta-lesson: **prompt engineering is iterative.** You won't nail it on the f
           backgroundColor: '#2C3E50',
           notes: `### Summary: The Prompt Engineering Ladder
 
-We've reached the end of our journey through 18 prompt engineering techniques, and I want to leave you with one powerful mental model: the ladder.
+[warmly] We've reached the end of our journey through 18 prompt engineering techniques, and I want to leave you with one powerful mental model: the ladder.
 
-**Level 1: Foundations.** Zero-shot and few-shot prompting. This is your ground floor, your default approach. Honestly, this solves about 80 percent of real-world problems. Need to categorize support tickets? Zero-shot. Want to generate marketing copy in a specific style? Few-shot with three examples. Don't overthink it. Start here, every single time. The infrastructure is trivial—just LLM API calls—and the cognitive load is minimal. Your whole team can work with these techniques.
+[lecture] **Level 1: Foundations.** Zero-shot and few-shot prompting. This is your ground floor, your default approach. Honestly, this solves about 80 percent of real-world problems. Need to categorize support tickets? Zero-shot. Want to generate marketing copy in a specific style? Few-shot with three examples. Don't overthink it. Start here, every single time. The infrastructure is trivial—just LLM API calls—and the cognitive load is minimal. Your whole team can work with these techniques.
 
-**Level 2: Reasoning.** Chain of Thought, Meta-prompting, Self-Consistency. Climb to this level when outputs need to be more thoughtful or more reliable. Math problems? CoT helps the model show its work. Need standardized JSON output? Meta-prompting sets the rules. Getting inconsistent answers? Self-consistency samples multiple reasoning paths. You're still just making API calls, but you're orchestrating them more carefully to improve quality.
+[lecture] **Level 2: Reasoning.** Chain of Thought, Meta-prompting, Self-Consistency. Climb to this level when outputs need to be more thoughtful or more reliable. Math problems? CoT helps the model show its work. Need standardized JSON output? Meta-prompting sets the rules. Getting inconsistent answers? Self-consistency samples multiple reasoning paths. You're still just making API calls, but you're orchestrating them more carefully to improve quality.
 
-**Level 3: Retrieval & Orchestration.** RAG and Prompt Chaining. This is production territory. Most real-world applications eventually need external knowledge (RAG) or multi-step workflows (chaining). You're now running infrastructure: vector databases, retrieval pipelines, workflow orchestration. But these are proven patterns with tons of tooling support. Companies run entire products on this level.
+[lecture] **Level 3: Retrieval & Orchestration.** RAG and Prompt Chaining. This is production territory. Most real-world applications eventually need external knowledge (RAG) or multi-step workflows (chaining). You're now running infrastructure: vector databases, retrieval pipelines, workflow orchestration. But these are proven patterns with tons of tooling support. Companies run entire products on this level.
 
-**Level 4: Agentic.** ReAct, PAL, Reflexion. Here's where AI starts to *do things*—calling APIs, writing and executing code, reflecting on its own outputs and improving. This is powerful but requires careful guardrails. Tool use means more failure modes. Self-correction means more LLM calls and higher costs. Use this level when the task truly requires autonomous actions or iteration.
+[lecture] **Level 4: Agentic.** ReAct, PAL, Reflexion. Here's where AI starts to *do things*—calling APIs, writing and executing code, reflecting on its own outputs and improving. This is powerful but requires careful guardrails. Tool use means more failure modes. Self-correction means more LLM calls and higher costs. Use this level when the task truly requires autonomous actions or iteration.
 
-**Level 5: Advanced.** Tree of Thoughts, APE, Graph Prompting. The peak of the ladder, for specialized problems. Complex search over solution spaces, automatic prompt optimization, reasoning over knowledge graphs. The infrastructure is heavy: graph databases, sophisticated search algorithms, active learning loops. These techniques are incredible when you need them—research applications, legal discovery, complex planning problems—but they're major overkill for everyday tasks.
+[lecture] **Level 5: Advanced.** Tree of Thoughts, APE, Graph Prompting. The peak of the ladder, for specialized problems. Complex search over solution spaces, automatic prompt optimization, reasoning over knowledge graphs. The infrastructure is heavy: graph databases, sophisticated search algorithms, active learning loops. These techniques are incredible when you need them—research applications, legal discovery, complex planning problems—but they're major overkill for everyday tasks.
 
-**The key insight: Start at Level 1, climb only as high as your task requires.** Don't build Level 5 infrastructure to solve Level 1 problems. But also don't stay stuck at Level 1 when you're clearly fighting a Level 3 or 4 problem. The ladder gives you a framework for escalation. Try the simpler approach first. If it works, great—ship it! If it doesn't, move up one level and try again.
+**[inspiringly] The key insight: Start at Level 1, climb only as high as your task requires.** Don't build Level 5 infrastructure to solve Level 1 problems. But also don't stay stuck at Level 1 when you're clearly fighting a Level 3 or 4 problem. The ladder gives you a framework for escalation. Try the simpler approach first. If it works, great—ship it! If it doesn't, move up one level and try again.
 
 This progression also maps to learning and adoption. Start by mastering the foundations. Get really good at zero-shot and few-shot prompting. Then learn reasoning techniques. Then retrieval. Each level builds on the previous ones. By the time you need agentic or advanced techniques, you'll have the judgment to use them wisely.
 
