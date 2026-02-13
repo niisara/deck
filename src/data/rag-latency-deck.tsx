@@ -194,7 +194,7 @@ flowchart LR
 Each technique targets one or more of these stages. The key insight is that you don't need to apply all eleven — pick the ones that address your biggest bottleneck first.
 
 #### 🎯 Key Takeaway
-The key idea here is simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. Now let's dive into each technique, starting with smaller embedding models...`
+[confidently] The key simple: **optimize the critical path and perceived latency first**, then tune infrastructure. Focus on different latency stages to comprehensively reduce end-to-end latency. Now let's dive into each technique, starting with smaller embedding models...`
         }
       ]
     },
@@ -228,10 +228,10 @@ The key idea here is simple: **optimize the critical path and perceived latency 
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 3. Use Smaller Embedding Models — Goal
-Let's start with our first technique — using **smaller embedding models**. The goal here is straightforward: reduce the time it takes to convert text into numerical vectors, while keeping your retrieval quality acceptable.
+[energetic] Let's start with our first technique — using **smaller embedding models**. The goal here is straightforward: reduce the time it takes to convert text into numerical vectors, while keeping your retrieval quality acceptable.
 
 #### 🎯 What's the Goal?
-When you embed a query or a document, you're running it through a neural network. Bigger models like OpenAI's text-embedding-ada-002 👉 'text embedding ada oh-oh-two' produce great embeddings, but they're slow. Smaller models can give you 2x to 10x (two x to ten x) speedups with only a minor drop in recall.
+[lecture] When you When you embed a query or a document, you're running it through a neural network. Bigger models like OpenAI's text-embedding-ada-002 👉 'text embedding ada oh-oh-two' produce great embeddings, but they're slow. Smaller models can give you 2x to 10x (two x to ten x) speedups with only a minor drop in recall.
 
 #### 💡 Think of It This Way
 Imagine you have two translators. One is a world-class expert who takes five minutes per page. The other is a skilled professional who takes thirty seconds per page and gets ninety-five percent of the nuances right. For most practical purposes, the faster translator is the better choice.
@@ -277,7 +277,7 @@ If your data changes often and you need to re-embed documents regularly, faster 
 #### 🌍 Multilingual Applications
 Some smaller models like multilingual E5-small 👉 'ee-five small' handle multiple languages efficiently without needing separate models for each language.
 
-Now let's look at how this actually works under the hood...`
+[energetic] Now let\'s look at how this actually works under the hood...`
         },
         {
           id: 5,
@@ -371,15 +371,15 @@ You're trading a small amount of recall quality for big latency gains. In most r
 Let's walk through the practical steps to switch to a smaller embedding model. This is a systematic process that helps you make the transition safely.
 
 #### 📋 Step-by-Step Guide
-**Step one: Benchmark your baseline.** Before changing anything, measure your current retrieval quality using metrics like recall@k 👉 'recall at k' and your p95 latency 👉 'pee ninety-five latency'. This gives you a reference point to compare against.
+[lecture] **Step one: Benchmark your baseline.** Before changing anything, measure your current retrieval quality using metrics like recall@k 👉 'recall at k' and your p95 latency 👉 'pee ninety-five latency'. This gives you a reference point to compare against.
 
-**Step two: Trial alternatives.** Pick two or three smaller models and evaluate them on a representative set of queries. Look at both quality metrics and speed. Models like E5-small or bge-small are great starting points.
+[lecture] **Step two: Trial alternatives.** Pick two or three smaller models and evaluate them on a representative set of queries. Look at both quality metrics and speed. Models like E5-small or bge-small are great starting points.
 
-**Step three: Optimize dimensions.** If the quality is close but you want even more speed, try reducing vector dimensions. Going from 768 to 384 dimensions can give you another 2x (two x) speedup on similarity search with minimal quality loss.
+[lecture] **Step three: Optimize dimensions.** If the quality is close but you want even more speed, try reducing vector dimensions. Going from 768 to 384 dimensions can give you another 2x (two x) speedup on similarity search with minimal quality loss.
 
-**Step four: Measure performance.** Run your full evaluation suite. Track both recall@k and latency percentiles. Make sure the quality drop is within your acceptable threshold — typically less than five percent.
+[lecture] **Step four: Measure performance.** Run your full evaluation suite. Track both recall@k and latency percentiles. Make sure the quality drop is within your acceptable threshold — typically less than five percent.
 
-**Step five: Tune parameters.** If you notice quality drops, try adjusting retrieval settings like increasing top-k slightly or adding a reranking step to compensate. Now let's look at the trade-offs...`
+[lecture] **Step five: Tune parameters.** If you notice quality drops, try adjusting retrieval settings like increasing top-k slightly or adding a reranking step to compensate. Now let's look at the trade-offs...`
         },
         {
           id: 7,
@@ -432,7 +432,7 @@ The good stuff: You get **2x to 10x (two x to ten x) faster inference**, which i
 The problems: There's a **potential recall drop on nuanced queries** — very subtle semantic differences might be missed by smaller models. You **may underperform on long-tail cases** where rare vocabulary or domain-specific jargon is involved. There's a **reindexing cost** when switching models — you need to re-embed all your documents, which can be expensive for large corpora. And there might be **multilingual performance gaps** if the smaller model wasn't trained on enough data in your target languages.
 
 #### ⚖️ The Verdict
-For most production use cases, the speed gains far outweigh the minor quality trade-offs. Start with a smaller model and only move to a larger one if you can measure a meaningful quality difference on your specific data. Now let's move to our second technique — reducing chunk size...`
+[reassuringly] For mostroduction use cases, the speed gains far outweigh the minor quality trade-offs. Start with a smaller model and only move to a larger one if you can measure a meaningful quality difference on your specific data. Now let's move to our second technique — reducing chunk size...`
         }
       ]
     },
@@ -466,15 +466,15 @@ For most production use cases, the speed gains far outweigh the minor quality tr
           ),
           backgroundColor: '#6b1d4d',
           notes: `### 8. Reduce Chunk Size — Goal
-On to our second technique — reducing chunk size. This one might seem simple, but it's surprisingly impactful. The goal is to make your chunks smaller so that embedding, retrieval, and LLM processing all get faster.
+[energetic] On to our second technique — reducing chunk size. This one might seem simple, but it's surprisingly impactful. The goal is to make your chunks smaller so that embedding, retrieval, and LLM processing all get faster.
 
 #### 🎯 What's the Goal?
-When you split documents into chunks for your RAG pipeline, the size of those chunks affects everything downstream. Smaller chunks mean faster embedding, more precise retrieval, and less token usage when generating answers.
+[lecture] When you split documents into chunks for your RAG pipeline, the size of those chunks affects everything downstream. Smaller chunks mean faster embedding, more precise retrieval, and less token usage when generating answers.
 
 #### 💡 The Analogy
-Think of it like organizing a library. If each "book" on the shelf is actually a fifty-page chapter, it's hard to find the exact paragraph you need. But if each "book" is just a single page or paragraph, you can quickly grab exactly the information you're looking for — no fluff, no wasted time.
+[storytelling] Think of it like organizing a library. If each "book" on the shelf is actually a fifty-page chapter, it's hard to find the exact paragraph you need. But if each "book" is just a single page or paragraph, you can quickly grab exactly the information you're looking for — no fluff, no wasted time.
 
-The key insight is that most of the content in a large chunk is irrelevant to any given query. By making chunks smaller, you reduce noise and speed up the entire pipeline. Let's see when this is most effective...`
+[lecture] The key insight is that most of the content in a large chunk is irrelevant to any given query. By making chunks smaller, you reduce noise and speed up the entire pipeline. Let's see when this is most effective...`
         },
         {
           id: 9,
@@ -506,7 +506,7 @@ When should you consider reducing your chunk size? Here are the key scenarios wh
 #### 📝 Dense, Factual Content
 If your documents contain lots of specific facts, definitions, or data points packed closely together, smaller chunks help isolate each fact. Think technical documentation, legal contracts, or medical records.
 
-#### 🎯 Precision-Critical Applications
+[seriously] #### 🎯 Precision-Critical Applications
 When your users need exact answers rather than general summaries, smaller chunks reduce the noise. For example, a customer support bot answering "what's the return policy for electronics?" doesn't need the entire policy document — just the relevant paragraph.
 
 #### 💰 Token Cost Optimization
@@ -515,7 +515,7 @@ Since LLMs charge per token, sending smaller, more relevant chunks means lower c
 #### ⚡ Low-Latency Requirements
 Every token sent to the LLM adds to generation time. Smaller chunks mean fewer tokens, which means faster responses. For real-time applications, this can be the difference between an acceptable and an unacceptable user experience.
 
-Let's see how chunk size reduction actually works in practice...`
+[conversational] Let's see how chunk size reduction actually works in practice...`
         },
         {
           id: 10,
@@ -558,7 +558,7 @@ Let's see how chunk size reduction actually works in practice...`
           ),
           backgroundColor: '#6b1d4d',
           notes: `### 10. Reduce Chunk Size — How It Works
-Let's understand the mechanics of chunk size reduction and why it speeds things up at every stage of the pipeline.
+[conversational] Let's understand the mechanics of chunk size reduction and why it speeds things up at every stage of the pipeline.
 
 #### ⚙️ The Mechanism
 \`\`\`mermaid
@@ -608,15 +608,15 @@ Use chunk overlap — typically 10 to 20 percent — to ensure you don't cut imp
 Here's a practical guide to reducing your chunk size effectively. Follow these steps to find your optimal configuration.
 
 #### 📋 Implementation Steps
-**Step one: Analyze your current chunks.** Look at your existing chunk sizes and measure how much of each chunk is actually relevant to typical queries. If most of the content is noise, smaller chunks will help.
+[lecture] **Step one: Analyze your current chunks.** Look at your existing chunk sizes and measure how much of each chunk is actually relevant to typical queries. If most of the content is noise, smaller chunks will help.
 
-**Step two: Experiment with sizes.** Try chunking at 128, 200, and 256 tokens. For each size, run your evaluation queries and measure both retrieval quality and latency.
+[lecture] **Step two: Experiment with sizes.** Try chunking at 128, 200, and 256 tokens. For each size, run your evaluation queries and measure both retrieval quality and latency.
 
-**Step three: Add semantic boundaries.** Don't just split at token counts — use paragraph breaks, section headers, or sentence boundaries. This preserves meaning within each chunk. Libraries like LangChain 👉 'lang-chain' have built-in splitters for this.
+[lecture] **Step three: Add semantic boundaries.** Don't just split at token counts — use paragraph breaks, section headers, or sentence boundaries. This preserves meaning within each chunk. Libraries like LangChain 👉 'lang-chain' have built-in splitters for this.
 
-**Step four: Configure overlap.** Set chunk overlap to about 10-20% of your chunk size. For a 200-token chunk, that's 20-40 tokens of overlap. This ensures continuity between adjacent chunks.
+[lecture] **Step four: Configure overlap.** Set chunk overlap to about 10-20% of your chunk size. For a 200-token chunk, that's 20-40 tokens of overlap. This ensures continuity between adjacent chunks.
 
-**Step five: Reindex and evaluate.** Re-embed all your documents with the new chunk size and run your full evaluation suite. Compare recall@k, latency, and token costs against your baseline.
+[lecture] **Step five: Reindex and evaluate.** Re-embed all your documents with the new chunk size and run your full evaluation suite. Compare recall@k, latency, and token costs against your baseline.
 
 Time to see the trade-offs of this approach...`
         },
@@ -662,16 +662,16 @@ Time to see the trade-offs of this approach...`
           ),
           backgroundColor: '#6b1d4d',
           notes: `### 12. Reduce Chunk Size — Pros and Cons
-Let's evaluate the trade-offs of reducing chunk size. Understanding these helps you make informed decisions for your specific use case.
+[conversational] Let's evaluate the trade-offs of reducing chunk size. Understanding these helps you make informed decisions for your specific use case.
 
 #### ✅ Pros
-The good stuff: You get **more precise retrieval** because each chunk focuses on a single topic, reducing noise. **Lower token costs** since you're sending fewer irrelevant tokens to the LLM. **Faster generation** because the LLM processes less input. **Better relevance scores** in your vector search because the embeddings represent more focused content. And **easier debugging** — when something goes wrong, it's easier to trace issues in smaller chunks.
+[lecture] The good stuff: You get **more precise retrieval** because each chunk focuses on a single topic, reducing noise. **Lower token costs** since you're sending fewer irrelevant tokens to the LLM. **Faster generation** because the LLM processes less input. **Better relevance scores** in your vector search because the embeddings represent more focused content. And **easier debugging** — when something goes wrong, it's easier to trace issues in smaller chunks.
 
 #### ❌ Cons
-The problems: You **may lose context** if chunks are too small, making it harder for the LLM to understand the full picture. You get **more chunks to index**, which increases storage requirements and indexing time. There's a risk of **splitting related information** across chunks, which can lead to incomplete answers. And you need to **reindex everything** when you change chunk sizes, which can be time-consuming for large document collections.
+[lecture] The problems: You **may lose context** if chunks are too small, making it harder for the LLM to understand the full picture. You get **more chunks to index**, which increases storage requirements and indexing time. There's a risk of **splitting related information** across chunks, which can lead to incomplete answers. And you need to **reindex everything** when you change chunk sizes, which can be time-consuming for large document collections.
 
 #### 💡 Pro Tip
-Start with 200 tokens and adjust from there based on your content type. Technical documentation often works better with smaller chunks around 128 tokens, while narrative content may need larger chunks around 300 tokens. Up next, let's talk about limiting top-K retrieval...`
+[warmly] Start with 200 tokens and adjust from there based on your content type. Technical documentation often works better with smaller chunks around 128 tokens, while narrative content may need larger chunks around 300 tokens. Up next, let's talk about limiting top-K retrieval...`
         }
       ]
     },
@@ -705,15 +705,15 @@ Start with 200 tokens and adjust from there based on your content type. Technica
           ),
           backgroundColor: '#571d6b',
           notes: `### 13. Limit Top-K Retrieval — Goal
-Now let's look at technique number three — limiting Top-K retrieval. This is one of the simplest yet most effective optimizations you can make to your RAG pipeline.
+[energetic] Now let's look at technique number three — limiting Top-K retrieval. This is one of the simplest yet most effective optimizations you can make to your RAG pipeline.
 
 #### 🎯 What's the Goal?
 Top-K 👉 'top kay' refers to how many results your vector search returns. If you're fetching the top 20 most similar chunks when you only really need the top 3, you're wasting time on retrieval, reranking, and sending unnecessary tokens to the LLM.
 
 #### 💡 The Analogy
-Imagine you're searching Google for a recipe. You don't read all 10 million results — you look at the first 3 or 4 and pick the best one. The same principle applies here. Most of the relevant information is in the top few results, and the rest is just noise that slows everything down.
+[storytelling] Imagine you're searching Google for a recipe. You don't read all 10 million results — you look at the first 3 or 4 and pick the best one. The same principle applies here. Most of the relevant information is in the top few results, and the rest is just noise that slows everything down.
 
-The beauty of this technique is that it costs nothing to implement and often improves both speed AND quality. Let's see when to apply it...`
+[lecture] The beauty of this technique is that it costs nothing to implement and often improves both speed AND quality. Let's see when to apply it...`
         },
         {
           id: 14,
@@ -751,10 +751,10 @@ When your embeddings are high quality and your data is well-organized, the top 3
 #### 💰 Cost-Sensitive Applications
 Every token sent to the LLM costs money. If you're fetching 10 chunks at 200 tokens each, that's 2,000 tokens of context. Cutting to 3 chunks saves you 1,400 tokens per query — that's a 70% reduction in context token costs.
 
-#### 🔄 Simple Question-Answering
-For straightforward factual questions like "What is the return policy?" or "When was the company founded?", the answer is almost always in the top 1-2 results. Fetching more is wasteful.
+[reassuringly] #### 🔄 Simple Question-Answering
+[reassuringly] For straightforward factual questions like "What is the return policy?" or "When was the company founded?", the answer is almost always in the top 1-2 results. Fetching more is wasteful.
 
-Let's see the mechanics of how this optimization works...`
+[conversational] Let's see the mechanics of how this optimization works...`
         },
         {
           id: 15,
@@ -798,7 +798,7 @@ Let's see the mechanics of how this optimization works...`
           ),
           backgroundColor: '#571d6b',
           notes: `### 15. Limit Top-K Retrieval — How It Works
-Let's understand why reducing Top-K has such a dramatic effect on latency. It's not just about the retrieval step — it cascades through the entire pipeline.
+[conversational] Let's understand why reducing Top-K has such a dramatic effect on latency. It's not just about the retrieval step — it cascades through the entire pipeline.
 
 #### ⚙️ The Cascade Effect
 \`\`\`mermaid
@@ -846,20 +846,20 @@ Advanced systems use **dynamic Top-K** — adjusting the number of results based
           ),
           backgroundColor: '#571d6b',
           notes: `### 16. Limit Top-K Retrieval — Steps
-Here's how to systematically optimize your Top-K setting. It's a simple process, but doing it methodically ensures you don't sacrifice quality.
+[conversational] Here's how to systematically optimize your Top-K setting. It's a simple process, but doing it methodically ensures you don't sacrifice quality.
 
 #### 📋 Implementation Steps
-**Step one: Profile current usage.** Check what Top-K value you're currently using. Many frameworks default to 10 or 20, which is often excessive. Log how many results actually get used in your final answers.
+[lecture] **Step one: Profile current usage.** Check what Top-K value you're currently using. Many frameworks default to 10 or 20, which is often excessive. Log how many results actually get used in your final answers.
 
-**Step two: Analyze result relevance.** For a sample of queries, look at the relevance scores of each returned chunk. If results 5 through 20 consistently have low similarity scores, they're adding noise, not value.
+[lecture] **Step two: Analyze result relevance.** For a sample of queries, look at the relevance scores of each returned chunk. If results 5 through 20 consistently have low similarity scores, they're adding noise, not value.
 
-**Step three: A/B test reduced values.** Try Top-3, Top-5, and your current value side by side. Measure answer quality using your evaluation metrics and compare latency at each setting.
+[lecture] **Step three: A/B test reduced values.** Try Top-3, Top-5, and your current value side by side. Measure answer quality using your evaluation metrics and compare latency at each setting.
 
-**Step four: Implement with a safety margin.** Set your Top-K to the lowest value that maintains acceptable quality, plus one extra as a buffer. So if Top-3 works well, use Top-4 as your production setting.
+[lecture] **Step four: Implement with a safety margin.** Set your Top-K to the lowest value that maintains acceptable quality, plus one extra as a buffer. So if Top-3 works well, use Top-4 as your production setting.
 
-**Step five: Monitor in production.** Track answer quality metrics continuously. If you notice degradation on certain query types, consider implementing dynamic Top-K based on query classification.
+[lecture] **Step five: Monitor in production.** Track answer quality metrics continuously. If you notice degradation on certain query types, consider implementing dynamic Top-K based on query classification.
 
-Now let's look at the trade-offs of this approach...`
+[energetic] Now let\'s look at the trade-offs of this approach...`
         },
         {
           id: 17,
@@ -903,16 +903,16 @@ Now let's look at the trade-offs of this approach...`
           ),
           backgroundColor: '#571d6b',
           notes: `### 17. Limit Top-K Retrieval — Pros and Cons
-Let's weigh the benefits and risks of limiting Top-K retrieval. Spoiler alert: this technique has an excellent benefit-to-risk ratio.
+[conversational] Let's weigh the benefits and risks of limiting Top-K retrieval. Spoiler alert: this technique has an excellent benefit-to-risk ratio.
 
 #### ✅ Pros
-The good stuff: **Zero implementation cost** — it's literally changing a single parameter. **Immediate latency reduction** across retrieval, reranking, and generation steps. **Lower token costs** because you're sending less context to the LLM. **Often improves quality** because you're removing noisy, low-relevance results that can confuse the LLM. And it **reduces the chance of contradictory information** in your context window.
+[lecture] The good stuff: **Zero implementation cost** — it's literally changing a single parameter. **Immediate latency reduction** across retrieval, reranking, and generation steps. **Lower token costs** because you're sending less context to the LLM. **Often improves quality** because you're removing noisy, low-relevance results that can confuse the LLM. And it **reduces the chance of contradictory information** in your context window.
 
 #### ❌ Cons
-The problems: **Risk of missing relevant information** if important data happens to be in lower-ranked results. **Multi-topic queries suffer** — questions that span multiple topics might need more results to cover all aspects. **Inconsistent vector quality** can mean relevant results sometimes appear lower in the rankings. And **some query types need more context** — comparison questions or summarization tasks benefit from seeing more documents.
+[lecture] The problems: **Risk of missing relevant information** if important data happens to be in lower-ranked results. **Multi-topic queries suffer** — questions that span multiple topics might need more results to cover all aspects. **Inconsistent vector quality** can mean relevant results sometimes appear lower in the rankings. And **some query types need more context** — comparison questions or summarization tasks benefit from seeing more documents.
 
 #### 🎯 Bottom Line
-This is the single easiest optimization you can make. Start by cutting your current Top-K in half and measure the impact. Most teams find they can go from Top-10 to Top-3 with no quality loss and a significant speed improvement. Moving on to technique four — approximate nearest neighbor indexes...`
+[lecture] This is the single easiest optimization you can make. Start by cutting your current Top-K in half and measure the impact. Most teams find they can go from Top-10 to Top-3 with no quality loss and a significant speed improvement. Moving on to technique four — approximate nearest neighbor indexes...`
         }
       ]
     },
@@ -946,13 +946,13 @@ This is the single easiest optimization you can make. Start by cutting your curr
           ),
           backgroundColor: '#281d6b',
           notes: `### 18. Use Approximate Nearest Neighbor Indexes — Goal
-Technique number four takes us deeper into the retrieval layer — using **Approximate Nearest Neighbor** indexes, or ANN 👉 'ann' indexes for short. This is where things get really interesting from a computer science perspective.
+[energetic] Technique number four takes us deeper into the retrieval layer — using **Approximate Nearest Neighbor** indexes, or ANN 👉 'ann' indexes for short. This is where things get really interesting from a computer science perspective.
 
 #### 🎯 What's the Goal?
-When you search a vector database, the naive approach is to compare your query vector against every single stored vector. This is called **exact nearest neighbor** search, and it's incredibly slow for large datasets. ANN indexes trade a tiny bit of accuracy for massive speed improvements — we're talking 100x to 1000x (one hundred x to one thousand x) faster searches.
+[lecture] When you search a vector database, the naive approach is to compare your query vector against every single stored vector. This is called **exact nearest neighbor** search, and it's incredibly slow for large datasets. ANN indexes trade a tiny bit of accuracy for massive speed improvements — we're talking 100x to 1000x (one hundred x to one thousand x) faster searches.
 
 #### 💡 Think of It This Way
-Imagine you're looking for a book in a library. The exact search approach would be reading every single book to find the most similar one. An ANN index is like having a smart catalog system that organizes books by topic, author, and style — so you can jump directly to the right shelf and compare just a few books instead of millions.
+[storytelling] Imagine you're looking for a book in a library. The exact search approach would be reading every single book to find the most similar one. An ANN index is like having a smart catalog system that organizes books by topic, author, and style — so you can jump directly to the right shelf and compare just a few books instead of millions.
 
 Two popular ANN algorithms are HNSW 👉 'H-N-S-W' and IVF 👉 'eye-vee-eff'. Let's explore when to use them...`
         },
@@ -984,7 +984,7 @@ Two popular ANN algorithms are HNSW 👉 'H-N-S-W' and IVF 👉 'eye-vee-eff'. L
 When should you invest in setting up ANN indexes? Here are the scenarios where they make the biggest difference.
 
 #### 📊 Large Vector Collections
-If you have more than 100,000 vectors, exact search starts becoming a bottleneck. At a million vectors, it's practically unusable for real-time applications. ANN indexes make sub-millisecond search possible even at billions of vectors.
+[lecture] If you have more than 100,000 vectors, exact search starts becoming a bottleneck. At a million vectors, it's practically unusable for real-time applications. ANN indexes make sub-millisecond search possible even at billions of vectors.
 
 #### ⚡ Low-Latency Requirements
 When your SLA 👉 'ess-ell-ay' requires responses under 100 milliseconds, you simply can't afford to do brute-force vector comparison. ANN indexes bring search time down from seconds to single-digit milliseconds.
@@ -993,7 +993,7 @@ When your SLA 👉 'ess-ell-ay' requires responses under 100 milliseconds, you s
 If you're handling hundreds or thousands of queries per second, ANN indexes reduce the CPU load per query, letting you serve more users with the same hardware.
 
 #### 💰 Cost Optimization at Scale
-At large scale, the compute savings from ANN indexes can be substantial. You might need ten servers for exact search but only one for ANN search with the same performance.
+[cautiously] At large scale, the compute savings from ANN indexes can be substantial. You might need ten servers for exact search but only one for ANN search with the same performance.
 
 Most production vector databases like Pinecone 👉 'pine-cone', Weaviate 👉 'WEE-vee-ayt', and Milvus 👉 'MIL-vus' support ANN indexes out of the box. Let's see how they work...`
         },
@@ -1038,7 +1038,7 @@ Most production vector databases like Pinecone 👉 'pine-cone', Weaviate 👉 '
           ),
           backgroundColor: '#281d6b',
           notes: `### 20. Use ANN Indexes — How It Works
-Let's understand how ANN indexes achieve such dramatic speedups. There are two main approaches you'll encounter in production.
+[conversational] Let's understand how ANN indexes achieve such dramatic speedups. There are two main approaches you'll encounter in production.
 
 #### ⚙️ HNSW — Hierarchical Navigable Small World
 \`\`\`mermaid
@@ -1086,20 +1086,20 @@ You might miss the absolute best match occasionally, but you'll almost always fi
           ),
           backgroundColor: '#281d6b',
           notes: `### 21. Use ANN Indexes — Steps
-Here's how to set up ANN indexes in your vector database. The good news is most modern vector databases handle the heavy lifting for you.
+[conversational] Here's how to set up ANN indexes in your vector database. The good news is most modern vector databases handle the heavy lifting for you.
 
 #### 📋 Implementation Steps
-**Step one: Choose your algorithm.** HNSW is the most popular choice for RAG applications because it offers the best balance of speed, accuracy, and memory usage. IVF is better when you have very large datasets and memory constraints.
+[lecture] **Step one: Choose your algorithm.** HNSW is the most popular choice for RAG applications because it offers the best balance of speed, accuracy, and memory usage. IVF is better when you have very large datasets and memory constraints.
 
-**Step two: Configure parameters.** For HNSW, the key parameters are **M** (number of connections per layer, typically 16-64) and **ef_construction** 👉 'ee-eff construction' (build-time quality, typically 100-200). Higher values mean better accuracy but slower index building and more memory.
+[lecture] **Step two: Configure parameters.** For HNSW, the key parameters are **M** (number of connections per layer, typically 16-64) and **ef_construction** 👉 'ee-eff construction' (build-time quality, typically 100-200). Higher values mean better accuracy but slower index building and more memory.
 
-**Step three: Build the index.** Most vector databases like Pinecone, Qdrant 👉 'kew-drant', or Weaviate build HNSW indexes automatically. For custom setups, libraries like FAISS 👉 'face' from Meta make it straightforward.
+[lecture] **Step three: Build the index.** Most vector databases like Pinecone, Qdrant 👉 'kew-drant', or Weaviate build HNSW indexes automatically. For custom setups, libraries like FAISS 👉 'face' from Meta make it straightforward.
 
-**Step four: Tune search parameters.** The **ef_search** parameter controls the accuracy-speed trade-off at query time. Start with ef_search equal to Top-K times 2 and adjust based on your quality requirements.
+[lecture] **Step four: Tune search parameters.** The **ef_search** parameter controls the accuracy-speed trade-off at query time. Start with ef_search equal to Top-K times 2 and adjust based on your quality requirements.
 
-**Step five: Benchmark.** Compare exact search versus ANN search on your data. Measure recall@k to ensure the accuracy loss is acceptable, and celebrate the latency improvement.
+[lecture] **Step five: Benchmark.** Compare exact search versus ANN search on your data. Measure recall@k to ensure the accuracy loss is acceptable, and celebrate the latency improvement.
 
-Let's weigh the pros and cons...`
+[conversational] Let's weigh the pros and cons...`
         },
         {
           id: 22,
@@ -1143,16 +1143,16 @@ Let's weigh the pros and cons...`
           ),
           backgroundColor: '#281d6b',
           notes: `### 22. Use ANN Indexes — Pros and Cons
-Let's evaluate when ANN indexes are worth the setup effort and when you might want to stick with exact search.
+[conversational] Let's evaluate when ANN indexes are worth the setup effort and when you might want to stick with exact search.
 
 #### ✅ Pros
-The good stuff: **Massive speedups** — we're talking 100x to 1000x faster search compared to brute force. **Scales to billions of vectors** without proportional increase in search time. **Supported natively** by most production vector databases, so there's minimal implementation effort. **Low accuracy loss** — typically 95-99% recall compared to exact search. And **reduced compute costs** because each query uses far less CPU time.
+[lecture] The good stuff: **Massive speedups** — we're talking 100x to 1000x faster search compared to brute force. **Scales to billions of vectors** without proportional increase in search time. **Supported natively** by most production vector databases, so there's minimal implementation effort. **Low accuracy loss** — typically 95-99% recall compared to exact search. And **reduced compute costs** because each query uses far less CPU time.
 
 #### ❌ Cons
-The problems: **Additional memory overhead** — HNSW indexes can use 1.5-2x more memory than the raw vectors. **Index build time** can be significant for large datasets — hours for hundreds of millions of vectors. **Parameter tuning required** — you need to find the right balance of M, ef_construction, and ef_search for your data. **Not ideal for small datasets** — if you have fewer than 10,000 vectors, exact search is already fast enough. And **index updates can be expensive** — adding or removing vectors may require partial or full index rebuilds.
+[lecture] The problems: **Additional memory overhead** — HNSW indexes can use 1.5-2x more memory than the raw vectors. **Index build time** can be significant for large datasets — hours for hundreds of millions of vectors. **Parameter tuning required** — you need to find the right balance of M, ef_construction, and ef_search for your data. **Not ideal for small datasets** — if you have fewer than 10,000 vectors, exact search is already fast enough. And **index updates can be expensive** — adding or removing vectors may require partial or full index rebuilds.
 
 #### 🎯 The Verdict
-If you have more than 100,000 vectors and need low-latency search, ANN indexes are a no-brainer. The setup effort is minimal with modern vector databases, and the performance gains are enormous. Next up, we'll explore caching strategies, starting with caching query embeddings...`
+[lecture] If you have more than 100,000 vectors and need low-latency search, ANN indexes are a no-brainer. The setup effort is minimal with modern vector databases, and the performance gains are enormous. Next up, we'll explore caching strategies, starting with caching query embeddings...`
         }
       ]
     },
@@ -1186,13 +1186,13 @@ If you have more than 100,000 vectors and need low-latency search, ANN indexes a
           ),
           backgroundColor: '#1d416b',
           notes: `### 23. Cache Query Embeddings — Goal
-Welcome to the caching section! Technique five is about caching query embeddings. This is one of the most underutilized optimizations in RAG pipelines, and it can eliminate a significant portion of your latency.
+[energetic] Welcome to the caching section! Technique five is about caching query embeddings. This is one of the most underutilized optimizations in RAG pipelines, and it can eliminate a significant portion of your latency.
 
 #### 🎯 What's the Goal?
 Every time a user asks a question, your system converts that query into a vector using an embedding model. This embedding step typically takes 10-50 milliseconds. If the same or similar question has been asked before, why compute the embedding again? That's the idea behind caching query embeddings.
 
 #### 💡 Think of It This Way
-Imagine a receptionist at a hotel. The first time someone asks "Where's the pool?", the receptionist looks it up on the map. But after the hundredth guest asks the same question, the receptionist just answers from memory — no need to check the map again. That's exactly what embedding caching does.
+[storytelling] Imagine a receptionist at a hotel. The first time someone asks "Where's the pool?", the receptionist looks it up on the map. But after the hundredth guest asks the same question, the receptionist just answers from memory — no need to check the map again. That's exactly what embedding caching does.
 
 #### 📊 The Impact
 In many production systems, a large percentage of queries are repeats or near-duplicates. If 30% of your queries hit the cache, you eliminate the embedding step for almost a third of all requests. Let's see when this technique is most valuable...`
@@ -1234,11 +1234,11 @@ When every millisecond counts, eliminating the 10-50ms embedding step makes a no
 If you're using a paid embedding API like OpenAI's, each embedding call costs money. Caching eliminates API calls for repeated queries, directly reducing your operational costs.
 
 #### 📊 High Query Volume
-The more queries you process, the more likely you are to see repeats. At scale — say 10,000+ queries per day — the cache hit rate increases and the savings compound.
+[lecture] The more queries you process, the more likely you are to see repeats. At scale — say 10,000+ queries per day — the cache hit rate increases and the savings compound.
 
 > 🎤 Ask the audience: "What percentage of queries in your systems do you think are duplicates?"
 
-Let's look at how embedding caching actually works...`
+[conversational] Let's look at how embedding caching actually works...`
         },
         {
           id: 25,
@@ -1332,20 +1332,20 @@ Here's how to implement it step by step...`
           ),
           backgroundColor: '#1d416b',
           notes: `### 26. Cache Query Embeddings — Steps
-Let's walk through the implementation process for query embedding caching. This is one of the easiest optimizations to set up.
+[conversational] Let's walk through the implementation process for query embedding caching. This is one of the easiest optimizations to set up.
 
 #### 📋 Implementation Steps
-**Step one: Set up a cache store.** Redis is the most popular choice for this. It gives you in-memory speed with optional persistence. Set a TTL of 24-48 hours for most use cases — long enough to catch repeat queries but short enough to stay fresh.
+[lecture] **Step one: Set up a cache store.** Redis is the most popular choice for this. It gives you in-memory speed with optional persistence. Set a TTL of 24-48 hours for most use cases — long enough to catch repeat queries but short enough to stay fresh.
 
-**Step two: Define your cache key.** Start simple with the exact query text as the key. Normalize it by lowercasing and stripping extra whitespace. This alone catches most duplicate queries.
+[lecture] **Step two: Define your cache key.** Start simple with the exact query text as the key. Normalize it by lowercasing and stripping extra whitespace. This alone catches most duplicate queries.
 
-**Step three: Implement the cache-aside pattern.** Before calling your embedding API, check the cache. On a miss, compute the embedding, store it in the cache, and return it. On a hit, return the cached vector directly.
+[lecture] **Step three: Implement the cache-aside pattern.** Before calling your embedding API, check the cache. On a miss, compute the embedding, store it in the cache, and return it. On a hit, return the cached vector directly.
 
-**Step four: Add monitoring.** Track your cache hit rate. If it's below 10%, your queries are too diverse for basic caching and you might want semantic matching. If it's above 30%, you're getting excellent savings.
+[lecture] **Step four: Add monitoring.** Track your cache hit rate. If it's below 10%, your queries are too diverse for basic caching and you might want semantic matching. If it's above 30%, you're getting excellent savings.
 
-**Step five: Tune cache size and TTL.** Monitor memory usage and adjust your cache size. A typical setup with 100,000 cached embeddings at 3KB 👉 'three kilobytes' each uses only about 300MB of Redis memory. That's very affordable for the speed gains.
+[lecture] **Step five: Tune cache size and TTL.** Monitor memory usage and adjust your cache size. A typical setup with 100,000 cached embeddings at 3KB 👉 'three kilobytes' each uses only about 300MB of Redis memory. That's very affordable for the speed gains.
 
-Let's evaluate the trade-offs...`
+[conversational] Let's evaluate the trade-offs...`
         },
         {
           id: 27,
@@ -1389,16 +1389,16 @@ Let's evaluate the trade-offs...`
           ),
           backgroundColor: '#1d416b',
           notes: `### 27. Cache Query Embeddings — Pros and Cons
-Let's look at the advantages and disadvantages of caching query embeddings.
+[conversational] Let's look at the advantages and disadvantages of caching query embeddings.
 
 #### ✅ Pros
-The good stuff: **Eliminates embedding latency** for repeated queries — going from 50ms to sub-millisecond. **Reduces API costs** significantly if you're using paid embedding services. **Simple to implement** — it's just a key-value cache lookup before your embedding call. **No quality impact** — cached embeddings are identical to freshly computed ones. And **scales beautifully** — the more queries you process, the higher your hit rate tends to be.
+[lecture] The good stuff: **Eliminates embedding latency** for repeated queries — going from 50ms to sub-millisecond. **Reduces API costs** significantly if you're using paid embedding services. **Simple to implement** — it's just a key-value cache lookup before your embedding call. **No quality impact** — cached embeddings are identical to freshly computed ones. And **scales beautifully** — the more queries you process, the higher your hit rate tends to be.
 
 #### ❌ Cons
-The problems: **Additional infrastructure** — you need to run and maintain a Redis or similar cache service. **Memory usage** — storing thousands of embedding vectors requires dedicated RAM. **Cache invalidation** complexity if you change embedding models — all cached vectors become invalid. **Cold start problem** — a fresh cache has zero hits, so you don't see benefits until it warms up. And **limited benefit for diverse queries** — if every query is unique, your hit rate will be close to zero.
+[lecture] The problems: **Additional infrastructure** — you need to run and maintain a Redis or similar cache service. **Memory usage** — storing thousands of embedding vectors requires dedicated RAM. **Cache invalidation** complexity if you change embedding models — all cached vectors become invalid. **Cold start problem** — a fresh cache has zero hits, so you don't see benefits until it warms up. And **limited benefit for diverse queries** — if every query is unique, your hit rate will be close to zero.
 
 #### 💡 Pro Tip
-Start with a simple exact-match cache and measure your hit rate. If it's above 15%, the investment is already paying off. You can always add semantic matching later to increase hits further. Now let's move to technique six — caching retrieval results...`
+[warmly] Start with a simple exact-match cache and measure your hit rate. If it's above 15%, the investment is already paying off. You can always add semantic matching later to increase hits further. Now let's move to technique six — caching retrieval results...`
         }
       ]
     },
@@ -1432,13 +1432,13 @@ Start with a simple exact-match cache and measure your hit rate. If it's above 1
           ),
           backgroundColor: '#1d6b63',
           notes: `### 28. Cache Retrieval Results — Goal
-Technique six takes caching one step further — instead of just caching the query embedding, we cache the **entire retrieval result**. This can eliminate both the embedding AND the vector search step in one shot.
+[energetic] Technique six takes caching one step further — instead of just caching the query embedding, we cache the **entire retrieval result**. This can eliminate both the embedding AND the vector search step in one shot.
 
 #### 🎯 What's the Goal?
-The goal is to skip the vector database search entirely for queries you've seen before. If someone asks "What's the return policy?" and you already know the top-3 chunks that answer this question, why search the database again? Just return the cached results directly.
+[lecture] The goal is to skip the vector database search entirely for queries you've seen before. If someone asks "What's the return policy?" and you already know the top-3 chunks that answer this question, why search the database again? Just return the cached results directly.
 
 #### 💡 Think of It This Way
-Going back to our hotel receptionist analogy — caching embeddings is like memorizing the room number. But caching retrieval results is like memorizing the complete answer: "The pool is on the third floor, open from 6 AM to 10 PM, towels are provided." No lookup needed at all.
+[cautiously] Going back to our hotel receptionist analogy — caching embeddings is like memorizing the room number. But caching retrieval results is like memorizing the complete answer: "The pool is on the third floor, open from 6 AM to 10 PM, towels are provided." No lookup needed at all.
 
 #### ⚡ The Latency Impact
 Vector search typically takes 5-50 milliseconds depending on your index size and configuration. By caching the full retrieval results, you eliminate this entire step, often cutting 30-60% of your pre-LLM latency. Let's see when this is most effective...`
@@ -1477,12 +1477,12 @@ If your underlying documents don't change frequently, cached retrieval results s
 Customer support bots, FAQ systems, and internal knowledge assistants often see the same questions repeatedly. If 40% of queries are repeats, caching retrieval results eliminates the search step for nearly half your traffic.
 
 #### ⚡ Strict Latency Budgets
-When your end-to-end latency budget is under 500 milliseconds and the vector search alone takes 50ms, saving that 50ms by caching can be critical. Every millisecond counts in real-time applications.
+[seriously] When your end-to-end latency budget is under 500 milliseconds and the vector search alone takes 50ms, saving that 50ms by caching can be critical. Every millisecond counts in real-time applications.
 
 #### 💰 Expensive Vector Search
 Some vector databases charge per query or have limited throughput. Caching reduces the load on your vector database, lowering costs and freeing up capacity for cache-miss queries.
 
-Let's understand the mechanics of retrieval result caching...`
+[conversational] Let's understand the mechanics of retrieval result caching...`
         },
         {
           id: 30,
@@ -1528,7 +1528,7 @@ Let's understand the mechanics of retrieval result caching...`
           ),
           backgroundColor: '#1d6b63',
           notes: `### 30. Cache Retrieval Results — How It Works
-Let's see how retrieval result caching works and how it differs from embedding caching.
+[conversational] Let's see how retrieval result caching works and how it differs from embedding caching.
 
 #### ⚙️ The Cache Flow
 \`\`\`mermaid
@@ -1580,20 +1580,20 @@ Here are the practical implementation steps...`
           ),
           backgroundColor: '#1d6b63',
           notes: `### 31. Cache Retrieval Results — Steps
-Here's how to implement retrieval result caching in your RAG pipeline. It builds on the same infrastructure as embedding caching.
+[conversational] Here's how to implement retrieval result caching in your RAG pipeline. It builds on the same infrastructure as embedding caching.
 
 #### 📋 Implementation Steps
-**Step one: Define your cache key strategy.** Use normalized query text as the key, similar to embedding caching. Consider adding a version prefix that changes when your document collection updates, so stale results get automatically invalidated.
+[lecture] **Step one: Define your cache key strategy.** Use normalized query text as the key, similar to embedding caching. Consider adding a version prefix that changes when your document collection updates, so stale results get automatically invalidated.
 
-**Step two: Choose your storage.** Redis works great here too. Store the full retrieval results — chunk IDs, text content, and scores — as JSON values. Set TTL based on how often your documents change.
+[lecture] **Step two: Choose your storage.** Redis works great here too. Store the full retrieval results — chunk IDs, text content, and scores — as JSON values. Set TTL based on how often your documents change.
 
-**Step three: Implement the cache-aside pattern.** Check the cache before starting the embedding step. On a hit, skip embedding AND vector search. On a miss, proceed normally and cache the results after retrieval.
+[lecture] **Step three: Implement the cache-aside pattern.** Check the cache before starting the embedding step. On a hit, skip embedding AND vector search. On a miss, proceed normally and cache the results after retrieval.
 
-**Step four: Handle cache invalidation.** Set up a mechanism to invalidate cached results when documents are updated. A simple approach is to change the cache key prefix whenever your document index is updated.
+[lecture] **Step four: Handle cache invalidation.** Set up a mechanism to invalidate cached results when documents are updated. A simple approach is to change the cache key prefix whenever your document index is updated.
 
-**Step five: Monitor staleness.** Track how often cached results diverge from fresh results. If your data changes frequently, shorter TTLs prevent serving outdated information. Aim for a staleness rate below 5%.
+[lecture] **Step five: Monitor staleness.** Track how often cached results diverge from fresh results. If your data changes frequently, shorter TTLs prevent serving outdated information. Aim for a staleness rate below 5%.
 
-Now let's examine the trade-offs...`
+[energetic] Now let\'s examine the trade-offs...`
         },
         {
           id: 32,
@@ -1638,13 +1638,13 @@ Now let's examine the trade-offs...`
           ),
           backgroundColor: '#1d6b63',
           notes: `### 32. Cache Retrieval Results — Pros and Cons
-Let's weigh the benefits and challenges of caching retrieval results.
+[conversational] Let's weigh the benefits and challenges of caching retrieval results.
 
 #### ✅ Pros
-The good stuff: **Eliminates both embedding and search latency** for cached queries — the biggest time savings of any single caching technique. **Reduces vector database load**, which can lower infrastructure costs. **Consistent response times** for cached queries, improving user experience predictability. **Works well with embedding caching** — you can layer both for maximum benefit. And **simple cache-aside pattern** makes implementation straightforward.
+[lecture] The good stuff: **Eliminates both embedding and search latency** for cached queries — the biggest time savings of any single caching technique. **Reduces vector database load**, which can lower infrastructure costs. **Consistent response times** for cached queries, improving user experience predictability. **Works well with embedding caching** — you can layer both for maximum benefit. And **simple cache-aside pattern** makes implementation straightforward.
 
 #### ❌ Cons
-The problems: **Stale results risk** — if documents change between cache writes and reads, users may get outdated information. **Cache invalidation complexity** — knowing exactly when to invalidate which cached results is a hard problem. **Higher memory usage** than embedding caching because you're storing full text chunks, not just vectors. **Cold start is worse** — a cold cache means zero benefit until queries start repeating. And **not suitable for rapidly changing data** — if your documents update every few minutes, caching provides little value.
+[lecture] The problems: **Stale results risk** — if documents change between cache writes and reads, users may get outdated information. **Cache invalidation complexity** — knowing exactly when to invalidate which cached results is a hard problem. **Higher memory usage** than embedding caching because you're storing full text chunks, not just vectors. **Cold start is worse** — a cold cache means zero benefit until queries start repeating. And **not suitable for rapidly changing data** — if your documents update every few minutes, caching provides little value.
 
 #### 🎯 Best Practice
 Combine embedding caching (technique 5) with retrieval caching (technique 6) for maximum impact. Use embedding caching for all queries, and add retrieval caching for stable document collections. Together, they can eliminate 50-80% of your pre-LLM latency. Now let's move into reranking optimization — technique seven...`
@@ -1681,15 +1681,15 @@ Combine embedding caching (technique 5) with retrieval caching (technique 6) for
           ),
           backgroundColor: '#1d6b29',
           notes: `### 33. Re-Ranking — Goal
-Now we're entering the **reranking and compression** section with technique seven — optimizing your re-ranker. Wait, you might ask, didn't we say we want to reduce latency? Isn't adding a reranker ADDING a step? Great question! The trick is to re-rank only a few results, not all of them.
+[energetic] Now we're entering the **reranking and compression** section with technique seven — optimizing your re-ranker. Wait, you might ask, didn't we say we want to reduce latency? Isn't adding a reranker ADDING a step? Great question! The trick is to re-rank only a few results, not all of them.
 
 #### 🎯 What's the Goal?
-The goal is to use a lightweight re-ranker on just your top few retrieved results — say the top 3 to 5 — instead of reranking a large set. This gives you better precision without the latency penalty of scoring dozens of candidates.
+[lecture] The goal is to use a lightweight re-ranker on just your top few retrieved results — say the top 3 to 5 — instead of reranking a large set. This gives you better precision without the latency penalty of scoring dozens of candidates.
 
 #### 💡 The Analogy
-Think of it like hiring. You don't deeply interview all 500 applicants. You screen resumes first to get a shortlist of 5-10 candidates, then do thorough interviews with just those few. The screening is fast and rough, the interviews are slow and precise. Same principle: fast retrieval gets you candidates, lightweight reranking picks the winners.
+[storytelling] Think of it like hiring. You don't deeply interview all 500 applicants. You screen resumes first to get a shortlist of 5-10 candidates, then do thorough interviews with just those few. The screening is fast and rough, the interviews are slow and precise. Same principle: fast retrieval gets you candidates, lightweight reranking picks the winners.
 
-This approach actually REDUCES overall latency because better-ranked results mean less noise for the LLM, which generates faster responses. Let's see when to use it...`
+[lecture] This approach actually REDUCES overall latency because better-ranked results mean less noise for the LLM, which generates faster responses. Let's see when to use it...`
         },
         {
           id: 34,
@@ -1718,19 +1718,19 @@ This approach actually REDUCES overall latency because better-ranked results mea
           notes: `### 34. Re-Ranking — When to Use
 When should you add a lightweight reranker to your pipeline? Here are the key scenarios.
 
-#### 🎯 Quality-Critical Applications
-If your RAG system needs to provide highly accurate answers — like in medical, legal, or financial contexts — a reranker significantly improves the precision of your top results. The few milliseconds it adds are well worth the quality gain.
+[seriously] #### 🎯 Quality-Critical Applications
+[pleased] If your RAG system needs to provide highly accurate answers — like in medical, legal, or financial contexts — a reranker significantly improves the precision of your top results. The few milliseconds it adds are well worth the quality gain.
 
 #### 📊 When Vector Search Isn't Precise Enough
-Vector similarity search is good at finding semantically related content, but it sometimes ranks results poorly. A cross-encoder reranker understands the actual relationship between the query and each result, giving much better ordering.
+[cautiously] Vector similarity search is good at finding semantically related content, but it sometimes ranks results poorly. A cross-encoder reranker understands the actual relationship between the query and each result, giving much better ordering.
 
 #### ⚡ After Limiting Top-K
-This pairs beautifully with technique three. First, retrieve the top-5 with vector search, then rerank those 5 to get the best 3. The total latency is still less than retrieving top-20 without reranking.
+[lecture] This pairs beautifully with technique three. First, retrieve the top-5 with vector search, then rerank those 5 to get the best 3. The total latency is still less than retrieving top-20 without reranking.
 
 #### 🔄 Multi-Stage Retrieval
 In systems where you first do a broad retrieval and then narrow down, reranking is the natural narrowing step. It's the standard pattern in search engines and works equally well for RAG.
 
-Let's see how lightweight reranking works under the hood...`
+[conversational] Let's see how lightweight reranking works under the hood...`
         },
         {
           id: 35,
@@ -1775,7 +1775,7 @@ Let's see how lightweight reranking works under the hood...`
           ),
           backgroundColor: '#1d6b29',
           notes: `### 35. Re-Ranking — How It Works
-Let's understand the mechanics of efficient re-ranking and why it improves both quality and speed.
+[conversational] Let's understand the mechanics of efficient re-ranking and why it improves both quality and speed.
 
 #### ⚙️ The Reranking Pipeline
 \`\`\`mermaid
@@ -1824,20 +1824,20 @@ Even though reranking adds a step, the improved result quality means less noise 
           ),
           backgroundColor: '#1d6b29',
           notes: `### 36. Re-Ranking — Steps
-Here's how to add efficient reranking to your RAG pipeline without hurting latency.
+[conversational] Here's how to add efficient reranking to your RAG pipeline without hurting latency.
 
 #### 📋 Implementation Steps
-**Step one: Choose a lightweight reranker.** Start with a small cross-encoder model like **ms-marco-MiniLM-L-6** 👉 'em-ess marco mini-ell-em ell six'. It's tiny, fast, and surprisingly effective. Alternatively, use Cohere's Rerank API for a managed solution.
+[lecture] **Step one: Choose a lightweight reranker.** Start with a small cross-encoder model like **ms-marco-MiniLM-L-6** 👉 'em-ess marco mini-ell-em ell six'. It's tiny, fast, and surprisingly effective. Alternatively, use Cohere's Rerank API for a managed solution.
 
-**Step two: Limit the candidate set.** Only rerank your top-5 to top-10 results from vector search. Reranking more than 10 results usually doesn't improve quality but does add latency. The sweet spot for most applications is top-5.
+[lecture] **Step two: Limit the candidate set.** Only rerank your top-5 to top-10 results from vector search. Reranking more than 10 results usually doesn't improve quality but does add latency. The sweet spot for most applications is top-5.
 
-**Step three: Implement scoring.** Pass each (query, document) pair through the cross-encoder. It outputs a relevance score between 0 and 1. Sort by this score and take the top-3 for your LLM context.
+[lecture] **Step three: Implement scoring.** Pass each (query, document) pair through the cross-encoder. It outputs a relevance score between 0 and 1. Sort by this score and take the top-3 for your LLM context.
 
-**Step four: Benchmark the added latency.** Measure the time the reranker adds. If it's under 20 milliseconds for your candidate set, it's a clear win. If it's over 50ms, consider a smaller model or reducing the candidate set.
+[lecture] **Step four: Benchmark the added latency.** Measure the time the reranker adds. If it's under 20 milliseconds for your candidate set, it's a clear win. If it's over 50ms, consider a smaller model or reducing the candidate set.
 
-**Step five: Evaluate quality improvement.** Compare answer quality with and without reranking. Track metrics like answer correctness, relevance, and faithfulness. The quality improvement should justify the small latency cost.
+[lecture] **Step five: Evaluate quality improvement.** Compare answer quality with and without reranking. Track metrics like answer correctness, relevance, and faithfulness. The quality improvement should justify the small latency cost.
 
-Let's look at the trade-offs...`
+[conversational] Let's look at the trade-offs...`
         },
         {
           id: 37,
@@ -1882,16 +1882,16 @@ Let's look at the trade-offs...`
           ),
           backgroundColor: '#1d6b29',
           notes: `### 37. Re-Ranking — Pros and Cons
-Let's evaluate the advantages and disadvantages of adding a lightweight reranker.
+[conversational] Let's evaluate the advantages and disadvantages of adding a lightweight reranker.
 
 #### ✅ Pros
-The good stuff: **Significantly better result precision** — cross-encoders understand query-document relevance much better than vector similarity alone. **Small latency cost** when reranking only top-5 results — typically 5-15 milliseconds. **Net latency reduction** is possible because better results mean less noise for the LLM. **Works with any vector search** — you can add reranking to any existing pipeline without changing your embedding or indexing. And **proven technique** — this is standard practice in production search engines.
+[lecture] The good stuff: **Significantly better result precision** — cross-encoders understand query-document relevance much better than vector similarity alone. **Small latency cost** when reranking only top-5 results — typically 5-15 milliseconds. **Net latency reduction** is possible because better results mean less noise for the LLM. **Works with any vector search** — you can add reranking to any existing pipeline without changing your embedding or indexing. And **proven technique** — this is standard practice in production search engines.
 
 #### ❌ Cons
-The problems: **Adds a processing step** that requires GPU or CPU resources. **Model hosting overhead** — you need to serve the reranking model somewhere, which adds infrastructure complexity. **Latency scales with candidate count** — reranking 20 results takes 4x longer than reranking 5. **Potential single point of failure** if the reranker service goes down. And **diminishing returns** — if your vector search is already very precise, reranking adds latency without much quality gain.
+[lecture] The problems: **Adds a processing step** that requires GPU or CPU resources. **Model hosting overhead** — you need to serve the reranking model somewhere, which adds infrastructure complexity. **Latency scales with candidate count** — reranking 20 results takes 4x longer than reranking 5. **Potential single point of failure** if the reranker service goes down. And **diminishing returns** — if your vector search is already very precise, reranking adds latency without much quality gain.
 
 #### 🎯 The Verdict
-For most production RAG systems, adding a lightweight reranker on top-5 results is one of the highest-ROI optimizations. The quality improvement often outweighs the small latency cost, and in many cases, the net effect is actually faster responses. Now let's move to technique eight — context compression...`
+[reassuringly] For mostroduction RAG systems, adding a lightweight reranker on top-5 results is one of the highest-ROI optimizations. The quality improvement often outweighs the small latency cost, and in many cases, the net effect is actually faster responses. Now let's move to technique eight — context compression...`
         }
       ]
     },
@@ -1925,13 +1925,13 @@ For most production RAG systems, adding a lightweight reranker on top-5 results 
           ),
           backgroundColor: '#4a6b1d',
           notes: `### 38. Context Compression — Goal
-Technique eight is **context compression** — a powerful way to reduce the amount of text you send to the LLM. This directly speeds up generation and lowers costs.
+[energetic] Technique eight is **context compression** — a powerful way to reduce the amount of text you send to the LLM. This directly speeds up generation and lowers costs.
 
 #### 🎯 What's the Goal?
 Even after selecting the best chunks, there's often a lot of irrelevant text within those chunks. Context compression extracts or summarizes only the parts that are relevant to the query, dramatically reducing token count without losing important information.
 
 #### 💡 Think of It This Way
-Imagine you're studying for an exam and you have a 300-page textbook. Instead of reading the whole thing, you use a highlighter to mark only the key sentences. That's what context compression does — it highlights only the relevant parts of your retrieved chunks and discards the rest.
+[storytelling] Imagine you're studying for an exam and you have a 300-page textbook. Instead of reading the whole thing, you use a highlighter to mark only the key sentences. That's what context compression does — it highlights only the relevant parts of your retrieved chunks and discards the rest.
 
 #### 📊 The Impact
 In practice, context compression can reduce your context size by 50-80% while preserving all the relevant information. This means the LLM processes fewer tokens, generates faster responses, and costs less per query. Let's see when this technique is most valuable...`
@@ -1973,7 +1973,7 @@ If you're using expensive LLMs like GPT-4 👉 'gee-pee-tee four', every token c
 LLM generation time scales roughly linearly with input token count. If you can cut input tokens by 60%, you can expect a roughly 40-50% reduction in generation time. For applications where the LLM step is the bottleneck, this is huge.
 
 #### 📊 Multiple Retrieved Chunks
-When you need to include information from multiple chunks — say 5-10 — compression helps fit more relevant information within the context window without hitting token limits.
+[lecture] When you need to include information from multiple chunks — say 5-10 — compression helps fit more relevant information within the context window without hitting token limits.
 
 Let's dive into how context compression actually works...`
         },
@@ -2072,20 +2072,20 @@ Aim for a 50-70% compression ratio. Going too aggressive — say 90% — risks l
           ),
           backgroundColor: '#4a6b1d',
           notes: `### 41. Context Compression — Steps
-Here's how to implement context compression in your RAG pipeline.
+[conversational] Here's how to implement context compression in your RAG pipeline.
 
 #### 📋 Implementation Steps
-**Step one: Analyze your context.** Look at the chunks currently being sent to your LLM. Highlight the sentences that actually contribute to the answer. If more than 40% is irrelevant filler, compression will help significantly.
+[lecture] **Step one: Analyze your context.** Look at the chunks currently being sent to your LLM. Highlight the sentences that actually contribute to the answer. If more than 40% is irrelevant filler, compression will help significantly.
 
-**Step two: Choose your approach.** For factual accuracy, start with extractive compression — it's simpler and preserves exact wording. For maximum compression, try abstractive summarization with a small model like Flan-T5 👉 'flan tee five'.
+[lecture] **Step two: Choose your approach.** For factual accuracy, start with extractive compression — it's simpler and preserves exact wording. For maximum compression, try abstractive summarization with a small model like Flan-T5 👉 'flan tee five'.
 
-**Step three: Implement the compressor.** If using LangChain, the **ContextualCompressionRetriever** wraps your existing retriever and adds compression automatically. For custom implementations, use a lightweight model to score sentence relevance.
+[lecture] **Step three: Implement the compressor.** If using LangChain, the **ContextualCompressionRetriever** wraps your existing retriever and adds compression automatically. For custom implementations, use a lightweight model to score sentence relevance.
 
-**Step four: Set compression targets.** Define your target compression ratio based on your latency and cost goals. A 50% reduction in tokens typically translates to a 30-40% reduction in LLM generation time.
+[lecture] **Step four: Set compression targets.** Define your target compression ratio based on your latency and cost goals. A 50% reduction in tokens typically translates to a 30-40% reduction in LLM generation time.
 
-**Step five: Validate output quality.** Compare answers with and without compression on your evaluation set. Ensure that compressed contexts still produce accurate, complete answers. Watch for cases where compression removes critical qualifying information.
+[lecture] **Step five: Validate output quality.** Compare answers with and without compression on your evaluation set. Ensure that compressed contexts still produce accurate, complete answers. Watch for cases where compression removes critical qualifying information.
 
-Let's look at the trade-offs of context compression...`
+[conversational] Let's look at the trade-offs of context compression...`
         },
         {
           id: 42,
@@ -2130,13 +2130,13 @@ Let's look at the trade-offs of context compression...`
           ),
           backgroundColor: '#4a6b1d',
           notes: `### 42. Context Compression — Pros and Cons
-Let's evaluate when context compression is worth adding to your pipeline.
+[conversational] Let's evaluate when context compression is worth adding to your pipeline.
 
 #### ✅ Pros
-The good stuff: **Faster LLM generation** because fewer input tokens mean faster processing. **Lower token costs** — a 60% compression means 60% savings on the context portion of your LLM bill. **Better answer quality** in some cases because the LLM sees less noise and more relevant information. **Fits more information** in limited context windows — you can effectively use more chunks without hitting token limits. And **works with any LLM** — compression happens before the LLM step, so it's model-agnostic.
+[lecture] The good stuff: **Faster LLM generation** because fewer input tokens mean faster processing. **Lower token costs** — a 60% compression means 60% savings on the context portion of your LLM bill. **Better answer quality** in some cases because the LLM sees less noise and more relevant information. **Fits more information** in limited context windows — you can effectively use more chunks without hitting token limits. And **works with any LLM** — compression happens before the LLM step, so it's model-agnostic.
 
 #### ❌ Cons
-The problems: **Adds processing time** — the compression step itself takes 50-200 milliseconds depending on the approach. **Risk of information loss** if the compressor removes something important. **Additional model to maintain** — extractive compression needs a model for sentence scoring. **Abstractive compression can hallucinate** — the summarization model might add information that wasn't in the original text. And **complexity** — it's another component in your pipeline that needs monitoring and maintenance.
+[lecture] The problems: **Adds processing time** — the compression step itself takes 50-200 milliseconds depending on the approach. **Risk of information loss** if the compressor removes something important. **Additional model to maintain** — extractive compression needs a model for sentence scoring. **Abstractive compression can hallucinate** — the summarization model might add information that wasn't in the original text. And **complexity** — it's another component in your pipeline that needs monitoring and maintenance.
 
 #### ⚖️ When It's Worth It
 Context compression is most valuable when your LLM is the bottleneck — specifically when generation time dominates your overall latency. If your LLM step takes 2+ seconds and your pre-LLM pipeline is already fast, compression can cut that LLM time significantly. Next up, technique nine — parallelizing retrieval...`
@@ -2173,13 +2173,13 @@ Context compression is most valuable when your LLM is the bottleneck — specifi
           ),
           backgroundColor: '#6b641d',
           notes: `### 43. Parallelize Retrieval — Goal
-We've reached the **orchestration** section with technique nine — parallelizing retrieval. This is about making your pipeline smarter by running multiple steps at the same time instead of one after another.
+[energetic] We've reached the **orchestration** section with technique nine — parallelizing retrieval. This is about making your pipeline smarter by running multiple steps at the same time instead of one after another.
 
 #### 🎯 What's the Goal?
-In a typical RAG pipeline, steps run sequentially — embed the query, then search the vector store, then rerank, then generate. But many of these steps can run in parallel. The goal is to identify independent operations and execute them simultaneously, reducing total wall-clock time.
+[cautiously] In a typical RAG pipeline, steps run sequentially — embed the query, then search the vector store, then rerank, then generate. But many of these steps can run in parallel. The goal is to identify independent operations and execute them simultaneously, reducing total wall-clock time.
 
 #### 💡 Think of It This Way
-Imagine you're cooking a meal. A beginner cooks one thing at a time — boil the pasta, wait, then make the sauce, wait, then prepare the salad. An experienced cook starts the pasta boiling, makes the sauce while waiting, and preps the salad during downtime. The total cooking time drops dramatically even though the individual tasks take the same time. That's parallelization 👉 'par-ah-lel-ih-ZAY-shun' in action.
+[storytelling] Imagine you're cooking a meal. A beginner cooks one thing at a time — boil the pasta, wait, then make the sauce, wait, then prepare the salad. An experienced cook starts the pasta boiling, makes the sauce while waiting, and preps the salad during downtime. The total cooking time drops dramatically even though the individual tasks take the same time. That's parallelization 👉 'par-ah-lel-ih-ZAY-shun' in action.
 
 #### ⚡ The Impact
 Well-designed parallelization can reduce your overall pipeline latency by 30-50% without any quality trade-offs. It's pure optimization — you're doing the same work, just smarter. Let's see when to apply it...`
@@ -2218,12 +2218,12 @@ If you're searching across multiple vector stores, databases, or indexes, each s
 Pipelines with independent preprocessing steps — like query expansion, spell correction, and embedding — can run these steps concurrently. If query expansion and embedding don't depend on each other, run them at the same time.
 
 #### ⚡ Strict Latency Budgets
-When you have a hard latency SLA 👉 'ess-ell-ay' and your sequential pipeline is too slow, parallelization can bring you within budget without sacrificing quality.
+[lecture] When you have a hard latency SLA 👉 'ess-ell-ay' and your sequential pipeline is too slow, parallelization can bring you within budget without sacrificing quality.
 
 #### 📊 Hybrid Search
-If you're combining dense vector search with sparse BM25 👉 'bee-em twenty-five' keyword search, these two searches are completely independent and should always run in parallel. This is one of the easiest parallelization wins.
+[firmly] If you're combining dense vector search with sparse BM25 👉 'bee-em twenty-five' keyword search, these two searches are completely independent and should always run in parallel. This is one of the easiest parallelization wins.
 
-Let's see how to architect parallel retrieval...`
+[conversational] Let's see how to architect parallel retrieval...`
         },
         {
           id: 45,
@@ -2271,7 +2271,7 @@ Let's see how to architect parallel retrieval...`
           ),
           backgroundColor: '#6b641d',
           notes: `### 45. Parallelize Retrieval — How It Works
-Let's see how parallel retrieval architectures work and where the biggest gains come from.
+[conversational] Let's see how parallel retrieval architectures work and where the biggest gains come from.
 
 #### ⚙️ The Architecture
 \`\`\`mermaid
@@ -2323,18 +2323,18 @@ After parallel searches complete, you need to merge and deduplicate results. Com
           ),
           backgroundColor: '#6b641d',
           notes: `### 46. Parallelize Retrieval — Steps
-Here's how to implement parallel retrieval in your RAG pipeline.
+[conversational] Here's how to implement parallel retrieval in your RAG pipeline.
 
 #### 📋 Implementation Steps
-**Step one: Map your pipeline.** Draw out your current pipeline and identify which steps are independent. Any step that doesn't depend on the output of another step can potentially run in parallel.
+[lecture] **Step one: Map your pipeline.** Draw out your current pipeline and identify which steps are independent. Any step that doesn't depend on the output of another step can potentially run in parallel.
 
-**Step two: Identify parallel candidates.** Common parallelizable pairs include: vector search and keyword search, search across multiple collections, query embedding and query expansion, and retrieval from different data sources.
+[lecture] **Step two: Identify parallel candidates.** Common parallelizable pairs include: vector search and keyword search, search across multiple collections, query embedding and query expansion, and retrieval from different data sources.
 
-**Step three: Implement async execution.** Use your language's async primitives. In Python: \`results = await asyncio.gather(vector_search(query), bm25_search(query))\`. Keep it simple — don't over-parallelize.
+[lecture] **Step three: Implement async execution.** Use your language's async primitives. In Python: \`results = await asyncio.gather(vector_search(query), bm25_search(query))\`. Keep it simple — don't over-parallelize.
 
-**Step four: Implement result merging.** Use reciprocal rank fusion (RRF) to combine results from multiple sources. The formula is simple: \`score = sum(1 / (k + rank))\` for each document across all result sets, where k is typically 60.
+[lecture] **Step four: Implement result merging.** Use reciprocal rank fusion (RRF) to combine results from multiple sources. The formula is simple: \`score = sum(1 / (k + rank))\` for each document across all result sets, where k is typically 60.
 
-**Step five: Handle timeouts.** Set timeouts for each parallel task. If one search takes too long, proceed with the results from the others. This prevents a slow backend from blocking your entire pipeline.
+[lecture] **Step five: Handle timeouts.** Set timeouts for each parallel task. If one search takes too long, proceed with the results from the others. This prevents a slow backend from blocking your entire pipeline.
 
 Let's look at the trade-offs...`
         },
@@ -2381,16 +2381,16 @@ Let's look at the trade-offs...`
           ),
           backgroundColor: '#6b641d',
           notes: `### 47. Parallelize Retrieval — Pros and Cons
-Let's evaluate the benefits and challenges of parallel retrieval.
+[conversational] Let's evaluate the benefits and challenges of parallel retrieval.
 
 #### ✅ Pros
-The good stuff: **Significant latency reduction** — wall-clock time drops to the maximum of individual operations rather than their sum. **No quality trade-off** — you're doing the same work, just faster. **Better result diversity** when combining multiple search methods. **Resilience** — if one search backend is slow, others still return quickly. And **natural fit for hybrid search** — dense and sparse search are perfect parallelization candidates.
+[lecture] The good stuff: **Significant latency reduction** — wall-clock time drops to the maximum of individual operations rather than their sum. **No quality trade-off** — you're doing the same work, just faster. **Better result diversity** when combining multiple search methods. **Resilience** — if one search backend is slow, others still return quickly. And **natural fit for hybrid search** — dense and sparse search are perfect parallelization candidates.
 
 #### ❌ Cons
-The problems: **Increased code complexity** — async programming introduces race conditions, error handling challenges, and harder debugging. **Higher peak resource usage** — running multiple searches simultaneously uses more CPU and memory at peak. **Result merging complexity** — combining and deduplicating results from multiple sources requires careful design. **Timeout handling** — you need robust timeout logic to prevent slow backends from degrading the experience. And **diminishing returns** — parallelizing more than 3-4 operations often adds complexity without meaningful latency improvement.
+[lecture] The problems: **Increased code complexity** — async programming introduces race conditions, error handling challenges, and harder debugging. **Higher peak resource usage** — running multiple searches simultaneously uses more CPU and memory at peak. **Result merging complexity** — combining and deduplicating results from multiple sources requires careful design. **Timeout handling** — you need robust timeout logic to prevent slow backends from degrading the experience. And **diminishing returns** — parallelizing more than 3-4 operations often adds complexity without meaningful latency improvement.
 
 #### 🎯 Quick Win
-The easiest parallel optimization: if you're doing hybrid search (vector + keyword), make those searches parallel. It takes about 10 lines of code and can cut retrieval time in half. Next up, technique ten — streaming and partial generation...`
+[lecture] The easiest parallel optimization: if you're doing hybrid search (vector + keyword), make those searches parallel. It takes about 10 lines of code and can cut retrieval time in half. Next up, technique ten — streaming and partial generation...`
         }
       ]
     },
@@ -2424,13 +2424,13 @@ The easiest parallel optimization: if you're doing hybrid search (vector + keywo
           ),
           backgroundColor: '#6b471d',
           notes: `### 48. Streaming — Goal
-Technique ten shifts our focus from actual latency to **perceived latency** — and that's streaming. This doesn't make your pipeline objectively faster, but it makes it *feel* dramatically faster to users.
+[energetic] Technique ten shifts our focus from actual latency to **perceived latency** — and that's streaming. This doesn't make your pipeline objectively faster, but it makes it *feel* dramatically faster to users.
 
 #### 🎯 What's the Goal?
 Instead of waiting for the entire LLM response to be generated before showing anything to the user, stream tokens as they're generated. The user sees the first words within 100-200 milliseconds, even if the full response takes 3 seconds.
 
 #### 💡 Think of It This Way
-Imagine watching a webpage load. With the old approach, you stare at a blank screen for 3 seconds, then the entire page appears at once. With streaming, the content fills in gradually — header first, then text, then images. The total load time might be the same, but the experience feels much faster because you're seeing progress.
+[storytelling] Imagine watching a webpage load. With the old approach, you stare at a blank screen for 3 seconds, then the entire page appears at once. With streaming, the content fills in gradually — header first, then text, then images. The total load time might be the same, but the experience feels much faster because you're seeing progress.
 
 #### 📊 The Psychology
 Research shows that users perceive streaming responses as 2-3x faster than batch responses, even when the total time is identical. This is because **time-to-first-token** 👉 'time to first token' (TTFT) matters more than total generation time for user satisfaction. Let's see when to use streaming...`
@@ -2460,23 +2460,23 @@ Research shows that users perceive streaming responses as 2-3x faster than batch
           ),
           backgroundColor: '#6b471d',
           notes: `### 49. Streaming — When to Use
-When should you implement streaming in your RAG system? The short answer: almost always. But here are the scenarios where it's especially impactful.
+[cautiously] When should you implement streaming in your RAG system? The short answer: almost always. But here are the scenarios where it's especially impactful.
 
 #### 💬 Chat Interfaces
 Any conversational UI should stream responses. Users expect the typing-indicator experience from ChatGPT 👉 'chat gee-pee-tee'. Showing tokens as they appear creates a natural, conversational feel.
 
 #### 📝 Long-Form Generation
-When your LLM generates long responses — paragraphs, reports, or summaries — streaming is essential. Without it, users wait 5-10 seconds staring at a loading spinner, which feels like an eternity.
+[seriously] When your LLM generates long responses — paragraphs, reports, or summaries — streaming is essential. Without it, users wait 5-10 seconds staring at a loading spinner, which feels like an eternity.
 
 #### ⚡ Low Time-to-First-Token Priority
-When you need to show users that the system is working as quickly as possible. Even if the full response takes 3 seconds, showing the first word in 200ms signals responsiveness.
+[lecture] When you need to show users that the system is working as quickly as possible. Even if the full response takes 3 seconds, showing the first word in 200ms signals responsiveness.
 
 #### 🖥️ Real-Time Applications
 Voice assistants, live customer support, and interactive tutoring systems all benefit from streaming because it enables real-time interaction while the response is still being generated.
 
 > 🎤 Ask the audience: "Have you noticed how ChatGPT streams its responses? That's exactly what we're talking about here."
 
-Let's see how streaming works under the hood...`
+[conversational] Let's see how streaming works under the hood...`
         },
         {
           id: 50,
@@ -2520,7 +2520,7 @@ Let's see how streaming works under the hood...`
           ),
           backgroundColor: '#6b471d',
           notes: `### 50. Streaming — How It Works
-Let's understand the technical mechanics of LLM streaming and how to implement it.
+[conversational] Let's understand the technical mechanics of LLM streaming and how to implement it.
 
 #### ⚙️ Streaming vs Batch
 \`\`\`mermaid
@@ -2570,18 +2570,18 @@ Time-to-first-token can be further optimized by reducing pre-LLM processing time
           ),
           backgroundColor: '#6b471d',
           notes: `### 51. Streaming — Steps
-Here's how to implement streaming in your RAG application.
+[conversational] Here's how to implement streaming in your RAG application.
 
 #### 📋 Implementation Steps
-**Step one: Enable streaming on your LLM call.** With OpenAI's API, just add \`stream=True\` to your completion request. With LangChain, use the streaming callback handler. It's usually a one-parameter change.
+[lecture] **Step one: Enable streaming on your LLM call.** With OpenAI's API, just add \`stream=True\` to your completion request. With LangChain, use the streaming callback handler. It's usually a one-parameter change.
 
-**Step two: Set up your API endpoint for streaming.** Use Server-Sent Events (SSE) or WebSockets 👉 'web-SOK-ets'. SSE is simpler and works well for one-directional streaming. Return a streaming response from your server with the appropriate content type header.
+[lecture] **Step two: Set up your API endpoint for streaming.** Use Server-Sent Events (SSE) or WebSockets 👉 'web-SOK-ets'. SSE is simpler and works well for one-directional streaming. Return a streaming response from your server with the appropriate content type header.
 
-**Step three: Update your frontend.** Replace your fetch-and-display logic with a stream consumer. As each chunk arrives, append it to the UI. Add a cursor or typing indicator for visual polish.
+[lecture] **Step three: Update your frontend.** Replace your fetch-and-display logic with a stream consumer. As each chunk arrives, append it to the UI. Add a cursor or typing indicator for visual polish.
 
-**Step four: Handle errors gracefully.** Stream connections can drop. Implement reconnection logic and show the user a clear message if the stream is interrupted. Consider buffering a few tokens to smooth out network jitter.
+[lecture] **Step four: Handle errors gracefully.** Stream connections can drop. Implement reconnection logic and show the user a clear message if the stream is interrupted. Consider buffering a few tokens to smooth out network jitter.
 
-**Step five: Optimize time-to-first-token.** Profile your pre-LLM pipeline to see what's contributing to TTFT. Apply the earlier techniques — caching, compression, smaller models — to minimize the time before the first token starts flowing.
+[lecture] **Step five: Optimize time-to-first-token.** Profile your pre-LLM pipeline to see what's contributing to TTFT. Apply the earlier techniques — caching, compression, smaller models — to minimize the time before the first token starts flowing.
 
 Let's examine the trade-offs...`
         },
@@ -2628,16 +2628,16 @@ Let's examine the trade-offs...`
           ),
           backgroundColor: '#6b471d',
           notes: `### 52. Streaming — Pros and Cons
-Let's weigh the advantages and challenges of implementing streaming.
+[conversational] Let's weigh the advantages and challenges of implementing streaming.
 
 #### ✅ Pros
-The good stuff: **Dramatically better perceived latency** — users see the first words in under 200 milliseconds. **Natural conversational feel** that matches user expectations from ChatGPT and similar tools. **No quality trade-off** — the final output is identical to batch mode. **User engagement** — users start reading while the response generates, increasing engagement. And **progressive enhancement** — users can start acting on partial information before the full response is complete.
+[lecture] The good stuff: **Dramatically better perceived latency** — users see the first words in under 200 milliseconds. **Natural conversational feel** that matches user expectations from ChatGPT and similar tools. **No quality trade-off** — the final output is identical to batch mode. **User engagement** — users start reading while the response generates, increasing engagement. And **progressive enhancement** — users can start acting on partial information before the full response is complete.
 
 #### ❌ Cons
-The problems: **Added implementation complexity** — streaming requires SSE or WebSocket infrastructure, which is more complex than simple request-response. **Error handling is trickier** — you need to handle mid-stream failures, reconnection, and partial responses. **Post-processing challenges** — if you need to validate, filter, or format the complete response, streaming makes this harder. **Connection management overhead** — long-lived connections consume server resources differently than short-lived ones. And **not suitable for all use cases** — structured data responses like JSON, tables, or charts often need the complete response before display.
+[lecture] The problems: **Added implementation complexity** — streaming requires SSE or WebSocket infrastructure, which is more complex than simple request-response. **Error handling is trickier** — you need to handle mid-stream failures, reconnection, and partial responses. **Post-processing challenges** — if you need to validate, filter, or format the complete response, streaming makes this harder. **Connection management overhead** — long-lived connections consume server resources differently than short-lived ones. And **not suitable for all use cases** — structured data responses like JSON, tables, or charts often need the complete response before display.
 
 #### 🎯 The Verdict
-Streaming is almost always worth implementing for user-facing RAG applications. The perceived latency improvement is significant, and most modern frameworks make it straightforward. For our final technique, let's look at using smaller or distilled LLMs...`
+[confidently] Streaming is almost always worth implementing for user-facing RAG applications. The perceived latency improvement is significant, and most modern frameworks make it straightforward. For our final technique, let's look at using smaller or distilled LLMs...`
         }
       ]
     },
@@ -2671,13 +2671,13 @@ Streaming is almost always worth implementing for user-facing RAG applications. 
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 53. Smaller LLM — Goal
-Our final technique is perhaps the most impactful — using a **smaller or distilled LLM** for generation. The LLM step is typically the biggest source of latency in any RAG pipeline, so optimizing it can yield dramatic improvements.
+[energetic] Our final technique is perhaps the most impactful — using a **smaller or distilled LLM** for generation. The LLM step is typically the biggest source of latency in any RAG pipeline, so optimizing it can yield dramatic improvements.
 
 #### 🎯 What's the Goal?
-The goal is to replace your large, expensive LLM with a smaller, faster one that still produces high-quality answers for your specific use case. Not every query needs GPT-4 👉 'gee-pee-tee four' — many can be handled perfectly well by a model that's 10x faster and 50x cheaper.
+[lecture] The goal is to replace your large, expensive LLM with a smaller, faster one that still produces high-quality answers for your specific use case. Not every query needs GPT-4 👉 'gee-pee-tee four' — many can be handled perfectly well by a model that's 10x faster and 50x cheaper.
 
 #### 💡 Think of It This Way
-Imagine you're running a restaurant. You wouldn't hire a Michelin-star chef to make sandwiches — a skilled line cook does the job perfectly at a fraction of the cost. Similarly, for straightforward RAG queries like "What is the return policy?", a small 7B 👉 'seven billion' parameter model produces the same quality answer as a 70B model, but in a fraction of the time.
+[storytelling] Imagine you're running a restaurant. You wouldn't hire a Michelin-star chef to make sandwiches — a skilled line cook does the job perfectly at a fraction of the cost. Similarly, for straightforward RAG queries like "What is the return policy?", a small 7B 👉 'seven billion' parameter model produces the same quality answer as a 70B model, but in a fraction of the time.
 
 #### 📊 The Numbers
 Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation latency by 3-10x and costs by 10-50x. That's the single biggest latency and cost reduction you can achieve. Let's see when this makes sense...`
@@ -2709,13 +2709,13 @@ Switching from GPT-4 to GPT-3.5 or a fine-tuned 7B model can reduce generation l
           notes: `### 54. Smaller LLM — When to Use
 When can you safely switch to a smaller LLM without hurting quality? Here are the key scenarios.
 
-#### 📝 Simple Question-Answering
-For straightforward factual queries where the answer is directly in the retrieved chunks, smaller models excel. Questions like "What are the business hours?" or "What's the price of product X?" don't need GPT-4's reasoning power.
+[reassuringly] #### 📝 Simple Question-Answering
+[reassuringly] For straightforward factual queries where the answer is directly in the retrieved chunks, smaller models excel. Questions like "What are the business hours?" or "What's the price of product X?" don't need GPT-4's reasoning power.
 
 #### 🎯 Well-Defined Output Formats
 When your responses follow a predictable structure — short answers, specific formats, or template-based replies — smaller models are just as capable. They struggle more with creative or open-ended generation.
 
-#### ⚡ Latency-Critical Applications
+[seriously] #### ⚡ Latency-Critical Applications
 When your users expect sub-second responses, a smaller model generating at 100 tokens per second is far better than a large model at 20 tokens per second, even if the large model produces slightly more polished prose.
 
 #### 💰 High Query Volume with Budget Constraints
@@ -2724,7 +2724,7 @@ At scale, the cost difference between GPT-4 and a self-hosted 7B model is enormo
 #### 🔧 After Fine-Tuning
 A smaller model fine-tuned on your domain data can outperform a generic large model. This is the best of both worlds — fast, cheap, AND high quality for your specific use case.
 
-Let's look at how to make this transition...`
+[conversational] Let's look at how to make this transition...`
         },
         {
           id: 55,
@@ -2768,7 +2768,7 @@ Let's look at how to make this transition...`
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 55. Smaller LLM — How It Works
-Let's understand the options for using smaller LLMs and the techniques that make them work well in RAG systems.
+[conversational] Let's understand the options for using smaller LLMs and the techniques that make them work well in RAG systems.
 
 #### ⚙️ Size vs Performance
 \`\`\`mermaid
@@ -2815,20 +2815,20 @@ Popular choices include **Mistral 7B** 👉 'miss-TRAL seven bee', **Llama 3 8B*
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 56. Smaller LLM — Steps
-Here's how to safely transition from a large LLM to a smaller one in your RAG system.
+[conversational] Here's how to safely transition from a large LLM to a smaller one in your RAG system.
 
 #### 📋 Implementation Steps
-**Step one: Evaluate baseline quality.** Run your evaluation suite with your current large model and record answer quality scores. This is your target to match.
+[lecture] **Step one: Evaluate baseline quality.** Run your evaluation suite with your current large model and record answer quality scores. This is your target to match.
 
-**Step two: Select candidate models.** Try 2-3 smaller models on your evaluation set. Good starting points are Mistral 7B, Llama 3 8B, or GPT-3.5-turbo 👉 'gee-pee-tee three point five turbo'. Measure both quality and latency.
+[lecture] **Step two: Select candidate models.** Try 2-3 smaller models on your evaluation set. Good starting points are Mistral 7B, Llama 3 8B, or GPT-3.5-turbo 👉 'gee-pee-tee three point five turbo'. Measure both quality and latency.
 
-**Step three: Consider fine-tuning.** If off-the-shelf small models don't match your quality bar, fine-tune one on your domain data. Use the large model's outputs as training labels — this is distillation in practice. Even a few thousand examples can make a dramatic difference.
+[lecture] **Step three: Consider fine-tuning.** If off-the-shelf small models don't match your quality bar, fine-tune one on your domain data. Use the large model's outputs as training labels — this is distillation in practice. Even a few thousand examples can make a dramatic difference.
 
-**Step four: Implement model routing.** For the best results, use a **router** that sends simple queries to the small model and complex queries to the large model. This gives you speed for easy queries and quality for hard ones. A simple classifier can route based on query complexity.
+[lecture] **Step four: Implement model routing.** For the best results, use a **router** that sends simple queries to the small model and complex queries to the large model. This gives you speed for easy queries and quality for hard ones. A simple classifier can route based on query complexity.
 
-**Step five: Deploy and monitor.** Self-host your small model using **vLLM** 👉 'vee-ell-ell-em' or **TGI** 👉 'tee-gee-eye' for optimized inference. Monitor quality metrics continuously and adjust routing thresholds as needed.
+[lecture] **Step five: Deploy and monitor.** Self-host your small model using **vLLM** 👉 'vee-ell-ell-em' or **TGI** 👉 'tee-gee-eye' for optimized inference. Monitor quality metrics continuously and adjust routing thresholds as needed.
 
-Let's look at the final trade-offs for this technique...`
+[conversational] Let's look at the final trade-offs for this technique...`
         },
         {
           id: 57,
@@ -2873,16 +2873,16 @@ Let's look at the final trade-offs for this technique...`
           ),
           backgroundColor: '#6b1d1d',
           notes: `### 57. Smaller LLM — Pros and Cons
-Let's evaluate the final technique in our toolkit — switching to a smaller LLM.
+[conversational] Let's evaluate the final technique in our toolkit — switching to a smaller LLM.
 
 #### ✅ Pros
-The good stuff: **3-10x faster generation** which is the single biggest latency reduction for most RAG systems. **10-50x cost reduction** on LLM inference, which is often the largest line item in your RAG budget. **Self-hosting capability** — 7B models run on a single GPU, giving you full control over infrastructure and data privacy. **Fine-tuning potential** — small models can be customized to your domain for better quality than generic large models. And **predictable performance** — self-hosted models have consistent latency without API rate limits or quotas.
+[lecture] The good stuff: **3-10x faster generation** which is the single biggest latency reduction for most RAG systems. **10-50x cost reduction** on LLM inference, which is often the largest line item in your RAG budget. **Self-hosting capability** — 7B models run on a single GPU, giving you full control over infrastructure and data privacy. **Fine-tuning potential** — small models can be customized to your domain for better quality than generic large models. And **predictable performance** — self-hosted models have consistent latency without API rate limits or quotas.
 
 #### ❌ Cons
-The problems: **Quality gap for complex reasoning** — smaller models struggle with multi-step reasoning, nuanced analysis, and creative generation. **Fine-tuning investment** — creating training data and fine-tuning requires significant engineering effort. **Infrastructure management** — self-hosting means you're responsible for GPU provisioning, scaling, and reliability. **Model selection churn** — the small model landscape evolves rapidly, and today's best option may be obsolete in months. And **evaluation complexity** — measuring quality differences between models requires robust evaluation frameworks.
+[lecture] The problems: **Quality gap for complex reasoning** — smaller models struggle with multi-step reasoning, nuanced analysis, and creative generation. **Fine-tuning investment** — creating training data and fine-tuning requires significant engineering effort. **Infrastructure management** — self-hosting means you're responsible for GPU provisioning, scaling, and reliability. **Model selection churn** — the small model landscape evolves rapidly, and today's best option may be obsolete in months. And **evaluation complexity** — measuring quality differences between models requires robust evaluation frameworks.
 
 #### 🎯 The Bottom Line
-For most production RAG use cases, a well-chosen small model delivers 80-95% of large model quality at a fraction of the cost and latency. The key is thorough evaluation on your specific data and use cases. And with that, we've covered all eleven techniques! Let's wrap up with key takeaways...`
+[reassuringly] For mostroduction RAG use cases, a well-chosen small model delivers 80-95% of large model quality at a fraction of the cost and latency. The key is thorough evaluation on your specific data and use cases. And with that, we've covered all eleven techniques! Let's wrap up with key takeaways...`
         }
       ]
     },
@@ -2925,15 +2925,15 @@ For most production RAG use cases, a well-chosen small model delivers 80-95% of 
 Alright, let's bring it all together with the key takeaways from our eleven techniques. These are the principles you should remember even if you forget the specific details.
 
 #### 🎯 The Core Message
-The most important takeaway is this: **you don't need to implement all eleven techniques**. Start by profiling your pipeline to find your biggest bottleneck, then apply the technique that addresses it. One well-chosen optimization often gives you 50% or more of the total possible improvement.
+[lecture] The most important takeaway is this: **you don't need to implement all eleven techniques**. Start by profiling your pipeline to find your biggest bottleneck, then apply the technique that addresses it. One well-chosen optimization often gives you 50% or more of the total possible improvement.
 
 #### 📊 The Layered Approach
-Think of these techniques as layers. Start with the easy wins — limiting Top-K, adding caching, enabling streaming. These are quick to implement and give immediate results. Then move to the medium-effort techniques like smaller models, reranking, and compression. Finally, tackle the infrastructure-level optimizations like ANN indexes and parallelization when you need to squeeze out every last millisecond.
+[reassuringly] Think of these techniques as layers. Start with the easy wins — limiting Top-K, adding caching, enabling streaming. These are quick to implement and give immediate results. Then move to the medium-effort techniques like smaller models, reranking, and compression. Finally, tackle the infrastructure-level optimizations like ANN indexes and parallelization when you need to squeeze out every last millisecond.
 
 #### 💡 Measure Everything
-Before and after every optimization, measure both latency and quality. It's tempting to skip evaluation, but without measurement, you can't tell if an optimization actually helped or if it degraded quality in ways you haven't noticed. Track TTFT 👉 'tee-tee-eff-tee' (time-to-first-token), p50, and p95 latency for a complete picture.
+[cautiously] Before and after every optimization, measure both latency and quality. It's tempting to skip evaluation, but without measurement, you can't tell if an optimization actually helped or if it degraded quality in ways you haven't noticed. Track TTFT 👉 'tee-tee-eff-tee' (time-to-first-token), p50, and p95 latency for a complete picture.
 
-Now let's look at a practical guide for choosing where to start...`
+[energetic] Now let\'s look at a practical guide for choosing where to start...`
         },
         {
           id: 59,
@@ -2980,7 +2980,7 @@ Now let's look at a practical guide for choosing where to start...`
 Here's your practical decision guide for choosing which techniques to implement first. Not every team needs every technique, so let's help you prioritize.
 
 #### ⚡ If Latency Is Your Main Problem
-Start with techniques 3 (Limit Top-K), 10 (Streaming), and 11 (Smaller LLM). These three alone can reduce perceived latency by 70-80% with minimal implementation effort. Top-K is a one-parameter change, streaming is usually a simple API flag, and switching to a smaller model is a model swap.
+[reassuringly] Start with techniques 3 (Limit Top-K), 10 (Streaming), and 11 (Smaller LLM). These three alone can reduce perceived latency by 70-80% with minimal implementation effort. Top-K is a one-parameter change, streaming is usually a simple API flag, and switching to a smaller model is a model swap.
 
 #### 💰 If Cost Is Your Main Concern
 Focus on techniques 2 (Reduce Chunk Size), 5-6 (Caching), and 11 (Smaller LLM). Reducing chunks and caching eliminate unnecessary computation. A smaller LLM slashes your per-query cost dramatically.
@@ -3022,7 +3022,7 @@ Let's now visualize the speed versus recall trade-offs...`
           ),
           backgroundColor: '#1d6b1f',
           notes: `### 60. Speed vs Recall Tradeoffs
-This slide helps you understand the fundamental tension in RAG optimization — **speed versus recall**. Every optimization exists somewhere on this spectrum.
+[lecture] This slide helps you understand the fundamental tension in RAG optimization — **speed versus recall**. Every optimization exists somewhere on this spectrum.
 
 #### ⚖️ The Trade-off Spectrum
 On one end, you have maximum recall — finding every relevant document no matter how long it takes. On the other end, you have maximum speed — returning results instantly with some information potentially missed. The art of RAG optimization is finding the sweet spot for your use case.
@@ -3031,10 +3031,10 @@ On one end, you have maximum recall — finding every relevant document no matte
 Some techniques have almost no quality cost. **Caching** (techniques 5-6) gives you speed with zero quality loss for cache hits. **Streaming** (technique 10) improves perceived speed with zero quality impact. **Parallelization** (technique 9) also gives free speed.
 
 #### ⚠️ Higher Trade-off Techniques
-Others require careful balancing. **Smaller embeddings** (technique 1) and **ANN indexes** (technique 4) trade a small amount of recall for significant speed gains. **Smaller LLMs** (technique 11) may reduce answer sophistication. **Reducing chunk size** (technique 2) can miss context if done too aggressively.
+[cautiously] Others require careful balancing. **Smaller embeddings** (technique 1) and **ANN indexes** (technique 4) trade a small amount of recall for significant speed gains. **Smaller LLMs** (technique 11) may reduce answer sophistication. **Reducing chunk size** (technique 2) can miss context if done too aggressively.
 
 #### 🎯 The Key Insight
-Always start with the **zero trade-off techniques** first, then carefully add the ones with trade-offs, measuring quality at each step. Now let's look at quality versus cost...`
+[cautiously] Always start with the **zero trade-off techniques** first, then carefully add the ones with trade-offs, measuring quality at each step. Now let's look at quality versus cost...`
         },
         {
           id: 61,
@@ -3083,16 +3083,16 @@ Always start with the **zero trade-off techniques** first, then carefully add th
           ),
           backgroundColor: '#1d6b1f',
           notes: `### 61. Quality vs Cost Tradeoffs
-Now let's look at the other critical dimension — **quality versus cost**. In production, every optimization has a dollar value.
+[energetic] Now let\'s look at the other critical dimension — **quality versus cost**. In production, every optimization has a dollar value.
 
 #### 💰 The Cost Spectrum
-LLM inference is typically your biggest cost center. At scale, the difference between GPT-4 and a self-hosted 7B model can be hundreds of thousands of dollars per year. But quality matters too — a system that gives wrong answers is worse than a slow system.
+[cautiously] LLM inference is typically your biggest cost center. At scale, the difference between GPT-4 and a self-hosted 7B model can be hundreds of thousands of dollars per year. But quality matters too — a system that gives wrong answers is worse than a slow system.
 
 #### 📊 Cost-Reducing Techniques
 **Caching** (techniques 5-6) reduces costs by eliminating redundant computation. **Context compression** (technique 8) reduces token counts sent to the LLM. **Smaller LLMs** (technique 11) have the biggest per-query cost impact. **Reducing chunk size** (technique 2) also reduces token costs.
 
 #### ⚖️ Quality-Cost Sweet Spots
-The best optimizations reduce cost while maintaining or improving quality. **Re-ranking** (technique 7) is one of these — it improves quality and can reduce LLM costs by providing more relevant context. **Context compression** (technique 8) is another — less noise means better answers and lower costs.
+[lecture] The best optimizations reduce cost while maintaining or improving quality. **Re-ranking** (technique 7) is one of these — it improves quality and can reduce LLM costs by providing more relevant context. **Context compression** (technique 8) is another — less noise means better answers and lower costs.
 
 #### 🎯 Practical Advice
 Start by measuring your current cost per query. Identify which component — embedding, search, or generation — accounts for the most cost. Then apply the techniques that target that component. Most teams find that 80% of their cost is in the LLM, making techniques 8 and 11 the highest-impact choices.
@@ -3151,7 +3151,7 @@ Start this week with three zero-effort optimizations. First, **limit your Top-K*
 Next, implement **caching** — both query embedding caching and retrieval result caching. Set up Redis, add the cache-aside pattern, and start measuring hit rates. Then evaluate **smaller embedding models** — benchmark 2-3 alternatives and switch if the quality holds up.
 
 #### 🏗️ Month 2: Deeper Optimizations
-Now tackle the bigger changes. Evaluate a **smaller LLM** or set up model routing. Implement **context compression** to reduce token costs. Add **lightweight reranking** for quality improvement. Each of these requires more engineering effort but delivers substantial returns.
+[cautiously] Now tackle the bigger changes. Evaluate a **smaller LLM** or set up model routing. Implement **context compression** to reduce token costs. Add **lightweight reranking** for quality improvement. Each of these requires more engineering effort but delivers substantial returns.
 
 #### 🎯 Ongoing: Monitor and Iterate
 Set up dashboards for TTFT, p95 latency, answer quality, and cost per query. Review these weekly and adjust your optimizations. The RAG optimization journey is ongoing — as your data, queries, and scale change, different techniques become more or less valuable.
