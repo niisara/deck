@@ -88,10 +88,10 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
               <div style={{ marginBottom: '30px' }}>
               </div>
               <h4>
-                  Technique Categories
-                  <MermaidPopover
-                    title="Graph Retrieval Technique Landscape"
-                    diagram={`graph TB
+                Technique Categories
+                <MermaidPopover
+                  title="Graph Retrieval Technique Landscape"
+                  diagram={`graph TB
     A[13 Graph Retrieval<br/>Techniques] --> B[Basic Retrieval<br/>1-3]
     A --> C[Path & Community<br/>4-6]
     A --> D[Hybrid Methods<br/>7-8]
@@ -119,8 +119,8 @@ We're keeping things **simple and visual**. No overwhelming complexity, no intim
     style C fill:#81c784,color:#000
     style D fill:#e1bee7,color:#000
     style E fill:#ffb74d,color:#000`}
-                  />
-                </h4>
+                />
+              </h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', fontSize: '1.2rem', marginTop: '14px' }}>
                 <GSAPStaggerList stagger={0.08} duration={0.6}>
                   <div style={{ marginBottom: '0.7rem' }}>
@@ -3571,7 +3571,7 @@ This structured approach ensures you retrieve exactly the projects matching the 
               <GSAPAnimated animation="slideInTop" delay={0.1}>
                 <h3>Implementation Steps</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.3} stagger={0.15}>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li><strong>1. NER 👉 'en-ee-arr' & RE 👉 'arr-ee':</strong> Apply domain-adapted models to extract entities and relations from query. Use spaCy 👉 'space-ee', Transformers, or custom models.</li>
@@ -3715,7 +3715,7 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
               <GSAPAnimated animation="slideInLeft" delay={0.1}>
                 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.3} stagger={0.12}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>High Precision:</strong> Structural matching ensures results satisfy all relational constraints—no false positives from keyword overlap.</li>
@@ -3728,7 +3728,7 @@ Query Graph Construction is powerful for structured, complex queries. Implement 
               <GSAPAnimated animation="slideInRight" delay={0.7}>
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.9} stagger={0.12}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>NER/RE Quality Dependency:</strong> Extraction errors cascade—if entities or relations are missed, matching fails. Requires domain-adapted models.</li>
@@ -4170,7 +4170,7 @@ Context Path Stitching is a powerful post-processing technique that transforms r
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3>Implementation Steps</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.3} stagger={0.15}>
                 <ul style={{ fontSize: '1.2rem', marginTop: '14px' }}>
                   <li><strong>1. Retrieve & Collect:</strong> Get top-k paths from graph retrieval (path-based, traversal, etc.). Include node texts and metadata.</li>
@@ -4524,7 +4524,7 @@ Answer: Recent research indicates that sleep deprivation has significant cogniti
               <GSAPAnimated animation="fadeIn" delay={0.1}>
                 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.3} stagger={0.12}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>Narrative Coherence:</strong> Transforms raw graph triples into flowing, readable prose that LLMs 👉 'el-el-ems' process naturally—dramatically improving answer quality.</li>
@@ -4537,7 +4537,7 @@ Answer: Recent research indicates that sleep deprivation has significant cogniti
               <GSAPAnimated animation="fadeIn" delay={0.7}>
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.9} stagger={0.12}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>Additional Latency:</strong> Post-processing (deduplication, ordering, text generation) adds time. Needs optimization for real-time applications.</li>
@@ -5023,7 +5023,7 @@ Provide the LLM with **rules** to prevent bad decisions: "Never explore edges le
               <GSAPAnimated animation="flipCard" delay={0.1}>
                 <h3>Implementation Steps</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.3} stagger={0.15}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>1. Initialize:</strong> Identify seed nodes (entity linking or semantic search). Set budget (max steps: 5-10, max tokens: 5K). Initialize visited set and context accumulator.</li>
@@ -5431,7 +5431,7 @@ def log_exploration(query, state, decision, result):
               <GSAPAnimated animation="rotateIn" delay={0.1}>
                 <h3 style={{ color: '#2ecc71' }}>Benefits & Impact</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.3} stagger={0.12}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>Intelligent Adaptability:</strong> LLM 👉 'el-el-em' reasons about relevance, exploring promising areas and skipping irrelevant branches—far more flexible than fixed traversal rules.</li>
@@ -5444,7 +5444,7 @@ def log_exploration(query, state, decision, result):
               <GSAPAnimated animation="slideInRight" delay={0.7}>
                 <h3 style={{ color: '#e74c3c' }}>Limitations & Considerations</h3>
               </GSAPAnimated>
-              
+
               <GSAPStaggerList delay={0.9} stagger={0.12}>
                 <ul style={{ fontSize: '1rem', marginTop: '14px' }}>
                   <li><strong>High Cost & Latency:</strong> Multiple LLM 👉 'el-el-em' calls per query (one per iteration) add significant time (1-3s each) and cost—prohibitive at large scale.</li>
