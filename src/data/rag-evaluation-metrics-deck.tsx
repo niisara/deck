@@ -1826,24 +1826,24 @@ where score_i ∈ [0,1] for each chunk`}
           ),
           backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — Overview
-Welcome to metric number seven! We're shifting our focus to something that's becoming increasingly important in modern RAG systems: the Grounded Answer Score.
+[excited] Welcome to metric number seven! [conversational] We're shifting our focus to something that's becoming increasingly important in modern RAG systems: the Grounded Answer Score.
 
 #### What Is Grounded Answer Score?
-This metric, which we pronounce as 👉 "G-A-S" or simply "grounded score," measures whether your RAG system's answers cite retrieved facts correctly. Think of it like checking if a research paper properly references its sources. The key difference from faithfulness? This specifically focuses on citation accuracy in systems that provide source attribution. If your system says "According to document X," this metric checks if document X actually says what the system claims it does.
+[lecture] This metric, which we pronounce as 👉 "G-A-S" or simply "grounded score," measures whether your RAG system's answers cite retrieved facts correctly. [storytelling] Think of it like checking if a research paper properly references its sources. [confidently] The key difference from faithfulness? This specifically focuses on citation accuracy in systems that provide source attribution. If your system says "According to document X," this metric checks if document X actually says what the system claims it does.
 
 #### Why This Matters More Than Ever
-The benefits here are tremendous for building trustworthy systems. First, it encourages precise evidence use with traceable citations—your system learns to point to specific evidence rather than making vague references. Second, it dramatically improves user trust because people can verify the information themselves by checking the sources. Third, it enables better debugging of hallucination sources—when something goes wrong, you can trace exactly where the system got its information. Finally, it supports regulatory compliance with evidence requirements, which is crucial in industries like healthcare, legal, and finance where auditability isn't optional.
+[pleased] The benefits here are tremendous for building trustworthy systems. First, it encourages precise evidence use with traceable citations—your system learns to point to specific evidence rather than making vague references. Second, it dramatically improves user trust because people can verify the information themselves by checking the sources. [confidently] Third, it enables better debugging of hallucination sources—when something goes wrong, you can trace exactly where the system got its information. [seriously] Finally, it supports regulatory compliance with evidence requirements, which is crucial in industries like healthcare, legal, and finance where auditability isn't optional.
 
 #### When to Use This
-You'll want to implement Grounded Answer Score for systems that expose citations or links to sources—basically any RAG system with a footnote or reference feature. It's essential for legal, medical, or financial applications requiring auditability where someone might need to verify every claim. Compliance-focused applications that need traceable evidence should make this a priority metric. And definitely use it when building user interfaces that highlight source evidence—those little citation numbers or reference links that users can click.
+[conversational] You'll want to implement Grounded Answer Score for systems that expose citations or links to sources—basically any RAG system with a footnote or reference feature. [seriously] It's essential for legal, medical, or financial applications requiring auditability where someone might need to verify every claim. Compliance-focused applications that need traceable evidence should make this a priority metric. And definitely use it when building user interfaces that highlight source evidence—those little citation numbers or reference links that users can click.
 
 #### Pros
-The good stuff: this metric directly addresses the trust gap in AI systems by making claims verifiable, it helps you catch attribution errors before users do, and it provides clear debugging paths when hallucinations occur because you can see exactly which citation was wrong.
+[pleased] The good stuff: this metric directly addresses the trust gap in AI systems by making claims verifiable, it helps you catch attribution errors before users do, and it provides clear debugging paths when hallucinations occur because you can see exactly which citation was wrong.
 
 #### Cons
-The problems: this metric only works for systems that actually generate citations, so it's not universal. It requires more complex evaluation infrastructure than simpler metrics like faithfulness. Citation formats and granularity can vary widely across systems, making standardized evaluation tricky. And it may penalize citations to partially supporting evidence even when the partial support is reasonable.
+[cautiously] The problems: this metric only works for systems that actually generate citations, so it's not universal. It requires more complex evaluation infrastructure than simpler metrics like faithfulness. Citation formats and granularity can vary widely across systems, making standardized evaluation tricky. And it may penalize citations to partially supporting evidence even when the partial support is reasonable.
 
-Let's dive into how this metric actually works in practice.`
+[confidently] Let's dive into how this metric actually works in practice.`
         },
         {
           id: 28,
@@ -1903,22 +1903,22 @@ Let's dive into how this metric actually works in practice.`
           ),
           backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — How It Works
-Now let's break down the mechanics of how Grounded Answer Score actually evaluates your citations.
+[lecture] Now let's break down the mechanics of how Grounded Answer Score actually evaluates your citations.
 
 #### The Core Concept
-Grounded Answer Score evaluates whether claims in the answer correctly cite the supporting evidence from retrieved context. It's a two-part check: first, is the claim factually accurate? Second, does the citation actually point to evidence that supports this claim? Think of it as having a fact-checker who not only verifies the claim but also checks if the footnote reference is correct.
+[conversational] Grounded Answer Score evaluates whether claims in the answer correctly cite the supporting evidence from retrieved context. [confidently] It's a two-part check: first, is the claim factually accurate? Second, does the citation actually point to evidence that supports this claim? [storytelling] Think of it as having a fact-checker who not only verifies the claim but also checks if the footnote reference is correct.
 
 #### The Formula Explained
-The formula is beautifully simple: GAS equals the number of claims with correct citation-supported spans divided by the total number of claims. So if you have ten claims in your answer, and nine of them have citations that actually support what they're claiming, you get a score of 0.90. The key word here is "supported"—the cited source must genuinely back up the claim being made.
+[pleased] The formula is beautifully simple: GAS equals the number of claims with correct citation-supported spans divided by the total number of claims. So if you have ten claims in your answer, and nine of them have citations that actually support what they're claiming, you get a score of 0.90. [confidently] The key word here is "supported"—the cited source must genuinely back up the claim being made.
 
 #### The Step-by-Step Process
-Here's how it works in practice: First, identify each claim in the generated answer—break it down into individual factual statements. Second, for each claim with a citation, verify that the cited span actually supports the claim. This means going back to the original source and checking if it says what the answer claims it says. Third, count the correctly supported claims and divide by total claims. This gives you a ratio that reflects citation accuracy.
+[lecture] Here's how it works in practice: First, identify each claim in the generated answer—break it down into individual factual statements. Second, for each claim with a citation, verify that the cited span actually supports the claim. This means going back to the original source and checking if it says what the answer claims it says. Third, count the correctly supported claims and divide by total claims. This gives you a ratio that reflects citation accuracy.
 
 #### What Score Should You Target?
-For general applications, aim for at least 0.90 or 90% accuracy. That means nine out of ten citations should be correct. For strict domains like legal, medical, or financial applications, bump that up to 0.95 or 95%. In these high-stakes fields, even a 5% citation error rate can have serious consequences. Lower scores are a red flag indicating inaccurate citation or attribution issues that need debugging.
+[conversational] For general applications, aim for at least 0.90 or 90% accuracy. That means nine out of ten citations should be correct. [seriously] For strict domains like legal, medical, or financial applications, bump that up to 0.95 or 95%. In these high-stakes fields, even a 5% citation error rate can have serious consequences. [cautiously] Lower scores are a red flag indicating inaccurate citation or attribution issues that need debugging.
 
 #### When to Use This
-This metric shines when you're dealing with citation-heavy systems, especially in domains where users need to verify claims or where regulatory compliance requires traceable evidence. It's your quality control checkpoint for ensuring that those little superscript numbers or reference links actually point to legitimate supporting evidence.
+[confidently] This metric shines when you're dealing with citation-heavy systems, especially in domains where users need to verify claims or where regulatory compliance requires traceable evidence. It's your quality control checkpoint for ensuring that those little superscript numbers or reference links actually point to legitimate supporting evidence.
 
 Let's look at a concrete example to make this crystal clear.`
         },
@@ -1954,25 +1954,25 @@ Let's look at a concrete example to make this crystal clear.`
           ),
           backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — Implementation
-Let's walk through a real-world example to see how Grounded Answer Score calculation works in practice.
+[conversational] Let's walk through a real-world example to see how Grounded Answer Score calculation works in practice.
 
 #### The Example Scenario
-Imagine a medical RAG system responding to a question about medication side effects. The answer says: "The medication has three primary side effects[1]. It may cause drowsiness[2], headaches[3], and in rare cases, dizziness[4]." Notice those bracketed numbers? Those are citations pointing to specific sources in the retrieved context.
+[storytelling] Imagine a medical RAG system responding to a question about medication side effects. The answer says: "The medication has three primary side effects[1]. It may cause drowsiness[2], headaches[3], and in rare cases, dizziness[4]." [lecture] Notice those bracketed numbers? Those are citations pointing to specific sources in the retrieved context.
 
 #### Breaking Down the Claims
-When we analyze this answer, we find 10 total claims. These include the statement about three primary side effects, the claim about drowsiness, the claim about headaches, the claim about dizziness, and several other implicit claims like the frequency indicated by "in rare cases." Each of these is a verifiable statement that should be backed by the cited source.
+[conversational] When we analyze this answer, we find 10 total claims. These include the statement about three primary side effects, the claim about drowsiness, the claim about headaches, the claim about dizziness, and several other implicit claims like the frequency indicated by "in rare cases." Each of these is a verifiable statement that should be backed by the cited source.
 
 #### The Verification Process
-Here's where it gets interesting: when we check each citation against the original sources, we discover that 9 out of 10 claims are correctly cited. One citation doesn't actually support its claim—maybe citation [4] points to a source that mentions dizziness but doesn't specify it's rare, or perhaps it doesn't mention dizziness at all. This kind of citation mismatch is exactly what Grounded Answer Score is designed to catch.
+[excited] Here's where it gets interesting: when we check each citation against the original sources, we discover that 9 out of 10 claims are correctly cited. [quizzically] One citation doesn't actually support its claim—maybe citation [4] points to a source that mentions dizziness but doesn't specify it's rare, or perhaps it doesn't mention dizziness at all. [confidently] This kind of citation mismatch is exactly what Grounded Answer Score is designed to catch.
 
 #### The Math
-The calculation is straightforward: GAS equals 9 divided by 10, giving us 0.90 or 90%. This meets our threshold for general applications but would fall short for high-stakes medical applications where we'd want at least 0.95. In a real deployment, you'd need to debug that one incorrect citation to improve the score.
+[lecture] The calculation is straightforward: GAS equals 9 divided by 10, giving us 0.90 or 90%. [conversational] This meets our threshold for general applications but would fall short for high-stakes medical applications where we'd want at least 0.95. In a real deployment, you'd need to debug that one incorrect citation to improve the score.
 
 #### How to Calculate This Yourself
-First, extract all claims from the answer along with their citations. Use an 👉 "LLM" or natural language processing tool to break the answer into atomic claims. Second, for each cited claim, verify that the referenced source actually supports it—this requires looking up each citation and checking if the content matches. Third, count the correctly cited claims and divide by total claims. This requires both extraction and verification steps, which is why automated tools like RAGAS or custom evaluation pipelines are often used.
+[conversational] First, extract all claims from the answer along with their citations. Use an 👉 "LLM" or natural language processing tool to break the answer into atomic claims. Second, for each cited claim, verify that the referenced source actually supports it—this requires looking up each citation and checking if the content matches. Third, count the correctly cited claims and divide by total claims. [lecture] This requires both extraction and verification steps, which is why automated tools like RAGAS or custom evaluation pipelines are often used.
 
 #### Real-World Considerations
-In practice, this calculation can be nuanced. What counts as "supported" versus "partially supported"? What if a source implies something without stating it directly? These judgment calls are why clear evaluation criteria and consistent scoring rubrics are essential.
+[cautiously] In practice, this calculation can be nuanced. [quizzically] What counts as "supported" versus "partially supported"? What if a source implies something without stating it directly? [seriously] These judgment calls are why clear evaluation criteria and consistent scoring rubrics are essential.
 
 Now let's discuss the broader implications and limitations of this metric.`
         },
@@ -2028,24 +2028,24 @@ Now let's discuss the broader implications and limitations of this metric.`
           ),
           backgroundColor: '#6f1f32',
           notes: `### 7. Grounded Answer Score — Considerations
-Let's wrap up Grounded Answer Score by examining its impact on RAG systems and the limitations you need to keep in mind.
+[conversational] Let's wrap up Grounded Answer Score by examining its impact on RAG systems and the limitations you need to keep in mind.
 
 #### Positive Impact on RAG Systems
-The benefits of tracking Grounded Answer Score are substantial. First, it encourages precise evidence use with traceable citations—your system learns that every claim needs a specific, verifiable source rather than vague references. This creates a culture of precision in your RAG system's outputs. Second, it improves user trust by making information verifiable. When users can click a citation and see the original source, their confidence in your system skyrockets. Third, it enables better debugging of hallucination sources. When something goes wrong, you can trace exactly which citation was incorrect and why. Finally, it supports regulatory compliance with evidence requirements, which is non-negotiable in fields like healthcare, legal, and finance where auditability is mandated.
+[pleased] The benefits of tracking Grounded Answer Score are substantial. First, it encourages precise evidence use with traceable citations—your system learns that every claim needs a specific, verifiable source rather than vague references. This creates a culture of precision in your RAG system's outputs. [delighted] Second, it improves user trust by making information verifiable. When users can click a citation and see the original source, their confidence in your system skyrockets. [confidently] Third, it enables better debugging of hallucination sources. When something goes wrong, you can trace exactly which citation was incorrect and why. [seriously] Finally, it supports regulatory compliance with evidence requirements, which is non-negotiable in fields like healthcare, legal, and finance where auditability is mandated.
 
 #### Real-World Benefits
-Think about a medical diagnosis assistant that cites research papers for each recommendation, or a legal research tool that references specific case law and statutes. Grounded Answer Score ensures these citations are accurate, which protects both users and the organization deploying the system from misinformation and legal liability.
+[storytelling] Think about a medical diagnosis assistant that cites research papers for each recommendation, or a legal research tool that references specific case law and statutes. [firmly] Grounded Answer Score ensures these citations are accurate, which protects both users and the organization deploying the system from misinformation and legal liability.
 
 #### Limitations to Consider
-However, this metric isn't perfect. First major limitation: it's only applicable to systems that generate citations. If your RAG system doesn't produce footnotes or source references, this metric doesn't apply at all—you'd use faithfulness score instead. Second, it requires more complex evaluation infrastructure. You need systems that can parse citations, retrieve the cited sources, and verify claim support, which is more sophisticated than simpler metrics. Third, citation format and granularity can vary widely. One system might cite entire documents while another cites specific paragraphs or sentences, making standardized evaluation challenging. Finally, it may penalize citations to partially supporting evidence. Sometimes a source provides partial support for a claim, and it's debatable whether that should count as correct or incorrect.
+[cautiously] However, this metric isn't perfect. [seriously] First major limitation: it's only applicable to systems that generate citations. If your RAG system doesn't produce footnotes or source references, this metric doesn't apply at all—you'd use faithfulness score instead. Second, it requires more complex evaluation infrastructure. You need systems that can parse citations, retrieve the cited sources, and verify claim support, which is more sophisticated than simpler metrics. [conversational] Third, citation format and granularity can vary widely. One system might cite entire documents while another cites specific paragraphs or sentences, making standardized evaluation challenging. [quizzically] Finally, it may penalize citations to partially supporting evidence. Sometimes a source provides partial support for a claim, and it's debatable whether that should count as correct or incorrect.
 
 #### The Balanced Perspective
-Despite these limitations, Grounded Answer Score is invaluable for citation-enabled RAG systems. The key is using it alongside other metrics like faithfulness and relevance to get a complete picture of system quality. A system with perfect grounded scores but terrible relevance is still useless to users.
+[confidently] Despite these limitations, Grounded Answer Score is invaluable for citation-enabled RAG systems. The key is using it alongside other metrics like faithfulness and relevance to get a complete picture of system quality. [disappointed] A system with perfect grounded scores but terrible relevance is still useless to users.
 
 #### Moving Forward
-As you implement this metric, start with clear guidelines about what constitutes adequate support, establish consistent citation formats, and use automated tools to scale the evaluation. Remember that the goal isn't just high scores—it's building systems that users can trust and verify.
+[conversational] As you implement this metric, start with clear guidelines about what constitutes adequate support, establish consistent citation formats, and use automated tools to scale the evaluation. [seriously] Remember that the goal isn't just high scores—it's building systems that users can trust and verify.
 
-Next up, we'll explore Faithfulness Score, which focuses on factual consistency without requiring explicit citations.`
+[cheerfully] Next up, we'll explore Faithfulness Score, which focuses on factual consistency without requiring explicit citations.`
         },
       ]
     },
@@ -2085,27 +2085,27 @@ Next up, we'll explore Faithfulness Score, which focuses on factual consistency 
           ),
           backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — Overview
-Welcome to metric number eight: Faithfulness Score. This is arguably one of the most critical metrics in RAG evaluation because it directly addresses the hallucination problem.
+[excited] Welcome to metric number eight: Faithfulness Score. [seriously] This is arguably one of the most critical metrics in RAG evaluation because it directly addresses the hallucination problem.
 
 #### What Is Faithfulness Score?
-Faithfulness Score, sometimes called 👉 "groundedness" or "context faithfulness," checks whether claims in the generated answer are fully supported by the retrieved context. It ensures factual consistency between the response your system generates and the evidence it retrieved. Think of it as a fact-checker that asks: "Can every statement in this answer be verified against the documents we retrieved?"
+[lecture] Faithfulness Score, sometimes called 👉 "groundedness" or "context faithfulness," checks whether claims in the generated answer are fully supported by the retrieved context. [confidently] It ensures factual consistency between the response your system generates and the evidence it retrieved. [storytelling] Think of it as a fact-checker that asks: [quizzically] "Can every statement in this answer be verified against the documents we retrieved?"
 
 #### The Core Purpose
-The key difference from Grounded Answer Score? Faithfulness doesn't require explicit citations—it just checks if the content could have come from the retrieved documents. This makes it applicable to all RAG systems, not just those with citation features. It's your first line of defense against hallucinations.
+[conversational] The key difference from Grounded Answer Score? Faithfulness doesn't require explicit citations—it just checks if the content could have come from the retrieved documents. This makes it applicable to all RAG systems, not just those with citation features. [seriously] It's your first line of defense against hallucinations.
 
 #### The Powerful Benefits
-The benefits here are game-changing. First, higher faithfulness directly reduces hallucinations. There's a direct inverse relationship: as faithfulness goes up, hallucinations go down. Second, it improves factual accuracy and system trustworthiness. Users get answers they can rely on because every claim is grounded in retrieved evidence. Third, it's essential for detecting prompt or context misalignments. If faithfulness suddenly drops, it might mean your retrieval system is pulling irrelevant documents or your prompt is encouraging the model to speculate. Finally, it's the foundation for implementing safety guardrails. You can reject or flag answers with low faithfulness scores before they reach users.
+[enthusiastically] The benefits here are game-changing. [confidently] First, higher faithfulness directly reduces hallucinations. There's a direct inverse relationship: as faithfulness goes up, hallucinations go down. [pleased] Second, it improves factual accuracy and system trustworthiness. Users get answers they can rely on because every claim is grounded in retrieved evidence. [lecture] Third, it's essential for detecting prompt or context misalignments. If faithfulness suddenly drops, it might mean your retrieval system is pulling irrelevant documents or your prompt is encouraging the model to speculate. [firmly] Finally, it's the foundation for implementing safety guardrails. You can reject or flag answers with low faithfulness scores before they reach users.
 
 #### When to Use This
-This is your core hallucination control metric for all RAG systems—no exceptions. Every RAG system should track faithfulness. Use it in pre-deployment quality assurance checks to ensure your system meets accuracy standards before launch. Implement continuous monitoring in production to catch drift or degradation. And definitely prioritize it when legal or compliance risks exist from incorrect information, such as in healthcare, legal, or financial applications where mistakes can have serious consequences.
+[seriously] This is your core hallucination control metric for all RAG systems—no exceptions. Every RAG system should track faithfulness. [conversational] Use it in pre-deployment quality assurance checks to ensure your system meets accuracy standards before launch. Implement continuous monitoring in production to catch drift or degradation. [firmly] And definitely prioritize it when legal or compliance risks exist from incorrect information, such as in healthcare, legal, or financial applications where mistakes can have serious consequences.
 
 #### Pros
-The good stuff: this metric is universally applicable to all RAG systems, it directly measures the most critical quality factor—hallucination rate—and it provides clear actionable insights for improving context quality and prompt engineering.
+[pleased] The good stuff: this metric is universally applicable to all RAG systems, it directly measures the most critical quality factor—hallucination rate—and it provides clear actionable insights for improving context quality and prompt engineering.
 
 #### Cons
-The problems: claim extraction quality varies across evaluation methods, which can lead to inconsistent scores. It may penalize valid reasoning or inference from context, even when that inference is logical and helpful. The retrieved context may not contain all necessary background information, which isn't really the answer's fault. And evaluation can be computationally expensive at scale, especially when using LLM-as-judge approaches.
+[cautiously] The problems: claim extraction quality varies across evaluation methods, which can lead to inconsistent scores. It may penalize valid reasoning or inference from context, even when that inference is logical and helpful. The retrieved context may not contain all necessary background information, which isn't really the answer's fault. And evaluation can be computationally expensive at scale, especially when using LLM-as-judge approaches.
 
-Let's dive into the mechanics of how this crucial metric works.`
+[confidently] Let's dive into the mechanics of how this crucial metric works.`
         },
         {
           id: 32,
@@ -2166,25 +2166,25 @@ Let's dive into the mechanics of how this crucial metric works.`
           ),
           backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — How It Works
-Let's break down the mechanics of Faithfulness Score and understand how it measures factual consistency.
+[lecture] Let's break down the mechanics of Faithfulness Score and understand how it measures factual consistency.
 
 #### The Core Mechanism
-Faithfulness Score measures what proportion of claims in the answer can be verified against the retrieved context. Here's the key insight: it's the complement of hallucination rate. If your faithfulness is 0.80 or 80%, that means your hallucination rate is 0.20 or 20%. Every claim that isn't supported by the context is considered a potential hallucination.
+[conversational] Faithfulness Score measures what proportion of claims in the answer can be verified against the retrieved context. [excited] Here's the key insight: it's the complement of hallucination rate. If your faithfulness is 0.80 or 80%, that means your hallucination rate is 0.20 or 20%. [seriously] Every claim that isn't supported by the context is considered a potential hallucination.
 
 #### The Simple Formula
-The formula is elegantly simple: Faithfulness equals the number of supported claims divided by the total number of claims. So if your answer contains 10 claims and 8 of them can be verified in the retrieved context, your faithfulness score is 0.80. It's a straightforward ratio that tells you exactly what percentage of your answer is grounded in evidence.
+[pleased] The formula is elegantly simple: Faithfulness equals the number of supported claims divided by the total number of claims. [conversational] So if your answer contains 10 claims and 8 of them can be verified in the retrieved context, your faithfulness score is 0.80. It's a straightforward ratio that tells you exactly what percentage of your answer is grounded in evidence.
 
 #### The Implementation Process
-Here's how it works in practice: First, extract individual claims from the generated answer. This involves breaking down the answer into atomic statements that can be independently verified. For example, "The product costs $199 and ships in 2 days" becomes two claims: one about price, one about shipping time. Second, check each claim against the retrieved context. Look through your retrieved documents to see if the claim is stated or can be reasonably inferred. Third, count up the supported claims and calculate the ratio. Modern frameworks like 👉 "RAGAS" or 👉 "HHEM-2.1-Open" (that's H-H-E-M two-point-one Open) automate this entire process, using language models to perform the claim extraction and verification.
+[lecture] Here's how it works in practice: First, extract individual claims from the generated answer. This involves breaking down the answer into atomic statements that can be independently verified. [storytelling] For example, "The product costs $199 and ships in 2 days" becomes two claims: one about price, one about shipping time. [conversational] Second, check each claim against the retrieved context. Look through your retrieved documents to see if the claim is stated or can be reasonably inferred. Third, count up the supported claims and calculate the ratio. [confidently] Modern frameworks like 👉 "RAGAS" or 👉 "HHEM-2.1-Open" (that's H-H-E-M two-point-one Open) automate this entire process, using language models to perform the claim extraction and verification.
 
 #### Target Scores to Aim For
-For general-purpose RAG applications, aim for at least 0.80 or 80% faithfulness. This means that 4 out of 5 claims should be verifiable in your retrieved context. For high-stakes domains like medical, legal, or finance, bump that target up to 0.90 or 90%. In these fields, a 10% hallucination rate is already quite risky. Also, consider sampling confidence intervals when evaluating—don't just look at the average score across your test set. Check the distribution and identify outlier queries where faithfulness drops dramatically.
+[conversational] For general-purpose RAG applications, aim for at least 0.80 or 80% faithfulness. This means that 4 out of 5 claims should be verifiable in your retrieved context. [seriously] For high-stakes domains like medical, legal, or finance, bump that target up to 0.90 or 90%. In these fields, a 10% hallucination rate is already quite risky. [lecture] Also, consider sampling confidence intervals when evaluating—don't just look at the average score across your test set. Check the distribution and identify outlier queries where faithfulness drops dramatically.
 
 #### The Relationship to Other Metrics
-Faithfulness is closely related to other metrics but distinct. Unlike Grounded Answer Score, it doesn't require explicit citations. Unlike Answer Relevance, it doesn't care if the answer addresses the query—only if it's factually grounded. Unlike Context Precision, it evaluates the answer, not the retrieved context. Think of faithfulness as your hallucination detector—it's the metric that keeps your RAG system honest.
+[conversational] Faithfulness is closely related to other metrics but distinct. Unlike Grounded Answer Score, it doesn't require explicit citations. Unlike Answer Relevance, it doesn't care if the answer addresses the query—only if it's factually grounded. Unlike Context Precision, it evaluates the answer, not the retrieved context. [confidently] Think of faithfulness as your hallucination detector—it's the metric that keeps your RAG system honest.
 
 #### Automated Evaluation Tools
-The beauty of modern frameworks like RAGAS is that they can evaluate faithfulness at scale without human annotation. They use language models to extract claims and verify them against context, making it practical to monitor thousands of interactions. However, these tools aren't perfect, which is why validation with human evaluation is still recommended for critical applications.
+[pleased] The beauty of modern frameworks like RAGAS is that they can evaluate faithfulness at scale without human annotation. [lecture] They use language models to extract claims and verify them against context, making it practical to monitor thousands of interactions. [cautiously] However, these tools aren't perfect, which is why validation with human evaluation is still recommended for critical applications.
 
 Let's see a concrete example to solidify this understanding.`
         },
@@ -2223,28 +2223,28 @@ Let's see a concrete example to solidify this understanding.`
           ),
           backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — Implementation
-Let's walk through a detailed example to see how faithfulness calculation works in real-world scenarios.
+[conversational] Let's walk through a detailed example to see how faithfulness calculation works in real-world scenarios.
 
 #### The Setup
-Imagine a customer service RAG system answering a question about return policies. The retrieved context says: "Our return policy allows returns within 30 days with receipt. Damaged items cannot be returned." That's the evidence your RAG system has to work with. Now the system generates this answer: "You can return items within 30 days if you have the receipt. Damaged items aren't eligible. All returns receive store credit."
+[storytelling] Imagine a customer service RAG system answering a question about return policies. The retrieved context says: "Our return policy allows returns within 30 days with receipt. Damaged items cannot be returned." That's the evidence your RAG system has to work with. [conversational] Now the system generates this answer: "You can return items within 30 days if you have the receipt. Damaged items aren't eligible. All returns receive store credit."
 
 #### Breaking Down the Claims
-Let's decompose this answer into atomic claims—individual statements that can be verified independently. We have three claims here: First, the 30-day return window. Second, the receipt requirement. Third, the statement about store credit. Each of these is a factual claim that should be verifiable against the retrieved context.
+[lecture] Let's decompose this answer into atomic claims—individual statements that can be verified independently. We have three claims here: First, the 30-day return window. Second, the receipt requirement. Third, the statement about store credit. Each of these is a factual claim that should be verifiable against the retrieved context.
 
 #### Verifying Against Context
-Now we check each claim against our retrieved context. The first claim about 30 days with receipt? Directly supported by the context—it explicitly states "returns within 30 days with receipt." The second claim about damaged items not being eligible? Also directly supported—the context says "Damaged items cannot be returned." The third claim about store credit? Here's the problem: the retrieved context says nothing about store credit. This is a hallucination—the system made up information that isn't in the evidence.
+[conversational] Now we check each claim against our retrieved context. [quizzically] The first claim about 30 days with receipt? [pleased] Directly supported by the context—it explicitly states "returns within 30 days with receipt." [quizzically] The second claim about damaged items not being eligible? [pleased] Also directly supported—the context says "Damaged items cannot be returned." [quizzically] The third claim about store credit? [seriously] Here's the problem: the retrieved context says nothing about store credit. This is a hallucination—the system made up information that isn't in the evidence.
 
 #### The Calculation
-So we have 3 total claims in the answer, but only 2 are supported by the retrieved context. The faithfulness score is 2 divided by 3, which equals 0.67 or 67%. This is below our target threshold of 0.80 for general applications, indicating a quality problem that needs addressing.
+[lecture] So we have 3 total claims in the answer, but only 2 are supported by the retrieved context. The faithfulness score is 2 divided by 3, which equals 0.67 or 67%. [disappointed] This is below our target threshold of 0.80 for general applications, indicating a quality problem that needs addressing.
 
 #### What This Score Tells Us
-A score of 0.67 means that one-third of the answer is unsupported hallucination. In this case, telling customers they'll receive store credit when the policy might actually be different could create customer service issues and damage trust. This is exactly the kind of problem faithfulness scoring helps you catch before it reaches users.
+[seriously] A score of 0.67 means that one-third of the answer is unsupported hallucination. [concerned] In this case, telling customers they'll receive store credit when the policy might actually be different could create customer service issues and damage trust. [confidently] This is exactly the kind of problem faithfulness scoring helps you catch before it reaches users.
 
 #### How to Calculate This in Practice
-First, break the answer into atomic claims. You can do this manually for small test sets or use an LLM to extract claims automatically. Second, for each claim, check if it can be verified from the retrieved context. This requires carefully reading the context and determining if the claim is stated, implied, or completely absent. Third, count the supported claims and divide by total claims. For automation at scale, use tools like RAGAS or HHEM-2.1-Open which handle both claim extraction and verification using language models.
+[conversational] First, break the answer into atomic claims. You can do this manually for small test sets or use an LLM to extract claims automatically. Second, for each claim, check if it can be verified from the retrieved context. This requires carefully reading the context and determining if the claim is stated, implied, or completely absent. Third, count the supported claims and divide by total claims. [lecture] For automation at scale, use tools like RAGAS or HHEM-2.1-Open which handle both claim extraction and verification using language models.
 
 #### Debugging Low Scores
-When you see low faithfulness scores, investigate the root cause. Is your retrieval system pulling irrelevant documents? Is your prompt encouraging speculation? Is your generation model too creative? Each of these requires different fixes. In this example, the model might need better instructions to stick to the facts provided or better prompting to say "I don't have information about refund methods" instead of making something up.
+[quizzically] When you see low faithfulness scores, investigate the root cause. Is your retrieval system pulling irrelevant documents? Is your prompt encouraging speculation? Is your generation model too creative? [conversational] Each of these requires different fixes. In this example, the model might need better instructions to stick to the facts provided or better prompting to say "I don't have information about refund methods" instead of making something up.
 
 Now let's explore the broader implications and trade-offs of this metric.`
         },
@@ -2301,30 +2301,30 @@ Now let's explore the broader implications and trade-offs of this metric.`
           ),
           backgroundColor: '#4c1f6f',
           notes: `### 8. Faithfulness Score — Considerations
-Let's conclude our discussion of Faithfulness Score by examining its impact on RAG systems and the important limitations to keep in mind.
+[conversational] Let's conclude our discussion of Faithfulness Score by examining its impact on RAG systems and the important limitations to keep in mind.
 
 #### The Powerful Impact on RAG Quality
-The positive impacts of tracking faithfulness are profound. First and most importantly, higher faithfulness directly reduces hallucinations. This is a direct, measurable relationship. As you improve faithfulness from 0.70 to 0.90, you're cutting hallucinations by two-thirds. Second, it improves factual accuracy and system trustworthiness. Users quickly learn whether they can rely on your system, and high faithfulness builds that confidence. Third, it's essential for detecting prompt or context misalignments. If faithfulness suddenly drops, it's often a signal that something in your pipeline broke—maybe retrieval quality degraded, or a prompt change encouraged more speculation. Finally, faithfulness is the foundation for implementing safety guardrails. You can automatically reject or flag low-faithfulness answers before they reach users, creating a quality control checkpoint.
+[enthusiastically] The positive impacts of tracking faithfulness are profound. [confidently] First and most importantly, higher faithfulness directly reduces hallucinations. This is a direct, measurable relationship. As you improve faithfulness from 0.70 to 0.90, you're cutting hallucinations by two-thirds. [pleased] Second, it improves factual accuracy and system trustworthiness. Users quickly learn whether they can rely on your system, and high faithfulness builds that confidence. [lecture] Third, it's essential for detecting prompt or context misalignments. If faithfulness suddenly drops, it's often a signal that something in your pipeline broke—maybe retrieval quality degraded, or a prompt change encouraged more speculation. [firmly] Finally, faithfulness is the foundation for implementing safety guardrails. You can automatically reject or flag low-faithfulness answers before they reach users, creating a quality control checkpoint.
 
 #### Real-World Applications
-Think about a medical information system where a faithfulness score below 0.95 triggers human review, or a financial advisor bot that refuses to answer when faithfulness drops below 0.90. These guardrails prevent potentially harmful misinformation from reaching users.
+[storytelling] Think about a medical information system where a faithfulness score below 0.95 triggers human review, or a financial advisor bot that refuses to answer when faithfulness drops below 0.90. [seriously] These guardrails prevent potentially harmful misinformation from reaching users.
 
 #### Critical Limitations to Understand
-However, faithfulness scoring has important limitations. First, claim extraction quality varies across evaluation methods. Different tools might break answers into claims differently, leading to inconsistent scores. A claim extraction system that's too granular might inflate scores, while one that's too coarse might deflate them. Second, faithfulness may penalize valid reasoning or inference from context. If your RAG system makes a logical inference that isn't explicitly stated but is clearly implied by the context, faithfulness scoring might incorrectly flag it as a hallucination. For example, if the context says "The store opens at 9 AM and closes at 5 PM," and your answer says "The store is open 8 hours daily," that inference might be marked unsupported even though it's perfectly valid.
+[cautiously] However, faithfulness scoring has important limitations. First, claim extraction quality varies across evaluation methods. Different tools might break answers into claims differently, leading to inconsistent scores. A claim extraction system that's too granular might inflate scores, while one that's too coarse might deflate them. [conversational] Second, faithfulness may penalize valid reasoning or inference from context. [storytelling] If your RAG system makes a logical inference that isn't explicitly stated but is clearly implied by the context, faithfulness scoring might incorrectly flag it as a hallucination. For example, if the context says "The store opens at 9 AM and closes at 5 PM," and your answer says "The store is open 8 hours daily," that inference might be marked unsupported even though it's perfectly valid.
 
 #### Context Completeness Issues
-Third, the retrieved context may not contain all necessary background information. Sometimes answers need common knowledge or general background that isn't in the retrieved documents. For instance, if the context mentions "CPU" and the answer explains it as "Central Processing Unit," that expansion might be marked unfaithful even though it's helpful and correct. This is where faithfulness needs to be balanced with other quality criteria.
+[lecture] Third, the retrieved context may not contain all necessary background information. [conversational] Sometimes answers need common knowledge or general background that isn't in the retrieved documents. [storytelling] For instance, if the context mentions "CPU" and the answer explains it as "Central Processing Unit," that expansion might be marked unfaithful even though it's helpful and correct. [cautiously] This is where faithfulness needs to be balanced with other quality criteria.
 
 #### Computational Costs
-Fourth, evaluation can be computationally expensive at scale. Using LLM-as-judge approaches to extract claims and verify them requires multiple API calls per answer, which adds up quickly when evaluating thousands of interactions. This is why sampling strategies and efficient evaluation frameworks are important for production monitoring.
+[seriously] Fourth, evaluation can be computationally expensive at scale. Using LLM-as-judge approaches to extract claims and verify them requires multiple API calls per answer, which adds up quickly when evaluating thousands of interactions. [conversational] This is why sampling strategies and efficient evaluation frameworks are important for production monitoring.
 
 #### The Balancing Act
-The key is understanding that faithfulness is one critical dimension of quality, but not the only one. A system with perfect faithfulness but poor relevance is useless. A system with perfect faithfulness but terrible completeness frustrates users. You need to track faithfulness alongside other metrics like answer relevance, context precision, and answer completeness to get a holistic view of system quality.
+[lecture] The key is understanding that faithfulness is one critical dimension of quality, but not the only one. [disappointed] A system with perfect faithfulness but poor relevance is useless. A system with perfect faithfulness but terrible completeness frustrates users. [confidently] You need to track faithfulness alongside other metrics like answer relevance, context precision, and answer completeness to get a holistic view of system quality.
 
 #### Best Practices
-Use faithfulness as your primary hallucination prevention metric. Set appropriate thresholds based on your domain's risk level. Monitor trends over time to catch degradation. And always investigate the root causes of low scores rather than just trying to game the metric.
+[firmly] Use faithfulness as your primary hallucination prevention metric. Set appropriate thresholds based on your domain's risk level. Monitor trends over time to catch degradation. [seriously] And always investigate the root causes of low scores rather than just trying to game the metric.
 
-Next, we'll explore Answer Completeness, which addresses whether responses fully answer multi-part questions.`
+[cheerfully] Next, we'll explore Answer Completeness, which addresses whether responses fully answer multi-part questions.`
         },
       ]
     },
@@ -2364,27 +2364,27 @@ Next, we'll explore Answer Completeness, which addresses whether responses fully
           ),
           backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — Overview
-Welcome to our final generation quality metric: Answer Completeness. While faithfulness checks if answers are factually grounded, completeness asks a different question: does the answer address everything the user asked?
+[cheerfully] Welcome to our final generation quality metric: Answer Completeness. [conversational] While faithfulness checks if answers are factually grounded, completeness asks a different question: [quizzically] does the answer address everything the user asked?
 
 #### What Is Answer Completeness?
-Answer Completeness measures whether the answer addresses all required parts of the query, especially for multi-part or complex questions. Think of it as a coverage metric. If someone asks three questions in one query, does your answer address all three, or does it cherry-pick the easy ones and ignore the rest? This metric holds your RAG system accountable for comprehensive responses.
+[lecture] Answer Completeness measures whether the answer addresses all required parts of the query, especially for multi-part or complex questions. [storytelling] Think of it as a coverage metric. If someone asks three questions in one query, does your answer address all three, or does it cherry-pick the easy ones and ignore the rest? [confidently] This metric holds your RAG system accountable for comprehensive responses.
 
 #### The Critical Distinction
-Here's what makes this metric unique: it's not about being correct—that's faithfulness. It's not about being relevant—that's answer relevance. It's about being thorough. You can have a perfectly faithful answer that's still incomplete if it only addresses half of what the user asked. Answer Completeness fills this gap in your evaluation framework.
+[lecture] Here's what makes this metric unique: it's not about being correct—that's faithfulness. It's not about being relevant—that's answer relevance. It's about being thorough. [cautiously] You can have a perfectly faithful answer that's still incomplete if it only addresses half of what the user asked. Answer Completeness fills this gap in your evaluation framework.
 
 #### The User Experience Benefits
-The benefits here directly impact user satisfaction. First, it improves user satisfaction by addressing all query aspects. Nothing frustrates users more than asking multiple questions and getting answers to only some of them. Second, it reduces follow-up queries and conversation turns. When users get complete answers on the first try, they don't need to ask "what about the other part of my question?" This saves time and improves efficiency. Third, when combined with faithfulness, it ensures comprehensive and accurate responses. The sweet spot is answers that are both complete and faithful. Finally, it's essential for establishing trust in expert domains where partial answers can be as problematic as wrong answers.
+[pleased] The benefits here directly impact user satisfaction. First, it improves user satisfaction by addressing all query aspects. [disappointed] Nothing frustrates users more than asking multiple questions and getting answers to only some of them. [conversational] Second, it reduces follow-up queries and conversation turns. When users get complete answers on the first try, they don't need to ask "what about the other part of my question?" This saves time and improves efficiency. [confidently] Third, when combined with faithfulness, it ensures comprehensive and accurate responses. The sweet spot is answers that are both complete and faithful. [seriously] Finally, it's essential for establishing trust in expert domains where partial answers can be as problematic as wrong answers.
 
 #### When to Use This Metric
-Deploy Answer Completeness for multi-part questions with explicit sub-questions. If users frequently ask things like "What's the price, warranty, and return policy?" you need this metric. It's critical for enterprise support where complete responses are essential—customers expect thorough answers, not fragments. Use it for analytics answers that must address multiple aspects, like "Compare these products by price, features, and reviews." And definitely track it when assessing response quality beyond mere factuality, because being right isn't enough if you're only answering half the question.
+[conversational] Deploy Answer Completeness for multi-part questions with explicit sub-questions. If users frequently ask things like "What's the price, warranty, and return policy?" you need this metric. [seriously] It's critical for enterprise support where complete responses are essential—customers expect thorough answers, not fragments. [lecture] Use it for analytics answers that must address multiple aspects, like "Compare these products by price, features, and reviews." And definitely track it when assessing response quality beyond mere factuality, because being right isn't enough if you're only answering half the question.
 
 #### Pros
-The good stuff: this metric directly measures user satisfaction with answer thoroughness, it helps identify when your RAG system is avoiding difficult questions, and it encourages comprehensive responses that reduce conversation length.
+[pleased] The good stuff: this metric directly measures user satisfaction with answer thoroughness, it helps identify when your RAG system is avoiding difficult questions, and it encourages comprehensive responses that reduce conversation length.
 
 #### Cons
-The problems: there's subjective determination of what constitutes "complete"—different evaluators might disagree. It may encourage verbose answers that include unnecessary information to maximize coverage. It's difficult to apply to open-ended or exploratory queries where completeness is ambiguous. And it can conflict with brevity goals in some applications where users want concise answers.
+[cautiously] The problems: there's subjective determination of what constitutes "complete"—different evaluators might disagree. It may encourage verbose answers that include unnecessary information to maximize coverage. It's difficult to apply to open-ended or exploratory queries where completeness is ambiguous. And it can conflict with brevity goals in some applications where users want concise answers.
 
-Let's dive into how this metric works mechanically.`
+[conversational] Let's dive into how this metric works mechanically.`
         },
         {
           id: 36,
@@ -2445,28 +2445,28 @@ Let's dive into how this metric works mechanically.`
           ),
           backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — How It Works
-Let's break down the mechanics of Answer Completeness and understand how it measures coverage.
+[lecture] Let's break down the mechanics of Answer Completeness and understand how it measures coverage.
 
 #### The Core Assessment
-Answer Completeness assesses whether all parts of a multi-faceted query are addressed in the response. It measures coverage of required sub-answers. The key word here is "required"—not every tangential detail, but the core elements that the user explicitly or implicitly asked about. Think of it as a checklist: did the answer check all the boxes?
+[conversational] Answer Completeness assesses whether all parts of a multi-faceted query are addressed in the response. It measures coverage of required sub-answers. [confidently] The key word here is "required"—not every tangential detail, but the core elements that the user explicitly or implicitly asked about. [storytelling] Think of it as a checklist: [quizzically] did the answer check all the boxes?
 
 #### The Straightforward Formula
-The formula is elegantly simple: Completeness equals the number of required sub-answers present divided by the number required. If a question has three parts and your answer addresses two of them, your completeness score is 0.67 or 67%. It's a direct measure of coverage.
+[pleased] The formula is elegantly simple: Completeness equals the number of required sub-answers present divided by the number required. [conversational] If a question has three parts and your answer addresses two of them, your completeness score is 0.67 or 67%. It's a direct measure of coverage.
 
 #### Identifying Required Elements
-Where it gets nuanced is determining what counts as "required." Where do the required sub-answers come from? You can use reference decomposition—manually breaking down queries into component questions during test set creation. Or you can use an 👉 "LLM judge" with a checklist approach, where a language model identifies the distinct parts that need addressing. For example, given the query "Compare product A and B by price and features," the required elements are: product A price, product B price, product A features, and product B features. All four must be addressed for full completeness.
+[quizzically] Where it gets nuanced is determining what counts as "required." [lecture] Where do the required sub-answers come from? You can use reference decomposition—manually breaking down queries into component questions during test set creation. Or you can use an 👉 "LLM judge" with a checklist approach, where a language model identifies the distinct parts that need addressing. [storytelling] For example, given the query "Compare product A and B by price and features," the required elements are: product A price, product B price, product A features, and product B features. [confidently] All four must be addressed for full completeness.
 
 #### The Step-by-Step Process
-Here's how evaluation works in practice: First, parse the query to identify all sub-questions or required information elements. This might be done manually for gold-standard test sets or automatically using an LLM for scale. Second, check the generated answer to see which elements are addressed. You're looking for content that directly responds to each sub-question. Third, count the addressed elements and divide by the total required elements to get your completeness score.
+[lecture] Here's how evaluation works in practice: First, parse the query to identify all sub-questions or required information elements. This might be done manually for gold-standard test sets or automatically using an LLM for scale. Second, check the generated answer to see which elements are addressed. You're looking for content that directly responds to each sub-question. Third, count the addressed elements and divide by the total required elements to get your completeness score.
 
 #### Target Scores for Different Domains
-For general applications, target at least 0.85 or 85% completeness. This means answering most but not necessarily every single aspect, which allows some flexibility for edge cases. For high-stakes domains like medical, legal, or finance, aim for 0.95 or 95% completeness. In these fields, missing critical information can have serious consequences. A medical answer that addresses symptoms but ignores contraindications is dangerously incomplete.
+[conversational] For general applications, target at least 0.85 or 85% completeness. This means answering most but not necessarily every single aspect, which allows some flexibility for edge cases. [seriously] For high-stakes domains like medical, legal, or finance, aim for 0.95 or 95% completeness. In these fields, missing critical information can have serious consequences. [concerned] A medical answer that addresses symptoms but ignores contraindications is dangerously incomplete.
 
 #### The Balancing Act
-Here's the critical point: balance completeness with other metrics like faithfulness and relevance. A verbose answer that addresses everything but includes hallucinations is worse than a focused answer that only addresses the most important parts faithfully. Similarly, an answer that dumps every possible related fact to maximize completeness might actually hurt user experience by being overwhelming. The goal is comprehensive yet focused responses.
+[firmly] Here's the critical point: balance completeness with other metrics like faithfulness and relevance. [disappointed] A verbose answer that addresses everything but includes hallucinations is worse than a focused answer that only addresses the most important parts faithfully. [cautiously] Similarly, an answer that dumps every possible related fact to maximize completeness might actually hurt user experience by being overwhelming. [confidently] The goal is comprehensive yet focused responses.
 
 #### Automation Strategies
-For scaling evaluation, LLM-as-judge approaches work well. Provide the judge with the query and answer, and ask it to identify which query elements were addressed. This can be done with structured prompts that output scores or with more sophisticated multi-step reasoning. The key is maintaining consistency across evaluations.
+[conversational] For scaling evaluation, LLM-as-judge approaches work well. Provide the judge with the query and answer, and ask it to identify which query elements were addressed. This can be done with structured prompts that output scores or with more sophisticated multi-step reasoning. [lecture] The key is maintaining consistency across evaluations.
 
 Let's see a concrete example to make this practical.`
         },
@@ -2502,34 +2502,34 @@ Let's see a concrete example to make this practical.`
           ),
           backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — Implementation
-Let's work through a practical example to see how Answer Completeness evaluation happens in the real world.
+[conversational] Let's work through a practical example to see how Answer Completeness evaluation happens in the real world.
 
 #### The Setup
-Imagine an e-commerce RAG system receiving this query: "What's the price, warranty length, and return policy for this product?" This is a classic multi-part question with three explicit information requests: price, warranty, and return policy. Each of these is a required element that should be addressed in a complete answer.
+[storytelling] Imagine an e-commerce RAG system receiving this query: "What's the price, warranty length, and return policy for this product?" This is a classic multi-part question with three explicit information requests: price, warranty, and return policy. Each of these is a required element that should be addressed in a complete answer.
 
 #### The Generated Answer
-The system responds with: "The product costs $199 and comes with a 2-year warranty." At first glance, this seems like a helpful answer—it provides concrete information about price and warranty. But let's evaluate it for completeness.
+[conversational] The system responds with: "The product costs $199 and comes with a 2-year warranty." [pleased] At first glance, this seems like a helpful answer—it provides concrete information about price and warranty. [quizzically] But let's evaluate it for completeness.
 
 #### Analyzing Coverage
-When we break down the query, we identify three required parts: price information, warranty length, and return policy details. Now let's check the answer: Does it address price? Yes—it states "$199." Does it address warranty? Yes—it mentions "2-year warranty." Does it address return policy? No—there's no mention of returns, refunds, or return windows. The answer addresses 2 out of 3 required parts.
+[lecture] When we break down the query, we identify three required parts: price information, warranty length, and return policy details. [conversational] Now let's check the answer: [quizzically] Does it address price? [pleased] Yes—it states "$199." Does it address warranty? Yes—it mentions "2-year warranty." Does it address return policy? [disappointed] No—there's no mention of returns, refunds, or return windows. The answer addresses 2 out of 3 required parts.
 
 #### The Calculation
-The completeness score is 2 divided by 3, which equals 0.67 or 67%. This is below our target threshold of 0.85 for general applications, indicating an incomplete response that will likely frustrate the user and trigger a follow-up question.
+[lecture] The completeness score is 2 divided by 3, which equals 0.67 or 67%. [disappointed] This is below our target threshold of 0.85 for general applications, indicating an incomplete response that will likely frustrate the user and trigger a follow-up question.
 
 #### The User Experience Impact
-Think about the user's perspective here. They specifically asked about the return policy—maybe that's actually the most important factor in their purchasing decision. The answer, while accurate on the parts it addresses, leaves them hanging on a critical piece of information. They'll need to ask another question like "What about the return policy?" which doubles the conversation length and diminishes user satisfaction.
+[storytelling] Think about the user's perspective here. They specifically asked about the return policy—maybe that's actually the most important factor in their purchasing decision. [disappointed] The answer, while accurate on the parts it addresses, leaves them hanging on a critical piece of information. [conversational] They'll need to ask another question like "What about the return policy?" which doubles the conversation length and diminishes user satisfaction.
 
 #### How to Calculate This in Practice
-First, parse the query to identify all sub-questions or required information elements. For this example, that's straightforward—three explicit questions separated by commas. For more complex queries, you might need an LLM to extract the distinct information needs. Second, check the answer to see which elements are addressed. Go through each required element and determine if the answer contains responsive information. Third, count the addressed elements and divide by the total required elements. In this case, 2 divided by 3 gives us our 0.67 score.
+[lecture] First, parse the query to identify all sub-questions or required information elements. For this example, that's straightforward—three explicit questions separated by commas. [conversational] For more complex queries, you might need an LLM to extract the distinct information needs. Second, check the answer to see which elements are addressed. Go through each required element and determine if the answer contains responsive information. Third, count the addressed elements and divide by the total required elements. In this case, 2 divided by 3 gives us our 0.67 score.
 
 #### Edge Cases and Judgment Calls
-Sometimes it's not so clear-cut. What if the answer said "The product costs $199, comes with a 2-year warranty, and we have a flexible return policy"? The word "flexible" acknowledges returns but doesn't really answer the question. Would you count that as addressed? This is where clear evaluation guidelines are essential. Generally, vague acknowledgments shouldn't count as addressing the element—the answer should provide substantive information.
+[quizzically] Sometimes it's not so clear-cut. What if the answer said "The product costs $199, comes with a 2-year warranty, and we have a flexible return policy"? [puzzled] The word "flexible" acknowledges returns but doesn't really answer the question. Would you count that as addressed? [cautiously] This is where clear evaluation guidelines are essential. Generally, vague acknowledgments shouldn't count as addressing the element—the answer should provide substantive information.
 
 #### Improving the Answer
-To improve this answer to full completeness, the system would need to add return policy information: "The product costs $199 and comes with a 2-year warranty. You can return it within 30 days with proof of purchase." Now all three required elements are addressed, giving a completeness score of 1.0.
+[conversational] To improve this answer to full completeness, the system would need to add return policy information: "The product costs $199 and comes with a 2-year warranty. You can return it within 30 days with proof of purchase." [pleased] Now all three required elements are addressed, giving a completeness score of 1.0.
 
 #### Debugging Low Scores
-When you see low completeness scores, investigate why parts of the query are being ignored. Is the retrieval system failing to find relevant context for certain questions? Is the generation prompt biased toward certain types of information? Is the context length limiting what can be addressed? Each root cause requires different fixes.
+[quizzically] When you see low completeness scores, investigate why parts of the query are being ignored. Is the retrieval system failing to find relevant context for certain questions? Is the generation prompt biased toward certain types of information? Is the context length limiting what can be addressed? [conversational] Each root cause requires different fixes.
 
 Now let's explore the broader implications and trade-offs of this metric.`
         },
@@ -2591,37 +2591,37 @@ Now let's explore the broader implications and trade-offs of this metric.`
           ),
           backgroundColor: '#1f446f',
           notes: `### 9. Answer Completeness — Considerations
-Let's conclude our exploration of Answer Completeness by examining its impact on RAG systems and the important trade-offs to consider.
+[conversational] Let's conclude our exploration of Answer Completeness by examining its impact on RAG systems and the important trade-offs to consider.
 
 #### The Positive Impact on User Experience
-The benefits of tracking Answer Completeness directly enhance user satisfaction. First, it improves user satisfaction by addressing all query aspects. When users ask complex questions, they expect comprehensive answers. Meeting this expectation builds confidence and satisfaction. Second, it reduces follow-up queries and conversation turns. A complete answer on the first try is more efficient than a back-and-forth exchange where users have to repeatedly ask about the missing pieces. This efficiency matters for both user experience and system costs—fewer conversation turns means fewer API calls. Third, when combined with faithfulness, it ensures comprehensive and accurate responses. This is the sweet spot: answers that are both complete and truthful. Finally, it's essential for establishing trust in expert domains. In fields like legal, medical, or financial advice, partial answers can be dangerous. Users need to know they're getting the full picture.
+[pleased] The benefits of tracking Answer Completeness directly enhance user satisfaction. First, it improves user satisfaction by addressing all query aspects. [conversational] When users ask complex questions, they expect comprehensive answers. Meeting this expectation builds confidence and satisfaction. [delighted] Second, it reduces follow-up queries and conversation turns. A complete answer on the first try is more efficient than a back-and-forth exchange where users have to repeatedly ask about the missing pieces. This efficiency matters for both user experience and system costs—fewer conversation turns means fewer API calls. [confidently] Third, when combined with faithfulness, it ensures comprehensive and accurate responses. This is the sweet spot: answers that are both complete and truthful. [seriously] Finally, it's essential for establishing trust in expert domains. In fields like legal, medical, or financial advice, partial answers can be dangerous. Users need to know they're getting the full picture.
 
 #### Real-World Benefits
-Think about enterprise support scenarios where incomplete answers force customers to call back multiple times, or medical information systems where missing critical details could impact patient care. Answer Completeness helps ensure these high-stakes interactions are thorough.
+[storytelling] Think about enterprise support scenarios where incomplete answers force customers to call back multiple times, or medical information systems where missing critical details could impact patient care. [confidently] Answer Completeness helps ensure these high-stakes interactions are thorough.
 
 #### The Subjectivity Challenge
-However, Answer Completeness has significant limitations. The biggest is subjective determination of what constitutes "complete." Different evaluators might disagree on what parts of a query are truly required versus merely related. For example, if someone asks "What's the best laptop for programming?" should the answer include price? Battery life? Operating system options? There's no objectively correct answer to what makes a response "complete" for such queries.
+[cautiously] However, Answer Completeness has significant limitations. The biggest is subjective determination of what constitutes "complete." [quizzically] Different evaluators might disagree on what parts of a query are truly required versus merely related. [storytelling] For example, if someone asks "What's the best laptop for programming?" should the answer include price? Battery life? Operating system options? [puzzled] There's no objectively correct answer to what makes a response "complete" for such queries.
 
 #### The Verbosity Trap
-Second, Answer Completeness may encourage verbose answers that include unnecessary information. If your system learns that longer, more comprehensive answers score higher, it might start dumping every tangentially related fact to maximize completeness. This can actually hurt user experience—users don't want essays when they need quick facts. The metric doesn't distinguish between helpful thoroughness and overwhelming verbosity.
+[concerned] Second, Answer Completeness may encourage verbose answers that include unnecessary information. [disappointed] If your system learns that longer, more comprehensive answers score higher, it might start dumping every tangentially related fact to maximize completeness. This can actually hurt user experience—users don't want essays when they need quick facts. [cautiously] The metric doesn't distinguish between helpful thoroughness and overwhelming verbosity.
 
 #### Challenges with Open-ended Queries
-Third, it's difficult to apply to open-ended or exploratory queries. Questions like "Tell me about climate change" or "How does machine learning work?" don't have a clear set of required elements. What counts as complete for such broad questions? This is where completeness metrics struggle and where other quality dimensions like relevance and helpfulness become more important.
+[lecture] Third, it's difficult to apply to open-ended or exploratory queries. [quizzically] Questions like "Tell me about climate change" or "How does machine learning work?" don't have a clear set of required elements. [puzzled] What counts as complete for such broad questions? [conversational] This is where completeness metrics struggle and where other quality dimensions like relevance and helpfulness become more important.
 
 #### Brevity Conflicts
-Fourth, Answer Completeness can conflict with brevity goals in some applications. Many modern users prefer concise answers, especially on mobile devices or in voice interfaces. A mobile chatbot that aims for 95% completeness might produce answers that are too long for the format. You need to balance completeness with the constraints of your interface and user preferences.
+[cautiously] Fourth, Answer Completeness can conflict with brevity goals in some applications. [conversational] Many modern users prefer concise answers, especially on mobile devices or in voice interfaces. A mobile chatbot that aims for 95% completeness might produce answers that are too long for the format. You need to balance completeness with the constraints of your interface and user preferences.
 
 #### The Holistic View
-The key insight is that Answer Completeness is one dimension of quality that must be balanced with others. You need to track it alongside faithfulness to ensure answers are both complete and accurate. You need to balance it with relevance to avoid addressing tangential aspects. And you need to consider conciseness to avoid overwhelming users with information.
+[confidently] The key insight is that Answer Completeness is one dimension of quality that must be balanced with others. You need to track it alongside faithfulness to ensure answers are both complete and accurate. You need to balance it with relevance to avoid addressing tangential aspects. And you need to consider conciseness to avoid overwhelming users with information.
 
 #### Implementation Strategies
-In practice, set completeness thresholds appropriate to your domain. For factual, multi-part queries with clear sub-questions, aim high. For exploratory or open-ended queries, weight other metrics more heavily. Use query classification to apply different evaluation strategies for different question types. A product specification query needs high completeness, but a philosophical question might prioritize depth over breadth.
+[conversational] In practice, set completeness thresholds appropriate to your domain. For factual, multi-part queries with clear sub-questions, aim high. For exploratory or open-ended queries, weight other metrics more heavily. [lecture] Use query classification to apply different evaluation strategies for different question types. A product specification query needs high completeness, but a philosophical question might prioritize depth over breadth.
 
 #### Continuous Improvement
-Monitor completeness trends to identify systematic gaps. If you consistently see low scores on certain types of questions—like return policies or technical specifications—that indicates retrieval or generation issues that need debugging. Use completeness scores to drive targeted improvements in your RAG pipeline.
+[conversational] Monitor completeness trends to identify systematic gaps. If you consistently see low scores on certain types of questions—like return policies or technical specifications—that indicates retrieval or generation issues that need debugging. [confidently] Use completeness scores to drive targeted improvements in your RAG pipeline.
 
 #### Closing Thoughts on Generation Metrics
-With Answer Completeness, we've completed our tour of the key generation quality metrics. Together, Grounded Answer Score, Faithfulness, and Answer Completeness give you a comprehensive toolkit for evaluating the quality of your RAG system's outputs. Use them together to ensure your answers are properly cited, factually grounded, and thorough. Remember: the best RAG systems excel across all dimensions, not just one.`
+[pleased] With Answer Completeness, we've completed our tour of the key generation quality metrics. [delighted] Together, Grounded Answer Score, Faithfulness, and Answer Completeness give you a comprehensive toolkit for evaluating the quality of your RAG system's outputs. [confidently] Use them together to ensure your answers are properly cited, factually grounded, and thorough. [firmly] Remember: the best RAG systems excel across all dimensions, not just one.`
         },
       ]
     },
@@ -2659,19 +2659,19 @@ With Answer Completeness, we've completed our tour of the key generation quality
           ),
           backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — Overview
-Welcome to metric number ten! We've covered a lot of ground, and now we're diving into the final four metrics that really polish your RAG system. Let's talk about Answer Specificity.
+[cheerfully] Welcome to metric number ten! [conversational] We've covered a lot of ground, and now we're diving into the final four metrics that really polish your RAG system. Let's talk about Answer Specificity.
 
 #### What Is Answer Specificity?
-Answer Specificity 👉 (speh-sih-FIH-sih-tee) is all about avoiding the dreaded "could you be more specific?" question from your users. Think about asking a colleague "how do I fix this?" and they respond with "oh, just check the settings and restart." That's generic and unhelpful! Answer Specificity measures whether your RAG system provides concrete, actionable details instead of vague hand-waving.
+[storytelling] Answer Specificity 👉 (speh-sih-FIH-sih-tee) is all about avoiding the dreaded "could you be more specific?" question from your users. [disappointed] Think about asking a colleague "how do I fix this?" and they respond with "oh, just check the settings and restart." That's generic and unhelpful! [confidently] Answer Specificity measures whether your RAG system provides concrete, actionable details instead of vague hand-waving.
 
 #### Why This Matters
-Here's the thing: your retrieval system probably found the right documentation, but is your LLM actually using those juicy details? Or is it falling back to safe, generic responses like "please consult your administrator" or "check the documentation"? High specificity means your system is squeezing every bit of value from that retrieved context and turning it into actionable guidance.
+[quizzically] Here's the thing: your retrieval system probably found the right documentation, but is your LLM actually using those juicy details? [disappointed] Or is it falling back to safe, generic responses like "please consult your administrator" or "check the documentation"? [pleased] High specificity means your system is squeezing every bit of value from that retrieved context and turning it into actionable guidance.
 
 #### The Benefits Stack Up
-When you nail specificity, users get immediate value without bouncing back for clarification. The LLM uses those product codes, those version numbers, those exact menu paths from your documentation. User satisfaction goes up, support tickets go down, and your context wasn't retrieved for nothing!
+[delighted] When you nail specificity, users get immediate value without bouncing back for clarification. [excited] The LLM uses those product codes, those version numbers, those exact menu paths from your documentation. [pleased] User satisfaction goes up, support tickets go down, and your context wasn't retrieved for nothing!
 
 #### When to Use This
-This metric shines in scenarios where details matter. Product troubleshooting where you need exact steps. Technical documentation where version compatibility matters. Analytics reports where specific numbers and trends are the whole point. Any domain where "it depends" or "you might want to" just doesn't cut it.`
+[conversational] This metric shines in scenarios where details matter. Product troubleshooting where you need exact steps. Technical documentation where version compatibility matters. Analytics reports where specific numbers and trends are the whole point. [seriously] Any domain where "it depends" or "you might want to" just doesn't cut it.`
         },
         {
           id: 40,
@@ -2729,22 +2729,22 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           ),
           backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — How It Works
-So how do we actually measure if an answer is specific enough? You've got two main approaches here, and they each have their strengths.
+[conversational] So how do we actually measure if an answer is specific enough? [excited] You've got two main approaches here, and they each have their strengths.
 
 #### The LLM Judge Approach
-Option one is to fight fire with fire: use an LLM 👉 (ell-ell-emm) to judge your LLM! You basically ask another model - often a more powerful one - to read the answer and rate it on specificity. "Does this answer include concrete details? Are there specific values, steps, or identifiers?" It's subjective but surprisingly effective, especially if you give the judge model clear rubrics.
+[storytelling] Option one is to fight fire with fire: use an LLM 👉 (ell-ell-emm) to judge your LLM! [conversational] You basically ask another model - often a more powerful one - to read the answer and rate it on specificity. [quizzically] "Does this answer include concrete details? Are there specific values, steps, or identifiers?" [pleased] It's subjective but surprisingly effective, especially if you give the judge model clear rubrics.
 
 #### The Info Density Approach
-Option two is more mechanical: count up the information-dense elements in your answer. Named entities like "Cisco Router Model 2901", numbers like "v2.5" or "10 seconds", specific dates, model numbers, error codes. Then divide by your total token count to get an information density score. High density usually correlates with high specificity. Think of it like a nutrition label for your answers - how much actual nutritional content per serving?
+[lecture] Option two is more mechanical: count up the information-dense elements in your answer. Named entities like "Cisco Router Model 2901", numbers like "v2.5" or "10 seconds", specific dates, model numbers, error codes. Then divide by your total token count to get an information density score. [confidently] High density usually correlates with high specificity. [storytelling] Think of it like a nutrition label for your answers - how much actual nutritional content per serving?
 
 #### What Are We Counting?
-Entity recognition is your friend here. You're looking for proper nouns, product names, version numbers, specific quantities, technical identifiers. Generic words like "system," "process," or "check" don't count. Specific terms like "Settings > Network > WiFi" or "error code E-4019" absolutely do!
+[conversational] Entity recognition is your friend here. You're looking for proper nouns, product names, version numbers, specific quantities, technical identifiers. [disappointed] Generic words like "system," "process," or "check" don't count. [pleased] Specific terms like "Settings > Network > WiFi" or "error code E-4019" absolutely do!
 
 #### Target Benchmarks
-Shoot for at least 0.60 when you've got faithfulness guardrails in place. If you're tuning for a specific domain, aim higher - 0.70 or above. But here's the tension: overly specific answers can become verbose. You might hit 0.90 specificity but your users are drowning in detail. It's a balancing act with brevity!
+[conversational] Shoot for at least 0.60 when you've got faithfulness guardrails in place. If you're tuning for a specific domain, aim higher - 0.70 or above. [cautiously] But here's the tension: overly specific answers can become verbose. You might hit 0.90 specificity but your users are drowning in detail. It's a balancing act with brevity!
 
 #### The Sweet Spot
-You want that Goldilocks zone: specific enough to be actionable, concise enough to be readable. Monitor both specificity AND answer length to find your sweet spot.`
+[confidently] You want that Goldilocks zone: specific enough to be actionable, concise enough to be readable. Monitor both specificity AND answer length to find your sweet spot.`
         },
         {
           id: 41,
@@ -2773,22 +2773,22 @@ You want that Goldilocks zone: specific enough to be actionable, concise enough 
           ),
           backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — Implementation
-Time for a concrete example - pun absolutely intended! Let's see what low versus high specificity actually looks like in the wild.
+[excited] Time for a concrete example - pun absolutely intended! [cheerfully] Let's see what low versus high specificity actually looks like in the wild.
 
 #### The Question
-A user asks: "How do I troubleshoot connection issues?" Classic support question, right? Now watch how the specificity level changes the quality of the answer dramatically.
+[conversational] A user asks: "How do I troubleshoot connection issues?" [storytelling] Classic support question, right? Now watch how the specificity level changes the quality of the answer dramatically.
 
 #### Low Specificity Example
-The generic answer: "Try checking your connection settings and restart if needed." This is what we call a "fortune cookie response" - technically correct but utterly useless. What settings? Restart what? How? When? This is the kind of answer that makes users immediately search Google or file a support ticket. You retrieved good context but your LLM chickened out and gave a safe, vague response.
+[disappointed] The generic answer: "Try checking your connection settings and restart if needed." [storytelling] This is what we call a "fortune cookie response" - technically correct but utterly useless. [quizzically] What settings? Restart what? How? When? [frustrated] This is the kind of answer that makes users immediately search Google or file a support ticket. [disappointed] You retrieved good context but your LLM chickened out and gave a safe, vague response.
 
 #### High Specificity Example
-Now the good stuff: "Open Settings, then Network, then WiFi. Toggle WiFi off for 10 seconds, then reconnect to your 5GHz network. If error code E-4019 persists, update router firmware to v2.5 or higher." See the difference? Exact menu paths. Specific wait time. Particular network band. Even the error code and version number! This answer is immediately actionable. Your user can follow it step-by-step without guessing.
+[delighted] Now the good stuff: "Open Settings, then Network, then WiFi. Toggle WiFi off for 10 seconds, then reconnect to your 5GHz network. If error code E-4019 persists, update router firmware to v2.5 or higher." [excited] See the difference? Exact menu paths. Specific wait time. Particular network band. Even the error code and version number! [pleased] This answer is immediately actionable. Your user can follow it step-by-step without guessing.
 
 #### Calculating the Score
-For automated evaluation, send both answers to an LLM judge with a rubric: "Rate specificity from 0 to 1 based on concrete details, specific values, and actionable steps." Or use the mechanical approach: count named entities like "Settings," "Network," "WiFi," numbers like "10," "5GHz," "E-4019," "v2.5" and divide by token count. The high-specificity answer will score significantly higher either way.
+[lecture] For automated evaluation, send both answers to an LLM judge with a rubric: "Rate specificity from 0 to 1 based on concrete details, specific values, and actionable steps." [conversational] Or use the mechanical approach: count named entities like "Settings," "Network," "WiFi," numbers like "10," "5GHz," "E-4019," "v2.5" and divide by token count. [confidently] The high-specificity answer will score significantly higher either way.
 
 #### The Real-World Impact
-In production, high specificity answers reduce follow-up question rates by 30 to 60 percent! Users get what they need the first time. Your retrieved context is actually being used, not ignored in favor of generic safety.`
+[enthusiastically] In production, high specificity answers reduce follow-up question rates by 30 to 60 percent! [delighted] Users get what they need the first time. [pleased] Your retrieved context is actually being used, not ignored in favor of generic safety.`
         },
         {
           id: 42,
@@ -2838,22 +2838,22 @@ In production, high specificity answers reduce follow-up question rates by 30 to
           ),
           backgroundColor: '#1f6f21',
           notes: `### Answer Specificity — Considerations
-Let's talk about the trade-offs. Answer Specificity is powerful, but like everything in ML, it's not a free lunch. There are important considerations and limitations to keep in mind.
+[conversational] Let's talk about the trade-offs. [cautiously] Answer Specificity is powerful, but like everything in ML, it's not a free lunch. There are important considerations and limitations to keep in mind.
 
 #### Pros: The Good Stuff
-The benefits are compelling! When your answers are specific, users can actually DO something with them. They're actionable, not abstract. Your LLM is squeezing value from that retrieved context instead of ignoring it for safe generic responses. User satisfaction goes up because people get concrete information they can act on immediately. And here's a bonus: fewer follow-up questions! When you give specific details the first time, users don't need to ask "but how exactly do I do that?"
+[delighted] The benefits are compelling! When your answers are specific, users can actually DO something with them. They're actionable, not abstract. [pleased] Your LLM is squeezing value from that retrieved context instead of ignoring it for safe generic responses. User satisfaction goes up because people get concrete information they can act on immediately. [excited] And here's a bonus: fewer follow-up questions! When you give specific details the first time, users don't need to ask "but how exactly do I do that?"
 
 #### Cons: The Tensions
-But here's where it gets tricky. High specificity often conflicts with brevity. You might achieve 0.85 specificity but your answer is now three paragraphs long when one sentence would suffice for simpler queries. Not every question needs a detailed step-by-step! Sometimes "Yes, version 3.0 supports it" is better than a lengthy explanation of how version 3.0 implements the feature.
+[cautiously] But here's where it gets tricky. [concerned] High specificity often conflicts with brevity. You might achieve 0.85 specificity but your answer is now three paragraphs long when one sentence would suffice for simpler queries. [quizzically] Not every question needs a detailed step-by-step! [conversational] Sometimes "Yes, version 3.0 supports it" is better than a lengthy explanation of how version 3.0 implements the feature.
 
 #### Context Mismatch Risks
-There's also the over-fitting danger. If your context happens to include very specific details that aren't actually relevant to the query, a system optimized for high specificity might include them anyway. Like mentioning a specific error code when the user's problem is completely different. You're being specific, but you're being specifically wrong about which details matter!
+[seriously] There's also the over-fitting danger. [cautiously] If your context happens to include very specific details that aren't actually relevant to the query, a system optimized for high specificity might include them anyway. [disappointed] Like mentioning a specific error code when the user's problem is completely different. You're being specific, but you're being specifically wrong about which details matter!
 
 #### Generalizability Trade-off
-And some answers SHOULD be somewhat general! If someone asks "How does authentication work?" they might want a conceptual overview, not the exact API endpoints and token formats. High specificity can reduce how well an answer transfers to similar but slightly different scenarios.
+[conversational] And some answers SHOULD be somewhat general! [quizzically] If someone asks "How does authentication work?" they might want a conceptual overview, not the exact API endpoints and token formats. [cautiously] High specificity can reduce how well an answer transfers to similar but slightly different scenarios.
 
 #### The Balancing Act
-The key is balance and context awareness. Monitor specificity alongside answer length, user satisfaction, and follow-up rates. Different query types need different specificity levels. Tune your prompts accordingly!`
+[confidently] The key is balance and context awareness. [lecture] Monitor specificity alongside answer length, user satisfaction, and follow-up rates. [conversational] Different query types need different specificity levels. Tune your prompts accordingly!`
         },
       ]
     },
