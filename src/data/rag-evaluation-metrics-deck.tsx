@@ -2891,19 +2891,19 @@ Option 2: Info-density = (# named entities + numbers) / answer tokens`}
           ),
           backgroundColor: '#6f4a1f',
           notes: `### Noise Density — Overview
-Alright, metric eleven: Noise Density! This is where we talk about the garbage sneaking into your context window. Think of it as measuring how much junk food is in your LLM's diet.
+[conversational] Alright, metric eleven: Noise Density! [storytelling] This is where we talk about the garbage sneaking into your context window. Think of it as measuring how much junk food is in your LLM's diet.
 
 #### What Is Noise Density?
-Noise Density is the percentage of irrelevant tokens in your retrieved context - basically, context pollution. You retrieve a bunch of chunks, but how much of that content actually helps answer the query? If you're passing 3,000 tokens to your LLM but 800 of them are tangential, off-topic, or just plain useless, that's noise! And noise is expensive.
+[lecture] Noise Density is the percentage of irrelevant tokens in your retrieved context - basically, context pollution. You retrieve a bunch of chunks, but how much of that content actually helps answer the query? [concerned] If you're passing 3,000 tokens to your LLM but 800 of them are tangential, off-topic, or just plain useless, that's noise! And noise is expensive.
 
 #### Why This Matters
-Every irrelevant token you send to your LLM costs you money, adds latency, and worse - distracts the model! LLMs have attention mechanisms, and irrelevant context can pull that attention away from the good stuff. It's like trying to have an important conversation at a noisy party. Sure, you can technically hear the person, but all that background noise makes it harder to focus.
+[seriously] Every irrelevant token you send to your LLM costs you money, adds latency, and worse - distracts the model! LLMs have attention mechanisms, and irrelevant context can pull that attention away from the good stuff. [storytelling] It's like trying to have an important conversation at a noisy party. Sure, you can technically hear the person, but all that background noise makes it harder to focus.
 
 #### The Benefits of Clean Context
-When you reduce noise density, multiple good things happen at once. Your LLM focuses better, so grounding probability goes up. Your costs go down because you're sending fewer tokens. Latency improves because smaller context means faster processing. And you free up context window space for more relevant content or more complex prompts!
+[pleased] When you reduce noise density, multiple good things happen at once. Your LLM focuses better, so grounding probability goes up. Your costs go down because you're sending fewer tokens. Latency improves because smaller context means faster processing. [enthusiastically] And you free up context window space for more relevant content or more complex prompts!
 
 #### When to Use This Metric
-Noise Density is crucial when you're tuning retrieval and reranking systems. It helps you evaluate whether your semantic search is actually returning relevant content or just content that happens to share some keywords. It's also essential when working with long-context models where every token counts, and when you're optimizing chunk sizes and boundaries. Are your chunks too big, including irrelevant paragraphs?`
+[confidently] Noise Density is crucial when you're tuning retrieval and reranking systems. It helps you evaluate whether your semantic search is actually returning relevant content or just content that happens to share some keywords. It's also essential when working with long-context models where every token counts, and when you're optimizing chunk sizes and boundaries. [quizzically] Are your chunks too big, including irrelevant paragraphs?`
         },
         {
           id: 44,
@@ -2965,25 +2965,25 @@ Noise Density is crucial when you're tuning retrieval and reranking systems. It 
           ),
           backgroundColor: '#6f4a1f',
           notes: `### Noise Density — How It Works
-Let's get into the mechanics of measuring noise. This is simpler than it sounds, though getting it perfectly right can be nuanced.
+[conversational] Let's get into the mechanics of measuring noise. [reassuringly] This is simpler than it sounds, though getting it perfectly right can be nuanced.
 
 #### The Core Concept
-Noise Density is just a ratio: irrelevant tokens divided by total tokens in your context. If you send 3,000 tokens to your LLM and 800 are off-topic, that's 26.7% noise density. Lower is always better - you want that number as close to zero as possible!
+[lecture] Noise Density is just a ratio: irrelevant tokens divided by total tokens in your context. [storytelling] If you send 3,000 tokens to your LLM and 800 are off-topic, that's 26.7% noise density. [confidently] Lower is always better - you want that number as close to zero as possible!
 
 #### How Do We Detect Noise?
-The tricky part is figuring out which tokens are irrelevant. You've got a few approaches here. The most common is chunk-level evaluation: for each retrieved chunk, estimate its relevance score - maybe using an LLM 👉 (ell-ell-emm) judge or embedding similarity to the query. A chunk that scores low on relevance contributes most of its tokens to your noise count.
+[cautiously] The tricky part is figuring out which tokens are irrelevant. You've got a few approaches here. [lecture] The most common is chunk-level evaluation: for each retrieved chunk, estimate its relevance score - maybe using an LLM 👉 (ell-ell-emm) judge or embedding similarity to the query. A chunk that scores low on relevance contributes most of its tokens to your noise count.
 
 #### Token-Level Precision
-For more precision, you can do token-level labeling. Have an LLM read through the context and literally mark which sentences or tokens are relevant versus irrelevant. This is more accurate but also more computationally expensive. It's overkill for most use cases, but valuable when you're really optimizing retrieval quality.
+[conversational] For more precision, you can do token-level labeling. Have an LLM read through the context and literally mark which sentences or tokens are relevant versus irrelevant. [seriously] This is more accurate but also more computationally expensive. It's overkill for most use cases, but valuable when you're really optimizing retrieval quality.
 
 #### The Manual Baseline
-Don't underestimate the value of manual evaluation, at least for baselines! Take a sample of queries, look at the retrieved context with your human eyes, and honestly assess how much is helpful versus how much is tangential fluff. This gives you ground truth to validate your automated metrics.
+[confidently] Don't underestimate the value of manual evaluation, at least for baselines! Take a sample of queries, look at the retrieved context with your human eyes, and honestly assess how much is helpful versus how much is tangential fluff. This gives you ground truth to validate your automated metrics.
 
 #### Target Benchmarks
-For short context windows where every token is precious, aim for under 30% noise. For long context systems where you've got more room to work with, shoot for under 20%. High-performing domain-specific systems often achieve under 15% noise density because they've really tuned their retrieval and chunking strategies.
+[lecture] For short context windows where every token is precious, aim for under 30% noise. For long context systems where you've got more room to work with, shoot for under 20%. [pleased] High-performing domain-specific systems often achieve under 15% noise density because they've really tuned their retrieval and chunking strategies.
 
 #### The Quality-Cost Link
-Remember: every percentage point of noise reduction is money saved and performance gained. If you're sending a million queries per day with 3,000 token contexts at 30% noise, that's 900 million wasted tokens! Cut noise to 15% and you've just saved 450 million tokens - real money, real latency improvements!`
+[seriously] Remember: every percentage point of noise reduction is money saved and performance gained. [storytelling] If you're sending a million queries per day with 3,000 token contexts at 30% noise, that's 900 million wasted tokens! [enthusiastically] Cut noise to 15% and you've just saved 450 million tokens - real money, real latency improvements!`
         },
         {
           id: 45,
@@ -3010,25 +3010,25 @@ Remember: every percentage point of noise reduction is money saved and performan
           ),
           backgroundColor: '#6f4a1f',
           notes: `### Noise Density — Implementation
-Let's work through a real example to make this concrete. Numbers make everything clearer!
+[conversational] Let's work through a real example to make this concrete. [confidently] Numbers make everything clearer!
 
 #### The Scenario
-Imagine your retrieval system grabbed five chunks totaling 3,000 tokens for a user query. You send all that context to your LLM. Sounds reasonable, right? But here's the question: how much of that 3,000 tokens is actually helping?
+[storytelling] Imagine your retrieval system grabbed five chunks totaling 3,000 tokens for a user query. You send all that context to your LLM. Sounds reasonable, right? [quizzically] But here's the question: how much of that 3,000 tokens is actually helping?
 
 #### Breaking Down the Context
-Let's say you evaluate each chunk for relevance. Chunk one is highly relevant - 600 tokens, all good. Chunk two is mostly relevant, maybe 80% - so 400 tokens useful, 100 tokens noise. Chunk three is tangentially related at best - 700 tokens of mostly noise. Chunk four and five are solid. When you add it up, you've got roughly 800 tokens that don't really contribute to answering the query.
+[lecture] Let's say you evaluate each chunk for relevance. Chunk one is highly relevant - 600 tokens, all good. Chunk two is mostly relevant, maybe 80% - so 400 tokens useful, 100 tokens noise. [disappointed] Chunk three is tangentially related at best - 700 tokens of mostly noise. Chunk four and five are solid. [cautiously] When you add it up, you've got roughly 800 tokens that don't really contribute to answering the query.
 
 #### The Calculation
-Simple division: 800 irrelevant tokens divided by 3,000 total tokens equals 26.7% noise density. That's in the moderate range - not terrible, but definitely room for improvement! You're basically wasting more than a quarter of your context window and token budget on content that's not pulling its weight.
+[conversational] Simple division: 800 irrelevant tokens divided by 3,000 total tokens equals 26.7% noise density. [seriously] That's in the moderate range - not terrible, but definitely room for improvement! You're basically wasting more than a quarter of your context window and token budget on content that's not pulling its weight.
 
 #### What This Tells You
-A 26.7% noise density is a signal that your retrieval or reranking could be better. Maybe your embedding model isn't capturing semantic relevance well. Maybe your chunks are too large and include too much tangential content. Maybe you need a reranker to filter out the weaker matches. This metric gives you a concrete target for optimization!
+[concerned] A 26.7% noise density is a signal that your retrieval or reranking could be better. Maybe your embedding model isn't capturing semantic relevance well. Maybe your chunks are too large and include too much tangential content. [confidently] Maybe you need a reranker to filter out the weaker matches. This metric gives you a concrete target for optimization!
 
 #### Step-by-Step Calculation
-In practice, you'd evaluate each chunk - either with an LLM judge giving a relevance score from 0 to 1, or using embedding similarity between chunk and query. Multiply each chunk's relevance score by its token count to get relevant tokens. Sum up what's NOT relevant across all chunks. Divide by total tokens. Track this over time and across different queries to identify patterns!
+[lecture] In practice, you'd evaluate each chunk - either with an LLM judge giving a relevance score from 0 to 1, or using embedding similarity between chunk and query. Multiply each chunk's relevance score by its token count to get relevant tokens. Sum up what's NOT relevant across all chunks. Divide by total tokens. [conversational] Track this over time and across different queries to identify patterns!
 
 #### The Improvement Path
-Once you know you're at 26.7%, you can experiment. Try adjusting your retrieval parameters. Add a reranker. Optimize chunk boundaries. Then measure again. Did you drop to 20%? 15%? That's direct evidence your changes worked!`
+[enthusiastically] Once you know you're at 26.7%, you can experiment. Try adjusting your retrieval parameters. Add a reranker. Optimize chunk boundaries. Then measure again. [pleased] Did you drop to 20%? 15%? That's direct evidence your changes worked!`
         },
         {
           id: 46,
@@ -3081,22 +3081,22 @@ Once you know you're at 26.7%, you can experiment. Try adjusting your retrieval 
           ),
           backgroundColor: '#6f4a1f',
           notes: `### Noise Density — Considerations
-Let's wrap up Noise Density by talking about the trade-offs and gotchas. This metric is valuable but comes with important nuances.
+[conversational] Let's wrap up Noise Density by talking about the trade-offs and gotchas. [cautiously] This metric is valuable but comes with important nuances.
 
 #### Pros: The Compelling Benefits
-The upside of low noise density is fantastic! Your LLM can focus its attention on relevant content without distraction. That means better grounding - the model uses the good context instead of getting confused by irrelevant tangents. Your token costs drop, sometimes dramatically! 15% noise reduction on high-volume systems can save thousands of dollars per month. And latency improves because smaller contexts process faster. Plus, you free up context window space for other valuable uses - maybe adding more examples or more retrieval results.
+[pleased] The upside of low noise density is fantastic! Your LLM can focus its attention on relevant content without distraction. That means better grounding - the model uses the good context instead of getting confused by irrelevant tangents. [enthusiastically] Your token costs drop, sometimes dramatically! 15% noise reduction on high-volume systems can save thousands of dollars per month. And latency improves because smaller contexts process faster. [delighted] Plus, you free up context window space for other valuable uses - maybe adding more examples or more retrieval results.
 
 #### Cons: The Subjectivity Problem
-Here's the first gotcha: "irrelevance" is surprisingly subjective! What looks irrelevant to you might actually provide useful background context to the LLM. Sometimes tangential information helps establish the broader picture. A paragraph about how a system works generally might help the LLM better interpret specific technical details later in the context. So be careful about being too aggressive in labeling things as noise.
+[seriously] Here's the first gotcha: "irrelevance" is surprisingly subjective! [cautiously] What looks irrelevant to you might actually provide useful background context to the LLM. Sometimes tangential information helps establish the broader picture. [conversational] A paragraph about how a system works generally might help the LLM better interpret specific technical details later in the context. So be careful about being too aggressive in labeling things as noise.
 
 #### The Background Context Value
-Some "noise" isn't really noise - it's context that seems irrelevant in isolation but becomes valuable when combined with other chunks. This is especially true for complex technical queries where understanding the full picture requires connecting multiple pieces of information. Over-optimizing for low noise density can accidentally strip away this connective tissue!
+[lecture] Some "noise" isn't really noise - it's context that seems irrelevant in isolation but becomes valuable when combined with other chunks. [seriously] This is especially true for complex technical queries where understanding the full picture requires connecting multiple pieces of information. [concerned] Over-optimizing for low noise density can accidentally strip away this connective tissue!
 
 #### Computational Cost Considerations
-Token-level evaluation of relevance is computationally expensive! If you're evaluating every token with an LLM judge, you might spend more on evaluation than you save on reduced context. Chunk-level evaluation is usually the sweet spot - good enough accuracy without excessive compute costs. Save the fine-grained analysis for your most important queries or for offline analysis.
+[cautiously] Token-level evaluation of relevance is computationally expensive! If you're evaluating every token with an LLM judge, you might spend more on evaluation than you save on reduced context. [confidently] Chunk-level evaluation is usually the sweet spot - good enough accuracy without excessive compute costs. Save the fine-grained analysis for your most important queries or for offline analysis.
 
 #### The Over-Pruning Risk
-Finally, there's the over-optimization danger. If you get too aggressive about removing "noise," you might lose important nuance or edge cases that matter. A 5% noise density sounds amazing, but did you accidentally filter out examples or exceptions that would have prevented a hallucination? Balance is key!`
+[seriously] Finally, there's the over-optimization danger. [disappointed] If you get too aggressive about removing "noise," you might lose important nuance or edge cases that matter. A 5% noise density sounds amazing, but did you accidentally filter out examples or exceptions that would have prevented a hallucination? [conversational] Balance is key!`
         },
       ]
     },
@@ -3134,22 +3134,22 @@ Finally, there's the over-optimization danger. If you get too aggressive about r
           ),
           backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — Overview
-Welcome to metric twelve: Context Compression Efficiency! This one is all about doing more with less - the holy grail of system optimization.
+[enthusiastically] Welcome to metric twelve: Context Compression Efficiency! [storytelling] This one is all about doing more with less - the holy grail of system optimization.
 
 #### What Is Context Compression Efficiency?
-Context Compression Efficiency, or CCE 👉 (see-see-eee), measures how compactly you can express key information while still maintaining the coverage you need for quality answers. Think of it like data compression for your prompts. You're trying to pack the same amount of useful information into fewer tokens. It's not about removing content - it's about expressing that content more efficiently!
+[lecture] Context Compression Efficiency, or CCE 👉 (see-see-eee), measures how compactly you can express key information while still maintaining the coverage you need for quality answers. [conversational] Think of it like data compression for your prompts. You're trying to pack the same amount of useful information into fewer tokens. [confidently] It's not about removing content - it's about expressing that content more efficiently!
 
 #### The Core Challenge
-Here's the tension: you need enough context to answer questions accurately, but every token costs money and adds latency. Can you get 85% coverage with 1,200 tokens instead of 2,000? If so, you've achieved a compression ratio of 1.67 to 1, which is huge! That's 40% fewer tokens while maintaining the same answer quality. In high-volume systems, that difference is the margin between profit and loss.
+[seriously] Here's the tension: you need enough context to answer questions accurately, but every token costs money and adds latency. [quizzically] Can you get 85% coverage with 1,200 tokens instead of 2,000? [pleased] If so, you've achieved a compression ratio of 1.67 to 1, which is huge! That's 40% fewer tokens while maintaining the same answer quality. [enthusiastically] In high-volume systems, that difference is the margin between profit and loss.
 
 #### Why This Matters
-Token-priced APIs make this extremely practical. If you're using GPT-4 or Claude and sending millions of requests, every token reduction directly impacts your bottom line. But it's not just about cost! Smaller contexts mean faster processing, lower latency for users, and more headroom in your context window for other features - maybe you can add few-shot examples or more sophisticated prompts with the tokens you've saved.
+[lecture] Token-priced APIs make this extremely practical. [seriously] If you're using GPT-4 or Claude and sending millions of requests, every token reduction directly impacts your bottom line. [conversational] But it's not just about cost! Smaller contexts mean faster processing, lower latency for users, and more headroom in your context window for other features - maybe you can add few-shot examples or more sophisticated prompts with the tokens you've saved.
 
 #### The Quality Preservation Requirement
-The crucial part is "while preserving coverage." Anyone can compress context by just deleting half of it! The trick is maintaining the same answer quality - same completeness, same accuracy - with fewer tokens. That's what separates good compression from naive truncation.
+[confidently] The crucial part is "while preserving coverage." [disappointed] Anyone can compress context by just deleting half of it! [lecture] The trick is maintaining the same answer quality - same completeness, same accuracy - with fewer tokens. That's what separates good compression from naive truncation.
 
 #### When to Focus on CCE
-This metric is essential when implementing context summarization or condensation systems, when optimizing reranker pruning strategies, during prompt engineering efforts to reduce token usage, and especially when you're in tight budget scenarios. If your CFO is asking why the LLM bill is so high, CCE is your best friend!`
+[conversational] This metric is essential when implementing context summarization or condensation systems, when optimizing reranker pruning strategies, during prompt engineering efforts to reduce token usage, and especially when you're in tight budget scenarios. [storytelling] If your CFO is asking why the LLM bill is so high, CCE is your best friend!`
         },
         {
           id: 48,
@@ -3216,25 +3216,25 @@ Compute MinimalTokens achieving Coverage ≥ τ`}
           ),
           backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — How It Works
-Let's dive into the mechanics of measuring compression efficiency. This is where art meets science!
+[conversational] Let's dive into the mechanics of measuring compression efficiency. [storytelling] This is where art meets science!
 
 #### The Core Formula
-CCE is basically coverage divided by tokens. Or if you prefer to think about it differently: what's the minimum number of tokens needed to achieve your target coverage threshold? Both perspectives give you the same insight - you want high coverage with low token count. The higher your CCE ratio, the more efficiently you're packing information.
+[lecture] CCE is basically coverage divided by tokens. Or if you prefer to think about it differently: what's the minimum number of tokens needed to achieve your target coverage threshold? [confidently] Both perspectives give you the same insight - you want high coverage with low token count. The higher your CCE ratio, the more efficiently you're packing information.
 
 #### What Is Coverage?
-Coverage here typically means contextual recall - what percentage of the necessary information is present in your context? If your baseline context includes 100% of what's needed to answer a query category and uses 2,000 tokens, and your compressed version includes 95% of what's needed but only uses 1,200 tokens, you've achieved better efficiency despite the slight coverage drop.
+[conversational] Coverage here typically means contextual recall - what percentage of the necessary information is present in your context? [lecture] If your baseline context includes 100% of what's needed to answer a query category and uses 2,000 tokens, and your compressed version includes 95% of what's needed but only uses 1,200 tokens, you've achieved better efficiency despite the slight coverage drop.
 
 #### Compression Techniques
-You've got several compression approaches to choose from. Summarization uses an LLM to condense the retrieved chunks into a shorter summary that preserves key points. Pruning removes lower-value chunks entirely based on relevance scores. Reranking keeps only your top-K highest-relevance chunks. Each approach has different trade-offs!
+[lecture] You've got several compression approaches to choose from. Summarization uses an LLM to condense the retrieved chunks into a shorter summary that preserves key points. Pruning removes lower-value chunks entirely based on relevance scores. Reranking keeps only your top-K highest-relevance chunks. [conversational] Each approach has different trade-offs!
 
 #### The Measurement Process
-Start with your baseline - measure coverage and token count with your current system. Then apply compression - maybe you summarize, maybe you prune chunks, maybe you do both! Measure again. Did you maintain 85% coverage? Great! How many tokens? If you went from 2,000 to 1,200, that's a 67% improvement in efficiency. That's the CCE gain!
+[confidently] Start with your baseline - measure coverage and token count with your current system. Then apply compression - maybe you summarize, maybe you prune chunks, maybe you do both! Measure again. [pleased] Did you maintain 85% coverage? Great! [quizzically] How many tokens? If you went from 2,000 to 1,200, that's a 67% improvement in efficiency. [enthusiastically] That's the CCE gain!
 
 #### Target Benchmarks
-Most systems aim for 20 to 40% token reduction while maintaining equivalent coverage. That's a realistic target that provides significant cost and latency benefits without risking answer quality. Some highly tuned systems achieve even better compression ratios, especially in domains where information is highly redundant or where aggressive summarization works well.
+[lecture] Most systems aim for 20 to 40% token reduction while maintaining equivalent coverage. That's a realistic target that provides significant cost and latency benefits without risking answer quality. [pleased] Some highly tuned systems achieve even better compression ratios, especially in domains where information is highly redundant or where aggressive summarization works well.
 
 #### The Validation Loop
-The critical step is validating that coverage is truly maintained! Don't just trust the math - actually test answer quality with compressed context. Do A/B testing. Compare user satisfaction. Make sure your 40% token reduction didn't silently degrade the quality of answers. The whole point is efficiency without sacrifice!`
+[seriously] The critical step is validating that coverage is truly maintained! Don't just trust the math - actually test answer quality with compressed context. [cautiously] Do A/B testing. Compare user satisfaction. Make sure your 40% token reduction didn't silently degrade the quality of answers. [confidently] The whole point is efficiency without sacrifice!`
         },
         {
           id: 49,
@@ -3261,25 +3261,25 @@ The critical step is validating that coverage is truly maintained! Don't just tr
           ),
           backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — Implementation
-Let's make this concrete with real numbers that demonstrate the power of compression!
+[enthusiastically] Let's make this concrete with real numbers that demonstrate the power of compression!
 
 #### The Baseline Scenario
-Your current system retrieves context that provides 85% coverage of necessary information - not perfect, but pretty good! This context uses 2,000 tokens. You're paying for those 2,000 tokens on every query, and they're adding noticeable latency to your responses. Can we do better?
+[conversational] Your current system retrieves context that provides 85% coverage of necessary information - not perfect, but pretty good! This context uses 2,000 tokens. [concerned] You're paying for those 2,000 tokens on every query, and they're adding noticeable latency to your responses. [quizzically] Can we do better?
 
 #### Applying Compression
-You implement a compression strategy - maybe you summarize the retrieved chunks, or you prune away the lowest-relevance portions, or you apply tighter reranking thresholds. Your goal is to maintain that 85% coverage while using fewer tokens. You run your optimization and measure again.
+[lecture] You implement a compression strategy - maybe you summarize the retrieved chunks, or you prune away the lowest-relevance portions, or you apply tighter reranking thresholds. [confidently] Your goal is to maintain that 85% coverage while using fewer tokens. You run your optimization and measure again.
 
 #### The Results
-After compression, you're still hitting 85% coverage - same quality threshold! But now you're only using 1,200 tokens. The math is beautiful: you've achieved a compression ratio of 1.67 to 1, or a 40% token reduction. You're delivering the same information density with 40% fewer tokens!
+[pleased] After compression, you're still hitting 85% coverage - same quality threshold! But now you're only using 1,200 tokens. [enthusiastically] The math is beautiful: you've achieved a compression ratio of 1.67 to 1, or a 40% token reduction. You're delivering the same information density with 40% fewer tokens!
 
 #### The Real-World Impact
-Let's put this in perspective. If you're running 100,000 queries per day at, say, $0.03 per thousand input tokens for GPT-4, you were spending $6,000 per day on input tokens. After compression, you're spending $3,600 per day - saving $2,400 daily, nearly $900,000 per year! And that's just input tokens for one component of your system. The savings compound across embeddings, reranking, and output tokens too.
+[storytelling] Let's put this in perspective. If you're running 100,000 queries per day at, say, $0.03 per thousand input tokens for GPT-4, you were spending $6,000 per day on input tokens. [delighted] After compression, you're spending $3,600 per day - saving $2,400 daily, nearly $900,000 per year! And that's just input tokens for one component of your system. [enthusiastically] The savings compound across embeddings, reranking, and output tokens too.
 
 #### Beyond Cost Savings
-But it's not just about money! Your average query latency probably dropped by 20-30% because the LLM is processing smaller contexts. User experience improves. And you've freed up context window space - maybe you can now add few-shot examples, or retrieve one more chunk, or implement chain-of-thought reasoning with the tokens you've saved.
+[pleased] But it's not just about money! Your average query latency probably dropped by 20-30% because the LLM is processing smaller contexts. User experience improves. [conversational] And you've freed up context window space - maybe you can now add few-shot examples, or retrieve one more chunk, or implement chain-of-thought reasoning with the tokens you've saved.
 
 #### Step-by-Step Calculation
-In practice: measure baseline coverage and tokens, apply your compression technique, measure compressed coverage and tokens, calculate the ratio. If coverage dropped below your threshold, adjust your compression parameters - maybe summarize less aggressively, or prune fewer chunks. Iterate until you find the optimal compression level for your quality requirements!`
+[lecture] In practice: measure baseline coverage and tokens, apply your compression technique, measure compressed coverage and tokens, calculate the ratio. [cautiously] If coverage dropped below your threshold, adjust your compression parameters - maybe summarize less aggressively, or prune fewer chunks. [confidently] Iterate until you find the optimal compression level for your quality requirements!`
         },
         {
           id: 50,
@@ -3340,25 +3340,25 @@ In practice: measure baseline coverage and tokens, apply your compression techni
           ),
           backgroundColor: '#466f1f',
           notes: `### Context Compression Efficiency — Considerations
-Let's talk about the full picture of compression - the benefits are huge, but there are real trade-offs to consider!
+[conversational] Let's talk about the full picture of compression - [pleased] the benefits are huge, but there are real trade-offs to consider!
 
 #### Pros: The Efficiency Jackpot
-When compression works well, you hit the efficiency jackpot! You maintain answer accuracy while dramatically lowering token usage - we're talking 20 to 40% reductions that translate directly to cost savings. Latency drops because smaller contexts process faster. And here's the sneaky benefit: you've freed up context budget for other valuable features. Maybe you can now afford to include more examples, or add chain-of-thought prompting, or implement additional safety checks - all within the same context window and budget you were already using!
+[enthusiastically] When compression works well, you hit the efficiency jackpot! You maintain answer accuracy while dramatically lowering token usage - we're talking 20 to 40% reductions that translate directly to cost savings. [pleased] Latency drops because smaller contexts process faster. [delighted] And here's the sneaky benefit: you've freed up context budget for other valuable features. Maybe you can now afford to include more examples, or add chain-of-thought prompting, or implement additional safety checks - all within the same context window and budget you were already using!
 
 #### The Cost Savings Compound
-In high-volume production systems, these savings are transformative. A 40% token reduction on a system handling millions of queries per month can save hundreds of thousands of dollars annually. That's not just optimization - that's business viability! It's the difference between "we can't afford this" and "let's scale this up."
+[storytelling] In high-volume production systems, these savings are transformative. A 40% token reduction on a system handling millions of queries per month can save hundreds of thousands of dollars annually. [enthusiastically] That's not just optimization - that's business viability! It's the difference between "we can't afford this" and "let's scale this up."
 
 #### Cons: The Hidden Costs
-But compression isn't free! The biggest gotcha is processing overhead. If you're using an LLM to summarize your context, you're adding an extra API call and latency hit before you even get to the main query. For some queries, that summarization latency exceeds what you saved on the smaller context! You need to do the math on your specific use case.
+[cautiously] But compression isn't free! [concerned] The biggest gotcha is processing overhead. If you're using an LLM to summarize your context, you're adding an extra API call and latency hit before you even get to the main query. [seriously] For some queries, that summarization latency exceeds what you saved on the smaller context! You need to do the math on your specific use case.
 
 #### The Detail Loss Risk
-Compression inevitably risks losing subtle but important details. Summarization might drop edge cases, caveats, or specific examples that would have prevented hallucinations or improved specificity. You MUST validate that coverage is truly maintained - don't just trust the metrics, actually test answer quality with real queries! Run A/B tests, measure user satisfaction, check for regression in corner cases.
+[disappointed] Compression inevitably risks losing subtle but important details. Summarization might drop edge cases, caveats, or specific examples that would have prevented hallucinations or improved specificity. [seriously] You MUST validate that coverage is truly maintained - don't just trust the metrics, actually test answer quality with real queries! [cautiously] Run A/B tests, measure user satisfaction, check for regression in corner cases.
 
 #### When Compression Doesn't Help
-If your context is already concise and well-pruned, compression might not help much. You can't efficiently compress what's already efficient! If you're only using 500 tokens of highly relevant content, trying to compress further might just degrade quality without meaningful savings. Know when to stop optimizing!
+[conversational] If your context is already concise and well-pruned, compression might not help much. You can't efficiently compress what's already efficient! [lecture] If you're only using 500 tokens of highly relevant content, trying to compress further might just degrade quality without meaningful savings. Know when to stop optimizing!
 
 #### The Right Approach
-The key is measuring the full pipeline impact - compression overhead versus token savings, latency changes, quality validation. And remember: different queries might benefit from different compression strategies or no compression at all!`
+[confidently] The key is measuring the full pipeline impact - compression overhead versus token savings, latency changes, quality validation. [conversational] And remember: different queries might benefit from different compression strategies or no compression at all!`
         },
       ]
     },
@@ -3396,22 +3396,22 @@ The key is measuring the full pipeline impact - compression overhead versus toke
           ),
           backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — Overview
-And here we are - metric thirteen, our final metric! The Latency-Cost Tradeoff Score brings everything together into a single efficiency measure. This is the meta-metric that executives love and engineers need.
+[enthusiastically] And here we are - metric thirteen, our final metric! [storytelling] The Latency-Cost Tradeoff Score brings everything together into a single efficiency measure. This is the meta-metric that executives love and engineers need.
 
 #### What Is the Latency-Cost Tradeoff Score?
-The LCTS 👉 (ell-see-tee-ess) measures overall RAG pipeline efficiency under both latency and budget constraints. It's not just about being fast, or just about being cheap - it's about finding the optimal balance between user experience responsiveness and operational costs. Think of it as your system's efficiency rating, like miles-per-gallon for cars but for RAG systems!
+[lecture] The LCTS 👉 (ell-see-tee-ess) measures overall RAG pipeline efficiency under both latency and budget constraints. [confidently] It's not just about being fast, or just about being cheap - it's about finding the optimal balance between user experience responsiveness and operational costs. [storytelling] Think of it as your system's efficiency rating, like miles-per-gallon for cars but for RAG systems!
 
 #### The Dual Constraint Reality
-Here's why this metric matters: you're always juggling two competing constraints. Users want fast responses - ideally under a second or two for most queries. But faster often means more expensive - maybe you're using a more powerful model, or more retrieval results, or less caching. Meanwhile, your CFO wants to keep costs down. How do you navigate this tension?
+[conversational] Here's why this metric matters: you're always juggling two competing constraints. [seriously] Users want fast responses - ideally under a second or two for most queries. But faster often means more expensive - maybe you're using a more powerful model, or more retrieval results, or less caching. [concerned] Meanwhile, your CFO wants to keep costs down. [quizzically] How do you navigate this tension?
 
 #### The Balancing Act
-The LCTS gives you a framework for making data-driven trade-off decisions. Should you use GPT-4 Turbo or GPT-3.5? The answer depends on your latency budget and cost budget! Should you retrieve top-5 chunks or top-10? LCTS helps you compare configurations objectively. It's not about finding the absolute fastest or absolute cheapest - it's about finding the sweet spot that meets both constraints.
+[confidently] The LCTS gives you a framework for making data-driven trade-off decisions. [conversational] Should you use GPT-4 Turbo or GPT-3.5? The answer depends on your latency budget and cost budget! Should you retrieve top-5 chunks or top-10? [lecture] LCTS helps you compare configurations objectively. It's not about finding the absolute fastest or absolute cheapest - it's about finding the sweet spot that meets both constraints.
 
 #### The Business Impact
-This metric directly enables sustainable scaling. If your LCTS is good, you can scale to millions of users without blowing your budget or delivering a sluggish user experience. If it's poor, you're either hemorrhaging money or losing users to slow responses. It provides a quantitative framework for infrastructure decisions that used to be guesswork!
+[enthusiastically] This metric directly enables sustainable scaling. If your LCTS is good, you can scale to millions of users without blowing your budget or delivering a sluggish user experience. [disappointed] If it's poor, you're either hemorrhaging money or losing users to slow responses. [confidently] It provides a quantitative framework for infrastructure decisions that used to be guesswork!
 
 #### When to Use This
-Use LCTS when selecting models - comparing different LLMs, embeddings, or rerankers. Use it when tuning retrieval parameters like top-K. Use it when optimizing batching, caching, or other infrastructure strategies. Use it during deployment sizing and scaling decisions. And critically, use it to compare different system configurations under realistic budget constraints!`
+[lecture] Use LCTS when selecting models - comparing different LLMs, embeddings, or rerankers. Use it when tuning retrieval parameters like top-K. Use it when optimizing batching, caching, or other infrastructure strategies. [conversational] Use it during deployment sizing and scaling decisions. And critically, use it to compare different system configurations under realistic budget constraints!`
         },
         {
           id: 52,
@@ -3476,28 +3476,28 @@ Use LCTS when selecting models - comparing different LLMs, embeddings, or rerank
           ),
           backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — How It Works
-Let's break down the mathematics behind LCTS. Don't worry - it's more intuitive than it looks!
+[conversational] Let's break down the mathematics behind LCTS. [reassuringly] Don't worry - it's more intuitive than it looks!
 
 #### The Core Formula
-LCTS equals 1 minus a weighted sum of how much of your budgets you're using. The weighted sum includes alpha times your latency ratio, plus one-minus-alpha times your cost ratio. The result is clipped to stay between 0 and 1. Higher scores are better - they mean you're operating efficiently within your constraints!
+[lecture] LCTS equals 1 minus a weighted sum of how much of your budgets you're using. The weighted sum includes alpha times your latency ratio, plus one-minus-alpha times your cost ratio. The result is clipped to stay between 0 and 1. [confidently] Higher scores are better - they mean you're operating efficiently within your constraints!
 
 #### Understanding the Components
-Let's decode this. P50 latency is your median response time - the latency at which 50% of requests are faster and 50% are slower. This is more stable than average latency because it's not skewed by occasional outliers. Your latency budget is whatever threshold you've set - maybe 2 seconds for interactive queries. The ratio tells you what percentage of your budget you're consuming.
+[conversational] Let's decode this. P50 latency is your median response time - the latency at which 50% of requests are faster and 50% are slower. [lecture] This is more stable than average latency because it's not skewed by occasional outliers. Your latency budget is whatever threshold you've set - maybe 2 seconds for interactive queries. The ratio tells you what percentage of your budget you're consuming.
 
 #### The Cost Side
-Similarly, token cost divided by cost budget tells you what percentage of your cost budget you're using. If you budgeted for 5 cents per query but you're spending 3 cents, that's a 0.6 ratio - you're using 60% of your cost budget. Not bad!
+[conversational] Similarly, token cost divided by cost budget tells you what percentage of your cost budget you're using. [storytelling] If you budgeted for 5 cents per query but you're spending 3 cents, that's a 0.6 ratio - you're using 60% of your cost budget. [pleased] Not bad!
 
 #### The Alpha Weight Parameter
-Here's where it gets interesting - alpha lets you prioritize! If alpha is 0.6, you're saying latency is slightly more important than cost. If alpha is 0.8, you really care about speed and cost is secondary. If alpha is 0.3, you're cost-focused and can tolerate higher latency. This flexibility is crucial because different applications have different priorities!
+[enthusiastically] Here's where it gets interesting - alpha lets you prioritize! [lecture] If alpha is 0.6, you're saying latency is slightly more important than cost. If alpha is 0.8, you really care about speed and cost is secondary. If alpha is 0.3, you're cost-focused and can tolerate higher latency. [confidently] This flexibility is crucial because different applications have different priorities!
 
 #### Worked Through the Math
-Let's say alpha is 0.6, you're using 70% of your latency budget, and 50% of your cost budget. The calculation is: 1 minus bracket 0.6 times 0.7 plus 0.4 times 0.5 bracket. That's 1 minus bracket 0.42 plus 0.20 bracket equals 1 minus 0.62 equals 0.38. That's a low score - it means you're consuming a lot of your budgets!
+[conversational] Let's say alpha is 0.6, you're using 70% of your latency budget, and 50% of your cost budget. The calculation is: 1 minus bracket 0.6 times 0.7 plus 0.4 times 0.5 bracket. [lecture] That's 1 minus bracket 0.42 plus 0.20 bracket equals 1 minus 0.62 equals 0.38. [disappointed] That's a low score - it means you're consuming a lot of your budgets!
 
 #### Target Benchmarks
-Aim for at least 0.70 for acceptable efficiency - that means you're staying comfortably within budgets. Above 0.85 indicates strong performance - you've got headroom! Below 0.70 means you're pushing your constraints and need optimization. Critical applications might set stricter thresholds, maybe requiring 0.90 or higher.
+[lecture] Aim for at least 0.70 for acceptable efficiency - that means you're staying comfortably within budgets. [pleased] Above 0.85 indicates strong performance - you've got headroom! [concerned] Below 0.70 means you're pushing your constraints and need optimization. [seriously] Critical applications might set stricter thresholds, maybe requiring 0.90 or higher.
 
 #### The Interpretation
-A high LCTS means you're delivering quality answers while staying well within your latency and cost constraints - that's operational excellence! A low LCTS is a red flag that you need to optimize your pipeline or adjust your budgets or priorities.`
+[enthusiastically] A high LCTS means you're delivering quality answers while staying well within your latency and cost constraints - that's operational excellence! [disappointed] A low LCTS is a red flag that you need to optimize your pipeline or adjust your budgets or priorities.`
         },
         {
           id: 53,
@@ -3531,28 +3531,28 @@ A high LCTS means you're delivering quality answers while staying well within yo
           ),
           backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — Implementation
-Time for a concrete example that shows exactly how LCTS works in practice and what the numbers tell you!
+[enthusiastically] Time for a concrete example that shows exactly how LCTS works in practice and what the numbers tell you!
 
 #### Setting Up the Scenario
-Let's say you've decided that latency is slightly more important than cost for your application, so you set alpha to 0.6. You've measured your production system: your P50 latency is using 70% of your latency budget, and your token costs are using 50% of your cost budget. Not terrible, but not great either. What's your LCTS?
+[conversational] Let's say you've decided that latency is slightly more important than cost for your application, so you set alpha to 0.6. [lecture] You've measured your production system: your P50 latency is using 70% of your latency budget, and your token costs are using 50% of your cost budget. [cautiously] Not terrible, but not great either. [quizzically] What's your LCTS?
 
 #### Walking Through the Math
-Let's calculate step by step. First, the latency component: 0.6 times 0.7 equals 0.42. That's the weighted latency penalty. Next, the cost component: 0.4 (which is 1 minus alpha) times 0.5 equals 0.20. That's the weighted cost penalty. Add them together: 0.42 plus 0.20 equals 0.62. That's your total penalty!
+[conversational] Let's calculate step by step. First, the latency component: 0.6 times 0.7 equals 0.42. That's the weighted latency penalty. Next, the cost component: 0.4 (which is 1 minus alpha) times 0.5 equals 0.20. That's the weighted cost penalty. [lecture] Add them together: 0.42 plus 0.20 equals 0.62. That's your total penalty!
 
 #### The Final Score
-Now subtract from 1: LCTS equals 1 minus 0.62 equals 0.38. Oof! That's well below the 0.70 acceptable threshold. This score is telling you that your system is consuming too much of your budgets - you're pushing your constraints hard. You need optimization!
+[conversational] Now subtract from 1: LCTS equals 1 minus 0.62 equals 0.38. [disappointed] Oof! That's well below the 0.70 acceptable threshold. [seriously] This score is telling you that your system is consuming too much of your budgets - you're pushing your constraints hard. You need optimization!
 
 #### What Does 0.38 Mean?
-A score of 0.38 means you have very little headroom. You're using 70% of your latency budget and 50% of your cost budget, weighted by your priorities. If traffic increases, or if queries get more complex, you'll blow past your budgets. This is your early warning system saying "optimize now before you have a production incident!"
+[concerned] A score of 0.38 means you have very little headroom. You're using 70% of your latency budget and 50% of your cost budget, weighted by your priorities. [seriously] If traffic increases, or if queries get more complex, you'll blow past your budgets. [cautiously] This is your early warning system saying "optimize now before you have a production incident!"
 
 #### Where to Optimize
-With this breakdown, you can see where to focus. Your latency is consuming more of its budget (70%) than cost is (50%), and latency is weighted higher in your priorities. So your first optimization target should be reducing latency! Maybe you need caching, or a faster model, or better batching. Track LCTS as you make changes to see if you're improving.
+[lecture] With this breakdown, you can see where to focus. Your latency is consuming more of its budget (70%) than cost is (50%), and latency is weighted higher in your priorities. [confidently] So your first optimization target should be reducing latency! Maybe you need caching, or a faster model, or better batching. Track LCTS as you make changes to see if you're improving.
 
 #### Practical Calculation Steps
-In production, continuously measure P50 latency and per-query token costs. Compare against your predetermined budgets - maybe 2 seconds for latency, 5 cents for cost. Calculate the ratios. Apply your formula with your chosen alpha. Log this score alongside your other metrics. Use it to compare different configurations - does switching to a different model improve your LCTS?
+[conversational] In production, continuously measure P50 latency and per-query token costs. Compare against your predetermined budgets - maybe 2 seconds for latency, 5 cents for cost. Calculate the ratios. Apply your formula with your chosen alpha. [lecture] Log this score alongside your other metrics. [quizzically] Use it to compare different configurations - does switching to a different model improve your LCTS?
 
 #### Using LCTS for Decisions
-The beauty of LCTS is it gives you one number to compare apples-to-oranges trade-offs. Config A is faster but more expensive, Config B is slower but cheaper - which is better? LCTS tells you, based on your priorities!`
+[enthusiastically] The beauty of LCTS is it gives you one number to compare apples-to-oranges trade-offs. [storytelling] Config A is faster but more expensive, Config B is slower but cheaper - which is better? [confidently] LCTS tells you, based on your priorities!`
         },
         {
           id: 54,
@@ -3614,34 +3614,34 @@ The beauty of LCTS is it gives you one number to compare apples-to-oranges trade
           ),
           backgroundColor: '#1f696f',
           notes: `### Latency-Cost Tradeoff Score — Considerations
-Let's wrap up our final metric - and really, the entire deck - by talking about the power and limitations of the Latency-Cost Tradeoff Score!
+[conversational] Let's wrap up our final metric - and really, the entire deck - by talking about the power and limitations of the Latency-Cost Tradeoff Score!
 
 #### Pros: The Strategic Framework
-The big win with LCTS is that it gives you a strategic framework for managing the eternal tension between user experience and operational costs. It's not just a metric - it's a decision-making tool! You can use it to objectively compare configurations that make different trade-offs. Should we use GPT-4 or Claude? Should we cache aggressively or compute fresh? LCTS helps you answer these questions with data instead of gut feelings.
+[enthusiastically] The big win with LCTS is that it gives you a strategic framework for managing the eternal tension between user experience and operational costs. [confidently] It's not just a metric - it's a decision-making tool! You can use it to objectively compare configurations that make different trade-offs. [quizzically] Should we use GPT-4 or Claude? Should we cache aggressively or compute fresh? [lecture] LCTS helps you answer these questions with data instead of gut feelings.
 
 #### Sustainable Scaling
-Perhaps most importantly, LCTS enables sustainable scaling. Without this kind of framework, you either scale up and blow your budget, or you stay within budget and deliver a sluggish experience that drives users away. LCTS helps you find and maintain that sweet spot where you can grow your user base while keeping both latency and costs under control. That's the difference between a demo and a production system!
+[seriously] Perhaps most importantly, LCTS enables sustainable scaling. [disappointed] Without this kind of framework, you either scale up and blow your budget, or you stay within budget and deliver a sluggish experience that drives users away. [pleased] LCTS helps you find and maintain that sweet spot where you can grow your user base while keeping both latency and costs under control. [enthusiastically] That's the difference between a demo and a production system!
 
 #### Data-Driven Infrastructure Decisions
-LCTS provides quantitative justification for infrastructure investments. When you tell your VP that switching to a different model configuration will improve LCTS from 0.45 to 0.82, that's compelling! It translates technical optimization into business value. And it helps identify where optimization efforts will have the most impact.
+[conversational] LCTS provides quantitative justification for infrastructure investments. [storytelling] When you tell your VP that switching to a different model configuration will improve LCTS from 0.45 to 0.82, that's compelling! [confidently] It translates technical optimization into business value. And it helps identify where optimization efforts will have the most impact.
 
 #### Cons: The Subjectivity of Alpha
-But let's talk limitations. The biggest one is that alpha selection - how you weight latency versus cost - can be subjective. Different stakeholders might want different values! Your product manager wants low latency (high alpha), your CFO wants low cost (low alpha). You need organizational alignment on priorities, or LCTS becomes a source of argument rather than clarity.
+[cautiously] But let's talk limitations. The biggest one is that alpha selection - how you weight latency versus cost - can be subjective. [concerned] Different stakeholders might want different values! Your product manager wants low latency (high alpha), your CFO wants low cost (low alpha). [seriously] You need organizational alignment on priorities, or LCTS becomes a source of argument rather than clarity.
 
 #### The Moving Target Problem
-Budget constraints change over time! Maybe you set your cost budget at 5 cents per query based on last year's API pricing, but then prices increase or decrease. Or your latency requirements change as user expectations evolve. You need to periodically revisit and adjust your budgets to keep LCTS meaningful. It's not a "set it and forget it" metric.
+[conversational] Budget constraints change over time! [lecture] Maybe you set your cost budget at 5 cents per query based on last year's API pricing, but then prices increase or decrease. Or your latency requirements change as user expectations evolve. [cautiously] You need to periodically revisit and adjust your budgets to keep LCTS meaningful. It's not a "set it and forget it" metric.
 
 #### What LCTS Doesn't Measure
-Critically, LCTS doesn't directly measure answer quality! You could have a fantastic LCTS of 0.95 because you're fast and cheap, but if your answers are garbage, who cares? You MUST use LCTS alongside quality metrics like faithfulness, recall, and answer completeness. Never optimize for efficiency at the expense of quality - that's a fast track to user churn!
+[seriously] Critically, LCTS doesn't directly measure answer quality! [disappointed] You could have a fantastic LCTS of 0.95 because you're fast and cheap, but if your answers are garbage, who cares? [confidently] You MUST use LCTS alongside quality metrics like faithfulness, recall, and answer completeness. Never optimize for efficiency at the expense of quality - that's a fast track to user churn!
 
 #### Hidden Costs
-LCTS typically focuses on token costs and inference latency, but there are other costs in your system - vector database queries, reranker compute, storage costs, data processing pipelines. The metric might not capture the full cost picture. Make sure you're measuring the costs that actually matter for your deployment!
+[lecture] LCTS typically focuses on token costs and inference latency, but there are other costs in your system - vector database queries, reranker compute, storage costs, data processing pipelines. [cautiously] The metric might not capture the full cost picture. Make sure you're measuring the costs that actually matter for your deployment!
 
 #### The Right Way to Use LCTS
-Use LCTS as one tool in your evaluation toolkit, not the only tool. Combine it with quality metrics to ensure you're delivering value, not just efficiency. Use it to compare configurations and track optimization progress over time. And make sure your alpha and budgets reflect actual business priorities and constraints!
+[confidently] Use LCTS as one tool in your evaluation toolkit, not the only tool. Combine it with quality metrics to ensure you're delivering value, not just efficiency. [lecture] Use it to compare configurations and track optimization progress over time. And make sure your alpha and budgets reflect actual business priorities and constraints!
 
 #### Closing Thoughts on All 13 Metrics
-And with that, we've completed our journey through all thirteen RAG evaluation metrics! From the foundational retrieval metrics that diagnose whether you're even finding the right evidence, through the quality metrics that ensure your answers are faithful and complete, to these efficiency metrics that make your system sustainable in production. Each metric illuminates a different aspect of RAG performance. No single metric tells the full story - you need multiple perspectives to truly understand and optimize your system. Use these metrics together, track them continuously, and let them guide your optimization efforts. The journey from a prototype RAG system to a production-grade, scalable, cost-effective solution that users love - that journey is paved with good metrics and thoughtful optimization. Thank you for joining me through these thirteen metrics. Now go build amazing RAG systems!`
+[warmly] And with that, we've completed our journey through all thirteen RAG evaluation metrics! [storytelling] From the foundational retrieval metrics that diagnose whether you're even finding the right evidence, through the quality metrics that ensure your answers are faithful and complete, to these efficiency metrics that make your system sustainable in production. [lecture] Each metric illuminates a different aspect of RAG performance. No single metric tells the full story - you need multiple perspectives to truly understand and optimize your system. [confidently] Use these metrics together, track them continuously, and let them guide your optimization efforts. [inspiringly] The journey from a prototype RAG system to a production-grade, scalable, cost-effective solution that users love - that journey is paved with good metrics and thoughtful optimization. [warmly] Thank you for joining me through these thirteen metrics. [enthusiastically] Now go build amazing RAG systems!`
         },
       ]
     },
@@ -3742,24 +3742,24 @@ And with that, we've completed our journey through all thirteen RAG evaluation m
           ),
           backgroundColor: '#1f696f',
           notes: `### Summary & Next Steps
-And that brings us to the end of our journey through these thirteen powerful RAG evaluation metrics! Let's recap what we've learned and chart a path forward.
+[warmly] And that brings us to the end of our journey through these thirteen powerful RAG evaluation metrics! [confidently] Let's recap what we've learned and chart a path forward.
 
 ####  The Four Pillars of RAG Evaluation
-We've covered thirteen metrics organized into four logical categories that mirror how RAG systems actually work. **Retrieval metrics**—Recall at K, Precision at K, Hit Rate, and Context Overlap Score—diagnose whether you're finding the right documents in the first place. If your answers are incomplete or hallucinated, start here. **Context Quality**—the Context Relevance Score—evaluates whether what you retrieved is actually useful for answering the query. **Answer Quality metrics**—Hallucination Rate, Grounded Answer Score, Faithfulness Score, Answer Completeness, and Answer Specificity—measure whether your LLM is generating truthful, complete, and focused responses. And **Efficiency metrics**—Noise Density, Context Compression Efficiency, and Latency-Cost Tradeoff Score—ensure you're not wasting tokens or money.
+[lecture] We've covered thirteen metrics organized into four logical categories that mirror how RAG systems actually work. **Retrieval metrics**—Recall at K, Precision at K, Hit Rate, and Context Overlap Score—diagnose whether you're finding the right documents in the first place. [conversational] If your answers are incomplete or hallucinated, start here. **Context Quality**—the Context Relevance Score—evaluates whether what you retrieved is actually useful for answering the query. **Answer Quality metrics**—Hallucination Rate, Grounded Answer Score, Faithfulness Score, Answer Completeness, and Answer Specificity—measure whether your LLM is generating truthful, complete, and focused responses. [enthusiastically] And **Efficiency metrics**—Noise Density, Context Compression Efficiency, and Latency-Cost Tradeoff Score—ensure you're not wasting tokens or money.
 
 ####  Best Practices for Implementation
-Here are the key principles to remember. First, never rely on a single metric. Retrieval might look great on paper, but if your LLM ignores the context, your answers will still be poor. Use multiple metrics together to get the full picture. Second, start with the fundamentals—establish baselines for retrieval quality using Recall and Precision at K, and measure faithfulness to ensure your LLM is grounding its answers. Third, continuously monitor your system in production. Metrics that look good during development can degrade over time as your document corpus evolves or user queries shift. Finally, always balance quality with efficiency constraints. Perfect retrieval that costs a fortune or takes forever isn't useful in production.
+[conversational] Here are the key principles to remember. First, never rely on a single metric. [storytelling] Retrieval might look great on paper, but if your LLM ignores the context, your answers will still be poor. [confidently] Use multiple metrics together to get the full picture. Second, start with the fundamentals—establish baselines for retrieval quality using Recall and Precision at K, and measure faithfulness to ensure your LLM is grounding its answers. [lecture] Third, continuously monitor your system in production. Metrics that look good during development can degrade over time as your document corpus evolves or user queries shift. [seriously] Finally, always balance quality with efficiency constraints. Perfect retrieval that costs a fortune or takes forever isn't useful in production.
 
 ####  Your Implementation Roadmap
-If you're just getting started, I recommend a phased approach. **Phase One** is your foundation: implement Recall at K, Precision at K, and Faithfulness Score. These three metrics give you visibility into whether you're retrieving the right documents and whether your LLM is using them correctly. Get these working and stable before moving on. **Phase Two** focuses on quality improvements: add Context Relevance Score, Answer Completeness, and Hallucination Rate. These metrics help you refine your system to produce better, more trustworthy answers. **Phase Three** is optimization: once your quality is solid, track Noise Density, Context Compression Efficiency, and Latency-Cost Tradeoff Score to make your system faster and more cost-effective without sacrificing quality.
+[enthusiastically] If you're just getting started, I recommend a phased approach. [lecture] **Phase One** is your foundation: implement Recall at K, Precision at K, and Faithfulness Score. These three metrics give you visibility into whether you're retrieving the right documents and whether your LLM is using them correctly. [confidently] Get these working and stable before moving on. **Phase Two** focuses on quality improvements: add Context Relevance Score, Answer Completeness, and Hallucination Rate. These metrics help you refine your system to produce better, more trustworthy answers. [pleased] **Phase Three** is optimization: once your quality is solid, track Noise Density, Context Compression Efficiency, and Latency-Cost Tradeoff Score to make your system faster and more cost-effective without sacrificing quality.
 
 ####  The Power of Combinations
-Here's the most important insight from this entire presentation: no single metric tells the full story. The real power comes from using combinations to diagnose root causes. If your end-to-end answer quality is poor, is it because you're missing relevant documents during retrieval? Or are you retrieving the right documents but the LLM is ignoring them and hallucinating instead? Or maybe you're retrieving too much noise and the signal is getting lost? Different combinations of metrics point to different problems, and understanding which combination you're seeing is the key to efficient debugging and improvement.
+[inspiringly] Here's the most important insight from this entire presentation: no single metric tells the full story. [lecture] The real power comes from using combinations to diagnose root causes. [quizzically] If your end-to-end answer quality is poor, is it because you're missing relevant documents during retrieval? Or are you retrieving the right documents but the LLM is ignoring them and hallucinating instead? Or maybe you're retrieving too much noise and the signal is getting lost? [confidently] Different combinations of metrics point to different problems, and understanding which combination you're seeing is the key to efficient debugging and improvement.
 
 ####  Your Next Steps
-Start small. Pick two or three metrics that address your biggest pain points right now, implement them, and use them to drive improvements. As your system matures, gradually add more metrics to get finer-grained visibility. Remember, the goal isn't to achieve perfect scores on every metric—the goal is to build a reliable, efficient RAG system that serves your users well. Use these metrics as diagnostic tools, not as ends in themselves.
+[conversational] Start small. Pick two or three metrics that address your biggest pain points right now, implement them, and use them to drive improvements. [lecture] As your system matures, gradually add more metrics to get finer-grained visibility. [warmly] Remember, the goal isn't to achieve perfect scores on every metric—the goal is to build a reliable, efficient RAG system that serves your users well. Use these metrics as diagnostic tools, not as ends in themselves.
 
-Thank you for your attention! I hope these thirteen underused metrics give you the tools you need to build better RAG systems. Remember, whether you're a fresher just starting out or an experienced practitioner, systematic evaluation is the key to moving from prototypes to production-ready systems. Good luck, and happy building!`
+[warmly] Thank you for your attention! [enthusiastically] I hope these thirteen underused metrics give you the tools you need to build better RAG systems. [inspiringly] Remember, whether you're a fresher just starting out or an experienced practitioner, systematic evaluation is the key to moving from prototypes to production-ready systems. [pleased] Good luck, and happy building!`
         }
       ]
     }
