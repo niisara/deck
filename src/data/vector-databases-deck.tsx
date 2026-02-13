@@ -74,16 +74,16 @@ export const vectorDatabasesDeck: Deck = {
           backgroundColor: '#2a217b',
           notes: `### Vector Databases Cheat Sheet
 #### Welcome
-Hello everyone! Welcome to this comprehensive guide on vector databases. If you're new to this topic, don't worry - we'll start from the basics and build up your understanding step by step.
+[cheerfully] Hello everyone! [excited] Welcome to this comprehensive guide on vector databases. [warmly] If you're new to this topic, don't worry - we'll start from the basics and build up your understanding step by step.
 #### What Are Vector Databases?
-Think of vector databases as specialized storage systems designed specifically for AI applications. Just like you might use a traditional database to store customer names and addresses, vector databases store mathematical representations of data called "vectors" - think of them as long lists of numbers that capture the meaning or essence of things like text, images, or audio.
+[conversational] Think of vector databases as specialized storage systems designed specifically for AI applications. [storytelling] Just like you might use a traditional database to store customer names and addresses, vector databases store mathematical representations of data called "vectors" - think of them as long lists of numbers that capture the meaning or essence of things like text, images, or audio.
 #### Why Do We Need Them?
-Modern AI applications, especially those using large language models like ChatGPT 👉 'chat-G-P-T', need to find similar items quickly. For example, when you ask a question, the system needs to find relevant information from millions of documents in milliseconds. Vector databases are built specifically for this "similarity search" task.
+[confidently] Modern AI applications, especially those using large language models like ChatGPT 👉 'chat-G-P-T', need to find similar items quickly. For example, when you ask a question, the system needs to find relevant information from millions of documents in milliseconds. Vector databases are built specifically for this "similarity search" task.
 #### What's Covered Today
-We're going to explore 11 different vector databases, each with its own strengths and ideal use cases. By the end, you'll understand which database to choose for your specific needs - whether you're building a prototype, launching a production app, or working at enterprise scale.
+[enthusiastically] We're going to explore 11 different vector databases, each with its own strengths and ideal use cases. By the end, you'll understand which database to choose for your specific needs - whether you're building a prototype, launching a production app, or working at enterprise scale.
 #### The Journey
-We'll look at vector storage, how similarity search works, and how these enable powerful AI applications like chatbots with memory, recommendation systems, and semantic search engines.
-Let's dive into our table of contents next to see all 11 databases we'll cover.`
+[energetic] We'll look at vector storage, how similarity search works, and how these enable powerful AI applications like chatbots with memory, recommendation systems, and semantic search engines.
+[excited] Let's dive into our table of contents next to see all 11 databases we'll cover.`
         },
         {
           id: 2,
@@ -165,14 +165,14 @@ Let's dive into our table of contents next to see all 11 databases we'll cover.`
           backgroundColor: '#2a217b',
           notes: `### Table of Contents
 #### Overview of Coverage
-Great! Now let's look at what we're going to cover today. We'll be exploring 11 different vector databases, each with unique capabilities and ideal use cases.
+[energetic] Great! Now let's look at what we're going to cover today. [enthusiastically] We'll be exploring 11 different vector databases, each with unique capabilities and ideal use cases.
 #### The Databases
-We'll start with purpose-built vector databases like Pinecone, Weaviate, Qdrant, Milvus, and Chroma. These are databases designed from the ground up specifically for vector search. Then we'll look at established databases that added vector capabilities - Redis, Elasticsearch, Vespa, PostgreSQL with pgvector extension, MongoDB, and LanceDB. Each brings something different to the table.
+[conversational] We'll start with purpose-built vector databases like Pinecone, Weaviate, Qdrant, Milvus, and Chroma. These are databases designed from the ground up specifically for vector search. Then we'll look at established databases that added vector capabilities - Redis, Elasticsearch, Vespa, PostgreSQL with pgvector extension, MongoDB, and LanceDB. [pleased] Each brings something different to the table.
 #### What to Expect for Each Database
-For every database, we'll cover six key aspects in a consistent format. First, the index type - this is the algorithm used to organize and search vectors efficiently. Second, the scaling model - how you grow the system as your data increases. Third, performance profile - how fast it is under different conditions. Fourth, cost considerations - the pricing model and what drives costs. Fifth, best use cases - when you should choose this database. And finally, important notes and gotchas you should be aware of.
+[confidently] For every database, we'll cover six key aspects in a consistent format. First, the index type - this is the algorithm used to organize and search vectors efficiently. Second, the scaling model - how you grow the system as your data increases. Third, performance profile - how fast it is under different conditions. Fourth, cost considerations - the pricing model and what drives costs. Fifth, best use cases - when you should choose this database. And finally, important notes and gotchas you should be aware of.
 #### The Grand Finale
-At the end, we'll have a comprehensive comparison table showing all 11 databases side by side, followed by decision-making guidance to help you choose the right one for your specific needs.
-Now let's start with our first database - Pinecone!`
+[excited] At the end, we'll have a comprehensive comparison table showing all 11 databases side by side, followed by decision-making guidance to help you choose the right one for your specific needs.
+[cheerfully] Now let's start with our first database - Pinecone!`
         }
       ]
     },
@@ -196,15 +196,15 @@ Now let's start with our first database - Pinecone!`
           backgroundColor: '#1a4e71',
           notes: `### Pinecone - Index Type
 #### Introduction to Pinecone
-Pinecone is one of the most popular fully-managed vector databases, and it's a great place to start our journey. Let's talk about how it organizes data internally.
+[conversational] Pinecone is one of the most popular fully-managed vector databases, and it's a great place to start our journey. [lecture] Let's talk about how it organizes data internally.
 #### Understanding Index Types
-When we talk about "index type," we're discussing the algorithm that organizes vectors for fast searching. Think of it like organizing books in a library - you could arrange them alphabetically, by topic, or by color. Each method has trade-offs between speed, accuracy, and space.
+[storytelling] When we talk about "index type," we're discussing the algorithm that organizes vectors for fast searching. Think of it like organizing books in a library - you could arrange them alphabetically, by topic, or by color. Each method has trade-offs between speed, accuracy, and space.
 #### Pinecone's Approach
-Pinecone uses proprietary ANN 👉 'A-N-N' algorithms - that stands for Approximate Nearest Neighbor search. "Approximate" means it finds results that are very close to perfect, but trades a tiny bit of accuracy for much faster speed. This is actually what you want for most real-world applications.
+[confidently] Pinecone uses proprietary ANN 👉 'A-N-N' algorithms - that stands for Approximate Nearest Neighbor search. [conversational] "Approximate" means it finds results that are very close to perfect, but trades a tiny bit of accuracy for much faster speed. This is actually what you want for most real-world applications.
 #### Pod Types Explained
-Pinecone offers different "pod" families with specialized algorithms. The p1 and p2 pods use graph-based approaches for high performance - imagine connections between related vectors like a social network. The s1 pods optimize for storage efficiency when you have massive datasets but query less frequently. Each tier also supports various quantization options - that's a technique to compress vectors and save memory.
+[lecture] Pinecone offers different "pod" families with specialized algorithms. The p1 and p2 pods use graph-based approaches for high performance - [storytelling] imagine connections between related vectors like a social network. The s1 pods optimize for storage efficiency when you have massive datasets but query less frequently. [conversational] Each tier also supports various quantization options - that's a technique to compress vectors and save memory.
 #### Why This Matters
-The proprietary nature means Pinecone has optimized these algorithms specifically for production use cases, focusing on consistent performance and reliability rather than exposing algorithm details.
+[confidently] The proprietary nature means Pinecone has optimized these algorithms specifically for production use cases, focusing on consistent performance and reliability rather than exposing algorithm details.
 Let's see how Pinecone scales as your needs grow.`
         },
         {
@@ -224,13 +224,13 @@ Let's see how Pinecone scales as your needs grow.`
           backgroundColor: '#1a4e71',
           notes: `### Pinecone - Scaling Model
 #### Two Ways to Scale
-Pinecone offers two complementary ways to scale your vector database: vertical scaling and horizontal scaling. Let me explain both in simple terms.
+[conversational] Pinecone offers two complementary ways to scale your vector database: vertical scaling and horizontal scaling. Let me explain both in simple terms.
 #### Vertical Scaling - Growing Upward
-Vertical scaling means making your existing pod bigger and more powerful. Pinecone lets you increase your pod size from x1 to x2, then x4, all the way up to x8. Each step doubles the capacity. The amazing part? This happens with zero downtime - your application keeps running smoothly while the upgrade happens in the background. It's like adding more floors to a building while people continue working inside.
+[lecture] Vertical scaling means making your existing pod bigger and more powerful. Pinecone lets you increase your pod size from x1 to x2, then x4, all the way up to x8. Each step doubles the capacity. [excited] The amazing part? This happens with zero downtime - your application keeps running smoothly while the upgrade happens in the background. [storytelling] It's like adding more floors to a building while people continue working inside.
 #### Horizontal Scaling - Growing Outward
-Horizontal scaling means adding more pods working in parallel. For read-heavy workloads, you add replicas which increase your QPS 👉 'Q-P-S' - that's Queries Per Second, measuring how many searches you can handle. Think of it like opening more checkout counters at a store to serve more customers simultaneously. If you need to expand capacity beyond what vertical scaling allows, or want to change pod types, you create new indexes from collections - this is Pinecone's way of reconfiguring your data structure.
+[conversational] Horizontal scaling means adding more pods working in parallel. For read-heavy workloads, you add replicas which increase your QPS 👉 'Q-P-S' - that's Queries Per Second, measuring how many searches you can handle. [storytelling] Think of it like opening more checkout counters at a store to serve more customers simultaneously. [lecture] If you need to expand capacity beyond what vertical scaling allows, or want to change pod types, you create new indexes from collections - this is Pinecone's way of reconfiguring your data structure.
 #### The Best of Both Worlds
-You can combine both approaches. Start with one x1 pod, scale it vertically to x2 for more capacity, then add replicas horizontally for higher throughput. This flexibility lets you optimize for both data size and query volume.
+[pleased] You can combine both approaches. Start with one x1 pod, scale it vertically to x2 for more capacity, then add replicas horizontally for higher throughput. This flexibility lets you optimize for both data size and query volume.
 Next, let's look at the actual performance you can expect.`
         },
         {
@@ -249,15 +249,15 @@ Next, let's look at the actual performance you can expect.`
           backgroundColor: '#1a4e71',
           notes: `### Pinecone - Performance Profile
 #### Speed is Critical
-For AI applications, especially those serving real users, speed is absolutely critical. Nobody wants to wait several seconds for a chatbot response or product recommendation.
+[seriously] For AI applications, especially those serving real users, speed is absolutely critical. [conversational] Nobody wants to wait several seconds for a chatbot response or product recommendation.
 #### Pinecone's Performance Characteristics
-Pinecone delivers consistently low latency - typically under 50 milliseconds for queries. To put that in perspective, a blink of your eye takes about 100 to 150 milliseconds. So Pinecone can search through millions of vectors and return results faster than you can blink! This consistency is key - it doesn't matter if you're querying at 2 AM with low traffic or during peak usage, the performance remains stable.
+[enthusiastically] Pinecone delivers consistently low latency - typically under 50 milliseconds for queries. [storytelling] To put that in perspective, a blink of your eye takes about 100 to 150 milliseconds. So Pinecone can search through millions of vectors and return results faster than you can blink! [confidently] This consistency is key - it doesn't matter if you're querying at 2 AM with low traffic or during peak usage, the performance remains stable.
 #### P2 Indexes for Maximum Speed
-If you need the absolute highest performance, Pinecone's p2 indexes are optimized specifically for speed. These are ideal for latency-sensitive applications where every millisecond counts.
+[lecture] If you need the absolute highest performance, Pinecone's p2 indexes are optimized specifically for speed. These are ideal for latency-sensitive applications where every millisecond counts.
 #### Scalable Throughput
-Here's something elegant: QPS scales linearly with replica count. Add one replica, double your throughput. Add two replicas, triple it. This predictability makes capacity planning straightforward - you can accurately predict what resources you'll need for your expected load.
+[pleased] Here's something elegant: QPS scales linearly with replica count. Add one replica, double your throughput. Add two replicas, triple it. [conversational] This predictability makes capacity planning straightforward - you can accurately predict what resources you'll need for your expected load.
 #### Production-Grade Reliability
-Pinecone is optimized for production workloads, meaning it maintains consistent latency even under heavy load. No performance degradation during peak times - crucial for user-facing applications.
+[confidently] Pinecone is optimized for production workloads, meaning it maintains consistent latency even under heavy load. No performance degradation during peak times - crucial for user-facing applications.
 Now let's talk about what this performance costs.`
         },
         {
@@ -276,15 +276,15 @@ Now let's talk about what this performance costs.`
           backgroundColor: '#1a4e71',
           notes: `### Pinecone - Cost Consideration
 #### Understanding Pinecone's Pricing
-Pinecone is a fully managed service, which means you're paying for convenience and operational simplicity - no infrastructure to manage, no servers to maintain, no database administration headaches.
+[conversational] Pinecone is a fully managed service, which means you're paying for convenience and operational simplicity - no infrastructure to manage, no servers to maintain, no database administration headaches.
 #### Pod-Based Pricing
-The traditional model starts at around $70 per month for an s1.x1 pod. This is capacity-based pricing - you pay for what you provision, not what you use. Think of it like leasing a dedicated storage unit - you pay the monthly fee whether you fill it completely or leave it half empty.
+[lecture] The traditional model starts at around $70 per month for an s1.x1 pod. This is capacity-based pricing - you pay for what you provision, not what you use. [storytelling] Think of it like leasing a dedicated storage unit - you pay the monthly fee whether you fill it completely or leave it half empty.
 #### Understanding the Cost Drivers
-Your cost scales with two main factors. First, pod size - an x2 pod costs twice as much as an x1, an x4 costs four times as much. Second, replica count - each replica you add multiplies the cost but also multiplies your query capacity. So if you need to handle 10 times more queries, you'll need 10 replicas at 10 times the cost.
+[confidently] Your cost scales with two main factors. First, pod size - an x2 pod costs twice as much as an x1, an x4 costs four times as much. Second, replica count - each replica you add multiplies the cost but also multiplies your query capacity. So if you need to handle 10 times more queries, you'll need 10 replicas at 10 times the cost.
 #### Serverless Option
-Pinecone also offers a serverless option with usage-based pricing. This can be more cost-effective for variable or unpredictable workloads where you don't want to pay for idle capacity. You only pay for what you actually use.
+[conversational] Pinecone also offers a serverless option with usage-based pricing. This can be more cost-effective for variable or unpredictable workloads where you don't want to pay for idle capacity. You only pay for what you actually use.
 #### Cost vs Value
-While Pinecone may not be the cheapest option, you're paying for managed operations, SLA guarantees, consistent performance, and the ability to scale without touching infrastructure. For production applications, this operational simplicity often justifies the cost.
+[thoughtfully] While Pinecone may not be the cheapest option, you're paying for managed operations, SLA guarantees, consistent performance, and the ability to scale without touching infrastructure. For production applications, this operational simplicity often justifies the cost.
 Let's explore when Pinecone is the best choice.`
         },
         {
@@ -303,19 +303,19 @@ Let's explore when Pinecone is the best choice.`
           backgroundColor: '#1a4e71',
           notes: `### Pinecone - Best Use Case
 #### When to Choose Pinecone
-After exploring Pinecone's features, let's crystallize when it's the ideal choice for your project.
+[conversational] After exploring Pinecone's features, let's crystallize when it's the ideal choice for your project.
 #### Production-Grade Applications
-Pinecone shines for production-grade vector search applications. If you're building something that real users will depend on - a customer-facing chatbot, a recommendation engine for an e-commerce site, or a semantic search for a SaaS product - Pinecone should be on your shortlist.
+[enthusiastically] Pinecone shines for production-grade vector search applications. [storytelling] If you're building something that real users will depend on - a customer-facing chatbot, a recommendation engine for an e-commerce site, or a semantic search for a SaaS product - Pinecone should be on your shortlist.
 #### Easy Operations Matter
-If you want to focus on your application instead of managing infrastructure, Pinecone is excellent. There's no Kubernetes to configure, no sharding strategies to plan, no backup procedures to implement. Just point your application at the API and you're running.
+[pleased] If you want to focus on your application instead of managing infrastructure, Pinecone is excellent. There's no Kubernetes to configure, no sharding strategies to plan, no backup procedures to implement. Just point your application at the API and you're running.
 #### SLA Guarantees
-When you need contractual guarantees about uptime and performance, Pinecone offers SLAs - Service Level Agreements. This is critical for business-critical applications where downtime directly impacts revenue or user experience.
+[seriously] When you need contractual guarantees about uptime and performance, Pinecone offers SLAs - Service Level Agreements. This is critical for business-critical applications where downtime directly impacts revenue or user experience.
 #### Predictable Latency
-If your application requires consistently low latency without performance spikes or degradation, Pinecone's architecture delivers. You get reliable, predictable response times.
+[confidently] If your application requires consistently low latency without performance spikes or degradation, Pinecone's architecture delivers. You get reliable, predictable response times.
 #### Rapid Scale-Out
-When you anticipate rapid growth or have spiky traffic patterns, Pinecone's ability to scale horizontally with replicas and vertically with larger pods without downtime is invaluable. You can grow your infrastructure as fast as your business grows.
+[excited] When you anticipate rapid growth or have spiky traffic patterns, Pinecone's ability to scale horizontally with replicas and vertically with larger pods without downtime is invaluable. You can grow your infrastructure as fast as your business grows.
 #### Enterprise Support
-Teams that need enterprise-grade support, documentation, and hand-holding will appreciate Pinecone's focus on developer experience and customer success.
+[warmly] Teams that need enterprise-grade support, documentation, and hand-holding will appreciate Pinecone's focus on developer experience and customer success.
 Let's look at some additional considerations and tips.`
         },
         {
@@ -337,16 +337,16 @@ Let's look at some additional considerations and tips.`
           backgroundColor: '#1a4e71',
           notes: `### Pinecone - Notes
 #### Important Details and Tips
-Before we move on to the next database, let's cover some important details and gotchas you should know about Pinecone.
+[conversational] Before we move on to the next database, let's cover some important details and gotchas you should know about Pinecone.
 #### Zero-Downtime Scaling
-First, that zero-downtime vertical scaling is a huge operational advantage. When you increase pod size from x1 to x2 or x4, your application continues to accept upserts - that means writes or updates - and queries without any interruption. This is rare in database systems and eliminates the need for maintenance windows.
+[enthusiastically] First, that zero-downtime vertical scaling is a huge operational advantage. When you increase pod size from x1 to x2 or x4, your application continues to accept upserts - that means writes or updates - and queries without any interruption. [pleased] This is rare in database systems and eliminates the need for maintenance windows.
 #### Collections for Flexibility
-Collections are a powerful feature for horizontal scaling and reconfiguration. You can create a snapshot of your index as a collection, then create a new index from that collection with different pod types or configurations. This gives you flexibility to change your infrastructure setup without rebuilding from scratch.
+[confidently] Collections are a powerful feature for horizontal scaling and reconfiguration. You can create a snapshot of your index as a collection, then create a new index from that collection with different pod types or configurations. This gives you flexibility to change your infrastructure setup without rebuilding from scratch.
 #### Selective Metadata Indexing
-Pinecone supports metadata filtering, but here's a pro tip: you can selectively choose which metadata fields to index. Indexing every field increases storage costs and can slow queries. Only index the fields you actually filter on - this optimizes both cost and performance.
+[lecture] Pinecone supports metadata filtering, but here's a pro tip: you can selectively choose which metadata fields to index. [cautiously] Indexing every field increases storage costs and can slow queries. Only index the fields you actually filter on - this optimizes both cost and performance.
 #### Serverless Auto-Scaling
-The serverless option is worth considering for variable workloads. If your traffic is unpredictable or has big spikes - maybe you get most queries during business hours and almost none at night - serverless can automatically scale up and down, potentially saving significant costs compared to provisioning for peak capacity 24/7.
-Now let's move on to our second database - Weaviate!`
+[conversational] The serverless option is worth considering for variable workloads. If your traffic is unpredictable or has big spikes - [storytelling] maybe you get most queries during business hours and almost none at night - [pleased] serverless can automatically scale up and down, potentially saving significant costs compared to provisioning for peak capacity 24/7.
+[cheerfully] Now let's move on to our second database - Weaviate!`
         }
       ]
     },
@@ -370,15 +370,15 @@ Now let's move on to our second database - Weaviate!`
           backgroundColor: '#104928',
           notes: `### Weaviate - Index Type
 #### Introduction to Weaviate
-Welcome to Weaviate! This is an open-source vector database with strong community support and excellent features for hybrid search - combining semantic similarity with traditional filtering.
+[cheerfully] Welcome to Weaviate! [conversational] This is an open-source vector database with strong community support and excellent features for hybrid search - combining semantic similarity with traditional filtering.
 #### Dual Index Architecture
-Weaviate uses two complementary indexing systems working together. For vector search, it uses HNSW 👉 'H-N-S-W', which stands for Hierarchical Navigable Small World. It also offers a Flat index option for exact search when you need perfect accuracy rather than approximate results.
+[lecture] Weaviate uses two complementary indexing systems working together. For vector search, it uses HNSW 👉 'H-N-S-W', which stands for Hierarchical Navigable Small World. It also offers a Flat index option for exact search when you need perfect accuracy rather than approximate results.
 #### Understanding HNSW
-Think of HNSW as a sophisticated highway system for navigating through vector space. It builds multiple layers of connections, like express highways, local roads, and neighborhood streets. When searching, you start on the express highway to quickly get to the right region, then use local roads to find the exact neighborhood you're looking for. This hierarchical approach makes searches incredibly fast even with millions of vectors.
+[storytelling] Think of HNSW as a sophisticated highway system for navigating through vector space. It builds multiple layers of connections, like express highways, local roads, and neighborhood streets. When searching, you start on the express highway to quickly get to the right region, then use local roads to find the exact neighborhood you're looking for. [pleased] This hierarchical approach makes searches incredibly fast even with millions of vectors.
 #### Inverted Index for Filtering
-The second index is an inverted index for text and structured data properties. This works like the index at the back of a book - you can quickly look up which documents contain specific words or match certain criteria. This enables fast filtering on metadata.
+[conversational] The second index is an inverted index for text and structured data properties. [storytelling] This works like the index at the back of a book - you can quickly look up which documents contain specific words or match certain criteria. This enables fast filtering on metadata.
 #### The Power of Combination
-The magic happens when these two indices work together. You can perform hybrid searches - find vectors similar to your query vector AND filter by properties like date, category, or author - all in a single efficient query. This combination is Weaviate's superpower.
+[excited] The magic happens when these two indices work together. You can perform hybrid searches - find vectors similar to your query vector AND filter by properties like date, category, or author - all in a single efficient query. This combination is Weaviate's superpower.
 Let's see how Weaviate handles growth and scaling.`
         },
         {
@@ -397,17 +397,17 @@ Let's see how Weaviate handles growth and scaling.`
           backgroundColor: '#104928',
           notes: `### Weaviate - Scaling Model
 #### Flexible Scaling Options
-Weaviate offers flexible scaling strategies suitable for different deployment scenarios - from small projects to massive enterprise deployments.
+[conversational] Weaviate offers flexible scaling strategies suitable for different deployment scenarios - from small projects to massive enterprise deployments.
 #### Horizontal Scaling Through Sharding
-Weaviate supports horizontal scaling through sharding - that's splitting your data across multiple nodes. Think of it like dividing a massive library across multiple buildings. Each shard contains a portion of your data, and Weaviate coordinates queries across all shards to give you complete results. This lets you scale beyond what a single machine can handle.
+[lecture] Weaviate supports horizontal scaling through sharding - that's splitting your data across multiple nodes. [storytelling] Think of it like dividing a massive library across multiple buildings. Each shard contains a portion of your data, and Weaviate coordinates queries across all shards to give you complete results. [confidently] This lets you scale beyond what a single machine can handle.
 #### Replication for High Availability
-Weaviate also supports replication - creating copies of your data across multiple nodes. This provides two benefits: higher query throughput since multiple nodes can serve queries simultaneously, and high availability since if one node fails, others can continue serving requests. It's like having multiple librarians working in parallel.
+[conversational] Weaviate also supports replication - creating copies of your data across multiple nodes. This provides two benefits: higher query throughput since multiple nodes can serve queries simultaneously, and high availability since if one node fails, others can continue serving requests. [storytelling] It's like having multiple librarians working in parallel.
 #### Vertical Scaling
-You can also scale vertically by selecting larger instance sizes with more CPU and RAM. This is simpler than horizontal scaling for moderate datasets.
+[conversational] You can also scale vertically by selecting larger instance sizes with more CPU and RAM. This is simpler than horizontal scaling for moderate datasets.
 #### Memory Efficiency
-Here's a key advantage: Weaviate doesn't require all vectors to reside in RAM - random access memory. Many vector databases need everything in memory for performance, which gets expensive at scale. Weaviate's architecture allows it to efficiently work with disk storage for portions of the dataset, significantly reducing memory costs while maintaining good performance.
+[enthusiastically] Here's a key advantage: Weaviate doesn't require all vectors to reside in RAM - random access memory. [cautiously] Many vector databases need everything in memory for performance, which gets expensive at scale. [pleased] Weaviate's architecture allows it to efficiently work with disk storage for portions of the dataset, significantly reducing memory costs while maintaining good performance.
 #### Cloud-Native Design
-Weaviate is designed for cloud-native deployments, working well with Kubernetes and supporting multi-zone deployments for high availability and disaster recovery.
+[confidently] Weaviate is designed for cloud-native deployments, working well with Kubernetes and supporting multi-zone deployments for high availability and disaster recovery.
 Let's examine Weaviate's performance characteristics.`
         },
         {
@@ -426,15 +426,15 @@ Let's examine Weaviate's performance characteristics.`
           backgroundColor: '#104928',
           notes: `### Weaviate - Performance Profile
 #### Fast Vector Search
-Weaviate delivers fast HNSW-based search with sub-50 millisecond latency for 20-NN queries - that's finding the 20 nearest neighbors to your query vector. Even on large datasets with millions or tens of millions of vectors, Weaviate maintains this responsiveness.
+[confidently] Weaviate delivers fast HNSW-based search with sub-50 millisecond latency for 20-NN queries - that's finding the 20 nearest neighbors to your query vector. Even on large datasets with millions or tens of millions of vectors, Weaviate maintains this responsiveness.
 #### Hybrid Search Excellence
-Where Weaviate really shines is hybrid search - combining vector similarity with filtering. Many applications need this. For example, imagine searching for "products similar to this laptop" but only showing results under $1000 and in stock. Weaviate can execute the vector similarity search AND apply the price and inventory filters efficiently in a single query.
+[enthusiastically] Where Weaviate really shines is hybrid search - combining vector similarity with filtering. [conversational] Many applications need this. [storytelling] For example, imagine searching for "products similar to this laptop" but only showing results under $1000 and in stock. [pleased] Weaviate can execute the vector similarity search AND apply the price and inventory filters efficiently in a single query.
 #### Optimized Filter Integration
-The key here is that filtering isn't a slow post-processing step. Weaviate's inverted index for properties works in concert with vector search, so filters are evaluated efficiently during the search process, not after. This makes filtered vector searches nearly as fast as unfiltered ones.
+[lecture] The key here is that filtering isn't a slow post-processing step. Weaviate's inverted index for properties works in concert with vector search, so filters are evaluated efficiently during the search process, not after. This makes filtered vector searches nearly as fast as unfiltered ones.
 #### Single Query Efficiency
-When you combine vector search with WHERE filters in a single query, Weaviate optimizes the execution. Rather than finding all similar vectors first and then filtering which would be slow, it narrows the search space using filters during the vector traversal. This architectural decision makes a huge performance difference.
+[conversational] When you combine vector search with WHERE filters in a single query, Weaviate optimizes the execution. Rather than finding all similar vectors first and then filtering which would be slow, it narrows the search space using filters during the vector traversal. [impressed] This architectural decision makes a huge performance difference.
 #### Scalability
-Performance scales with your infrastructure. Add more shards and replicas, and Weaviate maintains its low latency while increasing throughput. The performance characteristics are predictable and reliable.
+[confidently] Performance scales with your infrastructure. Add more shards and replicas, and Weaviate maintains its low latency while increasing throughput. The performance characteristics are predictable and reliable.
 Now let's talk about the cost to run Weaviate.`
         },
         {
