@@ -1455,7 +1455,7 @@ In the implementation, you first run an ambiguity detector. If the ambiguity sco
                 <strong>User Response:</strong> "Apple Inc., United States"<br />
                 <strong>Rewritten Query:</strong> "Apple Inc. digital payment policies and terms for Apple Pay service in the United States"
               </div>
-                <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
               <ul>
                 <li>Adds interaction step (latency)</li>
                 <li>Requires timeout handling</li>
@@ -1734,7 +1734,7 @@ A practical tip: build and maintain a **curated mapping dictionary** for your mo
                 <strong>Before:</strong> "heart attack treatment"<br />
                 <strong>After:</strong> "myocardial infarction (MI) management" OR "acute coronary syndrome therapy" OR "thrombolysis" OR "PCI" OR "cardiac revascularization"
               </div>
-                <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
+              <h3 style={{ color: '#e74c3c', paddingTop: '10px', fontSize: '2rem' }}>Considerations</h3>
               <ul>
                 <li>Requires curated domain ontology</li>
                 <li>Risk of ontology drift over time</li>
@@ -1908,7 +1908,7 @@ Here's Query2Doc in practice.
                 <li>More comprehensive final responses</li>
               </ul>
 
-                <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
+              <h3 style={{ fontSize: '2rem' }}>When to Use</h3>
               <ul>
                 <li>Hard questions requiring comprehensive info</li>
                 <li>Incomplete initial context</li>
