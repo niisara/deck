@@ -101,7 +101,7 @@ export const chunkingTechniquesDeck: Deck = {
     style E fill:#e1bee7`}
                     />
                   </h3>
-                  <p style={{ fontSize: '1.2rem',margin: '0px' }}>
+                  <p style={{ fontSize: '1.2rem', margin: '0px' }}>
                     Chunking is the process of breaking large documents into <strong>smaller, retrievable, semantically coherent units</strong> that preserve context while fitting within model constraints.
                   </p>
                 </div>
@@ -388,7 +388,7 @@ export const chunkingTechniquesDeck: Deck = {
                   <li>Easy to implement and debug</li>
                   <li>Predictable storage requirements</li>
                 </ul>
-              
+
               </GSAPStaggerList>
             </div>
           ),
@@ -995,7 +995,7 @@ export const chunkingTechniquesDeck: Deck = {
                   />
                 </h3>
               </GSAPAnimated>
-              <GSAPStaggerList stagger={0.14} duration={0.7}>   
+              <GSAPStaggerList stagger={0.14} duration={0.7}>
                 <ul>
                   <li>Paragraphs can be long or inconsistent</li>
                   <li>Document formatting affects quality</li>
@@ -1374,7 +1374,7 @@ export const chunkingTechniquesDeck: Deck = {
               </GSAPAnimated>
               <GSAPAnimated delay={1.5} duration={0.8}>
                 <h3 style={{ color: '#e74c3c', marginBottom: '20px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
+                  <SvgIcon iconName="duo-gauge" sizeName="2x" darkModeInvert={true} />
                   Computational Cost
                 </h3>
               </GSAPAnimated>
@@ -2052,11 +2052,11 @@ export const chunkingTechniquesDeck: Deck = {
                 <h3 style={{ color: '#2ecc71', marginBottom: '20px' }}>Best Chunk Size</h3>
               </GSAPAnimated>
               <GSAPStaggerList stagger={0.11} delay={0.3}>
-                <ul> 
+                <ul>
                   <li>200–600 tokens per semantic unit</li>
                   <li>Varies based on topic cohesion and content density</li>
-                   </ul>
-                  
+                </ul>
+
               </GSAPStaggerList>
               <GSAPAnimated delay={0.5} duration={0.8}>
                 <h3 style={{ color: '#f39c12', marginBottom: '20px', marginTop: '30px' }}>Overlap Size</h3>
@@ -6327,10 +6327,10 @@ Once you have diarization results, the actual chunking is straightforward since 
                     <SvgIcon iconName="duo-layer-group" sizeName="2x" darkModeInvert={true} />
                     3. Special content types?
                   </h4>
-                  <p style={{ margin: '0px'}}><strong>Code →</strong> Code-Aware chunking</p>
-                  <p style={{ margin: '0px'}}><strong>Tables →</strong> Table-Aware chunking</p>
-                  <p style={{ margin: '0px'}}><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
-                  <p style={{ margin: '0px'}}><strong>QA Tasks →</strong> QA-Focused chunking</p>
+                  <p style={{ margin: '0px' }}><strong>Code →</strong> Code-Aware chunking</p>
+                  <p style={{ margin: '0px' }}><strong>Tables →</strong> Table-Aware chunking</p>
+                  <p style={{ margin: '0px' }}><strong>Audio/Speech →</strong> Speaker-Turn or Time-Based chunking</p>
+                  <p style={{ margin: '0px' }}><strong>QA Tasks →</strong> QA-Focused chunking</p>
                 </div>
                 <div style={{ padding: '15px', backgroundColor: 'rgba(46, 204, 113, 0.1)', borderRadius: '10px', border: '2px solid #2ecc71', color: '#2ecc71' }}>
                   <h4 style={{ color: '#2ecc71', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>
